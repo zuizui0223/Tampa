@@ -26,6 +26,9 @@ jobs:
       - name: Build response-independent TBEP water-quality screen
         run: python analysis/02_water_quality_screen.py --out results/generated
 
+      - name: Build quantitative Thalassia state audit
+        run: python analysis/03_quantitative_state.py --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
