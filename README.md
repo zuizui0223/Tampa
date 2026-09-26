@@ -1,69 +1,137 @@
-# Tampa — ecological memory and state transitions in Tampa Bay seagrass
+# Tampa — ecological memory and cryptic state degradation in Tampa Bay seagrass
 
-This repository develops an ecological analysis of long-term fixed-transect seagrass monitoring in Tampa Bay. It is intentionally separate from the EOG method-validation result that motivated the question.
+This repository develops a biological analysis of long-term fixed-transect seagrass monitoring in Tampa Bay. It is intentionally separate from the EOG method-validation endpoint that motivated the question.
 
-## Scientific question
+## Scientific mainline
 
-**How long does annual *Thalassia testudinum* state at a fixed transect retain ecological memory, and when does that memory break or reorganize?**
+The working question is now:
 
-The first analysis treats one transect-year as an annual recorded-detection state and asks whether recent local history improves prospective prediction beyond static space-time information.
+> **Can a foundation species remain recorded across fixed transects while its quantitative meadow state degrades or reorganizes?**
 
-## Frozen public source
+The analysis distinguishes four state dimensions for *Thalassia testudinum*:
 
-The analysis is pinned to:
+1. recorded presence at a transect;
+2. frequency occurrence across sampled meter marks;
+3. Braun-Blanquet abundance/cover index;
+4. plant condition variables (blade length and short-shoot density).
 
-- source repository: `tbep-tech/obis-example`
-- source commit: `6c567beff95ea04f0e397101befb49d5233ace8f`
-- focal taxon: *Thalassia testudinum*
+This matters because a stable presence map can hide thinning, reduced stature, reduced density, or community reorganization.
+
+## Frozen source
+
+The primary biological source is pinned to:
+
+- repository: `tbep-tech/obis-example`
+- commit: `6c567beff95ea04f0e397101befb49d5233ace8f`
 - years: 1997–2025
-- eligible parent-transect visits: 1,497
+- eligible transect visits: 1,497
 - stable transect nodes: 71
+- focal taxon: *Thalassia testudinum*
 
-The parser verifies the exact byte sizes and Git blob identities of `dwc/event.csv` and `dwc/occurrence.csv` before analysis.
+The scripts verify exact byte sizes and Git blob identities for Event, Occurrence and eMoF before analysis.
 
-## Initial ecological validation
+The reconstructed frequency-occurrence and Braun-Blanquet abundance definitions follow the TBEP/tbeptools convention: species observations divided by sampled placements, and species-specific Braun-Blanquet scores averaged over sampled placements.
 
-Exploratory result, frozen here before environmental-cause modelling:
+## Current reproducible result
 
-1. Annualizing the 1,497 visits yields **1,480 transect-years** and **1,176 consecutive-year transitions**.
-2. The data do **not** support a simple claim that memory weakened permanently after 2016. Persistence is high before and after the 2016–2017 pulse.
-3. In 2016, **5 of 19 previously positive transects lost recorded *Thalassia***, compared with 15 losses among 492 comparable prior transitions (exploratory one-sided Fisher OR = **11.36**, p = **0.000445**).
-4. In 2017, the **same five transects** regained recorded *Thalassia*. The gain pulse is also elevated relative to prior transitions (OR = **5.29**, p = **0.00837**).
-5. Those five 2016 transects were surveyed and retained other seagrass records, especially *Halodule*, so the pulse is not explained by simple absence of sampling.
-6. In prospective walk-forward prediction, a baseline using longitude, latitude, year and water body has mean log loss **0.3088**. Adding a decaying history of the focal transect sharply improves prediction; the best simple candidate is an exponential memory with a **3-year decay scale** (mean log loss **0.13275** across 22 target years).
-7. Infinite/cumulative history is worse than the best finite-memory representation. The current hypothesis is therefore **finite ecological memory**, not permanent site identity.
+### 1. Strong temporal memory, but not a 3.5-year result
 
-## Current interpretation boundary
+Annualization yields 1,480 transect-years and 1,176 consecutive-year transitions.
 
-Supported as an exploratory pattern:
+In strict walk-forward prediction on identical rows:
 
-> Annual *Thalassia* recorded state has strong finite temporal memory, interrupted by a spatially clustered 2016 loss / 2017 return pulse.
+- space/time baseline mean log loss: **0.3312**
+- + previous-year state: **0.1701**
+- + exponentially weighted earlier history: **0.1395**
+- best tested decay scale: **10 years**
+- long-history model beats lag-1 in **14/22** target years
 
-Not yet supported:
+The earlier exploratory 3.5-year memory claim is superseded. The supported result is **strong immediate state dependence plus additional long-lived site-history information**; the memory horizon is not sharply identified.
 
-- a climate-causal explanation;
-- true demographic extinction/recolonization;
-- a bay-wide 2016 collapse;
-- detection-free occupancy;
-- a unique mechanism for the 2016–2017 pulse.
+### 2. Presence and quantitative condition decouple after 2016
 
-The five affected transects are four in Middle Tampa Bay and one in Old Tampa Bay. Because Tampa Bay seagrass acreage peaked around 2016 before later bay-wide decline, the local binary turnover pulse must not be equated with the later regional acreage decline.
+For 2016–2025, within-transect models include node fixed effects and adjust for cyclic survey date and sampled-point count. Cluster bootstrap resamples transects.
+
+**Old Tampa Bay**
+
+- recorded detection slope: -0.0215 yr⁻¹, 95% bootstrap interval [-0.0582, 0]
+- blade length: **-1.09 mm yr⁻¹**, [-1.69, -0.68]
+- shoot density: **-38.3 shoots m⁻² yr⁻¹**, [-49.8, -21.9]
+
+**Middle Tampa Bay**
+
+- recorded detection: +0.0231 yr⁻¹, interval overlaps zero
+- blade length: **-0.405 mm yr⁻¹**, [-0.908, -0.222]
+
+**Lower Tampa Bay**
+
+- recorded detection: -0.0053 yr⁻¹, interval includes zero
+- focal frequency occurrence: **-0.0128 yr⁻¹**, [-0.0240, -0.00367]
+
+**Boca Ciega Bay** does not show the same clear pattern.
+
+The current biological interpretation is therefore:
+
+> **A stable or recovering binary occurrence state can coexist with deterioration of spatial occupancy within a transect, plant stature, or shoot density.**
+
+This is treated as a candidate **cryptic degradation / ecological-state decoupling** result, not yet as a climate-causal result.
+
+### 3. The 2016 loss / 2017 return pulse is not the main result
+
+Five transects lost recorded *Thalassia* in 2016 and all five recorded it again in 2017. However, this pulse is protocol-sensitive:
+
+- 24/47 eligible 2016 visits use 25 December as the parent date;
+- four of the five pulse transects use that date;
+- sampled-point counts changed strongly at several pulse transects;
+- the pinned OBIS conversion uses the **minimum** date within a multi-day transect ID, while current `tbeptools::read_formtransect()` uses the **maximum** date because some transects are sampled over more than one day.
+
+Therefore the pulse remains exploratory and is **not** interpreted as confirmed extinction/recolonization or a discrete environmental disturbance.
+
+Where quantitative data are available, the 2017 return was often incomplete: across the five pulse nodes, median 2017 frequency was about 55% of its 2015 value and median Braun-Blanquet index about 26%.
+
+## Water-quality screen
+
+A separate response-independent screen uses the pinned TBEP/EPCHC long-term water-quality archive. It summarizes salinity, temperature, chlorophyll, total nitrogen, Secchi depth and turbidity by bay segment/year.
+
+No single 2016 water-quality anomaly currently explains the protocol-sensitive pulse. Environmental attribution is therefore downstream of the more robust long-term quantitative-state result.
 
 ## Reproduce
 
 ```bash
 python -m pip install -r requirements.txt
 python analysis/01_transition_memory.py --out results/generated
+python analysis/02_water_quality_screen.py --out results/generated
+python analysis/03_quantitative_state.py --out results/generated
+python analysis/04_state_change_validation.py --out results/generated
 ```
 
-The script downloads only the pinned public Darwin Core files and verifies their immutable identities before using them.
+CI reruns all four analyses from pinned public sources.
 
-## Next test
+Canonical current boundary: `results/current_validation_v2.json`.
 
-The next analysis will distinguish three explanations for the 2016–2017 pulse:
+`results/initial_validation.json` is retained as historical provenance and contains superseded early exploratory wording.
 
-1. **environmental pulse** — temperature, salinity, clarity/nutrients or disturbance altered *Thalassia* persistence;
-2. **community replacement** — *Halodule* / *Syringodium* state changed when *Thalassia* disappeared and returned;
-3. **observation/protocol effect** — the annual pulse reflects survey or data-generation changes rather than ecology.
+## Claim boundary
 
-Environmental attribution will be added only after the corresponding source, spatial join and temporal aggregation rules are frozen.
+Supported now:
+
+- annual recorded *Thalassia* state has strong temporal memory;
+- earlier site history adds information beyond previous-year state;
+- multiple quantitative state dimensions can trend differently from binary detection;
+- Old Tampa Bay, Middle Tampa Bay and Lower Tampa Bay show different forms of state decoupling after 2016.
+
+Not supported now:
+
+- demographic extinction/recolonization from recorded absence/presence;
+- a causal temperature, salinity or nutrient mechanism;
+- a confirmed ecological interpretation of the 2016/2017 pulse;
+- a universal 10-year biological memory constant;
+- equivalence between fixed-transect condition and bay-wide mapped acreage.
+
+## Next scientific gate
+
+The next test is community-state compensation and environmental coupling:
+
+1. quantify *Halodule*, *Syringodium* and *Ruppia* frequency/abundance on the same transects;
+2. test whether declining *Thalassia* condition is compensated by alternative seagrass states;
+3. then relate within-transect state changes to independently pinned water-quality histories without treating correlated trends as causal proof.
