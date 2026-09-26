@@ -29,7 +29,8 @@
     "stated_protocol": "12 quadrats along each of three transects/stations per location",
     "focal_taxon": "Thalassia testudinum",
     "response_payload_opened_before_contract": false,
-    "response_values_opened_before_contract": false
+    "response_values_opened_before_contract": false,
+    "focal_taxon_worms_aphia_id": 374720
   },
   "parser_contract": {
     "encoding": "utf-8",
@@ -54,7 +55,7 @@
     "node_id": "normalized Loc ID + '::' + normalized Stat ID",
     "date": "ISO-compatible Date/Time; calendar year used for annualization",
     "quadrat_sample_id": "node_id + exact Date/Time + quadrat-number field at column 9, falling back to column 10 only when column 9 is empty",
-    "focal_taxon_match": "case-insensitive whitespace-normalized substring 'thalassia testudinum' in the concatenation of columns 11-13",
+    "focal_taxon_match": "case-insensitive whitespace-normalized scientific-name substring 'thalassia testudinum' OR WoRMS AphiaID 374720 / LSID taxname:374720 in the concatenation of columns 11-13",
     "focal_cover": "column 14; focal rows must contain a finite numeric percent-cover value between 0 and 100 inclusive",
     "duplicate_focal_quadrat": "terminal stop if more than one focal row maps to the same quadrat sample",
     "node_geometry": "median latitude/longitude per node; stop if either coordinate span exceeds 0.01 degree within node",
