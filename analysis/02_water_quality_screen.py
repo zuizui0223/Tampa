@@ -21,7 +21,8 @@ from urllib.request import Request, urlopen
 
 import numpy as np
 import pandas as pd
-import xlrd
+import io
+import openpyxl
 
 WQ_COMMIT = "00aa86030f9245fe0318c186e7137798684dce74"
 WQ_URL = (
@@ -96,11 +97,9 @@ def as_float(value):
     return out if math.isfinite(out) else math.nan
 
 
-def as_datetime(book, sheet, row, col):
-    cell = sheet.cell(row, col)
-    if cell.ctype == xlrd.XL_CELL_DATE:
-        return xlrd.xldate_as_datetime(cell.value, book.datemode)
-    value = cell.value
+def as_datetime(value):
+    if isinstance(value, datetime):
+        return value
     if isinstance(value, str):
         value = value.strip()
         for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d", "%m/%d/%Y %H:%M", "%m/%d/%Y"):
@@ -112,11 +111,13 @@ def as_datetime(book, sheet, row, col):
 
 
 def load_selected(data: bytes) -> tuple[pd.DataFrame, dict]:
-    book = xlrd.open_workbook(file_contents=data, on_demand=True)
-    if SHEET not in book.sheet_names():
+    # The upstream file is named .xls but is an OpenXML/XLSX ZIP container.
+    book = openpyxl.load_workbook(io.BytesIO(data), read_only=True, data_only=True)
+    if SHEET not in book.sheetnames:
         raise RuntimeError(f"missing sheet: {SHEET}")
-    sheet = book.sheet_by_name(SHEET)
-    header = [str(sheet.cell_value(0, c)).strip() for c in range(sheet.ncols)]
+    sheet = book[SHEET]
+    first = next(sheet.iter_rows(min_row=1, max_row=1, values_only=True))
+    header = [str(value).strip() if value is not None else "" for value in first]
     index = {name: i for i, name in enumerate(header)}
     missing = sorted(set(RAW_COLUMNS.values()) - set(index))
     if missing:
@@ -124,22 +125,25 @@ def load_selected(data: bytes) -> tuple[pd.DataFrame, dict]:
 
     rows = []
     mapped_raw_rows = 0
-    for r in range(1, sheet.nrows):
-        station_value = as_float(sheet.cell_value(r, index[RAW_COLUMNS["station"]]))
+    physical_rows = 1
+    for values in sheet.iter_rows(min_row=2, values_only=True):
+        physical_rows += 1
+        station_value = as_float(values[index[RAW_COLUMNS["station"]]])
         if not math.isfinite(station_value):
             continue
         station = int(station_value)
         segment = STATION_SEGMENT.get(station)
         if segment is None:
             continue
-        when = as_datetime(book, sheet, r, index[RAW_COLUMNS["sample_time"]])
+        when = as_datetime(values[index[RAW_COLUMNS["sample_time"]]])
         if when is None or when.year < 1997 or when.year > 2025:
             continue
 
         mapped_raw_rows += 1
-        total_depth = as_float(sheet.cell_value(r, index[RAW_COLUMNS["total_depth"]]))
-        secchi = as_float(sheet.cell_value(r, index[RAW_COLUMNS["secchi"]]))
-        secchi_q = str(sheet.cell_value(r, index[RAW_COLUMNS["secchi_q"]])).strip()
+        total_depth = as_float(values[index[RAW_COLUMNS["total_depth"]]])
+        secchi = as_float(values[index[RAW_COLUMNS["secchi"]]])
+        secchi_q_raw = values[index[RAW_COLUMNS["secchi_q"]]]
+        secchi_q = "" if secchi_q_raw is None else str(secchi_q_raw).strip()
         # tbeptools/read_formwq: VOB (">") and Secchi within 0.5 ft of bottom are unusable.
         if secchi_q == ">":
             secchi = math.nan
@@ -154,23 +158,24 @@ def load_selected(data: bytes) -> tuple[pd.DataFrame, dict]:
                 "mtb_group": MTB_GROUP.get(station),
                 "year": when.year,
                 "month": when.month,
-                "salinity": as_float(sheet.cell_value(r, index[RAW_COLUMNS["salinity"]])),
-                "temperature": as_float(sheet.cell_value(r, index[RAW_COLUMNS["temperature"]])),
-                "chlorophyll": as_float(sheet.cell_value(r, index[RAW_COLUMNS["chlorophyll"]])),
-                "total_nitrogen": as_float(sheet.cell_value(r, index[RAW_COLUMNS["total_nitrogen"]])),
+                "salinity": as_float(values[index[RAW_COLUMNS["salinity"]]]),
+                "temperature": as_float(values[index[RAW_COLUMNS["temperature"]]]),
+                "chlorophyll": as_float(values[index[RAW_COLUMNS["chlorophyll"]]]),
+                "total_nitrogen": as_float(values[index[RAW_COLUMNS["total_nitrogen"]]]),
                 "secchi": secchi,
-                "turbidity": as_float(sheet.cell_value(r, index[RAW_COLUMNS["turbidity"]])),
+                "turbidity": as_float(values[index[RAW_COLUMNS["turbidity"]]]),
             }
         )
 
     frame = pd.DataFrame(rows)
     audit = {
-        "sheet_rows_including_header": int(sheet.nrows),
-        "sheet_columns": int(sheet.ncols),
+        "physical_rows_including_header": int(physical_rows),
+        "sheet_columns": int(len(header)),
         "mapped_1997_2025_raw_rows": int(mapped_raw_rows),
         "selected_columns": RAW_COLUMNS,
+        "container_format": "xlsx_openxml_despite_xls_filename",
     }
-    book.release_resources()
+    book.close()
     return frame, audit
 
 
