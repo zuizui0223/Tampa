@@ -338,6 +338,156 @@ def walkforward_memory(feature_frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.Da
     return scores, summary
 
 
+
+SEAGRASS_TAXA = {
+    "Thalassia": "Thalassia testudinum",
+    "Halodule": "Halodule wrightii",
+    "Syringodium": "Syringodium filiforme",
+    "Ruppia": "Ruppia maritima",
+}
+
+
+def community_turnover(
+    candidates: list[dict[str, object]],
+    species_by_parent: dict[str, set[str]],
+) -> tuple[pd.DataFrame, dict]:
+    visit_rows = []
+    for row in candidates:
+        present = species_by_parent.get(str(row["unit_id"]), set())
+        visit_rows.append(
+            {
+                "node_id": row["node_id"],
+                "year": int(row["year"]),
+                "water_body": row["water_body"],
+                **{
+                    name: int(scientific in present)
+                    for name, scientific in SEAGRASS_TAXA.items()
+                },
+            }
+        )
+    visit_species = pd.DataFrame(visit_rows)
+    annual_species = (
+        visit_species.groupby(["node_id", "year", "water_body"], as_index=False)
+        [list(SEAGRASS_TAXA)]
+        .max()
+        .sort_values(["node_id", "year"])
+        .reset_index(drop=True)
+    )
+
+    transitions = []
+    for _, group in annual_species.groupby("node_id"):
+        records = group.sort_values("year").to_dict("records")
+        for left, right in zip(records[:-1], records[1:]):
+            if int(right["year"]) != int(left["year"]) + 1:
+                continue
+            record = {
+                "node_id": right["node_id"],
+                "year": int(right["year"]),
+                "water_body": right["water_body"],
+            }
+            for taxon in SEAGRASS_TAXA:
+                record[f"{taxon}_prev"] = int(left[taxon])
+                record[taxon] = int(right[taxon])
+            transitions.append(record)
+    tr = pd.DataFrame(transitions)
+
+    thal_prev = tr[tr.Thalassia_prev == 1].copy()
+    loss = thal_prev[thal_prev.Thalassia == 0].copy()
+    persistence = thal_prev[thal_prev.Thalassia == 1].copy()
+
+    cooccurrence = {}
+    for taxon in ["Halodule", "Syringodium", "Ruppia"]:
+        a = int(loss[taxon].sum())
+        b = int(len(loss) - a)
+        c = int(persistence[taxon].sum())
+        d = int(len(persistence) - c)
+        alternative = "less" if taxon == "Syringodium" else "two-sided"
+        test = fisher_exact([[a, b], [c, d]], alternative=alternative)
+        cooccurrence[taxon] = {
+            "loss_present": a,
+            "loss_absent": b,
+            "persistence_present": c,
+            "persistence_absent": d,
+            "odds_ratio": float(test.statistic),
+            "p": float(test.pvalue),
+            "alternative": alternative,
+        }
+
+    loss_2016 = loss[loss.year == 2016]
+    gain_2017 = tr[
+        (tr.year == 2017)
+        & (tr.Thalassia_prev == 0)
+        & (tr.Thalassia == 1)
+    ]
+    pulse_nodes = sorted(set(loss_2016.node_id) & set(gain_2017.node_id))
+    pulse_state = annual_species[
+        annual_species.node_id.isin(pulse_nodes)
+        & annual_species.year.isin([2015, 2016, 2017])
+    ].sort_values(["node_id", "year"])
+
+    usable_loss = []
+    annual_index = {
+        (str(row.node_id), int(row.year)): row
+        for row in annual_species.itertuples(index=False)
+    }
+    for row in loss.itertuples(index=False):
+        nxt = annual_index.get((str(row.node_id), int(row.year) + 1))
+        if nxt is not None:
+            usable_loss.append(
+                {
+                    "node_id": str(row.node_id),
+                    "loss_year": int(row.year),
+                    "recovered_next_year": int(nxt.Thalassia),
+                }
+            )
+    recovery = pd.DataFrame(usable_loss)
+    pulse_recovered = recovery[recovery.loss_year == 2016]
+    other_recovered = recovery[recovery.loss_year != 2016]
+    recovery_test = fisher_exact(
+        [
+            [
+                int(pulse_recovered.recovered_next_year.sum()),
+                int(len(pulse_recovered) - pulse_recovered.recovered_next_year.sum()),
+            ],
+            [
+                int(other_recovered.recovered_next_year.sum()),
+                int(len(other_recovered) - other_recovered.recovered_next_year.sum()),
+            ],
+        ],
+        alternative="greater",
+    )
+
+    summary = {
+        "annual_species_rows": int(len(annual_species)),
+        "consecutive_species_transitions": int(len(tr)),
+        "thalassia": {
+            "loss_events": int(len(loss)),
+            "persistence_events": int(len(persistence)),
+            "cooccurrence_at_destination": cooccurrence,
+            "usable_loss_events_with_next_year": int(len(recovery)),
+            "next_year_recovery_events": int(recovery.recovered_next_year.sum()),
+            "pulse_2016_loss_events": int(len(pulse_recovered)),
+            "pulse_2016_next_year_recoveries": int(pulse_recovered.recovered_next_year.sum()),
+            "non2016_loss_events_with_next_year": int(len(other_recovered)),
+            "non2016_next_year_recoveries": int(other_recovered.recovered_next_year.sum()),
+            "pulse_recovery_fisher": {
+                "odds_ratio": (
+                    "inf" if math.isinf(float(recovery_test.statistic))
+                    else float(recovery_test.statistic)
+                ),
+                "p": float(recovery_test.pvalue),
+                "alternative": "greater",
+            },
+        },
+        "pulse_nodes": pulse_nodes,
+        "pulse_state_2015_2017": pulse_state.to_dict("records"),
+        "interpretation_boundary": (
+            "Exploratory community-state analysis on the same frozen visit registry. "
+            "Co-occurrence and recovery tests are data-derived and not confirmatory."
+        ),
+    }
+    return annual_species, summary
+
 def main(outdir: Path) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
     event_bytes = fetch(EVENT)
@@ -411,6 +561,7 @@ def main(outdir: Path) -> None:
     feature_frame = add_memory_features(annual)
     memory_scores, memory_summary = walkforward_memory(feature_frame)
     best = memory_summary.iloc[0].to_dict()
+    annual_species, community_summary = community_turnover(candidates, species)
 
     pulse_species: dict[str, dict[str, object]] = {}
     for node in sorted(loss_2016.node_id):
@@ -480,6 +631,9 @@ def main(outdir: Path) -> None:
     transition_by_year.to_csv(outdir / "transition_by_year.csv", index=False)
     memory_scores.to_csv(outdir / "memory_walkforward.csv", index=False)
     memory_summary.to_csv(outdir / "memory_summary.csv", index=False)
+    annual_species.to_csv(outdir / "annual_species_panel.csv", index=False)
+    with (outdir / "community_summary.json").open("w") as handle:
+        json.dump(community_summary, handle, indent=2, sort_keys=True)
     with (outdir / "pulse_species_composition.json").open("w") as handle:
         json.dump(pulse_species, handle, indent=2, sort_keys=True)
     with (outdir / "summary.json").open("w") as handle:
