@@ -112,7 +112,17 @@ A separate response-independent screen uses the pinned TBEP/EPCHC long-term wate
 
 No single 2016 annual anomaly explains the protocol-sensitive pulse. A second conservative coupling screen averages ecological state change to the same **bay-segment × year** scale as the environmental exposure, avoiding pseudo-replication of one annual water-quality value across many transects. Across declared post-2016 *Thalassia*, *Halodule* and *Syringodium* state-change outcomes, **0 associations survive FDR < 0.05 and 0 fall in 0.05–0.10**.
 
-This is a useful negative result: **no simple annual water-quality variable currently explains the post-2016 state changes at this aggregation scale**. It does not reject temperature, salinity, hydrologic pulses or other mechanisms operating at finer temporal or spatial scales, and it does not support climate-causal attribution.
+This is a useful negative result: **no simple annual water-quality variable currently explains the post-2016 state changes at this aggregation scale**.
+
+A narrower seasonal screen then aligned water quality to each target survey month and tested only an a priori 8-test family: *Thalassia* frequency/cover change against the hottest monthly mean temperature and freshest monthly mean salinity in the preceding 3- and 6-month windows. This also returned no support:
+
+- primary 2017–2025 exposure units: **94**
+- FDR < 0.05: **0/8**
+- FDR 0.05–0.10: **0/8**
+- smallest primary nominal test: minimum 3-month salinity vs *Thalassia* Braun-Blanquet change, `rho=0.126`, `p=0.225`, `q=0.918`
+- excluding target year 2017 gives the same conclusion; best `q=0.773`
+
+Thus the simple **seasonal hot/fresh** explanation is also unsupported at segment-month resolution. This does not reject acute daily extremes, local hydrodynamics, within-segment gradients or other mechanisms, and it does not support climate-causal attribution.
 
 ## Reproduce
 
@@ -125,9 +135,10 @@ python analysis/04_state_change_validation.py --out results/generated
 python analysis/05_community_compensation.py --out results/generated
 python analysis/06_source_protocol_audit.py --out results/generated
 python analysis/07_environmental_coupling.py --input results/generated --out results/generated
+python analysis/08_seasonal_stress_screen.py --input results/generated --out results/generated
 ```
 
-CI reruns all seven analyses from pinned public sources.
+CI reruns all eight analyses from pinned public sources.
 
 Canonical current boundary: `results/current_validation_v2.json`.
 
@@ -142,7 +153,8 @@ Supported now:
 - multiple quantitative state dimensions can trend differently from binary detection;
 - Old Tampa Bay, Middle Tampa Bay and Lower Tampa Bay show different forms of state decoupling after 2016;
 - Lower Tampa Bay shows a reproducible compositional signal: declining *Thalassia* and *Syringodium* with increasing *Halodule* frequency;
-- no declared simple annual water-quality coupling survives the post-2016 multiplicity-controlled segment-year screen.
+- no declared simple annual water-quality coupling survives the post-2016 multiplicity-controlled segment-year screen;
+- aligning temperature and salinity to 3- and 6-month pre-survey windows still yields no multiplicity-controlled seasonal hot/fresh association.
 
 Not supported now:
 
@@ -154,10 +166,10 @@ Not supported now:
 
 ## Next scientific gate
 
-The broad annual environmental screen is now closed as a negative result. The next ecological gate should test **mechanism at the temporal scale on which stress actually acts**, without reviving the protocol-sensitive 2016 pulse as a primary endpoint:
+Both annual and pre-survey 3/6-month hot-fresh screens are now negative. The next environmental gate should therefore move **downscale**, not add more arbitrary seasonal windows:
 
-1. build seasonal/event-scale exposure histories where defensible (heat, low salinity, turbidity/hydrologic pulses);
-2. test whether those exposures predict **which degradation mode** a transect enters: condition loss, within-transect frequency loss, or community reorganization;
-3. preserve bay-segment heterogeneity rather than forcing a single Tampa-wide slope or cause.
+1. obtain defensible daily/event-scale heat, freshwater/flow, salinity and turbidity histories where available;
+2. test a small predeclared set of acute-stress summaries against **degradation mode**, not only binary presence;
+3. retain bay-segment heterogeneity and distinguish condition loss, within-transect frequency loss and community reorganization.
 
-Until that gate passes, the manuscript-level ecological claim is state decoupling and spatially heterogeneous degradation, not a climate mechanism.
+If event-scale exposure cannot be reconstructed without major missingness or retrospective tuning, stop environmental attribution there. The manuscript-level ecological claim remains state decoupling and spatially heterogeneous degradation, not a climate mechanism.

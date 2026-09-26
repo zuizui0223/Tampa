@@ -41,6 +41,9 @@ jobs:
       - name: Screen annual environmental coupling
         run: python analysis/07_environmental_coupling.py --input results/generated --out results/generated
 
+      - name: Screen pre-survey seasonal hot-fresh exposure
+        run: python analysis/08_seasonal_stress_screen.py --input results/generated --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
@@ -80,7 +83,14 @@ jobs:
           assert environmental["post2016_segment_years"] == 36
           assert environmental["post2016_fdr_lt_0_05"] == 0
           assert environmental["post2016_fdr_0_05_to_0_10"] == 0
-          print("Frozen Tampa registry/pulse result reproduced; memory, community, and environmental screens emitted.")
+
+          seasonal = json.load(open("results/generated/seasonal_stress_screen_v1.json"))
+          assert seasonal["primary_family_size"] == 8
+          assert seasonal["primary_exposure_units"] == 94
+          assert seasonal["primary_supported_q_lt_0_05"] == 0
+          assert seasonal["primary_suggestive_q_0_05_to_0_10"] == 0
+          assert seasonal["sensitivity_supported_q_lt_0_05"] == 0
+          print("Frozen Tampa registry/pulse result reproduced; memory, community, annual and seasonal environmental screens emitted.")
           PY
 
       - name: Upload generated audit tables

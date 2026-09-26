@@ -1,0 +1,40 @@
+{
+  "analysis_unit": "bay-segment x target-year x survey-month",
+  "best_primary": {
+    "directional_interpretation": "fresher_expected_more_negative_so_higher_salinity_expected_more_positive",
+    "exposure": "salinity_min_3m",
+    "n_exposure_units": 94,
+    "outcome": "Thalassia_cover_index",
+    "p_two_sided": 0.2245042298163089,
+    "period": "post2016_target_2017_2025",
+    "q_family_bh": 0.9178089851190508,
+    "rho": 0.12646874053061186,
+    "window_months": 3
+  },
+  "best_sensitivity": {
+    "directional_interpretation": "fresher_expected_more_negative_so_higher_salinity_expected_more_positive",
+    "exposure": "salinity_min_3m",
+    "n_exposure_units": 84,
+    "outcome": "Thalassia_cover_index",
+    "p_two_sided": 0.13104963491654792,
+    "period": "sensitivity_exclude_2017_target_2018_2025",
+    "q_family_bh": 0.7726326590671507,
+    "rho": 0.16609390664694593,
+    "window_months": 3
+  },
+  "claim_boundary": [
+    "Monthly segment means cannot resolve acute daily extremes, local hydrodynamics, or within-segment exposure heterogeneity.",
+    "The screen tests association, not causality.",
+    "A null seasonal screen does not exclude finer-scale heat/freshwater pulses or other mechanisms.",
+    "The 2017-excluded sensitivity is reported because the 2016/2017 recorded-state pulse is protocol-sensitive.",
+    "No alternative window or exposure is selected after observing these results."
+  ],
+  "interpretation": "Aligning hot/fresh exposure to 3- and 6-month pre-survey windows does not recover a multiplicity-controlled association with Thalassia frequency or Braun-Blanquet state change. The simple seasonal hot/fresh mechanism remains unsupported at segment-month resolution.",
+  "primary_exposure_units": 94,
+  "primary_family_size": 8,
+  "primary_suggestive_q_0_05_to_0_10": 0,
+  "primary_supported_q_lt_0_05": 0,
+  "schema": "tampa.seasonal_hot_fresh_screen_v1",
+  "sensitivity_exposure_units": 84,
+  "sensitivity_supported_q_lt_0_05": 0
+}
