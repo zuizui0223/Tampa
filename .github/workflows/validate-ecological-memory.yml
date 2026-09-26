@@ -23,6 +23,9 @@ jobs:
       - name: Rebuild analysis from pinned public source
         run: python analysis/01_transition_memory.py --out results/generated
 
+      - name: Build response-independent TBEP water-quality screen
+        run: python analysis/02_water_quality_screen.py --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
