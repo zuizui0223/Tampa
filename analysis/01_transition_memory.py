@@ -264,6 +264,10 @@ def add_memory_features(annual: pd.DataFrame) -> pd.DataFrame:
         for _, row in group.sort_values("year").iterrows():
             year = int(row["year"])
             record = row.to_dict()
+            if history and history[-1][0] == year - 1:
+                record["lag1"] = float(history[-1][1])
+            else:
+                record["lag1"] = np.nan
             for tau in TAUS:
                 if history:
                     ages = np.asarray([year - old_year for old_year, _ in history], dtype=float)
@@ -298,18 +302,26 @@ def walkforward_memory(feature_frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.Da
         for target_year in sorted(feature_frame.year.unique()):
             if int(target_year) < 2004:
                 continue
+            # Direct multi-year-memory test uses only rows with an observed previous
+            # calendar year so lag-1 and exponential memory are compared on exactly
+            # the same training and test cases.
             train = feature_frame[
-                (feature_frame.year < target_year) & feature_frame[memory].notna()
+                (feature_frame.year < target_year)
+                & feature_frame[memory].notna()
+                & feature_frame["lag1"].notna()
             ].copy()
             test = feature_frame[
-                (feature_frame.year == target_year) & feature_frame[memory].notna()
+                (feature_frame.year == target_year)
+                & feature_frame[memory].notna()
+                & feature_frame["lag1"].notna()
             ].copy()
             if len(test) == 0 or train.label.nunique() < 2:
                 continue
 
             baseline = fit_score(train, test, ["longitude", "latitude", "year"])
+            lag1 = fit_score(train, test, ["longitude", "latitude", "year", "lag1"])
             augmented = fit_score(
-                train, test, ["longitude", "latitude", "year", memory]
+                train, test, ["longitude", "latitude", "year", "lag1", memory]
             )
             rows.append(
                 {
@@ -317,8 +329,10 @@ def walkforward_memory(feature_frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.Da
                     "year": int(target_year),
                     "n": len(test),
                     "baseline_log_loss": baseline,
+                    "lag1_log_loss": lag1,
                     "memory_log_loss": augmented,
-                    "delta": augmented - baseline,
+                    "memory_minus_baseline": augmented - baseline,
+                    "memory_minus_lag1": augmented - lag1,
                 }
             )
 
@@ -328,16 +342,18 @@ def walkforward_memory(feature_frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.Da
         .agg(
             years=("year", "nunique"),
             baseline_mean_log_loss=("baseline_log_loss", "mean"),
+            lag1_mean_log_loss=("lag1_log_loss", "mean"),
             memory_mean_log_loss=("memory_log_loss", "mean"),
-            mean_delta=("delta", "mean"),
-            median_delta=("delta", "median"),
-            wins=("delta", lambda values: int((values < 0).sum())),
+            mean_memory_minus_baseline=("memory_minus_baseline", "mean"),
+            mean_memory_minus_lag1=("memory_minus_lag1", "mean"),
+            median_memory_minus_lag1=("memory_minus_lag1", "median"),
+            memory_wins_vs_baseline=("memory_minus_baseline", lambda values: int((values < 0).sum())),
+            memory_wins_vs_lag1=("memory_minus_lag1", lambda values: int((values < 0).sum())),
         )
         .sort_values(["memory_mean_log_loss", "tau_years"])
         .reset_index(drop=True)
     )
     return scores, summary
-
 
 
 SEAGRASS_TAXA = {
@@ -615,9 +631,12 @@ def main(outdir: Path) -> None:
             "best_tau_years": float(best["tau_years"]),
             "target_years": int(best["years"]),
             "matched_baseline_mean_log_loss": float(best["baseline_mean_log_loss"]),
+            "lag1_mean_log_loss": float(best["lag1_mean_log_loss"]),
             "memory_mean_log_loss": float(best["memory_mean_log_loss"]),
-            "mean_delta": float(best["mean_delta"]),
-            "wins": int(best["wins"]),
+            "mean_memory_minus_baseline": float(best["mean_memory_minus_baseline"]),
+            "mean_memory_minus_lag1": float(best["mean_memory_minus_lag1"]),
+            "memory_wins_vs_baseline": int(best["memory_wins_vs_baseline"]),
+            "memory_wins_vs_lag1": int(best["memory_wins_vs_lag1"]),
         },
         "interpretation_boundary": (
             "Exploratory annual recorded-detection/community-state memory. "
