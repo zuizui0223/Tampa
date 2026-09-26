@@ -1,0 +1,139 @@
+{
+  "schema": "tampa.caribbean_external_early_warning_v1.contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Independent external validation of whether source-year quantitative Thalassia meadow state predicts next-year recorded loss.",
+  "relationship_to_tampa_discovery": {
+    "discovery_repo": "zuizui0223/Tampa",
+    "discovery_main_commit": "7ce4ee7f1e1f990f742ce6c74224ccbe2ac1657a",
+    "discovery_result": "results/quantitative_early_warning_v1.json",
+    "frozen_hypothesis": "Among annual station-years with recorded Thalassia presence, lower source-year within-station frequency and abundance add out-of-time information about next-year recorded loss beyond a conventional space/time/effort baseline.",
+    "external_result_may_change_tampa_internal_result": false
+  },
+  "source": {
+    "repository": "PANGAEA",
+    "doi": "10.1594/PANGAEA.994149",
+    "landing_page": "https://doi.pangaea.de/10.1594/PANGAEA.994149",
+    "data_request": "HTTP content negotiation with Accept: text/tab-separated-values",
+    "published": "2026-06-04",
+    "stated_coverage": [
+      "2000-04-21",
+      "2017-02-02"
+    ],
+    "stated_locations": 27,
+    "stated_countries": [
+      "Antigua and Barbuda",
+      "Belize",
+      "Colombia",
+      "Mexico"
+    ],
+    "stated_protocol": "12 quadrats along each of three transects/stations per location",
+    "focal_taxon": "Thalassia testudinum",
+    "response_payload_opened_before_contract": false,
+    "response_values_opened_before_contract": false
+  },
+  "parser_contract": {
+    "encoding": "utf-8",
+    "delimiter": "tab",
+    "data_header_detection": {
+      "minimum_columns": 15,
+      "required_position_prefixes": {
+        "0": "Event",
+        "1": "Country",
+        "2": "Location",
+        "3": "Latitude",
+        "4": "Longitude",
+        "5": "Loc ID",
+        "6": "Station",
+        "7": "Stat ID",
+        "8": "Date/Time",
+        "9": "Quadrat",
+        "14": "Seagr cov"
+      }
+    },
+    "expected_minimum_columns": 21,
+    "node_id": "normalized Loc ID + '::' + normalized Stat ID",
+    "date": "ISO-compatible Date/Time; calendar year used for annualization",
+    "quadrat_sample_id": "node_id + exact Date/Time + quadrat-number field at column 9, falling back to column 10 only when column 9 is empty",
+    "focal_taxon_match": "case-insensitive whitespace-normalized substring 'thalassia testudinum' in the concatenation of columns 11-13",
+    "focal_cover": "column 14; focal rows must contain a finite numeric percent-cover value between 0 and 100 inclusive",
+    "duplicate_focal_quadrat": "terminal stop if more than one focal row maps to the same quadrat sample",
+    "node_geometry": "median latitude/longitude per node; stop if either coordinate span exceeds 0.01 degree within node",
+    "annual_candidate_min_quadrat_samples": 10
+  },
+  "annual_state": {
+    "unit": "stable station x calendar year",
+    "recorded_presence": "at least one focal quadrat sample with Thalassia cover > 0 during that station-year",
+    "frequency": "number of focal-positive quadrat samples / number of all unique sampled quadrats in station-year",
+    "abundance": "sum of focal percent cover across unique focal quadrat samples / number of all unique sampled quadrats in station-year; quadrats without focal record contribute zero",
+    "effort": [
+      "number of unique survey dates",
+      "number of unique sampled quadrats"
+    ],
+    "multiple_surveys": "all surveys within a station-year are pooled before state construction"
+  },
+  "transition_endpoint": {
+    "source_eligibility": "source station-year recorded_presence == 1",
+    "target": "same stable station in the immediately following calendar year",
+    "recorded_loss": "target station-year recorded_presence == 0",
+    "recorded_persistence": "target station-year recorded_presence == 1",
+    "interpretation": "recorded-state transition only; never demographic extinction/survival"
+  },
+  "estimability_gate": {
+    "minimum_annual_station_years": 100,
+    "minimum_source_positive_consecutive_transitions": 80,
+    "minimum_recorded_losses": 10,
+    "minimum_recorded_persistence": 40,
+    "minimum_scored_target_years": 4,
+    "per_target_year_training_min_prior_losses": 5,
+    "per_target_year_training_min_prior_persistence": 30,
+    "failure_status": "terminal_non_estimable_external_validation"
+  },
+  "model": {
+    "split": "strict walk-forward by target calendar year; target year y trains only on transitions with target year < y",
+    "learner": "sklearn LogisticRegression",
+    "hyperparameters": {
+      "C": 1,
+      "max_iter": 2000,
+      "solver": "lbfgs"
+    },
+    "numeric_scaling": "StandardScaler fit on each training set only",
+    "categorical_encoding": "OneHotEncoder(handle_unknown='ignore') fit on each training set only",
+    "baseline_numeric": [
+      "source_year",
+      "latitude",
+      "longitude",
+      "survey_sin_mean",
+      "survey_cos_mean",
+      "log_survey_count",
+      "log_quadrat_count"
+    ],
+    "baseline_categorical": [
+      "country"
+    ],
+    "augmentation": [
+      "focal_frequency",
+      "focal_cover_mean_all_quadrats"
+    ],
+    "only_allowed_arm_difference": "the two augmentation columns"
+  },
+  "scoring": {
+    "primary_metric": "binary log loss",
+    "secondary": [
+      "Brier score",
+      "ROC AUC when pooled labels contain both classes"
+    ],
+    "aggregation": "unweighted mean of scored target-year log losses",
+    "win_rule": "lower target-year log loss",
+    "favorable": "augmented macro log loss < baseline AND augmented wins >= ceil(0.60 * scored target years)",
+    "adverse": "baseline macro log loss < augmented AND baseline wins >= ceil(0.60 * scored target years)",
+    "otherwise": "no_confirmed_external_early_warning"
+  },
+  "no_rescue_rules": [
+    "Do not change focal taxon after data access.",
+    "Do not change annualization, transition endpoint, predictors, learner, training gate, scoring metric, or decision rule after data access.",
+    "Do not lower estimability minima after data access.",
+    "Do not replace percent cover with canopy height or biomass to rescue a result.",
+    "Do not drop a country, location, station, year, or adverse target year based on observed outcome.",
+    "Parser/schema failure after data access terminates v1; any repair requires a separately versioned future protocol and cannot be called the same independent validation."
+  ]
+}
