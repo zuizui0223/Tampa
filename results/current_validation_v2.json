@@ -1,0 +1,157 @@
+{
+  "schema": "tampa.current_validation_v2",
+  "status": "exploratory_reproducible",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "ci_run": 36247456329,
+    "ci_head": "4ca4aa5b39b4eed456bdbd7442a8475040ad2a7e"
+  },
+  "registry": {
+    "visits": 1497,
+    "annual_node_years": 1480,
+    "stable_nodes": 71,
+    "years": [
+      1997,
+      2025
+    ],
+    "thalassia_positive_visits": 927
+  },
+  "memory": {
+    "strict_walkforward_target_years": 22,
+    "baseline_mean_log_loss": 0.3312148,
+    "lag1_mean_log_loss": 0.1700713,
+    "best_tested_exponential_tau_years": 10,
+    "best_memory_mean_log_loss": 0.139493,
+    "memory_minus_lag1": -0.0305783,
+    "memory_wins_vs_lag1": 14,
+    "interpretation": "Strong immediate state dependence plus additional long-history information. The prior 3.5-year claim is superseded; the tested optimum is 10 years and nearby long-memory candidates are similar."
+  },
+  "quantitative_state": {
+    "period": [
+      2016,
+      2025
+    ],
+    "model": "within-transect fixed effects; cyclic survey-day and log sampled-point-count adjustment; node-cluster bootstrap",
+    "old_tampa_bay": {
+      "binary_detection_slope": -0.0215469,
+      "binary_detection_ci95": [
+        -0.0581642,
+        0
+      ],
+      "blade_length_mm_per_year": -1.0932782,
+      "blade_length_ci95": [
+        -1.6934703,
+        -0.6757676
+      ],
+      "shoot_density_per_m2_per_year": -38.29827,
+      "shoot_density_ci95": [
+        -49.8398394,
+        -21.8573837
+      ]
+    },
+    "middle_tampa_bay": {
+      "binary_detection_slope": 0.023068,
+      "binary_detection_ci95": [
+        -0.0001493,
+        0.0540049
+      ],
+      "blade_length_mm_per_year": -0.404892,
+      "blade_length_ci95": [
+        -0.9078908,
+        -0.2215552
+      ]
+    },
+    "lower_tampa_bay": {
+      "binary_detection_slope": -0.0052874,
+      "binary_detection_ci95": [
+        -0.0204815,
+        0
+      ],
+      "focal_frequency_per_year": -0.0127659,
+      "focal_frequency_ci95": [
+        -0.0240299,
+        -0.0036735
+      ]
+    },
+    "boca_ciega_bay": {
+      "cryptic_degradation_flag": false
+    },
+    "interpretation": "Recorded presence and quantitative meadow condition are partly decoupled. This is a candidate cryptic-degradation/state-decoupling result, not yet an environmental-causal result."
+  },
+  "pulse_2016_2017": {
+    "status": "protocol_sensitive_exploratory_only",
+    "loss_nodes": 5,
+    "same_nodes_recorded_again_2017": true,
+    "median_2017_frequency_ratio_to_2015": 0.5454545,
+    "median_2017_cover_index_ratio_to_2015": 0.2647472,
+    "survey_date_warning": "24/47 eligible 2016 visits use 2016-12-25; four of five pulse nodes use this date.",
+    "effort_warning": "Pulse-node 2016/2015 sampled-point ratios range from 0.854 to 3.545.",
+    "date_semantics_warning": "Pinned OBIS conversion uses minimum date within IDall, while current tbeptools read_formtransect uses maximum date for multi-day samples."
+  },
+  "claim_boundary": [
+    "Do not equate recorded presence/non-detection with demographic occupancy/extinction.",
+    "Do not interpret the 2016/2017 pulse as a confirmed ecological disturbance until original survey-date/protocol semantics are resolved.",
+    "Braun-Blanquet values are ordinal abundance classes, not percent cover.",
+    "Blade length and shoot density are secondary because measurement coverage is incomplete.",
+    "Current environmental associations are descriptive; no climate-causal attribution is supported.",
+    "Do not select a nominal annual water-quality association as a mechanism after inspecting the screen; no declared post-2016 association survives FDR control."
+  ],
+  "community_reorganization": {
+    "period": [
+      2016,
+      2025
+    ],
+    "lower_tampa_bay": {
+      "thalassia_frequency_per_year": -0.012581326662047584,
+      "thalassia_frequency_ci95": [
+        -0.024737955658743302,
+        -0.0036576255682541003
+      ],
+      "thalassia_cover_index_per_year": -0.04115150738456742,
+      "thalassia_cover_index_ci95": [
+        -0.07848829831685203,
+        -0.00028035257063264226
+      ],
+      "halodule_frequency_per_year": 0.010768113368172483,
+      "halodule_frequency_ci95": [
+        0.000044746310319499984,
+        0.017968469608709337
+      ],
+      "syringodium_frequency_per_year": -0.005257959783835091,
+      "syringodium_frequency_ci95": [
+        -0.012625286490823414,
+        -0.0002443732979611775
+      ],
+      "interpretation": "Consistent with compositional reorganization toward more frequent Halodule while Thalassia and Syringodium decline quantitatively; not proof of competition or replacement mechanism."
+    },
+    "old_tampa_bay": {
+      "interpretation": "No strong monotone alternative-seagrass replacement; the stronger signal remains declining Thalassia blade length and shoot density."
+    },
+    "middle_tampa_bay": {
+      "interpretation": "Thalassia and Syringodium year-to-year frequency changes are positively rather than negatively coupled; the stronger focal signal is declining Thalassia blade length."
+    },
+    "synthesis": "Post-2016 degradation mode differs among bay segments rather than following one common Tampa-wide trajectory."
+  },
+  "environmental_coupling": {
+    "unit": "bay-segment x target-year",
+    "outcomes": [
+      "Thalassia_frequency",
+      "Thalassia_cover_index",
+      "Halodule_frequency",
+      "Syringodium_frequency"
+    ],
+    "environmental_metrics": [
+      "salinity",
+      "temperature",
+      "chlorophyll",
+      "total_nitrogen",
+      "secchi",
+      "turbidity"
+    ],
+    "post2016_segment_years": 36,
+    "fdr_lt_0_05": 0,
+    "fdr_0_05_to_0_10": 0,
+    "interpretation": "No simple annual water-quality variable currently provides a multiplicity-controlled segment-year explanation of post-2016 state changes. Environmental causation remains unresolved; finer-scale stress mechanisms remain possible."
+  }
+}
