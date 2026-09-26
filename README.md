@@ -199,9 +199,27 @@ Not supported now:
 - demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
 - untouched prospective or external confirmation of the early-warning hypothesis.
 
+## Independent validation ledger
+
+### Caribbean SeagrassNet v1 — terminal protocol/schema STOP
+
+The first untouched external test was frozen before opening PANGAEA dataset `10.1594/PANGAEA.994149` (27 Caribbean locations, 2000–2017). The contract fixed *Thalassia testudinum*, annual station-state construction, next-year recorded loss, the space/time/effort baseline, the two quantitative augmentation features, estimability minima and terminal decision rules before response access.
+
+The one-shot workflow reached a terminal **protocol/schema STOP** before model fitting:
+
+- workflow: `36272071012`
+- terminal: `invalid_numeric:focal_percent_cover:`
+- model fits: **0**
+- predictive scores: **0**
+- counts as external predictive evidence: **false**
+
+At least one row matched the frozen *Thalassia* identity while its percent-cover field was empty, violating the predeclared parser contract. Per the no-rescue rule, v1 is **not repaired or rerun** and the already-opened Caribbean dataset is not promoted as a fresh independent confirmation under a new parser.
+
+This STOP narrows the next step: use a different, response-unopened monitoring dataset with quantitative species cover and freeze its data semantics before outcome access.
+
 ## Next scientific gate
 
-The primary next gate is now **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting.
+The primary next gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and therefore neither supports nor contradicts the ecological hypothesis.
 
 1. freeze the two quantitative predictors (frequency + Braun-Blanquet state), endpoint semantics and scoring rule before opening a new system or later held-out period;
 2. test whether quantitative degradation predicts future recorded-state instability in an independent seagrass dataset, bay, or genuinely future Tampa survey;
