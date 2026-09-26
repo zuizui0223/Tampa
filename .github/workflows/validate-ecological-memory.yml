@@ -1,0 +1,70 @@
+name: Validate ecological memory
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Rebuild analysis from pinned public source
+        run: python analysis/01_transition_memory.py --out results/generated
+
+      - name: Verify frozen headline results
+        run: |
+          python - <<'PY'
+          import json, math
+          expected = json.load(open("results/initial_validation.json"))
+          observed = json.load(open("results/generated/summary.json"))
+
+          assert observed["source_verified"] is True
+          assert observed["candidate_visits"] == expected["registry"]["candidate_visits"]
+          assert observed["annual_node_years"] == expected["registry"]["annual_node_years"]
+          assert observed["nodes"] == expected["registry"]["nodes"]
+          assert observed["years"] == expected["registry"]["years"]
+          assert observed["positive_visits"] == expected["registry"]["positive_visits"]
+          assert observed["consecutive_year_transitions"] == expected["registry"]["consecutive_year_transitions"]
+
+          loss = expected["pulse_2016_2017"]["loss_2016"]
+          gain = expected["pulse_2016_2017"]["gain_2017"]
+          assert observed["loss_2016"]["n"] == loss["n"]
+          assert observed["loss_2016"]["nodes"] == loss["nodes"]
+          assert observed["gain_2017"]["n"] == gain["n"]
+          assert observed["same_nodes_loss_2016_gain_2017"] == loss["nodes"]
+
+          def close(a, b, tol=1e-8):
+              assert math.isclose(float(a), float(b), rel_tol=tol, abs_tol=tol), (a, b)
+
+          close(observed["loss_2016"]["fisher_vs_prior"]["odds_ratio"], loss["fisher_odds_ratio"])
+          close(observed["loss_2016"]["fisher_vs_prior"]["p"], loss["fisher_p"])
+          close(observed["gain_2017"]["fisher_vs_prior"]["odds_ratio"], gain["fisher_odds_ratio"])
+          close(observed["gain_2017"]["fisher_vs_prior"]["p"], gain["fisher_p"])
+
+          memory = expected["finite_memory"]
+          close(observed["walkforward"]["best_tau_years"], memory["best_exponential_tau_years"])
+          assert observed["walkforward"]["target_years"] == memory["target_years"]
+          close(observed["walkforward"]["matched_baseline_mean_log_loss"], memory["matched_baseline_mean_log_loss"])
+          close(observed["walkforward"]["memory_mean_log_loss"], memory["memory_mean_log_loss"])
+          close(observed["walkforward"]["mean_delta"], memory["mean_delta"])
+          assert observed["walkforward"]["wins"] == memory["memory_wins"]
+          print("Frozen Tampa ecological-memory result reproduced.")
+          PY
+
+      - name: Upload generated audit tables
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-ecological-memory-generated
+          path: results/generated/
