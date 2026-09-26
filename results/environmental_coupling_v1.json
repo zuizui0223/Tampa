@@ -1,0 +1,34 @@
+{
+  "claim_boundary": [
+    "Annual segment means are a coarse exposure scale and cannot represent acute events or within-segment gradients.",
+    "Associations are descriptive and are not causal effects.",
+    "Absence of FDR-supported annual coupling does not reject temperature, salinity, hydrologic, or other mechanisms operating at finer temporal/spatial scales.",
+    "Do not select one nominally small unadjusted p-value as a mechanism after inspecting the screen."
+  ],
+  "environmental_metrics": [
+    "salinity",
+    "temperature",
+    "chlorophyll",
+    "total_nitrogen",
+    "secchi",
+    "turbidity"
+  ],
+  "interpretation": "No simple annual water-quality variable currently provides a multiplicity-controlled, segment-year explanation of post-2016 Thalassia/community state changes. Environmental causation remains unresolved; the stronger result is spatially heterogeneous ecological-state decoupling and community reorganization.",
+  "outcomes": [
+    "Thalassia_frequency",
+    "Thalassia_cover_index",
+    "Halodule_frequency",
+    "Syringodium_frequency"
+  ],
+  "periods": [
+    "full_1998_2025",
+    "post2016_2017_2025"
+  ],
+  "post2016_fdr_0_05_to_0_10": 0,
+  "post2016_fdr_lt_0_05": 0,
+  "post2016_segment_years": 36,
+  "post2016_suggestive_rows": [],
+  "post2016_supported_rows": [],
+  "schema": "tampa.environmental_coupling_v1",
+  "unit": "bay-segment x target-year; ecological response is mean consecutive-year within-transect state change"
+}
