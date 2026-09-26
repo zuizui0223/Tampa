@@ -41,3 +41,8 @@ def test_frozen_exploratory_result():
     assert lo < 0 < hi
     lo, hi = mem["cluster_bootstrap_95pct_post_minus_pre"]["frequency_lag_slope"]
     assert lo < 0 < hi
+
+
+if __name__ == "__main__":
+    test_frozen_exploratory_result()
+    print("frozen exploratory result: OK")
