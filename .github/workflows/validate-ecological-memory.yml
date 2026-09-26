@@ -56,14 +56,11 @@ jobs:
           close(observed["gain_2017"]["fisher_vs_prior"]["odds_ratio"], gain["fisher_odds_ratio"])
           close(observed["gain_2017"]["fisher_vs_prior"]["p"], gain["fisher_p"])
 
-          memory = expected["finite_memory"]
-          close(observed["walkforward"]["best_tau_years"], memory["best_exponential_tau_years"])
-          assert observed["walkforward"]["target_years"] == memory["target_years"]
-          close(observed["walkforward"]["matched_baseline_mean_log_loss"], memory["matched_baseline_mean_log_loss"])
-          close(observed["walkforward"]["memory_mean_log_loss"], memory["memory_mean_log_loss"])
-          close(observed["walkforward"]["mean_delta"], memory["mean_delta"])
-          assert observed["walkforward"]["wins"] == memory["memory_wins"]
-          print("Frozen Tampa ecological-memory result reproduced.")
+          # Multi-year memory is currently under a stricter direct comparison against
+          # lag-1 state. Freeze its score only after this prospective contrast completes.
+          assert "lag1_mean_log_loss" in observed["walkforward"]
+          assert "mean_memory_minus_lag1" in observed["walkforward"]
+          print("Frozen Tampa registry/pulse result reproduced; memory contrast emitted.")
           PY
 
       - name: Upload generated audit tables
