@@ -1,0 +1,54 @@
+{
+  "analysis": "annual_thalassia_state_memory_v1",
+  "status": "exploratory_frozen_initial_validation",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f"
+  },
+  "registry": {
+    "candidate_visits": 1497,
+    "annual_node_years": 1480,
+    "nodes": 71,
+    "years": [1997, 2025],
+    "positive_visits": 927,
+    "consecutive_year_transitions": 1176
+  },
+  "pulse_2016_2017": {
+    "loss_2016": {
+      "n": 5,
+      "nodes": [
+        "TBEP:seagrass:loc:S1T1",
+        "TBEP:seagrass:loc:S3T12",
+        "TBEP:seagrass:loc:S3T3",
+        "TBEP:seagrass:loc:S3T4",
+        "TBEP:seagrass:loc:S3T5"
+      ],
+      "fisher_odds_ratio": 11.357142857142858,
+      "fisher_p": 0.0004451588715397781
+    },
+    "gain_2017": {
+      "n": 5,
+      "same_five_nodes_as_2016_loss": true,
+      "fisher_odds_ratio": 5.292207792207792,
+      "fisher_p": 0.00837065746953075
+    },
+    "interpretation": "A synchronized local recorded-state turnover pulse, not yet demographic extinction/recolonization or a climate-causal result."
+  },
+  "finite_memory": {
+    "comparison": "strict walk-forward; baseline and augmented fitted/scored on identical rows for each memory candidate",
+    "best_exponential_tau_years": 3.5,
+    "target_years": 22,
+    "matched_baseline_mean_log_loss": 0.30856310884546645,
+    "memory_mean_log_loss": 0.13269809923871925,
+    "mean_delta": -0.17586500960674722,
+    "memory_wins": 20,
+    "total_years": 22
+  },
+  "claim_boundary": [
+    "The annual recorded Thalassia state contains strong finite temporal information.",
+    "The 2016 loss and 2017 return are exploratory data-derived pulse findings.",
+    "No climate-causal attribution is made.",
+    "Recorded non-detection is not equated with biological absence.",
+    "The 2016 pulse is not equated with the later bay-wide acreage decline."
+  ]
+}
