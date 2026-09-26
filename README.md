@@ -93,7 +93,38 @@ Old Tampa Bay shows a different degradation mode: the stronger signal is declini
 
 The stronger cross-bay result is therefore **heterogeneity in degradation mode**, not one bay-wide decline process.
 
-### 4. The 2016 loss / 2017 return pulse is not the main result
+### 4. Quantitative degradation predicts next-year recorded loss
+
+The state-decoupling result was then converted into a forward-looking ecological question:
+
+> **Among transects where *Thalassia* is still recorded, does quantitative meadow condition contain information about whether it will be unrecorded the following year?**
+
+The endpoint is strictly **next-year recorded loss**, not demographic extinction. Across 688 consecutive source-positive transitions, 24 were followed by recorded loss and 664 by recorded persistence.
+
+Before a recorded loss, source-year state was already much weaker:
+
+- frequency median: **0.0627** before loss vs **0.302** before persistence;
+- Braun-Blanquet all-point index median: **0.0495** vs **0.713**.
+
+A strict walk-forward comparison trained only on earlier target years. The baseline used year, geography, bay segment, cyclic survey timing and sampled-point effort. The augmented model added only source-year *Thalassia* frequency and Braun-Blanquet state.
+
+Across 23 scored target years (2003–2025):
+
+- baseline macro log loss: **0.1556**
+- + quantitative state: **0.1465**
+- quantitative arm better in **17/23** years
+- paired one-sided Wilcoxon: **p = 0.00271**
+- pooled AUC: **0.636 → 0.739**
+
+Crucially, target year **2016 is retained in the primary result and is strongly adverse** for the quantitative arm (log loss 0.935 vs 1.223). Excluding 2016 only as a declared sensitivity strengthens the overall contrast, but does not replace the primary result.
+
+This converts cryptic degradation from a descriptive mismatch into an **early-warning hypothesis**:
+
+> **A transect can remain recorded-positive while its quantitative meadow state already contains information about instability in the following year.**
+
+Because this hypothesis was motivated after inspecting the broader Tampa state-decoupling result, the current evidence is an **exploratory strict walk-forward validation**, not an untouched prospective or external replication.
+
+### 5. The 2016 loss / 2017 return pulse is not the main result
 
 Five transects lost recorded *Thalassia* in 2016 and all five recorded it again in 2017. However, this pulse is protocol-sensitive:
 
@@ -136,9 +167,10 @@ python analysis/05_community_compensation.py --out results/generated
 python analysis/06_source_protocol_audit.py --out results/generated
 python analysis/07_environmental_coupling.py --input results/generated --out results/generated
 python analysis/08_seasonal_stress_screen.py --input results/generated --out results/generated
+python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
 ```
 
-CI reruns all eight analyses from pinned public sources.
+CI reruns all nine analyses from pinned public sources.
 
 Canonical current boundary: `results/current_validation_v2.json`.
 
@@ -154,7 +186,8 @@ Supported now:
 - Old Tampa Bay, Middle Tampa Bay and Lower Tampa Bay show different forms of state decoupling after 2016;
 - Lower Tampa Bay shows a reproducible compositional signal: declining *Thalassia* and *Syringodium* with increasing *Halodule* frequency;
 - no declared simple annual water-quality coupling survives the post-2016 multiplicity-controlled segment-year screen;
-- aligning temperature and salinity to 3- and 6-month pre-survey windows still yields no multiplicity-controlled seasonal hot/fresh association.
+- aligning temperature and salinity to 3- and 6-month pre-survey windows still yields no multiplicity-controlled seasonal hot/fresh association;
+- source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort.
 
 Not supported now:
 
@@ -162,14 +195,18 @@ Not supported now:
 - a causal temperature, salinity or nutrient mechanism;
 - a confirmed ecological interpretation of the 2016/2017 pulse;
 - a universal 10-year biological memory constant;
-- equivalence between fixed-transect condition and bay-wide mapped acreage.
+- equivalence between fixed-transect condition and bay-wide mapped acreage;
+- demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
+- untouched prospective or external confirmation of the early-warning hypothesis.
 
 ## Next scientific gate
 
-Both annual and pre-survey 3/6-month hot-fresh screens are now negative. The next environmental gate should therefore move **downscale**, not add more arbitrary seasonal windows:
+The primary next gate is now **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting.
 
-1. obtain defensible daily/event-scale heat, freshwater/flow, salinity and turbidity histories where available;
-2. test a small predeclared set of acute-stress summaries against **degradation mode**, not only binary presence;
-3. retain bay-segment heterogeneity and distinguish condition loss, within-transect frequency loss and community reorganization.
+1. freeze the two quantitative predictors (frequency + Braun-Blanquet state), endpoint semantics and scoring rule before opening a new system or later held-out period;
+2. test whether quantitative degradation predicts future recorded-state instability in an independent seagrass dataset, bay, or genuinely future Tampa survey;
+3. keep the 2016 Tampa failure as part of the evidence rather than tuning it away.
 
-If event-scale exposure cannot be reconstructed without major missingness or retrospective tuning, stop environmental attribution there. The manuscript-level ecological claim remains state decoupling and spatially heterogeneous degradation, not a climate mechanism.
+Environmental attribution is secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
+
+The manuscript-level ecological center is therefore: **persistent occurrence can conceal quantitative degradation, degradation mode differs among bay segments, and quantitative state may provide an early warning of later recorded-state instability.**

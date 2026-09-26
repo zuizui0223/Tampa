@@ -44,6 +44,9 @@ jobs:
       - name: Screen pre-survey seasonal hot-fresh exposure
         run: python analysis/08_seasonal_stress_screen.py --input results/generated --out results/generated
 
+      - name: Test quantitative state as next-year early warning
+        run: python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
@@ -90,7 +93,15 @@ jobs:
           assert seasonal["primary_supported_q_lt_0_05"] == 0
           assert seasonal["primary_suggestive_q_0_05_to_0_10"] == 0
           assert seasonal["sensitivity_supported_q_lt_0_05"] == 0
-          print("Frozen Tampa registry/pulse result reproduced; memory, community, annual and seasonal environmental screens emitted.")
+
+          early = json.load(open("results/generated/quantitative_early_warning_v1.json"))
+          assert early["transition_registry"]["source_positive_consecutive_transitions"] == 688
+          assert early["transition_registry"]["recorded_losses"] == 24
+          assert early["primary"]["target_years"] == 23
+          assert early["primary"]["quantitative_wins"] == 17
+          assert early["primary"]["macro_delta"] < 0
+          assert early["target_2016"]["quantitative_minus_baseline"] > 0
+          print("Frozen Tampa registry/pulse result reproduced; memory, community, environmental, and early-warning analyses emitted.")
           PY
 
       - name: Upload generated audit tables

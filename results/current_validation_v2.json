@@ -96,7 +96,8 @@
     "Blade length and shoot density are secondary because measurement coverage is incomplete.",
     "Current environmental associations are descriptive; no climate-causal attribution is supported.",
     "Do not select a nominal annual water-quality association as a mechanism after inspecting the screen; no declared post-2016 association survives FDR control.",
-    "Do not add further retrospective seasonal windows to rescue the hot/fresh mechanism; both annual and predeclared 3/6-month screens are negative."
+    "Do not add further retrospective seasonal windows to rescue the hot/fresh mechanism; both annual and predeclared 3/6-month screens are negative.",
+    "Quantitative early warning is internally walk-forward validated but was motivated after observing Tampa state decoupling; external or untouched prospective confirmation is still required."
   ],
   "community_reorganization": {
     "period": [
@@ -193,5 +194,62 @@
       "q": 0.7726326590671507
     },
     "interpretation": "Aligning hot/fresh exposure to 3- and 6-month pre-survey windows does not recover a multiplicity-controlled association with Thalassia frequency or Braun-Blanquet state change. Acute/finer-scale mechanisms remain unresolved."
+  },
+  "quantitative_early_warning": {
+    "endpoint": "next-year recorded Thalassia loss among source-year recorded-positive stable transects",
+    "transition_registry": {
+      "source_positive_consecutive_transitions": 688,
+      "recorded_losses": 24,
+      "recorded_persistence": 664
+    },
+    "baseline_features": [
+      "source_year",
+      "longitude",
+      "latitude",
+      "sin_doy",
+      "cos_doy",
+      "log_points",
+      "water_body"
+    ],
+    "augmentation_features": [
+      "focal_frequency",
+      "bb_cover_mean_all_points"
+    ],
+    "primary": {
+      "target_year_range": [
+        2003,
+        2025
+      ],
+      "target_years": 23,
+      "quantitative_wins": 17,
+      "baseline_wins": 6,
+      "macro_baseline_log_loss": 0.1556293347558577,
+      "macro_quantitative_log_loss": 0.14645165934327545,
+      "macro_delta": -0.009177675412582265,
+      "pooled_rows": 570,
+      "pooled_losses": 19,
+      "pooled_baseline_auc": 0.6363549527175469,
+      "pooled_quantitative_auc": 0.7385614671888432,
+      "wilcoxon_one_sided_p": 0.002707242965698242
+    },
+    "target_2016": {
+      "baseline_log_loss": 0.9354129674365257,
+      "quantitative_log_loss": 1.2226367266275235,
+      "quantitative_minus_baseline": 0.28722375919099785,
+      "interpretation": "Retained in the primary result as an adverse year; exclusion is sensitivity only."
+    },
+    "sensitivity_exclude_2016": {
+      "target_years": 22,
+      "quantitative_wins": 17,
+      "baseline_wins": 5,
+      "macro_baseline_log_loss": 0.12018462417946368,
+      "macro_quantitative_log_loss": 0.09753415628490053,
+      "macro_delta": -0.022650467894563178,
+      "pooled_baseline_auc": 0.6344772545889865,
+      "pooled_quantitative_auc": 0.8010109071561586,
+      "wilcoxon_one_sided_p": 0.0002522468566894531
+    },
+    "interpretation": "Source-year quantitative meadow state adds strict out-of-time information about next-year recorded loss beyond space, year, survey timing and sampled-point effort. This supports an early-warning hypothesis for recorded-state instability, not demographic extinction risk.",
+    "evidence_class": "exploratory_strict_walkforward_internal_validation"
   }
 }

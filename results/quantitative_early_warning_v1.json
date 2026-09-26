@@ -1,0 +1,115 @@
+{
+  "augmentation_features": [
+    "focal_frequency",
+    "bb_cover_mean_all_points"
+  ],
+  "baseline_features": [
+    "source_year",
+    "longitude",
+    "latitude",
+    "sin_doy",
+    "cos_doy",
+    "log_points",
+    "water_body"
+  ],
+  "claim_boundary": [
+    "Recorded loss is not demographic extinction and recorded persistence is not demographic survival.",
+    "Frequency and Braun-Blanquet state are survey-derived ecological condition measures, not causal drivers.",
+    "The analysis was motivated after inspecting the broader Tampa state-decoupling result and is therefore an exploratory strict walk-forward validation, not an untouched prospective endpoint.",
+    "The 2016 target year remains in the primary score; exclusion is sensitivity only.",
+    "Blade length and shoot density are descriptive secondary variables because coverage is incomplete."
+  ],
+  "descriptive_source_state_separation": {
+    "bb_cover_mean_all_points": {
+      "loss_median": 0.0494505494505494,
+      "loss_n": 24,
+      "mannwhitney_p_two_sided": 1.4465348187686127e-08,
+      "persistence_median": 0.7126984126984127,
+      "persistence_n": 664
+    },
+    "blade_length_mean_mm": {
+      "loss_median": 18.049999999999997,
+      "loss_n": 10,
+      "mannwhitney_p_two_sided": 0.0010988164906407044,
+      "persistence_median": 25.85,
+      "persistence_n": 552
+    },
+    "focal_frequency": {
+      "loss_median": 0.06274509803921564,
+      "loss_n": 24,
+      "mannwhitney_p_two_sided": 3.035721427563552e-08,
+      "persistence_median": 0.30217391304347824,
+      "persistence_n": 664
+    },
+    "shoot_density_mean_m2": {
+      "loss_median": 449.85,
+      "loss_n": 10,
+      "mannwhitney_p_two_sided": 0.22200312824347435,
+      "persistence_median": 292.4038461538462,
+      "persistence_n": 548
+    }
+  },
+  "endpoint": "next-year recorded Thalassia loss among source-year recorded-positive stable transects",
+  "interpretation": "Source-year quantitative meadow state adds out-of-time information about next-year recorded loss beyond space, year, survey timing and sampled-point effort. This supports quantitative degradation as an early-warning signal for recorded-state instability, while retaining 2016 as an important adverse/protocol-sensitive year.",
+  "learner": "standardized logistic regression, C=1.0, strict walk-forward by target year",
+  "primary": {
+    "baseline_wins": 6,
+    "label": "all_scored_years",
+    "macro_baseline_log_loss": 0.1556293347558577,
+    "macro_delta": -0.009177675412582265,
+    "macro_quantitative_log_loss": 0.14645165934327545,
+    "median_year_delta": -0.015455479092449376,
+    "pooled_baseline_auc": 0.6363549527175469,
+    "pooled_baseline_brier": 0.03216681846779974,
+    "pooled_baseline_log_loss": 0.14971493590809562,
+    "pooled_losses": 19,
+    "pooled_quantitative_auc": 0.7385614671888432,
+    "pooled_quantitative_brier": 0.02978144847771091,
+    "pooled_quantitative_log_loss": 0.13804604022180997,
+    "pooled_rows": 570,
+    "quantitative_wins": 17,
+    "sign_test_one_sided_p": 0.01734483242034912,
+    "target_year_range": [2003, 2025],
+    "target_years": 23,
+    "ties": 0,
+    "wilcoxon_one_sided_p": 0.002707242965698242
+  },
+  "schema": "tampa.quantitative_early_warning_v1",
+  "sensitivity_exclude_2016": {
+    "baseline_wins": 5,
+    "label": "sensitivity_exclude_target_2016",
+    "macro_baseline_log_loss": 0.12018462417946368,
+    "macro_delta": -0.022650467894563178,
+    "macro_quantitative_log_loss": 0.09753415628490053,
+    "median_year_delta": -0.019172045456651257,
+    "pooled_baseline_auc": 0.6344772545889865,
+    "pooled_baseline_brier": 0.024901817677244226,
+    "pooled_baseline_log_loss": 0.12262190033814975,
+    "pooled_losses": 14,
+    "pooled_quantitative_auc": 0.8010109071561586,
+    "pooled_quantitative_brier": 0.02272389922706055,
+    "pooled_quantitative_log_loss": 0.10064636138023364,
+    "pooled_rows": 551,
+    "quantitative_wins": 17,
+    "sign_test_one_sided_p": 0.00845026969909668,
+    "target_year_range": [2003, 2025],
+    "target_years": 22,
+    "ties": 0,
+    "wilcoxon_one_sided_p": 0.0002522468566894531
+  },
+  "target_2016": {
+    "baseline_log_loss": 0.9354129674365257,
+    "interpretation": "The quantitative arm is adverse in target year 2016; this year is retained in the primary result and excluded only in a declared sensitivity because the 2016/2017 recorded-state pulse is protocol-sensitive.",
+    "quantitative_log_loss": 1.2226367266275235,
+    "quantitative_minus_baseline": 0.28722375919099785
+  },
+  "training_gate": {
+    "minimum_prior_losses": 5,
+    "minimum_prior_persistence": 50
+  },
+  "transition_registry": {
+    "recorded_losses": 24,
+    "recorded_persistence": 664,
+    "source_positive_consecutive_transitions": 688
+  }
+}
