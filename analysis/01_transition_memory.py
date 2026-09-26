@@ -42,7 +42,7 @@ OCC = {
 }
 FOCAL = "Thalassia testudinum"
 EXPECTED = {"candidate_units": 1497, "nodes": 71, "positive_units": 927, "contexts": 29}
-TAUS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 7.0, 10.0]
+TAUS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 7.0, 10.0, 15.0, 20.0, 30.0, 50.0, 100.0]
 
 EVENT_HEADER = [
     "eventID", "parentEventID", "eventType", "eventDate", "year", "month", "day",
