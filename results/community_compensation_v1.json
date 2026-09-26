@@ -1,0 +1,53 @@
+{
+  "schema": "tampa.community_compensation_v1",
+  "source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+  "ci_run": 36247789003,
+  "period": [
+    2016,
+    2025
+  ],
+  "model": "within-transect fixed effects with cyclic survey-day and log sampled-point-count adjustment; node bootstrap",
+  "lower_tampa_bay": {
+    "Thalassia_frequency_slope": -0.012581326662047584,
+    "Thalassia_frequency_ci95": [
+      -0.024737955658743302,
+      -0.0036576255682541003
+    ],
+    "Thalassia_cover_slope": -0.04115150738456742,
+    "Thalassia_cover_ci95": [
+      -0.07848829831685203,
+      -0.00028035257063264226
+    ],
+    "Halodule_frequency_slope": 0.010768113368172483,
+    "Halodule_frequency_ci95": [
+      0.000044746310319499984,
+      0.017968469608709337
+    ],
+    "Syringodium_frequency_slope": -0.005257959783835091,
+    "Syringodium_frequency_ci95": [
+      -0.012625286490823414,
+      -0.0002443732979611775
+    ],
+    "Syringodium_cover_slope": -0.029914115586788866,
+    "Syringodium_cover_ci95": [
+      -0.06939440243047837,
+      -0.0026991489017122554
+    ],
+    "interpretation": "Long-term compositional reorganization is consistent with increasing Halodule frequency while Thalassia and Syringodium decline quantitatively."
+  },
+  "old_tampa_bay": {
+    "community_replacement": "No strong monotone Halodule/Syringodium replacement detected in frequency/cover; the stronger focal signal remains Thalassia blade-length and shoot-density decline.",
+    "thalassia_halodule_cover_change_spearman": -0.18134510195132753,
+    "p_exploratory": 0.03893857786584412
+  },
+  "middle_tampa_bay": {
+    "community_pattern": "Thalassia and Syringodium frequency changes are positively coupled rather than compensatory.",
+    "thalassia_syringodium_frequency_change_spearman": 0.3256611358009577,
+    "p_exploratory": 0.0008899285747510539
+  },
+  "claim_boundary": [
+    "Long-term opposing species slopes are consistent with community reorganization but do not prove competition or replacement mechanism.",
+    "Year-to-year correlations are exploratory and are not corrected for multiple testing.",
+    "Braun-Blanquet cover is an ordinal abundance index rather than percent cover."
+  ]
+}
