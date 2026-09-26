@@ -29,6 +29,9 @@ jobs:
       - name: Build quantitative Thalassia state audit
         run: python analysis/03_quantitative_state.py --out results/generated
 
+      - name: Validate within-transect quantitative state change
+        run: python analysis/04_state_change_validation.py --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
