@@ -32,6 +32,9 @@ jobs:
       - name: Validate within-transect quantitative state change
         run: python analysis/04_state_change_validation.py --out results/generated
 
+      - name: Test seagrass community compensation
+        run: python analysis/05_community_compensation.py --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
