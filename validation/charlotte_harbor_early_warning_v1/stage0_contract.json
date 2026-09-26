@@ -1,0 +1,142 @@
+{
+  "schema": "tampa.charlotte_harbor_external_early_warning_v1.stage0_contract",
+  "frozen_on": "2026-09-27",
+  "status": "qualified_metadata_only_response_unopened",
+  "purpose": "Untouched external validation of whether quantitative Thalassia meadow state predicts next-year recorded-state instability in an independent fixed-transect seagrass monitoring program.",
+  "relationship_to_tampa_discovery": {
+    "discovery_repo": "zuizui0223/Tampa",
+    "discovery_main_commit": "de8ed2c37bfc39ebf407bef4f04201854ede91d7",
+    "discovery_result": "results/quantitative_early_warning_v1.json",
+    "frozen_hypothesis": "Among annual fixed-transect years with recorded Thalassia testudinum presence, lower source-year within-transect frequency and abundance add out-of-time information about next-year recorded loss beyond a conventional space/time/effort baseline.",
+    "tampa_internal_result_may_be_changed_by_this_attempt": false
+  },
+  "source": {
+    "provider": "Florida Department of Environmental Protection, Office of Resilience and Coastal Protection, Charlotte Harbor Aquatic Preserves",
+    "program": "Charlotte Harbor Seagrass Monitoring",
+    "seacar_program_id": 570,
+    "program_url": "https://data.florida-seacar.org/programs/details/570",
+    "program_page_metadata_last_observed": "2026-09-27",
+    "program_start": 1999,
+    "program_end": "current",
+    "frequency": "annual",
+    "method": "Fixed transects with repeat 1 m x 1 m quadrats; total and species-specific SAV evaluated by Braun-Blanquet; blade length and shoot counts also recorded.",
+    "managed_areas": [
+      "Cape Haze Aquatic Preserve",
+      "Gasparilla Sound-Charlotte Harbor Aquatic Preserve",
+      "Lemon Bay Aquatic Preserve",
+      "Matlacha Pass Aquatic Preserve",
+      "Pine Island Sound Aquatic Preserve"
+    ],
+    "candidate_response_file": "SEACAR_CHAP Seagrass Data_1999-2025_2025 submission.xlsx",
+    "candidate_response_file_added": "2026-03-02",
+    "standardized_export": "SAV - 570.zip",
+    "standardized_export_observed_updated": "2026-09-14 12:53 PM",
+    "response_file_bytes_opened_before_contract": 0,
+    "response_cell_values_opened_before_contract": false
+  },
+  "qualification_reason": {
+    "independent_ecosystem": true,
+    "fixed_repeated_spatial_units": true,
+    "annual_repeated_monitoring": true,
+    "species_specific_quantitative_state": true,
+    "braun_blanquet_compatible_with_tampa_state_definition": true,
+    "focal_taxon_expected": "Thalassia testudinum",
+    "notes": "Program metadata explicitly documents annual fixed transects, repeat quadrats, species-specific Braun-Blanquet abundance, shoot counts and blade lengths. This is closer to the Tampa observation hierarchy than a raster or one-off field survey."
+  },
+  "declared_program_filters": {
+    "include_only_seacar_program_id": 570,
+    "exclude_program_ids_if_co_packaged": [5721],
+    "exclude_site_ids_if_present": [
+      "CR01","CR02","CR02a","CR02b","CR03","CR04a","CR04b","CR05",
+      "PI10","PI11","SC04","SC05"
+    ],
+    "reason": "These exclusions are stated on the public Program 570 metadata page and are frozen before response access."
+  },
+  "scientific_estimand": {
+    "annual_unit": "stable fixed transect x calendar year",
+    "source_eligibility": "Thalassia testudinum recorded present in source year",
+    "target": "same stable fixed transect in the immediately following sampled calendar year",
+    "primary_endpoint": "next-year recorded loss of Thalassia testudinum",
+    "recorded_loss": "no positive Thalassia quadrat in target transect-year under the frozen sampling denominator",
+    "recorded_persistence": "at least one positive Thalassia quadrat in target transect-year",
+    "interpretation": "Recorded-state transition only; never demographic extinction, mortality, or true colonization."
+  },
+  "quantitative_predictors": {
+    "frequency": "positive Thalassia repeat quadrats divided by all eligible repeat quadrats in the source transect-year",
+    "abundance": "mean species-specific Thalassia Braun-Blanquet abundance across all eligible repeat quadrats in the source transect-year, with structurally sampled Thalassia-negative quadrats contributing zero",
+    "required_for_comparability": true,
+    "if_either_cannot_be_reconstructed_unambiguously": "terminal_noncomparable_schema_stop",
+    "blade_length_and_shoot_count": "secondary descriptive variables only; they may not replace frequency or Braun-Blanquet abundance to rescue the primary endpoint"
+  },
+  "baseline_semantics": {
+    "numeric": [
+      "source_year",
+      "latitude",
+      "longitude",
+      "cyclic survey timing when an actual survey date is available",
+      "log eligible repeat-quadrat count"
+    ],
+    "categorical": [
+      "managed area or equivalent prospectively declared geographic stratum"
+    ],
+    "missing_baseline_required_field": "terminal_schema_stop",
+    "station_or_transect_identity_as_predictor": false
+  },
+  "split_and_model": {
+    "split": "strict walk-forward by target calendar year; train only on transitions with target year earlier than the scored target year",
+    "learner": "sklearn.linear_model.LogisticRegression",
+    "hyperparameters": {
+      "C": 1.0,
+      "max_iter": 2000,
+      "solver": "lbfgs"
+    },
+    "numeric_scaling": "StandardScaler fitted on each training set only",
+    "categorical_encoding": "OneHotEncoder(handle_unknown='ignore') fitted on each training set only",
+    "only_allowed_arm_difference": "source-year Thalassia frequency plus Braun-Blanquet abundance"
+  },
+  "estimability_gate": {
+    "minimum_annual_transect_years": 100,
+    "minimum_source_positive_consecutive_transitions": 80,
+    "minimum_recorded_losses": 10,
+    "minimum_recorded_persistence": 40,
+    "minimum_scored_target_years": 4,
+    "per_target_year_training_min_prior_losses": 5,
+    "per_target_year_training_min_prior_persistence": 30,
+    "failure_status": "terminal_non_estimable_external_validation"
+  },
+  "scoring": {
+    "primary_metric": "binary log loss",
+    "secondary_metrics": ["Brier score","ROC AUC when pooled labels contain both classes"],
+    "aggregation": "unweighted mean of scored target-year log losses",
+    "favorable": "augmented macro log loss < baseline AND augmented wins in at least ceil(0.60 * scored target years)",
+    "adverse": "baseline macro log loss < augmented AND baseline wins in at least ceil(0.60 * scored target years)",
+    "otherwise": "no_confirmed_external_early_warning"
+  },
+  "stage1_schema_rule": {
+    "purpose": "After source acquisition, map workbook/table and header semantics before any predictive model fitting or score calculation.",
+    "allowed": [
+      "file identity and cryptographic hash",
+      "workbook sheet names",
+      "column/header names",
+      "declared codes and units",
+      "row counts without focal response summaries"
+    ],
+    "not_allowed_before_parser_freeze": [
+      "focal outcome counts",
+      "loss/persistence counts",
+      "focal predictor distributions",
+      "model fitting",
+      "predictive scoring"
+    ],
+    "post_access_alias_or_semantic_repair": "forbidden within v1; a schema mismatch terminates v1"
+  },
+  "no_rescue_rules": [
+    "Do not switch focal taxon after response access.",
+    "Do not change fixed-transect eligibility, annualization, source/target transition definition, quantitative predictors, baseline semantics, learner, estimability minima, scoring metric, or decision rule after response access.",
+    "Do not substitute blade length, shoot density, total SAV, another seagrass species, or a different Program 570 table to rescue a null, adverse, non-estimable, or schema-stop result.",
+    "Do not drop a managed area, station, transect, year, or adverse target year based on observed focal outcomes.",
+    "Do not reinterpret recorded loss as demographic extinction.",
+    "Any post-access parser/schema failure terminates v1; a repaired parser requires a separately versioned methodological follow-up and cannot count as this untouched confirmation."
+  ],
+  "next_gate": "authorized source acquisition and schema-only preflight; predictive response remains unopened at this Stage0 freeze"
+}
