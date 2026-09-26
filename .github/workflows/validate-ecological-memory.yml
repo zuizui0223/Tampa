@@ -38,6 +38,9 @@ jobs:
       - name: Audit original transect source protocol
         run: python analysis/06_source_protocol_audit.py --out results/generated
 
+      - name: Screen annual environmental coupling
+        run: python analysis/07_environmental_coupling.py --input results/generated --out results/generated
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
@@ -72,7 +75,12 @@ jobs:
           # lag-1 state. Freeze its score only after this prospective contrast completes.
           assert "lag1_mean_log_loss" in observed["walkforward"]
           assert "mean_memory_minus_lag1" in observed["walkforward"]
-          print("Frozen Tampa registry/pulse result reproduced; memory contrast emitted.")
+
+          environmental = json.load(open("results/generated/environmental_coupling_v1.json"))
+          assert environmental["post2016_segment_years"] == 36
+          assert environmental["post2016_fdr_lt_0_05"] == 0
+          assert environmental["post2016_fdr_0_05_to_0_10"] == 0
+          print("Frozen Tampa registry/pulse result reproduced; memory, community, and environmental screens emitted.")
           PY
 
       - name: Upload generated audit tables
