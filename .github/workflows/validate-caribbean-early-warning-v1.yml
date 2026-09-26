@@ -1,0 +1,73 @@
+name: Caribbean external early-warning v1
+
+on:
+  push:
+    branches:
+      - validation/caribbean-early-warning-v1
+    paths:
+      - validation/caribbean_early_warning_v1/frozen_contract.json
+      - analysis/10_caribbean_external_validation.py
+      - .github/workflows/validate-caribbean-early-warning-v1.yml
+  workflow_dispatch:
+
+jobs:
+  external-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Verify frozen v1 identities before response access
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object validation/caribbean_early_warning_v1/frozen_contract.json)" = "57c7e7f26894d39fccf211b1523e990427692fa3"
+          test "$(git hash-object analysis/10_caribbean_external_validation.py)" = "8e89cc621f2fc0f032f014b999827046575bd57e"
+          echo "Frozen contract and runner identities verified."
+
+      - name: Install frozen analysis dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Open PANGAEA response once and execute frozen external validation
+        run: |
+          python analysis/10_caribbean_external_validation.py \
+            --contract validation/caribbean_early_warning_v1/frozen_contract.json \
+            --out results/caribbean_external_v1
+
+      - name: Validate terminal result schema
+        run: |
+          python - <<'PY'
+          import json
+          r = json.load(open("results/caribbean_external_v1/caribbean_external_early_warning_v1.json"))
+          allowed = {
+              "favorable_external_early_warning",
+              "adverse_external_early_warning",
+              "no_confirmed_external_early_warning",
+              "terminal_non_estimable_external_validation",
+              "terminal_protocol_or_schema_stop",
+          }
+          status = r["terminal"]["status"]
+          assert status in allowed, status
+          if status in {
+              "favorable_external_early_warning",
+              "adverse_external_early_warning",
+              "no_confirmed_external_early_warning",
+          }:
+              assert r["transition_registry"]["source_positive_consecutive_transitions"] >= 80
+              assert r["transition_registry"]["recorded_losses"] >= 10
+              assert r["transition_registry"]["recorded_persistence"] >= 40
+              assert r["terminal"]["scored_target_years"] >= 4
+          print("Accepted frozen v1 terminal:", status)
+          PY
+
+      - name: Upload external validation result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: caribbean-external-early-warning-v1
+          path: results/caribbean_external_v1/

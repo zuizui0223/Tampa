@@ -1,0 +1,18 @@
+{
+  "schema": "tampa.caribbean_external_early_warning_v1.terminal_record",
+  "status": "terminal_protocol_or_schema_stop",
+  "reason": "invalid_numeric:focal_percent_cover:",
+  "workflow_run_id": 36272071012,
+  "workflow_head_sha": "24df83683543c674c3f3c4eaf7877392db3aaf6f",
+  "artifact_id": 10915597990,
+  "artifact_digest": "sha256:2420b9f64e9c3fbdbd52d36995610b70e2045d0f5bb1538ab90d7f23ce30cebd",
+  "frozen_contract_blob": "57c7e7f26894d39fccf211b1523e990427692fa3",
+  "frozen_runner_blob": "8e89cc621f2fc0f032f014b999827046575bd57e",
+  "source_doi": "10.1594/PANGAEA.994149",
+  "response_opened": true,
+  "predictive_model_fits": 0,
+  "predictive_scores": 0,
+  "counts_as_external_predictive_evidence": false,
+  "interpretation": "The frozen v1 parser encountered a Thalassia-identified row with an empty percent-cover value. Per the no-rescue rule, v1 terminates here. The dataset is not repaired, reinterpreted, or rerun as the same independent confirmation.",
+  "next_rule": "Any parser repair on this already-opened dataset is methodological follow-up only. A new independent confirmation must use a different response-unopened dataset and a separately frozen contract."
+}
