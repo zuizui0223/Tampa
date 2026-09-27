@@ -1,0 +1,35 @@
+name: Validate site-identity memory audit
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/site-identity-memory-audit-v1
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/19_tampa_site_identity_memory_audit.py"
+      - ".github/workflows/validate-site-identity-memory-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Rebuild Tampa annual quantitative state
+        run: python analysis/03_quantitative_state.py --out results/generated_site_identity
+      - name: Audit stable site identity versus older history
+        run: python analysis/19_tampa_site_identity_memory_audit.py --input results/generated_site_identity --out results/generated_site_identity
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-site-identity-memory-audit-v1
+          path: results/generated_site_identity/
