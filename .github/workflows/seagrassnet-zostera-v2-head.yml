@@ -1,0 +1,46 @@
+name: SeagrassNet Zostera v2 HEAD gate
+
+on:
+  push:
+    branches:
+      - validation/seagrassnet-zostera-v2
+    paths:
+      - "validation/seagrassnet_zostera_v2/**"
+      - ".github/workflows/seagrassnet-zostera-v2-head.yml"
+  workflow_dispatch:
+
+jobs:
+  head-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce frozen v1 candidate universe
+        run: python validation/seagrassnet_zostera_v1/preflight.py
+      - name: Verify candidate-universe fingerprint
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/seagrassnet_zostera_v1/preflight_result.json"))
+          assert x["fingerprint"]=="02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0"
+          PY
+      - name: HEAD exact biological download endpoint without body access
+        run: python validation/seagrassnet_zostera_v2/head_gate.py
+      - name: Assert response body remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/seagrassnet_zostera_v2/head_result.json"))
+          assert x["response_body_read_calls"]==0
+          assert x["response_body_bytes"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload HEAD certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seagrassnet-zostera-v2-head
+          path: |
+            validation/seagrassnet_zostera_v1/preflight_result.json
+            validation/seagrassnet_zostera_v2/head_result.json
