@@ -1,0 +1,44 @@
+name: Texas seagrass v2 once-only outcome
+
+on:
+  push:
+    branches:
+      - validation/texas-seagrass-v2
+    paths:
+      - "validation/texas_seagrass_v2/OUTCOME_AUTHORIZED_ONCE"
+
+jobs:
+  outcome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install frozen analysis dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Syntax check before response access
+        run: python -m py_compile validation/texas_seagrass_v2/outcome_runner.py
+      - name: Run one-shot Texas external endpoint
+        run: python validation/texas_seagrass_v2/outcome_runner.py
+      - name: Require one terminal record
+        if: always()
+        run: |
+          test -f validation/texas_seagrass_v2/terminal_outcome_result.json
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/texas_seagrass_v2/terminal_outcome_result.json"))
+          print(json.dumps({
+            "terminal_status":x["terminal_status"],
+            "counts_as_external_predictive_evidence":x["counts_as_external_predictive_evidence"],
+            "response_access_audit":x["response_access_audit"],
+          },indent=2))
+          PY
+      - name: Upload terminal certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: texas-seagrass-v2-terminal
+          path: validation/texas_seagrass_v2/terminal_outcome_result.json

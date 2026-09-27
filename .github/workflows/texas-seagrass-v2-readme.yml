@@ -1,0 +1,32 @@
+name: Texas seagrass v2 readme metadata
+
+on:
+  push:
+    branches: [validation/texas-seagrass-v2]
+    paths:
+      - "validation/texas_seagrass_v2/readme_gate_contract.json"
+      - "validation/texas_seagrass_v2/readme_gate.py"
+      - ".github/workflows/texas-seagrass-v2-readme.yml"
+  workflow_dispatch:
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python validation/texas_seagrass_v2/readme_gate.py
+      - name: Assert cover tables remain unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/texas_seagrass_v2/readme_gate_result.json"))
+          assert x["cover_entry_payload_requests"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: texas-seagrass-v2-readme-metadata
+          path: validation/texas_seagrass_v2/readme_gate_result.json

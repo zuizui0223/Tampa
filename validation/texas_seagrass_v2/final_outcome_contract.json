@@ -1,0 +1,282 @@
+{
+  "schema": "tampa.texas_seagrass_external_early_warning_v2.final_outcome_contract",
+  "attempt_id": "texas_thalassia_quantitative_early_warning_v2",
+  "frozen_on": "2026-09-27",
+  "scientific_question": "Among station-years where Thalassia testudinum is explicitly recorded present, do source-year within-station frequency and percent cover add out-of-time information about next-year explicitly recorded zero-cover state?",
+  "provenance": {
+    "iso_metadata_fingerprint": "3faff14c6f0e98d917c224301d6173bcc51dcca0fe156e9a26b498448823ed81",
+    "archive_inventory_fingerprint": "c48a970652287da246e16a2e7275843f40bd795afef814d6c3cd3588af214697",
+    "readme_metadata_fingerprint": "0e5f55720daed249f304eede66d46dd3caf5024c1c06139a2cb64872191438d1",
+    "prior_raw_cover_payload_bytes_opened": 0
+  },
+  "source": {
+    "doi": "10.25921/3gcr-4x94",
+    "ncei_accession": "0181898",
+    "focal_taxon": "Thalassia testudinum",
+    "years": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "selected_cover_entries": [
+      {
+        "year": 2011,
+        "url": "https://utw10133.utweb.utexas.edu/data/2011_results.zip",
+        "archive_size": 358427,
+        "etag": "\"5781b-50d956eb1fd80\"",
+        "entry": "2011_results_new/2011_QuadratPercentCover.xlsx",
+        "offset": 156412,
+        "method": 8,
+        "csize": 42904,
+        "usize": 47913,
+        "crc32": "ed2d47fa",
+        "format": "xlsx"
+      },
+      {
+        "year": 2012,
+        "url": "https://utw10133.utweb.utexas.edu/data/2012_results.zip",
+        "archive_size": 342255,
+        "etag": "\"538ef-50d956eb1fd80\"",
+        "entry": "2012_results_new/2012_QuadratPercentCover.xlsx",
+        "offset": 144612,
+        "method": 8,
+        "csize": 40645,
+        "usize": 45144,
+        "crc32": "42f2eb74",
+        "format": "xlsx"
+      },
+      {
+        "year": 2013,
+        "url": "https://utw10133.utweb.utexas.edu/data/2013_results.zip",
+        "archive_size": 348610,
+        "etag": "\"551c2-50d956eb1fd80\"",
+        "entry": "2013_results_new/2013_QuadratPercentCover.xlsx",
+        "offset": 151661,
+        "method": 8,
+        "csize": 41361,
+        "usize": 45611,
+        "crc32": "994300a7",
+        "format": "xlsx"
+      },
+      {
+        "year": 2014,
+        "url": "https://utw10133.utweb.utexas.edu/data/2014_results.zip",
+        "archive_size": 355998,
+        "etag": "\"56e9e-5129acda59e00\"",
+        "entry": "2014_QuadratPercentCover.xlsx",
+        "offset": 152256,
+        "method": 8,
+        "csize": 43248,
+        "usize": 47989,
+        "crc32": "0d677a32",
+        "format": "xlsx"
+      },
+      {
+        "year": 2015,
+        "url": "https://utw10133.utweb.utexas.edu/data/2015_results.zip",
+        "archive_size": 729781,
+        "etag": "\"b22b5-535e0eadf4340\"",
+        "entry": "2015_QuadratPercentCover.xlsx",
+        "offset": 312938,
+        "method": 8,
+        "csize": 88167,
+        "usize": 96155,
+        "crc32": "56a1f7f5",
+        "format": "xlsx"
+      },
+      {
+        "year": 2016,
+        "url": "https://utw10133.utweb.utexas.edu/data/2016_results.zip",
+        "archive_size": 18207,
+        "etag": "\"471f-579ed19c36880\"",
+        "entry": "2016_results/2016_QuadratPercentCover.csv",
+        "offset": 6964,
+        "method": 8,
+        "csize": 1872,
+        "usize": 7605,
+        "crc32": "05263f7c",
+        "format": "csv"
+      },
+      {
+        "year": 2017,
+        "url": "https://utw10133.utweb.utexas.edu/data/2017_results.zip",
+        "archive_size": 620370,
+        "etag": "\"97752-58528cc0ad000\"",
+        "entry": "2017_QuadratPercentCover.xlsx",
+        "offset": 295583,
+        "method": 8,
+        "csize": 45348,
+        "usize": 49586,
+        "crc32": "79ef8d47",
+        "format": "xlsx"
+      },
+      {
+        "year": 2018,
+        "url": "https://utw10133.utweb.utexas.edu/data/2018_results.zip",
+        "archive_size": 398716,
+        "etag": "\"6157c-5946b9abc5a80\"",
+        "entry": "2018_QuadratPercentCover.xlsx",
+        "offset": 169096,
+        "method": 8,
+        "csize": 49212,
+        "usize": 52174,
+        "crc32": "0c13ba64",
+        "format": "xlsx"
+      }
+    ]
+  },
+  "response_semantics": {
+    "valid_cover_range": [
+      0,
+      100
+    ],
+    "missing_sentinel": 9999,
+    "missing_sentinel_meaning": "NoData; never absence",
+    "unsurveyed_station_year": "absent cover-table station-year or station-year with fewer than two valid focal quadrat measurements; excluded, never converted to zero",
+    "recorded_presence": "at least one valid focal quadrat measurement > 0",
+    "recorded_zero_cover": "at least two valid focal quadrat measurements and every valid focal measurement equals 0",
+    "source_eligibility": "recorded_presence == true",
+    "transition_target": "same stable station in immediately following calendar year with an eligible annual state",
+    "recorded_loss": "source-year recorded_presence and target-year recorded_zero_cover",
+    "recorded_persistence": "source-year recorded_presence and target-year recorded_presence",
+    "interpretation": "recorded cover-state instability, not demographic extinction"
+  },
+  "parser": {
+    "selected_entry_only": true,
+    "xlsx_engine": "openpyxl load_workbook(read_only=True,data_only=True)",
+    "csv_encoding": "utf-8-sig",
+    "header_search_max_rows": 25,
+    "header_resolution": "deterministic normalized semantic aliases; exactly one valid mapping required per annual table",
+    "normalized_header": "lowercase; trim; replace % with percent; collapse non-alphanumeric runs to underscore",
+    "station_alias_priority": [
+      [
+        "station_id",
+        "stationid",
+        "site_id",
+        "siteid"
+      ],
+      [
+        "station",
+        "site"
+      ]
+    ],
+    "quadrat_aliases": [
+      "quadrat_id",
+      "quadratid",
+      "quadrat",
+      "quadrat_number",
+      "quadrat_no",
+      "quadratnum",
+      "quad",
+      "replicate",
+      "rep"
+    ],
+    "region_aliases": [
+      "bay",
+      "bay_name",
+      "bay_system",
+      "region",
+      "area",
+      "location"
+    ],
+    "long_species_aliases": [
+      "species",
+      "species_name",
+      "taxon",
+      "taxa",
+      "seagrass_species"
+    ],
+    "long_cover_aliases": [
+      "percent_cover",
+      "percentcover",
+      "pct_cover",
+      "pctcover",
+      "cover",
+      "seagrass_percent_cover",
+      "percent_cover_seagrass"
+    ],
+    "focal_long_values": [
+      "thalassia testudinum"
+    ],
+    "wide_focal_rule": "exactly one header cell whose normalized text contains 'thalassia'; because the selected table is predeclared QuadratPercentCover, that cell is interpreted as focal percent cover",
+    "layout_priority": [
+      "wide_species_columns",
+      "long_species_cover"
+    ],
+    "duplicate_station_quadrat_valid_focal_measurement": "terminal schema stop",
+    "ambiguous_header_or_layout": "terminal schema stop",
+    "other_missing_tokens": "blank cell allowed as missing; any nonblank focal-cover token other than numeric 0-100 or numeric 9999 is terminal",
+    "annual_min_valid_focal_quadrats": 2,
+    "stable_node_id": "if a region column is resolved use normalized region + '::' + station; otherwise station",
+    "region_optional": true,
+    "focal_frequency": "number of valid focal quadrats with cover >0 divided by number of valid focal quadrats",
+    "focal_mean_cover": "mean focal percent cover across all valid focal quadrats including explicit zero"
+  },
+  "estimability_gate": {
+    "minimum_annual_station_years": 300,
+    "minimum_source_positive_consecutive_transitions": 150,
+    "minimum_recorded_losses": 15,
+    "minimum_recorded_persistence": 80,
+    "minimum_scored_target_years": 5,
+    "per_target_year_training_min_prior_losses": 8,
+    "per_target_year_training_min_prior_persistence": 50,
+    "failure_status": "terminal_non_estimable_external_validation"
+  },
+  "model": {
+    "split": "strict walk-forward by target year; target y trains only transitions with target_year < y",
+    "learner": "sklearn.linear_model.LogisticRegression",
+    "hyperparameters": {
+      "C": 1,
+      "max_iter": 2000,
+      "solver": "lbfgs"
+    },
+    "numeric_scaling": "StandardScaler fit inside each training year split only",
+    "categorical_encoding": "OneHotEncoder(handle_unknown='ignore') fit inside each training year split only",
+    "baseline_numeric": [
+      "source_year",
+      "log_valid_quadrat_count"
+    ],
+    "baseline_categorical": [
+      "node_id",
+      "region"
+    ],
+    "augmentation": [
+      "focal_frequency",
+      "focal_mean_cover"
+    ],
+    "only_allowed_arm_difference": "augmentation columns",
+    "target_label": "recorded_loss = 1; recorded_persistence = 0"
+  },
+  "scoring": {
+    "primary_metric": "binary_log_loss",
+    "probability_clip": 0.000001,
+    "primary_aggregation": "unweighted mean of target-year log losses",
+    "target_year_win": "lower log loss",
+    "favorable": "augmented macro log loss < baseline AND augmented wins >= ceil(0.60 * scored target years)",
+    "adverse": "baseline macro log loss < augmented AND baseline wins >= ceil(0.60 * scored target years)",
+    "otherwise": "no_confirmed_external_early_warning",
+    "secondary": [
+      "pooled Brier score",
+      "pooled ROC AUC if both classes"
+    ]
+  },
+  "one_shot_access": {
+    "response_access": "for each year request only the selected QuadratPercentCover ZIP entry local header/name-extra bytes and compressed entry payload by exact HTTP Range; do not read any other ZIP entry payload",
+    "selected_entry_payload_count": 8,
+    "archive_full_downloads": 0,
+    "no_retry_after_any_selected_cover_entry_payload_open": true
+  },
+  "no_rescue": [
+    "Do not switch focal species after selected cover entry access.",
+    "Do not add canopy height, water quality, or another biological state to rescue the result.",
+    "Do not interpret 9999, blank, unsurveyed station-year, or absent focal measurement as zero.",
+    "Do not change header aliases, annualization, node definition, outcome, estimability minima, learner, split, metric, or decision after selected cover payload access.",
+    "Any parser/schema/estimability failure after cover-table access terminates v2 with zero predictive evidence if no valid predictive score is produced.",
+    "Retain 2017-2018 Hurricane Harvey context if present; do not remove an adverse year post-outcome."
+  ]
+}

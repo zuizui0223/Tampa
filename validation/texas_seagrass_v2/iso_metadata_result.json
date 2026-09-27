@@ -1,0 +1,16 @@
+{
+  "schema":"tampa.texas_seagrass_external_early_warning_v2.iso_metadata_result",
+  "status":"gate0_iso_metadata_qualified",
+  "fingerprint":"3faff14c6f0e98d917c224301d6173bcc51dcca0fe156e9a26b498448823ed81",
+  "raw_data_or_archive_gets":0,
+  "raw_data_or_archive_bytes_opened":0,
+  "response_values_opened":false,
+  "official_parameter_semantics":{
+    "sampling_units":"567 permanent stations; species composition and areal coverage from four replicate quadrats per station",
+    "percent_cover":"Sea Grasses - Percent Cover; measured percent; reasonable range 0 to 100",
+    "missing_value":"9999 indicates no data available",
+    "zero_is_valid_measurement":true,
+    "focal_species_list_in_metadata":["Thalassia testudinum","Halodule wrightii","Syringodium filiforme","Halophila engelmannii","Ruppia maritima"]
+  },
+  "iso_metadata_sha256":"ca0dbe54f99279d7ecd16c2eb445c758dd9a31cc69e1060eac41f91695c1dbc9"
+}
