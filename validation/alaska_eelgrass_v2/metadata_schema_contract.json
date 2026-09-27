@@ -1,0 +1,34 @@
+{
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v2.metadata_schema_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Response-blind schema qualification using only official USGS/ScienceBase metadata after v1 stopped before response-body access.",
+  "relationship_to_v1": {
+    "v1_terminal": "terminal_pre_response_header_transport_stop",
+    "v1_response_data_rows_opened": 0,
+    "v1_response_values_opened": false,
+    "v2_is_not_v1_repair": true,
+    "scientific_hypothesis_unchanged": true
+  },
+  "source": {
+    "sciencebase_item_id": "6671dc83d34e84915adb75e9",
+    "doi": "10.5066/F7RV0KV9",
+    "focal_taxon": "Zostera marina",
+    "response_csv_name": "KATMKEFJPWS_2008-2016_Zostera_Percent_Cover_Summary.csv",
+    "response_csv_size": 6564
+  },
+  "allowed_metadata_access": {
+    "item_metadata_json_gets": 1,
+    "record_file_descriptors_only": true,
+    "record_web_links_only": true,
+    "record_facets_structure_without_row_data": true,
+    "response_csv_gets": 0,
+    "response_csv_bytes": 0,
+    "response_values": false
+  },
+  "next_gate_rule": "Only if official metadata identifies an unambiguous stable sampling unit, year field, region/site field, and Zostera percent-cover field may a parser be frozen before opening CSV rows. Otherwise v2 stops pre-response.",
+  "no_rescue": [
+    "Do not infer column semantics from data values.",
+    "Do not open the response CSV to discover schema.",
+    "Do not change the ecological endpoint or estimability minima from v1 based on metadata convenience."
+  ]
+}
