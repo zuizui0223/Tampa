@@ -1,0 +1,10 @@
+{
+  "schema": "tampa.texas_seagrass_external_early_warning_v2.authorization",
+  "attempt_id": "texas_thalassia_quantitative_early_warning_v2",
+  "authorized": true,
+  "authorization_reason": "ISO metadata, archive inventory, README NoData semantics, selected annual cover entries, parser, annual-state definition, estimability minima, model arms, walk-forward split, metric and terminal decision were frozen before any QuadratPercentCover payload access.",
+  "prior_cover_entry_payload_requests": 0,
+  "prior_cover_entry_bytes_opened": 0,
+  "prior_response_values_opened": false,
+  "rerun_after_any_cover_entry_payload_open": false
+}
