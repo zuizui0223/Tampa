@@ -43,8 +43,8 @@ FAST_SITE_SD = float(G["fast_site_intercept_sd"])
 FAST_MEAN = float(G["fast_mean_logit"])
 SEED = int(G["random_seed"])
 TAU = float(P["exponential_tau_years"])
-FIRST_SCORE = int(P["first_scored_target_year"])
-LAST_SCORE = int(P["last_scored_target_year"])
+TRAIN_START, TRAIN_END = [int(x) for x in P["calibration_target_years"]]
+TEST_START, TEST_END = [int(x) for x in P["heldout_target_years"]]
 ALPHA = 1.0
 
 
@@ -147,21 +147,25 @@ def yearly_scores(obs: np.ndarray):
     rows=rows_for(obs)
     year=rows["year"]
     y=rows["target"]
+    train=(year>=TRAIN_START) & (year<=TRAIN_END)
+    heldout=(year>=TEST_START) & (year<=TEST_END)
+    if train.sum()==0 or heldout.sum()==0:
+        raise RuntimeError("empty calibration/heldout partition")
+    target_years=np.arange(TEST_START,TEST_END+1,dtype=int)
     scores={"baseline":[],"lag1":[],"long":[]}
-    target_years=[]
-    for target_year in range(FIRST_SCORE,LAST_SCORE+1):
-        train=year<target_year
-        test=year==target_year
-        if train.sum()==0 or test.sum()==0:
-            raise RuntimeError("empty walk-forward partition")
-        target_years.append(target_year)
-        for arm in ("baseline","lag1","long"):
-            x=design(rows,train,arm)
-            model=Ridge(alpha=ALPHA)
-            model.fit(x[train],y[train])
-            pred=np.clip(model.predict(x[test]),0.0,1.0)
-            scores[arm].append(float(mean_squared_error(y[test],pred)))
-    return np.asarray(target_years), {k:np.asarray(v) for k,v in scores.items()}
+    for arm in ("baseline","lag1","long"):
+        x=design(rows,train,arm)
+        model=Ridge(alpha=ALPHA)
+        model.fit(x[train],y[train])
+        pred=np.clip(model.predict(x[heldout]),0.0,1.0)
+        heldout_year=year[heldout]
+        heldout_y=y[heldout]
+        for target_year in target_years:
+            m=heldout_year==target_year
+            if m.sum()==0:
+                raise RuntimeError("empty heldout target year")
+            scores[arm].append(float(mean_squared_error(heldout_y[m],pred[m])))
+    return target_years, {k:np.asarray(v) for k,v in scores.items()}
 
 
 SIGN_CACHE: dict[int, np.ndarray] = {}
