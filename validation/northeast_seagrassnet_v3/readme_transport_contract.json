@@ -1,0 +1,35 @@
+{
+  "schema":"tampa.northeast_seagrassnet_external_early_warning_v3.readme_transport_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Final transport-diagnostic attempt to obtain only the response-independent Dryad README using browser-identical public request headers.",
+  "relationship_to_prior":{
+    "v1":"Dryad API file download returned 401",
+    "v2":"public file_stream with generic UA returned 403",
+    "v3_is_final_transport_attempt":true,
+    "response_data_opened_in_v1_v2":false,
+    "scientific_hypothesis_unchanged":true
+  },
+  "readme":{
+    "url":"https://datadryad.org/stash/downloads/file_stream/1619636",
+    "size":1097,
+    "sha256":"e74b185cd2aabac782e886f50c2021def369faa3eecedd55acd1959027f25d5d"
+  },
+  "browser_request":{
+    "user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "accept":"text/csv,text/plain;q=0.9,*/*;q=0.8",
+    "referer":"https://datadryad.org/dataset/doi%3A10.5061%2Fdryad.z34tmpggg",
+    "accept_language":"en-US,en;q=0.9"
+  },
+  "response_file":{
+    "url":"https://datadryad.org/stash/downloads/file_stream/1619635",
+    "gets_allowed":0,
+    "bytes_allowed":0
+  },
+  "success_rule":"README must match the frozen size and SHA-256 exactly, then its variable definitions may be emitted as safe schema evidence.",
+  "failure_rule":"Any transport/status/content-identity failure terminates automated validation on this Dryad candidate. Do not try a fourth transport variant.",
+  "no_rescue":[
+    "Do not request the biological response file.",
+    "Do not use cookies, login credentials, tokens, or alternate mirrors.",
+    "Do not alter the README identity."
+  ]
+}
