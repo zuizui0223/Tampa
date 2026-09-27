@@ -1,0 +1,38 @@
+{
+  "attempt_id": "nps_tier3_zostera_quantitative_early_warning_v2",
+  "counts_as_external_predictive_evidence": false,
+  "estimability": {
+    "annual_units": 240,
+    "passed": false,
+    "prospectively_scorable_target_year_count": 0,
+    "prospectively_scorable_target_years": [],
+    "recorded_losses": 0,
+    "recorded_persistence": 204,
+    "source_positive_consecutive_transitions": 204
+  },
+  "reason": "frozen_estimability_gate_failed",
+  "response_access_audit": {
+    "model_fits": 0,
+    "predictive_scores": 0,
+    "response_bytes_opened": 1455261,
+    "response_gets": 1,
+    "response_rows_opened": 6600,
+    "response_values_opened": true
+  },
+  "schema": "tampa.nps_tier3_external_early_warning_v2.terminal_outcome_result",
+  "state_summary": {
+    "annual_units": 240,
+    "loss_state_units": 0,
+    "nodes": 18,
+    "present_units": 240,
+    "years": [
+      2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025
+    ]
+  },
+  "terminal_status": "terminal_non_estimable_external_validation",
+  "authoritative_workflow_run_id": 36293489154,
+  "authoritative_artifact_id": 10923242255,
+  "authoritative_artifact_sha256": "c177425d03f86403694afd7ada74e42661bf389f586a56f27ff2ab63d3d0f16d",
+  "rerun_permitted": false,
+  "interpretation": "The frozen next-year recorded-loss endpoint is non-estimable because no eligible annual transect-year entered a recorded Zostera-loss state. This is not adverse predictive evidence and does not contradict the Tampa early-warning hypothesis."
+}
