@@ -1,0 +1,32 @@
+name: NPS Tier3 v2 deep EML audit
+
+on:
+  push:
+    branches: [validation/nps-tier3-v2]
+    paths:
+      - "validation/nps_tier3_v2/**"
+      - ".github/workflows/nps-tier3-v2-eml.yml"
+  workflow_dispatch:
+
+jobs:
+  eml:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python validation/nps_tier3_v2/deep_eml.py
+      - name: Assert CSV remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/nps_tier3_v2/deep_eml_result.json"))
+          assert x["response_csv_gets"]==0
+          assert x["response_csv_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nps-tier3-v2-deep-eml
+          path: validation/nps_tier3_v2/deep_eml_result.json
