@@ -1,0 +1,25 @@
+{
+  "fingerprint": "aba45c8f42f6597892d579b787998f2787661f9c64a9a98139c5804a7db305d1",
+  "next_gate": "inspect only this metadata inventory; freeze official metadata-document selection before any further network access",
+  "response_csv_bytes_opened": 0,
+  "response_csv_gets": 0,
+  "response_values_opened": false,
+  "safe_metadata_fingerprint": "8e32a39b393b9874554745cf4f0a067cbf77f84da6e581e002185fad70400ce1",
+  "safe_metadata_inventory": {
+    "body": "These data are part of the Gulf Watch Alaska (GWA) long-term monitoring program, nearshore monitoring component. The dataset has one comma separated values (.csv) table with estimates of eelgrass (Zostera marina) percent cover. Eelgrass cover was estimated from sonar and video drop cameras deployed from boats following prescribed survey transects.",
+    "facets": [],
+    "files": [
+      {"contentType":"text/csv","md5":"{'value': '07788949b3a6c36a997eac2607271c55', 'type': 'MD5'}","name":"KATMKEFJPWS_2008-2016_Zostera_Percent_Cover_Summary.csv","size":6564,"title":"None","url":"https://www.sciencebase.gov/catalog/file/get/6671dc83d34e84915adb75e9?f=__disk__77%2F3f%2Feb%2F773feb060a78f2c3c03cd697553440c95138c46b"},
+      {"contentType":"text/html","md5":"{'value': 'f2fd5bec9a732a20714968d7565e9c16', 'type': 'MD5'}","name":"KATMKEFJPWS_2008-2016_Zostera_metadata.html","size":51972,"title":"None","url":"https://www.sciencebase.gov/catalog/file/get/6671dc83d34e84915adb75e9?f=__disk__c7%2F0d%2Fb3%2Fc70db3f97e0950309ce650ad9ac806b673a63720"},
+      {"contentType":"application/fgdc+xml","md5":"{'value': 'e0f0bfafe2be2129639f5a72ce454793', 'type': 'MD5'}","name":"KATMKEFJPWS_2008-2016_Zostera_metadata.xml","size":23115,"title":"None","url":"https://www.sciencebase.gov/catalog/file/get/6671dc83d34e84915adb75e9?f=__disk__cf%2F5e%2Fad%2Fcf5ead02d90516ed4a117c683ca2c94eb52a7967"}
+    ],
+    "item_id":"6671dc83d34e84915adb75e9",
+    "summary":"These data are part of the Gulf Watch Alaska (GWA) long-term monitoring program, nearshore monitoring component. The dataset has one comma separated values (.csv) table with estimates of eelgrass (Zostera marina) percent cover. Eelgrass cover was estimated from sonar and video drop cameras deployed from boats following prescribed survey transects.",
+    "tags":["USGS Science Data Catalog (SDC)","Biota","Environment","Angiosperms (flowering plants)","Monocots","Seagrass","Marine ecosystems","Coastal ecosystems","Estuarine ecosystems","Seagrass beds","Animal and plant census","Relative abundance analysis","Biological productivity","Ecosystem monitoring","Eelgrass","Zostera marina","Nearshore ecology","Alaska","Gulf of Alaska","Prince William Sound","Alaska Peninsula","Kenai Fjords National Park","Katmai National Park and Preserve","Wildlife Biology","Aquatic Biology"],
+    "title":"Eelgrass (Zostera marina) Percent Cover Data from Katmai National Park and Preserve, Kenai Fjords National Park, and Prince William Sound, Alaska",
+    "top_level_keys":["body","browseCategories","citation","contacts","dates","distributionLinks","files","hasChildren","id","identifiers","link","maintenanceUpdateFrequency","parentId","provenance","purpose","relatedItems","rights","spatial","summary","systemTypes","tags","title"],
+    "webLinks":[]
+  },
+  "schema":"tampa.alaska_eelgrass_external_early_warning_v2.metadata_schema_result",
+  "status":"metadata_schema_inventory_complete"
+}
