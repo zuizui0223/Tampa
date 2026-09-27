@@ -1,0 +1,73 @@
+{
+  "schema": "tampa.threshold_induced_memory_known_truth_v1.contract",
+  "frozen_on": "2026-09-27",
+  "status": "design_frozen_before_simulation_outcome",
+  "purpose": "Test whether lossy binary aggregation can create apparent older-history value even when the underlying ecological state is first-order Markov.",
+  "known_truth": {
+    "latent_state": "site-specific first-order Gaussian AR(1) process on the logit scale",
+    "markov_order": 1,
+    "process": "z[i,t] = mu[i] + phi * (z[i,t-1] - mu[i]) + epsilon[i,t]",
+    "stationary_variance_rule": "epsilon SD = latent_sd * sqrt(1 - phi^2), so latent stationary variance is approximately latent_sd^2",
+    "probability_state": "p[i,t] = logistic(z[i,t])",
+    "sampling": "k[i,t] ~ Binomial(point_count, p[i,t])",
+    "quantitative_observation": "frequency[i,t] = k[i,t] / point_count",
+    "coarse_observation": "binary[i,t] = 1 if k[i,t] > 0 else 0",
+    "important_property": "The binary and quantitative responses come from exactly the same sampled count k; any memory contrast is induced after the same ecological process and sampling event."
+  },
+  "simulation_grid": {
+    "sites": 71,
+    "years": 29,
+    "replicates_per_cell": 32,
+    "phi": [0.3, 0.7, 0.9],
+    "mean_logit": [-4.0, -2.5],
+    "latent_stationary_sd": [0.75, 1.5],
+    "point_count": [10, 25],
+    "site_intercept_sd": 1.0,
+    "total_cells": 24,
+    "total_replicates": 768,
+    "random_seed": 20260927
+  },
+  "prediction_design": {
+    "train_target_years": [2, 18],
+    "test_target_years": [19, 28],
+    "learner_both_states": "Ridge(alpha=1.0)",
+    "loss_both_states": "mean squared error on the common [0,1] scale; binary MSE is Brier score",
+    "common_baseline_features": ["stable site identity", "standardized target year"],
+    "lag1_model": "common baseline + immediately previous observed state",
+    "older_history_model": "lag1 model + exponentially weighted all-prior observed state",
+    "exponential_tau_years": 10.0,
+    "tau_reason": "Transferred unchanged from the already-frozen Tampa binary-state result; no simulation-specific tau tuning is allowed.",
+    "prediction_clip": [0.0, 1.0]
+  },
+  "primary_estimand": {
+    "per_state_relative_gain": "(MSE_lag1 - MSE_long_history) / MSE_lag1",
+    "thresholding_amplification": "relative_gain_binary - relative_gain_frequency",
+    "positive_value": "older observed history helps the thresholded binary state more than the quantitative frequency state"
+  },
+  "cell_support_rule": "A parameter cell supports thresholding amplification when the median amplification across its 32 replicates is > 0 and at least 65% of its replicates have amplification > 0.",
+  "global_support_rule": {
+    "minimum_supporting_cells": 18,
+    "minimum_global_positive_replicate_fraction": 0.70,
+    "phi_robustness": "At least 2 of the 3 phi levels must have at least 6 of their 8 cells satisfy the cell support rule.",
+    "all_conditions_required": true
+  },
+  "secondary_outputs": [
+    "binary and frequency prevalence distributions by cell",
+    "absolute and relative older-history gains separately for binary and quantitative states",
+    "support counts by phi, mean_logit, latent_sd and point_count",
+    "replicate-level matched table for full audit"
+  ],
+  "forbidden_after_opening": [
+    "Changing the tau value.",
+    "Changing the parameter grid or dropping unfavorable cells.",
+    "Changing the learner or loss by state.",
+    "Changing the support thresholds.",
+    "Adding a second-order latent process to rescue the mechanism.",
+    "Calling threshold-induced memory the explanation of the Tampa field result unless the known-truth support rule passes."
+  ],
+  "interpretation_boundary": [
+    "A positive result would establish sufficiency, not necessity: coarse-graining can create longer apparent observed-state memory under first-order ecological dynamics.",
+    "A negative result would weaken this measurement-only explanation but would not prove biological long-memory.",
+    "This is response-free known-truth mechanism evidence, not an additional ecological dataset."
+  ]
+}

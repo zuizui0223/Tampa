@@ -1,0 +1,33 @@
+name: Validate threshold-induced memory known truth
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/threshold-induced-memory-v1
+    paths:
+      - "analysis/17_threshold_induced_memory.py"
+      - "results/threshold_induced_memory_known_truth_v1_contract.json"
+      - ".github/workflows/validate-threshold-induced-memory.yml"
+  workflow_dispatch:
+
+jobs:
+  known-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run frozen known-truth mechanism test
+        run: python analysis/17_threshold_induced_memory.py --out results/generated_threshold_memory
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: threshold-induced-memory-known-truth-v1
+          path: results/generated_threshold_memory/

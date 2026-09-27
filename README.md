@@ -193,6 +193,30 @@ Thus the current contrast is not readily explained by using different history su
 
 Different response distributions and learner families remain, so this still does not establish state dimension itself as the causal mechanism.
 
+### 2f. Simple thresholding does not generate the long-memory contrast under known truth
+
+A more fundamental alternative is that the coarse binary state has no longer biological memory at all. Because annual detection is a lossy thresholding of sampled quantitative occurrence, older observations might help reconstruct hidden current intensity after information has been discarded by binarization.
+
+That mechanism was tested in a frozen response-free known-truth experiment. The latent ecological state was constructed to be **strictly first-order Markov**. At each site-year, one Binomial point sample generated both responses:
+
+- quantitative state = sampled frequency;
+- coarse state = 1 if the same sampled count was greater than zero, otherwise 0.
+
+The two state dimensions then used the **same Ridge learner, the same MSE/Brier loss, the same sites and years, and the same τ=10 exponential-memory operator**. The frozen grid crossed 3 persistence levels, 2 mean-state levels, 2 latent-variance levels and 2 sampling intensities, for **24 cells × 32 replicates = 768 simulations**.
+
+The preregistered thresholding-amplification rule failed strongly:
+
+- supporting cells: **1/24**; required **18/24**;
+- replicates where older history helped binary relatively more than frequency: **30.6%**; required **70%**;
+- robust φ levels: **0/3**; required **2/3**;
+- global median amplification: **−0.00461**, opposite the predicted direction.
+
+Thus simple coarse-graining was **not sufficient** to reproduce the field contrast. This is a useful mechanistic negative result:
+
+> **The Tampa long-history signal in coarse recorded state cannot be reduced to the tested fact that frequency was thresholded into presence/non-presence.**
+
+This does **not** prove genuine biological long-memory. It narrows the candidate mechanisms toward slower hidden ecological or observation states: persistent habitat condition, demographic legacy, unmeasured slow environmental forcing, or observation heterogeneity not represented by the simple Binomial threshold model.
+
 
 
 ### 3. Community reorganization is bay-specific
@@ -293,6 +317,7 @@ python analysis/13_nps_quantitative_memory.py --input results/generated_nps_post
 python analysis/14_tampa_matched_quantitative_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
 python analysis/15_tampa_cover_index_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
 python analysis/16_tampa_exponential_memory_replay.py --input results/generated_exp_memory --out results/generated_exp_memory
+python analysis/17_threshold_induced_memory.py --out results/generated_threshold_memory
 ```
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
@@ -316,7 +341,8 @@ Supported now:
 - in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc;
 - in that same NPS panel, previous-year quantitative cover improves strict out-of-time next-year cover prediction beyond site identity in **11/14** target years, supporting short-term quantitative state dependence;
 - within Tampa itself, when binary presence is held persistent across consecutive years, both focal frequency and Braun–Blanquet condition show strong lag-1 dependence but **no robust older-history increment**;
-- transferring the **same exponential-memory representation** used by the frozen binary analysis likewise fails to produce supported older-history value for either quantitative metric, reducing history-feature choice as an alternative explanation.
+- transferring the **same exponential-memory representation** used by the frozen binary analysis likewise fails to produce supported older-history value for either quantitative metric, reducing history-feature choice as an alternative explanation;
+- a frozen first-order known-truth experiment shows that simple frequency-to-binary thresholding is **not sufficient** to create the empirical longer-history advantage of the coarse state across the declared parameter grid.
 
 Not supported now:
 
@@ -328,7 +354,8 @@ Not supported now:
 - demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
 - untouched prospective or external confirmation of the early-warning hypothesis;
 - a universal long-memory effect across seagrass state variables; older NPS cover history does not robustly improve beyond lag-1;
-- a causal claim that state dimension itself determines memory horizon; the binary and quantitative models use different response distributions and scoring metrics.
+- a causal claim that state dimension itself determines memory horizon; the binary and quantitative field models use different response distributions and scoring metrics;
+- proof of biological long-memory from the failure of the thresholding-only known-truth mechanism; slower hidden ecological, environmental, demographic or observation states remain unresolved.
 
 ## Independent validation ledger
 
@@ -368,7 +395,7 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The next contract must use the **same exponential all-prior-state operator and the same pre-frozen τ value(s) for both state dimensions**. The prediction is that lag-1 information should be useful for both states, while older history should satisfy the support rule for the coarse state but not for quantitative condition.
+The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The next contract must use the **same exponential all-prior-state operator and the same pre-frozen τ value(s) for both state dimensions**. The prediction is that lag-1 information should be useful for both states, while older history should satisfy the support rule for the coarse state but not for quantitative condition. Because the simple thresholding-only mechanism failed under known truth, a successful external replication would shift attention toward a **slow hidden state** shared by coarse persistence but incompletely represented by one-year quantitative condition.
 
 The separate predictive gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
 

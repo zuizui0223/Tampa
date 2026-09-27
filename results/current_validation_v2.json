@@ -334,5 +334,24 @@
       "minimum_grid_signflip_p": 0.1551422428878556
     },
     "interpretation": "Transferring the exact exponential-memory representation family used by the binary Tampa analysis does not produce a supported older-history increment for either quantitative state. This reduces, but does not eliminate, representation choice as an explanation of the state-dimension contrast."
+  },
+  "threshold_induced_memory_known_truth": {
+    "status": "mechanism_not_supported",
+    "known_truth_latent_markov_order": 1,
+    "same_binomial_sample_for_binary_and_frequency": true,
+    "same_learner": "Ridge(alpha=1.0)",
+    "same_loss": "MSE on [0,1]",
+    "tau_years": 10,
+    "cells": 24,
+    "total_replicates": 768,
+    "supporting_cells": 1,
+    "required_supporting_cells": 18,
+    "global_positive_amplification_fraction": 0.3059895833333333,
+    "required_global_positive_fraction": 0.7,
+    "robust_phi_levels": 0,
+    "required_robust_phi_levels": 2,
+    "global_median_amplification": -0.004610871844774022,
+    "support_rule_passed": false,
+    "interpretation": "Lossy conversion of the same sampled quantitative frequency to binary detection was not sufficient to reproduce the Tampa-like older-history advantage under a first-order latent ecological process. This weakens a thresholding-only explanation but does not prove biological long-memory."
   }
 }
