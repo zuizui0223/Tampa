@@ -1,0 +1,70 @@
+{
+  "schema":"tampa.texas_seagrass_external_early_warning_v1.gate0_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Untouched external qualification of the Tampa quantitative early-warning hypothesis in the Texas Seagrass Monitoring Program before any raw seagrass data file is opened.",
+  "relationship_to_prior_external_attempts":{
+    "caribbean_v1":"terminal schema STOP with zero model fits and zero predictive scores",
+    "alaska_v1":"terminal header-transport STOP before response-body access",
+    "alaska_v2":"terminal endpoint-semantics STOP with response CSV unopened",
+    "texas_is_new_system":true
+  },
+  "source":{
+    "authority":"NOAA National Centers for Environmental Information / University of Texas Marine Science Institute",
+    "ncei_accession":"0181898",
+    "doi":"10.25921/3gcr-4x94",
+    "metadata_version":11,
+    "stated_start_date":"2011-07-15",
+    "stated_end_date":"2023-12-19",
+    "stated_permanent_stations":567,
+    "stated_sampling":"annual Tier-2 monitoring at fixed stations",
+    "stated_response_family":"seagrass percent cover and related plant-condition measurements",
+    "focal_taxon_priority":["Thalassia testudinum","Halodule wrightii"],
+    "response_file_bytes_opened_before_contract":0,
+    "response_values_opened_before_contract":false
+  },
+  "allowed_gate0_access":{
+    "ncei_accession_details_html_gets":1,
+    "ncei_download_index_html_gets":1,
+    "raw_or_archived_data_file_gets":0,
+    "raw_or_archived_data_bytes":0,
+    "record_only":[
+      "accession identity",
+      "metadata version",
+      "coverage dates",
+      "permanent-station count",
+      "monitoring/sampling description",
+      "file-list link names and href identities from the download index without following them"
+    ]
+  },
+  "qualification_requirements":{
+    "must_confirm_fixed_or_permanent_sampling_units":true,
+    "must_confirm_multiyear_monitoring":true,
+    "must_confirm_seagrass_percent_cover":true,
+    "must_expose_at_least_one_candidate data_or_archive_link":true,
+    "minimum_year_span":6
+  },
+  "frozen_hypothesis":{
+    "endpoint":"Among source-year station-years with recorded focal seagrass presence, predict next-year recorded loss at the same stable station.",
+    "quantitative_augmentation":"source-year species percent cover; if a second quantitative focal-state variable is officially defined before response access, it may be frozen as a secondary augmentation but not substituted post-outcome.",
+    "baseline":"space/time/effort only",
+    "split":"strict walk-forward by target year",
+    "primary_metric":"binary log loss",
+    "interpretation":"recorded-state instability, not demographic extinction"
+  },
+  "estimability_gate":{
+    "minimum_annual_station_years":300,
+    "minimum_source_positive_consecutive_transitions":150,
+    "minimum_recorded_losses":15,
+    "minimum_recorded_persistence":80,
+    "minimum_scored_target_years":5,
+    "per_target_year_training_min_prior_losses":8,
+    "per_target_year_training_min_prior_persistence":50
+  },
+  "no_rescue":[
+    "Do not open raw data files in Gate0.",
+    "Do not choose focal species from observed predictive performance.",
+    "Do not redefine recorded loss after response access.",
+    "Do not lower estimability minima after response access.",
+    "Do not select years or regions after inspecting outcome values."
+  ]
+}

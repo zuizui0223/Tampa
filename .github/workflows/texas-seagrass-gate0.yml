@@ -1,0 +1,35 @@
+name: Texas seagrass Gate0 metadata only
+
+on:
+  push:
+    branches:
+      - validation/texas-seagrass-v1
+    paths:
+      - "validation/texas_seagrass_v1/**"
+      - ".github/workflows/texas-seagrass-gate0.yml"
+  workflow_dispatch:
+
+jobs:
+  gate0:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run NCEI metadata-only qualification
+        run: python validation/texas_seagrass_v1/gate0_metadata.py
+      - name: Assert zero raw biological access
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/texas_seagrass_v1/gate0_result.json"))
+          assert x["raw_data_file_gets"]==0
+          assert x["raw_data_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload qualification certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: texas-seagrass-gate0
+          path: validation/texas_seagrass_v1/gate0_result.json

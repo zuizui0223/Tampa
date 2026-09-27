@@ -1,0 +1,19 @@
+{
+  "schema":"tampa.texas_seagrass_external_early_warning_v1.terminal_record",
+  "status":"terminal_pre_response_metadata_transport_stop",
+  "source_accession":"0181898",
+  "source_doi":"10.25921/3gcr-4x94",
+  "workflow_run_id":36292003296,
+  "workflow_job_id":108543756196,
+  "workflow_head_sha":"18ef0c185a4439087ce3e945f24c75e279938bfb",
+  "reason":"The frozen NCEI OAS metadata route timed out before qualification completed.",
+  "raw_data_file_gets":0,
+  "raw_data_body_bytes_read":0,
+  "response_data_rows_opened":0,
+  "response_values_opened":false,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "interpretation":"Texas v1 stopped at metadata transport before biological response access. It neither supports nor contradicts the Tampa quantitative early-warning hypothesis.",
+  "next_rule":"Do not retry or substitute the v1 metadata route. A separately versioned v2 may use an independently frozen official metadata source while keeping the biological data unopened."
+}
