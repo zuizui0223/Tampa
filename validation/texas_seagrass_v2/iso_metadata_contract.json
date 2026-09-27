@@ -1,0 +1,58 @@
+{
+  "schema":"tampa.texas_seagrass_external_early_warning_v2.iso_metadata_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Response-blind schema qualification from NOAA official ISO metadata after Texas v1 ended at metadata transport with zero biological response access.",
+  "relationship_to_v1":{
+    "v1_status":"terminal_pre_response_metadata_transport_stop",
+    "v1_response_bytes_opened":0,
+    "v2_is_separately_versioned":true,
+    "scientific_hypothesis_unchanged":true
+  },
+  "source":{
+    "ncei_accession":"0181898",
+    "doi":"10.25921/3gcr-4x94",
+    "iso_metadata_url":"https://data.noaa.gov/waf/NOAA/NESDIS/ncei/accessions/iso/xml/0181898.xml",
+    "focal_taxon_priority":["Thalassia testudinum","Halodule wrightii"],
+    "stated_permanent_stations":567,
+    "stated_temporal_coverage":["2011-07-15","2023-12-19"]
+  },
+  "allowed_access":{
+    "iso_metadata_xml_gets":1,
+    "raw_data_or_archive_gets":0,
+    "raw_data_or_archive_bytes":0,
+    "response_values_opened":false
+  },
+  "required_before_any_response_access":[
+    "stable sampling-unit semantics",
+    "calendar date or year semantics",
+    "focal species or species field semantics",
+    "species percent-cover semantics",
+    "explicit interpretation of zero/absence/missing sufficient to define recorded loss",
+    "one exact official response-file or archive identity"
+  ],
+  "frozen_endpoint":{
+    "source_eligibility":"source-year unit has recorded focal seagrass presence",
+    "target":"same stable unit in immediately following calendar year",
+    "recorded_loss":"target-year focal species is explicitly surveyed and recorded absent/zero under official semantics",
+    "recorded_persistence":"target-year focal species remains explicitly recorded present",
+    "quantitative_augmentation":"source-year focal percent-cover state",
+    "baseline":"space/time/effort only",
+    "split":"strict walk-forward by target year",
+    "primary_metric":"binary log loss"
+  },
+  "estimability_gate":{
+    "minimum_annual_station_years":300,
+    "minimum_source_positive_consecutive_transitions":150,
+    "minimum_recorded_losses":15,
+    "minimum_recorded_persistence":80,
+    "minimum_scored_target_years":5,
+    "per_target_year_training_min_prior_losses":8,
+    "per_target_year_training_min_prior_persistence":50
+  },
+  "no_rescue":[
+    "Do not follow any data/archive URL in this gate.",
+    "Do not infer absence from missing rows or missing measurements.",
+    "Do not select focal species using outcome performance.",
+    "Do not alter the endpoint after any raw response value is opened."
+  ]
+}
