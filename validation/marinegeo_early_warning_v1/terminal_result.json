@@ -1,0 +1,15 @@
+{
+  "schema": "tampa.marinegeo_external_early_warning_v1.terminal_record",
+  "status": "terminal_pre_response_non_estimable",
+  "reason": "Public dataset metadata reports temporal coverage only from 2021-01-20 to 2022-07-21. The frozen external-validation design requires at least four scored target years and therefore at least five annual temporal contexts before response access.",
+  "source_doi": "10.15468/mt7ggd",
+  "public_temporal_contexts": 2,
+  "minimum_temporal_contexts_required": 5,
+  "response_payload_requests": 0,
+  "response_payload_bytes_opened": 0,
+  "response_values_opened": false,
+  "model_fits": 0,
+  "predictive_scores": 0,
+  "counts_as_external_predictive_evidence": false,
+  "interpretation": "MarineGEO is protocol-compatible but temporally non-estimable for the frozen next-year early-warning endpoint in its currently published 2021-2022 release. It neither supports nor contradicts the hypothesis."
+}
