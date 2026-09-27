@@ -353,5 +353,25 @@
     "global_median_amplification": -0.004610871844774022,
     "support_rule_passed": false,
     "interpretation": "Lossy conversion of the same sampled quantitative frequency to binary detection was not sufficient to reproduce the Tampa-like older-history advantage under a first-order latent ecological process. This weakens a thresholding-only explanation but does not prove biological long-memory."
+  },
+  "quantitative_memory_conditioning_audit": {
+    "status": "conditioning_not_explanation",
+    "authoritative_workflow_run_id": 36317214080,
+    "all_consecutive_transitions": true,
+    "frequency": {
+      "tau10_lag1_mean_mae": 0.04724436792111686,
+      "tau10_exponential_mean_mae": 0.048015625640266964,
+      "tau10_signflip_p": 0.9646517674116294,
+      "tau10_supported": false,
+      "grid_support_count": 0
+    },
+    "cover_index": {
+      "tau10_lag1_mean_mae": 0.16831216230440013,
+      "tau10_exponential_mean_mae": 0.1811608427017002,
+      "tau10_signflip_p": 0.999950002499875,
+      "tau10_supported": false,
+      "grid_support_count": 0
+    },
+    "interpretation": "Removing the persistent-presence restriction does not restore older-history value for quantitative frequency or Braun-Blanquet state."
   }
 }
