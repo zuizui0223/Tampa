@@ -1,0 +1,57 @@
+{
+  "schema":"tampa.florida_keys_external_early_warning_v2.metadata_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Response-blind qualification of the Florida Keys National Marine Sanctuary Seagrass Monitoring Project as an external test of Tampa quantitative early warning.",
+  "relationship_to_v1":{
+    "v1_status":"terminal_pre_response_metadata_transport_or_parser_stop",
+    "v1_biological_data_rows_opened":0,
+    "v1_biological_response_values_opened":false,
+    "v2_is_not_v1_repair":true
+  },
+  "scientific_hypothesis":"Among source-year permanent transects with recorded Thalassia presence, lower quantitative Thalassia state predicts next-year recorded loss beyond space/time/effort.",
+  "response_independent_sampling_semantics":{
+    "program_id":296,
+    "program_name":"Florida Keys National Marine Sanctuary Seagrass Monitoring Project",
+    "permanent_unit":"Level 1 stations are permanent/fixed sites sampled repeatedly; Level 2/3 sites are not eligible for the longitudinal endpoint.",
+    "level1_frequency":"quarterly in the FKNMS monitoring description",
+    "transect_design":"10 random 0.25 m2 quadrats along a permanent/fixed transect",
+    "focal_taxon":"Thalassia testudinum",
+    "braun_blanquet_zero_semantics":"0 indicates absence; positive categories range from solitary/sparse through 75-100% cover",
+    "sources":[
+      "https://gis.myfwc.com/FKNMS_WQPP/seagrassmonitoring.htm",
+      "https://data.florida-seacar.org/programs/details/296",
+      "https://www.researchgate.net/publication/227710626_Spatiotemporal_variation_of_the_abundance_of_calcareous_green_macroalgae_in_the_Florida_Keys_A_study_of_synchrony_within_a_macroalgal_function-form_group"
+    ]
+  },
+  "metadata_source":{
+    "url":"https://data.florida-seacar.org/static/metadataexport/SEACAR_Metadata.xlsx",
+    "type":"SEACAR standardized export metadata workbook",
+    "biological_response_data":false
+  },
+  "allowed_access":{
+    "metadata_workbook_gets":1,
+    "biological_data_downloads":0,
+    "biological_response_rows_opened":0,
+    "biological_response_values_opened":false
+  },
+  "required_standardized_semantics":[
+    "program identifier",
+    "sampling location/site identifier",
+    "sample/event date or year",
+    "species/taxon field",
+    "SAV percent-cover or abundance field",
+    "zero/absence distinguishable from missing/null"
+  ],
+  "candidate_data_source_if_qualified":{
+    "preferred":"SEACAR standardized SAV export for program 296, current version fixed before download",
+    "fallback_allowed":false,
+    "reason":"Do not choose among raw provider files after seeing outcomes."
+  },
+  "stop_rule":"If the standardized metadata cannot establish the required fields and missing-versus-zero semantics before biological data access, stop v2 pre-response.",
+  "no_rescue":[
+    "Do not inspect biological data values to infer schema.",
+    "Do not treat missing/null as absence.",
+    "Do not include Level 2/3 annually redrawn random stations in same-site transitions.",
+    "Do not change focal species, endpoint or primary predictors after biological data access."
+  ]
+}

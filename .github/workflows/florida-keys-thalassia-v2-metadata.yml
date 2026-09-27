@@ -1,0 +1,40 @@
+name: Florida Keys Thalassia v2 metadata schema
+
+on:
+  push:
+    branches:
+      - validation/florida-keys-thalassia-v2
+    paths:
+      - "validation/florida_keys_thalassia_v2/**"
+      - ".github/workflows/florida-keys-thalassia-v2-metadata.yml"
+  workflow_dispatch:
+
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install metadata parser
+        run: python -m pip install openpyxl==3.1.5
+      - name: Read SEACAR standardized metadata only
+        run: python validation/florida_keys_thalassia_v2/metadata_gate.py
+      - name: Assert biological response remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/florida_keys_thalassia_v2/metadata_result.json"))
+          assert x["biological_data_downloads"]==0
+          assert x["biological_response_rows_opened"]==0
+          assert x["biological_response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload metadata inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: florida-keys-thalassia-v2-metadata
+          path: validation/florida_keys_thalassia_v2/metadata_result.json
