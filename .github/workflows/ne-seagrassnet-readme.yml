@@ -1,0 +1,31 @@
+name: Northeast SeagrassNet README schema gate
+
+on:
+  push:
+    branches: [validation/ne-seagrassnet-memory-v1]
+    paths:
+      - "validation/ne_seagrassnet_memory_v1/version_metadata_result.json"
+      - "validation/ne_seagrassnet_memory_v1/readme_schema_contract.json"
+      - "validation/ne_seagrassnet_memory_v1/readme_schema.py"
+      - ".github/workflows/ne-seagrassnet-readme.yml"
+  workflow_dispatch:
+
+jobs:
+  readme-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python validation/ne_seagrassnet_memory_v1/readme_schema.py
+      - run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/ne_seagrassnet_memory_v1/readme_schema_result.json"))
+          assert x["response_file_gets"]==0 and x["response_bytes_opened"]==0 and x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ne-seagrassnet-readme-schema
+          path: validation/ne_seagrassnet_memory_v1/readme_schema_result.json
