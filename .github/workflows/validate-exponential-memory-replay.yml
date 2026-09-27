@@ -1,0 +1,35 @@
+name: Validate exponential memory operator replay
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/exponential-memory-replay-v1
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/16_tampa_exponential_memory_replay.py"
+      - ".github/workflows/validate-exponential-memory-replay.yml"
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Rebuild Tampa quantitative annual state
+        run: python analysis/03_quantitative_state.py --out results/generated_exp_memory
+      - name: Replay frozen binary exponential memory on quantitative states
+        run: python analysis/16_tampa_exponential_memory_replay.py --input results/generated_exp_memory --out results/generated_exp_memory
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-exponential-memory-replay-v1
+          path: results/generated_exp_memory/
