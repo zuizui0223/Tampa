@@ -1,0 +1,37 @@
+name: Northeast SeagrassNet README schema gate
+
+on:
+  push:
+    branches:
+      - validation/northeast-seagrassnet-v1
+    paths:
+      - "validation/northeast_seagrassnet_v1/gate0_result.json"
+      - "validation/northeast_seagrassnet_v1/readme_gate_contract.json"
+      - "validation/northeast_seagrassnet_v1/readme_schema.py"
+      - ".github/workflows/northeast-seagrassnet-readme.yml"
+  workflow_dispatch:
+
+jobs:
+  readme-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Open frozen README only
+        run: python validation/northeast_seagrassnet_v1/readme_schema.py
+      - name: Assert biological response remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/northeast_seagrassnet_v1/readme_gate_result.json"))
+          assert x["response_file_gets"]==0
+          assert x["response_file_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload README schema certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: northeast-seagrassnet-readme-schema
+          path: validation/northeast_seagrassnet_v1/readme_gate_result.json

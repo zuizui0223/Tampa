@@ -1,0 +1,11 @@
+{
+  "fingerprint":"102ca68fa8717a66d78fe647adaaa378c292946fc159c190b2ffa178875a4898",
+  "next_gate":"none",
+  "readme_gets":1,
+  "reason":"HTTP Error 401: Unauthorized",
+  "response_file_bytes_opened":0,
+  "response_file_gets":0,
+  "response_values_opened":false,
+  "schema":"tampa.northeast_seagrassnet_external_early_warning_v1.readme_gate_result",
+  "status":"terminal_pre_response_readme_transport_or_parse_stop"
+}

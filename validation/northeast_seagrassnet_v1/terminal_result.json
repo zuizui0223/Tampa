@@ -1,0 +1,19 @@
+{
+  "schema":"tampa.northeast_seagrassnet_external_early_warning_v1.terminal_record",
+  "status":"terminal_pre_response_readme_transport_stop",
+  "source_doi":"10.5061/dryad.z34tmpggg",
+  "dryad_version_id":"185156",
+  "gate0_status":"pass",
+  "gate0_fingerprint":"0e2bb00edb3bb06c5e5b50d1cdccf80ccc5419892e8a3cc9098fb6c07205a154",
+  "readme_gate_fingerprint":"102ca68fa8717a66d78fe647adaaa378c292946fc159c190b2ffa178875a4898",
+  "reason":"The frozen Dryad API file-download endpoint for README_seagrass_for_modeling.csv returned HTTP 401 before README bytes were accepted.",
+  "response_file":"seagrass_for_modeling.csv",
+  "response_file_gets":0,
+  "response_file_bytes_opened":0,
+  "response_values_opened":false,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "interpretation":"v1 stopped on metadata-document transport before biological response access. It neither supports nor contradicts the Tampa early-warning hypothesis.",
+  "next_rule":"Do not repair v1. A separately versioned route may use a publicly documented Dryad browser download path for the README only, while the response table remains unopened."
+}

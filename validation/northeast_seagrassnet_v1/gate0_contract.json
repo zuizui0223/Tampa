@@ -1,0 +1,61 @@
+{
+  "schema": "tampa.northeast_seagrassnet_external_early_warning_v1.gate0_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Untouched external validation candidate for whether source-year quantitative eelgrass state predicts next-year recorded loss.",
+  "relationship_to_tampa": {
+    "discovery_repo": "zuizui0223/Tampa",
+    "discovery_result": "results/quantitative_early_warning_v1.json",
+    "frozen_hypothesis": "Among annual sampling units with recorded eelgrass presence, lower source-year quantitative eelgrass state adds out-of-time information about next-year recorded loss beyond a conventional space/time/effort baseline.",
+    "caribbean_v1": "terminal schema STOP with zero predictive fits/scores",
+    "alaska_v1": "terminal pre-response transport STOP",
+    "alaska_v2": "terminal pre-response endpoint-semantics STOP",
+    "this_dataset_response_opened_before_contract": false
+  },
+  "source": {
+    "repository": "Dryad",
+    "doi": "10.5061/dryad.z34tmpggg",
+    "api_dataset_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.z34tmpggg",
+    "api_versions_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.z34tmpggg/versions",
+    "title": "Northeast USA SeagrassNet Zm percent cover",
+    "published": "2022-06-28",
+    "focal_taxon": "Zostera marina",
+    "public_design_facts": {
+      "sites": 8,
+      "monitoring_span_description": "most sites monitored annually for 9-17 years between 2003 and 2021",
+      "cover_scale": "0-100 percent",
+      "zero_semantics": "the associated study explicitly models 0 as absence and >0 as presence"
+    },
+    "expected_file_names": [
+      "README_seagrass_for_modeling.csv",
+      "seagrass_for_modeling.csv"
+    ],
+    "response_file": "seagrass_for_modeling.csv",
+    "metadata_file": "README_seagrass_for_modeling.csv"
+  },
+  "gate0": {
+    "allowed_requests": [
+      "GET dataset metadata JSON",
+      "GET versions metadata JSON",
+      "GET file-descriptor JSON for the selected published version"
+    ],
+    "file_downloads_allowed": 0,
+    "response_file_bytes_allowed": 0,
+    "response_values_opened": false,
+    "selection_rule": "select the single latest published version by versionNumber; require exactly the two expected filenames and no additional file is used for scientific schema",
+    "record": [
+      "dataset identity and version number/status",
+      "file IDs, filenames, sizes, digests/checksums when supplied",
+      "file download-link identity without following it"
+    ]
+  },
+  "next_gate": {
+    "rule": "Only after Gate0 is frozen may the small README file be opened as response-independent schema documentation. The response data file remains unopened.",
+    "response_data_opening_forbidden": true
+  },
+  "no_rescue": [
+    "Do not download seagrass_for_modeling.csv at Gate0.",
+    "Do not inspect row values to infer stable-unit semantics.",
+    "Do not change focal taxon or scientific endpoint after response access.",
+    "If the Dryad metadata do not uniquely identify the expected README and response files, stop before response access."
+  ]
+}
