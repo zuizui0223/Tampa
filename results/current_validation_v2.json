@@ -306,5 +306,33 @@
       "target_years": 22
     },
     "interpretation": "Within the same Tampa transects and while conditioning on recorded Thalassia persistence, two quantitative state variables show strong previous-year dependence but no robust increment from older history. The coarse recorded-state response previously retained older-history information beyond lag-1. This within-system contrast strengthens, but does not mechanistically prove, a state-dimension-dependent memory-horizon hypothesis."
+  },
+  "exponential_memory_operator_replay": {
+    "status": "posthoc_representation_matched_memory_replay",
+    "authoritative_workflow_run_id": 36316441327,
+    "primary_tau_years": 10,
+    "frequency": {
+      "lag1_mean_mae": 0.06699141514025017,
+      "exponential_mean_mae": 0.06684115465173229,
+      "exponential_wins": 15,
+      "lag1_wins": 7,
+      "median_delta": -0.0013806451644701907,
+      "signflip_p": 0.4274786260686966,
+      "support_rule_passed": false,
+      "descriptive_tau_grid_support_count": 0,
+      "minimum_grid_signflip_p": 0.055147242637868105
+    },
+    "cover_index": {
+      "lag1_mean_mae": 0.2402745465125706,
+      "exponential_mean_mae": 0.25499768717813426,
+      "exponential_wins": 2,
+      "lag1_wins": 20,
+      "median_delta": 0.01375207527931617,
+      "signflip_p": 1,
+      "support_rule_passed": false,
+      "descriptive_tau_grid_support_count": 0,
+      "minimum_grid_signflip_p": 0.1551422428878556
+    },
+    "interpretation": "Transferring the exact exponential-memory representation family used by the binary Tampa analysis does not produce a supported older-history increment for either quantitative state. This reduces, but does not eliminate, representation choice as an explanation of the state-dimension contrast."
   }
 }

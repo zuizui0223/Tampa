@@ -161,6 +161,38 @@ That differs from the frozen Tampa binary recorded-state analysis, where older h
 
 This is still a hypothesis about mechanism, not proof that state dimension itself causes the different memory horizon.
 
+### 2e. The contrast survives transfer of the same exponential-memory operator
+
+The binary and quantitative analyses initially summarized older history differently, leaving a representation-confounding alternative: perhaps quantitative long-memory failed only because its older history was encoded as a mean and trend rather than the exponential memory used for binary state.
+
+That alternative was tested directly. The **exact exponential-memory representation family** from the binary analysis was transferred to both quantitative state variables. The primary decay scale was fixed at **τ = 10 years**, because that value had already been selected by the earlier frozen binary-state result before this replay was opened. The full historical τ grid was retained only as a descriptive audit.
+
+For focal frequency:
+
+- lag-1 MAE: **0.06699**
+- + τ=10 exponential history: **0.06684**
+- exponential arm wins **15/22** target years
+- median exponential-minus-lag1 delta: **−0.00138**
+- paired sign-flip: **p = 0.427**
+- primary support rule: **not passed**
+
+For the Braun–Blanquet all-point index:
+
+- lag-1 MAE: **0.24027**
+- + τ=10 exponential history: **0.25500**
+- exponential arm wins only **2/22** target years
+- median delta: **+0.01375**
+- sign-flip: **p = 1.000**
+- primary support rule: **not passed**
+
+Across the descriptive 16-value τ grid, **no τ passed the same support rule for either quantitative metric**. The best nominal frequency result occurred at much shorter τ and still did not pass (minimum p ≈ 0.055); no Braun–Blanquet τ approached support.
+
+Thus the current contrast is not readily explained by using different history summaries. The stronger statement remains conditional:
+
+> **Within Tampa, coarse recorded state retains detectable information from history older than one year, whereas two quantitative condition variables do not show a robust older-history increment even when given the same exponential-memory operator.**
+
+Different response distributions and learner families remain, so this still does not establish state dimension itself as the causal mechanism.
+
 
 
 ### 3. Community reorganization is bay-specific
@@ -260,6 +292,7 @@ python analysis/12_nps_persistent_cover_sensitivity.py --input results/generated
 python analysis/13_nps_quantitative_memory.py --input results/generated_nps_posthoc --out results/generated_nps_posthoc
 python analysis/14_tampa_matched_quantitative_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
 python analysis/15_tampa_cover_index_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
+python analysis/16_tampa_exponential_memory_replay.py --input results/generated_exp_memory --out results/generated_exp_memory
 ```
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
@@ -282,7 +315,8 @@ Supported now:
 - source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort;
 - in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc;
 - in that same NPS panel, previous-year quantitative cover improves strict out-of-time next-year cover prediction beyond site identity in **11/14** target years, supporting short-term quantitative state dependence;
-- within Tampa itself, when binary presence is held persistent across consecutive years, both focal frequency and Braun–Blanquet condition show strong lag-1 dependence but **no robust older-history increment**, strengthening the state-dimension-dependent memory-horizon hypothesis.
+- within Tampa itself, when binary presence is held persistent across consecutive years, both focal frequency and Braun–Blanquet condition show strong lag-1 dependence but **no robust older-history increment**;
+- transferring the **same exponential-memory representation** used by the frozen binary analysis likewise fails to produce supported older-history value for either quantitative metric, reducing history-feature choice as an alternative explanation.
 
 Not supported now:
 
@@ -334,7 +368,7 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The prediction to freeze prospectively is that lag-1 information should be useful for both states, while history older than lag-1 should add more consistently to the coarse state than to quantitative condition.
+The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The next contract must use the **same exponential all-prior-state operator and the same pre-frozen τ value(s) for both state dimensions**. The prediction is that lag-1 information should be useful for both states, while older history should satisfy the support rule for the coarse state but not for quantitative condition.
 
 The separate predictive gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
 

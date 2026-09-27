@@ -1,61 +1,85 @@
 {
-  "schema":"tampa.state_dimension_memory_hypothesis_v1",
-  "frozen_on":"2026-09-27",
-  "status":"hypothesis_generated_from_tampa_and_nps_posthoc_evidence",
-  "ecological_question":"Does the timescale over which past state remains predictive depend on the ecological state dimension being measured?",
-  "working_hypothesis":"Coarse persistence or recorded-state variables integrate longer ecological histories, whereas quantitative meadow condition is dominated more strongly by the immediately previous state.",
-  "supporting_observations":{
-    "tampa_binary_recorded_state":{
-      "target_years":22,
-      "baseline_log_loss":0.3312148,
-      "lag1_log_loss":0.1700713,
-      "long_history_log_loss":0.139493,
-      "long_history_wins_vs_lag1":14,
-      "role":"hypothesis-generating coarse-state evidence"
+  "schema": "tampa.state_dimension_memory_hypothesis_v1",
+  "frozen_on": "2026-09-27",
+  "status": "hypothesis_generated_from_tampa_and_nps_posthoc_evidence",
+  "ecological_question": "Does the timescale over which past state remains predictive depend on the ecological state dimension being measured?",
+  "working_hypothesis": "Coarse persistence or recorded-state variables integrate longer ecological histories, whereas quantitative meadow condition is dominated more strongly by the immediately previous state.",
+  "supporting_observations": {
+    "tampa_binary_recorded_state": {
+      "target_years": 22,
+      "baseline_log_loss": 0.3312148,
+      "lag1_log_loss": 0.1700713,
+      "long_history_log_loss": 0.139493,
+      "long_history_wins_vs_lag1": 14,
+      "role": "hypothesis-generating coarse-state evidence"
     },
-    "tampa_frequency_persistent_only":{
-      "matched_rows":593,
-      "target_years":22,
-      "lag1_wins_vs_baseline":21,
-      "lag1_signflip_p":0.00004999750012499375,
-      "older_history_wins_vs_lag1":10,
-      "older_history_signflip_p":0.7187640617969101,
-      "older_history_supported":false
+    "tampa_frequency_persistent_only": {
+      "matched_rows": 593,
+      "target_years": 22,
+      "lag1_wins_vs_baseline": 21,
+      "lag1_signflip_p": 0.00004999750012499375,
+      "older_history_wins_vs_lag1": 10,
+      "older_history_signflip_p": 0.7187640617969101,
+      "older_history_supported": false
     },
-    "tampa_braun_blanquet_persistent_only":{
-      "matched_rows":593,
-      "target_years":22,
-      "lag1_wins_vs_baseline":19,
-      "lag1_signflip_p":0.00004999750012499375,
-      "older_history_wins_vs_lag1":6,
-      "older_history_signflip_p":0.9674516274186291,
-      "older_history_supported":false
+    "tampa_braun_blanquet_persistent_only": {
+      "matched_rows": 593,
+      "target_years": 22,
+      "lag1_wins_vs_baseline": 19,
+      "lag1_signflip_p": 0.00004999750012499375,
+      "older_history_wins_vs_lag1": 6,
+      "older_history_signflip_p": 0.9674516274186291,
+      "older_history_supported": false
     },
-    "nps_zostera_cover":{
-      "matched_rows":177,
-      "target_years":14,
-      "lag1_wins_vs_baseline":11,
-      "older_history_wins_vs_lag1":4,
-      "older_history_signflip_p":0.28853557322133894,
-      "older_history_supported":false
+    "nps_zostera_cover": {
+      "matched_rows": 177,
+      "target_years": 14,
+      "lag1_wins_vs_baseline": 11,
+      "older_history_wins_vs_lag1": 4,
+      "older_history_signflip_p": 0.28853557322133894,
+      "older_history_supported": false
+    },
+    "representation_matched_exponential_replay": {
+      "status": "posthoc_representation_matched_memory_replay",
+      "primary_tau_years": 10,
+      "primary_tau_selection": "Transferred from the already-frozen best tested Tampa binary-state exponential memory result before quantitative replay.",
+      "tampa_frequency": {
+        "target_years": 22,
+        "lag1_mean_mae": 0.06699141514025017,
+        "exponential_mean_mae": 0.06684115465173229,
+        "exponential_wins_vs_lag1": 15,
+        "signflip_p": 0.4274786260686966,
+        "support_rule_passed": false
+      },
+      "tampa_braun_blanquet": {
+        "target_years": 22,
+        "lag1_mean_mae": 0.2402745465125706,
+        "exponential_mean_mae": 0.25499768717813426,
+        "exponential_wins_vs_lag1": 2,
+        "signflip_p": 1,
+        "support_rule_passed": false
+      },
+      "descriptive_tau_grid": "No tested quantitative tau passed the predeclared support rule for either metric.",
+      "interpretation": "The coarse-versus-quantitative contrast is not explained simply by using older mean/slope features for quantitative state rather than the exponential-memory representation used for binary state."
     }
   },
-  "not_yet_identified":[
+  "not_yet_identified": [
     "Whether state dimension itself causes the different apparent memory horizon.",
-    "Whether the contrast instead reflects model family, response distribution, monitoring protocol, species, habitat, or noise structure.",
+    "Whether the contrast instead reflects response distribution, learner family, observation noise, or other properties tied to state dimension.",
     "A universal numerical memory timescale."
   ],
-  "prospective_confirmatory_design":{
-    "candidate_requirement":"A response-unopened repeated monitoring system with both a variable coarse presence/persistence state and a quantitative condition state measured on the same stable sampling units over at least five target years.",
-    "split":"Identical strict walk-forward target-year splits for both state dimensions.",
-    "baseline":"Same response-independent site/time covariates and stable-unit identity within each state-specific model.",
-    "lag1_increment":"Immediately previous-year state only.",
-    "older_history_increment":"Predeclared older-history mean, slope and history length; no post-outcome feature retuning.",
-    "support_rule":"For each state dimension separately, older history is supported only if it wins at least 60% of target years, has negative median paired loss delta versus lag1, and one-sided paired year-level sign-flip p<0.05.",
-    "primary_prediction":"Older history will satisfy the support rule for the coarse state more often than for quantitative condition.",
-    "forbidden":[
+  "prospective_confirmatory_design": {
+    "candidate_requirement": "A response-unopened repeated monitoring system with both a variable coarse presence/persistence state and a quantitative condition state measured on the same stable sampling units over at least five target years.",
+    "split": "Identical strict walk-forward target-year splits for both state dimensions.",
+    "baseline": "Same response-independent site/time covariates and stable-unit identity within each state-specific model.",
+    "lag1_increment": "Immediately previous-year state only.",
+    "older_history_increment": "Use the same exponential all-prior-state operator for both state dimensions, with tau values frozen before response opening. The primary tau must be common across dimensions; state-specific retuning is forbidden.",
+    "support_rule": "For each state dimension separately, older history is supported only if it wins at least 60% of target years, has negative median paired loss delta versus lag1, and one-sided paired year-level sign-flip p<0.05.",
+    "primary_prediction": "Under identical stable units, target-year splits, baseline information and a common exponential-memory operator, older history will satisfy the support rule for the coarse state but not for quantitative condition.",
+    "forbidden": [
       "Selecting thresholds after seeing outcomes to manufacture a coarse state.",
-      "Changing history features or support rules by state after outcome access.",
+      "Changing history representation or tau by state after outcome access.",
+      "Retuning tau separately for coarse and quantitative states to favor the hypothesis.",
       "Comparing raw effect magnitudes across incompatible loss functions as if directly commensurate.",
       "Calling the current Tampa/NPS contrast causal confirmation."
     ]
