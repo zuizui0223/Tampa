@@ -1,0 +1,30 @@
+{
+  "schema": "tampa.northeast_seagrassnet_external_early_warning_v1.readme_gate_contract",
+  "frozen_on": "2026-09-27",
+  "requires_gate0_fingerprint": "0e2bb00edb3bb06c5e5b50d1cdccf80ccc5419892e8a3cc9098fb6c07205a154",
+  "readme": {
+    "path": "README_seagrass_for_modeling.csv",
+    "size": 1097,
+    "sha256": "e74b185cd2aabac782e886f50c2021def369faa3eecedd55acd1959027f25d5d",
+    "download_url": "https://datadryad.org/api/v2/files/1619636/download"
+  },
+  "response": {
+    "path": "seagrass_for_modeling.csv",
+    "size": 156620,
+    "sha256": "2c770229651e24fae8ee301695a6a96b9082510a41f638567052de692e4bdb78",
+    "download_url": "https://datadryad.org/api/v2/files/1619635/download",
+    "gets_allowed": 0,
+    "bytes_allowed": 0
+  },
+  "allowed_access": "one complete GET of the 1,097-byte README only",
+  "schema_goal": [
+    "identify the exact response-column names",
+    "identify the stable spatial sampling-unit fields",
+    "identify the year/date fields",
+    "identify quantitative Zostera percent-cover semantics",
+    "identify effort or quadrat/transect replication fields",
+    "identify whether valid zero cover represents recorded absence"
+  ],
+  "pass_rule": "README semantics must be sufficient to freeze an annual recorded-state construction without inspecting response rows.",
+  "stop_rule": "If stable-unit, temporal, cover, or zero-state semantics remain ambiguous, stop before response-file access."
+}
