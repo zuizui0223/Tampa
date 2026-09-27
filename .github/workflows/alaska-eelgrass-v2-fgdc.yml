@@ -1,0 +1,37 @@
+name: Alaska eelgrass v2 FGDC schema
+
+on:
+  push:
+    branches:
+      - validation/alaska-eelgrass-v2
+    paths:
+      - "validation/alaska_eelgrass_v2/metadata_schema_result.json"
+      - "validation/alaska_eelgrass_v2/fgdc_schema_contract.json"
+      - "validation/alaska_eelgrass_v2/fgdc_schema.py"
+      - ".github/workflows/alaska-eelgrass-v2-fgdc.yml"
+  workflow_dispatch:
+
+jobs:
+  fgdc-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse frozen official FGDC metadata
+        run: python validation/alaska_eelgrass_v2/fgdc_schema.py
+      - name: Assert CSV remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/alaska_eelgrass_v2/fgdc_schema_result.json"))
+          assert x["response_csv_gets"]==0
+          assert x["response_csv_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload FGDC schema certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alaska-eelgrass-v2-fgdc-schema
+          path: validation/alaska_eelgrass_v2/fgdc_schema_result.json
