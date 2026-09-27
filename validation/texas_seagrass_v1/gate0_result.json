@@ -1,0 +1,10 @@
+{
+  "schema":"tampa.texas_seagrass_external_early_warning_v1.gate0_result",
+  "status":"terminal_pre_response_metadata_transport_or_parse_stop",
+  "reason":"The read operation timed out",
+  "raw_data_file_gets":0,
+  "raw_data_bytes_opened":0,
+  "response_values_opened":false,
+  "next_gate":"none",
+  "fingerprint":"05171c00e8ad4c0c2afd6a5c34eb5bf61bc3cd310c9ad9e88e935e79bcd577a5"
+}
