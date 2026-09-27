@@ -1,0 +1,35 @@
+name: Validate quantitative memory conditioning audit
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/conditioning-memory-audit-v1
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/18_tampa_quantitative_memory_conditioning_audit.py"
+      - ".github/workflows/validate-conditioning-memory-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Rebuild Tampa quantitative annual state
+        run: python analysis/03_quantitative_state.py --out results/generated_conditioning_audit
+      - name: Remove persistent-state conditioning and replay exponential memory
+        run: python analysis/18_tampa_quantitative_memory_conditioning_audit.py --input results/generated_conditioning_audit --out results/generated_conditioning_audit
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-quantitative-memory-conditioning-audit-v1
+          path: results/generated_conditioning_audit/
