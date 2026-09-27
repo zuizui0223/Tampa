@@ -1,0 +1,45 @@
+{
+  "schema":"tampa.ne_seagrassnet_state_memory_v1.public_documentation_semantics",
+  "frozen_on":"2026-09-27",
+  "sources":[
+    {
+      "type":"peer_reviewed_article",
+      "doi":"10.3389/fmars.2022.920699",
+      "title":"Influence of Rising Water Temperature on the Temperate Seagrass Species Eelgrass (Zostera marina L.) in the Northeast USA"
+    },
+    {
+      "type":"data_repository_landing_page",
+      "doi":"10.5061/dryad.z34tmpggg",
+      "title":"Northeast USA SeagrassNet Zm percent cover"
+    }
+  ],
+  "response_independent_semantics":{
+    "sites":8,
+    "site_range":"Northeast USA, New Hampshire to Maryland",
+    "monitoring_period":"site-specific annual records spanning 2003-2021; most sites 9-17 years",
+    "site_design":"three 50-m SeagrassNet transects along a depth gradient",
+    "sampling":"twelve 0.25 m2 quadrats per monitored transect",
+    "focal_taxon":"Zostera marina",
+    "quantitative_state":"eelgrass percent cover on a near-continuous 0-100% scale",
+    "coarse_state":"absence when percent cover == 0; presence when percent cover > 0",
+    "zero_is_ecological":"The published hurdle analysis treats 0 cover as ecological absence, distinct from positive abundance.",
+    "repeated_unit_evidence":"Published models include site and quadrat as nested random effects, demonstrating repeated quadrat identity in the analysis dataset.",
+    "published_data_scope":"The Dryad modeling file supports published presence and abundance analysis; the present study asks a different temporal-memory question."
+  },
+  "primary_overlap_warning":{
+    "status":"partially overlapping monitoring network",
+    "examples":["Fire Island, New York","Tingles Island, Maryland"],
+    "claim":"external published matched panel; not fully independent biological replication"
+  },
+  "schema_mapping_gate":{
+    "require_readme_columns_for":["site","quadrat","year or date","percent cover"],
+    "require_consistency_with_publication":true,
+    "contradiction_action":"terminal pre-response schema stop",
+    "response_file_may_open_before_mapping":false
+  },
+  "forbidden":[
+    "Do not infer a different stable unit from response values.",
+    "Do not redefine zero after biological CSV access.",
+    "Do not call the panel fully independent from NPS/SeagrassNet evidence."
+  ]
+}

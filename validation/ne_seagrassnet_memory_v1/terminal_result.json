@@ -1,0 +1,20 @@
+{
+  "schema": "tampa.ne_seagrassnet_state_memory_v1.terminal_record",
+  "status": "terminal_pre_response_documentation_access_stop",
+  "reason": "The frozen README-only schema gate requested Dryad documentation file 1619636 and received HTTP 401 Unauthorized. Per the pre-response contract, no alternative download route is substituted within v1.",
+  "source_doi": "10.5061/dryad.z34tmpggg",
+  "dryad_dataset_id": 86962,
+  "dryad_version_id": 185156,
+  "readme_file_id": 1619636,
+  "biological_response_file_id": 1619635,
+  "readme_bytes_opened": 0,
+  "response_file_gets": 0,
+  "response_bytes_opened": 0,
+  "response_values_opened": false,
+  "model_fits": 0,
+  "predictive_scores": 0,
+  "counts_as_external_confirmatory_evidence": false,
+  "independence_boundary": "This candidate was prospectively labeled an external published matched panel, not a fully independent monitoring replication because some sites overlap prior NPS/SeagrassNet monitoring.",
+  "interpretation": "Northeast SeagrassNet v1 stops before biological-response access. It neither supports nor contradicts the state-dimension-dependent memory hypothesis.",
+  "next_rule": "Do not repair v1 by switching README download routes or opening the biological CSV. Future confirmation should use a separately selected response-unopened dataset with directly accessible response-independent schema documentation."
+}

@@ -1,0 +1,17 @@
+{
+  "schema":"tampa.ne_seagrassnet_state_memory_v1.readme_schema_contract",
+  "requires_version_metadata_fingerprint":"007d2530bef81773722dadf116c0d2577d3253db980b664fb0d40571473e3f40",
+  "readme_file":{"dryad_file_id":1619636,"name":"README_seagrass_for_modeling.csv","size":1097},
+  "response_file":{"dryad_file_id":1619635,"name":"seagrass_for_modeling.csv","size":156620},
+  "allowed_access":"one complete GET of README file 1619636 only",
+  "response_file_gets":0,
+  "response_bytes":0,
+  "schema_questions":[
+    "Does documentation define a site identifier?",
+    "Does documentation define a repeatable quadrat identifier nested within site?",
+    "Does documentation define year or survey date?",
+    "Does documentation define Zostera percent cover and a valid observed zero distinct from missing?"
+  ],
+  "pass_rule":"All four schema questions must be unambiguous from README and already-public paper methods before any biological CSV access.",
+  "failure_rule":"Ambiguous stable-unit identity or zero semantics terminates v1 before biological CSV access."
+}

@@ -1,0 +1,18 @@
+{
+  "fingerprint":"007d2530bef81773722dadf116c0d2577d3253db980b664fb0d40571473e3f40",
+  "next_gate":"freeze README file id and read README only; biological CSV remains unopened",
+  "response_bytes_opened":0,
+  "response_file_gets":0,
+  "response_values_opened":false,
+  "safe_metadata":{
+    "versionNumber":3,
+    "publicationDate":"2022-06-28",
+    "files":[
+      {"name":"README_seagrass_for_modeling.csv","size":1097,"mimeType":"application/vnd.ms-excel","self":"/api/v2/files/1619636","download":"/api/v2/files/1619636/download"},
+      {"name":"seagrass_for_modeling.csv","size":156620,"mimeType":"application/vnd.ms-excel","self":"/api/v2/files/1619635","download":"/api/v2/files/1619635/download"}
+    ]
+  },
+  "safe_metadata_fingerprint":"dafd42f6fb9d06dc4867dffe906aed134d15c22556939839773cd5bffcb03d49",
+  "schema":"tampa.ne_seagrassnet_state_memory_v1.version_metadata_result",
+  "status":"version_file_metadata_pass"
+}

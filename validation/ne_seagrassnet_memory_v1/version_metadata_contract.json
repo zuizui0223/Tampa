@@ -1,0 +1,9 @@
+{
+  "schema":"tampa.ne_seagrassnet_state_memory_v1.version_metadata_contract",
+  "requires_gate0_fingerprint":"8c74195178a7bde34e527b8b638ef8071f03ebed4e7515b3f0215855df5f9093",
+  "version_id":185156,
+  "allowed":"Dryad version metadata and file-metadata listing only",
+  "forbidden":"any stash:download URL or file content GET",
+  "expected_filenames":["README_seagrass_for_modeling.csv","seagrass_for_modeling.csv"],
+  "response_bytes_allowed":0
+}
