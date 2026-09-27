@@ -169,6 +169,9 @@
       "quadrat_id",
       "quadratid",
       "quadrat",
+      "quadrat_number",
+      "quadrat_no",
+      "quadratnum",
       "quad",
       "replicate",
       "rep"
@@ -176,6 +179,7 @@
     "region_aliases": [
       "bay",
       "bay_name",
+      "bay_system",
       "region",
       "area",
       "location"
