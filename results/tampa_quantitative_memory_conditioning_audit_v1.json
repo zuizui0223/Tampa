@@ -1,0 +1,40 @@
+{
+  "schema": "tampa.quantitative_memory_conditioning_audit_v1",
+  "status": "conditioning_not_explanation",
+  "authoritative_workflow_run_id": 36317214080,
+  "authoritative_artifact_id": 10931142279,
+  "authoritative_artifact_sha256": "307b7cd92fabb1148b93ec9450699226317cc7bd6f77c6c6ffb65b84c46721ad",
+  "panel": "all same-transect consecutive-year transitions; no requirement that source or target Thalassia detection equals 1",
+  "primary_tau_years": 10.0,
+  "target_years": [2004, 2025],
+  "scored_target_years": 22,
+  "frequency": {
+    "tau10_lag1_mean_mae": 0.04724436792111686,
+    "tau10_exponential_mean_mae": 0.048015625640266964,
+    "tau10_exponential_wins": 9,
+    "tau10_lag1_wins": 13,
+    "tau10_median_delta": 0.0003040237625610426,
+    "tau10_signflip_p": 0.9646517674116294,
+    "tau10_supported": false,
+    "grid_support_count": 0,
+    "grid_min_signflip_p": 0.09109544522773862
+  },
+  "cover_index": {
+    "tau10_lag1_mean_mae": 0.16831216230440013,
+    "tau10_exponential_mean_mae": 0.1811608427017002,
+    "tau10_exponential_wins": 2,
+    "tau10_lag1_wins": 20,
+    "tau10_median_delta": 0.012954790346409298,
+    "tau10_signflip_p": 0.999950002499875,
+    "tau10_supported": false,
+    "grid_support_count": 0,
+    "grid_min_signflip_p": 0.1904904754762262
+  },
+  "interpretation": "Removing persistent-presence conditioning does not recover a supported older-history increment for either quantitative state. The quantitative short-memory result is therefore not readily explained by conditioning the primary matched panel on source and target detection.",
+  "claim_boundary": [
+    "Post-hoc conditioning audit.",
+    "Tau=10 remains the primary transferred binary-state value; the full tau grid is descriptive.",
+    "Failure of this conditioning explanation does not prove state dimension is causal.",
+    "No environmental mechanism is inferred."
+  ]
+}
