@@ -3,6 +3,7 @@ name: Validate NPS quantitative memory
 on:
   push:
     branches:
+      - main
       - analysis/nps-cover-memory-v1
     paths:
       - "analysis/13_nps_quantitative_memory.py"
