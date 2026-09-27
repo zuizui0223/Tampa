@@ -1,0 +1,47 @@
+{
+  "schema":"tampa.northeast_seagrassnet_external_early_warning_v2.readme_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Response-blind schema qualification for Northeast USA SeagrassNet using the public Dryad browser download route for the README only.",
+  "relationship_to_v1":{
+    "v1_status":"terminal_pre_response_readme_transport_stop",
+    "v1_response_file_gets":0,
+    "v1_response_values_opened":false,
+    "v2_is_separately_versioned":true,
+    "scientific_hypothesis_unchanged":true
+  },
+  "source":{
+    "doi":"10.5061/dryad.z34tmpggg",
+    "dryad_version_id":"185156",
+    "metadata_file":{
+      "name":"README_seagrass_for_modeling.csv",
+      "dryad_file_id":1619636,
+      "size":1097,
+      "sha256":"e74b185cd2aabac782e886f50c2021def369faa3eecedd55acd1959027f25d5d",
+      "public_browser_url":"https://datadryad.org/stash/downloads/file_stream/1619636"
+    },
+    "response_file":{
+      "name":"seagrass_for_modeling.csv",
+      "dryad_file_id":1619635,
+      "size":156620,
+      "sha256":"2c770229651e24fae8ee301695a6a96b9082510a41f638567052de692e4bdb78",
+      "public_browser_url":"https://datadryad.org/stash/downloads/file_stream/1619635",
+      "gets_allowed":0,
+      "bytes_allowed":0
+    }
+  },
+  "allowed_access":"one complete GET of README_seagrass_for_modeling.csv only",
+  "schema_goal":[
+    "exact column names and meanings",
+    "stable spatial sampling unit",
+    "calendar year or date",
+    "eelgrass percent cover scale including valid zero state",
+    "sampling-replication/effort identifiers"
+  ],
+  "pass_rule":"README must be sufficient to freeze response parser, annual-state construction and prediction features before biological response access.",
+  "stop_rule":"If any required semantic is ambiguous, terminate v2 before opening seagrass_for_modeling.csv.",
+  "no_rescue":[
+    "Do not request file_stream/1619635 at this gate.",
+    "Do not infer schema from response values.",
+    "Do not change the ecological early-warning hypothesis based on README convenience."
+  ]
+}
