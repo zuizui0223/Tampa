@@ -1,0 +1,34 @@
+name: NPS Tier3 v2 response HEAD
+
+on:
+  push:
+    branches: [validation/nps-tier3-v2]
+    paths:
+      - "validation/nps_tier3_v2/deep_eml_result.json"
+      - "validation/nps_tier3_v2/response_head_contract.json"
+      - "validation/nps_tier3_v2/response_head.py"
+      - ".github/workflows/nps-tier3-v2-head.yml"
+  workflow_dispatch:
+
+jobs:
+  head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python validation/nps_tier3_v2/response_head.py
+      - name: Assert zero response-body bytes
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/nps_tier3_v2/response_head_result.json"))
+          assert x["response_body_gets"]==0
+          assert x["response_body_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nps-tier3-v2-response-head
+          path: validation/nps_tier3_v2/response_head_result.json
