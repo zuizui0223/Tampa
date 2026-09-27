@@ -1,0 +1,47 @@
+{
+  "schema":"tampa.nps_tier2_landscape_state_v1.metadata_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Response-blind schema qualification for a cross-scale ecological analysis separating bay-wide Zostera contraction from quantitative thinning within persistent Tier-3 transects.",
+  "relationship_to_existing_results":{
+    "tampa_state_decoupling":"already exploratory/reproducible",
+    "nps_tier3_persistent_cover":"already post-hoc external ecological replication",
+    "this_analysis_is_not":"an external predictive validation of the Tampa next-year-loss endpoint"
+  },
+  "source":{
+    "nps_reference_id":"2316691",
+    "title":"2025 Estuarine Nutrient Enrichment Tier-2 Seagrass Monitoring Data Package",
+    "temporal_scope":["2006-07-10","2025-09-05"],
+    "parks":["Cape Cod National Seashore","Fire Island National Seashore"],
+    "eml_url":"https://irma.nps.gov/DataStore/DownloadFile/754573?Reference=2316691",
+    "csv_url":"https://irma.nps.gov/DataStore/DownloadFile/754572?Reference=2316691",
+    "response_csv_gets_before_contract":0,
+    "response_values_opened_before_contract":false
+  },
+  "ecological_question":"Do bay-wide occurrence/cover trajectories and fixed-transect quantitative trajectories reveal distinct degradation modes: landscape contraction versus within-patch thinning?",
+  "predeclared_mode_framework":{
+    "landscape_axis":"Tier-2 annual park-level Zostera occurrence/prevalence and, if defined in EML, quantitative cover.",
+    "persistent_patch_axis":"Tier-3 repeated-transect Zostera quantitative cover result already frozen in results/nps_persistent_cover_v1.json.",
+    "interpretation_classes":[
+      "landscape contraction plus persistent-patch thinning",
+      "landscape contraction without persistent-patch thinning",
+      "persistent-patch thinning without landscape contraction",
+      "no directional degradation on either axis"
+    ],
+    "no_single_universal_decline_rate":true
+  },
+  "allowed_gate0_access":{
+    "eml_full_gets":1,
+    "csv_gets":0,
+    "csv_bytes":0,
+    "response_values":false
+  },
+  "required_eml_semantics":[
+    "park or location",
+    "survey date/year",
+    "sampling unit or station identifier",
+    "species identity",
+    "Zostera or seagrass cover/occurrence measurement",
+    "missing-value semantics"
+  ],
+  "stop_rule":"If the official EML cannot support a non-arbitrary annual park-level Zostera state without inspecting CSV values, stop before response access."
+}
