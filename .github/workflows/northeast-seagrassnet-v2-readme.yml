@@ -1,0 +1,35 @@
+name: Northeast SeagrassNet v2 README gate
+
+on:
+  push:
+    branches:
+      - validation/northeast-seagrassnet-v2
+    paths:
+      - "validation/northeast_seagrassnet_v2/**"
+      - ".github/workflows/northeast-seagrassnet-v2-readme.yml"
+  workflow_dispatch:
+
+jobs:
+  readme-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify frozen README only
+        run: python validation/northeast_seagrassnet_v2/readme.py
+      - name: Assert response table remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/northeast_seagrassnet_v2/readme_result.json"))
+          assert x["response_file_gets"]==0
+          assert x["response_file_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload README certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: northeast-seagrassnet-v2-readme
+          path: validation/northeast_seagrassnet_v2/readme_result.json
