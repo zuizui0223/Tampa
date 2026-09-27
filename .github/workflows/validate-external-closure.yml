@@ -1,0 +1,30 @@
+name: Validate external validation closure
+
+on:
+  push:
+    paths:
+      - "validation/external_validation_ledger_v1.json"
+      - "validation/validate_external_validation_ledger.py"
+      - "manuscript/MANUSCRIPT_SPINE_V1.md"
+      - "README.md"
+      - ".github/workflows/validate-external-closure.yml"
+  pull_request:
+    paths:
+      - "validation/external_validation_ledger_v1.json"
+      - "validation/validate_external_validation_ledger.py"
+      - "manuscript/MANUSCRIPT_SPINE_V1.md"
+      - "README.md"
+      - ".github/workflows/validate-external-closure.yml"
+  workflow_dispatch:
+
+jobs:
+  closure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate frozen denominator and claim boundary
+        run: python validation/validate_external_validation_ledger.py
