@@ -164,18 +164,23 @@ def yearly_scores(obs: np.ndarray):
     return np.asarray(target_years), {k:np.asarray(v) for k,v in scores.items()}
 
 
+SIGN_CACHE: dict[int, np.ndarray] = {}
+
+
+def sign_matrix(n: int) -> np.ndarray:
+    if n not in SIGN_CACHE:
+        codes = np.arange(1 << n, dtype=np.uint32)[:, None]
+        bits = (codes >> np.arange(n, dtype=np.uint32)[None, :]) & 1
+        SIGN_CACHE[n] = np.where(bits == 1, -1.0, 1.0)
+    return SIGN_CACHE[n]
+
+
 def exact_signflip_p(delta: np.ndarray) -> float:
     delta=np.asarray(delta,dtype=float)
     observed=float(delta.mean())
-    n=len(delta)
-    count=0; total=1<<n
-    for bits in range(total):
-        signs=np.ones(n,dtype=float)
-        for j in range(n):
-            if (bits>>j)&1: signs[j]=-1.0
-        if float((delta*signs).mean()) <= observed + 1e-15:
-            count+=1
-    return count/total
+    signs=sign_matrix(len(delta))
+    permuted=(signs @ delta) / float(len(delta))
+    return float(np.mean(permuted <= observed + 1e-15))
 
 
 def support(candidate: np.ndarray, reference: np.ndarray):
