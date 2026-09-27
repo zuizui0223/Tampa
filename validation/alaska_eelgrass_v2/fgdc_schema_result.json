@@ -1,0 +1,24 @@
+{
+  "fgdc_md5": "e0f0bfafe2be2129639f5a72ce454793",
+  "fingerprint": "44e89d77f816f2f31cfe04f2bcbd4693ae16541ad49e1a2213267ba14339c5b7",
+  "next_gate": "freeze exact CSV parser, annual-state construction, estimability and once-only outcome runner before any CSV GET",
+  "response_csv_bytes_opened": 0,
+  "response_csv_gets": 0,
+  "response_values_opened": false,
+  "safe_schema_fingerprint": "6b7ab55c3795ea61d35d850f79584290984b58118b99b90d24e69d619c05f46e",
+  "semantic_screen": {
+    "attribute_labels": ["Region","BlockName","SiteID","SiteName","Year","Method","PercentCover","Notes"],
+    "has_repeated_unit_semantics": true,
+    "has_time_semantics": true,
+    "has_zostera_percent_cover_semantics": true
+  },
+  "status": "fgdc_schema_qualified",
+  "endpoint_semantic_audit": {
+    "PercentCover_definition": "Estimated percent cover of eelgrass in sample site. The null '.' value indicates that there is no estimate for the site.",
+    "PercentCover_declared_observed_range": [12, 90],
+    "valid_zero_cover_state_defined": false,
+    "missing_symbol": ".",
+    "missing_is_absence": false
+  },
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v2.fgdc_schema_result"
+}
