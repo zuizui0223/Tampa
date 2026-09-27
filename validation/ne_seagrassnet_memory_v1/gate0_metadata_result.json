@@ -1,0 +1,18 @@
+{
+  "fingerprint": "8c74195178a7bde34e527b8b638ef8071f03ebed4e7515b3f0215855df5f9093",
+  "next_gate": "freeze README/documentation access only; biological CSV remains unopened",
+  "response_bytes_opened": 0,
+  "response_file_gets": 0,
+  "response_values_opened": false,
+  "safe_metadata": {
+    "dataset_id": 86962,
+    "doi": "doi:10.5061/dryad.z34tmpggg",
+    "publicationDate": "2022-06-28",
+    "title": "Northeast USA SeagrassNet Zm percent cover",
+    "versionNumber": 3,
+    "version_id": 185156
+  },
+  "safe_metadata_fingerprint": "abe4d69591fa06b4b47b04b19c6a0c073ef76c051c24d879c5a2ad7667ccc012",
+  "schema": "tampa.ne_seagrassnet_state_memory_v1.gate0_metadata_result",
+  "status": "gate0_metadata_pass"
+}
