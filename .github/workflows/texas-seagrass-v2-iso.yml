@@ -1,0 +1,35 @@
+name: Texas seagrass v2 NOAA ISO metadata
+
+on:
+  push:
+    branches:
+      - validation/texas-seagrass-v2
+    paths:
+      - "validation/texas_seagrass_v2/**"
+      - ".github/workflows/texas-seagrass-v2-iso.yml"
+  workflow_dispatch:
+
+jobs:
+  iso-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse NOAA ISO metadata only
+        run: python validation/texas_seagrass_v2/iso_metadata.py
+      - name: Assert biological data remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/texas_seagrass_v2/iso_metadata_result.json"))
+          assert x["raw_data_or_archive_gets"]==0
+          assert x["raw_data_or_archive_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload ISO metadata certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: texas-seagrass-v2-iso-metadata
+          path: validation/texas_seagrass_v2/iso_metadata_result.json
