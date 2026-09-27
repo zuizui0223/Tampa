@@ -1,0 +1,33 @@
+name: NPS Tier2 deep EML semantics
+
+on:
+  push:
+    branches:
+      - analysis/nps-tier2-landscape-v1
+    paths:
+      - "analysis/nps_tier2_landscape_v1/metadata_result.json"
+      - "analysis/nps_tier2_landscape_v1/deep_eml.py"
+      - ".github/workflows/nps-tier2-landscape-deep-eml.yml"
+  workflow_dispatch:
+
+jobs:
+  deep-eml:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/nps_tier2_landscape_v1/deep_eml.py
+      - name: Assert CSV remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("analysis/nps_tier2_landscape_v1/deep_eml_result.json"))
+          assert x["csv_gets"]==0 and x["csv_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nps-tier2-landscape-deep-eml
+          path: analysis/nps_tier2_landscape_v1/deep_eml_result.json
