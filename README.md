@@ -105,6 +105,29 @@ Sensitivity analysis supports that interpretation:
 
 Thus the external result is not driven by a single declining location or by silently repairing source identity. Moriches Bay remains a genuine positive-trend counterexample, so the claim is **state decoupling with spatially heterogeneous quantitative trajectories**, not universal decline.
 
+### 2c. External NPS panel supports short-term quantitative memory, not a general long-memory effect
+
+The same already-opened NPS annual panel was used for a separate post-hoc ecological question: does quantitative *Zostera* cover retain temporal information beyond persistent site identity?
+
+A strict target-year walk-forward comparison was restricted to matched same-transect transitions with at least two observations older than the source year. Every arm included location and node identity plus target year.
+
+Across **177** matched transitions from **15** repeated transects and **14** scored target years:
+
+- space/time/site baseline mean MAE: **11.14 percentage points**;
+- + previous-year cover: **10.09**;
+- previous-year cover improved **11/14** target years, baseline improved 2, with 1 tie;
+- + older pre-lag history: mean MAE **9.49**, but it improved only **4/14** years relative to lag-1;
+- the median older-history minus lag-1 MAE difference was **+0.091** (slightly worse);
+- paired year-level sign-flip test for older history beyond lag-1: **p = 0.289**.
+
+The supported external result is therefore **short-term quantitative state dependence**: last year's cover adds information about next year's cover even after persistent site identity is included. The NPS result does **not** support a robust increment from older history beyond the previous year.
+
+This contrasts with Tampa's binary recorded-state model, where earlier history added information beyond lag-1. Because the systems, species, response dimensions and monitoring designs differ, this contrast does not establish a causal difference in memory horizon. It motivates a narrower hypothesis:
+
+> **Ecological memory may be state-dimension dependent: coarse persistence states can integrate longer histories than rapidly varying quantitative condition.**
+
+That hypothesis now requires a matched system in which binary and quantitative states can be forecast under the same sampling design.
+
 
 
 ### 3. Community reorganization is bay-specific
@@ -201,6 +224,7 @@ python analysis/08_seasonal_stress_screen.py --input results/generated --out res
 python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
 python analysis/11_nps_persistent_cover.py --out results/generated_nps_posthoc
 python analysis/12_nps_persistent_cover_sensitivity.py --input results/generated_nps_posthoc --out results/generated_nps_posthoc
+python analysis/13_nps_quantitative_memory.py --input results/generated_nps_posthoc --out results/generated_nps_posthoc
 ```
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
@@ -221,7 +245,8 @@ Supported now:
 - no declared simple annual water-quality coupling survives the post-2016 multiplicity-controlled segment-year screen;
 - aligning temperature and salinity to 3- and 6-month pre-survey windows still yields no multiplicity-controlled seasonal hot/fresh association;
 - source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort;
-- in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc.
+- in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc;
+- in that same NPS panel, previous-year quantitative cover improves strict out-of-time next-year cover prediction beyond site identity in **11/14** target years, supporting short-term quantitative state dependence.
 
 Not supported now:
 
@@ -231,7 +256,8 @@ Not supported now:
 - a universal 10-year biological memory constant;
 - equivalence between fixed-transect condition and bay-wide mapped acreage;
 - demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
-- untouched prospective or external confirmation of the early-warning hypothesis.
+- untouched prospective or external confirmation of the early-warning hypothesis;
+- a universal long-memory effect across seagrass state variables; older NPS cover history does not robustly improve beyond lag-1.
 
 ## Independent validation ledger
 

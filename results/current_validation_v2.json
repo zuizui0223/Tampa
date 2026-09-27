@@ -251,5 +251,23 @@
     },
     "interpretation": "Source-year quantitative meadow state adds strict out-of-time information about next-year recorded loss beyond space, year, survey timing and sampled-point effort. This supports an early-warning hypothesis for recorded-state instability, not demographic extinction risk.",
     "evidence_class": "exploratory_strict_walkforward_internal_validation"
+  },
+  "nps_quantitative_memory": {
+    "status": "posthoc_external_quantitative_memory_test",
+    "matched_rows": 177,
+    "nodes": 15,
+    "scored_target_years": 14,
+    "baseline_mean_mae": 11.144730825311768,
+    "lag1_mean_mae": 10.087525517474601,
+    "lag1_wins_vs_baseline": 11,
+    "baseline_wins_vs_lag1": 2,
+    "ties_vs_baseline": 1,
+    "long_history_mean_mae": 9.48657001966063,
+    "long_history_wins_vs_lag1": 4,
+    "lag1_wins_vs_long_history": 9,
+    "ties_vs_lag1": 1,
+    "lag1_vs_long_history_median_delta": 0.09144635721292405,
+    "lag1_vs_long_history_signflip_p": 0.28853557322133894,
+    "interpretation": "The external NPS Zostera panel supports immediate previous-year quantitative state dependence beyond persistent site identity, but does not support a robust increment from older history beyond lag-1. This motivates a state-dependent memory-horizon hypothesis without establishing why Tampa binary state and NPS quantitative cover differ."
   }
 }
