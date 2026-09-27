@@ -1,0 +1,12 @@
+{
+  "fingerprint": "f9eb8d549c35d5645c8629f8dcf9eca0a2c17da2cb48aaba317ed35a692483c3",
+  "next_gate": "none",
+  "readme_bytes_opened": 0,
+  "readme_gets": 1,
+  "reason": "HTTP Error 401: Unauthorized",
+  "response_bytes_opened": 0,
+  "response_file_gets": 0,
+  "response_values_opened": false,
+  "schema": "tampa.ne_seagrassnet_state_memory_v1.readme_schema_result",
+  "status": "readme_access_or_schema_stop"
+}
