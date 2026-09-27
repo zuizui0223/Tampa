@@ -1,0 +1,23 @@
+name: Diagnose NPS Tier2 row multiplicity
+
+on:
+  push:
+    branches:
+      - analysis/nps-tier2-landscape-v1
+    paths:
+      - "analysis/nps_tier2_landscape_v1/diagnose_structure.py"
+      - ".github/workflows/nps-tier2-structure-diagnostic.yml"
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/nps_tier2_landscape_v1/diagnose_structure.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nps-tier2-structure-diagnostic
+          path: analysis/nps_tier2_landscape_v1/structure_diagnostic_result.json
