@@ -1,0 +1,51 @@
+{
+  "schema": "tampa.matched_cover_index_memory_v1",
+  "status": "posthoc_quantitative_memory_replication",
+  "authoritative_workflow_run_id": 36315903024,
+  "authoritative_artifact_id": 10930324031,
+  "authoritative_artifact_sha256": "307c18f259152ddc6cb95d535208817e3f81f53b9485a7a8e1b6f1308e8b58de",
+  "metric": "Braun-Blanquet all-point index; ordinal abundance index, not percent cover",
+  "panel": "binary_persistent_only",
+  "matched_rows": 593,
+  "nodes": 44,
+  "scored_target_years": 22,
+  "baseline_vs_lag1": {
+    "mean_mae_left": 0.3056787560898841,
+    "mean_mae_right": 0.24964011672824354,
+    "mean_delta_right_minus_left": -0.056038639361640545,
+    "median_delta_right_minus_left": -0.07452883691581368,
+    "right_wins": 19,
+    "left_wins": 3,
+    "ties": 0,
+    "target_years": 22
+  },
+  "baseline_vs_lag1_signflip": {
+    "observed_mean_delta": -0.056038639361640545,
+    "one_sided_signflip_p": 0.00004999750012499375,
+    "replicates": 20000
+  },
+  "lag1_vs_long_history": {
+    "mean_mae_left": 0.24964011672824354,
+    "mean_mae_right": 0.2566841415743593,
+    "mean_delta_right_minus_left": 0.007044024846115734,
+    "median_delta_right_minus_left": 0.0033901210575068425,
+    "right_wins": 6,
+    "left_wins": 16,
+    "ties": 0,
+    "target_years": 22
+  },
+  "lag1_vs_long_history_signflip": {
+    "observed_mean_delta": 0.007044024846115734,
+    "one_sided_signflip_p": 0.9674516274186291,
+    "replicates": 20000
+  },
+  "lag1_supported": true,
+  "older_history_supported_beyond_lag1": false,
+  "interpretation": "Braun-Blanquet all-point condition independently reproduces the frequency-memory pattern: previous-year quantitative state is informative beyond persistent site identity, whereas older history does not provide a robust increment beyond lag-1.",
+  "claim_boundary": [
+    "Post-hoc replication across a second quantitative state variable.",
+    "Braun-Blanquet is an ordinal abundance index and is not interpreted as percent cover.",
+    "The analysis conditions on recorded Thalassia presence in both source and target years.",
+    "No environmental or demographic mechanism is inferred."
+  ]
+}

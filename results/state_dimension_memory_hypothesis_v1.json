@@ -1,0 +1,63 @@
+{
+  "schema":"tampa.state_dimension_memory_hypothesis_v1",
+  "frozen_on":"2026-09-27",
+  "status":"hypothesis_generated_from_tampa_and_nps_posthoc_evidence",
+  "ecological_question":"Does the timescale over which past state remains predictive depend on the ecological state dimension being measured?",
+  "working_hypothesis":"Coarse persistence or recorded-state variables integrate longer ecological histories, whereas quantitative meadow condition is dominated more strongly by the immediately previous state.",
+  "supporting_observations":{
+    "tampa_binary_recorded_state":{
+      "target_years":22,
+      "baseline_log_loss":0.3312148,
+      "lag1_log_loss":0.1700713,
+      "long_history_log_loss":0.139493,
+      "long_history_wins_vs_lag1":14,
+      "role":"hypothesis-generating coarse-state evidence"
+    },
+    "tampa_frequency_persistent_only":{
+      "matched_rows":593,
+      "target_years":22,
+      "lag1_wins_vs_baseline":21,
+      "lag1_signflip_p":0.00004999750012499375,
+      "older_history_wins_vs_lag1":10,
+      "older_history_signflip_p":0.7187640617969101,
+      "older_history_supported":false
+    },
+    "tampa_braun_blanquet_persistent_only":{
+      "matched_rows":593,
+      "target_years":22,
+      "lag1_wins_vs_baseline":19,
+      "lag1_signflip_p":0.00004999750012499375,
+      "older_history_wins_vs_lag1":6,
+      "older_history_signflip_p":0.9674516274186291,
+      "older_history_supported":false
+    },
+    "nps_zostera_cover":{
+      "matched_rows":177,
+      "target_years":14,
+      "lag1_wins_vs_baseline":11,
+      "older_history_wins_vs_lag1":4,
+      "older_history_signflip_p":0.28853557322133894,
+      "older_history_supported":false
+    }
+  },
+  "not_yet_identified":[
+    "Whether state dimension itself causes the different apparent memory horizon.",
+    "Whether the contrast instead reflects model family, response distribution, monitoring protocol, species, habitat, or noise structure.",
+    "A universal numerical memory timescale."
+  ],
+  "prospective_confirmatory_design":{
+    "candidate_requirement":"A response-unopened repeated monitoring system with both a variable coarse presence/persistence state and a quantitative condition state measured on the same stable sampling units over at least five target years.",
+    "split":"Identical strict walk-forward target-year splits for both state dimensions.",
+    "baseline":"Same response-independent site/time covariates and stable-unit identity within each state-specific model.",
+    "lag1_increment":"Immediately previous-year state only.",
+    "older_history_increment":"Predeclared older-history mean, slope and history length; no post-outcome feature retuning.",
+    "support_rule":"For each state dimension separately, older history is supported only if it wins at least 60% of target years, has negative median paired loss delta versus lag1, and one-sided paired year-level sign-flip p<0.05.",
+    "primary_prediction":"Older history will satisfy the support rule for the coarse state more often than for quantitative condition.",
+    "forbidden":[
+      "Selecting thresholds after seeing outcomes to manufacture a coarse state.",
+      "Changing history features or support rules by state after outcome access.",
+      "Comparing raw effect magnitudes across incompatible loss functions as if directly commensurate.",
+      "Calling the current Tampa/NPS contrast causal confirmation."
+    ]
+  }
+}

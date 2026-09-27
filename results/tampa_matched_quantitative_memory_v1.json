@@ -1,0 +1,70 @@
+{
+  "schema": "tampa.matched_quantitative_memory_v1",
+  "status": "posthoc_matched_state_dimension_memory_test",
+  "authoritative_workflow_run_id": 36315903024,
+  "authoritative_artifact_id": 10930324031,
+  "authoritative_artifact_sha256": "307c18f259152ddc6cb95d535208817e3f81f53b9485a7a8e1b6f1308e8b58de",
+  "primary": {
+    "panel": "binary_persistent_only",
+    "matched_rows": 593,
+    "nodes": 44,
+    "scored_target_years": 22,
+    "source_positive_fraction": 1.0,
+    "target_positive_fraction": 1.0,
+    "baseline_vs_lag1": {
+      "mean_mae_left": 0.07847021528764457,
+      "mean_mae_right": 0.06727912263161301,
+      "mean_delta_right_minus_left": -0.011191092656031547,
+      "median_delta_right_minus_left": -0.012096007322919215,
+      "right_wins": 21,
+      "left_wins": 1,
+      "ties": 0,
+      "target_years": 22
+    },
+    "baseline_vs_lag1_signflip": {
+      "observed_mean_delta": -0.011191092656031547,
+      "one_sided_signflip_p": 0.00004999750012499375,
+      "replicates": 20000
+    },
+    "lag1_vs_long_history": {
+      "mean_mae_left": 0.06727912263161301,
+      "mean_mae_right": 0.06796954993290212,
+      "mean_delta_right_minus_left": 0.0006904273012891103,
+      "median_delta_right_minus_left": 0.0010224089332543027,
+      "right_wins": 10,
+      "left_wins": 12,
+      "ties": 0,
+      "target_years": 22
+    },
+    "lag1_vs_long_history_signflip": {
+      "observed_mean_delta": 0.0006904273012891103,
+      "one_sided_signflip_p": 0.7187640617969101,
+      "replicates": 20000
+    },
+    "lag1_supported": true,
+    "older_history_supported_beyond_lag1": false
+  },
+  "supplementary": {
+    "panel": "all_consecutive_states",
+    "matched_rows": 1035,
+    "nodes": 63,
+    "scored_target_years": 23,
+    "lag1_supported": true,
+    "older_history_supported_beyond_lag1": false
+  },
+  "frozen_binary_memory_reference": {
+    "baseline_mean_log_loss": 0.3312148,
+    "lag1_mean_log_loss": 0.1700713,
+    "long_history_mean_log_loss": 0.139493,
+    "long_history_wins_vs_lag1": 14,
+    "scored_target_years": 22
+  },
+  "interpretation": "Within Tampa, quantitative focal frequency has strong previous-year state dependence under persistent recorded presence, but older quantitative history does not add robust information beyond lag-1. This contrasts with the frozen coarse recorded-state analysis, where earlier history added information beyond lag-1. The contrast motivates a state-dimension-dependent memory-horizon hypothesis but does not prove its mechanism because response models and loss functions differ.",
+  "claim_boundary": [
+    "Post-hoc matched ecological analysis.",
+    "The primary frequency panel conditions on recorded Thalassia presence in both source and target years.",
+    "Node identity is present in every quantitative arm.",
+    "Binary and quantitative effect magnitudes are not directly compared.",
+    "No environmental mechanism is inferred."
+  ]
+}

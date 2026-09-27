@@ -269,5 +269,42 @@
     "lag1_vs_long_history_median_delta": 0.09144635721292405,
     "lag1_vs_long_history_signflip_p": 0.28853557322133894,
     "interpretation": "The external NPS Zostera panel supports immediate previous-year quantitative state dependence beyond persistent site identity, but does not support a robust increment from older history beyond lag-1. This motivates a state-dependent memory-horizon hypothesis without establishing why Tampa binary state and NPS quantitative cover differ."
+  },
+  "matched_state_dimension_memory": {
+    "status": "posthoc_matched_state_dimension_memory_test",
+    "primary_panel": "binary_persistent_only",
+    "matched_rows": 593,
+    "nodes": 44,
+    "scored_target_years": 22,
+    "frequency": {
+      "baseline_mae": 0.07847021528764457,
+      "lag1_mae": 0.06727912263161301,
+      "lag1_wins": 21,
+      "lag1_signflip_p": 0.00004999750012499375,
+      "long_history_mae": 0.06796954993290212,
+      "older_history_wins_vs_lag1": 10,
+      "older_history_signflip_p": 0.7187640617969101,
+      "lag1_supported": true,
+      "older_history_supported_beyond_lag1": false
+    },
+    "cover_index": {
+      "baseline_mae": 0.3056787560898841,
+      "lag1_mae": 0.24964011672824354,
+      "lag1_wins": 19,
+      "lag1_signflip_p": 0.00004999750012499375,
+      "long_history_mae": 0.2566841415743593,
+      "older_history_wins_vs_lag1": 6,
+      "older_history_signflip_p": 0.9674516274186291,
+      "lag1_supported": true,
+      "older_history_supported_beyond_lag1": false
+    },
+    "frozen_binary_reference": {
+      "baseline_log_loss": 0.3312148,
+      "lag1_log_loss": 0.1700713,
+      "long_history_log_loss": 0.139493,
+      "long_history_wins_vs_lag1": 14,
+      "target_years": 22
+    },
+    "interpretation": "Within the same Tampa transects and while conditioning on recorded Thalassia persistence, two quantitative state variables show strong previous-year dependence but no robust increment from older history. The coarse recorded-state response previously retained older-history information beyond lag-1. This within-system contrast strengthens, but does not mechanistically prove, a state-dimension-dependent memory-horizon hypothesis."
   }
 }
