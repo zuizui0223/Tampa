@@ -1,0 +1,15 @@
+{
+  "schema":"tampa.florida_keys_external_early_warning_v1.terminal_record",
+  "status":"terminal_pre_response_metadata_transport_or_parser_stop",
+  "reason":"The frozen metadata gate required an exact 'Braun-Blanquet' token in the live SEACAR program-page HTML; the CI-fetched page did not satisfy that literal contract, so the attempt stopped before standardized metadata workbook parsing.",
+  "program_id":296,
+  "program_name":"Florida Keys National Marine Sanctuary Seagrass Monitoring Project",
+  "biological_data_downloads":0,
+  "biological_response_rows_opened":0,
+  "biological_response_values_opened":false,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "interpretation":"This is a pre-response metadata-interface STOP and neither supports nor contradicts the Tampa quantitative early-warning hypothesis.",
+  "next_rule":"Do not repair v1 in place. A separately versioned v2 may rely on official SEACAR standardized metadata and published FKNMS sampling/score semantics before any biological data access."
+}
