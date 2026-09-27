@@ -1,0 +1,17 @@
+{
+  "schema":"tampa.seagrassnet_zostera_external_early_warning_v3.terminal_record",
+  "status":"terminal_partial_raw_archive_access_transport_stop",
+  "reason":"The frozen ZIP central-directory request sent a suffix Range request, but SeagrassNet returned HTTP 200. The runner read its capped 65,558-byte buffer before checking the HTTP status, so a prefix of the biological ZIP response was physically opened. No ZIP member was decompressed or parsed and no biological response value was interpreted.",
+  "candidate_site_count":48,
+  "candidate_uuid_sha256":"6a727f362a7782b4a159b98bc942a4e474032b9b0c06a0afdaf5f0718401c95c",
+  "raw_archive_response_requests":1,
+  "raw_archive_bytes_opened":65558,
+  "decompressed_member_payloads":0,
+  "interpreted_response_values":0,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "integrity_boundary":"Because raw biological archive bytes were opened, the same frozen USA+Canada SeagrassNet candidate universe must not be retried, repaired, or relabeled as an untouched external validation.",
+  "interpretation":"This is a transport/protocol failure, not evidence for or against the Tampa quantitative early-warning hypothesis.",
+  "next_rule":"Independent confirmation must use a genuinely different response-unopened dataset or a future prospectively held-out Tampa survey."
+}
