@@ -24,12 +24,25 @@
     "sites": 71,
     "years": 29,
     "replicates_per_cell": 32,
-    "phi_slow": [0.85, 0.95, 0.99],
-    "phi_fast": [0.2, 0.6],
-    "slow_mean_logit": [-0.5, 0.5],
-    "point_count": [10, 25],
-    "slow_stationary_sd": 1.0,
-    "fast_stationary_sd": 1.0,
+    "phi_slow": [
+      0.85,
+      0.95,
+      0.99
+    ],
+    "phi_fast": [
+      0.2,
+      0.6
+    ],
+    "slow_mean_logit": [
+      -0.5,
+      0.5
+    ],
+    "point_count": [
+      10,
+      25
+    ],
+    "slow_stationary_sd": 1,
+    "fast_stationary_sd": 1,
     "slow_site_intercept_sd": 0.5,
     "fast_site_intercept_sd": 0.5,
     "fast_mean_logit": -0.5,
@@ -38,22 +51,28 @@
     "random_seed": 2026092701
   },
   "prediction_design": {
-    "first_scored_target_year": 10,
+    "first_scored_target_year": 19,
     "last_scored_target_year": 28,
     "strict_walk_forward": "For target year y, fit only rows with target year < y.",
     "learner_both_states_all_arms": "Ridge(alpha=1.0)",
     "loss_both_states": "mean squared error on common [0,1] scale; binary MSE is Brier score",
-    "common_baseline_features": ["stable site identity", "standardized target year"],
+    "common_baseline_features": [
+      "stable site identity",
+      "standardized target year"
+    ],
     "lag1_model": "common baseline + immediately previous observed state",
     "older_history_model": "lag1 model + exponentially weighted all-prior observed state",
-    "exponential_tau_years": 10.0,
+    "exponential_tau_years": 10,
     "tau_reason": "Transferred unchanged from the already-frozen Tampa coarse-state analysis and prior representation-matched quantitative replay.",
-    "prediction_clip": [0.0, 1.0],
+    "prediction_clip": [
+      0,
+      1
+    ],
     "same_rows_by_state": true
   },
   "within_replicate_support_rule": {
     "paired_unit": "scored target year",
-    "minimum_win_fraction": 0.60,
+    "minimum_win_fraction": 0.6,
     "median_delta_requirement": "candidate-minus-reference median target-year MSE delta < 0",
     "signflip_test": "exact one-sided paired sign-flip test of mean target-year MSE delta; p < 0.05",
     "lag1_support": "Apply rule to lag1 minus baseline.",
@@ -63,7 +82,7 @@
   "cell_support_rule": "A parameter cell supports the two-timescale mechanism when at least 50% of its 32 replicates satisfy the complete target pattern and the median replicate-level binary-minus-quantitative older-history relative-gain contrast is > 0.",
   "global_support_rule": {
     "minimum_supporting_cells": 18,
-    "minimum_global_target_pattern_fraction": 0.50,
+    "minimum_global_target_pattern_fraction": 0.5,
     "phi_slow_robustness": "At least 2 of the 3 phi_slow levels must have at least 6 of their 8 cells satisfy the cell support rule.",
     "all_conditions_required": true
   },
@@ -87,5 +106,20 @@
     "A positive result establishes sufficiency of a slow latent persistence state plus faster condition dynamics to reproduce the observed state-dimension memory pattern under shared sampling.",
     "A negative result weakens this specific two-timescale explanation but does not prove the Tampa coarse-state signal is artifactual.",
     "This is response-free known-truth mechanism evidence, not an additional ecological dataset."
-  ]
+  ],
+  "pre_outcome_amendment": {
+    "timing": "before any simulation outcome or artifact was opened",
+    "change": "first_scored_target_year changed from 10 to 19; last remains 28",
+    "reason": "Preserve the predeclared exact sign-flip test while matching the earlier thresholding known-truth 10-year heldout window and keeping computation tractable.",
+    "unchanged": [
+      "known-truth generative process",
+      "simulation grid",
+      "replicate count",
+      "tau=10",
+      "learner and loss",
+      "walk-forward rule",
+      "support thresholds",
+      "global decision rule"
+    ]
+  }
 }
