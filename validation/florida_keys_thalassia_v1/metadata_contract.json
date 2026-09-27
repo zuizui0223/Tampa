@@ -1,0 +1,39 @@
+{
+  "schema": "tampa.florida_keys_external_early_warning_v1.metadata_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Response-blind qualification of the Florida Keys National Marine Sanctuary Seagrass Monitoring Project as an independent test of Tampa quantitative early warning.",
+  "hypothesis": "Among source-year transects with recorded Thalassia presence, lower quantitative Thalassia state predicts next-year recorded loss beyond space/time/effort.",
+  "source": {
+    "program_id": 296,
+    "program_name": "Florida Keys National Marine Sanctuary Seagrass Monitoring Project",
+    "program_page": "https://data.florida-seacar.org/programs/details/296",
+    "public_metadata_workbook": "https://data.florida-seacar.org/static/metadataexport/SEACAR_Metadata.xlsx",
+    "stated_start": 1995,
+    "stated_end": "Current",
+    "stated_frequency": "Semiannual",
+    "stated_method": "Fixed transect - (10) random .25m^2 quadrats; data reported at transect level; Braun-Blanquet score averaged across quadrats",
+    "focal_taxon": "Thalassia testudinum"
+  },
+  "allowed_access": {
+    "program_page_html_gets": 1,
+    "seacar_metadata_xlsx_gets": 1,
+    "biological_data_downloads": 0,
+    "biological_response_rows_opened": 0,
+    "biological_response_values_opened": false
+  },
+  "required_before_data_access": [
+    "stable sampling unit identifier semantics",
+    "survey date or year semantics",
+    "species/taxon identifier semantics",
+    "quantitative cover or Braun-Blanquet semantics",
+    "explicit recorded-absence/zero semantics distinguishable from missing",
+    "publicly reproducible data source identity without selecting files after inspecting biological outcomes"
+  ],
+  "stop_rule": "If public metadata cannot establish all required semantics before biological data access, stop v1 pre-response.",
+  "no_rescue": [
+    "Do not use biological data values to infer schema.",
+    "Do not treat missing or unreported cover as absence.",
+    "Do not change the endpoint from next-year recorded loss after data access.",
+    "Do not choose a different Florida Keys data file after observing Thalassia outcomes."
+  ]
+}
