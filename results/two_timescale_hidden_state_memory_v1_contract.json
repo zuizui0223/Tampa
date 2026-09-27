@@ -1,0 +1,149 @@
+{
+  "schema": "tampa.two_timescale_hidden_state_memory_v1.contract",
+  "frozen_on": "2026-09-27",
+  "status": "design_frozen_before_simulation_outcome",
+  "purpose": "Test whether a slow latent persistence/suitability state combined with faster conditional meadow condition is sufficient to reproduce the Tampa pattern: immediate memory in both observed state dimensions but robust older-history value only for coarse recorded state.",
+  "relationship_to_prior_tests": {
+    "thresholding_only_result": "mechanism_not_supported",
+    "conditioning_audit": "Removing persistent-presence conditioning did not restore older-history value for quantitative Tampa state.",
+    "new_mechanism": "A two-timescale latent process, not simple thresholding of one first-order quantitative state."
+  },
+  "known_truth": {
+    "slow_state": "site-specific latent persistence/suitability propensity h[i,t] following stationary Gaussian AR(1)",
+    "slow_process": "h[i,t] = mu_h[i] + phi_slow*(h[i,t-1]-mu_h[i]) + epsilon_h",
+    "annual_presence": "z[i,t] ~ Bernoulli(logistic(h[i,t]))",
+    "fast_state": "conditional meadow condition c[i,t] following an independent stationary Gaussian AR(1) on the logit scale",
+    "fast_process": "c[i,t] = mu_c[i] + phi_fast*(c[i,t-1]-mu_c[i]) + epsilon_c",
+    "conditional_point_probability": "p_cond[i,t] = logistic(c[i,t])",
+    "shared_sampling": "k[i,t] ~ Binomial(point_count, z[i,t] * p_cond[i,t])",
+    "quantitative_observation": "frequency[i,t] = k[i,t] / point_count",
+    "coarse_observation": "binary[i,t] = 1 if k[i,t] > 0 else 0",
+    "important_property": "Binary and quantitative observations still derive from exactly the same sampled count k. The added ingredient relative to the failed thresholding-only test is a distinct slow latent persistence state multiplying a faster conditional-condition state."
+  },
+  "simulation_grid": {
+    "sites": 71,
+    "years": 29,
+    "replicates_per_cell": 32,
+    "phi_slow": [
+      0.85,
+      0.95,
+      0.99
+    ],
+    "phi_fast": [
+      0.2,
+      0.6
+    ],
+    "slow_mean_logit": [
+      -0.5,
+      0.5
+    ],
+    "point_count": [
+      10,
+      25
+    ],
+    "slow_stationary_sd": 1,
+    "fast_stationary_sd": 1,
+    "slow_site_intercept_sd": 0.5,
+    "fast_site_intercept_sd": 0.5,
+    "fast_mean_logit": -0.5,
+    "total_cells": 24,
+    "total_replicates": 768,
+    "random_seed": 2026092701
+  },
+  "prediction_design": {
+    "strict_walk_forward": false,
+    "learner_both_states_all_arms": "Ridge(alpha=1.0)",
+    "loss_both_states": "mean squared error on common [0,1] scale; binary MSE is Brier score",
+    "common_baseline_features": [
+      "stable site identity",
+      "standardized target year"
+    ],
+    "lag1_model": "common baseline + immediately previous observed state",
+    "older_history_model": "lag1 model + exponentially weighted all-prior observed state",
+    "exponential_tau_years": 10,
+    "tau_reason": "Transferred unchanged from the already-frozen Tampa coarse-state analysis and prior representation-matched quantitative replay.",
+    "prediction_clip": [
+      0,
+      1
+    ],
+    "same_rows_by_state": true,
+    "calibration_target_years": [
+      2,
+      18
+    ],
+    "heldout_target_years": [
+      19,
+      28
+    ],
+    "split": "Fit each arm once on target years 2-18; score the unchanged fitted model separately in heldout target years 19-28."
+  },
+  "within_replicate_support_rule": {
+    "paired_unit": "scored target year",
+    "minimum_win_fraction": 0.6,
+    "median_delta_requirement": "candidate-minus-reference median target-year MSE delta < 0",
+    "signflip_test": "exact one-sided paired sign-flip test of mean target-year MSE delta; p < 0.05",
+    "lag1_support": "Apply rule to lag1 minus baseline.",
+    "older_history_support": "Apply rule to older-history minus lag1.",
+    "target_pattern": "lag1 supported for both binary and quantitative states AND older history supported for binary state AND older history not supported for quantitative state."
+  },
+  "cell_support_rule": "A parameter cell supports the two-timescale mechanism when at least 50% of its 32 replicates satisfy the complete target pattern and the median replicate-level binary-minus-quantitative older-history relative-gain contrast is > 0.",
+  "global_support_rule": {
+    "minimum_supporting_cells": 18,
+    "minimum_global_target_pattern_fraction": 0.5,
+    "phi_slow_robustness": "At least 2 of the 3 phi_slow levels must have at least 6 of their 8 cells satisfy the cell support rule.",
+    "all_conditions_required": true
+  },
+  "secondary_outputs": [
+    "binary prevalence and quantitative-frequency distributions",
+    "lag1 and older-history support fractions separately by state and cell",
+    "older-history relative gains separately by state",
+    "binary-minus-quantitative older-history amplification",
+    "summaries by phi_slow and phi_fast"
+  ],
+  "forbidden_after_opening": [
+    "Changing tau.",
+    "Changing the grid or dropping unfavorable cells.",
+    "Changing the learner, loss, rows, or target years by state.",
+    "Changing support thresholds.",
+    "Changing the fast or slow process after seeing simulation outcomes.",
+    "Calling the mechanism necessary if the sufficiency test passes.",
+    "Calling biological long-memory proven by this response-free simulation."
+  ],
+  "interpretation_boundary": [
+    "A positive result establishes sufficiency of a slow latent persistence state plus faster condition dynamics to reproduce the observed state-dimension memory pattern under shared sampling.",
+    "A negative result weakens this specific two-timescale explanation but does not prove the Tampa coarse-state signal is artifactual.",
+    "This is response-free known-truth mechanism evidence, not an additional ecological dataset."
+  ],
+  "pre_outcome_amendments": [
+    {
+      "timing": "before any simulation outcome or artifact was opened",
+      "change": "first_scored_target_year changed from 10 to 19; last remains 28",
+      "reason": "Preserve the predeclared exact sign-flip test while matching the earlier thresholding known-truth 10-year heldout window and keeping computation tractable.",
+      "unchanged": [
+        "known-truth generative process",
+        "simulation grid",
+        "replicate count",
+        "tau=10",
+        "learner and loss",
+        "walk-forward rule",
+        "support thresholds",
+        "global decision rule"
+      ]
+    },
+    {
+      "timing": "before any simulation outcome or artifact was opened",
+      "change": "Replace repeated walk-forward refits with one frozen calibration fit on target years 2-18 and year-wise scoring on heldout years 19-28.",
+      "reason": "Match the earlier thresholding-only known-truth split exactly and reduce redundant fitting while preserving the paired 10-year exact sign-flip endpoint.",
+      "unchanged": [
+        "known-truth generative process",
+        "simulation grid",
+        "replicate count",
+        "tau=10",
+        "learner and loss",
+        "heldout target years 19-28",
+        "support thresholds",
+        "global decision rule"
+      ]
+    }
+  ]
+}

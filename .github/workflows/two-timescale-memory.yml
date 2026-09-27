@@ -1,0 +1,29 @@
+name: Two-timescale hidden-state memory known truth
+
+on:
+  push:
+    branches:
+      - mechanism/two-timescale-memory-v1
+    paths:
+      - "analysis/19_two_timescale_hidden_state_memory.py"
+      - "results/two_timescale_hidden_state_memory_v1_contract.json"
+      - ".github/workflows/two-timescale-memory.yml"
+  workflow_dispatch:
+
+jobs:
+  known-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python analysis/19_two_timescale_hidden_state_memory.py --out results/generated_two_timescale
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: two-timescale-hidden-state-memory
+          path: results/generated_two_timescale/

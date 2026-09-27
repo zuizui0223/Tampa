@@ -1,0 +1,103 @@
+{
+  "schema": "tampa.two_timescale_hidden_state_memory_v1.result",
+  "status": "mechanism_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36318342189,
+    "head_sha": "6b35f0fd733261da317391ac7490662d00108cc9",
+    "artifact_id": 10931760314,
+    "artifact_digest": "sha256:381c9d3981af93986eb23f4f3b8dfdd7d568976d4e981a7281fb09cad07a2f66"
+  },
+  "known_truth": {
+    "slow_latent_persistence_state": true,
+    "fast_conditional_condition_state": true,
+    "binary_and_frequency_share_same_sampled_count": true,
+    "common_learner": "Ridge(alpha=1.0)",
+    "common_loss": "MSE on [0,1]",
+    "tau_years": 10
+  },
+  "design": {
+    "cells": 24,
+    "replicates_per_cell": 32,
+    "total_replicates": 768,
+    "sites": 71,
+    "years": 29,
+    "phi_slow": [
+      0.85,
+      0.95,
+      0.99
+    ],
+    "phi_fast": [
+      0.2,
+      0.6
+    ],
+    "slow_mean_logit": [
+      -0.5,
+      0.5
+    ],
+    "point_count": [
+      10,
+      25
+    ],
+    "calibration_target_years": [
+      2,
+      18
+    ],
+    "heldout_target_years": [
+      19,
+      28
+    ]
+  },
+  "primary": {
+    "supporting_cells": 0,
+    "required_supporting_cells": 18,
+    "global_target_pattern_fraction": 0.005208333333333333,
+    "required_global_target_pattern_fraction": 0.5,
+    "robust_phi_slow_levels": 0,
+    "required_robust_phi_slow_levels": 2,
+    "global_median_amplification": -0.0028410319505203408,
+    "support_rule_passed": false
+  },
+  "diagnostic": {
+    "binary_lag1_support_fraction": 0.42578125,
+    "frequency_lag1_support_fraction": 0.74609375,
+    "binary_older_history_support_fraction": 0.009114583333333334,
+    "frequency_older_history_support_fraction": 0.015625,
+    "median_binary_older_relative_gain": -0.0130468636566585,
+    "median_frequency_older_relative_gain": -0.00979093600414045,
+    "maximum_cell_target_pattern_fraction": 0.0625,
+    "cells_with_positive_median_amplification": 3
+  },
+  "by_phi_slow": [
+    {
+      "phi_slow": 0.85,
+      "cells": 8,
+      "supporting_cells": 0,
+      "median_pattern_fraction": 0,
+      "median_amplification": -0.002043143090169376,
+      "robust": false
+    },
+    {
+      "phi_slow": 0.95,
+      "cells": 8,
+      "supporting_cells": 0,
+      "median_pattern_fraction": 0,
+      "median_amplification": -0.0037111154612755872,
+      "robust": false
+    },
+    {
+      "phi_slow": 0.99,
+      "cells": 8,
+      "supporting_cells": 0,
+      "median_pattern_fraction": 0,
+      "median_amplification": -0.0024098611637953364,
+      "robust": false
+    }
+  ],
+  "interpretation": "A slow latent AR(1) persistence/suitability propensity combined with a faster conditional meadow-condition process is not sufficient, over the frozen grid, to reproduce the Tampa pattern of immediate memory in both state dimensions with robust older-history value only for coarse recorded state.",
+  "consequence": "Together with the prior thresholding-only falsification, the Tampa coarse-state older-history signal cannot currently be explained by simple lossy thresholding or by adding a slowly autocorrelated latent suitability process to fast condition. Stronger mechanisms such as explicit latent occupancy persistence, hysteresis/storage, slow regime states, or observation-state persistence remain candidates but are not yet identified.",
+  "claim_boundary": [
+    "This is response-free known-truth mechanism evidence, not an ecological replication.",
+    "Failure of this model does not prove biological long-memory.",
+    "Do not retune phi, tau, support rules, or the grid to rescue this v1 mechanism test."
+  ]
+}
