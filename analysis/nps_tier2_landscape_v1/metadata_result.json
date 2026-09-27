@@ -1,0 +1,18 @@
+{
+  "schema": "tampa.nps_tier2_landscape_state_v1.metadata_result",
+  "status": "metadata_inventory_complete",
+  "fingerprint": "18c7b15673a124bd0874d869b75ba99b6639003b67582f0c75f0b365d70dc2cf",
+  "safe_eml_fingerprint": "e53a66fbed9d76fa22da74b52c68103ca74a12d4b3d89279e553ad8366c73c0b",
+  "safe_eml": {
+    "eml_bytes": 1562476,
+    "eml_sha256": "80b5256eedd2e6f44e8bacd8e25fa046233ee915adf35b6531f55547854ad92e"
+  },
+  "eml_gets": 1,
+  "csv_gets": 0,
+  "csv_bytes_opened": 0,
+  "response_values_opened": false,
+  "next_gate": "map park/time/unit/species/cover/missing semantics from EML only; do not open CSV yet",
+  "authoritative_workflow_run_id": 36307677960,
+  "authoritative_artifact_id": 10927502786,
+  "authoritative_artifact_sha256": "ac118d04318ec77f7996c5eb123c84f919a6b09e7836295600b602cbe38d8164"
+}
