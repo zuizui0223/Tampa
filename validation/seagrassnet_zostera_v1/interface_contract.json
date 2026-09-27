@@ -1,0 +1,26 @@
+{
+  "schema": "tampa.seagrassnet_zostera_external_early_warning_v1.interface_contract",
+  "frozen_on": "2026-09-27",
+  "requires_preflight_fingerprint": "02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0",
+  "purpose": "Identify the public SeagrassNet biological-download request interface and contributor schema without submitting a biological-data request.",
+  "allowed_access": {
+    "download_page_gets": 1,
+    "template_gets": 1,
+    "same_origin_javascript_gets": "script src resources referenced by the frozen download page only",
+    "maximum_total_javascript_bytes": 5000000,
+    "biological_download_requests": 0,
+    "biological_download_bytes": 0,
+    "response_values_opened": false
+  },
+  "required_interface_evidence": [
+    "download endpoint or request path",
+    "HTTP method or JavaScript request construction",
+    "site UUID parameter shape",
+    "returned file/content expectation"
+  ],
+  "required_schema_evidence": [
+    "template fields/rows sufficient to understand species-by-transect quadrat layout",
+    "date/event identity field semantics discoverable from template or interface documentation before outcome access"
+  ],
+  "stop_rule": "If the biological download request cannot be frozen unambiguously from public interface code, stop before data access."
+}
