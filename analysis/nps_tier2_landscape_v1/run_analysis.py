@@ -46,7 +46,7 @@ def parse(data):
         if park not in C["source"]["allowed_parks"]: raise RuntimeError(f"unexpected_park:{park}")
         species=req(row["Species"],f"species row{i}")
         if species not in C["source"]["allowed_species"]: raise RuntimeError(f"unexpected_species:{species}")
-        date=datetime.strptime(req(row["Date"],f"date row{i}"),"%m/%d/%Y").date()
+        date=datetime.fromisoformat(req(row["Date"],f"date row{i}")).date()
         event=req(row["Event_Code"],f"event row{i}")
         q=req(row["Quadrat_Ltr"],f"quadrat row{i}")
         if q not in {"A","B","C","D"}: raise RuntimeError(f"unexpected_quadrat:{q}")
