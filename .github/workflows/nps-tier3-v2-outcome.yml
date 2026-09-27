@@ -1,0 +1,62 @@
+name: NPS Tier3 v2 once-only outcome
+
+on:
+  push:
+    branches:
+      - validation/nps-tier3-v2
+    paths:
+      - "validation/nps_tier3_v2/OUTCOME_AUTHORIZED_ONCE"
+
+jobs:
+  outcome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install frozen dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Static preflight before response access
+        run: |
+          python -m py_compile validation/nps_tier3_v2/outcome_runner.py
+          python - <<'PY'
+          import json
+          c=json.load(open("validation/nps_tier3_v2/final_outcome_contract.json"))
+          required=[
+            ("source","response_url"),("source","expected_bytes"),("source","expected_physical_header"),
+            ("parser","required_nonblank"),("parser","allowed_species_codes"),("parser","date_format"),
+            ("parser","quadrat_integer_range"),("parser","percent_cover_valid_range"),("parser","percent_cover_missing_token"),
+            ("annual_state","minimum_reobserved_quadrats"),("annual_state","minimum_quantitative_quadrats"),
+            ("model","baseline_numeric"),("model","baseline_categorical"),("model","augmentation"),
+            ("scoring","probability_clip")
+          ]
+          for a,b in required:
+              assert b in c[a], (a,b)
+          assert c["source"]["expected_bytes"]==1455261
+          assert len(c["source"]["expected_physical_header"])==37
+          print("pre-response contract audit passed")
+          PY
+      - name: Run one-shot NPS external endpoint
+        run: python validation/nps_tier3_v2/outcome_runner.py
+      - name: Require terminal result
+        if: always()
+        run: |
+          test -f validation/nps_tier3_v2/terminal_outcome_result.json
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/nps_tier3_v2/terminal_outcome_result.json"))
+          print(json.dumps({
+            "terminal_status":x["terminal_status"],
+            "counts_as_external_predictive_evidence":x["counts_as_external_predictive_evidence"],
+            "response_access_audit":x["response_access_audit"]
+          },indent=2))
+          PY
+      - name: Upload terminal certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nps-tier3-v2-terminal
+          path: validation/nps_tier3_v2/terminal_outcome_result.json

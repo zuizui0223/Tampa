@@ -1,0 +1,16 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v2.response_head_result",
+  "status": "gate1_response_identity_pass",
+  "fingerprint": "eedcb35e2f8586b1b1c2dab743e0f57a9158b70d41caaf42072491355c87bf37",
+  "safe_response_identity": {
+    "requested_url": "https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692",
+    "resolved_url": "https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692",
+    "content_length": 1455261,
+    "content_type": "application/vnd.ms-excel",
+    "etag": "",
+    "last_modified": ""
+  },
+  "response_body_gets": 0,
+  "response_body_bytes_opened": 0,
+  "response_values_opened": false
+}

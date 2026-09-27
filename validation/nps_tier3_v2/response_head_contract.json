@@ -1,0 +1,16 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v2.response_head_contract",
+  "frozen_on": "2026-09-27",
+  "requires_eml_fingerprint": "82e30224d5e2d70d2b8fd8407ebe5e022b504cb8d984b02825a69801c6f1a3f9",
+  "response_csv": {
+    "object_name": "Tier3_Seagrass_Data_Certified_2025.csv",
+    "url": "https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692"
+  },
+  "allowed_access": {
+    "head_requests": 1,
+    "response_body_gets": 0,
+    "response_body_bytes": 0,
+    "response_values": false
+  },
+  "pass_rule": "HEAD resolves to a downloadable non-empty CSV identity with positive Content-Length before the one-shot contract is frozen."
+}

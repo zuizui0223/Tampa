@@ -1,0 +1,10 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v2.authorization",
+  "attempt_id": "nps_tier3_zostera_quantitative_early_warning_v2",
+  "authorized": true,
+  "authorization_reason": "EML measurement semantics, permanent-unit definition, explicit 0-100 cover scale, NA missing semantics, exact response identity/header, annual-state rules, estimability minima, model arms, walk-forward split and terminal decision were frozen before any response CSV body access.",
+  "prior_response_gets": 0,
+  "prior_response_bytes_opened": 0,
+  "prior_response_values_opened": false,
+  "rerun_after_response_open": false
+}

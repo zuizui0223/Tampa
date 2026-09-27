@@ -1,0 +1,40 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v2.deep_eml_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Response-blind deep EML audit after v1 stopped before CSV access; inspect only measurement scales, bounds, missing-value codes and stable-unit definitions.",
+  "source": {
+    "reference_id": "2316692",
+    "metadata_xml_url": "https://irma.nps.gov/DataStore/DownloadFile/758145?Reference=2316692",
+    "response_csv_url": "https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692",
+    "response_csv_gets_before_v2": 0,
+    "response_csv_bytes_before_v2": 0
+  },
+  "targets": [
+    "Location",
+    "SGNetCode",
+    "Transect",
+    "Quadrat",
+    "Species",
+    "Date",
+    "Percent Cover"
+  ],
+  "allowed_access": {
+    "metadata_xml_gets": 1,
+    "response_csv_gets": 0,
+    "response_csv_bytes": 0,
+    "response_values": false
+  },
+  "decision_rule": {
+    "stable_unit": "Location + Transect + Quadrat must be defined without date and Quadrat must be permanent/repeated.",
+    "focal_taxon": "Zostera marina represented by metadata-declared code ZM.",
+    "quantitative_state": "Percent Cover must have a declared numeric scale and missing-code semantics.",
+    "eligible_target_observation": "same permanent unit in next year has at least one declared species observation; absence of ZM may then be interpreted only as 'ZM not observed among recorded seagrass species', never bare-habitat absence.",
+    "stop_if": "metadata cannot support the narrower re-observed vegetated-quadrat transition without inspecting CSV values."
+  },
+  "no_rescue": [
+    "Do not open the CSV in this gate.",
+    "Do not infer bare-quadrat observations from missing rows.",
+    "Do not change focal taxon after CSV access.",
+    "Any future endpoint must be frozen before CSV access."
+  ]
+}
