@@ -1,0 +1,27 @@
+{
+  "schema": "tampa.marinegeo_external_early_warning_v1.contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Untouched external preflight for the Tampa quantitative early-warning hypothesis using MarineGEO Global Seagrass Habitat Monitoring.",
+  "source": {
+    "dataset": "MarineGEO Global Seagrass Habitat Monitoring Data",
+    "publisher": "United States Geological Survey / Smithsonian MarineGEO network",
+    "gbif_doi": "10.15468/mt7ggd",
+    "gbif_uuid": "b7d63092-9005-486b-83d1-92e484b47206",
+    "obis_dataset": "beab1dcb-8235-4072-85cd-d8c3373e4ae0",
+    "public_temporal_scope": ["2021-01-20", "2022-07-21"],
+    "protocol": "three fixed 50-m transects per site, intended to be permanent and usually sampled annually; seagrass cover measured every 4 m along transects",
+    "response_payload_opened": false,
+    "response_values_opened": false
+  },
+  "frozen_hypothesis": "Among annual sampling units with recorded seagrass presence, lower source-year quantitative cover predicts greater next-year recorded-state instability beyond space/time/effort baseline.",
+  "estimability_gate": {
+    "minimum_scored_target_years": 4,
+    "minimum_temporal_contexts_needed_before_response_access": 5,
+    "failure_status": "terminal_non_estimable_external_validation"
+  },
+  "no_rescue": [
+    "Do not open occurrence or measurement payloads when the public temporal scope already fails the frozen minimum.",
+    "Do not lower the minimum scored target-year requirement.",
+    "Do not reinterpret multiple transects within a single year as temporal replication."
+  ]
+}
