@@ -1,0 +1,11 @@
+{
+  "fingerprint":"3416198aa2e4807096d72ba2ab5315acd1e1b064cdc04312bb2f14bf0025c9bc",
+  "next_gate":"none",
+  "readme_gets":1,
+  "reason":"HTTP Error 403: Forbidden",
+  "response_file_bytes_opened":0,
+  "response_file_gets":0,
+  "response_values_opened":false,
+  "schema":"tampa.northeast_seagrassnet_external_early_warning_v2.readme_result",
+  "status":"terminal_pre_response_readme_transport_or_parse_stop"
+}
