@@ -1,0 +1,15 @@
+{
+  "fingerprint":"82e30224d5e2d70d2b8fd8407ebe5e022b504cb8d984b02825a69801c6f1a3f9",
+  "status":"gate0_deep_eml_qualified",
+  "response_csv_gets":0,
+  "response_csv_bytes_opened":0,
+  "response_values_opened":false,
+  "safe_eml_fingerprint":"2e38d7bcc5fc0e5ea45a485d25695e8cea8d6b63a56140fdf665d11dfcc6a2fc",
+  "official_semantics":{
+    "stable_unit":"Location::Transect::Quadrat; Quadrat is permanent sampling location along 50-m transect",
+    "species_code":"ZM = Zostera marina",
+    "percent_cover_range":[0,100],
+    "percent_cover_missing":"NA = percent cover was not recorded"
+  },
+  "schema":"tampa.nps_tier3_external_early_warning_v2.deep_eml_result"
+}
