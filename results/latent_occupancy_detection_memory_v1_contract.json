@@ -1,0 +1,93 @@
+{
+  "schema": "tampa.latent_occupancy_detection_memory_v1.contract",
+  "frozen_on": "2026-09-27",
+  "status": "design_frozen_before_simulation_outcome",
+  "purpose": "Test whether explicit first-order latent patch occupancy persistence plus faster conditional cover and imperfect point detection is sufficient to reproduce the Tampa state-dimension memory pattern.",
+  "relationship_to_prior_falsifications": {
+    "thresholding_only": "not supported",
+    "slow_ar1_suitability_plus_fast_condition": "not supported",
+    "new_mechanism": "The latent occupied/unoccupied patch state itself persists through time and is only imperfectly observed through finite point samples."
+  },
+  "known_truth": {
+    "latent_occupancy": "z[i,t] is a first-order two-state Markov process",
+    "persistence": "P(z[t]=1 | z[t-1]=1) = p11",
+    "colonization": "P(z[t]=1 | z[t-1]=0) = p01",
+    "initial_state": "stationary occupancy probability p01 / (1 - p11 + p01)",
+    "fast_condition": "c[i,t] is a site-specific stationary Gaussian AR(1) on the logit scale",
+    "conditional_point_probability": "p_cond[i,t] = logistic(c[i,t])",
+    "shared_sampling": "k[i,t] ~ Binomial(point_count, z[i,t] * p_cond[i,t])",
+    "quantitative_observation": "frequency[i,t] = k[i,t] / point_count",
+    "coarse_observation": "binary[i,t] = 1 if k[i,t] > 0 else 0",
+    "false_negative": "When z=1 but k=0, the coarse recorded state is a non-detection of a truly occupied patch.",
+    "important_property": "Binary and quantitative observations come from the same sampled count; both latent components are first-order. Any older observed-history value is therefore a hidden-state/observation consequence rather than an explicitly higher-order ecological process."
+  },
+  "simulation_grid": {
+    "sites": 71,
+    "years": 29,
+    "replicates_per_cell": 32,
+    "p11": [0.90, 0.98],
+    "p01": [0.05, 0.15],
+    "phi_fast": [0.2, 0.6],
+    "fast_mean_logit": [-2.5, -1.0],
+    "point_count": [10, 25],
+    "fast_stationary_sd": 1.0,
+    "fast_site_intercept_sd": 0.5,
+    "total_cells": 32,
+    "total_replicates": 1024,
+    "random_seed": 2026092702
+  },
+  "prediction_design": {
+    "calibration_target_years": [2, 18],
+    "heldout_target_years": [19, 28],
+    "split": "Fit each arm once on target years 2-18 and score the unchanged fit separately in heldout target years 19-28.",
+    "learner_both_states_all_arms": "Ridge(alpha=1.0)",
+    "loss_both_states": "mean squared error on common [0,1] scale; binary MSE is Brier score",
+    "common_baseline_features": ["stable site identity", "standardized target year"],
+    "lag1_model": "common baseline + immediately previous observed state",
+    "older_history_model": "lag1 model + exponentially weighted all-prior observed state",
+    "exponential_tau_years": 10.0,
+    "tau_reason": "Transferred unchanged from the frozen Tampa coarse-state result and prior mechanism tests.",
+    "prediction_clip": [0.0, 1.0],
+    "same_rows_by_state": true
+  },
+  "within_replicate_support_rule": {
+    "paired_unit": "10 heldout target years",
+    "minimum_win_fraction": 0.60,
+    "median_delta_requirement": "candidate-minus-reference median target-year MSE delta < 0",
+    "signflip_test": "exact one-sided paired sign-flip test of mean target-year MSE delta; p < 0.05",
+    "lag1_support": "Apply rule to lag1 minus baseline.",
+    "older_history_support": "Apply rule to older-history minus lag1.",
+    "target_pattern": "lag1 supported for both binary and quantitative states AND older history supported for binary state AND older history not supported for quantitative state."
+  },
+  "cell_support_rule": "A cell supports the mechanism when at least 50% of its 32 replicates satisfy the complete target pattern and its median binary-minus-quantitative older-history relative-gain contrast is > 0.",
+  "global_support_rule": {
+    "minimum_supporting_cells": 24,
+    "minimum_global_target_pattern_fraction": 0.50,
+    "p11_robustness": "Both p11 levels must have at least 12 of their 16 cells satisfy the cell support rule.",
+    "all_conditions_required": true
+  },
+  "secondary_outputs": [
+    "latent occupancy prevalence",
+    "observed binary prevalence",
+    "false-negative rate among occupied site-years",
+    "support fractions by state",
+    "older-history relative gains and amplification",
+    "cell summaries by p11, p01, detectability regime and point count"
+  ],
+  "hard_stop": {
+    "if_not_supported": "Stop response-free mechanism hunting after this v1; retain mechanism as unresolved rather than retuning or adding another simulation family in the same analysis line.",
+    "if_supported": "Treat as sufficiency only; do not identify latent occupancy persistence as the empirical Tampa mechanism without independent ecological evidence."
+  },
+  "forbidden_after_opening": [
+    "Changing p11, p01, fast-state parameters, point counts or replicate count.",
+    "Changing tau, learner, loss, calibration/heldout years or support thresholds.",
+    "Dropping low-detectability or unfavorable cells.",
+    "Adding explicit higher-order ecological memory to rescue failure.",
+    "Calling a positive sufficiency result necessary or causal."
+  ],
+  "interpretation_boundary": [
+    "A positive result means first-order persistent latent occupancy plus imperfect observation is sufficient to generate the empirical-style memory contrast.",
+    "A negative result means thresholding, slow AR(1) suitability, and first-order latent occupancy/detection have all failed as simple sufficiency explanations under their frozen grids.",
+    "This is response-free known-truth evidence, not an ecological replication."
+  ]
+}
