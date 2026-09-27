@@ -1,0 +1,33 @@
+name: Validate NPS quantitative memory
+
+on:
+  push:
+    branches:
+      - analysis/nps-cover-memory-v1
+    paths:
+      - "analysis/13_nps_quantitative_memory.py"
+      - ".github/workflows/validate-nps-quantitative-memory.yml"
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Rebuild frozen NPS annual state
+        run: python analysis/11_nps_persistent_cover.py --out results/generated_nps_memory
+      - name: Test quantitative temporal memory
+        run: python analysis/13_nps_quantitative_memory.py --input results/generated_nps_memory --out results/generated_nps_memory
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nps-quantitative-memory-v1
+          path: results/generated_nps_memory/
