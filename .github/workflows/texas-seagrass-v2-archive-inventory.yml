@@ -1,0 +1,37 @@
+name: Texas seagrass v2 archive inventory
+
+on:
+  push:
+    branches:
+      - validation/texas-seagrass-v2
+    paths:
+      - "validation/texas_seagrass_v2/iso_metadata_result.json"
+      - "validation/texas_seagrass_v2/archive_inventory_contract.json"
+      - "validation/texas_seagrass_v2/archive_inventory.py"
+      - ".github/workflows/texas-seagrass-v2-archive-inventory.yml"
+  workflow_dispatch:
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read ZIP central directories only
+        run: python validation/texas_seagrass_v2/archive_inventory.py
+      - name: Assert no entry payload or biological values opened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/texas_seagrass_v2/archive_inventory_result.json"))
+          assert x["zip_entry_payload_requests"]==0
+          assert x["decompressed_data_bytes"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: texas-seagrass-v2-archive-inventory
+          path: validation/texas_seagrass_v2/archive_inventory_result.json
