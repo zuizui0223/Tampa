@@ -1,0 +1,76 @@
+{
+  "schema": "tampa.ne_seagrassnet_state_memory_v1.analysis_contract",
+  "frozen_on": "2026-09-27",
+  "requires_candidate_contract": "validation/ne_seagrassnet_memory_v1/candidate_contract.json",
+  "purpose": "Matched external test of whether older ecological history has different predictive value for coarse presence and quantitative percent cover under one SeagrassNet sampling design.",
+  "pre_response_schema_gate": {
+    "primary_stable_unit": "site_id x quadrat_id",
+    "requirement": "README/schema must state or imply an identifier that is reused for the same quadrat across years within site. If quadrat labels are survey-specific or cannot be linked longitudinally without response values, terminate before opening biological CSV.",
+    "required_fields": [
+      "site identifier",
+      "calendar year or survey date",
+      "stable quadrat identifier",
+      "Zostera marina percent cover on a 0-100 scale"
+    ],
+    "zero_semantics": "0 percent cover must be a valid observed value and must represent recorded absence of Zostera in a sampled quadrat; missing/NA must remain distinct from zero.",
+    "forbidden_fallback": "Do not switch to site-year, transect-year, or another coarser unit after response opening if stable quadrat identity fails."
+  },
+  "panel_construction": {
+    "coarse_state": "1 if observed Zostera percent cover > 0 in the stable quadrat-year; 0 if observed percent cover == 0",
+    "quantitative_state": "observed Zostera percent cover / 100 on [0,1]",
+    "missing": "exclude only truly unavailable quadrat-years; never convert missing to zero",
+    "transition_requirement": "target year must equal source year + 1 for the same stable unit",
+    "history_requirement": "primary older-history comparison requires at least two observed states strictly older than the source year",
+    "matched_rows": "coarse and quantitative analyses use the same eligible stable-unit x target-year rows wherever both responses are defined"
+  },
+  "prediction_design": {
+    "split": "strict walk-forward by target calendar year; target year y trains only on eligible rows with target year < y",
+    "minimum_scored_target_years": 5,
+    "baseline": [
+      "stable site identity",
+      "stable quadrat identity nested within site",
+      "target calendar year"
+    ],
+    "lag1_increment": "source-year state only",
+    "older_history_operator": {
+      "type": "exponentially weighted mean of all observed states strictly before the source year",
+      "weight": "exp(-age_years / tau)",
+      "primary_tau_years": 10,
+      "state_specific_tau_forbidden": true,
+      "post_response_tau_retuning_forbidden": true
+    },
+    "learner": "Ridge(alpha=1.0) for both state dimensions",
+    "common_loss": "mean squared error on [0,1] for both coarse and quantitative states",
+    "prediction_clip": [0,1],
+    "reason_for_common_learner_and_loss": "remove learner-family and incompatible-loss alternatives from the state-dimension contrast"
+  },
+  "support_rules": {
+    "lag1": "supported separately for a state dimension only if lag1 beats baseline in >=60% of scored target years, median paired MSE delta (lag1-baseline) < 0, and one-sided paired target-year sign-flip p < 0.05",
+    "older_history": "supported separately for a state dimension only if older-history arm beats lag1 in >=60% of scored target years, median paired MSE delta (older-lag1) < 0, and one-sided paired target-year sign-flip p < 0.05",
+    "primary_state_dimension_prediction": "lag1 support for both dimensions; older-history support for coarse presence but not quantitative cover",
+    "terminal_classes": [
+      "predicted_state_dimension_pattern",
+      "coarse_and_quantitative_both_long_memory",
+      "neither_long_memory",
+      "quantitative_only_long_memory",
+      "non_estimable"
+    ]
+  },
+  "estimability": {
+    "minimum_unique_stable_units": 20,
+    "minimum_matched_transitions": 150,
+    "minimum_coarse_zero_targets": 20,
+    "minimum_coarse_one_targets": 80,
+    "minimum_scored_target_years": 5,
+    "per_target_year_training_min_zero": 10,
+    "per_target_year_training_min_one": 40,
+    "failure": "terminal_non_estimable_without_model_score"
+  },
+  "independence_and_claim_boundary": [
+    "This panel is external and published before the Tampa hypothesis, but some sites overlap NPS/SeagrassNet monitoring already represented elsewhere; do not call it a fully independent biological replication.",
+    "The analysis tests predictive memory structure, not causal ecological memory mechanism.",
+    "Do not infer that a longer predictive history in binary state is demographic persistence.",
+    "Do not exclude sites, years, or adverse results after response access.",
+    "Do not change stable unit, threshold, tau, learner, or loss after response access."
+  ]
+}
