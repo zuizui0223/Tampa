@@ -96,6 +96,16 @@ The direction is spatially heterogeneous: Duck Harbor Beach, Fire Island and Tin
 
 This reproduces the **state-decoupling** pattern in a different species (*Zostera marina*) and monitoring network. Because the response had already been opened by the frozen NPS estimability test, this is post-hoc external ecological replication, not untouched predictive confirmation.
 
+Sensitivity analysis supports that interpretation:
+
+- removing each monitored location in turn leaves the pooled within-transect cover slope negative (**−1.82 to −0.90 percentage points yr⁻¹**);
+- equal-node mean slope is **−0.70** and median node slope **−0.51 percentage points yr⁻¹**;
+- **12/15** repeated transects decline from their first to last eligible year;
+- three 2022 Tingles Island identities (`A::MD12.2`, `B::MD12.2`, `C::MD12.2`) are reverse-ID candidates relative to the long-term IDs. They are **not repaired**; because each occurs in only one year, they do not enter repeated-transect slopes.
+
+Thus the external result is not driven by a single declining location or by silently repairing source identity. Moriches Bay remains a genuine positive-trend counterexample, so the claim is **state decoupling with spatially heterogeneous quantitative trajectories**, not universal decline.
+
+
 
 ### 3. Community reorganization is bay-specific
 
@@ -190,6 +200,7 @@ python analysis/07_environmental_coupling.py --input results/generated --out res
 python analysis/08_seasonal_stress_screen.py --input results/generated --out results/generated
 python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
 python analysis/11_nps_persistent_cover.py --out results/generated_nps_posthoc
+python analysis/12_nps_persistent_cover_sensitivity.py --input results/generated_nps_posthoc --out results/generated_nps_posthoc
 ```
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.

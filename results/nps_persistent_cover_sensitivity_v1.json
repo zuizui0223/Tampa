@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.nps_persistent_cover_sensitivity_v1",
+  "status": "sensitivity_supports_external_state_decoupling",
+  "authoritative_workflow_run_id": 36307223132,
+  "authoritative_artifact_id": 10927412406,
+  "authoritative_artifact_sha256": "0fd069ca9db3f76a5f19479a2e8992cde213d8347ca90920fb7336b343e185d5",
+  "base_result": "results/nps_persistent_cover_v1.json",
+  "repeated_node_count": 15,
+  "pooled_within_node_slope_per_year": -1.5227180757670744,
+  "equal_node_weighting": {
+    "mean_node_slope_per_year": -0.7016685233483199,
+    "median_node_slope_per_year": -0.5107257261926985
+  },
+  "leave_one_location_out": {
+    "Duck Harbor Beach": {"remaining_nodes": 12, "pooled_within_node_slope_per_year": -0.897887527584196, "negative_node_slopes": 8, "positive_node_slopes": 4},
+    "Fire Island": {"remaining_nodes": 12, "pooled_within_node_slope_per_year": -1.7603220165682607, "negative_node_slopes": 8, "positive_node_slopes": 4},
+    "Moriches Bay": {"remaining_nodes": 12, "pooled_within_node_slope_per_year": -1.536965055618396, "negative_node_slopes": 11, "positive_node_slopes": 1},
+    "Pleasant Bay": {"remaining_nodes": 12, "pooled_within_node_slope_per_year": -1.8228314214406471, "negative_node_slopes": 9, "positive_node_slopes": 3},
+    "Tingles Island": {"remaining_nodes": 12, "pooled_within_node_slope_per_year": -1.5725402835110285, "negative_node_slopes": 8, "positive_node_slopes": 4}
+  },
+  "all_leave_one_location_out_slopes_negative": true,
+  "leave_one_location_out_slope_range": [-1.8228314214406471, -0.897887527584196],
+  "first_to_last_cover_change": {
+    "negative_nodes": 12,
+    "positive_nodes": 3,
+    "zero_nodes": 0,
+    "median_change": -11.125
+  },
+  "single_year_reverse_id_candidate_count": 3,
+  "single_year_reverse_id_candidates": [
+    {"node_id": "A::MD12.2", "reverse_repeated_node_id": "MD12.2::A", "Location": "Tingles Island", "year": 2022, "focal_mean_cover": 0.0},
+    {"node_id": "B::MD12.2", "reverse_repeated_node_id": "MD12.2::B", "Location": "Tingles Island", "year": 2022, "focal_mean_cover": 10.583333333333334},
+    {"node_id": "C::MD12.2", "reverse_repeated_node_id": "MD12.2::C", "Location": "Tingles Island", "year": 2022, "focal_mean_cover": 0.4166666666666667}
+  ],
+  "interpretation": "The external NPS state-decoupling result is robust to removal of any one monitored location and to equal-node weighting. Three 2022 reverse-ID candidates at Tingles Island are retained without repair and, being single-year identities, do not enter repeated-node slope estimation.",
+  "claim_boundary": [
+    "No source identity is repaired or remapped post hoc.",
+    "Leave-one-location-out robustness does not imply a decline at every location; Moriches Bay increases.",
+    "The result remains post-hoc ecological replication rather than prospective predictive confirmation.",
+    "No environmental cause is identified."
+  ]
+}
