@@ -61,6 +61,7 @@
     "exact_header_order_required": true,
     "exact_row_width": 37,
     "required_nonblank": [
+      "ID",
       "EventID",
       "Location",
       "SGNetCode",
