@@ -1,0 +1,48 @@
+{
+  "schema": "tampa.seagrassnet_zostera_external_early_warning_v1.preflight_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Response-blind interface and schema qualification for a multi-site SeagrassNet Zostera external validation.",
+  "scientific_hypothesis": "Among annual transect-years with recorded Zostera marina presence, lower source-year quantitative percent cover adds out-of-time information about next-year recorded loss beyond site/time/effort.",
+  "candidate_universe": {
+    "geography": ["United States of America", "Canada"],
+    "site_selection": "all SeagrassNet sites listed under United States of America or Canada on the public site/download directory; no selection by observed cover trajectory",
+    "transects": ["A", "B", "C"],
+    "focal_taxon": "Zostera marina",
+    "late_or_sparse_sites": "retained through data parse and removed only by the frozen estimability rules, never by observed predictive sign"
+  },
+  "metadata_sources": {
+    "sites_page": "https://www.seagrassnet.org/sites",
+    "download_page": "https://www.seagrassnet.org/download",
+    "upload_template": "https://www.seagrassnet.org/templates/data-upload-template.csv"
+  },
+  "allowed_preflight_access": {
+    "directory_html_gets": 2,
+    "site_page_gets": "only pages belonging to the frozen USA+Canada candidate universe",
+    "template_csv_gets": 1,
+    "downloaded_biological_data_requests": 0,
+    "downloaded_biological_data_bytes": 0,
+    "response_values_opened": false
+  },
+  "requirements": {
+    "download_form_action_and_method_identifiable": true,
+    "site_identifier_values_identifiable_without biological response data": true,
+    "template_defines_date_or year, site, transect, species/taxon, and percent-cover semantics": true,
+    "zero_and_missing_semantics": "must be frozen before any biological download; if template alone is insufficient, public protocol documentation may be used but biological values may not",
+    "minimum_candidate_sites_before_response": 5
+  },
+  "future_estimability_floor": {
+    "minimum_annual_transect_years": 150,
+    "minimum_source_positive_consecutive_transitions": 80,
+    "minimum_recorded_losses": 10,
+    "minimum_recorded_persistence": 40,
+    "minimum_scored_target_years": 4,
+    "per_target_year_training_min_prior_losses": 5,
+    "per_target_year_training_min_prior_persistence": 30
+  },
+  "no_rescue": [
+    "Do not open downloaded biological site data during preflight.",
+    "Do not select sites because they show decline, loss, recovery, or favorable model performance.",
+    "Do not treat missing cover as zero.",
+    "Do not weaken estimability floors after data access."
+  ]
+}
