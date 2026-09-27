@@ -1,0 +1,23 @@
+{
+  "schema":"tampa.alaska_eelgrass_external_early_warning_v2.terminal_record",
+  "status":"terminal_pre_response_endpoint_semantics_stop",
+  "source_doi":"10.5066/F7RV0KV9",
+  "reason":"Official FGDC metadata defines valid PercentCover estimates in the observed range 12-90 percent and defines '.' as no estimate. No valid 0-percent/recorded-absence state is defined, so next-year recorded loss cannot be constructed without treating missing estimation as absence.",
+  "official_schema":{
+    "stable_unit":"SiteID",
+    "time":"Year",
+    "quantitative_state":"PercentCover",
+    "valid_percent_cover_range":[12,90],
+    "null_symbol":".",
+    "null_meaning":"no estimate for the site"
+  },
+  "response_csv_gets":0,
+  "response_csv_body_bytes_read":0,
+  "response_data_rows_opened":0,
+  "response_values_opened":false,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "interpretation":"Alaska v2 is structurally suitable for repeated quantitative cover analysis but cannot test the frozen Tampa endpoint of next-year recorded loss. It neither supports nor contradicts the early-warning hypothesis.",
+  "no_rescue":"Do not reinterpret '.' as absence, do not invent a cover=0 state, and do not change the endpoint after inspecting this metadata."
+}
