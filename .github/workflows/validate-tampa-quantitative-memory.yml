@@ -8,6 +8,7 @@ on:
     paths:
       - "analysis/03_quantitative_state.py"
       - "analysis/14_tampa_matched_quantitative_memory.py"
+      - "analysis/15_tampa_cover_index_memory.py"
       - ".github/workflows/validate-tampa-quantitative-memory.yml"
   workflow_dispatch:
 
@@ -25,8 +26,10 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Rebuild Tampa quantitative annual state
         run: python analysis/03_quantitative_state.py --out results/generated_tampa_quant_memory
-      - name: Test matched quantitative memory
+      - name: Test matched quantitative frequency memory
         run: python analysis/14_tampa_matched_quantitative_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
+      - name: Replicate with Braun-Blanquet cover-index memory
+        run: python analysis/15_tampa_cover_index_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
       - name: Upload result
         if: always()
         uses: actions/upload-artifact@v4
