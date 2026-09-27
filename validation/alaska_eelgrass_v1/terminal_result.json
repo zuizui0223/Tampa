@@ -1,0 +1,21 @@
+{
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v1.terminal_record",
+  "status": "terminal_pre_response_header_transport_stop",
+  "reason": "The frozen exact-byte header gate requested Range bytes=0-0 but the ScienceBase file endpoint returned HTTP 200 rather than required HTTP 206.",
+  "workflow_run_id": 36286176186,
+  "workflow_head_sha": "1d4fab78b9390f9bc085f49d7a21a996d13b1b03",
+  "gate0_metadata_status": "pass",
+  "gate0_fingerprint": "a835924d48eeac68b2d42b80ded90372d47a85d55a479417f3d3adaa600a21d2",
+  "gate1_fingerprint": "284ee391fbebd3382d5b2bad57eaba9c8f39a9d8d00221fc6a77452011c66b32",
+  "source_doi": "10.5066/F7RV0KV9",
+  "source_csv": "KATMKEFJPWS_2008-2016_Zostera_Percent_Cover_Summary.csv",
+  "response_csv_downloads_completed": 0,
+  "response_csv_body_bytes_read": 0,
+  "response_data_rows_opened": 0,
+  "response_values_opened": false,
+  "predictive_model_fits": 0,
+  "predictive_scores": 0,
+  "counts_as_external_predictive_evidence": false,
+  "interpretation": "Alaska v1 stopped before biological response access. It neither supports nor contradicts the Tampa quantitative early-warning hypothesis.",
+  "next_rule": "Do not repair Alaska v1. A separately versioned schema route may use only official response-independent metadata/documentation before any CSV row/value access."
+}
