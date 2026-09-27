@@ -1,0 +1,49 @@
+{
+  "schema": "tampa.ne_seagrassnet_state_memory_v1.candidate_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Published external matched-panel test of state-dimension-dependent ecological memory using Northeast USA SeagrassNet Zostera marina monitoring.",
+  "independence_boundary": {
+    "claim": "external published matched panel, not fully independent monitoring observations",
+    "reason": "Some Northeast USA SeagrassNet sites overlap monitoring networks represented in the already-opened NPS panel.",
+    "forbidden_claim": "untouched fully independent replication"
+  },
+  "source": {
+    "repository": "Dryad",
+    "doi": "10.5061/dryad.z34tmpggg",
+    "title": "Northeast USA SeagrassNet Zm percent cover",
+    "published": "2022-06-28",
+    "stated_sites": 8,
+    "stated_monitoring_window": "site-specific 9-17 year periods between 2003 and 2021",
+    "protocol": "SeagrassNet; three fixed 50-m transects per site; twelve permanent/randomized quadrat positions per transect depending source implementation",
+    "focal_taxon": "Zostera marina",
+    "public_files_from_landing_page": [
+      {"name": "README_seagrass_for_modeling.csv", "display_size": "1.10 KB", "role": "documentation/schema only"},
+      {"name": "seagrass_for_modeling.csv", "display_size": "156.62 KB", "role": "biological response"}
+    ],
+    "response_file_opened_before_contract": false,
+    "response_values_opened_before_contract": false
+  },
+  "hypothesis": {
+    "primary": "Under one sampling design, previous-year state should improve prediction for both coarse presence and quantitative cover, while history older than one year should add more robust information to coarse presence than to quantitative cover.",
+    "matched_unit": "same site/transect/quadrat-or-equivalent repeated sampling unit and target year",
+    "history_operator": "same exponential all-prior-state operator for both state dimensions",
+    "primary_tau_years": 10,
+    "tau_reason": "pre-frozen from the earlier Tampa binary recorded-state analysis before this external matched-panel candidate is opened",
+    "coarse_state": "Zostera recorded presence/absence",
+    "quantitative_state": "Zostera percent cover",
+    "lag1_prediction": "lag-1 should add information beyond stable sampling-unit identity and target year for both dimensions",
+    "older_history_prediction": "tau=10 older history should satisfy the predeclared support rule for coarse state but not quantitative cover"
+  },
+  "gate0": {
+    "allowed": "Dryad dataset/version/file metadata JSON only",
+    "forbidden": "download or preview of seagrass_for_modeling.csv",
+    "response_bytes_allowed": 0,
+    "response_values_allowed": false
+  },
+  "no_rescue": [
+    "Do not call this panel fully independent of NPS monitoring.",
+    "Do not choose tau after response access.",
+    "Do not switch to a different response dimension after seeing results.",
+    "Do not drop adverse sites or target years based on outcomes."
+  ]
+}
