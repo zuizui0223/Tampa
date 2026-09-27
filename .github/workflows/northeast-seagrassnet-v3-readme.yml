@@ -1,0 +1,35 @@
+name: Northeast SeagrassNet v3 final README transport
+
+on:
+  push:
+    branches:
+      - validation/northeast-seagrassnet-v3
+    paths:
+      - "validation/northeast_seagrassnet_v3/**"
+      - ".github/workflows/northeast-seagrassnet-v3-readme.yml"
+  workflow_dispatch:
+
+jobs:
+  readme-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attempt frozen browser-identical README request
+        run: python validation/northeast_seagrassnet_v3/readme_transport.py
+      - name: Assert response remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/northeast_seagrassnet_v3/readme_transport_result.json"))
+          assert x["response_file_gets"]==0
+          assert x["response_file_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload v3 README certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: northeast-seagrassnet-v3-readme
+          path: validation/northeast_seagrassnet_v3/readme_transport_result.json
