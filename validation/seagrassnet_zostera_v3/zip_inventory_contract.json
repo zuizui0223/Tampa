@@ -1,0 +1,26 @@
+{
+  "schema":"tampa.seagrassnet_zostera_external_early_warning_v3.zip_inventory_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Read only the ZIP central directory of the frozen 48-site USA+Canada SeagrassNet download, treating server-generated attachment UUIDs as non-identity metadata.",
+  "candidate_universe":{
+    "v1_preflight_fingerprint":"02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0",
+    "candidate_site_count":48,
+    "candidate_uuid_sha256":"6a727f362a7782b4a159b98bc942a4e474032b9b0c06a0afdaf5f0718401c95c"
+  },
+  "endpoint":{
+    "url":"https://www.seagrassnet.org/api/download",
+    "query_parameter":"sites",
+    "request_shape":"comma-joined frozen site UUIDs",
+    "expected_content_type":"application/zip"
+  },
+  "allowed_access":{
+    "head_requests":1,
+    "archive_metadata_range_requests":1,
+    "maximum_archive_metadata_bytes":65557,
+    "member_payload_requests":0,
+    "member_payload_bytes":0,
+    "response_values_opened":false
+  },
+  "identity_rule":"Require frozen candidate UUID hash, HTTP 2xx HEAD, application/zip, and a valid central directory. Ignore only the random UUID token in Content-Disposition filename.",
+  "stop_rule":"If Range is not honored with HTTP 206, if central directory is incomplete/malformed/ZIP64, or candidate hash changes, stop before member payload access."
+}
