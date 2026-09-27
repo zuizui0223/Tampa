@@ -1,0 +1,35 @@
+name: NOVANA Zostera Gate0 schema only
+
+on:
+  push:
+    branches:
+      - validation/novana-zostera-v1
+    paths:
+      - "validation/novana_zostera_v1/**"
+      - ".github/workflows/novana-zostera-gate0.yml"
+  workflow_dispatch:
+
+jobs:
+  schema-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read WFS schema only
+        run: python validation/novana_zostera_v1/gate0_schema.py
+      - name: Assert no response rows were opened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/novana_zostera_v1/gate0_schema_result.json"))
+          assert x["get_feature_requests"]==0
+          assert x["csv_download_requests"]==0
+          assert x["biological_feature_rows_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: novana-zostera-gate0-schema
+          path: validation/novana_zostera_v1/gate0_schema_result.json

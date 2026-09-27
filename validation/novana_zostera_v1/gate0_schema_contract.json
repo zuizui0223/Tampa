@@ -1,0 +1,49 @@
+{
+  "schema": "tampa.novana_zostera_external_early_warning_v1.gate0_schema_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Response-blind schema qualification of Danish NOVANA marine eelgrass monitoring for external testing of the Tampa quantitative early-warning hypothesis.",
+  "source": {
+    "dataset_name": "Ålegræs Marin",
+    "semanticgis_reference": "sgis-001290",
+    "dmp_id": "urn:dmp:ds:aalegraes-marin",
+    "wfs_endpoint": "https://vanda-geo.miljoeportal.dk/geoserver/wfs",
+    "type_name": "vanda:aalegraes-marin",
+    "public_description": "Dataset contains all species from the marine eelgrass survey subject in VanDa and includes place, time, transect, measurement point, species, cover, main distribution and maximum depth limit.",
+    "novana_reference_period_for_candidate": [2011, 2022],
+    "focal_taxon": "Zostera marina",
+    "response_feature_rows_opened_before_contract": 0,
+    "response_values_opened_before_contract": false
+  },
+  "allowed_gate0_access": {
+    "requests": [
+      "WFS DescribeFeatureType for exactly vanda:aalegraes-marin"
+    ],
+    "get_feature_requests": 0,
+    "csv_download_requests": 0,
+    "biological_feature_rows": 0,
+    "response_values": false
+  },
+  "required_schema_roles": [
+    "stable transect identifier",
+    "measurement-point identifier or position",
+    "survey time/date/year",
+    "species identity",
+    "quantitative cover"
+  ],
+  "hypothesis_boundary": {
+    "endpoint": "Among source-year repeated sampling units with recorded Zostera presence, predict next-year recorded loss at the same stable unit.",
+    "augmentation": "source-year quantitative Zostera cover state only",
+    "baseline": "space/time/effort and stable-unit context only",
+    "split": "strict walk-forward by target year",
+    "primary_metric": "binary log loss",
+    "interpretation": "recorded-state instability, not demographic extinction"
+  },
+  "estimability_minima_carried_forward": {
+    "minimum_annual_units": 200,
+    "minimum_source_positive_consecutive_transitions": 100,
+    "minimum_recorded_losses": 12,
+    "minimum_recorded_persistence": 60,
+    "minimum_scored_target_years": 5
+  },
+  "stop_rule": "If required schema roles cannot be mapped from response-independent schema/official metadata before GetFeature access, terminate v1 pre-response."
+}

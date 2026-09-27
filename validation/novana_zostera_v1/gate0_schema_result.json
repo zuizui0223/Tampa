@@ -1,0 +1,28 @@
+{
+  "biological_feature_rows_opened": 0,
+  "csv_download_requests": 0,
+  "describe_feature_type_requests": 1,
+  "fingerprint": "4acefae2010dac9d38790de0713b21577a5409a2c2a2474e11aac81127e6db82",
+  "get_feature_requests": 0,
+  "next_gate": "map required semantic roles using only this schema plus official dataset documentation; do not issue GetFeature yet",
+  "response_values_opened": false,
+  "safe_schema": {
+    "element_count": 8,
+    "elements": [
+      {"maxOccurs":"1","minOccurs":"1","name":"Stationsnummer","nillable":"false","type":"xsd:string"},
+      {"maxOccurs":"1","minOccurs":"1","name":"Stationsnavn","nillable":"false","type":"xsd:string"},
+      {"maxOccurs":"1","minOccurs":"0","name":"Stationsejer","nillable":"true","type":"xsd:string"},
+      {"maxOccurs":"1","minOccurs":"0","name":"Lokation","nillable":"true","type":"gml:GeometryPropertyType"},
+      {"maxOccurs":"1","minOccurs":"0","name":"SenesteUndersoegelsesDato","nillable":"true","type":"xsd:string"},
+      {"maxOccurs":"1","minOccurs":"0","name":"FoersteUndersoegelsesDato","nillable":"true","type":"xsd:string"},
+      {"maxOccurs":"1","minOccurs":"1","name":"Link","nillable":"false","type":"xsd:string"},
+      {"maxOccurs":"","minOccurs":"","name":"aalegraes-marin","nillable":"","type":"vanda:aalegraes-marinType"}
+    ],
+    "request_url":"https://vanda-geo.miljoeportal.dk/geoserver/wfs?service=WFS&version=2.0.0&request=DescribeFeatureType&typeNames=vanda%3Aaalegraes-marin",
+    "response_bytes":1590,
+    "response_sha256":"ac8cdd6b9674ab84ef06602ae3dda736ac71dac4a01e9bb1c6cf7b1136f5df93"
+  },
+  "safe_schema_fingerprint":"614b7c2788b100ee23992982ee4345eb3a2ba2174628c0196f0b7e59eff8e31a",
+  "schema":"tampa.novana_zostera_external_early_warning_v1.gate0_schema_result",
+  "status":"gate0_schema_inventory_complete"
+}
