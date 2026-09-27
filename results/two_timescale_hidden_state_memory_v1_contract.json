@@ -51,9 +51,7 @@
     "random_seed": 2026092701
   },
   "prediction_design": {
-    "first_scored_target_year": 19,
-    "last_scored_target_year": 28,
-    "strict_walk_forward": "For target year y, fit only rows with target year < y.",
+    "strict_walk_forward": false,
     "learner_both_states_all_arms": "Ridge(alpha=1.0)",
     "loss_both_states": "mean squared error on common [0,1] scale; binary MSE is Brier score",
     "common_baseline_features": [
@@ -68,7 +66,16 @@
       0,
       1
     ],
-    "same_rows_by_state": true
+    "same_rows_by_state": true,
+    "calibration_target_years": [
+      2,
+      18
+    ],
+    "heldout_target_years": [
+      19,
+      28
+    ],
+    "split": "Fit each arm once on target years 2-18; score the unchanged fitted model separately in heldout target years 19-28."
   },
   "within_replicate_support_rule": {
     "paired_unit": "scored target year",
@@ -107,19 +114,36 @@
     "A negative result weakens this specific two-timescale explanation but does not prove the Tampa coarse-state signal is artifactual.",
     "This is response-free known-truth mechanism evidence, not an additional ecological dataset."
   ],
-  "pre_outcome_amendment": {
-    "timing": "before any simulation outcome or artifact was opened",
-    "change": "first_scored_target_year changed from 10 to 19; last remains 28",
-    "reason": "Preserve the predeclared exact sign-flip test while matching the earlier thresholding known-truth 10-year heldout window and keeping computation tractable.",
-    "unchanged": [
-      "known-truth generative process",
-      "simulation grid",
-      "replicate count",
-      "tau=10",
-      "learner and loss",
-      "walk-forward rule",
-      "support thresholds",
-      "global decision rule"
-    ]
-  }
+  "pre_outcome_amendments": [
+    {
+      "timing": "before any simulation outcome or artifact was opened",
+      "change": "first_scored_target_year changed from 10 to 19; last remains 28",
+      "reason": "Preserve the predeclared exact sign-flip test while matching the earlier thresholding known-truth 10-year heldout window and keeping computation tractable.",
+      "unchanged": [
+        "known-truth generative process",
+        "simulation grid",
+        "replicate count",
+        "tau=10",
+        "learner and loss",
+        "walk-forward rule",
+        "support thresholds",
+        "global decision rule"
+      ]
+    },
+    {
+      "timing": "before any simulation outcome or artifact was opened",
+      "change": "Replace repeated walk-forward refits with one frozen calibration fit on target years 2-18 and year-wise scoring on heldout years 19-28.",
+      "reason": "Match the earlier thresholding-only known-truth split exactly and reduce redundant fitting while preserving the paired 10-year exact sign-flip endpoint.",
+      "unchanged": [
+        "known-truth generative process",
+        "simulation grid",
+        "replicate count",
+        "tau=10",
+        "learner and loss",
+        "heldout target years 19-28",
+        "support thresholds",
+        "global decision rule"
+      ]
+    }
+  ]
 }
