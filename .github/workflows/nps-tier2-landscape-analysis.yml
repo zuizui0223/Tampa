@@ -1,0 +1,30 @@
+name: NPS Tier2 cross-scale landscape ecology
+
+on:
+  push:
+    branches:
+      - analysis/nps-tier2-landscape-v1
+    paths:
+      - "analysis/nps_tier2_landscape_v1/deep_eml_result.json"
+      - "analysis/nps_tier2_landscape_v1/analysis_contract.json"
+      - "analysis/nps_tier2_landscape_v1/run_analysis.py"
+      - ".github/workflows/nps-tier2-landscape-analysis.yml"
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python analysis/nps_tier2_landscape_v1/run_analysis.py --out results/generated_nps_tier2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nps-tier2-landscape-state
+          path: results/generated_nps_tier2/
