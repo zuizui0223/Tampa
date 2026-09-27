@@ -1,0 +1,67 @@
+{
+  "schema": "tampa.threshold_induced_memory_known_truth_v1.result",
+  "status": "mechanism_not_supported",
+  "authoritative_workflow_run_id": 36316907329,
+  "authoritative_artifact_id": 10930523571,
+  "authoritative_artifact_sha256": "035f8e027f50732b16dff2741b9b86d4eb62345d21e17184991f0721f971833c",
+  "known_truth": {
+    "latent_markov_order": 1,
+    "binary_and_frequency_share_same_binomial_count": true,
+    "learner_same_both_states": "Ridge(alpha=1.0)",
+    "loss_same_both_states": "MSE on [0,1]",
+    "exponential_tau_years": 10.0
+  },
+  "design": {
+    "cells": 24,
+    "replicates_per_cell": 32,
+    "total_replicates": 768,
+    "sites": 71,
+    "years": 29,
+    "phi": [0.3, 0.7, 0.9],
+    "mean_logit": [-4.0, -2.5],
+    "latent_stationary_sd": [0.75, 1.5],
+    "point_count": [10, 25]
+  },
+  "primary": {
+    "supporting_cells": 1,
+    "required_supporting_cells": 18,
+    "global_positive_amplification_fraction": 0.3059895833333333,
+    "required_global_positive_fraction": 0.70,
+    "robust_phi_levels": 0,
+    "required_robust_phi_levels": 2,
+    "global_median_amplification": -0.004610871844774022,
+    "global_median_binary_relative_gain": -0.0023433187737775365,
+    "global_median_frequency_relative_gain": 0.0001688944626406323,
+    "support_rule_passed": false
+  },
+  "by_phi": [
+    {
+      "phi": 0.3,
+      "cells": 8,
+      "supporting_cells": 0,
+      "median_cell_amplification": -0.004505532721396407,
+      "phi_level_robust": false
+    },
+    {
+      "phi": 0.7,
+      "cells": 8,
+      "supporting_cells": 0,
+      "median_cell_amplification": -0.0031257415568520285,
+      "phi_level_robust": false
+    },
+    {
+      "phi": 0.9,
+      "cells": 8,
+      "supporting_cells": 1,
+      "median_cell_amplification": -0.004499192097684259,
+      "phi_level_robust": false
+    }
+  ],
+  "interpretation": "The frozen known-truth design did not show robust thresholding amplification. Under a first-order latent ecological process, converting the same Binomial point sample from quantitative frequency to binary detection was not sufficient to create the Tampa-like older-history advantage. This weakens a coarse-graining-only explanation for the field contrast.",
+  "claim_boundary": [
+    "This negative sufficiency test does not prove biological long-memory in Tampa.",
+    "It rejects only the tested thresholding-only mechanism family over the frozen parameter grid.",
+    "Other observation models, hidden environmental states, demographic processes, or model-response interactions remain possible.",
+    "This is response-free known-truth mechanism evidence, not an additional ecological dataset."
+  ]
+}
