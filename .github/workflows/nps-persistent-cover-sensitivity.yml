@@ -1,0 +1,48 @@
+name: NPS persistent-cover sensitivity audit
+
+on:
+  push:
+    branches:
+      - analysis/nps-persistent-cover-sensitivity-v1
+    paths:
+      - "analysis/11_nps_persistent_cover.py"
+      - "analysis/12_nps_persistent_cover_sensitivity.py"
+      - ".github/workflows/nps-persistent-cover-sensitivity.yml"
+      - "validation/nps_tier3_v2/**"
+  workflow_dispatch:
+
+jobs:
+  sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild base NPS post-hoc panel
+        run: python analysis/11_nps_persistent_cover.py --out results/generated_nps_sensitivity
+      - name: Run sensitivity audit
+        run: python analysis/12_nps_persistent_cover_sensitivity.py --input results/generated_nps_sensitivity --out results/generated_nps_sensitivity
+      - name: Verify robustness and transparent anomaly handling
+        run: |
+          python - <<'PY'
+          import json
+          p="results/generated_nps_sensitivity/nps_persistent_cover_sensitivity_v1.json"
+          x=json.load(open(p))
+          assert x["repeated_node_count"] == 15
+          assert x["all_leave_one_location_out_slopes_negative"] is True
+          assert x["equal_node_weighting"]["mean_node_slope_per_year"] < 0
+          assert x["equal_node_weighting"]["median_node_slope_per_year"] < 0
+          assert x["single_year_reverse_id_candidate_count"] == 3
+          ids=[z["node_id"] for z in x["single_year_reverse_id_candidates"]]
+          assert ids == ["A::MD12.2","B::MD12.2","C::MD12.2"]
+          print(json.dumps(x, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nps-persistent-cover-sensitivity
+          path: results/generated_nps_sensitivity/
