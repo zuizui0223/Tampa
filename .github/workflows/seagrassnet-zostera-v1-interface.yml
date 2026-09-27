@@ -1,0 +1,47 @@
+name: SeagrassNet Zostera v1 interface gate
+
+on:
+  push:
+    branches:
+      - validation/seagrassnet-zostera-v1
+    paths:
+      - "validation/seagrassnet_zostera_v1/interface_contract.json"
+      - "validation/seagrassnet_zostera_v1/interface_gate.py"
+      - ".github/workflows/seagrassnet-zostera-v1-interface.yml"
+  workflow_dispatch:
+
+jobs:
+  interface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce preflight certificate
+        run: python validation/seagrassnet_zostera_v1/preflight.py
+      - name: Assert frozen preflight fingerprint
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/seagrassnet_zostera_v1/preflight_result.json"))
+          assert x["fingerprint"]=="02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0"
+          PY
+      - name: Inspect public interface only
+        run: python validation/seagrassnet_zostera_v1/interface_gate.py
+      - name: Assert biological data unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/seagrassnet_zostera_v1/interface_result.json"))
+          assert x["biological_download_requests"]==0
+          assert x["biological_download_bytes"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload interface result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seagrassnet-zostera-v1-interface
+          path: |
+            validation/seagrassnet_zostera_v1/preflight_result.json
+            validation/seagrassnet_zostera_v1/interface_result.json

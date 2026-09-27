@@ -1,0 +1,35 @@
+name: SeagrassNet Zostera v1 preflight
+
+on:
+  push:
+    branches:
+      - validation/seagrassnet-zostera-v1
+    paths:
+      - "validation/seagrassnet_zostera_v1/**"
+      - ".github/workflows/seagrassnet-zostera-v1-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory interface and template only
+        run: python validation/seagrassnet_zostera_v1/preflight.py
+      - name: Assert no biological data were downloaded
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/seagrassnet_zostera_v1/preflight_result.json"))
+          assert x["biological_download_requests"] == 0
+          assert x["biological_download_bytes"] == 0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload preflight result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seagrassnet-zostera-v1-preflight
+          path: validation/seagrassnet_zostera_v1/preflight_result.json

@@ -1,0 +1,19 @@
+{
+  "schema":"tampa.seagrassnet_zostera_external_early_warning_v1.terminal_record",
+  "status":"terminal_pre_response_interface_gate_stop",
+  "reason":"The frozen automated interface gate classified site-parameter shape as unresolved even though its response-independent JavaScript capture contained the concrete client expression S.map(e=>e.id).join(',') and window.open('/api/download?sites='+e,'_blank'). The v1 decision is not repaired after gate execution.",
+  "preflight_fingerprint":"02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0",
+  "interface_result_fingerprint":"18936b9f23d2a2d0ddc5deef9e3007380f3a02781d868841d7eb7c8517e4bd32",
+  "response_independent_interface_evidence":{
+    "endpoint":"/api/download?sites=<comma-joined selected site IDs>",
+    "method":"GET opened in a new browser window",
+    "site_value":"internal site UUID id from the public site directory"
+  },
+  "biological_download_requests":0,
+  "biological_download_bytes":0,
+  "response_values_opened":false,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "next_rule":"Do not repair v1. A separately versioned v2 may freeze the exact endpoint from this response-independent JavaScript and perform body-free HEAD qualification before biological response access."
+}
