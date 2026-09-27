@@ -1,0 +1,27 @@
+{
+  "fingerprint": "a835924d48eeac68b2d42b80ded90372d47a85d55a479417f3d3adaa600a21d2",
+  "next_gate": "freeze exact CSV identity and perform schema/header-only validation; no data rows or cover values may be opened until that contract is committed",
+  "response_csv_bytes_opened": 0,
+  "response_csv_downloads": 0,
+  "response_values_opened": false,
+  "safe_metadata": {
+    "citation": "U.S. Geological Survey - Alaska Science Center, and National Park Service - Southwest Alaska Inventory and Monitoring Network, 2024, Eelgrass (Zostera marina) percent cover data from Katmai National Park and Preserve, Kenai Fjords National Park, and Prince William Sound, Alaska: U.S. Geological Survey data release, https://doi.org/10.5066/F7RV0KV9.",
+    "csv": {
+      "contentType": "text/csv",
+      "name": "KATMKEFJPWS_2008-2016_Zostera_Percent_Cover_Summary.csv",
+      "size": 6564,
+      "url": "https://www.sciencebase.gov/catalog/file/get/6671dc83d34e84915adb75e9?f=__disk__77%2F3f%2Feb%2F773feb060a78f2c3c03cd697553440c95138c46b"
+    },
+    "item_id": "6671dc83d34e84915adb75e9",
+    "provenance": {
+      "dataSource": "Input directly",
+      "dateCreated": "2024-06-18T19:14:11Z",
+      "lastUpdated": "2025-09-16T20:52:48Z"
+    },
+    "title": "Eelgrass (Zostera marina) Percent Cover Data from Katmai National Park and Preserve, Kenai Fjords National Park, and Prince William Sound, Alaska"
+  },
+  "safe_metadata_fingerprint": "5b7326675a8c800f3b28d23f57826c345c26e9e1ffdfb47e6be807b1dfaa9338",
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v1.gate0_metadata_result",
+  "sciencebase_metadata_requests": 1,
+  "status": "gate0_metadata_pass"
+}

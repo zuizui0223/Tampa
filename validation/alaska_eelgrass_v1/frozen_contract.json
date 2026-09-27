@@ -1,0 +1,66 @@
+{
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v1.contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Second untouched external validation attempt of whether source-year quantitative seagrass state predicts next-year recorded-state instability.",
+  "relationship_to_tampa_discovery": {
+    "discovery_repo": "zuizui0223/Tampa",
+    "discovery_result": "results/quantitative_early_warning_v1.json",
+    "frozen_hypothesis": "Among annual sampling units with recorded seagrass presence, lower source-year quantitative cover adds out-of-time information about next-year recorded loss beyond a conventional space/time/effort baseline.",
+    "caribbean_v1": "terminal protocol/schema STOP with zero model fits and zero predictive scores; Alaska v1 is a different response-unopened system and is not a repair."
+  },
+  "source": {
+    "authority": "U.S. Geological Survey",
+    "sciencebase_item_id": "6671dc83d34e84915adb75e9",
+    "doi": "10.5066/F7RV0KV9",
+    "title": "Eelgrass (Zostera marina) Percent Cover Data from Katmai National Park and Preserve, Kenai Fjords National Park, and Prince William Sound, Alaska",
+    "stated_years": [2008, 2016],
+    "stated_regions": ["Katmai National Park and Preserve", "Kenai Fjords National Park", "Prince William Sound"],
+    "stated_sampling": "sonar and video drop cameras deployed from boats following prescribed survey transects",
+    "stated_data_layout": "one comma-separated-values table with estimates of Zostera marina percent cover",
+    "focal_taxon": "Zostera marina",
+    "response_csv_payload_opened_before_contract": false,
+    "response_csv_values_opened_before_contract": false
+  },
+  "gate0_metadata_only": {
+    "sciencebase_metadata_url": "https://www.sciencebase.gov/catalog/item/6671dc83d34e84915adb75e9?format=json",
+    "allowed_network_request": "one GET of ScienceBase item metadata JSON",
+    "response_file_downloads_allowed": 0,
+    "required_csv_count": 1,
+    "csv_selection_rule": "exactly one ScienceBase file whose name ends case-insensitively with .csv",
+    "record_only": ["item id", "title", "citation", "provenance dates", "file name", "file size", "content type", "download URL identity"],
+    "forbidden": ["opening CSV bytes", "reading CSV header", "reading any cover values", "changing candidate system based on response values"]
+  },
+  "hypothesis_boundary": {
+    "primary_endpoint": "next-year recorded loss from a source-year unit with recorded Zostera presence",
+    "quantitative_predictor": "source-year Zostera percent-cover state, using the published quantitative cover field under a parser frozen after schema-only inspection",
+    "baseline": "space/time/effort only; no response-derived ecological state",
+    "split": "strict walk-forward by target calendar year",
+    "primary_metric": "binary log loss",
+    "only_allowed_arm_difference": "source-year quantitative Zostera state",
+    "interpretation": "recorded-state instability, not demographic extinction"
+  },
+  "estimability_gate_frozen_before_response": {
+    "minimum_annual_sampling_units": 100,
+    "minimum_source_positive_consecutive_transitions": 80,
+    "minimum_recorded_losses": 10,
+    "minimum_recorded_persistence": 40,
+    "minimum_scored_target_years": 4,
+    "per_target_year_training_min_prior_losses": 5,
+    "per_target_year_training_min_prior_persistence": 30,
+    "failure_status": "terminal_non_estimable_external_validation"
+  },
+  "decision_rule": {
+    "favorable": "augmented macro log loss < baseline AND augmented wins >= ceil(0.60 * scored target years)",
+    "adverse": "baseline macro log loss < augmented AND baseline wins >= ceil(0.60 * scored target years)",
+    "otherwise": "no_confirmed_external_early_warning",
+    "all_three_are_terminal": true
+  },
+  "no_rescue_rules": [
+    "Do not open CSV payload before Gate0 metadata-only result is frozen.",
+    "Do not switch focal species, data release, or years after response access.",
+    "Do not lower estimability minima after response access.",
+    "Do not redefine recorded loss after response access.",
+    "Do not select another quantitative eelgrass variable to rescue an unfavorable result.",
+    "Schema or linkage failure after response access terminates Alaska v1; any repair is a new protocol and not the same untouched confirmation."
+  ]
+}

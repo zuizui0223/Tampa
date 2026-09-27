@@ -1,0 +1,36 @@
+name: Alaska eelgrass Gate0 metadata only
+
+on:
+  push:
+    branches:
+      - validation/alaska-eelgrass-v1
+    paths:
+      - "validation/alaska_eelgrass_v1/**"
+      - ".github/workflows/alaska-eelgrass-gate0.yml"
+  workflow_dispatch:
+
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run metadata-only preflight
+        run: python validation/alaska_eelgrass_v1/gate0_metadata.py
+      - name: Assert no response bytes were opened
+        run: |
+          python - <<'PY'
+          import json
+          p = "validation/alaska_eelgrass_v1/gate0_metadata_result.json"
+          x = json.load(open(p))
+          assert x["response_csv_downloads"] == 0
+          assert x["response_csv_bytes_opened"] == 0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload Gate0 certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alaska-eelgrass-gate0-metadata
+          path: validation/alaska_eelgrass_v1/gate0_metadata_result.json

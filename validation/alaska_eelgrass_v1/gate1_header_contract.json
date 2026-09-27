@@ -1,0 +1,22 @@
+{
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v1.gate1_header_contract",
+  "frozen_on": "2026-09-27",
+  "requires_gate0_fingerprint": "a835924d48eeac68b2d42b80ded90372d47a85d55a479417f3d3adaa600a21d2",
+  "csv_identity": {
+    "name": "KATMKEFJPWS_2008-2016_Zostera_Percent_Cover_Summary.csv",
+    "size": 6564,
+    "content_type": "text/csv",
+    "url": "https://www.sciencebase.gov/catalog/file/get/6671dc83d34e84915adb75e9?f=__disk__77%2F3f%2Feb%2F773feb060a78f2c3c03cd697553440c95138c46b"
+  },
+  "allowed_access": {
+    "method": "HTTP Range requests one byte at a time, beginning at byte 0",
+    "stop_condition": "first LF byte; if CRLF, the CR immediately preceding LF is part of the physical header terminator",
+    "maximum_header_bytes": 2048,
+    "require_http_206": true,
+    "forbid_any_byte_after_first_lf": true,
+    "data_rows_opened": 0,
+    "response_values_opened": false
+  },
+  "parser_freeze_rule_after_gate1": "Column semantics may be mapped only from the exact physical header plus USGS public metadata/documentation. No data row may be opened before the parser, annual-state construction, estimability gate, model arms, split, metrics and terminal decision are committed.",
+  "no_rescue": "A server that does not honor exact byte ranges, a header longer than 2048 bytes, invalid UTF-8, malformed CSV header, or ambiguous required column semantics terminates this v1 before response values."
+}

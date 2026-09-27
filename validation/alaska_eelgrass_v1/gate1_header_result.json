@@ -1,0 +1,10 @@
+{
+  "data_row_bytes_opened": 0,
+  "fingerprint": "284ee391fbebd3382d5b2bad57eaba9c8f39a9d8d00221fc6a77452011c66b32",
+  "next_gate": "none",
+  "reason": "range_not_honored_http_200_at_byte_0",
+  "requires_gate0_fingerprint": "a835924d48eeac68b2d42b80ded90372d47a85d55a479417f3d3adaa600a21d2",
+  "response_values_opened": false,
+  "schema": "tampa.alaska_eelgrass_external_early_warning_v1.gate1_header_result",
+  "status": "terminal_pre_response_header_stop"
+}

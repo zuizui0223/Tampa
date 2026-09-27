@@ -1,0 +1,36 @@
+name: Alaska eelgrass Gate1 header only
+
+on:
+  push:
+    branches:
+      - validation/alaska-eelgrass-v1
+    paths:
+      - "validation/alaska_eelgrass_v1/gate0_metadata_result.json"
+      - "validation/alaska_eelgrass_v1/gate1_header_contract.json"
+      - "validation/alaska_eelgrass_v1/gate1_header.py"
+      - ".github/workflows/alaska-eelgrass-gate1.yml"
+  workflow_dispatch:
+
+jobs:
+  header-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read exact header only
+        run: python validation/alaska_eelgrass_v1/gate1_header.py
+      - name: Assert response rows remain unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/alaska_eelgrass_v1/gate1_header_result.json"))
+          assert x["data_row_bytes_opened"] == 0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload Gate1 certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alaska-eelgrass-gate1-header
+          path: validation/alaska_eelgrass_v1/gate1_header_result.json
