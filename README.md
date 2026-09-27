@@ -76,6 +76,27 @@ The current biological interpretation is therefore:
 
 This is treated as a candidate **cryptic degradation / ecological-state decoupling** result, not yet as a climate-causal result.
 
+### 2b. External NPS panel reproduces binary–quantitative state decoupling
+
+A separate post-hoc ecological analysis uses the National Park Service Northeast Coastal and Barrier Network Tier-3 *Zostera marina* panel (2003–2025). This analysis is explicitly **not** a rescue or rerun of the frozen external early-warning endpoint: that endpoint terminated non-estimable because it contained zero recorded-loss transitions.
+
+Across the NPS panel:
+
+- **240/240** eligible annual transect units retained recorded *Zostera* presence;
+- focal frequency was **1.0 in every eligible unit**;
+- quantitative cover nevertheless ranged from **0 to 99.2%**;
+- the median within-transect cover range was **58.1 percentage points**;
+- **11/15** repeatedly sampled transects had negative cover slopes;
+- pooled within-transect cover slope was **−1.52 percentage points yr⁻¹**;
+- node-bootstrap 95% interval: **−2.45 to −0.60 percentage points yr⁻¹**.
+
+The direction is spatially heterogeneous: Duck Harbor Beach, Fire Island and Tingles Island declined; Moriches Bay increased; Pleasant Bay was uncertain. The useful cross-system result is therefore not a universal decline rate. It is:
+
+> **A saturated binary presence state can coexist with large and directionally heterogeneous quantitative change in a foundation seagrass.**
+
+This reproduces the **state-decoupling** pattern in a different species (*Zostera marina*) and monitoring network. Because the response had already been opened by the frozen NPS estimability test, this is post-hoc external ecological replication, not untouched predictive confirmation.
+
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
@@ -168,9 +189,10 @@ python analysis/06_source_protocol_audit.py --out results/generated
 python analysis/07_environmental_coupling.py --input results/generated --out results/generated
 python analysis/08_seasonal_stress_screen.py --input results/generated --out results/generated
 python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
+python analysis/11_nps_persistent_cover.py --out results/generated_nps_posthoc
 ```
 
-CI reruns all nine analyses from pinned public sources.
+CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
 
 Canonical current boundary: `results/current_validation_v2.json`.
 
@@ -187,7 +209,8 @@ Supported now:
 - Lower Tampa Bay shows a reproducible compositional signal: declining *Thalassia* and *Syringodium* with increasing *Halodule* frequency;
 - no declared simple annual water-quality coupling survives the post-2016 multiplicity-controlled segment-year screen;
 - aligning temperature and salinity to 3- and 6-month pre-survey windows still yields no multiplicity-controlled seasonal hot/fresh association;
-- source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort.
+- source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort;
+- in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc.
 
 Not supported now:
 
@@ -217,9 +240,27 @@ At least one row matched the frozen *Thalassia* identity while its percent-cover
 
 This STOP narrows the next step: use a different, response-unopened monitoring dataset with quantitative species cover and freeze its data semantics before outcome access.
 
+### NPS Tier-3 *Zostera marina* v2 — terminal non-estimable endpoint
+
+A second frozen external attempt used the 2025 NPS Tier-3 seagrass data package. Official EML metadata established permanent quadrats, an explicit 0–100% cover scale and separate NA semantics before response access. The once-only endpoint then opened the CSV exactly once.
+
+The frozen endpoint yielded:
+
+- eligible annual units: **240**;
+- stable transects: **18**;
+- source-positive consecutive transitions: **204**;
+- recorded persistence transitions: **204**;
+- recorded-loss transitions: **0**;
+- model fits: **0**;
+- predictive scores: **0**;
+- counts as external predictive evidence: **false**.
+
+Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-loss structure motivated the explicitly post-hoc persistent-cover analysis above, which is useful ecological replication but cannot be relabeled prospective predictive evidence.
+
+
 ## Next scientific gate
 
-The primary next gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and therefore neither supports nor contradicts the ecological hypothesis.
+The primary next gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
 
 1. freeze the two quantitative predictors (frequency + Braun-Blanquet state), endpoint semantics and scoring rule before opening a new system or later held-out period;
 2. test whether quantitative degradation predicts future recorded-state instability in an independent seagrass dataset, bay, or genuinely future Tampa survey;
@@ -227,4 +268,4 @@ The primary next gate remains **independent validation of the quantitative early
 
 Environmental attribution is secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
 
-The manuscript-level ecological center is therefore: **persistent occurrence can conceal quantitative degradation, degradation mode differs among bay segments, and quantitative state may provide an early warning of later recorded-state instability.**
+The manuscript-level ecological center is therefore: **binary persistence can conceal substantial quantitative degradation across independent seagrass monitoring systems; degradation mode is spatially heterogeneous, and Tampa additionally suggests that quantitative state may provide early warning of later recorded-state instability.**

@@ -1,0 +1,52 @@
+{
+  "schema": "tampa.nps_tier3_persistent_cover_v1",
+  "status": "posthoc_external_ecological_analysis_not_predictive_validation",
+  "source": {
+    "nps_reference_id": "2316692",
+    "years": [2003, 2025],
+    "annual_units": 240,
+    "nodes": 18,
+    "consecutive_year_pairs": 204,
+    "authoritative_workflow_run_id": 36306881474,
+    "authoritative_artifact_id": 10927881295,
+    "authoritative_artifact_sha256": "c1be9adf9a03602e8bbdfa162a59ee1ed64891d31c1b0476ce79c20d4fae97e9"
+  },
+  "binary_state": {
+    "recorded_presence_units": 240,
+    "recorded_nonpresence_units": 0,
+    "presence_fraction": 1.0
+  },
+  "quantitative_state": {
+    "focal_frequency_observed_range": [1.0, 1.0],
+    "cover_observed_range": [0.0, 99.16666666666667],
+    "cover_within_node_slope_per_year": -1.5227180757670744,
+    "cover_node_bootstrap_ci95": [-2.451978355323795, -0.5964932712620464],
+    "repeated_nodes_in_slope_analysis": 15,
+    "negative_node_slopes": 11,
+    "positive_node_slopes": 4,
+    "median_within_node_cover_range": 58.08333333333333,
+    "q25_within_node_cover_range": 29.61111111111111,
+    "q75_within_node_cover_range": 77.85416666666667,
+    "location_cover_slopes": {
+      "Duck Harbor Beach": {"slope": -2.9985285415991045, "ci95": [-4.183818498476085, -1.8422358026995092], "nodes": 3},
+      "Fire Island": {"slope": -0.46897847228405504, "ci95": [-1.0955660300359125, -0.06438930193215206], "nodes": 3},
+      "Moriches Bay": {"slope": 2.183333333333334, "ci95": [1.7166666666666666, 2.683333333333334], "nodes": 3},
+      "Pleasant Bay": {"slope": -1.0185293172440966, "ci95": [-2.8625948560054746, 0.31773263046588307], "nodes": 3},
+      "Tingles Island": {"slope": -1.2206645430139844, "ci95": [-2.5243907020074534, -0.4903822073967224], "nodes": 3}
+    }
+  },
+  "year_to_year_instability": {
+    "median_abs_delta_cover": 6.125,
+    "q75_abs_delta_cover": 15.5,
+    "q90_abs_delta_cover": 36.125000000000014,
+    "median_abs_delta_frequency": 0.0
+  },
+  "interpretation": "Across the eligible NPS Tier-3 panel, binary Zostera presence and focal frequency are saturated while quantitative cover varies substantially and declines on average within repeated transects. This independently reproduces the ecological-state-decoupling pattern at a different species and monitoring network, but it is post-hoc and is not an independent predictive validation of the Tampa early-warning endpoint.",
+  "claim_boundary": [
+    "Post-hoc because the NPS response was already opened by the frozen v2 estimability test.",
+    "Not counted as independent predictive confirmation of the Tampa early-warning endpoint.",
+    "Recorded presence refers to observation in re-observed seagrass-bearing quadrats, not total meadow occupancy.",
+    "Cover trends are observational and do not identify nutrient, temperature, or climate causation.",
+    "Location-specific slopes are descriptive and show substantial spatial heterogeneity, including positive cover trend at Moriches Bay."
+  ]
+}

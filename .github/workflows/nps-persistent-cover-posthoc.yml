@@ -1,0 +1,42 @@
+name: NPS Tier3 persistent-cover posthoc ecology
+
+on:
+  push:
+    branches:
+      - analysis/nps-persistent-cover-v1
+    paths:
+      - "analysis/11_nps_persistent_cover.py"
+      - ".github/workflows/nps-persistent-cover-posthoc.yml"
+      - "validation/nps_tier3_v2/**"
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Run post-hoc persistent-cover analysis
+        run: python analysis/11_nps_persistent_cover.py --out results/generated_nps_posthoc
+      - name: Verify boundary
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_nps_posthoc/nps_persistent_cover_v1.json"))
+          assert x["status"]=="posthoc_external_ecological_analysis_not_predictive_validation"
+          assert x["binary_state"]["recorded_nonpresence_units"]==0
+          assert x["source"]["annual_units"]==240
+          assert x["source"]["nodes"]==18
+          assert x["source"]["consecutive_year_pairs"]==204
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nps-tier3-persistent-cover-posthoc
+          path: results/generated_nps_posthoc/
