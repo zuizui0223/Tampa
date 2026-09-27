@@ -1,0 +1,60 @@
+{
+  "schema":"tampa.nps_tier2_landscape_state_v1.analysis_contract",
+  "frozen_on":"2026-09-27",
+  "requires_deep_eml_fingerprint":"975ec78b0e774a5597cd0284ca1e666d0749ac9d104b23f7c5ffbeaded850b67",
+  "source":{
+    "reference_id":"2316691",
+    "csv_url":"https://irma.nps.gov/DataStore/DownloadFile/754572?Reference=2316691",
+    "expected_header":["QuadratData_ID","Event_Code","Time","Date","Park_Code","Hexagon","Station","Quadrat_Ltr","Species","Latitude","Longitude","GPS_Accuracy_m","Percent_Cover","Average_Stem_Ht_cm","Average_Max_Shoot_Ht_cm","Average_Max_Shoot_Width_mm","Average_Number_Lvs","Substrate","Notes","Certified_Date","Last_Name"],
+    "allowed_parks":["CACO","FIIS"],
+    "allowed_species":["Ruppia maritima","Zostera marina"],
+    "focal_species":"Zostera marina"
+  },
+  "sample_semantics":{
+    "quadrat_key":["Event_Code","Quadrat_Ltr"],
+    "event_key":"Event_Code",
+    "station_identity":["Park_Code","Hexagon","Station"],
+    "year_from":"Date",
+    "percent_cover_valid_range":[0,100],
+    "missing_token":"NA",
+    "missing_meaning":"station not sampled",
+    "sampled_quadrat":"at least one species row in the quadrat has finite numeric Percent_Cover",
+    "focal_cover":"numeric Zostera marina Percent_Cover when present; otherwise 0 only when the same sampled quadrat has a numeric Ruppia maritima record",
+    "unsampled_quadrat":"no numeric species cover; excluded and never converted to zero",
+    "duplicate_species_within_quadrat":"terminal stop",
+    "mixed_numeric_and_NA_within_same_species_quadrat":"terminal stop"
+  },
+  "annual_state":{
+    "unit":"stable station x calendar year",
+    "station_presence":"at least one sampled quadrat has focal_cover > 0",
+    "station_mean_cover":"mean focal_cover across sampled quadrats",
+    "station_frequency":"fraction of sampled quadrats with focal_cover > 0",
+    "minimum_sampled_quadrats":1,
+    "multiple_visits_same_station_year":"pool all sampled quadrats across visits within year; report survey count"
+  },
+  "park_year_state":{
+    "unit":"park x calendar year",
+    "prevalence":"mean station_presence across eligible station-years",
+    "mean_station_cover":"mean station_mean_cover across eligible station-years",
+    "mean_station_frequency":"mean station_frequency across eligible station-years",
+    "equal_station_weighting":true
+  },
+  "trend_estimands":{
+    "primary":"within-station year slope for focal mean cover and focal frequency, pooled by sum(Sxy)/sum(Sxx), separately by park",
+    "secondary":"within-station linear-probability slope for recorded presence, separately by park",
+    "uncertainty":"5000-cluster bootstrap resamples of stable stations within park",
+    "minimum_repeated_years_per_station":2,
+    "report_spatial_heterogeneity":true
+  },
+  "cross_scale_boundary":{
+    "tier3_reference":"results/nps_persistent_cover_v1.json",
+    "interpretation":"Tier-2 estimates bay-wide/random-station change; Tier-3 estimates quantitative change inside repeatedly observed persistent transects. Concordant negative trends indicate contraction/thinning can coexist; discordance indicates scale-specific degradation.",
+    "do_not_call_tier2_and_tier3_directly_exchangeable":true
+  },
+  "claim_boundary":[
+    "This is observational post-hoc ecological analysis, not prospective predictive validation.",
+    "Do not interpret Percent_Cover decline as demographic extinction.",
+    "Do not infer nutrient or climate causation from temporal slopes.",
+    "Do not convert unsampled NA stations/quadrats to absence."
+  ]
+}
