@@ -1,0 +1,35 @@
+{
+  "schema": "tampa.nps_tier2_landscape_state_v1.postopen_structure_resolution",
+  "created_after_response_structure_diagnostic": true,
+  "status": "cover_state_collapse_justified_for_posthoc_ecology",
+  "evidence": {
+    "structure_diagnostic_run_id": 36308096761,
+    "structure_diagnostic_artifact_id": 10927308730,
+    "duplicate_semantics_run_id": 36308250925,
+    "duplicate_semantics_artifact_id": 10928062781,
+    "repeated_event_quadrat_species_groups": 1526,
+    "groups_with_identical_percent_cover": 1526,
+    "groups_with_different_numeric_percent_cover": 0,
+    "groups_with_mixed_numeric_and_na_cover": 0,
+    "groups_where_stem_height_varies": 1506,
+    "groups_where_max_shoot_height_varies": 1482,
+    "dominant_variation_pattern_groups": 1479,
+    "dominant_variation_pattern": [
+      "QuadratData_ID",
+      "Average_Stem_Ht_cm",
+      "Average_Max_Shoot_Ht_cm"
+    ]
+  },
+  "resolved_data_model": {
+    "cover_state_unit": "Event_Code x Quadrat_Ltr x Species",
+    "rule": "For a repeated cover-state unit, require all nonmissing Percent_Cover values to be exactly equal. Collapse repeated rows to that single observed cover value. If all values are NA, the species cover state is missing. If numeric values disagree or numeric and NA are mixed within the same cover-state unit, stop.",
+    "morphology_rows": "Distinct QuadratData_ID rows are retained conceptually as subordinate shoot/morphology measurements and are not treated as independent quadrats for cover denominators.",
+    "aggregation_type": "identity collapse, not arithmetic averaging"
+  },
+  "scientific_boundary": [
+    "This resolution was learned after opening the post-hoc Tier-2 response and is not represented as prospectively frozen.",
+    "It changes only the physical row-to-cover-state mapping; the predeclared sampled-quadrat, focal-zero, annual-state, park-year and trend estimands remain unchanged.",
+    "No cover disagreement is averaged away.",
+    "The Tier-2 analysis remains observational post-hoc ecology, not confirmatory predictive evidence."
+  ]
+}
