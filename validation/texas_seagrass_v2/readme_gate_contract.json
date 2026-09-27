@@ -1,0 +1,65 @@
+{
+  "schema": "tampa.texas_seagrass_external_early_warning_v2.readme_gate_contract",
+  "frozen_on": "2026-09-27",
+  "requires_archive_inventory_fingerprint": "c48a970652287da246e16a2e7275843f40bd795afef814d6c3cd3588af214697",
+  "allowed_entries": [
+    {
+      "year": 2014,
+      "url": "https://utw10133.utweb.utexas.edu/data/2014_results.zip",
+      "archive_size": 355998,
+      "name": "readme.txt",
+      "local_header_offset": 354636,
+      "compression_method": 0,
+      "compressed_size": 57,
+      "uncompressed_size": 57,
+      "crc32": "97619b57"
+    },
+    {
+      "year": 2015,
+      "url": "https://utw10133.utweb.utexas.edu/data/2015_results.zip",
+      "archive_size": 729781,
+      "name": "readme.txt",
+      "local_header_offset": 728420,
+      "compression_method": 0,
+      "compressed_size": 57,
+      "uncompressed_size": 57,
+      "crc32": "96c432e1"
+    },
+    {
+      "year": 2016,
+      "url": "https://utw10133.utweb.utexas.edu/data/2016_results.zip",
+      "archive_size": 18207,
+      "name": "2016_results/readme.txt",
+      "local_header_offset": 16245,
+      "compression_method": 8,
+      "compressed_size": 405,
+      "uncompressed_size": 722,
+      "crc32": "28dea051"
+    },
+    {
+      "year": 2017,
+      "url": "https://utw10133.utweb.utexas.edu/data/2017_results.zip",
+      "archive_size": 620370,
+      "name": "readme.txt",
+      "local_header_offset": 619009,
+      "compression_method": 0,
+      "compressed_size": 57,
+      "uncompressed_size": 57,
+      "crc32": "958f618d"
+    },
+    {
+      "year": 2018,
+      "url": "https://utw10133.utweb.utexas.edu/data/2018_results.zip",
+      "archive_size": 398716,
+      "name": "readme.txt",
+      "local_header_offset": 397355,
+      "compression_method": 0,
+      "compressed_size": 57,
+      "uncompressed_size": 57,
+      "crc32": "9cda703f"
+    }
+  ],
+  "response_cover_entry_payload_requests": 0,
+  "response_values_opened": false,
+  "purpose": "Read only predeclared readme.txt metadata entries to constrain format/parser rules before biological cover-table payload access."
+}
