@@ -199,32 +199,50 @@ Not supported now:
 - demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
 - untouched prospective or external confirmation of the early-warning hypothesis.
 
-## Independent validation ledger
+## Independent validation closure
 
-### Caribbean SeagrassNet v1 — terminal protocol/schema STOP
+The public-dataset search for an untouched external confirmation of the **quantitative early-warning** result is now closed.
 
-The first untouched external test was frozen before opening PANGAEA dataset `10.1594/PANGAEA.994149` (27 Caribbean locations, 2000–2017). The contract fixed *Thalassia testudinum*, annual station-state construction, next-year recorded loss, the space/time/effort baseline, the two quantitative augmentation features, estimability minima and terminal decision rules before response access.
+Canonical denominator: `validation/external_validation_ledger_v1.json`.
 
-The one-shot workflow reached a terminal **protocol/schema STOP** before model fitting:
+- protocol attempts: **10**
+- distinct external systems: **5**
+- valid externally scored endpoints: **0**
+- favorable / adverse / no-confirmed external endpoints: **0 / 0 / 0**
+- candidate hunting: **hard-stopped**
 
-- workflow: `36272071012`
-- terminal: `invalid_numeric:focal_percent_cover:`
-- model fits: **0**
-- predictive scores: **0**
-- counts as external predictive evidence: **false**
+The ten attempts comprise Caribbean SeagrassNet/PANGAEA, Alaska USGS eelgrass, Florida Keys FKNMS/SEACAR, Texas statewide seagrass/NCEI, and a frozen 48-site USA+Canada SeagrassNet universe. Individual attempts terminated at response-schema, endpoint-semantics, metadata/interface, transport, workbook-schema, dynamic-filename, or partial-archive-access gates. None produced a valid external predictive score.
 
-At least one row matched the frozen *Thalassia* identity while its percent-cover field was empty, violating the predeclared parser contract. Per the no-rescue rule, v1 is **not repaired or rerun** and the already-opened Caribbean dataset is not promoted as a fresh independent confirmation under a new parser.
+These STOPs are **not ecological null or adverse results**. They document the denominator of a no-rescue validation programme and prevent already-opened or otherwise consumed attempts from being repaired and relabeled as untouched confirmation.
 
-This STOP narrows the next step: use a different, response-unopened monitoring dataset with quantitative species cover and freeze its data semantics before outcome access.
+The early-warning status is therefore:
 
-## Next scientific gate
+> **internally supported by strict Tampa walk-forward evaluation, externally unconfirmed.**
 
-The primary next gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and therefore neither supports nor contradicts the ecological hypothesis.
+The manuscript does not require that early-warning result for its primary ecological conclusion.
 
-1. freeze the two quantitative predictors (frequency + Braun-Blanquet state), endpoint semantics and scoring rule before opening a new system or later held-out period;
-2. test whether quantitative degradation predicts future recorded-state instability in an independent seagrass dataset, bay, or genuinely future Tampa survey;
-3. keep the 2016 Tampa failure as part of the evidence rather than tuning it away.
+## Manuscript priority
 
-Environmental attribution is secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
+Canonical scientific spine: `manuscript/MANUSCRIPT_SPINE_V1.md`.
 
-The manuscript-level ecological center is therefore: **persistent occurrence can conceal quantitative degradation, degradation mode differs among bay segments, and quantitative state may provide an early warning of later recorded-state instability.**
+The paper hierarchy is now:
+
+1. **Primary:** persistent binary occurrence can conceal quantitative degradation in a foundation species.
+2. **Primary extension:** degradation mode differs among Tampa Bay segments, including plant-condition decline, within-transect contraction and compositional reorganization.
+3. **Secondary:** recorded state has strong site history / ecological memory beyond the immediately previous year.
+4. **Exploratory:** quantitative state may provide early warning of later recorded-state instability; external generality remains unconfirmed.
+
+Environmental attribution remains secondary and currently negative: neither the annual bay-segment screen nor the declared pre-survey 3/6-month hot/fresh screen provides multiplicity-controlled support for a simple causal driver.
+
+## Scientific stopping rule
+
+Do **not** add another public external dataset to improve the early-warning validation record.
+
+The next valid scientific work is limited to:
+
+1. manuscript and figure completion around the state-decoupling / heterogeneous-degradation result; or
+2. a genuinely prospective confirmation using either a future Tampa survey wave whose analysis contract is frozen before those responses exist, or a pre-authorized external dataset with immutable schema, explicit zero-versus-missing semantics and stable identifiers available before response inspection.
+
+The manuscript-level ecological center is therefore:
+
+> **Persistent occurrence can conceal cryptic degradation, and the form of that degradation differs among bay segments. Quantitative condition may anticipate later recorded-state instability, but that secondary early-warning hypothesis remains externally unconfirmed.**
