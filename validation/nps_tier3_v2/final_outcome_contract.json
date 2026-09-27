@@ -1,0 +1,176 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v2.final_outcome_contract",
+  "attempt_id": "nps_tier3_zostera_quantitative_early_warning_v2",
+  "frozen_on": "2026-09-27",
+  "provenance": {
+    "deep_eml_fingerprint": "82e30224d5e2d70d2b8fd8407ebe5e022b504cb8d984b02825a69801c6f1a3f9",
+    "response_head_fingerprint": "eedcb35e2f8586b1b1c2dab743e0f57a9158b70d41caaf42072491355c87bf37",
+    "response_values_opened_before_contract": false
+  },
+  "source": {
+    "reference_id": "2316692",
+    "response_url": "https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692",
+    "expected_bytes": 1455261,
+    "expected_physical_header": [
+      "ID",
+      "EventID",
+      "Location",
+      "SGNetCode",
+      "Transect",
+      "Quadrat",
+      "Species",
+      "Date",
+      "Time",
+      "Percent Cover",
+      "Density_Source",
+      "Density_ZM",
+      "Shoot Density",
+      "Canopy Height",
+      "Flowers",
+      "Fruits",
+      "Shoot_Count",
+      "Biomass",
+      "Biomass_stems",
+      "Biomass_roots",
+      "Grazing Evidence",
+      "Epiphytes",
+      "Wasting",
+      "Tidal Depth",
+      "Distance to Edge Left",
+      "Distance to Edge Center",
+      "Distance to Edge Right",
+      "Distance to Last Shoot Left",
+      "Distance to Last Shoot Center",
+      "Distance to Last Shoot Right",
+      "Salinity",
+      "Sediment Type Left",
+      "Sediment Type Center",
+      "Sediment Type Right",
+      "QC_notes",
+      "Certified_By",
+      "Certified_Date"
+    ],
+    "focal_species_code": "ZM",
+    "focal_species_name": "Zostera marina",
+    "alternative_species_code": "RM",
+    "alternative_species_name": "Ruppia maritima"
+  },
+  "parser": {
+    "encoding": "utf-8-sig",
+    "delimiter": ",",
+    "exact_header_order_required": true,
+    "exact_row_width": 37,
+    "required_nonblank": [
+      "EventID",
+      "Location",
+      "SGNetCode",
+      "Transect",
+      "Quadrat",
+      "Species",
+      "Date"
+    ],
+    "allowed_species_codes": [
+      "ZM",
+      "RM"
+    ],
+    "date_format": "%Y-%m-%d",
+    "quadrat_integer_range": [
+      1,
+      12
+    ],
+    "percent_cover_valid_range": [
+      0,
+      100
+    ],
+    "percent_cover_missing_token": "NA",
+    "other_blank_percent_cover": "terminal schema stop",
+    "non_numeric_non_NA_percent_cover": "terminal schema stop"
+  },
+  "annual_state": {
+    "stable_transect_id": "SGNetCode::Transect",
+    "permanent_quadrat_key": "SGNetCode::Transect::Quadrat",
+    "unit": "stable transect x calendar year",
+    "minimum_reobserved_quadrats": 6,
+    "minimum_quantitative_quadrats": 6,
+    "observed_quadrat": "at least one RM or ZM row for that permanent quadrat in that year",
+    "focal_presence_quadrat": "at least one ZM row for that permanent quadrat in that year, regardless of whether its Percent Cover is numeric or NA",
+    "focal_cover_quadrat": "mean numeric ZM Percent Cover across ZM rows for that quadrat-year; if the quadrat is observed but has no ZM row, assign 0 because the table enumerates seagrass species observed; if ZM is observed only with NA cover, focal cover is missing for quantitative averaging",
+    "focal_frequency": "number of observed quadrats with ZM observed / number of observed quadrats",
+    "focal_mean_cover": "mean focal_cover_quadrat across quadrats with known focal cover, including inferred 0 only for observed RM-only quadrats",
+    "survey_count": "number of distinct sampling dates in the transect-year",
+    "recorded_presence": "at least one observed quadrat has a ZM row",
+    "recorded_loss_state": "at least six observed quadrats and zero ZM-observed quadrats; this is ZM not observed among re-observed seagrass-bearing quadrats, not bare-habitat absence",
+    "unavailable": "fewer than six observed quadrats, fewer than six quadrats with known focal cover, or no seagrass row for the transect-year; excluded, never zero"
+  },
+  "transition_endpoint": {
+    "source_eligibility": "source transect-year recorded_presence and quantitative state eligible",
+    "target": "same stable transect in immediately following calendar year",
+    "recorded_loss": "target-year recorded_loss_state",
+    "recorded_persistence": "target-year recorded_presence",
+    "interpretation": "loss of recorded Zostera from re-observed seagrass-bearing permanent quadrats; not demographic extinction and not total meadow disappearance"
+  },
+  "estimability_gate": {
+    "minimum_annual_units": 200,
+    "minimum_source_positive_consecutive_transitions": 100,
+    "minimum_recorded_losses": 12,
+    "minimum_recorded_persistence": 60,
+    "minimum_scored_target_years": 5,
+    "per_target_year_training_min_prior_losses": 6,
+    "per_target_year_training_min_prior_persistence": 40,
+    "failure_status": "terminal_non_estimable_external_validation"
+  },
+  "model": {
+    "split": "strict walk-forward by target year; train only transitions with target year earlier than the scored year",
+    "learner": "sklearn.linear_model.LogisticRegression",
+    "hyperparameters": {
+      "C": 1,
+      "max_iter": 2000,
+      "solver": "lbfgs"
+    },
+    "numeric_scaling": "StandardScaler fitted on each training set only",
+    "categorical_encoding": "OneHotEncoder(handle_unknown='ignore') fitted on each training set only",
+    "baseline_numeric": [
+      "source_year",
+      "log_observed_quadrat_count",
+      "log_survey_count"
+    ],
+    "baseline_categorical": [
+      "SGNetCode",
+      "Transect",
+      "Location"
+    ],
+    "augmentation": [
+      "focal_frequency",
+      "focal_mean_cover"
+    ],
+    "only_allowed_arm_difference": "augmentation columns",
+    "target_label": "recorded_loss=1; recorded_persistence=0"
+  },
+  "scoring": {
+    "metric": "binary_log_loss",
+    "probability_clip": 0.000001,
+    "aggregation": "unweighted mean across prospectively scorable target years",
+    "favorable": "augmented macro log loss < baseline AND augmented wins >= ceil(0.60 * scored target years)",
+    "adverse": "baseline macro log loss < augmented AND baseline wins >= ceil(0.60 * scored target years)",
+    "otherwise": "no_confirmed_external_early_warning",
+    "secondary": [
+      "pooled Brier score",
+      "pooled ROC AUC if both classes"
+    ]
+  },
+  "one_shot": {
+    "response_gets": 1,
+    "response_bytes_expected": 1455261,
+    "response_payload_persistence": false,
+    "rerun_after_response_open": false
+  },
+  "no_rescue": [
+    "Do not treat a missing transect-year or missing Percent Cover as Zostera absence.",
+    "Do not count a bare/unsampled quadrat that has no RM/ZM row as an observed zero.",
+    "Do not switch to Ruppia after response access.",
+    "Do not change the six-quadrat eligibility threshold after response access.",
+    "Do not add density, biomass, canopy height, salinity, disease or other columns to rescue the endpoint.",
+    "Do not lower estimability minima or remove adverse years after response access.",
+    "Any schema/linkage/estimability failure is terminal for v2."
+  ]
+}
