@@ -1,0 +1,16 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v1.terminal_record",
+  "status": "terminal_pre_response_endpoint_semantics_stop",
+  "reason": "Official EML metadata defines Species as the species of seagrass observed and Percent Cover as percent cover of species observed in quadrat, but v1 did not establish an explicit recorded-zero/absence state distinct from a missing species row before response access.",
+  "metadata_result_fingerprint": "f5301a9183849165db7b32dcaf5462c3a26ee7a9ce8ff1f536b5bd0b6d91fbae",
+  "metadata_xml_sha256": "78ba7bbf1e02383d9891bd053ac024f5d5d1c83a026a32d37a45d1fcdf41060f",
+  "response_csv_gets": 0,
+  "response_csv_body_bytes_read": 0,
+  "response_rows_opened": 0,
+  "response_values_opened": false,
+  "model_fits": 0,
+  "predictive_scores": 0,
+  "counts_as_external_predictive_evidence": false,
+  "interpretation": "The dataset is structurally promising, but v1 cannot infer next-year recorded loss without stronger official zero-versus-missing semantics. It neither supports nor contradicts the Tampa early-warning hypothesis.",
+  "next_rule": "Freeze v1. A separately versioned response-blind metadata-only v2 may inspect the full EML measurementScale, numericDomain and missingValueCode before any CSV access."
+}

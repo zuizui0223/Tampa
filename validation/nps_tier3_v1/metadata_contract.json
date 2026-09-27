@@ -1,0 +1,69 @@
+{
+  "schema": "tampa.nps_tier3_external_early_warning_v1.metadata_contract",
+  "frozen_on": "2026-09-27",
+  "purpose": "Response-blind qualification of NPS NCBN Tier-3 seagrass monitoring as an untouched external test of the Tampa quantitative early-warning hypothesis.",
+  "source": {
+    "authority": "National Park Service",
+    "reference_id": "2316692",
+    "title": "2025 Estuarine Nutrient Enrichment Tier-3 Seagrass Monitoring Data Package",
+    "stated_temporal_coverage": [
+      "2003-07-14",
+      "2025-12-31"
+    ],
+    "stated_parks": [
+      "Assateague Island National Seashore",
+      "Cape Cod National Seashore",
+      "Fire Island National Seashore"
+    ],
+    "metadata_xml_url": "https://irma.nps.gov/DataStore/DownloadFile/758145?Reference=2316692",
+    "response_csv_url": "https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692",
+    "response_csv_opened_before_contract": false,
+    "response_values_opened_before_contract": false,
+    "focal_taxon_priority": [
+      "Zostera marina",
+      "Ruppia maritima"
+    ]
+  },
+  "allowed_gate0_access": {
+    "metadata_xml_gets": 1,
+    "response_csv_gets": 0,
+    "response_csv_bytes": 0,
+    "record_only_metadata": true
+  },
+  "required_semantics": [
+    "stable repeated sampling-unit identifier",
+    "calendar date or year",
+    "park/site grouping",
+    "species/taxon identity",
+    "species-specific quantitative cover or abundance",
+    "explicit zero-versus-missing semantics sufficient to define recorded loss",
+    "response CSV physical identity/schema declaration"
+  ],
+  "hypothesis": {
+    "endpoint": "Among source-year sampling units with recorded focal seagrass presence, predict next-year explicitly recorded focal loss at the same stable unit.",
+    "augmentation": [
+      "source-year focal frequency",
+      "source-year focal quantitative cover/abundance"
+    ],
+    "baseline": "space/time/effort only",
+    "split": "strict walk-forward by target year",
+    "metric": "binary log loss",
+    "interpretation": "recorded-state instability, not demographic extinction"
+  },
+  "estimability_gate": {
+    "minimum_annual_units": 200,
+    "minimum_source_positive_consecutive_transitions": 100,
+    "minimum_recorded_losses": 12,
+    "minimum_recorded_persistence": 60,
+    "minimum_scored_target_years": 5,
+    "per_target_year_training_min_prior_losses": 6,
+    "per_target_year_training_min_prior_persistence": 40
+  },
+  "no_rescue": [
+    "Do not open the response CSV in Gate0.",
+    "Do not infer zero from a missing row/value.",
+    "Do not change focal species based on outcome prevalence or performance.",
+    "Do not lower estimability minima after response access.",
+    "Do not change the endpoint after any response value is opened."
+  ]
+}

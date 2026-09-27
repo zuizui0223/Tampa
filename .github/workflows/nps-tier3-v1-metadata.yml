@@ -1,0 +1,32 @@
+name: NPS Tier3 seagrass metadata qualification
+
+on:
+  push:
+    branches: [validation/nps-tier3-v1]
+    paths:
+      - "validation/nps_tier3_v1/**"
+      - ".github/workflows/nps-tier3-v1-metadata.yml"
+  workflow_dispatch:
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python validation/nps_tier3_v1/metadata_gate.py
+      - name: Assert response remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/nps_tier3_v1/metadata_result.json"))
+          assert x["response_csv_gets"]==0
+          assert x["response_csv_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nps-tier3-v1-metadata
+          path: validation/nps_tier3_v1/metadata_result.json
