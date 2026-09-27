@@ -64,8 +64,9 @@
     }
   },
   "not_yet_identified": [
+    "Whether the coarse-state older-history signal reflects genuine slow ecological state, an unmeasured slowly varying environmental driver, demographic persistence, observation-process heterogeneity, or another hidden-state mechanism.",
     "Whether state dimension itself causes the different apparent memory horizon.",
-    "Whether the contrast instead reflects response distribution, learner family, observation noise, or other properties tied to state dimension.",
+    "Whether response distribution or learner family contributes to the empirical contrast.",
     "A universal numerical memory timescale."
   ],
   "prospective_confirmatory_design": {
@@ -75,7 +76,7 @@
     "lag1_increment": "Immediately previous-year state only.",
     "older_history_increment": "Use the same exponential all-prior-state operator for both state dimensions, with tau values frozen before response opening. The primary tau must be common across dimensions; state-specific retuning is forbidden.",
     "support_rule": "For each state dimension separately, older history is supported only if it wins at least 60% of target years, has negative median paired loss delta versus lag1, and one-sided paired year-level sign-flip p<0.05.",
-    "primary_prediction": "Under identical stable units, target-year splits, baseline information and a common exponential-memory operator, older history will satisfy the support rule for the coarse state but not for quantitative condition.",
+    "primary_prediction": "Under identical stable units, target-year splits, baseline information and a common exponential-memory operator, older history will satisfy the support rule for the coarse state but not for quantitative condition. Because simple thresholding-only known truth failed, a matched external confirmation would implicate a slower hidden ecological or observation state rather than coarse-graining alone.",
     "forbidden": [
       "Selecting thresholds after seeing outcomes to manufacture a coarse state.",
       "Changing history representation or tau by state after outcome access.",
@@ -83,5 +84,24 @@
       "Comparing raw effect magnitudes across incompatible loss functions as if directly commensurate.",
       "Calling the current Tampa/NPS contrast causal confirmation."
     ]
+  },
+  "mechanism_falsification": {
+    "thresholding_only_known_truth_v1": {
+      "status": "mechanism_not_supported",
+      "latent_markov_order": 1,
+      "same_sample_for_binary_and_frequency": true,
+      "same_learner": "Ridge(alpha=1.0)",
+      "same_loss": "MSE on [0,1]",
+      "tau_years": 10,
+      "cells": 24,
+      "total_replicates": 768,
+      "supporting_cells": 1,
+      "required_supporting_cells": 18,
+      "global_positive_amplification_fraction": 0.3059895833333333,
+      "required_global_positive_fraction": 0.7,
+      "robust_phi_levels": 0,
+      "required_robust_phi_levels": 2,
+      "interpretation": "Simple lossy thresholding of a first-order quantitative ecological state is not sufficient to explain the empirical coarse-versus-quantitative older-history contrast over the frozen grid."
+    }
   }
 }
