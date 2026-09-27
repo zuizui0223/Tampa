@@ -1,0 +1,66 @@
+{
+  "analysis_unit": "same-transect consecutive target year with at least two observations older than the source year",
+  "baseline_vs_lag1": {
+    "left_wins": 2,
+    "mean_delta_right_minus_left": -1.0572053078371693,
+    "mean_mae_left": 11.144730825311768,
+    "mean_mae_right": 10.087525517474601,
+    "median_delta_right_minus_left": -0.9444256105865643,
+    "right_wins": 11,
+    "target_years": 14,
+    "ties": 1
+  },
+  "baseline_vs_long_history": {
+    "left_wins": 3,
+    "mean_delta_right_minus_left": -1.6581608056511377,
+    "mean_mae_left": 11.144730825311768,
+    "mean_mae_right": 9.48657001966063,
+    "median_delta_right_minus_left": -0.9784949398381029,
+    "right_wins": 10,
+    "target_years": 14,
+    "ties": 1
+  },
+  "claim_boundary": [
+    "Post-hoc external ecological replication because NPS response data were previously opened.",
+    "Continuous cover prediction is a different endpoint from Tampa recorded-loss early warning.",
+    "Node identity is included in every arm, so memory increments are evaluated beyond persistent site differences.",
+    "No environmental cause is inferred.",
+    "The fixed long-history feature set is not tuned on held-out target years."
+  ],
+  "interpretation": "Immediate previous-year cover carries reproducible out-of-time information beyond persistent site identity and target year. Older history does not provide a robust increment beyond lag-1: it improves only 4/14 target years, has a slightly adverse median year-level delta, and the paired sign-flip test is not supportive. The external NPS system therefore supports short-term quantitative state dependence, not a general long-memory claim.",
+  "lag1_vs_long_history": {
+    "left_wins": 9,
+    "mean_delta_right_minus_left": -0.6009554978139688,
+    "mean_mae_left": 10.087525517474601,
+    "mean_mae_right": 9.48657001966063,
+    "median_delta_right_minus_left": 0.09144635721292405,
+    "right_wins": 4,
+    "target_years": 14,
+    "ties": 1
+  },
+  "lag1_vs_long_history_signflip": {
+    "observed_mean_delta": -0.6009554978139688,
+    "one_sided_signflip_p": 0.28853557322133894,
+    "replicates": 20000
+  },
+  "matched_rows": 177,
+  "model": {
+    "baseline_numeric": ["target_year"],
+    "categorical_baseline": ["Location", "node_id"],
+    "lag1_increment": ["source_cover"],
+    "learner": "Ridge(alpha=1.0)",
+    "long_history_increment": ["older_mean_cover", "older_slope_cover", "older_n"],
+    "prediction_clip": [0, 100],
+    "primary_metric": "target-year MAE; unweighted macro mean across target years",
+    "split": "strict walk-forward by target year"
+  },
+  "nodes": 15,
+  "schema": "tampa.nps_quantitative_memory_v1",
+  "scored_target_years": 14,
+  "source_result": "results/nps_persistent_cover_v1.json",
+  "status": "posthoc_external_quantitative_memory_test",
+  "target_year_range": [2006, 2025],
+  "authoritative_workflow_run_id": 36315239327,
+  "authoritative_artifact_id": 10930103734,
+  "authoritative_artifact_sha256": "87ef954d2d256ddf9c53215971cffae81f4614c5a6ad89674cba827168d1d342"
+}
