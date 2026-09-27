@@ -66,18 +66,22 @@ def annualize(rows):
         qmeta[key]=r
     qrows=[]
     for key,spp in qmap.items():
+        collapsed={}
         for sp,vals in spp.items():
             non=[v for v in vals if v is not None]
-            if len(non)>1: raise RuntimeError(f"duplicate_numeric_species_quadrat:{key}:{sp}")
-            if non and any(v is None for v in vals): raise RuntimeError(f"mixed_numeric_na:{key}:{sp}")
-        numeric_any=any(any(v is not None for v in vals) for vals in spp.values())
+            if non and any(v is None for v in vals):
+                raise RuntimeError(f"mixed_numeric_na:{key}:{sp}")
+            if len(set(non))>1:
+                raise RuntimeError(f"discordant_repeated_cover_state:{key}:{sp}:{sorted(set(non))}")
+            collapsed[sp]=(float(non[0]) if non else None)
+        numeric_any=any(v is not None for v in collapsed.values())
         if not numeric_any: continue
         r=qmeta[key]
-        focal_vals=[v for v in spp.get(C["source"]["focal_species"],[]) if v is not None]
-        other_vals=[v for v in spp.get("Ruppia maritima",[]) if v is not None]
-        if focal_vals:
-            focal=float(focal_vals[0])
-        elif other_vals:
+        focal_value=collapsed.get(C["source"]["focal_species"])
+        other_value=collapsed.get("Ruppia maritima")
+        if focal_value is not None:
+            focal=float(focal_value)
+        elif other_value is not None:
             focal=0.0
         else:
             continue
