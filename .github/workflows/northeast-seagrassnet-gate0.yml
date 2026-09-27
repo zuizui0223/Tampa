@@ -1,0 +1,35 @@
+name: Northeast SeagrassNet Gate0 metadata only
+
+on:
+  push:
+    branches:
+      - validation/northeast-seagrassnet-v1
+    paths:
+      - "validation/northeast_seagrassnet_v1/**"
+      - ".github/workflows/northeast-seagrassnet-gate0.yml"
+  workflow_dispatch:
+
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory Dryad metadata only
+        run: python validation/northeast_seagrassnet_v1/gate0_metadata.py
+      - name: Assert response file remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("validation/northeast_seagrassnet_v1/gate0_result.json"))
+          assert x["file_download_requests"] == 0
+          assert x["response_file_bytes_opened"] == 0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - name: Upload Gate0 certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: northeast-seagrassnet-gate0
+          path: validation/northeast_seagrassnet_v1/gate0_result.json
