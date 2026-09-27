@@ -1,0 +1,17 @@
+{
+  "attempt_id": "texas_thalassia_quantitative_early_warning_v2",
+  "counts_as_external_predictive_evidence": false,
+  "reason": "xlsx_valid_sheet_count:0",
+  "response_access_audit": {
+    "archive_full_downloads": 0,
+    "model_fits": 0,
+    "predictive_scores": 0,
+    "selected_entry_compressed_bytes_opened": 42904,
+    "selected_entry_local_header_requests": 2,
+    "selected_entry_payload_requests": 1,
+    "selected_entry_uncompressed_bytes_parsed": 47913,
+    "unselected_entry_payload_requests": 0
+  },
+  "schema": "tampa.texas_seagrass_external_early_warning_v2.terminal_outcome_result",
+  "terminal_status": "terminal_protocol_or_schema_stop"
+}
