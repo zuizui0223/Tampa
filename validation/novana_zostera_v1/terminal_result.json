@@ -1,0 +1,17 @@
+{
+  "schema": "tampa.novana_zostera_external_early_warning_v1.terminal_record",
+  "status": "terminal_pre_response_schema_semantics_stop",
+  "reason": "The public WFS DescribeFeatureType exposes only station-summary fields (station number/name/owner, geometry, first and latest survey dates, link). It does not expose the transect, measurement-point, species, or quantitative-cover fields required to freeze the Tampa early-warning endpoint before biological row access.",
+  "gate0_fingerprint": "4acefae2010dac9d38790de0713b21577a5409a2c2a2474e11aac81127e6db82",
+  "safe_schema_fingerprint": "614b7c2788b100ee23992982ee4345eb3a2ba2174628c0196f0b7e59eff8e31a",
+  "describe_feature_type_requests": 1,
+  "get_feature_requests": 0,
+  "csv_download_requests": 0,
+  "biological_feature_rows_opened": 0,
+  "response_values_opened": false,
+  "model_fits": 0,
+  "predictive_scores": 0,
+  "counts_as_external_predictive_evidence": false,
+  "interpretation": "NOVANA remains scientifically promising and publicly documented as containing time, transect, measurement point, species and cover, but the currently accessible response-independent WFS schema is only a station catalogue. v1 therefore stops rather than infer measurement schema from biological rows.",
+  "next_rule": "Any future NOVANA attempt must be separately versioned and must obtain a response-independent measurement-schema contract (for example official API/OpenAPI/data-dictionary metadata) before GetFeature or CSV row access."
+}
