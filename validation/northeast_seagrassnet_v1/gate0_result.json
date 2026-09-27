@@ -1,0 +1,45 @@
+{
+  "file_download_requests": 0,
+  "fingerprint": "0e2bb00edb3bb06c5e5b50d1cdccf80ccc5419892e8a3cc9098fb6c07205a154",
+  "metadata_requests": 3,
+  "next_gate": "freeze the exact README file identity from this certificate, then open only README_seagrass_for_modeling.csv to define schema before any response-file GET",
+  "response_file_bytes_opened": 0,
+  "response_values_opened": false,
+  "safe_metadata": {
+    "dataset": {
+      "identifier": "doi:10.5061/dryad.z34tmpggg",
+      "license": "https://spdx.org/licenses/CC0-1.0.html",
+      "publicationDate": "2022-06-28",
+      "title": "Northeast USA SeagrassNet Zm percent cover",
+      "versionNumber": 3,
+      "versionStatus": "submitted"
+    },
+    "files": [
+      {
+        "digest": "e74b185cd2aabac782e886f50c2021def369faa3eecedd55acd1959027f25d5d",
+        "download_href": "https://datadryad.org/api/v2/files/1619636/download",
+        "id": null,
+        "mimeType": "application/vnd.ms-excel",
+        "path": "README_seagrass_for_modeling.csv",
+        "size": 1097
+      },
+      {
+        "digest": "2c770229651e24fae8ee301695a6a96b9082510a41f638567052de692e4bdb78",
+        "download_href": "https://datadryad.org/api/v2/files/1619635/download",
+        "id": null,
+        "mimeType": "application/vnd.ms-excel",
+        "path": "seagrass_for_modeling.csv",
+        "size": 156620
+      }
+    ],
+    "selected_version": {
+      "id": "185156",
+      "publicationDate": "2022-06-28",
+      "versionNumber": 3,
+      "versionStatus": "submitted"
+    }
+  },
+  "safe_metadata_fingerprint": "f5abb9f34d0748572b87b7b5978da2a8b5b3bdec7de25f1bb7c020a8233ed784",
+  "schema": "tampa.northeast_seagrassnet_external_early_warning_v1.gate0_result",
+  "status": "gate0_metadata_pass"
+}
