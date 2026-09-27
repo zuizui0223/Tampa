@@ -1,0 +1,13 @@
+{
+  "archive_metadata_bytes_opened": 65558,
+  "archive_metadata_range_requests": 1,
+  "fingerprint": "e94ffa0d150fc8afc6a84db9c09b552bf8e2512907657ec09c342f5872fc438b",
+  "head_requests": 1,
+  "member_payload_bytes_opened": 0,
+  "member_payload_requests": 0,
+  "next_gate": "none",
+  "reason": "range_not_honored_http_200",
+  "response_values_opened": false,
+  "schema": "tampa.seagrassnet_zostera_external_early_warning_v3.zip_inventory_result",
+  "status": "terminal_pre_response_zip_inventory_stop"
+}
