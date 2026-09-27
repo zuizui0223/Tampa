@@ -1,0 +1,19 @@
+{
+  "schema":"tampa.seagrassnet_zostera_external_early_warning_v2.terminal_record",
+  "status":"terminal_pre_response_dynamic_filename_identity_stop",
+  "reason":"Reproducing the body-free HEAD response changed only the server-generated UUID in Content-Disposition (site_data_<uuid>.zip), causing the prospectively over-strict full HEAD fingerprint check to fail before ZIP metadata access.",
+  "stable_head_facts":{
+    "candidate_site_count":48,
+    "candidate_uuid_sha256":"6a727f362a7782b4a159b98bc942a4e474032b9b0c06a0afdaf5f0718401c95c",
+    "content_type":"application/zip",
+    "content_length":"155502",
+    "filename_pattern":"site_data_<random-uuid>.zip"
+  },
+  "archive_metadata_bytes_opened":0,
+  "member_payload_bytes_opened":0,
+  "biological_response_values_opened":false,
+  "model_fits":0,
+  "predictive_scores":0,
+  "counts_as_external_predictive_evidence":false,
+  "next_rule":"Do not repair v2. A separately versioned v3 may treat the random download filename as non-identity metadata while keeping candidate UUID hash and archive structure frozen before member payload access."
+}

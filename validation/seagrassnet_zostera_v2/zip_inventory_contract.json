@@ -1,0 +1,18 @@
+{
+  "schema":"tampa.seagrassnet_zostera_external_early_warning_v2.zip_inventory_contract",
+  "frozen_on":"2026-09-27",
+  "requires_preflight_fingerprint":"02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0",
+  "requires_head_fingerprint":"a681dbe4a49df2d8964523ec6a68722530e7879bb3572175eb04660c5a2ed2b1",
+  "candidate_uuid_sha256":"6a727f362a7782b4a159b98bc942a4e474032b9b0c06a0afdaf5f0718401c95c",
+  "endpoint":"https://www.seagrassnet.org/api/download",
+  "query_parameter":"sites",
+  "allowed_access":{
+    "range_requests":1,
+    "range":"suffix bytes sufficient to contain EOCD and central directory",
+    "maximum_archive_metadata_bytes":65557,
+    "member_payload_bytes_opened":0,
+    "response_values_opened":false
+  },
+  "pass_rule":"HTTP 206 and a valid non-ZIP64 central directory whose member identities can be frozen without reading member payloads.",
+  "stop_rule":"HTTP 200/full-body fallback, ZIP64/unsupported structure, malformed central directory, or candidate-universe drift stops before member payload access."
+}

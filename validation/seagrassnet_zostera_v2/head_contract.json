@@ -1,0 +1,28 @@
+{
+  "schema":"tampa.seagrassnet_zostera_external_early_warning_v2.head_contract",
+  "frozen_on":"2026-09-27",
+  "purpose":"Body-free qualification of the exact multi-site SeagrassNet download response before biological data access.",
+  "prior_v1":{
+    "status":"terminal_pre_response_interface_gate_stop",
+    "biological_download_bytes":0,
+    "preflight_fingerprint":"02f9582219d9b1afae58947b08a5502488f8c9d2ae75d2b06c9ef1fd6ca45ea0",
+    "response_independent_js_endpoint":"/api/download?sites=<comma-joined selected site ids>"
+  },
+  "candidate_universe":"exact USA+Canada site UUID universe reproduced by the v1 preflight fingerprint; no outcome-based site selection",
+  "request":{
+    "base":"https://www.seagrassnet.org",
+    "path":"/api/download",
+    "query_parameter":"sites",
+    "query_value":"comma-joined candidate site UUID ids in deterministic code/UUID order",
+    "method":"HEAD",
+    "request_body":null
+  },
+  "allowed_access":{
+    "head_requests":1,
+    "response_body_read_calls":0,
+    "response_body_bytes":0,
+    "response_values_opened":false
+  },
+  "pass_rule":"HTTP 2xx with a declared Content-Type or Content-Disposition sufficient to freeze the return container/parser class.",
+  "stop_rule":"Any transport failure, authentication requirement, non-2xx status, or absence of both content type and disposition stops v2 before biological response access."
+}
