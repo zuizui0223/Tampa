@@ -1,0 +1,34 @@
+name: NPS Tier2 landscape EML gate
+
+on:
+  push:
+    branches:
+      - analysis/nps-tier2-landscape-v1
+    paths:
+      - "analysis/nps_tier2_landscape_v1/**"
+      - ".github/workflows/nps-tier2-landscape-eml.yml"
+  workflow_dispatch:
+
+jobs:
+  eml-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse official EML only
+        run: python analysis/nps_tier2_landscape_v1/metadata_gate.py
+      - name: Assert CSV remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("analysis/nps_tier2_landscape_v1/metadata_result.json"))
+          assert x["csv_gets"]==0
+          assert x["csv_bytes_opened"]==0
+          assert x["response_values_opened"] is False
+          print(x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nps-tier2-landscape-eml
+          path: analysis/nps_tier2_landscape_v1/metadata_result.json
