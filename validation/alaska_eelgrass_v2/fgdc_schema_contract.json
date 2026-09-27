@@ -1,0 +1,19 @@
+{
+  "schema":"tampa.alaska_eelgrass_external_early_warning_v2.fgdc_schema_contract",
+  "frozen_on":"2026-09-27",
+  "requires_metadata_inventory_fingerprint":"aba45c8f42f6597892d579b787998f2787661f9c64a9a98139c5804a7db305d1",
+  "metadata_xml":{
+    "name":"KATMKEFJPWS_2008-2016_Zostera_metadata.xml",
+    "size":23115,
+    "md5":"e0f0bfafe2be2129639f5a72ce454793",
+    "content_type":"application/fgdc+xml",
+    "url":"https://www.sciencebase.gov/catalog/file/get/6671dc83d34e84915adb75e9?f=__disk__cf%2F5e%2Fad%2Fcf5ead02d90516ed4a117c683ca2c94eb52a7967"
+  },
+  "allowed_access":"one complete GET of the frozen FGDC metadata XML only",
+  "response_csv_gets":0,
+  "response_csv_bytes":0,
+  "response_values_opened":false,
+  "schema_fields_to_extract":["entity labels/definitions","attribute labels/definitions","attribute domains","data-quality/process descriptions"],
+  "pass_rule":"metadata must define, without reference to CSV values, an annual/time field, a stable repeated sampling unit or transect/site identifier, a spatial/region identifier, and quantitative Zostera percent-cover semantics sufficient to freeze the response parser",
+  "failure_rule":"if any required semantic is absent or ambiguous, terminate v2 before CSV access"
+}
