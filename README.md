@@ -6,7 +6,7 @@ This repository develops a biological analysis of long-term fixed-transect seagr
 
 The working question is now:
 
-> **Can a foundation species remain recorded across fixed transects while its quantitative meadow state degrades or reorganizes?**
+> **Can binary persistence conceal quantitative degradation, and do coarse and quantitative seagrass states retain ecological memory over different timescales?**
 
 The analysis distinguishes four state dimensions for *Thalassia testudinum*:
 
@@ -128,6 +128,39 @@ This contrasts with Tampa's binary recorded-state model, where earlier history a
 
 That hypothesis now requires a matched system in which binary and quantitative states can be forecast under the same sampling design.
 
+### 2d. Within Tampa, quantitative condition has strong lag-1 memory but no older-history increment
+
+The matched test can be done inside Tampa itself, removing the species/network confounding in the Tampa–NPS comparison. The primary panel keeps only consecutive transect-years in which *Thalassia* is recorded in **both** source and target years. Thus quantitative-memory performance cannot be explained simply by local disappearance or recolonization.
+
+For **593** persistent-state transitions across **44** transects and **22** scored target years, every quantitative model already contained water-body identity, stable node identity and target year.
+
+**Focal frequency**
+
+- site/time baseline MAE: **0.0785**
+- + previous-year frequency: **0.0673**
+- lag-1 improves **21/22** years; paired sign-flip **p ≈ 5×10⁻⁵**
+- + older history: **0.0680**
+- older history improves only **10/22** years relative to lag-1
+- older-history minus lag-1 median MAE delta: **+0.00102**
+- sign-flip for older history beyond lag-1: **p = 0.719**
+
+**Braun–Blanquet all-point index**
+
+- site/time baseline MAE: **0.3057**
+- + previous-year index: **0.2496**
+- lag-1 improves **19/22** years; paired sign-flip **p ≈ 5×10⁻⁵**
+- + older history: **0.2567**
+- older history improves only **6/22** years relative to lag-1
+- sign-flip for older history beyond lag-1: **p = 0.967**
+
+Both quantitative state variables therefore reproduce the same pattern: **strong immediate state dependence, but no robust information gain from history older than the previous year**.
+
+That differs from the frozen Tampa binary recorded-state analysis, where older history improved prediction beyond lag-1 in 14/22 target years. Effect magnitudes are not directly comparable because the response distributions, models and loss functions differ. But because the quantitative comparison is now within the **same species, transects and monitoring system**, the contrast more strongly motivates a state-dimension hypothesis:
+
+> **Coarse persistence states may integrate longer ecological histories, whereas quantitative meadow condition is dominated by recent state.**
+
+This is still a hypothesis about mechanism, not proof that state dimension itself causes the different memory horizon.
+
 
 
 ### 3. Community reorganization is bay-specific
@@ -225,6 +258,8 @@ python analysis/09_quantitative_early_warning.py --input results/generated --out
 python analysis/11_nps_persistent_cover.py --out results/generated_nps_posthoc
 python analysis/12_nps_persistent_cover_sensitivity.py --input results/generated_nps_posthoc --out results/generated_nps_posthoc
 python analysis/13_nps_quantitative_memory.py --input results/generated_nps_posthoc --out results/generated_nps_posthoc
+python analysis/14_tampa_matched_quantitative_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
+python analysis/15_tampa_cover_index_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
 ```
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
@@ -246,7 +281,8 @@ Supported now:
 - aligning temperature and salinity to 3- and 6-month pre-survey windows still yields no multiplicity-controlled seasonal hot/fresh association;
 - source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort;
 - in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc;
-- in that same NPS panel, previous-year quantitative cover improves strict out-of-time next-year cover prediction beyond site identity in **11/14** target years, supporting short-term quantitative state dependence.
+- in that same NPS panel, previous-year quantitative cover improves strict out-of-time next-year cover prediction beyond site identity in **11/14** target years, supporting short-term quantitative state dependence;
+- within Tampa itself, when binary presence is held persistent across consecutive years, both focal frequency and Braun–Blanquet condition show strong lag-1 dependence but **no robust older-history increment**, strengthening the state-dimension-dependent memory-horizon hypothesis.
 
 Not supported now:
 
@@ -257,7 +293,8 @@ Not supported now:
 - equivalence between fixed-transect condition and bay-wide mapped acreage;
 - demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
 - untouched prospective or external confirmation of the early-warning hypothesis;
-- a universal long-memory effect across seagrass state variables; older NPS cover history does not robustly improve beyond lag-1.
+- a universal long-memory effect across seagrass state variables; older NPS cover history does not robustly improve beyond lag-1;
+- a causal claim that state dimension itself determines memory horizon; the binary and quantitative models use different response distributions and scoring metrics.
 
 ## Independent validation ledger
 
@@ -297,7 +334,9 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The primary next gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
+The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The prediction to freeze prospectively is that lag-1 information should be useful for both states, while history older than lag-1 should add more consistently to the coarse state than to quantitative condition.
+
+The separate predictive gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
 
 1. freeze the two quantitative predictors (frequency + Braun-Blanquet state), endpoint semantics and scoring rule before opening a new system or later held-out period;
 2. test whether quantitative degradation predicts future recorded-state instability in an independent seagrass dataset, bay, or genuinely future Tampa survey;
@@ -305,4 +344,4 @@ The primary next gate remains **independent validation of the quantitative early
 
 Environmental attribution is secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
 
-The manuscript-level ecological center is therefore: **binary persistence can conceal substantial quantitative degradation across independent seagrass monitoring systems; degradation mode is spatially heterogeneous, and Tampa additionally suggests that quantitative state may provide early warning of later recorded-state instability.**
+The manuscript-level ecological center is therefore: **binary persistence can conceal substantial quantitative degradation across independent seagrass monitoring systems; quantitative condition is strongly state-dependent over short timescales; and Tampa suggests that coarse persistence states may retain longer ecological histories than quantitative condition, while quantitative degradation may also provide early warning of later recorded-state instability.**
