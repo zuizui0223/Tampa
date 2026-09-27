@@ -1,0 +1,27 @@
+{
+  "schema":"tampa.nps_tier2_landscape_state_v1.deep_eml_result",
+  "status":"deep_eml_inventory_complete",
+  "fingerprint":"975ec78b0e774a5597cd0284ca1e666d0749ac9d104b23f7c5ffbeaded850b67",
+  "safe_semantics_fingerprint":"d729551ec4aac93baa9742114543ac5d23c633aa475ce322c296260afdf3877c",
+  "eml_gets":1,
+  "csv_gets":0,
+  "csv_bytes_opened":0,
+  "response_values_opened":false,
+  "safe_semantics":{
+    "eml_sha256":"80b5256eedd2e6f44e8bacd8e25fa046233ee915adf35b6531f55547854ad92e",
+    "attributes":{
+      "Park_Code":{"definition":"NPS park unit code","values":{"CACO":"Cape Cod National Seashore","FIIS":"Fire Island National Seashore"}},
+      "Event_Code":{"definition":"Sampling event code. Concatenation of park code, hexagon ID, station ID, and sampling date."},
+      "Station":{"definition":"ID of original randomly selected sampling station","missing":{"NA":"Station was not recorded"}},
+      "Quadrat_Ltr":{"definition":"Quadrat label A, B, C, or D","values":["A","B","C","D"]},
+      "Species":{"definition":"Scientific name of seagrass species observed","values":["Ruppia maritima","Zostera marina"]},
+      "Date":{"definition":"Date sampling occurred"},
+      "Percent_Cover":{"definition":"Percent cover of the species in the quadrat","range":[0,100],"missing":{"NA":"Indicates the station was not sampled"}},
+      "GPS_Accuracy_m":{"missing":{"NA":"Indicates the station was not sampled"}}
+    }
+  },
+  "next_gate":"freeze exact sampled-quadrat denominator, focal Zostera mapping, zero/missing rules and cross-scale trend estimands before CSV access",
+  "authoritative_workflow_run_id":36307797260,
+  "authoritative_artifact_id":10928156606,
+  "authoritative_artifact_sha256":"440183a53369159cbd2d7fb9697a53078cd96ef44ce1a8f3f8041ce948d62dd2"
+}
