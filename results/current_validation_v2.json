@@ -187,7 +187,9 @@
     "Do not treat one-year Thalassia re-recording as complete ecological recovery; returned points show both quantitative abundance debt and elevated subsequent recorded re-loss risk.",
     "Do not interpret recovery debt as proof of residual stress, rhizome depletion, physiological damage, or demographic mechanism; the exact-point comparison is observational.",
     "Do not claim that low return-year Braun-Blanquet mediates or causes subsequent recorded re-loss; the frozen return-quality fragility interval overlaps zero.",
-    "Treat recovery debt and return fragility as parallel dimensions of incomplete recovery unless a future test demonstrates a robust quantitative-state-to-fragility link."
+    "Treat recovery debt and return fragility as parallel dimensions of incomplete recovery unless a future test demonstrates a robust quantitative-state-to-fragility link.",
+    "Do not claim that longer pre-loss Thalassia persistence produces deeper quantitative recovery; the frozen legacy-to-recovery-quality interval overlaps zero.",
+    "Treat recovery probability, recovery abundance debt, and post-return stability as partially distinct dimensions rather than one serial recovery axis."
   ],
   "community_reorganization": {
     "period": [
@@ -1091,5 +1093,29 @@
       "supported": false
     },
     "interpretation": "Return-year Braun-Blanquet is directionally lower among re-lost returns but does not robustly explain subsequent re-loss after pre-loss history, loss-year vegetation continuity, source abundance, stable site identity and return year. Recovery debt and return fragility remain parallel features of incomplete recovery."
+  },
+  "legacy_recovery_quality": {
+    "status": "legacy_recovery_quality_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36483753440,
+      "head_sha": "1ba8644001dabc697a3b342cc3044c8336a1b9a3",
+      "artifact_id": 10997172604,
+      "artifact_digest": "sha256:4288e4d8feef0efdee42050b3abd0ac1999cb084d517605189fa1cbe433c1607"
+    },
+    "registry": {
+      "recovered_quantitative_sequences": 109,
+      "nodes": 20,
+      "nodes_with_thalassia_run_variation": 17,
+      "positive_habitat_headstart_events": 74
+    },
+    "primary": {
+      "thalassia_run_coefficient": 0.07899029963187473,
+      "ci95": [
+        -0.3847294533518759,
+        0.4207484069770098
+      ],
+      "supported": false
+    },
+    "interpretation": "Pre-loss focal Thalassia history does not robustly predict return-year Braun-Blanquet abundance after source abundance, generic habitat headstart, loss-year vegetation continuity, source mixture, stable node and return year are represented. Local history therefore affects recovery probability/stability without demonstrably setting recovery abundance depth."
   }
 }
