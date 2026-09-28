@@ -173,7 +173,8 @@
     "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it.",
     "Do not add further retrospective temperature/salinity thresholds, lag windows or compound stress formulas after the frozen published 30 C / 25 ppt joint-stress test; this stress-index rescue line is closed.",
     "Do not call the community-buffering hypothesis confirmed: its full frozen Lower Tampa support rule failed and the Lower-specific exact-point comparison was non-estimable.",
-    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested."
+    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested.",
+    "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality or residual rhizomes can generate the same pattern."
   ],
   "community_reorganization": {
     "period": [
@@ -763,5 +764,35 @@
     },
     "interpretation": "Lower Tampa Bay Thalassia frequency declines substantially faster than total seagrass point occupancy, consistent with partial community buffering, but the full frozen H1 rule does not pass because non-Thalassia-only occupancy has a positive point estimate with a 95% interval that slightly crosses zero. The predeclared Lower-specific exact-point comparison is non-estimable. Descriptively, most exact-point Thalassia losses remain occupied by another seagrass.",
     "next_hypothesis": "Freeze a separate exact-point community-insurance test asking whether seagrass occupancy after Thalassia loss is primarily persistence of species already co-occurring at the source point rather than new colonization after focal loss."
+  },
+  "microsite_recovery_pathway": {
+    "status": "habitat_continuity",
+    "authoritative_workflow": {
+      "run_id": 36407097378,
+      "head_sha": "68866d1a0ae2687c452b4dd10fbb75b4c3c5fa0a",
+      "artifact_id": 10961829814,
+      "artifact_digest": "sha256:be38f82e7fe79855a1e8ee3c0559d4b70bfd1c74fe7619d7169f23976e1300fc"
+    },
+    "registry": {
+      "eligible_three_year_loss_sequences": 259,
+      "nodes": 25
+    },
+    "other_seagrass_intermediate": {
+      "sequences": 215,
+      "nodes": 23,
+      "thalassia_return_fraction": 0.4697674418604651
+    },
+    "no_seagrass_intermediate": {
+      "sequences": 44,
+      "nodes": 17,
+      "thalassia_return_fraction": 0.18181818181818182
+    },
+    "return_difference_other_minus_no_seagrass": 0.2879492600422833,
+    "return_difference_ci95": [
+      0.1584317800176524,
+      0.4083510911050265
+    ],
+    "interpretation": "Exact points retaining another seagrass after Thalassia loss are substantially more likely to re-record Thalassia one year later than points entering a no-seagrass state, consistent with a habitat-continuity pattern.",
+    "evidence_class": "posthoc exploratory community ecology"
   }
 }
