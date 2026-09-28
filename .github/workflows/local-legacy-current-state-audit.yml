@@ -9,6 +9,8 @@ on:
       - "analysis/35_microsite_recovery_pathway.py"
       - "analysis/40_local_legacy_current_state_audit.py"
       - "results/local_legacy_current_state_audit_v1_contract.json"
+      - "results/local_legacy_current_state_audit_v1.json"
+      - "validation/verify_local_legacy_current_state_audit.py"
       - ".github/workflows/local-legacy-current-state-audit.yml"
   pull_request:
     branches: [main]
@@ -38,6 +40,9 @@ jobs:
         run: python analysis/03_quantitative_state.py --out results/generated_local_legacy_current_state
       - name: Test local legacy beyond current quantitative state
         run: python analysis/40_local_legacy_current_state_audit.py --input results/generated_local_legacy_current_state --out results/generated_local_legacy_current_state
+
+      - name: Verify canonical result
+        run: python validation/verify_local_legacy_current_state_audit.py --generated results/generated_local_legacy_current_state/local_legacy_current_state_audit_v1.json --canonical results/local_legacy_current_state_audit_v1.json
 
       - name: Verify frozen registry
         run: |
