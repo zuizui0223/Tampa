@@ -173,7 +173,8 @@
     "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it.",
     "Do not add further retrospective temperature/salinity thresholds, lag windows or compound stress formulas after the frozen published 30 C / 25 ppt joint-stress test; this stress-index rescue line is closed.",
     "Do not call the community-buffering hypothesis confirmed: its full frozen Lower Tampa support rule failed and the Lower-specific exact-point comparison was non-estimable.",
-    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested."
+    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested.",
+    "Do not interpret microsite diversity insurance as proof of facilitation, competition, or equivalent ecosystem function among seagrass species."
   ],
   "community_reorganization": {
     "period": [
@@ -763,5 +764,41 @@
     },
     "interpretation": "Lower Tampa Bay Thalassia frequency declines substantially faster than total seagrass point occupancy, consistent with partial community buffering, but the full frozen H1 rule does not pass because non-Thalassia-only occupancy has a positive point estimate with a 95% interval that slightly crosses zero. The predeclared Lower-specific exact-point comparison is non-estimable. Descriptively, most exact-point Thalassia losses remain occupied by another seagrass.",
     "next_hypothesis": "Freeze a separate exact-point community-insurance test asking whether seagrass occupancy after Thalassia loss is primarily persistence of species already co-occurring at the source point rather than new colonization after focal loss."
+  },
+  "microsite_diversity_insurance": {
+    "status": "both_supported",
+    "authoritative_workflow": {
+      "run_id": 36406697324,
+      "head_sha": "2f7b93d749086af8d7657bf37ec782685cc03551",
+      "artifact_id": 10962133475,
+      "artifact_digest": "sha256:a8c1891b5306f26d0671ba836cad1472fa2e646c1e113c87826e30f3f3e08cdc"
+    },
+    "registry": {
+      "exact_point_thalassia_loss_events": 328,
+      "nodes_with_loss": 27,
+      "replacement_events": 264
+    },
+    "mixed_source": {
+      "events": 248,
+      "nodes": 25,
+      "replacement_fraction": 0.8467741935483871
+    },
+    "pure_thalassia_source": {
+      "events": 80,
+      "nodes": 18,
+      "replacement_fraction": 0.675
+    },
+    "replacement_difference_mixed_minus_pure": 0.17177419354838708,
+    "replacement_difference_ci95": [
+      0.060201763908239773,
+      0.3481136976790774
+    ],
+    "persistence_component_fraction": 0.7424242424242424,
+    "persistence_component_ci95": [
+      0.6160990712074303,
+      0.865679335282351
+    ],
+    "interpretation": "Pre-existing microsite seagrass diversity is associated with greater retention of seagrass occupancy after exact-point Thalassia loss, and most target alternative occupancy retains at least one taxon already co-occurring at the source point.",
+    "evidence_class": "posthoc exploratory community ecology"
   }
 }
