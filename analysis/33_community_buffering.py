@@ -54,8 +54,9 @@ THALASSIA="Thalassia testudinum"
 ORDER="Alismatales"
 PRIMARY_SEGMENT="Lower Tampa Bay"
 COMPARISON={"Old Tampa Bay","Middle Tampa Bay"}
-BOOT=5000
-SEED=2026092806
+H1_BOOT=int(C["implementation_freeze"]["H1_bootstrap_replicates"])
+H2_BOOT=int(C["implementation_freeze"]["H2_bootstrap_replicates"])
+SEED=int(C["implementation_freeze"]["random_seed"])
 
 
 def git_blob_sha1(data:bytes)->str:
@@ -206,8 +207,8 @@ def slope(frame:pd.DataFrame,metric:str,min_years=5):
         return np.linalg.pinv(xtx)@xty
     beta=est(nodes)
     rng=np.random.default_rng(SEED)
-    vals=np.empty(BOOT,float)
-    for i in range(BOOT):
+    vals=np.empty(H1_BOOT,float)
+    for i in range(H1_BOOT):
         vals[i]=est(rng.choice(nodes,size=len(nodes),replace=True).tolist())[0]
     ci=np.quantile(vals,[.025,.975])
     return {
@@ -290,10 +291,10 @@ def bootstrap_difference(losses:pd.DataFrame):
         return base
     diff=base["lower_replacement_fraction"]-base["comparison_replacement_fraction"]
     rng=np.random.default_rng(SEED+1)
-    boots=np.empty(BOOT,float)
+    boots=np.empty(H2_BOOT,float)
     by_l={n:lower[lower["node_id"]==n] for n in ln}
     by_c={n:comp[comp["node_id"]==n] for n in cn}
-    for i in range(BOOT):
+    for i in range(H2_BOOT):
         ls=rng.choice(ln,size=len(ln),replace=True)
         cs=rng.choice(cn,size=len(cn),replace=True)
         lv=pd.concat([by_l[n] for n in ls],ignore_index=True)
