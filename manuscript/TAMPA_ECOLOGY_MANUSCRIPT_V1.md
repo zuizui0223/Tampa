@@ -12,6 +12,8 @@ Within Tampa, low source-year frequency and Braun–Blanquet state improved stri
 
 foundation species; seagrass; long-term monitoring; ecological condition; state decoupling; Tampa Bay
 
+---
+
 # Introduction
 
 Foundation species create habitat, alter local physical conditions and support diverse ecological communities, so their loss can reorganize ecosystem structure and function (Ellison et al., 2005). Because distributions and mapped extent are often monitored over large areas and long periods, occurrence is a natural indicator of ecosystem status. Yet the ecological state of an occupied site is multidimensional. A species can remain detectable while local abundance declines, occupied area within a sampling unit contracts, individual condition deteriorates, or community composition changes. When these dimensions respond at different rates, persistence of a coarse occurrence state can give an incomplete picture of ecological degradation.
