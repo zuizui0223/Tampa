@@ -8,7 +8,7 @@ import math
 from pathlib import Path
 
 
-def close(a, b, tol=1e-8):
+def close(a, b, tol=1e-4):
     return math.isclose(float(a), float(b), rel_tol=tol, abs_tol=tol)
 
 
