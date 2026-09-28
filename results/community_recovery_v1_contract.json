@@ -1,0 +1,54 @@
+{
+  "schema": "tampa.community_recovery_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_three_year_exact_point_hypothesis_frozen_before_recovery_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Community-insurance v1 supports greater occupancy retention after exact-point Thalassia loss in pre-existing mixed-species patches. Test whether retaining another seagrass in the loss year is associated with greater one-year focal return, distinguishing habitat-state continuity from simple visual persistence.",
+  "source": {
+    "parent_state_builder": "analysis/33_community_buffering.py",
+    "stable_point_state": "community_buffering_point_year_consensus.csv",
+    "point_identity": "pinned Point-event locationID"
+  },
+  "primary_population": {
+    "geography": "all Tampa Bay segments pooled",
+    "loss_target_years": [
+      2016,
+      2024
+    ],
+    "sequence": "same stable point observed in years t, t+1, t+2; Thalassia present at t, absent at t+1; t+2 biological state observed",
+    "exposure_year": "t+1 focal-loss year",
+    "recovery_year": "t+2"
+  },
+  "hypotheses": {
+    "H4a_habitat_continuity_recovery": {
+      "statement": "After exact-point Thalassia loss, meter marks that remain occupied by another seagrass in the loss year have higher one-year Thalassia return probability than meter marks that become seagrass-bare.",
+      "exposure": "loss_year_any_seagrass_present",
+      "outcome": "Thalassia present at the same point in t+2",
+      "estimator": "node-cluster bootstrap difference in one-year return fraction: vegetated loss-year point minus bare loss-year point",
+      "minimum_events_per_group": 20,
+      "minimum_nodes_per_group": 8,
+      "support_rule": "bootstrap 95% interval for vegetated-minus-bare return difference entirely above zero"
+    },
+    "H4b_preexisting_insurance_recovery": {
+      "statement": "Among loss-year points occupied by another seagrass, points retaining at least one alternative species already present with Thalassia at t have higher one-year focal return than points occupied only by newly appearing alternatives.",
+      "exposure": "retained_preexisting_alternative versus new_only alternative occupancy at t+1",
+      "outcome": "Thalassia present at t+2",
+      "estimator": "node-cluster bootstrap difference in one-year return fraction: retained-preexisting minus new-only",
+      "minimum_events_per_group": 20,
+      "minimum_nodes_per_group": 8,
+      "support_rule": "bootstrap 95% interval entirely above zero"
+    }
+  },
+  "descriptive_only": [
+    "bay-segment-specific return fractions",
+    "return fractions by loss-year alternative species identity",
+    "overall one-year return fraction"
+  ],
+  "claim_boundary": [
+    "Post-hoc exploratory three-year exact-point ecology.",
+    "Higher return from vegetated loss-year points would be consistent with habitat/community continuity but would not establish facilitation.",
+    "Return means recorded reappearance at the same sampled meter mark, not genet-level recolonization or demographic recovery.",
+    "Alternative species may be indicators of persistent favorable habitat rather than causal agents of focal return.",
+    "Do not change the pooled geography, one-year return horizon, loss definition, bootstrap unit, or support thresholds after opening t+2 focal states."
+  ]
+}
