@@ -1,0 +1,48 @@
+{
+  "schema": "tampa.focal_vs_habitat_legacy_v1.canonical_summary",
+  "status": "focal_specific_legacy_supported",
+  "authoritative_workflow": {
+    "run_id": 36443749630,
+    "head_sha": "56d3edd62aefa8f0e3093fe93578635aa9f41ebe",
+    "artifact_id": 10979484498,
+    "artifact_digest": "sha256:170c74c67aefb9c580a72678abb08f506627babcab5eabc880a119744a5426af"
+  },
+  "registry": {
+    "recovery_sequences": 259,
+    "nodes": 25,
+    "nodes_with_thalassia_run_variation": 18,
+    "headstart_positive_events": 184,
+    "nodes_with_positive_headstart": 22,
+    "thalassia_run_median": 1,
+    "any_seagrass_run_median": 7,
+    "habitat_headstart_median": 4,
+    "habitat_headstart_max": 26
+  },
+  "primary": {
+    "centered_thalassia_run_coefficient": 0.4836832872462511,
+    "ci95": [
+      0.11487138732362126,
+      1.3473019344616406
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": true
+  },
+  "secondary": {
+    "centered_habitat_headstart_coefficient": 0.15994443107328132,
+    "habitat_headstart_ci95": [
+      -0.21938322611074426,
+      0.3619233192806425
+    ]
+  },
+  "interpretation": "Continuous Thalassia persistence history retains positive recovery information after generic pre-focal seagrass habitat headstart is represented. This supports a focal-species-specific local legacy signal beyond general long-lived vegetated microsite history, while still not identifying the mechanism as clonal or rhizome memory.",
+  "ecological_synthesis": "The recovery pattern is best described by multiple layers: persistent transect quality, above-ground community continuity, and focal-species-specific local history. The focal history effect is not reducible to generic seagrass habitat duration, but its disappearance in the bare-loss subgroup cautions against a simple autonomous below-ground-memory interpretation.",
+  "next_hypothesis": "Test return-state fragility: after Thalassia is re-recorded following a one-year exact-point loss, is it more likely to be lost again the following year than continuously occupied comparison points? This would distinguish stable recovery from transient observation-state flicker.",
+  "claim_boundary": [
+    "Post-hoc history decomposition on an already-opened recovery endpoint.",
+    "The focal-specific coefficient is on a standardized within-node centered predictor and is not a per-year log-odds effect.",
+    "Do not call this proof of clonal memory, rhizome reserves, or vegetative resprouting without direct below-ground data.",
+    "The bare-loss subgroup null means focal history alone is not sufficient evidence for autonomous below-ground buffering.",
+    "Return is recorded reappearance, not genet-level recolonization."
+  ]
+}
