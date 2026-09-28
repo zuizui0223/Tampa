@@ -1,0 +1,58 @@
+name: Pre-existing mixed-patch ecology
+
+on:
+  push:
+    branches: [analysis/preexisting-mixed-patch-v1]
+    paths:
+      - "analysis/35_preexisting_mixed_patch.py"
+      - "results/preexisting_mixed_patch_v1_contract.json"
+      - ".github/workflows/preexisting-mixed-patch.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/35_preexisting_mixed_patch.py"
+      - "results/preexisting_mixed_patch_v1_contract.json"
+      - ".github/workflows/preexisting-mixed-patch.yml"
+  workflow_dispatch:
+
+jobs:
+  mixed-patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Test pre-existing mixed-patch persistence
+        run: python analysis/35_preexisting_mixed_patch.py --out results/generated_preexisting_mixed_patch
+      - name: Verify frozen endpoint registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_preexisting_mixed_patch/preexisting_mixed_patch_v1.json"))
+          assert x["schema"]=="tampa.preexisting_mixed_patch_v1.result"
+          assert x["contract"]=="results/preexisting_mixed_patch_v1_contract.json"
+          assert x["registry"]["eligible_visits"]==1497
+          assert x["registry"]["stable_nodes"]==71
+          assert x["registry"]["primary_replacement_events"]>0
+          assert x["registry"]["primary_nodes"]>0
+          for name in [
+            "mixed_patch_point_visits.csv",
+            "mixed_patch_point_year_consensus.csv",
+            "mixed_patch_replacement_events.csv",
+            "mixed_patch_by_segment.csv",
+            "mixed_patch_by_target_taxon.csv",
+          ]:
+              p=Path("results/generated_preexisting_mixed_patch")/name
+              assert p.exists() and p.stat().st_size>0, name
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-preexisting-mixed-patch-v1
+          path: results/generated_preexisting_mixed_patch/
