@@ -1,0 +1,62 @@
+name: Recovery debt ecology
+
+on:
+  push:
+    branches: [analysis/recovery-debt-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/43_recovery_debt.py"
+      - "results/recovery_debt_v1_contract.json"
+      - "results/recovery_debt_v1.json"
+      - "validation/verify_recovery_debt.py"
+      - ".github/workflows/recovery-debt.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/43_recovery_debt.py"
+      - "results/recovery_debt_v1_contract.json"
+      - "results/recovery_debt_v1.json"
+      - "validation/verify_recovery_debt.py"
+      - ".github/workflows/recovery-debt.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point presence states
+        run: python analysis/33_community_buffering.py --out results/generated_recovery_debt
+      - name: Test exact-point quantitative recovery debt
+        run: python analysis/43_recovery_debt.py --input results/generated_recovery_debt --out results/generated_recovery_debt
+      - name: Verify canonical recovery-debt result
+        run: python validation/verify_recovery_debt.py --generated results/generated_recovery_debt/recovery_debt_v1.json --canonical results/recovery_debt_v1.json
+
+      - name: Verify frozen recovery-debt registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_recovery_debt/recovery_debt_v1.json"))
+          assert x["schema"]=="tampa.recovery_debt_v1.result"
+          assert x["registry"]["presence_defined_sequences"]>0
+          assert x["registry"]["point_years_with_numeric_bb"]>0
+          assert x["registry"]["recovered_sequences"]>=0
+          assert x["registry"]["continuous_sequences"]>=0
+          for p in ["recovery_debt_sequences.csv","recovery_debt_point_year_bb.csv","recovery_debt_by_segment.csv"]:
+              q=Path("results/generated_recovery_debt")/p
+              assert q.exists()
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-recovery-debt-v1
+          path: results/generated_recovery_debt/
