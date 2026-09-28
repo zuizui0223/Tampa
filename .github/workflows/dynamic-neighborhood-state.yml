@@ -5,14 +5,14 @@ on:
     branches: [analysis/dynamic-neighborhood-state-v1]
     paths:
       - "analysis/03_quantitative_state.py"
-      - "analysis/21_dynamic_neighborhood_state.py"
+      - "analysis/22_dynamic_neighborhood_state.py"
       - "results/dynamic_neighborhood_state_v1_contract.json"
       - ".github/workflows/dynamic-neighborhood-state.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/03_quantitative_state.py"
-      - "analysis/21_dynamic_neighborhood_state.py"
+      - "analysis/22_dynamic_neighborhood_state.py"
       - "results/dynamic_neighborhood_state_v1_contract.json"
       - ".github/workflows/dynamic-neighborhood-state.yml"
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
       - name: Rebuild Tampa quantitative annual state
         run: python analysis/03_quantitative_state.py --out results/generated_dynamic_neighborhood
       - name: Test dynamic segment and neighborhood state
-        run: python analysis/21_dynamic_neighborhood_state.py --input results/generated_dynamic_neighborhood --out results/generated_dynamic_neighborhood
+        run: python analysis/22_dynamic_neighborhood_state.py --input results/generated_dynamic_neighborhood --out results/generated_dynamic_neighborhood
       - uses: actions/upload-artifact@v4
         if: always()
         with:
