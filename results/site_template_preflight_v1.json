@@ -1,0 +1,47 @@
+{
+  "schema": "tampa.site_template_preflight_v1.canonical_summary",
+  "status": "physical_covariates_usable_for_outcome_gate",
+  "authoritative_workflow": {
+    "run_id": 36378385291,
+    "head_sha": "fa672558bf123b668a949d05ad96346bab598bad",
+    "artifact_id": 10951917403,
+    "artifact_digest": "sha256:8dd4a90569d2625d6a32cfcd04e0946d63ff40427906c425c80ee066beed97d5"
+  },
+  "response_access": {
+    "thalassia_occurrence_opened": false,
+    "thalassia_cover_opened": false,
+    "event_physical_depth_opened": true,
+    "sediment_parsed_without_taxon_filter": true
+  },
+  "registry": {
+    "eligible_transect_visits": 1497,
+    "point_events": 45849,
+    "stable_nodes": 71
+  },
+  "depth": {
+    "nodes_with_depth": 71,
+    "nodes_without_depth": 0,
+    "minimum_point_observations": 18,
+    "median_point_observations": 492
+  },
+  "sediment": {
+    "nodes_with_sediment": 71,
+    "nodes_without_sediment": 0,
+    "raw_rows": 35351,
+    "unique_single_label_point_events": 27449,
+    "conflicting_point_events": 39,
+    "categories": {
+      "mud": 1449,
+      "muddy sand": 10519,
+      "oyster": 10,
+      "sand": 14672,
+      "shelly sand": 799
+    }
+  },
+  "decision": "Proceed to a frozen exploratory held-out-node test of whether depth and sediment explain persistent site-level Thalassia state beyond water-body identity and coordinates.",
+  "claim_boundary": [
+    "Depth summaries are habitat-template proxies and may include tidal/sampling variation.",
+    "Sediment availability can depend on biological record structure even though no focal-taxon filter was used.",
+    "The 39 conflicting point-event sediment labels are excluded rather than adjudicated."
+  ]
+}
