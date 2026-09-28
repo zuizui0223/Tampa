@@ -1,0 +1,69 @@
+{
+  "schema": "tampa.community_diversity_insurance_v1.canonical_summary",
+  "status": "community_diversity_insurance_supported",
+  "authoritative_workflow": {
+    "run_id": 36409152754,
+    "head_sha": "f536f523aaacb67640361531d009679889baaa82",
+    "artifact_id": 10963064742,
+    "artifact_digest": "sha256:6e352576df909917a436a909b0594e49b8c9585c981b1a8f8515c2f2e398bfe9"
+  },
+  "registry": {
+    "transitions": 370,
+    "nodes": 27,
+    "target_year_range": [
+      2016,
+      2025
+    ],
+    "observed_richness_values": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "primary": {
+    "standardized_richness_log_odds_coefficient": 0.36399618970028,
+    "bootstrap_ci95": [
+      0.07448931275756815,
+      0.6547052858298457
+    ],
+    "bootstrap_replicates": 5000,
+    "frozen_support_rule_passed": true
+  },
+  "descriptive_by_richness": {
+    "0": {
+      "transitions": 89,
+      "nodes": 20,
+      "target_occupancy_fraction": 0.7078651685393258
+    },
+    "1": {
+      "transitions": 257,
+      "nodes": 25,
+      "target_occupancy_fraction": 0.8521400778210116
+    },
+    "2": {
+      "transitions": 23,
+      "nodes": 13,
+      "target_occupancy_fraction": 0.8260869565217391
+    },
+    "3": {
+      "transitions": 1,
+      "nodes": 1,
+      "target_occupancy_fraction": 1
+    }
+  },
+  "marginal_predictions": {
+    "0": 0.7243375311142862,
+    "1": 0.8380323064046507,
+    "2": 0.9107938801956554,
+    "3": 0.9527850603888358
+  },
+  "interpretation": "The supported positive richness coefficient extends the binary source-mixture community-insurance result to a diversity gradient: exact points with more alternative seagrass taxa before Thalassia loss are more likely to remain seagrass-occupied afterward, after adjustment for target year and water body.",
+  "claim_boundary": [
+    "Post-hoc exploratory exact-point community ecology; richness endpoint frozen before the gradient result was opened.",
+    "A positive richness coefficient is consistent with biodiversity insurance but does not prove causal insurance, facilitation, niche complementarity, or functional redundancy.",
+    "Persistent habitat quality could jointly increase source richness and later seagrass retention.",
+    "Raw richness=2 and richness=3 groups are sparse; inference comes from the frozen linear richness model and node-cluster bootstrap, not from post-hoc pairwise contrasts.",
+    "The result concerns retention of seagrass occupancy after focal Thalassia loss, not preservation of equivalent ecosystem function."
+  ]
+}
