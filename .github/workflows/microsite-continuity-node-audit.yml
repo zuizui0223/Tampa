@@ -1,0 +1,66 @@
+name: Microsite continuity within-node audit
+
+on:
+  push:
+    branches: [analysis/microsite-continuity-node-audit-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/37_microsite_continuity_node_audit.py"
+      - "results/community_buffering_v1_contract.json"
+      - "results/microsite_recovery_pathway_v1_contract.json"
+      - "results/microsite_continuity_node_audit_v1_contract.json"
+      - "results/microsite_continuity_node_audit_v1.json"
+      - "validation/verify_microsite_continuity_node_audit.py"
+      - ".github/workflows/microsite-continuity-node-audit.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/37_microsite_continuity_node_audit.py"
+      - "results/microsite_continuity_node_audit_v1_contract.json"
+      - "results/microsite_continuity_node_audit_v1.json"
+      - "validation/verify_microsite_continuity_node_audit.py"
+      - ".github/workflows/microsite-continuity-node-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_microsite_continuity
+      - name: Rebuild frozen three-year recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_microsite_continuity --out results/generated_microsite_continuity
+      - name: Test within-node microsite continuity
+        run: python analysis/37_microsite_continuity_node_audit.py --input results/generated_microsite_continuity --out results/generated_microsite_continuity
+      - name: Verify canonical audit result
+        run: python validation/verify_microsite_continuity_node_audit.py --generated results/generated_microsite_continuity/microsite_continuity_node_audit_v1.json --canonical results/microsite_continuity_node_audit_v1.json
+
+      - name: Verify frozen audit registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_microsite_continuity/microsite_continuity_node_audit_v1.json"))
+          assert x["schema"]=="tampa.microsite_continuity_node_audit_v1.result"
+          assert x["registry"]["all_recovery_sequences"]==259
+          assert x["registry"]["all_nodes"]==25
+          assert x["registry"]["informative_nodes"]>=0
+          q=Path("results/generated_microsite_continuity/microsite_continuity_node_differences.csv")
+          assert q.exists()
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-microsite-continuity-node-audit-v1
+          path: results/generated_microsite_continuity/
