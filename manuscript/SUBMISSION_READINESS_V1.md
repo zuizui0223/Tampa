@@ -25,8 +25,9 @@
 ## Required before initial journal submission
 
 - [ ] Select target journal and apply journal-specific structure/word limits.
-- [ ] Convert reference notes into a complete formatted bibliography.
-- [ ] Check every in-text author–year citation against the bibliography.
+- [x] Complete provisional bibliography for all current in-text citations.
+- [x] Check every current in-text author–year citation against the bibliography.
+- [ ] Apply the selected target journal's reference style and punctuation rules.
 - [ ] Write Supplementary Methods from `TAMPA_ECOLOGY_SUPPLEMENT_OUTLINE_V1.md`.
 - [ ] Render Supplementary Figures/Tables S1–S9.
 - [ ] Add Data Availability statement with exact public source locations and pinned commits.
