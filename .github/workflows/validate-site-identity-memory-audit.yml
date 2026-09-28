@@ -8,12 +8,18 @@ on:
       - "analysis/03_quantitative_state.py"
       - "analysis/19_tampa_site_identity_memory_audit.py"
       - ".github/workflows/validate-site-identity-memory-audit.yml"
+      - "README.md"
+      - "results/current_validation_v2.json"
+      - "results/site_identity_memory_audit_v1.json"
   pull_request:
     branches: [main]
     paths:
       - "analysis/03_quantitative_state.py"
       - "analysis/19_tampa_site_identity_memory_audit.py"
       - ".github/workflows/validate-site-identity-memory-audit.yml"
+      - "README.md"
+      - "results/current_validation_v2.json"
+      - "results/site_identity_memory_audit_v1.json"
   workflow_dispatch:
 
 jobs:
