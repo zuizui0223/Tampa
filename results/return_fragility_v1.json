@@ -29,28 +29,15 @@
   "secondary": {
     "recovered_reloss_fraction": 0.3614457831325301,
     "continuous_reloss_fraction": 0.12877263581488935,
-    "risk_difference_recovered_minus_continuous": 0.23267314731764077,
-    "old_tampa_bay": {
-      "recovered_sequences": 35,
-      "recovered_reloss_fraction": 0.34285714285714286,
-      "continuous_sequences": 338,
-      "continuous_reloss_fraction": 0.09171597633136094
-    },
-    "middle_tampa_bay": {
-      "recovered_sequences": 48,
-      "recovered_reloss_fraction": 0.375,
-      "continuous_sequences": 156,
-      "continuous_reloss_fraction": 0.20512820512820512
-    }
+    "risk_difference_recovered_minus_continuous": 0.23267314731764077
   },
-  "interpretation": "Exact-point Thalassia re-recording after a one-year loss is substantially more fragile than uninterrupted occupancy at the next annual observation. This supports a hysteresis/incomplete-recovery pattern at the observation-state level: presence can return before local state stability is restored.",
-  "ecological_synthesis": "Recovery of the coarse recorded state is not equivalent to recovery of local stability. Combined with state decoupling, community insurance, and focal-specific local history, Tampa supports a multi-state resilience model in which occupancy loss and reappearance can occur on a more fragile trajectory than long-term continuous occupancy.",
-  "next_hypothesis": "Test whether pre-loss local abundance/condition predicts which returned meter marks remain stable versus re-lose, distinguishing shallow reappearance from deeper state recovery.",
+  "interpretation": "Exact points that re-record Thalassia after a one-year loss are substantially more likely to be unrecorded again the following year than points with uninterrupted occupancy, after stable-node and return-year adjustment. Re-recording therefore marks a comparatively fragile state rather than complete recovery at this annual resolution.",
+  "ecological_boundary": "The fragility pattern is consistent with hysteresis or incomplete local recovery but can also arise from patchiness, detectability, residual stress, or demographic instability; it does not identify the mechanism.",
   "claim_boundary": [
-    "Post-hoc four-year exact-point endpoint.",
-    "Recorded re-loss is an observation-state transition, not demographic relapse, mortality, or failed recolonization.",
-    "The result is adjusted for stable node and return year but is not an experimental matched-control design.",
-    "Fragility may reflect patchiness, detectability, residual stress, or demographic instability.",
-    "Do not describe re-recording as full ecological recovery."
+    "Post-hoc four-year exact-point temporal ecology.",
+    "Recorded re-loss is an observation-state transition, not mortality or demographic relapse.",
+    "Do not treat a one-year Thalassia re-recording as full ecological recovery.",
+    "Continuous controls are observational and adjusted for stable node and return year, not experimentally matched.",
+    "The result does not identify whether fragility arises from residual rhizomes, local stress, patchiness, detectability, or demographic state."
   ]
 }
