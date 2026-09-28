@@ -1,0 +1,53 @@
+{
+  "schema": "tampa.preloss_point_abundance_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_exact_point_abundance_hypothesis_frozen_before_return_association",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "The pre-loss exact-point legacy test indicates that longer uninterrupted Thalassia occupancy history is associated with later re-recording. This test asks whether the same recovery signal is also carried by focal abundance immediately before loss, separating historical persistence from current above-ground state.",
+  "source": {
+    "biological": "tbep-tech/obis-example commit 6c567beff95ea04f0e397101befb49d5233ace8f",
+    "recovery_sequence": "same frozen 259 exact-point loss/recovery sequences as microsite_recovery_pathway_v1",
+    "abundance_measure": "numeric source-year Thalassia seagrass percent cover (Braun-Blanquet scale) eMoF measurement at the same stable point",
+    "stable_point_id": "child-event locationID"
+  },
+  "point_abundance": {
+    "visit_value": "For each eligible point event with Thalassia present, mean all numeric focal Braun-Blanquet measurements linked to focal occurrence rows; if focal presence has no numeric Braun-Blanquet value, visit abundance is missing.",
+    "source_point_year_value": "Mean numeric visit values within the source calendar year at the same stable point.",
+    "nonnumeric_reported": "Missing; never converted to a numeric class.",
+    "no_imputation": true
+  },
+  "primary_design": {
+    "population": "same frozen three-year exact-point recovery sequences; retain sequences with numeric source-point-year Braun-Blanquet abundance",
+    "stratification": [
+      "stable node_id",
+      "loss-year intermediate state (other_seagrass versus no_seagrass)"
+    ],
+    "informative_stratum": "within a node × intermediate-state stratum, at least one return and one non-return sequence with numeric source abundance",
+    "stratum_effect": "mean source-point Braun-Blanquet abundance among return sequences minus mean among non-return sequences",
+    "node_effect": "unweighted mean informative-stratum effect within node",
+    "estimator": "unweighted mean node effect",
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 10000,
+    "random_seed": 2026092814,
+    "minimum_informative_nodes": 8,
+    "support_rule": "95% bootstrap interval for the mean node effect entirely above zero"
+  },
+  "secondary_descriptive": [
+    "numeric abundance coverage among the 259 recovery sequences",
+    "median node effect and positive/zero/negative node counts",
+    "source abundance distributions by return outcome",
+    "descriptive return fraction by observed source Braun-Blanquet class where n>=10"
+  ],
+  "interpretation": {
+    "supported": "Higher focal abundance immediately before exact-point loss is associated with subsequent re-recording beyond broad transect and loss-year community state, consistent with a local state-strength/reserve proxy.",
+    "unsupported": "Immediate pre-loss Braun-Blanquet abundance does not show a robust within-node/within-loss-state association with later re-recording; any supported pre-loss history effect is therefore not reducible to the last observed abundance class."
+  },
+  "claim_boundary": [
+    "Post-hoc exploratory exact-point temporal ecology.",
+    "Braun-Blanquet is an ordinal above-ground abundance index, not percent cover or a direct measurement of below-ground reserves.",
+    "A positive association would not identify rhizome biomass, carbohydrate stores, clonal integration, or facilitation.",
+    "Nonnumeric focal cover values remain missing and are not recoded.",
+    "Return means re-recorded Thalassia at the same meter mark, not proven demographic recolonization.",
+    "Do not change the recovery sequence, abundance aggregation, stratification, minimum informative-node rule, bootstrap unit, or directional support rule after opening the return-abundance association."
+  ]
+}
