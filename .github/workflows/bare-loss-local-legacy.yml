@@ -8,6 +8,8 @@ on:
       - "analysis/35_microsite_recovery_pathway.py"
       - "analysis/39_bare_loss_local_legacy.py"
       - "results/bare_loss_local_legacy_v1_contract.json"
+      - "results/bare_loss_local_legacy_v1.json"
+      - "validation/verify_bare_loss_local_legacy.py"
       - ".github/workflows/bare-loss-local-legacy.yml"
   pull_request:
     branches: [main]
@@ -37,6 +39,9 @@ jobs:
 
       - name: Test bare-loss local legacy
         run: python analysis/39_bare_loss_local_legacy.py --input results/generated_bare_loss_legacy --out results/generated_bare_loss_legacy
+
+      - name: Verify canonical result
+        run: python validation/verify_bare_loss_local_legacy.py --generated results/generated_bare_loss_legacy/bare_loss_local_legacy_v1.json --canonical results/bare_loss_local_legacy_v1.json
 
       - name: Verify frozen subgroup registry
         run: |
