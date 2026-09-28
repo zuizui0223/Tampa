@@ -169,7 +169,8 @@
     "Do not infer that EOG prediction failure proves dispersal or connectivity is ecologically irrelevant; the post-hoc translation tests only static geometry and one simple annual neighborhood formulation.",
     "Treat persistent site template, clonal buffering and local threshold loss as ecological hypotheses requiring direct habitat or demographic measurements, not identified causes.",
     "Do not interpret the failed segment/neighborhood increments as proof that Tampa transects are ecologically independent; common forcing may act at other temporal scales or through unmeasured exposures.",
-    "Do not explain the stable-node effect as simple depth or sediment differences; the frozen held-out-node test found 0/3 primary state dimensions supported by those measured components."
+    "Do not explain the stable-node effect as simple depth or sediment differences; the frozen held-out-node test found 0/3 primary state dimensions supported by those measured components.",
+    "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it."
   ],
   "community_reorganization": {
     "period": [
@@ -627,5 +628,45 @@
       "below-ground biomass/rhizome reserve and clonal meadow legacy",
       "persistent-template by episodic-stress interactions"
     ]
+  },
+  "benthic_light_condition": {
+    "status": "benthic_light_condition_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36380072242,
+      "head_sha": "a8da58fe54d17ec54c89df9f0db6648fd10265ea",
+      "artifact_id": 10952124339,
+      "artifact_digest": "sha256:11b3b46486981c852be996641e52b02d7de71f407d908c20eb5b567c21986fbe"
+    },
+    "exposure_preflight": {
+      "visits": 1236,
+      "nodes": 57,
+      "years": [
+        1998,
+        2025
+      ],
+      "median_benthic_fraction": 0.48849778469219185,
+      "range": [
+        0.0816050256020408,
+        0.9886820573311353
+      ]
+    },
+    "blade_length": {
+      "baseline_mae": 6.768384302093701,
+      "light_mae": 6.766815996429359,
+      "wins": 11,
+      "target_years": 22,
+      "signflip_p": 0.46786532134678654,
+      "supported": false
+    },
+    "shoot_density": {
+      "baseline_mae": 173.86065971487776,
+      "light_mae": 175.1260013582521,
+      "wins": 10,
+      "target_years": 22,
+      "signflip_p": 0.94530054699453,
+      "supported": false
+    },
+    "sensitivity_3m_supported": false,
+    "interpretation": "The segment-Secchi x visit-depth benthic-light proxy does not add robust heldout information for plant condition beyond node identity, survey context, depth and bulk Secchi. Local/spectral optical stress, epiphytes and event-scale light limitation remain unresolved."
   }
 }
