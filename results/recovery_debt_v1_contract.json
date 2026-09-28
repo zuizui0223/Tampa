@@ -1,0 +1,60 @@
+{
+  "schema": "tampa.recovery_debt_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_exact_point_recovery_quality_hypothesis_frozen_before_quantitative_return_state",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Return fragility shows that exact points re-recording Thalassia after a one-year loss are more likely to be unrecorded again than continuously occupied points. Test whether the return state is also quantitatively depressed at the moment of re-recording.",
+  "source": {
+    "pinned_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "exact_point_identity": "child-event locationID = Transect + meter-mark Site",
+    "group_state_builder": "same point-year Thalassia presence logic used by analysis/33_community_buffering.py and analysis/42_return_fragility.py",
+    "quantitative_measurement": "numeric Thalassia Braun-Blanquet measurement from pinned eMoF"
+  },
+  "three_year_sequence": {
+    "years": "t, t+1, t+2 observed consecutively at the same stable meter mark",
+    "period": "t >= 2016 and t+2 <= 2025",
+    "recovered_group": "Thalassia present at t, absent at t+1, present at t+2",
+    "continuous_group": "Thalassia present at t, t+1, and t+2",
+    "quantitative_requirement": "numeric point-level Braun-Blanquet state observed at both t and t+2",
+    "point_year_quantitative_rule": "mean all numeric focal Braun-Blanquet measurements assigned to the exact point-year; if focal presence is recorded but no numeric Braun-Blanquet exists, point-year is missing for this endpoint"
+  },
+  "primary_hypothesis": {
+    "statement": "At the return year, recovered points have lower Thalassia Braun-Blanquet state than continuously occupied points after stable-transect identity, return year, and source-year point Braun-Blanquet state are represented.",
+    "outcome": "target-year exact-point numeric Braun-Blanquet state",
+    "model": "Ridge(alpha=1.0)",
+    "categorical": [
+      "node_id",
+      "return_year"
+    ],
+    "numeric": [
+      "source_bb",
+      "recovered_group"
+    ],
+    "estimator": "standardized recovered_group coefficient; negative means recovery debt",
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092913,
+    "minimum_recovered_sequences": 30,
+    "minimum_continuous_sequences": 100,
+    "minimum_recovered_nodes": 10,
+    "minimum_control_nodes": 10,
+    "support_rule": "upper bound of 95% node-bootstrap interval for recovered_group coefficient < 0"
+  },
+  "secondary": [
+    "raw target Braun-Blanquet mean/median in recovered and continuous groups",
+    "source-to-target Braun-Blanquet change by group",
+    "bay-segment-specific target-state summaries, descriptive only"
+  ],
+  "interpretation": {
+    "supported": "Re-recorded Thalassia returns in a quantitatively depressed state relative to uninterrupted occupancy, consistent with recovery debt or hysteresis at annual resolution.",
+    "unsupported": "Re-recorded points are not detectably lower in exact-point Braun-Blanquet state than uninterrupted controls after baseline state, site, and year adjustment; binary return fragility is not accompanied by the tested quantitative recovery debt."
+  },
+  "claim_boundary": [
+    "Post-hoc exact-point recovery-quality endpoint.",
+    "Braun-Blanquet is an ordinal abundance state, not percent cover or biomass.",
+    "A negative recovered-group coefficient is consistent with recovery debt but does not identify residual stress, rhizome state, detectability, or demographic mechanism.",
+    "Continuous controls are observational and adjusted for stable node, return year, and source point abundance; they are not experimentally matched.",
+    "Return is recorded reappearance at the same meter mark, not proven genet-level recolonization.",
+    "Do not change sequence patterns, period, quantitative inclusion rule, control variables, minima, learner, or support threshold after opening target quantitative states."
+  ]
+}
