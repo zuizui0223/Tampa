@@ -11,11 +11,6 @@
     "seagrass_definition": "Present occurrence rows in order Alismatales",
     "point_year_consistency": "Retain only point-years for which repeated visits agree on the complete present-Alismatales scientificName set."
   },
-  "primary_segments": [
-    "Old Tampa Bay",
-    "Middle Tampa Bay",
-    "Lower Tampa Bay"
-  ],
   "primary_period": [
     2016,
     2025
@@ -63,6 +58,15 @@
     "A positive richness coefficient is consistent with biodiversity insurance but does not prove causal insurance, facilitation, or niche complementarity.",
     "Persistent habitat quality could cause both higher source richness and target seagrass retention.",
     "Richness counts observed taxa at the annual point visit and is subject to detection variability.",
-    "Do not change the linear richness treatment, transition/node minima, period, segment pool, or endpoint after response opening."
-  ]
+    "Do not change the linear richness treatment, transition/node minima, period, segment pool, or endpoint after response opening.",
+    "Primary geography is all Tampa Bay segments pooled to match the already-supported binary community-insurance analysis; do not narrow or expand it after response opening."
+  ],
+  "primary_population": {
+    "target_years": [
+      2016,
+      2025
+    ],
+    "geography": "all Tampa Bay segments pooled, exactly matching community_insurance_v1 primary population",
+    "transition": "same stable point observed in consecutive years; source-year Thalassia present; target-year Thalassia absent"
+  }
 }
