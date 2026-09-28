@@ -7,6 +7,8 @@ on:
       - "analysis/03_quantitative_state.py"
       - "analysis/36_condition_leads_thinning.py"
       - "results/condition_leads_thinning_v1_contract.json"
+      - "results/condition_leads_thinning_v1.json"
+      - "validation/verify_condition_leads_thinning.py"
       - ".github/workflows/condition-leads-thinning.yml"
   pull_request:
     branches: [main]
@@ -14,6 +16,8 @@ on:
       - "analysis/03_quantitative_state.py"
       - "analysis/36_condition_leads_thinning.py"
       - "results/condition_leads_thinning_v1_contract.json"
+      - "results/condition_leads_thinning_v1.json"
+      - "validation/verify_condition_leads_thinning.py"
       - ".github/workflows/condition-leads-thinning.yml"
   workflow_dispatch:
 
@@ -32,6 +36,9 @@ jobs:
         run: python analysis/03_quantitative_state.py --out results/generated_condition_leads_thinning
       - name: Test condition-to-thinning cross-lag
         run: python analysis/36_condition_leads_thinning.py --input results/generated_condition_leads_thinning --out results/generated_condition_leads_thinning
+      - name: Verify canonical result
+        run: python validation/verify_condition_leads_thinning.py --generated results/generated_condition_leads_thinning/condition_leads_thinning_v1.json --canonical results/condition_leads_thinning_v1.json
+
       - name: Verify frozen endpoint registry
         run: |
           python - <<'PY'
