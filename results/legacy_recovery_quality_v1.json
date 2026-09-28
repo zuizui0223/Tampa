@@ -1,0 +1,47 @@
+{
+  "schema": "tampa.legacy_recovery_quality_v1.canonical_summary",
+  "status": "legacy_recovery_quality_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36483753440,
+    "head_sha": "1ba8644001dabc697a3b342cc3044c8336a1b9a3",
+    "artifact_id": 10997172604,
+    "artifact_digest": "sha256:4288e4d8feef0efdee42050b3abd0ac1999cb084d517605189fa1cbe433c1607"
+  },
+  "registry": {
+    "recovered_quantitative_sequences": 109,
+    "nodes": 20,
+    "nodes_with_thalassia_run_variation": 17,
+    "positive_habitat_headstart_events": 74,
+    "thalassia_run_min": 1,
+    "thalassia_run_max": 25
+  },
+  "primary": {
+    "thalassia_run_coefficient": 0.07899029963187473,
+    "ci95": [
+      -0.3847294533518759,
+      0.4207484069770098
+    ],
+    "bootstrap_replicates": 5000,
+    "supported": false
+  },
+  "secondary": {
+    "habitat_headstart_coefficient": -0.046156495759909356,
+    "habitat_headstart_ci95": [
+      -0.32994141077279104,
+      0.3665535044100612
+    ],
+    "source_bb_coefficient": 0.6148365988029159,
+    "loss_year_vegetated_coefficient": -0.023063620767314334,
+    "source_mixed_coefficient": 0.08126442917639315
+  },
+  "interpretation": "Pre-loss focal Thalassia history does not robustly predict the quantitative Braun-Blanquet depth of re-recorded recovery after source abundance, generic habitat headstart, loss-year vegetation continuity, source mixture, stable node and return year are represented. Local history therefore informs return probability and later stability without demonstrably determining return-year abundance.",
+  "ecological_update": "Recovery dimensions are partially decoupled: historical persistence affects whether Thalassia returns and how stable the return is, whereas the abundance level at return remains largely tied to other state information, especially source abundance.",
+  "claim_boundary": [
+    "Post-hoc quantitative recovery endpoint on an already-opened exact-point return dataset.",
+    "Do not claim that longer pre-loss Thalassia history produces deeper quantitative recovery; the frozen coefficient interval overlaps zero.",
+    "The positive point estimate is descriptive and does not replace the failed support rule.",
+    "Braun-Blanquet is ordinal abundance, not percent cover, biomass or ecosystem function.",
+    "Do not interpret the supported history effects on return probability/stability as evidence that the same mechanism controls recovery abundance.",
+    "Do not retune history definitions, controls, quantitative inclusion, model or support threshold to rescue a recovery-quality legacy effect."
+  ]
+}
