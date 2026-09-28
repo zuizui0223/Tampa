@@ -1,0 +1,69 @@
+{
+  "schema": "tampa.return_quality_fragility_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_recovery_quality_fragility_hypothesis_frozen_before_reloss_quality_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Return-fragility and recovery-debt analyses independently show that re-recorded Thalassia is both more likely to be lost again and quantitatively depressed. Test whether return-year quantitative state predicts the subsequent re-loss within recovered points after previously identified legacy/community covariates are represented.",
+  "source": {
+    "pinned_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "recovery_debt_builder": "analysis/43_recovery_debt.py",
+    "four_year_pattern": "same recovered pattern as results/return_fragility_v1_contract.json",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site"
+  },
+  "primary_population": {
+    "years": "t, t+1, t+2, t+3 observed consecutively at same point",
+    "pattern": "Thalassia present t, absent t+1, present t+2",
+    "outcome": "Thalassia absent at t+3",
+    "period": "t >= 2016 and t+3 <= 2025",
+    "required_quantitative": [
+      "numeric source-year point Braun-Blanquet",
+      "numeric return-year point Braun-Blanquet"
+    ],
+    "required_history": "pre-loss consecutive Thalassia run length ending at t",
+    "required_loss_state": "whether another seagrass remained at t+1"
+  },
+  "primary_hypothesis": {
+    "statement": "Among recovered exact points, lower return-year Thalassia Braun-Blanquet state predicts greater next-year recorded re-loss after stable node, return year, pre-loss focal history, loss-year vegetation continuity, and source point abundance are represented.",
+    "model": "L2 logistic regression",
+    "categorical": [
+      "node_id",
+      "return_year"
+    ],
+    "numeric": [
+      "pre_loss_run_length_centered",
+      "loss_year_vegetated",
+      "source_bb",
+      "return_bb"
+    ],
+    "coefficient_of_interest": "return_bb",
+    "direction": "negative coefficient = higher return abundance associated with lower re-loss risk",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092914,
+    "minimum_sequences": 60,
+    "minimum_nodes": 12,
+    "minimum_reloss_events": 20,
+    "support_rule": "upper bound of 95% node-bootstrap interval for return_bb coefficient < 0"
+  },
+  "secondary": [
+    "raw re-loss fraction by return-year Braun-Blanquet quartile if each quartile has >=10 sequences; descriptive only",
+    "model coefficient for pre-loss run length",
+    "model coefficient for loss-year vegetation continuity",
+    "return-year Braun-Blanquet mean among stable versus re-lost returns"
+  ],
+  "interpretation": {
+    "supported": "Quantitative quality of re-recorded Thalassia predicts subsequent stability: higher return-year abundance is associated with lower next-year re-loss, linking recovery debt to binary return fragility.",
+    "unsupported": "Return-year Braun-Blanquet state does not add robust information about subsequent re-loss after legacy, loss-year vegetation, site identity, year, and source abundance are represented; recovery debt and return fragility remain parallel rather than demonstrably linked."
+  },
+  "claim_boundary": [
+    "Post-hoc fragility mechanism-discrimination on an already-opened exact-point recovery endpoint.",
+    "A supported return-quality coefficient would not prove that low abundance causes re-loss; both can reflect residual stress, microsite quality, detectability, or demographic state.",
+    "Braun-Blanquet is ordinal abundance, not percent cover or biomass.",
+    "Recorded re-loss is an observation-state transition, not mortality or demographic relapse.",
+    "Do not change the recovered pattern, period, history definition, loss-year state, quantitative inclusion rule, controls, model, minima, or directional support threshold after opening re-loss by return quality."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "tampa.return_quality_fragility_v1.canonical_summary",
+  "status": "return_quality_fragility_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36482520287,
+    "head_sha": "e6040268fb88237c99b33cfc5d6e991ea328a5cc",
+    "artifact_id": 10997535768,
+    "artifact_digest": "sha256:a270a31d8bb2f8a7b4f4126b90df20377f693c1eda62faf3cdb2383635633a90"
+  },
+  "registry": {
+    "complete_recovered_four_year_sequences": 83,
+    "nodes": 17,
+    "recorded_relosses": 30,
+    "stable_returns": 53,
+    "pre_loss_run_min": 1,
+    "pre_loss_run_max": 25
+  },
+  "primary": {
+    "return_bb_coefficient": -0.39571709154601065,
+    "ci95": [
+      -1.1411226759671906,
+      0.49676718130475556
+    ],
+    "bootstrap_replicates": 5000,
+    "supported": false
+  },
+  "secondary": {
+    "stable_return_bb_mean": 2.0641509433962266,
+    "relost_return_bb_mean": 1.7833333333333337,
+    "pre_loss_run_length_coefficient": -0.40488628330256965,
+    "loss_year_vegetated_coefficient": -0.1497639016153686,
+    "source_bb_coefficient": -0.1207569730629034
+  },
+  "interpretation": "Return-year Braun-Blanquet state is directionally lower in points that are lost again, but it does not add robust fragility information after pre-loss local history, loss-year vegetation continuity, source point abundance, stable node identity, and return year are represented. Recovery debt and return fragility are therefore parallel features of incomplete recovery rather than a demonstrated abundance-mediated pathway.",
+  "ecological_update": "Observed recovery has at least two partially distinct dimensions: returned points are quantitatively depressed on average, and returned points are more likely to be lost again; current data do not show that the abundance debt itself explains the elevated re-loss.",
+  "claim_boundary": [
+    "Post-hoc fragility mechanism-discrimination on an already-opened exact-point recovery endpoint.",
+    "Do not claim that low return-year Braun-Blanquet mediates or causes subsequent re-loss; the frozen coefficient interval overlaps zero.",
+    "The negative point estimate and lower mean BB among re-lost returns are descriptive and do not replace the failed support rule.",
+    "Recorded re-loss is an observation-state transition, not mortality or demographic relapse.",
+    "Braun-Blanquet is ordinal abundance, not percent cover or biomass.",
+    "Do not retune recovery patterns, controls, history terms, quantitative inclusion, or model to rescue a return-quality mechanism."
+  ]
+}
