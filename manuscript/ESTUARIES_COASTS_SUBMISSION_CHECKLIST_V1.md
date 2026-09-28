@@ -76,6 +76,7 @@ Guideline source checked 2026-09-28.
 - [ ] Data Availability
 - [ ] Code Availability
 - [ ] Ethics / permits / not-applicable statement
+- [x] AI-assisted research/manuscript use disclosed in Methods; AI system not listed as an author
 
 ## Supplementary Information
 
