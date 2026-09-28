@@ -1,0 +1,66 @@
+{
+  "schema": "tampa.main_figure_data_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "figure_data_contract",
+  "purpose": "Generate manuscript-facing data tables without recomputing or reselecting scientific endpoints.",
+  "figures": {
+    "figure1": {
+      "title": "Study system and ecological state hierarchy",
+      "panels": {
+        "A": "71 stable Tampa transects with water-body identity and coordinates",
+        "B": "Stable-node versus year descriptive R2 for recorded detection, frequency, Braun-Blanquet, blade length and shoot density"
+      },
+      "inputs": [
+        "quant_annual_panel.csv"
+      ],
+      "claim": "Occurrence/abundance levels are much more site-anchored than plant-condition traits."
+    },
+    "figure2": {
+      "title": "Persistent occurrence with bay-specific quantitative degradation",
+      "panels": {
+        "A_D": "2016-2025 segment-year trajectories for detection plus relevant quantitative state dimensions",
+        "E": "Canonical within-transect slope summary and bootstrap intervals"
+      },
+      "inputs": [
+        "quant_segment_year.csv",
+        "results/current_validation_v2.json"
+      ],
+      "claim": "Old, Middle and Lower Tampa Bay show distinct degradation modes beneath weak binary change."
+    },
+    "figure3_tampa": {
+      "title": "Community reorganization in Lower Tampa Bay",
+      "panels": {
+        "A": "2016-2025 Thalassia, Syringodium and Halodule frequency trajectories"
+      },
+      "inputs": [
+        "community_quant_segment_year.csv"
+      ],
+      "claim": "Lower Tampa Bay shows compositional reorganization, not proof of competitive replacement."
+    },
+    "figure3_nps": {
+      "title": "External Zostera state decoupling",
+      "source_workflow": "NPS post-hoc workflow",
+      "claim": "Saturated recorded presence can coexist with large quantitative cover trajectories in a second monitoring system."
+    },
+    "figure4": {
+      "title": "Quantitative state before next-year recorded loss",
+      "panels": {
+        "A": "Source-year focal frequency before persistence versus loss",
+        "B": "Source-year Braun-Blanquet state before persistence versus loss",
+        "C": "Target-year quantitative-minus-baseline log-loss difference"
+      },
+      "inputs": [
+        "early_warning_transitions.csv",
+        "early_warning_year_scores.csv"
+      ],
+      "claim": "Quantitative degradation is an internal exploratory early-warning candidate for recorded-state instability."
+    }
+  },
+  "rules": [
+    "Do not omit adverse target year 2016 from Figure 4 primary panel.",
+    "Do not plot Braun-Blanquet as percent cover; label as ordinal abundance index.",
+    "Do not show mechanism-null screens as a main figure unless manuscript structure changes prospectively.",
+    "Do not use Figure 1 stable-node R2 as a causal variance partition.",
+    "Do not infer competitive replacement from Figure 3 Tampa community trajectories."
+  ]
+}
