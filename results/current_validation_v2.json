@@ -177,7 +177,8 @@
     "Do not call pre-existing mixed-species occupancy facilitation: the exact-point insurance association may reflect shared persistent habitat quality.",
     "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement.",
     "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern.",
-    "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null."
+    "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null.",
+    "Do not interpret the positive community-richness gradient as causal biodiversity insurance, facilitation, niche complementarity, or functional redundancy; persistent habitat quality remains a plausible common cause."
   ],
   "community_reorganization": {
     "period": [
@@ -878,5 +879,40 @@
       "supported": false
     },
     "interpretation": "Source-year blade length and shoot density do not add robust year-ahead information about next-year Thalassia frequency or Braun-Blanquet state beyond current quantitative state and stable site identity. Treat plant condition and within-meadow occupancy/abundance as partially distinct degradation axes rather than a proven annual serial cascade."
+  },
+  "community_diversity_insurance": {
+    "status": "community_diversity_insurance_supported",
+    "authoritative_workflow": {
+      "run_id": 36409152754,
+      "head_sha": "f536f523aaacb67640361531d009679889baaa82",
+      "artifact_id": 10963064742,
+      "artifact_digest": "sha256:6e352576df909917a436a909b0594e49b8c9585c981b1a8f8515c2f2e398bfe9"
+    },
+    "registry": {
+      "transitions": 370,
+      "nodes": 27,
+      "observed_richness_values": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "primary": {
+      "standardized_richness_log_odds_coefficient": 0.36399618970028,
+      "ci95": [
+        0.07448931275756815,
+        0.6547052858298457
+      ],
+      "supported": true
+    },
+    "descriptive_target_occupancy_fraction": {
+      "richness_0": 0.7078651685393258,
+      "richness_1": 0.8521400778210116,
+      "richness_2": 0.8260869565217391,
+      "richness_3": 1
+    },
+    "interpretation": "Greater pre-loss alternative seagrass richness predicts a higher probability that an exact meter mark remains seagrass-occupied after Thalassia loss, extending the binary mixed-patch insurance result to a richness gradient after adjustment for target year and water body.",
+    "evidence_class": "posthoc exploratory exact-point community ecology"
   }
 }
