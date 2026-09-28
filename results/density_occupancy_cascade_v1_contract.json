@@ -1,0 +1,72 @@
+{
+  "schema": "tampa.density_occupancy_cascade_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_endpoint_result",
+  "evidence_class": "posthoc_exploratory_state_cascade",
+  "motivation": "Test whether a faster plant-condition dimension temporally leads a slower within-meadow occupancy dimension, rather than merely covarying with it.",
+  "ecological_hypothesis": "Lower source-year Thalassia shoot density precedes lower next-year within-transect focal frequency after current frequency/abundance and persistent site identity are already known.",
+  "source": {
+    "annual_panel": "analysis/03_quantitative_state.py -> quant_annual_panel.csv",
+    "stable_unit": "node_id",
+    "transition": "same-node consecutive calendar years",
+    "primary_condition": "shoot_density_mean_m2",
+    "secondary_condition": "blade_length_mean_mm",
+    "target": "next-year focal_frequency"
+  },
+  "primary_model": {
+    "row_eligibility": "source-year shoot_density_mean_m2 nonmissing; consecutive target year exists",
+    "baseline_categorical": [
+      "water_body",
+      "node_id"
+    ],
+    "baseline_numeric": [
+      "target_year",
+      "source_frequency",
+      "source_bb",
+      "log_source_visits",
+      "log_source_condition_measurements"
+    ],
+    "augmentation": [
+      "source_condition"
+    ],
+    "learner": "Ridge(alpha=1.0)",
+    "target_clip": [
+      0,
+      1
+    ],
+    "split": "strict walk-forward by target year; train only earlier target years",
+    "candidate_target_years": [
+      2004,
+      2025
+    ],
+    "minimum_train_rows": 50,
+    "minimum_train_years": 4,
+    "minimum_test_rows_per_target_year": 5,
+    "minimum_scored_target_years": 10
+  },
+  "support_rule": {
+    "paired_unit": "scored target year",
+    "metric": "MAE of next-year focal frequency",
+    "minimum_win_fraction": 0.6,
+    "median_delta_augmented_minus_baseline_lt_zero": true,
+    "one_sided_signflip_p_lt": 0.05,
+    "signflip_replicates": 100000,
+    "random_seed": 2026092810,
+    "direction_audit": "standardized source_condition coefficient must be positive in >=60% of scored target years and have positive median coefficient"
+  },
+  "secondary_blade_length": {
+    "design": "same target, learner, walk-forward split and support rule on blade-length-eligible rows; log blade measurement count replaces log shoot measurement count",
+    "role": "sensitivity/biological replication only; cannot rescue a null or adverse shoot-density primary result"
+  },
+  "interpretation_map": {
+    "supported": "Consistent with an annual density-to-occupancy cascade: plant-density condition contains leading information about future within-meadow thinning beyond current focal occupancy/abundance and stable site identity.",
+    "unsupported": "No robust evidence that shoot density is an annual leading indicator of future focal-frequency decline under this design; state dimensions can still differ in temporal lability without forming a simple cascade."
+  },
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis generated after the state-hierarchy result; not independent confirmation.",
+    "Predictive lead does not establish shoot density as a causal driver of frequency decline.",
+    "Shared local stress, residual meadow quality, and measurement processes can produce the same lagged association.",
+    "Do not retune target years, alpha, baseline covariates, condition transformation, support rule, or replace the primary with blade length after opening the result.",
+    "A positive result supports temporal ordering at annual resolution, not a universal degradation sequence."
+  ]
+}
