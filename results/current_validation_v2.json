@@ -25,7 +25,72 @@
     "best_memory_mean_log_loss": 0.139493,
     "memory_minus_lag1": -0.0305783,
     "memory_wins_vs_lag1": 14,
-    "interpretation": "Strong immediate state dependence plus additional long-history information. The prior 3.5-year claim is superseded; the tested optimum is 10 years and nearby long-memory candidates are similar."
+    "interpretation": "Strong immediate state dependence is robust. The original older-history gain is reference-dependent: it is supported under geography/bay references but not after stable transect identity is added, indicating that long history partly proxies persistent among-transect heterogeneity rather than cleanly identifying a long biological memory horizon.",
+    "site_identity_audit": {
+      "status": "stable_site_reference_absorbs_formal_older_history_support",
+      "authoritative_workflow": {
+        "run_id": 36374969355,
+        "head_sha": "a8c78852e2cb4574a65ec20c1e7622a19c8af75f",
+        "artifact_id": 10949544757,
+        "artifact_digest": "sha256:42048a2413ee8e16d513679579052de5b755e8854ac72199e33c4342d4ce0762"
+      },
+      "primary_tau_years": 10,
+      "binary_detected": {
+        "without_node_id": {
+          "lag1_log_loss": 0.1700713162376601,
+          "history_log_loss": 0.13949300745531368,
+          "history_wins": 14,
+          "signflip_p": 0.014849257537123144,
+          "supported": true,
+          "grid_support_count": 6
+        },
+        "with_node_id": {
+          "lag1_log_loss": 0.15707743535422106,
+          "history_log_loss": 0.1416998451922005,
+          "history_wins": 13,
+          "signflip_p": 0.087995600219989,
+          "supported": false,
+          "grid_support_count": 0
+        }
+      },
+      "focal_frequency": {
+        "without_node_id": {
+          "lag1_mae": 0.051658221979173385,
+          "history_mae": 0.04993311232603206,
+          "history_wins": 16,
+          "signflip_p": 0.035048247587620616,
+          "supported": true,
+          "grid_support_count": 12
+        },
+        "with_node_id": {
+          "lag1_mae": 0.04701850248422637,
+          "history_mae": 0.04785400366865436,
+          "history_wins": 8,
+          "signflip_p": 0.9816509174541272,
+          "supported": false,
+          "grid_support_count": 0
+        }
+      },
+      "cover_index": {
+        "without_node_id": {
+          "lag1_mae": 0.17622948930300775,
+          "history_mae": 0.1818428396626062,
+          "history_wins": 8,
+          "signflip_p": 0.9116544172791361,
+          "supported": false,
+          "grid_support_count": 1
+        },
+        "with_node_id": {
+          "lag1_mae": 0.1661445434525914,
+          "history_mae": 0.17923124975128782,
+          "history_wins": 2,
+          "signflip_p": 1,
+          "supported": false,
+          "grid_support_count": 0
+        }
+      },
+      "interpretation": "Formal older-history support disappears for every state dimension when stable transect identity is added. The original long-history gain therefore partly reflects persistent site-specific heterogeneity not captured by coordinates and bay segment; node identity is a saturated reference, not an identified ecological mechanism."
+    }
   },
   "quantitative_state": {
     "period": [
@@ -98,7 +163,9 @@
     "Do not select a nominal annual water-quality association as a mechanism after inspecting the screen; no declared post-2016 association survives FDR control.",
     "Do not add further retrospective seasonal windows to rescue the hot/fresh mechanism; both annual and predeclared 3/6-month screens are negative.",
     "Quantitative early warning is internally walk-forward validated but was motivated after observing Tampa state decoupling; external or untouched prospective confirmation is still required.",
-    "Do not retune or add another response-free mechanism simulation family after the frozen latent-occupancy v1 hard stop; the mechanism remains unresolved."
+    "Do not retune or add another response-free mechanism simulation family after the frozen latent-occupancy v1 hard stop; the mechanism remains unresolved.",
+    "Do not present the original binary older-history gain as a robust long biological-memory result after the stable-node reference audit; formal support disappears when node identity is added.",
+    "Do not interpret node_id as a causal habitat mechanism; it is a saturated repeated-site reference."
   ],
   "community_reorganization": {
     "period": [
@@ -306,7 +373,7 @@
       "long_history_wins_vs_lag1": 14,
       "target_years": 22
     },
-    "interpretation": "Within the same Tampa transects and while conditioning on recorded Thalassia persistence, two quantitative state variables show strong previous-year dependence but no robust increment from older history. The coarse recorded-state response previously retained older-history information beyond lag-1. This within-system contrast strengthens, but does not mechanistically prove, a state-dimension-dependent memory-horizon hypothesis."
+    "interpretation": "Quantitative frequency and Braun–Blanquet state show strong previous-year dependence. The earlier apparent binary-versus-quantitative older-history contrast is weakened by a later reference-saturation audit: once stable node identity is added, no state dimension has a supported older-history increment across the tested tau grid."
   },
   "exponential_memory_operator_replay": {
     "status": "posthoc_representation_matched_memory_replay",
