@@ -6,17 +6,15 @@
 
 ## Abstract
 
-Monitoring of foundation species often emphasizes distribution or presence, yet ecological condition can change substantially before a species disappears from a site. We tested whether persistent recorded occurrence concealed quantitative degradation in long-term fixed-transect monitoring of *Thalassia testudinum* in Tampa Bay, Florida. The reconstructed 1997–2025 panel comprised 1,497 eligible visits and 1,480 annual transect-years at 71 stable transects, resolving recorded presence, within-transect frequency, Braun–Blanquet abundance, blade length and shoot density.
+Monitoring of foundation species often emphasizes distribution or presence, yet ecological condition can change substantially before local disappearance. We tested whether persistent recorded occurrence concealed quantitative degradation in 1997–2025 fixed-transect monitoring of *Thalassia testudinum* in Tampa Bay, Florida. The reconstructed panel comprised 1,497 eligible visits and 1,480 annual transect-years at 71 stable transects, resolving recorded presence, within-transect frequency, Braun–Blanquet abundance, blade length, and shoot density.
 
-After 2016, recorded *Thalassia* occurrence changed weakly in several bay segments while quantitative state deteriorated through different pathways. In Old Tampa Bay, blade length declined by approximately 1.09 mm yr⁻¹ and shoot density by 38.3 shoots m⁻² yr⁻¹. In Middle Tampa Bay, blade length declined by approximately 0.405 mm yr⁻¹. In Lower Tampa Bay, *Thalassia* frequency and Braun–Blanquet abundance declined while *Halodule wrightii* increased and *Syringodium filiforme* decreased, consistent with compositional reorganization. A post-hoc external *Zostera marina* monitoring panel showed the same general state-decoupling pattern: recorded presence and focal frequency were saturated while quantitative cover varied widely among repeated transects.
+After 2016, recorded *Thalassia* occurrence changed weakly in several bay segments while quantitative state deteriorated through different pathways. In Old Tampa Bay, blade length declined by approximately 1.09 mm yr⁻¹ and shoot density by 38.3 shoots m⁻² yr⁻¹. In Middle Tampa Bay, blade length declined by approximately 0.405 mm yr⁻¹. In Lower Tampa Bay, *Thalassia* frequency and Braun–Blanquet abundance declined while *Halodule wrightii* increased and *Syringodium filiforme* decreased, consistent with compositional reorganization. A post-hoc external *Zostera marina* panel showed the same general state-decoupling pattern: recorded presence and focal frequency were saturated while quantitative cover varied widely.
 
-Within Tampa, low source-year frequency and Braun–Blanquet state also improved strict out-of-time prediction of next-year recorded-state loss, supporting an exploratory early-warning hypothesis. However, a bounded sequence of spatial, environmental and hidden-state tests did not identify a single mechanism for the recent degradation.
-
-These results show that persistent occurrence is not equivalent to persistent ecological condition. Presence-only monitoring can therefore detect foundation-species degradation late and cannot distinguish the different pathways by which occupied habitat deteriorates.
+Within Tampa, low source-year frequency and Braun–Blanquet state improved strict out-of-time prediction of next-year recorded-state loss, supporting an exploratory early-warning hypothesis. However, bounded spatial, environmental, and hidden-state tests did not identify a single mechanism for recent degradation. Persistent occurrence is therefore not equivalent to persistent ecological condition, and presence-only monitoring can detect foundation-species degradation late while obscuring distinct degradation pathways.
 
 ## Keywords
 
-seagrass; foundation species; ecological condition; occupancy; long-term monitoring; state decoupling; *Thalassia testudinum*; Tampa Bay; early warning; community reorganization
+foundation species; seagrass; long-term monitoring; ecological condition; state decoupling; Tampa Bay
 
 ---
 
