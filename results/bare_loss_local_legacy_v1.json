@@ -1,0 +1,43 @@
+{
+  "schema": "tampa.bare_loss_local_legacy_v1.canonical_summary",
+  "status": "bare_loss_local_legacy_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36442468641,
+    "head_sha": "14ab53b0ecb90bf90d4dbcc71c7c86996d93930e",
+    "artifact_id": 10979327696,
+    "artifact_digest": "sha256:f1722ae0e72690d45925d604be28339691c8df78352c80dce9436e0819ffcaf3"
+  },
+  "registry": {
+    "bare_loss_sequences": 44,
+    "nodes": 17,
+    "nodes_with_run_length_variation": 5,
+    "returns": 8,
+    "nonreturns": 36,
+    "run_length_min": 1,
+    "run_length_median": 1,
+    "run_length_max": 12
+  },
+  "primary": {
+    "centered_run_length_coefficient": -0.07347134586982422,
+    "ci95": [
+      -0.9540368624402489,
+      0.7827089370712381
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": false
+  },
+  "secondary": {
+    "return_run_length_median": 1,
+    "nonreturn_run_length_median": 1
+  },
+  "interpretation": "The supported pooled pre-loss local-history signal does not persist among meter marks that become completely seagrass-bare in the loss year. This weakens a simple hidden below-ground legacy interpretation and suggests that the broader recovery association depends on community/habitat continuity or other state differences.",
+  "next_hypothesis": "Test whether pre-loss focal-history information is conditional on loss-year vegetation continuity, using a frozen interaction between within-node centered run length and loss-year vegetated state.",
+  "claim_boundary": [
+    "Post-hoc subgroup analysis of an already-opened recovery endpoint.",
+    "Do not claim residual rhizomes or clonal memory from the pooled history result after the bare-loss subgroup null.",
+    "The bare subgroup is modest (44 sequences, 8 returns); the null is informative but does not prove absence of below-ground persistence.",
+    "Return is recorded reappearance, not genet-level recolonization.",
+    "Do not relax subgroup minima or pool vegetated states back into this endpoint to rescue the legacy effect."
+  ]
+}
