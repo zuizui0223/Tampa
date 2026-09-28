@@ -1,0 +1,55 @@
+{
+  "schema": "tampa.preloss_local_legacy_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_local_legacy_hypothesis_frozen_before_history_endpoint",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "After exact-point Thalassia loss, points retaining another seagrass were more likely to re-record Thalassia, but the within-node audit weakened that association. Test whether pre-loss focal persistence history itself carries recovery information, consistent with local meadow/clonal legacy or persistent microsite quality.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "recovery_sequence_builder": "analysis/35_microsite_recovery_pathway.py",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site"
+  },
+  "primary_population": {
+    "sequence_rule": "same frozen 259 three-year exact-point Thalassia-loss sequences from microsite_recovery_pathway_v1",
+    "pre_loss_run_length": "number of immediately consecutive consensus years ending in the source year with Thalassia recorded present at the same stable point; stop at first missing year or Thalassia-absent year; minimum=1",
+    "required_controls": [
+      "stable node identity",
+      "loss year",
+      "loss-year vegetation state: other seagrass vs no seagrass",
+      "source-year mixed-species state"
+    ]
+  },
+  "primary_hypothesis": {
+    "statement": "Within stable transects, longer-than-usual consecutive pre-loss Thalassia occupancy history is associated with higher one-year Thalassia re-recording after a one-year loss.",
+    "predictor": "pre_loss_run_length centered by stable-node mean among eligible sequences",
+    "outcome": "Thalassia recorded present at the same meter mark in the recovery year",
+    "model": "L2-regularized logistic regression with stable-node categorical effects and frozen controls; primary coefficient is the node-centered pre-loss run-length term",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "uncertainty": "stable-node bootstrap; refit the same model after resampling stable nodes with replacement",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092813,
+    "minimum_sequences": 150,
+    "minimum_nodes": 15,
+    "minimum_nodes_with_run_length_variation": 8,
+    "support_rule": "lower bound of 95% node-bootstrap interval for the centered run-length coefficient > 0"
+  },
+  "secondary_descriptive": [
+    "distribution of pre-loss run length among return and non-return sequences",
+    "overall return fraction by integer run length where at least 10 sequences occur",
+    "same coefficient without node-centering, reported only as descriptive contrast"
+  ],
+  "interpretation": {
+    "supported": "Longer local focal persistence history predicts re-recording after loss even after stable transect identity and community-continuity controls, consistent with a local legacy or residual-structure signal.",
+    "unsupported": "Pre-loss focal persistence history does not add robust within-transect recovery information beyond node identity and community state; broad site quality and current community continuity remain better-supported explanations."
+  },
+  "claim_boundary": [
+    "Post-hoc temporal ecology on an already-opened recovery endpoint.",
+    "A history effect would not distinguish residual rhizomes, clonal memory, persistent microsite habitat quality, or repeated detectability.",
+    "Re-recording is an observation-state return, not genet-level recolonization.",
+    "Do not change the run-length definition, node-centering, control set, regularization, bootstrap unit, minima, or support threshold after opening the history endpoint.",
+    "Do not infer a causal clonal-memory mechanism without direct below-ground measurements."
+  ]
+}
