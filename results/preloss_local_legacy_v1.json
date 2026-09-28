@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.preloss_local_legacy_v1.canonical_summary",
+  "status": "preloss_local_legacy_supported",
+  "authoritative_workflow": {
+    "run_id": 36441617643,
+    "head_sha": "803f4408efe521346b1e6a8dca0b716485339ba5",
+    "artifact_id": 10978956366,
+    "artifact_digest": "sha256:065f4e95068b19e00c8b14c4875dff2d35ccabc0df5bda9ebc34d02cb5802a50"
+  },
+  "registry": {
+    "recovery_sequences": 259,
+    "nodes": 25,
+    "nodes_with_run_length_variation": 18,
+    "run_length_min": 1,
+    "run_length_median": 1,
+    "run_length_max": 25
+  },
+  "primary": {
+    "centered_run_length_coefficient": 0.45119165238746967,
+    "ci95": [
+      0.08866514158716116,
+      1.3725843508448023
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": true
+  },
+  "secondary": {
+    "return_run_length_median": 2,
+    "nonreturn_run_length_median": 1,
+    "uncentered_run_length_coefficient": 0.5337831487161102
+  },
+  "interpretation": "Longer consecutive pre-loss Thalassia history at the same meter mark predicts one-year re-recording after a one-year loss even after stable transect identity, loss-year vegetation state, source-year mixed-species state, and loss year are represented. This supports a local persistence-legacy signal but does not distinguish residual rhizomes/clonal structure from persistent microsite quality or repeated detectability.",
+  "next_hypothesis": "Test the legacy effect specifically among loss-year seagrass-bare meter marks. Persistence of the effect without above-ground seagrass continuity would strengthen a subterranean/local-legacy interpretation while still not proving rhizome causality.",
+  "claim_boundary": [
+    "Post-hoc temporal ecology on an already-opened recovery endpoint.",
+    "The coefficient is on a standardized within-node centered run-length predictor; do not interpret 0.451 as a per-year log-odds effect.",
+    "Do not call this direct evidence of clonal memory or residual rhizomes without below-ground measurements.",
+    "Stable node identity and community-continuity controls reduce but do not eliminate confounding by persistent microsite habitat quality or detectability.",
+    "Re-recording is an observation-state return, not genet-level recolonization."
+  ]
+}
