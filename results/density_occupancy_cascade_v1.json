@@ -1,0 +1,50 @@
+{
+  "schema": "tampa.density_occupancy_cascade_v1.canonical_summary",
+  "status": "density_occupancy_cascade_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36408511871,
+    "head_sha": "57401da0026f15e82464cd69329efd16953f53a2",
+    "artifact_id": 10963447193,
+    "artifact_digest": "sha256:6163e0f55e0bbee8f5a9d35d761a6c139f270ea5e98b56af3244ad65c0da3ad5"
+  },
+  "primary_shoot_density": {
+    "transition_rows": 558,
+    "nodes": 47,
+    "scored_target_years": 22,
+    "baseline_mean_mae": 0.07332234980272608,
+    "augmented_mean_mae": 0.07344527961428055,
+    "wins": 9,
+    "losses": 13,
+    "mean_delta": 0.00012292981155447372,
+    "median_delta": 0.0002524166479405329,
+    "signflip_p": 0.6140938590614093,
+    "positive_coefficient_years": 0,
+    "coefficient_positive_fraction": 0,
+    "median_standardized_coefficient": -0.005068341405044231,
+    "supported": false
+  },
+  "secondary_blade_length": {
+    "transition_rows": 562,
+    "nodes": 47,
+    "scored_target_years": 22,
+    "baseline_mean_mae": 0.07368103081461633,
+    "augmented_mean_mae": 0.07459866448578177,
+    "wins": 7,
+    "losses": 15,
+    "mean_delta": 0.0009176336711654629,
+    "median_delta": 0.0007856368732695254,
+    "signflip_p": 0.9785302146978531,
+    "positive_coefficient_years": 3,
+    "coefficient_positive_fraction": 0.13636363636363635,
+    "median_standardized_coefficient": -0.007838765954492632,
+    "supported": false
+  },
+  "interpretation": "Neither source-year shoot density nor blade length robustly improves next-year focal-frequency prediction beyond current frequency, Braun-Blanquet abundance, stable node identity, year, visits, and condition-measurement effort. The Tampa state hierarchy is therefore not supported as a simple annual condition-to-occupancy cascade under this design.",
+  "ecological_boundary": "Plant condition is more temporally labile than occurrence/abundance, but those state dimensions need not form a single serial degradation sequence. They may respond in parallel to local meadow state or different stress pathways.",
+  "claim_boundary": [
+    "Post-hoc exploratory state-cascade test; not independent confirmation.",
+    "A null annual cascade does not imply blade length or shoot density are ecologically irrelevant.",
+    "Negative predictive coefficients should not be interpreted causally because current frequency/abundance and site identity are conditioned on.",
+    "Do not retune lags, condition transforms, target state, or baseline after this result to manufacture a serial cascade."
+  ]
+}
