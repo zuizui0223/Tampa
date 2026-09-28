@@ -9,7 +9,14 @@ on:
       - "analysis/28_compound_hotfresh_preflight_summary.py"
       - "analysis/29_compound_hotfresh_condition.py"
       - "results/compound_hotfresh_v1_contract.json"
+      - "results/compound_hotfresh_preflight_v1.json"
       - "results/compound_hotfresh_condition_v1_contract.json"
+      - "results/compound_hotfresh_condition_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - "validation/verify_compound_hotfresh_condition.py"
+      - "README.md"
       - ".github/workflows/compound-hotfresh-preflight.yml"
   pull_request:
     branches: [main]
@@ -19,7 +26,14 @@ on:
       - "analysis/28_compound_hotfresh_preflight_summary.py"
       - "analysis/29_compound_hotfresh_condition.py"
       - "results/compound_hotfresh_v1_contract.json"
+      - "results/compound_hotfresh_preflight_v1.json"
       - "results/compound_hotfresh_condition_v1_contract.json"
+      - "results/compound_hotfresh_condition_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - "validation/verify_compound_hotfresh_condition.py"
+      - "README.md"
       - ".github/workflows/compound-hotfresh-preflight.yml"
   workflow_dispatch:
 
@@ -51,6 +65,8 @@ jobs:
         run: python analysis/03_quantitative_state.py --out results/generated_compound_hotfresh
       - name: Test joint hot-fresh stress beyond marginal hot/fresh stress
         run: python analysis/29_compound_hotfresh_condition.py --input results/generated_compound_hotfresh --out results/generated_compound_hotfresh
+      - name: Verify canonical compound result
+        run: python validation/verify_compound_hotfresh_condition.py --generated results/generated_compound_hotfresh/compound_hotfresh_condition_v1.json --canonical results/compound_hotfresh_condition_v1.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
