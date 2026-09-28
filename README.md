@@ -349,6 +349,30 @@ Focal frequency and Braun–Blanquet state were also unsupported, and the predec
 
 This does **not** show that light is biologically irrelevant. It shows that a coarse segment-level Secchi × transect-depth proxy does not explain the remaining annual signal after strong site and survey controls. Node-scale optical variability, spectral quality, epiphyte shading and event-scale stress remain unresolved.
 
+### 2n. Published hot–fresh compound stress does not rescue the mechanism
+
+The final retrospective climate-stress test reused the exact published Tampa Bay reconstruction from Beck et al. (2024), pinned to the public `tbep-tech/temp-manu` artifact. That analysis fits station-level GAMs to monthly EPC bottom temperature and salinity, predicts daily conditions, and measures consecutive runs above/below declared thresholds.
+
+The frozen Tampa test used the published **30 °C** and **25 ppt** thresholds. To ask specifically whether compound stress matters, the reference model already contained:
+
+- the focal transect's previous-year plant state;
+- stable transect identity and water body;
+- the segment-year maximum hot-run duration;
+- the segment-year maximum fresh-run duration.
+
+The augmented model added only the duration of days when **hot and fresh conditions overlapped**.
+
+Coverage was broad: four bay segments, **1997–2022**, **1,147 station intervals** and **102 segment-years**. Joint hot–fresh runs were non-zero in about **58%** of segment-years and reached a segment mean maximum run of **92.6 days**.
+
+The compound increment failed for both primary plant-condition outcomes:
+
+- blade length: MAE **6.332 → 6.433 mm**, 5/19 target years improved, **p = 0.996**;
+- shoot density: **186.28 → 188.67 shoots m⁻²**, 7/19 improved, **p = 0.741**.
+
+Frequency and Braun–Blanquet state were also unsupported.
+
+Thus the earlier negative hot/fresh screens are **not rescued by using the published joint-stress duration metric**. This closes retrospective temperature/salinity indicator hunting in the current dataset. The remaining hypotheses require information not represented by these segment-level routine data: node-scale high-frequency exposure, epiphyte/light microenvironment, below-ground reserves and clonal legacy, acute disturbance/disease, or independently collected future data.
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
@@ -528,7 +552,7 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The manuscript-level ecological center is **state decoupling and spatially heterogeneous degradation**, not a long-memory or generic connectivity mechanism.
+The manuscript-level ecological center is **state decoupling and spatially heterogeneous degradation**, not a long-memory, generic connectivity, or retrospectively rescued climate-stressor mechanism.
 
 The EOG translation sharpens the next ecological question. Stable site identity dominates occurrence/frequency/abundance levels, simple annually refreshed neighborhood state adds no mean heldout value, and plant-condition variables are much more temporally labile. The highest-value next causal work is therefore to replace `node_id` with measured components of the persistent site template rather than adding more abstract memory/connectivity features.
 
