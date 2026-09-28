@@ -586,6 +586,31 @@ Lower Tampa target fates were **10 *Syringodium filiforme***, **3 *Halodule wrig
 
 This motivates a new exact-point hypothesis: does community occupancy after focal loss mainly reflect **persistence of species that were already co-occurring before *Thalassia* disappeared**, rather than new colonization after loss?
 
+### 2o. Pre-existing mixed-species patches insure seagrass occupancy after exact-point Thalassia loss
+
+The previous exact-point audit showed that most meter marks losing *Thalassia* remained occupied by another seagrass, but that target state alone could not distinguish persistence of pre-existing community members from new post-loss appearance.
+
+A separately frozen pooled Tampa test used the same **370 exact-point post-2016 Thalassia-loss transitions**.
+
+**Source-mixture insurance was supported.**
+
+- source points where another seagrass already co-occurred with *Thalassia*: **281 events / 25 nodes**;
+- target year remained occupied by seagrass in **85.1%**;
+- source points containing *Thalassia* alone: **89 events / 20 nodes**;
+- target occupancy: **70.8%**;
+- difference: **+14.3 percentage points**;
+- node-cluster bootstrap 95% interval: **+4.45 to +26.72 pp**.
+
+Thus exact meter marks are less likely to become seagrass-bare after focal loss when the source community is already mixed.
+
+**Persistence of pre-existing community members was also supported.**
+
+Among **302** focal-loss points that remained seagrass-occupied, **71.2%** retained at least one alternative species that had already been present before *Thalassia* disappeared (bootstrap 95% interval **59.2–82.7%**). Only **28.8%** were occupied exclusively by alternative species not recorded at the source point.
+
+The ecological interpretation is therefore not primarily “a new species rapidly replaces *Thalassia* after loss.” Instead, much of the persistence of seagrass occupancy reflects **pre-existing mixed-species patches losing the focal foundation species while other community members remain**.
+
+This is consistent with a **community-insurance pattern**, but it does not identify facilitation: mixed-species points may simply share habitat conditions that favor continued seagrass occupancy. Nor does continued seagrass occupancy imply that ecosystem function is unchanged when *Thalassia* is lost.
+
 ## Next scientific gate
 
 Retrospective mechanism hunting in the current Tampa dataset is closed. The tested alternatives now include static and dynamic spatial accessibility, simple hidden-state explanations, depth/sediment, bulk benthic-light exposure, annual and seasonal temperature/salinity, and the exact published 30 °C / 25 ppt compound hot–fresh metric. None identifies the driver of the post-2016 condition changes.

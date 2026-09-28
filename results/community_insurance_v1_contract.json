@@ -1,0 +1,54 @@
+{
+  "schema": "tampa.community_insurance_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_exact_point_hypothesis_frozen_before_source_cooccurrence_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Community-buffering v1 showed that most exact meter marks losing Thalassia remained occupied by another seagrass, but target occupancy alone cannot distinguish persistence of pre-existing mixed-species patches from new colonization after focal loss.",
+  "source": {
+    "parent_analysis": "analysis/33_community_buffering.py",
+    "stable_point_state": "community_buffering_point_year_consensus.csv",
+    "point_identity": "pinned Point-event locationID",
+    "source_taxonomy": "present Alismatales; focal species Thalassia testudinum"
+  },
+  "primary_population": {
+    "target_years": [
+      2016,
+      2025
+    ],
+    "geography": "all Tampa Bay segments pooled",
+    "transition": "same stable point observed in consecutive years; source-year Thalassia present; target-year Thalassia absent",
+    "rationale": "The prior Lower-specific exact-point endpoint was non-estimable under frozen minima, so this is a new all-bay ecological question rather than a lowered Lower-Tampa threshold."
+  },
+  "hypotheses": {
+    "H3a_source_mixture_insurance": {
+      "statement": "After exact-point Thalassia loss, points where another seagrass already co-occurred with Thalassia in the source year are more likely to remain seagrass-occupied than source points containing Thalassia alone.",
+      "exposure": "source_mixed = source-year alternative_species nonempty while Thalassia present",
+      "outcome": "target_any_seagrass_present; because target Thalassia is absent, this equals target alternative-seagrass occupancy",
+      "estimator": "node-cluster bootstrap difference in target occupancy fraction: source mixed minus source Thalassia-only",
+      "minimum_events_per_group": 30,
+      "minimum_nodes_per_group": 10,
+      "support_rule": "bootstrap 95% interval for mixed-minus-Thalassia-only occupancy difference entirely above zero"
+    },
+    "H3b_persistence_not_colonization": {
+      "statement": "Among Thalassia-loss points that remain occupied by another seagrass, the majority retain at least one alternative species that was already co-occurring in the source year rather than being occupied exclusively by newly appearing alternative species.",
+      "eligible": "primary-population transitions with target_any_seagrass_present=true",
+      "retained_species": "intersection of source and target alternative-species sets is nonempty",
+      "estimator": "node-cluster bootstrap fraction with retained_species=true",
+      "minimum_events": 50,
+      "minimum_nodes": 10,
+      "support_rule": "bootstrap 95% lower bound for retained-species fraction > 0.5"
+    }
+  },
+  "descriptive_only": [
+    "bay-segment-specific source-mixture and target-retention fractions",
+    "species identity of retained versus newly appearing alternatives",
+    "Lower Tampa Bay subset; it cannot replace pooled primary tests if the pooled tests fail"
+  ],
+  "claim_boundary": [
+    "Post-hoc exploratory exact-point community ecology.",
+    "A positive source-mixture association would be consistent with community insurance but would not identify facilitation; mixed points may share persistent habitat quality.",
+    "Retained alternative species after focal loss indicates persistence of co-occurring community members, not functional equivalence to Thalassia.",
+    "Newly appearing alternative species are observational colonization/appearance events and do not establish competitive replacement.",
+    "Do not change the pooled geography, target years, transition definition, bootstrap unit, or support thresholds after opening source-year co-occurrence results."
+  ]
+}

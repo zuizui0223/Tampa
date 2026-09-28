@@ -1,0 +1,54 @@
+name: Test pre-existing community insurance
+
+on:
+  push:
+    branches: [analysis/community-insurance-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/34_community_insurance.py"
+      - "results/community_buffering_v1_contract.json"
+      - "results/community_insurance_v1_contract.json"
+      - ".github/workflows/community-insurance-v1.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/34_community_insurance.py"
+      - "results/community_insurance_v1_contract.json"
+      - ".github/workflows/community-insurance-v1.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community states
+        run: python analysis/33_community_buffering.py --out results/generated_community_insurance
+      - name: Test frozen pre-existing community insurance hypotheses
+        run: python analysis/34_community_insurance.py --input results/generated_community_insurance --out results/generated_community_insurance
+      - name: Verify canonical community-insurance result
+        run: python validation/verify_community_insurance.py --generated results/generated_community_insurance/community_insurance_v1.json --canonical results/community_insurance_v1.json
+
+      - name: Verify frozen population
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_community_insurance/community_insurance_v1.json"))
+          assert x["schema"]=="tampa.community_insurance_v1.result"
+          assert x["registry"]["eligible_thalassia_loss_transitions"]==370
+          assert x["registry"]["nodes_with_loss"]>=20
+          assert x["H3a_source_mixture_insurance"]["source_mixed_events"]>0
+          assert x["H3a_source_mixture_insurance"]["source_thalassia_only_events"]>0
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-community-insurance-v1
+          path: results/generated_community_insurance/
