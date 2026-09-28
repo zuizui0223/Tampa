@@ -17,5 +17,17 @@
   },
   "next_gate": "response-blind schema inspection only",
   "response_opening_authorized": false,
-  "terminal_if_schema_fails": true
+  "terminal_if_schema_fails": true,
+  "arcgis_metadata_identity": {
+    "collection_item_id": "0faa3e83feb14c63a71d98199f9acf4c",
+    "collection_title": "SeagrassScallopArchiveCollection",
+    "indexed_layers": [
+      "SeagrassScallopArchiveLayer",
+      "AlgaeInfoArchive",
+      "BioInfoArchive",
+      "ScallopInfoArchive"
+    ],
+    "identity_frozen_before_response_opening": true
+  },
+  "contract_pull_request": 32
 }
