@@ -1,0 +1,50 @@
+name: Supplement integrity
+
+on:
+  push:
+    paths:
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_CAPTIONS_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md"
+      - "manuscript/build_supplement.py"
+      - ".github/workflows/supplement-integrity.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_CAPTIONS_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md"
+      - "manuscript/build_supplement.py"
+      - ".github/workflows/supplement-integrity.yml"
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild Supplement
+        run: python manuscript/build_supplement.py --out manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md
+      - name: Verify assembled Supplement is current
+        run: git diff --exit-code -- manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md
+      - name: Audit Supplement structure and boundaries
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          x=Path("manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md").read_text()
+          low=x.lower()
+          for n in range(1,15):
+              assert f"supplementary methods s{n}" in low, n
+          for n in range(1,8):
+              assert f"fig. s{n}" in low, n
+          for n in range(1,10):
+              assert f"table s{n}" in low, n
+          assert "not demographic extinction" in low
+          assert "no additional response-free hidden-state simulation family" in low
+          assert "no alternative window was selected after seeing the results" in low
+          assert "post hoc" in low or "post-hoc" in low
+          print("Supplement integrity: OK")
+          PY
