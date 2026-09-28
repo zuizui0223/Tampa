@@ -1,0 +1,54 @@
+name: NPS external figure-data sidecar
+
+on:
+  push:
+    branches: [figures/nps-sidecar-v1]
+    paths:
+      - "analysis/11_nps_persistent_cover.py"
+      - "analysis/31_nps_figure_data.py"
+      - ".github/workflows/nps-figure-data.yml"
+      - "results/nps_persistent_cover_v1.json"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/11_nps_persistent_cover.py"
+      - "analysis/31_nps_figure_data.py"
+      - ".github/workflows/nps-figure-data.yml"
+      - "results/nps_persistent_cover_v1.json"
+  workflow_dispatch:
+
+jobs:
+  figure-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild frozen NPS annual state
+        run: python analysis/11_nps_persistent_cover.py --out results/generated_nps_figure
+      - name: Build external Figure 3 sidecar
+        run: python analysis/31_nps_figure_data.py --input results/generated_nps_figure --out results/generated_nps_figure/figure_data
+      - name: Verify figure boundary
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_nps_figure/figure_data/nps_figure_data_v1.json"))
+          assert x["status"]=="external_posthoc_figure_sidecar"
+          assert x["annual_units"]==240
+          assert x["all_recorded_present"] is True
+          assert x["all_focal_frequency_one"] is True
+          assert x["repeated_cover_nodes"]==15
+          assert x["negative_node_slopes"]==11
+          assert x["positive_node_slopes"]==4
+          assert x["pooled_within_node_cover_slope_per_year"] < 0
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-nps-figure-data-v1
+          path: results/generated_nps_figure/figure_data/
