@@ -11,6 +11,7 @@
 - **Scientific spine:** `TAMPA_ECOLOGY_MANUSCRIPT_SPINE_V2.md`
 - **Claim–evidence map:** `CLAIM_EVIDENCE_MAP_V1.md`
 - **Reference notes:** `TAMPA_ECOLOGY_REFERENCE_NOTES_V1.md`
+- **Provisional bibliography:** `TAMPA_ECOLOGY_REFERENCES_V1.md`
 - **Supplement plan:** `TAMPA_ECOLOGY_SUPPLEMENT_OUTLINE_V1.md`
 - **Submission checklist:** `SUBMISSION_READINESS_V1.md`
 
