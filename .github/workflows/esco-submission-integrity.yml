@@ -1,0 +1,80 @@
+name: Estuaries and Coasts submission integrity
+
+on:
+  push:
+    paths:
+      - "manuscript/TAMPA_ECOLOGY_ABSTRACT_INTRO_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_METHODS_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_FIGURE_CAPTIONS_ESCO_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_REFERENCES_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md"
+      - "manuscript/build_esco_submission.py"
+      - "manuscript/ESTUARIES_COASTS_TARGET_V1.md"
+      - ".github/workflows/esco-submission-integrity.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "manuscript/TAMPA_ECOLOGY_ABSTRACT_INTRO_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_METHODS_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_FIGURE_CAPTIONS_ESCO_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_REFERENCES_V1.md"
+      - "manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md"
+      - "manuscript/build_esco_submission.py"
+      - "manuscript/ESTUARIES_COASTS_TARGET_V1.md"
+      - ".github/workflows/esco-submission-integrity.yml"
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild ESCO submission body
+        run: python manuscript/build_esco_submission.py --out manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md
+      - name: Verify committed ESCO body is current
+        run: git diff --exit-code -- manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md
+      - name: Audit ESCO-specific requirements
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          p=Path("manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md")
+          x=p.read_text()
+          low=x.lower()
+
+          a=x[x.index("## Abstract")+len("## Abstract"):x.index("## Keywords")].strip()
+          words=re.findall(r"\b\w+[\w’'-]*\b",re.sub(r"[*_]"," ",a))
+          assert 150 <= len(words) <= 250, len(words)
+
+          k=x[x.index("## Keywords")+len("## Keywords"):x.index("# Introduction")].strip()
+          keys=[v.strip() for v in k.split(";") if v.strip()]
+          assert 4 <= len(keys) <= 6, keys
+
+          assert "statistically significant" not in low
+          assert "p < 0.05" not in low and "p<0.05" not in low
+          assert "# references" in low
+          assert "post-hoc external ecological" in low
+          assert "not interpreted as demographic extinction" in low
+
+          bad=re.findall(r"\([A-Z][^()]{0,80}\bet al\. (?:19|20)\d{2}\)",x)
+          assert not bad, bad
+
+          caps=Path("manuscript/TAMPA_ECOLOGY_FIGURE_CAPTIONS_ESCO_V1.md").read_text().splitlines()
+          figlines=[v for v in caps if v.startswith("**Fig. ")]
+          assert len(figlines)==4, figlines
+          for line in figlines:
+              assert not line.rstrip().endswith("."), line
+
+          refs=Path("manuscript/TAMPA_ECOLOGY_REFERENCES_V1.md").read_text()
+          starts=[line for line in refs.splitlines() if line and not line.startswith("#") and not line.startswith("This list")]
+          first_authors=[line.split(",")[0] for line in starts if "(" in line]
+          assert first_authors==sorted(first_authors,key=str.casefold), first_authors
+
+          print(f"ESCO manuscript integrity: OK; abstract={len(words)} words; keywords={len(keys)}")
+          PY

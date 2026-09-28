@@ -85,6 +85,10 @@ The tested classes included:
 
 The purpose of this sequence was to constrain causal interpretation, not to identify a best retrospective predictor. Per the final mechanism boundary, no additional temperature threshold, salinity threshold, lag window, spatial radius, generic connectivity index, hidden-state simulation family, depth/sediment transformation or bulk-light formula is selected after the observed results.
 
+## AI-assisted research and manuscript development
+
+ChatGPT (OpenAI) was used interactively during development of the analysis repository to assist with code drafting, reproducibility auditing, alternative-explanation test design, and manuscript drafting and editing. All scientific questions, frozen decision rules, source selections, analyses, interpretations, code changes, and final manuscript text were reviewed and approved by the human author(s), who take responsibility for the work. The AI system is not listed as an author.
+
 ## Reproducibility and figure data
 
 Primary analyses rebuild from pinned public sources in GitHub Actions. Canonical result boundaries are recorded in `results/current_validation_v2.json`. The current ecological mechanism stopping rule is recorded in `docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md`.

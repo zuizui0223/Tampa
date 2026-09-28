@@ -24,10 +24,12 @@
 
 ## Required before initial journal submission
 
-- [ ] Select target journal and apply journal-specific structure/word limits.
+- [x] Select target journal: **Estuaries and Coasts — Original Article**.
+- [x] Apply journal Abstract/keyword/citation/caption constraints in the ESCO submission build.
 - [x] Complete provisional bibliography for all current in-text citations.
 - [x] Check every current in-text author–year citation against the bibliography.
-- [ ] Apply the selected target journal's reference style and punctuation rules.
+- [x] Apply Estuaries and Coasts / APA-style reference ordering and author–year punctuation.
+- [ ] Final Word export: verify journal-specific typography and line numbering.
 - [ ] Write Supplementary Methods from `TAMPA_ECOLOGY_SUPPLEMENT_OUTLINE_V1.md`.
 - [ ] Render Supplementary Figures/Tables S1–S9.
 - [ ] Add Data Availability statement with exact public source locations and pinned commits.
@@ -39,7 +41,8 @@
 - [ ] Decide whether the journal requires permits/ethics text for public monitoring data; document not applicable if appropriate.
 - [ ] Freeze a submission commit/tag and archive release.
 - [ ] Run final manuscript–figure numeric consistency audit against that tag.
-- [ ] Export publication-quality vector figures at the target journal dimensions.
+- [x] Add Estuaries and Coasts figure renderer at 174 mm width with EPS + 600 dpi TIFF outputs.
+- [ ] Final visual QA of the Estuaries and Coasts EPS/TIFF package.
 - [ ] Check species names, units, minus signs, superscripts and Braun–Blanquet wording after typesetting/export.
 - [ ] Confirm that adverse target year 2016 remains visible in Figure 4 and text.
 - [ ] Confirm NPS external comparison is still labelled post-hoc everywhere.

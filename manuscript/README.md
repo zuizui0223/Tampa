@@ -14,6 +14,12 @@
 - **Provisional bibliography:** `TAMPA_ECOLOGY_REFERENCES_V1.md`
 - **Supplement plan:** `TAMPA_ECOLOGY_SUPPLEMENT_OUTLINE_V1.md`
 - **Submission checklist:** `SUBMISSION_READINESS_V1.md`
+- **Target journal contract:** `ESTUARIES_COASTS_TARGET_V1.md`
+- **ESCO submission body:** `TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md`
+- **ESCO figure captions:** `TAMPA_ECOLOGY_FIGURE_CAPTIONS_ESCO_V1.md`
+- **ESCO back matter template:** `ESTUARIES_COASTS_BACK_MATTER_TEMPLATE_V1.md`
+- **ESCO cover letter template:** `ESTUARIES_COASTS_COVER_LETTER_TEMPLATE_V1.md`
+- **ESCO checklist:** `ESTUARIES_COASTS_SUBMISSION_CHECKLIST_V1.md`
 
 ## Authoritative scientific boundaries
 
