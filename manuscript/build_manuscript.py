@@ -12,6 +12,7 @@ SOURCES={
     "methods": ROOT/"manuscript/TAMPA_ECOLOGY_METHODS_V1.md",
     "results": ROOT/"manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md",
     "captions": ROOT/"manuscript/TAMPA_ECOLOGY_FIGURE_CAPTIONS_V1.md",
+    "references": ROOT/"manuscript/TAMPA_ECOLOGY_REFERENCES_V1.md",
 }
 
 def read(name:str)->str:
@@ -22,6 +23,7 @@ def build()->str:
     methods=read("methods")
     results=read("results")
     captions=read("captions")
+    references=read("references")
 
     m=re.search(r"## Working title\s+\*\*([^*]+)\*\*",intro,re.S)
     if not m:
@@ -35,6 +37,7 @@ def build()->str:
     methods_body="\n".join(methods.splitlines()[2:]).strip()
     results_section=results[results.index("# Results"):].strip()
     captions_body="\n".join(captions.splitlines()[2:]).strip()
+    references_body="\n".join(references.splitlines()[2:]).strip()
 
     text=(
         f"# {title}\n\n"
@@ -43,7 +46,9 @@ def build()->str:
         f"{methods_body}\n\n"
         f"{results_section}\n\n"
         "# Figure captions\n\n"
-        f"{captions_body}\n"
+        f"{captions_body}\n\n"
+        "# References\n\n"
+        f"{references_body}\n"
     )
 
     forbidden=["[REF", "CITATION NEEDED", "TODO:"]
