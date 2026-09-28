@@ -9,12 +9,16 @@ on:
       - "analysis/44_return_quality_fragility.py"
       - "results/recovery_debt_v1_contract.json"
       - "results/return_quality_fragility_v1_contract.json"
+      - "results/return_quality_fragility_v1.json"
+      - "validation/verify_return_quality_fragility.py"
       - ".github/workflows/return-quality-fragility.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/44_return_quality_fragility.py"
       - "results/return_quality_fragility_v1_contract.json"
+      - "results/return_quality_fragility_v1.json"
+      - "validation/verify_return_quality_fragility.py"
       - ".github/workflows/return-quality-fragility.yml"
   workflow_dispatch:
 
@@ -35,6 +39,9 @@ jobs:
         run: python analysis/43_recovery_debt.py --input results/generated_return_quality_fragility --out results/generated_return_quality_fragility
       - name: Test return-quality fragility
         run: python analysis/44_return_quality_fragility.py --input results/generated_return_quality_fragility --out results/generated_return_quality_fragility
+      - name: Verify canonical return-quality result
+        run: python validation/verify_return_quality_fragility.py --generated results/generated_return_quality_fragility/return_quality_fragility_v1.json --canonical results/return_quality_fragility_v1.json
+
       - name: Verify frozen endpoint registry
         run: |
           python - <<'PY'
