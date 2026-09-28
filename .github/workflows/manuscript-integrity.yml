@@ -44,5 +44,15 @@ jobs:
           assert "not demographic extinction" in x
           assert "target year 2016" in x
           assert "mechanism" in x and "unresolved" in x
-          print("manuscript claim-boundary audit: OK")
+          assert "# references" in x
+          refs=Path("manuscript/TAMPA_ECOLOGY_REFERENCES_V1.md").read_text().lower()
+          required_refs=[
+              "ellison", "orth", "waycott", "roca", "lefcheck",
+              "unsworth", "lee", "carlson", "beck", "rising",
+          ]
+          for key in required_refs:
+              assert key in refs, f"missing bibliography key: {key}"
+          for key in ["ellison","orth","waycott","roca","lefcheck","unsworth","lee","carlson","beck","rising"]:
+              assert key in x, f"missing in-text citation key: {key}"
+          print("manuscript claim-boundary and bibliography audit: OK")
           PY
