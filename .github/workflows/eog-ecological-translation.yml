@@ -6,12 +6,22 @@ on:
     paths:
       - "analysis/03_quantitative_state.py"
       - "analysis/21_eog_ecological_translation.py"
+      - "results/eog_ecological_translation_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_eog_ecological_translation.py"
+      - "README.md"
       - ".github/workflows/eog-ecological-translation.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/03_quantitative_state.py"
       - "analysis/21_eog_ecological_translation.py"
+      - "results/eog_ecological_translation_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_eog_ecological_translation.py"
+      - "README.md"
       - ".github/workflows/eog-ecological-translation.yml"
   workflow_dispatch:
 
@@ -30,6 +40,8 @@ jobs:
         run: python analysis/03_quantitative_state.py --out results/generated_eog_ecology
       - name: Translate EOG failure into ecological tests
         run: python analysis/21_eog_ecological_translation.py --input results/generated_eog_ecology --out results/generated_eog_ecology
+      - name: Verify canonical ecological translation
+        run: python validation/verify_eog_ecological_translation.py --generated results/generated_eog_ecology/eog_ecological_translation_v1.json --canonical results/eog_ecological_translation_v1.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
