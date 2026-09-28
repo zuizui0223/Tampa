@@ -48,11 +48,11 @@ jobs:
           refs=Path("manuscript/TAMPA_ECOLOGY_REFERENCES_V1.md").read_text().lower()
           required_refs=[
               "ellison", "orth", "waycott", "roca", "lefcheck",
-              "unsworth", "lee", "carlson", "beck", "rising",
+              "unsworth", "lee", "carlson", "beck", "rising", "williams",
           ]
           for key in required_refs:
               assert key in refs, f"missing bibliography key: {key}"
-          for key in ["ellison","orth","waycott","roca","lefcheck","unsworth","lee","carlson","beck","rising"]:
+          for key in ["ellison","orth","waycott","roca","lefcheck","unsworth","lee","carlson","beck","rising","williams"]:
               assert key in x, f"missing in-text citation key: {key}"
           print("manuscript claim-boundary and bibliography audit: OK")
           PY
