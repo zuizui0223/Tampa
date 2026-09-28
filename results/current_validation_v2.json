@@ -183,7 +183,9 @@
     "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism.",
     "Do not interpret the focal-specific local-history coefficient as direct evidence of clonal memory or residual rhizomes; the bare-loss subgroup null and unresolved continuity interaction rule out a simple autonomous below-ground carryover story.",
     "Do not present the pooled source-richness gradient as causal biodiversity insurance after the within-node centered-richness audit; its interval overlaps zero.",
-    "Treat higher seagrass richness as both a candidate insurance state and a possible marker of persistently favorable transects."
+    "Treat higher seagrass richness as both a candidate insurance state and a possible marker of persistently favorable transects.",
+    "Do not explain the supported pre-loss exact-point history effect as merely a proxy for current source-year frequency or Braun-Blanquet; the frozen saturation audit retained a positive history coefficient.",
+    "Do not convert the surviving history effect into a clonal-memory or residual-rhizome mechanism without direct below-ground data."
   ],
   "community_reorganization": {
     "period": [
@@ -1033,5 +1035,33 @@
       "supported": false
     },
     "interpretation": "The pooled diversity gradient weakens after stable-transect saturation; persistent site quality is a plausible common cause of both higher local richness and later seagrass retention."
+  },
+  "local_legacy_current_state_audit": {
+    "status": "legacy_beyond_current_state_supported",
+    "authoritative_workflow": {
+      "run_id": 36444957844,
+      "head_sha": "4ce2a6e0fb1d36cc7fe82d4ec321ba98a804854d",
+      "artifact_id": 10980196971,
+      "artifact_digest": "sha256:4eeb3d03ba1489039aa270f154e4a096071c5749c558bf7fdc9d8bcd41b597f6"
+    },
+    "registry": {
+      "complete_sequences": 259,
+      "nodes": 25,
+      "nodes_with_run_length_variation": 18
+    },
+    "primary": {
+      "current_state_saturated_run_length_coefficient": 0.4701525569669674,
+      "ci95": [
+        0.08247560744242632,
+        1.411377026181121
+      ],
+      "supported": true
+    },
+    "secondary": {
+      "without_current_state_run_length_coefficient": 0.45119165238746917,
+      "corr_run_length_source_frequency": 0.18586835832054777,
+      "corr_run_length_source_bb": 0.19879565297163995
+    },
+    "interpretation": "Exact-point pre-loss Thalassia history remains predictive of one-year re-recording after current source-year transect frequency/Braun-Blanquet, stable node identity, and community-continuity controls are added. This strengthens a local history/legacy interpretation without identifying the mechanism."
   }
 }
