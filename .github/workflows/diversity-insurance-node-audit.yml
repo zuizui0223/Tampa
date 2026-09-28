@@ -1,0 +1,60 @@
+name: Diversity insurance within-node audit
+
+on:
+  push:
+    branches: [analysis/diversity-insurance-node-audit-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/34_community_insurance.py"
+      - "analysis/39_diversity_insurance_node_audit.py"
+      - "results/community_insurance_v1_contract.json"
+      - "results/diversity_insurance_node_audit_v1_contract.json"
+      - ".github/workflows/diversity-insurance-node-audit.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/39_diversity_insurance_node_audit.py"
+      - "results/diversity_insurance_node_audit_v1_contract.json"
+      - ".github/workflows/diversity-insurance-node-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_diversity_node_audit
+      - name: Rebuild community-insurance transitions
+        run: python analysis/34_community_insurance.py --input results/generated_diversity_node_audit --out results/generated_diversity_node_audit
+      - name: Test within-node richness gradient
+        run: python analysis/39_diversity_insurance_node_audit.py --input results/generated_diversity_node_audit --out results/generated_diversity_node_audit
+      - name: Verify frozen registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_diversity_node_audit/diversity_insurance_node_audit_v1.json"))
+          assert x["schema"]=="tampa.diversity_insurance_node_audit_v1.result"
+          assert x["registry"]["all_transitions"]==370
+          assert x["registry"]["all_nodes"]==27
+          assert x["registry"]["informative_nodes"]>=0
+          for name in [
+            "diversity_insurance_node_audit_transitions.csv",
+            "diversity_insurance_node_audit_nodes.csv",
+          ]:
+              p=Path("results/generated_diversity_node_audit")/name
+              assert p.exists()
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-diversity-insurance-node-audit-v1
+          path: results/generated_diversity_node_audit/
