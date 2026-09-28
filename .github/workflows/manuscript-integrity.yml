@@ -1,0 +1,48 @@
+name: Manuscript integrity
+
+on:
+  push:
+    paths:
+      - "manuscript/**"
+      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - ".github/workflows/manuscript-integrity.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "manuscript/**"
+      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - ".github/workflows/manuscript-integrity.yml"
+  workflow_dispatch:
+
+jobs:
+  manuscript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild single-file manuscript
+        run: python manuscript/build_manuscript.py --out manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
+      - name: Verify generated manuscript is current
+        run: git diff --exit-code -- manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
+      - name: Audit high-risk wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          x=Path("manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md").read_text().lower()
+          forbidden=[
+              "[ref",
+              "citation needed",
+              "competitive replacement by",
+              "confirmed extinction",
+              "confirmed recolonization",
+          ]
+          for token in forbidden:
+              assert token not in x, token
+          assert "post-hoc external ecological" in x
+          assert "not demographic extinction" in x
+          assert "target year 2016" in x
+          assert "mechanism" in x and "unresolved" in x
+          print("manuscript claim-boundary audit: OK")
+          PY
