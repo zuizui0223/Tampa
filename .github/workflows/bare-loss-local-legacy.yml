@@ -1,0 +1,65 @@
+name: Bare-loss local legacy ecology
+
+on:
+  push:
+    branches: [analysis/bare-loss-local-legacy-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/39_bare_loss_local_legacy.py"
+      - "results/bare_loss_local_legacy_v1_contract.json"
+      - "results/bare_loss_local_legacy_v1.json"
+      - "validation/verify_bare_loss_local_legacy.py"
+      - ".github/workflows/bare-loss-local-legacy.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/39_bare_loss_local_legacy.py"
+      - "results/bare_loss_local_legacy_v1_contract.json"
+      - ".github/workflows/bare-loss-local-legacy.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_bare_loss_legacy
+
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_bare_loss_legacy --out results/generated_bare_loss_legacy
+
+      - name: Test bare-loss local legacy
+        run: python analysis/39_bare_loss_local_legacy.py --input results/generated_bare_loss_legacy --out results/generated_bare_loss_legacy
+
+      - name: Verify canonical result
+        run: python validation/verify_bare_loss_local_legacy.py --generated results/generated_bare_loss_legacy/bare_loss_local_legacy_v1.json --canonical results/bare_loss_local_legacy_v1.json
+
+      - name: Verify frozen subgroup registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_bare_loss_legacy/bare_loss_local_legacy_v1.json"))
+          assert x["schema"]=="tampa.bare_loss_local_legacy_v1.result"
+          assert x["registry"]["bare_loss_sequences"]==44
+          assert x["registry"]["nodes"]==17
+          assert x["registry"]["returns"] + x["registry"]["nonreturns"] == 44
+          q=Path("results/generated_bare_loss_legacy/bare_loss_local_legacy_sequences.csv")
+          assert q.exists() and q.stat().st_size>100
+          print(json.dumps(x,indent=2))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-bare-loss-local-legacy-v1
+          path: results/generated_bare_loss_legacy/

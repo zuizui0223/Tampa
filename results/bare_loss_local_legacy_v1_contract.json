@@ -1,0 +1,52 @@
+{
+  "schema": "tampa.bare_loss_local_legacy_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_bare_state_legacy_hypothesis_frozen_before_subgroup_history_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "The pooled pre-loss local-history effect predicts Thalassia re-recording after one-year loss. Restrict to loss-year meter marks with no seagrass present to test whether the history signal persists without above-ground community continuity.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "recovery_sequence_builder": "analysis/35_microsite_recovery_pathway.py",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f"
+  },
+  "primary_population": {
+    "base_sequence": "same frozen three-year exact-point Thalassia-loss sequences as microsite_recovery_pathway_v1",
+    "subgroup": "intermediate_state == no_seagrass",
+    "pre_loss_run_length": "number of immediately consecutive consensus years ending in the source year with Thalassia recorded present at the same stable point; stop at first missing year or Thalassia-absent year; minimum=1"
+  },
+  "primary_hypothesis": {
+    "statement": "Among meter marks that become seagrass-bare after Thalassia loss, longer-than-usual pre-loss Thalassia persistence within the same stable transect is associated with higher one-year Thalassia re-recording.",
+    "predictor": "pre_loss_run_length centered by stable-node mean within the bare-loss subgroup",
+    "outcome": "Thalassia recorded present at the same meter mark in the recovery year",
+    "controls": [
+      "stable node identity",
+      "loss year",
+      "source-year mixed-species state"
+    ],
+    "model": "L2-regularized logistic regression",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092814,
+    "minimum_sequences": 30,
+    "minimum_nodes": 10,
+    "minimum_nodes_with_run_length_variation": 5,
+    "minimum_returns": 5,
+    "minimum_nonreturns": 15,
+    "support_rule": "lower bound of 95% node-bootstrap interval for the centered run-length coefficient > 0"
+  },
+  "interpretation": {
+    "supported": "A focal-history signal persists even when above-ground seagrass occupancy is lost, strengthening a local legacy / residual below-ground structure / persistent microsite interpretation.",
+    "unsupported": "The focal-history signal does not remain robust in bare loss states; the broader legacy association may depend on community continuity or other state differences."
+  },
+  "claim_boundary": [
+    "Post-hoc subgroup analysis of an already-opened recovery endpoint.",
+    "A positive result would still not prove residual rhizomes or clonal memory; persistent substrate/habitat quality and detectability remain alternatives.",
+    "Return is recorded reappearance at the same meter mark, not genet-level recolonization.",
+    "Do not alter the bare-state definition, run-length definition, node-centering, control set, model, minima, or support threshold after opening the subgroup history result.",
+    "If frozen minima fail, retain non-estimable status rather than pooling vegetated loss states back in."
+  ]
+}
