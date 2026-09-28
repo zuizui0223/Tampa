@@ -47,6 +47,9 @@ jobs:
       - name: Test quantitative state as next-year early warning
         run: python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
 
+      - name: Build manuscript figure data
+        run: python analysis/30_main_figure_data.py --input results/generated --out results/generated/figure_data
+
       - name: Verify frozen headline results
         run: |
           python - <<'PY'
@@ -101,7 +104,17 @@ jobs:
           assert early["primary"]["quantitative_wins"] == 17
           assert early["primary"]["macro_delta"] < 0
           assert early["target_2016"]["quantitative_minus_baseline"] > 0
-          print("Frozen Tampa registry/pulse result reproduced; memory, community, environmental, and early-warning analyses emitted.")
+
+          figures = json.load(open("results/generated/figure_data/main_figure_data_v1.json"))
+          assert figures["figure1"]["nodes"] == 71
+          assert figures["figure1"]["state_dimensions"] == 5
+          assert figures["figure3_tampa"]["lower_tampa_years"] == 10
+          assert figures["figure4"]["source_positive_transitions"] == 688
+          assert figures["figure4"]["recorded_losses"] == 24
+          assert figures["figure4"]["scored_target_years"] == 23
+          assert figures["figure4"]["target_2016_retained"] is True
+
+          print("Frozen Tampa registry/pulse result reproduced; primary ecological and manuscript figure-data tables emitted.")
           PY
 
       - name: Upload generated audit tables
