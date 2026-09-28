@@ -1,0 +1,43 @@
+{
+  "schema": "tampa.diversity_insurance_node_audit_v1.canonical_summary",
+  "status": "within_node_diversity_insurance_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36443213712,
+    "head_sha": "5af07133a5f93ef52f4014cde17a841b4944cf27",
+    "artifact_id": 10978359859,
+    "artifact_digest": "sha256:543d2b05a087e32d074af370586c34f86f147b01469aa27c905ff6b4dca7865c"
+  },
+  "registry": {
+    "all_transitions": 370,
+    "all_nodes": 27,
+    "informative_nodes": 20,
+    "informative_transitions": 357,
+    "observed_raw_richness_values": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "primary": {
+    "standardized_centered_richness_log_odds_coefficient": 0.27287862948510416,
+    "ci95": [
+      -0.06223413310785701,
+      0.6130249057697755
+    ],
+    "bootstrap_replicates_used": 5000,
+    "supported": false
+  },
+  "secondary": {
+    "median_centered_richness_sd": 0.4714045207910317,
+    "uncentered_with_node_effect_orientation_coefficient": 0.32533735558226445
+  },
+  "interpretation": "The pooled positive richness-retention gradient is not robust after stable-transect saturation. Higher source richness may partly mark persistently favorable transects rather than a purely microsite-scale biodiversity-insurance mechanism.",
+  "claim_boundary": [
+    "Post-hoc reference-saturation audit of an already-opened richness endpoint.",
+    "Do not call the pooled richness gradient causal biodiversity insurance after the within-node interval overlaps zero.",
+    "The positive within-node point estimate remains descriptive and does not replace the failed support rule.",
+    "Persistent site quality can jointly increase local richness and later seagrass retention.",
+    "Retention of any seagrass does not imply equivalent ecosystem function after Thalassia loss."
+  ]
+}
