@@ -175,7 +175,8 @@
     "Do not call the community-buffering hypothesis confirmed: its full frozen Lower Tampa support rule failed and the Lower-specific exact-point comparison was non-estimable.",
     "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested.",
     "Do not call pre-existing mixed-species occupancy facilitation: the exact-point insurance association may reflect shared persistent habitat quality.",
-    "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement."
+    "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement.",
+    "Do not describe post-Thalassia alternative occupancy as de novo colonization or competitive replacement by default; 70.9% of exact-point replacement events retained at least one alternative species already present at the source point."
   ],
   "community_reorganization": {
     "period": [
@@ -805,5 +806,31 @@
     },
     "interpretation": "Exact-point Thalassia losses are less likely to leave a seagrass-bare point when another seagrass already co-occurred in the source year, and most target alternative occupancy retains species already present before focal loss. This supports a pre-existing community-insurance pattern while remaining non-causal.",
     "next_hypothesis": "Test whether alternative-seagrass occupancy in the loss year predicts greater one-year Thalassia return at the same meter mark than becoming seagrass-bare."
+  },
+  "preexisting_mixed_patch_persistence": {
+    "status": "supported_posthoc_exploratory",
+    "authoritative_workflow": {
+      "run_id": 36407837819,
+      "head_sha": "aa4bf065048c0292ea2ca0b1bbad4cd53981eec0",
+      "artifact_id": 10962224799,
+      "artifact_digest": "sha256:20a38fa0fe27feb1fc6fb4365c736a1b04636c95b82e93ebe33b42fd33a93b8c"
+    },
+    "exact_point_replacement_events": 299,
+    "stable_nodes": 23,
+    "preexisting_persistence_events": 212,
+    "de_novo_only_events": 87,
+    "preexisting_persistence_fraction": 0.7090301003344481,
+    "bootstrap_ci95": [
+      0.5872929606625259,
+      0.8244972091400662
+    ],
+    "frozen_support_rule_passed": true,
+    "secondary": {
+      "syringodium_target_events": 172,
+      "syringodium_preexisting_fraction": 0.7965116279069767,
+      "halodule_target_events": 142,
+      "halodule_preexisting_fraction": 0.5492957746478874
+    },
+    "interpretation": "Most alternative-seagrass occupancy one year after exact-point Thalassia loss reflects persistence of a species already co-occurring at that same meter mark. This supports selective Thalassia dropout from pre-existing mixed patches as a common route to apparent community replacement, not point-for-point competitive displacement."
   }
 }
