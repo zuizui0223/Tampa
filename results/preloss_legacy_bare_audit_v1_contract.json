@@ -1,0 +1,67 @@
+{
+  "schema": "tampa.preloss_legacy_bare_audit_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_subgroup_legacy_audit_frozen_before_bare_state_history_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "The supported pre-loss local legacy signal remains after stable-node and community-state controls. Test whether that history signal is still present when the focal-loss year becomes completely seagrass-bare, removing immediate community-continuity as an explanation.",
+  "prerequisite": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "recovery_builder": "analysis/35_microsite_recovery_pathway.py",
+    "history_definition": "same uninterrupted pre-loss Thalassia run length as preloss_local_legacy_v1",
+    "source_result": "results/preloss_local_legacy_v1.json"
+  },
+  "primary_population": {
+    "sequence_rule": "same frozen 259 three-year exact-point recovery sequences",
+    "subgroup": "loss-year intermediate_state == no_seagrass",
+    "known_registry_from_parent_result": {
+      "bare_sequences": 44,
+      "nodes": 17
+    },
+    "minimum_sequences": 40,
+    "minimum_nodes": 12,
+    "minimum_return_events": 5,
+    "minimum_nonreturn_events": 20,
+    "minimum_nodes_with_run_length_variation": 6
+  },
+  "predictor": {
+    "name": "pre_loss_run_length",
+    "definition": "number of immediately consecutive consensus years ending in the source year with Thalassia recorded present at the same point; stop at first missing or absent year",
+    "primary": "within-node centered continuous run length",
+    "no_thresholding": true
+  },
+  "model": {
+    "learner": "LogisticRegression(C=1.0, solver=lbfgs, max_iter=5000)",
+    "categorical": [
+      "node_id"
+    ],
+    "numeric": [
+      "loss_year",
+      "source_mixed",
+      "pre_loss_run_length_centered"
+    ],
+    "outcome": "Thalassia recorded present at the same meter mark in recovery year",
+    "scaling": "StandardScaler for numeric predictors inside each fit"
+  },
+  "uncertainty": {
+    "method": "stable-node cluster bootstrap with all bare-state sequences from sampled nodes travelling together",
+    "bootstrap_replicates": 5000,
+    "random_seed": 202609292,
+    "support_rule": "95% bootstrap interval for standardized centered run-length coefficient entirely above zero"
+  },
+  "secondary_descriptive": [
+    "return versus non-return run-length medians within the bare subgroup",
+    "uncentered run-length coefficient",
+    "run-length distribution among bare-state sequences"
+  ],
+  "interpretation": {
+    "supported": "A pre-loss local history signal remains even when the loss-year point is seagrass-bare, consistent with focal local legacy or persistent microsite structure beyond immediate community continuity.",
+    "unsupported": "The pre-loss history signal does not remain robust among seagrass-bare loss-year points; the overall legacy association may depend on vegetated habitat continuity and/or broader site quality."
+  },
+  "claim_boundary": [
+    "Post-hoc subgroup audit of an already-opened recovery and history endpoint.",
+    "A positive bare-state history effect would still not identify residual rhizomes, clonal integration, habitat quality, or detection persistence separately.",
+    "Return is recorded reappearance at the same meter mark, not genet-level recolonization.",
+    "The bare subgroup, run-length definition, node-centering, covariates, regularization, bootstrap unit, minima, and support threshold are frozen before opening this subgroup coefficient.",
+    "Do not relax minima or pool vegetated loss-year points back into the primary if the bare audit is non-estimable or unsupported."
+  ]
+}
