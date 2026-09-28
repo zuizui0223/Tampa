@@ -54,5 +54,14 @@
     "Alternative occupancy after Thalassia loss is species turnover/reorganization, not proof of competition or causal replacement.",
     "Stable meter-mark identity is taken from the pinned source's point locationID construction and must pass repeated-point coverage checks.",
     "Do not change the primary segment, period, point-loss definition, comparison group, bootstrap rule, or seagrass taxonomic definition after opening the endpoint result."
-  ]
+  ],
+  "implementation_freeze": {
+    "point_year_state": "For each stable point locationID x calendar year, classify each visit as focal_present (Thalassia present, regardless of co-occurring seagrass), other_only (Thalassia absent and >=1 other present Alismatales taxon), or bare (no present Alismatales). Retain the point-year for H2 only when all repeated visits in that year agree on the same class; otherwise mark ambiguous and exclude.",
+    "H1_bootstrap_replicates": 2000,
+    "H2_bootstrap_replicates": 5000,
+    "random_seed": 20260928,
+    "H1_minimum_years_per_node": 5,
+    "H1_minimum_nodes": 3,
+    "H2_group_bootstrap": "Resample stable transect nodes with replacement separately within Lower Tampa Bay and the pooled Old+Middle comparison; all eligible point-loss transitions from each sampled node travel together."
+  }
 }
