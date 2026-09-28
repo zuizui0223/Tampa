@@ -1,0 +1,44 @@
+name: Sarasota state-memory response-blind schema gate
+
+on:
+  push:
+    branches: [validation/sarasota-state-memory-v1]
+    paths:
+      - "validation/sarasota_state_memory_v1/**"
+      - ".github/workflows/sarasota-state-memory-schema.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "validation/sarasota_state_memory_v1/**"
+      - ".github/workflows/sarasota-state-memory-schema.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  schema-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inventory ArcGIS metadata only
+        run: python validation/sarasota_state_memory_v1/arcgis_schema_inventory.py results/generated_sarasota_schema
+      - name: Assert response rows were never queried
+        run: |
+          python - <<'PY'
+          import json
+          p = "results/generated_sarasota_schema/arcgis_schema_inventory.json"
+          x = json.load(open(p))
+          assert x["response_values_opened"] is False
+          assert x["feature_query_requests"] == 0
+          print(x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sarasota-state-memory-schema-inventory
+          path: results/generated_sarasota_schema/
