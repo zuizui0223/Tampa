@@ -27,6 +27,17 @@ Use for:
 - global pressure/loss context;
 - justification for monitoring condition as well as distribution.
 
+## Contemporary multi-level monitoring context
+
+**Rising, K., Bulling, M. & Sweet, M. (2026).** Seagrass monitoring methods: Aligning expert opinion with practice. *iScience* 29: 114871.  
+DOI: **10.1016/j.isci.2026.114871**
+
+Use for:
+- a current synthesis of 500 seagrass monitoring studies plus an expert survey;
+- distribution/extent, species composition and cover are core commonly used metrics;
+- physiological- and organism-level approaches are comparatively underused;
+- supports the manuscript's recommendation to integrate state dimensions rather than replace occurrence monitoring.
+
 ## State variables / indicator response times
 
 **Roca, G. et al. (2016).** Response of seagrass indicators to shifts in environmental stressors: A global review and management synthesis. *Ecological Indicators* 63: 310–323.  
@@ -35,6 +46,17 @@ DOI: **10.1016/j.ecolind.2015.12.007**
 Use for:
 - different seagrass indicators have different sensitivities and response times;
 - justification for treating occurrence, abundance, density and morphology as distinct ecological states.
+
+**Lee, K.-S. & Dunton, K.H. (1997).** Effect of in situ light reduction on the maintenance, growth and partitioning of carbon resources in *Thalassia testudinum* Banks ex König. *Journal of Experimental Marine Biology and Ecology* 210: 53–73.  
+DOI: **10.1016/S0022-0981(96)02720-7**
+
+**Carlson, P.R. Jr., Yarbro, L.A., Madley, K., Arnold, H., Merello, M., Vanderbloemen, L., McRae, G. & Durako, M.J. (2003).** Effect of El Niño on demographic, morphological, and chemical parameters in turtle-grass (*Thalassia testudinum*): an unexpected test of indicators. *Environmental Monitoring and Assessment* 81: 393–408.  
+DOI: **10.1023/A:1021322301725**
+
+Use for:
+- direct *Thalassia* evidence that shoot density, blade traits and rhizome carbohydrate reserves respond to chronic light reduction or major water-quality perturbation;
+- supports treating blade length / shoot density as biologically meaningful condition variables;
+- supports the distinction between failure of our coarse light proxy and rejection of light/physiological mechanisms.
 
 ## Multiple stressors in long-term seagrass records
 
