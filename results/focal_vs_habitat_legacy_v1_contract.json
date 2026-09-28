@@ -1,0 +1,61 @@
+{
+  "schema": "tampa.focal_vs_habitat_legacy_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_legacy_decomposition_frozen_before_joint_history_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Pooled pre-loss Thalassia history predicts re-recording, while the effect disappears in bare loss states. Decompose local history into current focal-species persistence and pre-existing generic seagrass habitat continuity to test whether the recovery signal is focal-specific or mainly a persistent microsite property.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "recovery_sequence_builder": "analysis/35_microsite_recovery_pathway.py",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f"
+  },
+  "history_decomposition": {
+    "thalassia_run": "immediately consecutive consensus years ending in source year with Thalassia present",
+    "any_seagrass_run": "immediately consecutive consensus years ending in source year with any seagrass present",
+    "habitat_headstart": "any_seagrass_run - thalassia_run; number of continuous vegetated years preceding the current continuous Thalassia run",
+    "identity": "any_seagrass_run = thalassia_run + habitat_headstart"
+  },
+  "primary_hypothesis": {
+    "statement": "Within stable transects, current continuous Thalassia run length retains a positive association with one-year re-recording after controlling for pre-focal habitat headstart, community-continuity state, and source mixture.",
+    "outcome": "Thalassia recorded present at the same meter mark in the recovery year",
+    "predictors": [
+      "node-centered thalassia_run",
+      "node-centered habitat_headstart",
+      "loss_year_vegetated",
+      "source_mixed",
+      "loss_year"
+    ],
+    "categorical": [
+      "node_id"
+    ],
+    "model": "L2 logistic regression",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "primary_term": "node-centered thalassia_run",
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092816,
+    "minimum_sequences": 150,
+    "minimum_nodes": 15,
+    "minimum_nodes_with_thalassia_run_variation": 8,
+    "minimum_headstart_positive_events": 30,
+    "minimum_nodes_with_positive_headstart": 8,
+    "support_rule": "lower bound of 95% node-bootstrap interval for the centered Thalassia-run coefficient > 0"
+  },
+  "secondary": {
+    "habitat_headstart_term": "report centered habitat-headstart coefficient and bootstrap interval descriptively",
+    "predictor_structure": "report distribution of Thalassia run, any-seagrass run, and habitat headstart"
+  },
+  "interpretation": {
+    "supported": "Focal-species persistence history carries recovery information beyond generic pre-existing vegetation continuity, consistent with a Thalassia-specific local legacy signal.",
+    "unsupported": "Once generic habitat continuity history is represented, focal-species run length no longer adds robust recovery information; the earlier local-legacy signal is better interpreted as persistent microsite/habitat quality."
+  },
+  "claim_boundary": [
+    "Post-hoc history decomposition on an already-opened recovery endpoint.",
+    "A focal-specific coefficient would still not prove clonal memory or residual rhizomes without below-ground measurements.",
+    "A habitat-headstart coefficient would not identify which environmental property makes the microsite persistent.",
+    "Return is recorded reappearance, not genet-level recolonization.",
+    "Do not change the history decomposition, node-centering, controls, model, minima, or support threshold after opening the joint-history endpoint."
+  ]
+}

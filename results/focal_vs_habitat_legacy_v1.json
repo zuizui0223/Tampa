@@ -1,0 +1,47 @@
+{
+  "schema": "tampa.focal_vs_habitat_legacy_v1.canonical_summary",
+  "status": "focal_specific_legacy_supported",
+  "authoritative_workflow": {
+    "run_id": 36443749630,
+    "head_sha": "56d3edd62aefa8f0e3093fe93578635aa9f41ebe",
+    "artifact_id": 10979484498,
+    "artifact_digest": "sha256:170c74c67aefb9c580a72678abb08f506627babcab5eabc880a119744a5426af"
+  },
+  "registry": {
+    "recovery_sequences": 259,
+    "nodes": 25,
+    "nodes_with_thalassia_run_variation": 18,
+    "headstart_positive_events": 184,
+    "nodes_with_positive_headstart": 22,
+    "thalassia_run_median": 1,
+    "any_seagrass_run_median": 7,
+    "habitat_headstart_median": 4,
+    "habitat_headstart_max": 26
+  },
+  "primary": {
+    "centered_thalassia_run_coefficient": 0.4836832872462511,
+    "ci95": [
+      0.11487138732362126,
+      1.3473019344616406
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": true
+  },
+  "secondary": {
+    "centered_habitat_headstart_coefficient": 0.15994443107328132,
+    "habitat_headstart_ci95": [
+      -0.21938322611074426,
+      0.3619233192806425
+    ]
+  },
+  "interpretation": "Focal Thalassia persistence history retains positive recovery information after generic continuous seagrass-habitat history, stable transect identity, loss-year vegetation state, source mixed-species state and loss year are represented. This supports a focal-specific local legacy signal beyond generic vegetated-microsite history.",
+  "ecological_boundary": "The supported focal-specific history signal still does not identify clonal memory or residual rhizomes. The bare-loss subgroup null and unresolved history-by-continuity interaction imply that focal history is informative but not a simple autonomous below-ground carryover mechanism.",
+  "claim_boundary": [
+    "Post-hoc history decomposition on an already-opened recovery endpoint.",
+    "Do not equate the focal-specific coefficient with direct evidence of clonal integration, residual rhizomes, or genet survival.",
+    "Generic habitat headstart is not supported as an independent recovery predictor under the joint model.",
+    "The bare-loss subgroup null remains an important boundary: focal history does not robustly predict return after complete seagrass loss.",
+    "Return is recorded reappearance at the same meter mark, not genet-level recolonization."
+  ]
+}
