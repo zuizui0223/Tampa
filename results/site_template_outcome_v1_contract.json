@@ -1,0 +1,118 @@
+{
+  "schema": "tampa.site_template_outcome_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "design_frozen_after_response_independent_physical_preflight_before_outcome_model",
+  "evidence_class": "posthoc_exploratory_site_template_test",
+  "preflight": "results/site_template_preflight_v1.json",
+  "ecological_hypothesis": "Persistent physical site template contributes to long-run differences among Thalassia transects; measured depth and sediment should explain held-out node-level state beyond broad bay identity and coordinates.",
+  "analysis_unit": "stable transect node",
+  "outcome_construction": {
+    "source": "quant_annual_panel.csv",
+    "aggregation": "mean annual state within node over all available years",
+    "minimum_annual_observations_per_node": 5,
+    "primary": {
+      "detection_prevalence": "mean detected",
+      "focal_frequency": "mean focal_frequency",
+      "bb_cover_index": "mean bb_cover_mean_all_points"
+    },
+    "secondary": {
+      "blade_length": "mean blade_length_mean_mm",
+      "shoot_density": "mean shoot_density_mean_m2"
+    }
+  },
+  "physical_template": {
+    "source": "site_template_node_preflight.csv",
+    "depth_features": [
+      "depth_median_m",
+      "depth_iqr_m"
+    ],
+    "sediment_features": [
+      "sediment_modal",
+      "sediment_modal_fraction",
+      "sediment_entropy"
+    ],
+    "sediment_conflict_rule": "Use only point events with exactly one normalized sediment label; the 39 preflight conflict events are excluded.",
+    "frozen_categories": [
+      "mud",
+      "muddy sand",
+      "oyster",
+      "sand",
+      "shelly sand"
+    ]
+  },
+  "models": {
+    "spatial_reference": {
+      "categorical": [
+        "water_body"
+      ],
+      "numeric": [
+        "longitude",
+        "latitude"
+      ]
+    },
+    "depth": {
+      "categorical": [
+        "water_body"
+      ],
+      "numeric": [
+        "longitude",
+        "latitude",
+        "depth_median_m",
+        "depth_iqr_m"
+      ]
+    },
+    "sediment": {
+      "categorical": [
+        "water_body",
+        "sediment_modal"
+      ],
+      "numeric": [
+        "longitude",
+        "latitude",
+        "sediment_modal_fraction",
+        "sediment_entropy"
+      ]
+    },
+    "measured_template": {
+      "categorical": [
+        "water_body",
+        "sediment_modal"
+      ],
+      "numeric": [
+        "longitude",
+        "latitude",
+        "depth_median_m",
+        "depth_iqr_m",
+        "sediment_modal_fraction",
+        "sediment_entropy"
+      ]
+    }
+  },
+  "learner": "Ridge(alpha=1.0)",
+  "validation": "leave-one-node-out; each stable transect is predicted once from all other eligible nodes",
+  "scoring": {
+    "primary_metric": "MAE across held-out nodes",
+    "secondary_metric": "pooled held-out R2",
+    "paired_increment": "absolute-error difference: measured_template minus spatial_reference",
+    "support_rule": {
+      "minimum_win_fraction": 0.6,
+      "median_delta_lt_zero": true,
+      "one_sided_signflip_p_lt": 0.05,
+      "signflip_replicates": 100000,
+      "random_seed": 2026092803
+    },
+    "primary_cross_outcome_rule": "Measured site template is considered broadly supported only if it passes the support rule for at least 2 of the 3 primary occurrence/abundance outcomes."
+  },
+  "interpretation_map": {
+    "supported": "Depth/sediment recover generalizable persistent site-state information beyond water-body identity and coordinates.",
+    "unsupported": "The strong node effect remains largely unresolved by depth/sediment alone; prioritize benthic light, hydrodynamics, chronic local water quality, and meadow/clonal legacy.",
+    "mixed": "Measured template explains some state dimensions but not a general persistent-site effect."
+  },
+  "claim_boundary": [
+    "Retrospective cross-node ecological analysis, not causal identification.",
+    "Depth summaries include tidal/sampling variation and are not exact bathymetry.",
+    "Sediment data are not focal-taxon selected but their availability depends on the biological record structure.",
+    "A positive result would not prove depth or sediment causes persistence; a negative result would not rule out site-template ecology.",
+    "Do not alter the minimum-year rule, feature set, learner, or support threshold after opening the outcome result."
+  ]
+}

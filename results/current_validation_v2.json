@@ -168,7 +168,8 @@
     "Do not interpret node_id as a causal habitat mechanism; it is a saturated repeated-site reference.",
     "Do not infer that EOG prediction failure proves dispersal or connectivity is ecologically irrelevant; the post-hoc translation tests only static geometry and one simple annual neighborhood formulation.",
     "Treat persistent site template, clonal buffering and local threshold loss as ecological hypotheses requiring direct habitat or demographic measurements, not identified causes.",
-    "Do not interpret the failed segment/neighborhood increments as proof that Tampa transects are ecologically independent; common forcing may act at other temporal scales or through unmeasured exposures."
+    "Do not interpret the failed segment/neighborhood increments as proof that Tampa transects are ecologically independent; common forcing may act at other temporal scales or through unmeasured exposures.",
+    "Do not explain the stable-node effect as simple depth or sediment differences; the frozen held-out-node test found 0/3 primary state dimensions supported by those measured components."
   ],
   "community_reorganization": {
     "period": [
@@ -569,5 +570,62 @@
       "supported_local_radii_cover_index": 0
     },
     "interpretation": "After stable node identity and own lag-1 state, neither previous-year water-body mean state nor local neighborhood deviation adds supported next-year predictive information for frequency or Braun-Blanquet state. The annual quantitative dynamics are therefore more consistent with site-local control than simple segment-wide synchrony or local spatial propagation at the tested scales."
+  },
+  "site_template_components": {
+    "status": "measured_depth_sediment_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36378607576,
+      "head_sha": "4b8e9ade2a75dce436acb6346e7831a480c3c8f4",
+      "artifact_id": 10952136647,
+      "artifact_digest": "sha256:6ea06acdc99e64f80f7dac963a64f24a8d9283a2e6521011379cc9295d9a3b1f"
+    },
+    "preflight": {
+      "depth_nodes_covered": 71,
+      "sediment_nodes_covered": 71,
+      "sediment_categories": [
+        "mud",
+        "muddy sand",
+        "oyster",
+        "sand",
+        "shelly sand"
+      ],
+      "conflicting_sediment_point_events": 39
+    },
+    "primary_support_count": 0,
+    "primary_support_required": 2,
+    "detection_prevalence": {
+      "eligible_nodes": 63,
+      "spatial_reference_mae": 0.21737512403227605,
+      "measured_template_mae": 0.22680679178563518,
+      "measured_template_p": 0.7306326936730633,
+      "supported": false
+    },
+    "focal_frequency": {
+      "eligible_nodes": 63,
+      "spatial_reference_mae": 0.1346852894049285,
+      "measured_template_mae": 0.14830143393602593,
+      "measured_template_p": 0.977380226197738,
+      "supported": false
+    },
+    "bb_cover_index": {
+      "eligible_nodes": 63,
+      "spatial_reference_mae": 0.46726805081542183,
+      "measured_template_mae": 0.47962076397911685,
+      "measured_template_p": 0.6926030739692604,
+      "supported": false
+    },
+    "secondary": {
+      "blade_length_sediment_hint_p": 0.08701912980870191,
+      "blade_length_primary_supported": false,
+      "shoot_density_primary_supported": false
+    },
+    "interpretation": "Measured depth and sediment do not recover the persistent among-transect Thalassia state beyond water-body identity and coordinates. The strong stable-node effect therefore remains unresolved and should not be reduced to simple bathymetry or sediment class.",
+    "next_hypotheses": [
+      "benthic light climate and chronic water clarity",
+      "hydrodynamic exposure and residence time",
+      "finer-scale chronic water-quality regime",
+      "below-ground biomass/rhizome reserve and clonal meadow legacy",
+      "persistent-template by episodic-stress interactions"
+    ]
   }
 }
