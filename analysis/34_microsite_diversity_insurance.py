@@ -247,8 +247,9 @@ def main(input_dir:Path,outdir:Path):
     py=pd.read_csv(input_dir/"community_buffering_point_year_consensus.csv")
     if len(py)!=45494:
         raise RuntimeError(f"consensus point-year registry drift: {len(py)}")
-    if py["point_id"].nunique()!=3917:
-        raise RuntimeError(f"stable point registry drift: {py['point_id'].nunique()}")
+    repeated_points=int((py.groupby("point_id")["year"].nunique()>=2).sum())
+    if repeated_points!=3917:
+        raise RuntimeError(f"repeated stable-point registry drift: {repeated_points}")
 
     d=build_transitions(py)
     if len(d)!=370:
@@ -269,7 +270,8 @@ def main(input_dir:Path,outdir:Path):
         "contract":"results/microsite_diversity_insurance_v1_contract.json",
         "registry":{
             "consensus_point_years":int(len(py)),
-            "stable_points":int(py["point_id"].nunique()),
+            "stable_point_ids_total":int(py["point_id"].nunique()),
+            "repeated_stable_points":repeated_points,
             "post2016_exact_point_thalassia_loss_events":int(len(d)),
             "nodes_with_loss":int(d["node_id"].nunique()),
         },
