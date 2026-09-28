@@ -30,13 +30,13 @@
     "nonreturn_run_length_median": 1,
     "uncentered_run_length_coefficient": 0.5337831487161102
   },
-  "interpretation": "Longer consecutive pre-loss Thalassia history at the same meter mark predicts one-year re-recording after a one-year loss even after stable transect identity, loss-year vegetation state, source-year mixed-species state, and loss year are represented. This supports a local persistence-legacy signal but does not distinguish residual rhizomes/clonal structure from persistent microsite quality or repeated detectability.",
-  "next_hypothesis": "Test the legacy effect specifically among loss-year seagrass-bare meter marks. Persistence of the effect without above-ground seagrass continuity would strengthen a subterranean/local-legacy interpretation while still not proving rhizome causality.",
+  "interpretation": "Longer uninterrupted local Thalassia occupancy history predicts re-recording after a one-year exact-point loss even after stable transect identity, loss year, loss-year vegetation state, and source mixed-species state are controlled. This supports a local legacy/residual-structure signal beyond broad node quality and immediate community continuity.",
+  "ecological_boundary": "The historical-state signal is consistent with residual rhizomes/clonal persistence or persistent microsite quality, but the monitoring data cannot distinguish those mechanisms from repeated detectability without direct below-ground measurements.",
   "claim_boundary": [
-    "Post-hoc temporal ecology on an already-opened recovery endpoint.",
-    "The coefficient is on a standardized within-node centered run-length predictor; do not interpret 0.451 as a per-year log-odds effect.",
-    "Do not call this direct evidence of clonal memory or residual rhizomes without below-ground measurements.",
-    "Stable node identity and community-continuity controls reduce but do not eliminate confounding by persistent microsite habitat quality or detectability.",
-    "Re-recording is an observation-state return, not genet-level recolonization."
+    "Post-hoc exploratory exact-point temporal ecology on an already-opened recovery endpoint.",
+    "Do not call the run-length effect direct evidence of clonal memory, residual rhizomes, or facilitation.",
+    "Return is recorded reappearance at the same meter mark, not proven genet-level recolonization.",
+    "The exposure remains continuous; no outcome-driven streak threshold is authorized.",
+    "Stable-node and community-state controls reduce but do not eliminate unmeasured microsite habitat or observation persistence."
   ]
 }
