@@ -183,7 +183,9 @@
     "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism.",
     "Do not interpret the focal-specific local-history coefficient as direct evidence of clonal memory or residual rhizomes; the bare-loss subgroup null and unresolved continuity interaction rule out a simple autonomous below-ground carryover story.",
     "Do not present the pooled source-richness gradient as causal biodiversity insurance after the within-node centered-richness audit; its interval overlaps zero.",
-    "Treat higher seagrass richness as both a candidate insurance state and a possible marker of persistently favorable transects."
+    "Treat higher seagrass richness as both a candidate insurance state and a possible marker of persistently favorable transects.",
+    "Do not treat one-year Thalassia re-recording as complete ecological recovery; returned points show both quantitative abundance debt and elevated subsequent recorded re-loss risk.",
+    "Do not interpret recovery debt as proof of residual stress, rhizome depletion, physiological damage, or demographic mechanism; the exact-point comparison is observational."
   ],
   "community_reorganization": {
     "period": [
@@ -1033,5 +1035,35 @@
       "supported": false
     },
     "interpretation": "The pooled diversity gradient weakens after stable-transect saturation; persistent site quality is a plausible common cause of both higher local richness and later seagrass retention."
+  },
+  "recovery_debt": {
+    "status": "recovery_debt_supported",
+    "authoritative_workflow": {
+      "run_id": 36481399320,
+      "head_sha": "d8eb03c492830ffb4606487e266b66afa9a2206a",
+      "artifact_id": 10996828515,
+      "artifact_digest": "sha256:e8651dec8e421528cac1faa247417f0987cfb209b8d2fa39c194dd8069be6874"
+    },
+    "registry": {
+      "quantitative_complete_sequences": 701,
+      "recovered_sequences": 109,
+      "continuous_sequences": 592,
+      "nodes": 22
+    },
+    "primary": {
+      "recovered_group_coefficient": -0.20390748738774772,
+      "ci95": [
+        -0.3017363073367092,
+        -0.10344227703526034
+      ],
+      "supported": true
+    },
+    "raw_target_state": {
+      "recovered_mean_bb": 1.953211009174312,
+      "recovered_median_bb": 2,
+      "continuous_mean_bb": 2.9253378378378376,
+      "continuous_median_bb": 3
+    },
+    "interpretation": "Exact-point Thalassia re-recording after a one-year loss occurs in a quantitatively depressed Braun-Blanquet state relative to uninterrupted occupancy after source abundance, stable site identity, and return year are represented. Together with return fragility, this supports incomplete recovery / hysteresis at annual resolution."
   }
 }
