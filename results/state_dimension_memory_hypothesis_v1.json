@@ -1,9 +1,9 @@
 {
   "schema": "tampa.state_dimension_memory_hypothesis_v1",
   "frozen_on": "2026-09-27",
-  "status": "hypothesis_generated_from_tampa_and_nps_posthoc_evidence",
+  "status": "superseded_by_stable_site_reference_audit",
   "ecological_question": "Does the timescale over which past state remains predictive depend on the ecological state dimension being measured?",
-  "working_hypothesis": "Coarse persistence or recorded-state variables integrate longer ecological histories, whereas quantitative meadow condition is dominated more strongly by the immediately previous state.",
+  "working_hypothesis": "Historical hypothesis retained for provenance only: coarse persistence was hypothesized to retain longer predictive history than quantitative condition. The stable-site reference audit did not support this as a robust state-dimension contrast.",
   "supporting_observations": {
     "tampa_binary_recorded_state": {
       "target_years": 22,
@@ -64,10 +64,9 @@
     }
   },
   "not_yet_identified": [
-    "Whether the coarse-state older-history signal reflects genuine slow ecological state, an unmeasured slowly varying environmental driver, demographic persistence, observation-process heterogeneity, or another hidden-state mechanism.",
-    "Whether state dimension itself causes the different apparent memory horizon.",
-    "Whether response distribution or learner family contributes to the empirical contrast.",
-    "A universal numerical memory timescale."
+    "Which persistent ecological attributes are represented by stable transect identity.",
+    "How much of the residual older-history predictive gain is temporal rather than site-specific heterogeneity.",
+    "A causal mechanism for Tampa state decoupling or spatially heterogeneous degradation."
   ],
   "prospective_confirmatory_design": {
     "candidate_requirement": "A response-unopened repeated monitoring system with both a variable coarse presence/persistence state and a quantitative condition state measured on the same stable sampling units over at least five target years.",
@@ -76,14 +75,16 @@
     "lag1_increment": "Immediately previous-year state only.",
     "older_history_increment": "Use the same exponential all-prior-state operator for both state dimensions, with tau values frozen before response opening. The primary tau must be common across dimensions; state-specific retuning is forbidden.",
     "support_rule": "For each state dimension separately, older history is supported only if it wins at least 60% of target years, has negative median paired loss delta versus lag1, and one-sided paired year-level sign-flip p<0.05.",
-    "primary_prediction": "Under identical stable units, target-year splits, baseline information and a common exponential-memory operator, older history will satisfy the support rule for the coarse state but not for quantitative condition. Because simple thresholding-only known truth failed, a matched external confirmation would implicate a slower hidden ecological or observation state rather than coarse-graining alone.",
+    "primary_prediction": "Historical pre-audit prediction retained for provenance only; not an active confirmatory target.",
     "forbidden": [
       "Selecting thresholds after seeing outcomes to manufacture a coarse state.",
       "Changing history representation or tau by state after outcome access.",
       "Retuning tau separately for coarse and quantitative states to favor the hypothesis.",
       "Comparing raw effect magnitudes across incompatible loss functions as if directly commensurate.",
       "Calling the current Tampa/NPS contrast causal confirmation."
-    ]
+    ],
+    "status": "withdrawn_before_new_external_response_access",
+    "withdrawal_reason": "Stable transect identity removed formal older-history support in every tested state dimension, so a prospective matched-memory external test is no longer the highest-value gate."
   },
   "mechanism_falsification": {
     "thresholding_only_known_truth_v1": {
@@ -102,6 +103,39 @@
       "robust_phi_levels": 0,
       "required_robust_phi_levels": 2,
       "interpretation": "Simple lossy thresholding of a first-order quantitative ecological state is not sufficient to explain the empirical coarse-versus-quantitative older-history contrast over the frozen grid."
+    },
+    "two_timescale_hidden_state_v1": {
+      "status": "mechanism_not_supported",
+      "cells": 24,
+      "total_replicates": 768,
+      "supporting_cells": 0,
+      "interpretation": "A slow latent AR(1) suitability/persistence state plus faster condition did not reproduce the frozen complete pattern."
+    },
+    "latent_occupancy_detection_v1": {
+      "status": "mechanism_not_supported",
+      "cells": 32,
+      "total_replicates": 1024,
+      "supporting_cells": 2,
+      "interpretation": "First-order latent occupancy persistence plus imperfect detection produced some binary-biased older-history signal but failed the frozen global sufficiency rule.",
+      "hard_stop": true
     }
+  },
+  "superseded_on": "2026-09-28",
+  "superseded_by": {
+    "canonical_result": "results/site_identity_memory_audit_v1.json",
+    "reason": "The earlier coarse-versus-quantitative older-history contrast was not reference-matched. Adding stable transect identity removes formal older-history support for all three tested state dimensions across the 16-value tau grid.",
+    "primary_tau10": {
+      "binary_without_node_supported": true,
+      "binary_with_node_supported": false,
+      "frequency_without_node_supported": true,
+      "frequency_with_node_supported": false,
+      "braun_blanquet_with_node_supported": false
+    },
+    "supported_tau_counts_with_node_id": {
+      "binary_detected": 0,
+      "focal_frequency": 0,
+      "braun_blanquet_index": 0
+    },
+    "claim_boundary": "Do not use v1 as an active state-dimension-dependent long-memory hypothesis or as justification to open a new external matched-memory response dataset."
   }
 }
