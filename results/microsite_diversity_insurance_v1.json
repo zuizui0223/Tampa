@@ -1,0 +1,72 @@
+{
+  "schema": "tampa.microsite_diversity_insurance_v1.canonical_summary",
+  "status": "both_supported",
+  "authoritative_workflow": {
+    "run_id": 36406697324,
+    "head_sha": "2f7b93d749086af8d7657bf37ec782685cc03551",
+    "artifact_id": 10962133475,
+    "artifact_digest": "sha256:a8c1891b5306f26d0671ba836cad1472fa2e646c1e113c87826e30f3f3e08cdc"
+  },
+  "registry": {
+    "consensus_point_years": 45494,
+    "stable_point_ids_total": 8181,
+    "repeated_stable_points": 3917,
+    "post2016_exact_point_thalassia_loss_events": 328,
+    "nodes_with_loss": 27
+  },
+  "H1_microsite_insurance": {
+    "mixed_source": {
+      "events": 248,
+      "nodes": 25,
+      "replacement_fraction": 0.8467741935483871
+    },
+    "pure_thalassia_source": {
+      "events": 80,
+      "nodes": 18,
+      "replacement_fraction": 0.675
+    },
+    "difference_mixed_minus_pure": 0.17177419354838708,
+    "ci95": [
+      0.060201763908239773,
+      0.3481136976790774
+    ],
+    "supported": true
+  },
+  "H2_persistence_component": {
+    "replacement_events": 264,
+    "nodes": 24,
+    "persistent_component_fraction": 0.7424242424242424,
+    "novel_only_fraction": 0.25757575757575757,
+    "ci95": [
+      0.6160990712074303,
+      0.865679335282351
+    ],
+    "supported": true
+  },
+  "taxon_fates": {
+    "Syringodium filiforme": {
+      "persistent": 131,
+      "novel": 32
+    },
+    "Halodule wrightii": {
+      "persistent": 68,
+      "novel": 48
+    },
+    "Ruppia maritima": {
+      "persistent": 0,
+      "novel": 3
+    },
+    "Halophila": {
+      "persistent": 0,
+      "novel": 1
+    }
+  },
+  "interpretation": "Exact-point Thalassia loss is buffered by pre-existing microsite seagrass diversity: mixed-source points are 17.2 percentage points more likely than pure-Thalassia points to retain another seagrass one year after focal loss, and most replacement events retain at least one taxon already co-occurring at the source point.",
+  "ecological_boundary": "This is statistical community insurance of seagrass occupancy, not evidence that alternative species provide equivalent habitat function or that facilitation/competition caused the pattern.",
+  "claim_boundary": [
+    "Post-hoc exploratory community ecology from an already-opened exact-point panel.",
+    "Mixed-source occupancy can reflect habitat filtering or shared tolerance as well as species interactions.",
+    "Annual observations cannot prove uninterrupted persistence of the same ramets or clones.",
+    "Do not reinterpret the result as competitive release, facilitation, or functional equivalence among seagrasses."
+  ]
+}
