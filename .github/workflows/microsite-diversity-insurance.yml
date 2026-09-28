@@ -1,0 +1,59 @@
+name: Microsite diversity insurance ecology
+
+on:
+  push:
+    branches: [analysis/microsite-diversity-insurance-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/34_microsite_diversity_insurance.py"
+      - "results/community_buffering_v1_contract.json"
+      - "results/microsite_diversity_insurance_v1_contract.json"
+      - ".github/workflows/microsite-diversity-insurance.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/34_microsite_diversity_insurance.py"
+      - "results/microsite_diversity_insurance_v1_contract.json"
+      - ".github/workflows/microsite-diversity-insurance.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community states
+        run: python analysis/33_community_buffering.py --out results/generated_microsite_insurance
+      - name: Test microsite diversity insurance
+        run: python analysis/34_microsite_diversity_insurance.py --input results/generated_microsite_insurance --out results/generated_microsite_insurance
+      - name: Verify frozen registry and endpoint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_microsite_insurance/microsite_diversity_insurance_v1.json"))
+          assert x["schema"]=="tampa.microsite_diversity_insurance_v1.result"
+          assert x["registry"]["consensus_point_years"]==45494
+          assert x["registry"]["stable_points"]==3917
+          assert x["registry"]["post2016_exact_point_thalassia_loss_events"]==370
+          assert x["registry"]["nodes_with_loss"]>=20
+          for p in [
+              "microsite_insurance_transitions.csv",
+              "microsite_insurance_taxon_fates.csv",
+              "microsite_insurance_by_bay.csv",
+          ]:
+              q=Path("results/generated_microsite_insurance")/p
+              assert q.exists() and q.stat().st_size>100, q
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-microsite-diversity-insurance-v1
+          path: results/generated_microsite_insurance/
