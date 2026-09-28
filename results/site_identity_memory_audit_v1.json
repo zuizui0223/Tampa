@@ -1,0 +1,110 @@
+{
+  "schema": "tampa.site_identity_memory_audit_v1.canonical_summary",
+  "status": "stable_site_reference_absorbs_older_history",
+  "authoritative_workflow": {
+    "run_id": 36374969355,
+    "head_sha": "a8c78852e2cb4574a65ec20c1e7622a19c8af75f",
+    "artifact_id": 10949544757,
+    "artifact_digest": "sha256:42048a2413ee8e16d513679579052de5b755e8854ac72199e33c4342d4ce0762"
+  },
+  "repair_provenance": {
+    "prior_run_id": 36317558381,
+    "prior_failure": "NameError before analysis because Python source used JSON null instead of None",
+    "scientific_design_changed": false
+  },
+  "panel": "all same-transect consecutive-year annual states; target years 2004-2025",
+  "primary_tau_years": 10,
+  "only_reference_difference": "addition of stable categorical node_id",
+  "binary_detected": {
+    "without_node_id": {
+      "lag1_log_loss": 0.1700713162376601,
+      "history_log_loss": 0.13949300745531368,
+      "history_wins": 14,
+      "signflip_p": 0.014849257537123144,
+      "supported": true,
+      "grid_support_count": 6
+    },
+    "with_node_id": {
+      "lag1_log_loss": 0.15707743535422106,
+      "history_log_loss": 0.1416998451922005,
+      "history_wins": 13,
+      "signflip_p": 0.087995600219989,
+      "supported": false,
+      "grid_support_count": 0
+    }
+  },
+  "focal_frequency": {
+    "without_node_id": {
+      "lag1_mae": 0.051658221979173385,
+      "history_mae": 0.04993311232603206,
+      "history_wins": 16,
+      "signflip_p": 0.035048247587620616,
+      "supported": true,
+      "grid_support_count": 12
+    },
+    "with_node_id": {
+      "lag1_mae": 0.04701850248422637,
+      "history_mae": 0.04785400366865436,
+      "history_wins": 8,
+      "signflip_p": 0.9816509174541272,
+      "supported": false,
+      "grid_support_count": 0
+    }
+  },
+  "cover_index": {
+    "without_node_id": {
+      "lag1_mae": 0.17622948930300775,
+      "history_mae": 0.1818428396626062,
+      "history_wins": 8,
+      "signflip_p": 0.9116544172791361,
+      "supported": false,
+      "grid_support_count": 1
+    },
+    "with_node_id": {
+      "lag1_mae": 0.1661445434525914,
+      "history_mae": 0.17923124975128782,
+      "history_wins": 2,
+      "signflip_p": 1,
+      "supported": false,
+      "grid_support_count": 0
+    }
+  },
+  "full_grid": {
+    "taus": [
+      0.5,
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      3.5,
+      4,
+      5,
+      7,
+      10,
+      15,
+      20,
+      30,
+      50,
+      100
+    ],
+    "supported_tau_counts_without_node": {
+      "binary_detected": 6,
+      "focal_frequency": 12,
+      "cover_index": 1
+    },
+    "supported_tau_counts_with_node": {
+      "binary_detected": 0,
+      "focal_frequency": 0,
+      "cover_index": 0
+    }
+  },
+  "primary_proxy_pattern_passed": true,
+  "interpretation": "Older-history value is strongly reference-dependent. Adding stable transect identity removes formal older-history support for every state dimension, consistent with historical state carrying persistent site-specific information that geography and bay segment do not fully encode.",
+  "claim_boundary": [
+    "Post-hoc reference-saturation audit.",
+    "Node identity is a saturated repeated-site reference, not an identified habitat mechanism.",
+    "History may still contain temporal information even when formal support fails after node identity is added.",
+    "Do not claim a robust state-dimension-dependent memory horizon from the earlier unmatched reference models."
+  ]
+}

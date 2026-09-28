@@ -34,19 +34,27 @@ The reconstructed frequency-occurrence and Braun-Blanquet abundance definitions 
 
 ## Current reproducible result
 
-### 1. Strong temporal memory, but not a 3.5-year result
+### 1. Strong immediate state dependence; older-history gain is reference-dependent
 
 Annualization yields 1,480 transect-years and 1,176 consecutive-year transitions.
 
-In strict walk-forward prediction on identical rows:
+Under the original space/time reference, strict walk-forward prediction gave:
 
 - space/time baseline mean log loss: **0.3312**
-- + previous-year state: **0.1701**
-- + exponentially weighted earlier history: **0.1395**
-- best tested decay scale: **10 years**
+- + previous-year recorded state: **0.1701**
+- + τ=10 exponentially weighted earlier history: **0.1395**
 - long-history model beats lag-1 in **14/22** target years
+- paired sign-flip **p = 0.01485**
 
-The earlier exploratory 3.5-year memory claim is superseded. The supported result is **strong immediate state dependence plus additional long-lived site-history information**; the memory horizon is not sharply identified.
+A post-hoc reference-saturation audit then added only stable transect identity (`node_id`) to both lag-1 and long-history models. With that reference:
+
+- lag-1 mean log loss: **0.1571**
+- + τ=10 earlier history: **0.1417**
+- long-history model beats lag-1 in **13/22** target years
+- paired sign-flip **p = 0.0880**
+- supported τ values across the 16-value grid: **0/16**, versus **6/16** without node identity.
+
+The robust result is therefore **strong immediate state dependence**. Earlier history can improve prediction when the reference contains geography and bay segment but not stable transect identity; its formal support disappears once repeated-site identity is saturated. The older-history signal is consequently interpreted as a mixture of temporal information and persistent site-specific heterogeneity, not as a clean estimate of a long biological memory horizon.
 
 ### 2. Presence and quantitative condition decouple after 2016
 
@@ -254,7 +262,25 @@ The higher-persistence regime (`p11 = 0.98`) moved partially in the predicted di
 
 > **Three simple response-free sufficiency explanations have now failed: thresholding alone, slow latent AR(1) suitability plus fast condition, and first-order latent occupancy persistence with imperfect detection.**
 
-Per the prospectively frozen hard stop, this repository does **not** retune those grids or add another response-free simulation family in the same mechanism line. The empirical state-dimension memory contrast remains a predictive result; its biological/observation mechanism is unresolved.
+Per the prospectively frozen hard stop, this repository does **not** retune those grids or add another response-free simulation family in the same mechanism line. A later stable-site reference audit shows that formal older-history support is itself reference-dependent, so these mechanism simulations are retained as bounded diagnostics rather than evidence for a confirmed state-dimension memory mechanism.
+
+### 2i. Stable transect identity absorbs formal older-history support
+
+The earlier binary-versus-quantitative contrast depended on a reference asymmetry: the original binary model used coordinates and bay segment but not stable transect identity, whereas later quantitative models included `node_id`. A frozen post-hoc audit changed exactly that reference component while keeping each response's learner, loss, rows, lag-1 term, τ grid and target years fixed.
+
+At the primary **τ = 10 years**:
+
+- **binary recorded state:** history is supported without node identity (log loss **0.1701 → 0.1395**, 14/22 wins, **p = 0.01485**) but not with node identity (**0.1571 → 0.1417**, 13/22 wins, **p = 0.0880**);
+- **focal frequency:** history is supported without node identity (MAE **0.05166 → 0.04993**, 16/22 wins, **p = 0.03505**) but not with node identity (**0.04702 → 0.04785**, 8/22 wins, **p = 0.9817**);
+- **Braun–Blanquet index:** τ=10 history is unsupported both without and with node identity.
+
+Across the full 16-value τ grid:
+
+- binary: **6/16 → 0/16** supported τ values after adding node identity;
+- frequency: **12/16 → 0/16**;
+- Braun–Blanquet: **1/16 → 0/16**.
+
+Thus no state dimension retains a formally supported older-history increment once stable transect identity is included. This weakens the earlier state-dimension-dependent memory-horizon interpretation. The more defensible ecological reading is that long history carries information about **persistent differences among transects** that coordinates and bay segment do not fully encode. Node identity itself is not a mechanism and must not be interpreted causally.
 
 ### 3. Community reorganization is bay-specific
 
@@ -370,8 +396,10 @@ Canonical current boundary: `results/current_validation_v2.json`.
 
 Supported now:
 
-- annual recorded *Thalassia* state has strong temporal memory;
-- earlier site history adds information beyond previous-year state;
+- annual recorded *Thalassia* state has strong immediate year-to-year dependence;
+- under the original geography/bay reference, earlier history improves binary-state prediction beyond lag-1, but this formal support disappears when stable transect identity is added;
+- the same site-identity saturation pattern occurs for focal frequency, and **no state dimension has any supported τ value once node identity is included**;
+- long history therefore carries substantial information about persistent transect-specific heterogeneity not captured by coordinates and bay segment, although node identity is not itself an ecological mechanism;
 - multiple quantitative state dimensions can trend differently from binary detection;
 - Old Tampa Bay, Middle Tampa Bay and Lower Tampa Bay show different forms of state decoupling after 2016;
 - Lower Tampa Bay shows a reproducible compositional signal: declining *Thalassia* and *Syringodium* with increasing *Halodule* frequency;
@@ -380,11 +408,7 @@ Supported now:
 - source-year *Thalassia* frequency and Braun-Blanquet state add strict out-of-time information about next-year **recorded loss** beyond space, time, survey timing and effort;
 - in the independent NPS Tier-3 *Zostera* panel, recorded presence and focal frequency are completely saturated while quantitative cover varies widely and declines on average within repeated transects, reproducing the binary–quantitative **state-decoupling** pattern post hoc;
 - in that same NPS panel, previous-year quantitative cover improves strict out-of-time next-year cover prediction beyond site identity in **11/14** target years, supporting short-term quantitative state dependence;
-- within Tampa itself, when binary presence is held persistent across consecutive years, both focal frequency and Braun–Blanquet condition show strong lag-1 dependence but **no robust older-history increment**;
-- transferring the **same exponential-memory representation** used by the frozen binary analysis likewise fails to produce supported older-history value for either quantitative metric, reducing history-feature choice as an alternative explanation;
-- a frozen first-order known-truth experiment shows that simple frequency-to-binary thresholding is **not sufficient** to create the empirical longer-history advantage of the coarse state across the declared parameter grid.
-- a second frozen known-truth test shows that adding a slow latent AR(1) suitability/persistence process plus faster condition is also **not sufficient**;
-- a third frozen known-truth test shows that first-order latent occupancy persistence plus imperfect detection produces some binary-biased older-history signal, especially at high persistence, but still fails the global sufficiency rule (**2/32** supporting cells; **16.99%** complete-pattern replicates).
+- three frozen response-free mechanism families fail their global sufficiency rules: thresholding alone, slow latent AR(1) suitability plus fast condition, and first-order latent occupancy persistence with imperfect detection.
 
 Not supported now:
 
@@ -392,12 +416,12 @@ Not supported now:
 - a causal temperature, salinity or nutrient mechanism;
 - a confirmed ecological interpretation of the 2016/2017 pulse;
 - a universal 10-year biological memory constant;
+- a robust state-dimension-dependent difference in older-history horizon after stable transect identity is included;
+- interpreting `node_id` as a causal habitat mechanism;
 - equivalence between fixed-transect condition and bay-wide mapped acreage;
 - demographic extinction risk or causal collapse mechanism from the early-warning endpoint;
 - untouched prospective or external confirmation of the early-warning hypothesis;
-- a universal long-memory effect across seagrass state variables; older NPS cover history does not robustly improve beyond lag-1;
-- a causal claim that state dimension itself determines memory horizon; the binary and quantitative field models use different response distributions and scoring metrics;
-- proof of biological long-memory or identification of its mechanism: thresholding-only, slow-suitability/fast-condition, and first-order latent-occupancy/detection models all fail their frozen sufficiency rules, so the mechanism remains unresolved.
+- proof of biological long-memory or identification of its mechanism.
 
 ## Independent validation ledger
 
@@ -437,14 +461,14 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The next contract must use the **same exponential all-prior-state operator and the same pre-frozen τ value(s) for both state dimensions**. The prediction is that lag-1 information should be useful for both states, while older history should satisfy the support rule for the coarse state but not for quantitative condition. Three simple response-free sufficiency mechanisms have now failed under frozen known truth, so this line stops rather than being rescued by further simulation-family tuning. A successful external matched replication would establish the field pattern more strongly while leaving its mechanism explicitly unresolved.
+The manuscript-level ecological center is now **state decoupling and spatially heterogeneous degradation**, not a long-memory mechanism. The site-identity audit shows that the older-history result is strongly reference-dependent, so further retrospective memory-mechanism hunting is closed.
 
-The separate predictive gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
+The highest-value next work is:
 
-1. freeze the two quantitative predictors (frequency + Braun-Blanquet state), endpoint semantics and scoring rule before opening a new system or later held-out period;
-2. test whether quantitative degradation predicts future recorded-state instability in an independent seagrass dataset, bay, or genuinely future Tampa survey;
-3. keep the 2016 Tampa failure as part of the evidence rather than tuning it away.
+1. finish figures and manuscript around cryptic degradation beneath persistent occurrence;
+2. retain immediate state dependence and the stable-site/history audit as a secondary result about persistent transect heterogeneity;
+3. keep the quantitative next-year-loss result explicitly exploratory until a genuinely future Tampa wave or pre-authorized external dataset can be scored under a frozen contract.
 
-Environmental attribution is secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
+Environmental attribution remains secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
 
-The manuscript-level ecological center is therefore: **binary persistence can conceal substantial quantitative degradation across independent seagrass monitoring systems; quantitative condition is strongly state-dependent over short timescales; and Tampa suggests that coarse persistence states may retain longer ecological histories than quantitative condition, while quantitative degradation may also provide early warning of later recorded-state instability.**
+The manuscript-level synthesis is therefore: **binary persistence can conceal substantial, spatially heterogeneous quantitative degradation; recent state is strongly predictive; and apparent long-history gains are partly absorbed by stable transect identity rather than identifying a clean long biological memory horizon.**
