@@ -611,6 +611,8 @@ The ecological interpretation is therefore not primarily “a new species rapidl
 
 This is consistent with a **community-insurance pattern**, but it does not identify facilitation: mixed-species points may simply share habitat conditions that favor continued seagrass occupancy. Nor does continued seagrass occupancy imply that ecosystem function is unchanged when *Thalassia* is lost.
 
+A separately frozen richness test extended this result beyond a binary mixed/not-mixed contrast. Across the same **370** exact-point losses, source alternative-seagrass richness had a positive standardized log-odds coefficient for target seagrass occupancy (**+0.364**, node-bootstrap 95% interval **+0.074 to +0.655**). The frozen support rule passed. This is consistent with a **biodiversity-insurance gradient** in habitat-state retention, while remaining non-causal because persistent habitat quality could support both greater source richness and later occupancy.
+
 ## Next scientific gate
 
 Retrospective mechanism hunting in the current Tampa dataset is closed. The tested alternatives now include static and dynamic spatial accessibility, simple hidden-state explanations, depth/sediment, bulk benthic-light exposure, annual and seasonal temperature/salinity, and the exact published 30 °C / 25 ppt compound hot–fresh metric. None identifies the driver of the post-2016 condition changes.
