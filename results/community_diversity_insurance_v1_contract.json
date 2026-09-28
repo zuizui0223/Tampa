@@ -1,0 +1,68 @@
+{
+  "schema": "tampa.community_diversity_insurance_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_richness_gradient_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Community-insurance v1 showed that source points with at least one alternative seagrass were more likely to remain seagrass-occupied after exact-point Thalassia loss. Test whether that binary effect extends to a diversity gradient: more pre-loss alternative seagrass taxa predict greater habitat-state retention.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "Point-event locationID constructed upstream as Transect + Site/meter-mark identity",
+    "seagrass_definition": "Present occurrence rows in order Alismatales",
+    "point_year_consistency": "Retain only point-years for which repeated visits agree on the complete present-Alismatales scientificName set."
+  },
+  "primary_segments": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "primary_period": [
+    2016,
+    2025
+  ],
+  "eligible_transition": "same stable point observed in consecutive years; source-year Thalassia present; target-year Thalassia absent",
+  "predictor": {
+    "name": "source_alternative_seagrass_richness",
+    "definition": "count of distinct source-year present Alismatales scientificName values excluding Thalassia testudinum",
+    "treatment": "integer count, entered linearly in the primary logistic model; no post-outcome binning"
+  },
+  "endpoint": "target-year any seagrass present at the same point",
+  "model": {
+    "learner": "sklearn LogisticRegression(C=1.0, max_iter=2000)",
+    "numeric": [
+      "source_alternative_seagrass_richness",
+      "loss_year"
+    ],
+    "categorical": [
+      "water_body"
+    ],
+    "scaling": "StandardScaler fitted to numeric predictors within each bootstrap fit",
+    "bootstrap": "stable-transect node-cluster bootstrap; all point-loss transitions from a sampled node travel together"
+  },
+  "hypothesis": {
+    "statement": "Greater pre-loss alternative seagrass richness predicts a higher probability that an exact meter mark remains occupied by seagrass after Thalassia loss.",
+    "estimand": "log-odds coefficient for source_alternative_seagrass_richness, adjusted for loss year and water body",
+    "support_rule": "lower bound of 95% node-cluster bootstrap interval for richness coefficient > 0",
+    "minimum_transitions": 250,
+    "minimum_nodes": 20,
+    "minimum_distinct_richness_values": 3
+  },
+  "descriptive_outputs": [
+    "target occupancy fraction by exact source richness value",
+    "transition and node counts by richness",
+    "predicted occupancy probability at observed richness values from the full fitted model"
+  ],
+  "implementation_freeze": {
+    "bootstrap_replicates": 5000,
+    "random_seed": 20260928,
+    "exact_consecutive_years_only": true,
+    "no_richness_binning_for_primary_inference": true
+  },
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis motivated by the supported binary source-mixture insurance result.",
+    "A positive richness coefficient is consistent with biodiversity insurance but does not prove causal insurance, facilitation, or niche complementarity.",
+    "Persistent habitat quality could cause both higher source richness and target seagrass retention.",
+    "Richness counts observed taxa at the annual point visit and is subject to detection variability.",
+    "Do not change the linear richness treatment, transition/node minima, period, segment pool, or endpoint after response opening."
+  ]
+}
