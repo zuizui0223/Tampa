@@ -1,0 +1,99 @@
+name: Build Tampa Supplementary Figures
+
+on:
+  push:
+    branches: [manuscript/supplement-v1]
+    paths:
+      - "analysis/02_water_quality_screen.py"
+      - "analysis/03_quantitative_state.py"
+      - "analysis/05_community_compensation.py"
+      - "analysis/07_environmental_coupling.py"
+      - "analysis/08_seasonal_stress_screen.py"
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/19_tampa_site_identity_memory_audit.py"
+      - "analysis/22_dynamic_neighborhood_state.py"
+      - "analysis/27_compound_hotfresh_preflight.R"
+      - "figures/render_supplement_figures.py"
+      - "results/current_validation_v2.json"
+      - "results/dynamic_neighborhood_state_v1_contract.json"
+      - ".github/workflows/build-supplement-figures.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "figures/render_supplement_figures.py"
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_V1.md"
+      - ".github/workflows/build-supplement-figures.yml"
+      - "results/current_validation_v2.json"
+  workflow_dispatch:
+
+jobs:
+  figures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt "matplotlib>=3.10,<4" "pillow>=11,<12"
+
+      - name: Rebuild Tampa water quality
+        run: python analysis/02_water_quality_screen.py --out results/generated_supplement_figures
+      - name: Rebuild Tampa quantitative state
+        run: python analysis/03_quantitative_state.py --out results/generated_supplement_figures
+      - name: Rebuild Tampa community state
+        run: python analysis/05_community_compensation.py --out results/generated_supplement_figures
+      - name: Rebuild annual environmental screen
+        run: python analysis/07_environmental_coupling.py --input results/generated_supplement_figures --out results/generated_supplement_figures
+      - name: Rebuild seasonal hot-fresh screen
+        run: python analysis/08_seasonal_stress_screen.py --input results/generated_supplement_figures --out results/generated_supplement_figures
+      - name: Rebuild early-warning target-year scores
+        run: python analysis/09_quantitative_early_warning.py --input results/generated_supplement_figures --out results/generated_supplement_figures
+
+      - name: Prepare site-identity input
+        run: |
+          mkdir -p results/generated_supplement_site
+          cp results/generated_supplement_figures/quant_annual_panel.csv results/generated_supplement_site/quant_annual_panel.csv
+      - name: Rebuild stable-node memory grids
+        run: python analysis/19_tampa_site_identity_memory_audit.py --input results/generated_supplement_site --out results/generated_supplement_site
+
+      - name: Rebuild dynamic neighborhood audit
+        run: python analysis/22_dynamic_neighborhood_state.py --input results/generated_supplement_figures --out results/generated_supplement_dynamic
+
+      - name: Download pinned published hot-fresh artifact
+        run: |
+          mkdir -p results/generated_supplement_compound
+          curl -L --fail --silent --show-error             https://raw.githubusercontent.com/tbep-tech/temp-manu/e5aaec93c7501fc38c63b615a89e68636b36421f/data/thralltrndat.RData             -o results/generated_supplement_compound/thralltrndat.RData
+          test "$(git hash-object results/generated_supplement_compound/thralltrndat.RData)" = "f6518ea25685369057bfe92e71973ec04c57eac1"
+      - name: Rebuild published marginal and joint stress exposures
+        run: Rscript analysis/27_compound_hotfresh_preflight.R results/generated_supplement_compound/thralltrndat.RData results/generated_supplement_compound/compound_hotfresh_segment_year.csv
+
+      - name: Render Supplementary Figures S1-S7
+        run: |
+          python figures/render_supplement_figures.py             --primary results/generated_supplement_figures             --site results/generated_supplement_site             --dynamic results/generated_supplement_dynamic             --compound results/generated_supplement_compound             --out results/generated_supplement_figures_rendered
+
+      - name: Verify Supplementary Figure package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          root=Path("results/generated_supplement_figures_rendered")
+          for n in range(1,8):
+              for ext in ("eps","tif"):
+                  p=root/f"FigS{n}.{ext}"
+                  assert p.exists() and p.stat().st_size>1000, (p,p.stat().st_size if p.exists() else None)
+              qa=root/f"FigS{n}_QA.png"
+              assert qa.exists() and qa.stat().st_size>1000
+              with Image.open(root/f"FigS{n}.tif") as im:
+                  assert im.info.get("dpi",(0,0))[0] >= 590, (n,im.info.get("dpi"))
+          print("Supplementary Figures S1-S7: OK")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-supplement-figures-v1
+          path: results/generated_supplement_figures_rendered/
