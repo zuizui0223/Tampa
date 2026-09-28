@@ -1,0 +1,86 @@
+{
+  "schema": "tampa.recovery_window_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_recovery_hazard_hypothesis_frozen_before_duration_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Supported exact-point local history suggests a persistent local legacy after focal loss. Test whether the probability of Thalassia re-recording decays with time since loss, which would be consistent with a finite local resilience window rather than only time-invariant site quality.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site"
+  },
+  "episode_population": {
+    "loss_start": "same stable point observed in consecutive years t-1 and t; Thalassia present at t-1 and absent at t",
+    "loss_year_range": [
+      2016,
+      2022
+    ],
+    "rationale_for_end_year": "t+1 through t+3 can then be evaluated within the monitoring record through 2025",
+    "exact_annual_observation": "risk rows require uninterrupted consensus observations; any missing year stops the episode",
+    "maximum_absence_duration_years": 3,
+    "recurrent_episode_rule": "after a return, a later new loss can start a new episode if it again satisfies the frozen start rule"
+  },
+  "risk_set": {
+    "duration_1": "point absent at loss year t and observed at t+1; outcome is Thalassia present at t+1",
+    "duration_2": "point remained absent through t+1 and is observed at t+2; outcome is Thalassia present at t+2",
+    "duration_3": "point remained absent through t+2 and is observed at t+3; outcome is Thalassia present at t+3",
+    "stop_after_return": true
+  },
+  "predictors": {
+    "primary": "years_since_loss entered linearly as 1,2,3",
+    "controls": [
+      "stable node identity",
+      "loss year",
+      "pre-loss run length centered within stable node",
+      "source-year mixed-species state",
+      "previous absence-year other-seagrass occupancy"
+    ],
+    "previous_absence_year_other_seagrass": "for duration d, use any non-Thalassia seagrass state at t+d-1, before the return outcome is observed"
+  },
+  "model": {
+    "outcome": "Thalassia recorded present at the exact stable meter mark in the current risk year",
+    "learner": "L2 logistic regression",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "categorical": [
+      "node_id"
+    ],
+    "numeric": [
+      "loss_year",
+      "years_since_loss",
+      "pre_loss_run_length_centered",
+      "source_mixed",
+      "previous_other_seagrass"
+    ],
+    "preprocessing": "node-center run length before fitting; StandardScaler numeric predictors; OneHot stable node identity"
+  },
+  "primary_hypothesis": {
+    "statement": "Conditional on remaining absent and re-observed, the exact-point probability of Thalassia re-recording declines as years since focal loss increase.",
+    "estimand": "standardized coefficient for years_since_loss",
+    "support_rule": "upper bound of 95% stable-node bootstrap interval < 0",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092917,
+    "minimum_risk_rows": 150,
+    "minimum_nodes": 15,
+    "minimum_rows_per_duration": 20,
+    "minimum_returns": 20
+  },
+  "secondary_descriptive": [
+    "observed return hazard at durations 1, 2, and 3",
+    "risk rows, nodes, and returns by duration",
+    "same duration coefficient without pre-loss run-length control for orientation only",
+    "return hazard by previous-other-seagrass state"
+  ],
+  "interpretation": {
+    "supported": "Return probability declines with time since exact-point loss after site, local-history, and community-state controls, consistent with a finite recovery/resilience window.",
+    "unsupported": "No robust decline in return probability across the first three years of absence; time-invariant site quality or recurrent detection may better explain the local history signal than a decaying recovery window."
+  },
+  "claim_boundary": [
+    "Post-hoc temporal ecology on an already-opened point-history panel.",
+    "A declining return hazard would not prove rhizome survival or physiological reserve decay; observation persistence and unmeasured microsite state remain alternatives.",
+    "Return means recorded reappearance, not genet-level recolonization.",
+    "The duration coefficient is conditional on a point remaining absent and observed up to each risk year; it is not an unconditional population recovery rate.",
+    "Do not change the 1–3 year horizon, loss-year range, exact-observation rule, risk-set construction, controls, learner, bootstrap unit, minima, or support threshold after opening the duration endpoint."
+  ]
+}
