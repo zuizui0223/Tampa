@@ -34,13 +34,13 @@ jobs:
           forbidden=[
               "[ref",
               "citation needed",
-              "competitive replacement by",
               "confirmed extinction",
               "confirmed recolonization",
           ]
           for token in forbidden:
               assert token not in x, token
           assert "post-hoc external ecological" in x
+          assert "do not establish direct competitive replacement" in x
           assert "not demographic extinction" in x
           assert "target year 2016" in x
           assert "mechanism" in x and "unresolved" in x
