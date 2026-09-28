@@ -1,0 +1,60 @@
+{
+  "schema": "tampa.microsite_diversity_insurance_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_derived_endpoint",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Community-buffering v1 showed that most exact-point Thalassia-loss events remained occupied by another seagrass, but did not distinguish persistence of pre-existing mixed patches from novel post-loss occupancy.",
+  "source": {
+    "prerequisite": "analysis/33_community_buffering.py output from pinned tbep-tech/obis-example commit 6c567beff95ea04f0e397101befb49d5233ace8f",
+    "point_year_file": "community_buffering_point_year_consensus.csv",
+    "stable_point_id": "pinned child-event locationID = Transect + meter-mark Site",
+    "annual_state_rule": "same consensus point-year rule as community-buffering v1; conflicting repeated visits within a point-year are excluded upstream"
+  },
+  "primary_period": [
+    2016,
+    2025
+  ],
+  "primary_population": "All post-2016 exact stable-point transitions across Tampa Bay where source-year Thalassia is present and target-year Thalassia is absent.",
+  "hypotheses": {
+    "H1_microsite_insurance": {
+      "statement": "Pre-existing mixed-species points are more likely than Thalassia-only points to remain occupied by another seagrass after exact-point Thalassia loss.",
+      "source_classes": {
+        "mixed_source": "source-year Thalassia present AND >=1 non-Thalassia seagrass taxon co-occurs at the same consensus point-year",
+        "pure_thalassia_source": "source-year Thalassia present AND no other seagrass taxon occurs at that consensus point-year"
+      },
+      "endpoint": "target-year point remains occupied by >=1 non-Thalassia seagrass after Thalassia loss",
+      "estimator": "difference in replacement fraction: mixed_source minus pure_thalassia_source",
+      "uncertainty": "stable-transect node-cluster bootstrap, resampling nodes with replacement; all eligible point-loss transitions from sampled nodes travel together",
+      "bootstrap_replicates": 5000,
+      "random_seed": 2026092807,
+      "minimum_events_per_source_class": 20,
+      "minimum_nodes_per_source_class": 5,
+      "support_rule": "95% bootstrap interval for mixed-minus-pure replacement fraction entirely above zero"
+    },
+    "H2_persistence_component": {
+      "statement": "Among replacement events, target alternative-seagrass occupancy more often contains at least one taxon already co-occurring at the source point than only newly appearing taxa.",
+      "population": "H1 events with target-year non-Thalassia seagrass occupancy",
+      "persistent_component": "source and target non-Thalassia taxon sets have non-empty intersection",
+      "novel_only_component": "target non-Thalassia taxon set is non-empty and has empty intersection with source non-Thalassia taxa",
+      "estimator": "fraction of replacement events with persistent component",
+      "uncertainty": "stable-transect node-cluster bootstrap",
+      "bootstrap_replicates": 5000,
+      "random_seed": 2026092808,
+      "minimum_replacement_events": 40,
+      "minimum_nodes": 8,
+      "support_rule": "95% bootstrap interval for persistent-component fraction entirely above 0.5"
+    }
+  },
+  "descriptive_only": [
+    "Bay-segment-specific source-class replacement fractions",
+    "Taxon-specific persistence/novel appearance frequencies",
+    "Year-specific replacement fractions"
+  ],
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis generated after opening the community-buffering result; not independent confirmation.",
+    "Microsite insurance means statistical persistence of seagrass occupancy after focal loss, not equivalent ecosystem function among species.",
+    "Annual observations cannot distinguish continuous survival of a co-occurring taxon from disappearance and reappearance between surveys.",
+    "A source mixed patch can reflect habitat filtering or shared environmental tolerance; this test does not establish facilitation or competition.",
+    "Do not change the all-bay primary population, source-class definitions, exact-point loss definition, bootstrap unit, event/node minima, or support rules after opening the derived endpoint."
+  ]
+}
