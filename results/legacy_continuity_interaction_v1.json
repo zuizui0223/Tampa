@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.legacy_continuity_interaction_v1.canonical_summary",
+  "status": "legacy_continuity_interaction_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36443347984,
+    "head_sha": "f536ce76e498fb9cbd42d387da7173a706533322",
+    "artifact_id": 10980035036,
+    "artifact_digest": "sha256:3adb2ad41d96b5a62af0927e505cb9555434860a6d6db38354b11c0c8db130db"
+  },
+  "registry": {
+    "recovery_sequences": 259,
+    "nodes": 25,
+    "vegetated_loss_sequences": 215,
+    "bare_loss_sequences": 44,
+    "nodes_with_both_loss_states": 15
+  },
+  "primary": {
+    "interaction_coefficient": 0.26957354099618147,
+    "ci95": [
+      -0.5790566964408755,
+      1.0668583797103484
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": false
+  },
+  "secondary": {
+    "vegetated_only_history_coefficient": 0.5039340848179568,
+    "bare_only_history_coefficient": 0.08634360498018886,
+    "vegetated_return_fraction": 0.4697674418604651,
+    "bare_return_fraction": 0.18181818181818182
+  },
+  "interpretation": "The history effect is directionally stronger when another seagrass remains in the loss year, but the frozen interaction interval overlaps zero. The data therefore do not support a robust history-by-community-continuity synergy; the bare-state null may reflect limited sample size or broader site-state differences.",
+  "next_hypothesis": "Decompose pre-loss history into focal Thalassia run length versus generic any-seagrass habitat headstart to test whether the supported pooled history signal is focal-specific or a marker of persistent vegetated microsites.",
+  "claim_boundary": [
+    "Post-hoc interaction test on an already-opened recovery endpoint.",
+    "Do not claim a formally supported synergy between local history and alternative-seagrass continuity.",
+    "The positive vegetated-only coefficient and higher return fraction are descriptive secondary patterns, not substitutes for the failed interaction support rule.",
+    "Do not infer facilitation, rhizome memory, or causal community effects.",
+    "Return is recorded reappearance, not genet-level recolonization."
+  ]
+}
