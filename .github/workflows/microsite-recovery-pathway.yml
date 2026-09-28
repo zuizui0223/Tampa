@@ -1,0 +1,65 @@
+name: Microsite recovery pathway ecology
+
+on:
+  push:
+    branches: [analysis/microsite-recovery-pathway-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "results/community_buffering_v1_contract.json"
+      - "results/microsite_recovery_pathway_v1_contract.json"
+      - "results/microsite_recovery_pathway_v1.json"
+      - "validation/verify_microsite_recovery_pathway.py"
+      - ".github/workflows/microsite-recovery-pathway.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "results/microsite_recovery_pathway_v1_contract.json"
+      - "results/microsite_recovery_pathway_v1.json"
+      - "validation/verify_microsite_recovery_pathway.py"
+      - ".github/workflows/microsite-recovery-pathway.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community states
+        run: python analysis/33_community_buffering.py --out results/generated_microsite_recovery
+      - name: Test three-year recovery pathway
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_microsite_recovery --out results/generated_microsite_recovery
+      - name: Verify canonical result
+        run: python validation/verify_microsite_recovery_pathway.py --generated results/generated_microsite_recovery/microsite_recovery_pathway_v1.json --canonical results/microsite_recovery_pathway_v1.json
+      - name: Verify frozen recovery endpoint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_microsite_recovery/microsite_recovery_pathway_v1.json"))
+          assert x["schema"]=="tampa.microsite_recovery_pathway_v1.result"
+          assert x["registry"]["consensus_point_years"]==45494
+          assert x["registry"]["points_with_at_least_three_consensus_years"]>0
+          assert x["registry"]["eligible_three_year_loss_sequences"]>0
+          assert x["registry"]["nodes"]>=10
+          for p in [
+              "microsite_recovery_sequences.csv",
+              "microsite_recovery_taxon_rows.csv",
+              "microsite_recovery_by_bay.csv",
+          ]:
+              q=Path("results/generated_microsite_recovery")/p
+              assert q.exists() and q.stat().st_size>100, q
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-microsite-recovery-pathway-v1
+          path: results/generated_microsite_recovery/
