@@ -1,0 +1,62 @@
+name: Pre-loss exact-point legacy ecology
+
+on:
+  push:
+    branches: [analysis/preloss-point-legacy-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/38_preloss_point_legacy.py"
+      - "results/preloss_point_legacy_v1_contract.json"
+      - ".github/workflows/preloss-point-legacy.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/38_preloss_point_legacy.py"
+      - "results/preloss_point_legacy_v1_contract.json"
+      - ".github/workflows/preloss-point-legacy.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community states
+        run: python analysis/33_community_buffering.py --out results/generated_preloss_legacy
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
+      - name: Test pre-loss exact-point legacy
+        run: python analysis/38_preloss_point_legacy.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
+      - name: Verify frozen registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import pandas as pd
+          x=json.load(open("results/generated_preloss_legacy/preloss_point_legacy_v1.json"))
+          assert x["schema"]=="tampa.preloss_point_legacy_v1.result"
+          assert x["registry"]["recovery_sequences"]==259
+          assert x["registry"]["nodes"]==25
+          assert x["registry"]["maximum_observed_streak_years"]>=1
+          for p in [
+              "preloss_point_legacy_sequences.csv",
+              "preloss_point_legacy_strata.csv",
+              "preloss_point_legacy_node_effects.csv",
+              "preloss_point_legacy_by_streak.csv",
+          ]:
+              q=Path("results/generated_preloss_legacy")/p
+              assert q.exists(), q
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-preloss-point-legacy-v1
+          path: results/generated_preloss_legacy/
