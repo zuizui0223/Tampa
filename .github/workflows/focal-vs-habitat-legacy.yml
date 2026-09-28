@@ -8,6 +8,8 @@ on:
       - "analysis/35_microsite_recovery_pathway.py"
       - "analysis/41_focal_vs_habitat_legacy.py"
       - "results/focal_vs_habitat_legacy_v1_contract.json"
+      - "results/focal_vs_habitat_legacy_v1.json"
+      - "validation/verify_focal_vs_habitat_legacy.py"
       - ".github/workflows/focal-vs-habitat-legacy.yml"
   pull_request:
     branches: [main]
@@ -34,6 +36,9 @@ jobs:
         run: python analysis/35_microsite_recovery_pathway.py --input results/generated_focal_vs_habitat --out results/generated_focal_vs_habitat
       - name: Test focal versus habitat legacy
         run: python analysis/41_focal_vs_habitat_legacy.py --input results/generated_focal_vs_habitat --out results/generated_focal_vs_habitat
+      - name: Verify canonical result
+        run: python validation/verify_focal_vs_habitat_legacy.py --generated results/generated_focal_vs_habitat/focal_vs_habitat_legacy_v1.json --canonical results/focal_vs_habitat_legacy_v1.json
+
       - name: Verify frozen predictor registry
         run: |
           python - <<'PY'
