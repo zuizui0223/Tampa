@@ -47,13 +47,11 @@ Persistent occurrence conceals spatially heterogeneous degradation in a seagrass
 
 ## Data Availability
 
-The primary Tampa Bay biological analyses use publicly available monitoring data pinned to commit `6c567beff95ea04f0e397101befb49d5233ace8f` of the `tbep-tech/obis-example` repository. The response-independent water-quality analyses use the pinned public TBEP/EPCHC archive documented in the analysis repository. The external National Park Service Tier-3 *Zostera marina* source is identified in the reproducibility records. Exact source identities, parser contracts, and canonical analysis results are recorded in the public code repository accompanying the manuscript.
-
-Before submission, replace this paragraph with stable public URLs/DOIs and the frozen Tampa submission commit/tag.
+The primary Tampa Bay biological analyses use publicly available Darwin Core monitoring data from `tbep-tech/obis-example` (https://github.com/tbep-tech/obis-example), pinned to commit `6c567beff95ea04f0e397101befb49d5233ace8f`. Response-independent long-term water-quality analyses use `tbep-tech/wq-static` (https://github.com/tbep-tech/wq-static), pinned to commit `00aa86030f9245fe0318c186e7137798684dce74`, source file `data-raw/Results_Updated.xls`. The published Tampa Bay hot–fresh reconstruction is reused from `tbep-tech/temp-manu` (https://github.com/tbep-tech/temp-manu), pinned to commit `e5aaec93c7501fc38c63b615a89e68636b36421f`, artifact `data/thralltrndat.RData`. The post-hoc external *Zostera marina* comparison uses National Park Service IRMA DataStore reference `2316692` (frozen response download: https://irma.nps.gov/DataStore/DownloadFile/758144?Reference=2316692). The terminal Caribbean external-validation attempt used PANGAEA dataset https://doi.org/10.1594/PANGAEA.994149. Full source identities, parser contracts, byte/blob checks, and reuse boundaries are recorded in `manuscript/DATA_CODE_AVAILABILITY_V1.md`.
 
 ## Code Availability
 
-All analysis and figure-generation code is available in the Tampa repository. The submission version will be frozen at <GIT TAG / COMMIT / ARCHIVE DOI BEFORE SUBMISSION>.
+All analysis, validation, figure-generation, manuscript-build, and submission-integrity code is available at https://github.com/zuizui0223/Tampa. The final submitted version will be frozen at `<SUBMISSION_TAG>` / `<SUBMISSION_COMMIT>` and the archival DOI will be added here if a repository archive is created: `<ARCHIVE_DOI_IF_CREATED>`.
 
 ## Ethics / permits
 
