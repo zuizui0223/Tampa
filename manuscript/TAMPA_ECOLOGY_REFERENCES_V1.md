@@ -18,6 +18,8 @@ Rising, K., Bulling, M., & Sweet, M. (2026). Seagrass monitoring methods: Aligni
 
 Roca, G., Alcoverro, T., Krause-Jensen, D., Balsby, T. J. S., van Katwijk, M. M., Marbà, N., Santos, R., Arthur, R., Mascaró, O., Fernández-Torquemada, Y., Pérez, M., Duarte, C. M., & Romero, J. (2016). Response of seagrass indicators to shifts in environmental stressors: A global review and management synthesis. *Ecological Indicators, 63*, 310–323. https://doi.org/10.1016/j.ecolind.2015.12.007
 
+Tampa Bay Estuary Program. (n.d.). Seagrass assessment. Retrieved September 28, 2026, from https://tbep.org/seagrass-assessment/
+
 Unsworth, R. K. F., McKenzie, L. J., Collier, C. J., Cullen-Unsworth, L. C., Duarte, C. M., Eklöf, J. S., Jarvis, J. C., Jones, B. L., & Nordlund, L. M. (2019). Global challenges for seagrass conservation. *Ambio, 48*, 801–815. https://doi.org/10.1007/s13280-018-1115-y
 
 Waycott, M., Duarte, C. M., Carruthers, T. J. B., Orth, R. J., Dennison, W. C., Olyarnik, S., Calladine, A., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Short, F. T., & Williams, S. L. (2009). Accelerating loss of seagrasses across the globe threatens coastal ecosystems. *Proceedings of the National Academy of Sciences of the United States of America, 106*, 12377–12381. https://doi.org/10.1073/pnas.0905620106

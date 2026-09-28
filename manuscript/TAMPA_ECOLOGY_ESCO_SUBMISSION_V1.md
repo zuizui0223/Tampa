@@ -263,6 +263,14 @@ Each level answers a different ecological question and can change on a different
 
 In Tampa Bay, the consequence of that compression was visible across multiple pathways: plant-condition decline in Old and Middle Tampa Bay, occupancy/abundance contraction and community reorganization in Lower Tampa Bay, and quantitative weakening before some subsequent recorded losses. The external *Zostera* comparison showed that this decoupling is not unique to one focal species or one monitoring programme.
 
+## Conservation implication: separate extent recovery from meadow-condition recovery
+
+This distinction is directly compatible with existing Tampa Bay management infrastructure. The Tampa Bay Estuary Program already combines approximately biennial aerial seagrass-coverage mapping with annual transect monitoring at more than 60 locations, using the two data streams to assess broad habitat extent and within-bay status (Tampa Bay Estuary Program, n.d.). Our results suggest that those monitoring levels should be interpreted as complementary rather than interchangeable. Stable or increasing mapped extent should not by itself close concern if species-specific frequency, abundance, blade length, or shoot density is declining at repeatedly monitored meadows.
+
+A practical use is therefore a **trajectory-based warning hierarchy** rather than a new hard threshold. Stable extent together with declining plant-condition state indicates hidden degradation within occupied habitat; declining focal frequency or abundance indicates meadow thinning; simultaneous focal decline and alternative-species change indicates community reorganization; and a recorded loss should trigger confirmation of sampling continuity before demographic interpretation. Sites with low or declining quantitative state can be prioritized for near-term resampling or local instrumentation, but the present early-warning analysis does not validate an intervention threshold or collapse forecast. Because focal frequency and Braun–Blanquet state have broad network coverage while blade length and shoot density are more temporally labile but less completely measured, a two-tier design is especially practical: use frequency/abundance for broad annual screening and deploy condition, below-ground, and high-frequency environmental measurements at flagged and matched reference meadows.
+
+This framework changes the conservation question from “Is seagrass still present?” to “Which component of meadow state is changing while seagrass is still present?” That distinction is particularly important for clonal foundation species, for which established local structure can plausibly maintain a coarse occupancy state while plant condition changes more rapidly. The present study therefore supports earlier and more biologically resolved diagnosis, while leaving causal prescription to future measurements of local optical conditions, high-frequency temperature and salinity, hydrodynamics, epiphytes, disease, and below-ground meadow reserves.
+
 ## Conclusion
 
 Long-term persistence of a foundation species does not imply persistence of meadow condition. Across Tampa Bay, *Thalassia testudinum* often remained recorded while different bay segments lost plant stature, shoot density, local occupancy or abundance, and Lower Tampa Bay reorganized compositionally. A second seagrass monitoring system reproduced the broader decoupling between saturated presence and quantitative change.
@@ -298,6 +306,8 @@ Orth, R. J., Carruthers, T. J. B., Dennison, W. C., Duarte, C. M., Fourqurean, J
 Rising, K., Bulling, M., & Sweet, M. (2026). Seagrass monitoring methods: Aligning expert opinion with practice. *iScience, 29*, 114871. https://doi.org/10.1016/j.isci.2026.114871
 
 Roca, G., Alcoverro, T., Krause-Jensen, D., Balsby, T. J. S., van Katwijk, M. M., Marbà, N., Santos, R., Arthur, R., Mascaró, O., Fernández-Torquemada, Y., Pérez, M., Duarte, C. M., & Romero, J. (2016). Response of seagrass indicators to shifts in environmental stressors: A global review and management synthesis. *Ecological Indicators, 63*, 310–323. https://doi.org/10.1016/j.ecolind.2015.12.007
+
+Tampa Bay Estuary Program. (n.d.). Seagrass assessment. Retrieved September 28, 2026, from https://tbep.org/seagrass-assessment/
 
 Unsworth, R. K. F., McKenzie, L. J., Collier, C. J., Cullen-Unsworth, L. C., Duarte, C. M., Eklöf, J. S., Jarvis, J. C., Jones, B. L., & Nordlund, L. M. (2019). Global challenges for seagrass conservation. *Ambio, 48*, 801–815. https://doi.org/10.1007/s13280-018-1115-y
 
