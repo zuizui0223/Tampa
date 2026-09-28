@@ -1,0 +1,69 @@
+{
+  "schema": "tampa.halodule_spatial_redistribution_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_gain_endpoint_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Discriminate direct point-for-point replacement of Thalassia by Halodule from spatial redistribution/expansion of Halodule into other meter marks during Lower Tampa Bay community reorganization.",
+  "source": {
+    "parent_analysis": "analysis/33_community_buffering.py",
+    "required_input": "community_buffering_point_year_consensus.csv",
+    "source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "Point-event locationID constructed upstream as Transect + Site/meter-mark identity",
+    "consistency_rule": "Use only point-years retained by the frozen community-buffering consensus rule; ambiguous repeated-visit point-years remain excluded."
+  },
+  "primary_segment": "Lower Tampa Bay",
+  "primary_period": [
+    2016,
+    2025
+  ],
+  "focal_species": "Thalassia testudinum",
+  "expanding_species": "Halodule wrightii",
+  "hypotheses": {
+    "H1_direct_takeover_not_dominant": {
+      "statement": "Among exact stable meter marks with Halodule absent in the source year and present in the target year, fewer than half of Halodule gains are direct-takeover candidates where Thalassia is present in the source year and absent in the target year.",
+      "gain_event": "source-year Halodule absent AND target-year Halodule present at the same stable point in consecutive years",
+      "direct_takeover_candidate": "source-year Thalassia present AND target-year Thalassia absent",
+      "estimator": "fraction of Halodule gain events classified as direct_takeover_candidate",
+      "uncertainty": "stable-transect node-cluster bootstrap",
+      "support_rule": "upper bound of 95% node-cluster bootstrap interval for direct-takeover fraction < 0.5",
+      "minimum_gain_events": 30,
+      "minimum_nodes_with_gain": 5
+    },
+    "H2_gain_prefers_non_thalassia_space": {
+      "statement": "Among exact stable meter marks where Halodule is absent in the source year, next-year Halodule gain is more frequent when Thalassia is also absent in the source year than when Thalassia is present.",
+      "eligible_transition": "same stable point observed in consecutive years; source-year Halodule absent; target-year point observed",
+      "groups": {
+        "source_thalassia_absent": "source-year Thalassia absent",
+        "source_thalassia_present": "source-year Thalassia present"
+      },
+      "endpoint": "target-year Halodule present",
+      "estimator": "risk difference P(Halodule gain | source Thalassia absent) - P(Halodule gain | source Thalassia present)",
+      "uncertainty": "stable-transect node-cluster bootstrap with source-point transitions travelling with the sampled node",
+      "support_rule": "lower bound of 95% bootstrap interval for risk difference > 0",
+      "minimum_transitions_per_group": 100,
+      "minimum_nodes_per_group": 5
+    }
+  },
+  "secondary_descriptive": {
+    "gain_fates": [
+      "direct_takeover_candidate",
+      "gain_with_thalassia_persistence",
+      "gain_from_thalassia_absent_space",
+      "simultaneous_thalassia_gain"
+    ],
+    "note": "Report counts/fractions only; do not promote a secondary category if a primary rule fails."
+  },
+  "implementation_freeze": {
+    "bootstrap_replicates": 5000,
+    "random_seed": 20260928,
+    "exact_consecutive_years_only": true,
+    "no_new_taxon_reclassification": true
+  },
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis motivated by the already-opened community-buffering result.",
+    "Direct-takeover candidate is an observational transition class, not proof that Halodule caused Thalassia loss.",
+    "A non-direct Halodule gain supports spatial redistribution/reorganization, not equivalence of ecosystem function among seagrass species.",
+    "Do not change the 0.5 dominance threshold, Lower Tampa primary segment, period, eligibility rule, or bootstrap minima after opening the Halodule-gain endpoint.",
+    "If either primary endpoint is non-estimable, retain that outcome; do not lower event or node minima."
+  ]
+}
