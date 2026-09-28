@@ -7,6 +7,8 @@ on:
       - "analysis/33_community_buffering.py"
       - "analysis/42_return_fragility.py"
       - "results/return_fragility_v1_contract.json"
+      - "results/return_fragility_v1.json"
+      - "validation/verify_return_fragility.py"
       - ".github/workflows/return-fragility.yml"
   pull_request:
     branches: [main]
@@ -31,6 +33,9 @@ jobs:
         run: python analysis/33_community_buffering.py --out results/generated_return_fragility
       - name: Test exact-point return fragility
         run: python analysis/42_return_fragility.py --input results/generated_return_fragility --out results/generated_return_fragility
+      - name: Verify canonical result
+        run: python validation/verify_return_fragility.py --generated results/generated_return_fragility/return_fragility_v1.json --canonical results/return_fragility_v1.json
+
       - name: Verify frozen four-year registry
         run: |
           python - <<'PY'
