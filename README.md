@@ -282,6 +282,27 @@ Across the full 16-value τ grid:
 
 Thus no state dimension retains a formally supported older-history increment once stable transect identity is included. This weakens the earlier state-dimension-dependent memory-horizon interpretation. The more defensible ecological reading is that long history carries information about **persistent differences among transects** that coordinates and bay segment do not fully encode. Node identity itself is not a mechanism and must not be interpreted causally.
 
+### 2j. EOG failure points toward a local site-template ecology rather than annual neighborhood accessibility
+
+The frozen EOG Tampa endpoint was adverse because its prediction-facing structural block had become a static, node-specific geometry signature reused across repeated visits while all five declared worlds remained compatible. A post-hoc ecological translation therefore asked whether the biological state itself is mostly site-anchored and whether a genuinely dynamic neighborhood signal helps.
+
+Stable transect identity alone descriptively accounts for:
+
+- recorded detection: **R² = 0.823**
+- focal frequency: **R² = 0.874**
+- Braun–Blanquet all-point state: **R² = 0.862**
+- blade length: **R² = 0.259**
+- shoot density: **R² = 0.232**
+
+Thus occurrence/abundance levels are strongly anchored to persistent site differences, whereas blade length and shoot density are much more temporally labile.
+
+The dynamic-neighborhood audit then recomputed the previous year's state of surrounding transects inside the four frozen EOG radii (14.91, 23.93, 34.71 and 43.48 km) and added those features to a reference that already contained stable node identity, geography, year and the focal transect's own lag-1 state.
+
+- binary detection: log loss **0.15708 → 0.16079**; mean delta **+0.00371**; neighborhood wins 12/22 years; sign-flip **p = 0.692**
+- focal frequency: MAE **0.04702 → 0.04797**; mean delta **+0.000953**; neighborhood wins 7/22; **p = 0.991**
+
+So a simple annually refreshed neighborhood-accessibility signal does not rescue the spatial story. The working ecological hypothesis is now that **persistent local site template and meadow legacy stabilize occurrence, while local plant condition can deteriorate on shorter timescales and eventually cross a recorded-state threshold**. This is a post-hoc hypothesis, not a causal identification. See `docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md`.
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
@@ -461,14 +482,18 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The manuscript-level ecological center is now **state decoupling and spatially heterogeneous degradation**, not a long-memory mechanism. The site-identity audit shows that the older-history result is strongly reference-dependent, so further retrospective memory-mechanism hunting is closed.
+The manuscript-level ecological center is **state decoupling and spatially heterogeneous degradation**, not a long-memory or generic connectivity mechanism.
 
-The highest-value next work is:
+The EOG translation sharpens the next ecological question. Stable site identity dominates occurrence/frequency/abundance levels, simple annually refreshed neighborhood state adds no mean heldout value, and plant-condition variables are much more temporally labile. The highest-value next causal work is therefore to replace `node_id` with measured components of the persistent site template rather than adding more abstract memory/connectivity features.
 
-1. finish figures and manuscript around cryptic degradation beneath persistent occurrence;
-2. retain immediate state dependence and the stable-site/history audit as a secondary result about persistent transect heterogeneity;
-3. keep the quantitative next-year-loss result explicitly exploratory until a genuinely future Tampa wave or pre-authorized external dataset can be scored under a frozen contract.
+Priority measurements or defensible historical reconstructions are:
 
-Environmental attribution remains secondary. Both annual and pre-survey 3/6-month hot-fresh screens are negative; finer event-scale exposure should be pursued only if it can be reconstructed defensibly without retrospective window hunting.
+1. depth and benthic light climate / water clarity;
+2. sediment and rhizosphere properties;
+3. exposure / hydrodynamic setting;
+4. chronic local water-quality regime;
+5. direct indicators of meadow persistence and clonal/rhizome structure where available.
 
-The manuscript-level synthesis is therefore: **binary persistence can conceal substantial, spatially heterogeneous quantitative degradation; recent state is strongly predictive; and apparent long-history gains are partly absorbed by stable transect identity rather than identifying a clean long biological memory horizon.**
+The quantitative next-year-loss result remains explicitly exploratory until a genuinely future Tampa wave or pre-authorized external dataset can be scored under a frozen contract.
+
+The manuscript-level synthesis is therefore: **binary persistence can conceal substantial, spatially heterogeneous quantitative degradation; recent local state is strongly predictive; apparent long-history gains are partly absorbed by stable transect identity; and neither static EOG geometry nor a simple annually refreshed neighborhood state explains the changing annual response.**
