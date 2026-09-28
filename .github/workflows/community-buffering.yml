@@ -1,0 +1,57 @@
+name: Community buffering ecology
+
+on:
+  push:
+    branches: [analysis/community-buffering-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "results/community_buffering_v1_contract.json"
+      - ".github/workflows/community-buffering.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "results/community_buffering_v1_contract.json"
+      - ".github/workflows/community-buffering.yml"
+  workflow_dispatch:
+
+jobs:
+  community:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Test community buffering and exact-point turnover
+        run: python analysis/33_community_buffering.py --out results/generated_community_buffering
+      - name: Verify frozen registry and output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_community_buffering/community_buffering_v1.json"))
+          assert x["schema"]=="tampa.community_buffering_v1.result"
+          assert x["registry"]["eligible_visits"]==1497
+          assert x["registry"]["stable_nodes"]==71
+          assert x["registry"]["repeated_stable_points"]>0
+          assert x["registry"]["thalassia_loss_point_transitions_post2016"]>0
+          for p in [
+            "community_buffering_visit.csv",
+            "community_buffering_annual.csv",
+            "community_buffering_point_year_consensus.csv",
+            "community_buffering_thalassia_point_losses.csv",
+            "community_buffering_target_species_fates.csv",
+          ]:
+              q=Path("results/generated_community_buffering")/p
+              assert q.exists() and q.stat().st_size>100, q
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-community-buffering-v1
+          path: results/generated_community_buffering/
