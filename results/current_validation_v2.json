@@ -185,7 +185,9 @@
     "Do not present the pooled source-richness gradient as causal biodiversity insurance after the within-node centered-richness audit; its interval overlaps zero.",
     "Treat higher seagrass richness as both a candidate insurance state and a possible marker of persistently favorable transects.",
     "Do not treat one-year Thalassia re-recording as complete ecological recovery; returned points show both quantitative abundance debt and elevated subsequent recorded re-loss risk.",
-    "Do not interpret recovery debt as proof of residual stress, rhizome depletion, physiological damage, or demographic mechanism; the exact-point comparison is observational."
+    "Do not interpret recovery debt as proof of residual stress, rhizome depletion, physiological damage, or demographic mechanism; the exact-point comparison is observational.",
+    "Do not claim that low return-year Braun-Blanquet mediates or causes subsequent recorded re-loss; the frozen return-quality fragility interval overlaps zero.",
+    "Treat recovery debt and return fragility as parallel dimensions of incomplete recovery unless a future test demonstrates a robust quantitative-state-to-fragility link."
   ],
   "community_reorganization": {
     "period": [
@@ -1065,5 +1067,29 @@
       "continuous_median_bb": 3
     },
     "interpretation": "Exact-point Thalassia re-recording after a one-year loss occurs in a quantitatively depressed Braun-Blanquet state relative to uninterrupted occupancy after source abundance, stable site identity, and return year are represented. Together with return fragility, this supports incomplete recovery / hysteresis at annual resolution."
+  },
+  "return_quality_fragility": {
+    "status": "return_quality_fragility_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36482520287,
+      "head_sha": "e6040268fb88237c99b33cfc5d6e991ea328a5cc",
+      "artifact_id": 10997535768,
+      "artifact_digest": "sha256:a270a31d8bb2f8a7b4f4126b90df20377f693c1eda62faf3cdb2383635633a90"
+    },
+    "registry": {
+      "complete_recovered_four_year_sequences": 83,
+      "nodes": 17,
+      "recorded_relosses": 30,
+      "stable_returns": 53
+    },
+    "primary": {
+      "return_bb_coefficient": -0.39571709154601065,
+      "ci95": [
+        -1.1411226759671906,
+        0.49676718130475556
+      ],
+      "supported": false
+    },
+    "interpretation": "Return-year Braun-Blanquet is directionally lower among re-lost returns but does not robustly explain subsequent re-loss after pre-loss history, loss-year vegetation continuity, source abundance, stable site identity and return year. Recovery debt and return fragility remain parallel features of incomplete recovery."
   }
 }
