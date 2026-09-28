@@ -173,7 +173,9 @@
     "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it.",
     "Do not add further retrospective temperature/salinity thresholds, lag windows or compound stress formulas after the frozen published 30 C / 25 ppt joint-stress test; this stress-index rescue line is closed.",
     "Do not call the community-buffering hypothesis confirmed: its full frozen Lower Tampa support rule failed and the Lower-specific exact-point comparison was non-estimable.",
-    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested."
+    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested.",
+    "Do not call pre-existing mixed-species occupancy facilitation: the exact-point insurance association may reflect shared persistent habitat quality.",
+    "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement."
   ],
   "community_reorganization": {
     "period": [
@@ -763,5 +765,45 @@
     },
     "interpretation": "Lower Tampa Bay Thalassia frequency declines substantially faster than total seagrass point occupancy, consistent with partial community buffering, but the full frozen H1 rule does not pass because non-Thalassia-only occupancy has a positive point estimate with a 95% interval that slightly crosses zero. The predeclared Lower-specific exact-point comparison is non-estimable. Descriptively, most exact-point Thalassia losses remain occupied by another seagrass.",
     "next_hypothesis": "Freeze a separate exact-point community-insurance test asking whether seagrass occupancy after Thalassia loss is primarily persistence of species already co-occurring at the source point rather than new colonization after focal loss."
+  },
+  "community_insurance": {
+    "status": "both_insurance_hypotheses_supported",
+    "authoritative_workflow": {
+      "run_id": 36405367660,
+      "head_sha": "3d7c1f5e50e17460bba9cb792fe9bc173ab62c42",
+      "artifact_id": 10961464868,
+      "artifact_digest": "sha256:d4dc482728e4f99b2f789920c20514b1f1ee9c16b141ac4d18991853d687544a"
+    },
+    "registry": {
+      "exact_point_thalassia_loss_transitions": 370,
+      "nodes_with_loss": 27
+    },
+    "source_mixture_insurance": {
+      "mixed_events": 281,
+      "mixed_nodes": 25,
+      "target_occupancy_fraction": 0.8505338078291815,
+      "thalassia_only_events": 89,
+      "thalassia_only_nodes": 20,
+      "thalassia_only_target_occupancy_fraction": 0.7078651685393258,
+      "difference_percentage_points": 14.266863928985574,
+      "difference_ci95_percentage_points": [
+        4.450966750495043,
+        26.72194489536275
+      ],
+      "supported": true
+    },
+    "preexisting_species_persistence": {
+      "target_occupied_events": 302,
+      "nodes": 24,
+      "retained_species_fraction": 0.7119205298013245,
+      "retained_species_ci95": [
+        0.591897324286263,
+        0.8267336477742262
+      ],
+      "new_only_fraction": 0.28807947019867547,
+      "supported": true
+    },
+    "interpretation": "Exact-point Thalassia losses are less likely to leave a seagrass-bare point when another seagrass already co-occurred in the source year, and most target alternative occupancy retains species already present before focal loss. This supports a pre-existing community-insurance pattern while remaining non-causal.",
+    "next_hypothesis": "Test whether alternative-seagrass occupancy in the loss year predicts greater one-year Thalassia return at the same meter mark than becoming seagrass-bare."
   }
 }
