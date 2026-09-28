@@ -178,6 +178,9 @@
     "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement.",
     "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern.",
     "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null.",
+    "Do not interpret the supported pre-loss local-history effect as direct evidence of clonal memory or residual rhizomes; persistent microsite quality and detectability remain alternatives.",
+    "Do not call the pooled habitat-continuity return association a robust within-transect microsite effect; the equal-node audit interval overlapped zero.",
+    "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism.",
     "Do not interpret the positive community-richness gradient as causal biodiversity insurance, facilitation, niche complementarity, or functional redundancy; persistent habitat quality remains a plausible common cause."
   ],
   "community_reorganization": {
@@ -880,6 +883,61 @@
     },
     "interpretation": "Source-year blade length and shoot density do not add robust year-ahead information about next-year Thalassia frequency or Braun-Blanquet state beyond current quantitative state and stable site identity. Treat plant condition and within-meadow occupancy/abundance as partially distinct degradation axes rather than a proven annual serial cascade."
   },
+  "microsite_continuity_node_audit": {
+    "status": "within_node_microsite_continuity_not_supported",
+    "registry": {
+      "all_recovery_sequences": 259,
+      "all_nodes": 25,
+      "informative_nodes": 15
+    },
+    "primary": {
+      "equal_node_mean_difference": 0.19475466123144144,
+      "ci95": [
+        -0.0022938162284911415,
+        0.3885662005692965
+      ],
+      "supported": false
+    },
+    "secondary": {
+      "positive_nodes": 11,
+      "zero_nodes": 1,
+      "negative_nodes": 3,
+      "event_weighted_difference_in_informative_nodes": 0.2694168576521518
+    },
+    "interpretation": "The pooled habitat-continuity association remains directionally positive within most informative transects but does not pass the frozen equal-node bootstrap rule; persistent site quality remains a plausible contributor."
+  },
+  "preloss_local_legacy": {
+    "status": "preloss_local_legacy_supported",
+    "authoritative_workflow": {
+      "run_id": 36441617643,
+      "head_sha": "803f4408efe521346b1e6a8dca0b716485339ba5",
+      "artifact_id": 10978956366,
+      "artifact_digest": "sha256:065f4e95068b19e00c8b14c4875dff2d35ccabc0df5bda9ebc34d02cb5802a50"
+    },
+    "registry": {
+      "recovery_sequences": 259,
+      "nodes": 25,
+      "nodes_with_run_length_variation": 18,
+      "run_length_range": [
+        1,
+        25
+      ]
+    },
+    "primary": {
+      "centered_run_length_coefficient": 0.45119165238746967,
+      "ci95": [
+        0.08866514158716116,
+        1.3725843508448023
+      ],
+      "supported": true
+    },
+    "secondary": {
+      "return_run_length_median": 2,
+      "nonreturn_run_length_median": 1
+    },
+    "interpretation": "Longer uninterrupted exact-point Thalassia history predicts re-recording after a one-year loss even after stable node identity, loss year, loss-year vegetation state and source mixed-species state are controlled. This is consistent with a local legacy/residual-structure signal but does not identify rhizomes, clonal integration, fine-scale habitat quality or repeated detectability separately.",
+    "evidence_class": "posthoc exploratory exact-point temporal ecology"
+  },
   "community_diversity_insurance": {
     "status": "community_diversity_insurance_supported",
     "authoritative_workflow": {
@@ -905,12 +963,6 @@
         0.6547052858298457
       ],
       "supported": true
-    },
-    "descriptive_target_occupancy_fraction": {
-      "richness_0": 0.7078651685393258,
-      "richness_1": 0.8521400778210116,
-      "richness_2": 0.8260869565217391,
-      "richness_3": 1
     },
     "interpretation": "Greater pre-loss alternative seagrass richness predicts a higher probability that an exact meter mark remains seagrass-occupied after Thalassia loss, extending the binary mixed-patch insurance result to a richness gradient after adjustment for target year and water body.",
     "evidence_class": "posthoc exploratory exact-point community ecology"
