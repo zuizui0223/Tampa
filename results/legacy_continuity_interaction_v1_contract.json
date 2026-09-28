@@ -1,0 +1,65 @@
+{
+  "schema": "tampa.legacy_continuity_interaction_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_interaction_hypothesis_frozen_before_interaction_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Pooled pre-loss focal history predicts Thalassia re-recording, whereas the frozen bare-loss subgroup does not. Test whether the local-history effect is stronger when another seagrass remains in the focal-loss year.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "recovery_sequence_builder": "analysis/35_microsite_recovery_pathway.py",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site"
+  },
+  "primary_population": {
+    "sequence_rule": "same frozen 259 three-year exact-point Thalassia-loss sequences",
+    "pre_loss_run_length": "immediately consecutive consensus years with Thalassia present ending in the source year",
+    "continuity_state": "loss_year_vegetated = 1 if another seagrass remains at t+1, else 0"
+  },
+  "model": {
+    "outcome": "Thalassia recorded present at the same meter mark in the recovery year",
+    "categorical": [
+      "node_id"
+    ],
+    "numeric_main_effects": [
+      "loss_year",
+      "source_mixed",
+      "loss_year_vegetated",
+      "pre_loss_run_length_centered"
+    ],
+    "interaction": "pre_loss_run_length_centered × loss_year_vegetated",
+    "preprocessing": "node-center pre-loss run length, then StandardScaler numeric terms; OneHot node identity",
+    "learner": "L2 logistic regression",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000
+  },
+  "primary_hypothesis": {
+    "statement": "The positive association between pre-loss local Thalassia history and one-year re-recording is stronger when the focal-loss year remains vegetated by another seagrass.",
+    "estimator": "coefficient of the standardized centered-run-length × loss-year-vegetated interaction",
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092815,
+    "minimum_sequences": 150,
+    "minimum_nodes": 15,
+    "minimum_vegetated_sequences": 100,
+    "minimum_bare_sequences": 30,
+    "minimum_nodes_with_both_loss_states": 8,
+    "support_rule": "lower bound of 95% node-bootstrap interval for the interaction coefficient > 0"
+  },
+  "secondary_descriptive": [
+    "fitted centered-run-length coefficient among vegetated sequences only",
+    "fitted centered-run-length coefficient among bare sequences only",
+    "return fraction by loss-year vegetation state"
+  ],
+  "interpretation": {
+    "supported": "Local persistence history and above-ground community continuity interact positively, consistent with a compound resilience state in which historical local occupancy is expressed most strongly when seagrass habitat continuity is retained.",
+    "unsupported": "The apparent contrast between pooled and bare-subgroup history effects does not yield a robust interaction; the bare null may reflect limited sample size or broader site-state differences."
+  },
+  "claim_boundary": [
+    "Post-hoc interaction test motivated by already-opened pooled and bare-subgroup results.",
+    "A positive interaction would not prove facilitation by alternative seagrasses; both continuity and history may index persistent microsite quality.",
+    "A positive interaction would not identify clonal/rhizome memory without direct below-ground measurements.",
+    "Return is recorded reappearance, not genet-level recolonization.",
+    "Do not alter the interaction term, history definition, node-centering, controls, model, minima, or support threshold after opening the interaction endpoint."
+  ]
+}
