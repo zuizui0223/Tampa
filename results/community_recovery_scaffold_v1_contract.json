@@ -1,0 +1,60 @@
+{
+  "schema": "tampa.community_recovery_scaffold_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_three_year_return_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Test whether retaining non-Thalassia seagrass at an exact meter mark during a one-year Thalassia non-detection predicts higher next-year Thalassia recorded return than becoming seagrass-bare.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "Point-event locationID constructed upstream as Transect + Site/meter-mark identity",
+    "seagrass_definition": "Present occurrence rows in order Alismatales",
+    "point_year_consistency": "Retain only point-years for which repeated visits agree on the complete present-Alismatales taxon set."
+  },
+  "primary_segments": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "three_year_sequence": {
+    "source_year": "t-1: Thalassia present",
+    "loss_year": "t: Thalassia absent",
+    "followup_year": "t+1: same stable point observed",
+    "primary_loss_years": [
+      2017,
+      2024
+    ],
+    "exclusion": "Loss year 2016 is excluded prospectively because the 2016/2017 recorded-state pulse has an independently documented protocol sensitivity."
+  },
+  "groups": {
+    "loss_year_other_seagrass": "Thalassia absent at t and >=1 other Alismatales taxon present at t",
+    "loss_year_bare": "Thalassia absent at t and no present Alismatales taxon at t"
+  },
+  "endpoint": "Thalassia present at t+1 at the same stable meter mark (recorded return; not demographic recolonization)",
+  "hypothesis": {
+    "statement": "Thalassia recorded return one year after exact-point loss is more frequent when another seagrass remains at the loss-year point than when the point becomes seagrass-bare.",
+    "estimator": "risk difference P(return | other seagrass at loss year) - P(return | bare at loss year)",
+    "uncertainty": "stable-transect node-cluster bootstrap",
+    "support_rule": "lower bound of 95% node-cluster bootstrap interval for risk difference > 0",
+    "minimum_events_per_group": 50,
+    "minimum_nodes_per_group": 10
+  },
+  "secondary_descriptive": {
+    "by_segment": "Report return fractions separately for Old, Middle, and Lower Tampa Bay; do not promote a segment-specific result if pooled primary support fails.",
+    "by_loss_year_taxon": "Among loss-year occupied points, report which alternative taxa were present and their observed return fractions; descriptive only.",
+    "sensitivity_2016": "Report 2016 loss-year sequences separately as protocol-sensitive context; they cannot replace the primary 2017-2024 result."
+  },
+  "implementation_freeze": {
+    "bootstrap_replicates": 5000,
+    "random_seed": 20260928,
+    "exact_three_consecutive_years_only": true,
+    "no_imputation_of_missing_point_years": true
+  },
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis motivated by the supported community-insurance result.",
+    "A positive association would identify a recovery-scaffold candidate, not prove facilitation or causal enhancement of Thalassia recovery.",
+    "Recorded return is observation-state reappearance at a re-observed exact point, not demographic recolonization.",
+    "Persistent favorable habitat could jointly explain alternative-seagrass retention and Thalassia return.",
+    "Do not restore loss year 2016 to the primary endpoint, lower event/node minima, change the segment pool, or redefine bare/occupied after opening the result."
+  ]
+}
