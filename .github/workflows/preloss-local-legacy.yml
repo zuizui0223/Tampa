@@ -10,6 +10,8 @@ on:
       - "results/community_buffering_v1_contract.json"
       - "results/microsite_recovery_pathway_v1_contract.json"
       - "results/preloss_local_legacy_v1_contract.json"
+      - "results/preloss_local_legacy_v1.json"
+      - "validation/verify_preloss_local_legacy.py"
       - ".github/workflows/preloss-local-legacy.yml"
   pull_request:
     branches: [main]
@@ -39,6 +41,9 @@ jobs:
 
       - name: Test pre-loss local legacy
         run: python analysis/38_preloss_local_legacy.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
+
+      - name: Verify canonical result
+        run: python validation/verify_preloss_local_legacy.py --generated results/generated_preloss_legacy/preloss_local_legacy_v1.json --canonical results/preloss_local_legacy_v1.json
 
       - name: Verify frozen registry
         run: |
