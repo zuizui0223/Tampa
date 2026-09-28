@@ -1,22 +1,30 @@
-name: Site-template physical preflight
+name: Site-template physical and ecological audit
 
 on:
   push:
     branches: [analysis/site-template-components-v1]
     paths:
+      - "analysis/03_quantitative_state.py"
       - "analysis/23_site_template_preflight.py"
+      - "analysis/24_site_template_outcome.py"
+      - "results/site_template_preflight_v1.json"
+      - "results/site_template_outcome_v1_contract.json"
       - ".github/workflows/site-template-preflight.yml"
   pull_request:
     branches: [main]
     paths:
+      - "analysis/03_quantitative_state.py"
       - "analysis/23_site_template_preflight.py"
+      - "analysis/24_site_template_outcome.py"
+      - "results/site_template_preflight_v1.json"
+      - "results/site_template_outcome_v1_contract.json"
       - ".github/workflows/site-template-preflight.yml"
   workflow_dispatch:
 
 jobs:
-  preflight:
+  audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,9 +32,14 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: python -m pip install -r requirements.txt
-      - run: python analysis/23_site_template_preflight.py --out results/generated_site_template
+      - name: Extract response-independent site template
+        run: python analysis/23_site_template_preflight.py --out results/generated_site_template
+      - name: Rebuild Tampa quantitative response panel
+        run: python analysis/03_quantitative_state.py --out results/generated_site_template
+      - name: Test measured site-template components
+        run: python analysis/24_site_template_outcome.py --input results/generated_site_template --out results/generated_site_template
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: tampa-site-template-preflight-v1
+          name: tampa-site-template-v1
           path: results/generated_site_template/
