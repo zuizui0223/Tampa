@@ -1,21 +1,23 @@
-# Tampa — ecological memory and cryptic state degradation in Tampa Bay seagrass
+# Tampa — persistent occurrence and cryptic quantitative degradation in Tampa Bay seagrass
 
 This repository develops a biological analysis of long-term fixed-transect seagrass monitoring in Tampa Bay. It is intentionally separate from the EOG method-validation endpoint that motivated the question.
 
 ## Scientific mainline
 
-The working question is now:
+The paper-level ecological question is now:
 
-> **Can binary persistence conceal quantitative degradation, and do coarse and quantitative seagrass states retain ecological memory over different timescales?**
+> **Can a foundation species remain recorded at long-monitored sites while its quantitative meadow condition deteriorates, and do different parts of the bay degrade through different state dimensions?**
 
-The analysis distinguishes four state dimensions for *Thalassia testudinum*:
+The analysis distinguishes four nested state dimensions for *Thalassia testudinum*:
 
 1. recorded presence at a transect;
 2. frequency occurrence across sampled meter marks;
-3. Braun-Blanquet abundance/cover index;
-4. plant condition variables (blade length and short-shoot density).
+3. Braun–Blanquet abundance index;
+4. plant-condition variables (blade length and short-shoot density).
 
-This matters because a stable presence map can hide thinning, reduced stature, reduced density, or community reorganization.
+The central result is **state decoupling under persistent occurrence**. Binary presence is a coarse endpoint: it can remain stable while within-transect occupancy, abundance, plant stature, shoot density or community composition change substantially.
+
+Temporal-memory analyses are retained as secondary diagnostics. After stable transect identity is included, the formal older-history increment disappears, so the manuscript does not lead with a long biological-memory claim.
 
 ## Frozen source
 
@@ -552,18 +554,19 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The manuscript-level ecological center is **state decoupling and spatially heterogeneous degradation**, not a long-memory, generic connectivity, or retrospectively rescued climate-stressor mechanism.
+Retrospective mechanism hunting in the current Tampa dataset is closed. The tested alternatives now include static and dynamic spatial accessibility, simple hidden-state explanations, depth/sediment, bulk benthic-light exposure, annual and seasonal temperature/salinity, and the exact published 30 °C / 25 ppt compound hot–fresh metric. None identifies the driver of the post-2016 condition changes.
 
-The EOG translation sharpens the next ecological question. Stable site identity dominates occurrence/frequency/abundance levels, simple annually refreshed neighborhood state adds no mean heldout value, and plant-condition variables are much more temporally labile. The highest-value next causal work is therefore to replace `node_id` with measured components of the persistent site template rather than adding more abstract memory/connectivity features.
+The manuscript should therefore be completed around the ecological pattern that is already robust:
 
-Priority measurements or defensible historical reconstructions are:
+1. **persistent binary occurrence can conceal quantitative degradation;**
+2. **degradation mode differs among bay segments;**
+3. **the same binary–quantitative decoupling appears post hoc in an external *Zostera marina* monitoring panel;**
+4. **local quantitative state contains internal out-of-time information about next-year recorded-state loss;**
+5. **mechanism remains unresolved despite a prospectively bounded sequence of alternative-explanation tests.**
 
-1. depth and benthic light climate / water clarity;
-2. sediment and rhizosphere properties;
-3. exposure / hydrodynamic setting;
-4. chronic local water-quality regime;
-5. direct indicators of meadow persistence and clonal/rhizome structure where available.
+The next mechanism claim requires genuinely new state information rather than another transformation of the same retrospective variables. Highest-priority future measurements are meadow-scale high-frequency temperature/salinity/PAR, canopy and epiphyte light microenvironment, hydrodynamic exposure/residence time, below-ground biomass or carbohydrate reserve, clonal/rhizome architecture, and acute disturbance or disease indicators.
 
-The quantitative next-year-loss result remains explicitly exploratory until a genuinely future Tampa wave or pre-authorized external dataset can be scored under a frozen contract.
+The manuscript-level synthesis is:
 
-The manuscript-level synthesis is therefore: **binary persistence can conceal substantial, spatially heterogeneous quantitative degradation; recent local state is strongly predictive; apparent long-history gains are partly absorbed by stable transect identity; and neither static EOG geometry nor a simple annually refreshed neighborhood state explains the changing annual response.**
+> **A foundation species can remain present while different components of meadow condition deteriorate through spatially distinct pathways; presence-only monitoring therefore detects degradation late and incompletely.**
+
