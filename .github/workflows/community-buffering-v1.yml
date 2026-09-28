@@ -28,6 +28,9 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - name: Run frozen community buffering analysis
         run: python analysis/33_community_buffering.py --out results/generated_community_buffering
+      - name: Verify canonical result
+        run: python validation/verify_community_buffering.py --generated results/generated_community_buffering/community_buffering_v1.json --canonical results/community_buffering_v1.json
+
       - name: Verify source and frozen endpoint
         run: |
           python - <<'PY'
