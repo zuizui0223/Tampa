@@ -6,10 +6,10 @@
   "motivation": "Discriminate direct point-for-point replacement of Thalassia by Halodule from spatial redistribution/expansion of Halodule into other meter marks during Lower Tampa Bay community reorganization.",
   "source": {
     "parent_analysis": "analysis/33_community_buffering.py",
-    "required_input": "community_buffering_point_year_consensus.csv",
+    "required_input": "Pinned Darwin Core Event + Occurrence tables; point-year taxon states rebuilt directly from the same source identity as analysis/33.",
     "source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
     "stable_point_id": "Point-event locationID constructed upstream as Transect + Site/meter-mark identity",
-    "consistency_rule": "Use only point-years retained by the frozen community-buffering consensus rule; ambiguous repeated-visit point-years remain excluded."
+    "consistency_rule": "For each stable point locationID x year, retain the point-year only when repeated visits agree separately on Thalassia presence/absence AND Halodule presence/absence. Any taxon-specific disagreement makes that point-year ambiguous and excludes it from both primary endpoints."
   },
   "primary_segment": "Lower Tampa Bay",
   "primary_period": [
@@ -57,7 +57,11 @@
     "bootstrap_replicates": 5000,
     "random_seed": 20260928,
     "exact_consecutive_years_only": true,
-    "no_new_taxon_reclassification": true
+    "no_new_taxon_reclassification": true,
+    "taxon_specific_point_year_consistency": [
+      "Thalassia testudinum",
+      "Halodule wrightii"
+    ]
   },
   "claim_boundary": [
     "Post-hoc ecological hypothesis motivated by the already-opened community-buffering result.",
