@@ -1,0 +1,64 @@
+{
+  "schema": "tampa.local_legacy_current_state_audit_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_current_state_saturation_audit_frozen_before_endpoint",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "The supported pre-loss run-length effect may reflect current source-year meadow abundance/detectability rather than historical local legacy. Test whether run length remains informative after source-year focal frequency and Braun-Blanquet state are added.",
+  "source": {
+    "recovery_sequences": "analysis/35_microsite_recovery_pathway.py",
+    "legacy_builder": "analysis/38_preloss_local_legacy.py",
+    "annual_state": "analysis/03_quantitative_state.py",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f"
+  },
+  "primary_population": {
+    "sequence_rule": "same frozen 259 exact-point three-year Thalassia-loss sequences",
+    "source_year_join": "join annual node-level focal_frequency and bb_cover_mean_all_points on node_id x source_year",
+    "missing_rule": "retain only sequences with both source-year quantitative state values observed; do not impute"
+  },
+  "model": {
+    "outcome": "Thalassia recorded present at the same meter mark in the recovery year",
+    "categorical": [
+      "node_id"
+    ],
+    "numeric_controls": [
+      "loss_year",
+      "loss_year_vegetated",
+      "source_mixed",
+      "source_focal_frequency",
+      "source_bb_cover_mean_all_points"
+    ],
+    "focal_predictor": "pre_loss_run_length_centered within stable node",
+    "learner": "L2 logistic regression",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "preprocessing": "node-center run length first; StandardScaler numeric predictors; OneHot stable node identity"
+  },
+  "primary_hypothesis": {
+    "statement": "Longer-than-usual exact-point pre-loss Thalassia history remains positively associated with one-year re-recording after controlling current source-year focal frequency and Braun-Blanquet state.",
+    "estimator": "coefficient of standardized within-node centered pre_loss_run_length",
+    "uncertainty": "stable-node cluster bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092916,
+    "minimum_sequences": 150,
+    "minimum_nodes": 15,
+    "minimum_nodes_with_run_length_variation": 8,
+    "support_rule": "lower bound of 95% node-bootstrap interval > 0"
+  },
+  "secondary_descriptive": [
+    "same model without current source-year frequency/BB for coefficient orientation only",
+    "correlations of run length with source-year frequency and Braun-Blanquet",
+    "return/nonreturn medians of source-year frequency and Braun-Blanquet"
+  ],
+  "interpretation": {
+    "supported": "Pre-loss local occupancy history contains recovery information beyond current transect-level abundance and stable node identity, strengthening a genuine history/legacy interpretation while remaining mechanistically unresolved.",
+    "unsupported": "The pre-loss run-length effect is absorbed by current source-year quantitative state; current meadow abundance/detectability is sufficient to explain the apparent history signal."
+  },
+  "claim_boundary": [
+    "Post-hoc saturation audit of an already-opened recovery endpoint.",
+    "A surviving history effect would still not prove clonal memory or residual rhizomes; fine-scale habitat quality and repeated detectability remain alternatives.",
+    "Current focal frequency and Braun-Blanquet are transect-level states, not point-level physiological measures.",
+    "Return means recorded reappearance, not genet-level recolonization.",
+    "Do not change the annual-state controls, history definition, node-centering, model, bootstrap unit, minima, or support threshold after opening the endpoint."
+  ]
+}
