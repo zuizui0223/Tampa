@@ -1,0 +1,61 @@
+name: Pre-loss legacy bare-state audit
+
+on:
+  push:
+    branches: [analysis/preloss-legacy-bare-audit-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/40_preloss_legacy_bare_audit.py"
+      - "results/community_buffering_v1_contract.json"
+      - "results/microsite_recovery_pathway_v1_contract.json"
+      - "results/preloss_legacy_bare_audit_v1_contract.json"
+      - ".github/workflows/preloss-legacy-bare-audit.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/40_preloss_legacy_bare_audit.py"
+      - "results/preloss_legacy_bare_audit_v1_contract.json"
+      - ".github/workflows/preloss-legacy-bare-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_bare_legacy
+
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_bare_legacy --out results/generated_bare_legacy
+
+      - name: Test bare-state pre-loss legacy
+        run: python analysis/40_preloss_legacy_bare_audit.py --input results/generated_bare_legacy --out results/generated_bare_legacy
+
+      - name: Verify frozen registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_bare_legacy/preloss_legacy_bare_audit_v1.json"))
+          assert x["schema"]=="tampa.preloss_legacy_bare_audit_v1.result"
+          assert x["registry"]["bare_sequences"]==44
+          assert x["registry"]["nodes"]==17
+          q=Path("results/generated_bare_legacy/preloss_legacy_bare_sequences.csv")
+          assert q.exists() and q.stat().st_size>100
+          print(json.dumps(x,indent=2))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-preloss-legacy-bare-audit-v1
+          path: results/generated_bare_legacy/
