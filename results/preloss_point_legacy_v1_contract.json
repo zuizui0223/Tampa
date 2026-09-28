@@ -1,0 +1,51 @@
+{
+  "schema": "tampa.preloss_point_legacy_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_exact_point_legacy_hypothesis_frozen_before_streak_return_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "The merged recovery pathway shows that Thalassia is re-recorded more often when seagrass habitat remains occupied after focal loss, while the within-node audit tests how much of that is broad site quality. This hypothesis asks whether a point's own pre-loss Thalassia persistence history contains an additional local legacy signal.",
+  "source": {
+    "point_year_panel": "analysis/33_community_buffering.py -> community_buffering_point_year_consensus.csv",
+    "recovery_sequence": "same exact three-year sequence definition as results/microsite_recovery_pathway_v1_contract.json",
+    "stable_point_id": "pinned child-event locationID"
+  },
+  "exposure": {
+    "name": "preloss_thalassia_streak_years",
+    "definition": "Number of consecutive calendar years with consensus Thalassia presence at the same stable point ending in source year t immediately before the frozen t+1 loss. Walk backward one calendar year at a time and stop at the first absence or unobserved/non-consensus year.",
+    "no_gap_bridging": true,
+    "no_thresholding": true
+  },
+  "primary_design": {
+    "population": "same frozen three-year exact-point loss sequences as microsite_recovery_pathway_v1",
+    "stratification": [
+      "stable node_id",
+      "loss-year intermediate state (other_seagrass versus no_seagrass)"
+    ],
+    "informative_stratum": "within a node × intermediate-state stratum, at least one t+2 Thalassia return and at least one non-return",
+    "stratum_effect": "mean pre-loss streak among return sequences minus mean pre-loss streak among non-return sequences",
+    "node_effect": "unweighted mean of informative stratum effects within each node",
+    "estimator": "unweighted mean node effect across informative nodes",
+    "uncertainty": "stable-node bootstrap over node effects",
+    "bootstrap_replicates": 10000,
+    "random_seed": 2026092813,
+    "minimum_informative_nodes": 8,
+    "support_rule": "95% bootstrap interval for mean within-node/within-intermediate-state streak difference entirely above zero"
+  },
+  "secondary_descriptive": [
+    "median node effect",
+    "positive/zero/negative informative node counts",
+    "overall pre-loss streak distribution",
+    "return fraction by exact integer streak length where n>=10, descriptive only"
+  ],
+  "interpretation": {
+    "supported": "Longer exact-point pre-loss Thalassia persistence is associated with subsequent re-recording even after controlling by stable transect and loss-year vegetation class, consistent with a local legacy/persistence signal.",
+    "unsupported": "Pre-loss exact-point persistence history does not add a robust within-node/within-loss-state legacy signal for subsequent re-recording."
+  },
+  "claim_boundary": [
+    "Post-hoc exploratory temporal ecology on an already-opened exact-point panel.",
+    "A pre-loss streak association cannot identify residual rhizomes, clonal integration, habitat quality, or observation/detection persistence separately.",
+    "Return remains re-recorded Thalassia at the same meter mark, not proven recolonization.",
+    "Do not dichotomize or retune streak length after opening results.",
+    "Do not change the frozen recovery sequence, node/intermediate-state stratification, equal-node estimator, bootstrap unit, or minimum informative-node rule after opening the endpoint."
+  ]
+}
