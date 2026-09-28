@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.microsite_continuity_node_audit_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_reference_saturation_audit_frozen_before_within_node_endpoint",
+  "evidence_class": "posthoc exploratory exact-point ecology",
+  "motivation": "The pooled exact-point recovery result showed higher one-year Thalassia re-recording when another seagrass remained after focal loss. This audit asks whether that association persists within the same stable transect, reducing confounding by persistent node-level habitat quality.",
+  "prerequisite": {
+    "analysis": "analysis/35_microsite_recovery_pathway.py",
+    "sequence_file": "microsite_recovery_sequences.csv",
+    "canonical_result": "results/microsite_recovery_pathway_v1.json"
+  },
+  "primary_population": {
+    "sequence_rule": "same frozen three-year exact-point loss sequences used by microsite_recovery_pathway_v1",
+    "informative_node": "stable transect node containing >=1 loss-year vegetated sequence and >=1 loss-year bare sequence",
+    "no_event_redefinition": true
+  },
+  "primary_hypothesis": {
+    "statement": "Within informative stable transects, meter marks retaining another seagrass in the Thalassia-loss year have higher one-year Thalassia return than meter marks becoming seagrass-bare.",
+    "node_effect": "For each informative node, compute return fraction among vegetated loss-year sequences minus return fraction among bare loss-year sequences.",
+    "estimator": "unweighted mean of node-specific differences so high-sampling nodes do not dominate",
+    "uncertainty": "stable-node bootstrap over informative nodes",
+    "bootstrap_replicates": 10000,
+    "random_seed": 2026092812,
+    "minimum_informative_nodes": 8,
+    "support_rule": "95% node-bootstrap interval for the mean within-node difference entirely above zero"
+  },
+  "secondary_descriptive": [
+    "median node-specific difference",
+    "number of informative nodes with positive, zero, and negative differences",
+    "event-weighted pooled difference within the informative-node subset"
+  ],
+  "interpretation": {
+    "supported": "The habitat-continuity return association persists within stable transects, consistent with a microsite-scale continuity signal beyond broad node quality.",
+    "unsupported": "The pooled habitat-continuity return association does not remain robust within the same transects; persistent node-level habitat quality is a plausible explanation."
+  },
+  "claim_boundary": [
+    "Post-hoc reference-saturation audit of an already-opened recovery endpoint.",
+    "Within-node persistence does not establish facilitation; microsite substrate, residual rhizomes, fine-scale environment, or observation persistence can generate the same association.",
+    "Return remains recorded reappearance at the same meter mark, not demographic recolonization.",
+    "Do not alter the informative-node rule, equal-node estimator, bootstrap unit, period, or event definition after opening node-specific differences."
+  ]
+}
