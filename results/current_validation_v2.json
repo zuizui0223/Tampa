@@ -176,7 +176,8 @@
     "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested.",
     "Do not call pre-existing mixed-species occupancy facilitation: the exact-point insurance association may reflect shared persistent habitat quality.",
     "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement.",
-    "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern."
+    "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern.",
+    "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null."
   ],
   "community_reorganization": {
     "period": [
@@ -836,5 +837,46 @@
     ],
     "interpretation": "At exact stable meter marks, retaining another seagrass after Thalassia loss is associated with substantially higher one-year re-recording of Thalassia than entering a no-seagrass state, consistent with habitat continuity rather than simple alternative-state lock-in.",
     "evidence_class": "posthoc exploratory community ecology"
+  },
+  "condition_leads_thinning": {
+    "status": "condition_leading_information_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36409228963,
+      "head_sha": "70e8fbfc045c070fa702eac47926c38cec10aa36",
+      "artifact_id": 10964090767,
+      "artifact_digest": "sha256:4438672a335844a6facc59b6812b35f111429d49471e907f85d96117ff5e4ce7"
+    },
+    "registry": {
+      "condition_eligible_consecutive_transitions": 435,
+      "nodes": 44
+    },
+    "primary_frequency": {
+      "scored_target_years": 17,
+      "baseline_mean_mae": 0.06691057485405161,
+      "condition_mean_mae": 0.06861794398816712,
+      "wins": 6,
+      "losses": 11,
+      "signflip_p": 0.918310816891831,
+      "supported": false
+    },
+    "sensitivity_include_2016": {
+      "scored_target_years": 18,
+      "baseline_mean_mae": 0.07088087439226864,
+      "condition_mean_mae": 0.07302647750016952,
+      "wins": 7,
+      "losses": 11,
+      "signflip_p": 0.9785902140978591,
+      "supported": false
+    },
+    "secondary_braun_blanquet": {
+      "scored_target_years": 17,
+      "baseline_mean_mae": 0.23395226760565652,
+      "condition_mean_mae": 0.24018972365683336,
+      "wins": 3,
+      "losses": 14,
+      "signflip_p": 0.999090009099909,
+      "supported": false
+    },
+    "interpretation": "Source-year blade length and shoot density do not add robust year-ahead information about next-year Thalassia frequency or Braun-Blanquet state beyond current quantitative state and stable site identity. Treat plant condition and within-meadow occupancy/abundance as partially distinct degradation axes rather than a proven annual serial cascade."
   }
 }
