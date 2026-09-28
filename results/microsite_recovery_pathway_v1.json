@@ -1,0 +1,62 @@
+{
+  "schema": "tampa.microsite_recovery_pathway_v1.canonical_summary",
+  "status": "habitat_continuity",
+  "authoritative_workflow": {
+    "run_id": 36407097378,
+    "head_sha": "68866d1a0ae2687c452b4dd10fbb75b4c3c5fa0a",
+    "artifact_id": 10961829814,
+    "artifact_digest": "sha256:be38f82e7fe79855a1e8ee3c0559d4b70bfd1c74fe7619d7169f23976e1300fc"
+  },
+  "registry": {
+    "consensus_point_years": 45494,
+    "points_with_at_least_three_consensus_years": 2808,
+    "eligible_three_year_loss_sequences": 259,
+    "nodes": 25
+  },
+  "primary": {
+    "other_seagrass": {
+      "sequences": 215,
+      "nodes": 23,
+      "thalassia_return_fraction": 0.4697674418604651
+    },
+    "no_seagrass": {
+      "sequences": 44,
+      "nodes": 17,
+      "thalassia_return_fraction": 0.18181818181818182
+    },
+    "difference_other_minus_no_seagrass": 0.2879492600422833,
+    "ci95": [
+      0.1584317800176524,
+      0.4083510911050265
+    ],
+    "classification": "habitat_continuity"
+  },
+  "bay_segment_descriptive": {
+    "Lower Tampa Bay": {
+      "other_seagrass_return_fraction": 0.18181818181818182,
+      "no_seagrass_return_fraction": 0,
+      "other_sequences": 11,
+      "no_seagrass_sequences": 2
+    },
+    "Middle Tampa Bay": {
+      "other_seagrass_return_fraction": 0.46153846153846156,
+      "no_seagrass_return_fraction": 0.2608695652173913,
+      "other_sequences": 117,
+      "no_seagrass_sequences": 23
+    },
+    "Old Tampa Bay": {
+      "other_seagrass_return_fraction": 0.5172413793103449,
+      "no_seagrass_return_fraction": 0.1111111111111111,
+      "other_sequences": 87,
+      "no_seagrass_sequences": 18
+    }
+  },
+  "interpretation": "After exact-point Thalassia loss, retaining another seagrass at the same meter mark is associated with a substantially higher probability of re-recording Thalassia one year later than transitioning to a no-seagrass state. This is consistent with habitat continuity rather than a simple alternative-state lock-in pattern.",
+  "ecological_boundary": "The pattern can arise from shared favorable habitat, residual Thalassia rhizomes, microsite stability, or species interactions; it does not establish facilitation or demographic recolonization.",
+  "claim_boundary": [
+    "Post-hoc derived ecological endpoint from an already-opened exact-point panel.",
+    "Return is re-recorded Thalassia at the same meter mark, not demographic recolonization.",
+    "Alternative-seagrass occupancy is a state marker and may not causally promote return.",
+    "Do not interpret the result as proof of facilitation or equivalent ecosystem function among species."
+  ]
+}
