@@ -1,0 +1,78 @@
+{
+  "schema": "tampa.benthic_light_condition_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "outcome_design_frozen_after_response_independent_exposure_preflight",
+  "evidence_class": "posthoc_exploratory_mechanism_test",
+  "preflight": "results/benthic_light_exposure_preflight_v1.json",
+  "hypothesis": "Pre-survey benthic light availability contains out-of-time information about Thalassia plant condition beyond persistent transect identity, survey context, visit depth and bulk water clarity.",
+  "primary_outcomes": {
+    "blade_length_mean_mm": {
+      "loss": "MAE",
+      "direction": "not predeclared; low light can alter morphology non-monotonically"
+    },
+    "shoot_density_mean_m2": {
+      "loss": "MAE",
+      "direction": "not required for predictive endpoint; biological expectation is lower density under chronic light stress"
+    }
+  },
+  "secondary_outcomes": {
+    "focal_frequency": {
+      "loss": "MAE"
+    },
+    "bb_cover_mean_all_points": {
+      "loss": "MAE"
+    }
+  },
+  "exposure": {
+    "primary": "pre_6m_benthic_fraction_mean",
+    "sensitivity": "pre_3m_benthic_fraction_mean",
+    "sensitivity_cannot_replace_primary": true
+  },
+  "baseline": {
+    "categorical": [
+      "node_id",
+      "water_body"
+    ],
+    "numeric": [
+      "year",
+      "sin_doy",
+      "cos_doy",
+      "log_points",
+      "depth_median_m",
+      "pre_6m_secchi_mean"
+    ],
+    "rationale": "Controls persistent site identity, secular/seasonal survey context, effort, depth itself and bulk water clarity before testing the nonlinear light-at-depth proxy."
+  },
+  "augmented": "baseline + pre_6m_benthic_fraction_mean",
+  "learner": "Ridge(alpha=1.0)",
+  "validation": {
+    "split": "strict walk-forward by target year; training uses only earlier years",
+    "candidate_target_years": [
+      2004,
+      2025
+    ],
+    "minimum_train_rows": 50,
+    "minimum_train_years": 4,
+    "minimum_test_rows_per_target_year": 5,
+    "minimum_scored_target_years_per_outcome": 10
+  },
+  "support_rule": {
+    "paired_unit": "scored target year",
+    "minimum_win_fraction": 0.6,
+    "median_delta_lt_zero": true,
+    "one_sided_signflip_p_lt": 0.05,
+    "signflip_replicates": 100000,
+    "random_seed": 2026092804
+  },
+  "interpretation": {
+    "supported": "Benthic-light dose is a candidate dynamic mechanism for plant condition above the information in depth and segment-level Secchi separately.",
+    "unsupported": "This simplified segment-Secchi x visit-depth light proxy does not add robust annual predictive information; finer optical data, epiphytes, event-scale stress or below-ground legacy remain unresolved."
+  },
+  "claim_boundary": [
+    "Post-hoc exploratory mechanism test, not causal identification.",
+    "Segment-level Secchi does not provide node-specific optical conditions.",
+    "Beer-Lambert exposure omits spectral quality, epiphytes, bottom reflectance and canopy self-shading.",
+    "Do not alter the exposure window, outcomes, baseline, estimability rules or support threshold after opening the response result.",
+    "The 3-month sensitivity cannot replace an adverse or null 6-month primary result."
+  ]
+}
