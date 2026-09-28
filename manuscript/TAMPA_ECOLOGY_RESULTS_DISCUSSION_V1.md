@@ -96,7 +96,7 @@ The NPS *Zostera marina* panel provides a useful comparison because its binary s
 
 The external panel therefore strengthens a general monitoring proposition rather than a species-specific decline claim: **binary persistence can coexist with large quantitative change**. The spatial heterogeneity in the NPS panel, including the positive Moriches Bay trend, is an important boundary. The result is not that seagrass cover must decline wherever presence remains stable, but that persistence of the binary endpoint does not determine either the magnitude or direction of quantitative change.
 
-This distinction should be relevant beyond seagrasses wherever monitoring compresses a continuously varying foundation-species state into occupied/unoccupied habitat. [CITATION NEEDED: examples of condition–occupancy decoupling in foundation species or habitat monitoring.]
+This distinction should be relevant beyond seagrasses wherever monitoring compresses a continuously varying foundation-species state into occupied/unoccupied habitat. More broadly, the foundation-species concept emphasizes that structural persistence and ecosystem function need not be interchangeable properties (Ellison et al. 2005).
 
 ## Quantitative state may provide earlier warning than recorded loss
 
@@ -120,7 +120,9 @@ A common temptation after observing state decoupling would be to select the envi
 
 The resulting mechanism ledger is scientifically useful even though it is mostly negative. Static regional geometry, simple annual spatial propagation, depth/sediment summaries, coarse benthic-light exposure, simple annual or seasonal water-quality metrics and the published compound hot–fresh duration did not supply a robust common explanation. The known-truth simulations likewise showed that several simple thresholding and hidden-state constructions were insufficient to reproduce the earlier apparent memory contrast.
 
-These results should not be presented as evidence that Tampa seagrass degradation lacks environmental causes. They show that **the information currently available at these spatial and temporal resolutions is insufficient to identify one general driver**. That conclusion is compatible with several biologically plausible mechanisms that require genuinely new measurements rather than further transformations of the same retrospective variables.
+These results should not be presented as evidence that Tampa seagrass degradation lacks environmental causes. Beck et al. (2024) documented long-term warming and freshening of Tampa Bay and developed threshold-based stress indices as a weight-of-evidence climate-stress assessment. Our question was narrower and more incremental: within the fixed-transect *Thalassia* panel, did the published joint-stress duration add plant-condition information beyond marginal hot/fresh duration and local previous-year state? It did not. The two results are therefore not logically contradictory; they operate at different response scales and ask different inferential questions.
+
+The current analyses show that **the information available at these spatial and temporal resolutions is insufficient to identify one general driver** of the observed state decoupling. That conclusion is compatible with several biologically plausible mechanisms that require genuinely new measurements rather than further transformations of the same retrospective variables.
 
 Particularly informative future states include meadow-scale high-frequency temperature, salinity and photosynthetically active radiation; canopy and epiphyte light microenvironment; hydrodynamic exposure and residence time; below-ground biomass and carbohydrate reserves; clonal or rhizome architecture; and acute disturbance or disease indicators. These measurements could test whether the persistent site effect reflects local physical exposure, meadow legacy, physiological buffering, or interactions among them.
 
