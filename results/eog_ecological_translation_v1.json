@@ -1,0 +1,90 @@
+{
+  "schema": "tampa.eog_ecological_translation_v1.canonical_summary",
+  "status": "posthoc_ecological_translation",
+  "authoritative_workflow": {
+    "run_id": 36376613225,
+    "head_sha": "5351d8abf7edea1b408a7f7c198da849b1ea41d9",
+    "artifact_id": 10951032509,
+    "artifact_digest": "sha256:b170c359d4378691e5c93f9d1eece9b229923e3e388752528835c6cca8dbc198"
+  },
+  "source_panel": {
+    "annual_node_years": 1480,
+    "consecutive_year_rows": 1176,
+    "stable_nodes": 71,
+    "years": [
+      1997,
+      2025
+    ]
+  },
+  "frozen_eog_radii_km": [
+    14.910552760894076,
+    23.92945001793242,
+    34.70605518869811,
+    43.48070387866193
+  ],
+  "state_structure": {
+    "detected": {
+      "stable_node_r2": 0.8233228768630321,
+      "year_r2": 0.03253665456445909,
+      "bay_year_r2": 0.47856831168872427,
+      "node_plus_year_additive_r2": 0.8362930086110507
+    },
+    "focal_frequency": {
+      "stable_node_r2": 0.8744523136044959,
+      "year_r2": 0.013546477473856622,
+      "bay_year_r2": 0.38285969036183254,
+      "node_plus_year_additive_r2": 0.8857794661239956
+    },
+    "bb_cover_mean_all_points": {
+      "stable_node_r2": 0.8617168301480468,
+      "year_r2": 0.014110394229010392,
+      "bay_year_r2": 0.3205551020168931,
+      "node_plus_year_additive_r2": 0.8730598162646462
+    },
+    "blade_length_mean_mm": {
+      "n": 755,
+      "stable_node_r2": 0.2592218094380291,
+      "year_r2": 0.13631465803178355,
+      "bay_year_r2": 0.2906310710199205,
+      "node_plus_year_additive_r2": 0.38572339735088346
+    },
+    "shoot_density_mean_m2": {
+      "n": 751,
+      "stable_node_r2": 0.23187189012278953,
+      "year_r2": 0.09340272044384446,
+      "bay_year_r2": 0.33818449367367853,
+      "node_plus_year_additive_r2": 0.32557218195943693
+    }
+  },
+  "dynamic_neighborhood": {
+    "binary_detected": {
+      "target_years": 22,
+      "baseline_log_loss": 0.15707743535422106,
+      "dynamic_neighborhood_log_loss": 0.16078727826399428,
+      "delta": 0.003709842909773264,
+      "dynamic_neighborhood_wins": 12,
+      "baseline_wins": 10,
+      "median_delta": -0.0012031179735479264,
+      "signflip_mc_one_sided_p": 0.6919130808691913
+    },
+    "focal_frequency": {
+      "target_years": 22,
+      "baseline_mae": 0.04701850248422637,
+      "dynamic_neighborhood_mae": 0.047971496979176194,
+      "delta": 0.0009529944949498302,
+      "dynamic_neighborhood_wins": 7,
+      "baseline_wins": 15,
+      "median_delta": 0.0006802513215114041,
+      "signflip_mc_one_sided_p": 0.991190088099119
+    }
+  },
+  "synthesis": "Tampa seagrass levels are strongly structured by persistent transect identity for recorded occurrence, within-transect frequency and Braun-Blanquet state, while blade length and shoot density are substantially more temporally labile. A simple annually refreshed neighborhood state at the four frozen EOG radii does not improve mean out-of-time prediction beyond stable node identity plus local lag-1. This favors a local-site-template/local-meadow-state interpretation over simple annual neighborhood-accessibility control.",
+  "claim_boundary": [
+    "Post-hoc ecological translation of an already-consumed EOG endpoint.",
+    "No EOG endpoint is repaired, rerun or reclassified.",
+    "Variance-explained quantities are descriptive, not causal effects.",
+    "Node identity is a saturated site reference, not a measured habitat mechanism.",
+    "Only one simple dynamic-neighborhood formulation is tested.",
+    "Clonal persistence, light limitation, sediment/hydrodynamic template and local recruitment remain mechanistic candidates rather than identified causes."
+  ]
+}

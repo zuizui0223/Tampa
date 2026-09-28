@@ -1,0 +1,49 @@
+name: EOG ecological translation audit
+
+on:
+  push:
+    branches: [analysis/eog-ecological-translation-v1]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/21_eog_ecological_translation.py"
+      - "results/eog_ecological_translation_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_eog_ecological_translation.py"
+      - "README.md"
+      - ".github/workflows/eog-ecological-translation.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/21_eog_ecological_translation.py"
+      - "results/eog_ecological_translation_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_eog_ecological_translation.py"
+      - "README.md"
+      - ".github/workflows/eog-ecological-translation.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild Tampa annual quantitative state
+        run: python analysis/03_quantitative_state.py --out results/generated_eog_ecology
+      - name: Translate EOG failure into ecological tests
+        run: python analysis/21_eog_ecological_translation.py --input results/generated_eog_ecology --out results/generated_eog_ecology
+      - name: Verify canonical ecological translation
+        run: python validation/verify_eog_ecological_translation.py --generated results/generated_eog_ecology/eog_ecological_translation_v1.json --canonical results/eog_ecological_translation_v1.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-eog-ecological-translation-v1
+          path: results/generated_eog_ecology/
