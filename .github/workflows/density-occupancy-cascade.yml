@@ -1,0 +1,58 @@
+name: Density to occupancy cascade ecology
+
+on:
+  push:
+    branches: [analysis/density-occupancy-cascade-v1]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/36_density_occupancy_cascade.py"
+      - "results/density_occupancy_cascade_v1_contract.json"
+      - ".github/workflows/density-occupancy-cascade.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/36_density_occupancy_cascade.py"
+      - "results/density_occupancy_cascade_v1_contract.json"
+      - ".github/workflows/density-occupancy-cascade.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild Tampa quantitative annual panel
+        run: python analysis/03_quantitative_state.py --out results/generated_density_cascade
+      - name: Test density-to-occupancy cascade
+        run: python analysis/36_density_occupancy_cascade.py --input results/generated_density_cascade --out results/generated_density_cascade
+      - name: Verify frozen registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_density_cascade/density_occupancy_cascade_v1.json"))
+          assert x["schema"]=="tampa.density_occupancy_cascade_v1.result"
+          assert x["results"]["shoot_density"]["transition_rows"]>0
+          assert x["results"]["shoot_density"]["nodes"]>=10
+          assert x["results"]["blade_length"]["transition_rows"]>0
+          for p in [
+              "density_cascade_shoot_density_transitions.csv",
+              "density_cascade_shoot_density_year_scores.csv",
+              "density_cascade_blade_length_transitions.csv",
+              "density_cascade_blade_length_year_scores.csv",
+          ]:
+              q=Path("results/generated_density_cascade")/p
+              assert q.exists() and q.stat().st_size>100, q
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-density-occupancy-cascade-v1
+          path: results/generated_density_cascade/
