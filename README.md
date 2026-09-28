@@ -318,6 +318,22 @@ Neither increment passed the frozen support rule, and **0/4** tested radii suppo
 
 This sharpens the ecological interpretation: annual meadow state is not well described as simple spatial propagation from neighboring transects or as one-year shared segment synchrony after persistent site identity and local recent state are known. The unresolved driver appears more **site-local**. This does not exclude shared environmental forcing operating through finer event timing, nonlinear thresholds, or persistent habitat properties.
 
+### 2l. Depth and sediment do not explain the persistent site template
+
+The EOG-derived local-site hypothesis predicts that measured persistent habitat properties should explain some of the stable transect effect. A response-independent preflight first established that the pinned source contains usable physical covariates at all **71/71** stable nodes: point depth and five normalized sediment categories (mud, muddy sand, oyster, sand, shelly sand). Only 39 point events had conflicting sediment labels and were excluded rather than adjudicated.
+
+A frozen leave-one-node-out analysis then predicted each transect's long-run *Thalassia* state. The reference already contained water-body identity and geographic coordinates; the measured-template model added node-level depth median/IQR plus modal sediment, modal fraction and sediment entropy.
+
+None of the three primary occurrence/abundance states passed the support rule:
+
+- detection prevalence: MAE **0.2174 → 0.2268**, **p = 0.731**;
+- focal frequency: **0.1347 → 0.1483**, **p = 0.977**;
+- Braun–Blanquet state: **0.4673 → 0.4796**, **p = 0.693**.
+
+Primary support was therefore **0/3**. A secondary blade-length sediment contrast was directionally better but remained unsupported (**p = 0.087**) and is not promoted.
+
+This narrows the persistent-site hypothesis: the strong node effect is **not simply depth plus sediment class**. Candidate site-template mechanisms now shift toward benthic light climate / chronic water clarity, hydrodynamic exposure or residence time, finer-scale chronic water quality, below-ground rhizome/biomass legacy, and interactions between persistent habitat and episodic stress.
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
