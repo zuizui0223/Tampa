@@ -1,0 +1,108 @@
+{
+  "schema": "tampa.site_template_outcome_v1.canonical_summary",
+  "status": "measured_template_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36378607576,
+    "head_sha": "4b8e9ade2a75dce436acb6346e7831a480c3c8f4",
+    "artifact_id": 10952136647,
+    "artifact_digest": "sha256:6ea06acdc99e64f80f7dac963a64f24a8d9283a2e6521011379cc9295d9a3b1f"
+  },
+  "primary_template_supported_count": 0,
+  "primary_template_support_required": 2,
+  "broad_support": false,
+  "primary": {
+    "detection_prevalence": {
+      "eligible_nodes": 63,
+      "spatial_reference": {
+        "mae": 0.21737512403227605,
+        "heldout_r2": 0.5570273344433994
+      },
+      "measured_template": {
+        "mae": 0.22680679178563518,
+        "heldout_r2": 0.4967104325596532
+      },
+      "increment": {
+        "wins": 30,
+        "losses": 27,
+        "ties": 6,
+        "mean_delta": 0.009431667753359076,
+        "median_delta": 0,
+        "signflip_p": 0.7306326936730633,
+        "supported": false
+      }
+    },
+    "focal_frequency": {
+      "eligible_nodes": 63,
+      "spatial_reference": {
+        "mae": 0.1346852894049285,
+        "heldout_r2": 0.44127273693964675
+      },
+      "measured_template": {
+        "mae": 0.14830143393602593,
+        "heldout_r2": 0.36153958166213884
+      },
+      "increment": {
+        "wins": 26,
+        "losses": 33,
+        "ties": 4,
+        "mean_delta": 0.013616144531097399,
+        "median_delta": 0.01729912571703579,
+        "signflip_p": 0.977380226197738,
+        "supported": false
+      }
+    },
+    "bb_cover_index": {
+      "eligible_nodes": 63,
+      "spatial_reference": {
+        "mae": 0.46726805081542183,
+        "heldout_r2": 0.28644609675730914
+      },
+      "measured_template": {
+        "mae": 0.47962076397911685,
+        "heldout_r2": 0.2576882485967885
+      },
+      "increment": {
+        "wins": 26,
+        "losses": 34,
+        "ties": 3,
+        "mean_delta": 0.012352713163694934,
+        "median_delta": 0.01299988302921027,
+        "signflip_p": 0.6926030739692604,
+        "supported": false
+      }
+    }
+  },
+  "secondary": {
+    "blade_length": {
+      "eligible_nodes": 41,
+      "spatial_reference_mae": 3.698929656777723,
+      "sediment_mae": 3.25846048024056,
+      "measured_template_mae": 3.392852108926478,
+      "sediment_vs_spatial_p": 0.08701912980870191,
+      "measured_template_vs_spatial_p": 0.1936080639193608,
+      "supported": false
+    },
+    "shoot_density": {
+      "eligible_nodes": 41,
+      "spatial_reference_mae": 107.43405488357774,
+      "measured_template_mae": 114.82599619010001,
+      "measured_template_vs_spatial_p": 0.8522114778852211,
+      "supported": false
+    }
+  },
+  "interpretation": "Depth and sediment do not broadly recover the persistent among-transect Thalassia state beyond water-body identity and coordinates. The strong stable-node effect therefore cannot be reduced to simple bathymetric depth and sediment class summaries; unmeasured persistent local template components remain candidates.",
+  "next_hypotheses": [
+    "benthic light climate / chronic water clarity",
+    "hydrodynamic exposure and residence time",
+    "chronic local water-quality regime at finer spatial scale",
+    "below-ground biomass, rhizome reserve and clonal meadow legacy",
+    "interactions among persistent habitat template and episodic stress"
+  ],
+  "claim_boundary": [
+    "Retrospective held-out-node analysis; no causal identification.",
+    "Depth summaries include tidal/sampling variation and are not exact bathymetry.",
+    "Sediment data availability depends on biological record structure.",
+    "The weak secondary blade-length sediment signal was not primary and did not pass the frozen support rule; do not promote it.",
+    "Failure of depth/sediment does not reject persistent site-template ecology."
+  ]
+}
