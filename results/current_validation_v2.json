@@ -179,7 +179,8 @@
     "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern.",
     "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null.",
     "Do not interpret the supported pre-loss local-history effect as direct evidence of clonal memory or residual rhizomes; persistent microsite quality and detectability remain alternatives.",
-    "Do not call the pooled habitat-continuity return association a robust within-transect microsite effect; the equal-node audit interval overlapped zero."
+    "Do not call the pooled habitat-continuity return association a robust within-transect microsite effect; the equal-node audit interval overlapped zero.",
+    "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism."
   ],
   "community_reorganization": {
     "period": [
@@ -915,7 +916,11 @@
     "registry": {
       "recovery_sequences": 259,
       "nodes": 25,
-      "nodes_with_run_length_variation": 18
+      "nodes_with_run_length_variation": 18,
+      "run_length_range": [
+        1,
+        25
+      ]
     },
     "primary": {
       "centered_run_length_coefficient": 0.45119165238746967,
@@ -929,6 +934,7 @@
       "return_run_length_median": 2,
       "nonreturn_run_length_median": 1
     },
-    "interpretation": "Longer consecutive pre-loss Thalassia history at the same meter mark predicts one-year re-recording after a one-year loss even after stable node identity and community-continuity controls, consistent with a local persistence-legacy signal but not an identified clonal mechanism."
+    "interpretation": "Longer uninterrupted exact-point Thalassia history predicts re-recording after a one-year loss even after stable node identity, loss year, loss-year vegetation state and source mixed-species state are controlled. This is consistent with a local legacy/residual-structure signal but does not identify rhizomes, clonal integration, fine-scale habitat quality or repeated detectability separately.",
+    "evidence_class": "posthoc exploratory exact-point temporal ecology"
   }
 }
