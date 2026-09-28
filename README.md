@@ -303,6 +303,21 @@ The dynamic-neighborhood audit then recomputed the previous year's state of surr
 
 So a simple annually refreshed neighborhood-accessibility signal does not rescue the spatial story. The working ecological hypothesis is now that **persistent local site template and meadow legacy stabilize occurrence, while local plant condition can deteriorate on shorter timescales and eventually cross a recorded-state threshold**. This is a post-hoc hypothesis, not a causal identification. See `docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md`.
 
+### 2k. Segment-wide synchrony and local neighborhood both fail beyond own recent state
+
+The first EOG ecological translation showed that adding four annually refreshed neighborhood summaries together did not improve prediction. A second frozen decomposition asked a narrower ecological question: is there useful **shared bay-segment state**, or a **finer local neighborhood deviation** after that shared state is represented?
+
+For each consecutive annual transition, the reference already included stable transect identity and the focal transect's own previous-year state. The next model added the leave-one-node-out previous-year mean within the same water body. The final model added the previous-year neighborhood mean minus that water-body mean. The primary neighborhood radius (**23.93 km**) and three sensitivity radii were transferred unchanged from the frozen EOG Tampa world family.
+
+At the primary radius:
+
+- focal frequency: own-state MAE **0.04724**; + segment state **0.04763** (11/22 wins, **p = 0.927**); + local neighborhood residual **0.04843** (3/22 wins, **p = 0.9993**);
+- Braun–Blanquet state: own-state MAE **0.16831**; + segment state **0.16805** (12/22 wins, **p = 0.257**); + local neighborhood residual **0.16979** (6/22 wins, **p = 0.9989**).
+
+Neither increment passed the frozen support rule, and **0/4** tested radii supported either a segment or local-neighborhood increment for either quantitative state.
+
+This sharpens the ecological interpretation: annual meadow state is not well described as simple spatial propagation from neighboring transects or as one-year shared segment synchrony after persistent site identity and local recent state are known. The unresolved driver appears more **site-local**. This does not exclude shared environmental forcing operating through finer event timing, nonlinear thresholds, or persistent habitat properties.
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
