@@ -1,0 +1,67 @@
+{
+  "schema": "tampa.compound_hotfresh_condition_v1.canonical_summary",
+  "status": "compound_hotfresh_condition_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36383469958,
+    "head_sha": "15036a5a5263a715be3e3fbe2324674867c4162d",
+    "artifact_id": 10953423703,
+    "artifact_digest": "sha256:d16302bf943f52f96d351be5d98394204ea6aad37a269a93e180d08e094b7ad2"
+  },
+  "primary_estimable_outcomes": 2,
+  "primary_supported_outcomes": 0,
+  "primary": {
+    "blade_length_mean_mm": {
+      "transition_rows": 418,
+      "nodes": 34,
+      "target_years": 19,
+      "baseline_mae": 6.33158090754037,
+      "compound_mae": 6.433435300345403,
+      "wins": 5,
+      "losses": 14,
+      "mean_delta": 0.10185439280503346,
+      "median_delta": 0.10301296865156839,
+      "signflip_p": 0.995620043799562,
+      "p_threshold": 0.025,
+      "supported": false
+    },
+    "shoot_density_mean_m2": {
+      "transition_rows": 413,
+      "nodes": 34,
+      "target_years": 19,
+      "baseline_mae": 186.27537502774732,
+      "compound_mae": 188.6697936641468,
+      "wins": 7,
+      "losses": 12,
+      "mean_delta": 2.3944186363994677,
+      "median_delta": 4.092956339412325,
+      "signflip_p": 0.7414025859741402,
+      "p_threshold": 0.025,
+      "supported": false
+    }
+  },
+  "secondary": {
+    "focal_frequency": {
+      "baseline_mae": 0.047599914535392654,
+      "compound_mae": 0.04716559161037656,
+      "wins": 10,
+      "signflip_p": 0.21522784772152279,
+      "supported": false
+    },
+    "bb_cover_mean_all_points": {
+      "baseline_mae": 0.17051422513814732,
+      "compound_mae": 0.16831733211128092,
+      "wins": 9,
+      "signflip_p": 0.23582764172358275,
+      "supported": false
+    }
+  },
+  "interpretation": "Published joint hot-fresh run duration adds no supported information beyond marginal hot and fresh run duration plus local previous-year state for Thalassia blade length or shoot density. This closes the current retrospective stress-index rescue line.",
+  "hard_stop": "Do not add alternative retrospective temperature/salinity thresholds, lag windows, compound formulas, or post-outcome stress summaries to rescue a climate-stress mechanism in this dataset.",
+  "remaining_candidates": [
+    "node-scale high-frequency temperature/salinity and optical exposure measured at the meadow",
+    "epiphyte and local shading dynamics",
+    "below-ground biomass, rhizome carbohydrate reserves and clonal meadow legacy",
+    "acute disturbance or disease processes not represented by segment-level routine water quality",
+    "interactions that require independent future or newly instrumented data"
+  ]
+}

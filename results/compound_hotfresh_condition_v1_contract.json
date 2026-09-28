@@ -1,0 +1,99 @@
+{
+  "schema": "tampa.compound_hotfresh_condition_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "outcome_design_frozen_before_focal_response_opening",
+  "ecological_hypothesis": "Duration of simultaneous hot and fresh conditions contains plant-condition information beyond the durations of hot and fresh stress considered separately.",
+  "exposure_source": "Exact published Beck et al. 2024 GAM-derived daily reconstruction pinned by results/compound_hotfresh_v1_contract.json.",
+  "exposure_mapping": {
+    "target_year": "published trnyr",
+    "segment_map": {
+      "Old Tampa Bay": "OTB",
+      "Hillsborough Bay": "HB",
+      "Middle Tampa Bay": "MTB",
+      "Lower Tampa Bay": "LTB"
+    },
+    "hot_feature": "segment mean station-level maximum run of temperature >= 30 C",
+    "fresh_feature": "segment mean station-level maximum run of salinity <= 25 ppt",
+    "compound_feature": "segment mean station-level maximum run with both simultaneously true"
+  },
+  "transition_design": {
+    "unit": "same-transect consecutive annual transition",
+    "candidate_target_years": [
+      2004,
+      2022
+    ],
+    "source_state": "previous-year same outcome",
+    "eligible_segments": [
+      "OTB",
+      "HB",
+      "MTB",
+      "LTB"
+    ]
+  },
+  "primary_outcomes": [
+    "blade_length_mean_mm",
+    "shoot_density_mean_m2"
+  ],
+  "secondary_outcomes": [
+    "focal_frequency",
+    "bb_cover_mean_all_points"
+  ],
+  "models": {
+    "baseline": {
+      "categorical": [
+        "node_id",
+        "water_body"
+      ],
+      "numeric": [
+        "target_year",
+        "lag1_state",
+        "hot_run_days",
+        "fresh_run_days"
+      ]
+    },
+    "augmented": {
+      "categorical": [
+        "node_id",
+        "water_body"
+      ],
+      "numeric": [
+        "target_year",
+        "lag1_state",
+        "hot_run_days",
+        "fresh_run_days",
+        "hotfresh_run_days"
+      ]
+    },
+    "only_difference": "hotfresh_run_days"
+  },
+  "learner": "Ridge(alpha=1.0)",
+  "loss": "MAE",
+  "validation": {
+    "split": "strict walk-forward by target year; train only on earlier target years",
+    "minimum_train_rows": 80,
+    "minimum_train_years": 5,
+    "minimum_test_rows": 8,
+    "minimum_scored_target_years": 15
+  },
+  "support_rule": {
+    "paired_unit": "scored target year",
+    "minimum_win_fraction": 0.6,
+    "median_delta_lt_zero": true,
+    "signflip_replicates": 100000,
+    "random_seed": 2026092805,
+    "primary_familywise_p_lt": 0.025,
+    "secondary_nominal_p_lt": 0.05,
+    "overall_primary_support": "At least one of the two primary outcomes passes the full win/median rule and p<0.025; report the other primary outcome regardless."
+  },
+  "interpretation": {
+    "positive": "Joint hot-fresh duration carries outcome-specific information beyond hot and fresh durations separately, consistent with a compound-stress candidate mechanism.",
+    "negative": "The published joint-duration metric does not explain fixed-transect Thalassia condition beyond local legacy plus marginal hot/fresh stress; compound climate stress may operate at finer spatial/temporal or physiological scales."
+  },
+  "claim_boundary": [
+    "Retrospective ecological test using published model-derived exposure; not prospective climate prediction.",
+    "The threshold metrics are stress indices, not proven species-specific physiological boundaries.",
+    "Segment-level exposure is spatially coarser than the fixed transect response.",
+    "A positive result is association/predictive evidence for a compound-stress candidate, not causal identification.",
+    "Do not alter thresholds, exposure aggregation, outcomes, baseline, years or familywise rule after opening focal responses."
+  ]
+}

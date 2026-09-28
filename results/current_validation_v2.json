@@ -170,7 +170,8 @@
     "Treat persistent site template, clonal buffering and local threshold loss as ecological hypotheses requiring direct habitat or demographic measurements, not identified causes.",
     "Do not interpret the failed segment/neighborhood increments as proof that Tampa transects are ecologically independent; common forcing may act at other temporal scales or through unmeasured exposures.",
     "Do not explain the stable-node effect as simple depth or sediment differences; the frozen held-out-node test found 0/3 primary state dimensions supported by those measured components.",
-    "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it."
+    "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it.",
+    "Do not add further retrospective temperature/salinity thresholds, lag windows or compound stress formulas after the frozen published 30 C / 25 ppt joint-stress test; this stress-index rescue line is closed."
   ],
   "community_reorganization": {
     "period": [
@@ -668,5 +669,51 @@
     },
     "sensitivity_3m_supported": false,
     "interpretation": "The segment-Secchi x visit-depth benthic-light proxy does not add robust heldout information for plant condition beyond node identity, survey context, depth and bulk Secchi. Local/spectral optical stress, epiphytes and event-scale light limitation remain unresolved."
+  },
+  "compound_hotfresh_condition": {
+    "status": "compound_hotfresh_condition_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36383469958,
+      "head_sha": "15036a5a5263a715be3e3fbe2324674867c4162d",
+      "artifact_id": 10953423703,
+      "artifact_digest": "sha256:d16302bf943f52f96d351be5d98394204ea6aad37a269a93e180d08e094b7ad2"
+    },
+    "exposure": {
+      "source": "published Beck et al. 2024 daily GAM reconstruction",
+      "thresholds": {
+        "temperature_c": 30,
+        "salinity_ppt": 25
+      },
+      "years": [
+        1997,
+        2022
+      ],
+      "segment_years": 102,
+      "hotfresh_nonzero_fraction": 0.5784313725490197
+    },
+    "primary": {
+      "blade_length": {
+        "baseline_mae": 6.33158090754037,
+        "compound_mae": 6.433435300345403,
+        "wins": 5,
+        "target_years": 19,
+        "signflip_p": 0.995620043799562,
+        "supported": false
+      },
+      "shoot_density": {
+        "baseline_mae": 186.27537502774732,
+        "compound_mae": 188.6697936641468,
+        "wins": 7,
+        "target_years": 19,
+        "signflip_p": 0.7414025859741402,
+        "supported": false
+      }
+    },
+    "secondary": {
+      "focal_frequency_p": 0.21522784772152279,
+      "bb_cover_p": 0.23582764172358275
+    },
+    "interpretation": "Published simultaneous hot-fresh run duration does not add supported information beyond marginal hot and fresh run duration plus local previous-year state for Thalassia plant condition.",
+    "hard_stop": "Do not add new retrospective temperature/salinity thresholds, windows or compound formulas to rescue a climate-stress mechanism in the current Tampa dataset."
   }
 }

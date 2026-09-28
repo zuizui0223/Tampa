@@ -1,0 +1,73 @@
+{
+  "schema": "tampa.compound_hotfresh_v1.preflight.canonical",
+  "status": "preflight_pass",
+  "authoritative_workflow": {
+    "run_id": 36383469958,
+    "head_sha": "15036a5a5263a715be3e3fbe2324674867c4162d",
+    "artifact_id": 10953423703,
+    "artifact_digest": "sha256:d16302bf943f52f96d351be5d98394204ea6aad37a269a93e180d08e094b7ad2"
+  },
+  "source": {
+    "repository": "tbep-tech/temp-manu",
+    "commit": "e5aaec93c7501fc38c63b615a89e68636b36421f",
+    "path": "data/thralltrndat.RData",
+    "git_blob_sha1": "f6518ea25685369057bfe92e71973ec04c57eac1"
+  },
+  "registry": {
+    "segments": [
+      "HB",
+      "LTB",
+      "MTB",
+      "OTB"
+    ],
+    "year_range": [
+      1997,
+      2022
+    ],
+    "year_count": 26,
+    "segment_years_hotfresh": 102,
+    "station_intervals_hotfresh": 1147
+  },
+  "stress_type_summary": {
+    "hot": {
+      "median_segment_mean_max_run_days": 48.375,
+      "maximum": 95.8,
+      "fraction_nonzero": 0.9901960784313726
+    },
+    "fresh": {
+      "median_segment_mean_max_run_days": 60.8,
+      "maximum": 376.933333333333,
+      "fraction_nonzero": 0.7352941176470589
+    },
+    "hotfresh": {
+      "median_segment_mean_max_run_days": 7.241666666666665,
+      "maximum": 92.6,
+      "fraction_nonzero": 0.5784313725490197
+    }
+  },
+  "hotfresh_by_segment": {
+    "HB": {
+      "years": 26,
+      "median_mean_max_run": 23.2,
+      "max_mean_max_run": 63
+    },
+    "LTB": {
+      "years": 25,
+      "median_mean_max_run": 0,
+      "max_mean_max_run": 0
+    },
+    "MTB": {
+      "years": 26,
+      "median_mean_max_run": 7.33333333333333,
+      "max_mean_max_run": 49
+    },
+    "OTB": {
+      "years": 25,
+      "median_mean_max_run": 18.2666666666667,
+      "max_mean_max_run": 92.6
+    }
+  },
+  "response_access_before_pass": {
+    "focal_thalassia_response_opened": false
+  }
+}

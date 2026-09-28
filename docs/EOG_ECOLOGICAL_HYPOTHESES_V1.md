@@ -117,11 +117,29 @@ The three-month sensitivity and the quantitative frequency/abundance outcomes we
 
 This is consistent with recent Tampa Bay synthesis showing that substantial post-2016 seagrass loss occurred even while segment-scale light environments were broadly considered supportive of growth. The remaining mechanism may therefore depend on **local optical heterogeneity, compound event-scale stress, below-ground reserve state, or interactions among these factors**, rather than a simple bay-segment light deficit.
 
+## New ecological result 6 — even the published joint hot–fresh duration does not explain plant condition
+
+A final climate-stress rescue hypothesis asked whether the earlier temperature and salinity screens failed because they treated the stressors separately. Rather than inventing another index, the test reused the exact published Tampa Bay daily-GAM reconstruction from Beck et al. (2024).
+
+The exposure series covered all four major bay segments from **1997–2022**. The published thresholds were **temperature ≥ 30 °C** and **salinity ≤ 25 ppt**. Joint hot–fresh exposure was common enough to test: about **58%** of segment-years had non-zero overlap, with strong contrasts among segments.
+
+The outcome design then controlled the marginal hot-run and fresh-run durations and asked whether their **simultaneous overlap duration** added information.
+
+It did not:
+
+- blade length: MAE **6.332 → 6.433**, 5/19 yearly wins, p = **0.996**;
+- shoot density: **186.28 → 188.67**, 7/19 wins, p = **0.741**;
+- focal frequency and Braun–Blanquet state were also unsupported.
+
+This matters because it closes an obvious explanation for the earlier null screens: the missing signal is not recovered simply by combining hot and fresh conditions into the published threshold-overlap metric.
+
+The current retrospective evidence therefore points away from further tuning of broad water-quality stress indices. Mechanistic progress now requires **new state information**—especially meadow-scale high-frequency physical exposure, epiphytes/light at the canopy, below-ground carbohydrate/rhizome state, or acute disturbance/disease observations.
+
 ## Ecological hypothesis H1 — persistent site template + local meadow buffer
 
 **Hypothesis.** Long-lived local habitat properties and meadow legacy stabilize whether *Thalassia* remains established at a transect, while above-ground condition can change substantially before the binary state changes.
 
-Simple depth/sediment summaries and a segment-Secchi × visit-depth benthic-light proxy have now been tested and did not recover the unresolved site/condition signal. Remaining candidates include node-scale optical heterogeneity and epiphyte shading, rhizosphere chemistry not captured by sediment class, exposure/hydrodynamics, nonlinear compound heat–freshwater events, and long-lived below-ground clonal/rhizome structure.
+Simple depth/sediment summaries, a segment-Secchi × visit-depth benthic-light proxy, and the published 30 °C / 25 ppt joint hot–fresh duration have now been tested without recovering the unresolved site/condition signal. Remaining candidates require finer or different state information: node-scale high-frequency physical exposure, epiphyte/canopy light microenvironment, rhizosphere chemistry, acute disturbance or disease, and long-lived below-ground clonal/rhizome structure.
 
 ### Existing evidence consistent with H1
 
@@ -206,4 +224,4 @@ Regional neighborhood geometry may still matter during establishment, recovery a
 - `node_id` is a placeholder for persistent site differences, not a biological variable.
 - The dynamic-neighborhood test covers one annual, four-radius formulation only.
 - The EOG failure cannot itself prove clonal buffering, light limitation or local recruitment.
-- Future causal work should measure the persistent site template directly rather than add more abstract memory or connectivity representations.
+- Future causal work should measure the persistent site template and meadow physiological state directly rather than add more abstract memory/connectivity features or retrospectively tune additional temperature/salinity stress indices.

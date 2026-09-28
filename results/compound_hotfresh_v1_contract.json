@@ -1,0 +1,53 @@
+{
+  "schema": "tampa.compound_hotfresh_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "response_independent_published_exposure_preflight_frozen",
+  "motivation": "After static geometry, annual neighborhood state, depth/sediment and a bulk benthic-light proxy failed to explain Tampa annual condition, test the published Tampa Bay compound hot-fresh stress hypothesis against Thalassia plant-condition states.",
+  "published_source": {
+    "repository": "tbep-tech/temp-manu",
+    "commit": "e5aaec93c7501fc38c63b615a89e68636b36421f",
+    "path": "data/thralltrndat.RData",
+    "git_blob_sha1": "f6518ea25685369057bfe92e71973ec04c57eac1",
+    "article": "Beck et al. 2024, Estuaries and Coasts, Hot and Fresh",
+    "provenance_note": "The source artifact was generated from station-specific GAM daily predictions and aligned to Tampa Bay transect survey intervals in the published analysis code."
+  },
+  "exposure_definition": {
+    "temperature_threshold_c": 30,
+    "salinity_threshold_ppt": 25,
+    "exact_code_relations": {
+      "hot": "temp daily prediction >= 30 C",
+      "fresh": "salinity daily prediction <= 25 ppt",
+      "hotfresh": "both simultaneously true"
+    },
+    "station_interval_metric": "maximum consecutive daily run under each stress state within each published transect interval",
+    "segment_interval_metric": "mean station-level maximum run within bay segment and transect year",
+    "primary_compound_question": "Whether hotfresh run duration adds information beyond the hot and fresh run durations separately.",
+    "thresholds_frozen_from_published_code": true
+  },
+  "response_access_before_preflight": {
+    "focal_thalassia_occurrence": false,
+    "focal_thalassia_frequency": false,
+    "focal_thalassia_cover": false,
+    "focal_thalassia_blade_length": false,
+    "focal_thalassia_shoot_density": false
+  },
+  "required_segments": [
+    "OTB",
+    "HB",
+    "MTB",
+    "LTB"
+  ],
+  "preflight_pass": {
+    "minimum_segments": 4,
+    "minimum_years": 20,
+    "minimum_segment_years": 70,
+    "minimum_station_intervals": 200
+  },
+  "next_gate": "If the published compound-stress exposure passes coverage, freeze a fixed-transect Thalassia plant-condition analysis before opening focal response.",
+  "claim_boundary": [
+    "The daily stress sequence is model-derived from monthly EPC observations, not direct daily measurement.",
+    "The original published reconstruction used the full environmental time series; any downstream Tampa analysis is retrospective ecological association/prediction, not prospective climate forecasting.",
+    "Thresholds were partly chosen in the published study for statistical utility and are stress indices, not proven physiological limits.",
+    "No focal Thalassia response is opened in this preflight."
+  ]
+}
