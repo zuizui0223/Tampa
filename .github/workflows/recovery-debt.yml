@@ -7,6 +7,8 @@ on:
       - "analysis/33_community_buffering.py"
       - "analysis/43_recovery_debt.py"
       - "results/recovery_debt_v1_contract.json"
+      - "results/recovery_debt_v1.json"
+      - "validation/verify_recovery_debt.py"
       - ".github/workflows/recovery-debt.yml"
   pull_request:
     branches: [main]
@@ -14,6 +16,8 @@ on:
       - "analysis/33_community_buffering.py"
       - "analysis/43_recovery_debt.py"
       - "results/recovery_debt_v1_contract.json"
+      - "results/recovery_debt_v1.json"
+      - "validation/verify_recovery_debt.py"
       - ".github/workflows/recovery-debt.yml"
   workflow_dispatch:
 
@@ -32,6 +36,9 @@ jobs:
         run: python analysis/33_community_buffering.py --out results/generated_recovery_debt
       - name: Test exact-point quantitative recovery debt
         run: python analysis/43_recovery_debt.py --input results/generated_recovery_debt --out results/generated_recovery_debt
+      - name: Verify canonical recovery-debt result
+        run: python validation/verify_recovery_debt.py --generated results/generated_recovery_debt/recovery_debt_v1.json --canonical results/recovery_debt_v1.json
+
       - name: Verify frozen recovery-debt registry
         run: |
           python - <<'PY'
