@@ -1,0 +1,81 @@
+{
+  "schema": "tampa.preexisting_mixed_patch_v1.canonical_summary",
+  "status": "preexisting_mixed_patch_persistence_supported",
+  "authoritative_workflow": {
+    "run_id": 36407837819,
+    "head_sha": "aa4bf065048c0292ea2ca0b1bbad4cd53981eec0",
+    "artifact_id": 10962224799,
+    "artifact_digest": "sha256:20a38fa0fe27feb1fc6fb4365c736a1b04636c95b82e93ebe33b42fd33a93b8c"
+  },
+  "registry": {
+    "eligible_visits": 1497,
+    "stable_nodes": 71,
+    "point_visit_rows": 45849,
+    "consensus_point_years": 45469,
+    "ambiguous_complete_taxon_set_point_years_excluded": 99,
+    "primary_replacement_events": 299,
+    "primary_nodes": 23
+  },
+  "primary": {
+    "preexisting_persistence_events": 212,
+    "de_novo_only_events": 87,
+    "preexisting_persistence_fraction": 0.7090301003344481,
+    "bootstrap_ci95": [
+      0.5872929606625259,
+      0.8244972091400662
+    ],
+    "estimable": true,
+    "frozen_support_rule_passed": true
+  },
+  "by_segment": {
+    "Lower Tampa Bay": {
+      "events": 13,
+      "nodes": 2,
+      "preexisting_persistence_fraction": 0.6153846153846154
+    },
+    "Middle Tampa Bay": {
+      "events": 163,
+      "nodes": 12,
+      "preexisting_persistence_fraction": 0.7361963190184049
+    },
+    "Old Tampa Bay": {
+      "events": 123,
+      "nodes": 9,
+      "preexisting_persistence_fraction": 0.6829268292682927
+    }
+  },
+  "by_target_taxon": {
+    "Syringodium filiforme": {
+      "target_events": 172,
+      "persisted_events": 137,
+      "new_only_events": 35,
+      "persisted_fraction": 0.7965116279069767
+    },
+    "Halodule wrightii": {
+      "target_events": 142,
+      "persisted_events": 78,
+      "new_only_events": 64,
+      "persisted_fraction": 0.5492957746478874
+    },
+    "Ruppia maritima": {
+      "target_events": 3,
+      "persisted_events": 0,
+      "new_only_events": 3,
+      "persisted_fraction": 0
+    },
+    "Halophila": {
+      "target_events": 1,
+      "persisted_events": 0,
+      "new_only_events": 1,
+      "persisted_fraction": 0
+    }
+  },
+  "interpretation": "Most exact-point alternative-seagrass occupancy one year after Thalassia loss represents persistence of at least one alternative species already co-occurring at that same meter mark. This supports selective focal-species dropout from pre-existing mixed patches as a common route to apparent community replacement, rather than entirely de novo colonization after focal loss.",
+  "claim_boundary": [
+    "Post-hoc exploratory community ecology; endpoint frozen before source-target alternative-species overlap was opened.",
+    "Persistence of a co-occurring alternative species is consistent with species-specific dropout from a mixed patch, not proof of facilitation, competition, or causal displacement.",
+    "Target-only appearance need not equal biological colonization because detection can vary between annual visits.",
+    "Segment-specific and taxon-specific fractions are descriptive secondary results.",
+    "The result concerns point-scale community-state turnover and does not establish equivalent ecosystem function after Thalassia loss."
+  ]
+}
