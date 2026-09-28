@@ -9,12 +9,16 @@ on:
       - "analysis/45_legacy_recovery_quality.py"
       - "results/recovery_debt_v1_contract.json"
       - "results/legacy_recovery_quality_v1_contract.json"
+      - "results/legacy_recovery_quality_v1.json"
+      - "validation/verify_legacy_recovery_quality.py"
       - ".github/workflows/legacy-recovery-quality.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/45_legacy_recovery_quality.py"
       - "results/legacy_recovery_quality_v1_contract.json"
+      - "results/legacy_recovery_quality_v1.json"
+      - "validation/verify_legacy_recovery_quality.py"
       - ".github/workflows/legacy-recovery-quality.yml"
   workflow_dispatch:
 
@@ -35,6 +39,9 @@ jobs:
         run: python analysis/43_recovery_debt.py --input results/generated_legacy_recovery_quality --out results/generated_legacy_recovery_quality
       - name: Test local legacy against recovery quality
         run: python analysis/45_legacy_recovery_quality.py --input results/generated_legacy_recovery_quality --out results/generated_legacy_recovery_quality
+      - name: Verify canonical legacy recovery-quality result
+        run: python validation/verify_legacy_recovery_quality.py --generated results/generated_legacy_recovery_quality/legacy_recovery_quality_v1.json --canonical results/legacy_recovery_quality_v1.json
+
       - name: Verify frozen endpoint registry
         run: |
           python - <<'PY'
