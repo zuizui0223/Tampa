@@ -219,6 +219,43 @@ This does **not** prove genuine biological long-memory. It narrows the candidate
 
 
 
+
+### 2g. A slow latent state plus faster condition is also insufficient
+
+A second frozen response-free known-truth test asked whether the contrast could arise from two latent timescales: a slowly autocorrelated persistence/suitability state plus faster meadow condition, observed through the same finite point sample.
+
+Across **24 cells × 32 replicates = 768 simulations**, the complete target pattern was rare:
+
+- supporting cells: **0/24**; required **18/24**;
+- complete target-pattern fraction: **0.52%**; required **50%**;
+- robust slow-persistence levels: **0/3**;
+- global median binary-minus-quantitative older-history amplification: **−0.00284**;
+- older-history support occurred in **0.91%** of binary replicates and **1.56%** of quantitative replicates.
+
+Thus adding a slow AR(1) suitability/persistence process to faster condition is **not sufficient** to reproduce the Tampa contrast.
+
+### 2h. First-order latent occupancy plus imperfect detection also fails the frozen sufficiency rule
+
+The remaining simple hidden-state explanation was made more explicit: each patch has a persistent occupied/unoccupied state, conditional meadow condition varies faster, and finite point sampling creates imperfect detection. Binary and quantitative observations still come from the **same sampled count**, and both latent components remain first-order.
+
+The frozen grid crossed 2 occupancy-persistence levels, 2 colonization levels, 2 fast-state autocorrelations, 2 mean-condition levels and 2 point counts, for **32 cells × 32 replicates = 1,024 simulations**.
+
+The preregistered support rule again failed:
+
+- supporting cells: **2/32**; required **24/32**;
+- complete target-pattern fraction: **16.99%**; required **50%**;
+- robust occupancy-persistence levels: **0/2**;
+- global median binary-minus-quantitative older-history amplification: **+0.00142**;
+- lag-1 support remained nearly universal (**99.8%** binary; **99.5%** quantitative);
+- older-history support was more common for binary state (**22.75%**) than quantitative frequency (**12.30%**), but far below the frozen mechanism threshold;
+- median false-negative rate among truly occupied site-years was **18.1%**.
+
+The higher-persistence regime (`p11 = 0.98`) moved partially in the predicted direction, but only **2/16** cells supported the complete mechanism and the result was not robust.
+
+> **Three simple response-free sufficiency explanations have now failed: thresholding alone, slow latent AR(1) suitability plus fast condition, and first-order latent occupancy persistence with imperfect detection.**
+
+Per the prospectively frozen hard stop, this repository does **not** retune those grids or add another response-free simulation family in the same mechanism line. The empirical state-dimension memory contrast remains a predictive result; its biological/observation mechanism is unresolved.
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
@@ -318,6 +355,9 @@ python analysis/14_tampa_matched_quantitative_memory.py --input results/generate
 python analysis/15_tampa_cover_index_memory.py --input results/generated_tampa_quant_memory --out results/generated_tampa_quant_memory
 python analysis/16_tampa_exponential_memory_replay.py --input results/generated_exp_memory --out results/generated_exp_memory
 python analysis/17_threshold_induced_memory.py --out results/generated_threshold_memory
+python analysis/18_tampa_quantitative_memory_conditioning_audit.py --input results/generated_conditioning_audit --out results/generated_conditioning_audit
+python analysis/19_two_timescale_hidden_state_memory.py --out results/generated_two_timescale
+python analysis/20_latent_occupancy_detection_memory.py --out results/generated_latent_occupancy
 ```
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
@@ -343,6 +383,8 @@ Supported now:
 - within Tampa itself, when binary presence is held persistent across consecutive years, both focal frequency and Braun–Blanquet condition show strong lag-1 dependence but **no robust older-history increment**;
 - transferring the **same exponential-memory representation** used by the frozen binary analysis likewise fails to produce supported older-history value for either quantitative metric, reducing history-feature choice as an alternative explanation;
 - a frozen first-order known-truth experiment shows that simple frequency-to-binary thresholding is **not sufficient** to create the empirical longer-history advantage of the coarse state across the declared parameter grid.
+- a second frozen known-truth test shows that adding a slow latent AR(1) suitability/persistence process plus faster condition is also **not sufficient**;
+- a third frozen known-truth test shows that first-order latent occupancy persistence plus imperfect detection produces some binary-biased older-history signal, especially at high persistence, but still fails the global sufficiency rule (**2/32** supporting cells; **16.99%** complete-pattern replicates).
 
 Not supported now:
 
@@ -355,7 +397,7 @@ Not supported now:
 - untouched prospective or external confirmation of the early-warning hypothesis;
 - a universal long-memory effect across seagrass state variables; older NPS cover history does not robustly improve beyond lag-1;
 - a causal claim that state dimension itself determines memory horizon; the binary and quantitative field models use different response distributions and scoring metrics;
-- proof of biological long-memory from the failure of the thresholding-only known-truth mechanism; slower hidden ecological, environmental, demographic or observation states remain unresolved.
+- proof of biological long-memory or identification of its mechanism: thresholding-only, slow-suitability/fast-condition, and first-order latent-occupancy/detection models all fail their frozen sufficiency rules, so the mechanism remains unresolved.
 
 ## Independent validation ledger
 
@@ -395,7 +437,7 @@ Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-
 
 ## Next scientific gate
 
-The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The next contract must use the **same exponential all-prior-state operator and the same pre-frozen τ value(s) for both state dimensions**. The prediction is that lag-1 information should be useful for both states, while older history should satisfy the support rule for the coarse state but not for quantitative condition. Because the simple thresholding-only mechanism failed under known truth, a successful external replication would shift attention toward a **slow hidden state** shared by coarse persistence but incompletely represented by one-year quantitative condition.
+The strongest new ecological gate is now a **matched external test of state-dimension-dependent memory**: a monitoring system must contain both a variable coarse presence/persistence state and a quantitative condition state under the same repeated sampling design. The next contract must use the **same exponential all-prior-state operator and the same pre-frozen τ value(s) for both state dimensions**. The prediction is that lag-1 information should be useful for both states, while older history should satisfy the support rule for the coarse state but not for quantitative condition. Three simple response-free sufficiency mechanisms have now failed under frozen known truth, so this line stops rather than being rescued by further simulation-family tuning. A successful external matched replication would establish the field pattern more strongly while leaving its mechanism explicitly unresolved.
 
 The separate predictive gate remains **independent validation of the quantitative early-warning hypothesis**, not further retrospective cause hunting. Caribbean SeagrassNet v1 stopped at its frozen schema gate and NPS Tier-3 v2 stopped as non-estimable because it contained zero recorded-loss transitions. Neither supplies an external predictive sign.
 
