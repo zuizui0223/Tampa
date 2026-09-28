@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Verify canonical exact-point return-fragility result."""
 from __future__ import annotations
 import argparse,json,math
 from pathlib import Path
@@ -11,12 +12,15 @@ def main(generated:Path,canonical:Path):
     assert g["status"]=="return_fragility_supported"
     for k in ["four_year_sequences","nodes","recovered_sequences","recovered_nodes","continuous_sequences","continuous_nodes","total_recorded_relosses"]:
         assert g["registry"][k]==c["registry"][k],k
-    assert g["primary"]["supported"] is True
-    assert close(g["primary"]["recovered_group_coefficient"],c["primary"]["recovered_group_coefficient"])
-    assert close(g["primary"]["ci95"][0],c["primary"]["ci95"][0])
-    assert close(g["primary"]["ci95"][1],c["primary"]["ci95"][1])
-    for k in ["recovered_reloss_fraction","continuous_reloss_fraction","risk_difference_recovered_minus_continuous"]:
-        assert close(g["secondary"][k],c["secondary"][k]),k
+    gp=g["primary"]; cp=c["primary"]
+    assert gp["supported"] is True
+    assert close(gp["recovered_group_coefficient"],cp["recovered_group_coefficient"])
+    assert close(gp["ci95"][0],cp["ci95"][0])
+    assert close(gp["ci95"][1],cp["ci95"][1])
+    gs=g["secondary"]; cs=c["secondary"]
+    assert close(gs["recovered_reloss_fraction"],cs["recovered_reloss_fraction"])
+    assert close(gs["continuous_reloss_fraction"],cs["continuous_reloss_fraction"])
+    assert close(gs["risk_difference_recovered_minus_continuous"],cs["risk_difference_recovered_minus_continuous"])
     print("return fragility canonical result: OK")
 
 if __name__=="__main__":
