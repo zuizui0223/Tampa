@@ -1,0 +1,54 @@
+{
+  "schema": "tampa.recovery_debt_v1.canonical_summary",
+  "status": "recovery_debt_supported",
+  "authoritative_workflow": {
+    "run_id": 36481399320,
+    "head_sha": "d8eb03c492830ffb4606487e266b66afa9a2206a",
+    "artifact_id": 10996828515,
+    "artifact_digest": "sha256:e8651dec8e421528cac1faa247417f0987cfb209b8d2fa39c194dd8069be6874"
+  },
+  "registry": {
+    "presence_defined_sequences": 701,
+    "quantitative_complete_sequences": 701,
+    "nodes": 22,
+    "recovered_sequences": 109,
+    "recovered_nodes": 20,
+    "continuous_sequences": 592,
+    "continuous_nodes": 22,
+    "point_years_with_numeric_bb": 7846,
+    "nonnumeric_focal_bb_rows": 826
+  },
+  "primary": {
+    "recovered_group_coefficient": -0.20390748738774772,
+    "ci95": [
+      -0.3017363073367092,
+      -0.10344227703526034
+    ],
+    "bootstrap_replicates": 5000,
+    "supported": true
+  },
+  "secondary": {
+    "recovered": {
+      "target_bb_mean": 1.953211009174312,
+      "target_bb_median": 2,
+      "source_bb_mean": 2.277981651376147,
+      "mean_source_to_target_change": -0.32477064220183494
+    },
+    "continuous": {
+      "target_bb_mean": 2.9253378378378376,
+      "target_bb_median": 3,
+      "source_bb_mean": 3.0250844594594595,
+      "mean_source_to_target_change": -0.09974662162162162
+    }
+  },
+  "interpretation": "Re-recorded Thalassia returns at exact stable meter marks in a quantitatively depressed Braun-Blanquet state relative to uninterrupted occupancy after adjusting for source point abundance, stable transect identity, and return year. Together with the independently supported return-fragility result, this indicates incomplete annual-resolution recovery rather than simple binary restoration.",
+  "ecological_update": "Return is a distinct ecological state: reappearance can carry both abundance debt and elevated subsequent re-loss risk. This supports path dependence / hysteresis in observed meadow recovery while remaining non-mechanistic.",
+  "claim_boundary": [
+    "Post-hoc exact-point recovery-quality endpoint.",
+    "Braun-Blanquet is an ordinal abundance state, not percent cover, biomass, or ecosystem function.",
+    "Do not interpret recovery debt as proof of residual stress, rhizome depletion, physiological damage, or demographic mechanism.",
+    "Continuous controls are observational and adjusted for stable node, return year, and source point abundance; they are not experimentally matched.",
+    "Return is recorded reappearance at the same meter mark, not proven genet-level recolonization.",
+    "Do not retune sequence patterns, period, quantitative inclusion, controls, model, minima, or support threshold after the supported result."
+  ]
+}
