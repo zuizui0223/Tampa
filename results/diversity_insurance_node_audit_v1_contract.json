@@ -1,0 +1,59 @@
+{
+  "schema": "tampa.diversity_insurance_node_audit_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_reference_saturation_audit_frozen_before_within_node_richness_result",
+  "evidence_class": "posthoc exploratory exact-point community ecology",
+  "motivation": "The pooled richness-gradient result is consistent with biodiversity insurance but could reflect persistent differences among transects. Test whether source alternative-seagrass richness retains positive information about post-loss seagrass occupancy within the same stable transects.",
+  "prerequisite": {
+    "transition_builder": "analysis/34_community_insurance.py",
+    "transition_file": "community_insurance_transitions.csv",
+    "source_population": "same 370 exact-point post-2016 Thalassia-loss transitions as community_insurance_v1"
+  },
+  "primary_population": {
+    "transition_rule": "unchanged from community_insurance_v1",
+    "informative_node": "stable transect with >=2 observed source alternative-richness values among eligible transitions",
+    "minimum_informative_nodes": 8,
+    "minimum_transitions": 200
+  },
+  "predictor": {
+    "raw": "source alternative-seagrass richness = number of distinct source-year Alismatales taxa excluding Thalassia",
+    "primary": "within-node centered richness = raw richness minus that node's mean richness among eligible transitions",
+    "no_binning": true
+  },
+  "model": {
+    "learner": "LogisticRegression(C=1.0, solver=lbfgs, max_iter=5000)",
+    "outcome": "target_any_seagrass_present",
+    "categorical": [
+      "node_id"
+    ],
+    "numeric": [
+      "target_year",
+      "within_node_centered_richness"
+    ],
+    "only_primary_coefficient": "within_node_centered_richness",
+    "scaling": "StandardScaler fitted within each fit"
+  },
+  "uncertainty": {
+    "method": "stable-node cluster bootstrap with all transitions from sampled nodes travelling together",
+    "bootstrap_replicates": 5000,
+    "random_seed": 202609291,
+    "support_rule": "95% bootstrap interval for standardized centered-richness coefficient entirely above zero"
+  },
+  "secondary_descriptive": [
+    "number of informative nodes",
+    "within-node richness standard deviation distribution",
+    "event-weighted observed occupancy by raw richness",
+    "uncentered pooled richness coefficient reported only for orientation"
+  ],
+  "interpretation": {
+    "supported": "The positive richness–retention association persists after stable transect saturation, consistent with a microsite-scale diversity-insurance signal beyond broad site quality.",
+    "unsupported": "The pooled richness gradient is not robust within stable transects; persistent site quality is a plausible common cause of both higher richness and later occupancy retention."
+  },
+  "claim_boundary": [
+    "Post-hoc reference-saturation audit of an already-opened richness endpoint.",
+    "A within-node richness association would still not prove causal biodiversity insurance, facilitation, niche complementarity, or functional redundancy.",
+    "Richness is observed taxon richness and remains subject to detection variability.",
+    "Do not change the transition population, node-centering rule, learner, node fixed effect, target-year control, bootstrap unit, minima, or support threshold after opening the endpoint.",
+    "Retention of any seagrass does not imply equivalent ecosystem function after Thalassia loss."
+  ]
+}
