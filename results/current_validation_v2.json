@@ -180,7 +180,8 @@
     "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null.",
     "Do not interpret the supported pre-loss local-history effect as direct evidence of clonal memory or residual rhizomes; persistent microsite quality and detectability remain alternatives.",
     "Do not call the pooled habitat-continuity return association a robust within-transect microsite effect; the equal-node audit interval overlapped zero.",
-    "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism."
+    "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism.",
+    "Do not interpret the focal-specific local-history coefficient as direct evidence of clonal memory or residual rhizomes; the bare-loss subgroup null and unresolved continuity interaction rule out a simple autonomous below-ground carryover story."
   ],
   "community_reorganization": {
     "period": [
@@ -935,6 +936,42 @@
       "nonreturn_run_length_median": 1
     },
     "interpretation": "Longer uninterrupted exact-point Thalassia history predicts re-recording after a one-year loss even after stable node identity, loss year, loss-year vegetation state and source mixed-species state are controlled. This is consistent with a local legacy/residual-structure signal but does not identify rhizomes, clonal integration, fine-scale habitat quality or repeated detectability separately.",
+    "evidence_class": "posthoc exploratory exact-point temporal ecology"
+  },
+  "focal_vs_habitat_legacy": {
+    "status": "focal_specific_legacy_supported",
+    "authoritative_workflow": {
+      "run_id": 36443749630,
+      "head_sha": "56d3edd62aefa8f0e3093fe93578635aa9f41ebe",
+      "artifact_id": 10979484498,
+      "artifact_digest": "sha256:170c74c67aefb9c580a72678abb08f506627babcab5eabc880a119744a5426af"
+    },
+    "registry": {
+      "recovery_sequences": 259,
+      "nodes": 25,
+      "nodes_with_thalassia_run_variation": 18,
+      "headstart_positive_events": 184,
+      "nodes_with_positive_headstart": 22,
+      "thalassia_run_median": 1,
+      "any_seagrass_run_median": 7,
+      "habitat_headstart_median": 4
+    },
+    "primary": {
+      "centered_thalassia_run_coefficient": 0.4836832872462511,
+      "ci95": [
+        0.11487138732362126,
+        1.3473019344616406
+      ],
+      "supported": true
+    },
+    "secondary": {
+      "centered_habitat_headstart_coefficient": 0.15994443107328132,
+      "habitat_headstart_ci95": [
+        -0.21938322611074426,
+        0.3619233192806425
+      ]
+    },
+    "interpretation": "Thalassia-specific continuous occupancy history predicts exact-point re-recording after loss even after generic continuous seagrass-habitat headstart, stable node identity and immediate community-state controls. Generic habitat headstart is not independently supported in the joint model.",
     "evidence_class": "posthoc exploratory exact-point temporal ecology"
   }
 }
