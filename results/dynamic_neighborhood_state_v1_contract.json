@@ -1,0 +1,100 @@
+{
+  "schema": "tampa.dynamic_neighborhood_state_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "analysis_design_frozen_before_new_endpoint_result",
+  "evidence_class": "posthoc_exploratory_hypothesis_test",
+  "motivation": {
+    "tampa_site_identity_audit": "Formal older-history support disappears after adding stable node identity, implying strong persistent site heterogeneity.",
+    "eog_tampa_failure": "Frozen EOG Layer-B became a static node-specific spatial/topology signature reused across repeated visits and was predictively adverse.",
+    "ecological_question": "If fixed spatial identity is not the useful changing signal, does previous-year state of the surrounding meadow add information about next-year local quantitative state?"
+  },
+  "source": {
+    "annual_panel": "analysis/03_quantitative_state.py -> quant_annual_panel.csv",
+    "expected_node_years": 1480,
+    "expected_nodes": 71,
+    "years": [
+      1997,
+      2025
+    ]
+  },
+  "outcomes": {
+    "frequency": {
+      "column": "focal_frequency",
+      "loss": "MAE",
+      "clip": [
+        0,
+        1
+      ]
+    },
+    "cover_index": {
+      "column": "bb_cover_mean_all_points",
+      "loss": "MAE",
+      "clip": null
+    }
+  },
+  "transition_design": {
+    "unit": "same-node consecutive annual transition",
+    "target_years": [
+      2004,
+      2025
+    ],
+    "source_state": "target year minus one only",
+    "no_target_year_neighbor_information": true
+  },
+  "spatial_scales_km": {
+    "source": "Frozen Tampa EOG endpoint-3 Haversine world thresholds; reused without outcome-based tuning.",
+    "tested": [
+      14.910552760894076,
+      23.92945001793242,
+      34.70605518869811,
+      43.48070387866193
+    ],
+    "primary": 23.92945001793242,
+    "sensitivity_role": "Other three radii are descriptive robustness checks and cannot replace the primary radius."
+  },
+  "predictors": {
+    "own_model": [
+      "stable node_id",
+      "water_body",
+      "standardized target_year",
+      "own previous-year state"
+    ],
+    "segment_model": [
+      "own_model",
+      "leave-one-node-out previous-year mean state within water_body"
+    ],
+    "local_model": [
+      "segment_model",
+      "previous-year neighborhood mean minus previous-year water_body mean at the frozen radius"
+    ],
+    "neighborhood_excludes_focal_node": true,
+    "minimum_segment_peers": 2,
+    "minimum_neighborhood_peers": 1
+  },
+  "learner": "Ridge(alpha=1.0) for both quantitative outcomes",
+  "scoring": {
+    "paired_unit": "target year",
+    "segment_increment": "segment_model MAE minus own_model MAE",
+    "local_increment": "local_model MAE minus segment_model MAE",
+    "support_rule": {
+      "minimum_win_fraction": 0.6,
+      "median_delta_lt_zero": true,
+      "one_sided_signflip_p_lt": 0.05,
+      "signflip_replicates": 20000,
+      "random_seed": 20260928
+    }
+  },
+  "interpretation_map": {
+    "segment_supported_local_not_supported": "Shared bay-segment condition is an ecological context candidate; no evidence that finer local neighborhood adds beyond it.",
+    "local_supported": "Local spatial coupling/synchrony is a candidate above segment-wide condition; this does not establish dispersal or contagion.",
+    "neither_supported": "Next-year quantitative state is dominated by own recent state and persistent site identity at these scales.",
+    "both_supported": "Nested segment-wide and local spatial context both carry predictive information; mechanism remains unresolved."
+  },
+  "claim_boundary": [
+    "This is post-hoc exploratory ecology motivated by already-consumed Tampa and EOG results.",
+    "Predictive increment does not identify causal dispersal, contagion, competition, or environmental forcing.",
+    "A segment effect may represent shared environment, monitoring context, or other synchronized forcing.",
+    "A local-neighborhood effect may represent spatially structured shared forcing rather than biological interaction.",
+    "Do not tune radii, support rules, learner, or target years after opening this endpoint result."
+  ]
+}
