@@ -35,14 +35,13 @@
       0.3619233192806425
     ]
   },
-  "interpretation": "Continuous Thalassia persistence history retains positive recovery information after generic pre-focal seagrass habitat headstart is represented. This supports a focal-species-specific local legacy signal beyond general long-lived vegetated microsite history, while still not identifying the mechanism as clonal or rhizome memory.",
-  "ecological_synthesis": "The recovery pattern is best described by multiple layers: persistent transect quality, above-ground community continuity, and focal-species-specific local history. The focal history effect is not reducible to generic seagrass habitat duration, but its disappearance in the bare-loss subgroup cautions against a simple autonomous below-ground-memory interpretation.",
-  "next_hypothesis": "Test return-state fragility: after Thalassia is re-recorded following a one-year exact-point loss, is it more likely to be lost again the following year than continuously occupied comparison points? This would distinguish stable recovery from transient observation-state flicker.",
+  "interpretation": "Focal Thalassia persistence history retains positive recovery information after generic continuous seagrass-habitat history, stable transect identity, loss-year vegetation state, source mixed-species state and loss year are represented. This supports a focal-specific local legacy signal beyond generic vegetated-microsite history.",
+  "ecological_boundary": "The supported focal-specific history signal still does not identify clonal memory or residual rhizomes. The bare-loss subgroup null and unresolved history-by-continuity interaction imply that focal history is informative but not a simple autonomous below-ground carryover mechanism.",
   "claim_boundary": [
     "Post-hoc history decomposition on an already-opened recovery endpoint.",
-    "The focal-specific coefficient is on a standardized within-node centered predictor and is not a per-year log-odds effect.",
-    "Do not call this proof of clonal memory, rhizome reserves, or vegetative resprouting without direct below-ground data.",
-    "The bare-loss subgroup null means focal history alone is not sufficient evidence for autonomous below-ground buffering.",
-    "Return is recorded reappearance, not genet-level recolonization."
+    "Do not equate the focal-specific coefficient with direct evidence of clonal integration, residual rhizomes, or genet survival.",
+    "Generic habitat headstart is not supported as an independent recovery predictor under the joint model.",
+    "The bare-loss subgroup null remains an important boundary: focal history does not robustly predict return after complete seagrass loss.",
+    "Return is recorded reappearance at the same meter mark, not genet-level recolonization."
   ]
 }
