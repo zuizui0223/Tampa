@@ -128,7 +128,7 @@ def main(input_dir:Path,outdir:Path):
 
     nodes.to_csv(outdir/"microsite_continuity_node_differences.csv",index=False)
     (outdir/"microsite_continuity_node_audit_v1.json").write_text(
-        json.dumps(result,indent=2,sort_keys=True)+"
+        json.dumps(result,indent=2,sort_keys=True)+"\n"
 "
     )
     print(json.dumps(result,indent=2,sort_keys=True))
