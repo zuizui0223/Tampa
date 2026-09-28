@@ -12,9 +12,7 @@ Lee, K.-S., & Dunton, K. H. (1997). Effect of in situ light reduction on the mai
 
 Lefcheck, J. S., Wilcox, D. J., Murphy, R. R., Marion, S. R., & Orth, R. J. (2017). Multiple stressors threaten the imperiled coastal foundation species eelgrass (*Zostera marina*) in Chesapeake Bay, USA. *Global Change Biology, 23*, 3474–3483. https://doi.org/10.1111/gcb.13623
 
-Orth, R. J., Carruthers, T. J. B., Dennison, W. C., Duarte, C. M., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Olyarnik, S., Short, F. T., Williams, S. L., Ambo-Rappe, R., Sur, C., Abbott, J. M., & Limbong, S. R. (2017). Species richness accelerates marine ecosystem restoration in the Coral Triangle. *Proceedings of the National Academy of Sciences of the United States of America, 114*, 11986–11991. https://doi.org/10.1073/pnas.1707962114
-
-Waycott, M., & Williams, S. L. (2006). A global crisis for seagrass ecosystems. *BioScience, 56*, 987–996. https://doi.org/10.1641/0006-3568(2006)56[987:AGCFSE]2.0.CO;2
+Orth, R. J., Carruthers, T. J. B., Dennison, W. C., Duarte, C. M., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Olyarnik, S., Short, F. T., Waycott, M., & Williams, S. L. (2006). A global crisis for seagrass ecosystems. *BioScience, 56*, 987–996. https://doi.org/10.1641/0006-3568(2006)56[987:AGCFSE]2.0.CO;2
 
 Rising, K., Bulling, M., & Sweet, M. (2026). Seagrass monitoring methods: Aligning expert opinion with practice. *iScience, 29*, 114871. https://doi.org/10.1016/j.isci.2026.114871
 
@@ -25,3 +23,5 @@ Tampa Bay Estuary Program. (n.d.). Seagrass assessment. Retrieved September 28, 
 Unsworth, R. K. F., McKenzie, L. J., Collier, C. J., Cullen-Unsworth, L. C., Duarte, C. M., Eklöf, J. S., Jarvis, J. C., Jones, B. L., & Nordlund, L. M. (2019). Global challenges for seagrass conservation. *Ambio, 48*, 801–815. https://doi.org/10.1007/s13280-018-1115-y
 
 Waycott, M., Duarte, C. M., Carruthers, T. J. B., Orth, R. J., Dennison, W. C., Olyarnik, S., Calladine, A., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Short, F. T., & Williams, S. L. (2009). Accelerating loss of seagrasses across the globe threatens coastal ecosystems. *Proceedings of the National Academy of Sciences of the United States of America, 106*, 12377–12381. https://doi.org/10.1073/pnas.0905620106
+
+Williams, S. L., Ambo-Rappe, R., Sur, C., Abbott, J. M., & Limbong, S. R. (2017). Species richness accelerates marine ecosystem restoration in the Coral Triangle. *Proceedings of the National Academy of Sciences of the United States of America, 114*, 11986–11991. https://doi.org/10.1073/pnas.1707962114
