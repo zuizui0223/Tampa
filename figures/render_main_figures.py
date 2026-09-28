@@ -44,7 +44,7 @@ def figure1(primary:Path,outdir:Path):
     ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
     ax.set_title("A  Stable monitoring transects")
-    ax.legend(fontsize=7,frameon=False,loc="best")
+    ax.legend(fontsize=7,frameon=False,loc="upper left",bbox_to_anchor=(1.01,0.38))
     ax.grid(alpha=0.2)
 
     ax=axes[1]
@@ -60,6 +60,8 @@ def figure1(primary:Path,outdir:Path):
     ax.set_xlabel("Descriptive $R^2$")
     ax.set_title("B  State dimensions differ in site anchoring")
     ax.legend(fontsize=8,frameon=False)
+    for yi,val in enumerate(d["stable_node_r2"].to_numpy(float)):
+        ax.text(min(val+0.015,0.97), yi-h/2, f"{val:.2f}", va="center", fontsize=7)
     ax.grid(axis="x",alpha=0.2)
     fig.suptitle("Figure 1. Tampa Bay monitoring resolves a hierarchy of seagrass states",fontsize=12)
     return save(fig,outdir,"figure1_state_hierarchy")
@@ -115,6 +117,12 @@ def figure3(primary:Path,nps:Path,outdir:Path):
     ax.set_ylabel("Mean Zostera cover (%)")
     ax.set_title("B  External NPS Zostera quantitative trajectories")
     ax.legend(frameon=False,fontsize=7)
+    ax.text(
+        0.02,0.03,
+        "Eligible annual units: recorded presence = 1\nFocal frequency = 1.0 throughout",
+        transform=ax.transAxes,fontsize=7,va="bottom",
+        bbox={"boxstyle":"round,pad=0.25","facecolor":"white","alpha":0.85,"edgecolor":"0.7"}
+    )
     ax.grid(alpha=0.2)
     fig.suptitle("Figure 3. Quantitative change occurs beneath persistent recorded presence",fontsize=12)
     fig.tight_layout()
@@ -128,13 +136,13 @@ def figure4(primary:Path,outdir:Path):
     order=["recorded_persistence","recorded_loss"]
     labels=["Persistence","Loss"]
     data=[d.loc[d["next_year_state"]==k,"focal_frequency"].dropna().to_numpy(float) for k in order]
-    axes[0].boxplot(data,tick_labels=labels,showfliers=False)
+    axes[0].boxplot(data,tick_labels=["Persistence\n(n=664)","Loss\n(n=24)"],showfliers=False)
     axes[0].set_ylabel("Source-year focal frequency")
     axes[0].set_title("A  Frequency before next-year state")
     axes[0].grid(axis="y",alpha=0.2)
 
     data=[d.loc[d["next_year_state"]==k,"bb_cover_mean_all_points"].dropna().to_numpy(float) for k in order]
-    axes[1].boxplot(data,tick_labels=labels,showfliers=False)
+    axes[1].boxplot(data,tick_labels=["Persistence\n(n=664)","Loss\n(n=24)"],showfliers=False)
     axes[1].set_ylabel("Braun–Blanquet all-point index")
     axes[1].set_title("B  Abundance before next-year state")
     axes[1].grid(axis="y",alpha=0.2)
@@ -145,7 +153,8 @@ def figure4(primary:Path,outdir:Path):
     row=ys[ys["target_year"]==2016]
     if len(row)==1:
         x=float(row["target_year"].iloc[0]); y=float(row["quantitative_minus_baseline"].iloc[0])
-        ax.annotate("2016",xy=(x,y),xytext=(x+0.8,y),arrowprops={"arrowstyle":"->"},fontsize=8)
+        ax.annotate("2016 adverse",xy=(x,y),xytext=(x+0.8,y),arrowprops={"arrowstyle":"->"},fontsize=8)
+    ax.text(0.02,0.03,"Negative Δ = quantitative model better",transform=ax.transAxes,fontsize=7,va="bottom")
     ax.set_xlabel("Target year")
     ax.set_ylabel("Δ log loss\n(quantitative − baseline)")
     ax.set_title("C  Out-of-time predictive increment")
