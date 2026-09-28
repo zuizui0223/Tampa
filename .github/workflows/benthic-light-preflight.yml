@@ -11,6 +11,11 @@ on:
       - "results/benthic_light_exposure_v1_contract.json"
       - "results/benthic_light_exposure_preflight_v1.json"
       - "results/benthic_light_condition_v1_contract.json"
+      - "results/benthic_light_condition_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_benthic_light_condition.py"
+      - "README.md"
       - ".github/workflows/benthic-light-preflight.yml"
   pull_request:
     branches: [main]
@@ -22,6 +27,11 @@ on:
       - "results/benthic_light_exposure_v1_contract.json"
       - "results/benthic_light_exposure_preflight_v1.json"
       - "results/benthic_light_condition_v1_contract.json"
+      - "results/benthic_light_condition_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_benthic_light_condition.py"
+      - "README.md"
       - ".github/workflows/benthic-light-preflight.yml"
   workflow_dispatch:
 
@@ -44,6 +54,8 @@ jobs:
         run: python analysis/03_quantitative_state.py --out results/generated_benthic_light
       - name: Test plant condition against benthic light
         run: python analysis/26_benthic_light_condition.py --input results/generated_benthic_light --out results/generated_benthic_light
+      - name: Verify canonical result
+        run: python validation/verify_benthic_light_condition.py --generated results/generated_benthic_light/benthic_light_condition_v1.json --canonical results/benthic_light_condition_v1.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
