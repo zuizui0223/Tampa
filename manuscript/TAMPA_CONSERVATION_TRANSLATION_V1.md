@@ -123,6 +123,45 @@ Priority measurements at repeatedly monitored “hidden-degradation” and refer
 
 This would turn the present monitoring result into a mechanism-discrimination experiment.
 
+## A practical two-tier monitoring design
+
+The Tampa results also suggest how to allocate monitoring effort efficiently.
+
+### Tier 1 — broad annual screening
+
+Retain variables that are already available across most fixed transects:
+
+- recorded presence;
+- species-specific focal frequency;
+- Braun–Blanquet abundance;
+- community composition.
+
+These variables are inexpensive enough for network-wide repeated surveillance and, unlike presence alone, frequency and Braun–Blanquet state contained information about next-year recorded-state instability.
+
+### Tier 2 — targeted condition and mechanism diagnostics
+
+When a transect remains occupied but its quantitative state declines, intensify measurements locally rather than adding expensive measurements everywhere:
+
+- blade length and shoot density;
+- meadow-scale PAR;
+- high-frequency temperature and salinity;
+- epiphyte load;
+- below-ground biomass and rhizome carbohydrate reserves;
+- hydrodynamic exposure;
+- disease / acute disturbance observations.
+
+This design follows the empirical state hierarchy. Blade length and shoot density were much less site-saturated and therefore more temporally labile, but they were also measured less completely than frequency and Braun–Blanquet state. Frequency/abundance are therefore practical screening variables; condition and mechanism variables are better used as focused follow-up.
+
+### Suggested adaptive sequence
+
+1. screen every stable transect for direction of change in focal frequency/abundance while retaining presence;
+2. flag sites with persistent presence but sustained quantitative deterioration;
+3. resample flagged sites at shorter intervals to confirm the trajectory;
+4. add plant-condition and local environmental measurements at flagged sites and matched stable reference sites;
+5. only after that comparison, evaluate causal restoration or stress-mitigation actions.
+
+This is a more defensible conservation use of the present study than setting a universal numeric threshold from the retrospective Tampa data.
+
 ## What not to claim
 
 The present study does not justify:
