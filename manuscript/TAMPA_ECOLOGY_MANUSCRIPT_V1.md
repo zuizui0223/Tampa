@@ -155,6 +155,14 @@ The Lower Tampa Bay pattern is therefore consistent with community reorganizatio
 
 Together, the segment results identify at least two distinct pathways beneath persistent occurrence: deterioration of plant condition within established *Thalassia* meadows and contraction/reorganization of local meadow composition. These pathways can produce the same coarse outcome—continued recorded presence of the focal foundation species.
 
+## Pre-existing mixed-species patches buffered seagrass occupancy after exact-point *Thalassia* loss
+
+The community trajectories motivated a post-hoc exact-point test of whether species diversity buffered the habitat state when focal *Thalassia* disappeared from a meter mark. Across 370 consecutive post-2016 meter-mark transitions in which *Thalassia* was present in the source year and absent the following year, source points that already contained another seagrass species were more likely to remain seagrass-occupied after focal loss than source points containing *Thalassia* alone. Target-year seagrass occupancy was 85.1% among 281 source-mixed transitions versus 70.8% among 89 *Thalassia*-only transitions, a difference of 14.3 percentage points (node-cluster bootstrap 95% interval 4.45–26.72 percentage points).
+
+The persistence of the habitat state was primarily associated with community members that were already present before focal loss rather than with exclusively new alternative-species appearance. Among 302 focal-loss points that remained seagrass-occupied, 71.2% retained at least one alternative species already recorded in the source year (bootstrap 95% interval 59.2–82.7%); only 28.8% were occupied exclusively by alternative species not recorded at the source point.
+
+These exact-point results support a **community-insurance pattern**: pre-existing mixed-species patches were less likely to become seagrass-bare when *Thalassia* was lost. They do not identify facilitation because multispecies points may also represent persistently favorable habitat, and continued occupancy by another seagrass does not imply functional equivalence to *Thalassia*.
+
 ## A second seagrass monitoring system reproduced binary–quantitative state decoupling
 
 We next asked whether a saturated occurrence state could coexist with large quantitative trajectories outside Tampa. The already-opened National Park Service Tier-3 *Zostera marina* panel contained 240 eligible annual transect units from 2003 to 2025. Recorded *Zostera* presence was retained in all 240 units, and focal frequency was 1.0 throughout the eligible panel. Quantitative cover nevertheless ranged from 0 to 99.2%.
@@ -210,6 +218,14 @@ The Tampa pattern is not well described by a single estuary-wide decline process
 This heterogeneity is not a nuisance to be averaged away; it is part of the ecological result. Different stress histories, habitat templates or demographic pathways can converge on the same binary state. A transect recorded as “present” may contain a dense but short-stature meadow, a sparse meadow near a detection threshold, or a community in which the focal species is becoming less prominent. A binary occurrence endpoint cannot distinguish among those trajectories.
 
 The Lower Tampa Bay pattern is particularly useful because it illustrates that degradation of a focal foundation species need not occur in isolation. At the same time, the data do not establish direct competitive replacement by *Halodule*. The appropriate interpretation is community reorganization, with mechanism left open.
+
+## Community insurance separates foundation-species loss from immediate habitat vacancy
+
+The exact-point analysis adds a second form of state decoupling. Loss of the focal foundation species did not necessarily mean immediate loss of the broader seagrass habitat state. Pre-existing mixed-species points were more likely to remain vegetated after *Thalassia* loss, and most target alternative occupancy represented persistence of community members already present before focal disappearance.
+
+This pattern resembles a biodiversity-insurance process at the level of habitat occupancy. Experimental seagrass restoration has shown that multispecies plantings can increase survival and cover relative to less diverse plantings (Williams et al., 2017), demonstrating that seagrass diversity can influence restoration trajectories. Our observational result asks a different question: in an established natural monitoring network, does pre-existing community mixture alter the fate of a meter mark when one foundation species is lost? The positive association is consistent with insurance, but not with a demonstrated facilitative mechanism.
+
+The distinction matters for conservation. A meadow can retain seagrass occupancy while losing *Thalassia* identity, so “vegetated versus bare” and “which foundation species remains” are separate ecological endpoints. Community persistence may buffer some structural habitat continuity while still changing canopy architecture, below-ground structure, productivity, food-web support, and other functions. Functional consequences therefore require direct measurement rather than assuming that one seagrass species substitutes equivalently for another.
 
 ## External *Zostera* trajectories support the broader monitoring principle
 
@@ -311,7 +327,9 @@ Lee, K.-S., & Dunton, K. H. (1997). Effect of in situ light reduction on the mai
 
 Lefcheck, J. S., Wilcox, D. J., Murphy, R. R., Marion, S. R., & Orth, R. J. (2017). Multiple stressors threaten the imperiled coastal foundation species eelgrass (*Zostera marina*) in Chesapeake Bay, USA. *Global Change Biology, 23*, 3474–3483. https://doi.org/10.1111/gcb.13623
 
-Orth, R. J., Carruthers, T. J. B., Dennison, W. C., Duarte, C. M., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Olyarnik, S., Short, F. T., Waycott, M., & Williams, S. L. (2006). A global crisis for seagrass ecosystems. *BioScience, 56*, 987–996. https://doi.org/10.1641/0006-3568(2006)56[987:AGCFSE]2.0.CO;2
+Orth, R. J., Carruthers, T. J. B., Dennison, W. C., Duarte, C. M., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Olyarnik, S., Short, F. T., Williams, S. L., Ambo-Rappe, R., Sur, C., Abbott, J. M., & Limbong, S. R. (2017). Species richness accelerates marine ecosystem restoration in the Coral Triangle. *Proceedings of the National Academy of Sciences of the United States of America, 114*, 11986–11991. https://doi.org/10.1073/pnas.1707962114
+
+Waycott, M., & Williams, S. L. (2006). A global crisis for seagrass ecosystems. *BioScience, 56*, 987–996. https://doi.org/10.1641/0006-3568(2006)56[987:AGCFSE]2.0.CO;2
 
 Rising, K., Bulling, M., & Sweet, M. (2026). Seagrass monitoring methods: Aligning expert opinion with practice. *iScience, 29*, 114871. https://doi.org/10.1016/j.isci.2026.114871
 
