@@ -1,26 +1,34 @@
-name: Benthic light exposure preflight
+name: Benthic light exposure and condition test
 
 on:
   push:
     branches: [analysis/benthic-light-dose-v1]
     paths:
       - "analysis/02_water_quality_screen.py"
+      - "analysis/03_quantitative_state.py"
       - "analysis/25_benthic_light_preflight.py"
+      - "analysis/26_benthic_light_condition.py"
       - "results/benthic_light_exposure_v1_contract.json"
+      - "results/benthic_light_exposure_preflight_v1.json"
+      - "results/benthic_light_condition_v1_contract.json"
       - ".github/workflows/benthic-light-preflight.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/02_water_quality_screen.py"
+      - "analysis/03_quantitative_state.py"
       - "analysis/25_benthic_light_preflight.py"
+      - "analysis/26_benthic_light_condition.py"
       - "results/benthic_light_exposure_v1_contract.json"
+      - "results/benthic_light_exposure_preflight_v1.json"
+      - "results/benthic_light_condition_v1_contract.json"
       - ".github/workflows/benthic-light-preflight.yml"
   workflow_dispatch:
 
 jobs:
-  preflight:
+  light:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,8 +40,12 @@ jobs:
         run: python analysis/02_water_quality_screen.py --out results/generated_benthic_light
       - name: Build response-independent benthic light exposures
         run: python analysis/25_benthic_light_preflight.py --input results/generated_benthic_light --out results/generated_benthic_light
+      - name: Rebuild Tampa quantitative responses
+        run: python analysis/03_quantitative_state.py --out results/generated_benthic_light
+      - name: Test plant condition against benthic light
+        run: python analysis/26_benthic_light_condition.py --input results/generated_benthic_light --out results/generated_benthic_light
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: tampa-benthic-light-preflight-v1
+          name: tampa-benthic-light-v1
           path: results/generated_benthic_light/
