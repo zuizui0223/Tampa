@@ -1,0 +1,49 @@
+{
+  "schema": "tampa.microsite_recovery_pathway_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_derived_endpoint",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Community-buffering v1 showed frequent persistence of other seagrasses after exact-point Thalassia loss. This test asks whether retaining seagrass occupancy after focal loss predicts subsequent focal return, distinguishing habitat-continuity versus alternative-state lock-in patterns.",
+  "source": {
+    "prerequisite": "analysis/33_community_buffering.py output from pinned tbep-tech/obis-example commit 6c567beff95ea04f0e397101befb49d5233ace8f",
+    "point_year_file": "community_buffering_point_year_consensus.csv",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site",
+    "point_year_state_rule": "same consensus rule as community-buffering v1; within-year conflicting repeated visits excluded upstream"
+  },
+  "primary_sequence": {
+    "period_rule": "source year t >=2016 and recovery year t+2 <=2025",
+    "t": "exact point has Thalassia present",
+    "t_plus_1": "same point is re-observed and Thalassia absent",
+    "intermediate_classes": {
+      "other_seagrass": "t+1 has >=1 non-Thalassia seagrass present",
+      "no_seagrass": "t+1 has no present Alismatales"
+    },
+    "t_plus_2": "same point is re-observed exactly one year later; endpoint is Thalassia recorded present versus absent"
+  },
+  "primary_hypothesis": {
+    "statement": "The probability of Thalassia return at t+2 differs according to whether the t+1 loss state retained another seagrass or lost seagrass occupancy entirely.",
+    "estimator": "return fraction after other_seagrass intermediate minus return fraction after no_seagrass intermediate",
+    "uncertainty": "stable-transect node-cluster bootstrap across all eligible three-year sequences",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092809,
+    "minimum_sequences_per_intermediate_class": 20,
+    "minimum_nodes_per_intermediate_class": 5,
+    "classification": {
+      "habitat_continuity": "95% bootstrap interval for difference entirely above zero",
+      "alternative_state_lock_in": "95% bootstrap interval entirely below zero",
+      "unresolved": "interval overlaps zero"
+    }
+  },
+  "secondary_descriptive": [
+    "Bay-segment-specific return fractions by intermediate class",
+    "Return fractions by identity of the t+1 alternative seagrass",
+    "Fraction of t+1 alternative taxa persisting into t+2 among Thalassia-return and non-return sequences"
+  ],
+  "claim_boundary": [
+    "Post-hoc derived ecological endpoint from an already-opened exact-point panel; not independent confirmation.",
+    "Return means re-recorded Thalassia at the same stable meter mark, not demographic recolonization from outside the patch.",
+    "An association between intermediate community state and return can reflect habitat filtering, residual rhizomes, local environment, or species interactions; it does not identify facilitation or competition.",
+    "Other-seagrass occupancy is not assumed to preserve equivalent ecosystem function.",
+    "Do not change the three-year sequence definition, period, intermediate classes, bootstrap unit, event/node minima, or directional classification after opening the endpoint."
+  ]
+}
