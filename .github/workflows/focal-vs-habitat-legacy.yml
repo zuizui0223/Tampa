@@ -1,0 +1,53 @@
+name: Focal versus habitat legacy ecology
+
+on:
+  push:
+    branches: [analysis/focal-vs-habitat-legacy-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/41_focal_vs_habitat_legacy.py"
+      - "results/focal_vs_habitat_legacy_v1_contract.json"
+      - ".github/workflows/focal-vs-habitat-legacy.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/41_focal_vs_habitat_legacy.py"
+      - "results/focal_vs_habitat_legacy_v1_contract.json"
+      - ".github/workflows/focal-vs-habitat-legacy.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_focal_vs_habitat
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_focal_vs_habitat --out results/generated_focal_vs_habitat
+      - name: Test focal versus habitat legacy
+        run: python analysis/41_focal_vs_habitat_legacy.py --input results/generated_focal_vs_habitat --out results/generated_focal_vs_habitat
+      - name: Verify frozen predictor registry
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_focal_vs_habitat/focal_vs_habitat_legacy_v1.json"))
+          assert x["schema"]=="tampa.focal_vs_habitat_legacy_v1.result"
+          assert x["registry"]["recovery_sequences"]==259
+          assert x["registry"]["nodes"]==25
+          assert x["registry"]["nodes_with_thalassia_run_variation"]>=0
+          assert x["registry"]["headstart_positive_events"]>=0
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-focal-vs-habitat-legacy-v1
+          path: results/generated_focal_vs_habitat/
