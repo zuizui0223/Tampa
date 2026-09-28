@@ -1,0 +1,65 @@
+{
+  "schema": "tampa.preloss_abundance_recovery_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_exact_point_abundance_hypothesis_frozen_before_bb_recovery_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Pre-loss focal persistence history predicts exact-point Thalassia re-recording beyond generic habitat history. Test whether local source-year focal abundance contains additional recovery information beyond history and community continuity.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "point_identity": "Point-event locationID",
+    "focal_taxon": "Thalassia testudinum",
+    "measurement_type": "seagrass percent cover (Braun-Blanquet scale)"
+  },
+  "predictor_construction": {
+    "point_visit_bb": "mean numeric focal Braun-Blanquet value attached to focal occurrence(s) at the sampled point; nonnumeric Reported rows remain missing",
+    "point_year_bb": "mean of available numeric focal point-visit Braun-Blanquet values within the source calendar year",
+    "interpretation": "ordinal abundance index, not percent cover",
+    "node_centering": "subtract stable-node mean source-point BB across eligible recovery sequences"
+  },
+  "primary_population": {
+    "sequence_rule": "same frozen 259 three-year exact-point Thalassia-loss sequences",
+    "eligibility": "source point-year has numeric focal Braun-Blanquet index",
+    "outcome": "Thalassia recorded present at the same meter mark in the recovery year"
+  },
+  "primary_hypothesis": {
+    "statement": "Within stable transects, higher-than-usual source-point Thalassia Braun-Blanquet abundance predicts one-year re-recording after focal loss beyond local history and community-continuity state.",
+    "controls": [
+      "stable node identity",
+      "loss year",
+      "loss-year vegetated state",
+      "source-year mixed-species state",
+      "node-centered pre-loss Thalassia run length"
+    ],
+    "primary_predictor": "node-centered source-point Braun-Blanquet index",
+    "model": "L2 logistic regression",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092818,
+    "minimum_eligible_sequences": 100,
+    "minimum_nodes": 15,
+    "minimum_nodes_with_bb_variation": 8,
+    "minimum_returns": 25,
+    "minimum_nonreturns": 50,
+    "support_rule": "lower bound of 95% node-bootstrap interval for the centered source-point Braun-Blanquet coefficient > 0"
+  },
+  "secondary": [
+    "source-point Braun-Blanquet median among return and non-return sequences",
+    "eligible fraction of the frozen 259 recovery sequences",
+    "same coefficient without pre-loss history control, descriptive only"
+  ],
+  "interpretation": {
+    "supported": "Local focal abundance before loss carries recovery information beyond occupancy history and community continuity, consistent with a local state-depth/reserve signal.",
+    "unsupported": "Source-point Braun-Blanquet abundance does not add robust recovery information once local history, community state, and site identity are represented."
+  },
+  "claim_boundary": [
+    "Post-hoc exact-point predictor analysis on an already-opened recovery endpoint.",
+    "Braun-Blanquet is an ordinal abundance index, not percent cover or direct biomass.",
+    "A positive result would not prove carbohydrate reserve, below-ground biomass, or demographic vigor.",
+    "Return is recorded reappearance, not genet-level recolonization.",
+    "Do not change the point-year BB aggregation, history control, node-centering, model, minima, or support threshold after opening the abundance-recovery result."
+  ]
+}
