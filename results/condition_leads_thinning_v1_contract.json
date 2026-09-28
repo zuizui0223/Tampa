@@ -87,5 +87,15 @@
     "Blade length can respond non-monotonically to stress; no monotonic physiological direction is predeclared.",
     "Stable node identity is a saturated repeated-site reference, not a habitat mechanism.",
     "Do not change the target year set, 2016 handling, learner, baseline state variables, condition predictors, or support threshold after opening the endpoint."
-  ]
+  ],
+  "implementation_freeze": {
+    "primary_2016_handling": "Rows with target_year=2016 are excluded from both primary training and primary scoring. The sensitivity restores them to both.",
+    "shoot_transform": "log1p(shoot_density_mean_m2)",
+    "frequency_clip": [
+      0,
+      1
+    ],
+    "cover_clip": null,
+    "ridge_alpha": 1
+  }
 }
