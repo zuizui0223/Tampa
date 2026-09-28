@@ -1,0 +1,53 @@
+name: Legacy by community continuity ecology
+
+on:
+  push:
+    branches: [analysis/legacy-continuity-interaction-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/40_legacy_continuity_interaction.py"
+      - "results/legacy_continuity_interaction_v1_contract.json"
+      - ".github/workflows/legacy-continuity-interaction.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/40_legacy_continuity_interaction.py"
+      - "results/legacy_continuity_interaction_v1_contract.json"
+      - ".github/workflows/legacy-continuity-interaction.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_legacy_continuity
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_legacy_continuity --out results/generated_legacy_continuity
+      - name: Test legacy by community-continuity interaction
+        run: python analysis/40_legacy_continuity_interaction.py --input results/generated_legacy_continuity --out results/generated_legacy_continuity
+      - name: Verify frozen interaction registry
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_legacy_continuity/legacy_continuity_interaction_v1.json"))
+          assert x["schema"]=="tampa.legacy_continuity_interaction_v1.result"
+          assert x["registry"]["recovery_sequences"]==259
+          assert x["registry"]["vegetated_loss_sequences"]==215
+          assert x["registry"]["bare_loss_sequences"]==44
+          assert x["registry"]["nodes"]==25
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-legacy-continuity-interaction-v1
+          path: results/generated_legacy_continuity/
