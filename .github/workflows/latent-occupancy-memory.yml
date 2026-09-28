@@ -7,6 +7,12 @@ on:
       - "analysis/20_latent_occupancy_detection_memory.py"
       - "results/latent_occupancy_detection_memory_v1_contract.json"
       - ".github/workflows/latent-occupancy-memory.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/20_latent_occupancy_detection_memory.py"
+      - "results/latent_occupancy_detection_memory_v1_contract.json"
+      - ".github/workflows/latent-occupancy-memory.yml"
   workflow_dispatch:
 
 jobs:
