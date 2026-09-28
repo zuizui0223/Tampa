@@ -1,0 +1,43 @@
+{
+  "schema": "tampa.microsite_continuity_node_audit_v1.canonical_summary",
+  "status": "within_node_microsite_continuity_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36410042261,
+    "head_sha": "2eecf9a657bbfc9b479b8a0b31ecb5f8ec2f7d05",
+    "artifact_id": 10964137114,
+    "artifact_digest": "sha256:b9ce97ab6436ee83d49ece4095687aae91828d18b207a54f502c94625075898e"
+  },
+  "registry": {
+    "all_recovery_sequences": 259,
+    "all_nodes": 25,
+    "informative_nodes": 15,
+    "minimum_informative_nodes": 8
+  },
+  "primary": {
+    "equal_node_mean_difference": 0.19475466123144144,
+    "ci95": [
+      -0.0022938162284911415,
+      0.3885662005692965
+    ],
+    "bootstrap_replicates": 10000,
+    "supported": false
+  },
+  "secondary": {
+    "median_node_difference": 0.13636363636363635,
+    "positive_nodes": 11,
+    "zero_nodes": 1,
+    "negative_nodes": 3,
+    "event_weighted_difference_in_informative_nodes": 0.2694168576521518,
+    "informative_vegetated_sequences": 187,
+    "informative_bare_sequences": 42
+  },
+  "interpretation": "The pooled habitat-continuity association weakens under equal-node within-transect comparison: the point estimate remains positive and 11/15 informative nodes are positive, but the frozen 95% interval slightly overlaps zero. Persistent transect-level habitat quality is therefore a plausible contributor to the pooled return association, with microsite continuity remaining suggestive rather than formally supported.",
+  "next_hypothesis": "Test a pre-loss local legacy hypothesis: whether exact meter marks with longer pre-loss Thalassia occupancy history are more likely to re-record Thalassia after a one-year loss, beyond loss-year vegetation state and stable transect identity.",
+  "claim_boundary": [
+    "Post-hoc reference-saturation audit of an already-opened recovery endpoint.",
+    "Do not claim a robust within-transect facilitation or refuge effect; the frozen equal-node CI overlaps zero.",
+    "The positive direction in 11/15 nodes is descriptive and does not replace the failed support rule.",
+    "Persistent node-level habitat quality, residual rhizomes, microsite conditions, and observation persistence remain plausible contributors.",
+    "Return remains recorded reappearance at the same meter mark, not demographic recolonization."
+  ]
+}
