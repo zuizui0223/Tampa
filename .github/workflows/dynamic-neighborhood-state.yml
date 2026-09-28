@@ -7,6 +7,11 @@ on:
       - "analysis/03_quantitative_state.py"
       - "analysis/22_dynamic_neighborhood_state.py"
       - "results/dynamic_neighborhood_state_v1_contract.json"
+      - "results/dynamic_neighborhood_state_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_dynamic_neighborhood_state.py"
+      - "README.md"
       - ".github/workflows/dynamic-neighborhood-state.yml"
   pull_request:
     branches: [main]
@@ -14,6 +19,11 @@ on:
       - "analysis/03_quantitative_state.py"
       - "analysis/22_dynamic_neighborhood_state.py"
       - "results/dynamic_neighborhood_state_v1_contract.json"
+      - "results/dynamic_neighborhood_state_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_dynamic_neighborhood_state.py"
+      - "README.md"
       - ".github/workflows/dynamic-neighborhood-state.yml"
   workflow_dispatch:
 
@@ -32,6 +42,8 @@ jobs:
         run: python analysis/03_quantitative_state.py --out results/generated_dynamic_neighborhood
       - name: Test dynamic segment and neighborhood state
         run: python analysis/22_dynamic_neighborhood_state.py --input results/generated_dynamic_neighborhood --out results/generated_dynamic_neighborhood
+      - name: Verify canonical result
+        run: python validation/verify_dynamic_neighborhood_state.py --generated results/generated_dynamic_neighborhood/dynamic_neighborhood_state_v1.json --canonical results/dynamic_neighborhood_state_v1.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
