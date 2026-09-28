@@ -177,7 +177,8 @@
     "Do not call pre-existing mixed-species occupancy facilitation: the exact-point insurance association may reflect shared persistent habitat quality.",
     "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement.",
     "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern.",
-    "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null."
+    "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null.",
+    "Do not present the pooled habitat-continuity return association as a robust within-transect microsite effect; the equal-node within-transect audit CI slightly overlaps zero."
   ],
   "community_reorganization": {
     "period": [
@@ -878,5 +879,35 @@
       "supported": false
     },
     "interpretation": "Source-year blade length and shoot density do not add robust year-ahead information about next-year Thalassia frequency or Braun-Blanquet state beyond current quantitative state and stable site identity. Treat plant condition and within-meadow occupancy/abundance as partially distinct degradation axes rather than a proven annual serial cascade."
+  },
+  "microsite_continuity_node_audit": {
+    "status": "within_node_microsite_continuity_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36410042261,
+      "head_sha": "2eecf9a657bbfc9b479b8a0b31ecb5f8ec2f7d05",
+      "artifact_id": 10964137114,
+      "artifact_digest": "sha256:b9ce97ab6436ee83d49ece4095687aae91828d18b207a54f502c94625075898e"
+    },
+    "registry": {
+      "recovery_sequences": 259,
+      "all_nodes": 25,
+      "informative_nodes": 15
+    },
+    "primary": {
+      "equal_node_mean_return_difference": 0.19475466123144144,
+      "ci95": [
+        -0.0022938162284911415,
+        0.3885662005692965
+      ],
+      "supported": false
+    },
+    "secondary": {
+      "positive_nodes": 11,
+      "zero_nodes": 1,
+      "negative_nodes": 3,
+      "median_node_difference": 0.13636363636363635,
+      "event_weighted_difference_in_informative_nodes": 0.2694168576521518
+    },
+    "interpretation": "The pooled habitat-continuity return association weakens under equal-node within-transect comparison. Most informative nodes remain directionally positive, but the frozen interval overlaps zero, so broad persistent transect quality is a plausible contributor and a robust microsite refuge effect is not established."
   }
 }
