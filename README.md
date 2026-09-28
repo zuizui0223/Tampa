@@ -477,11 +477,27 @@ python analysis/17_threshold_induced_memory.py --out results/generated_threshold
 python analysis/18_tampa_quantitative_memory_conditioning_audit.py --input results/generated_conditioning_audit --out results/generated_conditioning_audit
 python analysis/19_two_timescale_hidden_state_memory.py --out results/generated_two_timescale
 python analysis/20_latent_occupancy_detection_memory.py --out results/generated_latent_occupancy
+
+# EOG-to-ecology translation and bounded site/spatial mechanism audits
+python analysis/21_eog_ecological_translation.py --input results/generated_eog_ecology --out results/generated_eog_ecology
+python analysis/22_dynamic_neighborhood_state.py --input results/generated_dynamic_neighborhood --out results/generated_dynamic_neighborhood
+python analysis/23_site_template_preflight.py --out results/generated_site_template
+python analysis/24_site_template_outcome.py --input results/generated_site_template --out results/generated_site_template
+python analysis/25_benthic_light_preflight.py --input results/generated_benthic_light --out results/generated_benthic_light
+python analysis/26_benthic_light_condition.py --input results/generated_benthic_light --out results/generated_benthic_light
 ```
+
+The published compound hot–fresh analysis (`analysis/27_*` to `analysis/29_*`) consumes a pinned R artifact from `tbep-tech/temp-manu`; use `.github/workflows/compound-hotfresh-preflight.yml` as the canonical reproducible entrypoint rather than manually reconstructing that artifact.
 
 CI reruns the Tampa analyses from pinned public sources; the NPS post-hoc workflow separately rebuilds the external persistent-cover analysis.
 
 Canonical current boundary: `results/current_validation_v2.json`.
+
+Manuscript-facing synthesis:
+
+- `manuscript/TAMPA_ECOLOGY_MANUSCRIPT_SPINE_V2.md` — current paper hierarchy, abstract spine, Results/Discussion logic and figure plan;
+- `docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md` — frozen mechanism/alternative-explanation boundary and stopping rule;
+- `docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md` — provenance of the EOG-to-ecology translation that motivated the bounded mechanism tests.
 
 `results/initial_validation.json` is retained as historical provenance and contains superseded early exploratory wording.
 
