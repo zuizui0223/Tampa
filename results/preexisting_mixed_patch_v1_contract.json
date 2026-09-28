@@ -1,0 +1,55 @@
+{
+  "schema": "tampa.preexisting_mixed_patch_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_source_alternative_overlap_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Determine whether exact-point occupancy by another seagrass after Thalassia loss reflects persistence of a pre-existing mixed-species patch rather than de novo colonization after focal loss.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "Point-event locationID constructed upstream as Transect + Site/meter-mark identity",
+    "seagrass_definition": "Present occurrence rows in order Alismatales",
+    "point_year_consistency": "Retain only point-years for which repeated visits agree on the complete set of present Alismatales scientificName values. Any within-year taxon-set disagreement is excluded."
+  },
+  "primary_period": [
+    2016,
+    2025
+  ],
+  "primary_segments": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "primary_endpoint": {
+    "eligible_transition": "same stable point observed in consecutive years; source-year Thalassia present; target-year Thalassia absent; target-year has >=1 other present seagrass",
+    "source_alternative_set": "all present Alismatales taxa other than Thalassia testudinum in source point-year",
+    "target_alternative_set": "all present Alismatales taxa other than Thalassia testudinum in target point-year",
+    "preexisting_persistence_event": "intersection(source_alternative_set, target_alternative_set) is non-empty",
+    "de_novo_only_event": "target_alternative_set non-empty and intersection with source_alternative_set is empty"
+  },
+  "hypothesis": {
+    "statement": "Most exact-point alternative-seagrass occupancy after Thalassia loss is persistence of at least one alternative species already co-occurring with Thalassia in the source year, rather than entirely de novo colonization.",
+    "estimator": "fraction of eligible replacement events with non-empty source-target alternative-species intersection",
+    "uncertainty": "stable-transect node-cluster bootstrap",
+    "support_rule": "lower bound of 95% node-cluster bootstrap interval > 0.5",
+    "minimum_events": 100,
+    "minimum_nodes": 10
+  },
+  "secondary_descriptive": {
+    "by_segment": "Report pre-existing persistence fraction separately for Old, Middle, and Lower Tampa Bay; do not promote a segment-specific result if the pooled primary rule fails.",
+    "by_taxon": "For each target alternative taxon, report events where that taxon persisted from source versus appeared only in target."
+  },
+  "implementation_freeze": {
+    "bootstrap_replicates": 5000,
+    "random_seed": 20260928,
+    "exact_consecutive_years_only": true,
+    "no_taxon_collapsing_beyond_scientificName": true
+  },
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis motivated by the already-opened exact-point community-buffering result.",
+    "Persistence of a co-occurring alternative species is consistent with species-specific dropout from a mixed patch, not proof of facilitation or competition.",
+    "De novo appearance is an observation transition and need not imply biological colonization within one year because detection can vary.",
+    "Do not relax complete taxon-set consistency, event/node minima, period, segment pool, or the 0.5 majority threshold after opening the endpoint.",
+    "Any supported result describes point-scale community-state turnover, not equivalence of ecosystem function among species."
+  ]
+}
