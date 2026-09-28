@@ -176,7 +176,8 @@
     "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested.",
     "Do not call pre-existing mixed-species occupancy facilitation: the exact-point insurance association may reflect shared persistent habitat quality.",
     "Do not treat retained alternative seagrass occupancy as functional equivalence to Thalassia or as proof of competitive replacement.",
-    "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern."
+    "Do not interpret the microsite recovery pathway as proof that alternative seagrasses facilitate Thalassia recolonization; shared habitat quality, residual rhizomes, or local persistence can generate the same pattern.",
+    "Do not present the supported community-diversity insurance gradient as causal biodiversity insurance; persistent habitat quality can jointly support higher source richness and later occupancy retention."
   ],
   "community_reorganization": {
     "period": [
@@ -836,5 +837,41 @@
     ],
     "interpretation": "At exact stable meter marks, retaining another seagrass after Thalassia loss is associated with substantially higher one-year re-recording of Thalassia than entering a no-seagrass state, consistent with habitat continuity rather than simple alternative-state lock-in.",
     "evidence_class": "posthoc exploratory community ecology"
+  },
+  "community_diversity_insurance": {
+    "status": "supported_posthoc_exploratory",
+    "authoritative_workflow": {
+      "run_id": 36409152754,
+      "head_sha": "f536f523aaacb67640361531d009679889baaa82",
+      "artifact_id": 10963064742,
+      "artifact_digest": "sha256:6e352576df909917a436a909b0594e49b8c9585c981b1a8f8515c2f2e398bfe9"
+    },
+    "transitions": 370,
+    "nodes": 27,
+    "observed_source_alternative_richness": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "standardized_richness_log_odds_coefficient": 0.36399618970028,
+    "bootstrap_ci95": [
+      0.07448931275756815,
+      0.6547052858298457
+    ],
+    "frozen_support_rule_passed": true,
+    "empirical_target_occupancy": {
+      "richness_0": 0.7078651685393258,
+      "richness_1": 0.8521400778210116,
+      "richness_2": 0.8260869565217391,
+      "richness_3": 1
+    },
+    "marginal_model_predictions": {
+      "richness_0": 0.7243375311142862,
+      "richness_1": 0.8380323064046507,
+      "richness_2": 0.9107938801956554,
+      "richness_3": 0.9527850603888358
+    },
+    "interpretation": "The supported binary source-mixture insurance result extends to a positive pre-loss alternative-seagrass richness gradient after adjustment for year and water body. This is consistent with biodiversity insurance of seagrass habitat occupancy after Thalassia loss, but remains non-causal."
   }
 }
