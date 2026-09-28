@@ -59,6 +59,28 @@ The baseline already contained stable node identity, geography, year and the foc
 
 So the EOG problem is not obviously fixed by replacing static geometry with this simple annually refreshed neighborhood state.
 
+## New ecological result 3 — the missing annual signal is not simple segment synchrony or local propagation
+
+The previous dynamic-neighborhood test added all four spatial summaries at once. To separate spatial scales, a frozen follow-up decomposed previous-year context into:
+
+1. the leave-one-node-out mean state of the focal transect's **water-body segment**; and
+2. the **local neighborhood deviation** from that segment mean.
+
+Stable node identity and the focal transect's own lag-1 state were already in the reference.
+
+At the primary frozen EOG radius of **23.93 km**:
+
+- focal frequency: segment state worsened mean MAE from **0.04724 to 0.04763** (p = **0.927**), and local deviation worsened it further to **0.04843** (p = **0.9993**);
+- Braun–Blanquet state: segment state changed mean MAE from **0.16831 to 0.16805** but was unsupported (p = **0.257**), while local deviation worsened it to **0.16979** (p = **0.9989**).
+
+Across all four frozen radii, no segment or local-neighborhood increment passed the declared support rule for either outcome.
+
+The useful ecological boundary is therefore narrower than “regional state does not matter.” Rather:
+
+> **once persistent site identity and the meadow's own recent state are known, a simple previous-year spatial average—whether segment-wide or local—does not explain the remaining annual variation.**
+
+Shared forcing may still exist, but it may be event-scale, nonlinear, asynchronous among sites, or mediated by persistent local habitat properties rather than by one-year spatial propagation.
+
 ## Ecological hypothesis H1 — persistent site template + local meadow buffer
 
 **Hypothesis.** Long-lived local habitat properties and meadow legacy stabilize whether *Thalassia* remains established at a transect, while above-ground condition can change substantially before the binary state changes.
@@ -70,7 +92,8 @@ Candidate components of the unmeasured site template include depth/light climate
 - stable node identity strongly structures detection, frequency and Braun–Blanquet levels;
 - blade length and shoot density are far less site-saturated;
 - older-history prediction loses formal support after node identity is added;
-- the simple dynamic-neighborhood augmentation adds no mean heldout benefit.
+- the simple dynamic-neighborhood augmentation adds no mean heldout benefit;
+- decomposing that signal into water-body-wide state and finer local neighborhood deviation still yields no supported increment at any of the four frozen EOG radii.
 
 ### Predictions
 
@@ -100,7 +123,7 @@ This is the ecological analogue of the EOG observation that all five worlds surv
 
 ### Predictions
 
-1. generic distance/connectivity terms will add little after local state and persistent site identity;
+1. generic distance/connectivity terms and simple previous-year spatial averages will add little after local state and persistent site identity;
 2. connectivity should matter more at genuine colonisation/recovery fronts than at continuously occupied established transects;
 3. multi-source or local-recruitment representations should be more biologically plausible than an arbitrary single-source anchor, but need not improve prediction if established meadows are locally persistent.
 

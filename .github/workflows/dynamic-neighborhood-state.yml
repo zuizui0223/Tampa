@@ -1,0 +1,51 @@
+name: Dynamic neighborhood state ecology
+
+on:
+  push:
+    branches: [analysis/dynamic-neighborhood-state-v1]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/22_dynamic_neighborhood_state.py"
+      - "results/dynamic_neighborhood_state_v1_contract.json"
+      - "results/dynamic_neighborhood_state_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_dynamic_neighborhood_state.py"
+      - "README.md"
+      - ".github/workflows/dynamic-neighborhood-state.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/22_dynamic_neighborhood_state.py"
+      - "results/dynamic_neighborhood_state_v1_contract.json"
+      - "results/dynamic_neighborhood_state_v1.json"
+      - "results/current_validation_v2.json"
+      - "docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md"
+      - "validation/verify_dynamic_neighborhood_state.py"
+      - "README.md"
+      - ".github/workflows/dynamic-neighborhood-state.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild Tampa quantitative annual state
+        run: python analysis/03_quantitative_state.py --out results/generated_dynamic_neighborhood
+      - name: Test dynamic segment and neighborhood state
+        run: python analysis/22_dynamic_neighborhood_state.py --input results/generated_dynamic_neighborhood --out results/generated_dynamic_neighborhood
+      - name: Verify canonical result
+        run: python validation/verify_dynamic_neighborhood_state.py --generated results/generated_dynamic_neighborhood/dynamic_neighborhood_state_v1.json --canonical results/dynamic_neighborhood_state_v1.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-dynamic-neighborhood-state-v1
+          path: results/generated_dynamic_neighborhood/

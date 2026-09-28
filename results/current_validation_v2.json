@@ -167,7 +167,8 @@
     "Do not present the original binary older-history gain as a robust long biological-memory result after the stable-node reference audit; formal support disappears when node identity is added.",
     "Do not interpret node_id as a causal habitat mechanism; it is a saturated repeated-site reference.",
     "Do not infer that EOG prediction failure proves dispersal or connectivity is ecologically irrelevant; the post-hoc translation tests only static geometry and one simple annual neighborhood formulation.",
-    "Treat persistent site template, clonal buffering and local threshold loss as ecological hypotheses requiring direct habitat or demographic measurements, not identified causes."
+    "Treat persistent site template, clonal buffering and local threshold loss as ecological hypotheses requiring direct habitat or demographic measurements, not identified causes.",
+    "Do not interpret the failed segment/neighborhood increments as proof that Tampa transects are ecologically independent; common forcing may act at other temporal scales or through unmeasured exposures."
   ],
   "community_reorganization": {
     "period": [
@@ -532,5 +533,41 @@
       }
     },
     "interpretation": "Occurrence, frequency and Braun-Blanquet levels are strongly anchored to persistent transect identity, whereas blade length and shoot density are much less site-saturated. A simple annually refreshed neighborhood state at the four frozen EOG radii does not add mean heldout predictive value beyond stable node identity and local lag-1. This favors a local-site-template/local-meadow-state working hypothesis over simple annual neighborhood-accessibility control."
+  },
+  "dynamic_neighborhood_decomposition": {
+    "status": "own_recent_state_and_site_identity_dominate",
+    "authoritative_workflow": {
+      "run_id": 36377705546,
+      "head_sha": "79f043e34d8b02f32faac8fec45b5f6b94e63a3b",
+      "artifact_id": 10951162374,
+      "artifact_digest": "sha256:4adbaf11adf3950704c60a67ae78cb7901dc4df8db39e3a4fc89cd9b9a1402af"
+    },
+    "primary_radius_km": 23.92945001793242,
+    "focal_frequency": {
+      "own_mae": 0.04724308531198309,
+      "segment_mae": 0.04762901459757305,
+      "local_mae": 0.04843106823403284,
+      "segment_signflip_p": 0.9265536723163842,
+      "local_signflip_p": 0.99930003499825,
+      "segment_supported": false,
+      "local_supported": false
+    },
+    "bb_cover_mean_all_points": {
+      "own_mae": 0.16831436333619673,
+      "segment_mae": 0.16805078674003637,
+      "local_mae": 0.1697940666419311,
+      "segment_signflip_p": 0.2568371581420929,
+      "local_signflip_p": 0.9989000549972501,
+      "segment_supported": false,
+      "local_supported": false
+    },
+    "sensitivity": {
+      "tested_frozen_eog_radii": 4,
+      "supported_segment_radii_frequency": 0,
+      "supported_local_radii_frequency": 0,
+      "supported_segment_radii_cover_index": 0,
+      "supported_local_radii_cover_index": 0
+    },
+    "interpretation": "After stable node identity and own lag-1 state, neither previous-year water-body mean state nor local neighborhood deviation adds supported next-year predictive information for frequency or Braun-Blanquet state. The annual quantitative dynamics are therefore more consistent with site-local control than simple segment-wide synchrony or local spatial propagation at the tested scales."
   }
 }

@@ -1,0 +1,82 @@
+{
+  "schema": "tampa.dynamic_neighborhood_state_v1.canonical_summary",
+  "status": "own_recent_state_and_site_identity_dominate",
+  "authoritative_workflow": {
+    "run_id": 36377705546,
+    "head_sha": "79f043e34d8b02f32faac8fec45b5f6b94e63a3b",
+    "artifact_id": 10951162374,
+    "artifact_digest": "sha256:4adbaf11adf3950704c60a67ae78cb7901dc4df8db39e3a4fc89cd9b9a1402af"
+  },
+  "repair_provenance": {
+    "failed_run_id": 36377594864,
+    "failure": "Walk-forward implementation filtered transition construction to evaluation years, leaving zero pre-2004 training rows.",
+    "scientific_design_changed": false,
+    "repair": "Retain all consecutive transitions for training; score only frozen 2004-2025 target years."
+  },
+  "primary_radius_km": 23.92945001793242,
+  "rows": 1176,
+  "nodes": 71,
+  "target_years": 22,
+  "frequency": {
+    "own_mae": 0.04724308531198309,
+    "segment_mae": 0.04762901459757305,
+    "local_mae": 0.04843106823403284,
+    "segment_increment": {
+      "wins": 11,
+      "mean_delta": 0.0003859292855899631,
+      "median_delta": -4.5544732988830883e-7,
+      "signflip_p": 0.9265536723163842,
+      "supported": false
+    },
+    "local_increment": {
+      "wins": 3,
+      "mean_delta": 0.0008020536364597778,
+      "median_delta": 0.0007438889770823055,
+      "signflip_p": 0.99930003499825,
+      "supported": false
+    },
+    "segment_supported_radii": 0,
+    "local_supported_radii": 0
+  },
+  "cover_index": {
+    "own_mae": 0.16831436333619673,
+    "segment_mae": 0.16805078674003637,
+    "local_mae": 0.1697940666419311,
+    "segment_increment": {
+      "wins": 12,
+      "mean_delta": -0.00026357659616034224,
+      "median_delta": -0.00008841974067255731,
+      "signflip_p": 0.2568371581420929,
+      "supported": false
+    },
+    "local_increment": {
+      "wins": 6,
+      "mean_delta": 0.0017432799018947639,
+      "median_delta": 0.000779616536778438,
+      "signflip_p": 0.9989000549972501,
+      "supported": false
+    },
+    "segment_supported_radii": 0,
+    "local_supported_radii": 0
+  },
+  "sensitivity": {
+    "tested_radii_km": [
+      14.910552760894076,
+      23.92945001793242,
+      34.70605518869811,
+      43.48070387866193
+    ],
+    "frequency_local_supported_radii": 0,
+    "cover_index_local_supported_radii": 0,
+    "frequency_segment_supported_radii": 0,
+    "cover_index_segment_supported_radii": 0
+  },
+  "interpretation": "After stable transect identity and own previous-year state are included, neither leave-one-node-out bay-segment state nor finer previous-year neighborhood deviation adds supported next-year information for focal frequency or Braun-Blanquet state. Annual quantitative dynamics therefore appear strongly site-local at these scales; this does not identify the local causal driver.",
+  "claim_boundary": [
+    "Post-hoc exploratory ecology motivated by already-consumed Tampa and EOG results.",
+    "Failure of segment/neighborhood increments does not prove ecological independence among transects.",
+    "The result does not exclude common environmental forcing that is asynchronous, nonlinear, event-scale, or poorly represented by previous-year state means.",
+    "Node identity is a saturated reference, not a measured habitat mechanism.",
+    "Do not tune the frozen EOG radii or support rule to rescue a spatial effect."
+  ]
+}
