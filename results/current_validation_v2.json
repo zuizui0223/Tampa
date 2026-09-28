@@ -180,7 +180,9 @@
     "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning; the frozen cross-lag test was null.",
     "Do not interpret the supported pre-loss local-history effect as direct evidence of clonal memory or residual rhizomes; persistent microsite quality and detectability remain alternatives.",
     "Do not call the pooled habitat-continuity return association a robust within-transect microsite effect; the equal-node audit interval overlapped zero.",
-    "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism."
+    "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism.",
+    "Do not explain the supported pre-loss exact-point history effect as merely a proxy for current source-year frequency or Braun-Blanquet; the frozen saturation audit retained a positive history coefficient.",
+    "Do not convert the surviving history effect into a clonal-memory or residual-rhizome mechanism without direct below-ground data."
   ],
   "community_reorganization": {
     "period": [
@@ -936,5 +938,33 @@
     },
     "interpretation": "Longer uninterrupted exact-point Thalassia history predicts re-recording after a one-year loss even after stable node identity, loss year, loss-year vegetation state and source mixed-species state are controlled. This is consistent with a local legacy/residual-structure signal but does not identify rhizomes, clonal integration, fine-scale habitat quality or repeated detectability separately.",
     "evidence_class": "posthoc exploratory exact-point temporal ecology"
+  },
+  "local_legacy_current_state_audit": {
+    "status": "legacy_beyond_current_state_supported",
+    "authoritative_workflow": {
+      "run_id": 36444957844,
+      "head_sha": "4ce2a6e0fb1d36cc7fe82d4ec321ba98a804854d",
+      "artifact_id": 10980196971,
+      "artifact_digest": "sha256:4eeb3d03ba1489039aa270f154e4a096071c5749c558bf7fdc9d8bcd41b597f6"
+    },
+    "registry": {
+      "complete_sequences": 259,
+      "nodes": 25,
+      "nodes_with_run_length_variation": 18
+    },
+    "primary": {
+      "current_state_saturated_run_length_coefficient": 0.4701525569669674,
+      "ci95": [
+        0.08247560744242632,
+        1.411377026181121
+      ],
+      "supported": true
+    },
+    "secondary": {
+      "without_current_state_run_length_coefficient": 0.45119165238746917,
+      "corr_run_length_source_frequency": 0.18586835832054777,
+      "corr_run_length_source_bb": 0.19879565297163995
+    },
+    "interpretation": "Exact-point pre-loss Thalassia history remains predictive of one-year re-recording after current source-year transect frequency/Braun-Blanquet, stable node identity, and community-continuity controls are added. This strengthens a local history/legacy interpretation without identifying the mechanism."
   }
 }
