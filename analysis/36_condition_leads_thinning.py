@@ -264,7 +264,7 @@ def main(input_dir:Path,outdir:Path):
     s_freq.to_csv(outdir/"condition_leads_thinning_frequency_with2016_year_scores.csv",index=False)
     p_bb.to_csv(outdir/"condition_leads_thinning_bb_primary_year_scores.csv",index=False)
     (outdir/"condition_leads_thinning_v1.json").write_text(
-        json.dumps(result,indent=2,sort_keys=True)+"\\n"
+        json.dumps(result,indent=2,sort_keys=True)+"\n"
     )
     print(json.dumps(result,indent=2,sort_keys=True))
 
