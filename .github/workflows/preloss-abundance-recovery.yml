@@ -1,0 +1,52 @@
+name: Pre-loss exact-point abundance recovery ecology
+
+on:
+  push:
+    branches: [analysis/preloss-abundance-recovery-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/43_preloss_abundance_recovery.py"
+      - "results/preloss_abundance_recovery_v1_contract.json"
+      - ".github/workflows/preloss-abundance-recovery.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/43_preloss_abundance_recovery.py"
+      - "results/preloss_abundance_recovery_v1_contract.json"
+      - ".github/workflows/preloss-abundance-recovery.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_preloss_abundance
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_preloss_abundance --out results/generated_preloss_abundance
+      - name: Test pre-loss exact-point abundance
+        run: python analysis/43_preloss_abundance_recovery.py --input results/generated_preloss_abundance --out results/generated_preloss_abundance
+      - name: Verify frozen abundance registry
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_preloss_abundance/preloss_abundance_recovery_v1.json"))
+          assert x["schema"]=="tampa.preloss_abundance_recovery_v1.result"
+          assert x["registry"]["frozen_recovery_sequences"]==259
+          assert 0 <= x["registry"]["bb_eligible_sequences"] <= 259
+          assert 0 <= x["registry"]["eligible_fraction"] <= 1
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-preloss-abundance-recovery-v1
+          path: results/generated_preloss_abundance/
