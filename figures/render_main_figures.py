@@ -116,13 +116,8 @@ def figure3(primary:Path,nps:Path,outdir:Path):
         ax.plot(g["year"],g["focal_mean_cover"],marker="o",markersize=3,label=name)
     ax.set_xlabel("Year")
     ax.set_ylabel("Mean Zostera cover (%)")
-    ax.set_title("B  External NPS Zostera quantitative trajectories")
+    ax.set_title("B  External NPS Zostera quantitative trajectories\nRecorded presence = 1; focal frequency = 1.0 throughout",fontsize=10)
     ax.legend(frameon=False,fontsize=7)
-    ax.text(
-        0.5,1.015,
-        "Eligible annual units: recorded presence = 1; focal frequency = 1.0 throughout",
-        transform=ax.transAxes,fontsize=7,ha="center",va="bottom"
-    )
     ax.grid(alpha=0.2)
     fig.suptitle("Figure 3. Quantitative change occurs beneath persistent recorded presence",fontsize=12)
     fig.tight_layout()
