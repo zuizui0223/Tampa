@@ -1,0 +1,63 @@
+{
+  "schema": "tampa.community_insurance_v1.canonical_summary",
+  "status": "both_insurance_hypotheses_supported",
+  "authoritative_workflow": {
+    "run_id": 36405367660,
+    "head_sha": "3d7c1f5e50e17460bba9cb792fe9bc173ab62c42",
+    "artifact_id": 10961464868,
+    "artifact_digest": "sha256:d4dc482728e4f99b2f789920c20514b1f1ee9c16b141ac4d18991853d687544a"
+  },
+  "registry": {
+    "exact_point_thalassia_loss_transitions": 370,
+    "nodes_with_loss": 27,
+    "point_years": 45494,
+    "stable_point_ids": 8181
+  },
+  "H3a_source_mixture_insurance": {
+    "source_mixed_events": 281,
+    "source_mixed_nodes": 25,
+    "mixed_target_occupancy_fraction": 0.8505338078291815,
+    "source_thalassia_only_events": 89,
+    "source_thalassia_only_nodes": 20,
+    "thalassia_only_target_occupancy_fraction": 0.7078651685393258,
+    "difference_percentage_points": 14.266863928985574,
+    "difference_ci95_percentage_points": [
+      4.450966750495043,
+      26.72194489536275
+    ],
+    "supported": true
+  },
+  "H3b_preexisting_species_persistence": {
+    "target_occupied_events": 302,
+    "nodes": 24,
+    "retained_species_fraction": 0.7119205298013245,
+    "retained_species_ci95": [
+      0.591897324286263,
+      0.8267336477742262
+    ],
+    "retained_only_fraction": 0.6655629139072847,
+    "retained_plus_new_fraction": 0.046357615894039736,
+    "new_only_fraction": 0.28807947019867547,
+    "supported": true
+  },
+  "lower_tampa_descriptive": {
+    "events": 17,
+    "source_mixed_fraction": 0.7647058823529411,
+    "target_occupancy_fraction": 0.7647058823529411,
+    "retained_species_fraction_given_target_occupied": 0.6153846153846154,
+    "new_only_fraction_given_target_occupied": 0.38461538461538464,
+    "retained_syringodium_events": 7,
+    "new_syringodium_events": 3,
+    "retained_halodule_events": 1,
+    "new_halodule_events": 2
+  },
+  "interpretation": "Pre-existing mixed-species meter marks are more likely than Thalassia-only meter marks to remain seagrass-occupied after exact-point Thalassia loss, and most target alternative occupancy retains at least one species already present before focal loss. This supports a community-insurance pattern based primarily on persistence of pre-existing community members rather than only post-loss colonization.",
+  "next_hypothesis": "Test whether retaining another seagrass in the loss year predicts higher one-year Thalassia return at the same meter mark than becoming seagrass-bare, using a separately frozen three-year exact-point transition.",
+  "claim_boundary": [
+    "Post-hoc exploratory exact-point community ecology.",
+    "The source-mixture association is consistent with ecological insurance but does not prove facilitation; mixed patches may share persistent habitat quality.",
+    "Retention of another seagrass preserves occupancy but does not imply equivalent habitat function or ecosystem services.",
+    "Species appearing after focal loss are observational appearances, not proven colonization or competitive replacement.",
+    "Do not generalize the pooled Tampa effect into a Lower-Tampa-specific effect without an independently estimable test."
+  ]
+}
