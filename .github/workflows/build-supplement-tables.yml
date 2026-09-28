@@ -1,0 +1,87 @@
+name: Build Tampa Supplementary Tables
+
+on:
+  push:
+    branches: [manuscript/supplement-v1]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/04_state_change_validation.py"
+      - "analysis/05_community_compensation.py"
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/11_nps_persistent_cover.py"
+      - "analysis/19_tampa_site_identity_memory_audit.py"
+      - "analysis/32_supplement_tables.py"
+      - "results/**"
+      - "validation/caribbean_early_warning_v1/terminal_result.json"
+      - "validation/nps_tier3_v2/terminal_outcome_result.json"
+      - ".github/workflows/build-supplement-tables.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/32_supplement_tables.py"
+      - "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_V1.md"
+      - ".github/workflows/build-supplement-tables.yml"
+      - "results/**"
+  workflow_dispatch:
+
+jobs:
+  tables:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rebuild Tampa quantitative panel
+        run: python analysis/03_quantitative_state.py --out results/generated_supplement
+      - name: Rebuild post-2016 trend audit
+        run: python analysis/04_state_change_validation.py --out results/generated_supplement
+      - name: Rebuild community panel
+        run: python analysis/05_community_compensation.py --out results/generated_supplement
+      - name: Rebuild early-warning analysis
+        run: python analysis/09_quantitative_early_warning.py --input results/generated_supplement --out results/generated_supplement
+
+      - name: Rebuild external NPS post-hoc panel
+        run: python analysis/11_nps_persistent_cover.py --out results/generated_nps_supplement
+
+      - name: Prepare site-identity memory input
+        run: |
+          mkdir -p results/generated_site_identity_supplement
+          cp results/generated_supplement/quant_annual_panel.csv results/generated_site_identity_supplement/quant_annual_panel.csv
+      - name: Rebuild site-identity tau grids
+        run: python analysis/19_tampa_site_identity_memory_audit.py --input results/generated_site_identity_supplement --out results/generated_site_identity_supplement
+
+      - name: Build Supplementary Tables S1-S9
+        run: python analysis/32_supplement_tables.py --primary results/generated_supplement --nps results/generated_nps_supplement --site results/generated_site_identity_supplement --out results/generated_supplement_tables
+
+      - name: Verify Supplementary Tables
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          root=Path("results/generated_supplement_tables")
+          files=sorted(root.glob("Table_S*.csv"))
+          assert len(files)==9, [p.name for p in files]
+          for p in files:
+              d=pd.read_csv(p)
+              assert len(d)>0, p
+          s1=pd.read_csv(root/"Table_S1_post2016_state_slopes.csv")
+          assert {"Old Tampa Bay","Middle Tampa Bay","Lower Tampa Bay"}.issubset(set(s1.water_body))
+          s3=pd.read_csv(root/"Table_S3_early_warning_target_years.csv")
+          assert len(s3)==23 and 2016 in set(s3.target_year.astype(int))
+          s4=pd.read_csv(root/"Table_S4_memory_tau_grid.csv")
+          assert s4.tau_years.nunique()==16
+          s9=pd.read_csv(root/"Table_S9_external_validation_ledger.csv")
+          assert len(s9)==2
+          print("Supplementary Tables S1-S9: OK")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-supplement-tables-v1
+          path: results/generated_supplement_tables/
