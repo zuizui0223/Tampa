@@ -1,0 +1,21 @@
+{
+  "schema": "tampa.sarasota_state_memory_v1.program_qualification",
+  "frozen_on": "2026-09-28",
+  "status": "program_metadata_pass_schema_gate_pending",
+  "response_values_opened": false,
+  "program_level_checks": {
+    "external_monitoring_program": true,
+    "monitoring_start_2006": true,
+    "annual_monitoring": true,
+    "fixed_sites_available": 40,
+    "random_sites_excluded_from_primary": 120,
+    "coarse_presence_absence_parameter_stated": true,
+    "quantitative_percent_cover_parameter_stated": true,
+    "known_2018_no_survey": true,
+    "known_2019_partial_survey": true,
+    "known_2024_sampling_season_shift": true
+  },
+  "next_gate": "response-blind schema inspection only",
+  "response_opening_authorized": false,
+  "terminal_if_schema_fails": true
+}
