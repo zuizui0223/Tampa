@@ -1,0 +1,71 @@
+name: Pre-loss local legacy ecology
+
+on:
+  push:
+    branches: [analysis/preloss-local-legacy-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/38_preloss_local_legacy.py"
+      - "results/community_buffering_v1_contract.json"
+      - "results/microsite_recovery_pathway_v1_contract.json"
+      - "results/preloss_local_legacy_v1_contract.json"
+      - "results/preloss_local_legacy_v1.json"
+      - "validation/verify_preloss_local_legacy.py"
+      - ".github/workflows/preloss-local-legacy.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/38_preloss_local_legacy.py"
+      - "results/preloss_local_legacy_v1_contract.json"
+      - ".github/workflows/preloss-local-legacy.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_preloss_legacy
+
+      - name: Rebuild frozen recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
+
+      - name: Test pre-loss local legacy
+        run: python analysis/38_preloss_local_legacy.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
+
+      - name: Verify canonical result
+        run: python validation/verify_preloss_local_legacy.py --generated results/generated_preloss_legacy/preloss_local_legacy_v1.json --canonical results/preloss_local_legacy_v1.json
+
+      - name: Verify frozen registry
+        run: |
+          python - <<'PY'
+          import json
+          import pandas as pd
+          from pathlib import Path
+
+          x=json.load(open("results/generated_preloss_legacy/preloss_local_legacy_v1.json"))
+          assert x["schema"]=="tampa.preloss_local_legacy_v1.result"
+          assert x["registry"]["recovery_sequences"]==259
+          assert x["registry"]["nodes"]==25
+          assert x["registry"]["nodes_with_run_length_variation"]>=0
+          q=Path("results/generated_preloss_legacy/preloss_local_legacy_sequences.csv")
+          assert q.exists() and q.stat().st_size>100
+          d=pd.read_csv(q)
+          assert (d["pre_loss_run_length"]>=1).all()
+          print(json.dumps(x,indent=2))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-preloss-local-legacy-v1
+          path: results/generated_preloss_legacy/

@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.preloss_local_legacy_v1.canonical_summary",
+  "status": "preloss_local_legacy_supported",
+  "authoritative_workflow": {
+    "run_id": 36441617643,
+    "head_sha": "803f4408efe521346b1e6a8dca0b716485339ba5",
+    "artifact_id": 10978956366,
+    "artifact_digest": "sha256:065f4e95068b19e00c8b14c4875dff2d35ccabc0df5bda9ebc34d02cb5802a50"
+  },
+  "registry": {
+    "recovery_sequences": 259,
+    "nodes": 25,
+    "nodes_with_run_length_variation": 18,
+    "run_length_min": 1,
+    "run_length_median": 1,
+    "run_length_max": 25
+  },
+  "primary": {
+    "centered_run_length_coefficient": 0.45119165238746967,
+    "ci95": [
+      0.08866514158716116,
+      1.3725843508448023
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": true
+  },
+  "secondary": {
+    "return_run_length_median": 2,
+    "nonreturn_run_length_median": 1,
+    "uncentered_run_length_coefficient": 0.5337831487161102
+  },
+  "interpretation": "Longer uninterrupted local Thalassia occupancy history predicts re-recording after a one-year exact-point loss even after stable transect identity, loss year, loss-year vegetation state, and source mixed-species state are controlled. This supports a local legacy/residual-structure signal beyond broad node quality and immediate community continuity.",
+  "ecological_boundary": "The historical-state signal is consistent with residual rhizomes/clonal persistence or persistent microsite quality, but the monitoring data cannot distinguish those mechanisms from repeated detectability without direct below-ground measurements.",
+  "claim_boundary": [
+    "Post-hoc exploratory exact-point temporal ecology on an already-opened recovery endpoint.",
+    "Do not call the run-length effect direct evidence of clonal memory, residual rhizomes, or facilitation.",
+    "Return is recorded reappearance at the same meter mark, not proven genet-level recolonization.",
+    "The exposure remains continuous; no outcome-driven streak threshold is authorized.",
+    "Stable-node and community-state controls reduce but do not eliminate unmeasured microsite habitat or observation persistence."
+  ]
+}
