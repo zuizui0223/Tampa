@@ -61,4 +61,4 @@ The study reanalyzes publicly available ecological monitoring datasets and did n
 
 ## AI-assisted writing disclosure
 
-<REVIEW JOURNAL POLICY AT SUBMISSION. If AI use was limited to copy editing of human-generated text, the current journal guidance indicates that declaration is not required. Any generative use beyond copy editing should be documented in Methods as required by the journal.>
+Generative AI use beyond copy editing is disclosed in the Methods section under “AI-assisted research and manuscript development.” ChatGPT (OpenAI) is not listed as an author; human author(s) retain responsibility for the scientific work and final manuscript. Recheck the journal policy at the actual submission date for any wording changes.
