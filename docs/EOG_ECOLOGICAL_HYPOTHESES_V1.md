@@ -81,11 +81,30 @@ The useful ecological boundary is therefore narrower than “regional state does
 
 Shared forcing may still exist, but it may be event-scale, nonlinear, asynchronous among sites, or mediated by persistent local habitat properties rather than by one-year spatial propagation.
 
+## New ecological result 4 — simple bathymetry and sediment do not recover the stable-site effect
+
+The persistent-site hypothesis was next made more concrete. Before reopening any focal response model, a response-independent physical preflight showed that all **71** stable transects had point-depth observations and sediment information. Depth was densely sampled (median **492** point observations per covered node; minimum **18**), and sediment resolved to five normalized classes. Thirty-nine point events with conflicting sediment labels were excluded.
+
+The outcome model was then frozen before opening this result. Each stable node's long-run *Thalassia* state was predicted under leave-one-node-out validation from:
+
+- reference: water-body identity + longitude + latitude;
+- measured template: reference + depth median/IQR + modal sediment + sediment dominance/entropy.
+
+The measured-template increment was unsupported for every primary state dimension:
+
+- detection prevalence: MAE **0.2174 → 0.2268**, p = **0.731**;
+- focal frequency: **0.1347 → 0.1483**, p = **0.977**;
+- Braun–Blanquet state: **0.4673 → 0.4796**, p = **0.693**.
+
+Thus the persistent node effect cannot be reduced to the tested depth and sediment summaries.
+
+This negative result matters because it rules out the easiest physical interpretation of `node_id`. The next candidate components are therefore less static/simple: **benthic light climate, chronic water clarity, hydrodynamic exposure/residence time, fine-scale chronic water-quality regime, below-ground meadow reserves and clonal legacy**, plus their interaction with episodic stress.
+
 ## Ecological hypothesis H1 — persistent site template + local meadow buffer
 
 **Hypothesis.** Long-lived local habitat properties and meadow legacy stabilize whether *Thalassia* remains established at a transect, while above-ground condition can change substantially before the binary state changes.
 
-Candidate components of the unmeasured site template include depth/light climate, sediment and rhizosphere properties, exposure/hydrodynamics, chronic water-quality regime and long-lived clonal/rhizome structure.
+Simple depth and sediment summaries have now been tested and did not recover the stable-site effect. Remaining candidate components include benthic light climate and chronic water clarity, rhizosphere chemistry not captured by sediment class, exposure/hydrodynamics, fine-scale chronic water-quality regime and long-lived below-ground clonal/rhizome structure.
 
 ### Existing evidence consistent with H1
 
@@ -97,7 +116,7 @@ Candidate components of the unmeasured site template include depth/light climate
 
 ### Predictions
 
-1. measured persistent habitat variables should explain part of the current node-ID effect;
+1. richer measured persistent habitat variables—especially benthic light/hydrodynamic and below-ground meadow properties—should explain part of the current node-ID effect; simple depth and sediment alone do not;
 2. plant-condition variables should respond earlier than binary occurrence to short-term stress;
 3. established meadows should often retain presence through periods of declining blade length/density;
 4. the strongest spatial predictor of long-run state should be local habitat template rather than distance to one arbitrary source.
