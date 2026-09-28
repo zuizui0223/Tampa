@@ -1,0 +1,63 @@
+{
+  "schema": "tampa.community_buffering_v1.canonical_summary",
+  "status": "partial_directional_buffering_lower_specific_comparison_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36404304664,
+    "head_sha": "b7902c69f4f733e4569a44066a749154c64d25a8",
+    "artifact_id": 10961433174,
+    "artifact_digest": "sha256:6ab33f4affebe268b4a50b1effc4d9193c7ac2043c6dda7917784156354cb23b"
+  },
+  "registry": {
+    "eligible_visits": 1497,
+    "stable_nodes": 71,
+    "point_visit_rows": 45849,
+    "consensus_point_years": 45494,
+    "ambiguous_point_years_excluded": 74,
+    "repeated_stable_points": 3917,
+    "thalassia_loss_point_transitions_post2016": 370
+  },
+  "H1_lower_tampa": {
+    "thalassia_frequency_slope": -0.012581326662047584,
+    "thalassia_ci95": [
+      -0.024346150681184727,
+      -0.0034125028195640685
+    ],
+    "any_seagrass_frequency_slope": -0.005191610251981598,
+    "any_seagrass_ci95": [
+      -0.016947936538941815,
+      0.003492698631948687
+    ],
+    "non_thalassia_only_frequency_slope": 0.007389716410065988,
+    "non_thalassia_only_ci95": [
+      -0.0014168596219532774,
+      0.01455891165018342
+    ],
+    "absolute_slope_attenuation_fraction": 0.5873558972407545,
+    "frozen_support_rule_passed": false,
+    "interpretation": "Thalassia frequency clearly declined while total seagrass point occupancy declined much less and was not clearly different from zero. Non-Thalassia-only occupancy increased directionally but its interval slightly crossed zero, so the full frozen buffering rule did not pass."
+  },
+  "H2_exact_point": {
+    "lower_events": 17,
+    "lower_nodes": 3,
+    "lower_replacement_fraction": 0.7647058823529411,
+    "comparison_events": 349,
+    "comparison_nodes": 22,
+    "comparison_replacement_fraction": 0.8194842406876791,
+    "estimable": false,
+    "supported": false,
+    "interpretation": "The predeclared Lower-versus-Old+Middle comparison was non-estimable because Lower had fewer than the frozen 20 loss events and 5 nodes. Descriptively, most exact-point Thalassia losses remained occupied by another seagrass in both groups."
+  },
+  "lower_target_fates": {
+    "Syringodium filiforme": 10,
+    "Halodule wrightii": 3,
+    "no_other_seagrass": 4
+  },
+  "ecological_boundary": "The data suggest partial buffering of total seagrass occupancy during Lower Tampa Thalassia decline, but do not support a Lower-specific replacement advantage. Exact-point losses frequently retain another seagrass, motivating a separately frozen test of whether this reflects persistence of pre-existing mixed-species patches rather than new colonization.",
+  "claim_boundary": [
+    "Post-hoc exploratory community ecology.",
+    "The full H1 support rule did not pass because non-Thalassia-only occupancy CI crossed zero.",
+    "H2 was non-estimable under its frozen event/node minima and must not be rescued by lowering them.",
+    "Target alternative species after Thalassia loss do not establish colonization; the species may already have co-occurred at the source point.",
+    "Do not interpret target alternative occupancy as competitive replacement or equivalent ecosystem function."
+  ]
+}

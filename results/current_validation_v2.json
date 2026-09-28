@@ -171,7 +171,9 @@
     "Do not interpret the failed segment/neighborhood increments as proof that Tampa transects are ecologically independent; common forcing may act at other temporal scales or through unmeasured exposures.",
     "Do not explain the stable-node effect as simple depth or sediment differences; the frozen held-out-node test found 0/3 primary state dimensions supported by those measured components.",
     "Do not attribute recent Tampa plant-condition degradation to the tested bulk benthic-light proxy; neither blade length nor shoot density gained supported held-out information from it.",
-    "Do not add further retrospective temperature/salinity thresholds, lag windows or compound stress formulas after the frozen published 30 C / 25 ppt joint-stress test; this stress-index rescue line is closed."
+    "Do not add further retrospective temperature/salinity thresholds, lag windows or compound stress formulas after the frozen published 30 C / 25 ppt joint-stress test; this stress-index rescue line is closed.",
+    "Do not call the community-buffering hypothesis confirmed: its full frozen Lower Tampa support rule failed and the Lower-specific exact-point comparison was non-estimable.",
+    "Do not interpret another seagrass present after exact-point Thalassia loss as new colonization until source-year co-occurrence is explicitly tested."
   ],
   "community_reorganization": {
     "period": [
@@ -715,5 +717,51 @@
     },
     "interpretation": "Published simultaneous hot-fresh run duration does not add supported information beyond marginal hot and fresh run duration plus local previous-year state for Thalassia plant condition.",
     "hard_stop": "Do not add new retrospective temperature/salinity thresholds, windows or compound formulas to rescue a climate-stress mechanism in the current Tampa dataset."
+  },
+  "community_buffering": {
+    "status": "partial_directional_buffering_lower_specific_comparison_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36404304664,
+      "head_sha": "b7902c69f4f733e4569a44066a749154c64d25a8",
+      "artifact_id": 10961433174,
+      "artifact_digest": "sha256:6ab33f4affebe268b4a50b1effc4d9193c7ac2043c6dda7917784156354cb23b"
+    },
+    "lower_tampa": {
+      "thalassia_frequency_slope": -0.012581326662047584,
+      "thalassia_ci95": [
+        -0.024346150681184727,
+        -0.0034125028195640685
+      ],
+      "any_seagrass_frequency_slope": -0.005191610251981598,
+      "any_seagrass_ci95": [
+        -0.016947936538941815,
+        0.003492698631948687
+      ],
+      "non_thalassia_only_frequency_slope": 0.007389716410065988,
+      "non_thalassia_only_ci95": [
+        -0.0014168596219532774,
+        0.01455891165018342
+      ],
+      "absolute_slope_attenuation_fraction": 0.5873558972407545,
+      "frozen_support_rule_passed": false
+    },
+    "exact_point_thalassia_losses": {
+      "all_post2016_events": 370,
+      "lower_events": 17,
+      "lower_nodes": 3,
+      "lower_other_seagrass_fraction": 0.7647058823529411,
+      "old_middle_events": 349,
+      "old_middle_nodes": 22,
+      "old_middle_other_seagrass_fraction": 0.8194842406876791,
+      "lower_vs_old_middle_estimable": false,
+      "lower_vs_old_middle_supported": false
+    },
+    "lower_target_fates": {
+      "syringodium_filiforme": 10,
+      "halodule_wrightii": 3,
+      "no_other_seagrass": 4
+    },
+    "interpretation": "Lower Tampa Bay Thalassia frequency declines substantially faster than total seagrass point occupancy, consistent with partial community buffering, but the full frozen H1 rule does not pass because non-Thalassia-only occupancy has a positive point estimate with a 95% interval that slightly crosses zero. The predeclared Lower-specific exact-point comparison is non-estimable. Descriptively, most exact-point Thalassia losses remain occupied by another seagrass.",
+    "next_hypothesis": "Freeze a separate exact-point community-insurance test asking whether seagrass occupancy after Thalassia loss is primarily persistence of species already co-occurring at the source point rather than new colonization after focal loss."
   }
 }

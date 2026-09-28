@@ -568,6 +568,24 @@ The frozen endpoint yielded:
 Thus NPS v2 is **non-estimable**, not an adverse early-warning result. Its zero-loss structure motivated the explicitly post-hoc persistent-cover analysis above, which is useful ecological replication but cannot be relabeled prospective predictive evidence.
 
 
+### 2n. Thalassia decline is partly buffered at the whole-seagrass occupancy level
+
+A separately frozen post-hoc community-ecology test used point-event taxonomic identity rather than summed species frequencies. Any-seagrass occupancy was defined as presence of any taxon in the seagrass order Alismatales at a sampled meter mark.
+
+In Lower Tampa Bay during 2016–2025:
+
+- *Thalassia* point frequency declined by **0.01258 yr⁻¹** (95% bootstrap interval **−0.02435 to −0.00341**);
+- any-seagrass point frequency declined by only **0.00519 yr⁻¹** (interval **−0.01695 to +0.00349**);
+- non-*Thalassia*-only occupancy increased by **0.00739 yr⁻¹**, although its interval (**−0.00142 to +0.01456**) slightly crossed zero.
+
+Thus the absolute decline in whole-seagrass point occupancy was about **59% weaker** than the focal *Thalassia* decline. The full predeclared buffering rule did **not** pass because the non-*Thalassia*-only interval included zero.
+
+The pinned source also preserves stable meter-mark identities. Across **370** post-2016 exact-point transitions where *Thalassia* was present in the source year and absent the next year, most points still contained another seagrass in the target year. In Lower Tampa Bay this occurred in **13/17 (76.5%)** losses; in Old + Middle Tampa Bay it occurred in **286/349 (81.9%)**. The predeclared Lower-versus-comparison test was non-estimable because Lower had only 17 loss events across 3 nodes, below the frozen 20-event / 5-node minimum.
+
+Lower Tampa target fates were **10 *Syringodium filiforme***, **3 *Halodule wrightii***, and **4 no-other-seagrass** point states. Therefore the earlier bay-wide increase in *Halodule* should not be interpreted as direct point-for-point replacement of *Thalassia*.
+
+This motivates a new exact-point hypothesis: does community occupancy after focal loss mainly reflect **persistence of species that were already co-occurring before *Thalassia* disappeared**, rather than new colonization after loss?
+
 ## Next scientific gate
 
 Retrospective mechanism hunting in the current Tampa dataset is closed. The tested alternatives now include static and dynamic spatial accessibility, simple hidden-state explanations, depth/sediment, bulk benthic-light exposure, annual and seasonal temperature/salinity, and the exact published 30 °C / 25 ppt compound hot–fresh metric. None identifies the driver of the post-2016 condition changes.

@@ -1,0 +1,58 @@
+{
+  "schema": "tampa.community_buffering_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_ecological_hypothesis_frozen_before_endpoint_result",
+  "evidence_class": "posthoc_exploratory_community_ecology",
+  "motivation": "Test whether loss of focal Thalassia state is buffered by occupancy of other seagrasses, separating foundation-species turnover from loss of seagrass habitat occupancy.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "Point-event locationID, constructed upstream as Transect + Site/meter-mark identity",
+    "seagrass_definition": "Any occurrenceStatus=present taxon in order Alismatales. This includes Thalassia and other seagrasses represented by the pinned source rather than only the four species in the prior community analysis."
+  },
+  "primary_period": [
+    2016,
+    2025
+  ],
+  "primary_segment": "Lower Tampa Bay",
+  "comparison_segments": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay"
+  ],
+  "hypotheses": {
+    "H1_transect_occupancy_buffering": {
+      "statement": "Within Lower Tampa Bay, Thalassia point frequency declines while non-Thalassia-only point occupancy increases, so any-seagrass point occupancy declines less than focal Thalassia occupancy.",
+      "metrics": [
+        "thalassia_frequency",
+        "any_seagrass_frequency",
+        "non_thalassia_only_frequency"
+      ],
+      "model": "same within-node year-slope design as existing community analysis: node-centered year + cyclic survey date + log sampled-point effort; node-cluster bootstrap",
+      "support_rule": [
+        "Thalassia frequency slope bootstrap 95% interval entirely below zero",
+        "non-Thalassia-only frequency slope bootstrap 95% interval entirely above zero",
+        "absolute any-seagrass frequency slope is smaller than absolute Thalassia frequency slope"
+      ]
+    },
+    "H2_exact_point_turnover": {
+      "statement": "Among exact stable meter marks that lose Thalassia between consecutive post-2016 years, Lower Tampa Bay has a higher probability of remaining occupied by another seagrass than Old and Middle Tampa Bay combined.",
+      "eligible_transition": "same stable point locationID observed in consecutive years; source year Thalassia present; target year Thalassia absent",
+      "endpoint": "target point has any non-Thalassia seagrass present versus no seagrass present",
+      "estimator": "node-cluster bootstrap difference in replacement fraction: Lower minus Old+Middle",
+      "support_rule": "bootstrap 95% interval for Lower-minus-comparison replacement fraction entirely above zero",
+      "minimum_loss_events_per_group": 20,
+      "minimum_nodes_with_loss_per_group": 5
+    }
+  },
+  "sensitivity": {
+    "H2_species_fates": "Report target alternative-seagrass identity frequencies for Halodule wrightii, Syringodium filiforme, Ruppia maritima, Halophila spp./taxa if present; descriptive only.",
+    "other_segments": "Report all bay segments descriptively but do not promote another segment if Lower primary fails."
+  },
+  "claim_boundary": [
+    "Post-hoc ecological hypothesis motivated by already-opened community trajectories.",
+    "Any-seagrass occupancy is a habitat-state metric, not a measure of equivalent ecosystem function among species.",
+    "Alternative occupancy after Thalassia loss is species turnover/reorganization, not proof of competition or causal replacement.",
+    "Stable meter-mark identity is taken from the pinned source's point locationID construction and must pass repeated-point coverage checks.",
+    "Do not change the primary segment, period, point-loss definition, comparison group, bootstrap rule, or seagrass taxonomic definition after opening the endpoint result."
+  ]
+}
