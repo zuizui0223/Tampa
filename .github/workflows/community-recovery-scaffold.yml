@@ -1,0 +1,58 @@
+name: Community recovery scaffold ecology
+
+on:
+  push:
+    branches: [analysis/community-recovery-scaffold-v1]
+    paths:
+      - "analysis/36_community_recovery_scaffold.py"
+      - "results/community_recovery_scaffold_v1_contract.json"
+      - ".github/workflows/community-recovery-scaffold.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/36_community_recovery_scaffold.py"
+      - "results/community_recovery_scaffold_v1_contract.json"
+      - ".github/workflows/community-recovery-scaffold.yml"
+  workflow_dispatch:
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Test three-year exact-point recovery scaffold
+        run: python analysis/36_community_recovery_scaffold.py --out results/generated_recovery_scaffold
+      - name: Verify frozen endpoint registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_recovery_scaffold/community_recovery_scaffold_v1.json"))
+          assert x["schema"]=="tampa.community_recovery_scaffold_v1.result"
+          assert x["contract"]=="results/community_recovery_scaffold_v1_contract.json"
+          assert x["registry"]["eligible_visits"]==1497
+          assert x["registry"]["stable_nodes"]==71
+          assert x["registry"]["primary_three_year_sequences"]>0
+          for name in [
+            "recovery_scaffold_point_visits.csv",
+            "recovery_scaffold_point_year_consensus.csv",
+            "recovery_scaffold_three_year_sequences.csv",
+            "recovery_scaffold_2016_sensitivity.csv",
+            "recovery_scaffold_by_segment.csv",
+            "recovery_scaffold_by_loss_year_taxon.csv",
+          ]:
+              p=Path("results/generated_recovery_scaffold")/name
+              assert p.exists() and p.stat().st_size>0, name
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-community-recovery-scaffold-v1
+          path: results/generated_recovery_scaffold/
