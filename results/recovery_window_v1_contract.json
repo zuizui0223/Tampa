@@ -82,5 +82,12 @@
     "Return means recorded reappearance, not genet-level recolonization.",
     "The duration coefficient is conditional on a point remaining absent and observed up to each risk year; it is not an unconditional population recovery rate.",
     "Do not change the 1–3 year horizon, loss-year range, exact-observation rule, risk-set construction, controls, learner, bootstrap unit, minima, or support threshold after opening the duration endpoint."
-  ]
+  ],
+  "implementation_freeze": {
+    "run_length_centering": "Compute pre-loss run length once per unique loss episode and center it by stable-node mean across episodes before expanding each episode into duration-specific risk rows.",
+    "bootstrap_unit": "Stable transect node; all risk rows and all episodes from a sampled node travel together, and duplicate sampled nodes are relabeled to receive separate node fixed effects.",
+    "previous_other_seagrass": "At duration d, use any_seagrass_present from the immediately preceding focal-absent year t+d-1; because Thalassia is absent by risk-set construction, this is non-Thalassia seagrass occupancy.",
+    "duration_treatment": "Numeric linear term taking values 1, 2, 3; no post-outcome binning or nonlinear rescue.",
+    "no_episode_weighting_in_centering": true
+  }
 }
