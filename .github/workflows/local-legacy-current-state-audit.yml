@@ -1,0 +1,61 @@
+name: Local legacy beyond current state
+
+on:
+  push:
+    branches: [analysis/local-legacy-current-state-audit-v1]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/33_community_buffering.py"
+      - "analysis/35_microsite_recovery_pathway.py"
+      - "analysis/40_local_legacy_current_state_audit.py"
+      - "results/local_legacy_current_state_audit_v1_contract.json"
+      - ".github/workflows/local-legacy-current-state-audit.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/40_local_legacy_current_state_audit.py"
+      - "results/local_legacy_current_state_audit_v1_contract.json"
+      - ".github/workflows/local-legacy-current-state-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rebuild exact-point community states
+        run: python analysis/33_community_buffering.py --out results/generated_local_legacy_current_state
+      - name: Rebuild frozen three-year recovery sequences
+        run: python analysis/35_microsite_recovery_pathway.py --input results/generated_local_legacy_current_state --out results/generated_local_legacy_current_state
+      - name: Rebuild annual quantitative state
+        run: python analysis/03_quantitative_state.py --out results/generated_local_legacy_current_state
+      - name: Test local legacy beyond current quantitative state
+        run: python analysis/40_local_legacy_current_state_audit.py --input results/generated_local_legacy_current_state --out results/generated_local_legacy_current_state
+
+      - name: Verify frozen registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_local_legacy_current_state/local_legacy_current_state_audit_v1.json"))
+          assert x["schema"]=="tampa.local_legacy_current_state_audit_v1.result"
+          assert x["registry"]["complete_sequences"]>0
+          assert x["registry"]["nodes"]>=15
+          assert x["registry"]["nodes_with_run_length_variation"]>=8
+          q=Path("results/generated_local_legacy_current_state/local_legacy_current_state_audit_sequences.csv")
+          assert q.exists() and q.stat().st_size>100
+          print(json.dumps(x,indent=2))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-local-legacy-current-state-audit-v1
+          path: results/generated_local_legacy_current_state/
