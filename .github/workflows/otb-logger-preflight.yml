@@ -6,14 +6,22 @@ on:
     paths:
       - "analysis/30_otb_logger_extract.R"
       - "analysis/31_otb_logger_preflight.py"
+      - "analysis/32_otb_logger_lock_2026_predictor.R"
       - "results/otb_continuous_logger_preflight_v1_contract.json"
+      - "results/otb_continuous_logger_preflight_v1.json"
+      - "results/otb_logger_2026_primary_crosswalk_v1.csv"
+      - "results/otb_logger_2027_condition_v1_contract.json"
       - ".github/workflows/otb-logger-preflight.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/30_otb_logger_extract.R"
       - "analysis/31_otb_logger_preflight.py"
+      - "analysis/32_otb_logger_lock_2026_predictor.R"
       - "results/otb_continuous_logger_preflight_v1_contract.json"
+      - "results/otb_continuous_logger_preflight_v1.json"
+      - "results/otb_logger_2026_primary_crosswalk_v1.csv"
+      - "results/otb_logger_2027_condition_v1_contract.json"
       - ".github/workflows/otb-logger-preflight.yml"
   workflow_dispatch:
 
@@ -48,6 +56,10 @@ jobs:
         run: Rscript analysis/30_otb_logger_extract.R results/generated_otb_logger/metadat.RData results/generated_otb_logger/tempdat.RData results/generated_otb_logger/logger_metadata.csv results/generated_otb_logger/logger_deployment_summary.csv
       - name: Audit temporal quality and fixed-transect alignment
         run: python analysis/31_otb_logger_preflight.py --metadata results/generated_otb_logger/logger_metadata.csv --deployments results/generated_otb_logger/logger_deployment_summary.csv --event results/generated_otb_logger/event.csv --out results/generated_otb_logger
+      - name: Verify preflight decision
+        run: python -c "import json; x=json.load(open('results/generated_otb_logger/otb_continuous_logger_preflight_v1.json')); assert x['status']=='preflight_pass', x"
+      - name: Lock 2026 response-free thermal predictor vector
+        run: Rscript analysis/32_otb_logger_lock_2026_predictor.R results/generated_otb_logger/tempdat.RData results/generated_otb_logger/otb_logger_deployment_crosswalk.csv results/generated_otb_logger/otb_logger_2026_deployment_heat_metrics.csv results/generated_otb_logger/otb_logger_2026_fixed_node_heat_predictor.csv
       - uses: actions/upload-artifact@v4
         if: always()
         with:
