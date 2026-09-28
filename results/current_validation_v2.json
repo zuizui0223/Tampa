@@ -181,7 +181,9 @@
     "Do not interpret the supported pre-loss local-history effect as direct evidence of clonal memory or residual rhizomes; persistent microsite quality and detectability remain alternatives.",
     "Do not call the pooled habitat-continuity return association a robust within-transect microsite effect; the equal-node audit interval overlapped zero.",
     "Do not interpret the supported pre-loss exact-point history effect as direct evidence of rhizome survival or clonal memory; it remains a local legacy signal with unresolved mechanism.",
-    "Do not interpret the focal-specific local-history coefficient as direct evidence of clonal memory or residual rhizomes; the bare-loss subgroup null and unresolved continuity interaction rule out a simple autonomous below-ground carryover story."
+    "Do not interpret the focal-specific local-history coefficient as direct evidence of clonal memory or residual rhizomes; the bare-loss subgroup null and unresolved continuity interaction rule out a simple autonomous below-ground carryover story.",
+    "Do not present the pooled source-richness gradient as causal biodiversity insurance after the within-node centered-richness audit; its interval overlaps zero.",
+    "Treat higher seagrass richness as both a candidate insurance state and a possible marker of persistently favorable transects."
   ],
   "community_reorganization": {
     "period": [
@@ -973,5 +975,63 @@
     },
     "interpretation": "Thalassia-specific continuous occupancy history predicts exact-point re-recording after loss even after generic continuous seagrass-habitat headstart, stable node identity and immediate community-state controls. Generic habitat headstart is not independently supported in the joint model.",
     "evidence_class": "posthoc exploratory exact-point temporal ecology"
+  },
+  "community_diversity_insurance": {
+    "status": "community_diversity_insurance_supported",
+    "authoritative_workflow": {
+      "run_id": 36409152754,
+      "head_sha": "f536f523aaacb67640361531d009679889baaa82",
+      "artifact_id": 10963064742,
+      "artifact_digest": "sha256:6e352576df909917a436a909b0594e49b8c9585c981b1a8f8515c2f2e398bfe9"
+    },
+    "registry": {
+      "transitions": 370,
+      "nodes": 27,
+      "observed_richness_values": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "primary": {
+      "standardized_richness_log_odds_coefficient": 0.36399618970028,
+      "ci95": [
+        0.07448931275756815,
+        0.6547052858298457
+      ],
+      "supported": true
+    },
+    "descriptive_target_occupancy_fraction": {
+      "richness_0": 0.7078651685393258,
+      "richness_1": 0.8521400778210116,
+      "richness_2": 0.8260869565217391,
+      "richness_3": 1
+    },
+    "interpretation": "Across pooled Tampa exact-point Thalassia-loss transitions, greater pre-loss alternative-seagrass richness predicts a higher probability that the point remains seagrass-occupied after focal loss. This is consistent with a diversity-insurance gradient but remains post-hoc and non-causal."
+  },
+  "diversity_insurance_node_audit": {
+    "status": "within_node_diversity_insurance_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36443213712,
+      "head_sha": "5af07133a5f93ef52f4014cde17a841b4944cf27",
+      "artifact_id": 10978359859,
+      "artifact_digest": "sha256:543d2b05a087e32d074af370586c34f86f147b01469aa27c905ff6b4dca7865c"
+    },
+    "registry": {
+      "all_transitions": 370,
+      "all_nodes": 27,
+      "informative_nodes": 20,
+      "informative_transitions": 357
+    },
+    "primary": {
+      "standardized_centered_richness_log_odds_coefficient": 0.27287862948510416,
+      "ci95": [
+        -0.06223413310785701,
+        0.6130249057697755
+      ],
+      "supported": false
+    },
+    "interpretation": "The pooled diversity gradient weakens after stable-transect saturation; persistent site quality is a plausible common cause of both higher local richness and later seagrass retention."
   }
 }
