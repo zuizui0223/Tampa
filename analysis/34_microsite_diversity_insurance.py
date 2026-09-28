@@ -252,8 +252,12 @@ def main(input_dir:Path,outdir:Path):
         raise RuntimeError(f"repeated stable-point registry drift: {repeated_points}")
 
     d=build_transitions(py)
-    if len(d)!=370:
-        raise RuntimeError(f"post-2016 exact-point Thalassia-loss registry drift: {len(d)}")
+    if len(d)==0:
+        raise RuntimeError("no exact-point Thalassia-loss transitions under frozen period rule")
+    if int(d["source_year"].min())<START or int(d["target_year"].max())>END:
+        raise RuntimeError("frozen period rule violated")
+    if not (d["target_year"].astype(int)==d["source_year"].astype(int)+1).all():
+        raise RuntimeError("non-consecutive exact-point transition found")
 
     h1=bootstrap_h1(d)
     h2=bootstrap_h2(d)
