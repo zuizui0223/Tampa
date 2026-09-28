@@ -1,0 +1,45 @@
+{
+  "schema": "tampa.diversity_insurance_node_audit_v1.canonical_summary",
+  "status": "within_node_diversity_insurance_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36443213712,
+    "head_sha": "5af07133a5f93ef52f4014cde17a841b4944cf27",
+    "artifact_id": 10978359859,
+    "artifact_digest": "sha256:543d2b05a087e32d074af370586c34f86f147b01469aa27c905ff6b4dca7865c"
+  },
+  "registry": {
+    "all_transitions": 370,
+    "all_nodes": 27,
+    "informative_nodes": 20,
+    "informative_transitions": 357,
+    "observed_raw_richness_values": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "primary": {
+    "standardized_centered_richness_log_odds_coefficient": 0.27287862948510416,
+    "ci95": [
+      -0.06223413310785701,
+      0.6130249057697755
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": false
+  },
+  "secondary": {
+    "median_centered_richness_sd": 0.4714045207910317,
+    "uncentered_with_node_effect_orientation_coefficient": 0.32533735558226445
+  },
+  "interpretation": "The positive pooled richness-retention gradient weakens after richness is centered within stable transects and node identity is saturated. The point estimate remains positive, but the frozen bootstrap interval overlaps zero, so persistent site quality is a plausible common cause of both higher local seagrass richness and later occupancy retention.",
+  "ecological_boundary": "Use the pooled richness gradient as evidence of an association between pre-loss community diversity and habitat-state retention, not as robust microsite-scale causal biodiversity insurance.",
+  "claim_boundary": [
+    "Post-hoc reference-saturation audit of an already-opened richness endpoint.",
+    "Do not claim a robust within-transect diversity-insurance effect; the frozen centered-richness interval overlaps zero.",
+    "Persistent transect/site quality remains a plausible common cause of source richness and target occupancy.",
+    "A positive directional coefficient does not prove facilitation, niche complementarity, functional redundancy, or equivalent ecosystem function.",
+    "Richness remains observed annual taxon richness and is subject to detection variability."
+  ]
+}
