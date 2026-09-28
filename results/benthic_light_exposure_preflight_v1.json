@@ -1,0 +1,57 @@
+{
+  "schema": "tampa.benthic_light_exposure_v1.preflight.canonical",
+  "status": "preflight_pass",
+  "authoritative_workflow": {
+    "run_id": 36379744818,
+    "head_sha": "6de87d15b1c408ccd819431e8e254efa354b8270",
+    "artifact_id": 10951564111,
+    "artifact_digest": "sha256:9f6bd9b545969cf940eb5df2869b367e9c4f178f49dffd89d832ad465b38a7c1"
+  },
+  "response_access": {
+    "focal_response_opened": false
+  },
+  "registry": {
+    "physical_eligible_visits": 1236,
+    "primary_exposure_visits": 1236,
+    "primary_exposure_nodes": 57,
+    "primary_exposure_years": [
+      1998,
+      2025
+    ],
+    "primary_exposure_year_count": 28,
+    "sensitivity_3m_visits": 1236
+  },
+  "primary_exposure": {
+    "window": "previous 6 complete calendar months",
+    "secchi_to_kd": "Kd=1.7/SecchiDepth",
+    "benthic_fraction": "exp(-Kd*visit_depth_median)",
+    "median": 0.48849778469219185,
+    "range": [
+      0.0816050256020408,
+      0.9886820573311353
+    ]
+  },
+  "by_segment": {
+    "Hillsborough Bay": {
+      "nodes": 10,
+      "visits": 259,
+      "median_fraction": 0.4172382271849125
+    },
+    "Lower Tampa Bay": {
+      "nodes": 15,
+      "visits": 308,
+      "median_fraction": 0.5300235130415913
+    },
+    "Middle Tampa Bay": {
+      "nodes": 13,
+      "visits": 313,
+      "median_fraction": 0.5174612642663754
+    },
+    "Old Tampa Bay": {
+      "nodes": 19,
+      "visits": 356,
+      "median_fraction": 0.4558507125599025
+    }
+  },
+  "decision": "Pass. Freeze focal plant-condition outcome design before opening biological response."
+}
