@@ -8,12 +8,16 @@ on:
       - "analysis/35_microsite_recovery_pathway.py"
       - "analysis/38_preloss_point_legacy.py"
       - "results/preloss_point_legacy_v1_contract.json"
+      - "results/preloss_point_legacy_v1.json"
+      - "validation/verify_preloss_point_legacy.py"
       - ".github/workflows/preloss-point-legacy.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/38_preloss_point_legacy.py"
       - "results/preloss_point_legacy_v1_contract.json"
+      - "results/preloss_point_legacy_v1.json"
+      - "validation/verify_preloss_point_legacy.py"
       - ".github/workflows/preloss-point-legacy.yml"
   workflow_dispatch:
 
@@ -34,6 +38,9 @@ jobs:
         run: python analysis/35_microsite_recovery_pathway.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
       - name: Test pre-loss exact-point legacy
         run: python analysis/38_preloss_point_legacy.py --input results/generated_preloss_legacy --out results/generated_preloss_legacy
+      - name: Verify canonical result
+        run: python validation/verify_preloss_point_legacy.py --generated results/generated_preloss_legacy/preloss_point_legacy_v1.json --canonical results/preloss_point_legacy_v1.json
+
       - name: Verify frozen registry
         run: |
           python - <<'PY'
