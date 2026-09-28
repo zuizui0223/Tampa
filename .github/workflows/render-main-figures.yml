@@ -1,0 +1,82 @@
+name: Render Tampa manuscript figures
+
+on:
+  push:
+    branches: [figures/render-main-v1]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/05_community_compensation.py"
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/11_nps_persistent_cover.py"
+      - "analysis/30_main_figure_data.py"
+      - "analysis/31_nps_figure_data.py"
+      - "figures/main_figure_data_contract_v1.json"
+      - "figures/render_main_figures.py"
+      - ".github/workflows/render-main-figures.yml"
+      - "results/current_validation_v2.json"
+      - "results/nps_persistent_cover_v1.json"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/03_quantitative_state.py"
+      - "analysis/05_community_compensation.py"
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/11_nps_persistent_cover.py"
+      - "analysis/30_main_figure_data.py"
+      - "analysis/31_nps_figure_data.py"
+      - "figures/main_figure_data_contract_v1.json"
+      - "figures/render_main_figures.py"
+      - ".github/workflows/render-main-figures.yml"
+      - "results/current_validation_v2.json"
+      - "results/nps_persistent_cover_v1.json"
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install analysis and rendering dependencies
+        run: python -m pip install -r requirements.txt "matplotlib>=3.10,<4"
+      - name: Rebuild Tampa quantitative state
+        run: python analysis/03_quantitative_state.py --out results/generated
+      - name: Rebuild Tampa community state
+        run: python analysis/05_community_compensation.py --out results/generated
+      - name: Rebuild Tampa early-warning analysis
+        run: python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
+      - name: Build Tampa primary figure data
+        run: python analysis/30_main_figure_data.py --input results/generated --out results/generated/figure_data
+      - name: Rebuild NPS post-hoc external panel
+        run: python analysis/11_nps_persistent_cover.py --out results/generated_nps_figure
+      - name: Build NPS Figure 3 sidecar
+        run: python analysis/31_nps_figure_data.py --input results/generated_nps_figure --out results/generated_nps_figure/figure_data
+      - name: Render Figures 1-4
+        run: python figures/render_main_figures.py --primary results/generated/figure_data --nps results/generated_nps_figure/figure_data --out results/generated_figures
+      - name: Verify rendered files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.load(open("results/generated_figures/render_manifest_v1.json"))
+          assert m["status"]=="rendered_from_frozen_figure_data"
+          for stem in [
+              "figure1_state_hierarchy",
+              "figure2_bay_specific_degradation",
+              "figure3_community_and_external_decoupling",
+              "figure4_early_warning",
+          ]:
+              for ext in ("png","svg"):
+                  p=Path("results/generated_figures")/f"{stem}.{ext}"
+                  assert p.exists() and p.stat().st_size>1000, (p,p.stat().st_size if p.exists() else None)
+          print(json.dumps(m,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-manuscript-figures-v1
+          path: results/generated_figures/
