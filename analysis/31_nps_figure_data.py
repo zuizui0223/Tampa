@@ -49,11 +49,13 @@ def main(input_dir:Path,outdir:Path):
     sl.to_csv(outdir/"figure3C_nps_cover_node_slopes.csv",index=False)
 
     pooled=float((slopes["sxy"].sum())/(slopes["sxx"].sum()))
-    exp=CANON["quantitative_state"]["cover"]
-    if not np.isclose(pooled,float(exp["within_node_slope_per_year"]),rtol=1e-12,atol=1e-12):
+    exp=CANON["quantitative_state"]
+    if not np.isclose(pooled,float(exp["cover_within_node_slope_per_year"]),rtol=1e-12,atol=1e-12):
         raise RuntimeError("NPS pooled cover slope drift")
     if int((slopes["slope"]<0).sum())!=int(exp["negative_node_slopes"]):
         raise RuntimeError("NPS negative node slope count drift")
+    if int((slopes["slope"]>0).sum())!=int(exp["positive_node_slopes"]):
+        raise RuntimeError("NPS positive node slope count drift")
 
     summary={
       "schema":"tampa.nps_figure_data_v1",
