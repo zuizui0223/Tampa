@@ -130,7 +130,7 @@ Particularly informative future states include meadow-scale high-frequency tempe
 
 ## Monitoring foundation species as a state hierarchy
 
-The practical implication is not to abandon occurrence monitoring. Presence remains valuable for broad distribution, persistence and range surveillance. Rather, the Tampa results argue for explicit separation of state dimensions. This interpretation aligns with recent monitoring synthesis showing broad agreement on core distribution, composition and cover metrics but comparatively limited use of physiological- and organism-level measures, and recommending integrated monitoring across biological levels (Rising et al. 2026).
+The practical implication is not to abandon occurrence monitoring. Presence remains valuable for broad distribution, persistence and range surveillance. Rather, the Tampa results argue for explicit separation of state dimensions. This interpretation aligns with recent monitoring synthesis showing broad agreement on core distribution, composition and cover metrics but comparatively limited use of physiological- and organism-level measures, and recommending integrated monitoring across biological levels (Rising et al. 2026). The contribution here is empirical rather than prescriptive: the same repeated-site record shows that those monitoring levels can diverge for years and that the dimension of degradation differs spatially within one estuary.
 
 For long-lived foundation species, a useful monitoring hierarchy is:
 
