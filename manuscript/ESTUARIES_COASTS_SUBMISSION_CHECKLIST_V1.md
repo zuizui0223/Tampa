@@ -50,8 +50,8 @@ Guideline source checked 2026-09-28.
 - [x] Lowercase panel letters
 - [x] Lines/markers/hatching reduce reliance on color alone
 - [x] Captions stored in manuscript text
-- [ ] Final visual QA of ESCO EPS/TIFF package
-- [ ] Confirm all figure files named Fig1–Fig4 at upload
+- [x] Final visual QA of ESCO EPS/TIFF package
+- [x] ESCO renderer emits Fig1–Fig4 EPS/TIFF files; confirm upload names again at submission
 
 ## Manuscript file
 
@@ -73,17 +73,17 @@ Guideline source checked 2026-09-28.
 - [ ] Funding
 - [ ] Competing Interests
 - [ ] Author Contributions
-- [ ] Data Availability
-- [ ] Code Availability
+- [x] Data Availability statement drafted with exact public sources and pinned identities
+- [x] Code Availability statement points to the public Tampa repository; final tag/commit/DOI remains to be frozen
 - [ ] Ethics / permits / not-applicable statement
 - [x] AI-assisted research/manuscript use disclosed in Methods; AI system not listed as an author
 
 ## Supplementary Information
 
-- [ ] Convert Supplementary Methods/Figures/Tables to PDF
+- [ ] Convert completed Supplementary Methods/Figures/Tables to the final SI PDF
 - [ ] Use “Online Resource” references/naming if required in final upload
 - [ ] Add title, journal, author names, affiliation, and corresponding-author email to each SI file
-- [ ] Keep machine-readable tables as CSV/XLSX where useful
+- [x] Machine-readable Supplementary Tables S1–S9 are generated as CSV
 - [ ] Ensure every SI item is cited in the manuscript
 
 ## Submission letter

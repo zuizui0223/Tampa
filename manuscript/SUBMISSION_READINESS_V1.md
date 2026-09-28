@@ -30,10 +30,10 @@
 - [x] Check every current in-text author–year citation against the bibliography.
 - [x] Apply Estuaries and Coasts / APA-style reference ordering and author–year punctuation.
 - [ ] Final Word export: verify journal-specific typography and line numbering.
-- [ ] Write Supplementary Methods from `TAMPA_ECOLOGY_SUPPLEMENT_OUTLINE_V1.md`.
-- [ ] Render Supplementary Figures/Tables S1–S9.
-- [ ] Add Data Availability statement with exact public source locations and pinned commits.
-- [ ] Add Code Availability statement pointing to the Tampa repository release/commit used for submission.
+- [x] Write Supplementary Methods S1–S14 and assemble deterministic SI source.
+- [x] Render Supplementary Figures S1–S7 and generate Supplementary Tables S1–S9 with dedicated CI.
+- [x] Add Data Availability statement with exact public source locations and pinned commits.
+- [x] Add Code Availability statement pointing to the public Tampa repository; final submission tag/commit/DOI remains to be frozen.
 - [ ] Add author list, affiliations and corresponding-author information.
 - [ ] Add author-contribution statement.
 - [ ] Add competing-interests statement.
@@ -42,12 +42,12 @@
 - [ ] Freeze a submission commit/tag and archive release.
 - [ ] Run final manuscript–figure numeric consistency audit against that tag.
 - [x] Add Estuaries and Coasts figure renderer at 174 mm width with EPS + 600 dpi TIFF outputs.
-- [ ] Final visual QA of the Estuaries and Coasts EPS/TIFF package.
+- [x] Final visual QA of the Estuaries and Coasts EPS/TIFF package.
 - [ ] Check species names, units, minus signs, superscripts and Braun–Blanquet wording after typesetting/export.
-- [ ] Confirm that adverse target year 2016 remains visible in Figure 4 and text.
-- [ ] Confirm NPS external comparison is still labelled post-hoc everywhere.
-- [ ] Confirm no sentence implies demographic extinction/recolonization from recorded state.
-- [ ] Confirm no sentence implies climate causation or competitive replacement.
+- [x] Confirm adverse target year 2016 remains visible in Figure 4 and text.
+- [x] Confirm NPS external comparison is still labelled post-hoc in manuscript/captions/claim map.
+- [x] Manuscript/Supplement integrity checks enforce the boundary against demographic extinction/recolonization claims.
+- [x] Manuscript/captions retain explicit boundaries against climate causation and competitive replacement.
 
 ## Nice to have, not required to submit
 
