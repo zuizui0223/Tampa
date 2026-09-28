@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.preloss_point_legacy_v1.canonical_summary",
+  "status": "preloss_local_legacy_supported",
+  "authoritative_workflow": {
+    "run_id": 36410731109,
+    "head_sha": "85653b9daf19543d165b5686f552f3d6e1914320",
+    "artifact_id": 10964117253,
+    "artifact_digest": "sha256:a553c7672997e15d081f072a43b3d666bbf9fc5e924db6df02c09c3429e57454"
+  },
+  "registry": {
+    "recovery_sequences": 259,
+    "nodes": 25,
+    "informative_strata": 25,
+    "informative_nodes": 18,
+    "minimum_informative_nodes": 8,
+    "maximum_observed_streak_years": 25
+  },
+  "primary": {
+    "equal_node_mean_streak_difference_years": 1.0921765779608916,
+    "ci95": [
+      0.11649581128747802,
+      2.2132817053589107
+    ],
+    "bootstrap_replicates": 10000,
+    "supported": true
+  },
+  "secondary": {
+    "median_node_effect": 0.6696428571428571,
+    "positive_nodes": 13,
+    "zero_nodes": 1,
+    "negative_nodes": 4
+  },
+  "interpretation": "Among the same frozen exact-point loss/recovery sequences, points that re-record Thalassia one year after loss had a longer uninterrupted pre-loss Thalassia history than non-return points, even after stratifying within stable transect and loss-year vegetation class. This supports a local legacy/persistence signal beyond broad node quality and immediate community continuity.",
+  "ecological_boundary": "The result identifies historical state dependence at the exact meter-mark scale but cannot distinguish residual rhizomes/clonal integration, fine-scale habitat quality, or observation/detection persistence.",
+  "claim_boundary": [
+    "Post-hoc exploratory temporal ecology on an already-opened exact-point panel.",
+    "Do not equate the pre-loss streak signal with direct evidence of below-ground rhizome survival or clonal integration.",
+    "Return is re-recorded Thalassia at the same meter mark, not proven demographic recolonization.",
+    "The exposure was kept continuous; no outcome-driven streak threshold is authorized.",
+    "The result is conditioned within node and loss-year community state but can still reflect unmeasured microsite habitat or observation persistence."
+  ]
+}
