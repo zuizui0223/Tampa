@@ -165,7 +165,9 @@
     "Quantitative early warning is internally walk-forward validated but was motivated after observing Tampa state decoupling; external or untouched prospective confirmation is still required.",
     "Do not retune or add another response-free mechanism simulation family after the frozen latent-occupancy v1 hard stop; the mechanism remains unresolved.",
     "Do not present the original binary older-history gain as a robust long biological-memory result after the stable-node reference audit; formal support disappears when node identity is added.",
-    "Do not interpret node_id as a causal habitat mechanism; it is a saturated repeated-site reference."
+    "Do not interpret node_id as a causal habitat mechanism; it is a saturated repeated-site reference.",
+    "Do not infer that EOG prediction failure proves dispersal or connectivity is ecologically irrelevant; the post-hoc translation tests only static geometry and one simple annual neighborhood formulation.",
+    "Treat persistent site template, clonal buffering and local threshold loss as ecological hypotheses requiring direct habitat or demographic measurements, not identified causes."
   ],
   "community_reorganization": {
     "period": [
@@ -489,5 +491,46 @@
     "support_rule_passed": false,
     "hard_stop": "Stop response-free mechanism hunting after this v1; do not retune this grid or add another simulation family in the same mechanism line.",
     "interpretation": "First-order latent occupancy persistence plus imperfect detection produces some binary-biased older-history signal, especially under high occupancy persistence, but does not robustly reproduce the complete Tampa pattern."
+  },
+  "eog_ecological_translation": {
+    "status": "posthoc_ecological_translation",
+    "authoritative_workflow": {
+      "run_id": 36376613225,
+      "head_sha": "5351d8abf7edea1b408a7f7c198da849b1ea41d9",
+      "artifact_id": 10951032509,
+      "artifact_digest": "sha256:b170c359d4378691e5c93f9d1eece9b229923e3e388752528835c6cca8dbc198"
+    },
+    "stable_node_r2": {
+      "detected": 0.8233228768630321,
+      "focal_frequency": 0.8744523136044959,
+      "bb_cover_mean_all_points": 0.8617168301480468,
+      "blade_length_mean_mm": 0.2592218094380291,
+      "shoot_density_mean_m2": 0.23187189012278953
+    },
+    "dynamic_neighborhood": {
+      "frozen_eog_radii_km": [
+        14.910552760894076,
+        23.92945001793242,
+        34.70605518869811,
+        43.48070387866193
+      ],
+      "binary_detected": {
+        "baseline_log_loss": 0.15707743535422106,
+        "augmented_log_loss": 0.16078727826399428,
+        "delta": 0.003709842909773264,
+        "wins": 12,
+        "target_years": 22,
+        "signflip_p": 0.6919130808691913
+      },
+      "focal_frequency": {
+        "baseline_mae": 0.04701850248422637,
+        "augmented_mae": 0.047971496979176194,
+        "delta": 0.0009529944949498302,
+        "wins": 7,
+        "target_years": 22,
+        "signflip_p": 0.991190088099119
+      }
+    },
+    "interpretation": "Occurrence, frequency and Braun-Blanquet levels are strongly anchored to persistent transect identity, whereas blade length and shoot density are much less site-saturated. A simple annually refreshed neighborhood state at the four frozen EOG radii does not add mean heldout predictive value beyond stable node identity and local lag-1. This favors a local-site-template/local-meadow-state working hypothesis over simple annual neighborhood-accessibility control."
   }
 }
