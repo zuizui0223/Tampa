@@ -1,0 +1,58 @@
+name: Halodule spatial redistribution ecology
+
+on:
+  push:
+    branches: [analysis/halodule-redistribution-v1]
+    paths:
+      - "analysis/34_halodule_spatial_redistribution.py"
+      - "results/halodule_spatial_redistribution_v1_contract.json"
+      - ".github/workflows/halodule-spatial-redistribution.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/34_halodule_spatial_redistribution.py"
+      - "results/halodule_spatial_redistribution_v1_contract.json"
+      - ".github/workflows/halodule-spatial-redistribution.yml"
+  workflow_dispatch:
+
+jobs:
+  redistribution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Test exact-point Halodule redistribution
+        run: python analysis/34_halodule_spatial_redistribution.py --out results/generated_halodule_redistribution
+      - name: Verify frozen endpoint registry
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.load(open("results/generated_halodule_redistribution/halodule_spatial_redistribution_v1.json"))
+          assert x["schema"]=="tampa.halodule_spatial_redistribution_v1.result"
+          assert x["contract"]=="results/halodule_spatial_redistribution_v1_contract.json"
+          assert x["registry"]["eligible_visits"]==1497
+          assert x["registry"]["stable_nodes"]==71
+          assert x["registry"]["consensus_point_years"]>0
+          assert x["registry"]["lower_eligible_source_halodule_absent_transitions"]>0
+          for name in [
+            "halodule_point_visits.csv",
+            "halodule_point_year_consensus.csv",
+            "halodule_source_absent_transitions.csv",
+            "halodule_gain_events.csv",
+            "halodule_gain_fates.csv",
+          ]:
+              p=Path("results/generated_halodule_redistribution")/name
+              assert p.exists() and p.stat().st_size>0, name
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-halodule-redistribution-v1
+          path: results/generated_halodule_redistribution/
