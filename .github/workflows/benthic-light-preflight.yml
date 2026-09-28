@@ -1,0 +1,39 @@
+name: Benthic light exposure preflight
+
+on:
+  push:
+    branches: [analysis/benthic-light-dose-v1]
+    paths:
+      - "analysis/02_water_quality_screen.py"
+      - "analysis/25_benthic_light_preflight.py"
+      - "results/benthic_light_exposure_v1_contract.json"
+      - ".github/workflows/benthic-light-preflight.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/02_water_quality_screen.py"
+      - "analysis/25_benthic_light_preflight.py"
+      - "results/benthic_light_exposure_v1_contract.json"
+      - ".github/workflows/benthic-light-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Build pinned monthly water quality
+        run: python analysis/02_water_quality_screen.py --out results/generated_benthic_light
+      - name: Build response-independent benthic light exposures
+        run: python analysis/25_benthic_light_preflight.py --input results/generated_benthic_light --out results/generated_benthic_light
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-benthic-light-preflight-v1
+          path: results/generated_benthic_light/
