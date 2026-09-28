@@ -8,6 +8,8 @@ on:
       - "analysis/35_microsite_recovery_pathway.py"
       - "analysis/40_legacy_continuity_interaction.py"
       - "results/legacy_continuity_interaction_v1_contract.json"
+      - "results/legacy_continuity_interaction_v1.json"
+      - "validation/verify_legacy_continuity_interaction.py"
       - ".github/workflows/legacy-continuity-interaction.yml"
   pull_request:
     branches: [main]
@@ -34,6 +36,9 @@ jobs:
         run: python analysis/35_microsite_recovery_pathway.py --input results/generated_legacy_continuity --out results/generated_legacy_continuity
       - name: Test legacy by community-continuity interaction
         run: python analysis/40_legacy_continuity_interaction.py --input results/generated_legacy_continuity --out results/generated_legacy_continuity
+      - name: Verify canonical result
+        run: python validation/verify_legacy_continuity_interaction.py --generated results/generated_legacy_continuity/legacy_continuity_interaction_v1.json --canonical results/legacy_continuity_interaction_v1.json
+
       - name: Verify frozen interaction registry
         run: |
           python - <<'PY'
