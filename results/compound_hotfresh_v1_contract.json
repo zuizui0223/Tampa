@@ -14,10 +14,14 @@
   "exposure_definition": {
     "temperature_threshold_c": 30,
     "salinity_threshold_ppt": 25,
-    "exact_code_relation": "temp daily prediction >= 30 C AND salinity daily prediction <= 25 ppt",
-    "station_interval_metric": "maximum consecutive daily run with both thresholds true within each published transect interval",
+    "exact_code_relations": {
+      "hot": "temp daily prediction >= 30 C",
+      "fresh": "salinity daily prediction <= 25 ppt",
+      "hotfresh": "both simultaneously true"
+    },
+    "station_interval_metric": "maximum consecutive daily run under each stress state within each published transect interval",
     "segment_interval_metric": "mean station-level maximum run within bay segment and transect year",
-    "secondary_segment_metric": "median station-level maximum run",
+    "primary_compound_question": "Whether hotfresh run duration adds information beyond the hot and fresh run durations separately.",
     "thresholds_frozen_from_published_code": true
   },
   "response_access_before_preflight": {
