@@ -56,5 +56,11 @@
     "Annual observations cannot distinguish continuous survival of a co-occurring taxon from disappearance and reappearance between surveys.",
     "A source mixed patch can reflect habitat filtering or shared environmental tolerance; this test does not establish facilitation or competition.",
     "Do not change the all-bay primary population, source-class definitions, exact-point loss definition, bootstrap unit, event/node minima, or support rules after opening the derived endpoint."
-  ]
+  ],
+  "implementation_freeze": {
+    "cluster_bootstrap": "Pool all eligible exact-point Thalassia-loss transitions, resample unique stable transect node_id values with replacement, and carry all transitions from each sampled node together. Recompute source-class fractions within each bootstrap sample. Samples lacking an estimable source class are discarded and replaced until the declared replicate count is reached.",
+    "taxon_set_parser": "Split semicolon-delimited alternative_species from upstream consensus point-years; blank means no non-Thalassia seagrass taxon recorded.",
+    "period_rule": "Source year >=2016 and target year <=2025, with target year exactly source year + 1.",
+    "target_replacement_rule": "Because target-year Thalassia is absent by endpoint definition, target any_seagrass_present=True is equivalent to >=1 non-Thalassia seagrass present."
+  }
 }
