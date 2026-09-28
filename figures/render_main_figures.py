@@ -44,7 +44,7 @@ def figure1(primary:Path,outdir:Path):
     ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
     ax.set_title("A  Stable monitoring transects")
-    ax.legend(fontsize=7,frameon=False,loc="upper left",bbox_to_anchor=(1.01,0.38))
+    ax.legend(fontsize=7,frameon=False,loc="upper left",bbox_to_anchor=(0.0,-0.12),ncol=2)
     ax.grid(alpha=0.2)
 
     ax=axes[1]
@@ -64,6 +64,7 @@ def figure1(primary:Path,outdir:Path):
         ax.text(min(val+0.015,0.97), yi-h/2, f"{val:.2f}", va="center", fontsize=7)
     ax.grid(axis="x",alpha=0.2)
     fig.suptitle("Figure 1. Tampa Bay monitoring resolves a hierarchy of seagrass states",fontsize=12)
+    fig.subplots_adjust(bottom=0.20,wspace=0.22)
     return save(fig,outdir,"figure1_state_hierarchy")
 
 def slope_panel(ax,d,state,title,xlabel):
@@ -118,10 +119,9 @@ def figure3(primary:Path,nps:Path,outdir:Path):
     ax.set_title("B  External NPS Zostera quantitative trajectories")
     ax.legend(frameon=False,fontsize=7)
     ax.text(
-        0.02,0.03,
-        "Eligible annual units: recorded presence = 1\nFocal frequency = 1.0 throughout",
-        transform=ax.transAxes,fontsize=7,va="bottom",
-        bbox={"boxstyle":"round,pad=0.25","facecolor":"white","alpha":0.85,"edgecolor":"0.7"}
+        0.5,1.015,
+        "Eligible annual units: recorded presence = 1; focal frequency = 1.0 throughout",
+        transform=ax.transAxes,fontsize=7,ha="center",va="bottom"
     )
     ax.grid(alpha=0.2)
     fig.suptitle("Figure 3. Quantitative change occurs beneath persistent recorded presence",fontsize=12)
