@@ -9,6 +9,8 @@ on:
       - "analysis/39_diversity_insurance_node_audit.py"
       - "results/community_insurance_v1_contract.json"
       - "results/diversity_insurance_node_audit_v1_contract.json"
+      - "results/diversity_insurance_node_audit_v1.json"
+      - "validation/verify_diversity_insurance_node_audit.py"
       - ".github/workflows/diversity-insurance-node-audit.yml"
   pull_request:
     branches: [main]
@@ -35,6 +37,9 @@ jobs:
         run: python analysis/34_community_insurance.py --input results/generated_diversity_node_audit --out results/generated_diversity_node_audit
       - name: Test within-node richness gradient
         run: python analysis/39_diversity_insurance_node_audit.py --input results/generated_diversity_node_audit --out results/generated_diversity_node_audit
+      - name: Verify canonical audit result
+        run: python validation/verify_diversity_insurance_node_audit.py --generated results/generated_diversity_node_audit/diversity_insurance_node_audit_v1.json --canonical results/diversity_insurance_node_audit_v1.json
+
       - name: Verify frozen registry
         run: |
           python - <<'PY'
