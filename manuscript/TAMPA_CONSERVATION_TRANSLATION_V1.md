@@ -129,6 +129,8 @@ The exact-point analysis adds a useful distinction between **foundation-species 
 
 For management, this means that multispecies meadows may provide **state insurance against immediate conversion to bare habitat**, even when focal foundation-species identity is lost. This should not be translated into “all seagrasses are interchangeable.” The structural and functional consequences of losing *Thalassia* while retaining *Syringodium*, *Halodule*, or another species may be substantial.
 
+The follow-up richness analysis strengthens this interpretation. Across 370 exact-point *Thalassia*-loss transitions, pre-loss alternative-seagrass richness had a positive association with later seagrass occupancy after adjustment for year and water body (standardized log-odds coefficient 0.364; node-bootstrap 95% interval 0.074–0.655). Thus the insurance signal is not limited to a binary “mixed versus monospecific” contrast: the frozen model supports a **biodiversity-insurance gradient** in habitat-state retention. This remains observational because locally favorable habitat can both support more species before focal loss and increase later vegetation persistence.
+
 A useful dashboard should therefore separate:
 - focal-species state;
 - any-seagrass occupancy;
