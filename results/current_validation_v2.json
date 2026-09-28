@@ -97,7 +97,8 @@
     "Current environmental associations are descriptive; no climate-causal attribution is supported.",
     "Do not select a nominal annual water-quality association as a mechanism after inspecting the screen; no declared post-2016 association survives FDR control.",
     "Do not add further retrospective seasonal windows to rescue the hot/fresh mechanism; both annual and predeclared 3/6-month screens are negative.",
-    "Quantitative early warning is internally walk-forward validated but was motivated after observing Tampa state decoupling; external or untouched prospective confirmation is still required."
+    "Quantitative early warning is internally walk-forward validated but was motivated after observing Tampa state decoupling; external or untouched prospective confirmation is still required.",
+    "Do not retune or add another response-free mechanism simulation family after the frozen latent-occupancy v1 hard stop; the mechanism remains unresolved."
   ],
   "community_reorganization": {
     "period": [
@@ -373,5 +374,53 @@
       "grid_support_count": 0
     },
     "interpretation": "Removing the persistent-presence restriction does not restore older-history value for quantitative frequency or Braun-Blanquet state."
+  },
+  "two_timescale_hidden_state_memory_known_truth": {
+    "status": "mechanism_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36318342189,
+      "head_sha": "6b35f0fd733261da317391ac7490662d00108cc9",
+      "artifact_id": 10931760314,
+      "artifact_digest": "sha256:381c9d3981af93986eb23f4f3b8dfdd7d568976d4e981a7281fb09cad07a2f66"
+    },
+    "cells": 24,
+    "total_replicates": 768,
+    "supporting_cells": 0,
+    "required_supporting_cells": 18,
+    "global_target_pattern_fraction": 0.005208333333333333,
+    "required_global_target_pattern_fraction": 0.5,
+    "robust_phi_slow_levels": 0,
+    "required_robust_phi_slow_levels": 2,
+    "global_median_amplification": -0.0028410319505203408,
+    "binary_older_history_support_fraction": 0.009114583333333334,
+    "frequency_older_history_support_fraction": 0.015625,
+    "support_rule_passed": false,
+    "interpretation": "A slow latent AR(1) persistence/suitability process plus faster conditional condition is not sufficient, over the frozen grid, to reproduce the Tampa state-dimension memory pattern."
+  },
+  "latent_occupancy_detection_memory_known_truth": {
+    "status": "mechanism_not_supported",
+    "authoritative_workflow": {
+      "run_id": 36374376924,
+      "head_sha": "05aa5793363a0377efd9155eac0df33b0051917a",
+      "artifact_id": 10950646406,
+      "artifact_digest": "sha256:2b75802953dfc604c2e29c6abcdecc922eb87755200c5389212b08132a74fb9d"
+    },
+    "cells": 32,
+    "total_replicates": 1024,
+    "supporting_cells": 2,
+    "required_supporting_cells": 24,
+    "global_target_pattern_fraction": 0.169921875,
+    "required_global_target_pattern_fraction": 0.5,
+    "robust_p11_levels": 0,
+    "required_robust_p11_levels": 2,
+    "global_median_amplification": 0.0014173061882548801,
+    "binary_lag1_support_fraction": 0.998046875,
+    "frequency_lag1_support_fraction": 0.9951171875,
+    "binary_older_history_support_fraction": 0.2275390625,
+    "frequency_older_history_support_fraction": 0.123046875,
+    "median_false_negative_rate_given_occupied": 0.18121998336508277,
+    "support_rule_passed": false,
+    "hard_stop": "Stop response-free mechanism hunting after this v1; do not retune this grid or add another simulation family in the same mechanism line.",
+    "interpretation": "First-order latent occupancy persistence plus imperfect detection produces some binary-biased older-history signal, especially under high occupancy persistence, but does not robustly reproduce the complete Tampa pattern."
   }
 }
