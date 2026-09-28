@@ -1,0 +1,74 @@
+{
+  "schema": "tampa.benthic_light_condition_v1.canonical_summary",
+  "status": "benthic_light_condition_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36380072242,
+    "head_sha": "a8da58fe54d17ec54c89df9f0db6648fd10265ea",
+    "artifact_id": 10952124339,
+    "artifact_digest": "sha256:11b3b46486981c852be996641e52b02d7de71f407d908c20eb5b567c21986fbe"
+  },
+  "joined_visits": 1236,
+  "nodes": 57,
+  "primary_estimable_outcomes": 2,
+  "primary_supported_outcomes": 0,
+  "primary_6m": {
+    "blade_length_mean_mm": {
+      "eligible_rows": 646,
+      "eligible_nodes": 38,
+      "scored_target_years": 22,
+      "baseline_mae": 6.768384302093701,
+      "light_mae": 6.766815996429359,
+      "wins": 11,
+      "losses": 11,
+      "median_delta": 0.000399509678213672,
+      "mean_delta": -0.0015683056643403777,
+      "signflip_p": 0.46786532134678654,
+      "supported": false
+    },
+    "shoot_density_mean_m2": {
+      "eligible_rows": 642,
+      "eligible_nodes": 38,
+      "scored_target_years": 22,
+      "baseline_mae": 173.86065971487776,
+      "light_mae": 175.1260013582521,
+      "wins": 10,
+      "losses": 12,
+      "median_delta": 0.06880655386056844,
+      "mean_delta": 1.2653416433743772,
+      "signflip_p": 0.94530054699453,
+      "supported": false
+    },
+    "focal_frequency": {
+      "baseline_mae": 0.06944968767679642,
+      "light_mae": 0.06940379602327215,
+      "wins": 12,
+      "signflip_p": 0.34952650473495267,
+      "supported": false
+    },
+    "bb_cover_mean_all_points": {
+      "baseline_mae": 0.2301021356758212,
+      "light_mae": 0.23016369638752757,
+      "wins": 12,
+      "signflip_p": 0.5553344466555334,
+      "supported": false
+    }
+  },
+  "sensitivity_3m": {
+    "blade_length_supported": false,
+    "blade_length_p": 0.6422335776642234,
+    "shoot_density_supported": false,
+    "shoot_density_p": 0.9378006219937801,
+    "focal_frequency_supported": false,
+    "focal_frequency_p": 0.29034709652903473,
+    "bb_cover_supported": false,
+    "bb_cover_p": 0.13796862031379686
+  },
+  "interpretation": "A simplified pre-survey benthic-light proxy derived from segment-level Secchi and visit depth does not add robust heldout information about Thalassia blade length or shoot density beyond persistent node identity, survey context, depth and bulk Secchi. This narrows but does not reject light-based mechanisms, because local/spectral light, epiphytes and event-scale optical stress are unresolved.",
+  "ecological_boundary": "Recent Tampa decline is not well explained by generic accessibility, simple annual spatial synchrony, depth/sediment, or this bulk segment-light proxy. Candidate mechanisms shift toward local/event-scale compound stress and below-ground/clonal meadow state.",
+  "claim_boundary": [
+    "Post-hoc exploratory mechanism test; no causal identification.",
+    "Segment-level Secchi is not node-specific optical monitoring.",
+    "The proxy omits spectral quality, epiphytes, bottom reflectance and canopy self-shading.",
+    "The 3-month sensitivity cannot replace the null 6-month primary result."
+  ]
+}
