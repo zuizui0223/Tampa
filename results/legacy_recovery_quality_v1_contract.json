@@ -1,0 +1,70 @@
+{
+  "schema": "tampa.legacy_recovery_quality_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_legacy_recovery_quality_hypothesis_frozen_before_history_quality_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Pre-loss focal history predicts whether Thalassia is re-recorded and, in a separate endpoint, predicts stability after re-recording. Recovery-debt analysis shows returned points are quantitatively depressed. Test whether focal local history also predicts the quantitative depth of recovery.",
+  "source": {
+    "pinned_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "quantitative_return_builder": "analysis/43_recovery_debt.py",
+    "history_definition": "same focal Thalassia run and generic habitat-headstart decomposition as results/focal_vs_habitat_legacy_v1_contract.json"
+  },
+  "primary_population": {
+    "pattern": "Thalassia present at t, absent at t+1, present at t+2",
+    "period": "t >= 2016 and t+2 <= 2025",
+    "required_quantitative": [
+      "numeric source-year exact-point Braun-Blanquet",
+      "numeric return-year exact-point Braun-Blanquet"
+    ],
+    "outcome": "return-year exact-point Braun-Blanquet state"
+  },
+  "history_decomposition": {
+    "thalassia_run": "immediately consecutive consensus years ending at source year with Thalassia present",
+    "any_seagrass_run": "immediately consecutive consensus years ending at source year with any seagrass present",
+    "habitat_headstart": "any_seagrass_run - thalassia_run",
+    "centering": "thalassia_run and habitat_headstart centered by stable-node means among eligible recovered sequences"
+  },
+  "primary_hypothesis": {
+    "statement": "Among recovered exact points, longer-than-usual focal Thalassia persistence history predicts higher return-year Braun-Blanquet state after source abundance, generic habitat headstart, loss-year vegetation continuity, source mixture, stable node, and return year are represented.",
+    "model": "Ridge(alpha=1.0)",
+    "categorical": [
+      "node_id",
+      "return_year"
+    ],
+    "numeric": [
+      "source_bb",
+      "thalassia_run_centered",
+      "habitat_headstart_centered",
+      "loss_year_vegetated",
+      "source_mixed"
+    ],
+    "primary_term": "thalassia_run_centered",
+    "direction": "positive coefficient = deeper quantitative recovery with longer focal history",
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092915,
+    "minimum_sequences": 80,
+    "minimum_nodes": 15,
+    "minimum_nodes_with_thalassia_run_variation": 8,
+    "minimum_positive_headstart_events": 20,
+    "support_rule": "lower bound of 95% node-bootstrap interval for thalassia_run_centered coefficient > 0"
+  },
+  "secondary": [
+    "centered habitat-headstart coefficient and bootstrap interval",
+    "return-year Braun-Blanquet mean by integer pre-loss Thalassia run length where >=10 sequences occur",
+    "source-to-return Braun-Blanquet change by pre-loss run-length class, descriptive only"
+  ],
+  "interpretation": {
+    "supported": "Local focal persistence history predicts not only return probability but the quantitative depth of re-recorded recovery, consistent with path-dependent recovery quality.",
+    "unsupported": "Focal history predicts whether or how stably Thalassia returns but does not robustly predict return-year quantitative abundance after current source state and habitat-history controls; recovery quality is a distinct dimension."
+  },
+  "claim_boundary": [
+    "Post-hoc quantitative recovery endpoint on an already-opened exact-point return dataset.",
+    "A positive history coefficient would not prove clonal memory, residual rhizomes, carbohydrate reserves, or genet survival.",
+    "Braun-Blanquet is ordinal abundance, not percent cover, biomass, or ecosystem function.",
+    "Generic habitat headstart and stable-node controls reduce but do not eliminate unmeasured microsite quality.",
+    "Return is recorded reappearance at the same meter mark, not proven recolonization.",
+    "Do not change history decomposition, centering, source-state control, loss-year state, quantitative inclusion, model, minima, or support threshold after opening recovery quality by history."
+  ]
+}
