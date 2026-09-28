@@ -1,0 +1,97 @@
+{
+  "schema": "tampa.sarasota_state_memory_v1.candidate_contract",
+  "frozen_on": "2026-09-28",
+  "status": "program_metadata_qualified_response_unopened",
+  "purpose": "Prospective external matched-panel test of state-dimension-dependent ecological memory using Sarasota County Seagrass Monitoring fixed sites.",
+  "independence_boundary": {
+    "claim": "external monitoring program with separate field sampling and data management from the Tampa Bay transect panel",
+    "limitation": "same broad Florida Gulf Coast region; do not call this an independent climate or biogeographic regime",
+    "forbidden_claim": "globally independent ecological replication"
+  },
+  "source": {
+    "authority": "Sarasota County; distributed by Florida SEACAR Data Discovery Interface",
+    "program_id": 568,
+    "program_name": "Sarasota County Seagrass Monitoring",
+    "program_url": "https://data.florida-seacar.org/programs/details/568",
+    "data_location": "https://data-sarco.opendata.arcgis.com/datasets/sarco::seagrassscalloparchivelayer/explore/",
+    "monitoring_start": 2006,
+    "monitoring_end": "current",
+    "frequency": "annual",
+    "design": "40 fixed and 120 random points",
+    "parameters": [
+      "seagrass-species presence/absence",
+      "species percent composition",
+      "percent cover",
+      "blade length",
+      "depth and ancillary habitat observations"
+    ],
+    "known_discontinuities_before_response_access": {
+      "2018": "no county survey due to red tide conditions",
+      "2019": "partial/incomplete survey",
+      "2024": "annual field season changed from winter to growing-season sampling according to the 2024 county monitoring report"
+    },
+    "response_files_opened_before_contract": false,
+    "response_values_opened_before_contract": false
+  },
+  "primary_panel_frozen_before_response": {
+    "sampling_frame": "fixed sites only; random points are excluded from the primary panel",
+    "primary_year_range": [2006, 2023],
+    "reason_for_end_2023": "avoid mixing the pre-2024 winter sampling regime with the 2024 growing-season protocol shift in the confirmatory primary panel",
+    "2018_rule": "structural missing survey year; never code as ecological absence",
+    "2019_rule": "use only explicitly observed fixed-site records; unsampled sites remain missing",
+    "post_2023_rule": "not part of the primary confirmatory analysis; any later use requires a separately declared protocol-shift sensitivity",
+    "stable_unit": "program-defined fixed site identifier, unchanged across years",
+    "forbidden_fallback": "do not substitute random sites, bay segments, subsegments, or nearest-coordinate matching if a persistent fixed-site identifier cannot be established response-blind"
+  },
+  "state_pair": {
+    "primary_ecological_dimension": "overall seagrass state",
+    "coarse_state_required_semantics": "explicit sampled presence/absence of any seagrass at the fixed site-year",
+    "quantitative_state_required_semantics": "explicit total seagrass percent cover on a 0-100 scale at the same fixed site-year",
+    "normalization": "quantitative percent cover / 100",
+    "zero_semantics": "0% must be a valid sampled zero, distinct from missing/not surveyed",
+    "forbidden": [
+      "derive absence from missing data",
+      "choose a focal species after seeing response prevalence",
+      "replace total cover with species composition after response opening",
+      "change the coarse-state threshold after response opening"
+    ]
+  },
+  "hypothesis": {
+    "primary": "Lag-1 state should improve prediction for both coarse and quantitative states, while tau=10 older history should satisfy the frozen support rule for coarse state but not quantitative condition.",
+    "history_operator": "same exponentially weighted all-prior-state operator for both dimensions",
+    "primary_tau_years": 10,
+    "tau_reason": "transferred unchanged from the already-frozen Tampa binary-state result",
+    "common_learner": "Ridge(alpha=1.0)",
+    "common_loss": "mean squared error on [0,1]"
+  },
+  "response_blind_schema_gate": {
+    "allowed_before_response_opening": [
+      "program landing-page metadata",
+      "protocol/SOP documentation",
+      "ArcGIS item/service metadata",
+      "field names, coded-value domains, aliases and schema-only layer definitions"
+    ],
+    "forbidden_before_schema_pass": [
+      "feature-record queries",
+      "CSV/XLSX biological rows",
+      "summary statistics computed from biological response fields",
+      "map inspection colored or symbolized by biological response values"
+    ],
+    "must_confirm": [
+      "a persistent fixed-site identifier",
+      "a field that distinguishes fixed from random sampling or an equivalent fixed-site identity list",
+      "calendar date/year",
+      "explicit all-seagrass sampled presence/absence semantics",
+      "explicit total seagrass percent cover on a 0-100 scale",
+      "0 cover means sampled no seagrass and is distinct from missing/not surveyed"
+    ],
+    "failure": "terminal_pre_response_schema_stop; do not open response rows or rescue by changing state dimension/unit"
+  },
+  "no_rescue": [
+    "Do not move to random sites if fixed-site identity is unusable.",
+    "Do not include 2024+ in the primary panel after seeing outcomes.",
+    "Do not impute 2018 or incomplete 2019 observations.",
+    "Do not select a species, cover transformation, threshold, tau, learner or loss after response access.",
+    "Do not use the same Sarasota responses for a second confirmatory contract after this v1 outcome is opened."
+  ]
+}
