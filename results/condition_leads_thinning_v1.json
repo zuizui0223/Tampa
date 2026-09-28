@@ -1,0 +1,63 @@
+{
+  "schema": "tampa.condition_leads_thinning_v1.canonical_summary",
+  "status": "condition_leading_information_not_supported",
+  "authoritative_workflow": {
+    "run_id": 36409228963,
+    "head_sha": "70e8fbfc045c070fa702eac47926c38cec10aa36",
+    "artifact_id": 10964090767,
+    "artifact_digest": "sha256:4438672a335844a6facc59b6812b35f111429d49471e907f85d96117ff5e4ce7"
+  },
+  "registry": {
+    "condition_eligible_consecutive_transitions": 435,
+    "nodes": 44,
+    "target_year_range": [
+      2004,
+      2025
+    ]
+  },
+  "primary_frequency": {
+    "target_2016_excluded": true,
+    "eligible_rows": 417,
+    "nodes": 44,
+    "scored_target_years": 17,
+    "baseline_mean_mae": 0.06691057485405161,
+    "condition_mean_mae": 0.06861794398816712,
+    "wins": 6,
+    "losses": 11,
+    "mean_delta": 0.0017073691341155171,
+    "median_delta": 0.0004643865006962733,
+    "signflip_p": 0.918310816891831,
+    "supported": false
+  },
+  "sensitivity_include_2016": {
+    "eligible_rows": 435,
+    "nodes": 44,
+    "scored_target_years": 18,
+    "baseline_mean_mae": 0.07088087439226864,
+    "condition_mean_mae": 0.07302647750016952,
+    "wins": 7,
+    "losses": 11,
+    "signflip_p": 0.9785902140978591,
+    "supported": false
+  },
+  "secondary_braun_blanquet": {
+    "eligible_rows": 417,
+    "nodes": 44,
+    "scored_target_years": 17,
+    "baseline_mean_mae": 0.23395226760565652,
+    "condition_mean_mae": 0.24018972365683336,
+    "wins": 3,
+    "losses": 14,
+    "signflip_p": 0.999090009099909,
+    "supported": false
+  },
+  "interpretation": "Source-year blade length and shoot density do not add robust year-ahead information about next-year Thalassia frequency or Braun-Blanquet state beyond current quantitative state and stable site identity. The faster temporal variability of plant condition therefore does not establish a simple annual condition-to-thinning sequence.",
+  "ecological_update": "Treat plant condition and within-meadow occupancy/abundance as partially distinct degradation axes rather than a proven serial cascade. Both may change before coarse recorded presence loss, but their ordering remains unresolved.",
+  "claim_boundary": [
+    "Post-hoc exploratory cross-lag ecology, not causal identification.",
+    "Do not state that blade-length or shoot-density decline is a validated one-year precursor of meadow thinning.",
+    "The null increment does not imply plant condition is ecologically irrelevant; it means current quantitative occupancy/abundance and site identity already contain the robust year-ahead information at this annual resolution.",
+    "Target 2016 is excluded from the primary by the pre-existing protocol audit; restoring 2016 does not change the conclusion.",
+    "Do not retune lag horizon, predictor subset, target years, or learner to rescue a condition-leading sequence."
+  ]
+}

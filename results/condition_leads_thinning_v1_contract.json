@@ -1,0 +1,101 @@
+{
+  "schema": "tampa.condition_leads_thinning_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "posthoc_crosslag_hypothesis_frozen_before_endpoint_result",
+  "evidence_class": "posthoc exploratory temporal ecology",
+  "motivation": "Test the buffer-then-threshold sequence suggested by Tampa state decoupling: does plant-condition state carry leading information about next-year within-meadow thinning before coarse recorded loss?",
+  "source": {
+    "annual_panel": "analysis/03_quantitative_state.py -> quant_annual_panel.csv",
+    "pinned_commit": "6c567beff95ea04f0e397101befb49d5233ace8f"
+  },
+  "transition_population": {
+    "unit": "same stable node in consecutive calendar years",
+    "source_requirements": [
+      "blade_length_mean_mm observed",
+      "shoot_density_mean_m2 observed",
+      "focal_frequency observed",
+      "bb_cover_mean_all_points observed"
+    ],
+    "target_requirement": "focal_frequency observed",
+    "candidate_target_years": [
+      2004,
+      2025
+    ],
+    "primary_excluded_target_years": [
+      2016
+    ],
+    "exclusion_reason": "2016 is excluded a priori from the primary cross-lag endpoint because the independent source-protocol audit established a protocol-sensitive 2016/2017 pulse; 2016 is retained in sensitivity only."
+  },
+  "primary_outcome": {
+    "variable": "target focal_frequency",
+    "loss": "MAE",
+    "clip": [
+      0,
+      1
+    ]
+  },
+  "secondary_outcome": {
+    "variable": "target bb_cover_mean_all_points",
+    "loss": "MAE",
+    "clip": null
+  },
+  "model": {
+    "learner": "Ridge(alpha=1.0)",
+    "categorical": [
+      "water_body",
+      "node_id"
+    ],
+    "baseline_numeric": [
+      "target_year",
+      "source_focal_frequency",
+      "source_bb_cover_mean_all_points"
+    ],
+    "condition_augmentation": [
+      "source_blade_length_mean_mm",
+      "source_log1p_shoot_density"
+    ],
+    "only_allowed_arm_difference": "condition augmentation",
+    "scaling": "StandardScaler fitted on each walk-forward training set"
+  },
+  "validation": {
+    "split": "strict walk-forward by target year; train only earlier target years",
+    "minimum_training_rows": 60,
+    "minimum_training_target_years": 4,
+    "minimum_test_rows_per_target_year": 5,
+    "minimum_scored_target_years": 10,
+    "paired_unit": "target year"
+  },
+  "support_rule": {
+    "minimum_win_fraction": 0.6,
+    "median_delta_lt_zero": true,
+    "one_sided_signflip_p_lt": 0.05,
+    "signflip_replicates": 100000,
+    "random_seed": 2026092811,
+    "primary_decision": "condition-leading-information supported only if the primary focal-frequency endpoint passes all three criteria"
+  },
+  "sensitivity": {
+    "include_target_2016": "repeat the frozen comparison with 2016 restored; sensitivity cannot replace primary",
+    "secondary_bb": "report same comparison for Braun-Blanquet target state; secondary cannot rescue a null primary"
+  },
+  "interpretation": {
+    "supported": "Plant-condition measurements carry leading information about next-year within-meadow Thalassia frequency beyond current frequency/abundance and persistent site identity, consistent with condition change preceding meadow thinning.",
+    "unsupported": "Plant-condition measurements do not add robust year-ahead information beyond current quantitative occupancy/abundance and site identity; the observed faster condition dynamics do not establish a condition-to-thinning sequence."
+  },
+  "claim_boundary": [
+    "Post-hoc exploratory cross-lag ecology, not causal identification.",
+    "Predictive increment is evidence about temporal ordering of information, not proof that low blade length or shoot density causes thinning.",
+    "Blade length can respond non-monotonically to stress; no monotonic physiological direction is predeclared.",
+    "Stable node identity is a saturated repeated-site reference, not a habitat mechanism.",
+    "Do not change the target year set, 2016 handling, learner, baseline state variables, condition predictors, or support threshold after opening the endpoint."
+  ],
+  "implementation_freeze": {
+    "primary_2016_handling": "Rows with target_year=2016 are excluded from both primary training and primary scoring. The sensitivity restores them to both.",
+    "shoot_transform": "log1p(shoot_density_mean_m2)",
+    "frequency_clip": [
+      0,
+      1
+    ],
+    "cover_clip": null,
+    "ridge_alpha": 1
+  }
+}
