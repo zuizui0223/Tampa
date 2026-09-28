@@ -123,6 +123,20 @@ Priority measurements at repeatedly monitored “hidden-degradation” and refer
 
 This would turn the present monitoring result into a mechanism-discrimination experiment.
 
+## Community insurance as a conservation state
+
+The exact-point analysis adds a useful distinction between **foundation-species persistence** and **continued seagrass habitat occupancy**. Meter marks where *Thalassia* co-occurred with another seagrass were 14.3 percentage points more likely to remain seagrass-occupied after focal loss than *Thalassia*-only points, and most retained occupancy involved species that were already present before focal disappearance.
+
+For management, this means that multispecies meadows may provide **state insurance against immediate conversion to bare habitat**, even when focal foundation-species identity is lost. This should not be translated into “all seagrasses are interchangeable.” The structural and functional consequences of losing *Thalassia* while retaining *Syringodium*, *Halodule*, or another species may be substantial.
+
+A useful dashboard should therefore separate:
+- focal-species state;
+- any-seagrass occupancy;
+- mixed-species versus monospecific point state;
+- transition to bare habitat.
+
+This distinction can identify where biodiversity appears to buffer habitat continuity and where focal-species loss corresponds to complete local vegetation loss.
+
 ## A practical two-tier monitoring design
 
 The Tampa results also suggest how to allocate monitoring effort efficiently.
