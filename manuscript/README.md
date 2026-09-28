@@ -20,6 +20,9 @@
 - **ESCO back matter template:** `ESTUARIES_COASTS_BACK_MATTER_TEMPLATE_V1.md`
 - **ESCO cover letter template:** `ESTUARIES_COASTS_COVER_LETTER_TEMPLATE_V1.md`
 - **ESCO checklist:** `ESTUARIES_COASTS_SUBMISSION_CHECKLIST_V1.md`
+- **Data/Code provenance:** `DATA_CODE_AVAILABILITY_V1.md`
+- **Assembled Supplement:** `TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md`
+- **Supplement captions:** `TAMPA_ECOLOGY_SUPPLEMENT_CAPTIONS_V1.md`
 
 ## Authoritative scientific boundaries
 
