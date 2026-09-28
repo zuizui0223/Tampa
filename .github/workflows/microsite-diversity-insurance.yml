@@ -8,12 +8,16 @@ on:
       - "analysis/34_microsite_diversity_insurance.py"
       - "results/community_buffering_v1_contract.json"
       - "results/microsite_diversity_insurance_v1_contract.json"
+      - "results/microsite_diversity_insurance_v1.json"
+      - "validation/verify_microsite_diversity_insurance.py"
       - ".github/workflows/microsite-diversity-insurance.yml"
   pull_request:
     branches: [main]
     paths:
       - "analysis/34_microsite_diversity_insurance.py"
       - "results/microsite_diversity_insurance_v1_contract.json"
+      - "results/microsite_diversity_insurance_v1.json"
+      - "validation/verify_microsite_diversity_insurance.py"
       - ".github/workflows/microsite-diversity-insurance.yml"
   workflow_dispatch:
 
@@ -32,6 +36,8 @@ jobs:
         run: python analysis/33_community_buffering.py --out results/generated_microsite_insurance
       - name: Test microsite diversity insurance
         run: python analysis/34_microsite_diversity_insurance.py --input results/generated_microsite_insurance --out results/generated_microsite_insurance
+      - name: Verify canonical result
+        run: python validation/verify_microsite_diversity_insurance.py --generated results/generated_microsite_insurance/microsite_diversity_insurance_v1.json --canonical results/microsite_diversity_insurance_v1.json
       - name: Verify frozen registry and endpoint
         run: |
           python - <<'PY'
