@@ -334,6 +334,21 @@ Primary support was therefore **0/3**. A secondary blade-length sediment contras
 
 This narrows the persistent-site hypothesis: the strong node effect is **not simply depth plus sediment class**. Candidate site-template mechanisms now shift toward benthic light climate / chronic water clarity, hydrodynamic exposure or residence time, finer-scale chronic water quality, below-ground rhizome/biomass legacy, and interactions between persistent habitat and episodic stress.
 
+### 2m. A segment-level benthic-light dose does not explain plant-condition variation
+
+Tampa Bay seagrass management and prior experiments make underwater light at depth a biologically plausible mechanism. To test that idea without conflating light with depth itself, a response-independent preflight combined visit-specific median point depth with the pinned monthly Secchi series. Using the fixed relation `Kd = 1.7 / Secchi`, the primary exposure was mean `exp(-Kd × depth)` across the six complete months before each survey.
+
+Coverage was strong: **1,236 visits**, **57 stable nodes**, **1998–2025**, with benthic-light fractions spanning **0.082–0.989**.
+
+The frozen walk-forward reference already included stable node identity, water body, year, survey timing, effort, visit depth and six-month mean Secchi. Adding only the nonlinear benthic-light fraction did not pass the support rule for either primary plant-condition outcome:
+
+- blade length: MAE **6.7684 → 6.7668 mm**, 11/22 wins, **p = 0.468**;
+- shoot density: **173.86 → 175.13 shoots m⁻²**, 10/22 wins, **p = 0.945**.
+
+Focal frequency and Braun–Blanquet state were also unsupported, and the predeclared three-month sensitivity did not change the conclusion.
+
+This does **not** show that light is biologically irrelevant. It shows that a coarse segment-level Secchi × transect-depth proxy does not explain the remaining annual signal after strong site and survey controls. Node-scale optical variability, spectral quality, epiphyte shading and event-scale stress remain unresolved.
+
 ### 3. Community reorganization is bay-specific
 
 The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium filiforme* and *Ruppia maritima*.
