@@ -1,0 +1,43 @@
+{
+  "schema": "tampa.return_fragility_v1.canonical_summary",
+  "status": "return_fragility_supported",
+  "authoritative_workflow": {
+    "run_id": 36444593923,
+    "head_sha": "971138808c56c85c94685a3f6b46e8e12f5929d9",
+    "artifact_id": 10980845687,
+    "artifact_digest": "sha256:452742229387131edad3123d6f535cbbdd83a473827c92d9afd9d22d93ca4876"
+  },
+  "registry": {
+    "four_year_sequences": 580,
+    "nodes": 21,
+    "recovered_sequences": 83,
+    "recovered_nodes": 17,
+    "continuous_sequences": 497,
+    "continuous_nodes": 21,
+    "total_recorded_relosses": 94
+  },
+  "primary": {
+    "recovered_group_coefficient": 0.3197993528036509,
+    "ci95": [
+      0.07746515275268133,
+      0.5687960554836885
+    ],
+    "bootstrap_replicates": 5000,
+    "bootstrap_attempts": 5000,
+    "supported": true
+  },
+  "secondary": {
+    "recovered_reloss_fraction": 0.3614457831325301,
+    "continuous_reloss_fraction": 0.12877263581488935,
+    "risk_difference_recovered_minus_continuous": 0.23267314731764077
+  },
+  "interpretation": "Exact points that re-record Thalassia after a one-year loss are substantially more likely to be unrecorded again the following year than points with uninterrupted occupancy, after stable-node and return-year adjustment. Re-recording therefore marks a comparatively fragile state rather than complete recovery at this annual resolution.",
+  "ecological_boundary": "The fragility pattern is consistent with hysteresis or incomplete local recovery but can also arise from patchiness, detectability, residual stress, or demographic instability; it does not identify the mechanism.",
+  "claim_boundary": [
+    "Post-hoc four-year exact-point temporal ecology.",
+    "Recorded re-loss is an observation-state transition, not mortality or demographic relapse.",
+    "Do not treat a one-year Thalassia re-recording as full ecological recovery.",
+    "Continuous controls are observational and adjusted for stable node and return year, not experimentally matched.",
+    "The result does not identify whether fragility arises from residual rhizomes, local stress, patchiness, detectability, or demographic state."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "tampa.return_fragility_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_four_year_fragility_hypothesis_frozen_before_reloss_endpoint",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "The exact-point recovery analyses show that Thalassia is frequently re-recorded after a one-year loss. Test whether such returns are stable or more fragile than uninterrupted occupancy.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f"
+  },
+  "four_year_sequence": {
+    "years": "t, t+1, t+2, t+3 observed consecutively at the same stable meter mark",
+    "period": "t >= 2016 and t+3 <= 2025",
+    "recovered_group": "Thalassia present at t, absent at t+1, present at t+2",
+    "continuous_group": "Thalassia present at t, t+1, and t+2",
+    "outcome": "Thalassia absent at t+3 (recorded re-loss)",
+    "note": "Because t >= 2016, recovered-group loss years begin in 2017; the independently protocol-sensitive 2016 loss year is excluded structurally."
+  },
+  "primary_hypothesis": {
+    "statement": "Exact-point Thalassia returns after a one-year loss are more likely to be followed by another recorded loss than continuously occupied meter marks.",
+    "model": "L2 logistic regression for t+3 recorded loss",
+    "categorical": [
+      "node_id",
+      "return_year"
+    ],
+    "numeric": [
+      "recovered_group"
+    ],
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "estimator": "coefficient for recovered_group after stable-node and return-year adjustment",
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092817,
+    "minimum_recovered_sequences": 30,
+    "minimum_continuous_sequences": 100,
+    "minimum_recovered_nodes": 10,
+    "minimum_control_nodes": 10,
+    "minimum_reloss_events_total": 15,
+    "support_rule": "lower bound of 95% node-bootstrap interval for recovered_group coefficient > 0"
+  },
+  "secondary": [
+    "raw recorded re-loss fraction in recovered and continuous groups",
+    "risk difference recovered minus continuous",
+    "bay-segment-specific re-loss fractions, descriptive only"
+  ],
+  "interpretation": {
+    "supported": "Re-recorded Thalassia after a one-year exact-point loss is a more fragile state than uninterrupted occupancy, consistent with hysteresis or incomplete local recovery.",
+    "unsupported": "Returned points are not detectably more fragile than continuously occupied points at the next annual observation; re-recording appears comparably stable at this temporal resolution."
+  },
+  "claim_boundary": [
+    "Post-hoc four-year exact-point endpoint.",
+    "Recorded re-loss is an observation-state transition, not demographic relapse or mortality.",
+    "A fragility effect could reflect patchiness, detectability, residual local stress, or demographic instability; it does not identify the mechanism.",
+    "Continuous controls are adjusted for stable node and return year but are not experimentally matched.",
+    "Do not alter the four-year state patterns, period, comparison group, model, minima, or support threshold after opening t+3 states."
+  ]
+}

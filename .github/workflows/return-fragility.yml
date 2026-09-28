@@ -1,0 +1,54 @@
+name: Exact-point return fragility ecology
+
+on:
+  push:
+    branches: [analysis/return-fragility-v1]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/42_return_fragility.py"
+      - "results/return_fragility_v1_contract.json"
+      - "results/return_fragility_v1.json"
+      - "validation/verify_return_fragility.py"
+      - ".github/workflows/return-fragility.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/42_return_fragility.py"
+      - "results/return_fragility_v1_contract.json"
+      - ".github/workflows/return-fragility.yml"
+  workflow_dispatch:
+
+jobs:
+  ecology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Rebuild exact-point community state
+        run: python analysis/33_community_buffering.py --out results/generated_return_fragility
+      - name: Test exact-point return fragility
+        run: python analysis/42_return_fragility.py --input results/generated_return_fragility --out results/generated_return_fragility
+      - name: Verify canonical result
+        run: python validation/verify_return_fragility.py --generated results/generated_return_fragility/return_fragility_v1.json --canonical results/return_fragility_v1.json
+
+      - name: Verify frozen four-year registry
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_return_fragility/return_fragility_v1.json"))
+          assert x["schema"]=="tampa.return_fragility_v1.result"
+          assert x["registry"]["recovered_sequences"]>=0
+          assert x["registry"]["continuous_sequences"]>=0
+          assert x["registry"]["four_year_sequences"]==x["registry"]["recovered_sequences"]+x["registry"]["continuous_sequences"]
+          print(json.dumps(x,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-return-fragility-v1
+          path: results/generated_return_fragility/
