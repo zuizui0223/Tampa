@@ -1,0 +1,56 @@
+{
+  "schema": "tampa.recovery_stability_legacy_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_recovery_stability_hypothesis_frozen_before_stability_history_result",
+  "evidence_class": "posthoc exploratory exact-point temporal ecology",
+  "motivation": "Exact-point returns after one-year Thalassia loss are more fragile than uninterrupted occupancy. Test whether pre-loss focal persistence history identifies which returned points remain stable one year later.",
+  "source": {
+    "point_year_builder": "analysis/33_community_buffering.py",
+    "pinned_source_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "stable_point_id": "child-event locationID = Transect + meter-mark Site"
+  },
+  "primary_population": {
+    "four_year_sequence": "same stable point observed in t,t+1,t+2,t+3; t>=2016; t+3<=2025",
+    "recovered_pattern": "Thalassia present at t, absent at t+1, present at t+2",
+    "outcome": "recorded Thalassia loss at t+3",
+    "pre_loss_run_length": "immediately consecutive consensus years ending at t with Thalassia present"
+  },
+  "primary_hypothesis": {
+    "statement": "Among exact-point Thalassia returns, longer-than-usual pre-loss focal persistence history predicts lower probability of re-loss in the next year.",
+    "primary_predictor": "pre_loss_run_length centered by stable-node mean among recovered sequences",
+    "controls": [
+      "stable node identity",
+      "return year",
+      "loss-year vegetated state",
+      "source-year mixed-species state"
+    ],
+    "model": "L2 logistic regression for recorded re-loss",
+    "logistic_C": 1,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "uncertainty": "stable-node bootstrap",
+    "bootstrap_replicates": 5000,
+    "random_seed": 2026092819,
+    "minimum_sequences": 60,
+    "minimum_nodes": 12,
+    "minimum_nodes_with_run_length_variation": 6,
+    "minimum_reloss_events": 20,
+    "minimum_stable_events": 30,
+    "support_rule": "upper bound of 95% node-bootstrap interval for the centered pre-loss run-length coefficient < 0"
+  },
+  "secondary": [
+    "re-loss fraction by integer pre-loss run length where >=5 recovered sequences occur",
+    "loss-year vegetation-continuity coefficient in the same model, descriptive only"
+  ],
+  "interpretation": {
+    "supported": "Longer focal persistence history is associated with more stable re-recording after loss, consistent with local legacy contributing to recovery depth as well as return probability.",
+    "unsupported": "Pre-loss focal history predicts reappearance but does not robustly distinguish stable versus fragile returns one year later."
+  },
+  "claim_boundary": [
+    "Post-hoc endpoint derived from an already-opened four-year return-fragility result.",
+    "Recorded re-loss is not demographic relapse, mortality, or failed recolonization.",
+    "A history effect would not prove rhizome or clonal memory without direct below-ground measurements.",
+    "Loss-year vegetation continuity is a state marker, not a causal facilitation treatment.",
+    "Do not change the recovered pattern, history definition, node-centering, controls, model, minima, or directional support rule after opening the stability-history result."
+  ]
+}
