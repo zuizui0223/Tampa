@@ -1,0 +1,212 @@
+{
+  "schema": "tampa.external_validation_ledger_v1",
+  "frozen_on": "2026-09-27",
+  "purpose": "Close the public-dataset search for external confirmation of the exploratory Tampa quantitative early-warning hypothesis without converting protocol/schema/transport STOPs into ecological outcomes.",
+  "discovery_hypothesis": {
+    "source": "results/quantitative_early_warning_v1.json",
+    "statement": "Among source-year transects where the focal seagrass is still recorded, lower quantitative meadow state may add out-of-time information about next-year recorded-state loss beyond space/time/effort.",
+    "tampa_status": "internally_supported_strict_walkforward_exploratory",
+    "external_status": "unconfirmed"
+  },
+  "denominator": {
+    "protocol_attempts": 10,
+    "distinct_external_systems": 5,
+    "scored_external_endpoints": 0,
+    "favorable_external_endpoints": 0,
+    "adverse_external_endpoints": 0,
+    "null_or_no_confirmed_external_endpoints": 0,
+    "candidate_hunting_hard_stop": true
+  },
+  "attempts": [
+    {
+      "index": 1,
+      "system": "Caribbean SeagrassNet / PANGAEA",
+      "version": "v1",
+      "source": "10.1594/PANGAEA.994149",
+      "terminal_stage": "post_response_schema",
+      "terminal_status": "terminal_protocol_or_schema_stop",
+      "reason": "A focal Thalassia-identified row had an empty percent-cover value under the frozen numeric parser.",
+      "biological_payload_opened": true,
+      "biological_values_opened": true,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/caribbean_early_warning_v1/terminal_result.json"
+    },
+    {
+      "index": 2,
+      "system": "Alaska USGS eelgrass",
+      "version": "v1",
+      "source": "10.5066/F7RV0KV9",
+      "terminal_stage": "pre_response_header_transport",
+      "terminal_status": "terminal_pre_response_header_transport_stop",
+      "reason": "ScienceBase returned HTTP 200 rather than required 206 to Range bytes=0-0.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/alaska_eelgrass_v1/terminal_result.json"
+    },
+    {
+      "index": 3,
+      "system": "Alaska USGS eelgrass",
+      "version": "v2",
+      "source": "10.5066/F7RV0KV9",
+      "terminal_stage": "pre_response_endpoint_semantics",
+      "terminal_status": "terminal_pre_response_endpoint_semantics_stop",
+      "reason": "Official FGDC metadata defined PercentCover estimates in the observed range 12-90 and '.' as no estimate; no valid 0%-cover recorded-absence state existed.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/alaska_eelgrass_v2/terminal_result.json"
+    },
+    {
+      "index": 4,
+      "system": "Florida Keys National Marine Sanctuary / SEACAR",
+      "version": "v1",
+      "source": "SEACAR program 296",
+      "terminal_stage": "pre_response_metadata_interface",
+      "terminal_status": "terminal_pre_response_metadata_transport_or_parser_stop",
+      "reason": "The frozen literal live-page parser did not reproduce the expected Braun-Blanquet token.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/florida_keys_thalassia_v1/terminal_result.json"
+    },
+    {
+      "index": 5,
+      "system": "Florida Keys National Marine Sanctuary / SEACAR",
+      "version": "v2",
+      "source": "SEACAR program 296",
+      "terminal_stage": "pre_response_metadata_transport",
+      "terminal_status": "terminal_pre_response_metadata_transport_stop",
+      "reason": "The public SEACAR standardized metadata workbook returned HTTP 401 in the validation runtime.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/florida_keys_thalassia_v2/terminal_result.json"
+    },
+    {
+      "index": 6,
+      "system": "Texas statewide seagrass / NCEI",
+      "version": "v1",
+      "source": "NCEI accession 0181898; DOI 10.25921/3gcr-4x94",
+      "terminal_stage": "pre_response_metadata_transport",
+      "terminal_status": "terminal_pre_response_metadata_transport_stop",
+      "reason": "The frozen NCEI OAS metadata route timed out before qualification completed.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/texas_seagrass_v1/terminal_result.json"
+    },
+    {
+      "index": 7,
+      "system": "Texas statewide seagrass / NCEI",
+      "version": "v2",
+      "source": "NCEI accession 0181898; DOI 10.25921/3gcr-4x94",
+      "terminal_stage": "post_response_schema",
+      "terminal_status": "terminal_protocol_or_schema_stop",
+      "reason": "The once-only 2011 QuadratPercentCover workbook contained zero worksheets/header mappings satisfying the frozen station + quadrat + Thalassia-cover schema.",
+      "biological_payload_opened": true,
+      "biological_values_opened": "payload_parsed_but_no_valid_response_table_constructed",
+      "biological_payload_audit": {
+        "selected_year_entries_opened": 1,
+        "selected_year_entries_planned": 8,
+        "compressed_bytes_opened": 42904,
+        "uncompressed_bytes_parsed": 47913,
+        "unselected_entry_payload_requests": 0
+      },
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/texas_seagrass_v2/terminal_outcome_result.json"
+    },
+    {
+      "index": 8,
+      "system": "SeagrassNet USA + Canada frozen 48-site universe",
+      "version": "v1",
+      "source": "seagrassnet.org",
+      "terminal_stage": "pre_response_interface",
+      "terminal_status": "terminal_pre_response_interface_gate_stop",
+      "reason": "The frozen automated interface heuristic failed even though the captured response-independent JavaScript exposed /api/download?sites=<comma-joined site IDs>.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/seagrassnet_zostera_v1/terminal_result.json"
+    },
+    {
+      "index": 9,
+      "system": "SeagrassNet USA + Canada frozen 48-site universe",
+      "version": "v2",
+      "source": "seagrassnet.org",
+      "terminal_stage": "pre_response_dynamic_filename_identity",
+      "terminal_status": "terminal_pre_response_dynamic_filename_identity_stop",
+      "reason": "A server-generated random UUID in Content-Disposition changed between body-free HEAD requests and violated the frozen full-HEAD fingerprint.",
+      "biological_payload_opened": false,
+      "biological_values_opened": false,
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/seagrassnet_zostera_v2/terminal_result.json"
+    },
+    {
+      "index": 10,
+      "system": "SeagrassNet USA + Canada frozen 48-site universe",
+      "version": "v3",
+      "source": "seagrassnet.org",
+      "terminal_stage": "partial_raw_archive_transport",
+      "terminal_status": "terminal_partial_raw_archive_access_transport_stop",
+      "reason": "The server ignored a suffix Range request and returned HTTP 200; the capped runner physically opened 65,558 raw ZIP bytes before checking status. No ZIP member was decompressed and no biological value was interpreted.",
+      "biological_payload_opened": "partial_raw_archive_bytes",
+      "biological_values_opened": false,
+      "biological_payload_audit": {
+        "raw_archive_requests": 1,
+        "raw_archive_bytes_opened": 65558,
+        "decompressed_member_payloads": 0
+      },
+      "model_fits": 0,
+      "predictive_scores": 0,
+      "counts_as_external_predictive_evidence": false,
+      "untouched_retry_allowed": false,
+      "canonical_record": "validation/seagrassnet_zostera_v3/terminal_result.json"
+    }
+  ],
+  "interpretation": {
+    "allowed": [
+      "The Tampa quantitative early-warning hypothesis has internal strict walk-forward support but no valid external scored endpoint.",
+      "The external denominator documents reproducibility, schema and endpoint-semantic barriers encountered under no-rescue rules.",
+      "Protocol/schema/transport STOPs are not ecological null or adverse outcomes.",
+      "Repeated public-dataset candidate hunting is closed."
+    ],
+    "forbidden": [
+      "Treating any STOP as evidence that the ecological hypothesis is false.",
+      "Reporting external replication success or failure when zero external predictive endpoints were scored.",
+      "Repairing an opened or consumed attempt and relabeling it untouched confirmation.",
+      "Continuing public candidate search until a favorable dataset is found."
+    ],
+    "next_valid_external_evidence": [
+      "A genuinely future Tampa Bay monitoring wave scored under a contract frozen before the new response is available.",
+      "A collaborator/provider dataset selected before response inspection, with immutable schema/data dictionary and explicit zero-versus-missing semantics available before outcome access."
+    ]
+  }
+}
