@@ -100,11 +100,28 @@ Thus the persistent node effect cannot be reduced to the tested depth and sedime
 
 This negative result matters because it rules out the easiest physical interpretation of `node_id`. The next candidate components are therefore less static/simple: **benthic light climate, chronic water clarity, hydrodynamic exposure/residence time, fine-scale chronic water-quality regime, below-ground meadow reserves and clonal legacy**, plus their interaction with episodic stress.
 
+## New ecological result 5 — the bulk benthic-light proxy is also insufficient
+
+Light remains a biologically strong candidate in Tampa Bay, but the relevant question is whether the available monitoring data recover the light signal at the scale of individual transects.
+
+A response-independent preflight combined visit depth with monthly segment Secchi to estimate a simplified pre-survey benthic-light fraction. The six-month exposure was available for **1,236 visits across 57 nodes and 28 years**, spanning **0.082–0.989**.
+
+The outcome test was deliberately stringent. The reference already contained stable node identity, water body, year, survey timing, effort, depth and bulk Secchi. The augmented model added only the nonlinear light-at-depth proxy.
+
+Neither primary plant-condition outcome was supported:
+
+- blade length: **6.7684 → 6.7668 mm MAE**, p = **0.468**;
+- shoot density: **173.86 → 175.13 shoots m⁻² MAE**, p = **0.945**.
+
+The three-month sensitivity and the quantitative frequency/abundance outcomes were also unsupported.
+
+This is consistent with recent Tampa Bay synthesis showing that substantial post-2016 seagrass loss occurred even while segment-scale light environments were broadly considered supportive of growth. The remaining mechanism may therefore depend on **local optical heterogeneity, compound event-scale stress, below-ground reserve state, or interactions among these factors**, rather than a simple bay-segment light deficit.
+
 ## Ecological hypothesis H1 — persistent site template + local meadow buffer
 
 **Hypothesis.** Long-lived local habitat properties and meadow legacy stabilize whether *Thalassia* remains established at a transect, while above-ground condition can change substantially before the binary state changes.
 
-Simple depth and sediment summaries have now been tested and did not recover the stable-site effect. Remaining candidate components include benthic light climate and chronic water clarity, rhizosphere chemistry not captured by sediment class, exposure/hydrodynamics, fine-scale chronic water-quality regime and long-lived below-ground clonal/rhizome structure.
+Simple depth/sediment summaries and a segment-Secchi × visit-depth benthic-light proxy have now been tested and did not recover the unresolved site/condition signal. Remaining candidates include node-scale optical heterogeneity and epiphyte shading, rhizosphere chemistry not captured by sediment class, exposure/hydrodynamics, nonlinear compound heat–freshwater events, and long-lived below-ground clonal/rhizome structure.
 
 ### Existing evidence consistent with H1
 
