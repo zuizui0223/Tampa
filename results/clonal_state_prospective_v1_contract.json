@@ -75,7 +75,8 @@
         "synchronization": "Complete all confirmatory node pairs within one <=28-day campaign.",
         "routine_schedule_boundary": "If the routine monitoring calendar cannot meet the frozen timing window, conduct a dedicated additional baseline fixed-transect survey using the same quantitative protocol rather than widening the TNC campaign.",
         "protocol_equivalence": "The dedicated baseline must use the same meter-mark/frequency and Braun-Blanquet definitions needed for the future change endpoint."
-      }
+      },
+      "historical_feasibility_source": "results/clonal_tnc_timing_feasibility_v1.json"
     },
     "nutrient_state_diagnostic": {
       "motivation": "In Florida Thalassia, rhizome carbohydrate can covary negatively with leaf nutrient content; high carbohydrate may represent reserve storage or passive accumulation under growth limitation.",
