@@ -258,3 +258,16 @@ The first two remain the strongest direct discriminators between persistent mead
 - NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
 - Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**
 - Existing qualitative epiphyte-density stress hypothesis: **not supported as a simple annual stress mechanism; no further same-field mining**
+
+## Cross-layer synthesis — dual buffering
+
+If TNC and paired canopy/ambient velocity can be collected at the same nodes, use the separately frozen joint contract:
+
+- `results/dual_buffer_prospective_v1_contract.json`
+- `docs/DUAL_BUFFER_HYPOTHESIS_V1.md`
+
+The joint ecological question is whether persistence reflects **stored internal capital** (rhizome TNC), **generated external buffering** (canopy hydrodynamic attenuation), or both.
+
+This is not a post-hoc combined model. The joint formula, two directional focal coefficients, Holm family correction, collinearity boundary and no-interaction rule are frozen before the future response exists.
+
+Do not call the concept itself novel. The intended Tampa advance is prospective field discrimination of the two mechanisms at the same long-monitored foundation-species nodes.
