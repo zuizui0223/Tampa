@@ -134,6 +134,80 @@ Do not choose or drop nodes using the future response.
 
 Where feasible, co-locate this design with the clonal-state sampling program, but keep the hydrodynamic and rhizome-TNC primary tests analytically separate.
 
+## Bare-bed counterfactual physical gate
+
+The primary paired vertical velocity design is useful for quantifying the flow environment experienced by the meadow, but by itself it cannot uniquely identify **canopy-caused** attenuation. Even an unvegetated seabed has a frictional boundary layer in which near-bed velocity is lower than velocity higher in the water column.
+
+Therefore add a nested, response-independent physical-validation subset.
+
+### Control subset
+
+Target:
+
+- 18 sampled meadow nodes;
+- minimum analyzable subset: 12;
+- at least 3 nodes from each of Old, Middle and Lower Tampa Bay.
+
+At each validation node, identify a nearby unvegetated or effectively canopy-free control patch before any future biological response is inspected.
+
+Frozen matching rules:
+
+- maximum horizontal separation: 100 m;
+- target absolute water-depth difference: <= 0.15 m;
+- hard maximum depth difference: <= 0.30 m;
+- no obvious channel edge, inlet jet, shoreline barrier, structure or other discontinuity that makes local forcing non-comparable;
+- record substrate and bathymetric context.
+
+A node that lacks a valid bare control can remain in the primary attenuation-to-future-state cohort. It is excluded only from this canopy-attribution subset.
+
+### Measurement geometry
+
+Use the same instrument family, QC, burst design and vertical sampling geometry at the vegetated and bare patches.
+
+Preferred confirmatory implementation is simultaneous measurement of four sampling volumes:
+
+1. vegetated near-bed / within-canopy;
+2. vegetated local reference above canopy;
+3. bare near-bed at the same height above sediment;
+4. bare local reference at the corresponding upper-water-column height.
+
+If hardware limitations require non-simultaneous vegetated and bare deployments, that node is descriptive only for canopy attribution because changing tides/waves can mimic a vegetation effect.
+
+### Canopy-specific metric
+
+Compute:
+
+```text
+A_veg  = 1 - p90(U_veg_nearbed)  / p90(U_veg_reference)
+A_bare = 1 - p90(U_bare_nearbed) / p90(U_bare_reference)
+
+excess_canopy_attenuation_p90 = A_veg - A_bare
+```
+
+The bare term estimates the local vertical attenuation expected without a canopy.
+
+Before opening the future *Thalassia* response, apply one frozen node-level paired bootstrap to the mean `excess_canopy_attenuation_p90`.
+
+**Physical attribution gate:** the 95% interval must lie above zero.
+
+If this gate fails, do not call the within-meadow vertical attenuation metric canopy ecosystem engineering. It remains a measured hydrodynamic gradient associated with vegetated sites.
+
+## Two-gate self-facilitation rule
+
+Use a hydrodynamic **self-facilitation / positive-feedback** interpretation only if both independent links are supported:
+
+1. **Physical engineering gate:** the bare-bed counterfactual shows positive excess canopy attenuation.
+2. **Prospective ecological gate:** the already frozen primary model shows that greater meadow attenuation predicts more positive / less negative future *Thalassia* frequency change after baseline state, ambient forcing and bay are represented.
+
+Interpret the four possible outcomes explicitly:
+
+- both pass -> consistent with hydrodynamic self-facilitation;
+- physical only -> vegetation modifies flow, but the modification is not shown to stabilize future *Thalassia*;
+- ecological only -> hydrodynamic state predicts the future, but canopy causation is not identified;
+- neither -> no support for hydrodynamic self-facilitation.
+
+This remains an observational feedback test, not experimental proof of causality.
+
 ## Paired velocity design
 
 At each node deploy two time-synchronized velocity measurements.
