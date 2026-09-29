@@ -39,6 +39,7 @@ YEARS=(2023,2024,2025)
 THALASSIA="Thalassia testudinum"
 ORDER="Alismatales"
 
+SWFWMD_FEATURE_URL="https://www25.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/FeatureServer/3"
 FWC_ZIP_URL="https://atoll.floridamarine.org/Data/Zips/SDE/seagrass_fl_poly.zip"
 EDGE_MAX_M=100.0
 TARGET=18
@@ -140,6 +141,65 @@ def reconstruct_recent_nodes(event:bytes,occ:bytes):
         raise RuntimeError("recent Thalassia-positive registry drift")
     return out
 
+def arcgis_json(url:str,params:dict):
+    from urllib.parse import urlencode
+    raw=get_bytes(url+"/query?"+urlencode(params),240)
+    return json.loads(raw.decode("utf-8"))
+
+def fetch_swfwmd_2024_union(nodes):
+    """Primary source: exact SWFWMD 2024 Tampa/Suncoast seagrass layer."""
+    lons=[x["longitude"] for x in nodes]
+    lats=[x["latitude"] for x in nodes]
+    pad=0.06
+    envelope=f"{min(lons)-pad},{min(lats)-pad},{max(lons)+pad},{max(lats)+pad}"
+
+    geoms=[]; attrs=[]; offset=0; page_size=1000
+    while True:
+        data=arcgis_json(SWFWMD_FEATURE_URL,{
+            "where":"1=1",
+            "geometry":envelope,
+            "geometryType":"esriGeometryEnvelope",
+            "inSR":"4326",
+            "spatialRel":"esriSpatialRelIntersects",
+            "outFields":"OBJECTID,FLUCCSCODE,FLUCCSDESC,DATESTAMP",
+            "returnGeometry":"true",
+            "outSR":"4326",
+            "orderByFields":"OBJECTID",
+            "resultOffset":str(offset),
+            "resultRecordCount":str(page_size),
+            "f":"geojson"
+        })
+        if "error" in data:
+            raise RuntimeError(f"SWFWMD FeatureServer error: {data['error']}")
+        feats=data.get("features",[])
+        for ft in feats:
+            g=ft.get("geometry")
+            if g:
+                from shapely.geometry import shape
+                geoms.append(shape(g))
+                attrs.append(ft.get("properties",{}))
+        if len(feats)<page_size:
+            break
+        offset += len(feats)
+        if offset>20000:
+            raise RuntimeError("SWFWMD FeatureServer pagination runaway guard")
+    if not geoms:
+        raise RuntimeError("SWFWMD 2024 FeatureServer returned no Tampa-area polygons")
+
+    union4326=unary_union(geoms)
+    tr=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
+    from shapely.ops import transform as shp_transform
+    union=shp_transform(tr.transform,union4326)
+    audit={
+        "source":"SWFWMD Seagrass in 2024 FeatureServer",
+        "feature_url":SWFWMD_FEATURE_URL,
+        "features_returned":len(geoms),
+        "working_crs":"EPSG:26917",
+        "query_envelope_wgs84":envelope,
+        "delivery":"GeoJSON FeatureServer pagination"
+    }
+    return union,audit
+
 def fetch_fwc_seagrass_union(outdir:Path,nodes):
     raw=get_bytes(FWC_ZIP_URL,300)
     archive=outdir/"seagrass_fl_poly.zip"
@@ -200,51 +260,58 @@ def fetch_fwc_seagrass_union(outdir:Path,nodes):
 def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
     nodes=reconstruct_recent_nodes(fetch(FILES["event"]),fetch(FILES["occurrence"]))
+    primary_error=None
     try:
-        union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
-    except Exception as exc:
-        unresolved={
-            "schema":"tampa.bare_control_spatial_preflight_v1",
-            "status":"source_delivery_unavailable_spatial_feasibility_unresolved",
-            "response_independent":True,
-            "source":{
-                "tbismp_commit":COMMIT,
-                "recent_years":list(YEARS),
-                "seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
-                "seagrass_archive":FWC_ZIP_URL,
-                "tampa_component_provenance":"SWFWMD Seagrass in 2024 per FWC metadata"
-            },
-            "registry":{
-                "recent_vegetated_nodes":len(nodes),
-                "recent_thalassia_positive_nodes":sum(x["thalassia_frequency"]>0 for x in nodes)
-            },
-            "candidate_gate":{
-                "maximum_edge_distance_m":EDGE_MAX_M,
-                "target_nodes":TARGET,
-                "minimum_nodes":MINIMUM,
-                "minimum_nodes_per_bay":MIN_PER_BAY,
-                "passed":None
-            },
-            "delivery_error":f"{type(exc).__name__}: {exc}",
-            "decision":"No scientific pass/fail is assigned. Preserve the frozen 100-m / 12-node / 3-per-bay criteria and resolve feasibility by accessible GIS mirror or preregistered field/imagery reconnaissance.",
-            "claim_boundary":[
-                "Source-delivery failure is not ecological evidence.",
-                "Do not relax the frozen distance or sample-size rules because the public GIS host was unavailable.",
-                "No future biological response is used."
-            ]
-        }
-        (outdir/"bare_control_spatial_preflight_v1.json").write_text(
-            json.dumps(unresolved,indent=2,sort_keys=True)+"\n"
-        )
-        (outdir/"bare_control_spatial_candidates_v1.csv").write_text(
-            "node_id,water_body,longitude,latitude,status\n"+
-            "\n".join(
-                f'{x["node_id"]},{x["water_body"]},{x["longitude"]},{x["latitude"]},UNRESOLVED'
-                for x in nodes
-            )+"\n"
-        )
-        print(json.dumps(unresolved,indent=2,sort_keys=True))
-        return
+        union,source_audit=fetch_swfwmd_2024_union(nodes)
+    except Exception as exc1:
+        primary_error=f"{type(exc1).__name__}: {exc1}"
+        try:
+            union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
+            source_audit["primary_delivery_error"]=primary_error
+            source_audit["fallback_used"]=True
+        except Exception as exc:
+                unresolved={
+                "schema":"tampa.bare_control_spatial_preflight_v1",
+                "status":"source_delivery_unavailable_spatial_feasibility_unresolved",
+                "response_independent":True,
+                "source":{
+                    "tbismp_commit":COMMIT,
+                    "recent_years":list(YEARS),
+                    "seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
+                    "seagrass_archive":FWC_ZIP_URL,
+                    "tampa_component_provenance":"SWFWMD Seagrass in 2024 per FWC metadata"
+                },
+                "registry":{
+                    "recent_vegetated_nodes":len(nodes),
+                    "recent_thalassia_positive_nodes":sum(x["thalassia_frequency"]>0 for x in nodes)
+                },
+                "candidate_gate":{
+                    "maximum_edge_distance_m":EDGE_MAX_M,
+                    "target_nodes":TARGET,
+                    "minimum_nodes":MINIMUM,
+                    "minimum_nodes_per_bay":MIN_PER_BAY,
+                    "passed":None
+                },
+                "delivery_error":f"{type(exc).__name__}: {exc}",
+                "decision":"No scientific pass/fail is assigned. Preserve the frozen 100-m / 12-node / 3-per-bay criteria and resolve feasibility by accessible GIS mirror or preregistered field/imagery reconnaissance.",
+                "claim_boundary":[
+                    "Source-delivery failure is not ecological evidence.",
+                    "Do not relax the frozen distance or sample-size rules because the public GIS host was unavailable.",
+                    "No future biological response is used."
+                ]
+            }
+            (outdir/"bare_control_spatial_preflight_v1.json").write_text(
+                json.dumps(unresolved,indent=2,sort_keys=True)+"\n"
+            )
+            (outdir/"bare_control_spatial_candidates_v1.csv").write_text(
+                "node_id,water_body,longitude,latitude,status\n"+
+                "\n".join(
+                    f'{x["node_id"]},{x["water_body"]},{x["longitude"]},{x["latitude"]},UNRESOLVED'
+                    for x in nodes
+                )+"\n"
+            )
+            print(json.dumps(unresolved,indent=2,sort_keys=True))
+            return
 
     transformer=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
     boundary=union.boundary
@@ -294,10 +361,10 @@ def main(outdir:Path):
         "source":{
             "tbismp_commit":COMMIT,
             "recent_years":list(YEARS),
-            "seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
-            "seagrass_archive":FWC_ZIP_URL,
-            "tampa_component_provenance":"SWFWMD Seagrass in 2024 per FWC metadata",
-            "archive_audit":source_audit,
+            "seagrass_source":source_audit.get("source","FWC/FWRI Seagrass Florida current statewide compilation"),
+            "primary_feature_url":SWFWMD_FEATURE_URL,
+            "fallback_archive":FWC_ZIP_URL,
+            "source_audit":source_audit,
         },
         "registry":{
             "recent_vegetated_nodes":len(rows),
