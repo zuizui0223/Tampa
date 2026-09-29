@@ -33,11 +33,33 @@ Start from the contemporaneous baseline-vegetated stable nodes in:
 - Middle Tampa Bay;
 - Lower Tampa Bay.
 
-For each node, search for a candidate bare or effectively canopy-free seabed patch within a **100 m radius** of the fixed monitoring location.
+First select the vegetated deployment meter mark under the frozen edge-independent representative-placement rule. Then search for a candidate bare or effectively canopy-free seabed patch within **100 m of that preselected vegetated deployment meter mark**.
 
-The 100 m threshold is unchanged from the failed GIS preflight.
+The 100 m threshold is unchanged from the frozen GIS preflight.
 
 Do not extend the search radius after seeing reconnaissance yield.
+
+## Vegetated deployment-point rule
+
+The vegetated sensor location is chosen **before** bare-control proximity is used.
+
+For the primary *Thalassia* persistence cohort:
+
+- compute the median meter-mark position (`site_m`) among all contemporaneously vegetated meter marks in the node;
+- among contemporaneously *Thalassia*-positive meter marks, choose the mark closest to that median;
+- break an exact tie by choosing the lower `site_m`.
+
+For the secondary all-vegetated physical cohort, choose the vegetated meter mark closest to the same node-level vegetated median.
+
+Do not move the vegetated sensor to an edge-nearest mark because a bare patch is easier to find there.
+
+A response-independent GIS audit using this rule passed the frozen 100-m counterfactual feasibility gate:
+
+- representative vegetated marks: 21 candidate nodes total;
+- representative *Thalassia* marks: 19 candidate nodes total;
+- *Thalassia* representative candidates by bay: Old 3, Middle 7, Lower 9.
+
+Thus the counterfactual is not dependent on selecting edge-proximal meadow locations.
 
 ## Stage 1 — imagery reconnaissance
 
@@ -47,7 +69,7 @@ Record for every candidate node:
 
 - imagery date and source;
 - candidate bare-patch coordinates;
-- straight-line distance from fixed node;
+- straight-line distance from the preselected vegetated deployment meter mark;
 - apparent patch width / area;
 - surrounding vegetation configuration;
 - distance and bearing to nearest visible vegetation edge;
@@ -62,7 +84,7 @@ At the contemporaneous baseline visit, a bare control is accepted only if all co
 
 ### A. Distance
 
-- control sampling volume <= 100 m from the fixed monitoring node.
+- control sampling volume <= 100 m from the preselected vegetated deployment meter mark.
 
 ### B. Vegetation state
 
