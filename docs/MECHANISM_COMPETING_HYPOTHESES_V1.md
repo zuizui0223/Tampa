@@ -54,6 +54,19 @@ Rhizome carbohydrate is not a generic health score.
 
 A positive TNC -> future-state result therefore supports **predictive information in measured below-ground reserve state**, not proof that carbohydrate itself is the causal buffering mechanism.
 
+### Secondary competing below-ground mechanism: regenerative meristem bank
+
+Do not collapse all below-ground biology into one "clonal memory" variable.
+
+The same field cores can separate two candidate axes:
+
+- **energetic reserve:** rhizome TNC;
+- **regenerative capacity:** rhizome meristem / apex density.
+
+Integrated-growth work in *T. testudinum* has proposed inactive shoots and associated meristematic structures as a dormant meristem bank. A meristem-density signal would therefore support a regenerative-capacity mechanism distinct from the primary TNC reserve hypothesis.
+
+This is predeclared as secondary and cannot rescue a null primary TNC result.
+
 ### What it does not require
 
 It does not require blade length to decline before frequency. The rejected one-year condition -> thinning cascade is therefore not a contradiction.
