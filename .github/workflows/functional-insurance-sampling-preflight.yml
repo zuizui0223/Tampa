@@ -1,0 +1,33 @@
+name: Functional-insurance sampling preflight
+
+on:
+  push:
+    paths:
+      - "analysis/54_functional_insurance_sampling_preflight.py"
+      - ".github/workflows/functional-insurance-sampling-preflight.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/54_functional_insurance_sampling_preflight.py"
+      - "results/functional_insurance_sampling_preflight_v1.json"
+      - "results/direct_hydrodynamic_prospective_v1_contract.json"
+      - "docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md"
+      - ".github/workflows/functional-insurance-sampling-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check numpy
+      - name: Rebuild recent community sampling frame
+        run: python analysis/54_functional_insurance_sampling_preflight.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: functional-insurance-sampling-preflight
+          path: results/generated_functional_insurance_preflight/functional_insurance_sampling_preflight_v1.json
