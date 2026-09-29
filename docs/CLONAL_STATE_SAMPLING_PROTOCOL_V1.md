@@ -34,15 +34,38 @@ Do not subsample nodes after seeing the future response, and do not add alternat
 
 ## Core placement
 
-At each selected transect:
+At each selected transect, use the contemporaneous *Thalassia*-positive meter-mark geometry to distribute three independent cores before any TNC value or future response is known.
 
-1. identify the permanent transect / meter-mark area;
-2. place destructive cores adjacent to the monitored line or marks so the permanent observation unit is not damaged;
-3. use a fixed offset rule decided before field collection;
-4. collect at least 3 independent below-ground cores per node;
-5. record exact GPS/location metadata, water depth at sampling, date/time, and offset from the permanent transect.
+Primary anchor rule:
+
+1. sort contemporaneously *Thalassia*-positive meter marks by `site_m`;
+2. if at least three positive marks exist, select the observed marks nearest q25, q50 and q75 of positive-mark `site_m`, using three unique anchors where possible;
+3. if exactly two positive marks exist, anchor one core at each mark and place the third independent core at a pre-frozen lateral/perpendicular offset from the midpoint-nearest positive mark;
+4. if exactly one positive mark exists, place three independent non-overlapping offset cores adjacent to that mark;
+5. never core directly on the permanent meter mark;
+6. freeze the perpendicular/lateral offset geometry before field collection;
+7. record exact GPS/location metadata, anchor `site_m`, water depth, date/time and offset for every core.
+
+The baseline spatial preflight found that 30 of 33 recent *Thalassia*-positive nodes already have at least three positive meter marks (median 7). Only three nodes require a sparse-node fallback: one in Middle Tampa Bay and two in Lower Tampa Bay. Old Tampa Bay was 8/8 directly eligible for three spatial anchors.
+
+Three cores are **within-node spatial/measurement replication**. The inferential unit remains the stable transect node.
 
 If local permitting or monitoring rules require different core placement, update the field protocol **before collecting the first core** and document the deviation.
+
+## Spatial core-design feasibility
+
+A frozen baseline-only preflight is stored in `results/clonal_core_spatial_preflight_v1.json`.
+
+Recent planning frame:
+
+- 33 *Thalassia*-positive core-bay nodes;
+- 30/33 have at least three positive meter marks and support direct q25/q50/q75 anchors;
+- positive-meter-mark count median = 7, range = 1–19;
+- Old Tampa Bay: 8/8 direct three-anchor nodes;
+- Middle Tampa Bay: 10/11 direct, one single-mark fallback;
+- Lower Tampa Bay: 12/14 direct, one two-mark fallback and one single-mark fallback.
+
+Do not exclude sparse nodes merely because they are spatially sparse; doing so would condition the study on current meadow structure. Retain their predeclared design-class label and use the frozen fallback geometry.
 
 ## Primary below-ground measurement
 
