@@ -25,6 +25,13 @@
       },
       "source": "results/functional_insurance_sampling_preflight_v1.json",
       "boundary": "Historical opened data are used only for prospective sampling feasibility. Contemporaneous baseline Thalassia presence must be rechecked before destructive sampling."
+    },
+    "destructive_sampling_guardrail": {
+      "principle": "Below-ground measurement must not materially alter the permanent monitoring unit whose future state is the response.",
+      "transect_buffer": "Freeze a minimum perpendicular offset from the permanent transect line before the first core; never core on a permanent meter mark or inside the routine monitoring footprint.",
+      "core_footprint": "Freeze core diameter, depth and maximum total disturbed area per node before sampling; do not enlarge cores after inspecting TNC yield.",
+      "restoration": "Backfill/restore each core hole under the monitoring authority's protocol and record any visible disturbance at the end of sampling.",
+      "node_specific_deviation": "Any safety/access/permit exception must be documented at collection and cannot depend on future response."
     }
   },
   "baseline_new_measurements": {
@@ -79,7 +86,13 @@
       "next survey shoot density minus baseline where observed"
     ],
     "prohibited_primary": "binary reappearance / recorded return",
-    "rationale": "Use continuous quantitative stability as the mechanism endpoint; annual detection transitions are not ecological recovery."
+    "rationale": "Use continuous quantitative stability as the mechanism endpoint; annual detection transitions are not ecological recovery.",
+    "destructive_sampling_sensitivity": {
+      "status": "predeclared_if_point_level_future_data_allow",
+      "definition": "Recalculate future focal frequency after excluding the fixed permanent meter mark(s) nearest the three TNC core anchors under one pre-frozen distance/mark rule.",
+      "purpose": "Check that the prospective TNC association is not driven by local disturbance from destructive coring.",
+      "interpretation": "Primary inference remains node-level full-transect frequency; a strong discrepancy is reported as a measurement-intervention concern rather than hidden."
+    }
   },
   "primary_analysis": {
     "estimator": "standardized coefficient of baseline rhizome TNC in a prespecified linear model for future change in focal_frequency",
@@ -114,7 +127,11 @@
     "collection-to-preservation maximum delay",
     "allowable collection-time window",
     "confirmatory 30-node / 8-per-bay precision gate",
-    "q25/q50/q75 core-anchor implementation and sparse-node offset geometry"
+    "q25/q50/q75 core-anchor implementation and sparse-node offset geometry",
+    "minimum perpendicular core offset from permanent transect",
+    "core diameter/depth and maximum disturbed area per node",
+    "core-hole restoration procedure",
+    "anchor-neighborhood exclusion rule for the future disturbance sensitivity"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -125,7 +142,8 @@
     "Do not call a null TNC result decisive if fewer than 30 analyzable baseline-Thalassia-positive nodes remain or any core bay contributes fewer than 8; below that precision gate the result is a pilot.",
     "Rhizome TNC can vary with season and recent carbon balance; sampling season, tissue fraction and preservation timing are part of the primary measurement definition, not optional metadata.",
     "A supported TNC coefficient identifies a prospective reserve-state association, not genet identity, clonal connectivity, or causal resource translocation.",
-    "Three cores are within-node measurement replication/spatial coverage; inferential replication remains the stable transect node."
+    "Three cores are within-node measurement replication/spatial coverage; inferential replication remains the stable transect node.",
+    "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology."
   ],
   "design_precision_gate": {
     "planning_model_terms": "standardized_rhizome_TNC + baseline_frequency + baseline_Braun_Blanquet + two water-body indicators",
