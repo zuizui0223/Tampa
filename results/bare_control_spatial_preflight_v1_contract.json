@@ -1,0 +1,32 @@
+{
+  "schema": "tampa.bare_control_spatial_preflight_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "response_independent_spatial_feasibility",
+  "purpose": "Test whether the nested bare-bed counterfactual subset is geographically plausible before field deployment, using 2024 SWFWMD seagrass polygons and already-open recent sampling-state data only.",
+  "source": {
+    "seagrass_layer": "SWFWMD Seagrass in 2024",
+    "arcgis_layer": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/3",
+    "mapping_year": 2024,
+    "minimum_mapping_unit_acres": 0.25,
+    "node_registry": "Pinned TBISMP Event/Occurrence snapshot, latest eligible 2023-2025 state"
+  },
+  "frozen_rules": {
+    "core_bays": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"],
+    "candidate_nodes": "recent baseline-vegetated fixed nodes only",
+    "primary_subgroup": "recent Thalassia-positive nodes reported separately",
+    "maximum_edge_distance_m": 100,
+    "control_target_nodes": 18,
+    "control_minimum_nodes": 12,
+    "control_minimum_nodes_per_bay": 3,
+    "projected_crs": "EPSG:26917",
+    "edge_definition": "distance from fixed node to boundary of the union of mapped 2024 seagrass polygons",
+    "outside_polygon_rule": "A historically/recently vegetated transect outside the 2024 mapped union is flagged as a map-state mismatch, not automatically treated as a valid bare control."
+  },
+  "pass_rule": "At least 12 recent vegetated nodes have a mapped meadow edge within 100 m, with at least 3 such nodes in each core bay. The 18-node target is planning, not a pass requirement.",
+  "claim_boundary": [
+    "This is field-feasibility only; it is not an ecological mechanism test.",
+    "A mapped edge within 100 m does not prove a depth-matched bare control exists.",
+    "The 0.25-acre mapping unit can miss small unvegetated gaps inside patchy beds, so failure is conservative and requires field/imagery reconnaissance rather than threshold relaxation.",
+    "Do not use future Thalassia response to choose bare controls."
+  ]
+}
