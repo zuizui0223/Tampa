@@ -1,0 +1,33 @@
+{
+  "schema": "tampa.bare_control_spatial_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36524412785,
+    "head_sha": "37a1668179af9d9e886d839bf0324842ba854e89",
+    "artifact_id": 11013816436,
+    "artifact_digest": "sha256:6701b09c3229f9ee35e6e2e63a9c3506003c7459d594ce17a53156942bc56bf1"
+  },
+  "status": "source_delivery_unavailable_spatial_feasibility_unresolved",
+  "response_independent": true,
+  "registry": {
+    "recent_vegetated_nodes": 40,
+    "recent_thalassia_positive_nodes": 33
+  },
+  "frozen_gate": {
+    "maximum_edge_distance_m": 100,
+    "target_nodes": 18,
+    "minimum_nodes": 12,
+    "minimum_nodes_per_bay": 3,
+    "passed": null
+  },
+  "source_attempts": [
+    "SWFWMD 2024 MapServer returnIdsOnly: no usable IDs returned in CI",
+    "SWFWMD 2024 MapServer offset GeoJSON: non-JSON delivery in CI",
+    "FWC/FWRI current statewide seagrass archive: HTTP 403 after redirect in CI"
+  ],
+  "decision": "No scientific pass/fail is assigned. Preserve the 100-m / 12-node / 3-per-bay rules and resolve bare-control feasibility by an accessible authoritative GIS copy or preregistered field/imagery reconnaissance.",
+  "claim_boundary": [
+    "Source delivery failure is not evidence that nearby bare controls do or do not exist.",
+    "Do not relax distance, depth-match or sample-size rules to manufacture feasibility.",
+    "The counterfactual physical gate remains required before attributing vertical attenuation specifically to canopy ecosystem engineering."
+  ]
+}
