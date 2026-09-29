@@ -10,18 +10,30 @@
       "Middle Tampa Bay",
       "Lower Tampa Bay"
     ],
-    "sampling_frame": "Existing stable fixed-transect nodes with a baseline survey and permission for adjacent below-ground sampling.",
-    "target_sample_size_nodes": 24,
-    "minimum_analyzable_nodes": 18,
-    "stratification": "Aim for approximately balanced representation of quantitatively stable, persistent-but-degrading, and low/unstable quantitative-state transects using only data available before below-ground sampling.",
-    "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise."
+    "sampling_frame": "Census-oriented sampling of all contemporaneously baseline-Thalassia-positive stable fixed-transect nodes in Old, Middle and Lower Tampa Bay with permission for adjacent below-ground sampling.",
+    "stratification": "Do not subsample to manufacture balanced outcome classes. Attempt the full eligible baseline-Thalassia-positive core-bay frame; if permitting or field logistics require exclusions, freeze the node list and exclusion reasons before any future outcome exists.",
+    "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise.",
+    "planning_target_nodes": 33,
+    "minimum_primary_analyzable_nodes": 30,
+    "minimum_primary_nodes_per_bay": 8,
+    "recent_2023_2025_feasibility_context": {
+      "recent_thalassia_positive_nodes": 33,
+      "by_water_body": {
+        "Old Tampa Bay": 8,
+        "Middle Tampa Bay": 11,
+        "Lower Tampa Bay": 14
+      },
+      "source": "results/functional_insurance_sampling_preflight_v1.json",
+      "boundary": "Historical opened data are used only for prospective sampling feasibility. Contemporaneous baseline Thalassia presence must be rechecked before destructive sampling."
+    }
   },
   "baseline_new_measurements": {
     "primary_predictor": {
       "name": "rhizome_total_nonstructural_carbohydrate",
       "unit": "mg g-1 dry mass or laboratory-equivalent standardized concentration",
       "definition": "predefined laboratory sum of soluble sugar + starch in rhizome tissue",
-      "direction": "higher reserve predicts less subsequent quantitative decline"
+      "direction": "higher reserve predicts less subsequent quantitative decline",
+      "interpretation_scale": "Treat rhizome TNC as a candidate longer-term reserve/buffering state, not as an acute stress-event sensor."
     },
     "secondary_predictors": [
       "below-ground dry biomass per area",
@@ -30,7 +42,15 @@
       "below-ground : above-ground biomass ratio",
       "optional clonal/genet continuity if a validated molecular design is feasible"
     ],
-    "replication": "At least 3 independent adjacent below-ground cores per node; summarize the primary predictor by node median before outcome access."
+    "replication": "At least 3 independent adjacent below-ground cores per node; process the same frozen rhizome tissue fraction in every valid core and summarize the primary predictor by node median before outcome access.",
+    "standardization": {
+      "campaign_seasonality": "Freeze one narrow seasonal sampling campaign before the first core. Target completion of all primary TNC sampling within 42 consecutive days.",
+      "baseline_alignment": "Collect below-ground samples within 14 days before or after the node's contemporaneous fixed-transect baseline survey whenever permitted; deviations are recorded and cannot be chosen using the future response.",
+      "tissue_fraction": "Before the first outcome-bearing core, freeze one living rhizome tissue definition (horizontal/vertical fraction, position relative to a living shoot, segment length, and exclusion of necrotic tissue/roots) and use it at every node.",
+      "preservation": "Freeze preservation chemistry/temperature and a maximum collection-to-metabolic-arrest delay before the first core; record actual delay for every core.",
+      "assay_batch": "Randomize node/core samples across assay batches with respect to bay and baseline meadow state; technical standards/controls are mandatory.",
+      "time_of_day": "Record collection clock time for every core and freeze any allowable collection-time window before sampling. Do not create a time-of-day exclusion after future response access."
+    }
   },
   "baseline_existing_covariates": [
     "water body",
@@ -57,10 +77,14 @@
       "baseline Braun-Blanquet state",
       "water body"
     ],
-    "uncertainty": "node-label permutation or bootstrap fixed before outcome access",
+    "uncertainty": "Use one node-level bootstrap or permutation procedure frozen before outcome access; report a two-sided 95% interval for the standardized TNC coefficient.",
     "directional_hypothesis": "higher rhizome TNC -> more positive / less negative future frequency change",
     "alpha": 0.05,
-    "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor"
+    "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor",
+    "model": "future_delta_frequency ~ standardized_rhizome_TNC + baseline_frequency + baseline_Braun_Blanquet + water_body",
+    "primary_coefficient": "standardized_rhizome_TNC",
+    "confirmatory_gate": "Confirmatory only with at least 30 analyzable baseline-Thalassia-positive nodes and at least 8 such nodes in each core bay. Below this gate, report the prospective coefficient and uncertainty as a pilot and do not use a null result to reject rhizome-reserve buffering.",
+    "support_rule": "Primary support requires the frozen two-sided 95% interval for standardized_rhizome_TNC to lie above 0."
   },
   "secondary_analysis": {
     "note": "Secondary clonal traits and secondary biological outcomes are descriptive/supportive and cannot replace a null primary TNC -> future frequency result.",
@@ -72,13 +96,34 @@
     "TNC assay definition",
     "number of cores per node",
     "future survey date/window",
-    "analysis code and permutation/bootstrap rule"
+    "analysis code and permutation/bootstrap rule",
+    "seasonal campaign window",
+    "maximum TNC-to-baseline survey offset",
+    "rhizome tissue fraction / position definition",
+    "collection-to-preservation maximum delay",
+    "allowable collection-time window",
+    "confirmatory 30-node / 8-per-bay precision gate"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
     "Do not use binary re-recording as a recovery outcome.",
     "Do not change the primary clonal predictor after future response access.",
     "Do not replace a null primary result with a secondary clonal trait.",
-    "If below-ground sampling is not independent of monitoring state or management intervention, document that selection explicitly."
-  ]
+    "If below-ground sampling is not independent of monitoring state or management intervention, document that selection explicitly.",
+    "Do not call a null TNC result decisive if fewer than 30 analyzable baseline-Thalassia-positive nodes remain or any core bay contributes fewer than 8; below that precision gate the result is a pilot.",
+    "Rhizome TNC can vary with season and recent carbon balance; sampling season, tissue fraction and preservation timing are part of the primary measurement definition, not optional metadata.",
+    "A supported TNC coefficient identifies a prospective reserve-state association, not genet identity, clonal connectivity, or causal resource translocation."
+  ],
+  "design_precision_gate": {
+    "planning_model_terms": "standardized_rhizome_TNC + baseline_frequency + baseline_Braun_Blanquet + two water-body indicators",
+    "planning_assumption": "Approximate Gaussian multiple-regression benchmark, two-sided alpha 0.05, 80% power for the focal TNC term; used only to prevent an underpowered confirmatory label.",
+    "approximate_detectable_partial_r": {
+      "n_24": 0.57,
+      "n_30": 0.51,
+      "n_33": 0.49,
+      "n_39": 0.45,
+      "n_47": 0.41
+    },
+    "interpretation": "The old 24-node design mainly detected very large partial effects. The recent frame suggests roughly 33 eligible nodes, still implying sensitivity mainly to moderate-to-large TNC effects."
+  }
 }
