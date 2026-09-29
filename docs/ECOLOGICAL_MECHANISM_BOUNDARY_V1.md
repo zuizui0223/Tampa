@@ -49,6 +49,7 @@ Legacy analysis filenames and schema names containing `recovery` remain unchange
 | Published 30 °C / 25 ppt compound stress | Exact Beck et al. daily-GAM stress artifact; joint run tested beyond marginal hot and fresh runs | Blade length and shoot density unsupported | Joint threshold duration does not rescue the climate-stress mechanism |
 | Simple condition → thinning cascade | Source blade length + shoot density added beyond current frequency/BB and stable node identity in strict walk-forward prediction | Primary frequency and secondary Braun–Blanquet targets both unsupported | Faster condition dynamics do not establish that plant-condition decline is a one-year precursor of thinning |
 | TBOFS near-bottom current as meadow exposure | Response-blind grid mapping + physical point-depth relevance audit | All-network distance gate failed; tri-bay grid proximity was good but model bathymetry was systematically too deep for literal shallow-meadow interpretation | Retain TBOFS as regional context; do not use model bottom sigma velocity as the primary canopy-scale predictor |
+| Qualitative epiphyte load as annual leaf-scale stress | Response-blind coverage audit followed by frozen within-transect next-year retention model | Primary coefficient was positive (0.118, 95% bootstrap CI 0.019–0.223) rather than negative; restoring anomalous target 2016 moved the interval across zero | Reject the simple annual epiphyte-stress interpretation for this qualitative field; do not infer benefit; direct biomass / optical attenuation remains unmeasured |
 | Exact-point reappearance decomposition | Multiple post-hoc observation-state audits | Useful state-history and community-continuity associations, but still observational and increasingly reference-sensitive | Do not promote another annual-state decomposition into a mechanism claim |
 
 ## Current ecological model
@@ -148,7 +149,25 @@ The key prediction is that stronger measured canopy attenuation is associated wi
 
 The frozen design is in `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md` and `results/direct_hydrodynamic_prospective_v1_contract.json`.
 
-### 5. Event-scale physiological debt: **open, but only at a new temporal resolution**
+### 5. Qualitative epiphyte load: **simple annual stress interpretation not supported**
+
+The raw Tampa transect archive contains an underused epiphyte measurement layer that is not part of the annual state table. A response-blind inventory found substantial focal coverage: 7,590 *Thalassia* rows with qualitative epiphyte density, 7,575 unique points, 901 visits and 52 transects.
+
+A separately frozen post-hoc follow-up then asked whether within-transect deviations in epiphyte burden predicted next-year recorded retention after source Braun–Blanquet state, depth, season, node and year were represented.
+
+The prespecified primary excluding target 2016 gave a **positive**, not negative, within-node coefficient (0.118; 95% node-bootstrap interval 0.019 to 0.223; 4,189 complete transitions, 49 nodes, 810 recorded losses). Restoring target 2016 weakened this to 0.085 with an interval of -0.012 to 0.193.
+
+Therefore:
+
+- the qualitative `EpiphyteDensity` field does **not** support the simple hypothesis that higher annual epiphyte load is a year-ahead stress signal for *Thalassia* retention;
+- the positive primary estimate is not evidence that epiphytes benefit *Thalassia*;
+- epiphyte load may instead covary with leaf longevity, mature canopy state, grazing, hydrodynamics or persistent microsite quality;
+- because the unadjusted outcome gradient was seen before the adjusted follow-up was frozen, this remains post-hoc exploratory evidence;
+- do not rescue the stress hypothesis by searching epiphyte types, new category cuts, lags, node subsets or target years.
+
+If epiphyte shading remains mechanistically important, the next allowed layer is **direct epiphyte biomass plus leaf/canopy optical attenuation measured prospectively**, not another re-analysis of the qualitative ordinal field.
+
+### 6. Event-scale physiological debt: **open, but only at a new temporal resolution**
 
 Annual water quality, frozen 3/6-month hot/fresh summaries, and the published 30 C / 25 ppt compound-stress test did not support a common mechanism.
 
@@ -163,8 +182,9 @@ The strongest unresolved mechanism questions are now:
 1. does below-ground reserve explain persistence beyond current above-ground state?
 2. does short-timescale physical stress explain future quantitative change?
 3. does directly measured canopy attenuation buffer local hydrodynamic exposure and predict future quantitative persistence?
+4. does directly measured epiphyte biomass / optical attenuation matter after the qualitative annual epiphyte field failed the simple stress prediction?
 
-All three require a new measurement layer.
+All four require a genuinely new or more direct measurement layer.
 
 ## Community-continuity results are state ecology, not mechanism identification
 
