@@ -1,0 +1,66 @@
+{
+  "schema": "tampa.clonal_core_spatial_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36537868628,
+    "head_sha": "c44f2e37145cf87bd10a186dabe33bda3babaccb",
+    "artifact_id": 11019670393,
+    "artifact_digest": "sha256:b4d0d07e5a8ede119eff3c2352468b07aca194bd1a837099da11e95ef2b32094"
+  },
+  "status": "baseline_spatial_core_design_feasible",
+  "evidence_class": "response-open baseline design feasibility only; no future outcome",
+  "registry": {
+    "thalassia_positive_nodes": 33,
+    "positive_meter_mark_count": {
+      "min": 1,
+      "median": 7,
+      "max": 19,
+      "nodes_with_ge3": 30,
+      "nodes_with_lt3": 3
+    },
+    "by_water_body": {
+      "Old Tampa Bay": {
+        "nodes": 8,
+        "three_or_more_positive_marks": 8,
+        "two_positive_marks": 0,
+        "one_positive_mark": 0,
+        "design_classes": {
+          "three_spatial_anchors": 8
+        }
+      },
+      "Middle Tampa Bay": {
+        "nodes": 11,
+        "three_or_more_positive_marks": 10,
+        "two_positive_marks": 0,
+        "one_positive_mark": 1,
+        "design_classes": {
+          "three_spatial_anchors": 10,
+          "single_mark_three_offsets": 1
+        }
+      },
+      "Lower Tampa Bay": {
+        "nodes": 14,
+        "three_or_more_positive_marks": 12,
+        "two_positive_marks": 1,
+        "one_positive_mark": 1,
+        "design_classes": {
+          "three_spatial_anchors": 12,
+          "two_marks_one_replicated_anchor": 1,
+          "single_mark_three_offsets": 1
+        }
+      }
+    }
+  },
+  "anchor_rule": {
+    "ge3": "choose observed Thalassia-positive meter marks nearest q25/q50/q75 site_m, requiring unique anchors where possible",
+    "eq2": "one anchor at each positive mark plus a third independent lateral/perpendicular-offset core at the midpoint-nearest positive mark",
+    "eq1": "three independent non-overlapping offset cores adjacent to the single positive mark"
+  },
+  "interpretation": "Spatially distributed three-core sampling is directly feasible at 30 of 33 recent Thalassia-positive nodes. Only three sparse nodes require a predeclared reduced-spatial-coverage fallback; those nodes retain their design-class label in analysis and reporting.",
+  "decision": "Use the q25/q50/q75 positive-meter-mark anchor rule for primary TNC sampling where >=3 positive marks exist. Keep sparse-node fallbacks fixed; do not choose core positions from TNC results.",
+  "claim_boundary": [
+    "Recent vegetation state is used only for prospective sampling geometry.",
+    "No TNC assay values or future biological outcomes are available or used.",
+    "Sparse nodes remain eligible but provide less within-node spatial representation and must retain that design-class label.",
+    "Do not relocate cores after assay results are known."
+  ]
+}
