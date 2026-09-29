@@ -625,11 +625,15 @@ A focal point that is unrecorded and later recorded again is described as **re-r
 
 1. **below-ground / clonal state** — rhizome biomass, carbohydrate reserves, branching/architecture, meristem density, clonal continuity;
 2. **high-frequency local stress** — meadow-scale temperature, salinity and PAR at diel/event resolution;
-3. **hydrodynamic exposure / residence time** — current velocity, flushing, freshwater-plume exposure, near-bed flow;
+3. **direct canopy-scale hydrodynamics** — simultaneous inside-canopy and above-canopy velocity, with measured flow attenuation as the ecosystem-engineering state;
 4. **canopy / epiphyte light microenvironment**;
 5. **acute disturbance / disease**.
 
 The allowed mechanism gate is documented in `docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`.
+
+The first response-blind hydrodynamic source preflight is now complete. NOAA TBOFS current fields map geographically close to most stable Tampa transects, but the frozen all-network distance gate failed and mapped model bathymetry was systematically deeper than the physical shallow-transect depth record. TBOFS near-bottom velocity is therefore **not accepted as literal meadow-scale near-bed flow**. It remains regional circulation context.
+
+The hydrodynamic mechanism has moved to a frozen direct-measurement design: paired simultaneous velocity inside and above the canopy, summarized by `attenuation_p90 = 1 - p90(U_inside) / p90(U_reference)`, with future change in focal frequency as the primary biological endpoint. See `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md` and `results/direct_hydrodynamic_prospective_v1_contract.json`.
 
 The open 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test remains allowed because the exposure comes from a new high-frequency measurement layer and the future biological response is frozen before access.
 
