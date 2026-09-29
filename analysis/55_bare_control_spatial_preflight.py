@@ -270,16 +270,18 @@ def main(outdir:Path):
             source_audit["primary_delivery_error"]=primary_error
             source_audit["fallback_used"]=True
         except Exception as exc:
-                unresolved={
+            unresolved={
                 "schema":"tampa.bare_control_spatial_preflight_v1",
                 "status":"source_delivery_unavailable_spatial_feasibility_unresolved",
                 "response_independent":True,
                 "source":{
                     "tbismp_commit":COMMIT,
                     "recent_years":list(YEARS),
-                    "seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
-                    "seagrass_archive":FWC_ZIP_URL,
-                    "tampa_component_provenance":"SWFWMD Seagrass in 2024 per FWC metadata"
+                    "primary_seagrass_source":"SWFWMD Seagrass in 2024 FeatureServer",
+                    "primary_feature_url":SWFWMD_FEATURE_URL,
+                    "fallback_seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
+                    "fallback_archive":FWC_ZIP_URL,
+                    "primary_delivery_error":primary_error
                 },
                 "registry":{
                     "recent_vegetated_nodes":len(nodes),
@@ -395,7 +397,7 @@ def main(outdir:Path):
             "Field validation must still satisfy frozen separation, depth matching, comparable forcing, substrate/context and simultaneous sensor geometry.",
             "The source mapping can omit small bare gaps inside patchy beds; a negative GIS gate is conservative.",
             "Do not relax the 100-m threshold after inspection to create a pass.",
-            "The FWC compilation is used for spatial feasibility, not Tampa time-series inference.",
+            "The external seagrass map is used for spatial feasibility, not Tampa time-series inference.",
             "No future biological response is used.",
         ],
     }
