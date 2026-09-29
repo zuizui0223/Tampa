@@ -166,6 +166,9 @@ def inspect_and_map(nc_path:Path,nodes):
 
         lon=np.asarray(ds[lon_name].values)
         lat=np.asarray(ds[lat_name].values)
+        h=np.asarray(ds[h_name].values) if h_name else None
+        if h is not None:
+            h=np.squeeze(h)
         if lon.ndim!=2 or lat.shape!=lon.shape:
             raise RuntimeError(f"unexpected coordinate shapes lon={lon.shape} lat={lat.shape}")
         ny,nx=lon.shape
@@ -206,17 +209,27 @@ def inspect_and_map(nc_path:Path,nodes):
                 "grid_longitude":float(lon[jj,ii]),
                 "grid_latitude":float(lat[jj,ii]),
                 "distance_km":float(d[k]),
+                "model_bathymetry_m":(
+                    float(h[jj,ii])
+                    if h is not None and h.shape==(ny,nx) and np.isfinite(h[jj,ii])
+                    else None
+                ),
             })
 
         dist=np.array([x["distance_km"] for x in mapped],dtype=float)
         by_water={}
         for wb in sorted({x["water_body"] for x in mapped}):
-            dd=np.array([x["distance_km"] for x in mapped if x["water_body"]==wb])
+            subset=[x for x in mapped if x["water_body"]==wb]
+            dd=np.array([x["distance_km"] for x in subset])
+            hh=np.array([x["model_bathymetry_m"] for x in subset if x["model_bathymetry_m"] is not None],dtype=float)
             by_water[wb]={
                 "nodes":int(dd.size),
                 "median_distance_km":float(np.median(dd)),
                 "max_distance_km":float(np.max(dd)),
                 "within_2km":int((dd<=2.0).sum()),
+                "model_bathymetry_median":float(np.median(hh)) if hh.size else None,
+                "model_bathymetry_min":float(np.min(hh)) if hh.size else None,
+                "model_bathymetry_max":float(np.max(hh)) if hh.size else None,
             }
 
         meta={
@@ -246,6 +259,16 @@ def inspect_and_map(nc_path:Path,nodes):
         }
 
     required_water_ok=all(any(x["water_body"]==wb for x in mapped) for wb in GATE["required_water_bodies"])
+    core=[x for x in mapped if x["water_body"] in GATE["required_water_bodies"]]
+    core_dist=np.array([x["distance_km"] for x in core],dtype=float)
+    core_h=np.array([x["model_bathymetry_m"] for x in core if x["model_bathymetry_m"] is not None],dtype=float)
+    core_checks={
+        "nodes_gte_30":len(core)>=GATE["minimum_valid_nodes"],
+        "all_three_water_bodies_present":all(any(x["water_body"]==wb for x in core) for wb in GATE["required_water_bodies"]),
+        "median_distance_lte_1km":float(np.median(core_dist))<=GATE["maximum_median_mapping_distance_km"],
+        "max_distance_lte_2km":float(np.max(core_dist))<=GATE["maximum_primary_node_mapping_distance_km"],
+        "vertical_nearbed_interpretation":bool(meta["vertical_nearbed_interpretation_ok"]),
+    }
     gate_checks={
         "valid_nodes_gte_30":len(mapped)>=GATE["minimum_valid_nodes"],
         "required_water_bodies_present":required_water_ok,
@@ -278,7 +301,29 @@ def inspect_and_map(nc_path:Path,nodes):
             "within_1km":int((dist<=1.0).sum()),
             "within_2km":int((dist<=2.0).sum()),
             "by_water_body":by_water,
+            "distance_outliers_gt_2km":[
+                {
+                    "node_id":x["node_id"],
+                    "water_body":x["water_body"],
+                    "distance_km":x["distance_km"],
+                    "model_bathymetry_m":x["model_bathymetry_m"],
+                }
+                for x in mapped if x["distance_km"]>2.0
+            ],
             "nodes":mapped,
+        },
+        "tri_bay_core":{
+            "definition":"Old + Middle + Lower Tampa Bay only; reported after the original all-71 source gate and does not convert that gate to a pass.",
+            "nodes":len(core),
+            "median_distance_km":float(np.median(core_dist)),
+            "p90_distance_km":float(np.quantile(core_dist,0.9)),
+            "max_distance_km":float(np.max(core_dist)),
+            "within_2km":int((core_dist<=2.0).sum()),
+            "model_bathymetry_median":float(np.median(core_h)) if core_h.size else None,
+            "model_bathymetry_min":float(np.min(core_h)) if core_h.size else None,
+            "model_bathymetry_max":float(np.max(core_h)) if core_h.size else None,
+            "same_threshold_checks":core_checks,
+            "usable_as_new_restricted_prospective_scope":bool(all(core_checks.values())),
         },
         "gate":{
             "frozen_thresholds":GATE,
@@ -287,7 +332,9 @@ def inspect_and_map(nc_path:Path,nodes):
         },
         "claim_boundary":[
             "This audit uses node coordinates only and contains no Tampa biological response.",
-            "Passing the source gate establishes physical-layer usability, not ecological mechanism support.",
+            "The original all-71 source gate is authoritative and is not relaxed after seeing mapping distances.",
+            "A tri-bay core summary is response-blind source scoping; it does not retroactively convert a failed all-network gate into a pass.",
+            "Passing any source-scope check establishes physical-layer usability, not ecological mechanism support.",
             "No interpolation radius, vertical level, exposure percentile or biological model is tuned here."
         ],
     }
