@@ -12,16 +12,25 @@ The endpoint is **future quantitative meadow stability**, not binary reappearanc
 
 Target the existing stable Tampa fixed-transect network in Old, Middle, and Lower Tampa Bay.
 
-Initial target:
+Use a census-oriented baseline frame rather than a 24-node subsample.
 
-- 24 stable transect nodes;
-- minimum analyzable set: 18 nodes;
-- approximately balanced representation of:
-  - quantitatively stable meadows;
-  - persistent-recorded meadows with recent quantitative degradation;
-  - low/unstable quantitative-state meadows.
+Recent 2023–2025 feasibility gives approximately:
 
-Stratification uses only information already available before below-ground sampling.
+- Old Tampa Bay: 8 *Thalassia*-positive nodes;
+- Middle Tampa Bay: 11;
+- Lower Tampa Bay: 14;
+- total: 33.
+
+At the actual deployment baseline, re-evaluate *Thalassia* presence and attempt to sample **all eligible baseline-*Thalassia*-positive nodes** in the three core bays.
+
+The primary prospective TNC analysis is confirmatory only with:
+
+- at least 30 analyzable nodes total; and
+- at least 8 analyzable baseline-*Thalassia*-positive nodes in each bay.
+
+Below that precision gate, retain the prospective estimate and uncertainty but treat it as a pilot. A null result cannot be used to reject rhizome-reserve buffering.
+
+Do not subsample nodes after seeing the future response, and do not add alternative-seagrass-only nodes to the primary TNC cohort because they cannot supply the focal *Thalassia* rhizome measurement.
 
 ## Core placement
 
@@ -43,13 +52,46 @@ Primary mechanism predictor:
 
 > soluble sugar + starch concentration in rhizome tissue.
 
-The laboratory method, extraction chemistry, dry-mass basis, storage duration, and sample randomization must be fixed before the future biological outcome is opened.
+The laboratory method, extraction chemistry, rhizome tissue definition, dry-mass basis, preservation delay/storage, seasonal window and sample randomization must be fixed before the future biological outcome is opened.
 
 Node-level primary predictor:
 
 > median rhizome TNC across valid independent cores.
 
 Do not switch to a different reserve metric after seeing the future outcome.
+
+## Why TNC is a reserve-state measurement
+
+Rhizome carbohydrate is treated here as a candidate **stored reserve / buffering state**, not as an instantaneous stress sensor.
+
+The biological prediction is therefore not that every short heat, salinity or light event immediately changes TNC. Instead, meadows with larger standardized rhizome reserves should be better able to maintain quantitative *Thalassia* state over the subsequent monitoring interval.
+
+This interpretation also means that seasonal and tissue-position variation are measurement design problems that must be controlled before the future response exists.
+
+## Seasonal and tissue standardization
+
+Freeze the following before collecting the first outcome-bearing core:
+
+- one narrow seasonal campaign, with a target of completing all primary TNC sampling within 42 consecutive days;
+- a maximum allowable offset between TNC sampling and the node's contemporaneous fixed-transect baseline survey; target <=14 days in either direction where access/permits allow;
+- one living rhizome tissue definition, including horizontal/vertical fraction, position relative to a living shoot, segment length and which tissues are excluded;
+- one preservation method and maximum collection-to-metabolic-arrest delay;
+- one allowable collection-time window, while recording exact time for every core;
+- one laboratory extraction and dry-mass normalization protocol.
+
+If logistics require a protocol change, make and document it **before** future outcome access. Do not define a season, tissue subset or preservation-delay exclusion after seeing the future response.
+
+## Precision gate
+
+The old 24-node design was only well positioned for very large effects. For the same approximate multiple-regression benchmark used in the hydrodynamic design (two-sided alpha 0.05; 80% power; four control degrees of freedom), approximate detectable partial correlations for the focal TNC term are:
+
+- n = 24: about 0.57;
+- n = 30: about 0.51;
+- n = 33: about 0.49;
+- n = 39: about 0.45;
+- n = 47: about 0.41.
+
+These are design diagnostics, not expected biological effects. The realistic 33-node frame therefore still targets moderate-to-large reserve effects, but is materially stronger than deliberately stopping at 24.
 
 ## Secondary clonal measurements
 
@@ -118,7 +160,7 @@ Do not use annual binary reappearance as the primary outcome.
 
 ## Primary prediction
 
-After accounting for baseline focal frequency, baseline Braun–Blanquet state and water body:
+Under the prespecified model `future_delta_frequency ~ standardized_rhizome_TNC + baseline_frequency + baseline_Braun_Blanquet + water_body`:
 
 > higher baseline rhizome TNC predicts a more positive / less negative future change in focal frequency.
 
@@ -134,7 +176,11 @@ It would still not, by itself, prove causal clonal buffering.
 
 ### Unsupported
 
-A null result would rule against rhizome TNC as the primary measured reserve explanation under this design. Do not rescue the hypothesis by selecting another measured clonal trait after outcome access.
+A null result weakens rhizome TNC as the primary measured reserve explanation **only if** the frozen precision gate is met (>=30 analyzable nodes and >=8 per core bay).
+
+Below that gate, report the result as a pilot estimate and do not interpret a wide/null interval as evidence against clonal buffering.
+
+In either case, do not rescue the primary hypothesis by selecting another measured clonal trait after outcome access.
 
 ## Paired environmental measurements
 
@@ -151,11 +197,14 @@ These should be treated as separate predeclared measurement layers, not merged i
 
 Do not begin the outcome-bearing prospective study until the following are frozen:
 
-- selected nodes;
+- contemporaneous baseline eligibility and final node list;
+- confirmatory 30-node / 8-per-bay precision gate;
+- seasonal campaign window and maximum TNC-to-baseline survey offset;
 - core offset rule;
 - number and diameter/depth of cores;
-- tissue fraction used for TNC;
-- preservation procedure;
+- tissue fraction / rhizome-position definition used for TNC;
+- allowable collection-time window;
+- preservation procedure and maximum collection-to-metabolic-arrest delay;
 - lab assay;
 - future survey window;
 - primary analysis script.
