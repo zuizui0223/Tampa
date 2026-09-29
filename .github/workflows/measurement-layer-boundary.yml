@@ -3,27 +3,11 @@ name: Measurement-layer mechanism boundary
 on:
   push:
     paths:
-      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
-      - "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md"
-      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"
-      - "results/clonal_state_prospective_v1_contract.json"
-      - "results/current_validation_v2.json"
-      - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"
-      - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"
-      - "validation/verify_measurement_layer_hard_stop.py"
-      - ".github/workflows/measurement-layer-boundary.yml"
+      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"\n      - "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md"\n      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"\n      - "docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md"\n      - "results/clonal_state_prospective_v1_contract.json"\n      - "results/direct_hydrodynamic_prospective_v1_contract.json"\n      - "results/tbofs_hydrodynamic_preflight_v1.json"\n      - "results/tbofs_depth_relevance_audit_v1.json"\n      - "results/current_validation_v2.json"\n      - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"\n      - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"\n      - "validation/verify_measurement_layer_hard_stop.py"\n      - ".github/workflows/measurement-layer-boundary.yml"
   pull_request:
     branches: [main]
     paths:
-      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
-      - "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md"
-      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"
-      - "results/clonal_state_prospective_v1_contract.json"
-      - "results/current_validation_v2.json"
-      - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"
-      - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"
-      - "validation/verify_measurement_layer_hard_stop.py"
-      - ".github/workflows/measurement-layer-boundary.yml"
+      - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"\n      - "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md"\n      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"\n      - "docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md"\n      - "results/clonal_state_prospective_v1_contract.json"\n      - "results/direct_hydrodynamic_prospective_v1_contract.json"\n      - "results/tbofs_hydrodynamic_preflight_v1.json"\n      - "results/tbofs_depth_relevance_audit_v1.json"\n      - "results/current_validation_v2.json"\n      - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"\n      - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"\n      - "validation/verify_measurement_layer_hard_stop.py"\n      - ".github/workflows/measurement-layer-boundary.yml"
   workflow_dispatch:
 
 jobs:
