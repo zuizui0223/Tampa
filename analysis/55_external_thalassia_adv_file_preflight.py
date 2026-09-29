@@ -69,9 +69,14 @@ def main(outdir:Path):
     if len(selected)!=6:
         raise RuntimeError(f"expected exactly six ADV component files, found {len(selected)}")
     records=[]
+    unavailable=[]
     for r in selected:
         name=r["Binary"]
-        data=fetch(BASE+name)
+        try:
+            data=fetch(BASE+name)
+        except requests.RequestException as exc:
+            unavailable.append({"filename":name,"error":str(exc)})
+            continue
         md5=hashlib.md5(data).hexdigest()
         if md5!=r["Binary (Hash)"]:
             raise RuntimeError(f"MD5 mismatch {name}: {md5} != {r['Binary (Hash)']}")
@@ -88,14 +93,21 @@ def main(outdir:Path):
         })
     result={
         "schema":"tampa.external_thalassia_adv_file_preflight_v1",
-        "status":"all_label_selected_adv_components_downloaded_and_verified",
+        "status":(
+            "all_label_selected_adv_components_downloaded_and_verified"
+            if len(records)==len(selected)
+            else "catalogue_fixed_binary_delivery_unavailable"
+        ),
         "source":{
             "doi":DOI,
             "license":"CC-BY-4.0",
             "selection_rule":"all index rows with ADV in filename and exact content phrase 'velocity measured from an ADV'",
         },
         "selected_file_count":len(selected),
+        "downloaded_file_count":len(records),
+        "unavailable_file_count":len(unavailable),
         "records":records,
+        "unavailable":unavailable,
         "claim_boundary":[
             "All six XYZ component files from both barren and vegetated sites are retained.",
             "No file is selected or excluded based on observed velocity direction or magnitude.",
