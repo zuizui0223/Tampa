@@ -1,0 +1,24 @@
+{
+  "schema": "tampa.clonal_core_spatial_preflight_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "response_open_baseline_design_feasibility_only",
+  "purpose": "Determine whether three below-ground cores can sample within-node Thalassia spatial heterogeneity without selecting core positions using TNC values or any future response.",
+  "source": {
+    "geometry_registry": "Pinned 2023-2025 recent Tampa meter-mark reconstruction already used by analysis/55_bare_control_spatial_preflight.py",
+    "future_response_opened": false
+  },
+  "frozen_anchor_rule": {
+    "nodes": "recent baseline-Thalassia-positive Old/Middle/Lower Tampa nodes",
+    "if_three_or_more_positive_marks": "sort Thalassia-positive site_m and choose observed marks nearest the 25th, 50th and 75th percentiles; ties -> lower site_m; require three unique anchors where possible",
+    "if_two_positive_marks": "one anchor at each positive mark; third independent core is assigned to the positive mark closest to the midpoint between the two and uses a separately frozen lateral/perpendicular offset",
+    "if_one_positive_mark": "all three independent cores are placed adjacent to the single positive mark using three pre-frozen non-overlapping offsets",
+    "destructive_sampling": "never core directly on the permanent meter mark; core-offset geometry must be frozen before field collection"
+  },
+  "primary_node_summary": "median rhizome TNC across the three valid independent cores",
+  "claim_boundary": [
+    "This uses already-open recent vegetation state for sampling feasibility only.",
+    "Core positions are chosen from baseline Thalassia geometry, not TNC values or the future outcome.",
+    "A sparse node with one or two positive marks remains eligible but provides less within-node spatial coverage; report this design class.",
+    "Do not relocate cores after assay results are known."
+  ]
+}
