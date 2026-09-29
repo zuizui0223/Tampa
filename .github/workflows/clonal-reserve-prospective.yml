@@ -5,12 +5,16 @@ on:
     branches: [main]
     paths:
       - "results/clonal_state_prospective_v1_contract.json"
+      - "results/clonal_core_spatial_preflight_v1.json"
+      - "results/clonal_core_spatial_preflight_v1_contract.json"
       - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"
       - "validation/verify_clonal_reserve_precision.py"
       - ".github/workflows/clonal-reserve-prospective.yml"
   push:
     paths:
       - "results/clonal_state_prospective_v1_contract.json"
+      - "results/clonal_core_spatial_preflight_v1.json"
+      - "results/clonal_core_spatial_preflight_v1_contract.json"
       - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"
       - "validation/verify_clonal_reserve_precision.py"
       - ".github/workflows/clonal-reserve-prospective.yml"
