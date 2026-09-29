@@ -103,7 +103,14 @@
     "directional_hypothesis": "higher rhizome TNC -> more positive / less negative future frequency change",
     "alpha": 0.05,
     "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor or add secondary traits to recover sample size.",
-    "confirmatory_gate": ">=30 analyzable nodes and >=8 nodes per core bay"
+    "confirmatory_gate": ">=30 analyzable nodes and >=8 nodes per core bay",
+    "support_rule": {
+      "interval": "two-sided 95% interval under the frozen node-level uncertainty procedure",
+      "supported": "interval entirely above 0",
+      "contradicted_direction": "interval entirely below 0",
+      "unsupported": "interval overlaps 0",
+      "note": "Do not switch to a one-sided test after observing the future response."
+    }
   },
   "secondary_analysis": {
     "note": "Secondary clonal traits, nutrient-state diagnostics and secondary biological outcomes are descriptive/supportive and cannot replace a null primary TNC -> future frequency result.",
