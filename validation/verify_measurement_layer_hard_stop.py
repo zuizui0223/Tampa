@@ -42,12 +42,20 @@ assert "Canopy hydrodynamic buffering hypothesis" in hydro_protocol
 assert "TBOFS near-bottom velocity" in hydro_protocol
 assert "attenuation_p90" in hydro_protocol
 
+dual=json.loads((ROOT/"results/dual_buffer_prospective_v1_contract.json").read_text())
+assert dual["status"]=="future_joint_new_measurement_design_not_yet_deployed"
+assert dual["sampling"]["target_complete_nodes"]==36
+assert dual["joint_primary_model"]["focal_coefficients"]==["TNC_z","attenuation_p90_z"]
+assert "Holm" in dual["joint_primary_model"]["familywise_error"]
+assert "No TNC x attenuation interaction" in dual["interaction_rule"]
+
 boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
 assert "Observation-state reappearance is not ecological recovery." in boundary
 assert "Do **not** add another retrospective decomposition" in boundary
 assert "Below-ground reserve / clonal state" in boundary
 assert "model bottom-sigma velocity is not accepted" in boundary
 assert "DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md" in boundary
+assert "dual_buffer_prospective_v1_contract.json" in boundary
 
 program=(ROOT/"docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md").read_text()
 assert "Annual/exact-point retrospective mechanism decomposition: **HARD STOP**" in program
@@ -55,6 +63,7 @@ assert "results/clonal_state_prospective_v1_contract.json" in program
 assert "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md" in program
 assert "TBOFS near-bottom current: **not accepted as meadow-scale exposure" in program
 assert "DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md" in program
+assert "dual_buffer_prospective_v1_contract.json" in program
 
 cons=(ROOT/"manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md").read_text()
 assert "buffer-then-threshold meadow model" not in cons
