@@ -265,7 +265,7 @@ A frozen cross-lag test also failed to support a simple annual sequence in which
 
 The current analyses show that **the information available at these spatial and temporal resolutions is insufficient to identify one general driver** of the observed state decoupling. That conclusion is compatible with several biologically plausible mechanisms that require genuinely new measurements rather than further transformations of the same retrospective variables.
 
-Particularly informative future states include meadow-scale high-frequency temperature, salinity and photosynthetically active radiation; canopy and epiphyte light microenvironment; hydrodynamic exposure and residence time; below-ground biomass and carbohydrate reserves; clonal or rhizome architecture; and acute disturbance or disease indicators. These measurements could test whether the persistent site effect reflects local physical exposure, meadow legacy, physiological buffering, or interactions among them.
+Particularly informative future states are now prioritized as genuinely new measurement layers: first below-ground biomass, carbohydrate reserves and clonal/rhizome architecture; second meadow-scale high-frequency temperature, salinity and photosynthetically active radiation; third hydrodynamic exposure and residence time; followed by canopy/epiphyte light microenvironment and acute disturbance or disease. Further decomposition of the same annual loss/re-recording table is not treated as a new mechanism test.
 
 ## Monitoring foundation species as a state hierarchy
 
