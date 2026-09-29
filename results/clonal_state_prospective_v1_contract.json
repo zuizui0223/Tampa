@@ -87,6 +87,12 @@
       ],
       "role": "Secondary interpretation diagnostic only. The primary TNC coefficient is not replaced by a nutrient-adjusted result.",
       "interpretation_boundary": "A supported TNC-future-state association is evidence that measured reserve state is predictive; it is not by itself proof that carbohydrate causally buffers stress."
+    },
+    "core_replication_boundary": {
+      "inferential_unit": "stable transect node",
+      "within_node_cores": "spatial measurement replicates used to estimate node-level below-ground state",
+      "genetic_boundary": "Do not count separate cores as independent genets. Thalassia genets can extend across meters to much larger distances, and connected ramets may be physiologically integrated.",
+      "optional_genotyping": "If a validated molecular clonal-identity design is added before outcome access, use it as secondary mechanism context; it does not multiply the primary sample size."
     }
   },
   "baseline_existing_covariates": [
@@ -131,7 +137,14 @@
     "note": "Secondary clonal traits, nutrient-state diagnostics and secondary biological outcomes are descriptive/supportive and cannot replace a null primary TNC -> future frequency result.",
     "nutrient_diagnostic": "Report TNC relationships with contemporaneous leaf N, P and N:P and one predeclared sensitivity model adding leaf nutrient status if sample coverage is adequate. This is interpretation support, not a second primary test.",
     "component_reporting": "Report soluble NSC and starch separately in addition to TNC, but do not select whichever component best predicts the future as a replacement primary endpoint.",
-    "multiple_testing": "Apply one declared family correction if inferential secondary tests are retained."
+    "multiple_testing": "Apply one declared family correction if inferential secondary tests are retained.",
+    "meristem_bank_hypothesis": {
+      "biological_idea": "Below-ground persistence may depend not only on stored carbohydrate but also on regenerative meristem / rhizome-apex capacity, analogous to a dormant bud or meristem bank.",
+      "predictor": "predeclared node-level rhizome meristem/apex density from the same standardized below-ground sampling frame",
+      "outcome": "future quantitative focal-frequency and/or shoot-density change under one predeclared corrected secondary family",
+      "role": "secondary competing below-ground mechanism, not a rescue of the TNC primary test",
+      "interpretation": "TNC and meristem density represent distinct candidate axes: energetic resistance versus regenerative capacity."
+    }
   },
   "pre_outcome_freeze_required": [
     "final sampling nodes",
@@ -160,7 +173,9 @@
     "Rhizome TNC is seasonally variable; do not pool samples from an unconstrained seasonal window and call the differences stable clonal reserve.",
     "High TNC is not automatically a health score because carbohydrate can accumulate when growth is nutrient-limited; contemporaneous nutrient status is an interpretation diagnostic.",
     "Within-node core replication reduces TNC measurement error but does not substitute for node-level replication.",
-    "If the 30-node / 8-per-bay precision gate fails, a null result is a pilot null and cannot reject the reserve-buffering hypothesis."
+    "If the 30-node / 8-per-bay precision gate fails, a null result is a pilot null and cannot reject the reserve-buffering hypothesis.",
+    "Within-node cores are measurement replicates, not independent clone/genet replicates.",
+    "A secondary meristem/apex signal may support regenerative capacity as a distinct below-ground mechanism, but it cannot replace a null primary TNC result."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + two water-body indicators",
