@@ -124,37 +124,80 @@ Even A+B support remains observational at meadow scale rather than experimental 
 
 ---
 
-## H3. Event-scale physiological stress debt
+## H3. Event-scale hot-fresh stress debt
 
 ### Mechanism
 
-The failed annual/seasonal summaries may average over biologically important short events. Repeated heat, freshening, low-PAR or hypoxic pulses may accumulate physiological cost even when annual means look benign.
+The failed annual/segment temperature-salinity tests may have averaged over local short events.
 
-### New measurements
+The new test does **not** search for a new better-looking threshold. It keeps the published Tampa 30 C / 25 ppt suboptimal-condition definition and asks whether the same condition has biological meaning when measured at <=15-minute, node scale.
 
-Node-scale high-frequency:
+Prospective contract:
 
-- temperature;
-- salinity;
-- PAR;
-- optionally dissolved oxygen and turbidity.
+- `results/event_stress_debt_prospective_v1_contract.json`
+- `docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md`
 
-### Distinguishing prediction
+### Primary mechanistic link
 
-A response-independent, physiology-motivated event metric measured before the future survey predicts future quantitative change beyond baseline state.
+Deploy synchronized temperature + salinity loggers at the same census-oriented baseline-*Thalassia*-positive node frame used by the TNC program.
 
-Examples must be frozen before outcome access:
+Measure TNC before and after the common logger exposure window.
 
-- cumulative heat load;
-- duration above an externally chosen thermal threshold;
-- low-salinity event duration;
-- joint heat x fresh duration;
-- diel/cumulative PAR deficit;
-- recovery time after events.
+Primary model:
+
+~~~text
+tnc_post
+  ~ tnc_pre
+  + joint_hot_fresh_hours_30_25
+  + water_body
+~~~
+
+Prediction:
+
+> more simultaneous local hot-fresh exposure -> lower post-exposure TNC after pre-exposure TNC is represented.
+
+This makes the immediate biological response **reserve depletion**, rather than another annual presence/loss endpoint.
+
+### Exposure-scale falsification
+
+The design separates two explanations for the old null result.
+
+- node/event-scale test supported -> coarse spatial/temporal aggregation is a plausible reason the retrospective test failed;
+- node/event-scale test unsupported with adequate exposure variation and precision -> the specific Tampa hot-fresh mechanism becomes substantially weaker;
+- joint exposure lacks variation -> classify non-estimable and do not retune thresholds.
+
+### Two-gate stress-debt chain
+
+The independently frozen clonal test supplies the second link:
+
+1. event exposure -> reserve depletion;
+2. post-exposure TNC -> future focal-frequency change.
+
+Both links supported is consistent with:
+
+> event stress -> reserve depletion -> future persistence.
+
+It is not formal mediation or causal proof.
+
+### Why PAR is not added here
+
+PAR/light stress is retained as H4, a separate leaf/canopy optical mechanism.
+
+Adding PAR to H3 after seeing a hot-fresh result would recreate the same rescue-search problem that the measurement-layer hard stop was designed to prevent.
 
 ### What would weaken this mechanism
 
-If frozen high-frequency exposure features add no prospective information despite adequate temporal coverage and node replication, the explanation should not be rescued by threshold or window searching.
+A primary null with:
+
+- >=30 analyzable nodes;
+- >=8 per core bay;
+- >=35 days common overlap;
+- >=85% paired logger coverage per node;
+- adequate joint-exposure variation;
+
+weakens the fixed 30 C / 25 ppt event-scale stress-debt mechanism.
+
+Do not rescue it with a different temperature threshold, salinity threshold, lag, exposure percentile, season or node subset.
 
 ---
 
