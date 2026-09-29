@@ -4,14 +4,22 @@
   "status": "response_independent_spatial_feasibility",
   "purpose": "Test whether the nested bare-bed counterfactual subset is geographically plausible before field deployment, using 2024 SWFWMD seagrass polygons and already-open recent sampling-state data only.",
   "source": {
-    "seagrass_layer": "SWFWMD Seagrass in 2024",
-    "arcgis_layer": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/3",
-    "mapping_year": 2024,
-    "minimum_mapping_unit_acres": 0.25,
-    "node_registry": "Pinned TBISMP Event/Occurrence snapshot, latest eligible 2023-2025 state"
+    "seagrass_dataset": "FWC/FWRI Seagrass Florida current statewide compilation",
+    "direct_archive": "https://atoll.floridamarine.org/Data/Zips/SDE/seagrass_fl_poly.zip",
+    "metadata_item": "https://www.arcgis.com/sharing/rest/content/items/3c899a92589a4f8dba2cdbba734697c5/info/metadata/metadata.xml",
+    "tampa_provenance": "FWC metadata states that the current southwest-Florida component incorporates SWFWMD Seagrass in 2024; the statewide compilation retains the most recent mapped source where datasets overlap.",
+    "node_registry": "Pinned TBISMP Event/Occurrence snapshot, latest eligible 2023-2025 state",
+    "source_delivery_history": [
+      "Direct SWFWMD MapServer metadata was accessible but its query endpoint returned non-JSON/empty responses in GitHub Actions on two frozen-rule attempts.",
+      "The physical GIS source was therefore switched before obtaining any spatial-feasibility result; no distance/sample threshold was changed."
+    ]
   },
   "frozen_rules": {
-    "core_bays": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"],
+    "core_bays": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
     "candidate_nodes": "recent baseline-vegetated fixed nodes only",
     "primary_subgroup": "recent Thalassia-positive nodes reported separately",
     "maximum_edge_distance_m": 100,
@@ -27,6 +35,7 @@
     "This is field-feasibility only; it is not an ecological mechanism test.",
     "A mapped edge within 100 m does not prove a depth-matched bare control exists.",
     "The 0.25-acre mapping unit can miss small unvegetated gaps inside patchy beds, so failure is conservative and requires field/imagery reconnaissance rather than threshold relaxation.",
-    "Do not use future Thalassia response to choose bare controls."
+    "Do not use future Thalassia response to choose bare controls.",
+    "The FWC statewide compilation is used for spatial feasibility, not for Tampa seagrass time-series inference."
   ]
 }
