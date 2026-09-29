@@ -1,0 +1,77 @@
+{
+  "schema": "tampa.external_thalassia_hydrodynamic_preflight_v1.canonical_summary",
+  "frozen_on": "2026-09-29",
+  "status": "external_archive_catalogued_raw_binary_delivery_temporarily_unavailable",
+  "source": {
+    "dataset": "Fugate & Kaack 2024 PANGAEA raw data",
+    "doi": "10.1594/PANGAEA.967585",
+    "license": "CC-BY-4.0",
+    "supplement_to": "Kaack, Fugate & Thomas 2024, All Earth, DOI 10.1080/27669645.2024.2419236"
+  },
+  "catalogue": {
+    "data_points": 16,
+    "binary_rows": 8,
+    "adv_velocity_files": 6,
+    "selection_rule": "all catalogue rows identifying ADV velocity components",
+    "files": [
+      {
+        "filename": "Barren_ADV_Velocity1_Metadata.txt",
+        "component": "X",
+        "site": "barren",
+        "bytes_label": "881.4 kBytes",
+        "md5": "d0ee55c89755cefdd6a1dfec43d17ccd"
+      },
+      {
+        "filename": "Barren_ADV_Velocity2_Metadata.txt",
+        "component": "Y",
+        "site": "barren",
+        "bytes_label": "881.4 kBytes",
+        "md5": "16d6eaf8cc65a4df7f64ba0e96d1b2ae"
+      },
+      {
+        "filename": "Barren_ADV_Velocity3_Metadata.txt",
+        "component": "Z",
+        "site": "barren",
+        "bytes_label": "881.4 kBytes",
+        "md5": "f8f3c6b9766e12491d5bdfac4fd3519f"
+      },
+      {
+        "filename": "Vegetated_ADV_Velocity1_Metadata.txt",
+        "component": "X",
+        "site": "Thalassia-dominant vegetated",
+        "bytes_label": "705.5 kBytes",
+        "md5": "3e2164f8b386e92c42654fd978032cff"
+      },
+      {
+        "filename": "Vegetated_ADV_Velocity2_Metadata.txt",
+        "component": "Y",
+        "site": "Thalassia-dominant vegetated",
+        "bytes_label": "705.5 kBytes",
+        "md5": "3f81f6c59fd8f74347ba9c6b047353c7"
+      },
+      {
+        "filename": "Vegetated_ADV_Velocity3_Metadata.txt",
+        "component": "Z",
+        "site": "Thalassia-dominant vegetated",
+        "bytes_label": "705.5 kBytes",
+        "md5": "5b8aaabbc4fde21d4ab8c391ba6bfca5"
+      }
+    ]
+  },
+  "published_physical_result": {
+    "evidence_class": "external published field evidence, not a Tampa result",
+    "summary": "The paired Estero Bay study reports lower near-bed velocity and generally lower near-bottom shear stress at the Thalassia vegetated site than at the nearby barren site under similar hydrologic forcing.",
+    "role": "Supports the physical plausibility of direct canopy-scale velocity measurement; does not validate the Tampa attenuation-to-future-persistence hypothesis."
+  },
+  "raw_reanalysis": {
+    "attempted": true,
+    "result": "not completed",
+    "reason": "PANGAEA binary delivery returned persistent HTTP 503 during the reproducible CI attempt.",
+    "rule": "Do not substitute plotted-value digitization or selectively transcribed values as if they were the raw benchmark."
+  },
+  "novelty_boundary": [
+    "Showing that seagrass canopies attenuate flow is not the novel Tampa claim.",
+    "The Tampa test is whether measured attenuation predicts a future quantitative trajectory in long-monitored meadows.",
+    "A secondary Tampa-specific question is whether alternative-seagrass occupancy provides hydrodynamic functional insurance when Thalassia declines."
+  ]
+}
