@@ -55,5 +55,8 @@ assert sp["registry"]["by_water_body"]["Lower Tampa Bay"]["two_positive_marks"]=
 assert sp["registry"]["by_water_body"]["Lower Tampa Bay"]["one_positive_mark"]==1
 assert c["baseline_new_measurements"]["core_spatial_design"]["recent_nodes_with_three_or_more_positive_marks"]==30
 assert "inferential unit remains the stable transect node" in p
+assert "destructive_sampling_guardrail" in c["eligibility"]
+assert "destructive_sampling_sensitivity" in c["future_outcome"]
+assert "## Destructive-sampling guardrail" in p
 
 print("Tampa clonal reserve prospective design: OK")
