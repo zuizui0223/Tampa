@@ -114,8 +114,11 @@ def parse_site_m(location_id:str)->float:
         x=float(s)
     except Exception as exc:
         raise RuntimeError(f"non-numeric meter-mark locationID {location_id!r}") from exc
-    if not (0.0 <= x <= 1000.0):
-        raise RuntimeError(f"implausible meter mark {x}")
+    if not math.isfinite(x):
+        raise RuntimeError(f"non-finite meter mark {x}")
+    # The pinned source contains signed offsets (negative values lie on the
+    # opposite side of mark 0) and transects extending beyond 1 km. Preserve
+    # the observed signed meter-mark distance rather than clipping it.
     return x
 
 
