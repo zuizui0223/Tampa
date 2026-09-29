@@ -88,6 +88,25 @@ The recent 2023–2025 design-feasibility audit found:
 
 Thus approximately 40 deployments are a realistic planning target, but these historical counts do not determine field eligibility. Re-evaluate vegetation state at the contemporaneous baseline survey before sensors are placed.
 
+### Edge-independent vegetated sensor placement
+
+The physical deployment location within each fixed transect is selected without using mapped meadow-edge distance.
+
+For the primary future-*Thalassia* cohort:
+
+1. identify all contemporaneously vegetated meter marks;
+2. compute their median `site_m`;
+3. among contemporaneously *Thalassia*-positive meter marks, choose the mark closest to that median;
+4. break an exact tie by lower `site_m`.
+
+For the secondary all-vegetated physical cohort, choose the vegetated mark closest to the same node-level vegetated median.
+
+Do **not** choose the edge-nearest vegetated mark in order to manufacture a nearby bare control.
+
+A frozen response-independent GIS audit confirmed that this rule remains compatible with the 100-m counterfactual requirement: 19 representative *Thalassia* nodes have a mapped-edge candidate within 100 m (Old 3, Middle 7, Lower 9), and 21 representative all-vegetated nodes do so.
+
+The bare-control distance is measured from this preselected deployment meter mark.
+
 ### Primary future-persistence cohort
 
 The primary prospective model includes only nodes with:
@@ -152,7 +171,7 @@ At each validation node, identify a nearby unvegetated or effectively canopy-fre
 
 Frozen matching rules:
 
-- maximum horizontal separation: 100 m;
+- maximum horizontal separation: 100 m from the preselected vegetated deployment meter mark;
 - target absolute water-depth difference: <= 0.15 m;
 - hard maximum depth difference: <= 0.30 m;
 - no obvious channel edge, inlet jet, shoreline barrier, structure or other discontinuity that makes local forcing non-comparable;
