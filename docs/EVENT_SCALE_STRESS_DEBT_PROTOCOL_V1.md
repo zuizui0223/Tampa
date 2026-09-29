@@ -222,6 +222,23 @@ PR #38 remains a separate six-node Old Tampa Bay extreme-effect heat-only pilot.
 
 It is genuinely prospective, but its small-n rejection boundary means it is not the network-scale event-stress mechanism test and its null cannot veto this study.
 
+## Co-event attribution boundary
+
+Hot-fresh events can coincide with a broader rainfall/runoff event complex:
+
+- cloud-driven or turbidity-driven low light;
+- freshwater-plume transport;
+- changes in dissolved oxygen;
+- sediment or other local disturbance.
+
+Therefore even a supported primary result does not uniquely prove that temperature and salinity are the proximate physiological drivers.
+
+If resources allow, co-locate PAR, turbidity and/or dissolved-oxygen measurements as response-independent event context. These variables are not added to or removed from the primary hot-fresh model after seeing TNC.
+
+If the primary hot-fresh result is supported, describe it as a **hot-fresh event-complex association with reserve depletion** unless separate frozen measurements identify the proximate pathway.
+
+A null hot-fresh result cannot be rescued by adding a favorable event-context covariate after inspection.
+
 ## Separate optical mechanism
 
 PAR/light stress remains a separate mechanism layer.
