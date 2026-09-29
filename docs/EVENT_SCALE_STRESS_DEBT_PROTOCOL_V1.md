@@ -42,13 +42,40 @@ Confirmatory minimum:
 
 Below this gate, the result is a pilot estimate. A null cannot reject event-scale stress debt.
 
+## Frozen deployment calendar
+
+A response-independent preflight scanned every non-wrapping 42-day calendar window using the pinned Beck et al. daily GAM exposure artifact for 1998-2022. The selection rule was frozen before inspection: maximize the **second-highest** bay-specific fraction of station-years with at least one joint 30 C / 25 ppt day, matching the prospective requirement for variation in at least two bays.
+
+Selected calendar:
+
+> **July 24 through September 3**
+
+Historical station-year fraction with at least one joint day in this window:
+
+- Old Tampa Bay: **0.632**;
+- Middle Tampa Bay: **0.363**;
+- Lower Tampa Bay: **0.000**.
+
+Across historical years, at least two core bays had some joint-event occurrence in **64%** of years; all three bays did so in **0%**.
+
+This is an important design warning, not a reason to optimize again. The future node-scale exposure may fail the frozen variation gate.
+
+If it fails:
+
+> classify the primary hot-fresh exposure as **non-estimable**.
+
+Do not move the deployment to another season, alter 30 C or 25 ppt, extend the window, or drop Lower Tampa Bay after seeing exposure or TNC.
+
+Lower Tampa Bay remains in the deployment because its low-exposure state is ecologically informative context and because the same synchronized post-exposure TNC can contribute to the independently frozen reserve -> future-state study. However, zero exposure in LTB does not count as within-bay exposure variation.
+
 ## Synchronized exposure window
 
 Target:
 
+- fixed calendar target: July 24 through September 3;
 - 42 days continuous deployment;
-- all starts within 7 days;
-- all retrievals within 7 days;
+- all starts within 7 days of the frozen July 24 start;
+- all retrievals within 7 days of the frozen September 3 end;
 - primary exposure calculated only over the common calendar overlap shared by confirmatory nodes;
 - minimum common overlap 35 days.
 
