@@ -109,6 +109,10 @@ Do not retrospectively tune thresholds against the Tampa biological outcome.
 
 ## Priority 3 — hydrodynamic exposure / residence time
 
+Current source preflight:
+
+- `docs/HYDRODYNAMIC_EXPOSURE_PREFLIGHT_V1.md`
+
 ### Biological hypothesis
 
 Persistent among-transect differences reflect local transport and exposure regimes that coordinates, depth, sediment, and bay-level water quality do not resolve.
