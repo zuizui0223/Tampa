@@ -147,6 +147,19 @@
     "A supported primary result is consistent with event-scale hot-fresh exposure depleting measured rhizome reserve; it is not proof that temperature/salinity are the only causes of reserve change.",
     "Natural seasonal TNC change is controlled primarily by synchronous deployment and pre-TNC adjustment, not by post-hoc seasonal subsetting.",
     "Do not retune thresholds, deployment windows, node subsets or exposure summaries after observing TNC or future meadow responses.",
-    "Binary re-recording is not a recovery endpoint."
-  ]
+    "Binary re-recording is not a recovery endpoint.",
+    "Hot-fresh events may proxy a broader rainfall/runoff event complex including low light or other co-stressors; the primary association does not uniquely attribute reserve depletion to temperature and salinity."
+  ],
+  "co_event_confounding_boundary": {
+    "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
+    "optional_context_measurements": [
+      "canopy-level PAR",
+      "turbidity",
+      "dissolved oxygen",
+      "rainfall/freshwater-delivery context"
+    ],
+    "role": "response-independent event context / separate mechanism layers; not added to the primary hot-fresh model after inspection",
+    "interpretation": "If H3 is supported, call the result a hot-fresh event-complex association with reserve depletion unless independent measurements separately support temperature/salinity attribution.",
+    "no_rescue_rule": "A null H3 cannot be rescued by adding/removing PAR, turbidity, oxygen or rainfall covariates after outcome access."
+  }
 }
