@@ -31,6 +31,21 @@ assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33
 assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
 assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
 assert clonal["primary_analysis"]["support_rule"]["contradicted_direction"]=="interval entirely below 0"
+assert clonal["baseline_new_measurements"]["core_spatial_design"]["status"]=="baseline_spatial_core_design_feasible"
+assert clonal["baseline_new_measurements"]["core_spatial_design"]["recent_nodes_with_three_or_more_positive_marks"]==30
+assert clonal["baseline_new_measurements"]["core_spatial_design"]["recent_nodes_requiring_sparse_fallback"]==3
+assert "destructive_sampling_guardrail" in clonal["eligibility"]
+assert "destructive_sampling_sensitivity" in clonal["future_outcome"]
+assert (ROOT/"results/clonal_core_spatial_preflight_v1.json").exists()
+sp=json.loads((ROOT/"results/clonal_core_spatial_preflight_v1.json").read_text())
+assert sp["status"]=="baseline_spatial_core_design_feasible"
+assert sp["registry"]["thalassia_positive_nodes"]==33
+assert sp["registry"]["positive_meter_mark_count"]["nodes_with_ge3"]==30
+assert sp["registry"]["positive_meter_mark_count"]["nodes_with_lt3"]==3
+assert sp["registry"]["by_water_body"]["Old Tampa Bay"]["three_or_more_positive_marks"]==8
+assert sp["registry"]["by_water_body"]["Middle Tampa Bay"]["one_positive_mark"]==1
+assert sp["registry"]["by_water_body"]["Lower Tampa Bay"]["two_positive_marks"]==1
+assert sp["registry"]["by_water_body"]["Lower Tampa Bay"]["one_positive_mark"]==1
 assert "one-sided" in clonal["primary_analysis"]["support_rule"]["note"]
 assert clonal["baseline_new_measurements"]["temporal_standardization"]["historical_feasibility"]["observed_2025_survey_span_days"]==71
 assert clonal["baseline_new_measurements"]["temporal_standardization"]["historical_feasibility"]["densest_historical_28_day_window_nodes"]==19
