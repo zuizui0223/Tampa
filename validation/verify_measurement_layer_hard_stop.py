@@ -19,6 +19,16 @@ assert clonal["status"]=="future_new_measurement_design_not_yet_opened"
 assert clonal["future_outcome"]["primary"].startswith("next fixed-transect survey focal_frequency")
 assert "binary reappearance" in clonal["future_outcome"]["prohibited_primary"]
 assert clonal["baseline_new_measurements"]["primary_predictor"]["name"]=="rhizome_total_nonstructural_carbohydrate"
+assert clonal["eligibility"]["planning_target_nodes"]==33
+assert clonal["eligibility"]["minimum_confirmatory_analyzable_nodes"]==30
+assert clonal["eligibility"]["minimum_confirmatory_nodes_per_bay"]==8
+assert clonal["eligibility"]["recent_2023_2025_feasibility_context"]["recent_thalassia_positive_nodes"]==33
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["campaign_window"].startswith("Collect all primary TNC samples within one predeclared <=28-day")
+assert "14 days" in clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_alignment"]
+assert clonal["baseline_new_measurements"]["analytical_standardization"]["preferred_assay"].startswith("HPLC")
+assert "leaf %N" in clonal["baseline_new_measurements"]["nutrient_state_diagnostic"]["measurements"]
+assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
+assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
 
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
