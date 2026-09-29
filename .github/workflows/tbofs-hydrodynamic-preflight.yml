@@ -1,0 +1,41 @@
+name: TBOFS response-blind physical preflight
+
+on:
+  pull_request:
+    paths:
+      - "analysis/53_tbofs_hydrodynamic_preflight.py"
+      - "results/tbofs_hydrodynamic_preflight_v1_contract.json"
+      - "docs/HYDRODYNAMIC_EXPOSURE_PREFLIGHT_V1.md"
+      - ".github/workflows/tbofs-hydrodynamic-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install physical-layer dependencies
+        run: python -m pip install --upgrade pip numpy netCDF4
+
+      - name: Run response-blind TBOFS grid/depth audit
+        run: |
+          python analysis/53_tbofs_hydrodynamic_preflight.py \
+            --out results/generated_tbofs_preflight
+
+      - name: Show gate result
+        run: cat results/generated_tbofs_preflight/tbofs_hydrodynamic_preflight_v1.json
+
+      - name: Upload reproducible preflight outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: tbofs-hydrodynamic-preflight
+          path: |
+            results/generated_tbofs_preflight/tbofs_hydrodynamic_preflight_v1.json
+            results/generated_tbofs_preflight/tbofs_node_mapping_coordinates_only.csv
+          if-no-files-found: error
