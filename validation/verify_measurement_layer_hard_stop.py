@@ -47,7 +47,7 @@ assert ct["prospective_decision"]["baseline_alignment_days_each_side"]==14
 assert clonal["baseline_new_measurements"]["core_replication_boundary"]["inferential_unit"]=="stable transect node"
 assert "independent genets" in clonal["baseline_new_measurements"]["core_replication_boundary"]["genetic_boundary"]
 assert clonal["secondary_analysis"]["meristem_bank_hypothesis"]["predictor"].startswith("predeclared node-level rhizome meristem")
-assert "cannot replace" in clonal["secondary_analysis"]["meristem_bank_hypothesis"]["role"]
+assert "not a rescue" in clonal["secondary_analysis"]["meristem_bank_hypothesis"]["role"]
 
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
