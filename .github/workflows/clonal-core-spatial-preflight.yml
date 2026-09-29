@@ -1,0 +1,33 @@
+name: Clonal core spatial preflight
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/55_bare_control_spatial_preflight.py"
+      - "analysis/59_clonal_core_spatial_preflight.py"
+      - "results/clonal_core_spatial_preflight_v1_contract.json"
+      - ".github/workflows/clonal-core-spatial-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install geometry dependencies
+        run: python -m pip install --upgrade pip numpy shapely pyproj geopandas pyogrio
+      - name: Run clonal core spatial preflight
+        run: python analysis/59_clonal_core_spatial_preflight.py --out results/generated_clonal_core_preflight/clonal_core_spatial_preflight_v1.json
+      - name: Show result
+        run: cat results/generated_clonal_core_preflight/clonal_core_spatial_preflight_v1.json
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: clonal-core-spatial-preflight
+          path: results/generated_clonal_core_preflight/clonal_core_spatial_preflight_v1.json
+          if-no-files-found: error
