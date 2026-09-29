@@ -15,11 +15,12 @@
       "Middle Tampa Bay",
       "Lower Tampa Bay"
     ],
-    "target_nodes": 24,
-    "minimum_analyzable_nodes": 18,
-    "minimum_analyzable_nodes_per_bay": 5,
-    "selection_rule": "Stratify before deployment across baseline focal-frequency state within bay. Do not use future outcome for selection or exclusion.",
-    "paired_geometry_required": true
+    "target_nodes": 36,
+    "minimum_analyzable_nodes": 30,
+    "minimum_analyzable_nodes_per_bay": 9,
+    "selection_rule": "Within each bay, stratify before deployment across baseline focal-frequency tertiles (target 4 nodes per tertile per bay) using only baseline information available before the future outcome. Predeclare alternates before deployment.",
+    "paired_geometry_required": true,
+    "target_balance": "Aim for 12 nodes per bay across Old, Middle and Lower Tampa Bay."
   },
   "new_measurements": {
     "inside_canopy_velocity": {
@@ -119,5 +120,32 @@
     "A supported attenuation coefficient is consistent with self-facilitation but does not by itself prove causal ecosystem engineering.",
     "Do not change velocity percentile, sensor height, subgroup or endpoint after future response access to rescue a null primary result.",
     "Do not call binary re-recording recovery."
-  ]
+  ],
+  "design_sensitivity": {
+    "method": "Two-sided alpha=0.05 noncentral-F approximation for one focal attenuation coefficient after four control degrees of freedom (baseline frequency, ambient p90, and two water-body indicators).",
+    "power_target": 0.8,
+    "partial_effect_thresholds": {
+      "n24": {
+        "partial_r": 0.5725,
+        "partial_R2": 0.3278
+      },
+      "n30": {
+        "partial_r": 0.512,
+        "partial_R2": 0.2622
+      },
+      "n36": {
+        "partial_r": 0.4673,
+        "partial_R2": 0.2184
+      },
+      "n42": {
+        "partial_r": 0.4326,
+        "partial_R2": 0.1872
+      },
+      "n47": {
+        "partial_r": 0.4089,
+        "partial_R2": 0.1672
+      }
+    },
+    "decision": "The previous 24-node target was retained only for very large effects. Increase the target to 36 nodes because node-level future change remains the inferential unit; repeated velocity observations reduce measurement error but do not replace node replication."
+  }
 }
