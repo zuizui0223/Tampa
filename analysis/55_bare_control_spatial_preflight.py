@@ -200,7 +200,51 @@ def fetch_fwc_seagrass_union(outdir:Path,nodes):
 def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
     nodes=reconstruct_recent_nodes(fetch(FILES["event"]),fetch(FILES["occurrence"]))
-    union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
+    try:
+        union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
+    except Exception as exc:
+        unresolved={
+            "schema":"tampa.bare_control_spatial_preflight_v1",
+            "status":"source_delivery_unavailable_spatial_feasibility_unresolved",
+            "response_independent":True,
+            "source":{
+                "tbismp_commit":COMMIT,
+                "recent_years":list(YEARS),
+                "seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
+                "seagrass_archive":FWC_ZIP_URL,
+                "tampa_component_provenance":"SWFWMD Seagrass in 2024 per FWC metadata"
+            },
+            "registry":{
+                "recent_vegetated_nodes":len(nodes),
+                "recent_thalassia_positive_nodes":sum(x["thalassia_frequency"]>0 for x in nodes)
+            },
+            "candidate_gate":{
+                "maximum_edge_distance_m":EDGE_MAX_M,
+                "target_nodes":TARGET,
+                "minimum_nodes":MINIMUM,
+                "minimum_nodes_per_bay":MIN_PER_BAY,
+                "passed":None
+            },
+            "delivery_error":f"{type(exc).__name__}: {exc}",
+            "decision":"No scientific pass/fail is assigned. Preserve the frozen 100-m / 12-node / 3-per-bay criteria and resolve feasibility by accessible GIS mirror or preregistered field/imagery reconnaissance.",
+            "claim_boundary":[
+                "Source-delivery failure is not ecological evidence.",
+                "Do not relax the frozen distance or sample-size rules because the public GIS host was unavailable.",
+                "No future biological response is used."
+            ]
+        }
+        (outdir/"bare_control_spatial_preflight_v1.json").write_text(
+            json.dumps(unresolved,indent=2,sort_keys=True)+"\n"
+        )
+        (outdir/"bare_control_spatial_candidates_v1.csv").write_text(
+            "node_id,water_body,longitude,latitude,status\n"+
+            "\n".join(
+                f'{x["node_id"]},{x["water_body"]},{x["longitude"]},{x["latitude"]},UNRESOLVED'
+                for x in nodes
+            )+"\n"
+        )
+        print(json.dumps(unresolved,indent=2,sort_keys=True))
+        return
 
     transformer=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
     boundary=union.boundary
