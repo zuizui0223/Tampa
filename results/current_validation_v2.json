@@ -1138,5 +1138,73 @@
     ],
     "program_document": "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md",
     "prospective_exception": "The open 2026 Old Tampa Bay continuous-temperature -> 2027 fixed-transect test is allowed because it uses a new high-frequency exposure and a future response frozen before access."
+  },
+  "epiphyte_retention": {
+    "schema": "tampa.epiphyte_retention_v1.canonical_summary",
+    "authoritative_workflow": {
+      "run_id": 36513226275,
+      "head_sha": "32572123bac27a64f3ca6fc34788f64cdc1de24d",
+      "artifact_id": 11009843215,
+      "artifact_digest": "sha256:3449ed01844288335e20d4b3b4002a8229c2c2a7a6c7534e4b98283836fc98d4"
+    },
+    "status": "primary_positive_but_2016_sensitivity_not_supported",
+    "evidence_class": "posthoc_new_measurement_layer_temporal_ecology",
+    "primary_exclude_target_2016": {
+      "complete_transitions": 4189,
+      "nodes": 49,
+      "recorded_losses": 810,
+      "coefficient_epi_within_node": 0.11777939835174929,
+      "ci95": [
+        0.019280635952909315,
+        0.22276357072780015
+      ],
+      "classification": "within_node_positive_epiphyte_signal"
+    },
+    "sensitivity_include_target_2016": {
+      "complete_transitions": 4279,
+      "nodes": 49,
+      "recorded_losses": 840,
+      "coefficient_epi_within_node": 0.08498445693081891,
+      "ci95": [
+        -0.012421904782754198,
+        0.19276576648801286
+      ],
+      "classification": "within_node_epiphyte_signal_not_supported"
+    },
+    "unadjusted_retention_primary": [
+      {
+        "epiphyte_ordinal": 0,
+        "transitions": 79,
+        "nodes": 23,
+        "retention_fraction": 0.7468354430379747
+      },
+      {
+        "epiphyte_ordinal": 1,
+        "transitions": 1901,
+        "nodes": 46,
+        "retention_fraction": 0.787480273540242
+      },
+      {
+        "epiphyte_ordinal": 2,
+        "transitions": 1585,
+        "nodes": 43,
+        "retention_fraction": 0.8113564668769716
+      },
+      {
+        "epiphyte_ordinal": 3,
+        "transitions": 624,
+        "nodes": 41,
+        "retention_fraction": 0.8605769230769231
+      }
+    ],
+    "interpretation": "The qualitative annual epiphyte-density record does not support the simple hypothesis that higher epiphyte burden is a year-ahead stress signal for Thalassia recorded retention. The primary within-transect coefficient is positive, not negative, and the positive classification is not robust to restoring target year 2016. Treat qualitative epiphyte load as a possible canopy/maturity or microsite-state marker at this timescale, not as evidence that epiphytes benefit Thalassia.",
+    "next_measurement_boundary": "If epiphyte shading remains of interest, measure epiphyte biomass and leaf-level/canopy-level optical attenuation directly and prospectively. Do not mine additional categories, types, lags or subsets from the existing qualitative EpiphyteDensity field.",
+    "claim_boundary": [
+      "Post-hoc follow-up; the unadjusted outcome gradient was seen before the adjusted analysis was frozen.",
+      "Positive association is not evidence that epiphytes benefit Thalassia.",
+      "EpiphyteDensity is qualitative ordinal load, not measured biomass or light attenuation.",
+      "Target-2016 sensitivity changes the interval classification.",
+      "Do not retune categories, types, lags, target years or node subsets."
+    ]
   }
 }
