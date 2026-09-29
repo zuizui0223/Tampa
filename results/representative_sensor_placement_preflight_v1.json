@@ -1,0 +1,58 @@
+{
+  "schema": "tampa.representative_sensor_placement_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36536776628,
+    "head_sha": "35af4b80c2cfcfe54cf802c5ded7e774c8d67578",
+    "artifact_id": 11018164085,
+    "artifact_digest": "sha256:cdb77d62a3d6c247ce900d44e443dc2891cef2af50c355f2e5f4076bfe2a2193"
+  },
+  "status": "representative_placement_both_gates_pass",
+  "response_independent": true,
+  "selection": {
+    "edge_distance_used_for_selection": false,
+    "vegetated": "closest vegetated mark to node median vegetated site_m; tie -> lower site_m",
+    "thalassia": "closest Thalassia-positive mark to node median vegetated site_m; tie -> lower site_m"
+  },
+  "registry": {
+    "recent_vegetated_nodes": 40,
+    "recent_thalassia_positive_nodes": 33
+  },
+  "gate": {
+    "maximum_edge_distance_m": 100,
+    "target_nodes": 18,
+    "minimum_nodes": 12,
+    "minimum_nodes_per_bay": 3,
+    "vegetated_representative_candidate_nodes": 21,
+    "vegetated_gate_pass": true,
+    "thalassia_representative_candidate_nodes": 19,
+    "thalassia_gate_pass": true,
+    "by_water_body": {
+      "Old Tampa Bay": {
+        "recent_vegetated_nodes": 13,
+        "vegetated_representative_candidates_100m": 6,
+        "recent_thalassia_positive_nodes": 8,
+        "thalassia_representative_candidates_100m": 3
+      },
+      "Middle Tampa Bay": {
+        "recent_vegetated_nodes": 12,
+        "vegetated_representative_candidates_100m": 4,
+        "recent_thalassia_positive_nodes": 11,
+        "thalassia_representative_candidates_100m": 7
+      },
+      "Lower Tampa Bay": {
+        "recent_vegetated_nodes": 15,
+        "vegetated_representative_candidates_100m": 11,
+        "recent_thalassia_positive_nodes": 14,
+        "thalassia_representative_candidates_100m": 9
+      }
+    }
+  },
+  "interpretation": "Bare-control geography remains feasible when the vegetated deployment meter mark is selected independently of mapped meadow-edge distance. The Thalassia-specific representative-placement gate passes at the frozen minimum in Old Tampa Bay (3 nodes), so field qualification rather than edge-nearest sensor placement must determine the final counterfactual subset.",
+  "decision": "Freeze representative sensor placement independently of mapped edge distance. For the primary Thalassia persistence cohort, choose the Thalassia-positive meter mark closest to the median recent vegetated site_m; then search for a bare control within 100 m of that preselected deployment mark.",
+  "claim_boundary": [
+    "No future biological response was used.",
+    "Mapped edge distance is not used to choose the vegetated sensor position.",
+    "GIS feasibility does not replace field depth/forcing/substrate/wake qualification.",
+    "Do not switch to an edge-nearest meter mark to rescue a field-control failure."
+  ]
+}
