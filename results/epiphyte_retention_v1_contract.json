@@ -1,0 +1,71 @@
+{
+  "schema": "tampa.epiphyte_retention_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_followup_frozen_after_unadjusted_registry_opened",
+  "evidence_class": "posthoc_new_measurement_layer_temporal_ecology",
+  "discovery_disclosure": "During transition-registry inspection after the response-blind epiphyte coverage preflight, unadjusted next-year retention fractions were seen to increase across rounded epiphyte-load classes. Therefore this analysis is not response-unopened confirmatory evidence. The purpose of the frozen follow-up is to determine whether that pooled pattern survives within-transect adjustment and known physical/seasonal controls.",
+  "ecological_question": "Is qualitative epiphyte burden a local leaf-scale stressor that predicts next-year Thalassia recorded-state instability, or does it mainly mark persistent mature/favorable meadow state?",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "raw_file": "data/trnsct.csv",
+    "blob": "2a9ac04c300d4e209b1359656de6b581ad7ae138"
+  },
+  "measurement": {
+    "focal_species_labels": ["Thalassia", "Thalassia testudinum"],
+    "epiphyte_density_mapping": {
+      "Clean": 0,
+      "Light": 1,
+      "Moderate": 2,
+      "Heavy": 3
+    },
+    "excluded_label": "BAD DATA",
+    "point_year_aggregation": "mean ordinal epiphyte score across valid focal rows at the same Transect x Site x AssessmentYear",
+    "baseline_bb": "mean numeric leading Braun-Blanquet class from focal SpeciesAbundance at the same point-year",
+    "depth_m": "median absolute source Depth / 100 among sampled rows at the same point-year",
+    "season": "mean sine and cosine of source ObservationDate day-of-year"
+  },
+  "transition_population": {
+    "unit": "stable Transect x meter-mark Site x consecutive AssessmentYear transition",
+    "source_requirement": "Thalassia recorded and valid epiphyte density in source year",
+    "target_requirement": "same Transect x Site sampled in AssessmentYear + 1",
+    "outcome": "target-year Thalassia recorded retention (1) versus recorded loss (0)",
+    "primary_target_year_exclusion": 2016,
+    "reason": "pre-existing Tampa protocol/date audit marks target 2016 as anomalous; include it only as sensitivity",
+    "minimum_complete_transitions": 500,
+    "minimum_nodes": 30,
+    "minimum_recorded_losses": 100
+  },
+  "primary_analysis": {
+    "purpose": "Estimate within-transect epiphyte signal rather than pooled between-site association.",
+    "within_node_centering": "source epiphyte score minus mean source epiphyte score among eligible transitions for that Transect",
+    "model": "logit(retained_next_year) ~ epi_within_node + source_bb + source_depth_m + sin_doy + cos_doy + node_id FE + source_year FE",
+    "estimator": "L2-regularized logistic regression with C=1.0, lbfgs, max_iter=3000",
+    "primary_coefficient": "epi_within_node",
+    "bootstrap": {
+      "unit": "Transect node",
+      "replicates": 1000,
+      "seed": 20260929,
+      "interval": "2.5 and 97.5 empirical percentiles"
+    },
+    "interpretation": {
+      "ci_below_zero": "Within a stable transect, unusually high epiphyte burden predicts lower next-year recorded retention, consistent with a local epiphyte-stress signal.",
+      "ci_above_zero": "Within a stable transect, unusually high epiphyte burden predicts higher next-year recorded retention; reject the simple annual epiphyte-stress interpretation and treat load as a state marker / candidate mature-canopy signal at this timescale.",
+      "ci_overlaps_zero": "No robust independent year-ahead epiphyte signal after baseline state, depth, season, year and stable transect identity."
+    }
+  },
+  "secondary_analysis": {
+    "pooled_model": "logit(retained_next_year) ~ epiphyte_score + source_bb + source_depth_m + sin_doy + cos_doy + water_body + source_year",
+    "purpose": "Quantify how the pooled association differs from the within-transect primary coefficient; this is a scale/confounding diagnostic, not an independent primary test.",
+    "type_fields": "EpiphyteType_1..3 are descriptive only and cannot be searched to rescue a null primary density effect.",
+    "sensitivity": "Repeat the primary model including target 2016; conclusion changes only if sign/interval classification changes."
+  },
+  "claim_boundary": [
+    "Recorded loss is an observation-state endpoint, not demographic extinction.",
+    "EpiphyteDensity is qualitative ordinal load, not measured biomass or percent light attenuation.",
+    "A negative coefficient is consistent with epiphyte stress but does not prove shading causality.",
+    "A positive coefficient is not evidence that epiphytes benefit Thalassia; it may reflect leaf longevity, mature canopy state, grazing, hydrodynamics or favorable microsite conditions.",
+    "Because the unadjusted outcome gradient was seen before this follow-up was frozen, label all inference exploratory/post-hoc.",
+    "Do not tune epiphyte categories, type subsets, lag windows, node subsets or target years after the adjusted result is opened."
+  ]
+}
