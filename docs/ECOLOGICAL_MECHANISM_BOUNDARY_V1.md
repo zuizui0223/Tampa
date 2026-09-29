@@ -48,6 +48,7 @@ Legacy analysis filenames and schema names containing `recovery` remain unchange
 | Simple annual/seasonal temperature or salinity | Annual and frozen 3/6-month hot/fresh screens | No multiplicity-controlled association | Do not retune windows |
 | Published 30 °C / 25 ppt compound stress | Exact Beck et al. daily-GAM stress artifact; joint run tested beyond marginal hot and fresh runs | Blade length and shoot density unsupported | Joint threshold duration does not rescue the climate-stress mechanism |
 | Simple condition → thinning cascade | Source blade length + shoot density added beyond current frequency/BB and stable node identity in strict walk-forward prediction | Primary frequency and secondary Braun–Blanquet targets both unsupported | Faster condition dynamics do not establish that plant-condition decline is a one-year precursor of thinning |
+| TBOFS near-bottom current as meadow exposure | Response-blind grid mapping + physical point-depth relevance audit | All-network distance gate failed; tri-bay grid proximity was good but model bathymetry was systematically too deep for literal shallow-meadow interpretation | Retain TBOFS as regional context; do not use model bottom sigma velocity as the primary canopy-scale predictor |
 | Exact-point reappearance decomposition | Multiple post-hoc observation-state audits | Useful state-history and community-continuity associations, but still observational and increasingly reference-sensitive | Do not promote another annual-state decomposition into a mechanism claim |
 
 ## Current ecological model
@@ -112,21 +113,40 @@ That is sufficient for **community reorganization**.
 
 It is not sufficient for a successional-reset or pioneer-replacement mechanism. Exact-point analyses show that much alternative-species occupancy after focal loss reflects persistence of species already present before focal loss; among focal-loss points remaining seagrass-occupied, 71.2% retained at least one pre-existing alternative species. Thus post-loss *Halodule* cannot be assumed to be new colonization.
 
-### 4. Density-dependent self-facilitation / hydrodynamic threshold: **open and now directly testable**
+### 4. Canopy hydrodynamic self-buffering: **open; direct prospective design frozen**
 
 The annual table cannot identify a critical density threshold without post-hoc retuning, and threshold rescue on the same table is prohibited.
 
-A genuine physical route is now available through NOAA TBOFS 3-D gridded currents. The prospective discriminating prediction is not merely that current exposure is harmful, but that its effect depends on baseline meadow state:
+NOAA TBOFS was tested as a genuinely independent physical source before biological linkage. The result was useful but negative for the intended meadow-scale interpretation.
+
+- all 71 stable nodes could be mapped to valid current-support cells, but two Boca Ciega Bay nodes exceeded the frozen 2-km maximum-distance rule;
+- Old + Middle + Lower Tampa Bay were geometrically well covered (47/47 within 2 km);
+- however, physical point depths in that core had a median of about 0.90 m while mapped TBOFS bathymetry had a median of 2.00 m;
+- TBOFS bathymetry was deeper at all 47 core nodes and 40/47 mapped cells were exactly 2.0 m;
+- the node-level depth correlation was weak (about 0.16).
+
+Therefore model bottom-sigma velocity is not accepted as literal canopy/near-bed exposure for these shallow meadows.
+
+The hydrodynamic hypothesis is retained in a stronger form using **direct paired velocity measurements**:
+
+```text
+attenuation_p90
+  = 1 - p90(U_inside_canopy) / p90(U_above_canopy)
+```
+
+followed prospectively by:
 
 ```text
 future_delta_frequency
   ~ baseline_frequency
-  + p90_nearbed_current
-  + baseline_frequency × p90_nearbed_current
+  + ambient_p90
+  + attenuation_p90
   + water_body
 ```
 
-A positive interaction would be consistent with denser established meadow state buffering hydrodynamic exposure. This test is allowed only after the response-blind TBOFS grid/depth source gate passes and before the future biological response is opened.
+The key prediction is that stronger measured canopy attenuation is associated with less subsequent quantitative decline. This tests ecosystem engineering directly rather than assuming shoot density or model current equals physical buffering.
+
+The frozen design is in `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md` and `results/direct_hydrodynamic_prospective_v1_contract.json`.
 
 ### 5. Event-scale physiological debt: **open, but only at a new temporal resolution**
 
@@ -142,7 +162,7 @@ The strongest unresolved mechanism questions are now:
 
 1. does below-ground reserve explain persistence beyond current above-ground state?
 2. does short-timescale physical stress explain future quantitative change?
-3. does hydrodynamic exposure interact with meadow state in the direction predicted by self-facilitation?
+3. does directly measured canopy attenuation buffer local hydrodynamic exposure and predict future quantitative persistence?
 
 All three require a new measurement layer.
 
