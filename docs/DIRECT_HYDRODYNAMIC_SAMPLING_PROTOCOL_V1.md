@@ -164,14 +164,14 @@ A node that lacks a valid bare control can remain in the primary attenuation-to-
 
 Use the same instrument family, QC, burst design and vertical sampling geometry at the vegetated and bare patches.
 
-Preferred confirmatory implementation is simultaneous measurement of four sampling volumes:
+Preferred confirmatory implementation is simultaneous measurement of four sampling volumes. These can be obtained with two suitable shallow-water multi-bin profilers (vegetated and bare) or four point-velocity sampling volumes; four separate instruments are not intrinsically required:
 
 1. vegetated near-bed / within-canopy;
 2. vegetated local reference above canopy;
 3. bare near-bed at the same height above sediment;
 4. bare local reference at the corresponding upper-water-column height.
 
-If hardware limitations require non-simultaneous vegetated and bare deployments, that node is descriptive only for canopy attribution because changing tides/waves can mimic a vegetation effect.
+If hardware limitations require non-simultaneous vegetated and bare deployments, that node is descriptive only for canopy attribution because changing tides/waves can mimic a vegetation effect. Sensors may be rotated among nodes across deployment blocks, provided the vegetated and bare measurements within each retained counterfactual node are simultaneous and the block rule is frozen before future response access.
 
 ### Canopy-specific metric
 
@@ -327,7 +327,7 @@ Primary node-level ambient forcing:
 
 > `ambient_p90` = 90th percentile of valid reference-layer horizontal current speed.
 
-Primary node-level ecosystem-engineering metric:
+Primary node-level within-meadow vertical attenuation metric:
 
 > `attenuation_p90 = 1 - p90(U_inside) / p90(U_reference)`.
 
@@ -339,13 +339,15 @@ Interpretation:
 
 Do not truncate negative attenuation values to zero.
 
-## Physical mechanism gate
+## Within-meadow hydrodynamic-state gate
 
 Before using future meadow change, report the paired physical result across nodes.
 
-Primary physical question:
+Primary descriptive physical question:
 
 > Is `attenuation_p90` positive across the sampled meadow network?
+
+A positive answer alone is **not** a canopy-engineering result because seabed boundary-layer shear can produce a vertical velocity gradient without vegetation. Canopy attribution is reserved for the separate bare-bed counterfactual gate above.
 
 Use a node-level uncertainty procedure frozen before analysis. Report the full node distribution even if the pooled direction is null.
 
