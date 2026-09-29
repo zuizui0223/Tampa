@@ -43,4 +43,17 @@ assert "## Precision gate" in p
 assert "n = 33: about 0.49" in p
 assert "future_delta_frequency ~ standardized_rhizome_TNC" in p
 
+
+sp=json.loads((ROOT/"results/clonal_core_spatial_preflight_v1.json").read_text())
+assert sp["status"]=="baseline_spatial_core_design_feasible"
+assert sp["registry"]["thalassia_positive_nodes"]==33
+assert sp["registry"]["positive_meter_mark_count"]["nodes_with_ge3"]==30
+assert sp["registry"]["positive_meter_mark_count"]["nodes_with_lt3"]==3
+assert sp["registry"]["by_water_body"]["Old Tampa Bay"]["three_or_more_positive_marks"]==8
+assert sp["registry"]["by_water_body"]["Middle Tampa Bay"]["one_positive_mark"]==1
+assert sp["registry"]["by_water_body"]["Lower Tampa Bay"]["two_positive_marks"]==1
+assert sp["registry"]["by_water_body"]["Lower Tampa Bay"]["one_positive_mark"]==1
+assert c["baseline_new_measurements"]["core_spatial_design"]["recent_nodes_with_three_or_more_positive_marks"]==30
+assert "inferential unit remains the stable transect node" in p
+
 print("Tampa clonal reserve prospective design: OK")
