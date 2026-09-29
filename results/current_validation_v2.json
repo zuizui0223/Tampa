@@ -187,7 +187,11 @@
     "Do not treat one-year Thalassia re-recording as complete ecological recovery; returned points show both quantitative abundance debt and elevated subsequent recorded re-loss risk.",
     "Do not interpret recovery debt as proof of residual stress, rhizome depletion, physiological damage, or demographic mechanism; the exact-point comparison is observational.",
     "Do not claim that low return-year Braun-Blanquet mediates or causes subsequent recorded re-loss; the frozen return-quality fragility interval overlaps zero.",
-    "Treat recovery debt and return fragility as parallel dimensions of incomplete recovery unless a future test demonstrates a robust quantitative-state-to-fragility link."
+    "Treat recovery debt and return fragility as parallel dimensions of incomplete recovery unless a future test demonstrates a robust quantitative-state-to-fragility link.",
+    "Use re-recording / reappearance / recorded-state return for annual binary return events; do not label them ecological or demographic recovery.",
+    "Do not add another retrospective annual/exact-point state decomposition as a Tampa mechanism claim; the same-table mechanism line is hard-stopped.",
+    "New mechanism work must introduce a genuinely new biological/physical measurement layer, a future frozen response, or a response-unopened external dataset.",
+    "Do not reinstate a simple blade/shoot -> thinning cascade; the frozen condition-to-thinning cross-lag test was null."
   ],
   "community_reorganization": {
     "period": [
@@ -941,7 +945,7 @@
       "return_run_length_median": 2,
       "nonreturn_run_length_median": 1
     },
-    "interpretation": "Longer uninterrupted exact-point Thalassia history predicts re-recording after a one-year loss even after stable node identity, loss year, loss-year vegetation state and source mixed-species state are controlled. This is consistent with a local legacy/residual-structure signal but does not identify rhizomes, clonal integration, fine-scale habitat quality or repeated detectability separately.",
+    "interpretation": "Longer uninterrupted exact-point Thalassia history predicts later re-recording after a one-year non-detection even after stable transect identity, year, loss-year vegetation state and source mixed-species state are controlled. This observation-state legacy signal motivates direct clonal/below-ground measurement but does not identify rhizomes or clonal memory.",
     "evidence_class": "posthoc exploratory exact-point temporal ecology"
   },
   "focal_vs_habitat_legacy": {
@@ -977,7 +981,7 @@
         0.3619233192806425
       ]
     },
-    "interpretation": "Thalassia-specific continuous occupancy history predicts exact-point re-recording after loss even after generic continuous seagrass-habitat headstart, stable node identity and immediate community-state controls. Generic habitat headstart is not independently supported in the joint model.",
+    "interpretation": "Thalassia-specific continuous occupancy history predicts later exact-point re-recording after a one-year non-detection beyond generic continuous seagrass-habitat headstart and immediate community-state controls. This historical signal does not establish ecological recovery or clonal mechanism.",
     "evidence_class": "posthoc exploratory exact-point temporal ecology"
   },
   "community_diversity_insurance": {
@@ -1066,7 +1070,8 @@
       "continuous_mean_bb": 2.9253378378378376,
       "continuous_median_bb": 3
     },
-    "interpretation": "Exact-point Thalassia re-recording after a one-year loss occurs in a quantitatively depressed Braun-Blanquet state relative to uninterrupted occupancy after source abundance, stable site identity, and return year are represented. Together with return fragility, this supports incomplete recovery / hysteresis at annual resolution."
+    "interpretation": "Exact-point Thalassia re-recording after a one-year non-detection occurs in a quantitatively depressed Braun-Blanquet state relative to uninterrupted occupancy after source abundance, stable site identity and re-recording year are represented. This is an observation-state abundance debt; it is not evidence that ecological recovery occurred.",
+    "display_label": "re-recording abundance debt (legacy key retained for provenance)"
   },
   "return_quality_fragility": {
     "status": "return_quality_fragility_not_supported",
@@ -1090,6 +1095,48 @@
       ],
       "supported": false
     },
-    "interpretation": "Return-year Braun-Blanquet is directionally lower among re-lost returns but does not robustly explain subsequent re-loss after pre-loss history, loss-year vegetation continuity, source abundance, stable site identity and return year. Recovery debt and return fragility remain parallel features of incomplete recovery."
+    "interpretation": "Braun-Blanquet state at re-recording is directionally lower among points later unrecorded again but does not robustly explain subsequent recorded re-loss after local history, community continuity, source abundance, stable site identity and year. Do not describe either state as recovery or relapse.",
+    "display_label": "re-recording quality versus subsequent recorded re-loss"
+  },
+  "measurement_layer_hard_stop": {
+    "status": "same_annual_exact_point_mechanism_mining_closed",
+    "effective_date": "2026-09-29",
+    "terminology": {
+      "preferred": [
+        "re-recording",
+        "reappearance in the observation record",
+        "recorded-state return"
+      ],
+      "prohibited_as_binary_inference": [
+        "ecological recovery",
+        "demographic recovery",
+        "recolonization",
+        "clonal recovery",
+        "physiological recovery"
+      ],
+      "legacy_note": "Existing keys, filenames, schemas and historical branch names containing 'recovery' are retained for provenance only and do not imply recovery."
+    },
+    "next_mechanism_priority": [
+      "below-ground reserve / clonal state",
+      "node-scale high-frequency temperature, salinity and PAR",
+      "hydrodynamic exposure / residence time",
+      "canopy / epiphyte light microenvironment",
+      "acute disturbance / disease"
+    ],
+    "allowed_new_mechanism_gate": [
+      "new biological measurement state",
+      "substantially finer temporal or spatial physical measurement layer",
+      "future response frozen before access",
+      "response-unopened external dataset under frozen schema"
+    ],
+    "stopped_lines": [
+      "additional annual/exact-point reappearance/loss/reloss subgroups",
+      "additional local-history decompositions",
+      "additional state-transition subclasses",
+      "additional richness subgroups",
+      "retuned thresholds, lags or radii on current response"
+    ],
+    "program_document": "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md",
+    "prospective_exception": "The open 2026 Old Tampa Bay continuous-temperature -> 2027 fixed-transect test is allowed because it uses a new high-frequency exposure and a future response frozen before access."
   }
 }

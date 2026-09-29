@@ -29,6 +29,7 @@
 
 - `../results/current_validation_v2.json`
 - `../docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md`
+- `../docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`
 
 ## Editing rule
 

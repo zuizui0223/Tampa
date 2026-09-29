@@ -1,0 +1,84 @@
+{
+  "schema": "tampa.clonal_state_prospective_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "future_new_measurement_design_not_yet_opened",
+  "evidence_class": "prospective_new_measurement_mechanism",
+  "purpose": "Test whether below-ground reserve/clonal state predicts future quantitative meadow stability beyond current above-ground state, without using binary reappearance as a recovery endpoint.",
+  "eligibility": {
+    "geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
+    "sampling_frame": "Existing stable fixed-transect nodes with a baseline survey and permission for adjacent below-ground sampling.",
+    "target_sample_size_nodes": 24,
+    "minimum_analyzable_nodes": 18,
+    "stratification": "Aim for approximately balanced representation of quantitatively stable, persistent-but-degrading, and low/unstable quantitative-state transects using only data available before below-ground sampling.",
+    "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise."
+  },
+  "baseline_new_measurements": {
+    "primary_predictor": {
+      "name": "rhizome_total_nonstructural_carbohydrate",
+      "unit": "mg g-1 dry mass or laboratory-equivalent standardized concentration",
+      "definition": "predefined laboratory sum of soluble sugar + starch in rhizome tissue",
+      "direction": "higher reserve predicts less subsequent quantitative decline"
+    },
+    "secondary_predictors": [
+      "below-ground dry biomass per area",
+      "rhizome branching / meristem density",
+      "rhizome diameter and internode length",
+      "below-ground : above-ground biomass ratio",
+      "optional clonal/genet continuity if a validated molecular design is feasible"
+    ],
+    "replication": "At least 3 independent adjacent below-ground cores per node; summarize the primary predictor by node median before outcome access."
+  },
+  "baseline_existing_covariates": [
+    "water body",
+    "baseline focal_frequency",
+    "baseline bb_cover_mean_all_points",
+    "baseline blade length where measured",
+    "baseline shoot density where measured",
+    "survey timing"
+  ],
+  "future_outcome": {
+    "primary": "next fixed-transect survey focal_frequency minus baseline focal_frequency",
+    "secondary": [
+      "next survey Braun-Blanquet all-point index minus baseline",
+      "next survey blade length minus baseline where observed",
+      "next survey shoot density minus baseline where observed"
+    ],
+    "prohibited_primary": "binary reappearance / recorded return",
+    "rationale": "Use continuous quantitative stability as the mechanism endpoint; annual detection transitions are not ecological recovery."
+  },
+  "primary_analysis": {
+    "estimator": "standardized coefficient of baseline rhizome TNC in a prespecified linear model for future change in focal_frequency",
+    "required_controls": [
+      "baseline focal_frequency",
+      "baseline Braun-Blanquet state",
+      "water body"
+    ],
+    "uncertainty": "node-label permutation or bootstrap fixed before outcome access",
+    "directional_hypothesis": "higher rhizome TNC -> more positive / less negative future frequency change",
+    "alpha": 0.05,
+    "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor"
+  },
+  "secondary_analysis": {
+    "note": "Secondary clonal traits and secondary biological outcomes are descriptive/supportive and cannot replace a null primary TNC -> future frequency result.",
+    "multiple_testing": "Apply one declared family correction if inferential secondary tests are retained."
+  },
+  "pre_outcome_freeze_required": [
+    "final sampling nodes",
+    "core-processing laboratory protocol",
+    "TNC assay definition",
+    "number of cores per node",
+    "future survey date/window",
+    "analysis code and permutation/bootstrap rule"
+  ],
+  "claim_boundary": [
+    "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
+    "Do not use binary re-recording as a recovery outcome.",
+    "Do not change the primary clonal predictor after future response access.",
+    "Do not replace a null primary result with a secondary clonal trait.",
+    "If below-ground sampling is not independent of monitoring state or management intervention, document that selection explicitly."
+  ]
+}
