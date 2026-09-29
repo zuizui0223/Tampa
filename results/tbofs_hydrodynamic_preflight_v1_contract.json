@@ -1,0 +1,80 @@
+{
+  "schema": "tampa.tbofs_hydrodynamic_preflight_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "response_blind_physical_source_preflight",
+  "evidence_class": "new_physical_measurement_layer",
+  "purpose": "Determine whether NOAA TBOFS gridded 3-D currents can provide a reproducible near-bed hydrodynamic exposure layer for stable Tampa seagrass transects before any hydrodynamic-seagrass association is fit.",
+  "source": {
+    "name": "NOAA Tampa Bay Operational Forecast System (TBOFS)",
+    "model": "3-D ROMS",
+    "official_system_page": "https://tidesandcurrents.noaa.gov/ofs/tbofs/tbofs.html",
+    "official_info_page": "https://tidesandcurrents.noaa.gov/ofs/tbofs/tbofs_info.html",
+    "ncei_dataset_doi": "https://doi.org/10.25921/fztr-mf31",
+    "ncei_catalog": "https://www.ncei.noaa.gov/thredds/catalog/model/model.html",
+    "declared_horizontal_resolution": "approximately 100 m to 1.2 km",
+    "declared_vertical_levels": 11,
+    "candidate_field": "3-D current vector components from gridded NetCDF fields"
+  },
+  "response_blind_grid_audit": {
+    "allowed_node_columns": [
+      "node_id",
+      "water_body",
+      "longitude",
+      "latitude"
+    ],
+    "prohibited_columns": [
+      "detected",
+      "focal_frequency",
+      "bb_cover_mean_all_points",
+      "blade_length_mm",
+      "shoot_density_m2",
+      "loss",
+      "re_recording"
+    ],
+    "required_reports": [
+      "current variable names and units",
+      "vertical coordinate and near-bed level interpretation",
+      "wet-cell mask or valid-cell rule",
+      "mapped stable-node count and proportion",
+      "nearest-valid-cell distance distribution",
+      "coverage by water body"
+    ]
+  },
+  "network_gate": {
+    "minimum_valid_nodes": 30,
+    "required_water_bodies": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
+    "maximum_median_mapping_distance_km": 1.0,
+    "maximum_primary_node_mapping_distance_km": 2.0,
+    "vertical_requirement": "Selected current layer must have an explicit reproducible near-bed interpretation.",
+    "failure_action": "Do not use TBOFS as the primary network-wide meadow exposure layer; move to direct current/ADCP measurements or another validated near-bed product."
+  },
+  "candidate_prospective_test_if_gate_passes": {
+    "primary_exposure": "node-level 90th percentile near-bed current speed, speed = sqrt(u^2 + v^2), over a frozen pre-response exposure window",
+    "primary_outcome": "future fixed-transect focal_frequency minus baseline focal_frequency",
+    "model": "future_delta_frequency ~ baseline_frequency + p90_nearbed_current + baseline_frequency:p90_nearbed_current + water_body",
+    "mechanistic_prediction": {
+      "p90_nearbed_current": "non-positive",
+      "baseline_frequency_x_p90_current": "positive if denser established meadow state buffers hydrodynamic exposure"
+    },
+    "prohibited_primary_outcome": "binary reappearance / recorded-state return",
+    "freeze_before_response": [
+      "model/archive version",
+      "exposure time window",
+      "horizontal interpolation rule",
+      "vertical level rule",
+      "p90 exposure definition",
+      "future survey window",
+      "uncertainty procedure"
+    ]
+  },
+  "claim_boundary": [
+    "Passing the source gate establishes physical-layer usability, not an ecological mechanism.",
+    "Do not treat surface HF-radar currents as near-bed meadow exposure.",
+    "Do not tune interpolation radius, vertical level, exposure percentile or time window against a Tampa biological outcome.",
+    "A supported prospective interaction would be consistent with meadow-state buffering of hydrodynamic exposure, not proof of causal self-facilitation."
+  ]
+}

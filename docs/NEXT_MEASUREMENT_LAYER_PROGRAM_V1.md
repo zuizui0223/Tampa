@@ -117,6 +117,10 @@ Current source preflight:
 
 Persistent among-transect differences reflect local transport and exposure regimes that coordinates, depth, sediment, and bay-level water quality do not resolve.
 
+A stronger discriminating version is now frozen:
+
+> high near-bed flow should be most damaging where current meadow state is sparse; dense established meadow state should partially buffer physical exposure if self-facilitation is important.
+
 Candidate measurements:
 
 - current velocity;
@@ -126,13 +130,50 @@ Candidate measurements:
 - local shear stress;
 - near-bed flow variability.
 
-### Primary discriminating prediction
+### Source update
 
-After matching or controlling for present meadow state, transects with different hydrodynamic exposure should differ in future persistence, community state, or stress response.
+NOAA TBOFS was evaluated as a candidate network-scale physical source under a response-blind preflight.
 
-### Preferred evidence
+The all-71 spatial source gate failed its frozen maximum-distance rule. More importantly, even the geometrically well-covered Old + Middle + Lower Tampa core failed the ecological depth-relevance check: model bathymetry was systematically deeper than the shallow transect record, with a 2.0-m model bathymetry value at most core mappings.
 
-Use an independently validated hydrodynamic model, deployed current meters/ADCPs, or another pre-specified physical layer. Do not construct a new arbitrary connectivity proxy from the same annual biological table.
+Therefore:
+
+> **TBOFS is retained as regional hydrodynamic context, not accepted as literal meadow-scale near-bed exposure.**
+
+This is recorded in:
+
+- `results/tbofs_hydrodynamic_preflight_v1.json`;
+- `results/tbofs_depth_relevance_audit_v1.json`.
+
+### Preferred prospective test
+
+The hydrodynamic mechanism now uses direct paired shallow-water velocity measurement:
+
+- `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md`;
+- `results/direct_hydrodynamic_prospective_v1_contract.json`.
+
+At each selected node, measure simultaneous velocity inside the canopy / near bed and above the canopy. The primary ecosystem-engineering metric is:
+
+```text
+attenuation_p90
+  = 1 - p90(U_inside) / p90(U_reference)
+```
+
+The primary prospective ecological model is:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency
+  + ambient_p90
+  + attenuation_p90
+  + water_body
+```
+
+The key prediction is a positive attenuation coefficient: stronger measured canopy attenuation is associated with less subsequent quantitative decline after baseline state and ambient forcing are represented.
+
+This is preferable to a density × model-current interaction because the physical buffering is measured directly rather than inferred from shoot density or a coarse circulation model.
+
+Do not construct another arbitrary distance/connectivity proxy or tune alternative current metrics from the biological table.
 
 ## Priority 4 — canopy / epiphyte microenvironment
 
@@ -203,7 +244,7 @@ Otherwise it belongs to descriptive/sensitivity work, not to the mechanism progr
 4. **Canopy / epiphyte light microenvironment**
 5. **Acute disturbance / disease**
 
-The first two have the strongest ability to discriminate between persistent meadow legacy and unresolved short-timescale stress.
+The first two remain the strongest direct discriminators between persistent meadow legacy and unresolved short-timescale stress. Hydrodynamics remains independently valuable, but the TBOFS meadow-scale route failed physical preflight and has been replaced by direct canopy/ambient velocity measurement.
 
 ## Current program status
 
@@ -211,4 +252,5 @@ The first two have the strongest ability to discriminate between persistent mead
 - Binary reappearance terminology: **re-recording / reappearance, not recovery**
 - 2026 OTB continuous-temperature -> 2027 prospective test: **allowed new-measurement branch**
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
-- Hydrodynamic layer: **next independent physical-template test**
+- NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
+- Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**

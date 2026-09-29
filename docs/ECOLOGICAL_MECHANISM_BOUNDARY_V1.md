@@ -48,6 +48,7 @@ Legacy analysis filenames and schema names containing `recovery` remain unchange
 | Simple annual/seasonal temperature or salinity | Annual and frozen 3/6-month hot/fresh screens | No multiplicity-controlled association | Do not retune windows |
 | Published 30 °C / 25 ppt compound stress | Exact Beck et al. daily-GAM stress artifact; joint run tested beyond marginal hot and fresh runs | Blade length and shoot density unsupported | Joint threshold duration does not rescue the climate-stress mechanism |
 | Simple condition → thinning cascade | Source blade length + shoot density added beyond current frequency/BB and stable node identity in strict walk-forward prediction | Primary frequency and secondary Braun–Blanquet targets both unsupported | Faster condition dynamics do not establish that plant-condition decline is a one-year precursor of thinning |
+| TBOFS near-bottom current as meadow exposure | Response-blind grid mapping + physical point-depth relevance audit | All-network distance gate failed; tri-bay grid proximity was good but model bathymetry was systematically too deep for literal shallow-meadow interpretation | Retain TBOFS as regional context; do not use model bottom sigma velocity as the primary canopy-scale predictor |
 | Exact-point reappearance decomposition | Multiple post-hoc observation-state audits | Useful state-history and community-continuity associations, but still observational and increasingly reference-sensitive | Do not promote another annual-state decomposition into a mechanism claim |
 
 ## Current ecological model
@@ -75,6 +76,95 @@ Important implications:
 - multiple state axes can converge on recorded-state instability without having a single demonstrated order.
 
 The current annual table does **not** identify the persistent local template or short-timescale stress.
+
+## Hypothesis triage after the current mechanism tests
+
+### 1. Simple condition -> thinning -> loss cascade: **not supported**
+
+The frozen cross-lag test asked whether source-year blade length and shoot density improve strict year-ahead prediction of next-year focal frequency or Braun-Blanquet state beyond current quantitative state and stable node identity.
+
+For focal frequency, the condition model was worse on average than the baseline (mean MAE 0.06862 versus 0.06691), winning 6 of 17 scored target years. Braun-Blanquet showed the same direction of failure.
+
+Therefore:
+
+- faster plant-condition dynamics are real descriptive axes;
+- they are **not** validated as a one-year leading stage of thinning;
+- the manuscript must not present one universal serial degradation cascade.
+
+### 2. Clonal / below-ground buffering: **plausible but unresolved**
+
+Two pieces of retrospective evidence are relevant but insufficient.
+
+- Formal older-history support disappears after stable node identity is added, so generic long-memory inference is reference-sensitive.
+- Exact-point focal *Thalassia* history can retain information beyond generic vegetated-habitat history, but the bare-loss subgroup and history-by-continuity results do not support a simple autonomous residual-rhizome story.
+
+Therefore the only decisive next test is a genuinely new below-ground state measured before a future quantitative outcome. Rhizome TNC remains the frozen primary prospective predictor.
+
+### 3. Successional reset / pioneer replacement: **composition shift supported; mechanism not supported**
+
+Lower Tampa Bay shows a real directional community reorganization over 2016–2025:
+
+- *Thalassia* frequency declines;
+- *Thalassia* Braun-Blanquet state declines;
+- *Syringodium* declines;
+- *Halodule* frequency increases.
+
+That is sufficient for **community reorganization**.
+
+It is not sufficient for a successional-reset or pioneer-replacement mechanism. Exact-point analyses show that much alternative-species occupancy after focal loss reflects persistence of species already present before focal loss; among focal-loss points remaining seagrass-occupied, 71.2% retained at least one pre-existing alternative species. Thus post-loss *Halodule* cannot be assumed to be new colonization.
+
+### 4. Canopy hydrodynamic self-buffering: **open; direct prospective design frozen**
+
+The annual table cannot identify a critical density threshold without post-hoc retuning, and threshold rescue on the same table is prohibited.
+
+NOAA TBOFS was tested as a genuinely independent physical source before biological linkage. The result was useful but negative for the intended meadow-scale interpretation.
+
+- all 71 stable nodes could be mapped to valid current-support cells, but two Boca Ciega Bay nodes exceeded the frozen 2-km maximum-distance rule;
+- Old + Middle + Lower Tampa Bay were geometrically well covered (47/47 within 2 km);
+- however, physical point depths in that core had a median of about 0.90 m while mapped TBOFS bathymetry had a median of 2.00 m;
+- TBOFS bathymetry was deeper at all 47 core nodes and 40/47 mapped cells were exactly 2.0 m;
+- the node-level depth correlation was weak (about 0.16).
+
+Therefore model bottom-sigma velocity is not accepted as literal canopy/near-bed exposure for these shallow meadows.
+
+The hydrodynamic hypothesis is retained in a stronger form using **direct paired velocity measurements**:
+
+```text
+attenuation_p90
+  = 1 - p90(U_inside_canopy) / p90(U_above_canopy)
+```
+
+followed prospectively by:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency
+  + ambient_p90
+  + attenuation_p90
+  + water_body
+```
+
+The key prediction is that stronger measured canopy attenuation is associated with less subsequent quantitative decline. This tests ecosystem engineering directly rather than assuming shoot density or model current equals physical buffering.
+
+The frozen design is in `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md` and `results/direct_hydrodynamic_prospective_v1_contract.json`.
+
+### 5. Event-scale physiological debt: **open, but only at a new temporal resolution**
+
+Annual water quality, frozen 3/6-month hot/fresh summaries, and the published 30 C / 25 ppt compound-stress test did not support a common mechanism.
+
+This rules against the tested coarse summaries, not against short stress pulses. The remaining version of the hypothesis requires high-frequency node-scale temperature, salinity and/or PAR measured before a future response.
+
+### Current mechanistic ranking
+
+The data therefore favor neither a single serial cascade nor a demonstrated long-memory mechanism.
+
+The strongest unresolved mechanism questions are now:
+
+1. does below-ground reserve explain persistence beyond current above-ground state?
+2. does short-timescale physical stress explain future quantitative change?
+3. does directly measured canopy attenuation buffer local hydrodynamic exposure and predict future quantitative persistence?
+
+All three require a new measurement layer.
 
 ## Community-continuity results are state ecology, not mechanism identification
 
