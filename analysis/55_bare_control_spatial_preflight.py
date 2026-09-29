@@ -124,26 +124,38 @@ def arcgis_json(params):
     return json.loads(get_bytes(url,240).decode("utf-8"))
 
 def fetch_seagrass_geometries():
-    ids=arcgis_json({"where":"1=1","returnIdsOnly":"true","f":"json"}).get("objectIds",[])
-    if not ids:
-        raise RuntimeError("ArcGIS returned no seagrass object IDs")
-    geoms=[]; attrs=[]
-    for start in range(0,len(ids),500):
-        chunk=ids[start:start+500]
+    """Fetch all 2024 polygons with ArcGIS offset pagination.
+
+    returnIdsOnly is not consistently enabled on this legacy MapServer, so the
+    preflight uses ordered feature pagination without changing any scientific rule.
+    """
+    geoms=[]; attrs=[]; offset=0; page_size=1000
+    while True:
         data=arcgis_json({
-            "objectIds":",".join(str(x) for x in chunk),
+            "where":"1=1",
             "outFields":"OBJECTID,FLUCCSCODE,FLUCCSDESC",
             "returnGeometry":"true",
             "outSR":"4326",
+            "orderByFields":"OBJECTID",
+            "resultOffset":str(offset),
+            "resultRecordCount":str(page_size),
             "f":"geojson"
         })
-        for ft in data.get("features",[]):
+        if "error" in data:
+            raise RuntimeError(f"ArcGIS query error: {data['error']}")
+        feats=data.get("features",[])
+        for ft in feats:
             if ft.get("geometry"):
                 geoms.append(shape(ft["geometry"]))
                 attrs.append(ft.get("properties",{}))
+        if len(feats)<page_size:
+            break
+        offset += len(feats)
+        if offset>100000:
+            raise RuntimeError("ArcGIS pagination runaway guard")
     if not geoms:
-        raise RuntimeError("No polygon geometries returned")
-    return unary_union(geoms), attrs, len(ids)
+        raise RuntimeError(f"No polygon geometries returned; response keys={sorted(data.keys())}")
+    return unary_union(geoms), attrs, len(geoms)
 
 def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
