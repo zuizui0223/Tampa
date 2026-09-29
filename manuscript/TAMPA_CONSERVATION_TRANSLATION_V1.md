@@ -97,31 +97,42 @@ The field data further show that the pathway of degradation is spatially heterog
 
 The data **do not** yet identify the persistent site template or the causal stressor producing these differences.
 
-## A testable next ecological hypothesis
+## What the current data do **not** establish about sequence
 
-A useful future hypothesis is a **buffer-then-threshold meadow model**:
+The Tampa record does not support a single serial pathway in which plant-condition decline necessarily precedes meadow thinning and then recorded loss.
 
-1. persistent site conditions and established clonal meadow structure buffer recorded presence;
-2. plant condition and local abundance can deteriorate while that buffer remains;
-3. if local resilience is exhausted, recorded presence becomes unstable.
+A frozen cross-lag test asked whether source-year blade length and shoot density improved next-year focal frequency or Braun–Blanquet prediction after current frequency/abundance and stable transect identity were already represented. They did not.
 
-The current Tampa analyses support steps 1–2 as a descriptive state pattern and provide exploratory evidence linking low quantitative state to step 3. They do not demonstrate the buffering mechanism itself.
+The safer ecological model is therefore **multiple partially independent degradation axes**:
 
-## Highest-value next field measurements
+- occupancy / abundance;
+- plant condition;
+- community composition;
+- coarse recorded state.
 
-The next conservation study should collect genuinely new state information rather than another retrospective transformation of the same annual records.
+These axes can diverge and may converge on instability without following one universal order.
 
-Priority measurements at repeatedly monitored “hidden-degradation” and reference transects:
+## Highest-value next mechanism measurements
 
-1. high-frequency meadow-scale PAR;
-2. temperature and salinity loggers;
-3. epiphyte load / canopy shading;
-4. below-ground biomass and rhizome carbohydrate reserves;
-5. rhizome/clonal architecture or meadow age proxies;
-6. hydrodynamic exposure / residence time;
-7. acute disturbance and disease observations.
+The next mechanism study should collect genuinely new state information rather than further decompose annual loss/re-recording histories.
 
-This would turn the present monitoring result into a mechanism-discrimination experiment.
+Priority order:
+
+1. **below-ground / clonal state** — rhizome biomass, carbohydrate reserve, branching/architecture, meristem density and clonal continuity;
+2. **high-frequency meadow-scale stress** — temperature, salinity and PAR at diel/event resolution;
+3. **hydrodynamic exposure / residence time** — local current velocity, flushing, freshwater-plume exposure and near-bed flow;
+4. **canopy / epiphyte light microenvironment**;
+5. **acute disturbance / disease**.
+
+The strongest immediate test is below-ground/clonal buffering: compare meadows with similar current above-ground frequency/abundance but different future stability, asking whether independently measured reserve/clonal state separates their trajectories.
+
+The second priority is prospective high-frequency stress. The already frozen 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test is an example of an allowed next-generation mechanism study because the exposure is a new measurement layer and the future biological response is not yet opened.
+
+The full mechanism gate is documented in `docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`.
+
+### Terminology
+
+A point or transect that is unrecorded and later recorded again is **re-recorded / reappearing in the observation record**. That observation-state event is not called ecological recovery, demographic recovery, or recolonization without independent biological evidence.
 
 ## Community insurance as a conservation state
 
