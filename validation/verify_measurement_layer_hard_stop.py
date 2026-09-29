@@ -51,6 +51,8 @@ assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
 assert direct["new_measurements"]["canopy_counterfactual_control"]["target_nodes"]==18
 assert direct["new_measurements"]["canopy_counterfactual_control"]["minimum_analyzable_nodes"]==12
 assert direct["new_measurements"]["canopy_counterfactual_control"]["minimum_nodes_per_bay"]==3
+assert direct["new_measurements"]["canopy_counterfactual_control"]["spatial_preflight"]["status"]=="geographic_edge_feasibility_pass"
+assert direct["new_measurements"]["canopy_counterfactual_control"]["spatial_preflight"]["candidate_nodes_with_mapped_edge_within_100m"]==39
 assert "excess_canopy_attenuation_p90" in direct["new_measurements"]["canopy_counterfactual_control"]["metrics"]
 assert "gate_A_physical" in direct["ecosystem_engineering_feedback_gate"]
 assert "gate_B_future_ecology" in direct["ecosystem_engineering_feedback_gate"]
