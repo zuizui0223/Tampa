@@ -47,6 +47,13 @@ assert direct["design_precision_gate"]["approximate_detectable_partial_r"]["n_33
 assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
 assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
 
+frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
+assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
+assert frame["registry"]["recent_thalassia_positive_nodes"]==33
+assert frame["registry"]["recent_vegetated_nodes"]==40
+assert frame["registry"]["recent_alternative_only_nodes"]==7
+assert frame["decision"]["recent_frame_passes_30_node_8_per_bay_primary_precision_gate"] is True
+
 boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
 assert "Observation-state reappearance is not ecological recovery." in boundary
 assert "Do **not** add another retrospective decomposition" in boundary
