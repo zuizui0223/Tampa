@@ -37,11 +37,25 @@
     "maximum_nominal_sampling_interval_minutes": 15,
     "rollout_window_days": 7,
     "retrieval_window_days": 7,
-    "primary_exposure_window": "Use only the common calendar overlap shared by all confirmatory nodes after frozen QC, so spatial comparisons are not driven by different weather windows.",
+    "primary_exposure_window": "Use the fixed July 24 through September 3 calendar window, further restricted only to the common calendar overlap shared by all confirmatory nodes after frozen QC.",
     "sensor_height": "Target sampling center 0.20 m above sediment; exact instrument geometry and allowable tolerance fixed in a response-independent pilot before deployment.",
     "clock_rule": "Temperature and salinity observations must be synchronized or reproducibly aligned to the same <=15-minute grid.",
     "valid_coverage_rule": "Each confirmatory node must retain >=85% paired temperature-salinity coverage across the common overlap after only predeclared QC.",
-    "calibration_rule": "Instrument model, pre/post calibration, drift tolerance, fouling control, gap rule and salinity conversion must be frozen before outcome-bearing deployment."
+    "calibration_rule": "Instrument model, pre/post calibration, drift tolerance, fouling control, gap rule and salinity conversion must be frozen before outcome-bearing deployment.",
+    "calendar_preflight": {
+      "source": "results/event_stress_calendar_preflight_v1.json",
+      "status": "calendar_selected_from_response_independent_exposure_climatology",
+      "frozen_start_month_day": "07-24",
+      "frozen_end_month_day": "09-03",
+      "window_days": 42,
+      "historical_nonzero_station_year_fraction": {
+        "Old Tampa Bay": 0.632,
+        "Middle Tampa Bay": 0.3633333333,
+        "Lower Tampa Bay": 0
+      },
+      "historical_year_fraction_with_events_in_at_least_2_bays": 0.64,
+      "interpretation": "The calendar was selected before future TNC using environmental exposure climatology only. Lower Tampa Bay had zero historical joint exposure in the pinned daily artifact, so the future variation gate may fail and must not be rescued by changing calendar or thresholds."
+    }
   },
   "reserve_sampling": {
     "pre_exposure": "Collect >=3 independent adjacent rhizome cores per node within 3 days of logger deployment using the same tissue/HPLC protocol as the clonal TNC contract.",
@@ -61,7 +75,7 @@
     "nonestimable_variation_gate": {
       "minimum_nodes_with_nonzero_joint_exposure": 10,
       "minimum_bays_with_nonzero_joint_exposure": 2,
-      "rule": "If the gate fails, classify the primary exposure as non-estimable. Do not lower/raise either threshold or change the exposure window to manufacture variation."
+      "rule": "If the gate fails, classify the primary exposure as non-estimable. Do not lower/raise either threshold, shift the July 24-September 3 calendar, extend the exposure window, or change node/bay membership to manufacture variation."
     }
   },
   "primary_analysis": {
@@ -148,7 +162,9 @@
     "Natural seasonal TNC change is controlled primarily by synchronous deployment and pre-TNC adjustment, not by post-hoc seasonal subsetting.",
     "Do not retune thresholds, deployment windows, node subsets or exposure summaries after observing TNC or future meadow responses.",
     "Binary re-recording is not a recovery endpoint.",
-    "Hot-fresh events may proxy a broader rainfall/runoff event complex including low light or other co-stressors; the primary association does not uniquely attribute reserve depletion to temperature and salinity."
+    "Hot-fresh events may proxy a broader rainfall/runoff event complex including low light or other co-stressors; the primary association does not uniquely attribute reserve depletion to temperature and salinity.",
+    "The response-independent calendar preflight found historical joint exposure in OTB and MTB but none in LTB; disclose this asymmetry and do not count LTB zero-exposure replication as evidence of exposure variation.",
+    "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
