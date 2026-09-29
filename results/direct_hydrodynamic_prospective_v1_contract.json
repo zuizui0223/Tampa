@@ -59,7 +59,7 @@
     "physical_gate": "Report node-level attenuation_p90 distribution and frozen node-level uncertainty before linking to future biological outcome."
   },
   "existing_baseline_controls": [
-    "baseline focal_frequency",
+    "synchronized predeployment baseline focal_frequency",
     "water_body"
   ],
   "future_outcome": {
@@ -147,5 +147,25 @@
       }
     },
     "decision": "The previous 24-node target was retained only for very large effects. Increase the target to 36 nodes because node-level future change remains the inferential unit; repeated velocity observations reduce measurement error but do not replace node replication."
+  },
+  "predeployment_screening": {
+    "frame": "All 47 stable nodes in Old, Middle and Lower Tampa Bay are screened in one predeclared baseline window before final deployment selection.",
+    "why": "The historical 2025 survey is not synchronous across the tri-bay frame (13 Old, 12 Middle, 9 Lower nodes observed), so it is not used as the sole deployment baseline.",
+    "measurements": [
+      "focal Thalassia frequency under the frozen fixed-transect rule",
+      "water depth and tidal-stage metadata",
+      "canopy height",
+      "presence of a usable Thalassia canopy patch adjacent to the permanent line",
+      "paired-sensor geometry/submergence feasibility",
+      "species-specific local canopy composition"
+    ],
+    "primary_eligibility": [
+      "stable tri-bay node",
+      "focal Thalassia present at the deployment footprint",
+      "inside-canopy and above-canopy sensor geometry can be achieved under the frozen mount rule",
+      "no future biological outcome is available at selection"
+    ],
+    "selection_algorithm": "Within bay, rank only eligible nodes by synchronized baseline focal frequency, form low/middle/high thirds, and sample across all thirds using a frozen deterministic node-ID hash order. Aim for 36 deployed nodes overall and broad balance across bays; retain at least 9 analyzable nodes per bay.",
+    "alternates": "Predeclare ordered alternates within each bay x baseline-state stratum before velocity deployment begins."
   }
 }
