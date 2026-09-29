@@ -40,6 +40,7 @@ THALASSIA="Thalassia testudinum"
 ORDER="Alismatales"
 
 SWFWMD_FEATURE_URL="https://www25.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/FeatureServer/3"
+USF_MIRROR_URL="https://gis.waterinstitute.usf.edu/arcgis/rest/services/Maps/Seagrass2024/MapServer/0"
 FWC_ZIP_URL="https://atoll.floridamarine.org/Data/Zips/SDE/seagrass_fl_poly.zip"
 EDGE_MAX_M=100.0
 TARGET=18
@@ -200,6 +201,76 @@ def fetch_swfwmd_2024_union(nodes):
     }
     return union,audit
 
+def fetch_usf_2024_mirror_union(nodes):
+    """Secondary mirror with a strict date-stamp validation gate.
+
+    The service name is Seagrass2024 but its descriptive text contains stale
+    2018 wording. We therefore accept it only if returned feature DATESTAMP
+    values independently indicate 2024-or-later data.
+    """
+    from datetime import datetime, timezone
+    lons=[x["longitude"] for x in nodes]
+    lats=[x["latitude"] for x in nodes]
+    pad=0.06
+    envelope=f"{min(lons)-pad},{min(lats)-pad},{max(lons)+pad},{max(lats)+pad}"
+    geoms=[]; dates=[]; offset=0; page_size=1000
+    while True:
+        data=arcgis_json(USF_MIRROR_URL,{
+            "where":"1=1",
+            "geometry":envelope,
+            "geometryType":"esriGeometryEnvelope",
+            "inSR":"4326",
+            "spatialRel":"esriSpatialRelIntersects",
+            "outFields":"OBJECTID,FLUCCSCODE,FLUCCSDESC,DATESTAMP",
+            "returnGeometry":"true",
+            "outSR":"4326",
+            "orderByFields":"OBJECTID_1",
+            "resultOffset":str(offset),
+            "resultRecordCount":str(page_size),
+            "f":"geojson"
+        })
+        if "error" in data:
+            raise RuntimeError(f"USF mirror query error: {data['error']}")
+        feats=data.get("features",[])
+        for ft in feats:
+            g=ft.get("geometry")
+            if g:
+                from shapely.geometry import shape
+                geoms.append(shape(g))
+            val=(ft.get("properties") or {}).get("DATESTAMP")
+            if val is not None:
+                try:
+                    if isinstance(val,(int,float)):
+                        yr=datetime.fromtimestamp(float(val)/1000.0,tz=timezone.utc).year
+                    else:
+                        yr=int(str(val)[:4])
+                    dates.append(yr)
+                except Exception:
+                    pass
+        if len(feats)<page_size:
+            break
+        offset += len(feats)
+        if offset>20000:
+            raise RuntimeError("USF mirror pagination runaway guard")
+    if not geoms:
+        raise RuntimeError("USF mirror returned no Tampa-area polygons")
+    if not dates or float(np.median(np.asarray(dates,float)))<2024:
+        raise RuntimeError(f"USF mirror failed 2024 DATESTAMP gate: years={Counter(dates)}")
+
+    union4326=unary_union(geoms)
+    tr=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
+    from shapely.ops import transform as shp_transform
+    union=shp_transform(tr.transform,union4326)
+    return union,{
+        "source":"USF Water Institute Seagrass2024 mirror",
+        "feature_url":USF_MIRROR_URL,
+        "features_returned":len(geoms),
+        "datestamp_year_counts":dict(Counter(dates)),
+        "date_gate":"median DATESTAMP year >= 2024",
+        "working_crs":"EPSG:26917",
+        "fallback_used":True
+    }
+
 def fetch_fwc_seagrass_union(outdir:Path,nodes):
     raw=get_bytes(FWC_ZIP_URL,300)
     archive=outdir/"seagrass_fl_poly.zip"
@@ -261,59 +332,68 @@ def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
     nodes=reconstruct_recent_nodes(fetch(FILES["event"]),fetch(FILES["occurrence"]))
     primary_error=None
+    mirror_error=None
     try:
         union,source_audit=fetch_swfwmd_2024_union(nodes)
     except Exception as exc1:
         primary_error=f"{type(exc1).__name__}: {exc1}"
         try:
-            union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
+            union,source_audit=fetch_usf_2024_mirror_union(nodes)
             source_audit["primary_delivery_error"]=primary_error
-            source_audit["fallback_used"]=True
-        except Exception as exc:
-            unresolved={
-                "schema":"tampa.bare_control_spatial_preflight_v1",
-                "status":"source_delivery_unavailable_spatial_feasibility_unresolved",
-                "response_independent":True,
-                "source":{
-                    "tbismp_commit":COMMIT,
-                    "recent_years":list(YEARS),
-                    "primary_seagrass_source":"SWFWMD Seagrass in 2024 FeatureServer",
-                    "primary_feature_url":SWFWMD_FEATURE_URL,
-                    "fallback_seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
-                    "fallback_archive":FWC_ZIP_URL,
-                    "primary_delivery_error":primary_error
-                },
-                "registry":{
-                    "recent_vegetated_nodes":len(nodes),
-                    "recent_thalassia_positive_nodes":sum(x["thalassia_frequency"]>0 for x in nodes)
-                },
-                "candidate_gate":{
-                    "maximum_edge_distance_m":EDGE_MAX_M,
-                    "target_nodes":TARGET,
-                    "minimum_nodes":MINIMUM,
-                    "minimum_nodes_per_bay":MIN_PER_BAY,
-                    "passed":None
-                },
-                "delivery_error":f"{type(exc).__name__}: {exc}",
-                "decision":"No scientific pass/fail is assigned. Preserve the frozen 100-m / 12-node / 3-per-bay criteria and resolve feasibility by accessible GIS mirror or preregistered field/imagery reconnaissance.",
-                "claim_boundary":[
-                    "Source-delivery failure is not ecological evidence.",
-                    "Do not relax the frozen distance or sample-size rules because the public GIS host was unavailable.",
-                    "No future biological response is used."
-                ]
-            }
-            (outdir/"bare_control_spatial_preflight_v1.json").write_text(
-                json.dumps(unresolved,indent=2,sort_keys=True)+"\n"
-            )
-            (outdir/"bare_control_spatial_candidates_v1.csv").write_text(
-                "node_id,water_body,longitude,latitude,status\n"+
-                "\n".join(
-                    f'{x["node_id"]},{x["water_body"]},{x["longitude"]},{x["latitude"]},UNRESOLVED'
-                    for x in nodes
-                )+"\n"
-            )
-            print(json.dumps(unresolved,indent=2,sort_keys=True))
-            return
+        except Exception as exc2:
+            mirror_error=f"{type(exc2).__name__}: {exc2}"
+            try:
+                union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
+                source_audit["primary_delivery_error"]=primary_error
+                source_audit["mirror_delivery_or_date_error"]=mirror_error
+                source_audit["fallback_used"]=True
+            except Exception as exc:
+                unresolved={
+                    "schema":"tampa.bare_control_spatial_preflight_v1",
+                    "status":"source_delivery_unavailable_spatial_feasibility_unresolved",
+                    "response_independent":True,
+                    "source":{
+                        "tbismp_commit":COMMIT,
+                        "recent_years":list(YEARS),
+                        "primary_seagrass_source":"SWFWMD Seagrass in 2024 FeatureServer",
+                        "primary_feature_url":SWFWMD_FEATURE_URL,
+                        "validated_mirror_candidate":USF_MIRROR_URL,
+                        "fallback_archive":FWC_ZIP_URL,
+                        "primary_delivery_error":primary_error,
+                        "mirror_delivery_or_date_error":mirror_error
+                    },
+                    "registry":{
+                        "recent_vegetated_nodes":len(nodes),
+                        "recent_thalassia_positive_nodes":sum(x["thalassia_frequency"]>0 for x in nodes)
+                    },
+                    "candidate_gate":{
+                        "maximum_edge_distance_m":EDGE_MAX_M,
+                        "target_nodes":TARGET,
+                        "minimum_nodes":MINIMUM,
+                        "minimum_nodes_per_bay":MIN_PER_BAY,
+                        "passed":None
+                    },
+                    "delivery_error":f"{type(exc).__name__}: {exc}",
+                    "decision":"No scientific pass/fail is assigned. Preserve the frozen 100-m / 12-node / 3-per-bay criteria and resolve feasibility by accessible GIS mirror or preregistered field/imagery reconnaissance.",
+                    "claim_boundary":[
+                        "Source-delivery failure is not ecological evidence.",
+                        "Do not relax the frozen distance or sample-size rules because public GIS delivery failed.",
+                        "The USF mirror is accepted only if its returned DATESTAMP distribution independently passes the frozen 2024 date gate.",
+                        "No future biological response is used."
+                    ]
+                }
+                (outdir/"bare_control_spatial_preflight_v1.json").write_text(
+                    json.dumps(unresolved,indent=2,sort_keys=True)+"\n"
+                )
+                (outdir/"bare_control_spatial_candidates_v1.csv").write_text(
+                    "node_id,water_body,longitude,latitude,status\n"+
+                    "\n".join(
+                        f'{x["node_id"]},{x["water_body"]},{x["longitude"]},{x["latitude"]},UNRESOLVED'
+                        for x in nodes
+                    )+"\n"
+                )
+                print(json.dumps(unresolved,indent=2,sort_keys=True))
+                return
 
     transformer=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
     boundary=union.boundary
