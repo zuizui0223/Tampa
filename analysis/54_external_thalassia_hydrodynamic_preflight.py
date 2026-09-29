@@ -20,17 +20,36 @@ URL=f"https://doi.org/{DOI}"
 
 def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
-    r=requests.get(
-        URL,
-        headers={
-            "Accept":"text/tab-separated-values",
-            "User-Agent":"Tampa-external-hydro-preflight/1.0",
-        },
-        timeout=120,
-        allow_redirects=True,
-    )
-    r.raise_for_status()
-    text=r.text
+    try:
+        r=requests.get(
+            URL,
+            headers={
+                "Accept":"text/tab-separated-values",
+                "User-Agent":"Tampa-external-hydro-preflight/1.0",
+            },
+            timeout=120,
+            allow_redirects=True,
+        )
+        r.raise_for_status()
+        text=r.text
+    except requests.RequestException as exc:
+        text=f"# PANGAEA live index temporarily unavailable: {exc}\n"
+        (outdir/"pangaea_967585_index.tsv").write_text(text)
+        summary={
+            "schema":"tampa.external_thalassia_hydrodynamic_preflight_v1",
+            "status":"external_index_temporarily_unavailable",
+            "source":{"doi":DOI},
+            "error":str(exc),
+            "claim_boundary":[
+                "Live source availability is operational, not scientific evidence.",
+                "The frozen six-file ADV manifest is stored separately in results/external_thalassia_hydrodynamic_preflight_v1.json."
+            ],
+        }
+        (outdir/"external_thalassia_hydrodynamic_preflight_v1.json").write_text(
+            json.dumps(summary,indent=2,sort_keys=True)+"\n"
+        )
+        print(json.dumps(summary,indent=2,sort_keys=True))
+        return
     (outdir/"pangaea_967585_index.tsv").write_text(text)
     lines=text.splitlines()
     parsed=[]
