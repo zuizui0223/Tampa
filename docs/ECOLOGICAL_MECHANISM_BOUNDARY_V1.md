@@ -159,9 +159,9 @@ Therefore:
 
 - the current ordinal `Clean / Light / Moderate / Heavy` field does **not** support a simple annual epiphyte-stress interpretation;
 - the positive direction must not be described as a beneficial epiphyte effect;
-- qualitative epiphyte load may instead track mature/long-lived leaves, persistent favorable meadow state, hydrodynamic environment, grazing regime or another canopy property;
+- qualitative epiphyte load may instead track mature/long-lived leaves, slower leaf turnover, persistent favorable meadow state, hydrodynamic environment, grazing regime or another canopy property;
 - no further category/type/lag mining is authorized from this field;
-- an epiphyte-light mechanism remains open only through new direct measurements such as epiphyte biomass plus leaf/canopy optical attenuation.
+- an epiphyte-light mechanism remains open only through new direct measurements such as epiphyte biomass plus leaf/canopy optical attenuation; a distinct state-marker hypothesis would require direct leaf age / turnover measurement rather than reinterpretation of the ordinal load field.
 
 ### 6. Event-scale physiological debt: **open, but only at a new temporal resolution**
 
