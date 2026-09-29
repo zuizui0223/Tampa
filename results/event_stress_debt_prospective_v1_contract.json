@@ -8,7 +8,15 @@
     "retrospective_result": "Published/coarse 30 C / 25 ppt hot-fresh duration did not add supported information for Tampa plant-condition or quantitative-state outcomes under the frozen retrospective test.",
     "new_question": "Was that failure caused by coarse segment/time aggregation, or is the hot-fresh mechanism itself weak at meadow scale?",
     "design_rule": "Keep the threshold definition fixed and change the measurement layer: synchronized node-scale temperature + salinity at <=15-minute interval.",
-    "threshold_boundary": "30 C and 25 ppt are treated as a published Tampa suboptimal-condition definition, not as hard physiological niche boundaries."
+    "threshold_boundary": "30 C and 25 ppt are treated as a published Tampa suboptimal-condition definition, not as hard physiological niche boundaries.",
+    "physiological_boundary": {
+      "statement": "The 30 C value is not treated as a direct heat-damage threshold for Thalassia. Classic Tampa/Florida work places turtle-grass temperature optimum near 30 C, and newer thermal-performance work places peak GPP near 31 C with stronger decline above ~32 C. The prospective 30 C / 25 ppt metric is therefore a frozen published Tampa compound-condition index, not a univariate thermal-injury dose.",
+      "references": [
+        "Zieman 1975 Aquatic Botany 1:107-123, DOI 10.1016/0304-3770(75)90016-9",
+        "Increasing ocean temperature reduces primary productivity in three Caribbean seagrass species (2026), Estuarine Coastal and Shelf Science, thermal-performance result: Thalassia GPP optimum ~31 C"
+      ],
+      "interpretation": "Support would implicate the joint hot-fresh event complex at node scale. It would not show that 30 C itself damages Thalassia."
+    }
   },
   "sampling_frame": {
     "geography": [
@@ -164,7 +172,8 @@
     "Binary re-recording is not a recovery endpoint.",
     "Hot-fresh events may proxy a broader rainfall/runoff event complex including low light or other co-stressors; the primary association does not uniquely attribute reserve depletion to temperature and salinity.",
     "The response-independent calendar preflight found historical joint exposure in OTB and MTB but none in LTB; disclose this asymmetry and do not count LTB zero-exposure replication as evidence of exposure variation.",
-    "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season."
+    "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season.",
+    "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
