@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install spatial dependencies
-        run: python -m pip install --upgrade pip numpy shapely pyproj
+        run: python -m pip install --upgrade pip numpy shapely pyproj geopandas pyogrio
       - name: Run response-independent GIS preflight
         run: python analysis/55_bare_control_spatial_preflight.py --out results/generated_bare_control_preflight
       - name: Show result
