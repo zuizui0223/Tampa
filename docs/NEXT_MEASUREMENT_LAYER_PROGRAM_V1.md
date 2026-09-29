@@ -179,15 +179,23 @@ Do not construct another arbitrary distance/connectivity proxy or tune alternati
 
 This is distinct from the failed bulk Secchi × depth proxy.
 
-Measurements:
+An unused qualitative epiphyte layer has now been audited before promotion into the mechanism program:
 
-- canopy-level PAR;
-- epiphyte biomass/load;
+- response-blind coverage: 7,590 focal *Thalassia* rows, 7,575 points, 901 visits, 52 transects;
+- frozen post-hoc within-node follow-up: the annual epiphyte coefficient was positive in the primary analysis and became interval-indeterminate when target 2016 was restored;
+- conclusion: the existing qualitative `EpiphyteDensity` field does **not** support a simple annual epiphyte-stress interpretation.
+
+Therefore the retrospective qualitative field is now **closed for mechanism rescue**. Do not search epiphyte types, new category thresholds, lag windows or subsets.
+
+The next allowed epiphyte/light test must add a more direct measurement:
+
+- epiphyte dry biomass or standardized mass per leaf area;
+- leaf-level / canopy-level PAR attenuation;
 - spectral attenuation;
 - local turbidity;
 - canopy self-shading.
 
-The test should distinguish actual light experienced by leaves from bay-segment bulk clarity.
+The central prediction should be frozen prospectively: direct optical burden, not qualitative epiphyte category, predicts future quantitative meadow change after baseline state is represented.
 
 ## Priority 5 — acute disturbance / disease
 
@@ -254,3 +262,5 @@ The first two remain the strongest direct discriminators between persistent mead
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
 - NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
 - Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**
+- Existing qualitative epiphyte-density layer: **coverage substantial, but simple annual stress interpretation not supported; no further retrospective rescue**
+- Direct epiphyte biomass / optical attenuation: **allowed future measurement layer**
