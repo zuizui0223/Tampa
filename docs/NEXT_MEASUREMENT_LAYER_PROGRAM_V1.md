@@ -175,19 +175,22 @@ This is preferable to a density × model-current interaction because the physica
 
 Do not construct another arbitrary distance/connectivity proxy or tune alternative current metrics from the biological table.
 
-## Priority 4 — canopy / epiphyte microenvironment
+## Priority 4 — canopy optical microenvironment
 
-This is distinct from the failed bulk Secchi × depth proxy.
+The existing qualitative annual epiphyte-density field has now been tested and does **not** behave as the predicted annual stress signal. The primary within-transect coefficient is positive, and its support is sensitive to target 2016. Do not further mine the ordinal epiphyte field.
 
-Measurements:
+A genuinely new optical mechanism remains possible because the failed inputs were proxies rather than direct leaf-light exposure.
+
+Allowed new measurements:
 
 - canopy-level PAR;
-- epiphyte biomass/load;
+- epiphyte dry mass / area or another quantitative biomass measure;
+- direct leaf-level light attenuation by epiphytes;
 - spectral attenuation;
 - local turbidity;
 - canopy self-shading.
 
-The test should distinguish actual light experienced by leaves from bay-segment bulk clarity.
+The key distinction is **measured optical burden**, not another reinterpretation of `Clean / Light / Moderate / Heavy` epiphyte categories.
 
 ## Priority 5 — acute disturbance / disease
 
@@ -241,7 +244,7 @@ Otherwise it belongs to descriptive/sensitivity work, not to the mechanism progr
 1. **Below-ground / clonal state**
 2. **High-frequency local temperature / salinity / PAR**
 3. **Hydrodynamic exposure / residence time**
-4. **Canopy / epiphyte light microenvironment**
+4. **Canopy optical microenvironment (new direct measurements only)**
 5. **Acute disturbance / disease**
 
 The first two remain the strongest direct discriminators between persistent meadow legacy and unresolved short-timescale stress. Hydrodynamics remains independently valuable, but the TBOFS meadow-scale route failed physical preflight and has been replaced by direct canopy/ambient velocity measurement.
@@ -254,3 +257,4 @@ The first two remain the strongest direct discriminators between persistent mead
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
 - NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
 - Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**
+- Existing qualitative epiphyte-density stress hypothesis: **not supported as a simple annual stress mechanism; no further same-field mining**
