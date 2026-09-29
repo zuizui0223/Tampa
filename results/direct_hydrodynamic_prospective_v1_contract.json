@@ -119,7 +119,8 @@
     "Shoot density alone is not accepted as a proxy for hydrodynamic attenuation.",
     "A supported attenuation coefficient is consistent with self-facilitation but does not by itself prove causal ecosystem engineering.",
     "Do not change velocity percentile, sensor height, subgroup or endpoint after future response access to rescue a null primary result.",
-    "Do not call binary re-recording recovery."
+    "Do not call binary re-recording recovery.",
+    "Do not call a future attenuation association biophysical self-buffering unless the predeclared physical-function Gate A also passes."
   ],
   "design_sensitivity": {
     "method": "Two-sided alpha=0.05 noncentral-F approximation for one focal attenuation coefficient after four control degrees of freedom (baseline frequency, ambient p90, and two water-body indicators).",
@@ -167,5 +168,33 @@
     ],
     "selection_algorithm": "Within bay, rank only eligible nodes by synchronized baseline focal frequency, form low/middle/high thirds, and sample across all thirds using a frozen deterministic node-ID hash order. Aim for 36 deployed nodes overall and broad balance across bays; retain at least 9 analyzable nodes per bay.",
     "alternates": "Predeclare ordered alternates within each bay x baseline-state stratum before velocity deployment begins."
+  },
+  "mechanism_gate_logic": {
+    "name": "two-stage biophysical self-buffering test",
+    "gate_A_physical_function": {
+      "question": "Does the focal canopy measurably attenuate local high-end horizontal flow relative to its simultaneous above-canopy reference?",
+      "estimand": "equal-node mean attenuation_p90",
+      "uncertainty": "node-level bootstrap confidence interval fixed before biological outcome access",
+      "support_rule": "95% interval for equal-node mean attenuation_p90 is entirely above zero",
+      "interpretation_if_supported": "Direct evidence that sampled canopies modify local hydrodynamic exposure at the measured scale.",
+      "interpretation_if_not_supported": "Do not claim hydrodynamic self-buffering even if a later biological association appears."
+    },
+    "gate_B_future_relevance": {
+      "question": "Does measured attenuation predict the future quantitative Thalassia trajectory beyond baseline state and ambient forcing?",
+      "model": "future_delta_frequency ~ baseline_frequency + ambient_p90 + attenuation_p90 + water_body",
+      "focal_coefficient": "attenuation_p90",
+      "support_rule": "directional predeclared positive attenuation coefficient at alpha 0.05 under the frozen node-level uncertainty procedure",
+      "interpretation_if_supported": "Stronger measured physical buffering is associated prospectively with greater quantitative persistence."
+    },
+    "combined_claim_rule": "Use 'consistent with biophysical self-buffering / self-facilitation' only if both Gate A and Gate B pass. Gate A alone shows ecosystem engineering without demonstrated demographic relevance; Gate B without Gate A is not interpreted as physical self-buffering.",
+    "gate_C_structure_secondary": {
+      "question": "Which canopy properties generate attenuation?",
+      "candidate_predictors": [
+        "canopy height",
+        "local shoot density",
+        "total vegetated cover"
+      ],
+      "status": "secondary corrected family; cannot rescue either primary gate"
+    }
   }
 }
