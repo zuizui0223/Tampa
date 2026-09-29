@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.bare_control_spatial_preflight_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "response_independent_spatial_feasibility",
+  "purpose": "Test whether the nested bare-bed counterfactual subset is geographically plausible before field deployment using reconstructed recent vegetated meter-mark positions, not repeated transect-start coordinates.",
+  "source": {
+    "seagrass_dataset": "FWC/FWRI Seagrass Florida current statewide compilation",
+    "direct_archive": "https://atoll.floridamarine.org/Data/Zips/SDE/seagrass_fl_poly.zip",
+    "metadata_item": "https://www.arcgis.com/sharing/rest/content/items/3c899a92589a4f8dba2cdbba734697c5/info/metadata/metadata.xml",
+    "tampa_provenance": "FWC metadata states that the current southwest-Florida component incorporates SWFWMD Seagrass in 2024; the statewide compilation retains the most recent mapped source where datasets overlap.",
+    "node_registry": "Pinned TBISMP Event/Occurrence snapshot, latest eligible 2023-2025 state. Child Point coordinates repeat meter mark 0; meter-mark positions must be reconstructed from the pinned start coordinate, signed line-derived bearing in locationRemarks, and meter-mark distance.",
+    "source_delivery_history": [
+      "Direct SWFWMD MapServer metadata was accessible but its query endpoint returned non-JSON/empty responses in GitHub Actions on two frozen-rule attempts.",
+      "The physical GIS source was therefore switched before obtaining any spatial-feasibility result; no distance/sample threshold was changed."
+    ]
+  },
+  "frozen_rules": {
+    "core_bays": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
+    "candidate_nodes": "recent baseline-vegetated fixed nodes; geographic feasibility is evaluated from reconstructed vegetated meter marks within each node",
+    "primary_subgroup": "recent Thalassia-positive nodes reported separately",
+    "maximum_edge_distance_m": 100,
+    "control_target_nodes": 18,
+    "control_minimum_nodes": 12,
+    "control_minimum_nodes_per_bay": 3,
+    "projected_crs": "EPSG:26917",
+    "edge_definition": "minimum distance from a reconstructed recent vegetated meter mark to the boundary of the accepted mapped seagrass union",
+    "outside_polygon_rule": "A recent vegetated meter mark outside the mapped union is a map-state mismatch and is not automatically treated as a bare control."
+  },
+  "pass_rule": "At least 12 recent vegetated nodes have a mapped meadow edge within 100 m, with at least 3 such nodes in each core bay. The 18-node target is planning, not a pass requirement.",
+  "claim_boundary": [
+    "This is field-feasibility only; it is not an ecological mechanism test.",
+    "A mapped edge within 100 m does not prove a depth-matched bare control exists.",
+    "The 0.25-acre mapping unit can miss small unvegetated gaps inside patchy beds, so failure is conservative and requires field/imagery reconnaissance rather than threshold relaxation.",
+    "Do not use future Thalassia response to choose bare controls.",
+    "The FWC statewide compilation is used for spatial feasibility, not for Tampa seagrass time-series inference.",
+    "The earlier start-point-only GIS audit is not scientifically interpretable because Darwin Core repeats the transect-start coordinate for every meter mark; the corrected audit reconstructs meter-mark positions without changing any distance or sample-size threshold."
+  ]
+}\n

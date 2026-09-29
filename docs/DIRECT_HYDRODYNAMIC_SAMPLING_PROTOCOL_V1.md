@@ -88,6 +88,25 @@ The recent 2023–2025 design-feasibility audit found:
 
 Thus approximately 40 deployments are a realistic planning target, but these historical counts do not determine field eligibility. Re-evaluate vegetation state at the contemporaneous baseline survey before sensors are placed.
 
+### Edge-independent vegetated sensor placement
+
+The physical deployment location within each fixed transect is selected without using mapped meadow-edge distance.
+
+For the primary future-*Thalassia* cohort:
+
+1. identify all contemporaneously vegetated meter marks;
+2. compute their median `site_m`;
+3. among contemporaneously *Thalassia*-positive meter marks, choose the mark closest to that median;
+4. break an exact tie by lower `site_m`.
+
+For the secondary all-vegetated physical cohort, choose the vegetated mark closest to the same node-level vegetated median.
+
+Do **not** choose the edge-nearest vegetated mark in order to manufacture a nearby bare control.
+
+A frozen response-independent GIS audit confirmed that this rule remains compatible with the 100-m counterfactual requirement: 19 representative *Thalassia* nodes have a mapped-edge candidate within 100 m (Old 3, Middle 7, Lower 9), and 21 representative all-vegetated nodes do so.
+
+The bare-control distance is measured from this preselected deployment meter mark.
+
 ### Primary future-persistence cohort
 
 The primary prospective model includes only nodes with:
@@ -133,6 +152,100 @@ These are design diagnostics, not expected effect sizes. The realistically avail
 Do not choose or drop nodes using the future response.
 
 Where feasible, co-locate this design with the clonal-state sampling program, but keep the hydrodynamic and rhizome-TNC primary tests analytically separate.
+
+## Bare-bed counterfactual physical gate
+
+The primary paired vertical velocity design is useful for quantifying the flow environment experienced by the meadow, but by itself it cannot uniquely identify **canopy-caused** attenuation. Even an unvegetated seabed has a frictional boundary layer in which near-bed velocity is lower than velocity higher in the water column.
+
+Therefore add a nested, response-independent physical-validation subset.
+
+### Control subset
+
+Target:
+
+- 18 sampled meadow nodes;
+- minimum analyzable subset: 12;
+- at least 3 nodes from each of Old, Middle and Lower Tampa Bay.
+
+At each validation node, identify a nearby unvegetated or effectively canopy-free control patch before any future biological response is inspected.
+
+Frozen matching rules:
+
+- maximum horizontal separation: 100 m from the preselected vegetated deployment meter mark;
+- target absolute water-depth difference: <= 0.15 m;
+- hard maximum depth difference: <= 0.30 m;
+- no obvious channel edge, inlet jet, shoreline barrier, structure or other discontinuity that makes local forcing non-comparable;
+- record substrate and bathymetric context;
+- record distance and bearing from the bare sampling volume to the nearest live canopy edge;
+- record the dominant/instantaneous flow direction relative to that edge so a bare point lying in a vegetation wake is identifiable from physical metadata rather than silently treated as an independent no-canopy state.
+
+Because vegetation wakes can extend beyond the canopy footprint and depend on patch geometry, **mapped bare substrate is not automatically a no-canopy-flow counterfactual**. The confirmatory physical gate therefore requires field confirmation that the selected bare sampling volume is not embedded in an obvious sheltered wake throughout the retained record. If this cannot be established under reversing flow, report the comparison as a conservative canopy-associated contrast rather than a pure no-vegetation causal contrast.
+
+A node that lacks a valid bare control can remain in the primary attenuation-to-future-state cohort. It is excluded only from this canopy-attribution subset.
+
+### Response-independent spatial feasibility result
+
+The frozen GIS reconnaissance has now been run using **reconstructed meter-mark coordinates**, not the repeated transect-start coordinates stored on Darwin Core Point rows.
+
+Under the unchanged `<=100 m` mapped meadow-edge rule:
+
+- 39 of 40 recent vegetated core nodes have at least one geographic bare-edge candidate;
+- Old Tampa Bay: 12 of 13;
+- Middle Tampa Bay: 12 of 12;
+- Lower Tampa Bay: 15 of 15;
+- among the 33 recent *Thalassia*-positive nodes, 31 have a candidate at a recent *Thalassia*-positive meter mark.
+
+This passes the preregistered geographic feasibility rule for a target of 18 and minimum of 12 counterfactual nodes with at least 3 per bay.
+
+This is **not** field acceptance. A GIS candidate enters the physical-attribution subset only after confirming the frozen depth match, comparable forcing, substrate/bathymetric context, vegetation-wake boundary and simultaneous sensor geometry. Do not replace a failed field control with a more distant point by relaxing the 100-m rule.
+
+### Measurement geometry
+
+Use the same instrument family, QC, burst design and vertical sampling geometry at the vegetated and bare patches.
+
+Preferred confirmatory implementation is simultaneous measurement of four sampling volumes. These can be obtained with two suitable shallow-water multi-bin profilers (vegetated and bare) or four point-velocity sampling volumes; four separate instruments are not intrinsically required:
+
+1. vegetated near-bed / within-canopy;
+2. vegetated local reference above canopy;
+3. bare near-bed at the same height above sediment;
+4. bare local reference at the corresponding upper-water-column height.
+
+If hardware limitations require non-simultaneous vegetated and bare deployments, that node is descriptive only for canopy attribution because changing tides/waves can mimic a vegetation effect. Sensors may be rotated among nodes across deployment blocks, provided the vegetated and bare measurements within each retained counterfactual node are simultaneous and the block rule is frozen before future response access.
+
+### Canopy-specific metric
+
+Compute:
+
+```text
+A_veg  = 1 - p90(U_veg_nearbed)  / p90(U_veg_reference)
+A_bare = 1 - p90(U_bare_nearbed) / p90(U_bare_reference)
+
+excess_canopy_attenuation_p90 = A_veg - A_bare
+```
+
+The bare term estimates the local vertical attenuation expected without a canopy.
+
+Before opening the future *Thalassia* response, apply one frozen node-level paired bootstrap to the mean `excess_canopy_attenuation_p90`.
+
+**Physical attribution gate:** the 95% interval must lie above zero.
+
+If this gate fails, do not call the within-meadow vertical attenuation metric canopy ecosystem engineering. It remains a measured hydrodynamic gradient associated with vegetated sites.
+
+## Two-gate self-facilitation rule
+
+Use a hydrodynamic **self-facilitation / positive-feedback** interpretation only if both independent links are supported:
+
+1. **Physical engineering gate:** the bare-bed counterfactual shows positive excess canopy attenuation.
+2. **Prospective ecological gate:** the already frozen primary model shows that greater meadow attenuation predicts more positive / less negative future *Thalassia* frequency change after baseline state, ambient forcing and bay are represented.
+
+Interpret the four possible outcomes explicitly:
+
+- both pass -> consistent with hydrodynamic self-facilitation;
+- physical only -> vegetation modifies flow, but the modification is not shown to stabilize future *Thalassia*;
+- ecological only -> hydrodynamic state predicts the future, but canopy causation is not identified;
+- neither -> no support for hydrodynamic self-facilitation.
+
+This remains an observational feedback test, not experimental proof of causality.
 
 ## Paired velocity design
 
@@ -253,7 +366,7 @@ Primary node-level ambient forcing:
 
 > `ambient_p90` = 90th percentile of valid reference-layer horizontal current speed.
 
-Primary node-level ecosystem-engineering metric:
+Primary node-level within-meadow vertical attenuation metric:
 
 > `attenuation_p90 = 1 - p90(U_inside) / p90(U_reference)`.
 
@@ -265,13 +378,15 @@ Interpretation:
 
 Do not truncate negative attenuation values to zero.
 
-## Physical mechanism gate
+## Within-meadow hydrodynamic-state gate
 
 Before using future meadow change, report the paired physical result across nodes.
 
-Primary physical question:
+Primary descriptive physical question:
 
 > Is `attenuation_p90` positive across the sampled meadow network?
+
+A positive answer alone is **not** a canopy-engineering result because seabed boundary-layer shear can produce a vertical velocity gradient without vegetation. Canopy attribution is reserved for the separate bare-bed counterfactual gate above.
 
 Use a node-level uncertainty procedure frozen before analysis. Report the full node distribution even if the pooled direction is null.
 

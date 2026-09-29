@@ -1,0 +1,34 @@
+{
+  "schema": "tampa.representative_sensor_placement_preflight_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "response_independent_sensor_placement_audit",
+  "purpose": "Test whether the bare-control counterfactual remains geographically feasible when the vegetated sensor position is selected independently of mapped meadow-edge distance.",
+  "source": {
+    "node_and_meter_mark_registry": "analysis/55_bare_control_spatial_preflight.py reconstructed latest 2023-2025 vegetated meter marks",
+    "seagrass_map": "same accepted 2024-or-later mapped seagrass source and source-gate hierarchy as analysis/55"
+  },
+  "selection_rules": {
+    "vegetated_representative_mark": "For each recent vegetated node, compute the median site_m among that node's recent vegetated meter marks; choose the vegetated mark minimizing absolute distance from that median, breaking ties by lower site_m.",
+    "thalassia_representative_mark": "For each recent Thalassia-positive node, use the same node-level vegetated median site_m, then choose the Thalassia-positive mark minimizing absolute distance from that median, breaking ties by lower site_m.",
+    "edge_distance_not_used_for_selection": true,
+    "maximum_edge_distance_m": 100
+  },
+  "physical_counterfactual_gate": {
+    "minimum_nodes": 12,
+    "minimum_nodes_per_bay": 3,
+    "target_nodes": 18,
+    "primary_thalassia_subset_minimum_nodes": 12,
+    "primary_thalassia_subset_minimum_nodes_per_bay": 3
+  },
+  "interpretation": {
+    "both_pass": "The nested counterfactual is geographically feasible without choosing the vegetated sensor location for proximity to a meadow edge.",
+    "all_vegetated_pass_thalassia_fail": "General canopy counterfactual is feasible, but a Thalassia-specific representative-location counterfactual is not sufficiently distributed; do not force primary sensor positions toward edges.",
+    "fail": "Do not rescue feasibility by choosing edge-nearest sensor positions after inspection. Keep the primary sensor-placement rule independent of edge distance and use field counterfactuals only where naturally available."
+  },
+  "claim_boundary": [
+    "This is a response-independent design audit, not an ecological mechanism result.",
+    "A 100-m edge candidate still requires field depth/forcing/substrate/wake qualification.",
+    "Do not change the representative-mark rule or 100-m threshold after inspection.",
+    "Future Thalassia response is not used."
+  ]
+}

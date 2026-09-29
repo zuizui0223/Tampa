@@ -1,0 +1,45 @@
+name: Bare-control spatial preflight
+
+concurrency:
+  group: bare-control-spatial-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - "mechanism/canopy-counterfactual-gate-v1"
+    paths:
+      - "analysis/55_bare_control_spatial_preflight.py"
+      - "results/bare_control_spatial_preflight_v1_contract.json"
+      - ".github/workflows/bare-control-spatial-preflight.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/55_bare_control_spatial_preflight.py"
+      - "results/bare_control_spatial_preflight_v1_contract.json"
+      - ".github/workflows/bare-control-spatial-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install spatial dependencies
+        run: python -m pip install --upgrade pip numpy shapely pyproj geopandas pyogrio
+      - name: Run response-independent GIS preflight
+        run: python analysis/55_bare_control_spatial_preflight.py --out results/generated_bare_control_preflight
+      - name: Show result
+        run: cat results/generated_bare_control_preflight/bare_control_spatial_preflight_v1.json
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: bare-control-spatial-preflight
+          path: |
+            results/generated_bare_control_preflight/bare_control_spatial_preflight_v1.json
+            results/generated_bare_control_preflight/bare_control_spatial_candidates_v1.csv
+          if-no-files-found: error

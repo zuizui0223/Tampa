@@ -1,0 +1,98 @@
+{
+  "schema": "tampa.bare_control_spatial_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36535865828,
+    "head_sha": "a9ecee33f51c9cfd56f2658e0e3176d8fcde6bcb",
+    "artifact_id": 11018590782,
+    "artifact_digest": "sha256:41134139067fbdcb178023228891a2a29f7aed791be9e19f45107e4bc1229d50"
+  },
+  "status": "geographic_edge_feasibility_pass",
+  "response_independent": true,
+  "coordinate_semantics": {
+    "correction": "Darwin Core Point coordinates repeat meter mark 0 and are not literal meter-mark coordinates; vegetated meter-mark coordinates were reconstructed from the pinned transect start coordinate, signed bearing parsed from locationRemarks, and numeric meter-mark distance from child Point locationID.",
+    "start_coordinate": "pinned Darwin Core transect meter mark 0",
+    "bearing": "signed bearing parsed from pinned locationRemarks; generated from original TBEP transect LINESTRING",
+    "meter_mark_distance": "numeric suffix of child Point locationID"
+  },
+  "source": {
+    "tbismp_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "recent_years": [2023, 2024, 2025],
+    "seagrass_source": {
+      "source": "USF Water Institute Seagrass2024 mirror",
+      "feature_url": "https://gis.waterinstitute.usf.edu/arcgis/rest/services/Maps/Seagrass2024/MapServer/0",
+      "features_returned": 7838,
+      "date_gate": "median DATESTAMP year >= 2024",
+      "datestamp_year_counts": {
+        "2025": 7838
+      },
+      "working_crs": "EPSG:26917",
+      "fallback_used": true
+    },
+    "failed_source_attempts": [
+      {
+        "source": "SWFWMD official",
+        "error": "JSONDecodeError: Expecting value: line 3 column 1 (char 4)"
+      }
+    ]
+  },
+  "registry": {
+    "recent_vegetated_nodes": 40,
+    "recent_thalassia_positive_nodes": 33,
+    "vegetated_meter_marks": 762,
+    "mapped_state_compatible_nodes": 39,
+    "map_state_mismatches": 1
+  },
+  "meter_mark_edge_distance_m": {
+    "n_inside": 625,
+    "median": 52.30071229225027,
+    "p25": 21.328594984920116,
+    "p75": 110.59531798147904,
+    "max": 359.1618286658447
+  },
+  "candidate_gate": {
+    "maximum_edge_distance_m": 100.0,
+    "target_nodes": 18,
+    "minimum_nodes": 12,
+    "minimum_nodes_per_bay": 3,
+    "candidate_nodes": 39,
+    "minimum_candidates_in_any_bay": 12,
+    "passed": true,
+    "by_water_body": {
+      "Old Tampa Bay": {
+        "recent_vegetated_nodes": 13,
+        "mapped_state_compatible_nodes": 12,
+        "map_state_mismatches": 1,
+        "bare_edge_candidate_nodes_100m": 12,
+        "thalassia_mark_candidate_nodes_100m": 8
+      },
+      "Middle Tampa Bay": {
+        "recent_vegetated_nodes": 12,
+        "mapped_state_compatible_nodes": 12,
+        "map_state_mismatches": 0,
+        "bare_edge_candidate_nodes_100m": 12,
+        "thalassia_mark_candidate_nodes_100m": 10
+      },
+      "Lower Tampa Bay": {
+        "recent_vegetated_nodes": 15,
+        "mapped_state_compatible_nodes": 15,
+        "map_state_mismatches": 0,
+        "bare_edge_candidate_nodes_100m": 15,
+        "thalassia_mark_candidate_nodes_100m": 13
+      }
+    }
+  },
+  "primary_thalassia_counterfactual_feasibility": {
+    "recent_thalassia_positive_nodes": 33,
+    "thalassia_positive_nodes_with_100m_candidate": 31,
+    "interpretation": "The nested counterfactual target is geographically feasible for the future Thalassia-positive cohort before field depth/forcing/wake qualification."
+  },
+  "interpretation": "After correcting point-coordinate semantics and reconstructing actual vegetated meter-mark positions along each fixed transect, the frozen GIS feasibility gate passes strongly. The earlier transect-start-only audit was a coordinate-resolution artifact and is superseded. GIS proximity is reconnaissance only; it does not certify a matched bare control.",
+  "decision": "Retain the 18-node target and 12-node / 3-per-bay minimum for the nested canopy counterfactual. Proceed to preregistered field qualification without relaxing the 100-m threshold.",
+  "claim_boundary": [
+    "A reconstructed vegetated meter mark within 100 m of mapped meadow edge is only a reconnaissance candidate, not a validated bare control.",
+    "Field validation must still satisfy depth matching, comparable forcing, substrate/context, wake screening and simultaneous sensor geometry.",
+    "Do not relax the frozen 100-m / 12-node / 3-per-bay thresholds after inspection.",
+    "The corrected result supersedes the earlier start-coordinate-only GIS audit.",
+    "No future biological response is used."
+  ]
+}
