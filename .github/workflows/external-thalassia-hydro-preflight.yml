@@ -1,0 +1,27 @@
+name: External Thalassia hydrodynamic benchmark preflight
+
+on:
+  push:
+    paths:
+      - "analysis/54_external_thalassia_hydrodynamic_preflight.py"
+      - ".github/workflows/external-thalassia-hydro-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check pandas requests
+      - name: Inventory PANGAEA external physical data
+        run: python analysis/54_external_thalassia_hydrodynamic_preflight.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: external-thalassia-hydro-preflight
+          path: |
+            results/generated_external_hydro/pangaea_967585_index.tsv
+            results/generated_external_hydro/external_thalassia_hydrodynamic_preflight_v1.json
