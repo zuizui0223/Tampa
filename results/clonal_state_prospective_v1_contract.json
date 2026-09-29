@@ -11,9 +11,9 @@
       "Lower Tampa Bay"
     ],
     "sampling_frame": "Existing stable fixed-transect nodes with a baseline survey and permission for adjacent below-ground sampling.",
-    "target_sample_size_nodes": 24,
-    "minimum_analyzable_nodes": 18,
-    "stratification": "Aim for approximately balanced representation of quantitatively stable, persistent-but-degrading, and low/unstable quantitative-state transects using only data available before below-ground sampling.",
+    "target_sample_size_nodes": 36,
+    "minimum_analyzable_nodes": 30,
+    "stratification": "Use the same synchronized tri-bay predeployment screening as the direct-hydrodynamic study where feasible. Within bay, span low/middle/high baseline focal-frequency state before future outcome access.",
     "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise."
   },
   "baseline_new_measurements": {
@@ -80,5 +80,41 @@
     "Do not change the primary clonal predictor after future response access.",
     "Do not replace a null primary result with a secondary clonal trait.",
     "If below-ground sampling is not independent of monitoring state or management intervention, document that selection explicitly."
-  ]
+  ],
+  "design_sensitivity": {
+    "method": "Two-sided alpha=0.05 noncentral-F approximation for one focal TNC coefficient after four control degrees of freedom (baseline focal frequency, baseline Braun-Blanquet state, and two water-body indicators).",
+    "power_target": 0.8,
+    "partial_effect_thresholds": {
+      "n24": {
+        "partial_r": 0.5725,
+        "partial_R2": 0.3278
+      },
+      "n30": {
+        "partial_r": 0.512,
+        "partial_R2": 0.2622
+      },
+      "n36": {
+        "partial_r": 0.4673,
+        "partial_R2": 0.2184
+      },
+      "n42": {
+        "partial_r": 0.4326,
+        "partial_R2": 0.1872
+      },
+      "n47": {
+        "partial_r": 0.4089,
+        "partial_R2": 0.1672
+      }
+    },
+    "decision": "Raise the preferred clonal target from 24 to 36 nodes because future change is a node-level endpoint; three cores per node improve TNC measurement but do not replace node replication."
+  },
+  "sampling_time_control": {
+    "rule": "Collect primary TNC cores in the same predeclared seasonal baseline window used for synchronized screening, and record date/time and assay batch.",
+    "rationale": "Rhizome carbohydrate is seasonally dynamic, so between-node mechanism inference should not be confounded by broad seasonal sampling spread.",
+    "primary_handling": "Include frozen sampling-date covariate only if the collection window cannot be held sufficiently narrow; decide before future outcome access."
+  },
+  "relationship_to_direct_hydrodynamics": {
+    "co_location_preferred": true,
+    "rule": "When permissions and logistics allow, use the same node set and baseline window as the paired canopy/ambient velocity study. Standalone clonal and hydrodynamic primary tests remain valid under their own contracts; any joint inference uses the separately frozen dual-buffer contract."
+  }
 }
