@@ -1,0 +1,33 @@
+name: Representative sensor-placement preflight
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/55_bare_control_spatial_preflight.py"
+      - "analysis/58_representative_sensor_placement_preflight.py"
+      - "results/representative_sensor_placement_preflight_v1_contract.json"
+      - ".github/workflows/representative-sensor-placement-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install spatial dependencies
+        run: python -m pip install --upgrade pip numpy shapely pyproj geopandas pyogrio
+      - name: Run representative-placement audit
+        run: python analysis/58_representative_sensor_placement_preflight.py --out results/generated_representative_sensor_placement
+      - name: Show result
+        run: cat results/generated_representative_sensor_placement/representative_sensor_placement_preflight_v1.json
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: representative-sensor-placement-preflight
+          path: results/generated_representative_sensor_placement/representative_sensor_placement_preflight_v1.json
+          if-no-files-found: error
