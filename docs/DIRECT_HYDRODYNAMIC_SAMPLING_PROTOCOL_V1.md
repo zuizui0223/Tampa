@@ -164,6 +164,22 @@ Because vegetation wakes can extend beyond the canopy footprint and depend on pa
 
 A node that lacks a valid bare control can remain in the primary attenuation-to-future-state cohort. It is excluded only from this canopy-attribution subset.
 
+### Response-independent spatial feasibility result
+
+The frozen GIS reconnaissance has now been run using **reconstructed meter-mark coordinates**, not the repeated transect-start coordinates stored on Darwin Core Point rows.
+
+Under the unchanged `<=100 m` mapped meadow-edge rule:
+
+- 39 of 40 recent vegetated core nodes have at least one geographic bare-edge candidate;
+- Old Tampa Bay: 12 of 13;
+- Middle Tampa Bay: 12 of 12;
+- Lower Tampa Bay: 15 of 15;
+- among the 33 recent *Thalassia*-positive nodes, 31 have a candidate at a recent *Thalassia*-positive meter mark.
+
+This passes the preregistered geographic feasibility rule for a target of 18 and minimum of 12 counterfactual nodes with at least 3 per bay.
+
+This is **not** field acceptance. A GIS candidate enters the physical-attribution subset only after confirming the frozen depth match, comparable forcing, substrate/bathymetric context, vegetation-wake boundary and simultaneous sensor geometry. Do not replace a failed field control with a more distant point by relaxing the 100-m rule.
+
 ### Measurement geometry
 
 Use the same instrument family, QC, burst design and vertical sampling geometry at the vegetated and bare patches.
