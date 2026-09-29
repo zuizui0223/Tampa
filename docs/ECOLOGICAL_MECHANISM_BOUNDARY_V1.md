@@ -76,6 +76,76 @@ Important implications:
 
 The current annual table does **not** identify the persistent local template or short-timescale stress.
 
+## Hypothesis triage after the current mechanism tests
+
+### 1. Simple condition -> thinning -> loss cascade: **not supported**
+
+The frozen cross-lag test asked whether source-year blade length and shoot density improve strict year-ahead prediction of next-year focal frequency or Braun-Blanquet state beyond current quantitative state and stable node identity.
+
+For focal frequency, the condition model was worse on average than the baseline (mean MAE 0.06862 versus 0.06691), winning 6 of 17 scored target years. Braun-Blanquet showed the same direction of failure.
+
+Therefore:
+
+- faster plant-condition dynamics are real descriptive axes;
+- they are **not** validated as a one-year leading stage of thinning;
+- the manuscript must not present one universal serial degradation cascade.
+
+### 2. Clonal / below-ground buffering: **plausible but unresolved**
+
+Two pieces of retrospective evidence are relevant but insufficient.
+
+- Formal older-history support disappears after stable node identity is added, so generic long-memory inference is reference-sensitive.
+- Exact-point focal *Thalassia* history can retain information beyond generic vegetated-habitat history, but the bare-loss subgroup and history-by-continuity results do not support a simple autonomous residual-rhizome story.
+
+Therefore the only decisive next test is a genuinely new below-ground state measured before a future quantitative outcome. Rhizome TNC remains the frozen primary prospective predictor.
+
+### 3. Successional reset / pioneer replacement: **composition shift supported; mechanism not supported**
+
+Lower Tampa Bay shows a real directional community reorganization over 2016–2025:
+
+- *Thalassia* frequency declines;
+- *Thalassia* Braun-Blanquet state declines;
+- *Syringodium* declines;
+- *Halodule* frequency increases.
+
+That is sufficient for **community reorganization**.
+
+It is not sufficient for a successional-reset or pioneer-replacement mechanism. Exact-point analyses show that much alternative-species occupancy after focal loss reflects persistence of species already present before focal loss; among focal-loss points remaining seagrass-occupied, 71.2% retained at least one pre-existing alternative species. Thus post-loss *Halodule* cannot be assumed to be new colonization.
+
+### 4. Density-dependent self-facilitation / hydrodynamic threshold: **open and now directly testable**
+
+The annual table cannot identify a critical density threshold without post-hoc retuning, and threshold rescue on the same table is prohibited.
+
+A genuine physical route is now available through NOAA TBOFS 3-D gridded currents. The prospective discriminating prediction is not merely that current exposure is harmful, but that its effect depends on baseline meadow state:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency
+  + p90_nearbed_current
+  + baseline_frequency × p90_nearbed_current
+  + water_body
+```
+
+A positive interaction would be consistent with denser established meadow state buffering hydrodynamic exposure. This test is allowed only after the response-blind TBOFS grid/depth source gate passes and before the future biological response is opened.
+
+### 5. Event-scale physiological debt: **open, but only at a new temporal resolution**
+
+Annual water quality, frozen 3/6-month hot/fresh summaries, and the published 30 C / 25 ppt compound-stress test did not support a common mechanism.
+
+This rules against the tested coarse summaries, not against short stress pulses. The remaining version of the hypothesis requires high-frequency node-scale temperature, salinity and/or PAR measured before a future response.
+
+### Current mechanistic ranking
+
+The data therefore favor neither a single serial cascade nor a demonstrated long-memory mechanism.
+
+The strongest unresolved mechanism questions are now:
+
+1. does below-ground reserve explain persistence beyond current above-ground state?
+2. does short-timescale physical stress explain future quantitative change?
+3. does hydrodynamic exposure interact with meadow state in the direction predicted by self-facilitation?
+
+All three require a new measurement layer.
+
 ## Community-continuity results are state ecology, not mechanism identification
 
 The exact-point community analyses show that pre-existing mixed-species points are more likely to remain seagrass-occupied after focal *Thalassia* loss and that many later alternative-species records represent persistence of species already present before focal loss.
