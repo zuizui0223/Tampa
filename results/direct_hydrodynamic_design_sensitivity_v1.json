@@ -1,0 +1,47 @@
+{
+  "schema": "tampa.direct_hydrodynamic_design_sensitivity_v1",
+  "response_data_used": false,
+  "alpha_two_sided": 0.05,
+  "target_power": 0.8,
+  "controls": 4,
+  "control_definition": "baseline frequency + ambient p90 + two bay indicators",
+  "thresholds": [
+    {
+      "n": 18,
+      "residual_df": 12,
+      "partial_r": 0.6611462472907296,
+      "partial_R2": 0.43711436030661455
+    },
+    {
+      "n": 24,
+      "residual_df": 18,
+      "partial_r": 0.5725312641836541,
+      "partial_R2": 0.3277920484677331
+    },
+    {
+      "n": 30,
+      "residual_df": 24,
+      "partial_r": 0.5120112302871295,
+      "partial_R2": 0.2621554999401399
+    },
+    {
+      "n": 36,
+      "residual_df": 30,
+      "partial_r": 0.46733928878591335,
+      "partial_R2": 0.21840601084292333
+    },
+    {
+      "n": 42,
+      "residual_df": 36,
+      "partial_r": 0.43262667746751454,
+      "partial_R2": 0.18716584205658085
+    },
+    {
+      "n": 47,
+      "residual_df": 41,
+      "partial_r": 0.4089384700198297,
+      "partial_R2": 0.16723067226215915
+    }
+  ],
+  "decision": "Prefer 36 deployed nodes over the earlier 24-node target; repeated within-node velocity observations reduce measurement error but do not replace node-level replication."
+}
