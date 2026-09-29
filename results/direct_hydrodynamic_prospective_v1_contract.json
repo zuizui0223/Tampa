@@ -67,7 +67,28 @@
       "canopy cover or frozen photographic equivalent",
       "species-specific local cover/occupancy of Thalassia, Halodule, Syringodium and other structural macrophytes",
       "sensor heights"
-    ]
+    ],
+    "canopy_counterfactual_control": {
+      "purpose": "Separate vegetation-associated flow attenuation from the ordinary seabed boundary-layer vertical velocity gradient.",
+      "cohort": "Nested response-independent physical-validation subset; nodes may remain in the primary future-persistence cohort even when no valid bare control exists.",
+      "target_nodes": 18,
+      "minimum_analyzable_nodes": 12,
+      "minimum_nodes_per_bay": 3,
+      "control_geometry": {
+        "habitat": "nearby unvegetated or effectively canopy-free seabed",
+        "maximum_horizontal_separation_m": 100,
+        "target_depth_difference_m": 0.15,
+        "maximum_depth_difference_m": 0.3,
+        "requirement": "No obvious channel edge, shoreline barrier, inlet jet, structure, or other feature that would make ambient forcing non-comparable. Record substrate and bathymetric context before looking at any future biological response."
+      },
+      "sensors": "Use the same frozen near-bed and above-canopy/above-bed sampling heights and the same instrument family/QC on vegetated and bare patches. Prefer fully simultaneous four-volume measurement; if hardware limits force staggered deployment, the node is not eligible for the confirmatory canopy-attribution gate.",
+      "metrics": {
+        "vegetated_vertical_attenuation_p90": "1 - p90(U_veg_nearbed) / p90(U_veg_reference)",
+        "bare_vertical_attenuation_p90": "1 - p90(U_bare_nearbed) / p90(U_bare_reference)",
+        "excess_canopy_attenuation_p90": "vegetated_vertical_attenuation_p90 - bare_vertical_attenuation_p90"
+      },
+      "physical_attribution_gate": "Using a node-level paired bootstrap fixed before inspection, the 95% interval for mean excess_canopy_attenuation_p90 must lie above 0. If not, do not attribute the vertical attenuation metric specifically to canopy ecosystem engineering."
+    }
   },
   "primary_physical_metrics": {
     "horizontal_speed": "sqrt(u^2 + v^2)",
@@ -142,7 +163,12 @@
     "future survey window",
     "primary model code",
     "uncertainty procedure",
-    "exclusion and missing-data rules"
+    "exclusion and missing-data rules",
+    "bare-control node subset and alternates",
+    "bare-control maximum separation and depth-matching rule",
+    "bare near-bed/reference sensor geometry",
+    "excess_canopy_attenuation_p90 definition",
+    "paired-bootstrap rule for the canopy-attribution gate"
   ],
   "claim_boundary": [
     "The design tests measured canopy-scale physical buffering prospectively; it does not infer hydrodynamics from annual biological state.",
@@ -152,7 +178,9 @@
     "Do not call binary re-recording recovery.",
     "Do not label the future attenuation association as a decisive null if fewer than 30 analyzable nodes remain; below the frozen precision gate it is a pilot estimate.",
     "Alternative-seagrass-only nodes may strengthen the secondary functional-insurance physical test but must not be counted toward the primary future Thalassia-persistence sample-size gate.",
-    "If stored velocity cannot resolve oscillatory motion, restrict claims to current-speed attenuation; do not generalize to wave buffering."
+    "If stored velocity cannot resolve oscillatory motion, restrict claims to current-speed attenuation; do not generalize to wave buffering.",
+    "Inside-versus-above-canopy velocity contrast alone is not sufficient to attribute attenuation to vegetation because ordinary seabed boundary-layer shear can create the same vertical pattern.",
+    "Use the term canopy ecosystem engineering / hydrodynamic self-facilitation only if the nested bare-bed counterfactual physical gate and the prospective future-state gate both pass."
   ],
   "design_precision_gate": {
     "planning_model_terms": "baseline_frequency + ambient_p90 + attenuation_p90 + two water-body indicators",
@@ -166,5 +194,17 @@
     },
     "primary_rule": "The future attenuation-to-Thalassia-frequency analysis is confirmatory only with at least 30 baseline-Thalassia-positive analyzable nodes and at least 8 such nodes in each core bay. Below that gate, report effect estimates and uncertainty as a pilot and do not use a null result to reject hydrodynamic buffering.",
     "interpretation": "The recent historical frame suggests roughly 33 primary-eligible nodes, so the primary test is principally powered for moderate-to-large partial effects. Alternative-only nodes improve the secondary functional-insurance physical contrast but do not increase primary persistence sample size."
+  },
+  "ecosystem_engineering_feedback_gate": {
+    "purpose": "Require both the physical engineering link and the prospective ecological persistence link before using a self-facilitation interpretation.",
+    "gate_A_physical": "The nested bare-bed counterfactual physical-attribution gate passes.",
+    "gate_B_future_ecology": "The prespecified primary attenuation_p90 coefficient predicts more positive / less negative future focal-frequency change under the existing prospective model and frozen alpha/uncertainty rule.",
+    "interpretation": {
+      "both_pass": "Results are consistent with hydrodynamic self-facilitation: vegetation-associated attenuation is physically demonstrated and stronger attenuation predicts greater subsequent Thalassia quantitative stability.",
+      "A_pass_B_fail": "Canopy-associated flow engineering is demonstrated, but no supported link to future Thalassia stability is established.",
+      "A_fail_B_pass": "Attenuation predicts future state, but canopy causation is not identified; describe a hydrodynamic-state association, not ecosystem engineering.",
+      "both_fail": "Do not claim hydrodynamic self-facilitation."
+    },
+    "boundary": "This two-gate rule is still observational at the meadow scale and does not prove a causal positive feedback without experimental manipulation."
   }
 }
