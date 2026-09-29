@@ -1,5 +1,9 @@
 name: Bare-control spatial preflight
 
+concurrency:
+  group: bare-control-spatial-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 on:
   pull_request:
     branches: [main]
