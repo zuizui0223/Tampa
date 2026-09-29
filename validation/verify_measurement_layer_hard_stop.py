@@ -39,10 +39,11 @@ assert depth["tri_bay_core"]["model_bathymetry_median_across_nodes_m"] > depth["
 direct=json.loads((ROOT/"results/direct_hydrodynamic_prospective_v1_contract.json").read_text())
 assert direct["status"]=="future_new_measurement_design_not_yet_deployed"
 assert direct["primary_analysis"]["primary_coefficient"]=="attenuation_p90"
-assert direct["eligibility"]["target_nodes"]==39
-assert direct["eligibility"]["minimum_analyzable_nodes"]==30
-assert direct["eligibility"]["minimum_analyzable_nodes_per_bay"]==8
-assert direct["design_precision_gate"]["approximate_detectable_partial_r"]["n_39"]==0.45
+assert direct["eligibility"]["planning_target_nodes"]==40
+assert direct["eligibility"]["minimum_primary_analyzable_nodes"]==30
+assert direct["eligibility"]["minimum_primary_nodes_per_bay"]==8
+assert direct["eligibility"]["recent_2023_2025_feasibility_context"]["recent_thalassia_positive_nodes"]==33
+assert direct["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
 assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
 assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
 
