@@ -26,6 +26,7 @@ on:
       - "docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md"
       - "results/clonal_state_prospective_v1_contract.json"
       - "results/direct_hydrodynamic_prospective_v1_contract.json"
+      - "results/functional_insurance_sampling_preflight_v1.json"
       - "results/tbofs_hydrodynamic_preflight_v1.json"
       - "results/tbofs_depth_relevance_audit_v1.json"
       - "results/current_validation_v2.json"
