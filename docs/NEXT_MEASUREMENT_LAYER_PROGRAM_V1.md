@@ -132,31 +132,48 @@ Candidate measurements:
 
 ### Source update
 
-NOAA TBOFS is now a credible candidate network-wide physical source:
+NOAA TBOFS was evaluated as a candidate network-scale physical source under a response-blind preflight.
 
-- 3-D ROMS;
-- roughly 100 m–1.2 km horizontal resolution;
-- 11 vertical levels;
-- gridded NetCDF currents;
-- public operational and NCEI historical archives.
+The all-71 spatial source gate failed its frozen maximum-distance rule. More importantly, even the geometrically well-covered Old + Middle + Lower Tampa core failed the ecological depth-relevance check: model bathymetry was systematically deeper than the shallow transect record, with a 2.0-m model bathymetry value at most core mappings.
 
-This is **not yet equivalent to validated near-bed meadow exposure**. A response-blind node-to-grid and vertical-relevance audit is now required before biological testing.
+Therefore:
+
+> **TBOFS is retained as regional hydrodynamic context, not accepted as literal meadow-scale near-bed exposure.**
+
+This is recorded in:
+
+- `results/tbofs_hydrodynamic_preflight_v1.json`;
+- `results/tbofs_depth_relevance_audit_v1.json`.
 
 ### Preferred prospective test
 
-If the physical-source gate passes, freeze 90th-percentile near-bed current speed as the primary exposure and test a genuinely future quantitative response:
+The hydrodynamic mechanism now uses direct paired shallow-water velocity measurement:
+
+- `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md`;
+- `results/direct_hydrodynamic_prospective_v1_contract.json`.
+
+At each selected node, measure simultaneous velocity inside the canopy / near bed and above the canopy. The primary ecosystem-engineering metric is:
+
+```text
+attenuation_p90
+  = 1 - p90(U_inside) / p90(U_reference)
+```
+
+The primary prospective ecological model is:
 
 ```text
 future_delta_frequency
   ~ baseline_frequency
-  + p90_nearbed_current
-  + baseline_frequency × p90_nearbed_current
+  + ambient_p90
+  + attenuation_p90
   + water_body
 ```
 
-The positive interaction is the key self-facilitation / exposure-buffering prediction.
+The key prediction is a positive attenuation coefficient: stronger measured canopy attenuation is associated with less subsequent quantitative decline after baseline state and ambient forcing are represented.
 
-Do not construct another arbitrary distance or connectivity proxy from the biological table.
+This is preferable to a density × model-current interaction because the physical buffering is measured directly rather than inferred from shoot density or a coarse circulation model.
+
+Do not construct another arbitrary distance/connectivity proxy or tune alternative current metrics from the biological table.
 
 ## Priority 4 — canopy / epiphyte microenvironment
 
@@ -227,7 +244,7 @@ Otherwise it belongs to descriptive/sensitivity work, not to the mechanism progr
 4. **Canopy / epiphyte light microenvironment**
 5. **Acute disturbance / disease**
 
-The first two remain the strongest direct discriminators between persistent meadow legacy and unresolved short-timescale stress. Hydrodynamics has now moved from source-search to a concrete TBOFS physical-source preflight.
+The first two remain the strongest direct discriminators between persistent meadow legacy and unresolved short-timescale stress. Hydrodynamics remains independently valuable, but the TBOFS meadow-scale route failed physical preflight and has been replaced by direct canopy/ambient velocity measurement.
 
 ## Current program status
 
@@ -235,4 +252,5 @@ The first two remain the strongest direct discriminators between persistent mead
 - Binary reappearance terminology: **re-recording / reappearance, not recovery**
 - 2026 OTB continuous-temperature -> 2027 prospective test: **allowed new-measurement branch**
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
-- NOAA TBOFS hydrodynamic layer: **candidate identified; response-blind grid/depth audit next**
+- NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
+- Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**
