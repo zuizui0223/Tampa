@@ -1,0 +1,64 @@
+{
+  "schema": "tampa.tbofs_hydrodynamic_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36511090310,
+    "head_sha": "2616d0973e04f85323d5acba4fa4d3495c40707b",
+    "artifact_id": 11008429385
+  },
+  "status": "all_network_source_gate_failed",
+  "response_blind": true,
+  "tbofs_grid": {
+    "rho_shape": [290, 176],
+    "vertical_levels": 11,
+    "nearbed_s_rho_index": 0,
+    "nearbed_s_rho_value": -0.9545454545454546,
+    "u_variable": "u",
+    "v_variable": "v",
+    "velocity_units": "meter second-1",
+    "nearbed_current_supported_rho_cells": 30567
+  },
+  "all_71_nodes": {
+    "mapped_nodes": 71,
+    "median_distance_km": 0.1417784327231774,
+    "p90_distance_km": 0.29687049300086144,
+    "within_1km": 66,
+    "within_2km": 69,
+    "max_distance_km": 2.7532281083261974,
+    "distance_outliers_gt_2km": [
+      {
+        "node_id": "TBEP:seagrass:loc:S5T3",
+        "water_body": "Boca Ciega Bay",
+        "distance_km": 2.7532281083261974
+      },
+      {
+        "node_id": "TBEP:seagrass:loc:S5T4",
+        "water_body": "Boca Ciega Bay",
+        "distance_km": 2.68329223073948
+      }
+    ]
+  },
+  "tri_bay_core_geometric_summary": {
+    "water_bodies": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"],
+    "nodes": 47,
+    "median_distance_km": 0.1417784327231774,
+    "p90_distance_km": 0.26822715170891964,
+    "max_distance_km": 1.5817613077368244,
+    "within_2km": 47,
+    "same_distance_thresholds_pass": true,
+    "boundary": "This restricted summary was calculated after the original all-71 gate and does not convert the original gate to a pass."
+  },
+  "original_gate": {
+    "minimum_valid_nodes": true,
+    "required_water_bodies_present": true,
+    "median_distance_lte_1km": true,
+    "max_distance_lte_2km": false,
+    "vertical_nearbed_interpretation": true,
+    "passed": false
+  },
+  "decision": "Do not promote TBOFS to a network-wide near-bed meadow exposure layer. A separate physical-depth relevance audit is required even for the geometrically well-mapped tri-bay core.",
+  "claim_boundary": [
+    "No Tampa biological response entered the source gate.",
+    "The frozen 2-km maximum mapping threshold was not relaxed after inspection.",
+    "Geometric proximity is not evidence that the TBOFS near-bottom sigma level represents actual seagrass-canopy exposure."
+  ]
+}
