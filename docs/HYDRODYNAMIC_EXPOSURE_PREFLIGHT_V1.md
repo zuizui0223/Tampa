@@ -8,7 +8,7 @@ The goal is to avoid replacing the retired generic connectivity proxies with ano
 
 ## Updated decision
 
-A credible network-scale candidate has now been identified:
+A credible network-scale candidate was identified and then subjected to the frozen response-blind gate:
 
 > **NOAA Tampa Bay Operational Forecast System (TBOFS) gridded 3-D ROMS output.**
 
@@ -174,10 +174,37 @@ The source must also pass all of:
 5. physical relevance to the seagrass canopy / near-bed environment;
 6. no tuning of spatial scale or exposure summary after biological outcome access.
 
+## Authoritative preflight result
+
+The response-blind source gate has now been run and recorded in:
+
+- `results/tbofs_hydrodynamic_preflight_v1.json`
+- `results/tbofs_depth_relevance_audit_v1.json`
+
+The original all-network gate **failed**. All 71 stable nodes mapped to current-support cells, with a median nearest-cell distance of approximately 0.142 km, but two Boca Ciega Bay nodes exceeded the frozen 2-km maximum-distance rule. The threshold was not relaxed after inspection.
+
+A restricted Old + Middle + Lower Tampa Bay summary was geometrically better: all 47 nodes fell within 2 km of a valid current-support cell. This did **not** rescue the source as a meadow-scale near-bed layer, because the independent physical-depth audit showed systematic shallow-water mismatch.
+
+Across the 47 tri-bay nodes:
+
+- median observed point-depth state across nodes: approximately 0.90 m;
+- median TBOFS model bathymetry at mapped cells: 2.00 m;
+- median model-minus-observed depth: approximately +1.15 m;
+- TBOFS bathymetry was deeper at 47/47 nodes;
+- 40/47 mapped cells were at exactly 2.0 m model bathymetry;
+- node-level observed-depth versus model-bathymetry correlation was weak (approximately 0.16).
+
+This is not an evaluation of TBOFS as a regional operational circulation model. It is a specific ecological relevance failure: the lowest sigma-layer velocity cannot be assumed to equal literal flow experienced near the bed inside these very shallow seagrass meadows.
+
 ## Current decision
 
-**TBOFS is promoted from “source not yet identified” to “candidate identified; response-blind spatial/depth preflight required.”**
+**Do not use TBOFS near-bottom current as the primary meadow-scale hydrodynamic mechanism predictor.**
 
-Do not yet call TBOFS current a validated meadow exposure layer.
+TBOFS is retained for regional circulation context or future broad forcing questions. The primary canopy-scale mechanism test now moves to direct shallow-water paired velocity measurements under:
 
-The immediate next action is to run the coordinates-only grid/depth coverage audit. If that passes, freeze the prospective p90 near-bed-current test against a future quantitative Tampa response.
+- `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md`
+- `results/direct_hydrodynamic_prospective_v1_contract.json`
+
+The direct design measures simultaneous flow inside and above the canopy and tests whether measured canopy attenuation predicts a genuinely future quantitative *Thalassia* response.
+
+Do not rescue TBOFS by changing the 2-km mapping threshold, selecting another sigma layer after looking at biology, or redefining model bathymetry after the failed preflight.
