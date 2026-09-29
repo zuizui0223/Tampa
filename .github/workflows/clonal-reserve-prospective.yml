@@ -1,0 +1,27 @@
+name: Clonal reserve prospective design
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "results/clonal_state_prospective_v1_contract.json"
+      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"
+      - "validation/verify_clonal_reserve_precision.py"
+      - ".github/workflows/clonal-reserve-prospective.yml"
+  push:
+    paths:
+      - "results/clonal_state_prospective_v1_contract.json"
+      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md"
+      - "validation/verify_clonal_reserve_precision.py"
+      - ".github/workflows/clonal-reserve-prospective.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python validation/verify_clonal_reserve_precision.py
