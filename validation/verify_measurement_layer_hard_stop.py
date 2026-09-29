@@ -29,6 +29,9 @@ assert clonal["baseline_new_measurements"]["analytical_standardization"]["prefer
 assert "leaf %N" in clonal["baseline_new_measurements"]["nutrient_state_diagnostic"]["measurements"]
 assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
 assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
+assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
+assert clonal["primary_analysis"]["support_rule"]["contradicted_direction"]=="interval entirely below 0"
+assert "one-sided" in clonal["primary_analysis"]["support_rule"]["note"]
 
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
