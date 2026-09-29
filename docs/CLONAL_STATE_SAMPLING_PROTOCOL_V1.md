@@ -67,6 +67,24 @@ Recent planning frame:
 
 Do not exclude sparse nodes merely because they are spatially sparse; doing so would condition the study on current meadow structure. Retain their predeclared design-class label and use the frozen fallback geometry.
 
+## Destructive-sampling guardrail
+
+The TNC cores are measurements, but they are also small physical disturbances. The future response is measured on the same long-term transect network, so the field design must prevent the act of sampling from becoming an unacknowledged treatment.
+
+Before the first core, freeze:
+
+- a minimum perpendicular offset from the permanent transect line;
+- core diameter and depth;
+- maximum total disturbed area per node;
+- a core-hole backfill/restoration procedure;
+- any deterministic side/offset rule needed to avoid node-by-node discretionary placement.
+
+Never core directly on a permanent meter mark or inside the routine monitoring footprint.
+
+Record visible disturbance after each core. Any field exception required by safety, access or permit conditions is documented immediately and cannot be chosen using the future response.
+
+If the future monitoring release retains meter-mark identity, predeclare one sensitivity analysis that recalculates future focal frequency after excluding the fixed mark(s) nearest the three core anchors. This does not replace the full-transect primary endpoint; it checks whether destructive sampling itself plausibly contaminated the response.
+
 ## Primary below-ground measurement
 
 ### Rhizome total non-structural carbohydrate (TNC)
