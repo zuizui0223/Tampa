@@ -288,3 +288,19 @@ Before the future outcome is opened, freeze:
 - primary model;
 - uncertainty procedure;
 - missing-data/exclusion rules.
+
+
+## Node-level design sensitivity
+
+The future biological endpoint is one quantitative change per stable transect, so the effective inferential replication is the number of nodes, not the number of velocity observations collected within a node.
+
+A frozen noncentral-F design audit (two-sided alpha = 0.05; 80% power; one focal attenuation coefficient with baseline frequency, ambient p90 and two bay indicators as controls) gives approximate minimum detectable partial effects:
+
+- n = 24: |partial r| ≈ 0.573 (partial R² ≈ 0.328);
+- n = 30: |partial r| ≈ 0.512 (partial R² ≈ 0.262);
+- n = 36: |partial r| ≈ 0.467 (partial R² ≈ 0.218);
+- n = 42: |partial r| ≈ 0.433 (partial R² ≈ 0.187).
+
+Therefore the preferred target is **36 nodes** (nominally 12 per bay), with **30 nodes** as the minimum analyzable set. Within each bay, target four nodes from each pre-deployment baseline focal-frequency tertile. Repeated current measurements are still important because they reduce error in attenuation estimates, but they do not substitute for node replication.
+
+Do not reduce the node target after inspecting the future response.
