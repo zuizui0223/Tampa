@@ -90,3 +90,29 @@ Three cores within a node and repeated velocity measurements improve the precisi
 - attenuation is not automatically self-facilitation unless direct physical Gate A passes;
 - a marginal correlation for each buffer is not enough for a dual-buffer claim;
 - no TNC × attenuation interaction is permitted as a v1 rescue analysis.
+
+## Community-level extension: occupancy insurance versus functional insurance
+
+Tampa already shows that many exact points remain occupied by another seagrass after *Thalassia* is no longer recorded, and Lower Tampa Bay shows directional compositional reorganization. That is **occupancy insurance**, not automatically functional insurance.
+
+The direct-velocity layer creates a new community-ecology test:
+
+> when *Thalassia* dominance changes, does the remaining multispecies canopy preserve the physical buffering function of the meadow?
+
+Use the frozen secondary physical model from the direct-hydrodynamic contract:
+
+```text
+attenuation_p90
+  ~ total_vegetated_cover
+  + canopy_height
+  + thalassia_fraction
+  + water_body
+```
+
+This separates **vegetation remains** from **the same ecosystem-engineering function remains**.
+
+- a composition effect means community reorganization changes hydrodynamic function even at similar total cover/height;
+- no composition effect is consistent with hydrodynamic redundancy only over the measured structural range;
+- neither result proves that alternative species are equivalent across other functions such as habitat, carbon storage or food-web support.
+
+This secondary physical analysis cannot rescue a null future-persistence result, but it links the observed Tampa community reorganization to a concrete ecosystem function.
