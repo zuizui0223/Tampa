@@ -87,7 +87,21 @@
         "bare_vertical_attenuation_p90": "1 - p90(U_bare_nearbed) / p90(U_bare_reference)",
         "excess_canopy_attenuation_p90": "vegetated_vertical_attenuation_p90 - bare_vertical_attenuation_p90"
       },
-      "physical_attribution_gate": "Using a node-level paired bootstrap fixed before inspection, the 95% interval for mean excess_canopy_attenuation_p90 must lie above 0. If not, do not attribute the vertical attenuation metric specifically to canopy ecosystem engineering."
+      "physical_attribution_gate": "Using a node-level paired bootstrap fixed before inspection, the 95% interval for mean excess_canopy_attenuation_p90 must lie above 0. If not, do not attribute the vertical attenuation metric specifically to canopy ecosystem engineering.",
+      "spatial_preflight": {
+        "source": "results/bare_control_spatial_preflight_v1.json",
+        "status": "geographic_edge_feasibility_pass",
+        "recent_vegetated_nodes": 40,
+        "candidate_nodes_with_mapped_edge_within_100m": 39,
+        "candidate_nodes_by_bay": {
+          "Old Tampa Bay": 12,
+          "Middle Tampa Bay": 12,
+          "Lower Tampa Bay": 15
+        },
+        "thalassia_positive_nodes_with_candidate": 31,
+        "recent_thalassia_positive_nodes": 33,
+        "interpretation": "The 18-node nested counterfactual target is geographically feasible. GIS proximity is only reconnaissance; every retained control must still pass the frozen field depth/forcing/substrate/wake/simultaneity rules."
+      }
     }
   },
   "primary_physical_metrics": {
