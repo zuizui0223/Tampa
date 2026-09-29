@@ -117,6 +117,10 @@ Current source preflight:
 
 Persistent among-transect differences reflect local transport and exposure regimes that coordinates, depth, sediment, and bay-level water quality do not resolve.
 
+A stronger discriminating version is now frozen:
+
+> high near-bed flow should be most damaging where current meadow state is sparse; dense established meadow state should partially buffer physical exposure if self-facilitation is important.
+
 Candidate measurements:
 
 - current velocity;
@@ -126,13 +130,33 @@ Candidate measurements:
 - local shear stress;
 - near-bed flow variability.
 
-### Primary discriminating prediction
+### Source update
 
-After matching or controlling for present meadow state, transects with different hydrodynamic exposure should differ in future persistence, community state, or stress response.
+NOAA TBOFS is now a credible candidate network-wide physical source:
 
-### Preferred evidence
+- 3-D ROMS;
+- roughly 100 m–1.2 km horizontal resolution;
+- 11 vertical levels;
+- gridded NetCDF currents;
+- public operational and NCEI historical archives.
 
-Use an independently validated hydrodynamic model, deployed current meters/ADCPs, or another pre-specified physical layer. Do not construct a new arbitrary connectivity proxy from the same annual biological table.
+This is **not yet equivalent to validated near-bed meadow exposure**. A response-blind node-to-grid and vertical-relevance audit is now required before biological testing.
+
+### Preferred prospective test
+
+If the physical-source gate passes, freeze 90th-percentile near-bed current speed as the primary exposure and test a genuinely future quantitative response:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency
+  + p90_nearbed_current
+  + baseline_frequency × p90_nearbed_current
+  + water_body
+```
+
+The positive interaction is the key self-facilitation / exposure-buffering prediction.
+
+Do not construct another arbitrary distance or connectivity proxy from the biological table.
 
 ## Priority 4 — canopy / epiphyte microenvironment
 
@@ -203,7 +227,7 @@ Otherwise it belongs to descriptive/sensitivity work, not to the mechanism progr
 4. **Canopy / epiphyte light microenvironment**
 5. **Acute disturbance / disease**
 
-The first two have the strongest ability to discriminate between persistent meadow legacy and unresolved short-timescale stress.
+The first two remain the strongest direct discriminators between persistent meadow legacy and unresolved short-timescale stress. Hydrodynamics has now moved from source-search to a concrete TBOFS physical-source preflight.
 
 ## Current program status
 
@@ -211,4 +235,4 @@ The first two have the strongest ability to discriminate between persistent mead
 - Binary reappearance terminology: **re-recording / reappearance, not recovery**
 - 2026 OTB continuous-temperature -> 2027 prospective test: **allowed new-measurement branch**
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
-- Hydrodynamic layer: **next independent physical-template test**
+- NOAA TBOFS hydrodynamic layer: **candidate identified; response-blind grid/depth audit next**
