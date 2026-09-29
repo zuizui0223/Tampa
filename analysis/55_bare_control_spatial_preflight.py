@@ -3,24 +3,30 @@
 
 Uses:
 - pinned 2023-2025 TBISMP Event/Occurrence state only for field-sampling feasibility;
-- public SWFWMD 2024 seagrass polygons;
+- the directly downloadable FWC/FWRI Seagrass Florida polygon archive;
 - no future biological response.
 
-The key output is distance from recent vegetated fixed nodes to the mapped
-2024 seagrass-union boundary. It does NOT claim that a valid depth-matched
-bare control exists until field reconnaissance confirms it.
+FWC metadata documents SWFWMD Seagrass in 2024 as the current southwest-Florida
+source within the statewide compilation. This script is a spatial feasibility
+audit only, not a Tampa seagrass time-series analysis.
 """
 from __future__ import annotations
-import argparse, csv, hashlib, io, json, math
-from collections import defaultdict, Counter
+
+import argparse
+import csv
+import hashlib
+import io
+import json
+import zipfile
+from collections import defaultdict
 from pathlib import Path
-from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+import geopandas as gpd
 import numpy as np
-from shapely.geometry import Point, shape
-from shapely.ops import unary_union, transform
 from pyproj import Transformer
+from shapely.geometry import Point, box
+from shapely.ops import unary_union
 
 COMMIT="6c567beff95ea04f0e397101befb49d5233ace8f"
 BASE=f"https://raw.githubusercontent.com/tbep-tech/obis-example/{COMMIT}/dwc"
@@ -32,7 +38,8 @@ CORE=("Old Tampa Bay","Middle Tampa Bay","Lower Tampa Bay")
 YEARS=(2023,2024,2025)
 THALASSIA="Thalassia testudinum"
 ORDER="Alismatales"
-ARCGIS="https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/3"
+
+FWC_ZIP_URL="https://atoll.floridamarine.org/Data/Zips/SDE/seagrass_fl_poly.zip"
 EDGE_MAX_M=100.0
 TARGET=18
 MINIMUM=12
@@ -41,8 +48,11 @@ MIN_PER_BAY=3
 def git_blob_sha1(data:bytes)->str:
     return hashlib.sha1(f"blob {len(data)}\0".encode()+data).hexdigest()
 
-def get_bytes(url,timeout=240):
-    req=Request(url,headers={"Accept-Encoding":"identity","User-Agent":"Tampa-bare-control-preflight/1.0"})
+def get_bytes(url:str,timeout:int=300)->bytes:
+    req=Request(url,headers={
+        "Accept-Encoding":"identity",
+        "User-Agent":"Tampa-bare-control-preflight/1.1",
+    })
     with urlopen(req,timeout=timeout) as r:
         return r.read()
 
@@ -68,12 +78,13 @@ def reconstruct_recent_nodes(event:bytes,occ:bytes):
                     "year":year,
                     "water_body":wb,
                     "longitude":float(row["decimalLongitude"]),
-                    "latitude":float(row["decimalLatitude"])
+                    "latitude":float(row["decimalLatitude"]),
                 }
         elif typ=="Point":
             pid=row["parentEventID"].strip()
             if pid in parents:
                 children[pid].append(row["eventID"].strip())
+
     eligible={p for p in parents if len(children.get(p,[]))>=3}
     point_to_parent={eid:p for p in eligible for eid in children[p]}
 
@@ -102,68 +113,96 @@ def reconstruct_recent_nodes(event:bytes,occ:bytes):
     ny=defaultdict(lambda:{"n":0,"tf":0.0,"af":0.0,"meta":None})
     for v in visit:
         k=(v["node_id"],v["year"])
-        x=ny[k]; x["n"]+=1; x["tf"]+=v["tf"]; x["af"]+=v["af"]; x["meta"]=v
+        x=ny[k]
+        x["n"]+=1; x["tf"]+=v["tf"]; x["af"]+=v["af"]; x["meta"]=v
+
     latest={}
     for (node,year),x in ny.items():
         m=x["meta"]
         a={
-            "node_id":node,"year":year,"water_body":m["water_body"],
-            "longitude":m["longitude"],"latitude":m["latitude"],
+            "node_id":node,
+            "year":year,
+            "water_body":m["water_body"],
+            "longitude":m["longitude"],
+            "latitude":m["latitude"],
             "thalassia_frequency":x["tf"]/x["n"],
-            "any_seagrass_frequency":x["af"]/x["n"]
+            "any_seagrass_frequency":x["af"]/x["n"],
         }
         if node not in latest or year>latest[node]["year"]:
             latest[node]=a
+
     out=sorted(latest.values(),key=lambda z:(z["water_body"],z["node_id"]))
     if len(out)!=40:
         raise RuntimeError(f"recent node registry drift: {len(out)} != 40")
+    if sum(x["any_seagrass_frequency"]>0 for x in out)!=40:
+        raise RuntimeError("recent vegetated-node registry drift")
+    if sum(x["thalassia_frequency"]>0 for x in out)!=33:
+        raise RuntimeError("recent Thalassia-positive registry drift")
     return out
 
-def arcgis_json(params):
-    url=ARCGIS+"/query?"+urlencode(params)
-    return json.loads(get_bytes(url,240).decode("utf-8"))
+def fetch_fwc_seagrass_union(outdir:Path,nodes):
+    raw=get_bytes(FWC_ZIP_URL,300)
+    archive=outdir/"seagrass_fl_poly.zip"
+    archive.write_bytes(raw)
 
-def fetch_seagrass_geometries():
-    """Fetch all 2024 polygons with ArcGIS offset pagination.
+    extract=outdir/"seagrass_fwc"
+    extract.mkdir(parents=True,exist_ok=True)
+    with zipfile.ZipFile(archive) as z:
+        z.extractall(extract)
 
-    returnIdsOnly is not consistently enabled on this legacy MapServer, so the
-    preflight uses ordered feature pagination without changing any scientific rule.
-    """
-    geoms=[]; attrs=[]; offset=0; page_size=1000
-    while True:
-        data=arcgis_json({
-            "where":"1=1",
-            "outFields":"OBJECTID,FLUCCSCODE,FLUCCSDESC",
-            "returnGeometry":"true",
-            "outSR":"4326",
-            "orderByFields":"OBJECTID",
-            "resultOffset":str(offset),
-            "resultRecordCount":str(page_size),
-            "f":"geojson"
-        })
-        if "error" in data:
-            raise RuntimeError(f"ArcGIS query error: {data['error']}")
-        feats=data.get("features",[])
-        for ft in feats:
-            if ft.get("geometry"):
-                geoms.append(shape(ft["geometry"]))
-                attrs.append(ft.get("properties",{}))
-        if len(feats)<page_size:
-            break
-        offset += len(feats)
-        if offset>100000:
-            raise RuntimeError("ArcGIS pagination runaway guard")
-    if not geoms:
-        raise RuntimeError(f"No polygon geometries returned; response keys={sorted(data.keys())}")
-    return unary_union(geoms), attrs, len(geoms)
+    shp=sorted(extract.rglob("*.shp"))
+    if not shp:
+        raise RuntimeError("FWC archive contained no shapefile")
+
+    gdf=gpd.read_file(shp[0])
+    if gdf.crs is None:
+        raise RuntimeError("FWC seagrass shapefile has no CRS")
+    source_crs=str(gdf.crs)
+    source_columns=[str(x) for x in gdf.columns if x!="geometry"]
+
+    gdf=gdf.to_crs("EPSG:26917")
+    tr=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
+    xy=[tr.transform(n["longitude"],n["latitude"]) for n in nodes]
+
+    # Three-km buffer only reduces the statewide file to the Tampa analysis region.
+    # It does not alter the frozen 100-m bare-control candidate threshold.
+    local_box=box(
+        min(x for x,y in xy)-3000,
+        min(y for x,y in xy)-3000,
+        max(x for x,y in xy)+3000,
+        max(y for x,y in xy)+3000,
+    )
+    local=gdf[gdf.geometry.intersects(local_box)].copy()
+    local=local[local.geometry.notna() & ~local.geometry.is_empty].copy()
+    if local.empty:
+        raise RuntimeError("FWC archive has no seagrass polygons near Tampa nodes")
+
+    # Repair only invalid topology before unioning.
+    bad=~local.geometry.is_valid
+    if bad.any():
+        local.loc[bad,"geometry"]=local.loc[bad,"geometry"].buffer(0)
+    local=local[local.geometry.notna() & ~local.geometry.is_empty].copy()
+
+    union=unary_union(list(local.geometry))
+    audit={
+        "archive_bytes":len(raw),
+        "archive_sha256":hashlib.sha256(raw).hexdigest(),
+        "source_features_total":int(len(gdf)),
+        "tampa_nearby_features":int(len(local)),
+        "source_columns":source_columns,
+        "source_crs":source_crs,
+        "working_crs":"EPSG:26917",
+    }
+
+    archive.unlink(missing_ok=True)
+    return union,audit
 
 def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
     nodes=reconstruct_recent_nodes(fetch(FILES["event"]),fetch(FILES["occurrence"]))
-    union4326, attrs, n_ids=fetch_seagrass_geometries()
+    union,source_audit=fetch_fwc_seagrass_union(outdir,nodes)
 
     transformer=Transformer.from_crs("EPSG:4326","EPSG:26917",always_xy=True)
-    union=transform(transformer.transform,union4326)
     boundary=union.boundary
 
     rows=[]
@@ -179,24 +218,24 @@ def main(outdir:Path):
         candidate=bool(inside and edge is not None and edge<=EDGE_MAX_M)
         rows.append({
             **n,
-            "inside_2024_mapped_seagrass":inside,
+            "inside_current_mapped_seagrass":inside,
             "edge_distance_m":edge,
             "nearest_mapped_seagrass_distance_m":nearest_seagrass,
             "bare_edge_candidate_100m":candidate,
-            "primary_thalassia_positive":bool(n["thalassia_frequency"]>0)
+            "primary_thalassia_positive":bool(n["thalassia_frequency"]>0),
         })
 
     by={}
     for wb in CORE:
         d=[x for x in rows if x["water_body"]==wb]
-        c=[x for x in d if x["bare_edge_candidate_100m"]]
-        cp=[x for x in c if x["primary_thalassia_positive"]]
+        cand=[x for x in d if x["bare_edge_candidate_100m"]]
+        cand_primary=[x for x in cand if x["primary_thalassia_positive"]]
         by[wb]={
             "recent_vegetated_nodes":len(d),
-            "inside_2024_mapped_seagrass":sum(x["inside_2024_mapped_seagrass"] for x in d),
-            "bare_edge_candidates_100m":len(c),
-            "thalassia_positive_bare_edge_candidates_100m":len(cp),
-            "map_state_mismatches":sum(not x["inside_2024_mapped_seagrass"] for x in d)
+            "inside_current_mapped_seagrass":sum(x["inside_current_mapped_seagrass"] for x in d),
+            "bare_edge_candidates_100m":len(cand),
+            "thalassia_positive_bare_edge_candidates_100m":len(cand_primary),
+            "map_state_mismatches":sum(not x["inside_current_mapped_seagrass"] for x in d),
         }
 
     total=sum(x["bare_edge_candidate_100m"] for x in rows)
@@ -211,23 +250,23 @@ def main(outdir:Path):
         "source":{
             "tbismp_commit":COMMIT,
             "recent_years":list(YEARS),
-            "seagrass_arcgis_layer":ARCGIS,
-            "seagrass_mapping_year":2024,
-            "arcgis_object_ids":n_ids,
-            "projected_crs":"EPSG:26917"
+            "seagrass_source":"FWC/FWRI Seagrass Florida current statewide compilation",
+            "seagrass_archive":FWC_ZIP_URL,
+            "tampa_component_provenance":"SWFWMD Seagrass in 2024 per FWC metadata",
+            "archive_audit":source_audit,
         },
         "registry":{
             "recent_vegetated_nodes":len(rows),
             "recent_thalassia_positive_nodes":sum(x["primary_thalassia_positive"] for x in rows),
-            "inside_2024_mapped_seagrass_nodes":sum(x["inside_2024_mapped_seagrass"] for x in rows),
-            "map_state_mismatches":sum(not x["inside_2024_mapped_seagrass"] for x in rows)
+            "inside_current_mapped_seagrass_nodes":sum(x["inside_current_mapped_seagrass"] for x in rows),
+            "map_state_mismatches":sum(not x["inside_current_mapped_seagrass"] for x in rows),
         },
         "edge_distance_m":{
             "n_inside":len(edgevals),
             "median":float(np.median(edgevals)) if edgevals else None,
             "p25":float(np.quantile(edgevals,0.25)) if edgevals else None,
             "p75":float(np.quantile(edgevals,0.75)) if edgevals else None,
-            "max":float(np.max(edgevals)) if edgevals else None
+            "max":float(np.max(edgevals)) if edgevals else None,
         },
         "candidate_gate":{
             "maximum_edge_distance_m":EDGE_MAX_M,
@@ -237,29 +276,35 @@ def main(outdir:Path):
             "candidate_nodes":int(total),
             "minimum_candidates_in_any_bay":int(minbay),
             "by_water_body":by,
-            "passed":passed
+            "passed":passed,
         },
         "nodes":rows,
         "claim_boundary":[
             "A mapped meadow edge within 100 m is only a geographic reconnaissance candidate, not a validated bare control.",
             "Field validation must still satisfy frozen separation, depth matching, comparable forcing, substrate/context and simultaneous sensor geometry.",
-            "The 2024 seagrass map has a 0.25-acre minimum mapping unit and may omit small bare gaps inside patchy beds; failure is conservative.",
-            "Do not relax the 100-m GIS threshold after inspection to create a pass.",
-            "No future biological response is used."
-        ]
+            "The source mapping can omit small bare gaps inside patchy beds; a negative GIS gate is conservative.",
+            "Do not relax the 100-m threshold after inspection to create a pass.",
+            "The FWC compilation is used for spatial feasibility, not Tampa time-series inference.",
+            "No future biological response is used.",
+        ],
     }
-    (outdir/"bare_control_spatial_preflight_v1.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
+
+    (outdir/"bare_control_spatial_preflight_v1.json").write_text(
+        json.dumps(result,indent=2,sort_keys=True)+"\n"
+    )
     with (outdir/"bare_control_spatial_candidates_v1.csv").open("w",newline="") as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0].keys()))
         w.writeheader(); w.writerows(rows)
+
     print(json.dumps({
         "status":result["status"],
         "registry":result["registry"],
         "edge_distance_m":result["edge_distance_m"],
-        "candidate_gate":result["candidate_gate"]
+        "candidate_gate":result["candidate_gate"],
     },indent=2,sort_keys=True))
 
 if __name__=="__main__":
     ap=argparse.ArgumentParser()
     ap.add_argument("--out",type=Path,default=Path("results/generated_bare_control_preflight"))
-    a=ap.parse_args(); main(a.out)
+    a=ap.parse_args()
+    main(a.out)
