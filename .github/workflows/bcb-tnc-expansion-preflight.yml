@@ -1,0 +1,29 @@
+name: Boca Ciega TNC expansion preflight
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/60_bcb_tnc_expansion_preflight.py"
+      - ".github/workflows/bcb-tnc-expansion-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install numpy scipy
+      - name: Audit four-bay TNC sampling expansion
+        run: python analysis/60_bcb_tnc_expansion_preflight.py --out results/generated_bcb_expansion/bcb_tnc_expansion_preflight_v1.json
+      - name: Show result
+        run: cat results/generated_bcb_expansion/bcb_tnc_expansion_preflight_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bcb-tnc-expansion-preflight
+          path: results/generated_bcb_expansion/bcb_tnc_expansion_preflight_v1.json
+          if-no-files-found: error
