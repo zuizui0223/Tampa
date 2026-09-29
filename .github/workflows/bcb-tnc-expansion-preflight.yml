@@ -20,6 +20,8 @@ jobs:
       - run: python -m pip install numpy scipy
       - name: Audit four-bay TNC sampling expansion
         run: python analysis/60_bcb_tnc_expansion_preflight.py --out results/generated_bcb_expansion/bcb_tnc_expansion_preflight_v1.json
+      - name: Verify canonical feasibility result
+        run: python validation/verify_bcb_tnc_expansion.py
       - name: Show result
         run: cat results/generated_bcb_expansion/bcb_tnc_expansion_preflight_v1.json
       - uses: actions/upload-artifact@v4
