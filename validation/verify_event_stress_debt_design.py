@@ -58,4 +58,20 @@ assert "## H3. Event-scale hot-fresh stress debt" in hyp
 assert "tnc_post" in hyp
 assert "PAR is not added here" in hyp
 
+
+cal=json.loads((ROOT/"results/event_stress_calendar_preflight_v1.json").read_text())
+assert cal["status"]=="calendar_selected_from_response_independent_exposure_climatology"
+assert cal["response_independent"] is True
+assert cal["selected_window"]["start_md"]=="07-24"
+assert cal["selected_window"]["end_md"]=="09-03"
+assert cal["selected_window"]["OTB_nonzero_fraction"]==0.632
+assert cal["selected_window"]["MTB_nonzero_fraction"]==0.3633333333
+assert cal["selected_window"]["LTB_nonzero_fraction"]==0.0
+assert cal["selected_window"]["historical_year_fraction_with_events_in_at_least_2_bays"]==0.64
+assert c["deployment"]["calendar_preflight"]["frozen_start_month_day"]=="07-24"
+assert c["deployment"]["calendar_preflight"]["frozen_end_month_day"]=="09-03"
+assert c["deployment"]["calendar_preflight"]["historical_nonzero_station_year_fraction"]["Lower Tampa Bay"]==0.0
+assert "July 24" in c["deployment"]["primary_exposure_window"]
+assert "non-estimable" in c["primary_exposure"]["nonestimable_variation_gate"]["rule"]
+
 print("Tampa event-scale stress-debt design: OK")
