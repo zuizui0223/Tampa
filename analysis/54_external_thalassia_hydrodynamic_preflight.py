@@ -8,11 +8,11 @@ biological responses and does not select an external endpoint.
 from __future__ import annotations
 
 import argparse
+import csv
 import io
 import json
 from pathlib import Path
 
-import pandas as pd
 import requests
 
 DOI="10.1594/PANGAEA.967585"
@@ -32,7 +32,16 @@ def main(outdir:Path):
     r.raise_for_status()
     text=r.text
     (outdir/"pangaea_967585_index.tsv").write_text(text)
-    df=pd.read_csv(io.StringIO(text),sep="\t",comment="#")
+    lines=text.splitlines()
+    parsed=[]
+    for i,line in enumerate(lines, start=1):
+        if not line.strip():
+            continue
+        fields=next(csv.reader([line],delimiter="\t"))
+        parsed.append({"line_number":i,"field_count":len(fields),"fields":fields})
+    # PANGAEA binary indexes contain a metadata preamble before the data table.
+    # Preserve the raw inventory first; file selection will be frozen only after
+    # this structure is visible.
     summary={
         "schema":"tampa.external_thalassia_hydrodynamic_preflight_v1",
         "status":"external_binary_index_opened_response_independent",
@@ -42,9 +51,8 @@ def main(outdir:Path):
             "license":"CC-BY-4.0",
             "supplement_to":"Kaack, Fugate & Thomas 2024, All Earth, DOI 10.1080/27669645.2024.2419236",
         },
-        "rows":int(len(df)),
-        "columns":[str(x) for x in df.columns],
-        "records":df.fillna("").astype(str).to_dict(orient="records"),
+        "nonempty_lines":len(parsed),
+        "tab_structure":parsed,
         "claim_boundary":[
             "This preflight inventories an external physical-data archive only.",
             "No Tampa focal biological response is accessed.",
