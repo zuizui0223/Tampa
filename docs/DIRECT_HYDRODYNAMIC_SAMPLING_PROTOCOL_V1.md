@@ -304,3 +304,25 @@ A frozen noncentral-F design audit (two-sided alpha = 0.05; 80% power; one focal
 Therefore the preferred target is **36 nodes** (nominally 12 per bay), with **30 nodes** as the minimum analyzable set. Within each bay, target four nodes from each pre-deployment baseline focal-frequency tertile. Repeated current measurements are still important because they reduce error in attenuation estimates, but they do not substitute for node replication.
 
 Do not reduce the node target after inspecting the future response.
+
+
+## Stage 0 — synchronized tri-bay screening
+
+Do not use the asynchronous historical 2025 coverage as the sole baseline for deployment selection. In the current archive, 2025 contains 13 Old Tampa Bay nodes, 12 Middle Tampa Bay nodes and 9 Lower Tampa Bay nodes, whereas the stable tri-bay frame contains 19, 13 and 15 nodes respectively.
+
+Before final velocity deployment selection, screen **all 47 tri-bay stable nodes** in one predeclared baseline window.
+
+At each node record:
+
+- focal *Thalassia* frequency using the frozen fixed-transect rule;
+- water depth and tidal-stage metadata;
+- canopy height;
+- whether a *Thalassia* canopy patch adjacent to the permanent line can host the inside-canopy sensor;
+- whether the paired above-canopy reference geometry can remain acceptably submerged;
+- species-specific local canopy composition.
+
+Primary eligibility requires a measurable focal canopy and feasible paired-sensor geometry. A zero-frequency node can remain useful descriptive state information but cannot enter the primary *Thalassia* canopy-attenuation analysis unless a focal canopy is independently present in the frozen deployment footprint.
+
+Among eligible nodes, stratify within bay by the synchronized baseline focal-frequency distribution into low, middle and high thirds. Select nodes using a deterministic node-ID hash order fixed before deployment, not by investigator preference. Predeclare ordered alternates within each bay × state stratum.
+
+This screening state is the baseline used in the future-change model.
