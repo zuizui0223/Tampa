@@ -2,21 +2,20 @@
 
 ## Purpose
 
-The strict 2024 GIS preflight did **not** pass the frozen bare-control feasibility rule.
+The corrected 2024 GIS preflight **passed** the frozen bare-control feasibility rule after actual vegetated meter-mark coordinates were reconstructed along each transect.
 
-The result was:
+The corrected result was:
 
-- 13 mapped-edge candidates overall;
-- Old Tampa Bay: 5;
-- Middle Tampa Bay: 7;
-- Lower Tampa Bay: 1;
+- 39 candidate nodes overall;
+- Old Tampa Bay: 12;
+- Middle Tampa Bay: 12;
+- Lower Tampa Bay: 15;
+- 31 of 33 recently *Thalassia*-positive nodes have at least one reconstructed *Thalassia*/vegetated meter mark within 100 m of mapped meadow edge;
 - required: at least 12 overall and at least 3 in each bay.
 
-The failure was driven by Lower Tampa Bay and by a strong mismatch between point-monitoring state and public mapped polygons: only 13 of 40 recently vegetated monitoring nodes fell inside the polygon union.
+The key correction was coordinate semantics: Darwin Core Point rows repeat the transect-start coordinate rather than storing literal meter-mark coordinates. Meter-mark positions are therefore reconstructed from the pinned transect start coordinate, signed transect bearing and meter-mark distance.
 
-Therefore the GIS result is **not** used to relax any criterion and is **not** interpreted as evidence that bare habitat is absent.
-
-The next allowed step is a response-independent field/imagery reconnaissance using the same frozen spatial and physical criteria.
+GIS feasibility does **not** certify a control. The next step remains response-independent field/imagery reconnaissance under the same frozen spatial and physical criteria.
 
 ## Scientific role
 
@@ -126,7 +125,7 @@ Minimum confirmatory physical-attribution set:
 - 12 qualified nodes total;
 - >=3 qualified nodes in each of Old, Middle and Lower Tampa Bay.
 
-The failed GIS counts do not reduce these minima.
+The GIS pass does not reduce these minima or waive field qualification.
 
 If the field-qualified set is below 12 or any bay contributes fewer than 3:
 
