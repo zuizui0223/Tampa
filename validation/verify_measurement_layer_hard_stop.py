@@ -32,6 +32,10 @@ assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzab
 assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
 assert clonal["primary_analysis"]["support_rule"]["contradicted_direction"]=="interval entirely below 0"
 assert "one-sided" in clonal["primary_analysis"]["support_rule"]["note"]
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["historical_feasibility"]["observed_2025_survey_span_days"]==71
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["historical_feasibility"]["densest_historical_28_day_window_nodes"]==19
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_survey_plan"]["preferred"].startswith("Perform the fixed-transect baseline survey and TNC coring on the same day")
+assert "dedicated additional baseline" in clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_survey_plan"]["routine_schedule_boundary"]
 
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
