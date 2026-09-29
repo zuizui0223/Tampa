@@ -1,0 +1,40 @@
+name: Appearance condition measurement audit
+
+on:
+  push:
+    paths:
+      - "analysis/58_appearance_measurement_layer_preflight.py"
+      - "analysis/59_appearance_retention.py"
+      - "results/appearance_retention_v1_contract.json"
+      - ".github/workflows/appearance-condition.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/58_appearance_measurement_layer_preflight.py"
+      - "analysis/59_appearance_retention.py"
+      - "results/appearance_retention_v1_contract.json"
+      - ".github/workflows/appearance-condition.yml"
+  workflow_dispatch:
+
+jobs:
+  appearance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check numpy pandas scikit-learn
+      - name: Response-blind Appearance coverage audit
+        run: python analysis/58_appearance_measurement_layer_preflight.py
+      - name: Run frozen Appearance follow-up
+        run: python analysis/59_appearance_retention.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: appearance-condition
+          path: |
+            results/generated_appearance_preflight/appearance_measurement_layer_preflight_v1.json
+            results/generated_appearance_retention/appearance_retention_v1.json
+            results/generated_appearance_retention/appearance_retention_transitions.csv
+          if-no-files-found: error
