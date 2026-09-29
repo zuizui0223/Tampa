@@ -48,6 +48,13 @@ assert "wave_current_resolution_gate" in direct["new_measurements"]["deployment"
 assert any("oscillatory horizontal RMS speed" in x for x in direct["secondary_mechanism_support"]["wave_current_decomposition"]["metrics"])
 assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
 assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
+assert direct["new_measurements"]["canopy_counterfactual_control"]["target_nodes"]==18
+assert direct["new_measurements"]["canopy_counterfactual_control"]["minimum_analyzable_nodes"]==12
+assert direct["new_measurements"]["canopy_counterfactual_control"]["minimum_nodes_per_bay"]==3
+assert "excess_canopy_attenuation_p90" in direct["new_measurements"]["canopy_counterfactual_control"]["metrics"]
+assert "gate_A_physical" in direct["ecosystem_engineering_feedback_gate"]
+assert "gate_B_future_ecology" in direct["ecosystem_engineering_feedback_gate"]
+assert any("boundary-layer shear" in x for x in direct["claim_boundary"])
 
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
