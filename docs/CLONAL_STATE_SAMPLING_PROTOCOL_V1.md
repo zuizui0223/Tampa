@@ -113,6 +113,27 @@ Node-level primary predictor:
 
 > median TNC across valid independent cores.
 
+The **inferential unit is the stable transect node**. The three or more cores are spatial measurement replicates used to estimate node-level below-ground state; they are not three independent genets. *T. testudinum* ramets can be physiologically integrated, and genet extent can span metres or much farther. Optional genotyping can describe clonal identity, but it does not increase the primary sample size.
+
+## Secondary regenerative-meristem hypothesis
+
+TNC is an energetic-reserve hypothesis. A second, biologically distinct below-ground mechanism is **regenerative capacity**.
+
+Predeclare rhizome meristem / apex density from the same cores as a secondary mechanism variable:
+
+> meadows with a larger below-ground meristem bank may retain or rebuild shoot occupancy more effectively, even if TNC itself is not unusually high.
+
+This is motivated by work on integrated *Thalassia* growth that proposed inactive shoots / meristematic structures as a dormant meristem bank.
+
+Treat this as a corrected secondary family only. A positive meristem result cannot be used to relabel a null TNC result as support for the primary carbohydrate-reserve hypothesis.
+
+Conceptually:
+
+- TNC -> **energetic resistance / buffering**;
+- meristem/apex density -> **regenerative capacity**.
+
+The distinction is useful because a meadow can have stored carbon but few regenerative meristems, or many meristems but depleted reserves.
+
 ## Analytical method
 
 Seagrass NSC values are strongly method-dependent. The primary study therefore uses one laboratory workflow throughout.
