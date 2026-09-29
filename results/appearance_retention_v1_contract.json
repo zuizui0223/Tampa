@@ -1,0 +1,64 @@
+{
+  "schema": "tampa.appearance_retention_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "posthoc_new_measurement_layer_frozen_before_association_result",
+  "evidence_class": "posthoc_new_measurement_layer_temporal_ecology",
+  "ecological_question": "Does independently recorded general seagrass appearance contain year-ahead information about exact-point Thalassia recorded retention beyond source abundance, depth, position, season, stable transect identity, year and monitoring agency?",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "raw_file": "data/trnsct.csv",
+    "blob": "2a9ac04c300d4e209b1359656de6b581ad7ae138"
+  },
+  "measurement": {
+    "mapping": {
+      "Poor": 0,
+      "Fair": 1,
+      "Good": 2,
+      "Very Good": 3,
+      "Excellent": 3
+    },
+    "excluded_label": "BAD DATA",
+    "point_year_aggregation": "mean ordinal appearance score across valid focal rows at the same Transect x Site x AssessmentYear",
+    "rationale": "The TBISMP field manual defines a trained general seagrass appearance/condition rating; the database uses Very Good where the manual describes the top category as excellent."
+  },
+  "transition_population": {
+    "unit": "stable Transect x meter-mark Site x consecutive AssessmentYear transition",
+    "source_requirement": "Thalassia recorded with valid Appearance in source year",
+    "target_requirement": "same Transect x Site sampled in AssessmentYear + 1",
+    "outcome": "target-year Thalassia recorded retention (1) versus recorded loss (0)",
+    "primary_target_year_exclusion": 2016,
+    "minimum_complete_transitions": 500,
+    "minimum_nodes": 30,
+    "minimum_recorded_losses": 100
+  },
+  "primary_analysis": {
+    "within_node_centering": "source appearance score minus mean source appearance score among eligible transitions for that Transect",
+    "model": "logit(retained_next_year) ~ appearance_within_node + source_bb + source_depth_m + site_m + sin_doy + cos_doy + node_id FE + source_year FE + monitoring_agency",
+    "estimator": "L2-regularized logistic regression with C=1.0, lbfgs, max_iter=3000",
+    "primary_coefficient": "appearance_within_node",
+    "expected_direction": "positive: better-than-usual local appearance predicts higher next-year recorded retention",
+    "bootstrap": {
+      "unit": "Transect node",
+      "replicates": 1000,
+      "seed": 20260929,
+      "interval": "2.5 and 97.5 empirical percentiles"
+    },
+    "interpretation": {
+      "ci_above_zero": "General appearance carries positive year-ahead information beyond source abundance and controls, consistent with an integrated visual-condition early-warning dimension.",
+      "ci_overlaps_zero": "No robust independent year-ahead information from general appearance after abundance, site and survey controls.",
+      "ci_below_zero": "The expected health ordering is contradicted after adjustment; reject the simple visual-condition early-warning interpretation."
+    }
+  },
+  "sensitivity": {
+    "include_target_2016": true,
+    "rule": "Repeat the identical model with target 2016 restored; report whether interval classification changes."
+  },
+  "claim_boundary": [
+    "This is post-hoc historical temporal ecology, not a response-unopened prospective confirmation.",
+    "Recorded retention/loss is an observation-state endpoint, not demographic survival/extinction.",
+    "Appearance is subjective despite annual training and is not a physiological measurement.",
+    "A positive coefficient does not identify heat, disease, nutrient, light or clonal mechanism.",
+    "Do not retune category scores, target years, node subsets, lag windows or controls after the result is opened."
+  ]
+}
