@@ -19,7 +19,14 @@ assert clonal["status"]=="future_new_measurement_design_not_yet_opened"
 assert clonal["future_outcome"]["primary"].startswith("next fixed-transect survey focal_frequency")
 assert "binary reappearance" in clonal["future_outcome"]["prohibited_primary"]
 assert clonal["baseline_new_measurements"]["primary_predictor"]["name"]=="rhizome_total_nonstructural_carbohydrate"
+assert clonal["eligibility"]["target_sample_size_nodes"]==36
+assert clonal["eligibility"]["minimum_analyzable_nodes"]==30
 
+
+epi=json.loads((ROOT/"results/epiphyte_retention_v1.json").read_text())
+assert epi["status"]=="primary_positive_but_2016_sensitivity_not_supported"
+assert epi["primary_exclude_target_2016"]["coefficient_epi_within_node"]>0
+assert epi["sensitivity_include_target_2016"]["ci95"][0]<0<epi["sensitivity_include_target_2016"]["ci95"][1]
 
 tbofs=json.loads((ROOT/"results/tbofs_hydrodynamic_preflight_v1.json").read_text())
 assert tbofs["status"]=="all_network_source_gate_failed"
@@ -35,6 +42,9 @@ hydro=json.loads((ROOT/"results/direct_hydrodynamic_prospective_v1_contract.json
 assert hydro["status"]=="future_new_measurement_design_not_yet_deployed"
 assert hydro["primary_physical_metrics"]["attenuation_p90"].startswith("1 - p90(U_inside)")
 assert hydro["primary_analysis"]["primary_coefficient"]=="attenuation_p90"
+assert hydro["eligibility"]["target_nodes"]==36
+assert hydro["eligibility"]["minimum_analyzable_nodes"]==30
+assert hydro["mechanism_gate_logic"]["combined_claim_rule"].startswith("Use")
 assert "binary reappearance" in hydro["future_outcome"]["prohibited_primary"]
 
 hydro_protocol=(ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").read_text()
