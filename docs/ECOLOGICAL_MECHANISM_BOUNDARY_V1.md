@@ -48,6 +48,7 @@ Legacy analysis filenames and schema names containing `recovery` remain unchange
 | Simple annual/seasonal temperature or salinity | Annual and frozen 3/6-month hot/fresh screens | No multiplicity-controlled association | Do not retune windows |
 | Published 30 °C / 25 ppt compound stress | Exact Beck et al. daily-GAM stress artifact; joint run tested beyond marginal hot and fresh runs | Blade length and shoot density unsupported | Joint threshold duration does not rescue the climate-stress mechanism |
 | Simple condition → thinning cascade | Source blade length + shoot density added beyond current frequency/BB and stable node identity in strict walk-forward prediction | Primary frequency and secondary Braun–Blanquet targets both unsupported | Faster condition dynamics do not establish that plant-condition decline is a one-year precursor of thinning |
+| Qualitative annual epiphyte burden | Within-transect next-year retention model, node/year FE and baseline BB/depth/season controls | Primary coefficient positive (+0.118, 95% bootstrap CI 0.019 to 0.223); target-2016 sensitivity overlaps zero | Reject a simple annual epiphyte-stress reading; qualitative load may mark mature canopy/microsite state. Any shading mechanism requires direct biomass/optical measurement |
 | TBOFS near-bottom current as meadow exposure | Response-blind grid mapping + physical point-depth relevance audit | All-network distance gate failed; tri-bay grid proximity was good but model bathymetry was systematically too deep for literal shallow-meadow interpretation | Retain TBOFS as regional context; do not use model bottom sigma velocity as the primary canopy-scale predictor |
 | Exact-point reappearance decomposition | Multiple post-hoc observation-state audits | Useful state-history and community-continuity associations, but still observational and increasingly reference-sensitive | Do not promote another annual-state decomposition into a mechanism claim |
 
@@ -148,7 +149,21 @@ The key prediction is that stronger measured canopy attenuation is associated wi
 
 The frozen design is in `docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md` and `results/direct_hydrodynamic_prospective_v1_contract.json`.
 
-### 5. Event-scale physiological debt: **open, but only at a new temporal resolution**
+### 5. Qualitative epiphyte burden as annual stress: **not supported**
+
+The existing qualitative epiphyte-density layer was evaluated separately because epiphytes are a plausible leaf-scale shading mechanism that is not represented by bulk Secchi × depth.
+
+The adjusted within-transect primary coefficient was **positive**, not negative (+0.118; 95% node-bootstrap interval 0.019 to 0.223; 4,189 complete transitions across 49 nodes). Restoring the protocol-sensitive target year 2016 weakened the coefficient to +0.085 with an interval spanning zero (-0.012 to 0.193).
+
+Therefore:
+
+- the current ordinal `Clean / Light / Moderate / Heavy` field does **not** support a simple annual epiphyte-stress interpretation;
+- the positive direction must not be described as a beneficial epiphyte effect;
+- qualitative epiphyte load may instead track mature/long-lived leaves, persistent favorable meadow state, hydrodynamic environment, grazing regime or another canopy property;
+- no further category/type/lag mining is authorized from this field;
+- an epiphyte-light mechanism remains open only through new direct measurements such as epiphyte biomass plus leaf/canopy optical attenuation.
+
+### 6. Event-scale physiological debt: **open, but only at a new temporal resolution**
 
 Annual water quality, frozen 3/6-month hot/fresh summaries, and the published 30 C / 25 ppt compound-stress test did not support a common mechanism.
 
@@ -163,6 +178,8 @@ The strongest unresolved mechanism questions are now:
 1. does below-ground reserve explain persistence beyond current above-ground state?
 2. does short-timescale physical stress explain future quantitative change?
 3. does directly measured canopy attenuation buffer local hydrodynamic exposure and predict future quantitative persistence?
+
+The existing qualitative epiphyte layer is no longer a leading mechanism candidate; only a genuinely new biomass/optical epiphyte layer could reopen that pathway.
 
 All three require a new measurement layer.
 
