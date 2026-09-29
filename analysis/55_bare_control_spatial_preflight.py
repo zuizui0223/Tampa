@@ -18,7 +18,7 @@ import hashlib
 import io
 import json
 import zipfile
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from urllib.request import Request, urlopen
 
