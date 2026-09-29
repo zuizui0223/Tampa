@@ -67,6 +67,26 @@
     "Even a positive result would be predictive association, not causal proof of temperature injury.",
     "Nearby logger sites are proxies for fixed-transect thermal exposure.",
     "The endpoint is deliberately small-n but genuinely prospective and exact-permutation based.",
-    "This contract does not authorize access to a future biological response before the first qualifying public release is identified and source-locked."
-  ]
+    "This contract does not authorize access to a future biological response before the first qualifying public release is identified and source-locked.",
+    "The exact small-n test has very coarse resolution: at n=6 the least-extreme rejecting Spearman rho is -0.8857, and at n=5 only rho=-1 rejects under p<0.025. Therefore a null result is not evidence against moderate thermal effects."
+  ],
+  "design_resolution": {
+    "purpose": "Make the inferential resolution of the frozen small-n exact Spearman test explicit before any 2027 biological response exists.",
+    "exact_one_sided_alpha_rule": "primary contract requires p < 0.025",
+    "n6": {
+      "permutations": 720,
+      "least_extreme_rejecting_rho": -0.8857142857142857,
+      "exact_p_at_boundary": 0.016666666666666666,
+      "next_less_extreme_rho": -0.8285714285714285,
+      "exact_p_next": 0.029166666666666667
+    },
+    "n5": {
+      "permutations": 120,
+      "only_rejecting_rho": -1,
+      "exact_p_at_boundary": 0.008333333333333333,
+      "next_less_extreme_rho": -0.9,
+      "exact_p_next": 0.041666666666666664
+    },
+    "decision": "Treat this as an extreme-effect prospective probe. Failure to reject cannot be used to conclude that high-frequency thermal exposure is unimportant, because the frozen design can only detect an almost perfectly monotone node ranking at n=5-6."
+  }
 }
