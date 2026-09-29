@@ -41,6 +41,11 @@ These analyses are useful as descriptive ecology and boundary evidence. Repeated
 
 ## Priority 1 — below-ground / clonal state
 
+Frozen future design:
+
+- `results/clonal_state_prospective_v1_contract.json`
+- `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md`
+
 ### Biological hypothesis
 
 Persistent *Thalassia* occurrence is buffered by below-ground state rather than by above-ground condition alone.
