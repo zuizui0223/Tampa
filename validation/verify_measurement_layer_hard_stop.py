@@ -37,6 +37,14 @@ assert clonal["baseline_new_measurements"]["temporal_standardization"]["historic
 assert clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_survey_plan"]["preferred"].startswith("Perform the fixed-transect baseline survey and TNC coring on the same day")
 assert "dedicated additional baseline" in clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_survey_plan"]["routine_schedule_boundary"]
 
+ct=json.loads((ROOT/"results/clonal_tnc_timing_feasibility_v1.json").read_text())
+assert ct["status"]=="historical_routine_timing_too_dispersed_for_confirmatory_tnc_baseline"
+assert ct["registry"]["recent_thalassia_positive_nodes"]==33
+assert ct["latest_positive_by_year"]["2025"]["span_days"]==71
+assert ct["densest_historical_28_day_window"]["nodes"]==19
+assert ct["prospective_decision"]["campaign_window_days"]==28
+assert ct["prospective_decision"]["baseline_alignment_days_each_side"]==14
+
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
 tbofs=json.loads((ROOT/"results/tbofs_hydrodynamic_preflight_v1.json").read_text())
