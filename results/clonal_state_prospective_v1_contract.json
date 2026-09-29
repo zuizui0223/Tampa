@@ -61,7 +61,21 @@
       "campaign_window": "Collect all primary TNC samples within one predeclared <=28-day seasonal campaign.",
       "baseline_alignment": "Primary-eligible TNC collection must occur within 14 days before or after the corresponding baseline fixed-transect survey.",
       "time_metadata": "Record exact collection date/time for every core. Do not post-hoc choose a narrower date or time-of-day subset based on future response.",
-      "failure_rule": "Samples outside the frozen baseline-alignment window are excluded from the confirmatory primary analysis and may be reported descriptively only."
+      "failure_rule": "Samples outside the frozen baseline-alignment window are excluded from the confirmatory primary analysis and may be reported descriptively only.",
+      "historical_feasibility": {
+        "recent_latest_positive_nodes": 33,
+        "latest_positive_2025_nodes": 28,
+        "observed_2025_survey_span_days": 71,
+        "densest_historical_28_day_window_nodes": 19,
+        "interpretation": "Historical routine monitoring dates are too dispersed to provide a 30-node synchronized TNC baseline by passive add-on sampling."
+      },
+      "baseline_survey_plan": {
+        "preferred": "Perform the fixed-transect baseline survey and TNC coring on the same day at each node.",
+        "hard_alignment": "TNC coring must remain within +/-14 days of the paired baseline fixed-transect survey.",
+        "synchronization": "Complete all confirmatory node pairs within one <=28-day campaign.",
+        "routine_schedule_boundary": "If the routine monitoring calendar cannot meet the frozen timing window, conduct a dedicated additional baseline fixed-transect survey using the same quantitative protocol rather than widening the TNC campaign.",
+        "protocol_equivalence": "The dedicated baseline must use the same meter-mark/frequency and Braun-Blanquet definitions needed for the future change endpoint."
+      }
     },
     "nutrient_state_diagnostic": {
       "motivation": "In Florida Thalassia, rhizome carbohydrate can covary negatively with leaf nutrient content; high carbohydrate may represent reserve storage or passive accumulation under growth limitation.",
@@ -133,7 +147,8 @@
     "soluble-NSC extraction and starch quantification method",
     "dry-mass basis and technical standards",
     "leaf N/P nutrient-state diagnostic protocol",
-    "30-node / 8-per-bay confirmatory precision gate"
+    "30-node / 8-per-bay confirmatory precision gate",
+    "dedicated synchronized baseline-survey plan if routine monitoring dates exceed the frozen timing window"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
