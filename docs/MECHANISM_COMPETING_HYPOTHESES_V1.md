@@ -193,6 +193,50 @@ This is secondary and cannot rescue a null primary attenuation -> future *Thalas
 
 ---
 
+## H6. Resistance-to-recovery strategy shift under community reorganization
+
+### Mechanism question
+
+Lower Tampa Bay shows declining *Thalassia* and *Syringodium* with increasing *Halodule*, but the annual observation record does not show that *Halodule* newly colonized after focal loss. Much alternative occupancy is persistence of species already present.
+
+The stronger ecological hypothesis is therefore not "Halodule recolonizes after Thalassia disappears". It is:
+
+> disturbance or chronic stress can shift a meadow from a **persistence/resistance strategy** dominated by slow, long-lived *Thalassia* toward a **rapid-cover / recovery strategy** in which pre-existing or expanding *Halodule* becomes more prominent.
+
+This is motivated by established life-history contrasts in the literature: *H. wrightii* is widely treated as a fast-growing pioneer/early-successional species, whereas *T. testudinum* is slower-growing and late-successional. Classic comparative flume work also found stronger canopy friction and sediment protection for *T. testudinum* than for *H. wrightii*, with *Syringodium* lower still under the tested conditions (Fonseca & Fisher 1986, MEPS 29:15–22).
+
+### Tampa-specific discriminating prediction
+
+Occupancy insurance and functional insurance need not be the same.
+
+The direct hydrodynamic deployment therefore asks whether alternative-seagrass prominence preserves the physical function of the meadow:
+
+```text
+attenuation_p90
+  ~ total_vegetated_cover
+  + canopy_height
+  + thalassia_fraction
+  + water_body
+```
+
+If composition still explains attenuation after structural controls, then community reorganization changes ecosystem-engineering function even when the point remains vegetated.
+
+If composition does not add information, the result is consistent with hydrodynamic functional redundancy over the sampled structural range.
+
+### Why this is more informative than "successional reset"
+
+The current archive cannot distinguish new colonization, competitive release, clonal expansion of pre-existing *Halodule*, or shared microsite persistence. "Successional reset" therefore remains too mechanistically specific.
+
+The resistance-to-recovery framing requires only directly testable differences in life-history state and physical function. It also turns the Lower Tampa pattern into a general foundation-species question:
+
+> can community turnover preserve habitat occupancy while changing the mechanism by which the habitat resists disturbance?
+
+### Claim boundary
+
+Do not call the Lower Tampa pattern a demonstrated succession sequence until recruitment/expansion dynamics are measured directly.
+
+Do not infer that *Halodule* is functionally inferior from taxonomy alone. The Tampa functional result must come from measured canopy structure and hydrodynamic attenuation.
+
 ## Cross-mechanism discrimination
 
 The mechanisms make different observations necessary.
