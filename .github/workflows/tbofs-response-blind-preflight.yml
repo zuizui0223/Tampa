@@ -1,0 +1,60 @@
+name: TBOFS response-blind hydrodynamic preflight
+
+on:
+  push:
+    paths:
+      - "analysis/52_tbofs_response_blind_preflight.py"
+      - "analysis/53_tbofs_depth_relevance_audit.py"
+      - "results/tbofs_hydrodynamic_preflight_v1_contract.json"
+      - "docs/HYDRODYNAMIC_EXPOSURE_PREFLIGHT_V1.md"
+      - ".github/workflows/tbofs-response-blind-preflight.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/52_tbofs_response_blind_preflight.py"
+      - "analysis/53_tbofs_depth_relevance_audit.py"
+      - "results/tbofs_hydrodynamic_preflight_v1_contract.json"
+      - "docs/HYDRODYNAMIC_EXPOSURE_PREFLIGHT_V1.md"
+      - ".github/workflows/tbofs-response-blind-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install NetCDF audit dependencies
+        run: python -m pip install --disable-pip-version-check numpy xarray netCDF4
+      - name: Run response-blind TBOFS source gate
+        run: python analysis/52_tbofs_response_blind_preflight.py --out results/generated_tbofs_preflight
+      - name: Run response-independent depth relevance audit
+        run: python analysis/53_tbofs_depth_relevance_audit.py
+      - name: Verify no biological response columns entered preflight output
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          p=Path("results/generated_tbofs_preflight")
+          j=json.loads((p/"tbofs_hydrodynamic_preflight_v1.json").read_text())
+          assert j["response_blind"] is True
+          assert j["registry"]["stable_nodes"]==71
+          allowed={"node_id","water_body","longitude","latitude"}
+          with (p/"tbofs_nodes_response_blind.csv").open() as f:
+              cols=set(next(csv.reader(f)))
+          assert cols==allowed, cols
+          forbidden=("detected","focal_frequency","bb_cover","blade","shoot_density","loss","re_record","reappear","recovery")
+          text=(p/"tbofs_nodes_response_blind.csv").read_text().lower()
+          assert not any(x in text for x in forbidden)
+          print("Response-blind schema: OK")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tbofs-response-blind-preflight
+          path: |
+            results/generated_tbofs_preflight/tbofs_hydrodynamic_preflight_v1.json
+            results/generated_tbofs_preflight/tbofs_depth_relevance_audit_v1.json
+            results/generated_tbofs_preflight/tbofs_nodes_response_blind.csv
