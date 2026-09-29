@@ -15,13 +15,35 @@ import json
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 DOI="10.1594/PANGAEA.967585"
 INDEX_URL=f"https://doi.org/{DOI}"
 BASE="https://download.pangaea.de/dataset/967585/files/"
 
 def fetch(url):
-    r=requests.get(url,headers={"User-Agent":"Tampa-external-ADV/1.0"},timeout=120,allow_redirects=True)
+    retry=Retry(
+        total=6,
+        connect=6,
+        read=6,
+        status=6,
+        backoff_factor=2.0,
+        status_forcelist=[429,500,502,503,504],
+        allowed_methods=frozenset(["GET"]),
+        respect_retry_after_header=True,
+    )
+    s=requests.Session()
+    s.mount("https://",HTTPAdapter(max_retries=retry))
+    r=s.get(
+        url,
+        headers={
+            "User-Agent":"pangaeapy/1.1.3 Tampa-external-ADV",
+            "Accept":"text/plain,*/*",
+        },
+        timeout=120,
+        allow_redirects=True,
+    )
     r.raise_for_status()
     return r.content
 
