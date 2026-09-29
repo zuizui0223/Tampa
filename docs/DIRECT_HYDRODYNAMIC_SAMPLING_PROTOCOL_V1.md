@@ -75,12 +75,28 @@ Primary geography:
 
 Target:
 
-- 24 stable fixed-transect nodes;
-- approximately 8 nodes per bay where feasible;
-- minimum analyzable set: 18 nodes;
-- minimum 5 analyzable nodes in each of the three bays.
+- **39 stable fixed-transect nodes** as the primary design target;
+- approximately **13 nodes per bay** (all 13 Middle Tampa Bay stable nodes, plus matched 13-node samples in Old and Lower Tampa Bay);
+- if resources permit, extend to the full **47-node Old + Middle + Lower Tampa** frame;
+- minimum confirmatory analyzable set: **30 nodes**;
+- minimum **8 analyzable nodes in each bay**.
 
 Stratify before deployment across the observed baseline focal-frequency range. Do not select or drop nodes using the future response.
+
+### Precision gate
+
+The earlier 24-node target was too weak for the prespecified multivariable future model. With baseline frequency, ambient current, attenuation and two water-body indicator terms, a simple two-sided Gaussian planning benchmark gives approximate 80%-power detectable partial correlations of:
+
+- n = 24: about **0.57**;
+- n = 30: about **0.51**;
+- n = 39: about **0.45**;
+- n = 47: about **0.41**.
+
+These are design diagnostics, not expected effect sizes.
+
+The attenuation-to-future-frequency analysis is therefore confirmatory only if at least **30 analyzable nodes** remain and each bay contributes at least **8**. Below that gate, the study is a prospective pilot: report the attenuation coefficient and uncertainty, but do not use a null result to reject hydrodynamic buffering.
+
+Even the 39-node target is mainly capable of resolving moderate-to-large effects. Smaller effects may remain ecologically important but statistically unresolved under this network size.
 
 Where feasible, co-locate this design with the clonal-state sampling program, but keep the hydrodynamic and rhizome-TNC primary tests analytically separate.
 
