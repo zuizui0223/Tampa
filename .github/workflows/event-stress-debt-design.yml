@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - "results/event_stress_debt_prospective_v1_contract.json"
+      - ".github/workflows/event-stress-calendar-preflight.yml"
+      - "results/event_stress_calendar_preflight_v1.json"
+      - "analysis/59_event_stress_calendar_preflight.R"
       - "docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md"
       - "docs/MECHANISM_COMPETING_HYPOTHESES_V1.md"
       - "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md"
@@ -13,6 +16,9 @@ on:
     branches: [main]
     paths:
       - "results/event_stress_debt_prospective_v1_contract.json"
+      - ".github/workflows/event-stress-calendar-preflight.yml"
+      - "results/event_stress_calendar_preflight_v1.json"
+      - "analysis/59_event_stress_calendar_preflight.R"
       - "docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md"
       - "docs/MECHANISM_COMPETING_HYPOTHESES_V1.md"
       - "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md"
