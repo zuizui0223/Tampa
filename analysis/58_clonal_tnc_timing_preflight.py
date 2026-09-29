@@ -87,15 +87,16 @@ def main(out:Path):
             "survey_date":datetime.fromordinal(med).date()
         })
 
-    latest={}
+    latest_all={}
     for x in annual:
-        if x["focal_frequency"]<=0:
-            continue
-        if x["node_id"] not in latest or x["year"]>latest[x["node_id"]]["year"]:
-            latest[x["node_id"]]=x
-    rows=sorted(latest.values(),key=lambda x:(x["water_body"],x["node_id"]))
+        if x["node_id"] not in latest_all or x["year"]>latest_all[x["node_id"]]["year"]:
+            latest_all[x["node_id"]]=x
+    rows=sorted(
+        [x for x in latest_all.values() if x["focal_frequency"]>0],
+        key=lambda x:(x["water_body"],x["node_id"])
+    )
     if len(rows)!=33:
-        raise RuntimeError(f"recent Thalassia-positive node drift: {len(rows)} != 33")
+        raise RuntimeError(f"recent latest-state Thalassia-positive node drift: {len(rows)} != 33")
 
     # For each year, quantify survey span among nodes whose latest positive state is that year.
     by_year={}
