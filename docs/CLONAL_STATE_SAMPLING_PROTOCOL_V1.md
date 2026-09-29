@@ -14,8 +14,8 @@ Target the existing stable Tampa fixed-transect network in Old, Middle, and Lowe
 
 Initial target:
 
-- 24 stable transect nodes;
-- minimum analyzable set: 18 nodes;
+- 36 stable transect nodes;
+- minimum analyzable set: 30 nodes;
 - approximately balanced representation of:
   - quantitatively stable meadows;
   - persistent-recorded meadows with recent quantitative degradation;
@@ -161,3 +161,13 @@ Do not begin the outcome-bearing prospective study until the following are froze
 - primary analysis script.
 
 The scientific value comes from measuring a new biological state **before** the future quantitative response is known.
+
+## Node replication and synchronized timing
+
+The inferential unit for the future primary endpoint is the stable transect node. Three cores within a node improve measurement of TNC but do not create three independent future meadow trajectories.
+
+A response-free design-sensitivity audit therefore raises the preferred target from 24 to **36 nodes**, with **30 nodes** as the minimum analyzable set. At n = 36, the approximate 80%-power threshold for one focal TNC coefficient after the frozen baseline controls is |partial r| ≈ 0.467 (partial R² ≈ 0.218); at n = 24 it would require approximately |partial r| ≈ 0.573.
+
+Whenever permissions allow, use the same synchronized 47-node tri-bay screening and final deployment frame as the direct hydrodynamic study. Collect TNC cores during the same predeclared seasonal baseline window. Rhizome carbohydrate is seasonally dynamic, so broad sequential sampling across seasons is not accepted as a silent design feature.
+
+Co-location is scientifically valuable because it permits a separately frozen joint test of internal reserve and external physical buffering. The standalone TNC test remains governed by its own contract.
