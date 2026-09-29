@@ -25,13 +25,13 @@
     "inside_canopy_velocity": {
       "target_sampling_volume_height_m_above_bed": [
         0.05,
-        0.10
+        0.1
       ],
       "requirement": "Exact height and instrument geometry frozen before first outcome-bearing deployment."
     },
     "ambient_reference_velocity": {
       "definition": "simultaneous velocity above the local canopy at the same node",
-      "target_clearance_above_canopy_m": 0.10,
+      "target_clearance_above_canopy_m": 0.1,
       "requirement": "Reference sampling volume must remain submerged for retained observations; nodes that cannot accommodate frozen paired geometry are primary-ineligible."
     },
     "deployment": {
@@ -46,6 +46,7 @@
       "representative leaf length",
       "representative leaf width",
       "canopy cover or frozen photographic equivalent",
+      "species-specific local cover/occupancy of Thalassia, Halodule, Syringodium and other structural macrophytes",
       "sensor heights"
     ]
   },
@@ -80,7 +81,15 @@
   "secondary_mechanism_support": {
     "canopy_structure": "canopy height, local shoot density and cover may be related descriptively or under one predeclared corrected secondary family to attenuation_p90",
     "turbidity_pathway": "optional co-located turbidity / suspended-sediment measurement may test whether attenuation reduces near-bed resuspension",
-    "boundary": "Secondary variables cannot replace a null primary attenuation result."
+    "boundary": "Secondary variables cannot replace a null primary attenuation result.",
+    "community_functional_insurance": {
+      "question": "Does local species composition explain measured attenuation_p90 after total vegetated cover and canopy height are represented?",
+      "motivation": "Existing Tampa exact-point analyses show occupancy insurance by pre-existing alternative seagrasses, but not functional equivalence. Multispecies canopy structure can alter near-bed flow.",
+      "model": "attenuation_p90 ~ total_vegetated_cover + canopy_height + thalassia_fraction + water_body",
+      "inference": "two-sided secondary coefficient for thalassia_fraction under the declared secondary multiple-testing family",
+      "interpretation": "A composition effect would show that retained seagrass occupancy is not automatically hydrodynamically equivalent; a null effect would be consistent with functional redundancy only within the sampled range and uncertainty.",
+      "boundary": "Secondary test cannot rescue a null primary attenuation-to-future-frequency result."
+    }
   },
   "relationship_to_clonal_contract": {
     "separate_primary_tests": true,
