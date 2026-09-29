@@ -1,0 +1,86 @@
+{
+  "schema": "tampa.dual_buffer_prospective_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "future_joint_new_measurement_design_not_yet_deployed",
+  "evidence_class": "prospective_joint_mechanism_discrimination",
+  "title": "Internal reserve versus external ecosystem-engineering buffering",
+  "ecological_question": "Do long-lived Thalassia meadows persist because of stored below-ground reserve, canopy-mediated modification of physical exposure, or both?",
+  "novelty_boundary": {
+    "not_novel": [
+      "rhizome carbohydrate can function as a storage reserve",
+      "seagrass canopies can modify currents, shear, sediment and light",
+      "models can couple vegetation growth/storage with hydrodynamic feedback"
+    ],
+    "tampa_advance": "Measure both mechanisms at the same long-monitored fixed nodes before an unopened future quantitative outcome, then estimate their independent prospective contributions to the same meadow trajectory."
+  },
+  "sampling": {
+    "frame": "same synchronized 47-node Old/Middle/Lower Tampa screening used by the direct hydrodynamic design",
+    "target_complete_nodes": 36,
+    "minimum_complete_nodes": 30,
+    "preferred_rule": "Collect TNC and paired canopy/ambient velocity at the same selected nodes and in the same predeclared baseline season/window.",
+    "primary_new_predictors": [
+      "standardized node-median rhizome total non-structural carbohydrate (TNC)",
+      "standardized attenuation_p90 = 1 - p90(U_inside)/p90(U_reference)"
+    ],
+    "requirement": "Only nodes with both primary new-measurement predictors and frozen baseline controls enter the joint mechanistic-discrimination analysis."
+  },
+  "outcome": {
+    "primary": "next fixed-transect survey focal_frequency minus synchronized baseline focal_frequency",
+    "prohibited": "binary reappearance / recorded-state return"
+  },
+  "joint_primary_model": {
+    "formula": "future_delta_frequency ~ baseline_frequency + baseline_BraunBlanquet + ambient_p90 + TNC_z + attenuation_p90_z + water_body",
+    "focal_coefficients": [
+      "TNC_z",
+      "attenuation_p90_z"
+    ],
+    "directions": {
+      "TNC_z": "positive",
+      "attenuation_p90_z": "positive"
+    },
+    "familywise_error": "Holm correction across the two predeclared directional focal tests at family alpha 0.05.",
+    "uncertainty": "node-level resampling/permutation rule frozen before future outcome access"
+  },
+  "interpretation_matrix": {
+    "both_supported": "Consistent with dual buffering: internal stored reserve and external canopy-mediated physical buffering each carry independent prospective information.",
+    "tnc_only": "Consistent with internal-reserve buffering beyond measured physical attenuation; hydrodynamic buffering is not independently supported.",
+    "attenuation_only": "Consistent with external biophysical buffering beyond measured reserve, but only if the separate hydrodynamic physical-function Gate A passes.",
+    "neither": "Neither measured buffer explains future quantitative state beyond baseline and ambient forcing under the frozen design."
+  },
+  "hydrodynamic_dependency": "The attenuation mechanism may be called ecosystem-engineering/self-buffering only if the direct-hydrodynamic Gate A demonstrates positive physical attenuation before future biological response access.",
+  "collinearity_boundary": {
+    "report": "Pearson correlation and VIF for TNC_z and attenuation_p90_z before opening the future outcome.",
+    "warning_threshold": "absolute predictor correlation >= 0.70 or VIF >= 5",
+    "consequence": "Do not drop or substitute predictors after seeing the outcome. If warning threshold is crossed, retain the joint model but describe independent coefficient separation as weakly identified; standalone frozen tests remain authoritative."
+  },
+  "interaction_rule": "No TNC x attenuation interaction is a primary or rescue analysis in v1. A complementarity/redundancy interaction would require a separately powered future design.",
+  "design_sensitivity": {
+    "approximation": "Two-sided alpha=0.05, 80% power for one focal coefficient with six other control/predictor degrees of freedom; does not include the extra conservatism of Holm and is therefore optimistic for the joint test.",
+    "thresholds": {
+      "n30": {
+        "partial_r": 0.53,
+        "partial_R2": 0.2809
+      },
+      "n36": {
+        "partial_r": 0.4809,
+        "partial_R2": 0.2313
+      },
+      "n42": {
+        "partial_r": 0.4433,
+        "partial_R2": 0.1965
+      },
+      "n47": {
+        "partial_r": 0.4179,
+        "partial_R2": 0.1747
+      }
+    },
+    "implication": "36 complete nodes is a minimum practical target for joint discrimination, not a high-power design for subtle independent effects."
+  },
+  "claim_boundary": [
+    "A supported TNC coefficient is consistent with reserve buffering but does not prove causal resource translocation.",
+    "A supported attenuation coefficient requires physical Gate A before being interpreted as canopy self-facilitation.",
+    "Do not infer dual buffering from two separate marginal associations if the joint frozen coefficients do not both pass.",
+    "Do not add an interaction, change buffer metrics, or select a favorable subset after future outcome access.",
+    "Binary re-recording is not ecological recovery."
+  ]
+}
