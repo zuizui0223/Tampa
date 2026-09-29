@@ -182,6 +182,34 @@ Freeze before first deployment:
 - deployment duration;
 - valid-data threshold.
 
+## Wave-current resolution gate
+
+The paired velocity layer must not reduce shallow-water forcing to long-interval mean current alone.
+
+Prior *Thalassia* work shows that oscillatory wave motion can penetrate the canopy differently from unidirectional current and that canopy density changes turbulence/exchange. Therefore the instrument family must retain synchronized burst-level vector velocities at a sampling rate and burst duration adequate to characterize both:
+
+- burst vector-mean horizontal current;
+- oscillatory horizontal velocity within the burst.
+
+Before outcome-bearing deployment, run a **response-independent physical pilot** to freeze:
+
+- velocity sampling rate;
+- burst duration;
+- burst interval;
+- anti-aliasing / manufacturer QC;
+- the common burst statistic used for the primary `p90` calculation.
+
+The pilot may inspect physical velocity spectra and instrument limitations only. It must not inspect a future *Thalassia* response.
+
+If the selected logger stores only long-interval vector averages that erase oscillatory motion, the project may still test **current-speed attenuation**, but it must not describe that result as general wave-plus-current hydrodynamic buffering.
+
+For physical interpretation only, predeclare two secondary components:
+
+1. burst vector-mean current speed;
+2. oscillatory horizontal RMS speed after removal of the burst vector mean.
+
+These components cannot replace or rescue a null primary `attenuation_p90` result.
+
 ## Deployment duration
 
 Target at least 21 consecutive days per node.
