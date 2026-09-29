@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Verify Tampa new-measurement mechanism boundary."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+
+cv=json.loads((ROOT/"results/current_validation_v2.json").read_text())
+stop=cv["measurement_layer_hard_stop"]
+assert stop["status"]=="same_annual_exact_point_mechanism_mining_closed"
+assert stop["next_mechanism_priority"][0]=="below-ground reserve / clonal state"
+assert "new biological measurement state" in stop["allowed_new_mechanism_gate"]
+assert "additional annual/exact-point reappearance/loss/reloss subgroups" in stop["stopped_lines"]
+
+clonal=json.loads((ROOT/"results/clonal_state_prospective_v1_contract.json").read_text())
+assert clonal["status"]=="future_new_measurement_design_not_yet_opened"
+assert clonal["future_outcome"]["primary"].startswith("next fixed-transect survey focal_frequency")
+assert "binary reappearance" in clonal["future_outcome"]["prohibited_primary"]
+assert clonal["baseline_new_measurements"]["primary_predictor"]["name"]=="rhizome_total_nonstructural_carbohydrate"
+
+boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
+assert "Observation-state reappearance is not ecological recovery." in boundary
+assert "Do **not** add another retrospective decomposition" in boundary
+assert "Below-ground reserve / clonal state" in boundary
+
+program=(ROOT/"docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md").read_text()
+assert "Annual/exact-point retrospective mechanism decomposition: **HARD STOP**" in program
+assert "results/clonal_state_prospective_v1_contract.json" in program
+assert "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md" in program
+
+cons=(ROOT/"manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md").read_text()
+assert "buffer-then-threshold meadow model" not in cons
+assert "multiple partially independent degradation axes" in cons
+assert "re-recorded / reappearing in the observation record" in cons
+
+disc=(ROOT/"manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md").read_text()
+assert "Further decomposition of the same annual loss/re-recording table is not treated as a new mechanism test." in disc
+assert "plant-condition decline is a one-year precursor" not in disc
+
+print("Tampa new-measurement mechanism boundary: OK")
