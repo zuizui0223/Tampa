@@ -20,15 +20,41 @@ assert clonal["future_outcome"]["primary"].startswith("next fixed-transect surve
 assert "binary reappearance" in clonal["future_outcome"]["prohibited_primary"]
 assert clonal["baseline_new_measurements"]["primary_predictor"]["name"]=="rhizome_total_nonstructural_carbohydrate"
 
+# Independent physical-layer gate: TBOFS was tested response-blind and rejected
+# as the primary meadow-scale near-bed exposure layer.
+tbofs=json.loads((ROOT/"results/tbofs_hydrodynamic_preflight_v1.json").read_text())
+assert tbofs["status"]=="all_network_source_gate_failed"
+assert tbofs["response_blind"] is True
+assert tbofs["all_71_nodes"]["mapped_nodes"]==71
+assert tbofs["original_gate"]["passed"] is False
+assert tbofs["original_gate"]["max_distance_lte_2km"] is False
+
+depth=json.loads((ROOT/"results/tbofs_depth_relevance_audit_v1.json").read_text())
+assert depth["status"]=="nearbed_meadow_interpretation_not_supported"
+assert depth["response_blind"] is True
+assert depth["tri_bay_core"]["nodes"]==47
+assert depth["tri_bay_core"]["model_deeper_than_observed_nodes"]==47
+assert depth["tri_bay_core"]["model_bathymetry_median_across_nodes_m"] > depth["tri_bay_core"]["observed_depth_median_across_nodes_m"]
+
+direct=json.loads((ROOT/"results/direct_hydrodynamic_prospective_v1_contract.json").read_text())
+assert direct["status"]=="future_new_measurement_design_not_yet_deployed"
+assert direct["primary_analysis"]["primary_coefficient"]=="attenuation_p90"
+assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
+assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
+
 boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
 assert "Observation-state reappearance is not ecological recovery." in boundary
 assert "Do **not** add another retrospective decomposition" in boundary
 assert "Below-ground reserve / clonal state" in boundary
+assert "Canopy hydrodynamic self-buffering" in boundary
+assert "TBOFS near-bottom current as meadow exposure" in boundary
 
 program=(ROOT/"docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md").read_text()
 assert "Annual/exact-point retrospective mechanism decomposition: **HARD STOP**" in program
 assert "results/clonal_state_prospective_v1_contract.json" in program
 assert "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md" in program
+assert "NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure" in program
+assert "Direct paired canopy/ambient velocity layer" in program
 
 cons=(ROOT/"manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md").read_text()
 assert "buffer-then-threshold meadow model" not in cons
