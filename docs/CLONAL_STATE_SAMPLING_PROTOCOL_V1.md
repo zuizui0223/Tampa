@@ -67,13 +67,16 @@ Rhizome carbohydrate is seasonally variable. The field program therefore freezes
 Primary requirements:
 
 1. collect all confirmatory TNC samples within one predeclared **<=28-day seasonal campaign**;
-2. collect TNC within **14 days before or after** the corresponding baseline fixed-transect survey;
-3. record exact date and time for every core;
-4. do not post-hoc select a narrower month, tide or time-of-day subset after the future response is known.
+2. preferably perform TNC coring and the paired fixed-transect baseline survey on the **same day** at each node;
+3. hard rule: TNC collection must remain within **14 days before or after** the paired baseline fixed-transect survey;
+4. record exact date and time for every core;
+5. do not post-hoc select a narrower month, tide or time-of-day subset after the future response is known.
+
+A historical feasibility audit shows why this is necessary: the 28 latest-positive 2025 nodes were surveyed across roughly **71 days**, and the densest historical 28-day window contained only **19 of 33** recent positive nodes. Routine monitoring dates therefore cannot simply be reused as though they were a synchronized physiological baseline.
+
+If the routine monitoring calendar cannot meet the frozen timing window, conduct a **dedicated additional baseline fixed-transect survey** using the same meter-mark frequency and Braun-Blanquet protocol during the TNC campaign. Do not solve the scheduling problem by widening the seasonal window.
 
 Samples outside the +/-14-day baseline-alignment rule are not primary-confirmatory samples.
-
-If field logistics cannot meet this temporal design, do not widen the window after inspection. Treat the affected samples as descriptive and preserve the confirmatory subset as frozen.
 
 ## Core placement
 
