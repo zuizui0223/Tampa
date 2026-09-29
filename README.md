@@ -613,19 +613,27 @@ This is consistent with a **community-insurance pattern**, but it does not ident
 
 ## Next scientific gate
 
-Retrospective mechanism hunting in the current Tampa dataset is closed. The tested alternatives now include static and dynamic spatial accessibility, simple hidden-state explanations, depth/sediment, bulk benthic-light exposure, annual and seasonal temperature/salinity, and the exact published 30 °C / 25 ppt compound hot–fresh metric. None identifies the driver of the post-2016 condition changes.
+Retrospective mechanism mining of the current Tampa annual/exact-point observation-state archive is now **hard-stopped**.
 
-The manuscript should therefore be completed around the ecological pattern that is already robust:
+The tested record already includes binary detection, focal frequency, Braun–Blanquet state, plant condition, community composition, temporal history, exact-point loss/re-recording, community continuity and multiple environmental/spatial summaries. Further splitting of the same annual table may remain useful as sensitivity work, but it is no longer the preferred route to a new mechanism claim.
 
-1. **persistent binary occurrence can conceal quantitative degradation;**
-2. **degradation mode differs among bay segments;**
-3. **the same binary–quantitative decoupling appears post hoc in an external *Zostera marina* monitoring panel;**
-4. **local quantitative state contains internal out-of-time information about next-year recorded-state loss;**
-5. **mechanism remains unresolved despite a prospectively bounded sequence of alternative-explanation tests.**
+### Terminology
 
-The next mechanism claim requires genuinely new state information rather than another transformation of the same retrospective variables. Highest-priority future measurements are meadow-scale high-frequency temperature/salinity/PAR, canopy and epiphyte light microenvironment, hydrodynamic exposure/residence time, below-ground biomass or carbohydrate reserve, clonal/rhizome architecture, and acute disturbance or disease indicators.
+A focal point that is unrecorded and later recorded again is described as **re-recorded / reappearing in the observation record**, not as biologically recovered. Legacy filenames containing `recovery` are kept only for reproducibility.
 
-The manuscript-level synthesis is:
+### New-measurement mechanism priority
+
+1. **below-ground / clonal state** — rhizome biomass, carbohydrate reserves, branching/architecture, meristem density, clonal continuity;
+2. **high-frequency local stress** — meadow-scale temperature, salinity and PAR at diel/event resolution;
+3. **hydrodynamic exposure / residence time** — current velocity, flushing, freshwater-plume exposure, near-bed flow;
+4. **canopy / epiphyte light microenvironment**;
+5. **acute disturbance / disease**.
+
+The allowed mechanism gate is documented in `docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`.
+
+The open 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test remains allowed because the exposure comes from a new high-frequency measurement layer and the future biological response is frozen before access.
+
+The manuscript-level synthesis remains:
 
 > **A foundation species can remain present while different components of meadow condition deteriorate through spatially distinct pathways; presence-only monitoring therefore detects degradation late and incompletely.**
 
