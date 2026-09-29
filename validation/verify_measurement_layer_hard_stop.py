@@ -76,6 +76,18 @@ assert bare["candidate_gate"]["by_water_body"]["Lower Tampa Bay"]["bare_edge_can
 assert bare["primary_thalassia_counterfactual_feasibility"]["thalassia_positive_nodes_with_100m_candidate"]==31
 assert bare["coordinate_semantics"]["correction"].startswith("Darwin Core Point coordinates repeat meter mark 0")
 
+rep=json.loads((ROOT/"results/representative_sensor_placement_preflight_v1.json").read_text())
+assert rep["status"]=="representative_placement_both_gates_pass"
+assert rep["response_independent"] is True
+assert rep["selection"]["edge_distance_used_for_selection"] is False
+assert rep["gate"]["vegetated_representative_candidate_nodes"]==21
+assert rep["gate"]["thalassia_representative_candidate_nodes"]==19
+assert rep["gate"]["by_water_body"]["Old Tampa Bay"]["thalassia_representative_candidates_100m"]==3
+assert rep["gate"]["by_water_body"]["Middle Tampa Bay"]["thalassia_representative_candidates_100m"]==7
+assert rep["gate"]["by_water_body"]["Lower Tampa Bay"]["thalassia_representative_candidates_100m"]==9
+assert direct["new_measurements"]["canopy_counterfactual_control"]["representative_placement_preflight"]["status"]=="representative_placement_both_gates_pass"
+assert direct["eligibility"]["vegetated_sensor_placement"]["prohibited_rescue"].startswith("Do not move")
+
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
 assert frame["registry"]["recent_thalassia_positive_nodes"]==33
