@@ -49,6 +49,19 @@ assert any("oscillatory horizontal RMS speed" in x for x in direct["secondary_me
 assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
 assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
 
+epi_pre=json.loads((ROOT/"results/epiphyte_measurement_layer_preflight_v1.json").read_text())
+assert epi_pre["status"]=="unused_measurement_layer_has_substantial_focal_coverage"
+assert epi_pre["response_blind"] is True
+assert epi_pre["thalassia"]["unique_transects"]==52
+assert epi_pre["thalassia"]["rows_with_density"]==7590
+
+epi=json.loads((ROOT/"results/epiphyte_retention_v1.json").read_text())
+assert epi["status"]=="primary_positive_but_2016_sensitivity_not_supported"
+assert epi["primary_exclude_target_2016"]["nodes"]==49
+assert epi["primary_exclude_target_2016"]["ci95"][0] > 0
+assert epi["sensitivity_include_target_2016"]["ci95"][0] < 0 < epi["sensitivity_include_target_2016"]["ci95"][1]
+assert "Do not retune categories" in " ".join(epi["claim_boundary"])
+
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
 assert frame["registry"]["recent_thalassia_positive_nodes"]==33
