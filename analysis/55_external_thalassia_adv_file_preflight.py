@@ -19,8 +19,9 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 DOI="10.1594/PANGAEA.967585"
-INDEX_URL=f"https://doi.org/{DOI}"
 BASE="https://download.pangaea.de/dataset/967585/files/"
+ROOT=Path(__file__).resolve().parents[1]
+MANIFEST=ROOT/"results/external_thalassia_hydrodynamic_preflight_v1.json"
 
 def fetch(url):
     retry=Retry(
@@ -47,27 +48,18 @@ def fetch(url):
     r.raise_for_status()
     return r.content
 
-def parse_index(text):
-    lines=text.splitlines()
-    header_i=next(i for i,x in enumerate(lines) if x.startswith("Binary\tContent\t"))
-    reader=csv.DictReader(io.StringIO("\n".join(lines[header_i:])),delimiter="\t")
-    return list(reader)
-
 def main(outdir:Path):
     outdir.mkdir(parents=True,exist_ok=True)
-    idx=requests.get(
-        INDEX_URL,
-        headers={"Accept":"text/tab-separated-values","User-Agent":"Tampa-external-ADV/1.0"},
-        timeout=120,allow_redirects=True,
-    )
-    idx.raise_for_status()
-    rows=parse_index(idx.text)
-    selected=[
-        r for r in rows
-        if "ADV" in r["Binary"] and "velocity measured from an ADV" in r["Content"]
-    ]
+    manifest=json.loads(MANIFEST.read_text())
+    selected=[]
+    for x in manifest["catalogue"]["files"]:
+        selected.append({
+            "Binary":x["filename"],
+            "Binary (Hash)":x["md5"],
+            "Content":f"{x['component']}-dimension ADV velocity at {x['site']} site; selected from frozen PANGAEA manifest"
+        })
     if len(selected)!=6:
-        raise RuntimeError(f"expected exactly six ADV component files, found {len(selected)}")
+        raise RuntimeError(f"frozen manifest drift: expected six ADV component files, found {len(selected)}")
     records=[]
     unavailable=[]
     for r in selected:
@@ -101,7 +93,8 @@ def main(outdir:Path):
         "source":{
             "doi":DOI,
             "license":"CC-BY-4.0",
-            "selection_rule":"all index rows with ADV in filename and exact content phrase 'velocity measured from an ADV'",
+            "selection_rule":"all six ADV component files frozen in results/external_thalassia_hydrodynamic_preflight_v1.json from the response-independent PANGAEA catalogue",
+            "manifest":"results/external_thalassia_hydrodynamic_preflight_v1.json",
         },
         "selected_file_count":len(selected),
         "downloaded_file_count":len(records),
