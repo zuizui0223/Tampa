@@ -1,0 +1,52 @@
+{
+  "schema": "tampa.tbofs_depth_relevance_audit_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36511090310,
+    "head_sha": "2616d0973e04f85323d5acba4fa4d3495c40707b",
+    "artifact_id": 11008429385
+  },
+  "status": "nearbed_meadow_interpretation_not_supported",
+  "response_blind": true,
+  "all_71_nodes": {
+    "observed_depth_median_across_nodes_m": 0.83,
+    "model_bathymetry_median_across_nodes_m": 2.0,
+    "median_model_minus_observed_m": 1.2,
+    "median_abs_model_minus_observed_m": 1.2,
+    "p90_abs_model_minus_observed_m": 1.4,
+    "max_abs_model_minus_observed_m": 3.3572699999999998,
+    "model_deeper_than_observed_nodes": 71,
+    "model_at_2m_floor_nodes": 61,
+    "observed_below_1m_nodes": 51,
+    "observed_below_2m_nodes": 70,
+    "pearson_depth_correlation": 0.21842479439646656
+  },
+  "tri_bay_core": {
+    "nodes": 47,
+    "observed_depth_median_across_nodes_m": 0.9,
+    "model_bathymetry_median_across_nodes_m": 2.0,
+    "median_model_minus_observed_m": 1.15,
+    "median_abs_model_minus_observed_m": 1.15,
+    "p90_abs_model_minus_observed_m": 1.4492079999999998,
+    "max_abs_model_minus_observed_m": 3.3572699999999998,
+    "model_deeper_than_observed_nodes": 47,
+    "model_at_2m_floor_nodes": 40,
+    "observed_below_1m_nodes": 33,
+    "observed_below_2m_nodes": 46,
+    "pearson_depth_correlation": 0.16006692743014447
+  },
+  "strongest_mismatch_example": {
+    "node_id": "TBEP:seagrass:loc:S1T7",
+    "water_body": "Old Tampa Bay",
+    "mapping_distance_km": 0.10618345972381436,
+    "observed_depth_median_m": 0.55,
+    "model_bathymetry_m": 3.90727,
+    "model_minus_observed_m": 3.3572699999999998
+  },
+  "interpretation": "TBOFS grid cells are geographically close to most Tampa transects, but the model bathymetry is systematically deeper than the physical point-depth record. The lowest sigma layer is therefore not defensibly equivalent to literal seagrass-meadow near-bed or canopy flow at these shallow fixed transects.",
+  "decision": "Demote TBOFS to broad hydrodynamic context / candidate regional forcing. Do not use its near-bed current as the primary meadow-scale mechanism predictor. Prefer direct shallow-water current measurements or a separately validated shallow-water hydrodynamic product.",
+  "claim_boundary": [
+    "Point depth includes tide and sampling variation and is not exact chart bathymetry.",
+    "The depth mismatch does not imply TBOFS is a poor navigation or regional circulation model.",
+    "It specifically weakens the ecological interpretation of TBOFS near-bottom velocity as meadow-scale exposure."
+  ]
+}
