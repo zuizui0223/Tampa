@@ -59,13 +59,6 @@ assert "gate_B_future_ecology" in direct["ecosystem_engineering_feedback_gate"]
 assert any("boundary-layer shear" in x for x in direct["claim_boundary"])
 
 bare=json.loads((ROOT/"results/bare_control_spatial_preflight_v1.json").read_text())
-assert bare["response_independent"] is True
-assert bare["frozen_gate"]["maximum_edge_distance_m"]==100
-assert bare["frozen_gate"]["minimum_nodes"]==12
-assert bare["frozen_gate"]["minimum_nodes_per_bay"]==3
-assert bare["frozen_gate"]["passed"] is None
-
-bare=json.loads((ROOT/"results/bare_control_spatial_preflight_v1.json").read_text())
 assert bare["status"]=="geographic_edge_feasibility_pass"
 assert bare["response_independent"] is True
 assert bare["registry"]["vegetated_meter_marks"]==762
@@ -73,6 +66,10 @@ assert bare["registry"]["mapped_state_compatible_nodes"]==39
 assert bare["candidate_gate"]["candidate_nodes"]==39
 assert bare["candidate_gate"]["minimum_candidates_in_any_bay"]==12
 assert bare["candidate_gate"]["passed"] is True
+assert bare["candidate_gate"]["maximum_edge_distance_m"]==100.0
+assert bare["candidate_gate"]["minimum_nodes"]==12
+assert bare["candidate_gate"]["minimum_nodes_per_bay"]==3
+assert (ROOT/"docs/BARE_CONTROL_FIELD_RECONNAISSANCE_V1.md").exists()
 assert bare["candidate_gate"]["by_water_body"]["Old Tampa Bay"]["bare_edge_candidate_nodes_100m"]==12
 assert bare["candidate_gate"]["by_water_body"]["Middle Tampa Bay"]["bare_edge_candidate_nodes_100m"]==12
 assert bare["candidate_gate"]["by_water_body"]["Lower Tampa Bay"]["bare_edge_candidate_nodes_100m"]==15
