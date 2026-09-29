@@ -33,7 +33,13 @@
       "boundary": "Historical opened data are used only for sampling feasibility; contemporaneous deployment eligibility must be re-evaluated before sensor placement."
     },
     "selection_rule": "Apply the frozen contemporaneous baseline rules before deployment. Do not add alternative-only nodes to the primary Thalassia-persistence cohort to rescue sample size, and do not use future outcome for selection or exclusion.",
-    "paired_geometry_required": true
+    "paired_geometry_required": true,
+    "vegetated_sensor_placement": {
+      "rule": "Select the deployment meter mark without using mapped meadow-edge distance.",
+      "primary_thalassia_cohort": "Among contemporaneous Thalassia-positive meter marks, choose the mark closest to the median site_m of all contemporaneously vegetated meter marks within the node; tie -> lower site_m.",
+      "secondary_all_vegetated_cohort": "Choose the vegetated mark closest to the median site_m of all contemporaneously vegetated meter marks within the node; tie -> lower site_m.",
+      "prohibited_rescue": "Do not move the vegetated sensor toward the meadow edge after inspecting bare-control feasibility."
+    }
   },
   "new_measurements": {
     "inside_canopy_velocity": {
@@ -79,7 +85,8 @@
         "maximum_horizontal_separation_m": 100,
         "target_depth_difference_m": 0.15,
         "maximum_depth_difference_m": 0.3,
-        "requirement": "No obvious channel edge, shoreline barrier, inlet jet, structure, or other feature that would make ambient forcing non-comparable. Record substrate and bathymetric context before looking at any future biological response."
+        "requirement": "No obvious channel edge, shoreline barrier, inlet jet, structure, or other feature that would make ambient forcing non-comparable. Record substrate and bathymetric context before looking at any future biological response.",
+        "reference_origin": "The <=100 m separation is measured from the preselected vegetated deployment meter mark, not from transect start and not from an edge-nearest mark chosen after GIS inspection."
       },
       "sensors": "Use the same frozen near-bed and above-canopy/above-bed sampling heights and the same instrument family/QC on vegetated and bare patches. Prefer fully simultaneous four-volume measurement; if hardware limits force staggered deployment, the node is not eligible for the confirmatory canopy-attribution gate.",
       "metrics": {
@@ -101,6 +108,19 @@
         "thalassia_positive_nodes_with_candidate": 31,
         "recent_thalassia_positive_nodes": 33,
         "interpretation": "The 18-node nested counterfactual target is geographically feasible. GIS proximity is only reconnaissance; every retained control must still pass the frozen field depth/forcing/substrate/wake/simultaneity rules."
+      },
+      "representative_placement_preflight": {
+        "source": "results/representative_sensor_placement_preflight_v1.json",
+        "status": "representative_placement_both_gates_pass",
+        "edge_distance_used_for_selection": false,
+        "vegetated_representative_candidate_nodes": 21,
+        "thalassia_representative_candidate_nodes": 19,
+        "thalassia_candidates_by_bay": {
+          "Old Tampa Bay": 3,
+          "Middle Tampa Bay": 7,
+          "Lower Tampa Bay": 9
+        },
+        "interpretation": "The counterfactual remains geographically feasible when the vegetated sensor position is selected independently of edge proximity."
       }
     }
   },
@@ -182,7 +202,8 @@
     "bare-control maximum separation and depth-matching rule",
     "bare near-bed/reference sensor geometry",
     "excess_canopy_attenuation_p90 definition",
-    "paired-bootstrap rule for the canopy-attribution gate"
+    "paired-bootstrap rule for the canopy-attribution gate",
+    "representative vegetated meter-mark selection rule independent of mapped edge distance"
   ],
   "claim_boundary": [
     "The design tests measured canopy-scale physical buffering prospectively; it does not infer hydrodynamics from annual biological state.",
@@ -194,7 +215,8 @@
     "Alternative-seagrass-only nodes may strengthen the secondary functional-insurance physical test but must not be counted toward the primary future Thalassia-persistence sample-size gate.",
     "If stored velocity cannot resolve oscillatory motion, restrict claims to current-speed attenuation; do not generalize to wave buffering.",
     "Inside-versus-above-canopy velocity contrast alone is not sufficient to attribute attenuation to vegetation because ordinary seabed boundary-layer shear can create the same vertical pattern.",
-    "Use the term canopy ecosystem engineering / hydrodynamic self-facilitation only if the nested bare-bed counterfactual physical gate and the prospective future-state gate both pass."
+    "Use the term canopy ecosystem engineering / hydrodynamic self-facilitation only if the nested bare-bed counterfactual physical gate and the prospective future-state gate both pass.",
+    "Do not choose an edge-nearest vegetated deployment mark after inspection to manufacture a nearby bare control."
   ],
   "design_precision_gate": {
     "planning_model_terms": "baseline_frequency + ambient_p90 + attenuation_p90 + two water-body indicators",
