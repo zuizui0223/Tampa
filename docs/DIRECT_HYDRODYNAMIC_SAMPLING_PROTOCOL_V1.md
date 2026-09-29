@@ -326,3 +326,38 @@ Primary eligibility requires a measurable focal canopy and feasible paired-senso
 Among eligible nodes, stratify within bay by the synchronized baseline focal-frequency distribution into low, middle and high thirds. Select nodes using a deterministic node-ID hash order fixed before deployment, not by investigator preference. Predeclare ordered alternates within each bay × state stratum.
 
 This screening state is the baseline used in the future-change model.
+
+## Two-gate mechanism logic
+
+The hydrodynamic study does not treat a single regression coefficient as proof of ecosystem engineering. The mechanism claim is deliberately split into two prospective gates.
+
+### Gate A — physical function
+
+Before opening the future biological response, estimate `attenuation_p90` for every analyzable node and the equal-node mean across the deployed network.
+
+> Gate A passes only if the frozen node-bootstrap 95% interval for the equal-node mean `attenuation_p90` lies entirely above zero.
+
+Passing Gate A means that the sampled canopies measurably reduce high-end horizontal current relative to simultaneous above-canopy forcing. It does not yet show that the effect matters for meadow persistence.
+
+### Gate B — future ecological relevance
+
+After the future fixed-transect response is opened, fit the frozen primary model:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency
+  + ambient_p90
+  + attenuation_p90
+  + water_body
+```
+
+Gate B tests the predeclared positive effect of `attenuation_p90`.
+
+### Claim rule
+
+- Gate A + Gate B: consistent with **biophysical self-buffering / self-facilitation**.
+- Gate A only: canopy ecosystem engineering is present, but annual quantitative persistence has not been linked to it.
+- Gate B only: do not call the association hydrodynamic self-buffering because the physical-function requirement failed.
+- neither gate: reject this measured hydrodynamic-buffering mechanism under the frozen design.
+
+Canopy height, shoot density and total vegetated cover form a secondary corrected family asking what structural properties generate attenuation. They cannot rescue either primary gate.
