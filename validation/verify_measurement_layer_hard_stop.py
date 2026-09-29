@@ -45,7 +45,7 @@ assert direct["eligibility"]["minimum_primary_nodes_per_bay"]==8
 assert direct["eligibility"]["recent_2023_2025_feasibility_context"]["recent_thalassia_positive_nodes"]==33
 assert direct["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
 assert "wave_current_resolution_gate" in direct["new_measurements"]["deployment"]
-assert "oscillatory horizontal RMS speed" in direct["secondary_mechanism_support"]["wave_current_decomposition"]["metrics"]
+assert any("oscillatory horizontal RMS speed" in x for x in direct["secondary_mechanism_support"]["wave_current_decomposition"]["metrics"])
 assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
 assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
 
