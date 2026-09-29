@@ -26,7 +26,14 @@
     "minimum_confirmatory_nodes_per_bay": 8,
     "below_precision_gate": "If fewer than 30 analyzable baseline-Thalassia-positive nodes remain, or any core bay contributes fewer than 8, report the frozen prospective coefficient and uncertainty as a pilot. Do not use a null result to reject the below-ground reserve hypothesis.",
     "selection_rule": "Do not subsample nodes by past decline class if all eligible nodes can be sampled. If field capacity is lower than the census frame, freeze a response-independent node list and alternates before coring; future outcome must never enter node selection.",
-    "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise."
+    "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise.",
+    "destructive_sampling_guardrail": {
+      "principle": "Below-ground measurement must not materially alter the permanent monitoring unit whose future state is the response.",
+      "transect_buffer": "Freeze a minimum perpendicular offset from the permanent transect line before the first core; never core on a permanent meter mark or inside the routine monitoring footprint.",
+      "core_footprint": "Freeze core diameter, depth and maximum total disturbed area per node before sampling; do not enlarge cores after inspecting TNC yield.",
+      "restoration": "Backfill/restore each core hole under the monitoring authority's protocol and record any visible disturbance at the end of sampling.",
+      "node_specific_deviation": "Any safety/access/permit exception must be documented at collection and cannot depend on future response."
+    }
   },
   "baseline_new_measurements": {
     "primary_predictor": {
@@ -93,6 +100,17 @@
       "within_node_cores": "spatial measurement replicates used to estimate node-level below-ground state",
       "genetic_boundary": "Do not count separate cores as independent genets. Thalassia genets can extend across meters to much larger distances, and connected ramets may be physiologically integrated.",
       "optional_genotyping": "If a validated molecular clonal-identity design is added before outcome access, use it as secondary mechanism context; it does not multiply the primary sample size."
+    },
+    "core_spatial_design": {
+      "source": "results/clonal_core_spatial_preflight_v1.json",
+      "status": "baseline_spatial_core_design_feasible",
+      "recent_nodes_with_three_or_more_positive_marks": 30,
+      "recent_nodes_requiring_sparse_fallback": 3,
+      "primary_rule": "If >=3 contemporaneously Thalassia-positive meter marks exist, choose three observed marks nearest q25/q50/q75 site_m with unique anchors where possible.",
+      "two_mark_fallback": "Use one anchor at each positive mark; place the third independent core at a separately frozen lateral/perpendicular offset from the midpoint-nearest positive mark.",
+      "one_mark_fallback": "Place three independent non-overlapping offset cores adjacent to the single positive mark.",
+      "inference_unit": "stable transect node; cores are within-node measurement replication and spatial sampling, not independent inferential units",
+      "prohibited_rescue": "Do not relocate anchors after TNC assay results or future outcome access."
     }
   },
   "baseline_existing_covariates": [
@@ -111,7 +129,13 @@
       "next survey shoot density minus baseline where observed"
     ],
     "prohibited_primary": "binary reappearance / recorded return",
-    "rationale": "Use continuous quantitative stability as the mechanism endpoint; annual detection transitions are not ecological recovery."
+    "rationale": "Use continuous quantitative stability as the mechanism endpoint; annual detection transitions are not ecological recovery.",
+    "destructive_sampling_sensitivity": {
+      "status": "predeclared_if_point_level_future_data_allow",
+      "definition": "Recalculate future focal frequency after excluding the fixed permanent meter mark(s) nearest the three TNC core anchors under one pre-frozen distance/mark rule.",
+      "purpose": "Check that the prospective TNC association is not driven by local disturbance from destructive coring.",
+      "interpretation": "Primary inference remains node-level full-transect frequency; a strong discrepancy is reported as a measurement-intervention concern rather than hidden."
+    }
   },
   "primary_analysis": {
     "estimator": "standardized coefficient of baseline rhizome TNC in a prespecified linear model for future change in focal_frequency",
@@ -162,7 +186,12 @@
     "dry-mass basis and technical standards",
     "leaf N/P nutrient-state diagnostic protocol",
     "30-node / 8-per-bay confirmatory precision gate",
-    "dedicated synchronized baseline-survey plan if routine monitoring dates exceed the frozen timing window"
+    "dedicated synchronized baseline-survey plan if routine monitoring dates exceed the frozen timing window",
+    "q25/q50/q75 core-anchor implementation and sparse-node offset geometry",
+    "minimum perpendicular core offset from permanent transect",
+    "core diameter/depth and maximum disturbed area per node",
+    "core-hole restoration procedure",
+    "anchor-neighborhood exclusion rule for the future disturbance sensitivity"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -175,7 +204,9 @@
     "Within-node core replication reduces TNC measurement error but does not substitute for node-level replication.",
     "If the 30-node / 8-per-bay precision gate fails, a null result is a pilot null and cannot reject the reserve-buffering hypothesis.",
     "Within-node cores are measurement replicates, not independent clone/genet replicates.",
-    "A secondary meristem/apex signal may support regenerative capacity as a distinct below-ground mechanism, but it cannot replace a null primary TNC result."
+    "A secondary meristem/apex signal may support regenerative capacity as a distinct below-ground mechanism, but it cannot replace a null primary TNC result.",
+    "Three cores are within-node measurement replication/spatial coverage; inferential replication remains the stable transect node.",
+    "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + two water-body indicators",
