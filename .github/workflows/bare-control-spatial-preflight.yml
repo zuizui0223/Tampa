@@ -5,6 +5,13 @@ concurrency:
   cancel-in-progress: true
 
 on:
+  push:
+    branches:
+      - "mechanism/canopy-counterfactual-gate-v1"
+    paths:
+      - "analysis/55_bare_control_spatial_preflight.py"
+      - "results/bare_control_spatial_preflight_v1_contract.json"
+      - ".github/workflows/bare-control-spatial-preflight.yml"
   pull_request:
     branches: [main]
     paths:
