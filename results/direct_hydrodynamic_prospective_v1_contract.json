@@ -15,11 +15,12 @@
       "Middle Tampa Bay",
       "Lower Tampa Bay"
     ],
-    "target_nodes": 24,
-    "minimum_analyzable_nodes": 18,
-    "minimum_analyzable_nodes_per_bay": 5,
-    "selection_rule": "Stratify before deployment across baseline focal-frequency state within bay. Do not use future outcome for selection or exclusion.",
-    "paired_geometry_required": true
+    "target_nodes": 39,
+    "minimum_analyzable_nodes": 30,
+    "minimum_analyzable_nodes_per_bay": 8,
+    "selection_rule": "Primary target is 13 nodes per bay (39 total), stratified before deployment across baseline focal-frequency state. If resources allow, extend to the full 47-node Old+Middle+Lower Tampa frame. Do not use future outcome for selection or exclusion.",
+    "paired_geometry_required": true,
+    "preferred_full_tri_bay_census_nodes": 47
   },
   "new_measurements": {
     "inside_canopy_velocity": {
@@ -118,6 +119,19 @@
     "Shoot density alone is not accepted as a proxy for hydrodynamic attenuation.",
     "A supported attenuation coefficient is consistent with self-facilitation but does not by itself prove causal ecosystem engineering.",
     "Do not change velocity percentile, sensor height, subgroup or endpoint after future response access to rescue a null primary result.",
-    "Do not call binary re-recording recovery."
-  ]
+    "Do not call binary re-recording recovery.",
+    "Do not label the future attenuation association as a decisive null if fewer than 30 analyzable nodes remain; below the frozen precision gate it is a pilot estimate."
+  ],
+  "design_precision_gate": {
+    "planning_model_terms": "baseline_frequency + ambient_p90 + attenuation_p90 + two water-body indicators",
+    "planning_assumption": "Approximate Gaussian multiple-regression benchmark, two-sided alpha 0.05, 80% power for the attenuation term; used only to prevent an underpowered confirmatory label.",
+    "approximate_detectable_partial_r": {
+      "n_24": 0.57,
+      "n_30": 0.51,
+      "n_39": 0.45,
+      "n_47": 0.41
+    },
+    "primary_rule": "The prospective attenuation-to-future-frequency analysis is confirmatory only with at least 30 analyzable nodes and at least 8 nodes in each bay. Below that gate, report effect estimates and uncertainty as a pilot and do not use a null result to reject hydrodynamic buffering.",
+    "interpretation": "Even the 39-node target is principally powered for moderate-to-large partial effects; smaller effects may remain unresolved."
+  }
 }
