@@ -18,6 +18,24 @@ The paper also notes that the thresholds were chosen partly because they provide
 
 This prospective design therefore asks whether the same Tampa definition becomes informative when measured at 10-15 minute, meadow-local resolution.
 
+## Physiological interpretation of the frozen threshold
+
+The 30 C component must **not** be described as a direct heat-damage threshold for *Thalassia testudinum*.
+
+Classic turtle-grass work places the temperature optimum near 30 C (Zieman 1975, *Aquatic Botany* 1:107-123, DOI 10.1016/0304-3770(75)90016-9). Recent thermal-performance measurements likewise place *T. testudinum* gross-primary-production optimum near 31 C, with a clearer productivity decline above roughly 32 C.
+
+Likewise, marine salinity around 30 is commonly near the species' optimum, although low-salinity pulses can impose osmotic costs.
+
+Therefore this study is not:
+
+> temperature above 30 C causes heat injury.
+
+It is:
+
+> does the already published Tampa **joint hot-fresh condition** (>=30 C and <=25 ppt), when measured at meadow/event scale, carry information about reserve depletion?
+
+A supported result is interpreted as a compound event-complex association. It does not identify 30 C itself as harmful.
+
 ## Sampling frame
 
 Use stable fixed-transect nodes in:
