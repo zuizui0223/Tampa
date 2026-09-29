@@ -39,12 +39,22 @@ assert depth["tri_bay_core"]["model_bathymetry_median_across_nodes_m"] > depth["
 direct=json.loads((ROOT/"results/direct_hydrodynamic_prospective_v1_contract.json").read_text())
 assert direct["status"]=="future_new_measurement_design_not_yet_deployed"
 assert direct["primary_analysis"]["primary_coefficient"]=="attenuation_p90"
-assert direct["eligibility"]["target_nodes"]==39
-assert direct["eligibility"]["minimum_analyzable_nodes"]==30
-assert direct["eligibility"]["minimum_analyzable_nodes_per_bay"]==8
-assert direct["design_precision_gate"]["approximate_detectable_partial_r"]["n_39"]==0.45
+assert direct["eligibility"]["planning_target_nodes"]==40
+assert direct["eligibility"]["minimum_primary_analyzable_nodes"]==30
+assert direct["eligibility"]["minimum_primary_nodes_per_bay"]==8
+assert direct["eligibility"]["recent_2023_2025_feasibility_context"]["recent_thalassia_positive_nodes"]==33
+assert direct["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
+assert "wave_current_resolution_gate" in direct["new_measurements"]["deployment"]
+assert any("oscillatory horizontal RMS speed" in x for x in direct["secondary_mechanism_support"]["wave_current_decomposition"]["metrics"])
 assert "binary reappearance" in direct["future_outcome"]["prohibited_primary"]
 assert (ROOT/"docs/DIRECT_HYDRODYNAMIC_SAMPLING_PROTOCOL_V1.md").exists()
+
+frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
+assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
+assert frame["registry"]["recent_thalassia_positive_nodes"]==33
+assert frame["registry"]["recent_vegetated_nodes"]==40
+assert frame["registry"]["recent_alternative_only_nodes"]==7
+assert frame["decision"]["recent_frame_passes_30_node_8_per_bay_primary_precision_gate"] is True
 
 boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
 assert "Observation-state reappearance is not ecological recovery." in boundary

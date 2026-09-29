@@ -73,30 +73,64 @@ Primary geography:
 - Middle Tampa Bay;
 - Lower Tampa Bay.
 
-Target:
+The field deployment and the future *Thalassia* persistence analysis use **different frozen eligibility sets**.
 
-- **39 stable fixed-transect nodes** as the primary design target;
-- approximately **13 nodes per bay** (all 13 Middle Tampa Bay stable nodes, plus matched 13-node samples in Old and Lower Tampa Bay);
-- if resources permit, extend to the full **47-node Old + Middle + Lower Tampa** frame;
-- minimum confirmatory analyzable set: **30 nodes**;
-- minimum **8 analyzable nodes in each bay**.
+### Deployment / physical-functional frame
 
-Stratify before deployment across the observed baseline focal-frequency range. Do not select or drop nodes using the future response.
+Attempt census-oriented paired-flow sampling of all **baseline-vegetated** stable nodes in the three core bays, subject to access and the frozen paired-sensor geometry.
+
+The recent 2023–2025 design-feasibility audit found:
+
+- 40 core nodes with a recent eligible community state;
+- all 40 were vegetated;
+- 33 were *Thalassia*-positive;
+- 7 were occupied only by alternative seagrasses in their latest eligible year.
+
+Thus approximately 40 deployments are a realistic planning target, but these historical counts do not determine field eligibility. Re-evaluate vegetation state at the contemporaneous baseline survey before sensors are placed.
+
+### Primary future-persistence cohort
+
+The primary prospective model includes only nodes with:
+
+> baseline `focal_frequency > 0`
+
+at the contemporaneous deployment baseline.
+
+Alternative-seagrass-only nodes are **not** added to the primary cohort to increase sample size.
+
+The recent 2023–2025 frame contained approximately:
+
+- Old Tampa Bay: 8 *Thalassia*-positive nodes;
+- Middle Tampa Bay: 11;
+- Lower Tampa Bay: 14;
+- total: 33.
+
+The primary analysis is confirmatory only if at least **30 baseline-*Thalassia*-positive analyzable nodes** remain and each bay contributes at least **8**. Below that gate, retain the prospective estimate and uncertainty but treat it as a pilot; a null result cannot reject hydrodynamic buffering.
+
+### Secondary community-functional-insurance cohort
+
+The physical functional-insurance analysis includes all baseline-vegetated sampled nodes, including alternative-seagrass-only nodes.
+
+This distinction is deliberate:
+
+- a node without baseline *Thalassia* cannot inform persistence of an established *Thalassia* meadow without turning the endpoint back into a colonization/reappearance problem;
+- the same alternative-only node is highly informative for whether non-*Thalassia* vegetation provides comparable hydrodynamic engineering.
+
+The recent frame spans a broad composition gradient, so the secondary test should preserve `thalassia_fraction` as continuous rather than splitting nodes into a post-hoc dominant/mixed threshold.
 
 ### Precision gate
 
-The earlier 24-node target was too weak for the prespecified multivariable future model. With baseline frequency, ambient current, attenuation and two water-body indicator terms, a simple two-sided Gaussian planning benchmark gives approximate 80%-power detectable partial correlations of:
+For the prespecified primary model with baseline frequency, ambient current, attenuation and two water-body indicator terms, a simple two-sided Gaussian planning benchmark gives approximate 80%-power detectable partial correlations of:
 
 - n = 24: about **0.57**;
 - n = 30: about **0.51**;
+- n = 33: about **0.49**;
 - n = 39: about **0.45**;
 - n = 47: about **0.41**.
 
-These are design diagnostics, not expected effect sizes.
+These are design diagnostics, not expected effect sizes. The realistically available primary cohort therefore tests mainly moderate-to-large effects. Smaller hydrodynamic effects may remain ecologically important but statistically unresolved.
 
-The attenuation-to-future-frequency analysis is therefore confirmatory only if at least **30 analyzable nodes** remain and each bay contributes at least **8**. Below that gate, the study is a prospective pilot: report the attenuation coefficient and uncertainty, but do not use a null result to reject hydrodynamic buffering.
-
-Even the 39-node target is mainly capable of resolving moderate-to-large effects. Smaller effects may remain ecologically important but statistically unresolved under this network size.
+Do not choose or drop nodes using the future response.
 
 Where feasible, co-locate this design with the clonal-state sampling program, but keep the hydrodynamic and rhizome-TNC primary tests analytically separate.
 
@@ -147,6 +181,34 @@ Freeze before first deployment:
 - velocity QC;
 - deployment duration;
 - valid-data threshold.
+
+## Wave-current resolution gate
+
+The paired velocity layer must not reduce shallow-water forcing to long-interval mean current alone.
+
+Prior *Thalassia* work shows that oscillatory wave motion can penetrate the canopy differently from unidirectional current and that canopy density changes turbulence/exchange. Therefore the instrument family must retain synchronized burst-level vector velocities at a sampling rate and burst duration adequate to characterize both:
+
+- burst vector-mean horizontal current;
+- oscillatory horizontal velocity within the burst.
+
+Before outcome-bearing deployment, run a **response-independent physical pilot** to freeze:
+
+- velocity sampling rate;
+- burst duration;
+- burst interval;
+- anti-aliasing / manufacturer QC;
+- the common burst statistic used for the primary `p90` calculation.
+
+The pilot may inspect physical velocity spectra and instrument limitations only. It must not inspect a future *Thalassia* response.
+
+If the selected logger stores only long-interval vector averages that erase oscillatory motion, the project may still test **current-speed attenuation**, but it must not describe that result as general wave-plus-current hydrodynamic buffering.
+
+For physical interpretation only, predeclare two secondary components:
+
+1. burst vector-mean current speed;
+2. oscillatory horizontal RMS speed after removal of the burst vector mean.
+
+These components cannot replace or rescue a null primary `attenuation_p90` result.
 
 ## Deployment duration
 

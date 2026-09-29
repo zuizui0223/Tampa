@@ -1,0 +1,66 @@
+{
+  "schema": "tampa.functional_insurance_sampling_preflight_v1.canonical_summary",
+  "status": "recent_sampling_frame_supports_split_primary_and_functional_cohorts",
+  "authoritative_workflow": {
+    "run_id": 36518900221,
+    "head_sha": "4311013019de988585d861a9f71866aa3a8e02b5",
+    "artifact_id": 11011678701,
+    "artifact_digest": "sha256:5a744443db838abf9e18cbc66c8627953348e4f7043c8290868402f7566cb971"
+  },
+  "evidence_class": "response-open historical design feasibility only; not an ecological mechanism test",
+  "source": {
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "years": [2023, 2024, 2025],
+    "geography": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"]
+  },
+  "registry": {
+    "stable_core_nodes_total": 47,
+    "nodes_with_recent_eligible_state": 40,
+    "nodes_without_recent_eligible_state": 7,
+    "recent_thalassia_positive_nodes": 33,
+    "recent_vegetated_nodes": 40,
+    "recent_alternative_only_nodes": 7
+  },
+  "by_water_body": {
+    "Old Tampa Bay": {
+      "recent_nodes": 13,
+      "thalassia_positive_nodes": 8,
+      "vegetated_nodes": 13,
+      "alternative_only_nodes": 5
+    },
+    "Middle Tampa Bay": {
+      "recent_nodes": 12,
+      "thalassia_positive_nodes": 11,
+      "vegetated_nodes": 12,
+      "alternative_only_nodes": 1
+    },
+    "Lower Tampa Bay": {
+      "recent_nodes": 15,
+      "thalassia_positive_nodes": 14,
+      "vegetated_nodes": 15,
+      "alternative_only_nodes": 1
+    }
+  },
+  "thalassia_share_of_seagrass_points": {
+    "n_vegetated_nodes": 40,
+    "min": 0.0,
+    "q25": 0.17849462365591398,
+    "median": 0.4,
+    "q75": 0.60625,
+    "max": 0.875
+  },
+  "decision": {
+    "primary_future_persistence_cohort": "baseline Thalassia-positive core-bay nodes only",
+    "secondary_functional_insurance_cohort": "all baseline-vegetated core-bay nodes, including alternative-only nodes",
+    "recent_primary_cohort_size": 33,
+    "recent_secondary_cohort_size": 40,
+    "recent_minimum_primary_nodes_per_bay": 8,
+    "recent_frame_passes_30_node_8_per_bay_primary_precision_gate": true
+  },
+  "claim_boundary": [
+    "This is a sampling-feasibility audit using already-open historical community state, not evidence for hydrodynamic functional insurance.",
+    "Contemporaneous baseline state must be rechecked before deployment.",
+    "Alternative-only nodes must not inflate the primary Thalassia-persistence sample size.",
+    "Alternative-only nodes are eligible for the separately declared physical functional-insurance analysis."
+  ]
+}
