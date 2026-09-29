@@ -1,116 +1,75 @@
 {
   "schema": "tampa.bare_control_spatial_preflight_v1.canonical_summary",
-  "status": "geographic_edge_feasibility_pass",
   "authoritative_workflow": {
-    "run_id": 36527620849,
-    "head_sha": "cf7f103e471115af886a7455b517542eb9dec679",
-    "artifact_id": 11015313079,
-    "artifact_digest": "sha256:0dc1fbbd320048ac13da63561229af34569105011544a9b215ffd196ac665e55"
+    "run_id": 36526177460,
+    "head_sha": "a1aca6080bfb0564e421db63cbd8d274678e4b6b",
+    "artifact_id": 11014198437,
+    "artifact_digest": "sha256:0ef9b5f7e2bde5a38cbef3c0145452c50af234df45225c14d1f47740ce790b28"
   },
+  "status": "geographic_edge_feasibility_not_supported",
   "response_independent": true,
-  "coordinate_semantics": {
-    "start_coordinate": "Pinned Darwin Core transect meter mark 0.",
-    "bearing": "Signed bearing parsed from pinned locationRemarks; obis-example derived it from the original TBEP transect LINESTRING.",
-    "meter_mark_distance": "Numeric suffix of child Point locationID, retained as a signed source-defined offset.",
-    "correction": "Darwin Core Point coordinates repeat meter mark 0; the earlier start-point-only GIS audit is superseded."
+  "source": {
+    "seagrass_source": "USF Water Institute Seagrass2024 mirror",
+    "feature_url": "https://gis.waterinstitute.usf.edu/arcgis/rest/services/Maps/Seagrass2024/MapServer/0",
+    "date_gate": "median DATESTAMP year >= 2024",
+    "datestamp_year_counts": {
+      "2025": 7130
+    },
+    "primary_swfwmd_delivery_error": "JSONDecodeError: Expecting value: line 3 column 1 (char 4)",
+    "note": "The mirror passed the independently frozen DATESTAMP gate; the GIS result is therefore interpreted as a spatial-feasibility audit, not as a source-delivery failure."
   },
   "registry": {
     "recent_vegetated_nodes": 40,
     "recent_thalassia_positive_nodes": 33,
-    "recent_geometry_stable_nodes_2023_2025": 40,
-    "vegetated_meter_marks": 762,
-    "thalassia_positive_meter_marks": 279,
-    "mapped_state_compatible_nodes": 39,
-    "map_state_mismatches": 1
+    "inside_current_mapped_seagrass_nodes": 13,
+    "map_state_mismatches": 27
   },
-  "mapped_state_mismatch": {
-    "node_id": "TBEP:seagrass:loc:S1T1",
-    "water_body": "Old Tampa Bay",
-    "latest_year": 2025,
-    "latest_any_seagrass_frequency": 0.8421052631578947,
-    "latest_thalassia_frequency": 0,
-    "interpretation": "Recent transect vegetation was recorded but no reconstructed recent vegetated meter mark intersected the accepted external mapped-seagrass union; retain as a map-state mismatch rather than treating it as a bare-control candidate."
+  "edge_distance_m_for_nodes_inside_map": {
+    "n": 13,
+    "median": 5.292214274843761,
+    "p25": 2.4298807898409853,
+    "p75": 10.616175589343605,
+    "max": 28.418691590959348
   },
-  "meter_mark_edge_distance_m": {
-    "n_inside": 625,
-    "median": 52.30071229225027,
-    "p25": 21.328594984920116,
-    "p75": 110.59531798147904,
-    "max": 359.1618286658447
-  },
-  "candidate_gate": {
-    "maximum_edge_distance_m": 100,
+  "frozen_gate": {
+    "maximum_edge_distance_m": 100.0,
     "target_nodes": 18,
     "minimum_nodes": 12,
     "minimum_nodes_per_bay": 3,
-    "candidate_nodes": 39,
-    "minimum_candidates_in_any_bay": 12,
-    "by_water_body": {
-      "Old Tampa Bay": {
-        "recent_vegetated_nodes": 13,
-        "mapped_state_compatible_nodes": 12,
-        "bare_edge_candidate_nodes_100m": 12,
-        "thalassia_mark_candidate_nodes_100m": 8,
-        "map_state_mismatches": 1
-      },
-      "Middle Tampa Bay": {
-        "recent_vegetated_nodes": 12,
-        "mapped_state_compatible_nodes": 12,
-        "bare_edge_candidate_nodes_100m": 12,
-        "thalassia_mark_candidate_nodes_100m": 10,
-        "map_state_mismatches": 0
-      },
-      "Lower Tampa Bay": {
-        "recent_vegetated_nodes": 15,
-        "mapped_state_compatible_nodes": 15,
-        "bare_edge_candidate_nodes_100m": 15,
-        "thalassia_mark_candidate_nodes_100m": 13,
-        "map_state_mismatches": 0
-      }
+    "candidate_nodes": 13,
+    "minimum_candidates_in_any_bay": 1,
+    "passed": false
+  },
+  "by_water_body": {
+    "Old Tampa Bay": {
+      "recent_vegetated_nodes": 13,
+      "inside_current_mapped_seagrass": 5,
+      "bare_edge_candidates_100m": 5,
+      "thalassia_positive_bare_edge_candidates_100m": 5,
+      "map_state_mismatches": 8
     },
-    "passed": true
-  },
-  "primary_thalassia_counterfactual_feasibility": {
-    "thalassia_positive_nodes_with_100m_candidate": 31,
-    "recent_thalassia_positive_nodes": 33,
-    "nodes_without_thalassia_mark_candidate": [
-      "TBEP:seagrass:loc:S3T12",
-      "TBEP:seagrass:loc:S4T9"
-    ],
-    "interpretation": "The 18-node nested physical counterfactual target is geographically feasible without requiring the two non-candidate primary nodes."
-  },
-  "source": {
-    "tbismp_commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
-    "recent_years": [
-      2023,
-      2024,
-      2025
-    ],
-    "seagrass_source": {
-      "source": "USF Water Institute Seagrass2024 mirror",
-      "feature_url": "https://gis.waterinstitute.usf.edu/arcgis/rest/services/Maps/Seagrass2024/MapServer/0",
-      "features_returned": 7838,
-      "datestamp_year_counts": {
-        "2025": 7838
-      },
-      "date_gate": "median DATESTAMP year >= 2024",
-      "working_crs": "EPSG:26917",
-      "fallback_used": true
+    "Middle Tampa Bay": {
+      "recent_vegetated_nodes": 12,
+      "inside_current_mapped_seagrass": 7,
+      "bare_edge_candidates_100m": 7,
+      "thalassia_positive_bare_edge_candidates_100m": 6,
+      "map_state_mismatches": 5
     },
-    "failed_source_attempts": [
-      {
-        "source": "SWFWMD official",
-        "error": "JSONDecodeError from CI delivery endpoint; scientific thresholds unchanged."
-      }
-    ]
+    "Lower Tampa Bay": {
+      "recent_vegetated_nodes": 15,
+      "inside_current_mapped_seagrass": 1,
+      "bare_edge_candidates_100m": 1,
+      "thalassia_positive_bare_edge_candidates_100m": 1,
+      "map_state_mismatches": 14
+    }
   },
-  "decision": "The frozen geographic reconnaissance gate passes. Proceed to field validation of candidate bare patches; GIS proximity alone does not validate a control.",
+  "interpretation": "The strict 2024 map-based bare-control gate fails because Lower Tampa Bay contributes only one mapped-edge candidate despite 15 recently vegetated monitoring nodes. This does not demonstrate absence of nearby bare habitat: 27 of 40 recently vegetated monitoring nodes fall outside the mapped polygon union, so the public map and point-monitoring states are not spatially interchangeable at this scale. Preserve the frozen 100-m / 12-node / 3-per-bay criteria and move bare-control qualification to preregistered field/imagery reconnaissance rather than relaxing the GIS threshold.",
+  "decision": "Do not use the GIS layer alone to certify the canopy counterfactual subset. The direct hydrodynamic primary prospective study remains allowed. Canopy-specific attribution requires a separate field-validated bare-control subset passing the unchanged counterfactual criteria.",
   "claim_boundary": [
-    "A reconstructed vegetated meter mark within 100 m of mapped meadow edge is only a reconnaissance candidate, not a validated bare control.",
-    "Field validation must still satisfy <=0.30 m depth mismatch, comparable forcing, substrate/context, wake screening and simultaneous sensor geometry.",
-    "The external map can omit small bare gaps and differs in survey timing from recent transect observations.",
-    "Do not relax or retune the frozen 100-m / 12-node / 3-per-bay rules.",
-    "No future biological response was used.",
-    "The superseded start-point-only result must not be cited as evidence."
+    "The GIS failure is a field-design constraint, not evidence against hydrodynamic self-facilitation.",
+    "Do not relax the 100-m threshold or 3-per-bay requirement after seeing the result.",
+    "A monitoring node recorded as vegetated but outside the mapped polygon is a map-state mismatch, not automatically a bare habitat point.",
+    "Mapped edge proximity does not replace field depth matching, substrate/context inspection, wake assessment or simultaneous paired velocity measurement.",
+    "No future biological response was used."
   ]
 }
