@@ -27,6 +27,25 @@ jobs:
       - run: python -m pip install --disable-pip-version-check numpy
       - name: Rebuild recent community sampling frame
         run: python analysis/54_functional_insurance_sampling_preflight.py
+      - name: Verify canonical sampling-frame summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          g=json.loads(Path("results/generated_functional_insurance_preflight/functional_insurance_sampling_preflight_v1.json").read_text())
+          c=json.loads(Path("results/functional_insurance_sampling_preflight_v1.json").read_text())
+          assert g["status"]==c["status"]
+          assert g["registry"]==c["registry"]
+          for wb in ["Old Tampa Bay","Middle Tampa Bay","Lower Tampa Bay"]:
+              for key in ["recent_nodes","thalassia_positive_nodes","vegetated_nodes","alternative_only_nodes"]:
+                  assert g["by_water_body"][wb][key]==c["by_water_body"][wb][key]
+          for key in ["n_vegetated_nodes","min","q25","median","q75","max"]:
+              assert abs(g["thalassia_share_of_seagrass_points"][key]-c["thalassia_share_of_seagrass_points"][key]) < 1e-12
+          assert g["design_consequence"]["recent_primary_cohort_size"]==c["decision"]["recent_primary_cohort_size"]
+          assert g["design_consequence"]["recent_secondary_cohort_size"]==c["decision"]["recent_secondary_cohort_size"]
+          assert g["design_consequence"]["recent_minimum_per_bay"]==c["decision"]["recent_minimum_primary_nodes_per_bay"]
+          print("Functional-insurance sampling-frame canonical summary: OK")
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: functional-insurance-sampling-preflight
