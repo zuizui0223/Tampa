@@ -39,7 +39,33 @@ Among meadows with similar baseline above-ground frequency/abundance and bay con
 
 ### What would weaken this mechanism
 
-A null primary TNC result under the frozen prospective design weakens **rhizome TNC as the measured reserve explanation**. Secondary clonal traits cannot be selected after outcome access to rescue it.
+A null primary TNC result under the frozen prospective design weakens **rhizome TNC as the measured reserve explanation** only when the frozen precision gate is met (>=30 analyzable nodes and >=8 per core bay). Below that gate, a null remains a pilot estimate.
+
+Secondary clonal traits, soluble sugar alone, starch alone or a nutrient-adjusted metric cannot be selected after outcome access to rescue the primary TNC result.
+
+### Required interpretation diagnostics
+
+Rhizome carbohydrate is not a generic health score.
+
+- *Thalassia* rhizome carbohydrate is seasonally variable, so the primary design uses one <=28-day campaign and requires TNC sampling within +/-14 days of the paired baseline transect survey.
+- Florida work shows negative associations between plant nutrient content and rhizome carbohydrate. High TNC can therefore reflect stored reserve, reduced growth demand under nutrient limitation, or both.
+- Contemporaneous leaf N, P and N:P are collected as a secondary nutrient-state diagnostic.
+- The primary TNC assay is standardized as soluble NSC + starch under one HPLC workflow; method switching after outcome access is prohibited.
+
+A positive TNC -> future-state result therefore supports **predictive information in measured below-ground reserve state**, not proof that carbohydrate itself is the causal buffering mechanism.
+
+### Secondary competing below-ground mechanism: regenerative meristem bank
+
+Do not collapse all below-ground biology into one "clonal memory" variable.
+
+The same field cores can separate two candidate axes:
+
+- **energetic reserve:** rhizome TNC;
+- **regenerative capacity:** rhizome meristem / apex density.
+
+Integrated-growth work in *T. testudinum* has proposed inactive shoots and associated meristematic structures as a dormant meristem bank. A meristem-density signal would therefore support a regenerative-capacity mechanism distinct from the primary TNC reserve hypothesis.
+
+This is predeclared as secondary and cannot rescue a null primary TNC result.
 
 ### What it does not require
 

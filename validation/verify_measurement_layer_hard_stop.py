@@ -19,6 +19,35 @@ assert clonal["status"]=="future_new_measurement_design_not_yet_opened"
 assert clonal["future_outcome"]["primary"].startswith("next fixed-transect survey focal_frequency")
 assert "binary reappearance" in clonal["future_outcome"]["prohibited_primary"]
 assert clonal["baseline_new_measurements"]["primary_predictor"]["name"]=="rhizome_total_nonstructural_carbohydrate"
+assert clonal["eligibility"]["planning_target_nodes"]==33
+assert clonal["eligibility"]["minimum_confirmatory_analyzable_nodes"]==30
+assert clonal["eligibility"]["minimum_confirmatory_nodes_per_bay"]==8
+assert clonal["eligibility"]["recent_2023_2025_feasibility_context"]["recent_thalassia_positive_nodes"]==33
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["campaign_window"].startswith("Collect all primary TNC samples within one predeclared <=28-day")
+assert "14 days" in clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_alignment"]
+assert clonal["baseline_new_measurements"]["analytical_standardization"]["preferred_assay"].startswith("HPLC")
+assert "leaf %N" in clonal["baseline_new_measurements"]["nutrient_state_diagnostic"]["measurements"]
+assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
+assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
+assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
+assert clonal["primary_analysis"]["support_rule"]["contradicted_direction"]=="interval entirely below 0"
+assert "one-sided" in clonal["primary_analysis"]["support_rule"]["note"]
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["historical_feasibility"]["observed_2025_survey_span_days"]==71
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["historical_feasibility"]["densest_historical_28_day_window_nodes"]==19
+assert clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_survey_plan"]["preferred"].startswith("Perform the fixed-transect baseline survey and TNC coring on the same day")
+assert "dedicated additional baseline" in clonal["baseline_new_measurements"]["temporal_standardization"]["baseline_survey_plan"]["routine_schedule_boundary"]
+
+ct=json.loads((ROOT/"results/clonal_tnc_timing_feasibility_v1.json").read_text())
+assert ct["status"]=="historical_routine_timing_too_dispersed_for_confirmatory_tnc_baseline"
+assert ct["registry"]["recent_thalassia_positive_nodes"]==33
+assert ct["latest_positive_by_year"]["2025"]["span_days"]==71
+assert ct["densest_historical_28_day_window"]["nodes"]==19
+assert ct["prospective_decision"]["campaign_window_days"]==28
+assert ct["prospective_decision"]["baseline_alignment_days_each_side"]==14
+assert clonal["baseline_new_measurements"]["core_replication_boundary"]["inferential_unit"]=="stable transect node"
+assert "independent genets" in clonal["baseline_new_measurements"]["core_replication_boundary"]["genetic_boundary"]
+assert clonal["secondary_analysis"]["meristem_bank_hypothesis"]["predictor"].startswith("predeclared node-level rhizome meristem")
+assert "not a rescue" in clonal["secondary_analysis"]["meristem_bank_hypothesis"]["role"]
 
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
