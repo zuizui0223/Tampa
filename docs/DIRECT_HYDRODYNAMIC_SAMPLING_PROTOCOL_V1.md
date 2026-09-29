@@ -156,7 +156,11 @@ Frozen matching rules:
 - target absolute water-depth difference: <= 0.15 m;
 - hard maximum depth difference: <= 0.30 m;
 - no obvious channel edge, inlet jet, shoreline barrier, structure or other discontinuity that makes local forcing non-comparable;
-- record substrate and bathymetric context.
+- record substrate and bathymetric context;
+- record distance and bearing from the bare sampling volume to the nearest live canopy edge;
+- record the dominant/instantaneous flow direction relative to that edge so a bare point lying in a vegetation wake is identifiable from physical metadata rather than silently treated as an independent no-canopy state.
+
+Because vegetation wakes can extend beyond the canopy footprint and depend on patch geometry, **mapped bare substrate is not automatically a no-canopy-flow counterfactual**. The confirmatory physical gate therefore requires field confirmation that the selected bare sampling volume is not embedded in an obvious sheltered wake throughout the retained record. If this cannot be established under reversing flow, report the comparison as a conservative canopy-associated contrast rather than a pure no-vegetation causal contrast.
 
 A node that lacks a valid bare control can remain in the primary attenuation-to-future-state cohort. It is excluded only from this canopy-attribution subset.
 
