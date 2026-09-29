@@ -1,0 +1,123 @@
+{
+  "schema": "tampa.direct_hydrodynamic_prospective_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "future_new_measurement_design_not_yet_deployed",
+  "evidence_class": "prospective_new_physical_measurement_mechanism",
+  "purpose": "Directly test canopy-scale hydrodynamic buffering with paired shallow-water velocity measurements and a future quantitative Thalassia endpoint.",
+  "motivation": {
+    "tbofs_network_gate": "failed",
+    "tbofs_depth_relevance": "nearbed_meadow_interpretation_not_supported",
+    "reason_for_direct_measurement": "TBOFS grid proximity was generally good but model bathymetry was systematically deeper than the shallow transect record, so model near-bottom sigma velocity is not accepted as literal meadow-scale near-bed exposure."
+  },
+  "eligibility": {
+    "geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
+    "target_nodes": 24,
+    "minimum_analyzable_nodes": 18,
+    "minimum_analyzable_nodes_per_bay": 5,
+    "selection_rule": "Stratify before deployment across baseline focal-frequency state within bay. Do not use future outcome for selection or exclusion.",
+    "paired_geometry_required": true
+  },
+  "new_measurements": {
+    "inside_canopy_velocity": {
+      "target_sampling_volume_height_m_above_bed": [
+        0.05,
+        0.1
+      ],
+      "requirement": "Exact height and instrument geometry frozen before first outcome-bearing deployment."
+    },
+    "ambient_reference_velocity": {
+      "definition": "simultaneous velocity above the local canopy at the same node",
+      "target_clearance_above_canopy_m": 0.1,
+      "requirement": "Reference sampling volume must remain submerged for retained observations; nodes that cannot accommodate frozen paired geometry are primary-ineligible."
+    },
+    "deployment": {
+      "target_consecutive_days": 21,
+      "minimum_valid_days": 15,
+      "time_alignment": "inside and reference records must be simultaneous or reproducibly synchronized"
+    },
+    "baseline_canopy_context": [
+      "water depth",
+      "canopy height",
+      "local shoot density under a frozen quadrat protocol",
+      "representative leaf length",
+      "representative leaf width",
+      "canopy cover or frozen photographic equivalent",
+      "species-specific local cover/occupancy of Thalassia, Halodule, Syringodium and other structural macrophytes",
+      "sensor heights"
+    ]
+  },
+  "primary_physical_metrics": {
+    "horizontal_speed": "sqrt(u^2 + v^2)",
+    "ambient_p90": "90th percentile of valid synchronized reference-layer horizontal current speed after the frozen short-window aggregation",
+    "attenuation_p90": "1 - p90(U_inside) / p90(U_reference)",
+    "negative_values": "retain; do not truncate",
+    "physical_gate": "Report node-level attenuation_p90 distribution and frozen node-level uncertainty before linking to future biological outcome."
+  },
+  "existing_baseline_controls": [
+    "baseline focal_frequency",
+    "water_body"
+  ],
+  "future_outcome": {
+    "primary": "next fixed-transect survey focal_frequency minus baseline focal_frequency",
+    "secondary": [
+      "next survey Braun-Blanquet all-point index minus baseline",
+      "next survey blade length minus baseline where observed",
+      "next survey shoot density minus baseline where observed"
+    ],
+    "prohibited_primary": "binary reappearance / recorded-state return"
+  },
+  "primary_analysis": {
+    "model": "future_delta_frequency ~ baseline_frequency + ambient_p90 + attenuation_p90 + water_body",
+    "primary_coefficient": "attenuation_p90",
+    "directional_hypothesis": "higher attenuation_p90 predicts more positive / less negative future focal-frequency change",
+    "uncertainty": "node-level bootstrap or permutation rule frozen before outcome access",
+    "alpha": 0.05,
+    "missing_data_rule": "complete-case primary analysis after only predeclared instrument/QC exclusions"
+  },
+  "secondary_mechanism_support": {
+    "canopy_structure": "canopy height, local shoot density and cover may be related descriptively or under one predeclared corrected secondary family to attenuation_p90",
+    "turbidity_pathway": "optional co-located turbidity / suspended-sediment measurement may test whether attenuation reduces near-bed resuspension",
+    "boundary": "Secondary variables cannot replace a null primary attenuation result.",
+    "community_functional_insurance": {
+      "question": "Does local species composition explain measured attenuation_p90 after total vegetated cover and canopy height are represented?",
+      "motivation": "Existing Tampa exact-point analyses show occupancy insurance by pre-existing alternative seagrasses, but not functional equivalence. Multispecies canopy structure can alter near-bed flow.",
+      "model": "attenuation_p90 ~ total_vegetated_cover + canopy_height + thalassia_fraction + water_body",
+      "inference": "two-sided secondary coefficient for thalassia_fraction under the declared secondary multiple-testing family",
+      "interpretation": "A composition effect would show that retained seagrass occupancy is not automatically hydrodynamically equivalent; a null effect would be consistent with functional redundancy only within the sampled range and uncertainty.",
+      "boundary": "Secondary test cannot rescue a null primary attenuation-to-future-frequency result."
+    }
+  },
+  "relationship_to_clonal_contract": {
+    "separate_primary_tests": true,
+    "rule": "Do not build a combined TNC x hydrodynamic model after future outcome inspection. Any integration must be separately frozen in advance."
+  },
+  "pre_outcome_freeze_required": [
+    "final node list",
+    "instrument model",
+    "sampling frequency and burst design",
+    "inside-canopy sensor height",
+    "ambient-reference sensor height",
+    "deployment dates/window",
+    "minimum valid duration",
+    "velocity QC",
+    "short-window aggregation",
+    "ambient_p90 definition",
+    "attenuation_p90 definition",
+    "baseline survey definition",
+    "future survey window",
+    "primary model code",
+    "uncertainty procedure",
+    "exclusion and missing-data rules"
+  ],
+  "claim_boundary": [
+    "The design tests measured canopy-scale physical buffering prospectively; it does not infer hydrodynamics from annual biological state.",
+    "Shoot density alone is not accepted as a proxy for hydrodynamic attenuation.",
+    "A supported attenuation coefficient is consistent with self-facilitation but does not by itself prove causal ecosystem engineering.",
+    "Do not change velocity percentile, sensor height, subgroup or endpoint after future response access to rescue a null primary result.",
+    "Do not call binary re-recording recovery."
+  ]
+}
