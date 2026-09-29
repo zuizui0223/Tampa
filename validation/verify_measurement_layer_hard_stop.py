@@ -64,6 +64,20 @@ assert bare["frozen_gate"]["minimum_nodes"]==12
 assert bare["frozen_gate"]["minimum_nodes_per_bay"]==3
 assert bare["frozen_gate"]["passed"] is None
 
+bare=json.loads((ROOT/"results/bare_control_spatial_preflight_v1.json").read_text())
+assert bare["status"]=="geographic_edge_feasibility_pass"
+assert bare["response_independent"] is True
+assert bare["registry"]["vegetated_meter_marks"]==762
+assert bare["registry"]["mapped_state_compatible_nodes"]==39
+assert bare["candidate_gate"]["candidate_nodes"]==39
+assert bare["candidate_gate"]["minimum_candidates_in_any_bay"]==12
+assert bare["candidate_gate"]["passed"] is True
+assert bare["candidate_gate"]["by_water_body"]["Old Tampa Bay"]["bare_edge_candidate_nodes_100m"]==12
+assert bare["candidate_gate"]["by_water_body"]["Middle Tampa Bay"]["bare_edge_candidate_nodes_100m"]==12
+assert bare["candidate_gate"]["by_water_body"]["Lower Tampa Bay"]["bare_edge_candidate_nodes_100m"]==15
+assert bare["primary_thalassia_counterfactual_feasibility"]["thalassia_positive_nodes_with_100m_candidate"]==31
+assert bare["coordinate_semantics"]["correction"].startswith("Darwin Core Point coordinates repeat meter mark 0")
+
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
 assert frame["registry"]["recent_thalassia_positive_nodes"]==33
