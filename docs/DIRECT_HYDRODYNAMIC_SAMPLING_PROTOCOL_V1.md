@@ -22,6 +22,49 @@ This is an ecosystem-engineering hypothesis, not simply a prediction that high f
 
 Published field and flume work motivates direct within-canopy measurement because seagrass canopies can reduce near-bed velocity and shear, while sparse/flexible canopies can also generate complex turbulence and wave penetration. Therefore shoot density alone is not treated as a hydrodynamic proxy.
 
+## Prior evidence and novelty boundary
+
+The basic statement that seagrass canopies alter hydrodynamics is **not** the novel Tampa claim.
+
+Relevant prior work already shows that:
+
+- *Thalassia testudinum* canopies reduce near-bed velocity and shear relative to nearby unvegetated habitat;
+- sparse and dense *Thalassia* canopies differ in turbulence and exchange;
+- vertical canopy structure and secondary species can materially alter near-bed attenuation.
+
+Key references include:
+
+- Hansen & Reidenbach (2017), *Advances in Water Resources* 108:205–215, DOI 10.1016/j.advwatres.2017.08.001;
+- Weitzman et al. (2015), *Limnology and Oceanography* 60:1855–1874, DOI 10.1002/lno.10121;
+- Kaack, Fugate & Thomas (2024), *All Earth* 36, DOI 10.1080/27669645.2024.2419236; raw archive DOI 10.1594/PANGAEA.967585.
+
+The Tampa advance is prospective coupling:
+
+> does measured canopy-scale physical buffering explain which long-monitored meadows subsequently maintain versus lose quantitative *Thalassia* state?
+
+A second Tampa-specific question is whether **community occupancy insurance is also functional insurance**. Existing exact-point results show that alternative seagrasses often persist when *Thalassia* is no longer recorded, but persistence of vegetation does not establish equivalent ecosystem engineering.
+
+## Secondary community-functional-insurance hypothesis
+
+At the velocity deployment footprint, record species-specific canopy composition in addition to total cover:
+
+- *Thalassia testudinum*;
+- *Halodule wrightii*;
+- *Syringodium filiforme*;
+- other macrophyte/algal structure if present.
+
+Freeze one local quadrat/photographic protocol before deployment.
+
+Secondary question:
+
+> after total vegetated cover and canopy height are represented, does species composition still explain measured `attenuation_p90`?
+
+This tests whether a shift from *Thalassia*-dominated to alternative-seagrass vegetation preserves, weakens, or changes hydrodynamic engineering.
+
+Because existing literature shows that understory and multispecies structure can alter near-bed flow, no simple direction is assumed in advance. Report the composition coefficient and uncertainty two-sided.
+
+This is a **secondary functional test**. It cannot rescue a null primary attenuation-to-future-persistence result.
+
 ## Sampling frame
 
 Primary geography:
@@ -106,7 +149,8 @@ At deployment, record new local physical/structural context:
 - local shoot density in a fixed quadrat protocol;
 - representative leaf length;
 - representative leaf width;
-- percent canopy cover or an equivalent frozen photographic estimate;
+- percent total canopy cover or an equivalent frozen photographic estimate;
+- species-specific cover / occupancy of *Thalassia*, *Halodule*, *Syringodium* and other structural macrophytes;
 - sediment surface condition;
 - sensor height above bed;
 - reference height above canopy.
