@@ -1,0 +1,50 @@
+{
+  "schema": "tampa.event_stress_calendar_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36579593815,
+    "head_sha": "b6b505ac89679d0184859d6d6fcc98d9181e7ef2",
+    "artifact_id": 11039765208,
+    "artifact_digest": "sha256:c4dd6765805ce620a743ba09397c8419b06da430243555419ec234f159a1f7ad"
+  },
+  "status": "calendar_selected_from_response_independent_exposure_climatology",
+  "response_independent": true,
+  "source": {
+    "repository": "tbep-tech/temp-manu",
+    "commit": "e5aaec93c7501fc38c63b615a89e68636b36421f",
+    "path": "data/thralltrndat.RData",
+    "git_blob_sha1": "f6518ea25685369057bfe92e71973ec04c57eac1",
+    "years": [1998, 2022]
+  },
+  "frozen_inputs": {
+    "temperature_threshold_c": 30,
+    "salinity_threshold_ppt": 25,
+    "window_days": 42,
+    "core_bays": ["OTB", "MTB", "LTB"]
+  },
+  "selection_rule": {
+    "primary": "maximize second-highest bay-specific fraction of station-years with >=1 joint day",
+    "tie_break_1": "maximize overall station-year nonzero fraction",
+    "tie_break_2": "maximize overall mean joint days per station-year",
+    "tie_break_3": "earliest calendar start"
+  },
+  "selected_window": {
+    "start_md": "07-24",
+    "end_md": "09-03",
+    "second_highest_bay_nonzero_fraction": 0.3633333333,
+    "overall_nonzero_fraction": 0.3954285714,
+    "overall_mean_joint_days": 10.152,
+    "OTB_nonzero_fraction": 0.632,
+    "MTB_nonzero_fraction": 0.3633333333,
+    "LTB_nonzero_fraction": 0.0,
+    "historical_year_fraction_with_events_in_at_least_2_bays": 0.64,
+    "historical_year_fraction_with_events_in_all_3_bays": 0.0
+  },
+  "interpretation": "The response-independent environmental climatology selects July 24 through September 3. Historical joint 30 C / 25 ppt exposure is commonest in Old Tampa Bay, less common in Middle Tampa Bay, and absent in Lower Tampa Bay in the pinned daily GAM artifact. The prospective test therefore has real risk of failing its nonzero-exposure variation gate; that risk is part of the falsifiable design rather than a reason to retune thresholds or calendar.",
+  "decision": "Freeze the prospective 42-day calendar to July 24 through September 3. If the future node-scale variation gate fails, classify the primary exposure non-estimable and do not shift the calendar, thresholds, or node subset.",
+  "claim_boundary": [
+    "This selects deployment season only and does not alter the 30 C / 25 ppt thresholds or 42-day duration.",
+    "Daily GAM predictions are climatological design data, not substitutes for future node-scale <=15-minute exposure.",
+    "Historical zero joint exposure in LTB is disclosed and does not justify excluding LTB after the fact.",
+    "Do not call the design network-wide evidence for hot-fresh stress unless the frozen future exposure-variation gate is actually met in at least two bays."
+  ]
+}
