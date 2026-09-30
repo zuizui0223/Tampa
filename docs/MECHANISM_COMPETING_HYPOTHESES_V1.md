@@ -263,6 +263,130 @@ Do not call the Lower Tampa pattern a demonstrated succession sequence until rec
 
 Do not infer that *Halodule* is functionally inferior from taxonomy alone. The Tampa functional result must come from measured canopy structure and hydrodynamic attenuation.
 
+## Multilevel buffering synthesis
+
+The competing mechanisms above can be organized by **where ecological buffering is stored**.
+
+This is a candidate synthesis, not a current empirical result.
+
+### Level 1 — internal biological buffer
+
+State carrier:
+
+> rhizome non-structural carbohydrate reserve.
+
+Organizational level:
+
+> ramet / below-ground plant system.
+
+Frozen test:
+
+> does baseline rhizome TNC predict more favorable future quantitative *Thalassia* change beyond current above-ground state?
+
+This mechanism can operate even if annual blade length and shoot density do not lead frequency change. It is therefore compatible with the rejected simple condition -> thinning cascade.
+
+### Level 2 — external engineered buffer
+
+State carrier:
+
+> the physical environment modified by the standing canopy.
+
+Organizational level:
+
+> meadow / foundation-species patch.
+
+Frozen tests require two links:
+
+1. vegetation-associated attenuation beyond the matched bare-bed boundary-layer gradient;
+2. greater attenuation predicts more favorable future *Thalassia* quantitative change.
+
+Only both links together support hydrodynamic self-facilitation.
+
+### Level 3 — community functional buffer
+
+State carrier:
+
+> persistence of alternative habitat-forming species and the physical function of the mixed canopy.
+
+Organizational level:
+
+> seagrass community.
+
+Frozen question:
+
+> when *Thalassia* prominence decreases, does alternative-seagrass vegetation preserve the measured hydrodynamic function after total cover and canopy height are represented?
+
+This distinguishes **habitat occupancy insurance** from **functional insurance**.
+
+### External forcing — buffer depletion rather than another buffer
+
+Event-scale temperature/salinity/light/oxygen forcing is not a fourth memory store.
+
+Its mechanistic role is as a possible **input that consumes or overwhelms buffers**.
+
+The currently frozen hot-fresh prospective study asks only whether a published Tampa compound event condition is associated with short-term rhizome reserve depletion. A supported event -> TNC link would connect external forcing to the internal buffer; it would not by itself identify the long-term meadow response.
+
+### Why this framework explains state decoupling
+
+The annual archive showed that plant condition, focal abundance/occupancy and community composition do not form one supported serial cascade.
+
+A multilevel-buffer model does not require such a cascade.
+
+Different buffers can operate in parallel and at different organizational levels:
+
+```text
+short-timescale forcing
+        |
+        v
+internal reserve --------------------+
+        |                             |
+        +------> focal plant state <--+------ engineered physical buffer
+                         |
+                         v
+               focal quantitative persistence
+                         |
+             if focal state is lost
+                         v
+             community functional insurance
+```
+
+Coarse presence can therefore remain stable while one or more finer state axes change, because persistence is an **outcome jointly produced by partially independent buffers**, not a single latent health variable.
+
+### Predeclared interpretation matrix
+
+| Prospective result | Ecological interpretation |
+|---|---|
+| TNC supported; engineering unsupported | internal reserve buffering is the supported measured mechanism |
+| engineering supported; TNC unsupported | external physical self-buffering is the supported measured mechanism |
+| both supported | consistent with multiple buffering mechanisms operating in the same foundation-species system |
+| neither supported | current persistence lag requires another hidden state; do not rescue either mechanism post hoc |
+| alternative canopies retain occupancy but differ in attenuation | occupancy insurance without full functional insurance |
+| alternative canopies retain comparable attenuation | consistent with hydrodynamic functional redundancy over the sampled range |
+| event exposure predicts TNC depletion, and TNC predicts future change | consistent with an event -> reserve depletion -> future-state chain; not formal mediation |
+| event exposure does not predict TNC | do not invoke the tested hot-fresh condition as the cause of reserve differences |
+
+### What is potentially general
+
+The general ecological proposition is not that seagrass possesses a special form of "memory".
+
+It is:
+
+> **foundation-species persistence can be buffered at multiple organizational levels, and the apparent stability of a coarse state may reflect different combinations of internal storage, environmental engineering and community functional redundancy.**
+
+This structure can in principle apply to forests, marshes, reefs, kelp systems and other long-lived habitat-forming organisms.
+
+### Novelty boundary
+
+Internal biological memory, niche construction / ecosystem engineering, foundation-species facilitation and community insurance are all established ideas individually.
+
+The Tampa contribution would be the **prospective decomposition of these buffers in the same long-monitored foundation-species system**, using independent measurements and predeclared failure rules.
+
+Do not claim "multilevel buffering" is a new ecological concept merely because this document gives it a compact name.
+
+Do not combine the primary tests into a post-hoc composite score.
+
+Do not fit TNC x attenuation x event-stress interactions unless a separately powered study is frozen before response access.
+
 ## Cross-mechanism discrimination
 
 The mechanisms make different observations necessary.
