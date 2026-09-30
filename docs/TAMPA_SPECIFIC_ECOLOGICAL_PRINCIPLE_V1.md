@@ -113,11 +113,13 @@ The current data motivate:
 
 But this is not yet a demonstrated resilience debt.
 
-The term should be used only if prospective measurements show that:
+The current prospective programme can directly establish **hidden buffer depletion under persistent occurrence** if a measured buffer declines while coarse occurrence remains recorded, and can test whether the remaining buffer state predicts later quantitative deterioration.
 
-1. present occurrence remains high;
-2. one or more buffer states are measurably depleted or weakened;
-3. lower buffer state predicts subsequent quantitative deterioration or instability.
+A strict resilience-debt claim is held to the stronger Johnstone et al. (2016) meaning: diminished recovery capacity that becomes apparent after a subsequent independently characterized disturbance.
+
+Therefore the present event -> TNC -> future-frequency chain, even if fully supported, is described first as **buffer depletion with delayed quantitative consequence**, not automatically as resilience debt.
+
+See `docs/RESILIENCE_DEBT_BOUNDARY_V1.md`.
 
 ## Novelty boundary
 
