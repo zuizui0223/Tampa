@@ -21,6 +21,24 @@ See:
 
 The three projects should remain separate ecological papers. Any later synthesis is secondary.
 
+## Decisive prospective test now prioritized
+
+The first outcome-bearing mechanism test is the **four-bay rhizome TNC prospective design**.
+
+Planning frame:
+
+- Old Tampa Bay: 8 recent Thalassia-positive nodes;
+- Middle Tampa Bay: 11;
+- Lower Tampa Bay: 14;
+- Boca Ciega Bay: 8;
+- total: **41 nodes**.
+
+The v2 contract fixes Boca Ciega inclusion **before** future outcome-bearing sampling. Primary confirmation requires >=36 analyzable nodes and >=8 per bay.
+
+See:
+- [decisive-test priority](docs/TAMPA_DECISIVE_TEST_PRIORITY_V1.md)
+- [four-bay TNC contract](results/clonal_state_prospective_v2_contract.json)
+
 ## Scientific mainline
 
 The paper-level ecological question is now:
