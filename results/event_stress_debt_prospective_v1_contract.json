@@ -83,7 +83,14 @@
     "nonestimable_variation_gate": {
       "minimum_nodes_with_nonzero_joint_exposure": 10,
       "minimum_bays_with_nonzero_joint_exposure": 2,
-      "rule": "If the gate fails, classify the primary exposure as non-estimable. Do not lower/raise either threshold, shift the July 24-September 3 calendar, extend the exposure window, or change node/bay membership to manufacture variation."
+      "rule": "The primary exposure is estimable only if all frozen sample/coverage gates pass, >=10 nodes have nonzero joint exposure in >=2 bays, and >=2 bays each contain >=6 analyzable nodes with >=3 distinct joint-exposure values. Otherwise classify it non-estimable. Do not lower/raise either threshold, shift the July 24-September 3 calendar, extend the exposure window, change node/bay membership, or remove water_body to manufacture variation.",
+      "within_bay_identifiability": {
+        "minimum_bays_with_node_scale_variation": 2,
+        "minimum_analyzable_nodes_in_each_counted_bay": 6,
+        "minimum_distinct_exposure_values_in_each_counted_bay": 3,
+        "rationale": "The primary model includes water_body. Exposure must vary among nodes within at least two bays so the hot-fresh coefficient is not merely a bay-level contrast.",
+        "failure_rule": "If fewer than two bays meet the within-bay variation rule, classify the primary exposure non-estimable. Do not remove water_body, pool to bay means, or change thresholds/calendar to recover identifiability."
+      }
     }
   },
   "primary_analysis": {
@@ -162,7 +169,8 @@
     "primary model code",
     "node-level uncertainty procedure",
     "secondary multiplicity rule",
-    "future survey window"
+    "future survey window",
+    "within-bay exposure-identifiability gate"
   ],
   "claim_boundary": [
     "This design tests whether the published Tampa hot-fresh condition definition gains mechanistic value when measured at node/event scale; it does not establish 30 C or 25 ppt as physiological hard limits.",
@@ -173,7 +181,8 @@
     "Hot-fresh events may proxy a broader rainfall/runoff event complex including low light or other co-stressors; the primary association does not uniquely attribute reserve depletion to temperature and salinity.",
     "The response-independent calendar preflight found historical joint exposure in OTB and MTB but none in LTB; disclose this asymmetry and do not count LTB zero-exposure replication as evidence of exposure variation.",
     "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season.",
-    "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'."
+    "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'.",
+    "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
