@@ -195,6 +195,31 @@ Primary inference remains the prospective TNC coefficient. Do not replace a null
 
 If coverage is adequate, freeze one sensitivity model adding leaf nutrient status before the future outcome is opened.
 
+## Genet-identity diagnostic
+
+The primary mechanism is **below-ground reserve buffering**, not automatically "clonal integration".
+
+*T. testudinum* can form very large genets, but clonality varies strongly among populations. Published studies range from large, old genets extending tens to hundreds of metres to populations with high genotypic richness. A Tampa Bay outgroup in Bricker et al. (2015) showed high genotypic richness.
+
+Therefore preserve one DNA-quality tissue aliquot from each of the three frozen TNC core anchors.
+
+Before genotyping begins, freeze one validated *T. testudinum* multilocus panel and clone-calling / genotyping-error rule. Published nuclear microsatellite panels may be used after a response-independent Tampa locus-performance pilot; a SNP panel is also acceptable if chosen before future outcome access.
+
+Report per node:
+
+- number of distinct multilocus genotypes among the three anchors;
+- whether any genotype repeats across anchors;
+- separation between anchors sharing a genotype.
+
+Interpretation:
+
+- if all anchors are distinct genets, a supported TNC result remains a **below-ground reserve-state** result; do not call it one-clone integration;
+- if a genotype repeats across anchors, that supports genet-scale clonality, but does **not** prove the old rhizome connection is still intact or that resources are currently shared.
+
+Genet identity is secondary interpretation support. Do not create a TNC x clonality interaction after viewing future meadow change.
+
+Relevant examples include Van Dijk & van Tussenbroek (2010, *Aquatic Botany* 92:63-69, DOI 10.1016/j.aquabot.2009.10.005) and Bricker et al. (2015, *Aquatic Botany* 123:76-82, DOI 10.1016/j.aquabot.2015.01.008).
+
 ## Other secondary clonal measurements
 
 Collect when feasible:

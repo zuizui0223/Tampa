@@ -111,6 +111,26 @@
       "one_mark_fallback": "Place three independent non-overlapping offset cores adjacent to the single positive mark.",
       "inference_unit": "stable transect node; cores are within-node measurement replication and spatial sampling, not independent inferential units",
       "prohibited_rescue": "Do not relocate anchors after TNC assay results or future outcome access."
+    },
+    "genet_identity_diagnostic": {
+      "role": "secondary interpretation diagnostic; cannot replace or rescue the primary rhizome-TNC test",
+      "sampling": "Preserve one DNA-quality tissue aliquot corresponding to each of the three frozen TNC core anchors before biochemical processing.",
+      "marker_rule": "Use one validated Thalassia testudinum multilocus genotyping panel frozen before laboratory genotyping. Published nuclear microsatellite panels are acceptable if locus performance is verified in Tampa material; a validated SNP panel may replace them only if frozen before any future outcome access.",
+      "node_summary": [
+        "number of distinct multilocus genotypes among the three anchors",
+        "whether any multilocus genotype repeats across spatial anchors",
+        "maximum along-transect separation among anchors sharing a multilocus genotype"
+      ],
+      "interpretation": {
+        "all_distinct": "Do not describe node-scale reserve persistence as evidence of one integrated clone. A TNC association remains a below-ground reserve-state result.",
+        "repeated_genotype": "Repeated multilocus genotype across anchors supports genet-scale clonality but does not prove that rhizome connections remain physically intact or that resources are currently translocated among anchors."
+      },
+      "no_primary_interaction": "Do not add TNC x clonality or clonality x future-state interactions to the primary analysis after outcome inspection. Genet information is an interpretation diagnostic unless a separately powered prospective study is frozen in advance.",
+      "references": [
+        "Van Dijk & van Tussenbroek 2010 Aquatic Botany 92:63-69, DOI 10.1016/j.aquabot.2009.10.005",
+        "Bricker et al. 2015 Aquatic Botany 123:76-82, DOI 10.1016/j.aquabot.2015.01.008",
+        "Van Dijk et al. 2016 Heredity, limited pollen/seed dispersal and large genets in Thalassia testudinum"
+      ]
     }
   },
   "baseline_existing_covariates": [
@@ -191,7 +211,9 @@
     "minimum perpendicular core offset from permanent transect",
     "core diameter/depth and maximum disturbed area per node",
     "core-hole restoration procedure",
-    "anchor-neighborhood exclusion rule for the future disturbance sensitivity"
+    "anchor-neighborhood exclusion rule for the future disturbance sensitivity",
+    "DNA-quality tissue preservation from each TNC anchor",
+    "validated Thalassia multilocus genotyping panel and clone-calling error rule"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -206,7 +228,9 @@
     "Within-node cores are measurement replicates, not independent clone/genet replicates.",
     "A secondary meristem/apex signal may support regenerative capacity as a distinct below-ground mechanism, but it cannot replace a null primary TNC result.",
     "Three cores are within-node measurement replication/spatial coverage; inferential replication remains the stable transect node.",
-    "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology."
+    "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology.",
+    "TNC is the primary below-ground reserve measurement, not a direct measure of genet size or physiological integration.",
+    "Identical multilocus genotypes across anchors establish genet identity only; fragmented ramets can share a genotype without a currently intact rhizome connection, so genetic identity is not proof of resource translocation."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + two water-body indicators",

@@ -31,6 +31,10 @@ assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33
 assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
 assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
 assert clonal["primary_analysis"]["support_rule"]["contradicted_direction"]=="interval entirely below 0"
+assert clonal["baseline_new_measurements"]["genet_identity_diagnostic"]["role"].startswith("secondary interpretation diagnostic")
+assert "multilocus genotypes" in " ".join(clonal["baseline_new_measurements"]["genet_identity_diagnostic"]["node_summary"])
+assert "does not prove" in clonal["baseline_new_measurements"]["genet_identity_diagnostic"]["interpretation"]["repeated_genotype"]
+assert any("not proof of resource translocation" in x for x in clonal["claim_boundary"])
 assert clonal["baseline_new_measurements"]["core_spatial_design"]["status"]=="baseline_spatial_core_design_feasible"
 assert clonal["baseline_new_measurements"]["core_spatial_design"]["recent_nodes_with_three_or_more_positive_marks"]==30
 assert clonal["baseline_new_measurements"]["core_spatial_design"]["recent_nodes_requiring_sparse_fallback"]==3
