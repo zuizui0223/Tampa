@@ -201,33 +201,75 @@ Do not rescue it with a different temperature threshold, salinity threshold, lag
 
 ---
 
-## H4. Leaf/canopy optical stress versus mature-canopy marker
+## H4. Direct optical microenvironment
 
-### Motivation
+### Mechanism
 
-Bulk Secchi x depth did not explain plant-condition trajectories. A local leaf-scale pathway remains possible through epiphyte shading, self-shading or local turbidity.
+The failed bulk Secchi × depth proxy may have averaged over the light actually experienced by *Thalassia* leaves.
 
-However, the existing qualitative `EpiphyteDensity` record does **not** behave as a simple annual stress indicator: the adjusted primary association was positive rather than negative and became interval-ambiguous when target year 2016 was restored.
+The existing qualitative `EpiphyteDensity` record also does **not** support a simple annual epiphyte-stress interpretation.
 
-### Competing predictions
+The new mechanism therefore measures **actual within-canopy light** directly rather than rescuing the old proxy or categories.
 
-**Optical-stress version**
+Prospective design:
 
-> greater measured epiphyte biomass / lower leaf-level PAR -> more negative future plant or meadow state.
+- `results/optical_microenvironment_prospective_v1_contract.json`
+- `docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md`
 
-**Mature-canopy-marker version**
+### Primary process link
 
-> qualitative epiphyte load covaries with leaf age, canopy persistence or favorable microsite state, but directly measured optical attenuation does not independently predict future decline.
+Co-deploy high-frequency PAR over the same frozen 42-day biological interval as pre/post TNC.
 
-### Required new measurements
+Primary exposure:
 
-- epiphyte biomass per leaf area;
-- leaf-level or within-canopy PAR attenuation;
-- leaf age / turnover proxy;
-- canopy height and total cover;
-- local turbidity.
+```text
+mean_daily_within_canopy_dli
+```
 
-Do not mine additional categories, epiphyte types or lag windows from the old qualitative field.
+Primary model:
+
+```text
+tnc_post
+  ~ tnc_pre
+  + mean_daily_within_canopy_dli
+  + water_body
+```
+
+Prediction:
+
+> higher actual within-canopy daily light -> higher post-exposure rhizome TNC after pre-TNC is represented.
+
+No primary low-light threshold is used.
+
+### Epiphyte competing interpretation
+
+Historical qualitative epiphyte burden may mean either:
+
+1. **optical stress** — epiphyte biomass materially reduces light at the leaf surface; or
+2. **mature-canopy marker** — epiphyte burden marks older leaves, persistent canopy or favorable microsites without causing enough optical loss to explain reserve depletion.
+
+Therefore epiphyte biomass / paired leaf optics are secondary physical diagnostics.
+
+Do not infer epiphyte stress from an ordinal category alone.
+
+### What would weaken this mechanism
+
+A primary null with adequate node replication, PAR coverage and within-bay DLI variation weakens direct light as the tested 42-day reserve-depletion mechanism.
+
+Do not rescue it with:
+
+- another Secchi window;
+- a post-hoc DLI threshold;
+- percent-surface-light cutoffs;
+- a favorable PAR percentile;
+- historical EpiphyteDensity categories;
+- hot-fresh covariates added only after TNC inspection.
+
+### Site-template boundary
+
+Direct PAR and pre/post TNC form a dynamic process test and are less compatible with a purely static site-label explanation than a one-time cross-node proxy.
+
+They remain observational: time-varying turbidity, nutrients, hypoxia or disturbance can still affect both light and reserve.
 
 ---
 
