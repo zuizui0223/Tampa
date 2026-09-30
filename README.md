@@ -2,6 +2,25 @@
 
 This repository develops a biological analysis of long-term fixed-transect seagrass monitoring in Tampa Bay. It is intentionally separate from the EOG method-validation endpoint that motivated the question.
 
+
+## Three independent EOG-derived ecology programmes
+
+Tampa is the **third independent ecological programme**, alongside Azores and Louisiana—not part of one umbrella analysis.
+
+- **Azores:** state-dependent mobility gating;
+- **Louisiana:** within-home-range micro-niche tracking;
+- **Tampa:** buffered persistence under quantitative degradation.
+
+Tampa's specific question is:
+
+> **What allows a sessile foundation species to remain present while its quantitative condition deteriorates, and which hidden buffer actually predicts future persistence?**
+
+See:
+- [Tampa ecological mainline](docs/TAMPA_SPECIFIC_ECOLOGICAL_PRINCIPLE_V1.md)
+- [three independent ecology programmes](docs/THREE_ECOLOGY_PROGRAMS_V1.md)
+
+The three projects should remain separate ecological papers. Any later synthesis is secondary.
+
 ## Scientific mainline
 
 The paper-level ecological question is now:
