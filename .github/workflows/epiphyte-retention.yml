@@ -1,0 +1,32 @@
+name: Epiphyte retention follow-up
+
+on:
+  push:
+    paths:
+      - "analysis/57_epiphyte_retention.py"
+      - "results/epiphyte_retention_v1_contract.json"
+      - ".github/workflows/epiphyte-retention.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check numpy pandas scikit-learn
+      - name: Run frozen adjusted epiphyte follow-up
+        run: python analysis/57_epiphyte_retention.py
+      - name: Verify canonical bounded result
+        run: python validation/verify_epiphyte_layer.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: epiphyte-retention
+          path: |
+            results/generated_epiphyte_retention/epiphyte_retention_v1.json
+            results/generated_epiphyte_retention/epiphyte_retention_transitions.csv
