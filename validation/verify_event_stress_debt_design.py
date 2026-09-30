@@ -21,6 +21,11 @@ r=c["reserve_sampling"]
 assert ">=3" in r["pre_exposure"]
 assert ">=3" in r["post_exposure"]
 assert r["inferential_unit"].startswith("stable transect node")
+pair=r["temporal_pairing"]
+assert pair["target_pre_post_interval_days"]==42
+assert pair["confirmatory_min_interval_days"]==39
+assert pair["confirmatory_max_interval_days"]==45
+assert "descriptive-only" in pair["rule"]
 guard=r["combined_destructive_sampling_guardrail"]
 assert "Exactly two" in guard["total_rounds"]
 assert "3 valid pre-exposure + 3 valid post-exposure" in guard["total_core_count"]
