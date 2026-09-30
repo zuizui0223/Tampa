@@ -21,6 +21,12 @@ r=c["reserve_sampling"]
 assert ">=3" in r["pre_exposure"]
 assert ">=3" in r["post_exposure"]
 assert r["inferential_unit"].startswith("stable transect node")
+guard=r["combined_destructive_sampling_guardrail"]
+assert "Exactly two" in guard["total_rounds"]
+assert "3 valid pre-exposure + 3 valid post-exposure" in guard["total_core_count"]
+assert "permanent monitoring transect" in guard["permanent_transect_buffer"]
+assert "maximum cumulative disturbed area" in guard["cumulative_footprint"]
+assert "measurement-intervention concern" in guard["interpretation_boundary"]
 
 e=c["primary_exposure"]
 assert e["name"]=="joint_hot_fresh_hours_30_25"
