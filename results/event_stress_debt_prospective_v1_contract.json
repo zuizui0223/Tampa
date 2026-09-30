@@ -1,0 +1,223 @@
+{
+  "schema": "tampa.event_stress_debt_prospective_v1.contract",
+  "frozen_on": "2026-09-29",
+  "status": "future_new_measurement_design_not_yet_deployed",
+  "evidence_class": "prospective_new_physical_to_biological_mechanism",
+  "purpose": "Test whether node-scale high-frequency hot-fresh exposure depletes Thalassia rhizome reserve, using the same published Tampa 30 C / 25 ppt suboptimal-condition definition rather than reopening retrospective threshold search.",
+  "relationship_to_prior_tampa_result": {
+    "retrospective_result": "Published/coarse 30 C / 25 ppt hot-fresh duration did not add supported information for Tampa plant-condition or quantitative-state outcomes under the frozen retrospective test.",
+    "new_question": "Was that failure caused by coarse segment/time aggregation, or is the hot-fresh mechanism itself weak at meadow scale?",
+    "design_rule": "Keep the threshold definition fixed and change the measurement layer: synchronized node-scale temperature + salinity at <=15-minute interval.",
+    "threshold_boundary": "30 C and 25 ppt are treated as a published Tampa suboptimal-condition definition, not as hard physiological niche boundaries.",
+    "physiological_boundary": {
+      "statement": "The 30 C value is not treated as a direct heat-damage threshold for Thalassia. Classic Tampa/Florida work places turtle-grass temperature optimum near 30 C, and newer thermal-performance work places peak GPP near 31 C with stronger decline above ~32 C. The prospective 30 C / 25 ppt metric is therefore a frozen published Tampa compound-condition index, not a univariate thermal-injury dose.",
+      "references": [
+        "Zieman 1975 Aquatic Botany 1:107-123, DOI 10.1016/0304-3770(75)90016-9",
+        "Increasing ocean temperature reduces primary productivity in three Caribbean seagrass species (2026), Estuarine Coastal and Shelf Science, thermal-performance result: Thalassia GPP optimum ~31 C"
+      ],
+      "interpretation": "Support would implicate the joint hot-fresh event complex at node scale. It would not show that 30 C itself damages Thalassia."
+    }
+  },
+  "sampling_frame": {
+    "geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
+    "cohort": "Contemporaneously baseline-Thalassia-positive stable fixed-transect nodes, census-oriented where feasible.",
+    "planning_nodes": 33,
+    "minimum_confirmatory_nodes": 30,
+    "minimum_confirmatory_nodes_per_bay": 8,
+    "historical_planning_counts": {
+      "Old Tampa Bay": 8,
+      "Middle Tampa Bay": 11,
+      "Lower Tampa Bay": 14
+    },
+    "below_precision_gate": "Below 30 analyzable nodes or below 8 nodes in any core bay, retain estimates as pilot results and do not use a null to reject event-scale stress debt."
+  },
+  "deployment": {
+    "new_measurements": [
+      "water temperature",
+      "salinity/conductivity"
+    ],
+    "target_duration_days": 42,
+    "minimum_valid_common_overlap_days": 35,
+    "maximum_nominal_sampling_interval_minutes": 15,
+    "rollout_window_days": 7,
+    "retrieval_window_days": 7,
+    "primary_exposure_window": "Use the fixed July 24 through September 3 calendar window, further restricted only to the common calendar overlap shared by all confirmatory nodes after frozen QC.",
+    "sensor_height": "Target sampling center 0.20 m above sediment; exact instrument geometry and allowable tolerance fixed in a response-independent pilot before deployment.",
+    "clock_rule": "Temperature and salinity observations must be synchronized or reproducibly aligned to the same <=15-minute grid.",
+    "valid_coverage_rule": "Each confirmatory node must retain >=85% paired temperature-salinity coverage across the common overlap after only predeclared QC.",
+    "calibration_rule": "Instrument model, pre/post calibration, drift tolerance, fouling control, gap rule and salinity conversion must be frozen before outcome-bearing deployment.",
+    "calendar_preflight": {
+      "source": "results/event_stress_calendar_preflight_v1.json",
+      "status": "calendar_selected_from_response_independent_exposure_climatology",
+      "frozen_start_month_day": "07-24",
+      "frozen_end_month_day": "09-03",
+      "window_days": 42,
+      "historical_nonzero_station_year_fraction": {
+        "Old Tampa Bay": 0.632,
+        "Middle Tampa Bay": 0.3633333333,
+        "Lower Tampa Bay": 0
+      },
+      "historical_year_fraction_with_events_in_at_least_2_bays": 0.64,
+      "interpretation": "The calendar was selected before future TNC using environmental exposure climatology only. Lower Tampa Bay had zero historical joint exposure in the pinned daily artifact, so the future variation gate may fail and must not be rescued by changing calendar or thresholds."
+    }
+  },
+  "reserve_sampling": {
+    "pre_exposure": "Collect >=3 independent adjacent rhizome cores per node within 3 days of logger deployment using the same tissue/HPLC protocol as the clonal TNC contract.",
+    "post_exposure": "Collect >=3 independent adjacent rhizome cores per node within 3 days of logger retrieval.",
+    "node_summaries": {
+      "tnc_pre": "median rhizome TNC across valid pre-exposure cores",
+      "tnc_post": "median rhizome TNC across valid post-exposure cores"
+    },
+    "spatial_boundary": "Pre and post destructive cores must use pre-frozen non-overlapping offsets and must not damage permanent monitoring marks.",
+    "inferential_unit": "stable transect node; cores are measurement replicates, not independent genets",
+    "combined_destructive_sampling_guardrail": {
+      "total_rounds": "Exactly two outcome-bearing TNC rounds for the event study: pre-exposure and post-exposure. If post-exposure TNC is used as the clonal future-state baseline, do not collect a third redundant TNC round.",
+      "total_core_count": "Target 3 valid pre-exposure + 3 valid post-exposure cores per node; any replacement-core rule and absolute maximum attempted cores must be frozen before deployment.",
+      "permanent_transect_buffer": "Use the same pre-frozen minimum perpendicular offset from the permanent monitoring transect required by the clonal TNC program; no core may be placed on a permanent meter mark or inside the routine monitoring footprint.",
+      "pre_post_geometry": "At each frozen q25/q50/q75 anchor neighborhood, pre- and post-exposure cores must use predeclared distinct lateral/perpendicular offsets so post sampling does not re-core the pre-exposure hole or its immediately disturbed rhizosphere.",
+      "cumulative_footprint": "Freeze core diameter, depth and maximum cumulative disturbed area per node across both rounds before the first pre-exposure core. Do not enlarge the footprint after seeing TNC yield.",
+      "restoration": "Backfill/restore each hole under the monitoring authority protocol and record visible disturbance after each round.",
+      "future_response_sensitivity": "Carry forward the clonal-program point-level disturbance sensitivity: if future point data allow, recompute future focal frequency excluding the pre-frozen permanent meter-mark neighborhood nearest all TNC core anchors.",
+      "interpretation_boundary": "A strong future-state discrepancy near sampled anchors is a measurement-intervention concern, not evidence for or against reserve ecology."
+    },
+    "temporal_pairing": {
+      "target_pre_post_interval_days": 42,
+      "confirmatory_min_interval_days": 39,
+      "confirmatory_max_interval_days": 45,
+      "collection_windows": "Pre cores remain within 3 days of node logger deployment and post cores within 3 days of node logger retrieval; field routing should pair each node's two TNC visits approximately 42 days apart.",
+      "rule": "Nodes outside the frozen 39-45 day pre-to-post TNC interval are descriptive-only for the primary event-to-reserve model.",
+      "no_rescue": "Do not add pre-to-post interval length as a post-hoc covariate or widen the interval window after observing TNC."
+    }
+  },
+  "primary_exposure": {
+    "name": "joint_hot_fresh_hours_30_25",
+    "definition": "common_overlap_hours multiplied by the fraction of valid synchronized observations with temperature >=30 C AND salinity <=25 ppt",
+    "threshold_source": "Beck et al. 2024 Tampa Bay Hot and Fresh analysis, DOI 10.1007/s12237-024-01385-0",
+    "direction": "greater joint hot-fresh duration predicts lower post-exposure reserve after accounting for pre-exposure reserve",
+    "nonestimable_variation_gate": {
+      "minimum_nodes_with_nonzero_joint_exposure": 10,
+      "minimum_bays_with_nonzero_joint_exposure": 2,
+      "rule": "The primary exposure is estimable only if all frozen sample/coverage gates pass, >=10 nodes have nonzero joint exposure in >=2 bays, and >=2 bays each contain >=6 analyzable nodes with >=3 distinct joint-exposure values. Otherwise classify it non-estimable. Do not lower/raise either threshold, shift the July 24-September 3 calendar, extend the exposure window, change node/bay membership, or remove water_body to manufacture variation.",
+      "within_bay_identifiability": {
+        "minimum_bays_with_node_scale_variation": 2,
+        "minimum_analyzable_nodes_in_each_counted_bay": 6,
+        "minimum_distinct_exposure_values_in_each_counted_bay": 3,
+        "rationale": "The primary model includes water_body. Exposure must vary among nodes within at least two bays so the hot-fresh coefficient is not merely a bay-level contrast.",
+        "failure_rule": "If fewer than two bays meet the within-bay variation rule, classify the primary exposure non-estimable. Do not remove water_body, pool to bay means, or change thresholds/calendar to recover identifiability."
+      }
+    }
+  },
+  "primary_analysis": {
+    "model": "tnc_post ~ tnc_pre + joint_hot_fresh_hours_30_25 + water_body",
+    "primary_coefficient": "joint_hot_fresh_hours_30_25",
+    "expected_direction": "negative",
+    "uncertainty": "node-level bootstrap or permutation procedure frozen before biological outcome access",
+    "support_rule": {
+      "supported": "two-sided 95% interval entirely below 0",
+      "contradicted_direction": "two-sided 95% interval entirely above 0",
+      "unsupported": "interval overlaps 0",
+      "nonestimable": "sample-size/coverage/exposure-variation gate fails",
+      "boundary": "Do not switch to a one-sided test after inspection."
+    },
+    "required_controls": [
+      "tnc_pre",
+      "water_body"
+    ],
+    "missing_data_rule": "complete-case confirmatory analysis under predeclared logger/core QC; do not impute primary exposure or TNC to rescue n"
+  },
+  "design_precision_gate": {
+    "planning_model_terms": "joint hot-fresh exposure + pre-TNC + two water-body indicators",
+    "planning_assumption": "Approximate Gaussian multiple-regression benchmark, two-sided alpha 0.05, 80% power for the event-exposure term; used only as a resolution warning.",
+    "approximate_detectable_partial_r": {
+      "n_24": 0.52,
+      "n_30": 0.47,
+      "n_33": 0.45,
+      "n_40": 0.41
+    },
+    "interpretation": "Even the ~33-node design mainly resolves moderate-to-large node-level effects. Repeated high-frequency observations improve exposure measurement but do not substitute for node replication."
+  },
+  "secondary_exposure_diagnostics": {
+    "marginal_hot_hours_30": "hours with temperature >=30 C",
+    "marginal_fresh_hours_25": "hours with salinity <=25 ppt",
+    "temperature_p95": "95th percentile temperature",
+    "salinity_p05": "5th percentile salinity",
+    "role": "diagnose why the joint exposure varies; secondary only and cannot replace a null/nonestimable joint hot-fresh primary",
+    "multiple_testing": "Any inferential secondary family must use one predeclared multiplicity correction."
+  },
+  "secondary_future_ecology": {
+    "model": "future_delta_frequency ~ baseline_frequency + joint_hot_fresh_hours_30_25 + water_body",
+    "expected_direction": "negative",
+    "role": "secondary prospective link from event exposure directly to future quantitative meadow state",
+    "boundary": "Cannot rescue a null primary stress-to-reserve result."
+  },
+  "relationship_to_clonal_tnc_program": {
+    "post_exposure_tnc_role": "The post-exposure TNC sample is the preferred synchronized baseline TNC predictor for the independently frozen clonal TNC -> future-frequency contract if all clonal timing, spatial-core, destructive-sampling and assay rules are met. Using it avoids a third destructive TNC round.",
+    "two_gate_chain": {
+      "gate_A_event_to_reserve": "Primary event-stress contract supports a negative joint-hot-fresh coefficient on post-TNC conditional on pre-TNC.",
+      "gate_B_reserve_to_future_state": "Independent clonal contract supports a positive TNC coefficient on future focal-frequency change.",
+      "both_supported": "Consistent with an event-stress -> reserve depletion -> future persistence pathway; not formal mediation or causal proof.",
+      "A_only": "Measured events deplete reserve, but reserve is not shown to predict the next meadow trajectory.",
+      "B_only": "Reserve predicts future trajectory, but the measured hot-fresh events do not explain reserve variation.",
+      "neither": "No support for the proposed event-stress-debt chain under the frozen measurements."
+    },
+    "forbidden_integration": "Do not fit a post-hoc stress x TNC interaction or mediation model after future outcome access."
+  },
+  "relationship_to_otb_temperature_pilot": {
+    "pr": 38,
+    "role": "separate six-node Old Tampa Bay extreme-effect heat-only prospective pilot",
+    "boundary": "PR #38 is not counted as network-scale confirmation and a null in #38 does not veto this 30-node hot-fresh mechanism test."
+  },
+  "pre_outcome_freeze_required": [
+    "final contemporaneous node list and alternates",
+    "sensor model(s)",
+    "sensor height and mounting geometry",
+    "sampling interval",
+    "deployment/retrieval calendar and common-overlap rule",
+    "temperature and conductivity calibration/QC",
+    "salinity conversion",
+    "clock-alignment and gap rules",
+    "pre/post core offsets",
+    "pre/post TNC tissue and HPLC protocol",
+    "joint-hot-fresh exposure calculation code",
+    "exposure-variation gate",
+    "primary model code",
+    "node-level uncertainty procedure",
+    "secondary multiplicity rule",
+    "future survey window",
+    "within-bay exposure-identifiability gate",
+    "combined pre/post maximum destructive core footprint per node",
+    "pre-versus-post paired core offset geometry",
+    "maximum attempted/replacement cores across both TNC rounds",
+    "39-45 day confirmatory pre-to-post TNC interval"
+  ],
+  "claim_boundary": [
+    "This design tests whether the published Tampa hot-fresh condition definition gains mechanistic value when measured at node/event scale; it does not establish 30 C or 25 ppt as physiological hard limits.",
+    "A supported primary result is consistent with event-scale hot-fresh exposure depleting measured rhizome reserve; it is not proof that temperature/salinity are the only causes of reserve change.",
+    "Natural seasonal TNC change is controlled primarily by synchronous deployment and pre-TNC adjustment, not by post-hoc seasonal subsetting.",
+    "Do not retune thresholds, deployment windows, node subsets or exposure summaries after observing TNC or future meadow responses.",
+    "Binary re-recording is not a recovery endpoint.",
+    "Hot-fresh events may proxy a broader rainfall/runoff event complex including low light or other co-stressors; the primary association does not uniquely attribute reserve depletion to temperature and salinity.",
+    "The response-independent calendar preflight found historical joint exposure in OTB and MTB but none in LTB; disclose this asymmetry and do not count LTB zero-exposure replication as evidence of exposure variation.",
+    "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season.",
+    "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'.",
+    "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient.",
+    "Pre/post TNC sampling is itself a potential intervention. Post-exposure cores must be spatially separated from pre-exposure disturbance, and the combined six-core footprint must remain outside the permanent monitoring unit under a frozen cumulative disturbance limit.",
+    "Confirmatory event-to-reserve inference requires pre/post TNC samples 39-45 days apart so natural seasonal reserve change is not confounded with highly variable sampling intervals."
+  ],
+  "co_event_confounding_boundary": {
+    "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
+    "optional_context_measurements": [
+      "canopy-level PAR",
+      "turbidity",
+      "dissolved oxygen",
+      "rainfall/freshwater-delivery context"
+    ],
+    "role": "response-independent event context / separate mechanism layers; not added to the primary hot-fresh model after inspection",
+    "interpretation": "If H3 is supported, call the result a hot-fresh event-complex association with reserve depletion unless independent measurements separately support temperature/salinity attribution.",
+    "no_rescue_rule": "A null H3 cannot be rescued by adding/removing PAR, turbidity, oxygen or rainfall covariates after outcome access."
+  }
+}

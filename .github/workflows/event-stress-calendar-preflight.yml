@@ -1,0 +1,38 @@
+name: Event-stress calendar preflight
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/59_event_stress_calendar_preflight.R"
+      - "results/event_stress_debt_prospective_v1_contract.json"
+      - "docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md"
+      - ".github/workflows/event-stress-calendar-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  calendar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - name: Download pinned response-independent daily exposure artifact
+        run: |
+          mkdir -p results/generated_event_calendar
+          curl -L --fail --silent --show-error \
+            https://raw.githubusercontent.com/tbep-tech/temp-manu/e5aaec93c7501fc38c63b615a89e68636b36421f/data/thralltrndat.RData \
+            -o results/generated_event_calendar/thralltrndat.RData
+          test "$(git hash-object results/generated_event_calendar/thralltrndat.RData)" = "f6518ea25685369057bfe92e71973ec04c57eac1"
+      - name: Select 42-day calendar from environmental climatology only
+        run: |
+          Rscript analysis/59_event_stress_calendar_preflight.R \
+            results/generated_event_calendar/thralltrndat.RData \
+            results/generated_event_calendar/event_stress_calendar_preflight_v1.json
+      - name: Show result
+        run: cat results/generated_event_calendar/event_stress_calendar_preflight_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: event-stress-calendar-preflight
+          path: results/generated_event_calendar/event_stress_calendar_preflight_v1.json
+          if-no-files-found: error

@@ -107,6 +107,17 @@ Preferred exposure features should be fixed from physiology or external literatu
 
 Do not retrospectively tune thresholds against the Tampa biological outcome.
 
+
+### Frozen network-scale event-stress contract
+
+The general network-scale test is now frozen in:
+
+- `results/event_stress_debt_prospective_v1_contract.json`
+- `docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md`
+
+It retains the published Tampa 30 C / 25 ppt condition definition, measures simultaneous exposure at node / <=15-minute resolution, and uses pre/post rhizome TNC as the primary immediate biological response. PAR remains a separate optical mechanism layer.
+
+PR #38 is retained only as a six-node Old Tampa Bay extreme-effect heat-only prospective pilot and does not substitute for the network-scale design.
 ## Priority 3 — hydrodynamic exposure / residence time
 
 Current source preflight:
