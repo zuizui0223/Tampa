@@ -656,3 +656,6 @@ The manuscript-level synthesis remains:
 
 > **A foundation species can remain present while different components of meadow condition deteriorate through spatially distinct pathways; presence-only monitoring therefore detects degradation late and incompletely.**
 
+
+
+- [three-programme current status](docs/THREE_ECOLOGY_PROGRAMS_STATUS_V1.md)
