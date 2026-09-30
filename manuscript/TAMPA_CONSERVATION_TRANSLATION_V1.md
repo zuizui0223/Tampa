@@ -114,21 +114,92 @@ These axes can diverge and may converge on instability without following one uni
 
 ## Highest-value next mechanism measurements
 
-The next mechanism study should collect genuinely new state information rather than further decompose annual loss/re-recording histories.
+The mechanism programme has now moved beyond a generic wish list. Three new-measurement tests are frozen, and they answer different management questions.
 
-Priority order:
+### 1. Internal reserve / regenerative state
 
-1. **below-ground / clonal state** — rhizome biomass, carbohydrate reserve, branching/architecture, meristem density and clonal continuity;
-2. **high-frequency meadow-scale stress** — temperature, salinity and PAR at diel/event resolution;
-3. **hydrodynamic exposure / residence time** — local current velocity, flushing, freshwater-plume exposure and near-bed flow;
-4. **canopy / epiphyte light microenvironment**;
-5. **acute disturbance / disease**.
+Primary new measurement:
 
-The strongest immediate test is below-ground/clonal buffering: compare meadows with similar current above-ground frequency/abundance but different future stability, asking whether independently measured reserve/clonal state separates their trajectories.
+- rhizome total non-structural carbohydrate (TNC), standardized as soluble NSC + starch;
+- meristem/apex density as a distinct secondary regenerative-capacity axis;
+- leaf N/P as an interpretation diagnostic;
+- genet identity as secondary context, not as proof of current physiological integration.
 
-The second priority is prospective high-frequency stress. The already frozen 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test is an example of an allowed next-generation mechanism study because the exposure is a new measurement layer and the future biological response is not yet opened.
+Primary question:
 
-The full mechanism gate is documented in `docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`.
+> among meadows with comparable current above-ground state, does lower below-ground reserve predict less favourable future quantitative *Thalassia* change?
+
+The confirmatory core remains Old, Middle and Lower Tampa Bay. Boca Ciega Bay is prespecified only as a secondary context extension and cannot rescue a null core result.
+
+### 2. Event-scale buffer depletion
+
+The network-scale event study freezes a 42-day **July 24–September 3** deployment with <=15-minute temperature and salinity measurements.
+
+Primary event metric remains the published Tampa joint condition:
+
+> temperature >=30 C AND salinity <=25 ppt.
+
+The immediate biological response is **pre/post rhizome TNC**, not binary loss.
+
+This tests:
+
+> does local high-frequency hot-fresh exposure deplete an internal reserve buffer?
+
+The calendar, thresholds and within-bay variation gate are fixed before TNC response inspection. If exposure lacks sufficient node-scale variation, the result is non-estimable rather than retuned.
+
+### 3. Engineered physical buffering
+
+The hydrodynamic study uses direct shallow-water velocity measurements rather than TBOFS bottom velocity.
+
+It separates two questions:
+
+1. does a vegetated canopy attenuate flow beyond the ordinary bare-bed boundary-layer gradient?
+2. does stronger measured attenuation predict more favourable future quantitative *Thalassia* change?
+
+Matched bare-bed controls are required before the result is described as canopy ecosystem engineering.
+
+### 4. Optical microenvironment remains separate
+
+The old qualitative epiphyte-density field does **not** support a simple annual epiphyte-stress interpretation.
+
+If leaf-scale light stress remains a candidate mechanism, the new measurements must be direct:
+
+- epiphyte biomass per leaf area;
+- leaf/canopy PAR attenuation;
+- local turbidity;
+- canopy self-shading / leaf-age context.
+
+Do not reopen categories, epiphyte types or lags in the old qualitative field.
+
+## Candidate buffer-aware management layer — not yet validated
+
+If the prospective tests succeed, management could add a fifth layer to the existing monitoring hierarchy:
+
+| Candidate future layer | Example measurement | Potential interpretation after validation |
+|---|---|---|
+| Buffer state | rhizome TNC, meristem state, canopy-specific attenuation | how much resistance/regenerative capacity remains beneath an apparently persistent meadow |
+
+This layer is **not yet a management indicator**.
+
+The current data justify monitoring quantitative state; they do not yet justify intervention thresholds for TNC, meristem density or hydrodynamic attenuation.
+
+A future supported result could identify sites that are:
+
+> still occupied, but have unusually weak measured buffer state and therefore merit closer follow-up.
+
+That would be a prospective **buffer-depletion watch list**, not a deterministic collapse forecast.
+
+## Resistance versus continuity in management
+
+Persistent seagrass can mean different biological things.
+
+- **Resistance:** the focal meadow changes little because internal reserve or canopy engineering absorbs forcing.
+- **Regenerative capacity:** below-ground meristem state remains even if above-ground condition weakens.
+- **Functional continuity:** another seagrass retains vegetation and perhaps some ecosystem function when focal *Thalassia* declines.
+
+A map of "seagrass present" cannot distinguish these states.
+
+For conservation, this means that maintaining acreage, maintaining focal-species condition and maintaining ecosystem function are related but non-equivalent objectives.
 
 ### Terminology
 
