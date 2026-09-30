@@ -1,0 +1,60 @@
+{
+  "schema": "tampa.bcb_tnc_expansion_preflight_v1.canonical_summary",
+  "status": "four_bay_tnc_expansion_feasible",
+  "evidence_class": "response-open baseline field-design feasibility only; no future outcome",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "years": [2023, 2024, 2025]
+  },
+  "current_three_bay": {
+    "bays": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"],
+    "recent_thalassia_positive_nodes": 33,
+    "approximate_80pct_detectable_partial_r": 0.4881501522
+  },
+  "candidate_four_bay": {
+    "bays": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay", "Boca Ciega Bay"],
+    "recent_thalassia_positive_nodes": 41,
+    "minimum_nodes_per_bay": 8,
+    "approximate_80pct_detectable_partial_r": 0.4433248073,
+    "by_water_body": {
+      "Old Tampa Bay": {
+        "thalassia_positive_nodes": 8,
+        "nodes_with_ge3_positive_marks": 8,
+        "nodes_with_lt3_positive_marks": 0
+      },
+      "Middle Tampa Bay": {
+        "thalassia_positive_nodes": 11,
+        "nodes_with_ge3_positive_marks": 10,
+        "nodes_with_lt3_positive_marks": 1
+      },
+      "Lower Tampa Bay": {
+        "thalassia_positive_nodes": 14,
+        "nodes_with_ge3_positive_marks": 12,
+        "nodes_with_lt3_positive_marks": 2
+      },
+      "Boca Ciega Bay": {
+        "thalassia_positive_nodes": 8,
+        "nodes_with_ge3_positive_marks": 8,
+        "nodes_with_lt3_positive_marks": 0,
+        "positive_mark_min": 3,
+        "positive_mark_median": 11.5,
+        "positive_mark_max": 27
+      }
+    }
+  },
+  "boca_ciega_design_value": {
+    "additional_nodes": 8,
+    "all_nodes_have_ge3_positive_marks": true,
+    "role": "additional independent Thalassia meadow context and prospective generality; not selected using a future response"
+  },
+  "interpretation": "Boca Ciega Bay can add eight recent Thalassia-positive stable nodes and all eight have at least three positive meter marks, so the existing q25/q50/q75 TNC core design is directly applicable. Adding the bay increases the prospective planning frame from 33 to 41 nodes and improves the approximate 80%-power detectable partial correlation from 0.488 to 0.443 despite one additional bay indicator.",
+  "decision": "Four-bay TNC expansion is design-feasible and should be decided before field sampling. Boca Ciega is especially useful as an additional recent meadow context rather than conditioning mechanism inference only on the three bays emphasized for recent degradation. Do not add Boca Ciega later only to rescue a null three-bay result.",
+  "claim_boundary": [
+    "This does not modify the frozen TNC contract by itself.",
+    "Opened 2023-2025 state is used only for prospective field feasibility.",
+    "Boca Ciega inclusion must be decided before TNC collection and future outcome access.",
+    "Event-scale hot-fresh and hydrodynamic studies may retain different geographies; mechanism tests do not need identical sampling frames.",
+    "Do not weaken the 28-day seasonal campaign, HPLC assay, baseline-alignment or spatial-core rules in exchange for the larger sampling frame."
+  ]
+}

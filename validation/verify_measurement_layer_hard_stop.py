@@ -30,6 +30,14 @@ assert "leaf %N" in clonal["baseline_new_measurements"]["nutrient_state_diagnost
 assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
 assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
 assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
+
+bcb=clonal["prespecified_context_extension"]
+assert bcb["candidate_water_body"]=="Boca Ciega Bay"
+assert bcb["design_feasibility"]["recent_thalassia_positive_nodes"]==8
+assert bcb["design_feasibility"]["four_bay_planning_nodes"]==41
+assert bcb["primary_boundary"].startswith("The confirmatory primary mechanism test remains Old + Middle + Lower Tampa Bay")
+assert "Does not rescue" in bcb["interpretation"]["core_unsupported_four_bay_supported"]
+assert "not an independent replication" in bcb["claim_boundary"][1]
 assert clonal["primary_analysis"]["support_rule"]["contradicted_direction"]=="interval entirely below 0"
 assert clonal["baseline_new_measurements"]["genet_identity_diagnostic"]["role"].startswith("secondary interpretation diagnostic")
 assert "multilocus genotypes" in " ".join(clonal["baseline_new_measurements"]["genet_identity_diagnostic"]["node_summary"])

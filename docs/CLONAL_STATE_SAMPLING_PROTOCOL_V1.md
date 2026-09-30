@@ -298,6 +298,57 @@ Do not rescue it by selecting starch, soluble sugar, below-ground biomass or a c
 
 If the sample falls below 30 nodes or any bay falls below 8 nodes, retain the estimate and uncertainty as a pilot. Do not use the null to reject the reserve-buffering hypothesis.
 
+## Prespecified Boca Ciega context extension
+
+The confirmatory primary TNC test remains the three core bays: Old, Middle and Lower Tampa Bay.
+
+A response-open field-design preflight identified **Boca Ciega Bay** as a feasible additional context before any future outcome exists:
+
+- 8 recent *Thalassia*-positive stable nodes;
+- all 8 have at least 3 positive meter marks;
+- the existing q25/q50/q75 spatial-core design is directly applicable;
+- a four-bay planning frame would contain about 41 nodes.
+
+If permissions and logistics allow, collect Boca Ciega in the **same frozen field campaign** and under exactly the same rules:
+
+- one <=28-day campaign;
+- TNC within +/-14 days of the paired baseline survey;
+- same tissue class and HPLC workflow;
+- same three-core spatial design;
+- same leaf N/P diagnostic;
+- same DNA/genet diagnostic if used.
+
+Do not widen the seasonal window or weaken assay/core rules to accommodate the fourth bay.
+
+### Inferential role
+
+Boca Ciega is a **secondary prespecified context extension**, not a replacement for the primary test and not an independent replication dataset.
+
+Primary inference remains:
+
+> Old + Middle + Lower Tampa Bay under the >=30-node / >=8-per-core-bay gate.
+
+Secondary four-bay sensitivity:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency
+  + baseline_Braun_Blanquet
+  + rhizome_TNC
+  + water_body
+```
+
+Report the standardized TNC coefficient and two-sided 95% interval.
+
+Interpretation is frozen:
+
+- core primary supported + four-bay coefficient remains positive -> stronger context transportability, not independent replication;
+- core primary supported + four-bay result strongly attenuated/opposite -> report context dependence;
+- core primary unsupported + four-bay supported -> **no rescue** of the primary mechanism claim;
+- Boca Ciega-only estimate -> descriptive effect estimate/interval only; n~8 has no independent confirmatory pass/fail gate.
+
+If Boca Ciega cannot satisfy the frozen logistics, omit the extension rather than changing the three-bay primary design.
+
 ## Relationship to other Tampa mechanism tests
 
 Keep the TNC primary test analytically separate from:
