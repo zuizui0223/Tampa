@@ -1,202 +1,107 @@
-# Three independent ecology programmes — current evidence and decisive next tests
+# Three independent ecology programmes — executable status
 
-These are three separate ecological projects. EOG is only the discovery route.
+## Azores — state-dependent mobility gating
 
-## 1. Azores — state-dependent mobility gating
+**Completed**
+- seed EOG clue separated from ecological claim;
+- Europe-wide public eel panel audited;
+- exact Durif cohort identified;
+- project-stratified and project-fixed stage analyses implemented;
+- body-size and release-timing robustness implemented;
+- external within-landscape Dutch barrier confirmation protocol and schema gate implemented.
 
-### Current evidence
+**Current developmental result**
+- project-fixed ordinal FIII -> FIV -> FV OR: **1.89** per stage;
+- 95% CI: **1.49–2.38**;
+- after project-year + body length + release timing:
+  - OR **1.74**
+  - 95% CI **1.37–2.22**
+  - p approximately **7.2e-6**;
+- project heterogeneity is strong.
 
-Seed system:
-- 36 yellow European eels in Flores;
-- zero valid receiver-to-receiver movements.
+**Interpretation**
+- internal migratory readiness signal: supported developmentally;
+- universal stage × landscape-resistance law: not yet confirmed.
 
-Independent developmental panel:
-- 766 exact Durif-coded European eels;
-- primary female stages FIII/FIV/FV represented across seven projects;
-- project-fixed ordinal stage effect:
-  - OR per FIII -> FIV -> FV increment = **1.89**
-  - 95% CI **1.49–2.38**
-  - p approximately **1.1e-7**
-- categorical effects:
-  - FIV vs FIII OR **2.69**
-  - FV vs FIII OR **3.35**
-- project heterogeneity is strong:
-  - advanced-stage vs FIII project ORs range from about **0.58 to 46.5**
-  - Q approximately **21.55**, df=5, p approximately **0.0007**
-
-### Supported now
-
-> **Internal migratory readiness strongly predicts later realised movement on average after project control.**
-
-### Not yet supported
-
-> **A general state × landscape-resistance law.**
-
-Reason:
-- WRS/resistance is strongly project-confounded;
-- only one project has a useful within-project resistance gradient under the frozen preflight.
-
-### Decisive next test
-
-Use an independent same-landscape barrier system with FIII–FV variation and measured passage opportunity.
-
-Current candidate:
-- Dutch pump -> tidal-sluice European eel system;
-- 40 tagged eels;
-- Durif FIII–FV;
-- consecutive barriers;
-- open DANS data.
-
-### Failure condition
-
-If stage effects do not replicate under stronger within-system control, do not claim a general mobility-gating law.
+**Next decisive input**
+- DANS Dutch consecutive-barrier data DOI 10.17026/LS/WTSUNG;
+- run analysis/08_dutch_barrier_confirmation_gate.py after download.
 
 ---
 
-## 2. Louisiana — within-home-range micro-niche tracking
+## Louisiana — within-home-range micro-niche tracking
 
-### Current evidence/design
+**Completed**
+- EOG detection anomaly separated from ecological claim;
+- Lake Erie independent design frozen before file-level response analysis;
+- individual bird fixed as the biological replication unit;
+- SRI/state-retention metric implemented;
+- schema gate implemented;
+- South Carolina 2026 telemetry added as broad-relocation boundary/replication candidate.
 
-Seed clue:
-- King Rail temporal detections were not explained by simple local geographic propagation.
+**Current hypothesis**
+> resident birds may move geographically inside a familiar home range so that experienced microhabitat varies less than local time-matched availability.
 
-Independent Lake Erie design:
-- 10 birds with stabilized home ranges;
-- 206 used/homing microhabitat surveys;
-- 401 nearby random surveys;
-- one used point with intended two 75-m random-direction points sampled within 72 h;
-- repeated water-depth and vegetation measurements.
+**Current limitation**
+- Zenodo 6604660 is publicly cited by the source article, but its physical file list has not been resolved in the current execution environment;
+- therefore no SRI result is yet claimed.
 
-Primary hypothesis:
+**Next decisive input**
+- actual Lake Erie archive files containing individual/event/used-random/water-depth linkage;
+- then run analysis/04_state_fidelity_gate.py and analysis/05_state_retention_index.py.
 
-> **Routine movement inside a resident home range stabilizes experienced microhabitat relative to time-matched local availability.**
-
-Primary metric:
-
-~~~text
-SRI
-= 1 - variance(used environmental state)
-      / median variance(matched-availability pseudo-trajectories)
-~~~
-
-Biological replication/boundary:
-- 2026 South Carolina King Rail telemetry;
-- 9 birds with breeding + non-breeding locations;
-- 5/9 shifted seasonal home ranges;
-- mean shift 2.9 km, range 0.7–7.5 km;
-- flooding/management altered habitat availability and birds used adjacent tidal marsh/flooded forest.
-
-### Supported now
-
-The independent datasets make the hypothesis biologically plausible and testable.
-
-### Not yet supported
-
-No SRI result has yet been computed.
-
-The remaining Lake Erie gate is file-level:
-- bird identity;
-- event/date pairing;
-- used/random status;
-- water depth;
-- preferably coordinates.
-
-### Decisive next test
-
-Compute SRI per bird, treating **n=10 individuals** as the biological replication level.
-
-Strong support requires:
-- most birds positive;
-- no single-bird dominance;
-- used-state variability below matched availability;
-- where coordinates exist, geographic movement with comparatively low environmental-state displacement.
-
-### Failure condition
-
-If used environmental state is no more stable than event-matched availability, the fine-scale micro-niche tracking hypothesis fails in Lake Erie.
+**Independent boundary**
+- South Carolina King Rail telemetry shows broad seasonal relocation when habitat conditions/management change; raw data are currently by request rather than an open archive.
 
 ---
 
-## 3. Tampa — buffered persistence under quantitative degradation
+## Tampa — buffered persistence under quantitative degradation
 
-### Current evidence
+**Completed**
+- retrospective state decoupling established;
+- Tampa positioned as the third independent ecological programme;
+- TNC selected as first decisive prospective mechanism test;
+- Boca Ciega added prospectively before outcome-bearing sampling;
+- four-bay clonal_state_prospective_v2 contract frozen;
+- precollection freeze schema added;
+- field collection manifest added;
+- fail-closed baseline validator added.
 
-Retrospective biological result:
-- recorded presence can persist while frequency, abundance, blade length or shoot density decline;
-- degradation differs among Tampa Bay segments;
-- external Zostera panel reproduces broad binary–quantitative state decoupling;
-- simple annual environment, local propagation and several known-truth hidden-state explanations do not identify one common mechanism.
-
-Supported statement:
-
-> **Foundation-species occurrence and quantitative condition are distinct ecological states.**
-
-### Mechanism programme
-
-Candidate buffers:
-1. rhizome reserve / regenerative capacity;
-2. canopy-mediated physical self-facilitation;
-3. community functional insurance.
-
-### Decisive test priority
-
-**TNC first.**
-
-A new v2 prospective contract fixes a four-bay frame before future outcome-bearing sampling:
-
-- Old Tampa Bay: 8 recent Thalassia-positive nodes;
+**Four-bay planning frame**
+- Old Tampa Bay: 8 nodes;
 - Middle Tampa Bay: 11;
 - Lower Tampa Bay: 14;
 - Boca Ciega Bay: 8;
-- total planning frame: **41 nodes**.
+- total planning frame: **41**.
 
-Primary confirmatory gate:
+**Confirmatory gate**
 - >=36 analyzable nodes;
 - >=8 per bay;
-- one <=28-day synchronized TNC campaign;
-- each node baseline survey within +/-14 days;
-- one frozen HPLC TNC workflow.
+- <=28-day synchronized campaign;
+- baseline within +/-14 days;
+- >=3 valid cores per node;
+- one frozen HPLC TNC method.
 
-Primary model:
+**Current hard stop**
+The validator intentionally returns STOP until the response-independent pilot freezes:
+- rhizome tissue class;
+- minimum transect offset;
+- core diameter;
+- core depth;
+- preservation time;
+- preservation method;
+- assay-batch randomization rule;
+- campaign dates.
 
-~~~text
-future_delta_frequency
-  ~ baseline_frequency
-  + baseline_Braun_Blanquet
-  + rhizome_TNC
-  + water_body
-~~~
-
-### Supported now
-
-> **State decoupling is real and reproduced externally.**
-
-### Not yet supported
-
-No hidden buffer has yet been shown prospectively to predict future quantitative state.
-
-### Decisive next test
-
-Collect four-bay baseline rhizome TNC, freeze baseline/QC, then open the prespecified future quantitative transect response once.
-
-Hydrodynamic self-facilitation remains the second prospective line; community functional insurance the third.
-
-### Failure condition
-
-If TNC is null with adequate four-bay precision, weaken the reserve-buffer hypothesis and proceed to the separately frozen physical/community mechanisms without redefining TNC.
+**Next decisive input**
+- response-independent Thalassia tissue/HPLC pilot + field/logistics freeze.
 
 ---
 
-# Paper identities
+# Current order of work
 
-| Repository | Biological phenomenon | Decisive evidence | Field |
-|---|---|---|---|
-| azores | internal state gates realised mobility | replicated stage-aware movement/barrier interaction | movement & life-history ecology |
-| louis | resident movement stabilizes experienced microhabitat | individual matched-availability SRI | behavioural & wetland ecology |
-| Tampa | coarse presence outlasts quantitative condition through hidden buffers | prospective TNC / engineering / functional measurements | foundation-species resilience ecology |
+1. **Azores:** obtain/run Dutch open barrier dataset confirmation.
+2. **Louisiana:** resolve Lake Erie archive file schema and compute per-bird SRI.
+3. **Tampa:** complete precollection pilot/freeze, then execute four-bay TNC campaign.
 
-## Hard boundary
-
-The goal is **three independently strong ecological papers**, not one universal-rule paper.
-
-Any later synthesis is secondary.
+These are three separate ecological papers. Any synthesis remains secondary.
