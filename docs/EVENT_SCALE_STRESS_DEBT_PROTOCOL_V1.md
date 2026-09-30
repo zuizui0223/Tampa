@@ -302,6 +302,59 @@ This is not formal mediation or experimental causal proof.
 
 Do not add a stress x TNC interaction after outcome access.
 
+## Dynamic reserve-change to future-state diagnostic
+
+The strongest common-cause alternative is a persistent site template: some stable, incompletely measured property could make a node both high in TNC and more stable later.
+
+The pre/post TNC design allows one stronger, still-observational diagnostic without collecting another biological layer.
+
+Define:
+
+```text
+delta_tnc_42d = tnc_post - tnc_pre
+```
+
+using only nodes whose pre/post TNC samples pass the frozen 39-45 day interval, assay, spatial-core and destructive-sampling rules.
+
+Pair `tnc_post` to its post-exposure fixed-transect baseline under the already frozen clonal timing rule, then predeclare:
+
+```text
+future_delta_frequency
+  ~ baseline_frequency_post
+  + tnc_pre
+  + delta_tnc_42d
+  + water_body
+```
+
+Expected `delta_tnc_42d` direction: **positive**.
+
+Interpretation:
+
+- two-sided 95% interval entirely above zero -> within-node reserve maintenance/recovery carries prospective information about later quantitative stability;
+- interval entirely below zero -> opposite direction;
+- interval overlaps zero -> unsupported.
+
+Why this is useful:
+
+> a within-node reserve change is less compatible with a purely time-invariant site-quality explanation than a static TNC difference among nodes.
+
+Why it is still not causal proof:
+
+- time-varying local processes can affect both reserve change and future meadow state;
+- measurement error in difference scores can be large;
+- no random manipulation of reserve occurred.
+
+This is a **secondary site-template-resistant diagnostic**.
+
+It cannot rescue:
+
+- a null primary TNC -> future-state result;
+- a null/non-estimable event -> TNC result.
+
+Do not drop `tnc_pre` or `water_body`, switch to one-sided inference, or select only nodes with favorable reserve change after outcome access.
+
+If the hot-fresh exposure itself fails its variation gate, this diagnostic may still be estimated because it asks about measured reserve change, not event attribution.
+
 ## Secondary future-state test
 
 Predeclare only as secondary:
