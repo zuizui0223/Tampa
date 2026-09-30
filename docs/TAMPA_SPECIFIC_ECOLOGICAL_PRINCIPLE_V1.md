@@ -55,6 +55,56 @@ Prediction:
 
 > alternative-canopy composition may retain occupancy while changing hydrodynamic attenuation or other foundation-species functions.
 
+## Buffer role decomposition: resistance versus regenerative/functional continuity
+
+The three organizational levels above do not all buffer persistence in the same way.
+
+A useful second axis is **what the buffer does**.
+
+### Resistance buffers
+
+These reduce the amount of quantitative change experienced during a stress episode.
+
+Candidate Tampa mechanisms:
+
+- **rhizome energetic reserve (TNC):** stored carbon can sustain tissue and maintenance when current carbon balance is poor;
+- **canopy physical engineering:** the standing meadow can reduce or transform local hydrodynamic exposure.
+
+The common prediction is not reappearance. It is:
+
+> stronger resistance-buffer state -> smaller subsequent quantitative loss while the focal meadow remains under observation.
+
+### Regenerative / continuity buffers
+
+These do not necessarily prevent focal-state decline. Instead, they preserve the capacity for subsequent growth or preserve habitat function when focal *Thalassia* weakens.
+
+Candidate Tampa mechanisms:
+
+- **rhizome meristem / apex bank:** regenerative capacity remaining below ground;
+- **alternative seagrass canopy:** community-level continuity that can keep the habitat vegetated and potentially retain physical function even when *Thalassia* prominence declines.
+
+These are deliberately not called observed "recovery" from binary re-recording. Regenerative capacity and functional continuity are new biological states that must be measured directly.
+
+### Why this matters for the Tampa state-decoupling result
+
+The same coarse outcome—continued recorded presence—can arise through biologically different routes:
+
+1. the focal meadow resists change because internal or engineered buffers absorb forcing;
+2. the focal quantitative state changes, but regenerative capacity remains;
+3. focal dominance declines, but alternative foundation species preserve some habitat function.
+
+Therefore:
+
+> **coarse persistence does not identify whether the system resisted disturbance, retained regenerative capacity, or substituted function at the community level.**
+
+This is a stronger ecological interpretation of state decoupling than simply saying that presence is a coarse monitoring variable.
+
+### External forcing is not a buffer
+
+High-frequency hot-fresh events, low light, hypoxia or disturbance are treated as inputs that may **consume or overwhelm** resistance/regenerative buffers.
+
+The frozen event-stress study therefore asks whether local hot-fresh exposure depletes TNC; it does not add temperature/salinity as a fourth buffer.
+
 ## Stronger ecological hypothesis
 
 The current data motivate:
