@@ -27,6 +27,11 @@ assert e["name"]=="joint_hot_fresh_hours_30_25"
 assert "temperature >=30 C AND salinity <=25 ppt" in e["definition"]
 assert e["nonestimable_variation_gate"]["minimum_nodes_with_nonzero_joint_exposure"]==10
 assert e["nonestimable_variation_gate"]["minimum_bays_with_nonzero_joint_exposure"]==2
+wb=e["nonestimable_variation_gate"]["within_bay_identifiability"]
+assert wb["minimum_bays_with_node_scale_variation"]==2
+assert wb["minimum_analyzable_nodes_in_each_counted_bay"]==6
+assert wb["minimum_distinct_exposure_values_in_each_counted_bay"]==3
+assert "Do not remove water_body" in wb["failure_rule"]
 assert "Do not lower/raise either threshold" in e["nonestimable_variation_gate"]["rule"]
 
 p=c["primary_analysis"]
