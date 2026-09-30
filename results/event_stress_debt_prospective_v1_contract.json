@@ -83,6 +83,14 @@
       "restoration": "Backfill/restore each hole under the monitoring authority protocol and record visible disturbance after each round.",
       "future_response_sensitivity": "Carry forward the clonal-program point-level disturbance sensitivity: if future point data allow, recompute future focal frequency excluding the pre-frozen permanent meter-mark neighborhood nearest all TNC core anchors.",
       "interpretation_boundary": "A strong future-state discrepancy near sampled anchors is a measurement-intervention concern, not evidence for or against reserve ecology."
+    },
+    "temporal_pairing": {
+      "target_pre_post_interval_days": 42,
+      "confirmatory_min_interval_days": 39,
+      "confirmatory_max_interval_days": 45,
+      "collection_windows": "Pre cores remain within 3 days of node logger deployment and post cores within 3 days of node logger retrieval; field routing should pair each node's two TNC visits approximately 42 days apart.",
+      "rule": "Nodes outside the frozen 39-45 day pre-to-post TNC interval are descriptive-only for the primary event-to-reserve model.",
+      "no_rescue": "Do not add pre-to-post interval length as a post-hoc covariate or widen the interval window after observing TNC."
     }
   },
   "primary_exposure": {
@@ -183,7 +191,8 @@
     "within-bay exposure-identifiability gate",
     "combined pre/post maximum destructive core footprint per node",
     "pre-versus-post paired core offset geometry",
-    "maximum attempted/replacement cores across both TNC rounds"
+    "maximum attempted/replacement cores across both TNC rounds",
+    "39-45 day confirmatory pre-to-post TNC interval"
   ],
   "claim_boundary": [
     "This design tests whether the published Tampa hot-fresh condition definition gains mechanistic value when measured at node/event scale; it does not establish 30 C or 25 ppt as physiological hard limits.",
@@ -196,7 +205,8 @@
     "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season.",
     "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'.",
     "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient.",
-    "Pre/post TNC sampling is itself a potential intervention. Post-exposure cores must be spatially separated from pre-exposure disturbance, and the combined six-core footprint must remain outside the permanent monitoring unit under a frozen cumulative disturbance limit."
+    "Pre/post TNC sampling is itself a potential intervention. Post-exposure cores must be spatially separated from pre-exposure disturbance, and the combined six-core footprint must remain outside the permanent monitoring unit under a frozen cumulative disturbance limit.",
+    "Confirmatory event-to-reserve inference requires pre/post TNC samples 39-45 days apart so natural seasonal reserve change is not confounded with highly variable sampling intervals."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
