@@ -1,0 +1,285 @@
+{
+  "schema": "tampa.clonal_state_prospective_v2.contract",
+  "frozen_on": "2026-10-01",
+  "status": "future_new_measurement_design_not_yet_opened_four_bay",
+  "evidence_class": "prospective_new_measurement_mechanism",
+  "purpose": "Test whether below-ground reserve/clonal state predicts future quantitative meadow stability beyond current above-ground state, without using binary reappearance as a recovery endpoint.",
+  "eligibility": {
+    "geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay",
+      "Boca Ciega Bay"
+    ],
+    "sampling_frame": "Attempt census-oriented sampling of all contemporaneously baseline-Thalassia-positive stable fixed-transect nodes in Old, Middle, Lower Tampa Bay and Boca Ciega Bay, subject to permission and the frozen destructive-sampling geometry. Inclusion of Boca Ciega was decided before future outcome-bearing TNC sampling.",
+    "recent_2023_2025_feasibility_context": {
+      "recent_thalassia_positive_nodes": 41,
+      "by_water_body": {
+        "Old Tampa Bay": 8,
+        "Middle Tampa Bay": 11,
+        "Lower Tampa Bay": 14,
+        "Boca Ciega Bay": 8
+      },
+      "source": "results/bcb_tnc_expansion_preflight_v1.json",
+      "boundary": "Opened historical state is used only for prospective field feasibility. Contemporaneous baseline eligibility must be re-evaluated before coring."
+    },
+    "planning_target_nodes": 41,
+    "minimum_confirmatory_analyzable_nodes": 36,
+    "minimum_confirmatory_nodes_per_bay": 8,
+    "below_precision_gate": "If fewer than 36 analyzable baseline-Thalassia-positive nodes remain across the four-bay frame, or any bay contributes fewer than 8, report the frozen prospective coefficient and uncertainty as a pilot/sensitivity result. Do not use a null result to reject the below-ground reserve hypothesis.",
+    "selection_rule": "Do not subsample nodes by past decline class if all eligible nodes can be sampled. If field capacity is lower than the census frame, freeze a response-independent node list and alternates before coring; future outcome must never enter node selection.",
+    "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise.",
+    "destructive_sampling_guardrail": {
+      "principle": "Below-ground measurement must not materially alter the permanent monitoring unit whose future state is the response.",
+      "transect_buffer": "Freeze a minimum perpendicular offset from the permanent transect line before the first core; never core on a permanent meter mark or inside the routine monitoring footprint.",
+      "core_footprint": "Freeze core diameter, depth and maximum total disturbed area per node before sampling; do not enlarge cores after inspecting TNC yield.",
+      "restoration": "Backfill/restore each core hole under the monitoring authority's protocol and record any visible disturbance at the end of sampling.",
+      "node_specific_deviation": "Any safety/access/permit exception must be documented at collection and cannot depend on future response."
+    }
+  },
+  "baseline_new_measurements": {
+    "primary_predictor": {
+      "name": "rhizome_total_nonstructural_carbohydrate",
+      "unit": "mg g-1 dry mass under one frozen analytical protocol",
+      "definition": "sum of separately quantified rhizome soluble non-structural carbohydrates and starch",
+      "components": [
+        "soluble NSC",
+        "starch"
+      ],
+      "tissue": "one frozen horizontal-rhizome tissue class; exact ontogenetic/segment rule fixed after a response-independent tissue-mass pilot and before first outcome-bearing field sample",
+      "direction": "higher reserve predicts less subsequent quantitative decline"
+    },
+    "secondary_predictors": [
+      "below-ground dry biomass per area",
+      "rhizome branching / meristem density",
+      "rhizome diameter and internode length",
+      "below-ground : above-ground biomass ratio",
+      "optional clonal/genet continuity if a validated molecular design is feasible",
+      "leaf nitrogen and phosphorus status collected contemporaneously as a nutrient-state diagnostic"
+    ],
+    "replication": "At least 3 independent adjacent below-ground cores per node; summarize the primary predictor by node median before future outcome access.",
+    "analytical_standardization": {
+      "rationale": "Seagrass NSC estimates are strongly method-dependent; soluble sugars and starch must not be mixed across extraction/assay methods.",
+      "preferred_assay": "HPLC-based standardized seagrass NSC workflow, with soluble NSC and starch quantified separately and then summed for TNC.",
+      "reference": "Sørensen et al. 2018 Aquatic Botany 151:71-79, DOI 10.1016/j.aquabot.2018.08.006",
+      "species_matrix_pilot": "Before the first outcome-bearing field sample, run a response-independent Thalassia tissue pilot to verify adequate dry mass, extraction recovery, dilution range and assay precision under the chosen HPLC workflow. The pilot may optimize laboratory handling only; it cannot inspect a future biological response.",
+      "prohibited_switch": "Do not switch between colorimetric and HPLC assays, extraction solvents, starch hydrolysis methods, dry/fresh-mass basis or primary sugar definition after future response access."
+    },
+    "temporal_standardization": {
+      "rationale": "Thalassia rhizome soluble carbohydrate has strong seasonal variation, including reported fall maxima and spring minima.",
+      "campaign_window": "Collect all primary TNC samples within one predeclared <=28-day seasonal campaign.",
+      "baseline_alignment": "Primary-eligible TNC collection must occur within 14 days before or after the corresponding baseline fixed-transect survey.",
+      "time_metadata": "Record exact collection date/time for every core. Do not post-hoc choose a narrower date or time-of-day subset based on future response.",
+      "failure_rule": "Samples outside the frozen baseline-alignment window are excluded from the confirmatory primary analysis and may be reported descriptively only.",
+      "historical_feasibility": {
+        "recent_latest_positive_nodes": 33,
+        "latest_positive_2025_nodes": 28,
+        "observed_2025_survey_span_days": 71,
+        "densest_historical_28_day_window_nodes": 19,
+        "interpretation": "Historical routine monitoring dates are too dispersed to provide a 30-node synchronized TNC baseline by passive add-on sampling.",
+        "four_bay_design_decision": "Boca Ciega Bay included prospectively; historical routine survey timing still cannot substitute for the synchronized <=28-day campaign."
+      },
+      "baseline_survey_plan": {
+        "preferred": "Perform the fixed-transect baseline survey and TNC coring on the same day at each node.",
+        "hard_alignment": "TNC coring must remain within +/-14 days of the paired baseline fixed-transect survey.",
+        "synchronization": "Complete all confirmatory node pairs within one <=28-day campaign.",
+        "routine_schedule_boundary": "If the routine monitoring calendar cannot meet the frozen timing window, conduct a dedicated additional baseline fixed-transect survey using the same quantitative protocol rather than widening the TNC campaign.",
+        "protocol_equivalence": "The dedicated baseline must use the same meter-mark/frequency and Braun-Blanquet definitions needed for the future change endpoint."
+      },
+      "historical_feasibility_source": "results/clonal_tnc_timing_feasibility_v1.json"
+    },
+    "nutrient_state_diagnostic": {
+      "motivation": "In Florida Thalassia, rhizome carbohydrate can covary negatively with leaf nutrient content; high carbohydrate may represent reserve storage or passive accumulation under growth limitation.",
+      "measurements": [
+        "leaf %N",
+        "leaf %P",
+        "leaf N:P"
+      ],
+      "role": "Secondary interpretation diagnostic only. The primary TNC coefficient is not replaced by a nutrient-adjusted result.",
+      "interpretation_boundary": "A supported TNC-future-state association is evidence that measured reserve state is predictive; it is not by itself proof that carbohydrate causally buffers stress."
+    },
+    "core_replication_boundary": {
+      "inferential_unit": "stable transect node",
+      "within_node_cores": "spatial measurement replicates used to estimate node-level below-ground state",
+      "genetic_boundary": "Do not count separate cores as independent genets. Thalassia genets can extend across meters to much larger distances, and connected ramets may be physiologically integrated.",
+      "optional_genotyping": "If a validated molecular clonal-identity design is added before outcome access, use it as secondary mechanism context; it does not multiply the primary sample size."
+    },
+    "core_spatial_design": {
+      "source": "results/clonal_core_spatial_preflight_v1.json",
+      "status": "baseline_spatial_core_design_feasible",
+      "recent_nodes_with_three_or_more_positive_marks": 30,
+      "recent_nodes_requiring_sparse_fallback": 3,
+      "primary_rule": "If >=3 contemporaneously Thalassia-positive meter marks exist, choose three observed marks nearest q25/q50/q75 site_m with unique anchors where possible.",
+      "two_mark_fallback": "Use one anchor at each positive mark; place the third independent core at a separately frozen lateral/perpendicular offset from the midpoint-nearest positive mark.",
+      "one_mark_fallback": "Place three independent non-overlapping offset cores adjacent to the single positive mark.",
+      "inference_unit": "stable transect node; cores are within-node measurement replication and spatial sampling, not independent inferential units",
+      "prohibited_rescue": "Do not relocate anchors after TNC assay results or future outcome access."
+    },
+    "genet_identity_diagnostic": {
+      "role": "secondary interpretation diagnostic; cannot replace or rescue the primary rhizome-TNC test",
+      "sampling": "Preserve one DNA-quality tissue aliquot corresponding to each of the three frozen TNC core anchors before biochemical processing.",
+      "marker_rule": "Use one validated Thalassia testudinum multilocus genotyping panel frozen before laboratory genotyping. Published nuclear microsatellite panels are acceptable if locus performance is verified in Tampa material; a validated SNP panel may replace them only if frozen before any future outcome access.",
+      "node_summary": [
+        "number of distinct multilocus genotypes among the three anchors",
+        "whether any multilocus genotype repeats across spatial anchors",
+        "maximum along-transect separation among anchors sharing a multilocus genotype"
+      ],
+      "interpretation": {
+        "all_distinct": "Do not describe node-scale reserve persistence as evidence of one integrated clone. A TNC association remains a below-ground reserve-state result.",
+        "repeated_genotype": "Repeated multilocus genotype across anchors supports genet-scale clonality but does not prove that rhizome connections remain physically intact or that resources are currently translocated among anchors."
+      },
+      "no_primary_interaction": "Do not add TNC x clonality or clonality x future-state interactions to the primary analysis after outcome inspection. Genet information is an interpretation diagnostic unless a separately powered prospective study is frozen in advance.",
+      "references": [
+        "Van Dijk & van Tussenbroek 2010 Aquatic Botany 92:63-69, DOI 10.1016/j.aquabot.2009.10.005",
+        "Bricker et al. 2015 Aquatic Botany 123:76-82, DOI 10.1016/j.aquabot.2015.01.008",
+        "Van Dijk et al. 2016 Heredity, limited pollen/seed dispersal and large genets in Thalassia testudinum"
+      ]
+    }
+  },
+  "baseline_existing_covariates": [
+    "water body",
+    "baseline focal_frequency",
+    "baseline bb_cover_mean_all_points",
+    "baseline blade length where measured",
+    "baseline shoot density where measured",
+    "survey timing"
+  ],
+  "future_outcome": {
+    "primary": "next fixed-transect survey focal_frequency minus baseline focal_frequency",
+    "secondary": [
+      "next survey Braun-Blanquet all-point index minus baseline",
+      "next survey blade length minus baseline where observed",
+      "next survey shoot density minus baseline where observed"
+    ],
+    "prohibited_primary": "binary reappearance / recorded return",
+    "rationale": "Use continuous quantitative stability as the mechanism endpoint; annual detection transitions are not ecological recovery.",
+    "destructive_sampling_sensitivity": {
+      "status": "predeclared_if_point_level_future_data_allow",
+      "definition": "Recalculate future focal frequency after excluding the fixed permanent meter mark(s) nearest the three TNC core anchors under one pre-frozen distance/mark rule.",
+      "purpose": "Check that the prospective TNC association is not driven by local disturbance from destructive coring.",
+      "interpretation": "Primary inference remains node-level full-transect frequency; a strong discrepancy is reported as a measurement-intervention concern rather than hidden."
+    }
+  },
+  "primary_analysis": {
+    "estimator": "standardized coefficient of baseline rhizome TNC in a prespecified linear model for future change in focal_frequency",
+    "required_controls": [
+      "baseline focal_frequency",
+      "baseline Braun-Blanquet state",
+      "water body (four-level factor)"
+    ],
+    "uncertainty": "node-label permutation or bootstrap fixed before outcome access",
+    "directional_hypothesis": "higher rhizome TNC -> more positive / less negative future frequency change",
+    "alpha": 0.05,
+    "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor or add secondary traits to recover sample size.",
+    "confirmatory_gate": ">=36 analyzable nodes and >=8 nodes in each of Old, Middle, Lower and Boca Ciega Bay",
+    "support_rule": {
+      "interval": "two-sided 95% interval under the frozen node-level uncertainty procedure",
+      "supported": "interval entirely above 0",
+      "contradicted_direction": "interval entirely below 0",
+      "unsupported": "interval overlaps 0",
+      "note": "Do not switch to a one-sided test after observing the future response."
+    },
+    "design_note": "Primary inference is the TNC coefficient across the prospectively fixed four-bay census-oriented frame. Bay-specific estimates are descriptive/heterogeneity diagnostics unless separately powered."
+  },
+  "secondary_analysis": {
+    "note": "Secondary clonal traits, nutrient-state diagnostics and secondary biological outcomes are descriptive/supportive and cannot replace a null primary TNC -> future frequency result.",
+    "nutrient_diagnostic": "Report TNC relationships with contemporaneous leaf N, P and N:P and one predeclared sensitivity model adding leaf nutrient status if sample coverage is adequate. This is interpretation support, not a second primary test.",
+    "component_reporting": "Report soluble NSC and starch separately in addition to TNC, but do not select whichever component best predicts the future as a replacement primary endpoint.",
+    "multiple_testing": "Apply one declared family correction if inferential secondary tests are retained.",
+    "meristem_bank_hypothesis": {
+      "biological_idea": "Below-ground persistence may depend not only on stored carbohydrate but also on regenerative meristem / rhizome-apex capacity, analogous to a dormant bud or meristem bank.",
+      "predictor": "predeclared node-level rhizome meristem/apex density from the same standardized below-ground sampling frame",
+      "outcome": "future quantitative focal-frequency and/or shoot-density change under one predeclared corrected secondary family",
+      "role": "secondary competing below-ground mechanism, not a rescue of the TNC primary test",
+      "interpretation": "TNC and meristem density represent distinct candidate axes: energetic resistance versus regenerative capacity."
+    }
+  },
+  "pre_outcome_freeze_required": [
+    "final sampling nodes",
+    "core-processing laboratory protocol",
+    "TNC assay definition",
+    "number of cores per node",
+    "future survey date/window",
+    "analysis code and permutation/bootstrap rule",
+    "contemporaneous baseline eligibility and census-oriented node frame",
+    "single <=28-day TNC sampling campaign",
+    "TNC collection within +/-14 days of baseline fixed-transect survey",
+    "horizontal-rhizome tissue/ontogenetic segment rule",
+    "response-independent Thalassia tissue-mass / HPLC matrix pilot",
+    "soluble-NSC extraction and starch quantification method",
+    "dry-mass basis and technical standards",
+    "leaf N/P nutrient-state diagnostic protocol",
+    "30-node / 8-per-bay confirmatory precision gate",
+    "dedicated synchronized baseline-survey plan if routine monitoring dates exceed the frozen timing window",
+    "q25/q50/q75 core-anchor implementation and sparse-node offset geometry",
+    "minimum perpendicular core offset from permanent transect",
+    "core diameter/depth and maximum disturbed area per node",
+    "core-hole restoration procedure",
+    "anchor-neighborhood exclusion rule for the future disturbance sensitivity",
+    "DNA-quality tissue preservation from each TNC anchor",
+    "validated Thalassia multilocus genotyping panel and clone-calling error rule",
+    "Boca Ciega inclusion/exclusion decision before first TNC core",
+    "Boca Ciega node list and same frozen timing/assay/core rules"
+  ],
+  "claim_boundary": [
+    "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
+    "Do not use binary re-recording as a recovery outcome.",
+    "Do not change the primary clonal predictor after future response access.",
+    "Do not replace a null primary result with a secondary clonal trait.",
+    "If below-ground sampling is not independent of monitoring state or management intervention, document that selection explicitly.",
+    "Rhizome TNC is seasonally variable; do not pool samples from an unconstrained seasonal window and call the differences stable clonal reserve.",
+    "High TNC is not automatically a health score because carbohydrate can accumulate when growth is nutrient-limited; contemporaneous nutrient status is an interpretation diagnostic.",
+    "Within-node core replication reduces TNC measurement error but does not substitute for node-level replication.",
+    "If the 30-node / 8-per-bay precision gate fails, a null result is a pilot null and cannot reject the reserve-buffering hypothesis.",
+    "Within-node cores are measurement replicates, not independent clone/genet replicates.",
+    "A secondary meristem/apex signal may support regenerative capacity as a distinct below-ground mechanism, but it cannot replace a null primary TNC result.",
+    "Three cores are within-node measurement replication/spatial coverage; inferential replication remains the stable transect node.",
+    "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology.",
+    "TNC is the primary below-ground reserve measurement, not a direct measure of genet size or physiological integration.",
+    "Identical multilocus genotypes across anchors establish genet identity only; fragmented ramets can share a genotype without a currently intact rhizome connection, so genetic identity is not proof of resource translocation.",
+    "Boca Ciega Bay, if sampled, is a prespecified secondary context extension; it cannot rescue a null three-bay primary result or be described as independent replication.",
+    "Boca Ciega Bay was added before future outcome-bearing sampling to improve prospective generality and precision; it may not be removed post hoc because its future response is inconvenient.",
+    "The four-bay revision changes geography/sample-size planning only; assay, timing, core geometry, endpoint and primary predictor remain unchanged from v1."
+  ],
+  "design_precision_gate": {
+    "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + two water-body indicators",
+    "planning_assumption": "Approximate Gaussian multiple-regression benchmark, two-sided alpha 0.05, 80% power for the TNC term; used only to prevent an underpowered confirmatory null.",
+    "approximate_detectable_partial_r": {
+      "n_24": 0.57,
+      "n_30": 0.51,
+      "n_33": 0.49
+    },
+    "primary_rule": "Confirmatory interpretation requires >=30 analyzable nodes and >=8 analyzable nodes in each core bay. Below that gate, retain the prospective estimate and uncertainty but do not interpret a null as evidence against clonal/reserve buffering.",
+    "interpretation": "The realistic ~33-node frame is powered mainly for moderate-to-large partial effects; additional within-node cores improve measurement precision but do not replace node replication."
+  },
+  "prespecified_context_extension": {
+    "status": "baseline_design_feasible_not_independent_replication",
+    "source": "results/bcb_tnc_expansion_preflight_v1.json",
+    "candidate_water_body": "Boca Ciega Bay",
+    "design_feasibility": {
+      "recent_thalassia_positive_nodes": 8,
+      "nodes_with_ge3_positive_meter_marks": 8,
+      "four_bay_planning_nodes": 41,
+      "current_three_bay_approx_detectable_partial_r": 0.4881501522,
+      "four_bay_approx_detectable_partial_r": 0.4433248073
+    },
+    "sampling_rule": "If permissions/logistics allow, collect Boca Ciega under the same frozen <=28-day campaign, +/-14-day paired baseline, q25/q50/q75 core geometry, tissue class, HPLC, nutrient diagnostic and genet-diagnostic rules. Do not weaken any core three-bay rule to include Boca Ciega.",
+    "primary_boundary": "The confirmatory primary mechanism test remains Old + Middle + Lower Tampa Bay under the existing >=30 total / >=8 per core-bay gate.",
+    "secondary_four_bay_model": "future_delta_frequency ~ baseline_frequency + baseline_Braun_Blanquet + rhizome_TNC + water_body, using all eligible sampled nodes from the four prespecified bays",
+    "secondary_role": "Context-extension sensitivity only. Report the four-bay standardized TNC coefficient and two-sided 95% interval under the same frozen uncertainty procedure.",
+    "interpretation": {
+      "core_supported_four_bay_same_positive_direction": "Strengthens transportability of the measured reserve-state association across an additional Tampa Bay meadow context, but is not independent replication because the three core bays are reused.",
+      "core_supported_four_bay_opposite_or_strongly_attenuated": "Report context dependence; do not claim a bay-general reserve effect.",
+      "core_unsupported_four_bay_supported": "Does not rescue the primary mechanism test. Treat the four-bay result as secondary and hypothesis-generating.",
+      "boca_ciega_only": "Report a BCB-only coefficient/interval descriptively if estimable; n~8 is not assigned an independent confirmatory pass/fail gate."
+    },
+    "exclusion_rule": "If Boca Ciega cannot meet the frozen timing/assay/field rules, omit it from the context extension rather than widening windows or changing the primary three-bay design.",
+    "claim_boundary": [
+      "Boca Ciega is prespecified before TNC collection and future outcome access.",
+      "The extension broadens environmental/community context and may improve precision, but it is not an independent replication dataset.",
+      "Do not add Boca Ciega after seeing a null core result as a sample-size rescue."
+    ]
+  },
+  "revision_from": "results/clonal_state_prospective_v1_contract.json",
+  "revision_reason": "Prospective response-independent design decision to include Boca Ciega Bay before any outcome-bearing TNC sampling, based on the frozen four-bay feasibility audit."
+}
