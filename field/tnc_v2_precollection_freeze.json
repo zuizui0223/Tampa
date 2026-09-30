@@ -1,0 +1,34 @@
+{
+  "schema": "tampa.tnc_v2_precollection_freeze.v1",
+  "contract": "results/clonal_state_prospective_v2_contract.json",
+  "status": "PENDING_RESPONSE_INDEPENDENT_PILOT",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay",
+    "Boca Ciega Bay"
+  ],
+  "fixed_rules": {
+    "campaign_window_days": 28,
+    "baseline_alignment_days_each_side": 14,
+    "minimum_primary_nodes_total": 36,
+    "minimum_primary_nodes_per_bay": 8,
+    "minimum_cores_per_node": 3,
+    "assay_method": "HPLC",
+    "tnc_definition": "soluble_nsc_plus_starch",
+    "inference_unit": "stable transect node",
+    "future_outcome_allowed_in_baseline_manifest": false
+  },
+  "fields_to_freeze_before_first_outcome_bearing_core": {
+    "campaign_start_date": null,
+    "campaign_end_date": null,
+    "horizontal_rhizome_tissue_class": null,
+    "minimum_perpendicular_transect_offset_m": null,
+    "core_diameter_cm": null,
+    "core_depth_cm": null,
+    "maximum_collection_to_preservation_minutes": null,
+    "preservation_method": null,
+    "assay_batch_randomization_rule": null
+  },
+  "rule": "Validator must STOP while any precollection field is null. Fill only from response-independent pilot/logistics before first outcome-bearing core."
+}
