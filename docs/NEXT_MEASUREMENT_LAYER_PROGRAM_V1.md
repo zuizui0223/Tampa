@@ -186,19 +186,53 @@ This is preferable to a density × model-current interaction because the physica
 
 Do not construct another arbitrary distance/connectivity proxy or tune alternative current metrics from the biological table.
 
-## Priority 4 — canopy / epiphyte microenvironment
+## Priority 4 — direct optical microenvironment
 
-This is distinct from the failed bulk Secchi × depth proxy.
+Frozen prospective design:
 
-Measurements:
+- `results/optical_microenvironment_prospective_v1_contract.json`
+- `docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md`
 
-- canopy-level PAR;
-- epiphyte biomass/load;
-- spectral attenuation;
-- local turbidity;
-- canopy self-shading.
+### Biological hypothesis
 
-The test should distinguish actual light experienced by leaves from bay-segment bulk clarity.
+The failed bulk Secchi × depth result may reflect measurement-scale mismatch rather than absence of light biology.
+
+The new test measures the light actually experienced inside living *Thalassia* canopies over the same pre/post-TNC interval used by the event programme.
+
+Primary exposure:
+
+> mean daily within-canopy light integral (DLI; mol photons m-2 d-1).
+
+Primary process model:
+
+```text
+tnc_post
+  ~ tnc_pre
+  + mean_daily_within_canopy_dli
+  + water_body
+```
+
+Expected DLI direction: positive.
+
+No primary low-light threshold is searched.
+
+### Epiphyte boundary
+
+The bounded historical qualitative `EpiphyteDensity` layer does not support a simple year-ahead stress interpretation.
+
+Future epiphyte work therefore uses direct measurements:
+
+- epiphyte biomass per leaf area;
+- optional paired intact-versus-cleaned leaf optical attenuation after a response-independent removal-method pilot;
+- canopy structure / self-shading context.
+
+These are secondary physical diagnostics and cannot replace a null direct-light primary.
+
+### Relationship to event stress
+
+PAR may be co-deployed with temperature/salinity and share the same TNC cores, but optical and hot-fresh hypotheses remain separate primary tests.
+
+If both support, do not call them statistically independent causes without a separately powered joint design frozen before TNC response access.
 
 ## Priority 5 — acute disturbance / disease
 
