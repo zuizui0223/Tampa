@@ -152,6 +152,24 @@ tnc_post = median TNC across valid post-exposure cores.
 
 The stable transect node is the inferential unit. Cores are measurement replicates, not independent genets.
 
+## Pre/post TNC temporal pairing
+
+The event-to-reserve response is a change across one fixed exposure interval, so pre/post reserve sampling must not drift across unequal seasonal durations.
+
+For confirmatory nodes:
+
+- target pre-to-post TNC interval: **42 days**;
+- allowable confirmatory interval: **39-45 days**;
+- pre cores remain within 3 days of that node's logger deployment;
+- post cores remain within 3 days of that node's logger retrieval;
+- route planning should revisit each node on approximately the same relative day of the 42-day campaign.
+
+A node with pre/post TNC samples outside 39-45 days is descriptive-only for the primary event-to-reserve model.
+
+Do not widen this interval after seeing TNC, and do not add interval length as a post-hoc covariate to rescue the primary coefficient.
+
+This guardrail is separate from the common logger-overlap rule: high-frequency exposure is calculated on the frozen common calendar overlap, while reserve change is measured over a tightly matched node-level biological interval.
+
 ## Combined destructive-sampling guardrail
 
 The event study requires two TNC rounds, so destructive sampling itself is treated as a potential intervention.
