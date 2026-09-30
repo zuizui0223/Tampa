@@ -8,6 +8,9 @@ assert c["status"]=="future_new_measurement_design_not_yet_deployed"
 assert c["sampling_frame"]["planning_nodes"]==33
 assert c["sampling_frame"]["minimum_confirmatory_nodes"]==30
 assert c["sampling_frame"]["minimum_confirmatory_nodes_per_bay"]==8
+sel=c["sampling_frame"]["sensor_meter_mark_selection"]
+assert sel["primary_thalassia_rule"].startswith("Among contemporaneously Thalassia-positive meter marks")
+assert "Do not move" in sel["prohibited_rescue"]
 
 d=c["deployment"]
 assert d["target_duration_days"]==42
