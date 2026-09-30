@@ -63,6 +63,23 @@ Target:
 
 Sharing the biological interval is efficient but does **not** merge the hypotheses. Optical and hot-fresh exposures remain separate primary tests.
 
+## Representative deployment meter mark
+
+Choose the optical deployment location before any PAR record exists.
+
+For the primary *Thalassia* cohort:
+
+- identify all contemporaneously vegetated meter marks;
+- compute their median `site_m`;
+- among contemporaneously *Thalassia*-positive marks, choose the mark closest to that vegetated median;
+- exact tie -> lower `site_m`.
+
+Do **not** use preliminary PAR, mapped meadow-edge distance, accessibility to a nearby bare patch, or visual darkness/brightness to move the logger.
+
+If the preselected representative mark cannot satisfy the frozen PAR geometry, the node is optical-primary-ineligible rather than relocated to a more convenient optical position.
+
+This mirrors the representative-placement rule already used to prevent edge-biased hydrodynamic sensor placement.
+
 ## Within-canopy PAR placement
 
 At each node, measure PAR at one preselected within-canopy position.
