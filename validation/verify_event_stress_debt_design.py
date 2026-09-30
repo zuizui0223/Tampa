@@ -57,6 +57,14 @@ assert c["secondary_future_ecology"]["boundary"].startswith("Cannot rescue")
 assert c["relationship_to_otb_temperature_pilot"]["pr"]==38
 assert "extreme-effect" in c["relationship_to_otb_temperature_pilot"]["role"]
 
+dyn=c["relationship_to_clonal_tnc_program"]["dynamic_reserve_change_future_diagnostic"]
+assert dyn["focal_coefficient"]=="delta_tnc_42d"
+assert dyn["expected_direction"].startswith("positive")
+assert "tnc_pre + delta_tnc_42d + water_body" in dyn["model"]
+assert dyn["support_rule"]["supported"]=="two-sided 95% interval entirely above 0"
+assert "purely time-invariant site-template" in dyn["site_template_interpretation"]
+assert "cannot rescue" in dyn["no_rescue_rule"]
+
 chain=c["relationship_to_clonal_tnc_program"]["two_gate_chain"]
 assert "event-stress" in chain["gate_A_event_to_reserve"]
 assert "clonal contract" in chain["gate_B_reserve_to_future_state"]
