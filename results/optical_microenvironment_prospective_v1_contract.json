@@ -1,0 +1,144 @@
+{
+  "schema": "tampa.optical_microenvironment_prospective_v1.contract",
+  "frozen_on": "2026-10-01",
+  "status": "future_new_measurement_design_not_yet_deployed",
+  "evidence_class": "prospective_new_physical_to_biological_mechanism",
+  "purpose": "Test whether node-scale light actually experienced within Thalassia canopies predicts short-term reserve change, without reopening the failed bulk Secchi x depth proxy or the bounded qualitative epiphyte field.",
+  "relationship_to_existing_tampa_results": {
+    "bulk_light_result": "The frozen Secchi-derived benthic-light proxy did not support blade-length or shoot-density trajectories.",
+    "epiphyte_result": "Qualitative annual EpiphyteDensity did not support the simple prediction that higher burden is a year-ahead stress signal; the primary within-node coefficient was positive and the 2016 sensitivity overlapped zero.",
+    "new_question": "Does direct high-frequency irradiance inside the living canopy, measured over the same biological interval as TNC change, explain reserve depletion that coarse bay-segment light and qualitative epiphyte categories missed?",
+    "hard_boundary": "Do not reclassify EpiphyteDensity categories, epiphyte types, lags or annual windows. The new test must use direct optical measurements."
+  },
+  "sampling_frame": {
+    "geography": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"],
+    "cohort": "Contemporaneously baseline-Thalassia-positive stable fixed-transect nodes, census-oriented where feasible.",
+    "planning_nodes": 33,
+    "minimum_confirmatory_nodes": 30,
+    "minimum_confirmatory_nodes_per_bay": 8,
+    "historical_planning_counts": {
+      "Old Tampa Bay": 8,
+      "Middle Tampa Bay": 11,
+      "Lower Tampa Bay": 14
+    },
+    "below_precision_gate": "Below 30 analyzable nodes or below 8 nodes in any core bay, retain effect estimates and uncertainty as a pilot and do not use a null to reject optical stress."
+  },
+  "deployment": {
+    "preferred_calendar": "Co-deploy with the frozen July 24 through September 3 event-stress campaign so PAR and pre/post TNC are measured over the same biological interval.",
+    "target_duration_days": 42,
+    "minimum_valid_common_overlap_days": 35,
+    "maximum_nominal_sampling_interval_minutes": 15,
+    "primary_exposure_window": "Use the common calendar overlap shared by confirmatory nodes after frozen PAR QC; do not extend or shift the window after TNC inspection.",
+    "within_canopy_sensor": {
+      "measurement": "underwater scalar or cosine-corrected PAR, converted to photosynthetic photon flux density and daily light integral under one frozen calibration workflow",
+      "placement": "One fixed response-independent within-canopy sampling position per node, targeted at 50% of baseline canopy height above the bed.",
+      "minimum_height_m_above_bed": 0.05,
+      "geometry_rule": "Exact sensor model, angular orientation, proportional canopy-height placement, allowable height tolerance, mounting hardware and shading-clearance rule must be frozen in a response-independent physical pilot before outcome-bearing deployment.",
+      "eligibility_boundary": "If the frozen sensor position cannot remain submerged and physically within the canopy under field conditions, the node is not confirmatory for the optical primary rather than moving the sensor after inspection."
+    },
+    "coverage_rule": "Each confirmatory node must retain >=85% valid PAR observations across the common overlap after only predeclared QC.",
+    "fouling_rule": "Sensor anti-fouling method, cleaning schedule if any, optical-reference checks, fouling/drift exclusion rule, burial/exposure rule and interpolation/gap rule must be frozen before deployment."
+  },
+  "primary_exposure": {
+    "name": "mean_daily_within_canopy_dli",
+    "unit": "mol photons m-2 d-1",
+    "definition": "For each valid day, integrate calibrated within-canopy PAR over 24 h to daily light integral; primary node exposure is the arithmetic mean DLI across valid days in the frozen common overlap.",
+    "direction": "higher mean daily within-canopy DLI predicts higher post-exposure TNC after accounting for pre-exposure TNC",
+    "no_threshold_search": "No low-light threshold is used in the primary model. Do not introduce a percent-surface-light or DLI cutoff after observing TNC.",
+    "minimum_variation_gate": {
+      "minimum_distinct_node_exposure_values": 10,
+      "minimum_bays_with_node_scale_variation": 2,
+      "minimum_analyzable_nodes_in_each_counted_bay": 6,
+      "rule": "At least two bays must each contain >=6 analyzable nodes and >=3 distinct node-level DLI values. Otherwise the optical primary is non-estimable rather than dropping water_body or selecting a favorable subset."
+    }
+  },
+  "reserve_response": {
+    "pre_tnc": "Use the same pre-exposure TNC samples and frozen HPLC/tissue protocol as the event-stress/clonal programme.",
+    "post_tnc": "Use the same post-exposure TNC samples and frozen HPLC/tissue protocol as the event-stress/clonal programme.",
+    "temporal_pairing": "Confirmatory pre/post TNC interval remains 39-45 days under the already frozen destructive-sampling guardrail.",
+    "inferential_unit": "stable transect node; PAR rows and TNC cores are repeated measurements, not ecological replicates"
+  },
+  "primary_analysis": {
+    "model": "tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
+    "primary_coefficient": "mean_daily_within_canopy_dli",
+    "expected_direction": "positive",
+    "uncertainty": "node-level bootstrap or permutation procedure frozen before TNC inspection",
+    "support_rule": {
+      "supported": "two-sided 95% interval entirely above 0",
+      "contradicted_direction": "two-sided 95% interval entirely below 0",
+      "unsupported": "interval overlaps 0",
+      "nonestimable": "sample-size/coverage/optical-variation gate fails",
+      "boundary": "Do not switch to a one-sided test, a low-light threshold, or a different PAR aggregation after inspection."
+    },
+    "required_controls": ["tnc_pre", "water_body"],
+    "missing_data_rule": "complete-case confirmatory analysis under predeclared PAR/TNC QC; do not impute DLI or TNC to rescue sample size"
+  },
+  "secondary_optical_decomposition": {
+    "canopy_structure": {
+      "measurements": ["baseline canopy height", "local shoot density", "canopy cover", "representative leaf length/width"],
+      "role": "Describe whether low within-canopy DLI reflects canopy structure/self-shading; cannot replace a null primary DLI result."
+    },
+    "epiphyte_biomass": {
+      "measurement": "standardized epiphyte dry mass or ash-free dry mass per leaf area from a frozen leaf-age/position class",
+      "role": "Secondary explanation for leaf-surface optical load. Qualitative historical EpiphyteDensity is not reused as the primary mechanism variable."
+    },
+    "paired_leaf_optics": {
+      "status": "response-independent laboratory pilot required before inferential use",
+      "idea": "On a standardized sampled leaf segment, quantify PAR/spectral transmittance intact and after one validated gentle epiphyte-removal method; derive paired epiphyte-associated transmittance loss.",
+      "pilot_boundary": "The cleaning/removal method must be shown not to materially alter cleaned-leaf optical properties in a response-independent Thalassia pilot before using this metric.",
+      "role": "Physical attribution diagnostic for epiphyte shading only; not required for the broader actual-light primary."
+    },
+    "turbidity_context": {
+      "measurement": "optional co-located turbidity or suspended-particle proxy",
+      "role": "Response-independent context only; do not add/remove it from the primary DLI model after TNC inspection."
+    }
+  },
+  "competing_epiphyte_interpretations": {
+    "optical_stress_prediction": "Higher measured epiphyte biomass and/or paired epiphyte-associated transmittance loss should correspond to lower actual within-canopy light and, if biologically consequential over the interval, lower post-TNC after pre-TNC.",
+    "mature_canopy_marker_prediction": "Historical qualitative epiphyte burden may covary with leaf age, canopy persistence or favorable microsite state without independently reducing actual light enough to explain reserve depletion.",
+    "decision_boundary": "Do not infer epiphyte stress from taxonomy/category alone. The optical mechanism follows direct light and physical optical measurements."
+  },
+  "relationship_to_event_stress": {
+    "separate_primary_tests": true,
+    "shared_interval": "PAR may be co-deployed with temperature/salinity and share pre/post TNC, but hot-fresh and optical models remain separately frozen.",
+    "cross_exposure_diagnostic": "Before TNC results are inspected, report the node-level correlation between mean_daily_within_canopy_dli and joint_hot_fresh_hours_30_25 if both are estimable.",
+    "interpretation_boundary": "If both optical and hot-fresh primaries support, do not claim statistically independent effects without a separately powered joint model frozen before TNC response access.",
+    "no_rescue_rule": "A null/non-estimable hot-fresh result cannot be rescued by adding PAR, and a null optical result cannot be rescued by adding temperature/salinity covariates post hoc."
+  },
+  "relationship_to_future_meadow_state": {
+    "primary_role": "The immediate optical mechanism endpoint is reserve change, not binary loss or annual reappearance.",
+    "secondary_future_model": "future_delta_frequency ~ baseline_frequency_post + mean_daily_within_canopy_dli + water_body",
+    "expected_direction": "positive",
+    "boundary": "Secondary only; cannot rescue a null light-to-TNC primary. Binary re-recording remains prohibited as recovery."
+  },
+  "site_template_boundary": {
+    "statement": "A cross-node DLI association can still reflect persistent local site properties, but the pre/post TNC response and synchronized common exposure interval provide a dynamic process test that is less compatible with a purely static site-template explanation.",
+    "limitation": "Time-varying common causes such as turbidity events, nutrients, hypoxia or disturbance may still covary with light and TNC.",
+    "claim_rule": "Supported DLI -> TNC is described as a prospective actual-light/reserve association; causal optical stress is not claimed without stronger manipulation."
+  },
+  "pre_outcome_freeze_required": [
+    "final contemporaneous node list and alternates",
+    "PAR sensor model and calibration",
+    "within-canopy proportional-height placement rule and tolerance",
+    "sampling interval",
+    "July 24-September 3 common-window implementation",
+    "anti-fouling / cleaning / drift QC",
+    "daily-light-integral calculation code",
+    "optical variation/identifiability gate",
+    "pre/post TNC temporal and destructive-sampling rules",
+    "primary model code",
+    "node-level uncertainty procedure",
+    "secondary epiphyte biomass leaf class",
+    "any paired intact-versus-cleaned leaf optical method and response-independent damage pilot",
+    "secondary multiplicity rule",
+    "future survey window"
+  ],
+  "claim_boundary": [
+    "This study tests direct canopy-scale light exposure, not the failed bay-segment Secchi proxy.",
+    "Do not translate a supported DLI coefficient into proof that epiphytes caused the low light unless the separate physical epiphyte-optics diagnostic supports that link.",
+    "Do not reuse historical qualitative EpiphyteDensity as the primary optical predictor.",
+    "Repeated PAR observations improve exposure measurement but do not substitute for node replication.",
+    "If fewer than 30 analyzable nodes remain or any core bay has fewer than 8, a null is a pilot null.",
+    "Do not use binary re-recording as a recovery endpoint."
+  ]
+}
