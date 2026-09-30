@@ -1,0 +1,55 @@
+{
+  "schema": "tampa.epiphyte_measurement_layer_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36512835919,
+    "head_sha": "77a041af02e26bbf7dca8ea1a21e85749633fe1b",
+    "artifact_id": 11009852359,
+    "artifact_digest": "sha256:e6c4028f581267a9546b012fdb76c127a7f4a5aa9e560940d2153a09e59fe6d7"
+  },
+  "status": "unused_measurement_layer_has_substantial_focal_coverage",
+  "response_blind": true,
+  "measurement": {
+    "density_field": "EpiphyteDensity",
+    "ordinal_mapping": {
+      "Clean": 0,
+      "Light": 1,
+      "Moderate": 2,
+      "Heavy": 3
+    },
+    "excluded_label": "BAD DATA",
+    "boundary": "qualitative ordinal load; not epiphyte biomass, percent cover, or optical attenuation"
+  },
+  "all_taxa": {
+    "rows_with_density": 31737,
+    "unique_points": 25837,
+    "unique_visits": 1414,
+    "unique_transects": 71
+  },
+  "thalassia": {
+    "rows_with_density": 7590,
+    "unique_points": 7575,
+    "unique_visits": 901,
+    "unique_transects": 52,
+    "density_counts": {
+      "Light": 3522,
+      "Moderate": 2766,
+      "Heavy": 1136,
+      "BAD DATA": 6,
+      "Clean": 160
+    },
+    "by_bay": {
+      "Old Tampa Bay": 2156,
+      "Hillsborough Bay": 1,
+      "Middle Tampa Bay": 1346,
+      "Lower Tampa Bay": 2772,
+      "Boca Ciega Bay": 1293,
+      "Clearwater Bay": 22
+    }
+  },
+  "decision": "The unused qualitative epiphyte layer has enough focal coverage for a bounded follow-up, but coverage alone does not make it a causal shading measurement.",
+  "claim_boundary": [
+    "Coverage was audited without reading focal abundance, blade-length, shoot-density, loss or re-recording outcomes.",
+    "BAD DATA is excluded rather than recoded.",
+    "Do not interpret ordinal epiphyte density as direct light attenuation."
+  ]
+}
