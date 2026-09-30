@@ -119,6 +119,22 @@ The term should be used only if prospective measurements show that:
 2. one or more buffer states are measurably depleted or weakened;
 3. lower buffer state predicts subsequent quantitative deterioration or instability.
 
+## Persistent site-template alternative
+
+Stable transect identity explains a large fraction of the retrospective level differences in coarse state.
+
+Therefore a future cross-node association such as "high TNC -> better future state" or "high attenuation -> better future state" can still reflect persistent site quality that influences both the measured buffer and the future trajectory.
+
+The mechanism programme handles this by requiring **mechanism-specific process gates**, not by pretending the site-template alternative has disappeared:
+
+- event exposure -> within-node TNC depletion for the reserve pathway;
+- vegetated -> bare-bed excess attenuation for the engineering pathway;
+- directly measured composition -> physical function for community functional continuity.
+
+See `docs/SITE_TEMPLATE_ALTERNATIVE_AND_EVIDENCE_LADDER_V1.md`.
+
+A supported prospective association without its process gate is described as a **buffer-state predictor**, not a fully identified buffering mechanism.
+
 ## Novelty boundary
 
 Seagrass carbohydrate reserves, self-facilitation, ecosystem engineering, community insurance and resilience debt are all established ideas.
