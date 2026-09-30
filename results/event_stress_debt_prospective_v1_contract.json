@@ -73,7 +73,17 @@
       "tnc_post": "median rhizome TNC across valid post-exposure cores"
     },
     "spatial_boundary": "Pre and post destructive cores must use pre-frozen non-overlapping offsets and must not damage permanent monitoring marks.",
-    "inferential_unit": "stable transect node; cores are measurement replicates, not independent genets"
+    "inferential_unit": "stable transect node; cores are measurement replicates, not independent genets",
+    "combined_destructive_sampling_guardrail": {
+      "total_rounds": "Exactly two outcome-bearing TNC rounds for the event study: pre-exposure and post-exposure. If post-exposure TNC is used as the clonal future-state baseline, do not collect a third redundant TNC round.",
+      "total_core_count": "Target 3 valid pre-exposure + 3 valid post-exposure cores per node; any replacement-core rule and absolute maximum attempted cores must be frozen before deployment.",
+      "permanent_transect_buffer": "Use the same pre-frozen minimum perpendicular offset from the permanent monitoring transect required by the clonal TNC program; no core may be placed on a permanent meter mark or inside the routine monitoring footprint.",
+      "pre_post_geometry": "At each frozen q25/q50/q75 anchor neighborhood, pre- and post-exposure cores must use predeclared distinct lateral/perpendicular offsets so post sampling does not re-core the pre-exposure hole or its immediately disturbed rhizosphere.",
+      "cumulative_footprint": "Freeze core diameter, depth and maximum cumulative disturbed area per node across both rounds before the first pre-exposure core. Do not enlarge the footprint after seeing TNC yield.",
+      "restoration": "Backfill/restore each hole under the monitoring authority protocol and record visible disturbance after each round.",
+      "future_response_sensitivity": "Carry forward the clonal-program point-level disturbance sensitivity: if future point data allow, recompute future focal frequency excluding the pre-frozen permanent meter-mark neighborhood nearest all TNC core anchors.",
+      "interpretation_boundary": "A strong future-state discrepancy near sampled anchors is a measurement-intervention concern, not evidence for or against reserve ecology."
+    }
   },
   "primary_exposure": {
     "name": "joint_hot_fresh_hours_30_25",
@@ -137,7 +147,7 @@
     "boundary": "Cannot rescue a null primary stress-to-reserve result."
   },
   "relationship_to_clonal_tnc_program": {
-    "post_exposure_tnc_role": "The post-exposure TNC sample can serve as the synchronized baseline TNC predictor in the independently frozen clonal TNC -> future-frequency contract if all clonal-contract timing and assay rules are met.",
+    "post_exposure_tnc_role": "The post-exposure TNC sample is the preferred synchronized baseline TNC predictor for the independently frozen clonal TNC -> future-frequency contract if all clonal timing, spatial-core, destructive-sampling and assay rules are met. Using it avoids a third destructive TNC round.",
     "two_gate_chain": {
       "gate_A_event_to_reserve": "Primary event-stress contract supports a negative joint-hot-fresh coefficient on post-TNC conditional on pre-TNC.",
       "gate_B_reserve_to_future_state": "Independent clonal contract supports a positive TNC coefficient on future focal-frequency change.",
@@ -170,7 +180,10 @@
     "node-level uncertainty procedure",
     "secondary multiplicity rule",
     "future survey window",
-    "within-bay exposure-identifiability gate"
+    "within-bay exposure-identifiability gate",
+    "combined pre/post maximum destructive core footprint per node",
+    "pre-versus-post paired core offset geometry",
+    "maximum attempted/replacement cores across both TNC rounds"
   ],
   "claim_boundary": [
     "This design tests whether the published Tampa hot-fresh condition definition gains mechanistic value when measured at node/event scale; it does not establish 30 C or 25 ppt as physiological hard limits.",
@@ -182,7 +195,8 @@
     "The response-independent calendar preflight found historical joint exposure in OTB and MTB but none in LTB; disclose this asymmetry and do not count LTB zero-exposure replication as evidence of exposure variation.",
     "If the future nonzero-exposure gate fails in the frozen July 24-September 3 deployment, the hot-fresh mechanism remains non-estimable rather than being rescued by a different season.",
     "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'.",
-    "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient."
+    "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient.",
+    "Pre/post TNC sampling is itself a potential intervention. Post-exposure cores must be spatially separated from pre-exposure disturbance, and the combined six-core footprint must remain outside the permanent monitoring unit under a frozen cumulative disturbance limit."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
