@@ -164,7 +164,26 @@
       "B_only": "Reserve predicts future trajectory, but the measured hot-fresh events do not explain reserve variation.",
       "neither": "No support for the proposed event-stress-debt chain under the frozen measurements."
     },
-    "forbidden_integration": "Do not fit a post-hoc stress x TNC interaction or mediation model after future outcome access."
+    "forbidden_integration": "Do not fit a post-hoc stress x TNC interaction or mediation model after future outcome access.",
+    "dynamic_reserve_change_future_diagnostic": {
+      "status": "predeclared_secondary_site_template_resistant_diagnostic",
+      "purpose": "Test whether within-node reserve change across the frozen 39-45 day pre/post TNC interval predicts later quantitative Thalassia trajectory beyond static reserve level, reducing dependence on a purely time-invariant persistent-site explanation.",
+      "reserve_change_definition": "delta_tnc_42d = tnc_post - tnc_pre using only nodes that pass the frozen pre/post TNC temporal, spatial and assay QC.",
+      "future_baseline": "Use the post-exposure fixed-transect baseline paired to tnc_post under the clonal TNC timing rule; future_delta_frequency is next fixed-transect focal_frequency minus that post-exposure baseline focal_frequency.",
+      "model": "future_delta_frequency ~ baseline_frequency_post + tnc_pre + delta_tnc_42d + water_body",
+      "focal_coefficient": "delta_tnc_42d",
+      "expected_direction": "positive; nodes that maintain or increase reserve across the common exposure interval should show more positive / less negative future quantitative change",
+      "support_rule": {
+        "supported": "two-sided 95% interval entirely above 0",
+        "contradicted_direction": "two-sided 95% interval entirely below 0",
+        "unsupported": "interval overlaps 0",
+        "boundary": "Secondary diagnostic only. Do not switch to one-sided inference or drop tnc_pre/water_body after inspection."
+      },
+      "eligibility": "May be estimated whenever the pre/post TNC pair passes the frozen 39-45 day, assay and destructive-sampling rules, even if the hot-fresh exposure itself is non-estimable. Event-exposure variation is not required for this reserve-change diagnostic.",
+      "site_template_interpretation": "Because delta_tnc_42d is a within-node change, support is less compatible with a purely time-invariant site-template explanation than a static TNC-to-future association alone. It does not remove time-varying common causes or prove that reserve change itself is causal.",
+      "no_rescue_rule": "This diagnostic cannot rescue a null primary static TNC -> future-frequency result and cannot replace the event -> TNC primary test. Report all three links separately.",
+      "precision_boundary": "The realistic common-node sample is modest and the model includes both tnc_pre and delta_tnc_42d. A null is descriptive unless a separate precision analysis frozen before future response establishes adequate resolution."
+    }
   },
   "relationship_to_otb_temperature_pilot": {
     "pr": 38,
@@ -192,7 +211,8 @@
     "combined pre/post maximum destructive core footprint per node",
     "pre-versus-post paired core offset geometry",
     "maximum attempted/replacement cores across both TNC rounds",
-    "39-45 day confirmatory pre-to-post TNC interval"
+    "39-45 day confirmatory pre-to-post TNC interval",
+    "dynamic reserve-change -> future-state secondary model and uncertainty code"
   ],
   "claim_boundary": [
     "This design tests whether the published Tampa hot-fresh condition definition gains mechanistic value when measured at node/event scale; it does not establish 30 C or 25 ppt as physiological hard limits.",
@@ -206,7 +226,8 @@
     "Because 30 C is near reported Thalassia thermal optima rather than a demonstrated heat-injury threshold, never translate a supported joint 30 C / 25 ppt association into 'heat damage above 30 C'.",
     "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient.",
     "Pre/post TNC sampling is itself a potential intervention. Post-exposure cores must be spatially separated from pre-exposure disturbance, and the combined six-core footprint must remain outside the permanent monitoring unit under a frozen cumulative disturbance limit.",
-    "Confirmatory event-to-reserve inference requires pre/post TNC samples 39-45 days apart so natural seasonal reserve change is not confounded with highly variable sampling intervals."
+    "Confirmatory event-to-reserve inference requires pre/post TNC samples 39-45 days apart so natural seasonal reserve change is not confounded with highly variable sampling intervals.",
+    "A supported delta_tnc_42d -> future-state coefficient would weaken a purely time-invariant persistent-site explanation, but it would not eliminate time-varying site processes or establish causal mediation."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
