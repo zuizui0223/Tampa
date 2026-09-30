@@ -11,7 +11,11 @@
     "hard_boundary": "Do not reclassify EpiphyteDensity categories, epiphyte types, lags or annual windows. The new test must use direct optical measurements."
   },
   "sampling_frame": {
-    "geography": ["Old Tampa Bay", "Middle Tampa Bay", "Lower Tampa Bay"],
+    "geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
     "cohort": "Contemporaneously baseline-Thalassia-positive stable fixed-transect nodes, census-oriented where feasible.",
     "planning_nodes": 33,
     "minimum_confirmatory_nodes": 30,
@@ -21,7 +25,13 @@
       "Middle Tampa Bay": 11,
       "Lower Tampa Bay": 14
     },
-    "below_precision_gate": "Below 30 analyzable nodes or below 8 nodes in any core bay, retain effect estimates and uncertainty as a pilot and do not use a null to reject optical stress."
+    "below_precision_gate": "Below 30 analyzable nodes or below 8 nodes in any core bay, retain effect estimates and uncertainty as a pilot and do not use a null to reject optical stress.",
+    "sensor_meter_mark_selection": {
+      "rule": "Select the optical deployment meter mark before any PAR data are inspected and without using mapped edge distance, water clarity or preliminary light.",
+      "primary_thalassia_rule": "Among contemporaneously Thalassia-positive meter marks, choose the mark closest to the median site_m of all contemporaneously vegetated meter marks in that node; exact tie -> lower site_m.",
+      "provenance": "Same edge-independent representative-placement principle already frozen for the direct hydrodynamic programme.",
+      "prohibited_rescue": "Do not move the PAR logger to a brighter/darker or more accessible meter mark after preliminary optical inspection. If the chosen mark cannot satisfy the frozen sensor geometry, the node is optical-primary-ineligible."
+    }
   },
   "deployment": {
     "preferred_calendar": "Co-deploy with the frozen July 24 through September 3 event-stress campaign so PAR and pre/post TNC are measured over the same biological interval.",
@@ -70,12 +80,20 @@
       "nonestimable": "sample-size/coverage/optical-variation gate fails",
       "boundary": "Do not switch to a one-sided test, a low-light threshold, or a different PAR aggregation after inspection."
     },
-    "required_controls": ["tnc_pre", "water_body"],
+    "required_controls": [
+      "tnc_pre",
+      "water_body"
+    ],
     "missing_data_rule": "complete-case confirmatory analysis under predeclared PAR/TNC QC; do not impute DLI or TNC to rescue sample size"
   },
   "secondary_optical_decomposition": {
     "canopy_structure": {
-      "measurements": ["baseline canopy height", "local shoot density", "canopy cover", "representative leaf length/width"],
+      "measurements": [
+        "baseline canopy height",
+        "local shoot density",
+        "canopy cover",
+        "representative leaf length/width"
+      ],
       "role": "Describe whether low within-canopy DLI reflects canopy structure/self-shading; cannot replace a null primary DLI result."
     },
     "epiphyte_biomass": {
@@ -131,7 +149,8 @@
     "secondary epiphyte biomass leaf class",
     "any paired intact-versus-cleaned leaf optical method and response-independent damage pilot",
     "secondary multiplicity rule",
-    "future survey window"
+    "future survey window",
+    "edge/light-independent representative meter-mark selection"
   ],
   "claim_boundary": [
     "This study tests direct canopy-scale light exposure, not the failed bay-segment Secchi proxy.",
@@ -139,6 +158,7 @@
     "Do not reuse historical qualitative EpiphyteDensity as the primary optical predictor.",
     "Repeated PAR observations improve exposure measurement but do not substitute for node replication.",
     "If fewer than 30 analyzable nodes remain or any core bay has fewer than 8, a null is a pilot null.",
-    "Do not use binary re-recording as a recovery endpoint."
+    "Do not use binary re-recording as a recovery endpoint.",
+    "The optical deployment meter mark is selected without using preliminary PAR or mapped edge distance; sensor placement cannot be moved to manufacture exposure contrast."
   ]
 }
