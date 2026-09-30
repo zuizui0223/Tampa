@@ -1,0 +1,56 @@
+{
+  "schema": "tampa.otb_continuous_logger_preflight_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "response_independent_source_and_alignment_gate_frozen",
+  "motivation": "The retrospective Tampa mechanism line is hard-stopped. The next permitted mechanism evidence must use genuinely new state information. The public tbep-tech/otb-temp continuous shallow-seagrass temperature logger programme is a distinct high-frequency data stream.",
+  "logger_source": {
+    "repository": "tbep-tech/otb-temp",
+    "commit": "5edb38a458b029cc52bcb8b326298d29bc4b1b2e",
+    "metadata_path": "data/metadat.RData",
+    "metadata_git_blob_sha1": "248ebecfd0660d9a085bb106e587ecbe556b3a35",
+    "temperature_path": "data/tempdat.RData",
+    "temperature_git_blob_sha1": "1e1aed22a27a0a5531a4b6cd7af3238003b62f6d",
+    "source_code": "r/dat_proc.R",
+    "source_role": "Continuous summertime shallow-seagrass-bed temperature observations; independent of the Tampa fixed-transect focal response table."
+  },
+  "tampa_registry_source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "event_path": "dwc/event.csv",
+    "event_git_blob_sha1": "583b4d4e328290ab065346579eb4f29f03ea0f99",
+    "use": "Transect identity and coordinates only; no focal occurrence/cover/eMoF response opened."
+  },
+  "response_access_before_gate": {
+    "thalassia_detection": false,
+    "thalassia_frequency": false,
+    "thalassia_cover": false,
+    "thalassia_blade_length": false,
+    "thalassia_shoot_density": false
+  },
+  "logger_quality_gate": {
+    "minimum_unique_years": 3,
+    "minimum_qualified_deployments": 20,
+    "qualified_deployment_minimum_duration_days": 7,
+    "qualified_deployment_maximum_median_interval_minutes": 30,
+    "minimum_temperature_rows": 100000,
+    "minimum_metadata_key_match_fraction": 0.95
+  },
+  "spatial_alignment_gate": {
+    "primary_max_distance_km": 1,
+    "minimum_unique_fixed_transects_with_primary_match": 5,
+    "sensitivity_max_distance_km": 2,
+    "sensitivity_is_descriptive_only": true,
+    "rule": "A logger deployment maps to its nearest Old Tampa Bay fixed transect by Haversine distance. Multiple deployments may map to one transect; the gate counts unique fixed transects."
+  },
+  "decision_map": {
+    "pass": "A future/species-response contract may use only the predeclared <=1 km fixed-transect/logger mappings and must freeze temperature metrics before focal response access.",
+    "temporal_pass_spatial_stop": "The logger programme is high-frequency but not sufficiently co-located with fixed transects for direct Tampa response testing; do not expand the distance threshold after seeing focal outcomes.",
+    "source_stop": "Do not use this data stream for the fixed-transect mechanism test."
+  },
+  "claim_boundary": [
+    "Logger sites were designed for shallow Old Tampa Bay seagrass temperature work, not for the fixed-transect monitoring programme.",
+    "Spatial proximity does not make logger temperature identical to transect temperature.",
+    "This gate establishes source quality and spatial/temporal alignment only; it does not test a biological response.",
+    "The 1 km primary crosswalk threshold cannot be relaxed after this preflight result to obtain more matched transects."
+  ]
+}

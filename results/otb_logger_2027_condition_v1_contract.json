@@ -1,0 +1,92 @@
+{
+  "schema": "tampa.otb_logger_2027_condition_v1.contract",
+  "frozen_on": "2026-09-28",
+  "status": "prospective_response_unopened",
+  "scientific_question": "Does independently measured 2026 meadow-scale thermal stress predict deterioration of 2027 Thalassia plant condition at predeclared nearby Old Tampa Bay fixed transects?",
+  "predictor_source": {
+    "preflight": "results/otb_continuous_logger_preflight_v1.json",
+    "locked_crosswalk": "results/otb_logger_2026_primary_crosswalk_v1.csv",
+    "logger_commit": "5edb38a458b029cc52bcb8b326298d29bc4b1b2e",
+    "response_freeze_note": "The 2026 logger data and fixed-node mappings are fixed before any 2026 or 2027 fixed-transect biological response is opened from a future source update."
+  },
+  "predictor": {
+    "name": "deployment_centered_heat_load_above_30C",
+    "per_logger_deployment": "mean(max(temperature_C - 30, 0)) across valid 10-minute records",
+    "deployment_centering": "subtract the mean per-logger heat load across all temporally qualified OTB logger deployments sharing the same deploy_date",
+    "fixed_node_aggregation": "mean centered heat load across all locked <=1 km logger deployments mapped to that fixed transect in 2026",
+    "reason": "The OTB logger project's own design notes warn that raw temperatures should not be compared across deployment dates without within-deployment normalization. The 30 C reference is inherited from the published Tampa hot-stress work rather than selected against the future response.",
+    "diagnostics_only": [
+      "mean temperature anomaly centered within deploy_date",
+      "fraction of records >=30 C",
+      "maximum temperature",
+      "number of matched deployments"
+    ]
+  },
+  "locked_fixed_nodes": [
+    "TBEP:seagrass:loc:S1T5",
+    "TBEP:seagrass:loc:S1T10",
+    "TBEP:seagrass:loc:S1T11",
+    "TBEP:seagrass:loc:S1T14",
+    "TBEP:seagrass:loc:S1T15",
+    "TBEP:seagrass:loc:S1T16"
+  ],
+  "future_response": {
+    "source_rule": "Use the first public TBEP fixed-transect release, after this contract is merged, that contains both 2026 and 2027 observations under compatible semantics.",
+    "target_change": "2027 annual node state minus 2026 annual node state",
+    "primary_outcomes": [
+      "blade_length_mean_mm",
+      "shoot_density_mean_m2"
+    ],
+    "secondary_outcomes": [
+      "focal_frequency",
+      "bb_cover_mean_all_points"
+    ],
+    "minimum_nodes_per_outcome": 5,
+    "nonestimable_rule": "If fewer than 5 locked nodes have valid consecutive 2026-2027 values for a primary outcome, that primary outcome is non-estimable; do not replace it with a secondary outcome or expand the spatial crosswalk."
+  },
+  "primary_test": {
+    "estimand": "Spearman correlation across locked nodes between 2026 centered heat load and 2026->2027 state change",
+    "expected_direction": "negative: relatively hotter logger exposure predicts more negative plant-condition change",
+    "inference": "exact one-sided permutation over node outcome labels",
+    "familywise_alpha": 0.025,
+    "support_rule": "rho < 0 and exact one-sided p < 0.025 for a primary outcome; report both primaries regardless",
+    "overall_status": "supported if at least one estimable primary outcome passes; otherwise not supported or non-estimable"
+  },
+  "secondary_test": {
+    "alpha": 0.05,
+    "cannot_rescue_primary": true
+  },
+  "forbidden_after_freeze": [
+    "Adding 2 km sensitivity matches to increase node count.",
+    "Changing the 30 C reference, heat-load formula, deployment centering or fixed-node aggregation after future response access.",
+    "Changing the six locked fixed nodes.",
+    "Substituting 2026 absolute state for the predeclared 2026-to-2027 change after seeing outcomes.",
+    "Selecting a different biological outcome because blade length or shoot density is adverse or null."
+  ],
+  "claim_boundary": [
+    "Even a positive result would be predictive association, not causal proof of temperature injury.",
+    "Nearby logger sites are proxies for fixed-transect thermal exposure.",
+    "The endpoint is deliberately small-n but genuinely prospective and exact-permutation based.",
+    "This contract does not authorize access to a future biological response before the first qualifying public release is identified and source-locked.",
+    "The exact small-n test has very coarse resolution: at n=6 the least-extreme rejecting Spearman rho is -0.8857, and at n=5 only rho=-1 rejects under p<0.025. Therefore a null result is not evidence against moderate thermal effects."
+  ],
+  "design_resolution": {
+    "purpose": "Make the inferential resolution of the frozen small-n exact Spearman test explicit before any 2027 biological response exists.",
+    "exact_one_sided_alpha_rule": "primary contract requires p < 0.025",
+    "n6": {
+      "permutations": 720,
+      "least_extreme_rejecting_rho": -0.8857142857142857,
+      "exact_p_at_boundary": 0.016666666666666666,
+      "next_less_extreme_rho": -0.8285714285714285,
+      "exact_p_next": 0.029166666666666667
+    },
+    "n5": {
+      "permutations": 120,
+      "only_rejecting_rho": -1,
+      "exact_p_at_boundary": 0.008333333333333333,
+      "next_less_extreme_rho": -0.9,
+      "exact_p_next": 0.041666666666666664
+    },
+    "decision": "Treat this as an extreme-effect prospective probe. Failure to reject cannot be used to conclude that high-frequency thermal exposure is unimportant, because the frozen design can only detect an almost perfectly monotone node ranking at n=5-6."
+  }
+}

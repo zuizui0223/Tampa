@@ -1,0 +1,70 @@
+{
+  "schema": "tampa.otb_continuous_logger_preflight_v1.canonical_summary",
+  "status": "preflight_pass",
+  "authoritative_workflow": {
+    "run_id": 36384476533,
+    "head_sha": "e3800ded4a807cb79e85821e3adebeee0d56847e",
+    "artifact_id": 10954505008,
+    "artifact_digest": "sha256:6578ae7b0a5396a6ac6c50913fd8aba9a6d43a4ef09fea03355be745851adee9"
+  },
+  "source": {
+    "logger_repository": "tbep-tech/otb-temp",
+    "logger_commit": "5edb38a458b029cc52bcb8b326298d29bc4b1b2e",
+    "metadata_blob": "248ebecfd0660d9a085bb106e587ecbe556b3a35",
+    "temperature_blob": "1e1aed22a27a0a5531a4b6cd7af3238003b62f6d",
+    "tampa_event_blob": "583b4d4e328290ab065346579eb4f29f03ea0f99"
+  },
+  "registry": {
+    "logger_metadata_rows": 196,
+    "logger_deployments": 188,
+    "temperature_rows": 159369,
+    "metadata_key_match_fraction": 1,
+    "qualified_deployments": 21,
+    "qualified_years": [
+      2024,
+      2025,
+      2026
+    ],
+    "fixed_otb_transects": 19
+  },
+  "temporal_quality": {
+    "pass": true,
+    "median_qualified_duration_days": 7.95138888888337,
+    "median_qualified_interval_minutes": 10,
+    "p95_qualified_interval_minutes": 10,
+    "maximum_observed_temperature_c": 37.706669921875
+  },
+  "spatial_alignment": {
+    "primary_threshold_km": 1,
+    "primary_matched_deployments": 11,
+    "primary_unique_fixed_transects": 6,
+    "primary_unique_logger_sites": 11,
+    "primary_pass": true,
+    "qualified_nearest_distance_median_km": 0.970725256713053,
+    "qualified_nearest_distance_q90_km": 2.224385213403512,
+    "sensitivity_threshold_km": 2,
+    "sensitivity_unique_fixed_transects": 10,
+    "sensitivity_is_descriptive_only": true
+  },
+  "year_detail": {
+    "2024": {
+      "qualified_deployments": 6,
+      "primary_matched_deployments": 1
+    },
+    "2025": {
+      "qualified_deployments": 1,
+      "primary_matched_deployments": 1
+    },
+    "2026": {
+      "qualified_deployments": 14,
+      "primary_matched_deployments": 9
+    }
+  },
+  "decision": "Use the six predeclared <=1 km 2026 fixed-transect mappings to lock a 2026-temperature -> 2027-condition prospective test. Do not use the 2 km sensitivity set to enlarge the endpoint.",
+  "claim_boundary": [
+    "Spatial proximity does not make logger temperature identical to fixed-transect temperature.",
+    "The logger programme was independently designed for shallow Old Tampa Bay seagrass temperature monitoring.",
+    "The existing 2024/2025 overlap is too sparse for a meaningful retrospective fixed-transect mechanism test.",
+    "The value of this source is a future 2027 prospective test, not retrospective rescue."
+  ]
+}
