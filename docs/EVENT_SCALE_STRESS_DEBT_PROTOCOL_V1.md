@@ -173,16 +173,29 @@ common_overlap_hours
 x fraction(valid paired observations satisfying joint)
 ~~~
 
-### Exposure-variation gate
+### Exposure-variation and identifiability gate
 
-Before fitting the biological response:
+Before fitting the biological response, all of the following must hold:
 
-- >=10 confirmatory nodes must have non-zero joint exposure;
-- non-zero exposure must occur in >=2 core bays.
+- >=10 confirmatory nodes have non-zero joint exposure;
+- non-zero exposure occurs in >=2 core bays;
+- >=2 core bays each contain >=6 analyzable nodes;
+- in each of those counted bays, the node-level joint exposure contains >=3 distinct values.
 
-If this fails, classify the primary exposure as non-estimable.
+The last rule matters because the primary model includes `water_body`. A signal that is only "OTB high / MTB lower / LTB zero" is a bay contrast, not identified node-scale event stress.
 
-Do not alter thresholds, deployment dates or node membership to create variation.
+If fewer than two bays satisfy the within-bay variation rule, classify the primary exposure as **non-estimable**.
+
+Do not:
+
+- remove `water_body` to make the exposure coefficient estimable;
+- aggregate to bay means and call the result node-scale;
+- alter thresholds;
+- move the July 24-September 3 deployment;
+- extend the exposure window;
+- drop a bay or select a favorable node subset.
+
+Small but nonzero within-bay variation is handled by the coefficient uncertainty/precision, not by inventing another threshold.
 
 ## Primary reserve model
 
