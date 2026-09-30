@@ -152,6 +152,31 @@ tnc_post = median TNC across valid post-exposure cores.
 
 The stable transect node is the inferential unit. Cores are measurement replicates, not independent genets.
 
+## Combined destructive-sampling guardrail
+
+The event study requires two TNC rounds, so destructive sampling itself is treated as a potential intervention.
+
+Primary rule:
+
+> **pre-exposure and post-exposure are the only outcome-bearing TNC rounds.**
+
+If the post-exposure sample is used as the independently frozen clonal-program baseline TNC, do **not** collect a third redundant TNC round.
+
+At each node:
+
+- target 3 valid pre-exposure cores and 3 valid post-exposure cores;
+- freeze any replacement-core rule and the absolute maximum number of attempted cores before deployment;
+- use the same frozen minimum perpendicular buffer from the permanent monitoring transect as the clonal TNC program;
+- never core on a permanent meter mark or inside the routine monitoring footprint;
+- at each frozen q25/q50/q75 anchor neighborhood, place pre and post cores at distinct predeclared lateral/perpendicular offsets;
+- do not re-core a pre-exposure hole or its immediately disturbed rhizosphere;
+- freeze core diameter, depth and the **maximum cumulative disturbed area per node across both rounds** before the first core;
+- backfill/restore every hole under the monitoring authority protocol and record visible disturbance after each round.
+
+If future point-level monitoring allows, retain the already declared disturbance sensitivity that removes the fixed permanent meter-mark neighborhood nearest the TNC anchor set.
+
+A strong difference between full-transect and disturbance-excluded future results is reported as a **measurement-intervention concern**, not hidden or interpreted as reserve ecology.
+
 ## Primary exposure
 
 For each synchronized observation:
