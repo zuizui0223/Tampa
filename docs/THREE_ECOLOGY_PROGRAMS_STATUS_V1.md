@@ -1,180 +1,202 @@
-# Three independent ecology programmes — current evidence and next decisive test
+# Three independent ecology programmes — current evidence and decisive next tests
 
 These are three separate ecological projects. EOG is only the discovery route.
 
 ## 1. Azores — state-dependent mobility gating
 
-### What is already supported
+### Current evidence
 
 Seed system:
-- 36 yellow European eels in the Flores stream;
-- zero valid receiver-to-receiver movements in the source study;
-- EOG history representation improved receiver-week prediction despite that absence of observed propagation.
+- 36 yellow European eels in Flores;
+- zero valid receiver-to-receiver movements.
 
-Independent developmental evidence:
-- Europe-wide eel panel contains 766 exact Durif-coded individuals;
-- primary female stages FIII/FIV/FV occur across seven projects;
-- project-stratified FIV/FV versus FIII successful-migrant odds ratio: **2.80**;
-- leave-one-project-out range: **2.09–3.58**.
+Independent developmental panel:
+- 766 exact Durif-coded European eels;
+- primary female stages FIII/FIV/FV represented across seven projects;
+- project-fixed ordinal stage effect:
+  - OR per FIII -> FIV -> FV increment = **1.89**
+  - 95% CI **1.49–2.38**
+  - p approximately **1.1e-7**
+- categorical effects:
+  - FIV vs FIII OR **2.69**
+  - FV vs FIII OR **3.35**
+- project heterogeneity is strong:
+  - advanced-stage vs FIII project ORs range from about **0.58 to 46.5**
+  - Q approximately **21.55**, df=5, p approximately **0.0007**
 
-Supported ecological statement:
+### Supported now
 
-> **capture-time migratory readiness contains information about later realised movement.**
+> **Internal migratory readiness strongly predicts later realised movement on average after project control.**
 
-### What is not yet supported
+### Not yet supported
 
-The stronger claim:
-
-> **landscape resistance has different effects at different internal states**
-
-is not yet general evidence.
+> **A general state × landscape-resistance law.**
 
 Reason:
 - WRS/resistance is strongly project-confounded;
-- only one project currently has a useful within-project resistance gradient under the frozen preflight.
+- only one project has a useful within-project resistance gradient under the frozen preflight.
 
-### Next decisive test
+### Decisive next test
 
-Use an independent system where:
+Use an independent same-landscape barrier system with FIII–FV variation and measured passage opportunity.
 
-- FIII–FV state varies among individuals;
-- the same landscape/barrier sequence is experienced by those individuals;
-- hydrological passage opportunity is measured independently of movement.
+Current candidate:
+- Dutch pump -> tidal-sluice European eel system;
+- 40 tagged eels;
+- Durif FIII–FV;
+- consecutive barriers;
+- open DANS data.
 
-The Dutch pump + tidal-sluice system is a current confirmation candidate.
+### Failure condition
 
-### Paper-level failure condition
-
-If stage effects disappear under project-aware control, or a second system does not reproduce state-dependent movement expression, do not claim a general mobility-gating law.
+If stage effects do not replicate under stronger within-system control, do not claim a general mobility-gating law.
 
 ---
 
 ## 2. Louisiana — within-home-range micro-niche tracking
 
-### What is already supported
+### Current evidence/design
 
 Seed clue:
-- King Rail temporal detections were not well represented by simple local geographic propagation.
+- King Rail temporal detections were not explained by simple local geographic propagation.
 
-Independent biological design identified:
-- western Lake Erie King Rails;
-- 10 individuals with stabilized home ranges;
+Independent Lake Erie design:
+- 10 birds with stabilized home ranges;
 - 206 used/homing microhabitat surveys;
 - 401 nearby random surveys;
-- repeated water-depth and vegetation measurements;
-- intended event design: one used point plus two random-direction points 75 m away, measured within 72 h.
+- one used point with intended two 75-m random-direction points sampled within 72 h;
+- repeated water-depth and vegetation measurements.
 
-The test is now frozen before file-level outcome analysis.
+Primary hypothesis:
 
-### Primary ecological hypothesis
+> **Routine movement inside a resident home range stabilizes experienced microhabitat relative to time-matched local availability.**
 
-> **resident birds move within familiar space so that the environmental state they experience is more stable than time-matched local availability.**
-
-Primary individual-level metric:
+Primary metric:
 
 ~~~text
 SRI
 = 1 - variance(used environmental state)
-      / median variance(matched local-availability pseudo-trajectories)
+      / median variance(matched-availability pseudo-trajectories)
 ~~~
 
-### What is not yet supported
+Biological replication/boundary:
+- 2026 South Carolina King Rail telemetry;
+- 9 birds with breeding + non-breeding locations;
+- 5/9 shifted seasonal home ranges;
+- mean shift 2.9 km, range 0.7–7.5 km;
+- flooding/management altered habitat availability and birds used adjacent tidal marsh/flooded forest.
 
-No SRI result has been obtained yet.
+### Supported now
 
-The public archive exists, but the physical archived file schema still has to preserve enough information to reconstruct:
+The independent datasets make the hypothesis biologically plausible and testable.
 
+### Not yet supported
+
+No SRI result has yet been computed.
+
+The remaining Lake Erie gate is file-level:
 - bird identity;
-- event/date matching;
-- used versus random points;
+- event/date pairing;
+- used/random status;
 - water depth;
 - preferably coordinates.
 
-### Next decisive test
+### Decisive next test
 
-Compute SRI separately for each bird.
+Compute SRI per bird, treating **n=10 individuals** as the biological replication level.
 
-Strong result requires:
-- most birds show positive SRI;
-- no one-bird dominance;
-- used environmental-state displacement is lower than matched pseudo-trajectories;
-- if coordinates exist, geographic movement can coexist with low environmental-state displacement.
+Strong support requires:
+- most birds positive;
+- no single-bird dominance;
+- used-state variability below matched availability;
+- where coordinates exist, geographic movement with comparatively low environmental-state displacement.
 
-### Paper-level failure condition
+### Failure condition
 
-If used environmental states vary no less than time-matched availability, then within-home-range micro-niche tracking is not supported by this system.
+If used environmental state is no more stable than event-matched availability, the fine-scale micro-niche tracking hypothesis fails in Lake Erie.
 
 ---
 
 ## 3. Tampa — buffered persistence under quantitative degradation
 
-### What is already supported
+### Current evidence
 
-Retrospective biological pattern:
-- stable transect identity strongly structures coarse seagrass state;
-- recorded presence can persist while finer quantitative state declines;
-- post-2016 degradation occurs in different state dimensions among bay segments;
-- an external *Zostera marina* panel reproduces binary–quantitative state decoupling;
-- simple annual environmental summaries, simple local propagation and several response-free hidden-state explanations do not identify one common mechanism.
+Retrospective biological result:
+- recorded presence can persist while frequency, abundance, blade length or shoot density decline;
+- degradation differs among Tampa Bay segments;
+- external Zostera panel reproduces broad binary–quantitative state decoupling;
+- simple annual environment, local propagation and several known-truth hidden-state explanations do not identify one common mechanism.
 
-Supported ecological statement:
+Supported statement:
 
-> **foundation-species occurrence and quantitative condition are not the same ecological state.**
+> **Foundation-species occurrence and quantitative condition are distinct ecological states.**
 
-### What is not yet supported
+### Mechanism programme
 
-The retrospective archive does not identify which biological buffer maintains coarse persistence.
+Candidate buffers:
+1. rhizome reserve / regenerative capacity;
+2. canopy-mediated physical self-facilitation;
+3. community functional insurance.
 
-Do not infer from state decoupling alone that:
+### Decisive test priority
 
-- rhizome carbohydrate reserves are causal;
-- clonal integration is the mechanism;
-- canopy engineering stabilizes the meadow;
-- alternative seagrasses preserve equivalent function;
-- Tampa has accumulated a demonstrated resilience debt.
+**TNC first.**
 
-### Next decisive tests
+A new v2 prospective contract fixes a four-bay frame before future outcome-bearing sampling:
 
-The mechanism programme now requires genuinely new measurements.
+- Old Tampa Bay: 8 recent Thalassia-positive nodes;
+- Middle Tampa Bay: 11;
+- Lower Tampa Bay: 14;
+- Boca Ciega Bay: 8;
+- total planning frame: **41 nodes**.
 
-#### Internal biological buffer
-Prospective baseline:
-- rhizome TNC;
-- meristem/apex density as a distinct secondary axis.
+Primary confirmatory gate:
+- >=36 analyzable nodes;
+- >=8 per bay;
+- one <=28-day synchronized TNC campaign;
+- each node baseline survey within +/-14 days;
+- one frozen HPLC TNC workflow.
 
-Primary test:
-> baseline TNC predicts future quantitative *Thalassia* change beyond current above-ground state.
+Primary model:
 
-#### Engineered physical buffer
-Measure:
-- canopy and reference velocities;
-- matched bare-bed controls.
+~~~text
+future_delta_frequency
+  ~ baseline_frequency
+  + baseline_Braun_Blanquet
+  + rhizome_TNC
+  + water_body
+~~~
 
-Required two links:
-1. vegetation causes excess flow attenuation;
-2. stronger attenuation predicts better future quantitative persistence.
+### Supported now
 
-#### Community functional buffer
-Test whether alternative seagrass canopies:
-- preserve vegetation occupancy;
-- also preserve or alter measured physical function.
+> **State decoupling is real and reproduced externally.**
 
-### Paper-level failure condition
+### Not yet supported
 
-If none of the prospectively measured buffers predicts future state beyond current condition under adequate precision, do not rescue the buffering explanation from retrospective patterns.
+No hidden buffer has yet been shown prospectively to predict future quantitative state.
+
+### Decisive next test
+
+Collect four-bay baseline rhizome TNC, freeze baseline/QC, then open the prespecified future quantitative transect response once.
+
+Hydrodynamic self-facilitation remains the second prospective line; community functional insurance the third.
+
+### Failure condition
+
+If TNC is null with adequate four-bay precision, weaken the reserve-buffer hypothesis and proceed to the separately frozen physical/community mechanisms without redefining TNC.
 
 ---
 
-# The three paper identities
+# Paper identities
 
-| Repository | Biological phenomenon | Decisive new evidence | Final ecology field |
+| Repository | Biological phenomenon | Decisive evidence | Field |
 |---|---|---|---|
-| azores | internal state releases/suppresses mobility under landscape resistance | independent stage-aware movement/barrier test | movement & life-history ecology |
+| azores | internal state gates realised mobility | replicated stage-aware movement/barrier interaction | movement & life-history ecology |
 | louis | resident movement stabilizes experienced microhabitat | individual matched-availability SRI | behavioural & wetland ecology |
-| Tampa | coarse presence outlasts quantitative condition through hidden buffers | prospective reserve/engineering/community measurements | foundation-species resilience ecology |
+| Tampa | coarse presence outlasts quantitative condition through hidden buffers | prospective TNC / engineering / functional measurements | foundation-species resilience ecology |
 
 ## Hard boundary
 
-The goal is **not** to prove one universal rule from all three.
+The goal is **three independently strong ecological papers**, not one universal-rule paper.
 
-Each project must stand on its own biological mechanism and independent evidence.
+Any later synthesis is secondary.
