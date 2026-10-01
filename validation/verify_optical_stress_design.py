@@ -14,6 +14,9 @@ assert "Do not move" in sel["prohibited_rescue"]
 
 d=c["deployment"]
 assert d["target_duration_days"]==42
+assert "hot-fresh event-stress" in d["calendar_interpretation_boundary"]["selection_provenance"]
+assert "late-summer interval only" in d["calendar_interpretation_boundary"]["null_interpretation"]
+assert "separately frozen future study" in d["calendar_interpretation_boundary"]["no_rescue"]
 assert d["minimum_valid_common_overlap_days"]==35
 assert d["maximum_nominal_sampling_interval_minutes"]==15
 assert ">=85%" in d["coverage_rule"]
