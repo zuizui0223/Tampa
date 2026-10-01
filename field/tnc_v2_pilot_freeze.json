@@ -1,0 +1,72 @@
+{
+  "schema": "tampa.tnc_v2_response_independent_pilot_freeze.v1",
+  "status": "PENDING_PRE_PILOT_INPUTS",
+  "prospective_contract": "results/clonal_state_prospective_v2_contract.json",
+  "literature_method": {
+    "primary_reference": "Sørensen et al. 2018 Aquatic Botany 151:71-79",
+    "doi": "10.1016/j.aquabot.2018.08.006",
+    "analytical_principle": "HPLC",
+    "allowed_soluble_nsc_solvent_classes": [
+      "water",
+      "ethanol_water",
+      "methanol_water"
+    ],
+    "no_posthoc_fourth_solvent": true
+  },
+  "donor_rule": {
+    "future_response_nodes_allowed": false,
+    "donor_locations_must_be_permanently_excluded_from_confirmatory_cohort": true,
+    "minimum_independent_donor_locations": 3
+  },
+  "tissue_rule": {
+    "horizontal_rhizome_tissue_class": null,
+    "selection_must_precede_first_pilot_core": true,
+    "concentration_based_tissue_selection_prohibited": true
+  },
+  "field_geometry_pilot": {
+    "candidate_core_geometries": null,
+    "minimum_independent_cores_per_geometry": 6,
+    "lab_required_dry_mass_mg_per_core": null,
+    "dry_mass_sufficiency_pass_fraction": 0.9,
+    "selection_rule": "smallest_disturbed_sediment_volume_among_passing_geometries",
+    "tie_break": [
+      "smaller_core_diameter",
+      "shallower_core_depth",
+      "shorter_median_processing_time"
+    ]
+  },
+  "matrix_hplc_pilot": {
+    "minimum_pooled_matrices": 2,
+    "minimum_technical_replicates_per_solvent_per_matrix": 4,
+    "candidate_solvents": [
+      "water",
+      "ethanol_water",
+      "methanol_water"
+    ],
+    "calibration_acceptance_rule": null,
+    "spike_recovery_lower_pct": null,
+    "spike_recovery_upper_pct": null,
+    "maximum_technical_cv_pct": null,
+    "chromatographic_interference_rule": null,
+    "solvent_selection_rule": "highest_mean_soluble_nsc_yield_among_qc_passed_then_prefrozen_equivalence_tiebreak",
+    "equivalence_tolerance_pct_for_tiebreak": null,
+    "equivalence_tiebreak_rule": null
+  },
+  "preservation_pilot": {
+    "reference_workflow": null,
+    "candidate_workflows": null,
+    "candidate_delays_minutes": null,
+    "maximum_allowed_relative_bias_pct": null,
+    "minimum_replicates_per_delay": 4,
+    "selection_rule": "longest_operationally_useful_delay_within_prefrozen_bias_and_qc_limits"
+  },
+  "forbidden_inputs": [
+    "future_frequency",
+    "future_delta_frequency",
+    "future_braun_blanquet",
+    "future_blade_length",
+    "future_shoot_density",
+    "future_decline_class"
+  ],
+  "rule": "Pilot validator must STOP while any required pre-pilot field remains null."
+}
