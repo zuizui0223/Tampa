@@ -76,6 +76,21 @@ assert "independent genets" in clonal["baseline_new_measurements"]["core_replica
 assert clonal["secondary_analysis"]["meristem_bank_hypothesis"]["predictor"].startswith("predeclared node-level rhizome meristem")
 assert "not a rescue" in clonal["secondary_analysis"]["meristem_bank_hypothesis"]["role"]
 
+anchor_diag=clonal["secondary_analysis"]["within_transect_anchor_diagnostic"]
+assert anchor_diag["feasibility"]["eligible_nodes"]==30
+assert anchor_diag["feasibility"]["by_water_body"]["Old Tampa Bay"]==8
+assert anchor_diag["feasibility"]["by_water_body"]["Middle Tampa Bay"]==10
+assert anchor_diag["feasibility"]["by_water_body"]["Lower Tampa Bay"]==12
+assert "node_fixed_effect" in anchor_diag["model"]
+assert anchor_diag["support_rule"]["supported"]=="two-sided 95% interval entirely above 0"
+assert "cannot replace or rescue" in anchor_diag["role"]
+
+ta=json.loads((ROOT/"results/tnc_anchor_bb_preflight_v1.json").read_text())
+assert ta["status"]=="anchor_level_quantitative_diagnostic_feasible"
+assert ta["frozen_gate"]["nodes_with_three_distinct_quantitative_bb_anchors"]==30
+assert ta["frozen_gate"]["minimum_quantitative_nodes_in_any_bay"]==8
+assert ta["frozen_gate"]["passed"] is True
+
 # Independent physical-layer gate: TBOFS was tested response-blind and rejected
 # as the primary meadow-scale near-bed exposure layer.
 tbofs=json.loads((ROOT/"results/tbofs_hydrodynamic_preflight_v1.json").read_text())
