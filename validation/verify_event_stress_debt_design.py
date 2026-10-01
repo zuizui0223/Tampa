@@ -62,6 +62,13 @@ assert "event-stress" in chain["gate_A_event_to_reserve"]
 assert "clonal contract" in chain["gate_B_reserve_to_future_state"]
 assert "not formal mediation" in chain["both_supported"]
 
+dyn=c["relationship_to_clonal_tnc_program"]["dynamic_reserve_change_future_diagnostic"]
+assert dyn["model"]=="future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body"
+assert dyn["focal_coefficient"]=="delta_tnc_42d"
+assert dyn["support_rule"]["supported"]=="two-sided 95% interval entirely above 0"
+assert "current post-exposure reserve level" in dyn["purpose"]
+assert "cannot rescue" in dyn["no_rescue_rule"]
+
 protocol=(ROOT/"docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md").read_text()
 assert "same Tampa definition" in protocol
 assert "common calendar overlap" in protocol
