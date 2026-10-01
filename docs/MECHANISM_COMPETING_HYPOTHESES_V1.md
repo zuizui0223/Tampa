@@ -29,7 +29,7 @@ A meadow can maintain above-ground quantitative state because rhizome reserve an
 ### Frozen primary measurement
 
 - rhizome total non-structural carbohydrate (TNC);
-- prospective contract: `results/clonal_state_prospective_v1_contract.json`.
+- authoritative prospective contract: `results/clonal_state_prospective_v2_contract.json` (four-bay v2; v1 retained for provenance).
 
 ### Distinguishing prediction
 
