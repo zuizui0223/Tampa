@@ -188,6 +188,35 @@
       "outcome": "future quantitative focal-frequency and/or shoot-density change under one predeclared corrected secondary family",
       "role": "secondary competing below-ground mechanism, not a rescue of the TNC primary test",
       "interpretation": "TNC and meristem density represent distinct candidate axes: energetic resistance versus regenerative capacity."
+    },
+    "within_transect_anchor_diagnostic": {
+      "status": "predeclared_secondary_spatial_site_template_resistant_diagnostic",
+      "feasibility_source": "results/tnc_anchor_bb_preflight_v1.json",
+      "feasibility": {
+        "eligible_nodes": 30,
+        "by_water_body": {
+          "Old Tampa Bay": 8,
+          "Middle Tampa Bay": 10,
+          "Lower Tampa Bay": 12
+        },
+        "frozen_minimum_nodes": 24,
+        "frozen_minimum_nodes_per_bay": 6,
+        "passed": true
+      },
+      "eligibility": "Three distinct frozen q25/q50/q75 Thalassia-positive anchors with quantitative baseline Braun-Blanquet state at all three anchors, plus valid anchor-level TNC and future meter-mark state.",
+      "predictor": "within_node_centered_anchor_TNC = anchor_TNC - mean(anchor_TNC across the three anchors)",
+      "outcome": "future Thalassia Braun-Blanquet score at the same permanent meter mark; sampled focal absence=0, present nonnumeric 'Reported'=quantitatively missing",
+      "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
+      "uncertainty": "stable-node cluster bootstrap, resampling the full three-anchor node as one unit; code frozen before future outcome access",
+      "expected_direction": "positive",
+      "support_rule": {
+        "supported": "two-sided 95% interval entirely above 0",
+        "contradicted_direction": "interval entirely below 0",
+        "unsupported": "interval overlaps 0"
+      },
+      "role": "Secondary diagnostic of local reserve information after stable transect identity is removed. It cannot replace or rescue the node-level primary TNC result.",
+      "site_template_boundary": "Support is less compatible with a purely transect-level time-invariant site-template explanation, but persistent meter-mark microhabitat and time-varying local common causes remain possible.",
+      "intervention_boundary": "Anchor-level inference is valid only when the frozen core offset keeps destructive sampling outside the permanent meter-mark monitoring footprint."
     }
   },
   "pre_outcome_freeze_required": [
@@ -215,7 +244,10 @@
     "DNA-quality tissue preservation from each TNC anchor",
     "validated Thalassia multilocus genotyping panel and clone-calling error rule",
     "Boca Ciega inclusion/exclusion decision before first TNC core",
-    "Boca Ciega node list and same frozen timing/assay/core rules"
+    "Boca Ciega node list and same frozen timing/assay/core rules",
+    "anchor-level TNC centering and future Braun-Blanquet model",
+    "stable-node cluster-bootstrap code for anchor diagnostic",
+    "anchor-level coring-to-meter-mark intervention exclusion rule"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -233,7 +265,8 @@
     "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology.",
     "TNC is the primary below-ground reserve measurement, not a direct measure of genet size or physiological integration.",
     "Identical multilocus genotypes across anchors establish genet identity only; fragmented ramets can share a genotype without a currently intact rhizome connection, so genetic identity is not proof of resource translocation.",
-    "Boca Ciega Bay, if sampled, is a prespecified secondary context extension; it cannot rescue a null three-bay primary result or be described as independent replication."
+    "Boca Ciega Bay, if sampled, is a prespecified secondary context extension; it cannot rescue a null three-bay primary result or be described as independent replication.",
+    "A supported within-transect anchor-TNC result weakens stable transect-level site-template confounding but does not eliminate fixed meter-mark microhabitat or time-varying local common causes."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + two water-body indicators",

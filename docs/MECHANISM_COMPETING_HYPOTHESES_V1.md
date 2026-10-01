@@ -71,6 +71,55 @@ This is predeclared as secondary and cannot rescue a null primary TNC result.
 
 It does not require blade length to decline before frequency. The rejected one-year condition -> thinning cascade is therefore not a contradiction.
 
+### Persistent site-template alternative: two orthogonal diagnostics
+
+A supported cross-node TNC association alone can still arise if persistent site quality makes both rhizome reserve and later meadow state high.
+
+The reserve program therefore predeclares two **secondary site-template-resistant diagnostics** that attack this common-cause alternative in different dimensions.
+
+**Spatial diagnostic — within the same transect**
+
+At nodes with three distinct q25/q50/q75 anchors:
+
+```text
+future_BB_anchor
+  ~ baseline_BB_anchor
+  + within_node_centered_anchor_TNC
+  + node_fixed_effect
+```
+
+The baseline-only feasibility audit supports this design at 30 nodes (Old 8, Middle 10, Lower 12).
+
+A positive centered-TNC coefficient means that local reserve differences predict local future quantitative state **after stable transect identity is removed**. This weakens a transect-level site-template explanation, but persistent meter-mark microhabitat remains possible.
+
+**Temporal diagnostic — within the same node**
+
+Using the frozen 39-45 day pre/post TNC pair:
+
+```text
+delta_tnc_42d = tnc_post - tnc_pre
+
+future_delta_frequency
+  ~ baseline_frequency_post
+  + tnc_post
+  + delta_tnc_42d
+  + water_body
+```
+
+The focal question is whether recent reserve trajectory adds information **beyond current post-exposure reserve level**.
+
+A positive delta-TNC coefficient is less compatible with a purely time-invariant node-quality explanation, but time-varying common causes and TNC measurement error remain possible.
+
+**Interpretation matrix**
+
+- node-level static TNC only supported -> reserve state predicts the future, but persistent site quality remains a strong alternative;
+- within-transect anchor diagnostic supported -> stable transect identity alone is insufficient;
+- dynamic reserve-change diagnostic supported -> time-invariant node quality alone is insufficient;
+- both site-template-resistant diagnostics supported -> a purely fixed site-template explanation becomes substantially less complete, while local microhabitat and time-varying confounding still remain;
+- both unsupported -> do not promote the static TNC association into a strong process claim.
+
+Neither diagnostic can rescue a null primary node-level TNC result. They refine interpretation; they do not create a second route to significance.
+
 ---
 
 ## H2. Canopy hydrodynamic self-facilitation

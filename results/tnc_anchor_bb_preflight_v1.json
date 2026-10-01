@@ -1,0 +1,72 @@
+{
+  "schema": "tampa.tnc_anchor_bb_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36793263112,
+    "head_sha": "1abad11dcf4aa727ac92d0cb8e8f3314549bf647",
+    "artifact_id": 11132789161,
+    "artifact_digest": "sha256:f948da9e19eb7d509864a2f0440f62b9b17dc1269039941531a1120b88ec4193"
+  },
+  "status": "anchor_level_quantitative_diagnostic_feasible",
+  "evidence_class": "response-open baseline design feasibility only; no TNC and no future response",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "years": [2023, 2024, 2025]
+  },
+  "frozen_gate": {
+    "minimum_nodes_with_three_distinct_quantitative_anchors": 24,
+    "minimum_nodes_per_bay": 6,
+    "nodes_with_three_distinct_positive_anchors": 30,
+    "nodes_with_three_distinct_quantitative_bb_anchors": 30,
+    "minimum_quantitative_nodes_in_any_bay": 8,
+    "passed": true,
+    "by_water_body": {
+      "Old Tampa Bay": {
+        "recent_positive_nodes": 8,
+        "three_distinct_anchor_nodes": 8,
+        "three_anchor_quantitative_bb_nodes": 8
+      },
+      "Middle Tampa Bay": {
+        "recent_positive_nodes": 11,
+        "three_distinct_anchor_nodes": 10,
+        "three_anchor_quantitative_bb_nodes": 10
+      },
+      "Lower Tampa Bay": {
+        "recent_positive_nodes": 14,
+        "three_distinct_anchor_nodes": 12,
+        "three_anchor_quantitative_bb_nodes": 12
+      }
+    }
+  },
+  "bb_semantics": {
+    "present_numeric": "Use numeric Braun-Blanquet measurementValue.",
+    "sampled_focal_absent": "Code as 0 for the baseline visit.",
+    "present_but_reported_without_numeric_cover": "Quantitative anchor invalid; do not convert 'Reported' to a numeric cover score.",
+    "annual_anchor_summary": "Mean across eligible visits in the latest node-year only when every focal-present visit has numeric BB."
+  },
+  "prospective_diagnostic": {
+    "eligible_nodes": "Only nodes with three distinct frozen q25/q50/q75 Thalassia-positive anchors and quantitative baseline BB at all three anchors.",
+    "future_outcome": "Same permanent meter-mark Thalassia Braun-Blanquet score at the next fixed-transect survey; sampled focal absence may be coded 0, present nonnumeric 'Reported' is quantitatively missing.",
+    "predictor": "anchor-level rhizome TNC centered within node: anchor_TNC - mean(anchor_TNC across the three anchors)",
+    "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
+    "uncertainty": "Stable-node cluster bootstrap with the entire three-anchor node resampled as one unit; exact code frozen before future outcome access.",
+    "expected_direction": "positive",
+    "support_rule": {
+      "supported": "two-sided 95% cluster-bootstrap interval entirely above 0",
+      "contradicted_direction": "interval entirely below 0",
+      "unsupported": "interval overlaps 0"
+    },
+    "role": "Secondary spatial site-template-resistant diagnostic. It cannot replace or rescue the node-level primary TNC test."
+  },
+  "intervention_boundary": [
+    "Allowed only if the frozen core offset keeps destructive sampling outside the permanent meter-mark monitoring footprint.",
+    "Core anchor position may not move after TNC assay or preliminary environmental results.",
+    "If coring may plausibly alter the paired permanent meter mark, the future anchor diagnostic is invalid for that anchor rather than interpreted ecologically."
+  ],
+  "claim_boundary": [
+    "Within-node centering and node fixed effects remove stable transect-level site identity, but not persistent meter-mark microhabitat or time-varying local common causes.",
+    "Braun-Blanquet is an ordinal cover score; effect size is interpreted as association on the frozen score scale, not exact percent-cover change.",
+    "This is a secondary prospective diagnostic, not a replacement for the node-level TNC primary.",
+    "Binary re-recording is not ecological recovery."
+  ]
+}
