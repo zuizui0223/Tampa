@@ -1,4 +1,6 @@
-# Tampa clonal / below-ground measurement protocol v2
+# Tampa clonal / below-ground measurement protocol v1
+> **Version note (2026-10-01):** This document preserves the technical basis and historical three-bay v1 design. Outcome-bearing primary TNC inference is now governed by `results/clonal_state_prospective_v2_contract.json` and `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md`, which prospectively fix a four-bay primary before future TNC/outcome access. Do not choose v1 versus v2 after outcomes are known.
+
 
 ## Goal
 
