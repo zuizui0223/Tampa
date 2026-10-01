@@ -30,6 +30,28 @@ assert "leaf %N" in clonal["baseline_new_measurements"]["nutrient_state_diagnost
 assert clonal["design_precision_gate"]["approximate_detectable_partial_r"]["n_33"]==0.49
 assert clonal["primary_analysis"]["confirmatory_gate"].startswith(">=30 analyzable nodes")
 assert clonal["primary_analysis"]["support_rule"]["supported"]=="interval entirely above 0"
+assert clonal["supersession_notice"]["status"]=="superseded_for_outcome_bearing_primary_inference"
+assert clonal["supersession_notice"]["superseded_by"]=="results/clonal_state_prospective_v2_contract.json"
+
+clonal2=json.loads((ROOT/"results/clonal_state_prospective_v2_contract.json").read_text())
+assert clonal2["status"]=="future_new_measurement_design_not_yet_opened_four_bay"
+assert clonal2["version_authority"]["status"]=="authoritative_outcome_bearing_tnc_primary"
+assert clonal2["version_authority"]["supersedes"]=="results/clonal_state_prospective_v1_contract.json"
+assert len(clonal2["eligibility"]["geography"])==4
+assert "Boca Ciega Bay" in clonal2["eligibility"]["geography"]
+assert clonal2["eligibility"]["planning_target_nodes"]==41
+assert clonal2["eligibility"]["minimum_confirmatory_analyzable_nodes"]==36
+assert clonal2["eligibility"]["minimum_confirmatory_nodes_per_bay"]==8
+assert clonal2["primary_analysis"]["confirmatory_gate"].startswith(">=36 analyzable nodes")
+assert "four-level factor" in clonal2["primary_analysis"]["required_controls"][-1]
+assert "three water-body indicators" in clonal2["design_precision_gate"]["planning_model_terms"]
+assert clonal2["design_precision_gate"]["approximate_detectable_partial_r"]["n_36"]==0.4739779676
+assert clonal2["design_precision_gate"]["approximate_detectable_partial_r"]["n_41"]==0.4433248073
+assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["status"]=="four_bay_baseline_preflight_pending"
+assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["frozen_feasibility_gate"]["minimum_nodes_with_three_distinct_quantitative_anchors"]==36
+assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["frozen_feasibility_gate"]["minimum_nodes_per_bay"]==6
+assert "prespecified_context_extension" not in clonal2
+assert (ROOT/"docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md").exists()
 
 bcb=clonal["prespecified_context_extension"]
 assert bcb["candidate_water_body"]=="Boca Ciega Bay"
@@ -175,8 +197,10 @@ assert "TBOFS near-bottom current as meadow exposure" in boundary
 
 program=(ROOT/"docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md").read_text()
 assert "Annual/exact-point retrospective mechanism decomposition: **HARD STOP**" in program
-assert "results/clonal_state_prospective_v1_contract.json" in program
-assert "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md" in program
+assert "results/clonal_state_prospective_v2_contract.json" in program
+assert "authoritative four-bay outcome-bearing primary" in program
+assert "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md" in program
+assert "v1 contract/protocol retained for provenance only" in program
 assert "NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure" in program
 assert "Direct paired canopy/ambient velocity layer" in program
 
