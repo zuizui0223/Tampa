@@ -84,10 +84,43 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", default="field/tnc_v2_collection_manifest.csv")
     ap.add_argument("--freeze", default="field/tnc_v2_precollection_freeze.json")
+    ap.add_argument("--contract", default="results/clonal_state_prospective_v2_contract.json")
     ap.add_argument("--out", default="results/tnc_v2_baseline_validation.json")
     args = ap.parse_args()
 
     freeze = json.loads(Path(args.freeze).read_text(encoding="utf-8"))
+    contract = json.loads(Path(args.contract).read_text(encoding="utf-8"))
+
+    authority_errors = []
+    if freeze.get("contract") != args.contract:
+        authority_errors.append("freeze contract path does not match authoritative v2 contract")
+    if contract.get("version_authority", {}).get("status") != "authoritative_outcome_bearing_tnc_primary":
+        authority_errors.append("TNC v2 contract is not marked authoritative")
+    if set(contract.get("eligibility", {}).get("geography", [])) != BAYS:
+        authority_errors.append("contract geography does not match the frozen four-bay set")
+    if int(contract.get("eligibility", {}).get("minimum_confirmatory_analyzable_nodes", -1)) != int(freeze["fixed_rules"]["minimum_primary_nodes_total"]):
+        authority_errors.append("contract/freeze total-node gate mismatch")
+    if int(contract.get("eligibility", {}).get("minimum_confirmatory_nodes_per_bay", -1)) != int(freeze["fixed_rules"]["minimum_primary_nodes_per_bay"]):
+        authority_errors.append("contract/freeze per-bay gate mismatch")
+    if contract.get("baseline_new_measurements", {}).get("analytical_standardization", {}).get("preferred_assay", "").startswith("HPLC") is False:
+        authority_errors.append("authoritative contract no longer specifies HPLC primary assay")
+    if freeze["fixed_rules"].get("assay_method") != "HPLC":
+        authority_errors.append("precollection freeze assay does not match HPLC contract")
+    if contract.get("eligibility", {}).get("planning_target_nodes") != 41:
+        authority_errors.append("authoritative v2 planning frame is not 41 nodes")
+
+    if authority_errors:
+        result = {
+            "schema": "tampa.tnc_v2_baseline_validation.v1",
+            "status": "STOP_CONTRACT_FREEZE_MISMATCH",
+            "errors": authority_errors,
+            "message": "Do not accept outcome-bearing TNC cores until authoritative v2 contract and field freeze agree."
+        }
+        Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
+        print(json.dumps(result, indent=2))
+        return
+
     pending = [
         k for k, v in freeze["fields_to_freeze_before_first_outcome_bearing_core"].items()
         if v in (None, "", "PENDING")
