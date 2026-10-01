@@ -122,8 +122,8 @@ def main(out:Path):
             latest[node]=x
 
     latest_pos=[x for x in latest.values() if x["focal_frequency"]>0]
-    if len(latest_pos)!=33:
-        raise RuntimeError(f"recent positive node drift: {len(latest_pos)} != 33")
+    if len(latest_pos)!=41:
+        raise RuntimeError(f"recent four-bay positive node drift: {len(latest_pos)} != 41")
 
     rows=[]
     anchor_rows=[]
