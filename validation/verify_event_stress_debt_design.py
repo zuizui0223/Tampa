@@ -67,7 +67,7 @@ assert dyn["model"]=="future_delta_frequency ~ baseline_frequency_post + tnc_pos
 assert dyn["focal_coefficient"]=="delta_tnc_42d"
 assert dyn["support_rule"]["supported"]=="two-sided 95% interval entirely above 0"
 assert "current post-exposure reserve level" in dyn["purpose"]
-assert "cannot rescue" in dyn["no_rescue_rule"]
+assert "cannot rescue" in dyn["no_rescue_rule"].lower()
 
 protocol=(ROOT/"docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md").read_text()
 assert "same Tampa definition" in protocol
