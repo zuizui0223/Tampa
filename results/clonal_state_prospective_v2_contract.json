@@ -76,7 +76,7 @@
         "latest_positive_2025_nodes": 28,
         "observed_2025_survey_span_days": 71,
         "densest_historical_28_day_window_nodes": 19,
-        "interpretation": "Historical routine monitoring dates are too dispersed to provide a 30-node synchronized TNC baseline by passive add-on sampling.",
+        "interpretation": "The historical three-bay routine monitoring calendar was too dispersed for a synchronized TNC baseline by passive add-on sampling; v2 therefore requires one planned four-bay <=28-day campaign rather than inheriting routine survey timing.",
         "four_bay_design_decision": "Boca Ciega Bay included prospectively; historical routine survey timing still cannot substitute for the synchronized <=28-day campaign."
       },
       "baseline_survey_plan": {
@@ -280,34 +280,6 @@
     },
     "primary_rule": "Confirmatory interpretation requires >=36 analyzable nodes and >=8 analyzable nodes in each of Old, Middle, Lower and Boca Ciega Bay. Below that gate, retain the prospective estimate and uncertainty as pilot/sensitivity evidence and do not interpret a null as evidence against reserve buffering.",
     "interpretation": "The four-bay planning frame is ~41 nodes and mainly resolves moderate-to-large partial effects. Within-node cores improve TNC measurement precision but do not replace node replication."
-  },
-  "prespecified_context_extension": {
-    "status": "baseline_design_feasible_not_independent_replication",
-    "source": "results/bcb_tnc_expansion_preflight_v1.json",
-    "candidate_water_body": "Boca Ciega Bay",
-    "design_feasibility": {
-      "recent_thalassia_positive_nodes": 8,
-      "nodes_with_ge3_positive_meter_marks": 8,
-      "four_bay_planning_nodes": 41,
-      "current_three_bay_approx_detectable_partial_r": 0.4881501522,
-      "four_bay_approx_detectable_partial_r": 0.4433248073
-    },
-    "sampling_rule": "If permissions/logistics allow, collect Boca Ciega under the same frozen <=28-day campaign, +/-14-day paired baseline, q25/q50/q75 core geometry, tissue class, HPLC, nutrient diagnostic and genet-diagnostic rules. Do not weaken any core three-bay rule to include Boca Ciega.",
-    "primary_boundary": "The confirmatory primary mechanism test remains Old + Middle + Lower Tampa Bay under the existing >=30 total / >=8 per core-bay gate.",
-    "secondary_four_bay_model": "future_delta_frequency ~ baseline_frequency + baseline_Braun_Blanquet + rhizome_TNC + water_body, using all eligible sampled nodes from the four prespecified bays",
-    "secondary_role": "Context-extension sensitivity only. Report the four-bay standardized TNC coefficient and two-sided 95% interval under the same frozen uncertainty procedure.",
-    "interpretation": {
-      "core_supported_four_bay_same_positive_direction": "Strengthens transportability of the measured reserve-state association across an additional Tampa Bay meadow context, but is not independent replication because the three core bays are reused.",
-      "core_supported_four_bay_opposite_or_strongly_attenuated": "Report context dependence; do not claim a bay-general reserve effect.",
-      "core_unsupported_four_bay_supported": "Does not rescue the primary mechanism test. Treat the four-bay result as secondary and hypothesis-generating.",
-      "boca_ciega_only": "Report a BCB-only coefficient/interval descriptively if estimable; n~8 is not assigned an independent confirmatory pass/fail gate."
-    },
-    "exclusion_rule": "If Boca Ciega cannot meet the frozen timing/assay/field rules, omit it from the context extension rather than widening windows or changing the primary three-bay design.",
-    "claim_boundary": [
-      "Boca Ciega is prespecified before TNC collection and future outcome access.",
-      "The extension broadens environmental/community context and may improve precision, but it is not an independent replication dataset.",
-      "Do not add Boca Ciega after seeing a null core result as a sample-size rescue."
-    ]
   },
   "revision_from": "results/clonal_state_prospective_v1_contract.json",
   "revision_reason": "Prospective response-independent design decision to include Boca Ciega Bay before any outcome-bearing TNC sampling, based on the frozen four-bay feasibility audit.",
