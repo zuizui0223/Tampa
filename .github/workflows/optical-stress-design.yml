@@ -1,0 +1,21 @@
+name: Optical microenvironment design
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "results/optical_microenvironment_prospective_v1_contract.json"
+      - "docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md"
+      - "validation/verify_optical_stress_design.py"
+      - ".github/workflows/optical-stress-design.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python validation/verify_optical_stress_design.py
