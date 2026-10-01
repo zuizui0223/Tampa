@@ -18,6 +18,21 @@ assert d["minimum_valid_common_overlap_days"]==35
 assert d["maximum_nominal_sampling_interval_minutes"]==15
 assert ">=85%" in d["coverage_rule"]
 assert d["within_canopy_sensor"]["placement"].startswith("One fixed response-independent")
+pilot=d["within_canopy_sensor"]["vertical_representativeness_pilot"]
+assert "25%, 50% and 75%" in pilot["design"]
+assert "before the first outcome-bearing TNC sample" in pilot["decision_rule"]
+dqc=d["daily_dli_qc"]
+assert "full local photoperiod" in dqc["valid_day_rule"]
+assert "at least 30 valid daily DLIs" in dqc["node_rule"]
+
+ref=c["secondary_optical_decomposition"]["paired_above_canopy_reference"]
+assert ref["target_nodes"]==18
+assert ref["minimum_analyzable_nodes"]==12
+assert ref["minimum_nodes_per_bay"]==3
+assert ref["geometry"]["target_clearance_above_canopy_m"]==0.10
+assert "within_canopy_mean_daily_dli / above_canopy_mean_daily_dli" in ref["metrics"]["canopy_optical_transmittance"]
+assert "cannot replace or rescue" in ref["no_rescue"]
+assert "does not authorize an additional destructive TNC round" in c["reserve_response"]["shared_core_rule"]
 
 e=c["primary_exposure"]
 assert e["name"]=="mean_daily_within_canopy_dli"
