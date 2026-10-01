@@ -25,10 +25,15 @@
   },
   "field_geometry_pilot": {
     "candidate_core_geometries": null,
+    "candidate_geometry_required_fields": [
+      "id",
+      "diameter_cm",
+      "depth_cm"
+    ],
     "minimum_independent_cores_per_geometry": 6,
     "lab_required_dry_mass_mg_per_core": null,
     "dry_mass_sufficiency_pass_fraction": 0.9,
-    "selection_rule": "smallest_disturbed_sediment_volume_among_passing_geometries",
+    "selection_rule": "smallest_cylindrical_disturbed_volume_among_passing_geometries",
     "tie_break": [
       "smaller_core_diameter",
       "shallower_core_depth",
@@ -43,14 +48,15 @@
       "ethanol_water",
       "methanol_water"
     ],
+    "starch_workflow": null,
     "calibration_acceptance_rule": null,
     "spike_recovery_lower_pct": null,
     "spike_recovery_upper_pct": null,
     "maximum_technical_cv_pct": null,
     "chromatographic_interference_rule": null,
-    "solvent_selection_rule": "highest_mean_soluble_nsc_yield_among_qc_passed_then_prefrozen_equivalence_tiebreak",
+    "solvent_selection_rule": "highest_mean_soluble_nsc_yield_among_qc_passed_with_equivalence_tiebreak",
     "equivalence_tolerance_pct_for_tiebreak": null,
-    "equivalence_tiebreak_rule": null
+    "equivalence_tiebreak_preference": null
   },
   "preservation_pilot": {
     "reference_workflow": null,
@@ -68,5 +74,5 @@
     "future_shoot_density",
     "future_decline_class"
   ],
-  "rule": "Pilot validator must STOP while any required pre-pilot field remains null."
+  "rule": "Pilot validator must STOP while any required pre-pilot field remains null. Analytical acceptance limits are supplied and frozen by the receiving laboratory before pilot results are opened."
 }
