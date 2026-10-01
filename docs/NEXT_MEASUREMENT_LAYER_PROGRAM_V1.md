@@ -186,19 +186,28 @@ This is preferable to a density × model-current interaction because the physica
 
 Do not construct another arbitrary distance/connectivity proxy or tune alternative current metrics from the biological table.
 
-## Priority 4 — canopy / epiphyte microenvironment
+## Priority 4 — direct canopy optical microenvironment
 
-This is distinct from the failed bulk Secchi × depth proxy.
+The old bulk Secchi × depth proxy and qualitative annual epiphyte field are not reopened.
 
-Measurements:
+Frozen future design:
 
-- canopy-level PAR;
-- epiphyte biomass/load;
-- spectral attenuation;
-- local turbidity;
-- canopy self-shading.
+- `results/optical_microenvironment_prospective_v1_contract.json`
+- `docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md`
 
-The test should distinguish actual light experienced by leaves from bay-segment bulk clarity.
+Primary new measurement:
+
+> high-frequency within-canopy PAR summarized as continuous mean daily light integral over the same 42-day interval as pre/post TNC.
+
+Primary mechanistic endpoint:
+
+> post-exposure rhizome TNC after pre-exposure TNC is represented.
+
+A nested paired above-canopy reference separates actual low light from local canopy-associated optical attenuation. Direct epiphyte biomass and intact-versus-cleaned leaf optics remain secondary physical-attribution diagnostics.
+
+The optical layer reuses the existing pre/post TNC rounds; it does not justify more destructive reserve sampling.
+
+Do not rescue a null optical primary by retuning a DLI threshold, Secchi window, epiphyte category or sensor height.
 
 ## Priority 5 — acute disturbance / disease
 

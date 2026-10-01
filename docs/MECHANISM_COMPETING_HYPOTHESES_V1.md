@@ -250,33 +250,94 @@ Do not rescue it with a different temperature threshold, salinity threshold, lag
 
 ---
 
-## H4. Leaf/canopy optical stress versus mature-canopy marker
+## H4. Direct optical microenvironment versus mature-canopy marker
 
 ### Motivation
 
-Bulk Secchi x depth did not explain plant-condition trajectories. A local leaf-scale pathway remains possible through epiphyte shading, self-shading or local turbidity.
+Bulk Secchi × depth did not explain plant-condition trajectories, and the existing qualitative `EpiphyteDensity` field does not behave as a simple annual stress indicator. That closes the coarse/ordinal routes, not leaf-scale light biology.
 
-However, the existing qualitative `EpiphyteDensity` record does **not** behave as a simple annual stress indicator: the adjusted primary association was positive rather than negative and became interval-ambiguous when target year 2016 was restored.
+The new prospective test measures the light environment actually experienced inside the standing *Thalassia* canopy over the same 39–45 day biological interval used for pre/post TNC.
 
-### Competing predictions
+Primary contract:
 
-**Optical-stress version**
+- `results/optical_microenvironment_prospective_v1_contract.json`
+- `docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md`
 
-> greater measured epiphyte biomass / lower leaf-level PAR -> more negative future plant or meadow state.
+### Primary actual-light link
 
-**Mature-canopy-marker version**
+Primary exposure:
 
-> qualitative epiphyte load covaries with leaf age, canopy persistence or favorable microsite state, but directly measured optical attenuation does not independently predict future decline.
+```text
+mean_daily_within_canopy_dli
+```
 
-### Required new measurements
+Primary model:
 
-- epiphyte biomass per leaf area;
-- leaf-level or within-canopy PAR attenuation;
-- leaf age / turnover proxy;
-- canopy height and total cover;
-- local turbidity.
+```text
+tnc_post
+  ~ tnc_pre
+  + mean_daily_within_canopy_dli
+  + water_body
+```
 
-Do not mine additional categories, epiphyte types or lag windows from the old qualitative field.
+Prediction:
+
+> higher actual within-canopy daily light integral -> higher post-exposure rhizome TNC after pre-exposure TNC is represented.
+
+No low-light threshold is searched. DLI is continuous.
+
+### Optical-source attribution is a separate layer
+
+Low within-canopy DLI can arise from several sources:
+
+- cloud / incident-light variation;
+- water-column turbidity / attenuation;
+- canopy self-shading;
+- epiphyte load on leaves.
+
+Therefore a nested paired subset measures simultaneous **above-canopy** and **within-canopy** PAR.
+
+```text
+T_canopy = DLI_within / DLI_above
+A_canopy = 1 - T_canopy
+```
+
+This separates the broader actual-light exposure test from local canopy-associated optical attenuation.
+
+Interpretation:
+
+- DLI -> TNC supported + positive canopy attenuation -> consistent with biologically consequential low light plus a local canopy-associated optical gradient;
+- DLI -> TNC supported + weak attenuation -> light matters, but cloud/water-column forcing may dominate;
+- attenuation positive + null DLI -> canopy alters light, but that change is not shown to deplete reserve over the frozen interval.
+
+The paired attenuation diagnostic cannot replace a null actual-DLI primary.
+
+### Epiphyte-specific attribution
+
+Historical qualitative epiphyte categories are not reused as the primary predictor.
+
+Secondary direct measurements may include:
+
+- epiphyte biomass per standardized leaf area;
+- paired intact-versus-cleaned leaf transmittance under a response-independent cleaning-damage pilot.
+
+These ask whether epiphytes physically account for part of the observed optical attenuation.
+
+### Measurement integrity
+
+A response-independent vertical-profile pilot freezes one proportional within-canopy sensor height before outcome-bearing deployment. Daily DLI also has a photoperiod-specific missing-data rule; overall row coverage alone is insufficient.
+
+The optical programme reuses the same two pre/post TNC rounds as the event-stress programme and does not authorize a third destructive reserve-sampling round.
+
+### Site-template boundary
+
+Direct PAR and reserve change are dynamic measurements over a common interval and are less compatible with a purely static site label than one-time proxies.
+
+However, time-varying turbidity, nutrients, hypoxia and disturbance can still be common causes. A supported primary is therefore a **prospective actual-light / reserve association**, not experimental proof that light or epiphytes are the sole causal driver.
+
+### No-rescue rule
+
+Do not reopen Secchi windows, ordinal epiphyte categories, low-light thresholds or favorable PAR aggregation after TNC inspection.
 
 ---
 
