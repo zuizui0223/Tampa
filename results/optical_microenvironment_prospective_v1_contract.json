@@ -44,10 +44,22 @@
       "placement": "One fixed response-independent within-canopy sampling position per node, targeted at 50% of baseline canopy height above the bed.",
       "minimum_height_m_above_bed": 0.05,
       "geometry_rule": "Exact sensor model, angular orientation, proportional canopy-height placement, allowable height tolerance, mounting hardware and shading-clearance rule must be frozen in a response-independent physical pilot before outcome-bearing deployment.",
-      "eligibility_boundary": "If the frozen sensor position cannot remain submerged and physically within the canopy under field conditions, the node is not confirmatory for the optical primary rather than moving the sensor after inspection."
+      "eligibility_boundary": "If the frozen sensor position cannot remain submerged and physically within the canopy under field conditions, the node is not confirmatory for the optical primary rather than moving the sensor after inspection.",
+      "vertical_representativeness_pilot": {
+        "purpose": "Verify that one frozen proportional canopy height is a defensible proxy for the local within-canopy light environment before outcome-bearing deployment.",
+        "design": "At a response-independent physical-pilot subset spanning shallow/tall canopies, obtain short simultaneous or rapidly repeated PAR profiles at 25%, 50% and 75% of canopy height plus one above-canopy reference.",
+        "decision_rule": "Freeze one proportional within-canopy height before the first outcome-bearing TNC sample. The pilot may change the default 50% rule only before TNC response exists and only using optical representativeness/field geometry, never biological outcome.",
+        "no_rescue": "After outcome-bearing deployment begins, do not change sensor height by node or select the vertical level with the strongest TNC association."
+      }
     },
     "coverage_rule": "Each confirmatory node must retain >=85% valid PAR observations across the common overlap after only predeclared QC.",
-    "fouling_rule": "Sensor anti-fouling method, cleaning schedule if any, optical-reference checks, fouling/drift exclusion rule, burial/exposure rule and interpolation/gap rule must be frozen before deployment."
+    "fouling_rule": "Sensor anti-fouling method, cleaning schedule if any, optical-reference checks, fouling/drift exclusion rule, burial/exposure rule and interpolation/gap rule must be frozen before deployment.",
+    "daily_dli_qc": {
+      "valid_day_rule": "A daily DLI is valid only if the frozen expected-observation coverage rule is met across the full local photoperiod and no daytime gap exceeds the predeclared maximum gap. The exact coverage percentage and maximum gap are frozen from sensor specifications / response-independent pilot before deployment.",
+      "node_rule": "Primary node mean DLI uses only valid days and requires at least 30 valid daily DLIs within the frozen common overlap, in addition to the >=85% overall PAR coverage rule.",
+      "interpolation_boundary": "Interpolation may bridge only gaps shorter than the frozen maximum. Do not reconstruct long daytime gaps from neighboring nodes or above-canopy references.",
+      "rationale": "DLI integration is sensitive to missing observations during daylight; overall row coverage alone is insufficient."
+    }
   },
   "primary_exposure": {
     "name": "mean_daily_within_canopy_dli",
@@ -66,7 +78,8 @@
     "pre_tnc": "Use the same pre-exposure TNC samples and frozen HPLC/tissue protocol as the event-stress/clonal programme.",
     "post_tnc": "Use the same post-exposure TNC samples and frozen HPLC/tissue protocol as the event-stress/clonal programme.",
     "temporal_pairing": "Confirmatory pre/post TNC interval remains 39-45 days under the already frozen destructive-sampling guardrail.",
-    "inferential_unit": "stable transect node; PAR rows and TNC cores are repeated measurements, not ecological replicates"
+    "inferential_unit": "stable transect node; PAR rows and TNC cores are repeated measurements, not ecological replicates",
+    "shared_core_rule": "Use the same two pre/post TNC rounds already frozen for the event-stress/clonal programme. Optical sampling does not authorize an additional destructive TNC round."
   },
   "primary_analysis": {
     "model": "tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
@@ -109,6 +122,30 @@
     "turbidity_context": {
       "measurement": "optional co-located turbidity or suspended-particle proxy",
       "role": "Response-independent context only; do not add/remove it from the primary DLI model after TNC inspection."
+    },
+    "paired_above_canopy_reference": {
+      "purpose": "Distinguish low actual within-canopy light caused by local canopy/leaf attenuation from low incident/above-canopy underwater irradiance caused by cloud, water-column attenuation or bay-scale optical forcing.",
+      "cohort": "Nested response-independent optical-attribution subset. Nodes remain eligible for the primary within-canopy DLI -> TNC test even if no paired reference sensor is available.",
+      "target_nodes": 18,
+      "minimum_analyzable_nodes": 12,
+      "minimum_nodes_per_bay": 3,
+      "measurement": "Simultaneous PAR above the local canopy at the same node, using the same sensor family/calibration/QC and a frozen clearance above canopy.",
+      "geometry": {
+        "target_clearance_above_canopy_m": 0.1,
+        "requirement": "Reference sensor must remain submerged and outside the standing leaf canopy while avoiding mount shadow. Exact clearance tolerance frozen in the response-independent optical pilot."
+      },
+      "metrics": {
+        "above_canopy_mean_daily_dli": "Mean valid daily DLI measured simultaneously above the local canopy over the same common interval.",
+        "canopy_optical_transmittance": "within_canopy_mean_daily_dli / above_canopy_mean_daily_dli",
+        "canopy_optical_attenuation": "1 - canopy_optical_transmittance"
+      },
+      "physical_gate": "Report paired node-level transmittance/attenuation distribution and two-sided node-bootstrap interval for mean canopy_optical_attenuation. This is a physical attribution diagnostic, not a second biological primary.",
+      "interpretation": {
+        "primary_supported_attenuation_positive": "Consistent with biologically consequential low actual light plus a local canopy-associated optical gradient.",
+        "primary_supported_attenuation_weak": "Actual light predicts reserve state, but the cause may be incident/water-column forcing rather than canopy/epiphyte attenuation.",
+        "primary_unsupported_attenuation_positive": "Canopy changes local light, but this measured attenuation is not shown to deplete reserve over the frozen interval."
+      },
+      "no_rescue": "Do not replace a null primary within-canopy DLI result with attenuation, transmittance or above-canopy DLI as a new primary after inspection."
     }
   },
   "competing_epiphyte_interpretations": {
@@ -150,7 +187,11 @@
     "any paired intact-versus-cleaned leaf optical method and response-independent damage pilot",
     "secondary multiplicity rule",
     "future survey window",
-    "edge/light-independent representative meter-mark selection"
+    "edge/light-independent representative meter-mark selection",
+    "response-independent vertical PAR profile pilot and final proportional-height rule",
+    "daily DLI valid-day coverage and maximum daytime-gap rule",
+    "paired above-canopy reference subset and clearance geometry",
+    "canopy optical transmittance/attenuation calculation"
   ],
   "claim_boundary": [
     "This study tests direct canopy-scale light exposure, not the failed bay-segment Secchi proxy.",
@@ -159,6 +200,9 @@
     "Repeated PAR observations improve exposure measurement but do not substitute for node replication.",
     "If fewer than 30 analyzable nodes remain or any core bay has fewer than 8, a null is a pilot null.",
     "Do not use binary re-recording as a recovery endpoint.",
-    "The optical deployment meter mark is selected without using preliminary PAR or mapped edge distance; sensor placement cannot be moved to manufacture exposure contrast."
+    "The optical deployment meter mark is selected without using preliminary PAR or mapped edge distance; sensor placement cannot be moved to manufacture exposure contrast.",
+    "Within-canopy DLI is the biological exposure primary. Canopy/epiphyte optical attribution requires the separate paired above-canopy and/or leaf-optics diagnostics; low within-canopy DLI alone does not identify its optical source.",
+    "Daily-light-integral QC must protect the daylight integral itself; a node cannot remain primary-eligible solely because total row coverage exceeds 85% if daylight gaps make DLI unreliable.",
+    "Optical deployment reuses the already planned pre/post TNC rounds and does not justify additional destructive reserve sampling."
   ]
 }
