@@ -59,6 +59,12 @@
       "node_rule": "Primary node mean DLI uses only valid days and requires at least 30 valid daily DLIs within the frozen common overlap, in addition to the >=85% overall PAR coverage rule.",
       "interpolation_boundary": "Interpolation may bridge only gaps shorter than the frozen maximum. Do not reconstruct long daytime gaps from neighboring nodes or above-canopy references.",
       "rationale": "DLI integration is sensitive to missing observations during daylight; overall row coverage alone is insufficient."
+    },
+    "calendar_interpretation_boundary": {
+      "selection_provenance": "July 24-September 3 was selected response-independently for the hot-fresh event-stress programme, not optimized for optical contrast.",
+      "reason_for_sharing": "Co-deployment places optical and hot-fresh forcing on the same biological interval and reuses the same pre/post TNC samples.",
+      "null_interpretation": "An optical null weakens direct within-canopy DLI as a reserve driver over this fixed late-summer interval only; it is not evidence that light is unimportant in other seasons.",
+      "no_rescue": "Do not shift the optical window to another season after seeing TNC. A different seasonal optical hypothesis requires a separately frozen future study."
     }
   },
   "primary_exposure": {
@@ -203,6 +209,7 @@
     "The optical deployment meter mark is selected without using preliminary PAR or mapped edge distance; sensor placement cannot be moved to manufacture exposure contrast.",
     "Within-canopy DLI is the biological exposure primary. Canopy/epiphyte optical attribution requires the separate paired above-canopy and/or leaf-optics diagnostics; low within-canopy DLI alone does not identify its optical source.",
     "Daily-light-integral QC must protect the daylight integral itself; a node cannot remain primary-eligible solely because total row coverage exceeds 85% if daylight gaps make DLI unreliable.",
-    "Optical deployment reuses the already planned pre/post TNC rounds and does not justify additional destructive reserve sampling."
+    "Optical deployment reuses the already planned pre/post TNC rounds and does not justify additional destructive reserve sampling.",
+    "The July 24-September 3 calendar was chosen for event-stress climatology, not to maximize optical contrast; optical inference is explicitly interval-specific and cannot be generalized to all seasons from this deployment alone."
   ]
 }
