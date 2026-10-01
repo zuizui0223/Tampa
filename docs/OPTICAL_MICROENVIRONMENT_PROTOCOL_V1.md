@@ -104,6 +104,29 @@ Minimum target height above bed is 0.05 m.
 
 Do not move a sensor higher or lower after seeing PAR/TNC because one position gives a more favorable signal.
 
+## Response-independent vertical-profile pilot
+
+The outcome-bearing study will use one fixed within-canopy PAR height per node. Before choosing that height, run a short physical pilot without TNC/future-response access.
+
+At a subset spanning short and tall canopies, measure a local PAR profile at:
+
+- 25% of canopy height;
+- 50% of canopy height;
+- 75% of canopy height;
+- one above-canopy reference.
+
+Use simultaneous sensors where possible; otherwise use a predeclared rapid profiling procedure under sufficiently stable irradiance.
+
+The pilot asks only whether one proportional height provides a reproducible, field-feasible representation of within-canopy irradiance.
+
+Freeze the final proportional-height rule before the first outcome-bearing TNC core.
+
+After that point:
+
+- no node-specific height optimization;
+- no switching to the brightest/darkest level;
+- no selection of whichever height later correlates with TNC.
+
 ## Optical QC
 
 Freeze before deployment:
@@ -122,6 +145,61 @@ Freeze before deployment:
 Each confirmatory node must retain >=85% valid PAR observations across the common overlap.
 
 Biofouling is especially important for an underwater optical study. A fouled sensor is not interpreted as biologically low light.
+
+## Daily DLI integrity
+
+Daily light integral is sensitive to when missing observations occur.
+
+Before deployment, freeze:
+
+- expected observations per day;
+- minimum valid fraction across the local photoperiod;
+- maximum allowable continuous daytime gap;
+- the only gap length eligible for interpolation.
+
+A day failing the frozen daylight-integrity rule is not used for DLI.
+
+The primary node mean requires **at least 30 valid daily DLIs** within the common overlap, in addition to the network-wide >=85% PAR coverage rule.
+
+Do not reconstruct long daytime gaps from neighboring nodes, weather stations or the above-canopy reference.
+
+## Nested paired above-canopy optical reference
+
+The primary biological exposure remains actual within-canopy DLI. To identify whether low actual light is locally created by the canopy/leaf layer rather than by incident or water-column light, add a nested paired-reference subset.
+
+Planning target:
+
+- 18 nodes;
+- minimum analyzable physical-attribution set: 12;
+- >=3 nodes in each of Old, Middle and Lower Tampa Bay.
+
+At each retained attribution node, measure PAR **simultaneously above and within the same canopy** using the same sensor family, calibration, clock and QC.
+
+Target above-canopy sensor center:
+
+> 0.10 m above the top of the standing canopy.
+
+Freeze the clearance tolerance and mounting geometry in the physical pilot. The reference must remain submerged, outside the standing leaf canopy and clear of mount shadow.
+
+For each paired node calculate:
+
+```text
+T_canopy = mean_daily_DLI_within / mean_daily_DLI_above
+
+A_canopy = 1 - T_canopy
+```
+
+Retain negative attenuation values if they occur; do not truncate them.
+
+The physical diagnostic reports the node-level transmittance/attenuation distribution and a two-sided node-bootstrap interval for mean `A_canopy`.
+
+Interpretation:
+
+- actual DLI -> TNC supported + positive canopy attenuation -> consistent with biologically consequential low light plus a local canopy-associated optical gradient;
+- actual DLI -> TNC supported + weak canopy attenuation -> light matters, but low light may be driven mainly by cloud/water-column/turbidity forcing;
+- positive canopy attenuation + null actual-DLI primary -> canopy modifies light, but the modification is not shown to deplete reserve over this interval.
+
+The paired-reference metric cannot replace or rescue a null actual-DLI primary.
 
 ## Primary exposure
 
@@ -182,6 +260,20 @@ Support rule:
 - sample/coverage/variation gate fails -> non-estimable.
 
 The stable transect node is the inferential unit. PAR rows and TNC cores are repeated measurements.
+
+## Shared TNC sampling rule
+
+The optical programme uses the **same** pre-exposure and post-exposure TNC rounds already frozen for the event-stress / reserve programme.
+
+It does not authorize a third destructive reserve-sampling round.
+
+All optical primary nodes inherit the frozen:
+
+- 39-45 day pre/post TNC interval;
+- q25/q50/q75 spatial-core logic;
+- cumulative coring-footprint guardrail;
+- tissue/HPLC protocol;
+- disturbance sensitivity.
 
 ## Epiphyte role
 
