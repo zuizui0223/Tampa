@@ -181,18 +181,64 @@ Otherwise schedule direct velocity work separately under its existing 21-day, ba
 
 ## Capacity failure rule
 
-If response-independent inventory/logistics cannot meet one mechanism's confirmatory sampling frame:
+The four-bay TNC v2 primary is protected first.
 
-> classify that mechanism as pilot/non-confirmatory **before deployment**.
+Before the first outcome-bearing pre-TNC core, freeze each optional forcing module as either:
+
+- **confirmatory**, or
+- **disabled**.
+
+If response-independent inventory/logistics cannot meet the full frozen event or optical confirmatory frame:
+
+> disable that outcome-bearing module for this campaign.
+
+A disabled module may still run response-independent sensor, calibration or geometry pilots, but it does **not** justify an extra pre-exposure TNC round or an underpowered biological mechanism test.
 
 Do not:
 
 - rotate instruments into non-overlapping weather windows and combine them as if simultaneous;
+- run a small outcome-bearing forcing pilot that adds destructive pre-coring merely because full confirmatory capacity is unavailable;
 - drop a difficult bay after exposure is seen;
 - change July 24–September 3;
 - retune hot/fresh thresholds;
 - add a third TNC round;
 - sacrifice the authoritative four-bay TNC design to rescue another mechanism.
+
+Paired above-canopy PAR is different: it is a **secondary optical-attribution diagnostic**. If the 12-total / 3-per-bay reference subset cannot be met, disable that attribution layer only. The within-canopy DLI primary may remain confirmatory if its own 30-total / 8-per-bay and QC gates pass.
+
+## Fail-closed field readiness
+
+The integrated resource freeze is not just an inventory sheet.
+
+Before any outcome-bearing collection, the readiness audit must verify:
+
+- the separate authoritative TNC-v2 precollection freeze is complete;
+- the final four-bay TNC node registry meets >=36 total and >=6 per bay;
+- the authoritative TNC baseline dates fit one <=28-day campaign;
+- every baseline fixed-transect survey lies within +/-14 days of its TNC baseline;
+- TNC-v2 primary analysis and node-level uncertainty code are frozen;
+- confirmatory event/optical modules have enough simultaneous node systems and their primary analysis code frozen;
+- logger deployment/retrieval calendars preserve the frozen July 24-September 3 design and >=35-day common overlap;
+- pre/post TNC visits are within 3 days of deployment/retrieval and 39-45 days apart;
+- core-three post-TNC dates are the authoritative baseline TNC dates, so no third TNC round is silently introduced;
+- preservation capacity covers the full planned core count.
+
+A complete but insufficient freeze is a **STOP**, not a reason to reinterpret the study after fieldwork.
+
+## Integrated forcing-family inference
+
+Event-stress and optical DLI remain separate mechanism contracts.
+
+If both are confirmatory and estimable in the same campaign:
+
+- retain each contract's own frozen two-sided 95% interval and standalone support status;
+- for any paper-level statement that **measured environmental forcing predicts reserve change**, treat the two forcing primaries as one family;
+- use Bonferroni-adjusted **two-sided 97.5% intervals** from the same frozen node-level resampling procedure for that family-level claim;
+- report the pre-response node-level correlation between hot-fresh exposure and within-canopy DLI;
+- do not rank the two mechanisms by p-value, CI width or standardized coefficient;
+- if both support individually, do not call them statistically independent effects without a separately frozen joint model.
+
+This family-level rule does not change either individual contract. It controls the broader integrated-campaign claim.
 
 ## What integration buys biologically
 
