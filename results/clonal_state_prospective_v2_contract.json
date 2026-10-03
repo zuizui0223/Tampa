@@ -238,6 +238,29 @@
         "no_replacement": "Do not replace a failed anchor with another meter mark after TNC assay or future BB is observed.",
         "role": "Ensures the within-node biological contrast is not driven by differential analytical quality."
       }
+    },
+    "reserve_trajectory_diagnostic": {
+      "status": "predeclared_secondary_temporal_site_template_resistant_diagnostic",
+      "source_contract": "results/event_stress_debt_prospective_v1_contract.json",
+      "analysis_code": "analysis/71_dynamic_reserve_future_diagnostic.py",
+      "analysis_freeze": "field/dynamic_reserve_future_analysis_freeze.json",
+      "geography": [
+        "Old Tampa Bay",
+        "Middle Tampa Bay",
+        "Lower Tampa Bay"
+      ],
+      "reserve_change_definition": "delta_tnc_42d = tnc_post - tnc_pre using the same three frozen q25/q50/q75 anchor neighborhoods and distinct non-overlapping pre/post cores",
+      "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body",
+      "focal_coefficient": "delta_tnc_42d",
+      "expected_direction": "positive",
+      "replication_gate": ">=30 complete nodes and >=8 in each of Old, Middle and Lower Tampa Bay",
+      "measurement_validity_gate": {
+        "matched_anchor_rule": "Pre and post node summaries come from the same frozen anchor neighborhoods.",
+        "method_qc_rule": "Authoritative TNC-v2 response-independent method pilot passes all frozen analytical recovery/precision/calibration criteria and each included node passes TNC QC.",
+        "assay_batch_round_rule": "Pre/post sampling round is not perfectly confounded with HPLC assay batch; otherwise this diagnostic is non-estimable."
+      },
+      "interpretation": "Support means recent reserve trajectory contains information beyond current reserve level and is less compatible with a purely time-invariant node-quality explanation. It does not remove time-varying common causes, residual measurement error or establish hysteresis.",
+      "no_rescue": "Cannot replace or rescue a null authoritative four-bay static TNC primary."
     }
   },
   "pre_outcome_freeze_required": [
@@ -268,7 +291,10 @@
     "four-bay within-transect anchor preflight and cluster-bootstrap code if the frozen feasibility gate passes",
     "36-total / 6-per-bay v2 confirmatory replication gate",
     "within-transect anchor TNC future-BB analysis code/freeze",
-    "anchor diagnostic cluster-bootstrap seed 20261007"
+    "anchor diagnostic cluster-bootstrap seed 20261007",
+    "dynamic reserve trajectory analysis code/freeze",
+    "matched pre/post q25/q50/q75 anchor-neighborhood rule for reserve trajectory",
+    "non-confounding of pre/post round with HPLC assay batch for reserve-trajectory interpretation"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
