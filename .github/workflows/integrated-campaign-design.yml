@@ -9,6 +9,7 @@ on:
       - "docs/INTEGRATED_FIELD_CAMPAIGN_V1.md"
       - "validation/verify_integrated_campaign_design.py"
       - "validation/validate_integrated_campaign_readiness.py"
+      - "validation/test_integrated_campaign_readiness.py"
       - "results/clonal_state_prospective_v2_contract.json"
       - "results/event_stress_debt_prospective_v1_contract.json"
       - "results/optical_microenvironment_prospective_v1_contract.json"
@@ -26,6 +27,8 @@ jobs:
           python-version: "3.12"
       - name: Verify integrated design against source contracts
         run: python validation/verify_integrated_campaign_design.py
+      - name: Test completed readiness branches
+        run: python validation/test_integrated_campaign_readiness.py
       - name: Evaluate current resource-freeze readiness
         run: |
           python validation/validate_integrated_campaign_readiness.py \
