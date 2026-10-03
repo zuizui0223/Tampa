@@ -1,0 +1,3 @@
+method,delay_minutes,specimen_id,immediate_tnc_mg_g,delayed_tnc_mg_g,physically_suitable
+"liquid_nitrogen_flash_freeze",0,pilot01,,,
+"dry_ice_rapid_freeze",0,pilot01,,,
