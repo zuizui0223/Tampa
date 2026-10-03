@@ -1,0 +1,45 @@
+{
+  "schema": "tampa.integrated_campaign_resource_freeze.v1",
+  "contract": "results/integrated_field_campaign_v1_contract.json",
+  "status": "PENDING_RESPONSE_INDEPENDENT_RESOURCE_AUDIT",
+  "fixed_rules": {
+    "shared_event_optical_start_month_day": "07-24",
+    "shared_event_optical_end_month_day": "09-03",
+    "event_optical_target_days": 42,
+    "minimum_common_overlap_days": 35,
+    "pre_post_tnc_interval_days": [
+      39,
+      45
+    ],
+    "tnc_v2_minimum_total": 36,
+    "tnc_v2_minimum_per_bay": 6,
+    "event_minimum_total": 30,
+    "event_minimum_per_bay": 8,
+    "optical_minimum_total": 30,
+    "optical_minimum_per_bay": 8,
+    "optical_reference_minimum_total": 12,
+    "optical_reference_minimum_per_bay": 3,
+    "third_redundant_tnc_round_allowed": false,
+    "hydrodynamic_is_core_campaign_prerequisite": false
+  },
+  "fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger": {
+    "final_core_three_event_nodes_by_bay": null,
+    "final_core_three_optical_nodes_by_bay": null,
+    "final_four_bay_tnc_nodes_by_bay": null,
+    "complete_temperature_salinity_node_systems_available": null,
+    "within_canopy_par_node_systems_available": null,
+    "above_canopy_par_reference_systems_available": null,
+    "temperature_salinity_sensor_model_and_calibration_rule": null,
+    "par_sensor_model_and_calibration_rule": null,
+    "event_sensor_geometry_pilot_complete": null,
+    "optical_vertical_profile_pilot_complete": null,
+    "pre_post_core_offset_geometry_frozen": null,
+    "maximum_attempted_cores_per_node_across_pre_post_rounds": null,
+    "preservation_capacity_for_planned_core_samples": null,
+    "core_three_pre_visit_route_calendar": null,
+    "core_three_post_visit_route_calendar": null,
+    "four_bay_baseline_transect_calendar": null,
+    "four_bay_authoritative_tnc_baseline_calendar": null
+  },
+  "rule": "Do not begin outcome-bearing collection while any resource/pilot/calendar field remains null. If a mechanism lacks enough simultaneous systems for its frozen confirmatory frame, mark that mechanism pilot/non-confirmatory before deployment rather than changing its calendar or analysis after exposure."
+}
