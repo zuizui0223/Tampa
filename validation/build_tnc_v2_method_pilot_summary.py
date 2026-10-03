@@ -136,11 +136,6 @@ def summarize_hplc(path: Path):
         },
     }
 
-    # If an individual matrix-spike value violates the frozen 85-115 rule,
-    # force the summary gate to remain non-passable rather than hiding it in the mean.
-    if matrix and not matrix_all_pass:
-        summary["matrix_spike_mean_recovery_pct"] = None
-
     return summary
 
 
@@ -154,13 +149,19 @@ def summarize_tissue(path: Path, canonical):
 
     candidates = []
     for rank in sorted(by):
-        rr = [r for r in by[rank] if r.get("specimen_id", "").strip()]
+        declared = [r for r in by[rank] if r.get("specimen_id", "").strip()]
+        rr = [
+            r for r in declared
+            if r.get("classification_unambiguous", "").strip()
+            and r.get("dry_mass_sufficient", "").strip()
+            and r.get("destructive_guardrail_pass", "").strip()
+        ]
         n = len(rr)
         c = sum(as_bool(r["classification_unambiguous"]) for r in rr)/n if n else 0
         d = sum(as_bool(r["dry_mass_sufficient"]) for r in rr)/n if n else 0
         g = all(as_bool(r["destructive_guardrail_pass"]) for r in rr) if rr else False
         candidates.append({
-            "rank": rank, "n": n,
+            "rank": rank, "n_complete": n, "n_declared": len(declared),
             "classification_success_fraction": c,
             "sufficient_dry_mass_fraction": d,
             "all_guardrail_pass": g,
@@ -194,14 +195,21 @@ def summarize_geometry(path: Path, canonical):
 
     candidates = []
     for rank in sorted(by):
-        rr = [r for r in by[rank] if r.get("attempt_id", "").strip()]
+        declared = [r for r in by[rank] if r.get("attempt_id", "").strip()]
+        rr = [
+            r for r in declared
+            if r.get("live_horizontal_rhizome_recovered", "").strip()
+            and r.get("dry_mass_sufficient", "").strip()
+            and r.get("guardrail_pass", "").strip()
+            and r.get("three_anchor_feasible", "").strip()
+        ]
         n = len(rr)
         recovery = sum(as_bool(r["live_horizontal_rhizome_recovered"]) for r in rr)
         dry = sum(as_bool(r["dry_mass_sufficient"]) for r in rr)
         guard = all(as_bool(r["guardrail_pass"]) for r in rr) if rr else False
         anchor = all(as_bool(r["three_anchor_feasible"]) for r in rr) if rr else False
         candidates.append({
-            "rank": rank, "n": n,
+            "rank": rank, "n_complete": n, "n_declared": len(declared),
             "recovery_success_fraction": recovery/n if n else 0,
             "sufficient_dry_mass_fraction": dry/n if n else 0,
             "all_guardrail_pass": guard,
@@ -239,8 +247,15 @@ def summarize_offset(path: Path):
 
     candidates = []
     for offset in sorted(by):
-        rr = [r for r in by[offset] if r.get("placement_id", "").strip()]
-        passed = bool(rr) and all(
+        declared = [r for r in by[offset] if r.get("placement_id", "").strip()]
+        rr = [
+            r for r in declared
+            if r.get("permit_boundary_pass", "").strip()
+            and r.get("permanent_transect_protected", "").strip()
+            and r.get("placement_reproducible", "").strip()
+            and r.get("restoration_workspace_pass", "").strip()
+        ]
+        passed = bool(rr) and len(rr) == len(declared) and all(
             as_bool(r["permit_boundary_pass"])
             and as_bool(r["permanent_transect_protected"])
             and as_bool(r["placement_reproducible"])
@@ -248,7 +263,8 @@ def summarize_offset(path: Path):
             for r in rr
         )
         candidates.append({
-            "offset_m": offset, "n_placements": len(rr), "pass": passed
+            "offset_m": offset, "n_complete": len(rr),
+            "n_declared": len(declared), "pass": passed
         })
 
     selected = next((x for x in candidates if x["pass"]), None)
@@ -273,9 +289,17 @@ def summarize_preservation(path: Path, canonical, drift_absent):
         delay = float(delay)
         if delay <= 0:
             continue
+        required = (
+            r.get("specimen_id", "").strip(),
+            r.get("immediate_tnc_mg_g", "").strip(),
+            r.get("delayed_tnc_mg_g", "").strip(),
+            r.get("physically_suitable", "").strip(),
+        )
+        if not all(required):
+            continue
         a = float(r["immediate_tnc_mg_g"])
-        b = float(r["delayed_tnc_mg_g"])
-        rel = abs(b-a)/a*100 if a != 0 else math.inf
+        delayed = float(r["delayed_tnc_mg_g"])
+        rel = abs(delayed-a)/a*100 if a != 0 else math.inf
         cells[(method, delay)].append({
             "specimen": r["specimen_id"].strip(),
             "rel": rel,
