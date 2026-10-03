@@ -196,15 +196,20 @@ No correlation threshold is declared as a pass/fail rule.
 | complete reserve + complete engineering pathways supported | consistent with multiple measured buffering mechanisms; independent causal contributions still not demonstrated |
 | all prospective buffer-to-future tests unsupported at adequate precision | buffered-persistence mechanism programme weakens; do not rescue it from retrospective state decoupling |
 
-## Relationship to Boca Ciega
+## Relationship to the four-bay TNC v2 primary
 
-The prespecified Boca Ciega extension tests context transportability of the TNC association.
+Boca Ciega Bay is no longer a post-primary extension. It was prospectively incorporated before outcome-bearing TNC sampling and is part of the **authoritative four-bay v2 primary frame** together with Old, Middle and Lower Tampa Bay.
 
-It does not solve the site-template problem because it reuses the same observational mechanism logic.
+This strengthens context breadth and reduces dependence on the three bays emphasized by recent degradation, but it does **not** solve the persistent site-template problem.
 
-If the core TNC association transfers to Boca Ciega under the same protocol, the result is broader in context.
+The primary model includes a four-level water-body factor, so support means the TNC association is estimated across the prespecified four-bay frame beyond bay mean differences and current above-ground state. Persistent within-bay microsite quality can still influence both TNC and future trajectory.
 
-It is still not randomized causal evidence.
+Therefore:
+
+- four-bay support strengthens generality of the prospective reserve-state association;
+- it is not independent replication;
+- it is not randomized causal evidence;
+- mechanism interpretation still depends on the separate process/site-template-resistant diagnostics: event -> TNC change, dynamic reserve trajectory, and within-transect centered-anchor TNC.
 
 ## General ecological claim boundary
 
