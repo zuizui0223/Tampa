@@ -1,0 +1,40 @@
+{
+  "schema": "tampa.anchor_tnc_future_bb_analysis_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "script_path": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
+  "script_blob_sha1": "d34174c3b85fe2356d79b20857d7cd6b121e1098",
+  "role": "secondary spatial site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay node-level TNC primary",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay",
+    "Boca Ciega Bay"
+  ],
+  "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
+  "predictor_definition": "anchor_TNC - mean(anchor_TNC across the three frozen anchors within node)",
+  "focal_coefficient": "within_node_centered_anchor_TNC",
+  "complete_anchor_rule": "exactly three complete distinct frozen anchors per included node",
+  "replication_gate": {
+    "minimum_nodes": 36,
+    "minimum_nodes_per_bay": 6
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node cluster bootstrap",
+    "repetitions": 10000,
+    "seed": 20261007,
+    "interval": "two-sided percentile 95% CI",
+    "valid_replicate_requirement": ">=95%"
+  },
+  "support_rule": {
+    "supported": "95% CI entirely above 0",
+    "contradicted_direction": "95% CI entirely below 0",
+    "unsupported": "95% CI overlaps 0",
+    "below_gate": "non-estimable secondary diagnostic"
+  },
+  "no_rescue": [
+    "Do not move anchors after TNC assay or future outcome access.",
+    "Do not replace quantitative Braun-Blanquet with binary reappearance.",
+    "Do not use this diagnostic to rescue a null authoritative four-bay node-level TNC primary."
+  ]
+}
