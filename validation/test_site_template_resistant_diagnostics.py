@@ -21,7 +21,7 @@ def main():
     assert blob_sha(dfreeze["script_path"])==dfreeze["script_blob_sha1"]
     assert blob_sha(afreeze["script_path"])==afreeze["script_blob_sha1"]
     assert dfreeze["uncertainty"]["seed"]==20261006
-    assert "pre_post_anchor_match_pass" in " ".join(dfreeze["measurement_validity_gate"]["node_level_requirements"])
+    assert "exactly three frozen q25/q50/q75 anchor IDs per node" in " ".join(dfreeze["measurement_validity_gate"]["node_level_requirements"])
     assert "perfectly confounded" in dfreeze["measurement_validity_gate"]["assay_batch_round_boundary"]
     assert "<=10%" in dfreeze["measurement_validity_gate"]["analytical_precision_boundary"]
     assert afreeze["uncertainty"]["seed"]==20261007
@@ -34,7 +34,7 @@ def main():
     assert dyn_contract["analysis_code"]==dfreeze["script_path"]
     assert dyn_contract["analysis_freeze"]=="field/dynamic_reserve_future_analysis_freeze.json"
     assert "20261006" in dyn_contract["uncertainty"]
-    assert "delta_tnc_42d contains tnc_post" in dyn_contract["measurement_error_boundary"]["issue"]
+    assert "share the same post-exposure anchor measurements" in dyn_contract["measurement_error_boundary"]["issue"]
     assert "measurement-sensitive" in dyn_contract["measurement_error_boundary"]["discrepancy_rule"]
     assert anc_contract["analysis_code"]==afreeze["script_path"]
     assert anc_contract["analysis_freeze"]=="field/anchor_tnc_future_bb_analysis_freeze.json"
@@ -45,15 +45,34 @@ def main():
     rng=np.random.default_rng(10)
     for bi,b in enumerate(dyn.BAYS):
         for i in range(10):
-            pre=100+rng.normal(0,4)
-            delta=-5+10*(i/9)+rng.normal(0,0.2)
-            post=pre+delta
+            node=f"{bi}-{i}"
             base=.45+rng.normal(0,.04)
-            future=base+0.003*delta+0.001*post+rng.normal(0,.002)
-            rows.append(dict(node_id=f"{bi}-{i}",water_body=b,tnc_pre=pre,tnc_post=post,
-                             baseline_frequency_post=base,future_frequency=future,
-                             pre_post_anchor_match_pass=True,tnc_node_qc_pass=True))
-    d=pd.DataFrame(rows)
+            latent_delta=-5+10*(i/9)+rng.normal(0,0.2)
+            post_vals=[]
+            for a,anchor in enumerate(("q25","q50","q75")):
+                pre=100+6*a+rng.normal(0,1.0)
+                delta=latent_delta+rng.normal(0,0.15)
+                post=pre+delta
+                post_vals.append(post)
+                rows.append(dict(
+                    node_id=node,water_body=b,anchor_id=anchor,
+                    tnc_pre_anchor=pre,tnc_post_anchor=post,
+                    pre_tnc_date="2027-07-24",post_tnc_date="2027-09-03",
+                    baseline_frequency_post=base,future_frequency=np.nan,
+                    pre_anchor_tnc_qc_pass=True,post_anchor_tnc_qc_pass=True
+                ))
+            future=base+0.003*latent_delta+0.001*np.median(post_vals)+rng.normal(0,.002)
+            for r in rows[-3:]:
+                r["future_frequency"]=future
+    d=dyn.prepare(pd.DataFrame(rows))
+    assert len(d)==30
+    assert np.allclose(
+        d["delta_tnc_42d"].to_numpy(),
+        [np.median([
+            rows[k]["tnc_post_anchor"]-rows[k]["tnc_pre_anchor"]
+            for k in range(i*3,(i+1)*3)
+        ]) for i in range(30)]
+    )
     est=dyn.fit(d)
     assert est>0,est
     dyn.BOOT=200
