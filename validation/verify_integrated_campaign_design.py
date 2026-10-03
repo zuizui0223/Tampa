@@ -57,7 +57,7 @@ assert ff["optical_attribution_intent"] is None
 assert ff["tnc_v2_primary_analysis_code_frozen"] is True
 assert ff["node_level_uncertainty_code_frozen"] is True
 assert (ROOT/"field/tnc_v2_primary_analysis_freeze.json").exists()
-assert ff["forcing_family_analysis_code_frozen"] is None
+assert ff["forcing_family_analysis_code_frozen"] is True
 assert "confirmatory" in freeze["fixed_rules"]["module_intent_allowed_values"]
 assert "disabled" in freeze["fixed_rules"]["module_intent_allowed_values"]
 
