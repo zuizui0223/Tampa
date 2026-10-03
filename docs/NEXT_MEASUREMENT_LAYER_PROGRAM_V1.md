@@ -39,12 +39,14 @@ The annual observation-state archive has already been decomposed across:
 
 These analyses are useful as descriptive ecology and boundary evidence. Repeatedly deriving another transition variable from the same annual table now has lower mechanistic value than measuring the biological state that the annual table cannot resolve.
 
-## Priority 1 — below-ground / clonal state
+## Priority 1 — below-ground reserve / regenerative state
 
 Frozen future design:
 
-- `results/clonal_state_prospective_v1_contract.json`
-- `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md`
+- `results/clonal_state_prospective_v2_contract.json` — **authoritative four-bay outcome-bearing primary**
+- `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md`
+- provenance only: `results/clonal_state_prospective_v1_contract.json`
+- provenance only: `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md`
 
 ### Biological hypothesis
 

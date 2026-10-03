@@ -306,5 +306,12 @@
       "The extension broadens environmental/community context and may improve precision, but it is not an independent replication dataset.",
       "Do not add Boca Ciega after seeing a null core result as a sample-size rescue."
     ]
+  },
+  "supersession_notice": {
+    "status": "superseded_for_outcome_bearing_primary_inference",
+    "superseded_by": "results/clonal_state_prospective_v2_contract.json",
+    "effective_date": "2026-10-01",
+    "timing_boundary": "The four-bay revision was fixed before the first future outcome-bearing TNC sample and before future meadow response access.",
+    "provenance_rule": "Retain v1 unchanged as the historical three-bay design record. Do not use v1 geography as an alternative primary analysis after future outcomes are opened."
   }
 }

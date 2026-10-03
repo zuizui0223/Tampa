@@ -1,0 +1,66 @@
+{
+  "schema": "tampa.tnc_anchor_bb_four_bay_preflight_v1.canonical_summary",
+  "authoritative_workflow": {
+    "run_id": 36809312012,
+    "head_sha": "cf568b59d990b2d9d09a44a261b9e9ef268b1103",
+    "artifact_id": 11139536974,
+    "artifact_digest": "sha256:f47bfffafec51afb689ed53a42394cb8c69288f2ecccafa0da75df67343f4289"
+  },
+  "status": "anchor_level_quantitative_diagnostic_feasible",
+  "evidence_class": "response-open baseline field-design feasibility only; no future TNC or future meadow outcome",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay",
+    "Boca Ciega Bay"
+  ],
+  "registry": {
+    "recent_thalassia_positive_nodes": 41,
+    "nodes_with_three_distinct_positive_anchors": 38,
+    "nodes_with_three_distinct_quantitative_bb_anchors": 38,
+    "by_water_body": {
+      "Old Tampa Bay": {
+        "recent_positive_nodes": 8,
+        "three_distinct_anchor_nodes": 8,
+        "three_anchor_quantitative_bb_nodes": 8
+      },
+      "Middle Tampa Bay": {
+        "recent_positive_nodes": 11,
+        "three_distinct_anchor_nodes": 10,
+        "three_anchor_quantitative_bb_nodes": 10
+      },
+      "Lower Tampa Bay": {
+        "recent_positive_nodes": 14,
+        "three_distinct_anchor_nodes": 12,
+        "three_anchor_quantitative_bb_nodes": 12
+      },
+      "Boca Ciega Bay": {
+        "recent_positive_nodes": 8,
+        "three_distinct_anchor_nodes": 8,
+        "three_anchor_quantitative_bb_nodes": 8
+      }
+    }
+  },
+  "frozen_gate": {
+    "minimum_nodes_with_three_distinct_quantitative_anchors": 36,
+    "minimum_nodes_per_bay": 6,
+    "observed_eligible_nodes": 38,
+    "minimum_quantitative_nodes_in_any_bay": 8,
+    "passed": true
+  },
+  "planned_diagnostic": {
+    "predictor": "within_node_centered_anchor_TNC = anchor_TNC - mean(anchor_TNC across the three anchors)",
+    "outcome": "future Thalassia Braun-Blanquet score at the same permanent meter mark; sampled focal absence may be coded 0, present nonnumeric 'Reported' is quantitatively missing",
+    "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
+    "uncertainty": "stable-node cluster bootstrap, resampling the full three-anchor node as one unit",
+    "expected_direction": "positive",
+    "role": "secondary spatial site-template-resistant diagnostic; cannot replace or rescue the four-bay node-level primary TNC result"
+  },
+  "interpretation": "The four-bay q25/q50/q75 anchor diagnostic is baseline-feasible before any future response: 38 nodes have three distinct Thalassia-positive anchors with quantitative baseline Braun-Blanquet values, exceeding the frozen >=36 total / >=6 per-bay gate.",
+  "claim_boundary": [
+    "This is a baseline design audit, not evidence that TNC predicts future state.",
+    "Core anchor positions may not move after TNC assay, environmental measurements, or future outcome access.",
+    "Support in the future within-node diagnostic would weaken stable transect-level site-template confounding but would not eliminate persistent meter-mark microhabitat or time-varying local common causes.",
+    "If coring may plausibly alter a paired permanent meter mark, that anchor is invalid for the future local diagnostic rather than interpreted ecologically."
+  ]
+}
