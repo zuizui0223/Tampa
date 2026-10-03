@@ -26,6 +26,25 @@ def main():
     if x.get("outcome_response_accessed") is not False:
         errors.append("pilot must remain independent of future ecological outcome/response")
 
+    # Candidate search order is predeclared before pilot values are inspected.
+    tissue_candidates=x.get("tissue_class",{}).get("candidate_order",[])
+    if len(tissue_candidates)!=2 or "3-cm" not in tissue_candidates[0] or "4-cm" not in tissue_candidates[1]:
+        errors.append("tissue-class candidate order drift")
+
+    geometry_candidates=x.get("core_geometry",{}).get("candidate_order",[])
+    expected_geometry=[(9,15),(9,20),(15,15),(15,20),(15,25)]
+    got_geometry=[
+        (float(z.get("diameter_cm")),float(z.get("depth_cm")))
+        for z in geometry_candidates
+        if isinstance(z,dict) and z.get("diameter_cm") is not None and z.get("depth_cm") is not None
+    ]
+    if got_geometry != [(float(a),float(b)) for a,b in expected_geometry]:
+        errors.append("core-geometry candidate order drift")
+
+    preservation_candidates=x.get("preservation",{}).get("candidate_methods",[])
+    if len(preservation_candidates)!=2 or "liquid-nitrogen" not in preservation_candidates[0] or "dry-ice" not in preservation_candidates[1]:
+        errors.append("preservation candidate order drift")
+
     for sec,key in REQUIRED_SELECTED:
         if x.get(sec,{}).get(key) in (None,"","PENDING"):
             pending.append(f"{sec}.{key}")
