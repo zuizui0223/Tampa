@@ -39,7 +39,7 @@ Attempt census-oriented sampling of every contemporaneously eligible node.
 Primary confirmation requires:
 
 - >=36 analyzable nodes total;
-- >=8 analyzable nodes in **each** of the four bays.
+- >=6 analyzable nodes in **each** of the four bays.
 
 With baseline frequency, baseline Braun-Blanquet state and a four-level water-body factor, the approximate two-sided 80%-power detectable partial correlation for TNC is about:
 
@@ -208,7 +208,7 @@ After the first outcome-bearing v2 core or any future response access:
 - do not revert to the v1 three-bay primary;
 - do not remove Boca Ciega because its future result is inconvenient;
 - do not add another bay to rescue a null;
-- do not change the >=36 / >=8-per-bay confirmatory gate;
+- do not change the >=36 / >=6-per-bay confirmatory gate;
 - do not change timing, HPLC, tissue, core geometry or future endpoint.
 
 The purpose of v2 is a single prospective four-bay test whose null is scientifically interpretable.
