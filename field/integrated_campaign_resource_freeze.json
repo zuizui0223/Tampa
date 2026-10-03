@@ -61,7 +61,8 @@
     "optical_attribution_analysis_code_frozen": null,
     "forcing_family_analysis_code_frozen": null,
     "minimum_pre_post_core_center_separation_cm": null,
-    "maximum_cumulative_disturbed_area_cm2_per_node": null
+    "maximum_cumulative_disturbed_area_cm2_per_node": null,
+    "hplc_primary_assay_capacity_for_planned_core_samples": null
   },
   "rule": "Do not begin outcome-bearing collection while any unconditional TNC-v2 resource/pilot/calendar field remains null. Event and optical module intents must be frozen as confirmatory or disabled before deployment. A disabled module does not trigger extra pre/post TNC coring; its response-independent sensor pilot may still proceed. If a module is labeled confirmatory, all of its frozen sample, system, timing and analysis-code gates must pass."
 }
