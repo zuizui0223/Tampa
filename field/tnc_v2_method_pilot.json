@@ -1,0 +1,51 @@
+{
+  "schema": "tampa.tnc_v2_method_pilot.v1",
+  "status": "PENDING_RESPONSE_INDEPENDENT_PILOT",
+  "outcome_response_accessed": false,
+  "pilot_material": {
+    "independent_rhizome_specimens": null,
+    "collection_locations_or_batches": null,
+    "field_core_attempts": null
+  },
+  "analytical_qc": {
+    "standard_mix_mean_recovery_pct": null,
+    "matrix_spike_mean_recovery_pct": null,
+    "technical_duplicate_median_cv_pct": null,
+    "technical_duplicate_fraction_gt15pct": null,
+    "pilot_extract_fraction_in_calibration_range": null,
+    "blank_below_loq": null,
+    "post_high_standard_carryover_below_loq": null
+  },
+  "tissue_class": {
+    "candidate_order": [],
+    "selected_horizontal_rhizome_tissue_class": null,
+    "classification_success_fraction": null,
+    "sufficient_dry_mass_fraction": null,
+    "selection_used_tnc_level_or_ecological_state": false
+  },
+  "core_geometry": {
+    "candidate_order": [],
+    "selected_core_diameter_cm": null,
+    "selected_core_depth_cm": null,
+    "recovery_success_fraction": null,
+    "sufficient_dry_mass_fraction": null,
+    "three_anchor_geometry_feasible": null,
+    "least_destructive_passing_geometry_selected": null
+  },
+  "transect_offset": {
+    "monitoring_authority_boundary_documented": null,
+    "selected_minimum_perpendicular_transect_offset_m": null,
+    "representative_anchor_placement_test_passed": null
+  },
+  "preservation": {
+    "candidate_methods": [],
+    "selected_preservation_method": null,
+    "tested_delays_minutes": [],
+    "selected_maximum_collection_to_preservation_minutes": null,
+    "paired_specimens_at_selected_delay": null,
+    "median_abs_relative_tnc_difference_pct": null,
+    "p90_abs_relative_tnc_difference_pct": null,
+    "monotonic_directional_drift_absent": null
+  },
+  "decision": "Do not copy pilot values into the authoritative precollection freeze until the fail-closed pilot validator reports PASS_METHOD_PILOT."
+}
