@@ -114,12 +114,24 @@ A mechanism is confirmatory only if its own frozen sample/instrument gate is met
 1. finalize permissions and contemporaneous four-bay TNC node registry;
 2. run the response-independent *Thalassia* tissue/HPLC matrix pilot and the event/optical sensor-geometry pilots;
 3. freeze core diameter/depth, pre/post offset geometry, preservation workflow and instrument inventory in the integrated resource freeze;
-4. if event/optical resources meet their own confirmatory gates, deploy the frozen July 24–September 3 core-three campaign and collect the shared pre/post TNC rounds;
-5. use valid core-three post-TNC plus the same-period Boca Ciega baseline TNC as the authoritative four-bay v2 baseline; do not collect a third redundant TNC round;
+4. freeze event and optical module intent as confirmatory or disabled; only modules with full simultaneous confirmatory capacity may trigger the shared pre/post TNC rounds;
+5. if at least one forcing module is confirmatory, deploy the frozen July 24–September 3 core-three campaign and use valid post-TNC as the authoritative core-three v2 baseline; if both forcing modules are disabled, skip the biologically unnecessary pre-TNC round and collect only the authoritative four-bay baseline;
 6. perform the paired four-bay quantitative baseline survey within the frozen +/-14-day alignment;
 7. freeze baseline dataset/QC and primary model code;
 8. wait for the prespecified future transect survey;
 9. open the future endpoint once and run the frozen v2 model.
+
+## Resource-priority boundary
+
+The integrated readiness system protects the decisive four-bay TNC test.
+
+If event or optical capacity is below its full frozen confirmatory gate, that outcome-bearing module is **disabled before deployment** rather than run as a small biological pilot that adds destructive pre-coring.
+
+Response-independent sensor/calibration pilots remain allowed.
+
+Paired above-canopy PAR is secondary optical attribution only; inadequate reference capacity does not invalidate a confirmatory within-canopy DLI primary.
+
+If both event and optical primaries are confirmatory and estimable, any paper-level claim about a broader environmental-forcing family uses the frozen two-test family correction from the integrated campaign contract. Individual mechanism contracts retain their own standalone 95% interval status.
 
 ## Second mechanism line
 
