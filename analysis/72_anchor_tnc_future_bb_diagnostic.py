@@ -17,13 +17,17 @@ MIN_PER_BAY=6
 ANCHORS_PER_NODE=3
 BOOT=10000
 SEED=20261007
-REQ={"node_id","water_body","anchor_id","baseline_bb_anchor","anchor_tnc","future_bb_anchor"}
+REQ={"node_id","water_body","anchor_id","baseline_bb_anchor","anchor_tnc","future_bb_anchor","anchor_tnc_qc_pass"}
 
 def prepare(df):
     z=df.copy()
     for c in ["baseline_bb_anchor","anchor_tnc","future_bb_anchor"]:
         z[c]=pd.to_numeric(z[c],errors="coerce")
-    z=z[z["water_body"].isin(BAYS)].dropna(subset=list(REQ)).copy()
+    if z["anchor_tnc_qc_pass"].dtype != bool:
+        z["anchor_tnc_qc_pass"]=z["anchor_tnc_qc_pass"].astype(str).str.lower().map({"true":True,"false":False,"1":True,"0":False})
+    z=z[z["water_body"].isin(BAYS) & (z["anchor_tnc_qc_pass"]==True)].dropna(
+        subset=["node_id","water_body","anchor_id","baseline_bb_anchor","anchor_tnc","future_bb_anchor"]
+    ).copy()
     keep=[]
     for node,g in z.groupby("node_id",sort=False):
         if g["water_body"].nunique()!=1: continue
@@ -103,7 +107,8 @@ def main():
       "claim_boundary":[
         "Secondary spatial site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay node-level TNC primary.",
         "Node fixed effects remove stable transect-level differences, not persistent meter-mark microhabitat or time-varying local common causes.",
-        "Braun-Blanquet is analyzed on the frozen quantitative score scale."
+        "Braun-Blanquet is analyzed on the frozen quantitative score scale.",
+        "Every retained anchor must pass the authoritative TNC sample/assay QC; failed anchor chemistry makes the entire three-anchor node ineligible rather than being imputed or replaced after future outcome access."
       ]
     }
     if gate:
