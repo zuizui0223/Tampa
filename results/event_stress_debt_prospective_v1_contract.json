@@ -181,7 +181,11 @@
       },
       "precision_boundary": "At n≈30-33 with baseline state, post-TNC and bay controls, the diagnostic is mainly sensitive to moderate-to-large partial effects. A null is secondary evidence, not a rejection of the primary reserve hypothesis.",
       "site_template_interpretation": "Because delta_tnc_42d changes within node and the model conditions on current post-TNC, support is less compatible with a purely time-invariant node-quality explanation than a static cross-node TNC association alone. It still does not remove time-varying common causes or measurement error.",
-      "no_rescue_rule": "Cannot rescue a null node-level primary static TNC -> future-frequency result and cannot replace the event -> TNC primary. Report static TNC, reserve trajectory and event-stress links separately."
+      "no_rescue_rule": "Cannot rescue a null node-level primary static TNC -> future-frequency result and cannot replace the event -> TNC primary. Report static TNC, reserve trajectory and event-stress links separately.",
+      "analysis_code": "analysis/71_dynamic_reserve_future_diagnostic.py",
+      "analysis_freeze": "field/dynamic_reserve_future_analysis_freeze.json",
+      "uncertainty": "10,000-replicate water-body-stratified stable-node bootstrap; seed 20261006; two-sided percentile 95% interval",
+      "replication_gate": ">=30 complete core-three nodes and >=8 complete nodes in each of Old, Middle and Lower Tampa Bay; below this gate the secondary diagnostic is non-estimable rather than rescued."
     }
   },
   "relationship_to_otb_temperature_pilot": {
@@ -211,7 +215,9 @@
     "pre-versus-post paired core offset geometry",
     "maximum attempted/replacement cores across both TNC rounds",
     "39-45 day confirmatory pre-to-post TNC interval",
-    "dynamic reserve-trajectory -> future-state secondary model and uncertainty code"
+    "dynamic reserve-trajectory -> future-state secondary model and uncertainty code",
+    "dynamic reserve future diagnostic analysis code/freeze",
+    "dynamic reserve diagnostic bootstrap seed 20261006"
   ],
   "claim_boundary": [
     "This design tests whether the published Tampa hot-fresh condition definition gains mechanistic value when measured at node/event scale; it does not establish 30 C or 25 ppt as physiological hard limits.",
