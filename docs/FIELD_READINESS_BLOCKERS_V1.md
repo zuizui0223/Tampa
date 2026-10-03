@@ -64,6 +64,8 @@ Do not leave these as “maybe”.
 
 If event or optical is confirmatory, its extra simultaneous-sensor, geometry, calendar, coverage and analysis-code gates become mandatory. If capacity is insufficient, disable that module before biological sampling rather than rotating sensors through different weather windows.
 
+If full capacity exists for only one forcing primary, the frozen scientific priority is **within-canopy optical DLI before joint hot-fresh exposure**, while TNC-v2 remains protected above both. This priority does not override feasibility: event may proceed alone if optical fails its own full gate. See `docs/OPTIONAL_FORCING_MODULE_PRIORITY_V1.md`.
+
 ## What can proceed now
 
 Response-independent work can proceed immediately:
