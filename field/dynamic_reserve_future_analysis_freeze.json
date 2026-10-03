@@ -1,0 +1,64 @@
+{
+  "schema": "tampa.dynamic_reserve_future_analysis_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "script_path": "analysis/71_dynamic_reserve_future_diagnostic.py",
+  "script_blob_sha1": "a5e484fc0b24ec4b1d6750ee55366bc5d7a152aa",
+  "role": "secondary temporal site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay static TNC primary",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body",
+  "delta_definition": "tnc_post - tnc_pre; both node summaries must use the same three frozen q25/q50/q75 anchor neighborhoods with distinct non-overlapping pre/post cores",
+  "focal_coefficient": "delta_tnc_42d",
+  "temporal_pairing_days": [
+    39,
+    45
+  ],
+  "replication_gate": {
+    "minimum_total": 30,
+    "minimum_per_bay": 8
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node bootstrap",
+    "repetitions": 10000,
+    "seed": 20261006,
+    "interval": "two-sided percentile 95% CI",
+    "valid_replicate_requirement": ">=95%"
+  },
+  "support_rule": {
+    "supported": "95% CI entirely above 0",
+    "contradicted_direction": "95% CI entirely below 0",
+    "unsupported": "95% CI overlaps 0",
+    "below_gate": "non-estimable secondary diagnostic"
+  },
+  "no_rescue": [
+    "Do not drop tnc_post, baseline_frequency_post or water_body after inspection.",
+    "Do not widen the 39-45 day pre/post TNC interval after inspection.",
+    "Do not use this diagnostic to rescue a null authoritative four-bay static TNC primary.",
+    "Do not relax matched-anchor or TNC-QC requirements after future outcomes are inspected.",
+    "Do not interpret a pre/post contrast as trajectory if assay batch is perfectly confounded with sampling round.",
+    "Do not reinterpret an unsupported dynamic diagnostic as proof that reserve trajectory is irrelevant; its role is a bounded secondary test with moderate-to-large effect resolution."
+  ],
+  "measurement_validity_gate": {
+    "method_pilot_prerequisite": "Authoritative TNC-v2 response-independent method pilot must pass its frozen analytical QC before the dynamic diagnostic is eligible for ecological interpretation.",
+    "analytical_precision_boundary": "Technical-duplicate median TNC CV <=10%, <=10% of duplicate pairs >15% CV, and all other frozen HPLC recovery/calibration criteria must pass under the authoritative method pilot.",
+    "node_level_requirements": [
+      "pre_post_anchor_match_pass == true",
+      "tnc_node_qc_pass == true"
+    ],
+    "assay_batch_round_boundary": "Pre/post round must not be perfectly confounded with HPLC assay batch. If all pre samples and all post samples are separated by batch in a way that makes round indistinguishable from batch, classify the dynamic diagnostic non-estimable.",
+    "interpretation": "These gates reduce the chance that spatial core heterogeneity or analytical batch error is relabeled as reserve trajectory."
+  },
+  "design_resolution": {
+    "planning_model_terms": "delta_tnc_42d + tnc_post + baseline_frequency_post + two water-body indicators",
+    "approximation": "Gaussian multiple-regression partial-correlation benchmark, two-sided alpha 0.05, 80% power; resolution warning only.",
+    "approximate_detectable_partial_r": {
+      "n_30": 0.512,
+      "n_33": 0.488
+    },
+    "interpretation": "The diagnostic is mainly capable of detecting moderate-to-large trajectory information beyond current reserve state. An interval overlapping zero does not establish that smaller trajectory dependence is absent."
+  }
+}
