@@ -109,6 +109,7 @@ def main():
         "tnc_v2_primary_analysis_code_frozen",
         "node_level_uncertainty_code_frozen",
         "preservation_capacity_for_planned_core_samples",
+        "hplc_primary_assay_capacity_for_planned_core_samples",
         "four_bay_baseline_transect_calendar",
         "four_bay_authoritative_tnc_baseline_calendar",
     ]
@@ -408,6 +409,14 @@ def main():
             errors.append(f"preservation capacity {preserve} < minimum planned TNC cores {min_cores}")
     except Exception:
         errors.append("preservation_capacity_for_planned_core_samples must be integer")
+
+    try:
+        hplc_cap=int(fields.get("hplc_primary_assay_capacity_for_planned_core_samples"))
+        calculated["hplc_primary_assay_capacity_for_planned_core_samples"]=hplc_cap
+        if hplc_cap<min_cores:
+            errors.append(f"HPLC primary assay capacity {hplc_cap} < minimum planned TNC cores {min_cores}")
+    except Exception:
+        errors.append("hplc_primary_assay_capacity_for_planned_core_samples must be integer")
 
     # Determine per-module labels.
     tnc_errors=[e for e in errors if (
