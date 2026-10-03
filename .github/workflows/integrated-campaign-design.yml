@@ -6,6 +6,10 @@ on:
     paths:
       - "results/integrated_field_campaign_v1_contract.json"
       - "field/integrated_campaign_resource_freeze.json"
+      - "docs/TNC_V2_EXECUTION_MANIFEST_FREEZE_V1.md"
+      - "field/tnc_v2_execution_manifest_template.csv"
+      - "validation/test_tnc_v2_execution_manifest.py"
+      - "analysis/70_freeze_tnc_v2_execution_manifest.py"
       - "docs/FIELD_RESOURCE_ENVELOPE_V1.md"
       - "results/field_resource_scenario_requirements_v1.json"
       - "analysis/68_resource_scenario_requirements.py"
@@ -34,6 +38,8 @@ jobs:
           python-version: "3.12"
       - name: Install analysis dependencies
         run: python -m pip install -r requirements.txt
+      - name: Test final TNC execution-manifest freeze
+        run: python validation/test_tnc_v2_execution_manifest.py
       - name: Verify response-independent resource envelope
         run: |
           python analysis/68_resource_scenario_requirements.py
