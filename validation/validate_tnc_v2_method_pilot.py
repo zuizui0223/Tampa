@@ -53,7 +53,9 @@ def main():
     for sec,keys in {
       "pilot_material":["independent_rhizome_specimens","collection_locations_or_batches","field_core_attempts"],
       "analytical_qc":[
+        "calibration_identity_unambiguous",
         "standard_mix_mean_recovery_pct","matrix_spike_mean_recovery_pct",
+        "matrix_spike_all_within_85_115",
         "technical_duplicate_median_cv_pct","technical_duplicate_fraction_gt15pct",
         "pilot_extract_fraction_in_calibration_range","blank_below_loq",
         "post_high_standard_carryover_below_loq"
@@ -97,10 +99,14 @@ def main():
             errors.append("field_core_attempts < 10")
 
         q=x["analytical_qc"]
+        if q["calibration_identity_unambiguous"] is not True:
+            errors.append("primary HPLC calibration/analyte identity is not unambiguous")
         if not 95<=float(q["standard_mix_mean_recovery_pct"])<=105:
             errors.append("standard-mix mean recovery outside 95-105%")
         if not 85<=float(q["matrix_spike_mean_recovery_pct"])<=115:
             errors.append("matrix-spike mean recovery outside 85-115%")
+        if q["matrix_spike_all_within_85_115"] is not True:
+            errors.append("one or more individual matrix-spike recoveries fall outside 85-115%")
         if float(q["technical_duplicate_median_cv_pct"])>10:
             errors.append("technical-duplicate median CV > 10%")
         if float(q["technical_duplicate_fraction_gt15pct"])>0.10:
