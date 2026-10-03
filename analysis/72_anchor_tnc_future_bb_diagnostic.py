@@ -102,7 +102,7 @@ def main():
       "nodes_by_water_body":{b:int(counts[b]) for b in BAYS},
       "required_complete_anchors_per_node":ANCHORS_PER_NODE,
       "bootstrap":{"method":"water-body-stratified stable-node cluster bootstrap","repetitions":BOOT,"seed":SEED},
-      "estimate":None,"ci95":None,
+      "estimate":None,"ci95":None,"ci97_5_family":None,
       "classification":"nonestimable" if not gate else None,
       "claim_boundary":[
         "Secondary spatial site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay node-level TNC primary.",
@@ -120,8 +120,14 @@ def main():
             result["bootstrap"]["valid_replicates"]=int(len(boots))
         else:
             lo,hi=np.quantile(boots,[0.025,0.975])
+            flo,fhi=np.quantile(boots,[0.0125,0.9875])
             cls="supported" if lo>0 else "contradicted_direction" if hi<0 else "unsupported"
-            result.update({"status":"ESTIMATED","estimate":est,"ci95":[float(lo),float(hi)],"classification":cls})
+            fcls="supported" if flo>0 else "contradicted_direction" if fhi<0 else "unsupported"
+            result.update({
+              "status":"ESTIMATED","estimate":est,
+              "ci95":[float(lo),float(hi)],"classification":cls,
+              "ci97_5_family":[float(flo),float(fhi)],"family_classification":fcls
+            })
             result["bootstrap"]["valid_replicates"]=int(len(boots))
     a.out.parent.mkdir(parents=True,exist_ok=True)
     a.out.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
