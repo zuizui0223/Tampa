@@ -156,6 +156,17 @@ That would make the Tampa problem more general than monitoring resolution:
 
 > **two foundation-species meadows can occupy the same measured state yet carry different near-future risks because their hidden buffer trajectories differ.**
 
+### Predeclared state-versus-trajectory interpretation
+
+| Static four-bay TNC primary | Reserve-trajectory diagnostic | Interpretation |
+|---|---|---|
+| supported | supported | Current reserve level and recent reserve trajectory both carry prospective information; consistent with a genuinely dynamic internal buffer state. |
+| supported | unsupported | Current reserve stock predicts the future, but the 42-day trajectory adds no supported information beyond current stock under this design. |
+| unsupported | supported | The authoritative static reserve primary remains unsupported. Report trajectory dependence only as a secondary finding suggesting that recent change may be more informative than level; it does **not** rescue the primary TNC mechanism claim. |
+| unsupported | unsupported | No supported reserve-level or reserve-trajectory signal under the frozen tests; move to other measured buffers rather than retuning TNC analyses. |
+
+If the trajectory coefficient is measurement-sensitive under the frozen pre/post-core diagnostics, use that label instead of the supported/unsupported synthesis above.
+
 ### What this is not
 
 This diagnostic does **not** by itself establish:
