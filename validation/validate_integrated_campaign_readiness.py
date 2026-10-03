@@ -127,6 +127,8 @@ def main():
             "event_primary_analysis_code_frozen",
             "pre_post_core_offset_geometry_frozen",
             "maximum_attempted_cores_per_node_across_pre_post_rounds",
+            "maximum_cumulative_disturbed_area_cm2_per_node",
+            "minimum_pre_post_core_center_separation_cm",
             "core_three_pre_visit_route_calendar",
             "core_three_post_visit_route_calendar",
             "core_three_logger_deployment_calendar",
@@ -142,6 +144,8 @@ def main():
             "optical_primary_analysis_code_frozen",
             "pre_post_core_offset_geometry_frozen",
             "maximum_attempted_cores_per_node_across_pre_post_rounds",
+            "maximum_cumulative_disturbed_area_cm2_per_node",
+            "minimum_pre_post_core_center_separation_cm",
             "core_three_pre_visit_route_calendar",
             "core_three_post_visit_route_calendar",
             "core_three_logger_deployment_calendar",
@@ -317,7 +321,28 @@ def main():
             if max_attempt<6:
                 errors.append("maximum_attempted_cores_per_node_across_pre_post_rounds must be >=6")
         except Exception:
+            max_attempt=None
             errors.append("maximum_attempted_cores_per_node_across_pre_post_rounds must be integer")
+
+        try:
+            sep=float(fields.get("minimum_pre_post_core_center_separation_cm"))
+            max_area=float(fields.get("maximum_cumulative_disturbed_area_cm2_per_node"))
+            frozen_d=float(tnc_freeze["fields_to_freeze_before_first_outcome_bearing_core"]["core_diameter_cm"])
+            if sep < frozen_d:
+                errors.append(
+                    f"minimum pre/post core-center separation {sep} cm < frozen core diameter {frozen_d} cm; core footprints could overlap"
+                )
+            if max_attempt is not None:
+                import math
+                implied=max_attempt*math.pi*(frozen_d/2.0)**2
+                if max_area+1e-9 < implied:
+                    errors.append(
+                        f"maximum cumulative disturbed area {max_area:.2f} cm2 < area implied by {max_attempt} attempted {frozen_d} cm cores ({implied:.2f} cm2)"
+                    )
+            calculated["minimum_pre_post_core_center_separation_cm"]=sep
+            calculated["maximum_cumulative_disturbed_area_cm2_per_node"]=max_area
+        except Exception:
+            errors.append("pre/post core separation and cumulative disturbed area must be numeric and consistent with frozen TNC core diameter")
 
         deploy=date_map(fields.get("core_three_logger_deployment_calendar"),prepost,
                         "core_three_logger_deployment_calendar",errors)
