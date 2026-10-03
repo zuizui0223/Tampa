@@ -276,3 +276,5 @@ The first two remain the strongest direct discriminators between persistent mead
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
 - NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
 - Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**
+- Integrated TNC + event-stress + optical field orchestration: **frozen in `results/integrated_field_campaign_v1_contract.json`; response-independent instrument/resource inventory still pending**
+- Integrated campaign resource freeze: `field/integrated_campaign_resource_freeze.json`; no outcome-bearing deployment until the resource/pilot fields are frozen
