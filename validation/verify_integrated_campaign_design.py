@@ -32,6 +32,11 @@ ref=opt["secondary_optical_decomposition"]["paired_above_canopy_reference"]
 assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["minimum_total"]==ref["minimum_analyzable_nodes"]==12
 assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["minimum_per_bay"]==ref["minimum_nodes_per_bay"]==3
 assert x["mechanism_execution_gates"]["hydrodynamic"]["role"].startswith("Separate module")
+assert x["module_priority_and_failure_policy"]["priority_order"][0]=="authoritative four-bay TNC v2 primary"
+assert "disabled" in x["module_priority_and_failure_policy"]["optional_module_rule"]
+assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["role"].startswith("secondary attribution")
+assert "97.5%" in x["paper_level_forcing_family"]["integrated_family_rule"]
+assert "Do not compare" in x["paper_level_forcing_family"]["no_ranking"]
 
 assert freeze["contract"]=="results/integrated_field_campaign_v1_contract.json"
 assert freeze["status"]=="PENDING_RESPONSE_INDEPENDENT_RESOURCE_AUDIT"
@@ -45,12 +50,21 @@ assert freeze["fixed_rules"]["optical_reference_minimum_total"]==12
 assert freeze["fixed_rules"]["optical_reference_minimum_per_bay"]==3
 assert freeze["fixed_rules"]["third_redundant_tnc_round_allowed"] is False
 assert freeze["fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger"]["optical_reference_nodes_by_bay"] is None
+ff=freeze["fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger"]
+assert ff["event_module_intent"] is None
+assert ff["optical_module_intent"] is None
+assert ff["optical_attribution_intent"] is None
+assert ff["tnc_v2_primary_analysis_code_frozen"] is None
+assert ff["forcing_family_analysis_code_frozen"] is None
+assert "confirmatory" in freeze["fixed_rules"]["module_intent_allowed_values"]
+assert "disabled" in freeze["fixed_rules"]["module_intent_allowed_values"]
 
 doc=(ROOT/"docs/INTEGRATED_FIELD_CAMPAIGN_V1.md").read_text()
 assert "33 * 6 + 8 * 3 = 222" in doc
 assert "A third redundant TNC round is prohibited" in doc
 assert "Sequentially rotating a smaller logger pool" in doc
 assert "Hydrodynamic measurement is not a prerequisite" in doc
+assert "four-bay TNC v2" in doc
 
 # The readiness audit must be able to represent the deliberately pending state.
 assert (ROOT/"validation/validate_integrated_campaign_readiness.py").exists()
