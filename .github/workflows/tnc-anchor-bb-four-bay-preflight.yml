@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "analysis/62_tnc_anchor_bb_four_bay_preflight.py"
+      - "results/clonal_state_prospective_v2_contract.json"
+      - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md"
       - ".github/workflows/tnc-anchor-bb-four-bay-preflight.yml"
   workflow_dispatch:
 
