@@ -8,8 +8,10 @@
     "field_core_attempts": null
   },
   "analytical_qc": {
+    "calibration_identity_unambiguous": null,
     "standard_mix_mean_recovery_pct": null,
     "matrix_spike_mean_recovery_pct": null,
+    "matrix_spike_all_within_85_115": null,
     "technical_duplicate_median_cv_pct": null,
     "technical_duplicate_fraction_gt15pct": null,
     "pilot_extract_fraction_in_calibration_range": null,
