@@ -28,7 +28,7 @@ assert x["mechanism_execution_gates"]["event_stress"]["confirmatory_minimum_tota
 assert x["mechanism_execution_gates"]["event_stress"]["confirmatory_minimum_per_bay"]==evt["sampling_frame"]["minimum_confirmatory_nodes_per_bay"]==8
 assert x["mechanism_execution_gates"]["optical"]["confirmatory_minimum_total"]==opt["sampling_frame"]["minimum_confirmatory_nodes"]==30
 assert x["mechanism_execution_gates"]["optical"]["confirmatory_minimum_per_bay"]==opt["sampling_frame"]["minimum_confirmatory_nodes_per_bay"]==8
-ref=opt["physical_attribution"]["paired_above_canopy_reference"] if "physical_attribution" in opt else opt["secondary_physical_attribution"]["paired_above_canopy_reference"]
+ref=opt["secondary_optical_decomposition"]["paired_above_canopy_reference"]
 assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["minimum_total"]==ref["minimum_analyzable_nodes"]==12
 assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["minimum_per_bay"]==ref["minimum_nodes_per_bay"]==3
 assert x["mechanism_execution_gates"]["hydrodynamic"]["role"].startswith("Separate module")
