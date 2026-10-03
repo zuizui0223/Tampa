@@ -20,7 +20,15 @@
     "optical_reference_minimum_total": 12,
     "optical_reference_minimum_per_bay": 3,
     "third_redundant_tnc_round_allowed": false,
-    "hydrodynamic_is_core_campaign_prerequisite": false
+    "hydrodynamic_is_core_campaign_prerequisite": false,
+    "module_intent_allowed_values": [
+      "confirmatory",
+      "disabled"
+    ],
+    "optical_attribution_intent_allowed_values": [
+      "confirmatory",
+      "disabled"
+    ]
   },
   "fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger": {
     "final_core_three_event_nodes_by_bay": null,
@@ -40,7 +48,16 @@
     "core_three_post_visit_route_calendar": null,
     "four_bay_baseline_transect_calendar": null,
     "four_bay_authoritative_tnc_baseline_calendar": null,
-    "optical_reference_nodes_by_bay": null
+    "optical_reference_nodes_by_bay": null,
+    "event_module_intent": null,
+    "optical_module_intent": null,
+    "optical_attribution_intent": null,
+    "tnc_v2_primary_analysis_code_frozen": null,
+    "event_primary_analysis_code_frozen": null,
+    "optical_primary_analysis_code_frozen": null,
+    "node_level_uncertainty_code_frozen": null,
+    "core_three_logger_deployment_calendar": null,
+    "core_three_logger_retrieval_calendar": null
   },
-  "rule": "Do not begin outcome-bearing collection while any resource/pilot/calendar field remains null. If a mechanism lacks enough simultaneous systems for its frozen confirmatory frame, mark that mechanism pilot/non-confirmatory before deployment rather than changing its calendar or analysis after exposure."
+  "rule": "Do not begin outcome-bearing collection while any unconditional TNC-v2 resource/pilot/calendar field remains null. Event and optical module intents must be frozen as confirmatory or disabled before deployment. A disabled module does not trigger extra pre/post TNC coring; its response-independent sensor pilot may still proceed. If a module is labeled confirmatory, all of its frozen sample, system, timing and analysis-code gates must pass."
 }
