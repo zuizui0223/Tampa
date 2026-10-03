@@ -1,0 +1,102 @@
+{
+  "schema": "tampa.integrated_field_campaign_v1.contract",
+  "frozen_on": "2026-10-03",
+  "status": "resource_inventory_and_response_independent_pilots_pending",
+  "purpose": "Coordinate the already-frozen TNC, event-stress and optical mechanism studies in one field campaign without changing any primary estimator, threshold, endpoint, geography-specific inference gate or claim boundary.",
+  "source_contracts": {
+    "authoritative_tnc": "results/clonal_state_prospective_v2_contract.json",
+    "event_stress": "results/event_stress_debt_prospective_v1_contract.json",
+    "optical": "results/optical_microenvironment_prospective_v1_contract.json",
+    "hydrodynamic": "results/direct_hydrodynamic_prospective_v1_contract.json"
+  },
+  "inferential_independence": {
+    "rule": "Sharing dates, cores or field visits does not combine the primary analyses. Each mechanism retains its own frozen eligibility, precision, variation, uncertainty and no-rescue rules.",
+    "prohibited": "Do not build a composite buffer score, multivariable winner model, mediation model, or cross-mechanism interaction after outcome inspection."
+  },
+  "shared_calendar": {
+    "core_three_exposure_bays": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay"
+    ],
+    "event_optical_window": {
+      "start_month_day": "07-24",
+      "end_month_day": "09-03",
+      "target_days": 42,
+      "minimum_common_overlap_days": 35
+    },
+    "pre_tnc": "Core-three event/optical nodes use the frozen pre-exposure TNC round within 3 days of logger deployment.",
+    "post_tnc": "Core-three event/optical nodes use the frozen post-exposure TNC round within 3 days of logger retrieval, 39-45 days after pre-TNC.",
+    "authoritative_tnc_baseline_reuse": "For core-three nodes, a valid post-exposure TNC measurement is the preferred authoritative four-bay v2 baseline TNC measurement. Do not collect a third redundant TNC round.",
+    "boca_ciega_baseline": "Boca Ciega is not part of the frozen event/optical primary. Collect its authoritative v2 baseline TNC once during the same late-summer baseline campaign, under the same tissue/HPLC/core rules.",
+    "baseline_transect_alignment": "Pair the four-bay fixed-transect quantitative baseline to the authoritative baseline TNC within +/-14 days, preferably on the same node visit. Complete authoritative four-bay baseline TNC collection within one <=28-day campaign.",
+    "future_outcome": "The next prespecified fixed-transect survey supplies the v2 future quantitative response."
+  },
+  "shared_tnc_sampling": {
+    "core_three_rounds": 2,
+    "boca_ciega_rounds": 1,
+    "no_sham_coring": "Do not add a biologically unnecessary pre-coring round in Boca Ciega solely to mimic event-study disturbance.",
+    "intervention_metadata": "Record whether each authoritative baseline TNC node had a prior pre-exposure coring round, exact prior core offsets, dates and visible disturbance.",
+    "asymmetry_boundary": "Prior event-study coring is geographically structured and cannot be separated from water-body mean differences by adding a post-hoc indicator. Keep the frozen water-body factor, standardized destructive-sampling geometry and point-level disturbance sensitivity; do not reinterpret cross-bay mean TNC differences as a coring effect or ecological effect.",
+    "invalidation_rule": "If pre-coring visibly compromises a planned authoritative post-TNC anchor or permanent monitoring neighborhood, that anchor/node follows the predeclared destructive-sampling QC/sensitivity rule rather than being silently retained."
+  },
+  "mechanism_execution_gates": {
+    "tnc_v2": {
+      "geography": [
+        "Old Tampa Bay",
+        "Middle Tampa Bay",
+        "Lower Tampa Bay",
+        "Boca Ciega Bay"
+      ],
+      "planning_nodes": 41,
+      "confirmatory_minimum_total": 36,
+      "confirmatory_minimum_per_bay": 6,
+      "note": "Authoritative outcome-bearing TNC primary."
+    },
+    "event_stress": {
+      "geography": [
+        "Old Tampa Bay",
+        "Middle Tampa Bay",
+        "Lower Tampa Bay"
+      ],
+      "planning_nodes": 33,
+      "confirmatory_minimum_total": 30,
+      "confirmatory_minimum_per_bay": 8,
+      "simultaneous_requirement": "A complete temperature+salinity node system must operate on the same frozen common calendar window. Sequential rotation across non-overlapping windows cannot create confirmatory n.",
+      "other_gates": "Retain all frozen common-overlap, coverage, within-bay exposure-identifiability and 30 C / 25 ppt no-retuning rules."
+    },
+    "optical": {
+      "geography": [
+        "Old Tampa Bay",
+        "Middle Tampa Bay",
+        "Lower Tampa Bay"
+      ],
+      "planning_nodes": 33,
+      "confirmatory_minimum_total": 30,
+      "confirmatory_minimum_per_bay": 8,
+      "simultaneous_requirement": "A valid within-canopy PAR node system must operate on the frozen common calendar window. Sequential rotation across non-overlapping windows cannot create confirmatory n.",
+      "paired_reference_subset": {
+        "target_nodes": 18,
+        "minimum_total": 12,
+        "minimum_per_bay": 3
+      },
+      "other_gates": "Retain frozen daily-DLI daylight-gap QC, sensor-height pilot and no-season-shift rules."
+    },
+    "hydrodynamic": {
+      "role": "Separate module, not a resource prerequisite for the integrated TNC/event/optical campaign.",
+      "rule": "Run in parallel only if independent equipment/crew capacity cannot reduce TNC, event-stress or optical compliance. Otherwise schedule it separately under its own frozen 21-day and bare-control rules."
+    }
+  },
+  "resource_gate": {
+    "freeze_file": "field/integrated_campaign_resource_freeze.json",
+    "principle": "Before the first outcome-bearing pre-TNC core or logger deployment, freeze instrument inventory, node allocation, calibration/pilot status and route feasibility without using any future TNC or meadow response.",
+    "insufficient_capacity_rule": "If capacity cannot meet a mechanism's frozen confirmatory sampling frame, predeclare that mechanism as pilot/non-confirmatory for that campaign. Do not rotate instruments into different weather windows or drop inconvenient bays after exposure is observed.",
+    "no_cross_mechanism_rescue": "Failure or non-estimability of one mechanism cannot be rescued by adding another mechanism's exposure to its primary model."
+  },
+  "claim_boundary": [
+    "This is an execution/orchestration contract, not a new ecological hypothesis or estimator.",
+    "The four-bay TNC primary and the three-bay event/optical/hydrodynamic designs retain different geographies by design.",
+    "Co-deployment improves temporal comparability and reduces destructive sampling; it does not turn observational associations into causal experiments.",
+    "No binary re-recording endpoint is treated as ecological recovery."
+  ]
+}
