@@ -21,6 +21,9 @@ def main():
     assert blob_sha(dfreeze["script_path"])==dfreeze["script_blob_sha1"]
     assert blob_sha(afreeze["script_path"])==afreeze["script_blob_sha1"]
     assert dfreeze["uncertainty"]["seed"]==20261006
+    assert "matched_anchor" in " ".join(dfreeze["measurement_validity_gate"]["node_level_requirements"])
+    assert "perfectly confounded" in dfreeze["measurement_validity_gate"]["assay_batch_round_boundary"]
+    assert "<=10%" in dfreeze["measurement_validity_gate"]["analytical_precision_boundary"]
     assert afreeze["uncertainty"]["seed"]==20261007
     event=json.loads((ROOT/"results/event_stress_debt_prospective_v1_contract.json").read_text())
     clonal=json.loads((ROOT/"results/clonal_state_prospective_v2_contract.json").read_text())
@@ -44,7 +47,8 @@ def main():
             base=.45+rng.normal(0,.04)
             future=base+0.003*delta+0.001*post+rng.normal(0,.002)
             rows.append(dict(node_id=f"{bi}-{i}",water_body=b,tnc_pre=pre,tnc_post=post,
-                             baseline_frequency_post=base,future_frequency=future))
+                             baseline_frequency_post=base,future_frequency=future,
+                             pre_post_anchor_match_pass=True,tnc_node_qc_pass=True))
     d=pd.DataFrame(rows)
     est=dyn.fit(d)
     assert est>0,est
