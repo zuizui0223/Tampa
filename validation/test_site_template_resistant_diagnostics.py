@@ -41,6 +41,23 @@ def main():
     assert "20261007" in anc_contract["uncertainty"]
 
     dyn=loadmod("dyn","analysis/71_dynamic_reserve_future_diagnostic.py")
+    # Guard the key estimand: matched-anchor median change is not allowed to
+    # collapse back to difference of independently summarized node medians.
+    toy=pd.DataFrame([
+      dict(node_id="toy",water_body=dyn.BAYS[0],anchor_id="q25",tnc_pre_anchor=0,tnc_post_anchor=99,
+           pre_tnc_date="2027-07-24",post_tnc_date="2027-09-03",baseline_frequency_post=.5,future_frequency=.5,
+           pre_anchor_tnc_qc_pass=True,post_anchor_tnc_qc_pass=True),
+      dict(node_id="toy",water_body=dyn.BAYS[0],anchor_id="q50",tnc_pre_anchor=100,tnc_post_anchor=100,
+           pre_tnc_date="2027-07-24",post_tnc_date="2027-09-03",baseline_frequency_post=.5,future_frequency=.5,
+           pre_anchor_tnc_qc_pass=True,post_anchor_tnc_qc_pass=True),
+      dict(node_id="toy",water_body=dyn.BAYS[0],anchor_id="q75",tnc_pre_anchor=101,tnc_post_anchor=102,
+           pre_tnc_date="2027-07-24",post_tnc_date="2027-09-03",baseline_frequency_post=.5,future_frequency=.5,
+           pre_anchor_tnc_qc_pass=True,post_anchor_tnc_qc_pass=True),
+    ])
+    toy_node=dyn.prepare(toy)
+    assert len(toy_node)==1
+    assert toy_node.iloc[0]["delta_tnc_42d"]==1.0
+    assert (np.median([99,100,102])-np.median([0,100,101]))==0.0
     rows=[]
     rng=np.random.default_rng(10)
     for bi,b in enumerate(dyn.BAYS):
