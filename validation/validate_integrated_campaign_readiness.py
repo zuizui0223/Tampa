@@ -98,12 +98,97 @@ def main():
     notes=[]
     calculated={}
 
+    # Deliberately incomplete pre-field freezes are a valid repository state:
+    # report STOP_RESOURCE_FREEZE_INCOMPLETE without pretending the design failed.
+    tnc_pending=pending_tnc_freeze(tnc_freeze)
+    unconditional=[
+        "event_module_intent",
+        "optical_module_intent",
+        "optical_attribution_intent",
+        "final_four_bay_tnc_nodes_by_bay",
+        "tnc_v2_primary_analysis_code_frozen",
+        "node_level_uncertainty_code_frozen",
+        "preservation_capacity_for_planned_core_samples",
+        "four_bay_baseline_transect_calendar",
+        "four_bay_authoritative_tnc_baseline_calendar",
+    ]
+    pending=[k for k in unconditional if fields.get(k) in (None,"","PENDING")]
+
+
+    if event_intent=="confirmatory":
+        for k in (
+            "final_core_three_event_nodes_by_bay",
+            "complete_temperature_salinity_node_systems_available",
+            "temperature_salinity_sensor_model_and_calibration_rule",
+            "event_sensor_geometry_pilot_complete",
+            "event_primary_analysis_code_frozen",
+            "pre_post_core_offset_geometry_frozen",
+            "maximum_attempted_cores_per_node_across_pre_post_rounds",
+            "core_three_pre_visit_route_calendar",
+            "core_three_post_visit_route_calendar",
+            "core_three_logger_deployment_calendar",
+            "core_three_logger_retrieval_calendar",
+        ):
+            if fields.get(k) in (None,"","PENDING"): pending.append(k)
+    if optical_intent=="confirmatory":
+        for k in (
+            "final_core_three_optical_nodes_by_bay",
+            "within_canopy_par_node_systems_available",
+            "par_sensor_model_and_calibration_rule",
+            "optical_vertical_profile_pilot_complete",
+            "optical_primary_analysis_code_frozen",
+            "pre_post_core_offset_geometry_frozen",
+            "maximum_attempted_cores_per_node_across_pre_post_rounds",
+            "core_three_pre_visit_route_calendar",
+            "core_three_post_visit_route_calendar",
+            "core_three_logger_deployment_calendar",
+            "core_three_logger_retrieval_calendar",
+        ):
+            if fields.get(k) in (None,"","PENDING"): pending.append(k)
+    if attr_intent=="confirmatory":
+        for k in (
+            "optical_reference_nodes_by_bay",
+            "above_canopy_par_reference_systems_available",
+            "optical_attribution_analysis_code_frozen",
+        ):
+            if fields.get(k) in (None,"","PENDING"): pending.append(k)
+    if event_intent=="confirmatory" and optical_intent=="confirmatory":
+        if fields.get("forcing_family_analysis_code_frozen") in (None,"","PENDING"):
+            pending.append("forcing_family_analysis_code_frozen")
+
+    pending=sorted(set(pending))
+    if tnc_pending:
+        pending.extend("tnc_v2_precollection."+k for k in sorted(tnc_pending))
+    if pending:
+        result={
+          "schema":"tampa.integrated_campaign_readiness_v2",
+          "status":"STOP_RESOURCE_FREEZE_INCOMPLETE",
+          "pending_fields":pending,
+          "module_status":{
+            "tnc_v2":"PENDING",
+            "event_stress":"PENDING" if event_intent is None else event_intent.upper(),
+            "optical":"PENDING" if optical_intent is None else optical_intent.upper(),
+            "optical_attribution":"PENDING" if attr_intent is None else attr_intent.upper(),
+          },
+          "errors":[],
+          "notes":["No outcome-bearing collection is authorized while this freeze is incomplete."],
+          "calculated":{},
+          "claim_boundary":[
+            "Resource readiness is not ecological evidence.",
+            "This audit does not read TNC values or future meadow responses.",
+            "A pending fail-closed state is expected before response-independent logistics/pilots are frozen."
+          ]
+        }
+        out=Path(a.out); out.parent.mkdir(parents=True,exist_ok=True)
+        out.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
+        print(json.dumps(result,indent=2,sort_keys=True))
+        if a.strict:
+            raise SystemExit(2)
+        return
+
     # Authoritative TNC precollection system is mandatory.
     if tnc_freeze.get("contract")!="results/clonal_state_prospective_v2_contract.json":
         errors.append("TNC-v2 precollection freeze does not point to authoritative v2 contract")
-    tnc_pending=pending_tnc_freeze(tnc_freeze)
-    if tnc_pending:
-        errors.append("TNC-v2 precollection freeze incomplete: "+", ".join(sorted(tnc_pending)))
 
     # Freeze mechanism intent before sampling.
     event_intent=fields.get("event_module_intent")
