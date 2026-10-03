@@ -11,6 +11,10 @@ on:
       - "validation/validate_integrated_campaign_readiness.py"
       - "validation/test_integrated_campaign_readiness.py"
       - "results/clonal_state_prospective_v2_contract.json"
+      - "validation/verify_tnc_v2_primary_analysis_freeze.py"
+      - "validation/test_tnc_v2_primary_analysis.py"
+      - "field/tnc_v2_primary_analysis_freeze.json"
+      - "analysis/64_tnc_v2_primary_analysis.py"
       - "results/event_stress_debt_prospective_v1_contract.json"
       - "results/optical_microenvironment_prospective_v1_contract.json"
       - "results/direct_hydrodynamic_prospective_v1_contract.json"
@@ -27,6 +31,10 @@ jobs:
           python-version: "3.12"
       - name: Verify integrated design against source contracts
         run: python validation/verify_integrated_campaign_design.py
+      - name: Verify TNC v2 primary analysis freeze
+        run: python validation/verify_tnc_v2_primary_analysis_freeze.py
+      - name: Test frozen TNC v2 primary analysis
+        run: python validation/test_tnc_v2_primary_analysis.py
       - name: Test completed readiness branches
         run: python validation/test_integrated_campaign_readiness.py
       - name: Verify committed current readiness snapshot
