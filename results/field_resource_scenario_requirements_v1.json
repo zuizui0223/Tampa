@@ -1,0 +1,69 @@
+{
+  "schema": "tampa.field_resource_scenario_requirements_v1",
+  "status": "response_independent_resource_envelope",
+  "protected_primary": {
+    "tnc_v2_planning_nodes": 41,
+    "tnc_v2_confirmatory_minimum_nodes": 36,
+    "minimum_cores_full_planning_frame_tnc_only": 123,
+    "minimum_cores_at_exact_tnc_confirmatory_floor_tnc_only": 108
+  },
+  "scenario_examples": {
+    "tnc_only_full_planning_frame": {
+      "tnc_nodes": 41,
+      "prepost_nodes": 0,
+      "minimum_outcome_bearing_cores_before_replacements": 123,
+      "temperature_salinity_node_systems": 0,
+      "within_canopy_par_node_systems": 0,
+      "above_canopy_reference_systems": 0
+    },
+    "one_forcing_module_at_confirmatory_floor_with_full_tnc_frame": {
+      "tnc_nodes": 41,
+      "prepost_nodes": 30,
+      "minimum_outcome_bearing_cores_before_replacements": 213,
+      "note": "Applies to either event or optical when exactly 30 core-three nodes receive pre/post TNC."
+    },
+    "one_or_both_forcing_modules_full_core_three_frame": {
+      "tnc_nodes": 41,
+      "prepost_union_nodes": 33,
+      "minimum_outcome_bearing_cores_before_replacements": 222,
+      "note": "If event and optical use the same full 33 core-three nodes, shared TNC means both together still require 222 rather than two separate pre/post core programmes."
+    }
+  },
+  "module_capacity_gates": {
+    "event_stress": {
+      "planning_complete_temperature_salinity_node_systems": 33,
+      "confirmatory_minimum_complete_temperature_salinity_node_systems": 30,
+      "minimum_per_core_bay": 8,
+      "simultaneous": true,
+      "rotation_across_weather_windows_allowed": false
+    },
+    "optical_primary": {
+      "planning_within_canopy_par_node_systems": 33,
+      "confirmatory_minimum_within_canopy_par_node_systems": 30,
+      "minimum_per_core_bay": 8,
+      "simultaneous": true,
+      "rotation_across_weather_windows_allowed": false
+    },
+    "optical_attribution": {
+      "target_above_canopy_reference_systems": 18,
+      "confirmatory_minimum_above_canopy_reference_systems": 12,
+      "minimum_per_core_bay": 3,
+      "requires_optical_primary_confirmatory": true,
+      "role": "secondary attribution; may be disabled without invalidating optical primary"
+    }
+  },
+  "exact_core_formula": "6 * n(unique confirmatory event OR optical nodes) + 3 * n(authoritative TNC nodes outside that union)",
+  "decision_tree": [
+    "Protect TNC-v2 first. If the final authoritative TNC node set, preservation capacity, HPLC capacity, method pilot or baseline calendar cannot satisfy v2, no outcome-bearing campaign is ready.",
+    "If event-stress lacks its full simultaneous 30-node / 8-per-bay sensor and pilot/calendar gates, freeze event_module_intent=disabled before outcome-bearing pre-TNC sampling.",
+    "If optical lacks its full simultaneous 30-node / 8-per-bay within-canopy PAR and pilot/calendar gates, freeze optical_module_intent=disabled before outcome-bearing pre-TNC sampling.",
+    "If optical primary is confirmatory but the paired above-canopy subset cannot reach 12 total / 3 per bay, set optical_attribution_intent=disabled; do not downgrade the optical primary.",
+    "If both event and optical are confirmatory, they may share the same pre/post TNC rounds; resource planning uses the union of their node sets, never the sum."
+  ],
+  "capacity_boundary": [
+    "Core counts above exclude replacement attempts; replacement-core policy and total attempted-core ceiling are separate frozen fields.",
+    "HPLC and preservation capacity must be checked against the exact final-node core count, not merely against these planning examples.",
+    "Multi-channel PAR hardware may satisfy more than one sampling volume only when the frozen calibration/synchronization/geometry rules are met.",
+    "These resource envelopes contain no ecological result and cannot be used to select nodes by future TNC or meadow response."
+  ]
+}
