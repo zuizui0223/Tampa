@@ -9,6 +9,9 @@ on:
       - "field/dynamic_reserve_future_analysis_freeze.json"
       - "field/anchor_tnc_future_bb_analysis_freeze.json"
       - "validation/test_site_template_resistant_diagnostics.py"
+      - "docs/TAMPA_SPECIFIC_ECOLOGICAL_PRINCIPLE_V1.md"
+      - "results/clonal_state_prospective_v2_contract.json"
+      - "results/event_stress_debt_prospective_v1_contract.json"
       - ".github/workflows/site-template-resistant-diagnostics.yml"
   workflow_dispatch:
 
