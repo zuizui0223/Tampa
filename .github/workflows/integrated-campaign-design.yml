@@ -1,0 +1,48 @@
+name: Integrated prospective campaign design
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "results/integrated_field_campaign_v1_contract.json"
+      - "field/integrated_campaign_resource_freeze.json"
+      - "docs/INTEGRATED_FIELD_CAMPAIGN_V1.md"
+      - "validation/verify_integrated_campaign_design.py"
+      - "validation/validate_integrated_campaign_readiness.py"
+      - "validation/test_integrated_campaign_readiness.py"
+      - "results/clonal_state_prospective_v2_contract.json"
+      - "results/event_stress_debt_prospective_v1_contract.json"
+      - "results/optical_microenvironment_prospective_v1_contract.json"
+      - "results/direct_hydrodynamic_prospective_v1_contract.json"
+      - ".github/workflows/integrated-campaign-design.yml"
+  workflow_dispatch:
+
+jobs:
+  design:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify integrated design against source contracts
+        run: python validation/verify_integrated_campaign_design.py
+      - name: Test completed readiness branches
+        run: python validation/test_integrated_campaign_readiness.py
+      - name: Evaluate current resource-freeze readiness
+        run: |
+          python validation/validate_integrated_campaign_readiness.py \
+            --out results/integrated_campaign_readiness_v1.json
+      - name: Fail on a complete-but-insufficient resource freeze
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/integrated_campaign_readiness_v1.json"))
+          assert x["status"] in {"STOP_RESOURCE_FREEZE_INCOMPLETE","READY_TNC_CONFIRMATORY_CAMPAIGN"}, x
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integrated-campaign-readiness
+          path: results/integrated_campaign_readiness_v1.json
+          if-no-files-found: error
