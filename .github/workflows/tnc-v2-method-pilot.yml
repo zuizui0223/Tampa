@@ -8,6 +8,7 @@ on:
       - "field/tnc_v2_method_pilot.json"
       - "field/tnc_v2_precollection_freeze.json"
       - "validation/validate_tnc_v2_method_pilot.py"
+      - "analysis/69_apply_tnc_v2_method_pilot.py"
       - ".github/workflows/tnc-v2-method-pilot.yml"
   workflow_dispatch:
 
@@ -30,9 +31,25 @@ jobs:
           x=json.load(open("results/generated_tnc_v2_method_pilot_validation.json"))
           assert x["status"] in {"STOP_PILOT_INCOMPLETE","PASS_METHOD_PILOT"}, x
           PY
+      - name: Generate proposed precollection freeze after a passing pilot
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          p="results/generated_tnc_v2_method_pilot_validation.json"
+          x=json.load(open(p))
+          if x["status"]=="PASS_METHOD_PILOT":
+              subprocess.check_call([
+                  sys.executable,"analysis/69_apply_tnc_v2_method_pilot.py",
+                  "--validation",p,
+                  "--freeze","field/tnc_v2_precollection_freeze.json",
+                  "--out","results/generated_tnc_v2_precollection_freeze_after_pilot.json",
+              ])
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: tnc-v2-method-pilot-validation
-          path: results/generated_tnc_v2_method_pilot_validation.json
+          path: |
+            results/generated_tnc_v2_method_pilot_validation.json
+            results/generated_tnc_v2_precollection_freeze_after_pilot.json
           if-no-files-found: error
