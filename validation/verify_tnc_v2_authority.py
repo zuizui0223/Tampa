@@ -29,7 +29,14 @@ assert v2["design_precision_gate"]["approximate_detectable_partial_r"]["n_41"]==
 assert "prespecified_context_extension" not in v2
 
 ad=v2["secondary_analysis"]["within_transect_anchor_diagnostic"]
-assert ad["status"]=="four_bay_baseline_preflight_pending"
+assert ad["status"]=="anchor_level_quantitative_diagnostic_feasible"
+assert ad["feasibility"]["eligible_nodes"]==38
+assert ad["feasibility"]["by_water_body"]["Old Tampa Bay"]==8
+assert ad["feasibility"]["by_water_body"]["Middle Tampa Bay"]==10
+assert ad["feasibility"]["by_water_body"]["Lower Tampa Bay"]==12
+assert ad["feasibility"]["by_water_body"]["Boca Ciega Bay"]==8
+assert ad["feasibility"]["passed"] is True
+assert (ROOT/"results/tnc_anchor_bb_four_bay_preflight_v1.json").exists()
 assert ad["frozen_feasibility_gate"]["minimum_nodes_with_three_distinct_quantitative_anchors"]==36
 assert ad["frozen_feasibility_gate"]["minimum_nodes_per_bay"]==6
 
