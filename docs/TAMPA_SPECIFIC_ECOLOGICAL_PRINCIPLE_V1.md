@@ -121,6 +121,90 @@ Therefore the present event -> TNC -> future-frequency chain, even if fully supp
 
 See `docs/RESILIENCE_DEBT_BOUNDARY_V1.md`.
 
+## State-versus-trajectory hypothesis
+
+The reserve programme also makes a stronger dynamical prediction than a static "high TNC is good" association.
+
+Consider two meadows with the same current post-exposure rhizome TNC:
+
+- one recently **depleted** reserve to reach that current value;
+- the other recently **maintained or rebuilt** reserve to reach the same current value.
+
+If current reserve level were a sufficient ecological state descriptor, their subsequent quantitative trajectories should not systematically differ after current post-TNC and current above-ground state are represented.
+
+The frozen temporal diagnostic therefore asks:
+
+```text
+delta_tnc_42d = tnc_post - tnc_pre
+
+future_delta_frequency
+  ~ baseline_frequency_post
+  + tnc_post
+  + delta_tnc_42d
+  + water_body
+```
+
+The focal prediction is:
+
+> at the same current post-exposure reserve level, a meadow with a more positive recent reserve trajectory has a more favourable subsequent quantitative trajectory.
+
+This is a concrete form of **trajectory dependence**.
+
+If supported, the ecological implication is not merely that "history matters." It is that the instantaneous measured state is incomplete: the direction from which the system arrived at that state contains additional prospective information.
+
+That would make the Tampa problem more general than monitoring resolution:
+
+> **two foundation-species meadows can occupy the same measured state yet carry different near-future risks because their hidden buffer trajectories differ.**
+
+### Predeclared state-versus-trajectory interpretation
+
+| Static four-bay TNC primary | Reserve-trajectory diagnostic | Interpretation |
+|---|---|---|
+| supported | supported | Current reserve level and recent reserve trajectory both carry prospective information; consistent with a genuinely dynamic internal buffer state. |
+| supported | unsupported | Current reserve stock predicts the future, but the 42-day trajectory adds no supported information beyond current stock under this design. |
+| unsupported | supported | The authoritative static reserve primary remains unsupported. Report trajectory dependence only as a secondary finding suggesting that recent change may be more informative than level; it does **not** rescue the primary TNC mechanism claim. |
+| unsupported | unsupported | No supported reserve-level or reserve-trajectory signal under the frozen tests; move to other measured buffers rather than retuning TNC analyses. |
+
+If the trajectory coefficient is measurement-sensitive under the frozen pre/post-core diagnostics, use that label instead of the supported/unsupported synthesis above.
+
+### What this is not
+
+This diagnostic does **not** by itself establish:
+
+- hysteresis;
+- an alternative stable state;
+- a critical threshold;
+- rate-induced tipping;
+- formal ecological memory as a causal mechanism.
+
+Those ideas require stronger dynamical evidence. In particular, rate-induced tipping concerns the rate of change of an external forcing relative to a system's ability to track a moving state. The Tampa diagnostic instead measures recent change in an internal reserve state.
+
+The narrower wording is deliberate:
+
+> **recent reserve trajectory contains information beyond current reserve level.**
+
+This secondary diagnostic cannot rescue a null authoritative four-bay static TNC primary.
+
+### Measurement-validity boundary for trajectory dependence
+
+A 42-day TNC difference is called a reserve trajectory only when the measurement design itself can distinguish time from space and assay drift.
+
+Therefore the temporal diagnostic is eligible only if:
+
+- pre and post node summaries use the **same frozen q25/q50/q75 anchor neighborhoods**;
+- pre and post use distinct non-overlapping core offsets, so the second sample is not simply re-coring disturbed sediment;
+- every included TNC sample passes the authoritative TNC-v2 sample/assay QC;
+- the response-independent HPLC method pilot passes its frozen recovery and precision limits;
+- pre/post sampling round is **not perfectly confounded with HPLC assay batch**.
+
+If all pre material is effectively one assay batch and all post material another, the temporal diagnostic is non-estimable rather than being interpreted as reserve change.
+
+This matters because the ecological claim is stronger than a repeated-measures correlation:
+
+> **the same meadow can arrive at the same current reserve level by different recent reserve trajectories, and those trajectories may carry different near-future risks.**
+
+That claim requires the observed trajectory to be biological rather than a core-location or assay-round artifact.
+
 ## Persistent site-template alternative
 
 Stable transect identity explains a large fraction of the retrospective level differences in coarse state.
