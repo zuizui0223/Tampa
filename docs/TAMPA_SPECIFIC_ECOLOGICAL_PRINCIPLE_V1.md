@@ -135,14 +135,16 @@ If current reserve level were a sufficient ecological state descriptor, their su
 The frozen temporal diagnostic therefore asks:
 
 ```text
-delta_tnc_42d = tnc_post - tnc_pre
+paired_anchor_delta_tnc_42d = median_j(tnc_post_anchor_j - tnc_pre_anchor_j)
 
 future_delta_frequency
   ~ baseline_frequency_post
   + tnc_post
-  + delta_tnc_42d
+  + paired_anchor_delta_tnc_42d
   + water_body
 ```
+
+The trajectory is deliberately computed from matched q25/q50/q75 anchor changes before node summarization, rather than subtracting independently summarized node medians. This reduces the chance that spatial below-ground heterogeneity is relabelled as temporal change.
 
 The focal prediction is:
 
@@ -187,11 +189,11 @@ This secondary diagnostic cannot rescue a null authoritative four-bay static TNC
 
 ### Measurement-validity boundary for trajectory dependence
 
-A 42-day TNC difference is called a reserve trajectory only when the measurement design itself can distinguish time from space and assay drift.
+A 42-day TNC change is called a reserve trajectory only when the measurement design itself can distinguish time from space and assay drift.
 
 Therefore the temporal diagnostic is eligible only if:
 
-- pre and post node summaries use the **same frozen q25/q50/q75 anchor neighborhoods**;
+- exactly the same frozen **q25/q50/q75 anchor IDs** are represented in both rounds, and each anchor-specific post-minus-pre change is calculated before the node median trajectory;
 - pre and post use distinct non-overlapping core offsets, so the second sample is not simply re-coring disturbed sediment;
 - every included TNC sample passes the authoritative TNC-v2 sample/assay QC;
 - the response-independent HPLC method pilot passes its frozen recovery and precision limits;
@@ -201,7 +203,7 @@ If all pre material is effectively one assay batch and all post material another
 
 This matters because the ecological claim is stronger than a repeated-measures correlation:
 
-> **the same meadow can arrive at the same current reserve level by different recent reserve trajectories, and those trajectories may carry different near-future risks.**
+> **the same meadow can arrive at the same current reserve level by different matched-location reserve trajectories, and those trajectories may carry different near-future risks.**
 
 That claim requires the observed trajectory to be biological rather than a core-location or assay-round artifact.
 
