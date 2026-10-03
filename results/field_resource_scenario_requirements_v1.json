@@ -7,8 +7,9 @@
   ],
   "decision_tree": [
     "Protect TNC-v2 first. If the final authoritative TNC node set, preservation capacity, HPLC capacity, method pilot or baseline calendar cannot satisfy v2, no outcome-bearing campaign is ready.",
-    "If event-stress lacks its full simultaneous 30-node / 8-per-bay sensor and pilot/calendar gates, freeze event_module_intent=disabled before outcome-bearing pre-TNC sampling.",
-    "If optical lacks its full simultaneous 30-node / 8-per-bay within-canopy PAR and pilot/calendar gates, freeze optical_module_intent=disabled before outcome-bearing pre-TNC sampling.",
+    "Evaluate the optical primary first among optional forcing modules. If optical has full simultaneous 30-node / 8-per-bay within-canopy PAR capacity plus its pilot/calendar gates, it has the frozen scientific priority when only one forcing primary can be confirmatory.",
+    "Evaluate event-stress next. If event has full simultaneous 30-node / 8-per-bay temperature+salinity capacity plus its pilot/calendar gates, it may proceed together with optical or alone if optical is infeasible.",
+    "If a forcing module lacks its full gate, freeze that module as disabled before outcome-bearing pre-TNC sampling rather than rotating sensors across weather windows or reducing the protected TNC-v2 design.",
     "If optical primary is confirmatory but the paired above-canopy subset cannot reach 12 total / 3 per bay, set optical_attribution_intent=disabled; do not downgrade the optical primary.",
     "If both event and optical are confirmatory, they may share the same pre/post TNC rounds; resource planning uses the union of their node sets, never the sum."
   ],
@@ -36,6 +37,7 @@
       "simultaneous": true
     }
   },
+  "priority_boundary": "Scientific priority under a one-module resource constraint is TNC-v2 > optical DLI > event hot-fresh. This ordering does not override feasibility: event may proceed alone if optical cannot meet its own full gate.",
   "protected_primary": {
     "minimum_cores_at_exact_tnc_confirmatory_floor_tnc_only": 108,
     "minimum_cores_full_planning_frame_tnc_only": 123,
