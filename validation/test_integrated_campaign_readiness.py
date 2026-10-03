@@ -56,6 +56,7 @@ def base_resource(event_intent, optical_intent, attr_intent):
       "tnc_v2_primary_analysis_code_frozen":True,
       "node_level_uncertainty_code_frozen":True,
       "preservation_capacity_for_planned_core_samples":300,
+      "hplc_primary_assay_capacity_for_planned_core_samples":300,
       "four_bay_authoritative_tnc_baseline_calendar":dates(flat(by,BAYS3),"2027-09-03") | dates(by["Boca Ciega Bay"],"2027-09-04"),
       "four_bay_baseline_transect_calendar":dates(flat(by,BAYS3),"2027-09-03") | dates(by["Boca Ciega Bay"],"2027-09-04"),
     })
