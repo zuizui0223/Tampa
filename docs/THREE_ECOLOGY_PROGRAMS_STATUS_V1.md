@@ -76,7 +76,7 @@
 
 **Confirmatory gate**
 - >=36 analyzable nodes;
-- >=8 per bay;
+- >=6 per bay;
 - <=28-day synchronized campaign;
 - baseline within +/-14 days;
 - >=3 valid cores per node;

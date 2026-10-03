@@ -87,11 +87,13 @@ This is a generality decision, not a rescue.
 Primary four-bay claim requires:
 
 - >=36 analyzable nodes total;
-- >=8 analyzable nodes in each bay;
+- >=6 analyzable nodes in each bay;
 - all primary TNC samples collected within one <=28-day campaign;
 - each TNC sample paired to a baseline fixed-transect survey within +/-14 days;
 - one frozen HPLC-based TNC workflow;
 - future quantitative endpoint opened only after baseline predictor/QC freeze.
+
+The six-node per-bay floor is a representation guardrail that allows limited field/QC attrition in the two smallest planned bays; the >=36 total-node requirement carries the main precision burden.
 
 If those replication gates fail, the result becomes pilot/sensitivity evidence rather than a decisive null.
 

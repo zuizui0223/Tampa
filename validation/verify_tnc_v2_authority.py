@@ -56,4 +56,20 @@ assert ">=6 analyzable nodes in **each** of the four bays" in p
 assert "Boca Ciega Bay" in p
 assert "Do not choose between v1 and v2 after outcomes are known." in p
 
+readme=(ROOT/"README.md").read_text()
+assert "Primary confirmation requires >=36 analyzable nodes and >=6 per bay." in readme
+
+cons=(ROOT/"manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md").read_text()
+assert "The authoritative prospective TNC primary now spans Old, Middle, Lower and Boca Ciega Bay." in cons
+assert ">=36 analyzable nodes total with >=6 in each bay" in cons
+assert "The confirmatory core remains Old, Middle and Lower Tampa Bay" not in cons
+
+priority=(ROOT/"docs/TAMPA_DECISIVE_TEST_PRIORITY_V1.md").read_text()
+assert ">=6 analyzable nodes in each bay" in priority
+assert "six-node per-bay floor is a representation guardrail" in priority
+
+status=(ROOT/"docs/THREE_ECOLOGY_PROGRAMS_STATUS_V1.md").read_text()
+assert "- >=36 analyzable nodes;" in status
+assert "- >=6 per bay;" in status
+
 print("Tampa TNC v2 authority boundary: OK")
