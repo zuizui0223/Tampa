@@ -39,7 +39,8 @@
     "core_three_pre_visit_route_calendar": null,
     "core_three_post_visit_route_calendar": null,
     "four_bay_baseline_transect_calendar": null,
-    "four_bay_authoritative_tnc_baseline_calendar": null
+    "four_bay_authoritative_tnc_baseline_calendar": null,
+    "optical_reference_nodes_by_bay": null
   },
   "rule": "Do not begin outcome-bearing collection while any resource/pilot/calendar field remains null. If a mechanism lacks enough simultaneous systems for its frozen confirmatory frame, mark that mechanism pilot/non-confirmatory before deployment rather than changing its calendar or analysis after exposure."
 }
