@@ -223,7 +223,8 @@ Before any outcome-bearing collection, the readiness audit must verify:
 - logger deployment/retrieval calendars preserve the frozen July 24-September 3 design and >=35-day common overlap;
 - pre/post TNC visits are within 3 days of deployment/retrieval and 39-45 days apart;
 - core-three post-TNC dates are the authoritative baseline TNC dates, so no third TNC round is silently introduced;
-- preservation capacity covers the full planned core count.
+- preservation capacity covers the full planned core count;
+- the frozen primary HPLC workflow has assay capacity for at least the same planned core count.
 
 A complete but insufficient freeze is a **STOP**, not a reason to reinterpret the study after fieldwork.
 
