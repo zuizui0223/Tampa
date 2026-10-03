@@ -85,7 +85,9 @@
       "paired_reference_subset": {
         "target_nodes": 18,
         "minimum_total": 12,
-        "minimum_per_bay": 3
+        "minimum_per_bay": 3,
+        "role": "secondary attribution diagnostic; not a prerequisite for optical-primary confirmatory status",
+        "failure_action": "If below 12 total or below 3 per bay, mark canopy-optical attribution non-confirmatory while retaining the optical primary if its own 30/8, DLI, timing and variation gates pass."
       },
       "other_gates": "Retain frozen daily-DLI daylight-gap QC, sensor-height pilot and no-season-shift rules."
     },
@@ -99,12 +101,43 @@
     "principle": "Before the first outcome-bearing pre-TNC core or logger deployment, freeze instrument inventory, node allocation, calibration/pilot status and route feasibility without using any future TNC or meadow response.",
     "insufficient_capacity_rule": "If capacity cannot meet a mechanism's frozen confirmatory sampling frame, predeclare that mechanism as pilot/non-confirmatory for that campaign. Do not rotate instruments into different weather windows or drop inconvenient bays after exposure is observed.",
     "no_cross_mechanism_rescue": "Failure or non-estimability of one mechanism cannot be rescued by adding another mechanism's exposure to its primary model.",
-    "optical_capacity_note": "Count simultaneous sampling volumes/node systems, not necessarily physical logger boxes: multi-channel hardware may satisfy multiple synchronized sampling volumes only if the frozen calibration and synchronization rules are met."
+    "optical_capacity_note": "Count simultaneous sampling volumes/node systems, not necessarily physical logger boxes: multi-channel hardware may satisfy multiple synchronized sampling volumes only if the frozen calibration and synchronization rules are met.",
+    "analysis_freeze_rule": "Before the first outcome-bearing core/logger, freeze the authoritative TNC-v2 primary analysis code and node-level uncertainty procedure. If event or optical is marked confirmatory, freeze that module's primary analysis code as well. Disabled modules do not require outcome-bearing analysis code.",
+    "tnc_precollection_dependency": "Integrated readiness must import and pass the separate field/tnc_v2_precollection_freeze.json fail-closed system; duplicating only node counts is not sufficient.",
+    "calendar_semantics": "Freeze explicit node-level logger deployment/retrieval, pre/post TNC visit, authoritative TNC-baseline and fixed-transect-baseline calendars. Readiness must verify the July 24-September 3 exposure structure, >=35-day common overlap, 39-45 day pre/post TNC pairing, <=28-day authoritative four-bay TNC campaign, and +/-14-day baseline alignment."
   },
   "claim_boundary": [
     "This is an execution/orchestration contract, not a new ecological hypothesis or estimator.",
     "The four-bay TNC primary and the three-bay event/optical/hydrodynamic designs retain different geographies by design.",
     "Co-deployment improves temporal comparability and reduces destructive sampling; it does not turn observational associations into causal experiments.",
-    "No binary re-recording endpoint is treated as ecological recovery."
-  ]
+    "No binary re-recording endpoint is treated as ecological recovery.",
+    "The integrated campaign has one protected decisive biological primary line (four-bay TNC v2) plus optional confirmatory forcing modules. Hardware scarcity must disable an optional forcing module before outcome-bearing sampling rather than degrade TNC v2.",
+    "Paired above-canopy PAR is secondary attribution only; inadequate reference-sensor capacity does not by itself invalidate the optical within-canopy DLI primary.",
+    "When event and optical primaries are both confirmatory and estimable, any joint paper-level 'environmental forcing' claim uses the frozen two-test family correction; standalone contract statuses remain separately reported."
+  ],
+  "module_priority_and_failure_policy": {
+    "priority_order": [
+      "authoritative four-bay TNC v2 primary",
+      "core-three event-stress primary if full confirmatory capacity exists",
+      "core-three optical primary if full confirmatory capacity exists",
+      "secondary optical above-canopy attribution subset",
+      "separate hydrodynamic module"
+    ],
+    "tnc_v2_rule": "The outcome-bearing campaign may proceed only if the authoritative TNC-v2 precollection freeze and >=36 total / >=6 per bay planned baseline frame are ready. TNC v2 is not downgraded to preserve another module.",
+    "optional_module_rule": "Before any outcome-bearing pre-TNC core, freeze event_module_intent and optical_module_intent as confirmatory or disabled. If a module lacks its full simultaneous confirmatory capacity, set it disabled for the outcome-bearing campaign rather than running an underpowered biological pilot that adds destructive pre-coring.",
+    "disabled_module_boundary": "A disabled event/optical module may still run response-independent sensor/geometry pilots, but it receives no mechanism-specific outcome-bearing pre/post TNC round beyond what the authoritative TNC baseline independently requires.",
+    "optical_attribution_rule": "Paired above-canopy PAR is a secondary physical-attribution diagnostic. Failure to reach 12 total / 3 per bay downgrades only the attribution subset, not the optical primary, provided the optical primary itself meets its frozen 30/8 and DLI gates.",
+    "no_priority_reversal": "Do not sacrifice four-bay TNC node count, seasonal synchronization, core geometry, preservation, or assay quality to keep an optional forcing module confirmatory."
+  },
+  "paper_level_forcing_family": {
+    "members": [
+      "event-stress primary: joint_hot_fresh_hours_30_25 -> post-TNC conditional on pre-TNC",
+      "optical primary: mean_daily_within_canopy_dli -> post-TNC conditional on pre-TNC"
+    ],
+    "individual_contracts_unchanged": "Each mechanism retains its own frozen 95% two-sided interval and supported/unsupported/non-estimable status.",
+    "integrated_family_rule": "If both event and optical primaries are confirmatory and estimable in the same campaign and the paper makes a joint claim that measured environmental forcing predicts reserve change, report a two-test family correction. Use Bonferroni-adjusted two-sided 97.5% intervals from the same frozen node-level resampling procedure for the family-level claim.",
+    "interpretation": "A 95% contract-level result may remain supported for its standalone mechanism while failing the integrated family-level threshold. Report both transparently.",
+    "no_ranking": "Do not compare p-values, interval widths, or standardized coefficients to declare one forcing mechanism 'stronger' without a separately frozen comparative model.",
+    "correlation_boundary": "Report the pre-response node-level correlation between event and optical exposures. If both support, do not call their effects statistically independent because they share nodes, weather interval and TNC response."
+  }
 }
