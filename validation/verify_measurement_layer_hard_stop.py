@@ -10,7 +10,14 @@ ROOT=Path(__file__).resolve().parents[1]
 cv=json.loads((ROOT/"results/current_validation_v2.json").read_text())
 stop=cv["measurement_layer_hard_stop"]
 assert stop["status"]=="same_annual_exact_point_mechanism_mining_closed"
-assert stop["next_mechanism_priority"][0]=="below-ground reserve / clonal state"
+assert stop["next_mechanism_priority"]==[
+    "below-ground reserve / regenerative state (four-bay TNC v2)",
+    "direct within-canopy optical DLI / microenvironment",
+    "node-scale hot-fresh event stress (temperature + salinity)",
+    "direct hydrodynamic canopy engineering",
+    "acute disturbance / disease",
+]
+assert stop["priority_rule"].startswith("Authoritative prospective resource order")
 assert "new biological measurement state" in stop["allowed_new_mechanism_gate"]
 assert "additional annual/exact-point reappearance/loss/reloss subgroups" in stop["stopped_lines"]
 
