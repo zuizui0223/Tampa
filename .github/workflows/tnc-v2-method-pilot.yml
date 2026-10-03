@@ -1,0 +1,38 @@
+name: TNC v2 response-independent method pilot
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "docs/TNC_V2_METHOD_FIELD_PILOT_V1.md"
+      - "field/tnc_v2_method_pilot.json"
+      - "field/tnc_v2_precollection_freeze.json"
+      - "validation/validate_tnc_v2_method_pilot.py"
+      - ".github/workflows/tnc-v2-method-pilot.yml"
+  workflow_dispatch:
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate current method-pilot state
+        run: |
+          python validation/validate_tnc_v2_method_pilot.py \
+            --out results/generated_tnc_v2_method_pilot_validation.json
+      - name: Require fail-closed pending or validated pass
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("results/generated_tnc_v2_method_pilot_validation.json"))
+          assert x["status"] in {"STOP_PILOT_INCOMPLETE","PASS_METHOD_PILOT"}, x
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tnc-v2-method-pilot-validation
+          path: results/generated_tnc_v2_method_pilot_validation.json
+          if-no-files-found: error
