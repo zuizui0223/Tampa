@@ -91,7 +91,7 @@
     "model": "tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
     "primary_coefficient": "mean_daily_within_canopy_dli",
     "expected_direction": "positive",
-    "uncertainty": "node-level bootstrap or permutation procedure frozen before TNC inspection",
+    "uncertainty": "10,000-replicate water-body-stratified stable-node bootstrap; seed 20261005; two-sided percentile 95% interval for standalone status; same resamples yield 97.5% interval for the predeclared two-test forcing family.",
     "support_rule": {
       "supported": "two-sided 95% interval entirely above 0",
       "contradicted_direction": "two-sided 95% interval entirely below 0",
@@ -103,7 +103,9 @@
       "tnc_pre",
       "water_body"
     ],
-    "missing_data_rule": "complete-case confirmatory analysis under predeclared PAR/TNC QC; do not impute DLI or TNC to rescue sample size"
+    "missing_data_rule": "complete-case confirmatory analysis under predeclared PAR/TNC QC; do not impute DLI or TNC to rescue sample size",
+    "analysis_freeze": "field/optical_primary_analysis_freeze.json",
+    "analysis_code": "analysis/66_optical_primary_analysis.py"
   },
   "secondary_optical_decomposition": {
     "canopy_structure": {
