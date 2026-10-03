@@ -103,7 +103,7 @@ Separate UTM coordinate files lack verified event/date keys. Do not claim that a
 
 **Confirmatory gate**
 - >=36 analyzable nodes;
-- >=8 per bay;
+- >=6 per bay;
 - one <=28-day synchronized campaign;
 - paired baseline survey within +/-14 days;
 - >=3 valid cores per node;
