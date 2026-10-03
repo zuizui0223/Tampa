@@ -1,0 +1,49 @@
+{
+  "schema": "tampa.optical_primary_analysis_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_TNC_INSPECTION",
+  "authoritative_contract": "results/optical_microenvironment_prospective_v1_contract.json",
+  "script_path": "analysis/66_optical_primary_analysis.py",
+  "script_blob_sha1": "6cba7962bcb2697c613ddf08e6f4e03759f5f737",
+  "model": "tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "reference_water_body": "Old Tampa Bay",
+  "qc_and_gates": {
+    "minimum_total": 30,
+    "minimum_per_bay": 8,
+    "minimum_par_coverage_fraction": 0.85,
+    "minimum_valid_daily_dli_count": 30,
+    "minimum_common_overlap_days": 35,
+    "pre_post_tnc_interval_days": [
+      39,
+      45
+    ],
+    "minimum_distinct_node_exposure_values": 10,
+    "minimum_bays_with_within_bay_variation": 2,
+    "minimum_nodes_in_each_counted_variation_bay": 6,
+    "minimum_distinct_exposure_values_in_each_counted_bay": 3
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node bootstrap",
+    "repetitions": 10000,
+    "seed": 20261005,
+    "standalone_interval": "two-sided percentile 95% CI",
+    "forcing_family_interval": "two-sided percentile 97.5% CI"
+  },
+  "support_rule": {
+    "standalone_supported": "95% CI entirely above 0",
+    "standalone_contradicted": "95% CI entirely below 0",
+    "standalone_unsupported": "95% CI overlaps 0",
+    "nonestimable": "any frozen sample/QC/DLI-identifiability gate fails",
+    "one_sided_test_allowed": false
+  },
+  "no_rescue": [
+    "Do not introduce a low-light threshold after TNC inspection.",
+    "Do not change PAR aggregation, season, sensor subset or water_body control to rescue the primary.",
+    "Do not replace a null within-canopy DLI primary with canopy attenuation, epiphyte biomass or above-canopy DLI."
+  ]
+}
