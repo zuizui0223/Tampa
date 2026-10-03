@@ -97,17 +97,41 @@ The six-node per-bay floor is a representation guardrail that allows limited fie
 
 If those replication gates fail, the result becomes pilot/sensitivity evidence rather than a decisive null.
 
+## Integrated execution
+
+Operational orchestration is frozen in:
+
+- `results/integrated_field_campaign_v1_contract.json`;
+- `docs/INTEGRATED_FIELD_CAMPAIGN_V1.md`;
+- `field/integrated_campaign_resource_freeze.json`.
+
+The core-three event/optical programme may share one pre/post TNC trajectory. A valid core-three post-exposure TNC sample becomes the preferred authoritative v2 baseline TNC sample; Boca Ciega receives its v2 baseline TNC during the same late-summer baseline campaign. This avoids a third redundant core round.
+
+A mechanism is confirmatory only if its own frozen sample/instrument gate is met. Insufficient logger capacity cannot be repaired by rotating sensors into different weather windows.
+
 ## Execution order
 
-1. finalize permissions and contemporaneous 4-bay node registry;
-2. run the response-independent Thalassia tissue/HPLC matrix pilot;
-3. freeze core diameter/depth, offset geometry and preservation workflow;
-4. schedule one synchronized <=28-day field campaign;
-5. collect TNC + leaf N/P + meristem/apex diagnostics;
-6. perform paired quantitative baseline survey;
+1. finalize permissions and contemporaneous four-bay TNC node registry;
+2. run the response-independent *Thalassia* tissue/HPLC matrix pilot and the event/optical sensor-geometry pilots;
+3. freeze core diameter/depth, pre/post offset geometry, preservation workflow and instrument inventory in the integrated resource freeze;
+4. freeze event and optical module intent as confirmatory or disabled; only modules with full simultaneous confirmatory capacity may trigger the shared pre/post TNC rounds;
+5. if at least one forcing module is confirmatory, deploy the frozen July 24–September 3 core-three campaign and use valid post-TNC as the authoritative core-three v2 baseline; if both forcing modules are disabled, skip the biologically unnecessary pre-TNC round and collect only the authoritative four-bay baseline;
+6. perform the paired four-bay quantitative baseline survey within the frozen +/-14-day alignment;
 7. freeze baseline dataset/QC and primary model code;
 8. wait for the prespecified future transect survey;
-9. open future endpoint once and run the frozen model.
+9. open the future endpoint once and run the frozen v2 model.
+
+## Resource-priority boundary
+
+The integrated readiness system protects the decisive four-bay TNC test.
+
+If event or optical capacity is below its full frozen confirmatory gate, that outcome-bearing module is **disabled before deployment** rather than run as a small biological pilot that adds destructive pre-coring.
+
+Response-independent sensor/calibration pilots remain allowed.
+
+Paired above-canopy PAR is secondary optical attribution only; inadequate reference capacity does not invalidate a confirmatory within-canopy DLI primary.
+
+If both event and optical primaries are confirmatory and estimable, any paper-level claim about a broader environmental-forcing family uses the frozen two-test family correction from the integrated campaign contract. Individual mechanism contracts retain their own standalone 95% interval status.
 
 ## Second mechanism line
 
