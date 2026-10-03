@@ -3,7 +3,7 @@
   "frozen_on": "2026-10-03",
   "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
   "script_path": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
-  "script_blob_sha1": "d34174c3b85fe2356d79b20857d7cd6b121e1098",
+  "script_blob_sha1": "b8d202656171940ca51c667f5b813153cc0709ed",
   "role": "secondary spatial site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay node-level TNC primary",
   "geography": [
     "Old Tampa Bay",
@@ -35,6 +35,14 @@
   "no_rescue": [
     "Do not move anchors after TNC assay or future outcome access.",
     "Do not replace quantitative Braun-Blanquet with binary reappearance.",
-    "Do not use this diagnostic to rescue a null authoritative four-bay node-level TNC primary."
-  ]
+    "Do not use this diagnostic to rescue a null authoritative four-bay node-level TNC primary.",
+    "Do not retain a three-anchor node when any anchor fails authoritative TNC QC.",
+    "Do not replace a failed anchor with a different meter mark after future outcomes are known."
+  ],
+  "measurement_validity_gate": {
+    "method_pilot_prerequisite": "Authoritative TNC-v2 method pilot must pass its frozen analytical QC before the spatial diagnostic is eligible for ecological interpretation.",
+    "anchor_requirement": "All three frozen q25/q50/q75 anchors must have anchor_tnc_qc_pass == true; a failed anchor makes the node ineligible.",
+    "no_imputation": "Do not impute, borrow, or replace a failed anchor TNC value after future outcome access.",
+    "interpretation": "The diagnostic is intended to compare biological reserve heterogeneity within a transect, not analytical-quality heterogeneity."
+  }
 }
