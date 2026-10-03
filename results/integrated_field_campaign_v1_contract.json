@@ -118,8 +118,8 @@
   "module_priority_and_failure_policy": {
     "priority_order": [
       "authoritative four-bay TNC v2 primary",
-      "core-three event-stress primary if full confirmatory capacity exists",
       "core-three optical primary if full confirmatory capacity exists",
+      "core-three event-stress primary if full confirmatory capacity exists",
       "secondary optical above-canopy attribution subset",
       "separate hydrodynamic module"
     ],
@@ -127,7 +127,8 @@
     "optional_module_rule": "Before any outcome-bearing pre-TNC core, freeze event_module_intent and optical_module_intent as confirmatory or disabled. If a module lacks its full simultaneous confirmatory capacity, set it disabled for the outcome-bearing campaign rather than running an underpowered biological pilot that adds destructive pre-coring.",
     "disabled_module_boundary": "A disabled event/optical module may still run response-independent sensor/geometry pilots, but it receives no mechanism-specific outcome-bearing pre/post TNC round beyond what the authoritative TNC baseline independently requires.",
     "optical_attribution_rule": "Paired above-canopy PAR is a secondary physical-attribution diagnostic. Failure to reach 12 total / 3 per bay downgrades only the attribution subset, not the optical primary, provided the optical primary itself meets its frozen 30/8 and DLI gates.",
-    "no_priority_reversal": "Do not sacrifice four-bay TNC node count, seasonal synchronization, core geometry, preservation, or assay quality to keep an optional forcing module confirmatory."
+    "no_priority_reversal": "Do not sacrifice four-bay TNC node count, seasonal synchronization, core geometry, preservation, or assay quality to keep an optional forcing module confirmatory.",
+    "priority_consistency_note": "If only one forcing primary can be fully confirmatory without weakening TNC-v2, optical has the frozen scientific priority over event-stress; feasibility still governs whether optical can actually proceed."
   },
   "paper_level_forcing_family": {
     "members": [
