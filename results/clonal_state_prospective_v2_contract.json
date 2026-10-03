@@ -231,7 +231,13 @@
       "site_template_boundary": "Support weakens stable transect-level site-template confounding but does not eliminate persistent meter-mark microhabitat or time-varying local common causes.",
       "analysis_code": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
       "analysis_freeze": "field/anchor_tnc_future_bb_analysis_freeze.json",
-      "future_complete_case_gate": ">=36 nodes with exactly three complete quantitative anchors and >=6 such nodes per bay; below this gate the secondary diagnostic is non-estimable and cannot be rescued by changing anchors/outcome coding."
+      "future_complete_case_gate": ">=36 nodes with exactly three complete quantitative anchors and >=6 such nodes per bay; below this gate the secondary diagnostic is non-estimable and cannot be rescued by changing anchors/outcome coding.",
+      "measurement_validity_gate": {
+        "method_pilot_prerequisite": "Authoritative TNC-v2 response-independent method pilot passes all frozen HPLC recovery/precision/calibration criteria.",
+        "anchor_rule": "Every one of the three frozen anchors must pass sample-level TNC QC; any failed anchor excludes the node from this complete-anchor diagnostic.",
+        "no_replacement": "Do not replace a failed anchor with another meter mark after TNC assay or future BB is observed.",
+        "role": "Ensures the within-node biological contrast is not driven by differential analytical quality."
+      }
     }
   },
   "pre_outcome_freeze_required": [
@@ -283,7 +289,8 @@
     "The four-bay revision changes geography/sample-size planning only; assay, timing, core geometry, endpoint and primary predictor remain unchanged from v1.",
     "The four-bay v2 contract is the sole outcome-bearing TNC primary. The three-bay v1 contract is retained for provenance and may not be selected after future outcomes are known.",
     "Boca Ciega Bay was added before future outcome-bearing sampling; it may not be removed from the v2 primary because its future predictor or response is inconvenient.",
-    "If the >=36 total / >=6 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis."
+    "If the >=36 total / >=6 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis.",
+    "The within-transect TNC diagnostic requires all three frozen anchors to pass authoritative TNC QC; failed anchors are not imputed or post-hoc replaced."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + three water-body indicators",
