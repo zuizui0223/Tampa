@@ -12,7 +12,7 @@
     "campaign_window_days": 28,
     "baseline_alignment_days_each_side": 14,
     "minimum_primary_nodes_total": 36,
-    "minimum_primary_nodes_per_bay": 8,
+    "minimum_primary_nodes_per_bay": 6,
     "minimum_cores_per_node": 3,
     "assay_method": "HPLC",
     "tnc_definition": "soluble_nsc_plus_starch",
