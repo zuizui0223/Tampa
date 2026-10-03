@@ -223,6 +223,8 @@ See `docs/SITE_TEMPLATE_ALTERNATIVE_AND_EVIDENCE_LADDER_V1.md`.
 
 A supported prospective association without its process gate is described as a **buffer-state predictor**, not a fully identified buffering mechanism.
 
+The retrospective memory audit provides a methodological warning that is broader than Tampa: older-history prediction can be inflated by persistent unit heterogeneity. In Tampa, supported history scales fell to zero across the tested state dimensions once stable transect identity was saturated. This shifts the question from estimating a long biological-memory horizon to measuring the hidden site or buffer state directly. See `docs/STATE_DEPENDENCE_SITE_HETEROGENEITY_V1.md`.
+
 ## Novelty boundary
 
 Seagrass carbohydrate reserves, self-facilitation, ecosystem engineering, community insurance and resilience debt are all established ideas.
