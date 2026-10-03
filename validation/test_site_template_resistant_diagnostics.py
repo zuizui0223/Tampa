@@ -34,6 +34,8 @@ def main():
     assert dyn_contract["analysis_code"]==dfreeze["script_path"]
     assert dyn_contract["analysis_freeze"]=="field/dynamic_reserve_future_analysis_freeze.json"
     assert "20261006" in dyn_contract["uncertainty"]
+    assert "delta_tnc_42d contains tnc_post" in dyn_contract["measurement_error_boundary"]["issue"]
+    assert "measurement-sensitive" in dyn_contract["measurement_error_boundary"]["discrepancy_rule"]
     assert anc_contract["analysis_code"]==afreeze["script_path"]
     assert anc_contract["analysis_freeze"]=="field/anchor_tnc_future_bb_analysis_freeze.json"
     assert "20261007" in anc_contract["uncertainty"]
