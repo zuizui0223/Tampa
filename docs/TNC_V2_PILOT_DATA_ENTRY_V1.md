@@ -123,3 +123,42 @@ None of these input files may contain:
 - any ecological outcome used to choose a method.
 
 The validator rejects files containing obvious future-response columns/keys.
+
+
+## Canonical pipeline
+
+Raw pilot records are the source of truth for the method-development measurements.
+
+Run:
+
+~~~bash
+python validation/build_tnc_v2_method_pilot_summary.py
+~~~
+
+This writes:
+
+- `field/tnc_v2_method_pilot_candidate.json`
+- `results/tnc_v2_raw_pilot_summary.json`
+
+Then validate the candidate:
+
+~~~bash
+python validation/validate_tnc_v2_method_pilot.py \
+  --pilot field/tnc_v2_method_pilot_candidate.json
+~~~
+
+Only a `PASS_METHOD_PILOT` candidate may be copied into the authoritative:
+
+- `field/tnc_v2_method_pilot.json`
+- then the selected method fields into `field/tnc_v2_precollection_freeze.json`.
+
+The scripts never auto-merge either authoritative file.
+
+### Additional analytical gates
+
+The summary validator now also requires:
+
+- unambiguous primary HPLC calibration/analyte identity;
+- **every** recorded matrix-spike recovery inside 85–115%, not merely an acceptable mean.
+
+This matches the response-independent pilot protocol and prevents one poor matrix recovery from being hidden by averaging.
