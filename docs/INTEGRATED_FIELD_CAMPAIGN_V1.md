@@ -117,6 +117,8 @@ Instead:
 
 - record the prior pre-coring date and offsets for every core-three baseline node;
 - use the frozen distinct pre/post offset geometry and cumulative footprint limit;
+- before deployment, freeze a numeric minimum pre/post core-center separation and a numeric maximum cumulative disturbed area per node across all attempted pre/post cores;
+- require the frozen minimum center separation to be at least one core diameter so pre/post core footprints cannot physically overlap;
 - keep all coring outside the permanent monitoring footprint;
 - retain the future point-level disturbance sensitivity around TNC anchor neighborhoods;
 - keep the authoritative water-body factor.
