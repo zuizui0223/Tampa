@@ -25,8 +25,8 @@
     },
     "planning_target_nodes": 41,
     "minimum_confirmatory_analyzable_nodes": 36,
-    "minimum_confirmatory_nodes_per_bay": 8,
-    "below_precision_gate": "If fewer than 36 analyzable baseline-Thalassia-positive nodes remain across the four-bay frame, or any bay contributes fewer than 8, report the frozen prospective coefficient and uncertainty as a pilot/sensitivity result. Do not use a null result to reject the below-ground reserve hypothesis.",
+    "minimum_confirmatory_nodes_per_bay": 6,
+    "below_precision_gate": "If fewer than 36 analyzable baseline-Thalassia-positive nodes remain across the four-bay frame, or any bay contributes fewer than 6, report the frozen prospective coefficient and uncertainty as a pilot/sensitivity result. Do not use a null result to reject the below-ground reserve hypothesis.",
     "selection_rule": "Do not subsample nodes by past decline class if all eligible nodes can be sampled. If field capacity is lower than the census frame, freeze a response-independent node list and alternates before coring; future outcome must never enter node selection.",
     "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise.",
     "destructive_sampling_guardrail": {
@@ -171,7 +171,7 @@
     "directional_hypothesis": "higher rhizome TNC -> more positive / less negative future frequency change",
     "alpha": 0.05,
     "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor or add secondary traits to recover sample size.",
-    "confirmatory_gate": ">=36 analyzable nodes and >=8 nodes in each of Old, Middle, Lower and Boca Ciega Bay",
+    "confirmatory_gate": ">=36 analyzable nodes and >=6 nodes in each of Old, Middle, Lower and Boca Ciega Bay",
     "support_rule": {
       "interval": "two-sided 95% interval under the frozen node-level uncertainty procedure",
       "supported": "interval entirely above 0",
@@ -246,7 +246,8 @@
     "validated Thalassia multilocus genotyping panel and clone-calling error rule",
     "36-node / 8-per-bay four-bay confirmatory precision gate",
     "four-bay contemporaneous eligible node list and alternates",
-    "four-bay within-transect anchor preflight and cluster-bootstrap code if the frozen feasibility gate passes"
+    "four-bay within-transect anchor preflight and cluster-bootstrap code if the frozen feasibility gate passes",
+    "36-total / 6-per-bay v2 confirmatory replication gate"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -267,7 +268,7 @@
     "The four-bay revision changes geography/sample-size planning only; assay, timing, core geometry, endpoint and primary predictor remain unchanged from v1.",
     "The four-bay v2 contract is the sole outcome-bearing TNC primary. The three-bay v1 contract is retained for provenance and may not be selected after future outcomes are known.",
     "Boca Ciega Bay was added before future outcome-bearing sampling; it may not be removed from the v2 primary because its future predictor or response is inconvenient.",
-    "If the >=36 total / >=8 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis."
+    "If the >=36 total / >=6 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + three water-body indicators",
@@ -278,8 +279,9 @@
       "n_40": 0.4489801816,
       "n_41": 0.4433248073
     },
-    "primary_rule": "Confirmatory interpretation requires >=36 analyzable nodes and >=8 analyzable nodes in each of Old, Middle, Lower and Boca Ciega Bay. Below that gate, retain the prospective estimate and uncertainty as pilot/sensitivity evidence and do not interpret a null as evidence against reserve buffering.",
-    "interpretation": "The four-bay planning frame is ~41 nodes and mainly resolves moderate-to-large partial effects. Within-node cores improve TNC measurement precision but do not replace node replication."
+    "primary_rule": "Confirmatory interpretation requires >=36 analyzable nodes and >=6 analyzable nodes in each of Old, Middle, Lower and Boca Ciega Bay. Below that gate, retain the prospective estimate and uncertainty as pilot/sensitivity evidence and do not interpret a null as evidence against reserve buffering.",
+    "interpretation": "The four-bay planning frame is ~41 nodes and mainly resolves moderate-to-large partial effects. Within-node cores improve TNC measurement precision but do not replace node replication.",
+    "per_bay_retention_rationale": "The per-bay minimum is 6 rather than the historical full count of 8 in Old/Boca Ciega. Overall n>=36 remains the primary precision requirement; the 6-per-bay floor prevents a bay from becoming nearly absent while allowing up to two field/QC losses in the smallest planned bays. This threshold was fixed before outcome-bearing TNC collection."
   },
   "revision_from": "results/clonal_state_prospective_v1_contract.json",
   "revision_reason": "Prospective response-independent design decision to include Boca Ciega Bay before any outcome-bearing TNC sampling, based on the frozen four-bay feasibility audit.",
