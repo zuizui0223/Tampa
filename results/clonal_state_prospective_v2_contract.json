@@ -25,8 +25,8 @@
     },
     "planning_target_nodes": 41,
     "minimum_confirmatory_analyzable_nodes": 36,
-    "minimum_confirmatory_nodes_per_bay": 8,
-    "below_precision_gate": "If fewer than 36 analyzable baseline-Thalassia-positive nodes remain across the four-bay frame, or any bay contributes fewer than 8, report the frozen prospective coefficient and uncertainty as a pilot/sensitivity result. Do not use a null result to reject the below-ground reserve hypothesis.",
+    "minimum_confirmatory_nodes_per_bay": 6,
+    "below_precision_gate": "If fewer than 36 analyzable baseline-Thalassia-positive nodes remain across the four-bay frame, or any bay contributes fewer than 6, report the frozen prospective coefficient and uncertainty as a pilot/sensitivity result. Do not use a null result to reject the below-ground reserve hypothesis.",
     "selection_rule": "Do not subsample nodes by past decline class if all eligible nodes can be sampled. If field capacity is lower than the census frame, freeze a response-independent node list and alternates before coring; future outcome must never enter node selection.",
     "destructive_sampling_boundary": "Cores are taken adjacent to, not directly on, permanent meter marks unless the monitoring authority explicitly permits otherwise.",
     "destructive_sampling_guardrail": {
@@ -76,7 +76,7 @@
         "latest_positive_2025_nodes": 28,
         "observed_2025_survey_span_days": 71,
         "densest_historical_28_day_window_nodes": 19,
-        "interpretation": "Historical routine monitoring dates are too dispersed to provide a 30-node synchronized TNC baseline by passive add-on sampling.",
+        "interpretation": "The historical three-bay routine monitoring calendar was too dispersed for a synchronized TNC baseline by passive add-on sampling; v2 therefore requires one planned four-bay <=28-day campaign rather than inheriting routine survey timing.",
         "four_bay_design_decision": "Boca Ciega Bay included prospectively; historical routine survey timing still cannot substitute for the synchronized <=28-day campaign."
       },
       "baseline_survey_plan": {
@@ -171,7 +171,7 @@
     "directional_hypothesis": "higher rhizome TNC -> more positive / less negative future frequency change",
     "alpha": 0.05,
     "missing_data_rule": "complete-case primary analysis; do not impute the primary below-ground predictor or add secondary traits to recover sample size.",
-    "confirmatory_gate": ">=36 analyzable nodes and >=8 nodes in each of Old, Middle, Lower and Boca Ciega Bay",
+    "confirmatory_gate": ">=36 analyzable nodes and >=6 nodes in each of Old, Middle, Lower and Boca Ciega Bay",
     "support_rule": {
       "interval": "two-sided 95% interval under the frozen node-level uncertainty procedure",
       "supported": "interval entirely above 0",
@@ -192,6 +192,33 @@
       "outcome": "future quantitative focal-frequency and/or shoot-density change under one predeclared corrected secondary family",
       "role": "secondary competing below-ground mechanism, not a rescue of the TNC primary test",
       "interpretation": "TNC and meristem density represent distinct candidate axes: energetic resistance versus regenerative capacity."
+    },
+    "within_transect_anchor_diagnostic": {
+      "status": "four_bay_baseline_preflight_pending",
+      "preflight": "analysis/62_tnc_anchor_bb_four_bay_preflight.py",
+      "planned_result": "results/tnc_anchor_bb_four_bay_preflight_v1.json",
+      "frozen_feasibility_gate": {
+        "minimum_nodes_with_three_distinct_quantitative_anchors": 36,
+        "minimum_nodes_per_bay": 6
+      },
+      "geography": [
+        "Old Tampa Bay",
+        "Middle Tampa Bay",
+        "Lower Tampa Bay",
+        "Boca Ciega Bay"
+      ],
+      "predictor": "within_node_centered_anchor_TNC = anchor_TNC - mean(anchor_TNC across the three anchors)",
+      "outcome": "future Thalassia Braun-Blanquet score at the same permanent meter mark; sampled focal absence=0, present nonnumeric 'Reported'=quantitatively missing",
+      "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
+      "uncertainty": "stable-node cluster bootstrap, resampling the full three-anchor node as one unit; exact code frozen before future outcome access",
+      "expected_direction": "positive",
+      "support_rule": {
+        "supported": "two-sided 95% interval entirely above 0",
+        "contradicted_direction": "interval entirely below 0",
+        "unsupported": "interval overlaps 0"
+      },
+      "role": "Secondary spatial site-template-resistant diagnostic; cannot replace or rescue the four-bay node-level primary TNC result.",
+      "site_template_boundary": "Support weakens stable transect-level site-template confounding but does not eliminate persistent meter-mark microhabitat or time-varying local common causes."
     }
   },
   "pre_outcome_freeze_required": [
@@ -209,7 +236,6 @@
     "soluble-NSC extraction and starch quantification method",
     "dry-mass basis and technical standards",
     "leaf N/P nutrient-state diagnostic protocol",
-    "30-node / 8-per-bay confirmatory precision gate",
     "dedicated synchronized baseline-survey plan if routine monitoring dates exceed the frozen timing window",
     "q25/q50/q75 core-anchor implementation and sparse-node offset geometry",
     "minimum perpendicular core offset from permanent transect",
@@ -218,8 +244,10 @@
     "anchor-neighborhood exclusion rule for the future disturbance sensitivity",
     "DNA-quality tissue preservation from each TNC anchor",
     "validated Thalassia multilocus genotyping panel and clone-calling error rule",
-    "Boca Ciega inclusion/exclusion decision before first TNC core",
-    "Boca Ciega node list and same frozen timing/assay/core rules"
+    "36-node / 6-per-bay four-bay confirmatory precision gate",
+    "four-bay contemporaneous eligible node list and alternates",
+    "four-bay within-transect anchor preflight and cluster-bootstrap code if the frozen feasibility gate passes",
+    "36-total / 6-per-bay v2 confirmatory replication gate"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -230,56 +258,39 @@
     "Rhizome TNC is seasonally variable; do not pool samples from an unconstrained seasonal window and call the differences stable clonal reserve.",
     "High TNC is not automatically a health score because carbohydrate can accumulate when growth is nutrient-limited; contemporaneous nutrient status is an interpretation diagnostic.",
     "Within-node core replication reduces TNC measurement error but does not substitute for node-level replication.",
-    "If the 30-node / 8-per-bay precision gate fails, a null result is a pilot null and cannot reject the reserve-buffering hypothesis.",
     "Within-node cores are measurement replicates, not independent clone/genet replicates.",
     "A secondary meristem/apex signal may support regenerative capacity as a distinct below-ground mechanism, but it cannot replace a null primary TNC result.",
     "Three cores are within-node measurement replication/spatial coverage; inferential replication remains the stable transect node.",
     "Because coring is destructive, the sampling footprint is treated as a potential intervention; any evidence that local core disturbance affected future monitoring state must be reported rather than interpreted as reserve ecology.",
     "TNC is the primary below-ground reserve measurement, not a direct measure of genet size or physiological integration.",
     "Identical multilocus genotypes across anchors establish genet identity only; fragmented ramets can share a genotype without a currently intact rhizome connection, so genetic identity is not proof of resource translocation.",
-    "Boca Ciega Bay, if sampled, is a prespecified secondary context extension; it cannot rescue a null three-bay primary result or be described as independent replication.",
     "Boca Ciega Bay was added before future outcome-bearing sampling to improve prospective generality and precision; it may not be removed post hoc because its future response is inconvenient.",
-    "The four-bay revision changes geography/sample-size planning only; assay, timing, core geometry, endpoint and primary predictor remain unchanged from v1."
+    "The four-bay revision changes geography/sample-size planning only; assay, timing, core geometry, endpoint and primary predictor remain unchanged from v1.",
+    "The four-bay v2 contract is the sole outcome-bearing TNC primary. The three-bay v1 contract is retained for provenance and may not be selected after future outcomes are known.",
+    "Boca Ciega Bay was added before future outcome-bearing sampling; it may not be removed from the v2 primary because its future predictor or response is inconvenient.",
+    "If the >=36 total / >=6 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis."
   ],
   "design_precision_gate": {
-    "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + two water-body indicators",
+    "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + three water-body indicators",
     "planning_assumption": "Approximate Gaussian multiple-regression benchmark, two-sided alpha 0.05, 80% power for the TNC term; used only to prevent an underpowered confirmatory null.",
     "approximate_detectable_partial_r": {
-      "n_24": 0.57,
-      "n_30": 0.51,
-      "n_33": 0.49
+      "n_33": 0.4957297736,
+      "n_36": 0.4739779676,
+      "n_40": 0.4489801816,
+      "n_41": 0.4433248073
     },
-    "primary_rule": "Confirmatory interpretation requires >=30 analyzable nodes and >=8 analyzable nodes in each core bay. Below that gate, retain the prospective estimate and uncertainty but do not interpret a null as evidence against clonal/reserve buffering.",
-    "interpretation": "The realistic ~33-node frame is powered mainly for moderate-to-large partial effects; additional within-node cores improve measurement precision but do not replace node replication."
-  },
-  "prespecified_context_extension": {
-    "status": "baseline_design_feasible_not_independent_replication",
-    "source": "results/bcb_tnc_expansion_preflight_v1.json",
-    "candidate_water_body": "Boca Ciega Bay",
-    "design_feasibility": {
-      "recent_thalassia_positive_nodes": 8,
-      "nodes_with_ge3_positive_meter_marks": 8,
-      "four_bay_planning_nodes": 41,
-      "current_three_bay_approx_detectable_partial_r": 0.4881501522,
-      "four_bay_approx_detectable_partial_r": 0.4433248073
-    },
-    "sampling_rule": "If permissions/logistics allow, collect Boca Ciega under the same frozen <=28-day campaign, +/-14-day paired baseline, q25/q50/q75 core geometry, tissue class, HPLC, nutrient diagnostic and genet-diagnostic rules. Do not weaken any core three-bay rule to include Boca Ciega.",
-    "primary_boundary": "The confirmatory primary mechanism test remains Old + Middle + Lower Tampa Bay under the existing >=30 total / >=8 per core-bay gate.",
-    "secondary_four_bay_model": "future_delta_frequency ~ baseline_frequency + baseline_Braun_Blanquet + rhizome_TNC + water_body, using all eligible sampled nodes from the four prespecified bays",
-    "secondary_role": "Context-extension sensitivity only. Report the four-bay standardized TNC coefficient and two-sided 95% interval under the same frozen uncertainty procedure.",
-    "interpretation": {
-      "core_supported_four_bay_same_positive_direction": "Strengthens transportability of the measured reserve-state association across an additional Tampa Bay meadow context, but is not independent replication because the three core bays are reused.",
-      "core_supported_four_bay_opposite_or_strongly_attenuated": "Report context dependence; do not claim a bay-general reserve effect.",
-      "core_unsupported_four_bay_supported": "Does not rescue the primary mechanism test. Treat the four-bay result as secondary and hypothesis-generating.",
-      "boca_ciega_only": "Report a BCB-only coefficient/interval descriptively if estimable; n~8 is not assigned an independent confirmatory pass/fail gate."
-    },
-    "exclusion_rule": "If Boca Ciega cannot meet the frozen timing/assay/field rules, omit it from the context extension rather than widening windows or changing the primary three-bay design.",
-    "claim_boundary": [
-      "Boca Ciega is prespecified before TNC collection and future outcome access.",
-      "The extension broadens environmental/community context and may improve precision, but it is not an independent replication dataset.",
-      "Do not add Boca Ciega after seeing a null core result as a sample-size rescue."
-    ]
+    "primary_rule": "Confirmatory interpretation requires >=36 analyzable nodes and >=6 analyzable nodes in each of Old, Middle, Lower and Boca Ciega Bay. Below that gate, retain the prospective estimate and uncertainty as pilot/sensitivity evidence and do not interpret a null as evidence against reserve buffering.",
+    "interpretation": "The four-bay planning frame is ~41 nodes and mainly resolves moderate-to-large partial effects. Within-node cores improve TNC measurement precision but do not replace node replication.",
+    "per_bay_retention_rationale": "The per-bay minimum is 6 rather than the historical full count of 8 in Old/Boca Ciega. Overall n>=36 remains the primary precision requirement; the 6-per-bay floor prevents a bay from becoming nearly absent while allowing up to two field/QC losses in the smallest planned bays. This threshold was fixed before outcome-bearing TNC collection."
   },
   "revision_from": "results/clonal_state_prospective_v1_contract.json",
-  "revision_reason": "Prospective response-independent design decision to include Boca Ciega Bay before any outcome-bearing TNC sampling, based on the frozen four-bay feasibility audit."
+  "revision_reason": "Prospective response-independent design decision to include Boca Ciega Bay before any outcome-bearing TNC sampling, based on the frozen four-bay feasibility audit.",
+  "version_authority": {
+    "status": "authoritative_outcome_bearing_tnc_primary",
+    "supersedes": "results/clonal_state_prospective_v1_contract.json",
+    "effective_date": "2026-10-01",
+    "decision_timing": "Boca Ciega inclusion and the four-bay primary were fixed before the first outcome-bearing TNC core and before future meadow response access.",
+    "frozen_change_scope": "Primary geography/sample-size planning changes from three to four bays; TNC predictor, HPLC assay, timing, core geometry, baseline/future endpoint and no-rescue rules remain mechanistically unchanged.",
+    "no_reversion": "Do not revert to the three-bay v1 primary, remove Boca Ciega, or choose between v1/v2 based on future TNC or meadow outcomes."
+  }
 }
