@@ -33,7 +33,7 @@ Planning frame:
 - Boca Ciega Bay: 8;
 - total: **41 nodes**.
 
-The v2 contract fixes Boca Ciega inclusion **before** future outcome-bearing sampling. Primary confirmation requires >=36 analyzable nodes and >=8 per bay.
+The v2 contract fixes Boca Ciega inclusion **before** future outcome-bearing sampling. Primary confirmation requires >=36 analyzable nodes and >=6 per bay. The six-node bay floor is a representation guardrail that permits limited field/QC attrition; the >=36 total-node requirement carries the main precision burden.
 
 See:
 - [decisive-test priority](docs/TAMPA_DECISIVE_TEST_PRIORITY_V1.md)
