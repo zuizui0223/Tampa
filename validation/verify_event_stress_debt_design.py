@@ -73,7 +73,11 @@ protocol=(ROOT/"docs/EVENT_SCALE_STRESS_DEBT_PROTOCOL_V1.md").read_text()
 assert "same Tampa definition" in protocol
 assert "common calendar overlap" in protocol
 assert "Pre-exposure" in protocol and "Post-exposure" in protocol
-assert "Do not alter thresholds" in protocol
+assert "Exposure-variation and identifiability gate" in protocol
+assert "remove `water_body`" in protocol
+assert "alter thresholds" in protocol
+assert "39-45 days" in protocol
+assert "Combined destructive-sampling guardrail" in protocol
 assert "Separate optical mechanism" in protocol
 
 hyp=(ROOT/"docs/MECHANISM_COMPETING_HYPOTHESES_V1.md").read_text()
