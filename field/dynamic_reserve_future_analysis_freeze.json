@@ -3,7 +3,7 @@
   "frozen_on": "2026-10-03",
   "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
   "script_path": "analysis/71_dynamic_reserve_future_diagnostic.py",
-  "script_blob_sha1": "d8bdf6f4d2969fc6a93f4ea4da25be2ee89db5bb",
+  "script_blob_sha1": "b32151c93a8c9c804b159c3295c3b03469b6a2e3",
   "role": "secondary temporal site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay static TNC primary",
   "geography": [
     "Old Tampa Bay",
@@ -26,13 +26,17 @@
     "repetitions": 10000,
     "seed": 20261006,
     "interval": "two-sided percentile 95% CI",
-    "valid_replicate_requirement": ">=95%"
+    "valid_replicate_requirement": ">=95%",
+    "family_interval": "two-sided percentile 97.5% CI for the two-member site-template-resistant diagnostic family"
   },
   "support_rule": {
     "supported": "95% CI entirely above 0",
     "contradicted_direction": "95% CI entirely below 0",
     "unsupported": "95% CI overlaps 0",
-    "below_gate": "non-estimable secondary diagnostic"
+    "below_gate": "non-estimable secondary diagnostic",
+    "family_supported": "97.5% family CI entirely above 0",
+    "family_contradicted_direction": "97.5% family CI entirely below 0",
+    "family_unsupported": "97.5% family CI overlaps 0"
   },
   "no_rescue": [
     "Do not drop tnc_post, baseline_frequency_post or water_body after inspection.",
