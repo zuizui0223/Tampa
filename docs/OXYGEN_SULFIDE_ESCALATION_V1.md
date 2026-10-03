@@ -78,6 +78,69 @@ The key idea is **gating**:
 
 The biologically discriminating state is the failure of internal aeration and sulfide exclusion.
 
+## Competing downstream explanations after optical support
+
+A supported within-canopy DLI -> TNC result does not uniquely imply oxygen-sulfide toxicity. At least two biologically distinct pathways can generate the same reserve response.
+
+### Pathway C — carbon-limitation pathway
+
+Prediction:
+
+> lower DLI predicts lower reserve accumulation / greater reserve drawdown, but internal meristem/rhizome pO2 and tissue H2S intrusion show little or no corresponding deterioration.
+
+Interpretation:
+
+- light matters through carbon balance;
+- oxygen-sulfide failure is not required to explain the reserve response;
+- do not promote external porewater sulfide alone into a causal explanation.
+
+### Pathway A — aeration-failure pathway
+
+Predictions:
+
+1. lower recent within-canopy DLI predicts lower internal meristem/rhizome pO2, especially at night and around dawn;
+2. lower internal pO2 predicts greater probability or magnitude of H2S intrusion;
+3. nodes/times showing the strongest aeration failure also show poorer reserve and/or meristem state under a separately frozen prospective design.
+
+This is the pathway most directly motivated by the existing *Thalassia* microsensor literature.
+
+### Pathway O — external-oxygen pathway
+
+A third possibility is that low water-column O2, rather than light itself, is the immediate limitation on internal aeration during darkness.
+
+Prediction:
+
+> internal pO2 / H2S intrusion tracks nocturnal water-column O2 after recent light history is represented.
+
+This would support an oxygen-supply mechanism but would not justify calling low DLI the sole proximate cause.
+
+### Process-discrimination rule
+
+A future oxygen-sulfide study should be designed to distinguish these pathways rather than fit one large predictor model.
+
+Minimum process states:
+
+- recent direct within-canopy DLI;
+- simultaneous water-column O2;
+- internal meristem/rhizome pO2 across the diel cycle;
+- direct tissue/meristem H2S intrusion when technically feasible.
+
+Preferred temporal focus:
+
+- daytime oxygenation;
+- nocturnal decline;
+- dawn / near-sunrise pO2 minimum, because prior *T. testudinum* studies identify this as a biologically discriminating period.
+
+A future design may predeclare a small number of sequential process links, but must not claim formal mediation from observational data alone.
+
+Interpretation matrix:
+
+- **DLI -> reserve supported; internal O2/H2S process unsupported:** carbon limitation remains sufficient; aeration-failure explanation weakened.
+- **DLI -> low internal O2 and low internal O2 -> H2S supported:** direct support for the proposed aeration-gating process.
+- **water-column O2 -> internal O2/H2S stronger than DLI:** external oxygen supply is the better supported proximate process.
+- **porewater sulfide high but tissue H2S absent:** external sulfide exposure is present, but plant exclusion/aeration remains effective.
+- **tissue H2S intrusion present without future reserve/meristem consequence:** process exposure is demonstrated, but downstream ecological importance remains unresolved.
+
 ## Evidence ladder for a future study
 
 ### Level A — external context only
