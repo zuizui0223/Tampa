@@ -408,9 +408,9 @@ def main():
 
     if tnc_errors:
         status="STOP_TNC_V2_GATE_FAILED"
-    elif (event_intent=="confirmatory" and module_status["event_stress"]=="STOP") or (
-          optical_intent=="confirmatory" and module_status["optical"]=="STOP") or (
-          attr_intent=="confirmatory" and module_status["optical_attribution"]=="STOP"):
+    elif errors:
+        # Complete freezes fail closed on any remaining rule violation. Do not
+        # allow an unclassified calendar/QC error to slip through as READY.
         status="STOP_MODULE_INTENT_MISMATCH"
     else:
         status="READY_TNC_CONFIRMATORY_CAMPAIGN"
