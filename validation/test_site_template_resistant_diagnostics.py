@@ -22,6 +22,16 @@ def main():
     assert blob_sha(afreeze["script_path"])==afreeze["script_blob_sha1"]
     assert dfreeze["uncertainty"]["seed"]==20261006
     assert afreeze["uncertainty"]["seed"]==20261007
+    event=json.loads((ROOT/"results/event_stress_debt_prospective_v1_contract.json").read_text())
+    clonal=json.loads((ROOT/"results/clonal_state_prospective_v2_contract.json").read_text())
+    dyn_contract=event["relationship_to_clonal_tnc_program"]["dynamic_reserve_change_future_diagnostic"]
+    anc_contract=clonal["secondary_analysis"]["within_transect_anchor_diagnostic"]
+    assert dyn_contract["analysis_code"]==dfreeze["script_path"]
+    assert dyn_contract["analysis_freeze"]=="field/dynamic_reserve_future_analysis_freeze.json"
+    assert "20261006" in dyn_contract["uncertainty"]
+    assert anc_contract["analysis_code"]==afreeze["script_path"]
+    assert anc_contract["analysis_freeze"]=="field/anchor_tnc_future_bb_analysis_freeze.json"
+    assert "20261007" in anc_contract["uncertainty"]
 
     dyn=loadmod("dyn","analysis/71_dynamic_reserve_future_diagnostic.py")
     rows=[]
