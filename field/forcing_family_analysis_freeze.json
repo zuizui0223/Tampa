@@ -1,0 +1,17 @@
+{
+  "schema": "tampa.forcing_family_analysis_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_TNC_INSPECTION",
+  "script_path": "analysis/67_forcing_family_analysis.py",
+  "script_blob_sha1": "fb43ed9726eed5a5ae248c35fe5f65c27ac6ffde",
+  "members": [
+    "event-stress primary: joint_hot_fresh_hours_30_25 -> post-TNC conditional on pre-TNC",
+    "optical primary: mean_daily_within_canopy_dli -> post-TNC conditional on pre-TNC"
+  ],
+  "multiplicity": "Bonferroni two-test family; member-level family inference uses two-sided 97.5% percentile bootstrap intervals",
+  "event_direction": "negative",
+  "optical_direction": "positive",
+  "joint_claim_rule": "A paper-level confirmatory environmental-forcing family claim is allowed only when both primary modules are confirmatory and estimable. Report which corrected members pass; do not rank mechanisms.",
+  "nonestimable_boundary": "If either member is non-estimable/pilot-only, do not make a joint confirmatory forcing-family claim.",
+  "no_ranking": "Do not compare p-values, standardized coefficients, or CI widths to call one forcing mechanism stronger."
+}

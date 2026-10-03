@@ -1,0 +1,45 @@
+{
+  "schema": "tampa.tnc_v2_primary_analysis_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "authoritative_contract": "results/clonal_state_prospective_v2_contract.json",
+  "script_path": "analysis/64_tnc_v2_primary_analysis.py",
+  "script_blob_sha1": "e7ca25d7191d79a251aaa19676b19d03c69ebc8e",
+  "model": "future_delta_frequency ~ baseline_frequency + baseline_braun_blanquet + z_rhizome_tnc + water_body",
+  "standardization": {
+    "tnc": "z-score once in the original complete-case analytic sample using sample SD (ddof=1)",
+    "outcome": "future_frequency - baseline_frequency; unstandardized"
+  },
+  "water_body_coding": {
+    "levels": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay",
+      "Lower Tampa Bay",
+      "Boca Ciega Bay"
+    ],
+    "reference": "Old Tampa Bay"
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node bootstrap",
+    "repetitions": 10000,
+    "seed": 20261003,
+    "interval": "two-sided percentile 95% CI",
+    "valid_replicate_requirement": ">=95% of planned bootstrap repetitions"
+  },
+  "replication_gate": {
+    "minimum_total": 36,
+    "minimum_per_bay": 6
+  },
+  "support_rule": {
+    "supported": "95% CI entirely above 0",
+    "contradicted_direction": "95% CI entirely below 0",
+    "unsupported": "95% CI overlaps 0",
+    "one_sided_test_allowed": false
+  },
+  "missing_data": "complete case only; no imputation of TNC or future frequency",
+  "no_rescue": [
+    "Do not change bootstrap type, seed, repetitions, standardization, bay coding or interval after future outcome access.",
+    "Do not replace a null primary with soluble NSC, starch, nutrient-adjusted TNC, meristem density or selected subgroup.",
+    "Do not revert to the superseded three-bay v1 primary."
+  ]
+}

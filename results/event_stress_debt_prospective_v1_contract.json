@@ -115,7 +115,7 @@
     "model": "tnc_post ~ tnc_pre + joint_hot_fresh_hours_30_25 + water_body",
     "primary_coefficient": "joint_hot_fresh_hours_30_25",
     "expected_direction": "negative",
-    "uncertainty": "node-level bootstrap or permutation procedure frozen before biological outcome access",
+    "uncertainty": "10,000-replicate water-body-stratified stable-node bootstrap; seed 20261004; two-sided percentile 95% interval for standalone status; same resamples yield 97.5% interval for the predeclared two-test forcing family.",
     "support_rule": {
       "supported": "two-sided 95% interval entirely below 0",
       "contradicted_direction": "two-sided 95% interval entirely above 0",
@@ -127,7 +127,9 @@
       "tnc_pre",
       "water_body"
     ],
-    "missing_data_rule": "complete-case confirmatory analysis under predeclared logger/core QC; do not impute primary exposure or TNC to rescue n"
+    "missing_data_rule": "complete-case confirmatory analysis under predeclared logger/core QC; do not impute primary exposure or TNC to rescue n",
+    "analysis_freeze": "field/event_stress_primary_analysis_freeze.json",
+    "analysis_code": "analysis/65_event_stress_primary_analysis.py"
   },
   "design_precision_gate": {
     "planning_model_terms": "joint hot-fresh exposure + pre-TNC + two water-body indicators",
