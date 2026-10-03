@@ -34,7 +34,7 @@ assert ref["minimum_analyzable_nodes"]==12
 assert ref["minimum_nodes_per_bay"]==3
 assert ref["geometry"]["target_clearance_above_canopy_m"]==0.10
 assert "within_canopy_mean_daily_dli / above_canopy_mean_daily_dli" in ref["metrics"]["canopy_optical_transmittance"]
-assert "cannot replace or rescue" in ref["no_rescue"]
+assert "Do not replace a null primary" in ref["no_rescue"] && "new primary" in ref["no_rescue"]
 assert "does not authorize an additional destructive TNC round" in c["reserve_response"]["shared_core_rule"]
 
 e=c["primary_exposure"]
