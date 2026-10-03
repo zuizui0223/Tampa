@@ -79,7 +79,30 @@ If clonal buffering is real, sites with similar current above-ground frequency/a
 
 This hypothesis cannot be identified from the current annual observation table.
 
-## Priority 2 — node-scale high-frequency stress
+## Priority 2 — direct canopy optical microenvironment
+
+The old bulk Secchi × depth proxy and qualitative annual epiphyte field are not reopened.
+
+Frozen future design:
+
+- `results/optical_microenvironment_prospective_v1_contract.json`
+- `docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md`
+
+Primary new measurement:
+
+> high-frequency within-canopy PAR summarized as continuous mean daily light integral over the same 42-day interval as pre/post TNC.
+
+Primary mechanistic endpoint:
+
+> post-exposure rhizome TNC after pre-exposure TNC is represented.
+
+A nested paired above-canopy reference separates actual low light from local canopy-associated optical attenuation. Direct epiphyte biomass and intact-versus-cleaned leaf optics remain secondary physical-attribution diagnostics.
+
+The optical layer reuses the existing pre/post TNC rounds; it does not justify more destructive reserve sampling.
+
+Do not rescue a null optical primary by retuning a DLI threshold, Secchi window, epiphyte category or sensor height.
+
+## Priority 3 — node-scale high-frequency event stress
 
 ### Biological hypothesis
 
@@ -120,7 +143,7 @@ The general network-scale test is now frozen in:
 It retains the published Tampa 30 C / 25 ppt condition definition, measures simultaneous exposure at node / <=15-minute resolution, and uses pre/post rhizome TNC as the primary immediate biological response. PAR remains a separate optical mechanism layer.
 
 PR #38 is retained only as a six-node Old Tampa Bay extreme-effect heat-only prospective pilot and does not substitute for the network-scale design.
-## Priority 3 — hydrodynamic exposure / residence time
+## Priority 4 — direct hydrodynamic canopy engineering
 
 Current source preflight:
 
@@ -188,29 +211,6 @@ This is preferable to a density × model-current interaction because the physica
 
 Do not construct another arbitrary distance/connectivity proxy or tune alternative current metrics from the biological table.
 
-## Priority 4 — direct canopy optical microenvironment
-
-The old bulk Secchi × depth proxy and qualitative annual epiphyte field are not reopened.
-
-Frozen future design:
-
-- `results/optical_microenvironment_prospective_v1_contract.json`
-- `docs/OPTICAL_MICROENVIRONMENT_PROTOCOL_V1.md`
-
-Primary new measurement:
-
-> high-frequency within-canopy PAR summarized as continuous mean daily light integral over the same 42-day interval as pre/post TNC.
-
-Primary mechanistic endpoint:
-
-> post-exposure rhizome TNC after pre-exposure TNC is represented.
-
-A nested paired above-canopy reference separates actual low light from local canopy-associated optical attenuation. Direct epiphyte biomass and intact-versus-cleaned leaf optics remain secondary physical-attribution diagnostics.
-
-The optical layer reuses the existing pre/post TNC rounds; it does not justify more destructive reserve sampling.
-
-Do not rescue a null optical primary by retuning a DLI threshold, Secchi window, epiphyte category or sensor height.
-
 ## Priority 5 — acute disturbance / disease
 
 Candidate new observations:
@@ -260,13 +260,15 @@ Otherwise it belongs to descriptive/sensitivity work, not to the mechanism progr
 
 ## Current priority ordering
 
-1. **Below-ground / clonal state**
-2. **High-frequency local temperature / salinity / PAR**
-3. **Hydrodynamic exposure / residence time**
-4. **Canopy / epiphyte light microenvironment**
+This broad programme now follows the same prospective resource order as the authoritative integrated campaign:
+
+1. **Below-ground reserve / regenerative state — four-bay TNC v2**
+2. **Direct within-canopy optical DLI / microenvironment**
+3. **Node-scale hot-fresh event stress — temperature + salinity**
+4. **Direct hydrodynamic canopy engineering**
 5. **Acute disturbance / disease**
 
-The first two remain the strongest direct discriminators between persistent meadow legacy and unresolved short-timescale stress. Hydrodynamics remains independently valuable, but the TBOFS meadow-scale route failed physical preflight and has been replaced by direct canopy/ambient velocity measurement.
+The ordering is a scientific resource-allocation rule, not a claim that the higher-ranked mechanisms are already supported. Four-bay TNC v2 is protected first. If only one forcing module can be fully confirmatory without weakening TNC, direct optical DLI has priority over the hot-fresh event module; feasibility can still make event stress the only executable forcing primary. Hydrodynamics remains independently valuable but is a separate later module after the TBOFS meadow-scale route failed physical preflight.
 
 ## Current program status
 
@@ -275,6 +277,8 @@ The first two remain the strongest direct discriminators between persistent mead
 - 2026 OTB continuous-temperature -> 2027 prospective test: **allowed new-measurement branch**
 - New clonal/below-ground field layer: **highest-priority next mechanism study**
 - NOAA TBOFS near-bottom current: **not accepted as meadow-scale exposure after frozen spatial/depth preflight**
-- Direct paired canopy/ambient velocity layer: **prospective design frozen; preferred hydrodynamic mechanism test**
+- Direct within-canopy optical DLI layer: **prospective design frozen; first-priority optional forcing primary if full capacity exists**
+- Network hot-fresh event-stress layer: **prospective design frozen; second-priority optional forcing primary if full capacity exists**
+- Direct paired canopy/ambient velocity layer: **prospective design frozen; separate later hydrodynamic mechanism test**
 - Integrated TNC + event-stress + optical field orchestration: **frozen in `results/integrated_field_campaign_v1_contract.json`; response-independent instrument/resource inventory still pending**
 - Integrated campaign resource freeze: `field/integrated_campaign_resource_freeze.json`; no outcome-bearing deployment until the resource/pilot fields are frozen
