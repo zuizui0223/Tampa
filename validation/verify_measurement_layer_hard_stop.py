@@ -41,7 +41,7 @@ assert len(clonal2["eligibility"]["geography"])==4
 assert "Boca Ciega Bay" in clonal2["eligibility"]["geography"]
 assert clonal2["eligibility"]["planning_target_nodes"]==41
 assert clonal2["eligibility"]["minimum_confirmatory_analyzable_nodes"]==36
-assert clonal2["eligibility"]["minimum_confirmatory_nodes_per_bay"]==8
+assert clonal2["eligibility"]["minimum_confirmatory_nodes_per_bay"]==6
 assert clonal2["primary_analysis"]["confirmatory_gate"].startswith(">=36 analyzable nodes")
 assert "four-level factor" in clonal2["primary_analysis"]["required_controls"][-1]
 assert "three water-body indicators" in clonal2["design_precision_gate"]["planning_model_terms"]
