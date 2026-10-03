@@ -145,6 +145,51 @@ Already resolved:
 
 The batch manifest must be frozen before primary carbohydrate values are opened.
 
+
+## Predeclared candidate order
+
+The pilot now starts from a literature-backed **least-destructive-first** candidate order. These are not selected study values; the selected fields remain null until the response-independent pilot passes.
+
+### Horizontal-rhizome tissue class
+
+Test in this order:
+
+1. live horizontal rhizome, proximal **3 cm** segment associated with a living short shoot, excluding vertical rhizome and roots;
+2. live horizontal rhizome, proximal **4 cm** segment associated with a living short shoot, same exclusions.
+
+Direct *T. testudinum* work has used a 3-cm horizontal rhizome as part of standardized shoot units, while earlier chemical work defined the rhizome sample as a 4-cm section attached to the short shoot.
+
+Selection still follows the frozen rule: classification success -> sufficient dry mass -> destructive footprint -> candidate order. Mean TNC is never a selection criterion.
+
+### Core geometry
+
+Test from least to most destructive:
+
+1. 9 cm diameter x 15 cm depth;
+2. 9 cm x 20 cm;
+3. 15 cm x 15 cm;
+4. 15 cm x 20 cm;
+5. 15 cm x 25 cm.
+
+This brackets published *Thalassia* practice: 9-cm biomass cores, common 15-cm-diameter intact cores at about 20 cm depth, and 15-cm cores to 25 cm for belowground biomass.
+
+The study still selects the **first geometry that passes every recovery/dry-mass/spatial-guardrail criterion**. Published precedent does not override Tampa pilot performance.
+
+### Preservation candidates
+
+Primary rapid-metabolic-arrest candidates:
+
+1. immediate liquid-nitrogen flash freezing of cleaned target rhizome tissue -> frozen transport/storage -> freeze drying;
+2. rapid direct dry-ice freezing -> frozen transport/storage -> freeze drying.
+
+Plant/seagrass NSC guidance favors rapid freezing because enzymatic metabolism can continue after harvest. The final preservation method and maximum allowed delay still require the paired immediate-versus-delayed Tampa pilot.
+
+Do not add a slower chilled-only handling method during outcome-bearing collection merely because it is easier operationally.
+
+### Literature boundary
+
+The candidate order is supported by published field/method precedent, but the exact Tampa tissue class, core diameter/depth and preservation latency remain **empirical pilot outputs**. The candidate order narrows method development; it does not authorize outcome-bearing coring.
+
 ## Pilot completion rule
 
 The method pilot is complete only when all six selected outputs are non-null:
