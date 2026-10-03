@@ -85,3 +85,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: python validation/verify_measurement_layer_hard_stop.py
+      - run: python validation/verify_tnc_v2_authority.py
