@@ -1,0 +1,80 @@
+{
+  "schema": "tampa.dynamic_reserve_future_analysis_freeze.v2_paired_anchor",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "script_path": "analysis/71_dynamic_reserve_future_diagnostic.py",
+  "script_blob_sha1": "b32151c93a8c9c804b159c3295c3b03469b6a2e3",
+  "role": "secondary temporal site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay static TNC primary",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + paired_anchor_delta_tnc_42d + water_body",
+  "delta_definition": "paired_anchor_delta_tnc_42d = median across the three matched q25/q50/q75 anchor-specific changes (tnc_post_anchor - tnc_pre_anchor); tnc_post is the median of the same three post anchors",
+  "focal_coefficient": "paired_anchor_delta_tnc_42d",
+  "temporal_pairing_days": [
+    39,
+    45
+  ],
+  "replication_gate": {
+    "minimum_total": 30,
+    "minimum_per_bay": 8
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node bootstrap",
+    "repetitions": 10000,
+    "seed": 20261006,
+    "interval": "two-sided percentile 95% CI",
+    "valid_replicate_requirement": ">=95%",
+    "family_interval": "two-sided percentile 97.5% CI for the two-member site-template-resistant diagnostic family"
+  },
+  "support_rule": {
+    "supported": "95% CI entirely above 0",
+    "contradicted_direction": "95% CI entirely below 0",
+    "unsupported": "95% CI overlaps 0",
+    "below_gate": "non-estimable secondary diagnostic",
+    "family_supported": "97.5% family CI entirely above 0",
+    "family_contradicted_direction": "97.5% family CI entirely below 0",
+    "family_unsupported": "97.5% family CI overlaps 0"
+  },
+  "no_rescue": [
+    "Do not drop tnc_post, baseline_frequency_post or water_body after inspection.",
+    "Do not widen the 39-45 day pre/post TNC interval after inspection.",
+    "Do not use this diagnostic to rescue a null authoritative four-bay static TNC primary.",
+    "Do not relax matched-anchor or TNC-QC requirements after future outcomes are inspected.",
+    "Do not interpret a pre/post contrast as trajectory if assay batch is perfectly confounded with sampling round.",
+    "Do not reinterpret an unsupported dynamic diagnostic as proof that reserve trajectory is irrelevant; its role is a bounded secondary test with moderate-to-large effect resolution.",
+    "Do not revert to difference-of-node-medians or choose an anchor subset after future outcome access; the paired-anchor median change is frozen."
+  ],
+  "measurement_validity_gate": {
+    "method_pilot_prerequisite": "Authoritative TNC-v2 response-independent method pilot must pass its frozen analytical QC before the dynamic diagnostic is eligible for ecological interpretation.",
+    "analytical_precision_boundary": "Technical-duplicate median TNC CV <=10%, <=10% of duplicate pairs >15% CV, and all other frozen HPLC recovery/calibration criteria must pass under the authoritative method pilot.",
+    "node_level_requirements": [
+      "exactly three frozen q25/q50/q75 anchor IDs per node",
+      "pre_anchor_tnc_qc_pass == true at all three anchors",
+      "post_anchor_tnc_qc_pass == true at all three anchors",
+      "same anchor IDs are paired across pre and post rounds",
+      "39 <= post_date - pre_date <= 45 days"
+    ],
+    "assay_batch_round_boundary": "Pre/post round must not be perfectly confounded with HPLC assay batch. If all pre samples and all post samples are separated by batch in a way that makes round indistinguishable from batch, classify the dynamic diagnostic non-estimable.",
+    "interpretation": "These gates reduce the chance that spatial core heterogeneity or analytical batch error is relabeled as reserve trajectory.",
+    "spatial_pairing_boundary": "The node trajectory is computed from matched anchor-specific differences before node summarization. Do not compute delta as median(post anchors) - median(pre anchors), because that can relabel spatial core heterogeneity as temporal change.",
+    "paired_change_heterogeneity": "Report sign/range of the three anchor-specific changes as descriptive measurement heterogeneity. Do not invent a concordance threshold after future outcome access to select favorable nodes."
+  },
+  "design_resolution": {
+    "planning_model_terms": "paired_anchor_delta_tnc_42d + tnc_post + baseline_frequency_post + two water-body indicators",
+    "approximation": "Gaussian multiple-regression partial-correlation benchmark, two-sided alpha 0.05, 80% power; resolution warning only.",
+    "approximate_detectable_partial_r": {
+      "n_30": 0.512,
+      "n_33": 0.488
+    },
+    "interpretation": "The diagnostic is mainly capable of detecting moderate-to-large matched-location trajectory information beyond current reserve state. An interval overlapping zero does not establish that smaller trajectory dependence is absent."
+  },
+  "measurement_error_boundary": {
+    "issue": "tnc_post and paired_anchor_delta_tnc_42d still share the post-exposure measurements, so measurement error in post TNC can induce correlated error in the state-versus-trajectory parameterization.",
+    "mitigation": "Use the authoritative HPLC technical-QC gate, matched anchor neighborhoods, three independent spatial anchors, and report paired-anchor change heterogeneity. Do not hide or residualize measurement error post hoc.",
+    "interpretation": "A supported trajectory coefficient is evidence that matched recent reserve change carries information beyond current reserve state; it is not proof of hysteresis, memory or causal depletion.",
+    "discrepancy_rule": "If conclusions depend strongly on one anchor or fail under predeclared measurement-sensitivity checks, label the trajectory result measurement-sensitive rather than supported."
+  }
+}
