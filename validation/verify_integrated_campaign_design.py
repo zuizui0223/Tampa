@@ -33,6 +33,9 @@ assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["min
 assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["minimum_per_bay"]==ref["minimum_nodes_per_bay"]==3
 assert x["mechanism_execution_gates"]["hydrodynamic"]["role"].startswith("Separate module")
 assert x["module_priority_and_failure_policy"]["priority_order"][0]=="authoritative four-bay TNC v2 primary"
+assert x["module_priority_and_failure_policy"]["priority_order"][1]=="core-three optical primary if full confirmatory capacity exists"
+assert x["module_priority_and_failure_policy"]["priority_order"][2]=="core-three event-stress primary if full confirmatory capacity exists"
+assert "optical has the frozen scientific priority over event-stress" in x["module_priority_and_failure_policy"]["priority_consistency_note"]
 assert "disabled" in x["module_priority_and_failure_policy"]["optional_module_rule"]
 assert x["mechanism_execution_gates"]["optical"]["paired_reference_subset"]["role"].startswith("secondary attribution")
 assert "97.5%" in x["paper_level_forcing_family"]["integrated_family_rule"]
