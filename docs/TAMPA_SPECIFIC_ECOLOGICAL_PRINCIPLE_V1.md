@@ -174,6 +174,26 @@ The narrower wording is deliberate:
 
 This secondary diagnostic cannot rescue a null authoritative four-bay static TNC primary.
 
+### Measurement-validity boundary for trajectory dependence
+
+A 42-day TNC difference is called a reserve trajectory only when the measurement design itself can distinguish time from space and assay drift.
+
+Therefore the temporal diagnostic is eligible only if:
+
+- pre and post node summaries use the **same frozen q25/q50/q75 anchor neighborhoods**;
+- pre and post use distinct non-overlapping core offsets, so the second sample is not simply re-coring disturbed sediment;
+- every included TNC sample passes the authoritative TNC-v2 sample/assay QC;
+- the response-independent HPLC method pilot passes its frozen recovery and precision limits;
+- pre/post sampling round is **not perfectly confounded with HPLC assay batch**.
+
+If all pre material is effectively one assay batch and all post material another, the temporal diagnostic is non-estimable rather than being interpreted as reserve change.
+
+This matters because the ecological claim is stronger than a repeated-measures correlation:
+
+> **the same meadow can arrive at the same current reserve level by different recent reserve trajectories, and those trajectories may carry different near-future risks.**
+
+That claim requires the observed trajectory to be biological rather than a core-location or assay-round artifact.
+
 ## Persistent site-template alternative
 
 Stable transect identity explains a large fraction of the retrospective level differences in coarse state.
