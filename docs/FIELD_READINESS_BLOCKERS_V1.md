@@ -6,7 +6,7 @@
 
 The prospective mechanism programme is scientifically frozen far enough to begin response-independent pilots, but **outcome-bearing cores/loggers are not yet authorized**.
 
-There are **19 unconditional unresolved fields** across the integrated campaign freeze and the authoritative TNC-v2 precollection freeze.
+There are **16 unconditional unresolved fields** across the integrated campaign freeze and the authoritative TNC-v2 precollection freeze.
 
 ## Protected study
 
@@ -25,7 +25,7 @@ Do not sacrifice this design to keep an optional logger module alive.
 
 ## Blocker group 1 — TNC field/laboratory pilot
 
-Nine TNC-v2 precollection items are still unresolved:
+Eight TNC-v2 precollection items are still unresolved:
 
 1. campaign start date;
 2. campaign end date;
@@ -34,10 +34,11 @@ Nine TNC-v2 precollection items are still unresolved:
 5. core diameter;
 6. core depth;
 7. maximum collection-to-preservation time;
-8. preservation method;
-9. assay-batch randomization rule.
+8. preservation method.
 
-These must come from response-independent field/laboratory pilot work, not from future TNC or meadow outcomes.
+The assay-batch randomization rule is now frozen before HPLC results are opened.
+
+These eight remaining items must come from response-independent field/laboratory pilot work, not from future TNC or meadow outcomes.
 
 ## Blocker group 2 — final four-bay execution freeze
 
@@ -47,9 +48,9 @@ Still required:
 - authoritative TNC baseline calendar;
 - paired fixed-transect baseline calendar;
 - preservation capacity for the planned core count;
-- HPLC primary-assay capacity for the planned core count;
-- frozen TNC-v2 primary analysis code;
-- frozen node-level uncertainty code.
+- HPLC primary-assay capacity for the planned core count.
+
+The TNC-v2 primary model and water-body-stratified node-bootstrap uncertainty code are now frozen in `field/tnc_v2_primary_analysis_freeze.json`.
 
 ## Blocker group 3 — optional forcing-module decision
 
