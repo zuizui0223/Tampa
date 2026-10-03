@@ -20,6 +20,8 @@ def main():
     a=ap.parse_args()
 
     x=json.loads(Path(a.pilot).read_text())
+    pilot_source=str(Path(a.pilot))
+    raw_pilot_provenance=x.get("raw_pilot_provenance")
     errors=[]
     pending=[]
 
@@ -84,6 +86,8 @@ def main():
           "pending_fields":sorted(set(pending)),
           "errors":[],
           "copy_to_precollection_freeze":None,
+          "pilot_source":pilot_source,
+          "raw_pilot_provenance":raw_pilot_provenance,
           "claim_boundary":"Incomplete pilot is a logistics/method-development state, not ecological evidence."
         }
     else:
@@ -175,6 +179,8 @@ def main():
           "pending_fields":[],
           "errors":errors,
           "copy_to_precollection_freeze":copy if not errors else None,
+          "pilot_source":pilot_source,
+          "raw_pilot_provenance":raw_pilot_provenance,
           "claim_boundary":"Pilot pass validates method/field feasibility only; it does not support the ecological TNC hypothesis."
         }
 
