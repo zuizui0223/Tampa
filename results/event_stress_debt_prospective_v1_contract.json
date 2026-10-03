@@ -185,7 +185,13 @@
       "analysis_code": "analysis/71_dynamic_reserve_future_diagnostic.py",
       "analysis_freeze": "field/dynamic_reserve_future_analysis_freeze.json",
       "uncertainty": "10,000-replicate water-body-stratified stable-node bootstrap; seed 20261006; two-sided percentile 95% interval",
-      "replication_gate": ">=30 complete core-three nodes and >=8 complete nodes in each of Old, Middle and Lower Tampa Bay; below this gate the secondary diagnostic is non-estimable rather than rescued."
+      "replication_gate": ">=30 complete core-three nodes and >=8 complete nodes in each of Old, Middle and Lower Tampa Bay; below this gate the secondary diagnostic is non-estimable rather than rescued.",
+      "measurement_validity_gate": {
+        "matched_anchor_rule": "Pre and post node-level TNC summaries must be built from the same three frozen q25/q50/q75 anchor neighborhoods using distinct non-overlapping core offsets.",
+        "node_qc_rule": "Each included node must pass the frozen TNC sample/assay QC required by the authoritative TNC-v2 method and execution manifests.",
+        "assay_batch_round_rule": "Pre/post sampling round must not be perfectly confounded with HPLC assay batch; otherwise the dynamic diagnostic is non-estimable.",
+        "rationale": "A temporal reserve trajectory cannot be distinguished from spatial-core mismatch or round-specific analytical bias without these gates."
+      }
     }
   },
   "relationship_to_otb_temperature_pilot": {
@@ -232,7 +238,8 @@
     "Because the primary model controls water body, network-scale support requires node-level exposure variation within at least two bays; a simple OTB-versus-MTB-versus-LTB exposure contrast is not accepted as the mechanism coefficient.",
     "Pre/post TNC sampling is itself a potential intervention. Post-exposure cores must be spatially separated from pre-exposure disturbance, and the combined six-core footprint must remain outside the permanent monitoring unit under a frozen cumulative disturbance limit.",
     "Confirmatory event-to-reserve inference requires pre/post TNC samples 39-45 days apart so natural seasonal reserve change is not confounded with highly variable sampling intervals.",
-    "The reserve-change diagnostic conditions on current post-exposure TNC; it asks whether recent reserve trajectory adds information beyond current reserve level, not merely whether high post-TNC predicts the future."
+    "The reserve-change diagnostic conditions on current post-exposure TNC; it asks whether recent reserve trajectory adds information beyond current reserve level, not merely whether high post-TNC predicts the future.",
+    "The reserve-trajectory diagnostic is interpretable only after matched-anchor, node-level TNC QC and non-confounded assay-batch/round gates pass; otherwise it is non-estimable."
   ],
   "co_event_confounding_boundary": {
     "issue": "Hot-fresh periods can co-occur with rainfall, turbidity/cloud-driven low light, freshwater plumes and other event processes. A supported temperature-salinity association therefore does not uniquely identify the proximate physiological driver.",
