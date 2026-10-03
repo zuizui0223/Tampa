@@ -45,7 +45,8 @@ Frozen future design:
 
 - `results/clonal_state_prospective_v2_contract.json` — **authoritative four-bay outcome-bearing primary**
 - `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md`
-- v1 contract/protocol retained for provenance only
+- provenance only: `results/clonal_state_prospective_v1_contract.json`
+- provenance only: `docs/CLONAL_STATE_SAMPLING_PROTOCOL_V1.md`
 
 ### Biological hypothesis
 
