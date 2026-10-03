@@ -7,19 +7,16 @@
     "field/tnc_v2_precollection_freeze.json",
     "results/integrated_field_campaign_v1_contract.json"
   ],
-  "pending_count": 19,
+  "pending_count": 16,
   "pending_fields": [
     "event_module_intent",
     "final_four_bay_tnc_nodes_by_bay",
     "four_bay_authoritative_tnc_baseline_calendar",
     "four_bay_baseline_transect_calendar",
     "hplc_primary_assay_capacity_for_planned_core_samples",
-    "node_level_uncertainty_code_frozen",
     "optical_attribution_intent",
     "optical_module_intent",
     "preservation_capacity_for_planned_core_samples",
-    "tnc_v2_primary_analysis_code_frozen",
-    "tnc_v2_precollection.assay_batch_randomization_rule",
     "tnc_v2_precollection.campaign_end_date",
     "tnc_v2_precollection.campaign_start_date",
     "tnc_v2_precollection.core_depth_cm",
@@ -42,7 +39,7 @@
     "optical_attribution": "Secondary only; may be disabled without invalidating an otherwise confirmatory optical primary.",
     "hydrodynamic": "Separate module; not a prerequisite for this campaign."
   },
-  "current_decision": "No outcome-bearing field collection is authorized yet. Resolve TNC-v2 pilot/geometry/preservation items, final four-bay node/calendar manifests, assay/preservation capacity, analysis-code freeze and optional-module intents before deployment.",
+  "current_decision": "No outcome-bearing field collection is authorized yet. Primary TNC analysis/uncertainty code and HPLC batch randomization are frozen; resolve the remaining 16 node/calendar/capacity and response-independent field/laboratory pilot fields before deployment.",
   "claim_boundary": [
     "Readiness status is logistics/design evidence, not ecological evidence.",
     "Do not populate resource fields from assumptions or inferred equipment availability.",
