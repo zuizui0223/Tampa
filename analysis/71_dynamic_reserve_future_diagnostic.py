@@ -20,7 +20,7 @@ MAX_INTERVAL=45
 
 REQ={
  "node_id","water_body","tnc_pre","tnc_post","pre_tnc_date","post_tnc_date",
- "baseline_frequency_post","future_frequency"
+ "baseline_frequency_post","future_frequency","pre_post_anchor_match_pass","tnc_node_qc_pass"
 }
 
 def design(df:pd.DataFrame):
@@ -76,11 +76,16 @@ def main():
     df["interval_days"]=(df["post_tnc_date"]-df["pre_tnc_date"]).dt.days
     for c in ["tnc_pre","tnc_post","baseline_frequency_post","future_frequency"]:
         df[c]=pd.to_numeric(df[c],errors="coerce")
+    for c in ["pre_post_anchor_match_pass","tnc_node_qc_pass"]:
+        if df[c].dtype != bool:
+            df[c]=df[c].astype(str).str.lower().map({"true":True,"false":False,"1":True,"0":False})
 
     valid=(
       df["water_body"].isin(BAYS)
       & df["node_id"].notna()
       & df["interval_days"].between(MIN_INTERVAL,MAX_INTERVAL,inclusive="both")
+      & (df["pre_post_anchor_match_pass"]==True)
+      & (df["tnc_node_qc_pass"]==True)
       & df[["tnc_pre","tnc_post","baseline_frequency_post","future_frequency"]].notna().all(axis=1)
     )
     d=df.loc[valid].copy()
@@ -95,7 +100,7 @@ def main():
       "secondary":True,
       "model":"future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body",
       "focal_coefficient":"delta_tnc_42d",
-      "delta_definition":"tnc_post - tnc_pre",
+      "delta_definition":"tnc_post - tnc_pre; both node medians must come from the same three frozen q25/q50/q75 anchor neighborhoods using distinct non-overlapping cores",
       "eligible_nodes":int(len(d)),
       "nodes_by_water_body":{b:int(counts[b]) for b in BAYS},
       "temporal_pairing_days":[MIN_INTERVAL,MAX_INTERVAL],
@@ -104,7 +109,9 @@ def main():
       "classification":"nonestimable" if not gate else None,
       "claim_boundary":[
         "Secondary temporal site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay static TNC primary.",
-        "Support weakens a purely time-invariant node-quality explanation but does not remove time-varying common causes or TNC measurement error.",
+        "Support weakens a purely time-invariant node-quality explanation but does not remove time-varying common causes or residual TNC measurement error.",
+        "Nodes enter only when pre/post TNC come from the same frozen anchor neighborhoods and pass node-level TNC QC; spatially unmatched pre/post medians are not interpreted as reserve trajectory.",
+        "If assay batch is perfectly confounded with pre/post round at the study level, this diagnostic must be declared non-estimable upstream rather than interpreted as temporal reserve change.",
         "Binary reappearance is not an outcome."
       ]
     }
