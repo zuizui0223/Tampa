@@ -47,7 +47,9 @@ assert "four-level factor" in clonal2["primary_analysis"]["required_controls"][-
 assert "three water-body indicators" in clonal2["design_precision_gate"]["planning_model_terms"]
 assert clonal2["design_precision_gate"]["approximate_detectable_partial_r"]["n_36"]==0.4739779676
 assert clonal2["design_precision_gate"]["approximate_detectable_partial_r"]["n_41"]==0.4433248073
-assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["status"]=="four_bay_baseline_preflight_pending"
+assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["status"]=="anchor_level_quantitative_diagnostic_feasible"
+assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["feasibility"]["eligible_nodes"]==38
+assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["feasibility"]["passed"] is True
 assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["frozen_feasibility_gate"]["minimum_nodes_with_three_distinct_quantitative_anchors"]==36
 assert clonal2["secondary_analysis"]["within_transect_anchor_diagnostic"]["frozen_feasibility_gate"]["minimum_nodes_per_bay"]==6
 assert "prespecified_context_extension" not in clonal2
