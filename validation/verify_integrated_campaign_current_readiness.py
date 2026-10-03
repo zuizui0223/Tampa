@@ -34,4 +34,10 @@ assert canon["protected_primary"]["confirmatory_minimum_total"]==36
 assert canon["protected_primary"]["confirmatory_minimum_per_bay"]==6
 assert "No outcome-bearing field collection is authorized yet" in canon["current_decision"]
 
+tnc_freeze=json.loads((ROOT/"field/tnc_v2_precollection_freeze.json").read_text())
+batch_rule=tnc_freeze["fields_to_freeze_before_first_outcome_bearing_core"]["assay_batch_randomization_rule"]
+assert "joint batch manifest" in batch_rule
+assert "not perfectly confounded with HPLC batch" in batch_rule
+assert "dynamic reserve-trajectory diagnostic is non-estimable" in batch_rule
+
 print("Tampa current integrated readiness snapshot: OK")
