@@ -1,0 +1,42 @@
+{
+  "schema": "tampa.dynamic_reserve_future_analysis_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "script_path": "analysis/71_dynamic_reserve_future_diagnostic.py",
+  "script_blob_sha1": "b91370109a0e10b9611cbc97e8c396ca57aa2342",
+  "role": "secondary temporal site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay static TNC primary",
+  "geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay",
+    "Lower Tampa Bay"
+  ],
+  "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body",
+  "delta_definition": "tnc_post - tnc_pre",
+  "focal_coefficient": "delta_tnc_42d",
+  "temporal_pairing_days": [
+    39,
+    45
+  ],
+  "replication_gate": {
+    "minimum_total": 30,
+    "minimum_per_bay": 8
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node bootstrap",
+    "repetitions": 10000,
+    "seed": 20261006,
+    "interval": "two-sided percentile 95% CI",
+    "valid_replicate_requirement": ">=95%"
+  },
+  "support_rule": {
+    "supported": "95% CI entirely above 0",
+    "contradicted_direction": "95% CI entirely below 0",
+    "unsupported": "95% CI overlaps 0",
+    "below_gate": "non-estimable secondary diagnostic"
+  },
+  "no_rescue": [
+    "Do not drop tnc_post, baseline_frequency_post or water_body after inspection.",
+    "Do not widen the 39-45 day pre/post TNC interval after inspection.",
+    "Do not use this diagnostic to rescue a null authoritative four-bay static TNC primary."
+  ]
+}
