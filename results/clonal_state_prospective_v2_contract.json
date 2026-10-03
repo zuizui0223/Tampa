@@ -194,12 +194,22 @@
       "interpretation": "TNC and meristem density represent distinct candidate axes: energetic resistance versus regenerative capacity."
     },
     "within_transect_anchor_diagnostic": {
-      "status": "four_bay_baseline_preflight_pending",
+      "status": "anchor_level_quantitative_diagnostic_feasible",
       "preflight": "analysis/62_tnc_anchor_bb_four_bay_preflight.py",
-      "planned_result": "results/tnc_anchor_bb_four_bay_preflight_v1.json",
+      "feasibility_source": "results/tnc_anchor_bb_four_bay_preflight_v1.json",
       "frozen_feasibility_gate": {
         "minimum_nodes_with_three_distinct_quantitative_anchors": 36,
         "minimum_nodes_per_bay": 6
+      },
+      "feasibility": {
+        "eligible_nodes": 38,
+        "by_water_body": {
+          "Old Tampa Bay": 8,
+          "Middle Tampa Bay": 10,
+          "Lower Tampa Bay": 12,
+          "Boca Ciega Bay": 8
+        },
+        "passed": true
       },
       "geography": [
         "Old Tampa Bay",
