@@ -3,105 +3,130 @@
 ## Azores — state-dependent mobility gating
 
 **Completed**
-- seed EOG clue separated from ecological claim;
-- Europe-wide public eel panel audited;
+- EOG clue separated from ecological claim;
+- Europe-wide eel panel audited;
 - exact Durif cohort identified;
-- project-stratified and project-fixed stage analyses implemented;
+- behavioural migration initiation reconstructed from six compatible public projects;
 - body-size and release-timing robustness implemented;
-- external within-landscape Dutch barrier confirmation protocol and schema gate implemented.
+- Dutch consecutive-barrier confirmation protocol and schema gate implemented.
 
-**Current developmental result**
-- project-fixed ordinal FIII -> FIV -> FV OR: **1.89** per stage;
-- 95% CI: **1.49–2.38**;
-- after project-year + body length + release timing:
-  - OR **1.74**
-  - 95% CI **1.37–2.22**
-  - p approximately **7.2e-6**;
-- project heterogeneity is strong.
+**Robust developmental internal-state result**
+- 575 exact-stage FIII/FIV/FV eels represented in processable migration tables;
+- raw migration initiation: FIII **61.7%**, FIV **79.4%**, FV **87.8%**;
+- project-year/body-length/release-timing adjusted initiation OR per Durif stage = **1.99**;
+- 95% CI **1.49–2.66**, p approximately **3.2e-6**;
+- leave-one-project-out OR range **1.67–2.26**, every 95% interval >1;
+- final successful-migrant endpoint also carries a robust stage signal.
 
-**Interpretation**
-- internal migratory readiness signal: supported developmentally;
-- universal stage × landscape-resistance law: not yet confirmed.
+**Secondary heterogeneous result**
+- pooled initiator-only latency multiplier per stage = **0.75**, 95% CI **0.60–0.93**;
+- this is **not project-robust**: removing the 2015 Scheldt project gives approximately **1.01**, so migration timing is not a main claim.
 
-**Next decisive input**
-- DANS Dutch consecutive-barrier data DOI 10.17026/LS/WTSUNG;
-- run analysis/08_dutch_barrier_confirmation_gate.py after download.
+**Supported biological statement**
+> Capture-time migratory readiness robustly predicts whether later directed migration is expressed.
+
+**Unresolved novelty target**
+> Does barrier permeability / hydrological opportunity control how internal readiness is translated into realised movement?
+
+**Next decisive test**
+- Dutch consecutive-barrier data DOI 10.17026/LS/WTSUNG;
+- run the frozen confirmation schema gate when the archive is accessible.
 
 ---
 
-## Louisiana — within-home-range micro-niche tracking
+## Louisiana — within-home-range hydrological state regulation
 
 **Completed**
-- EOG detection anomaly separated from ecological claim;
-- Lake Erie independent design frozen before file-level response analysis;
-- individual bird fixed as the biological replication unit;
-- SRI/state-retention metric implemented;
-- schema gate implemented;
-- South Carolina 2026 telemetry added as broad-relocation boundary/replication candidate.
+- EOG propagation anomaly separated from ecological claim;
+- independent Lake Erie King Rail archive reconstructed without repairing malformed source IDs;
+- 190 matched used/local-random events from 10 birds;
+- individual bird fixed as the replication unit;
+- SRI and time-ordered state-retention analyses implemented;
+- flooded-habitat robustness implemented;
+- hydrological availability-coupling analysis implemented;
+- South Carolina same-species relocation boundary and Godwit cross-taxon generality paths added.
 
-**Current hypothesis**
-> resident birds may move geographically inside a familiar home range so that experienced microhabitat varies less than local time-matched availability.
+**Independent Lake Erie result**
 
-**Current limitation**
-- Zenodo 6604660 is publicly cited by the source article, but its physical file list has not been resolved in the current execution environment;
-- therefore no SRI result is yet claimed.
+State Retention Index:
+- **10/10 birds positive**;
+- median SRI **0.886**;
+- sign test **p = 0.00098**.
 
-**Next decisive input**
-- actual Lake Erie archive files containing individual/event/used-random/water-depth linkage;
-- then run analysis/04_state_fidelity_gate.py and analysis/05_state_retention_index.py.
+Time-ordered state retention:
+- **10/10 birds positive**;
+- median retention **0.658**;
+- all 10 individual randomization tests p < 0.05.
 
-**Independent boundary**
-- South Carolina King Rail telemetry shows broad seasonal relocation when habitat conditions/management change; raw data are currently by request rather than an open archive.
+Hydrological availability coupling:
+- used-depth response to local available depth: slope **0.162**;
+- event-matched pseudo-used null slope: approximately **1.001**;
+- coupling reduction: **83.8%**;
+- **10/10 birds** below their own null median;
+- **10/10 birds** individual p < 0.05.
+
+Flooded-only robustness:
+- conditional flooded availability: slope **0.145**, coupling reduction **85.5%**;
+- all retained points flooded: slope **0.180**, coupling reduction **82.0%**.
+
+**Supported biological statement**
+> King Rails strongly damp temporal hydrological variation in the microhabitat they actually use relative to nearby time-matched availability.
+
+This is stronger than one-time shallow-water selection.
+
+**Boundary**
+Separate UTM coordinate files lack verified event/date keys. Do not claim that a measured geographic displacement itself causes the buffering.
+
+**Next decisive test**
+- external replication/generalization of environmental-state regulation;
+- open Godwit wet/dry-season GPS + habitat panel is the current executable cross-taxon route;
+- South Carolina King Rail is the same-species broad-relocation boundary.
 
 ---
 
 ## Tampa — buffered persistence under quantitative degradation
 
 **Completed**
-- retrospective state decoupling established;
-- Tampa positioned as the third independent ecological programme;
-- TNC selected as first decisive prospective mechanism test;
-- Boca Ciega added prospectively before outcome-bearing sampling;
-- four-bay clonal_state_prospective_v2 contract frozen;
-- precollection freeze schema added;
-- field collection manifest added;
-- fail-closed baseline validator added.
+- retrospective binary–quantitative state decoupling established and externally reproduced;
+- simple retrospective mechanism families exhausted under frozen stop rules;
+- rhizome TNC selected as the first decisive prospective mechanism test;
+- Boca Ciega added before future outcome-bearing sampling;
+- four-bay prospective TNC v2 contract frozen;
+- precollection freeze, field manifest and fail-closed baseline validator implemented.
 
-**Four-bay planning frame**
-- Old Tampa Bay: 8 nodes;
+**Four-bay prospective frame**
+- Old Tampa Bay: 8 recent Thalassia-positive nodes;
 - Middle Tampa Bay: 11;
 - Lower Tampa Bay: 14;
 - Boca Ciega Bay: 8;
-- total planning frame: **41**.
+- total planning frame: **41 nodes**.
 
 **Confirmatory gate**
 - >=36 analyzable nodes;
 - >=6 per bay;
-- <=28-day synchronized campaign;
-- baseline within +/-14 days;
+- one <=28-day synchronized campaign;
+- paired baseline survey within +/-14 days;
 - >=3 valid cores per node;
-- one frozen HPLC TNC method.
+- one frozen HPLC TNC workflow.
 
-**Current hard stop**
-The validator intentionally returns STOP until the response-independent pilot freezes:
-- rhizome tissue class;
-- minimum transect offset;
-- core diameter;
-- core depth;
-- preservation time;
-- preservation method;
-- assay-batch randomization rule;
-- campaign dates.
+**Supported current statement**
+> Coarse foundation-species presence can persist while quantitative meadow state deteriorates.
 
-**Next decisive input**
-- response-independent Thalassia tissue/HPLC pilot + field/logistics freeze.
+**Unresolved mechanism**
+No hidden buffer has yet been shown prospectively to predict future state.
+
+**Next decisive test**
+- response-independent Thalassia tissue/HPLC pilot;
+- freeze tissue class, core geometry, preservation and campaign dates;
+- execute four-bay baseline TNC campaign;
+- open the future quantitative endpoint only after baseline/QC/model freeze.
 
 ---
 
-# Current order of work
+# Current work order
 
-1. **Azores:** obtain/run Dutch open barrier dataset confirmation.
-2. **Louisiana:** resolve Lake Erie archive file schema and compute per-bird SRI.
-3. **Tampa:** complete precollection pilot/freeze, then execute four-bay TNC campaign.
+1. **Louisiana:** external generality/replication after the strong independent Lake Erie hydrological-buffering result.
+2. **Azores:** Dutch within-landscape stage × barrier/opportunity confirmation.
+3. **Tampa:** complete response-independent precollection pilot/freeze and execute four-bay TNC prospective study.
 
-These are three separate ecological papers. Any synthesis remains secondary.
+These are three separate ecological papers. Any cross-system synthesis remains secondary.
