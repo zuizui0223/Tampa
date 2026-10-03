@@ -37,6 +37,7 @@
       "simultaneous": true
     }
   },
+  "priority_boundary": "Scientific priority under a one-module resource constraint is TNC-v2 > optical DLI > event hot-fresh. This ordering does not override feasibility: event may proceed alone if optical cannot meet its own full gate.",
   "protected_primary": {
     "minimum_cores_at_exact_tnc_confirmatory_floor_tnc_only": 108,
     "minimum_cores_full_planning_frame_tnc_only": 123,
@@ -66,6 +67,5 @@
     }
   },
   "schema": "tampa.field_resource_scenario_requirements_v1",
-  "status": "response_independent_resource_envelope",
-  "priority_boundary": "Scientific priority under a one-module resource constraint is TNC-v2 > optical DLI > event hot-fresh. This ordering does not override feasibility: event may proceed alone if optical cannot meet its own full gate."
+  "status": "response_independent_resource_envelope"
 }
