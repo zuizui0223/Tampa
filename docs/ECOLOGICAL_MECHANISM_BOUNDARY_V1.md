@@ -158,13 +158,14 @@ This rules against the tested coarse summaries, not against short stress pulses.
 
 The data therefore favor neither a single serial cascade nor a demonstrated long-memory mechanism.
 
-The strongest unresolved mechanism questions are now:
+The strongest unresolved mechanism questions are now ordered consistently with the prospective field programme:
 
-1. does below-ground reserve explain persistence beyond current above-ground state?
-2. does short-timescale physical stress explain future quantitative change?
-3. does directly measured canopy attenuation buffer local hydrodynamic exposure and predict future quantitative persistence?
+1. does below-ground reserve state predict future quantitative persistence beyond current above-ground state?
+2. does directly measured within-canopy light explain short-term reserve change?
+3. does node-scale hot-fresh event exposure explain reserve depletion at the frozen temporal scale?
+4. does directly measured canopy flow attenuation provide a hydrodynamic self-buffer and predict future quantitative persistence?
 
-All three require a new measurement layer.
+All four require genuinely new measurement layers. This ordering is prospective resource priority, not current evidentiary support.
 
 ## Community-continuity results are state ecology, not mechanism identification
 
@@ -180,11 +181,13 @@ The mechanism program now follows `docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`.
 
 Priority order:
 
-1. **Below-ground reserve / clonal state**
-2. **Node-scale high-frequency temperature, salinity and PAR**
-3. **Hydrodynamic exposure / residence time**
-4. **Canopy / epiphyte light microenvironment**
+1. **Below-ground reserve / regenerative state — four-bay TNC v2**
+2. **Direct within-canopy optical DLI / microenvironment**
+3. **Node-scale hot-fresh event stress — temperature + salinity**
+4. **Direct hydrodynamic canopy engineering**
 5. **Acute disturbance / disease**
+
+This is synchronized with the authoritative integrated campaign. PAR is no longer bundled into the generic event-stress label: direct optical DLI and hot-fresh temperature/salinity are separate frozen primaries.
 
 The open prospective Old Tampa Bay continuous-temperature branch is allowed because it freezes a future 2027 biological endpoint before that response exists.
 
