@@ -1,0 +1,49 @@
+{
+  "schema": "tampa.integrated_campaign_readiness_v2.canonical_current",
+  "frozen_on": "2026-10-03",
+  "status": "STOP_RESOURCE_FREEZE_INCOMPLETE",
+  "source_files": [
+    "field/integrated_campaign_resource_freeze.json",
+    "field/tnc_v2_precollection_freeze.json",
+    "results/integrated_field_campaign_v1_contract.json"
+  ],
+  "pending_count": 16,
+  "pending_fields": [
+    "event_module_intent",
+    "final_four_bay_tnc_nodes_by_bay",
+    "four_bay_authoritative_tnc_baseline_calendar",
+    "four_bay_baseline_transect_calendar",
+    "hplc_primary_assay_capacity_for_planned_core_samples",
+    "optical_attribution_intent",
+    "optical_module_intent",
+    "preservation_capacity_for_planned_core_samples",
+    "tnc_v2_precollection.campaign_end_date",
+    "tnc_v2_precollection.campaign_start_date",
+    "tnc_v2_precollection.core_depth_cm",
+    "tnc_v2_precollection.core_diameter_cm",
+    "tnc_v2_precollection.horizontal_rhizome_tissue_class",
+    "tnc_v2_precollection.maximum_collection_to_preservation_minutes",
+    "tnc_v2_precollection.minimum_perpendicular_transect_offset_m",
+    "tnc_v2_precollection.preservation_method"
+  ],
+  "protected_primary": {
+    "name": "four-bay rhizome TNC -> future quantitative Thalassia change",
+    "planning_nodes": 41,
+    "confirmatory_minimum_total": 36,
+    "confirmatory_minimum_per_bay": 6,
+    "rule": "Do not begin outcome-bearing collection until the authoritative TNC-v2 precollection freeze and integrated unconditional resource fields are complete."
+  },
+  "optional_module_boundary": {
+    "event_stress": "Must be frozen as confirmatory or disabled before outcome-bearing collection. Confirmatory status triggers additional simultaneous sensor, calendar, pre/post-TNC and analysis-code requirements.",
+    "optical": "Must be frozen as confirmatory or disabled before outcome-bearing collection. Confirmatory status triggers additional simultaneous PAR, calendar, pre/post-TNC and analysis-code requirements.",
+    "optical_attribution": "Secondary only; may be disabled without invalidating an otherwise confirmatory optical primary.",
+    "hydrodynamic": "Separate module; not a prerequisite for this campaign."
+  },
+  "current_decision": "No outcome-bearing field collection is authorized yet. Primary TNC analysis/uncertainty code and HPLC batch randomization are frozen; resolve the remaining 16 node/calendar/capacity and response-independent field/laboratory pilot fields before deployment.",
+  "claim_boundary": [
+    "Readiness status is logistics/design evidence, not ecological evidence.",
+    "Do not populate resource fields from assumptions or inferred equipment availability.",
+    "If optional forcing capacity is insufficient, disable that module before collection rather than degrading the four-bay TNC primary.",
+    "Response-independent sensor and laboratory pilots remain allowed while the campaign is STOP_RESOURCE_FREEZE_INCOMPLETE."
+  ]
+}
