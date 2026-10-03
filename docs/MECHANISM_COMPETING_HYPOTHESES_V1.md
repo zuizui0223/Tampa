@@ -335,6 +335,22 @@ Direct PAR and reserve change are dynamic measurements over a common interval an
 
 However, time-varying turbidity, nutrients, hypoxia and disturbance can still be common causes. A supported primary is therefore a **prospective actual-light / reserve association**, not experimental proof that light or epiphytes are the sole causal driver.
 
+### Conditional physiological escalation: internal aeration / sulfide exclusion
+
+If the frozen actual-DLI -> TNC primary is supported, the next physiological question is predeclared in:
+
+- `docs/OXYGEN_SULFIDE_ESCALATION_V1.md`
+
+Candidate process:
+
+> low irradiance -> reduced internal plant O2 -> greater H2S intrusion into meristem/rhizome tissue -> reserve and/or regenerative-capacity loss.
+
+This pathway is grounded in direct *Thalassia testudinum* oxygen/sulfide studies, but it is not added as another primary to the current campaign.
+
+Water-column DO and porewater sulfide alone are external-context measurements. A strong **aeration-failure** claim requires direct internal meristem/rhizome O2 and/or tissue H2S intrusion measurements in a separately frozen future study.
+
+If the optical primary is null with adequate precision, do not add O2/sulfide variables to rescue it post hoc.
+
 ### No-rescue rule
 
 Do not reopen Secchi windows, ordinal epiphyte categories, low-light thresholds or favorable PAR aggregation after TNC inspection.
