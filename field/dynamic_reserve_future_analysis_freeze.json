@@ -59,13 +59,13 @@
     "paired_change_heterogeneity": "Report sign/range of the three anchor-specific changes as descriptive measurement heterogeneity. Do not invent a concordance threshold after future outcome access to select favorable nodes."
   },
   "design_resolution": {
-    "planning_model_terms": "delta_tnc_42d + tnc_post + baseline_frequency_post + two water-body indicators",
+    "planning_model_terms": "paired_anchor_delta_tnc_42d + tnc_post + baseline_frequency_post + two water-body indicators",
     "approximation": "Gaussian multiple-regression partial-correlation benchmark, two-sided alpha 0.05, 80% power; resolution warning only.",
     "approximate_detectable_partial_r": {
       "n_30": 0.512,
       "n_33": 0.488
     },
-    "interpretation": "The diagnostic is mainly capable of detecting moderate-to-large trajectory information beyond current reserve state. An interval overlapping zero does not establish that smaller trajectory dependence is absent."
+    "interpretation": "The diagnostic is mainly capable of detecting moderate-to-large matched-location trajectory information beyond current reserve state. An interval overlapping zero does not establish that smaller trajectory dependence is absent."
   },
   "measurement_error_boundary": {
     "issue": "tnc_post and paired_anchor_delta_tnc_42d still share the post-exposure measurements, so measurement error in post TNC can induce correlated error in the state-versus-trajectory parameterization.",
