@@ -260,7 +260,14 @@
         "assay_batch_round_rule": "Pre/post sampling round is not perfectly confounded with HPLC assay batch; otherwise this diagnostic is non-estimable."
       },
       "interpretation": "Support means recent reserve trajectory contains information beyond current reserve level and is less compatible with a purely time-invariant node-quality explanation. It does not remove time-varying common causes, residual measurement error or establish hysteresis.",
-      "no_rescue": "Cannot replace or rescue a null authoritative four-bay static TNC primary."
+      "no_rescue": "Cannot replace or rescue a null authoritative four-bay static TNC primary.",
+      "design_resolution": {
+        "approximate_detectable_partial_r": {
+          "n_30": 0.512,
+          "n_33": 0.488
+        },
+        "interpretation": "Secondary diagnostic mainly resolves moderate-to-large partial effects. Unsupported does not establish absence of smaller trajectory dependence."
+      }
     }
   },
   "pre_outcome_freeze_required": [
