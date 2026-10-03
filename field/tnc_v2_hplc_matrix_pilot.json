@@ -1,0 +1,22 @@
+{
+  "schema": "tampa.tnc_v2_hplc_matrix_pilot.v1",
+  "calibration_identity_unambiguous": null,
+  "analytical_blank_below_loq": null,
+  "post_high_standard_carryover_below_loq": null,
+  "standard_recovery_pct": [],
+  "matrix_spike_recovery_pct": [],
+  "technical_duplicate_pairs": [
+    {
+      "pair_id": "example",
+      "tnc_a_mg_g": null,
+      "tnc_b_mg_g": null
+    }
+  ],
+  "extract_calibration_range": [
+    {
+      "extract_id": "example",
+      "all_primary_analytes_in_range": null
+    }
+  ],
+  "note": "Populate only response-independent analytical pilot results. Do not include node future outcomes or ecological contrasts."
+}
