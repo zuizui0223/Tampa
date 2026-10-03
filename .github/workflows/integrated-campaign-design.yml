@@ -35,7 +35,7 @@ jobs:
           python - <<'PY'
           import json
           x=json.load(open("results/integrated_campaign_readiness_v1.json"))
-          assert x["status"] in {"STOP_RESOURCE_FREEZE_INCOMPLETE","READY_CONFIRMATORY_CAMPAIGN"}, x
+          assert x["status"] in {"STOP_RESOURCE_FREEZE_INCOMPLETE","READY_TNC_CONFIRMATORY_CAMPAIGN"}, x
           PY
       - uses: actions/upload-artifact@v4
         if: always()
