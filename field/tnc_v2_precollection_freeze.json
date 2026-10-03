@@ -28,7 +28,7 @@
     "core_depth_cm": null,
     "maximum_collection_to_preservation_minutes": null,
     "preservation_method": null,
-    "assay_batch_randomization_rule": "Before HPLC results are inspected, assign blinded core IDs to analytical batches using reproducible blocked randomization so each batch spans available water bodies and campaign dates; distribute a node's three cores across at least two batches when batch capacity permits; include the same calibration/QC standard scheme in every batch. Freeze the batch manifest before primary carbohydrate values are opened."
+    "assay_batch_randomization_rule": "Before HPLC results are inspected, assign blinded core IDs to analytical batches using reproducible blocked randomization so each batch spans available water bodies and campaign dates; distribute a node's three cores across at least two batches when batch capacity permits; include the same calibration/QC standard scheme in every batch. If event/optical modules generate paired pre/post TNC, hold preserved material until both rounds can be assigned under one joint batch manifest and ensure pre/post sampling round is not perfectly confounded with HPLC batch; where feasible every trajectory-analysis batch contains samples from both rounds. Freeze the complete batch manifest before primary carbohydrate values are opened. If unavoidable laboratory constraints leave pre/post round perfectly confounded with batch, the dynamic reserve-trajectory diagnostic is non-estimable but this does not invalidate the separately frozen static TNC-v2 primary if its own assay QC passes."
   },
   "rule": "Validator must STOP while any precollection field is null. Fill only from response-independent pilot/logistics before first outcome-bearing core."
 }
