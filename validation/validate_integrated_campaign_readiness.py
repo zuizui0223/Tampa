@@ -114,6 +114,9 @@ def main():
     ]
     pending=[k for k in unconditional if fields.get(k) in (None,"","PENDING")]
 
+    event_intent=fields.get("event_module_intent")
+    optical_intent=fields.get("optical_module_intent")
+    attr_intent=fields.get("optical_attribution_intent")
 
     if event_intent=="confirmatory":
         for k in (
