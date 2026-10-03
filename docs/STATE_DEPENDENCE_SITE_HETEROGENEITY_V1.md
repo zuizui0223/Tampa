@@ -81,6 +81,85 @@ Examples already frozen prospectively:
 - event exposure -> within-node reserve depletion;
 - direct physical canopy engineering -> future quantitative state.
 
+## State-augmentation hypothesis: ecological history as a slow state
+
+The Tampa evidence suggests a more specific alternative to treating long history itself as the mechanism.
+
+A long-lived foundation-species system can look history-dependent when the variables currently observed are an incomplete description of ecological state.
+
+For example, repeated past forcing may alter:
+
+- rhizome carbohydrate reserve;
+- meristem / apex capacity;
+- canopy-engineered physical conditions;
+- local community functional structure.
+
+These quantities can persist longer than an individual stress event and can therefore carry information from the past into the future.
+
+This motivates the **state-augmentation hypothesis**:
+
+> apparent ecological memory in a coarse monitoring state may arise because past forcing is stored in slow biological or ecosystem state variables that are omitted from the observation model.
+
+This is not a claim that every historical effect is hidden-state memory. Tampa already shows that persistent transect heterogeneity can also generate apparent long-history prediction.
+
+### Prospective evidence ladder
+
+The existing prospective programme can distinguish several cases without adding another post-hoc primary test.
+
+1. **Static reserve state adds prospective information.**  
+   If baseline rhizome TNC predicts future quantitative *Thalassia* change beyond current above-ground state and water body, the measured current state was incomplete.
+
+2. **Within-transect reserve heterogeneity predicts local future state.**  
+   If within-node-centered anchor TNC predicts future Braun-Blanquet state at the matched meter mark with node fixed effects, a purely transect-level site template becomes less sufficient.
+
+3. **Recent reserve trajectory adds information beyond current reserve stock.**  
+   If matched-anchor `paired_anchor_delta_tnc_42d` predicts the future after current post-TNC is represented, one instantaneous reserve measurement is itself not a sufficient state descriptor. Two meadows with the same measured reserve stock can have different near-future risks depending on the direction from which they arrived.
+
+4. **Measured forcing updates the slow state.**  
+   If direct optical DLI or the frozen event-stress exposure predicts pre/post TNC change, an external process is linked prospectively to movement of the hidden biological state.
+
+Taken together, these steps would support a much narrower and more mechanistic statement than "the meadow remembers":
+
+> past environmental exposure can be retained in a measurable slow state whose current level and/or recent trajectory carries forward to later quantitative persistence.
+
+### Interpretation matrix
+
+- **History signal disappears under node identity; TNC predicts future:** consistent with persistent spatial heterogeneity plus a measurable slow reserve state; do not infer a long occupancy-memory horizon.
+- **TNC predicts future; reserve trajectory does not:** current reserve stock may be a sufficient measured summary of the tested recent reserve history.
+- **TNC and reserve trajectory both predict future:** consistent with dynamic state dependence; current reserve stock alone is incomplete.
+- **Within-node anchor TNC predicts future after node fixed effects:** weakens a purely transect-level site-template explanation, while persistent meter-mark microhabitat remains possible.
+- **Forcing predicts reserve change and reserve predicts future state:** consistent with a forcing -> slow-state update -> delayed quantitative consequence chain; still not formal mediation.
+- **TNC and trajectory are unsupported with adequate precision:** do not keep calling the retrospective history signal biological memory; move to other hidden states or site-template measurements.
+
+### Markov boundary
+
+Do not call the observed Tampa process "non-Markovian" merely because old observations predict new observations.
+
+A process can appear non-Markovian when the measured state vector is incomplete.
+
+The relevant question is instead:
+
+> **does augmenting the observed state with directly measured slow variables remove or reduce the need for historical predictors?**
+
+The current programme does not add a third history-residual significance test after outcome access. The state-augmentation idea is evaluated through the already frozen primary and secondary prospective measurements and their interpretation matrix.
+
+### General ecological implication
+
+This distinction is potentially useful beyond seagrass.
+
+In long-lived forests, marshes, reefs, kelp beds and other foundation-species systems, coarse occupancy can remain stable while slow internal or engineered states change.
+
+Thus an apparent lag between forcing and occupancy loss may reflect:
+
+1. persistent site heterogeneity;
+2. storage of past forcing in slow state variables;
+3. multiple buffers acting at different organizational levels;
+4. or combinations of these.
+
+The ecological task is therefore not to assign a memory duration from the longest predictive lag.
+
+It is to identify **what physical or biological state carries information forward through time**.
+
 ## General methodological proposition
 
 The Tampa audit motivates a broader caution for long-term ecological monitoring:
