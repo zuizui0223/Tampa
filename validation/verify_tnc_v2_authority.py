@@ -20,7 +20,7 @@ assert v2["eligibility"]["geography"]==[
 ]
 assert v2["eligibility"]["planning_target_nodes"]==41
 assert v2["eligibility"]["minimum_confirmatory_analyzable_nodes"]==36
-assert v2["eligibility"]["minimum_confirmatory_nodes_per_bay"]==8
+assert v2["eligibility"]["minimum_confirmatory_nodes_per_bay"]==6
 assert v2["primary_analysis"]["confirmatory_gate"].startswith(">=36 analyzable nodes")
 assert "four-level factor" in v2["primary_analysis"]["required_controls"][-1]
 assert "three water-body indicators" in v2["design_precision_gate"]["planning_model_terms"]
@@ -36,7 +36,7 @@ assert ad["frozen_feasibility_gate"]["minimum_nodes_per_bay"]==6
 assert freeze["contract"]=="results/clonal_state_prospective_v2_contract.json"
 assert freeze["geography"]==v2["eligibility"]["geography"]
 assert freeze["fixed_rules"]["minimum_primary_nodes_total"]==36
-assert freeze["fixed_rules"]["minimum_primary_nodes_per_bay"]==8
+assert freeze["fixed_rules"]["minimum_primary_nodes_per_bay"]==6
 assert freeze["fixed_rules"]["assay_method"]=="HPLC"
 assert freeze["status"]=="PENDING_RESPONSE_INDEPENDENT_PILOT"
 assert any(v is None for v in freeze["fields_to_freeze_before_first_outcome_bearing_core"].values())
@@ -45,6 +45,7 @@ assert (ROOT/"docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md").exists()
 p=(ROOT/"docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md").read_text()
 assert "authoritative outcome-bearing TNC field protocol" in p
 assert ">=36 analyzable nodes total" in p
+assert ">=6 analyzable nodes in **each** of the four bays" in p
 assert "Boca Ciega Bay" in p
 assert "Do not choose between v1 and v2 after outcomes are known." in p
 
