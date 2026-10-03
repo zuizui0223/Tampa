@@ -39,7 +39,7 @@ Among meadows with similar baseline above-ground frequency/abundance and bay con
 
 ### What would weaken this mechanism
 
-A null primary TNC result under the frozen prospective design weakens **rhizome TNC as the measured reserve explanation** only when the frozen precision gate is met (>=30 analyzable nodes and >=8 per core bay). Below that gate, a null remains a pilot estimate.
+A null primary TNC result under the authoritative four-bay prospective design weakens **rhizome TNC as the measured reserve explanation** only when the frozen precision gate is met (>=36 analyzable nodes total and >=6 per bay). Below that gate, a null remains a pilot/sensitivity estimate.
 
 Secondary clonal traits, soluble sugar alone, starch alone or a nutrient-adjusted metric cannot be selected after outcome access to rescue the primary TNC result.
 
