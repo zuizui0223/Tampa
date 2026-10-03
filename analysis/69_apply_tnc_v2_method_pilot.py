@@ -55,7 +55,8 @@ def main():
     freeze["method_pilot_provenance"]={
       "validation_schema":v.get("schema"),
       "validation_status":v.get("status"),
-      "source_pilot":"field/tnc_v2_method_pilot.json",
+      "source_pilot":v.get("pilot_source","field/tnc_v2_method_pilot.json"),
+      "raw_pilot_provenance":v.get("raw_pilot_provenance"),
       "copied_keys":list(KEYS),
       "rule":"Values copied mechanically from PASS_METHOD_PILOT; no ecological outcome used."
     }
