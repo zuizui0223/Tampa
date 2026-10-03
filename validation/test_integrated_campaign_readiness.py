@@ -84,6 +84,8 @@ def add_forcing(x,event=True,optical=True,attr=False,temp_systems=33):
         f.update({
           "pre_post_core_offset_geometry_frozen":True,
           "maximum_attempted_cores_per_node_across_pre_post_rounds":8,
+          "minimum_pre_post_core_center_separation_cm":20.0,
+          "maximum_cumulative_disturbed_area_cm2_per_node":700.0,
           "core_three_pre_visit_route_calendar":dates(ns,"2027-07-23"),
           "core_three_post_visit_route_calendar":dates(ns,"2027-09-03"),
           "core_three_logger_deployment_calendar":dates(ns,"2027-07-24"),
