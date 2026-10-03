@@ -144,5 +144,16 @@ def main():
       "STOP_MODULE_INTENT_MISMATCH",
     )
 
+    # Calendar rule violations must fail closed even if system counts are adequate.
+    bad=add_forcing(base_resource("confirmatory","disabled","disabled"),True,False,False,33)
+    bf=bad["fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger"]
+    first=next(iter(bf["core_three_logger_retrieval_calendar"]))
+    bf["core_three_logger_retrieval_calendar"][first]="2027-09-20"
+    run_case(
+      "event_calendar_failure",
+      bad,
+      "STOP_MODULE_INTENT_MISMATCH",
+    )
+
 if __name__=="__main__":
     main()
