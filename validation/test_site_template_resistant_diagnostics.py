@@ -21,7 +21,7 @@ def main():
     assert blob_sha(dfreeze["script_path"])==dfreeze["script_blob_sha1"]
     assert blob_sha(afreeze["script_path"])==afreeze["script_blob_sha1"]
     assert dfreeze["uncertainty"]["seed"]==20261006
-    assert "matched_anchor" in " ".join(dfreeze["measurement_validity_gate"]["node_level_requirements"])
+    assert "pre_post_anchor_match_pass" in " ".join(dfreeze["measurement_validity_gate"]["node_level_requirements"])
     assert "perfectly confounded" in dfreeze["measurement_validity_gate"]["assay_batch_round_boundary"]
     assert "<=10%" in dfreeze["measurement_validity_gate"]["analytical_precision_boundary"]
     assert afreeze["uncertainty"]["seed"]==20261007
