@@ -121,6 +121,59 @@ Therefore the present event -> TNC -> future-frequency chain, even if fully supp
 
 See `docs/RESILIENCE_DEBT_BOUNDARY_V1.md`.
 
+## State-versus-trajectory hypothesis
+
+The reserve programme also makes a stronger dynamical prediction than a static "high TNC is good" association.
+
+Consider two meadows with the same current post-exposure rhizome TNC:
+
+- one recently **depleted** reserve to reach that current value;
+- the other recently **maintained or rebuilt** reserve to reach the same current value.
+
+If current reserve level were a sufficient ecological state descriptor, their subsequent quantitative trajectories should not systematically differ after current post-TNC and current above-ground state are represented.
+
+The frozen temporal diagnostic therefore asks:
+
+```text
+delta_tnc_42d = tnc_post - tnc_pre
+
+future_delta_frequency
+  ~ baseline_frequency_post
+  + tnc_post
+  + delta_tnc_42d
+  + water_body
+```
+
+The focal prediction is:
+
+> at the same current post-exposure reserve level, a meadow with a more positive recent reserve trajectory has a more favourable subsequent quantitative trajectory.
+
+This is a concrete form of **trajectory dependence**.
+
+If supported, the ecological implication is not merely that "history matters." It is that the instantaneous measured state is incomplete: the direction from which the system arrived at that state contains additional prospective information.
+
+That would make the Tampa problem more general than monitoring resolution:
+
+> **two foundation-species meadows can occupy the same measured state yet carry different near-future risks because their hidden buffer trajectories differ.**
+
+### What this is not
+
+This diagnostic does **not** by itself establish:
+
+- hysteresis;
+- an alternative stable state;
+- a critical threshold;
+- rate-induced tipping;
+- formal ecological memory as a causal mechanism.
+
+Those ideas require stronger dynamical evidence. In particular, rate-induced tipping concerns the rate of change of an external forcing relative to a system's ability to track a moving state. The Tampa diagnostic instead measures recent change in an internal reserve state.
+
+The narrower wording is deliberate:
+
+> **recent reserve trajectory contains information beyond current reserve level.**
+
+This secondary diagnostic cannot rescue a null authoritative four-bay static TNC primary.
+
 ## Persistent site-template alternative
 
 Stable transect identity explains a large fraction of the retrospective level differences in coarse state.
