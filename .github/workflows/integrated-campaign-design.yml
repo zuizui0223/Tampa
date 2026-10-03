@@ -29,6 +29,8 @@ jobs:
         run: python validation/verify_integrated_campaign_design.py
       - name: Test completed readiness branches
         run: python validation/test_integrated_campaign_readiness.py
+      - name: Verify committed current readiness snapshot
+        run: python validation/verify_integrated_campaign_current_readiness.py
       - name: Evaluate current resource-freeze readiness
         run: |
           python validation/validate_integrated_campaign_readiness.py \
