@@ -191,6 +191,17 @@
         "node_qc_rule": "Each included node must pass the frozen TNC sample/assay QC required by the authoritative TNC-v2 method and execution manifests.",
         "assay_batch_round_rule": "Pre/post sampling round must not be perfectly confounded with HPLC assay batch; otherwise the dynamic diagnostic is non-estimable.",
         "rationale": "A temporal reserve trajectory cannot be distinguished from spatial-core mismatch or round-specific analytical bias without these gates."
+      },
+      "measurement_error_boundary": {
+        "issue": "delta_tnc_42d contains tnc_post, which is also included as a model control. Measurement error and regression-to-the-mean can therefore affect the trajectory coefficient.",
+        "required_reporting": [
+          "node-level dispersion across the valid pre-exposure TNC cores",
+          "node-level dispersion across the valid post-exposure TNC cores",
+          "three anchor-neighborhood pre-to-post TNC changes when paired anchor sampling is valid"
+        ],
+        "paired_anchor_diagnostic": "Report the sign and node-level median of post-minus-pre TNC across the three matched q25/q50/q75 anchor neighborhoods as a measurement-quality diagnostic. It is not an alternative inferential primary.",
+        "interpretation": "A supported delta_tnc_42d coefficient is evidence that recent measured reserve trajectory contains prospective information beyond current measured reserve level. It is not proof that physiological replenishment itself causally improves the future trajectory.",
+        "discrepancy_rule": "If node-level difference-of-medians and matched-anchor reserve-change summaries are qualitatively inconsistent, label the trajectory result measurement-sensitive rather than upgrading the mechanism claim."
       }
     }
   },
