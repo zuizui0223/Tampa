@@ -1,0 +1,33 @@
+{
+  "schema": "tampa.site_template_resistant_diagnostic_family_freeze.v1",
+  "frozen_on": "2026-10-03",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "role": "paper-level multiplicity boundary for the two predeclared secondary site-template-resistant TNC diagnostics",
+  "members": [
+    {
+      "name": "paired_anchor_dynamic_reserve_trajectory",
+      "script": "analysis/71_dynamic_reserve_future_diagnostic.py",
+      "focal_coefficient": "paired_anchor_delta_tnc_42d"
+    },
+    {
+      "name": "within_transect_centered_anchor_TNC",
+      "script": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
+      "focal_coefficient": "within_node_centered_anchor_TNC"
+    }
+  ],
+  "standalone_reporting": "Each member retains its frozen two-sided 95% interval and standalone secondary classification.",
+  "family_claim_rule": {
+    "method": "Bonferroni for two predeclared secondary tests",
+    "per_test_two_sided_alpha": 0.025,
+    "interval": "97.5% two-sided bootstrap interval",
+    "allowed_claim": "A paper-level statement that site-template-resistant TNC evidence is supported requires at least one member's 97.5% family interval entirely in its prespecified positive direction.",
+    "opposite_direction": "A member whose 97.5% family interval is entirely below 0 is family-level contradicted-direction evidence for that member.",
+    "neither": "If neither 97.5% family interval excludes 0 in the positive direction, do not claim family-level support even if one standalone 95% interval is positive."
+  },
+  "no_rescue": [
+    "Do not add a third site-template-resistant diagnostic after future outcomes are opened and retain a two-test correction.",
+    "Do not select whichever diagnostic has the narrower interval and omit the other.",
+    "Neither secondary diagnostic can rescue a null authoritative four-bay static TNC primary.",
+    "Family-level support weakens a purely time-invariant site-template explanation but does not eliminate time-varying common causes, persistent meter-mark microhabitat or TNC measurement error."
+  ]
+}

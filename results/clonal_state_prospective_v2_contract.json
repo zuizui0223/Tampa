@@ -226,7 +226,7 @@
       "predictor": "within_node_centered_anchor_TNC = anchor_TNC - mean(anchor_TNC across the three anchors)",
       "outcome": "future Thalassia Braun-Blanquet score at the same permanent meter mark; sampled focal absence=0, present nonnumeric 'Reported'=quantitatively missing",
       "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
-      "uncertainty": "stable-node cluster bootstrap, resampling the full three-anchor node as one unit; exact code frozen before future outcome access",
+      "uncertainty": "10,000-replicate water-body-stratified stable-node cluster bootstrap, resampling the full three-anchor node as one unit; seed 20261007; two-sided percentile 95% interval",
       "expected_direction": "positive",
       "support_rule": {
         "supported": "two-sided 95% interval entirely above 0",
@@ -234,7 +234,46 @@
         "unsupported": "interval overlaps 0"
       },
       "role": "Secondary spatial site-template-resistant diagnostic; cannot replace or rescue the four-bay node-level primary TNC result.",
-      "site_template_boundary": "Support weakens stable transect-level site-template confounding but does not eliminate persistent meter-mark microhabitat or time-varying local common causes."
+      "site_template_boundary": "Support weakens stable transect-level site-template confounding but does not eliminate persistent meter-mark microhabitat or time-varying local common causes.",
+      "analysis_code": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
+      "analysis_freeze": "field/anchor_tnc_future_bb_analysis_freeze.json",
+      "future_complete_case_gate": ">=36 nodes with exactly three complete quantitative anchors and >=6 such nodes per bay; below this gate the secondary diagnostic is non-estimable and cannot be rescued by changing anchors/outcome coding.",
+      "measurement_validity_gate": {
+        "method_pilot_prerequisite": "Authoritative TNC-v2 response-independent method pilot passes all frozen HPLC recovery/precision/calibration criteria.",
+        "anchor_rule": "Every one of the three frozen anchors must pass sample-level TNC QC; any failed anchor excludes the node from this complete-anchor diagnostic.",
+        "no_replacement": "Do not replace a failed anchor with another meter mark after TNC assay or future BB is observed.",
+        "role": "Ensures the within-node biological contrast is not driven by differential analytical quality."
+      }
+    },
+    "reserve_trajectory_diagnostic": {
+      "status": "predeclared_secondary_temporal_site_template_resistant_diagnostic",
+      "source_contract": "results/event_stress_debt_prospective_v1_contract.json",
+      "analysis_code": "analysis/71_dynamic_reserve_future_diagnostic.py",
+      "analysis_freeze": "field/dynamic_reserve_future_analysis_freeze.json",
+      "geography": [
+        "Old Tampa Bay",
+        "Middle Tampa Bay",
+        "Lower Tampa Bay"
+      ],
+      "reserve_change_definition": "delta_tnc_42d = tnc_post - tnc_pre using the same three frozen q25/q50/q75 anchor neighborhoods and distinct non-overlapping pre/post cores",
+      "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body",
+      "focal_coefficient": "delta_tnc_42d",
+      "expected_direction": "positive",
+      "replication_gate": ">=30 complete nodes and >=8 in each of Old, Middle and Lower Tampa Bay",
+      "measurement_validity_gate": {
+        "matched_anchor_rule": "Pre and post node summaries come from the same frozen anchor neighborhoods.",
+        "method_qc_rule": "Authoritative TNC-v2 response-independent method pilot passes all frozen analytical recovery/precision/calibration criteria and each included node passes TNC QC.",
+        "assay_batch_round_rule": "Pre/post sampling round is not perfectly confounded with HPLC assay batch; otherwise this diagnostic is non-estimable."
+      },
+      "interpretation": "Support means recent reserve trajectory contains information beyond current reserve level and is less compatible with a purely time-invariant node-quality explanation. It does not remove time-varying common causes, residual measurement error or establish hysteresis.",
+      "no_rescue": "Cannot replace or rescue a null authoritative four-bay static TNC primary.",
+      "design_resolution": {
+        "approximate_detectable_partial_r": {
+          "n_30": 0.512,
+          "n_33": 0.488
+        },
+        "interpretation": "Secondary diagnostic mainly resolves moderate-to-large partial effects. Unsupported does not establish absence of smaller trajectory dependence."
+      }
     }
   },
   "pre_outcome_freeze_required": [
@@ -263,7 +302,12 @@
     "36-node / 6-per-bay four-bay confirmatory precision gate",
     "four-bay contemporaneous eligible node list and alternates",
     "four-bay within-transect anchor preflight and cluster-bootstrap code if the frozen feasibility gate passes",
-    "36-total / 6-per-bay v2 confirmatory replication gate"
+    "36-total / 6-per-bay v2 confirmatory replication gate",
+    "within-transect anchor TNC future-BB analysis code/freeze",
+    "anchor diagnostic cluster-bootstrap seed 20261007",
+    "dynamic reserve trajectory analysis code/freeze",
+    "matched pre/post q25/q50/q75 anchor-neighborhood rule for reserve trajectory",
+    "non-confounding of pre/post round with HPLC assay batch for reserve-trajectory interpretation"
   ],
   "claim_boundary": [
     "Prospective observational mechanism test; even a supported result does not by itself prove causal clonal buffering.",
@@ -284,7 +328,8 @@
     "The four-bay revision changes geography/sample-size planning only; assay, timing, core geometry, endpoint and primary predictor remain unchanged from v1.",
     "The four-bay v2 contract is the sole outcome-bearing TNC primary. The three-bay v1 contract is retained for provenance and may not be selected after future outcomes are known.",
     "Boca Ciega Bay was added before future outcome-bearing sampling; it may not be removed from the v2 primary because its future predictor or response is inconvenient.",
-    "If the >=36 total / >=6 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis."
+    "If the >=36 total / >=6 per bay four-bay precision gate fails, a null is pilot/sensitivity evidence and cannot reject the reserve-buffering hypothesis.",
+    "The within-transect TNC diagnostic requires all three frozen anchors to pass authoritative TNC QC; failed anchors are not imputed or post-hoc replaced."
   ],
   "design_precision_gate": {
     "planning_model_terms": "TNC + baseline focal_frequency + baseline Braun-Blanquet state + three water-body indicators",
