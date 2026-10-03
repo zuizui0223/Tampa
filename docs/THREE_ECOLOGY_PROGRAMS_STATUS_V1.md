@@ -148,7 +148,8 @@ The registry is field planning, not current biological eligibility.
 
 ### Confirmatory baseline gate
 - >=36 analyzable nodes;
-- >=8 per bay;
+- >=6 per bay;
+- the six-node per-bay floor is a representation guardrail; the >=36 total-node requirement carries the main precision burden;
 - <=28-day synchronized campaign;
 - paired baseline survey within +/-14 days;
 - >=3 valid cores per node;
