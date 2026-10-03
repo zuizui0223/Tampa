@@ -25,6 +25,8 @@ def main():
     assert "perfectly confounded" in dfreeze["measurement_validity_gate"]["assay_batch_round_boundary"]
     assert "<=10%" in dfreeze["measurement_validity_gate"]["analytical_precision_boundary"]
     assert afreeze["uncertainty"]["seed"]==20261007
+    assert "anchor_tnc_qc_pass" in afreeze["measurement_validity_gate"]["anchor_requirement"]
+    assert "Do not impute" in afreeze["measurement_validity_gate"]["no_imputation"]
     event=json.loads((ROOT/"results/event_stress_debt_prospective_v1_contract.json").read_text())
     clonal=json.loads((ROOT/"results/clonal_state_prospective_v2_contract.json").read_text())
     dyn_contract=event["relationship_to_clonal_tnc_program"]["dynamic_reserve_change_future_diagnostic"]
@@ -68,7 +70,8 @@ def main():
                 baseline=node_base+0.05*a+rng.normal(0,.02)
                 future=baseline+0.01*(tnc-(100+rng.normal(0,.1)))+rng.normal(0,.01)
                 rows.append(dict(node_id=node,water_body=b,anchor_id=f"A{a}",
-                                 baseline_bb_anchor=baseline,anchor_tnc=tnc,future_bb_anchor=future))
+                                 baseline_bb_anchor=baseline,anchor_tnc=tnc,future_bb_anchor=future,
+                                 anchor_tnc_qc_pass=True))
     a=anc.prepare(pd.DataFrame(rows))
     est=anc.fit(a)
     assert est>0,est
