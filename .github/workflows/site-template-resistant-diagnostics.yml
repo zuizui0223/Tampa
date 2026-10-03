@@ -1,0 +1,24 @@
+name: Site-template-resistant TNC diagnostics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/71_dynamic_reserve_future_diagnostic.py"
+      - "analysis/72_anchor_tnc_future_bb_diagnostic.py"
+      - "field/dynamic_reserve_future_analysis_freeze.json"
+      - "field/anchor_tnc_future_bb_analysis_freeze.json"
+      - "validation/test_site_template_resistant_diagnostics.py"
+      - ".github/workflows/site-template-resistant-diagnostics.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.txt
+      - run: python validation/test_site_template_resistant_diagnostics.py
