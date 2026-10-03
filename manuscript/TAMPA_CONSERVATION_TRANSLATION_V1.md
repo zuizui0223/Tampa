@@ -129,7 +129,7 @@ Primary question:
 
 > among meadows with comparable current above-ground state, does lower below-ground reserve predict less favourable future quantitative *Thalassia* change?
 
-The confirmatory core remains Old, Middle and Lower Tampa Bay. Boca Ciega Bay is prespecified only as a secondary context extension and cannot rescue a null core result.
+The authoritative prospective TNC primary now spans Old, Middle, Lower and Boca Ciega Bay. The planning frame is 41 nodes and confirmatory interpretation requires >=36 analyzable nodes total with >=6 in each bay. This four-bay decision was frozen before outcome-bearing TNC collection; it does not alter the retrospective Tampa results.
 
 ### 2. Event-scale buffer depletion
 
