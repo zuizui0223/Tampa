@@ -38,7 +38,14 @@
     "no_sham_coring": "Do not add a biologically unnecessary pre-coring round in Boca Ciega solely to mimic event-study disturbance.",
     "intervention_metadata": "Record whether each authoritative baseline TNC node had a prior pre-exposure coring round, exact prior core offsets, dates and visible disturbance.",
     "asymmetry_boundary": "Prior event-study coring is geographically structured and cannot be separated from water-body mean differences by adding a post-hoc indicator. Keep the frozen water-body factor, standardized destructive-sampling geometry and point-level disturbance sensitivity; do not reinterpret cross-bay mean TNC differences as a coring effect or ecological effect.",
-    "invalidation_rule": "If pre-coring visibly compromises a planned authoritative post-TNC anchor or permanent monitoring neighborhood, that anchor/node follows the predeclared destructive-sampling QC/sensitivity rule rather than being silently retained."
+    "invalidation_rule": "If pre-coring visibly compromises a planned authoritative post-TNC anchor or permanent monitoring neighborhood, that anchor/node follows the predeclared destructive-sampling QC/sensitivity rule rather than being silently retained.",
+    "round_assignment": {
+      "pre_post_two_round_nodes": "Union of final core-three event-stress nodes and final core-three optical-primary nodes.",
+      "baseline_only_nodes": "Authoritative four-bay TNC nodes not in the event/optical union, including Boca Ciega unless separately covered by an allowed module.",
+      "planned_full_frame_example": "If event and optical both use the same 33 core-three nodes and TNC v2 uses all 41 planned nodes, minimum outcome-bearing core count before replacements is 33 x 6 + 8 x 3 = 222.",
+      "formula": "minimum_core_samples = 6 * n(unique event OR optical nodes) + 3 * n(TNC-v2 baseline nodes outside that union)",
+      "subset_rule": "Every event/optical node using TNC as a reserve response must also be present in the authoritative TNC-v2 baseline node registry unless a predeclared mechanism-specific exclusion makes the v2 baseline measurement invalid."
+    }
   },
   "mechanism_execution_gates": {
     "tnc_v2": {
@@ -91,7 +98,8 @@
     "freeze_file": "field/integrated_campaign_resource_freeze.json",
     "principle": "Before the first outcome-bearing pre-TNC core or logger deployment, freeze instrument inventory, node allocation, calibration/pilot status and route feasibility without using any future TNC or meadow response.",
     "insufficient_capacity_rule": "If capacity cannot meet a mechanism's frozen confirmatory sampling frame, predeclare that mechanism as pilot/non-confirmatory for that campaign. Do not rotate instruments into different weather windows or drop inconvenient bays after exposure is observed.",
-    "no_cross_mechanism_rescue": "Failure or non-estimability of one mechanism cannot be rescued by adding another mechanism's exposure to its primary model."
+    "no_cross_mechanism_rescue": "Failure or non-estimability of one mechanism cannot be rescued by adding another mechanism's exposure to its primary model.",
+    "optical_capacity_note": "Count simultaneous sampling volumes/node systems, not necessarily physical logger boxes: multi-channel hardware may satisfy multiple synchronized sampling volumes only if the frozen calibration and synchronization rules are met."
   },
   "claim_boundary": [
     "This is an execution/orchestration contract, not a new ecological hypothesis or estimator.",
