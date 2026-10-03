@@ -168,11 +168,11 @@
     "dynamic_reserve_change_future_diagnostic": {
       "status": "predeclared_secondary_temporal_site_template_resistant_diagnostic",
       "purpose": "Test whether recent within-node reserve trajectory carries prospective information beyond the current post-exposure reserve level, reducing compatibility with a purely time-invariant persistent-site explanation.",
-      "reserve_change_definition": "delta_tnc_42d = tnc_post - tnc_pre, using only nodes that pass the frozen 39-45 day temporal pairing, spatial-core, assay and destructive-sampling rules.",
+      "reserve_change_definition": "paired_anchor_delta_tnc_42d = median across the three matched q25/q50/q75 anchor-specific changes (tnc_post_anchor - tnc_pre_anchor), using only nodes passing the frozen 39-45 day temporal pairing, anchor-level TNC QC, assay and destructive-sampling rules.",
       "future_baseline": "Use the post-exposure fixed-transect baseline paired to tnc_post under the clonal TNC timing rule.",
-      "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + delta_tnc_42d + water_body",
-      "focal_coefficient": "delta_tnc_42d",
-      "expected_direction": "positive; at the same current post-exposure reserve level, nodes that recently maintained/increased reserve should show more positive or less negative future quantitative change.",
+      "model": "future_delta_frequency ~ baseline_frequency_post + tnc_post + paired_anchor_delta_tnc_42d + water_body",
+      "focal_coefficient": "paired_anchor_delta_tnc_42d",
+      "expected_direction": "positive; at the same current post-exposure reserve level, nodes with a more positive matched-anchor recent reserve trajectory should show more positive or less negative future quantitative change.",
       "support_rule": {
         "supported": "two-sided 95% interval entirely above 0",
         "contradicted_direction": "two-sided 95% interval entirely below 0",
@@ -180,28 +180,29 @@
         "boundary": "Secondary diagnostic only. Do not drop tnc_post, baseline_frequency_post or water_body after inspection."
       },
       "precision_boundary": "At n≈30-33 with baseline state, post-TNC and bay controls, the diagnostic is mainly sensitive to moderate-to-large partial effects. A null is secondary evidence, not a rejection of the primary reserve hypothesis.",
-      "site_template_interpretation": "Because delta_tnc_42d changes within node and the model conditions on current post-TNC, support is less compatible with a purely time-invariant node-quality explanation than a static cross-node TNC association alone. It still does not remove time-varying common causes or measurement error.",
+      "site_template_interpretation": "Because matched anchor-specific TNC changes occur within the same node and the model conditions on current post-TNC, support is less compatible with a purely time-invariant transect-level site-quality explanation than a static cross-node TNC association alone. Persistent anchor-scale microhabitat and time-varying common causes remain possible.",
       "no_rescue_rule": "Cannot rescue a null node-level primary static TNC -> future-frequency result and cannot replace the event -> TNC primary. Report static TNC, reserve trajectory and event-stress links separately.",
       "analysis_code": "analysis/71_dynamic_reserve_future_diagnostic.py",
       "analysis_freeze": "field/dynamic_reserve_future_analysis_freeze.json",
       "uncertainty": "10,000-replicate water-body-stratified stable-node bootstrap; seed 20261006; two-sided percentile 95% interval",
       "replication_gate": ">=30 complete core-three nodes and >=8 complete nodes in each of Old, Middle and Lower Tampa Bay; below this gate the secondary diagnostic is non-estimable rather than rescued.",
       "measurement_validity_gate": {
-        "matched_anchor_rule": "Pre and post node-level TNC summaries must be built from the same three frozen q25/q50/q75 anchor neighborhoods using distinct non-overlapping core offsets.",
-        "node_qc_rule": "Each included node must pass the frozen TNC sample/assay QC required by the authoritative TNC-v2 method and execution manifests.",
+        "matched_anchor_rule": "Exactly the same three frozen q25/q50/q75 anchor IDs must be represented in pre and post rounds. Compute each anchor's post-minus-pre TNC first, then take the node median of those three paired changes.",
+        "node_qc_rule": "All six anchor measurements (three pre + three post) must pass authoritative TNC sample/assay QC. A failed anchor makes the node ineligible for this secondary diagnostic; do not impute or replace anchors after future outcome access.",
         "assay_batch_round_rule": "Pre/post sampling round must not be perfectly confounded with HPLC assay batch; otherwise the dynamic diagnostic is non-estimable.",
         "rationale": "A temporal reserve trajectory cannot be distinguished from spatial-core mismatch or round-specific analytical bias without these gates."
       },
       "measurement_error_boundary": {
-        "issue": "delta_tnc_42d contains tnc_post, which is also included as a model control. Measurement error and regression-to-the-mean can therefore affect the trajectory coefficient.",
+        "issue": "tnc_post and paired_anchor_delta_tnc_42d share the same post-exposure anchor measurements, so correlated measurement error and regression-to-the-mean can still affect the trajectory coefficient.",
         "required_reporting": [
-          "node-level dispersion across the valid pre-exposure TNC cores",
-          "node-level dispersion across the valid post-exposure TNC cores",
-          "three anchor-neighborhood pre-to-post TNC changes when paired anchor sampling is valid"
+          "pre- and post-round dispersion across the same three anchor TNC values",
+          "the three matched anchor-specific post-minus-pre TNC changes",
+          "node median and range of matched anchor changes",
+          "anchor-change sign concordance as a descriptive heterogeneity diagnostic"
         ],
-        "paired_anchor_diagnostic": "Report the sign and node-level median of post-minus-pre TNC across the three matched q25/q50/q75 anchor neighborhoods as a measurement-quality diagnostic. It is not an alternative inferential primary.",
-        "interpretation": "A supported delta_tnc_42d coefficient is evidence that recent measured reserve trajectory contains prospective information beyond current measured reserve level. It is not proof that physiological replenishment itself causally improves the future trajectory.",
-        "discrepancy_rule": "If node-level difference-of-medians and matched-anchor reserve-change summaries are qualitatively inconsistent, label the trajectory result measurement-sensitive rather than upgrading the mechanism claim."
+        "paired_anchor_diagnostic": "Matched-anchor change is the frozen trajectory estimator, not an alternative sensitivity selected after inspection.",
+        "interpretation": "A supported paired-anchor trajectory coefficient means recent measured reserve change contains prospective information beyond current measured reserve level. It is not proof of hysteresis, formal memory, or causal replenishment.",
+        "discrepancy_rule": "If the result is dominated by one anchor or is unstable under predeclared measurement-sensitivity reporting, label it measurement-sensitive rather than upgrading the mechanism claim."
       }
     }
   },
