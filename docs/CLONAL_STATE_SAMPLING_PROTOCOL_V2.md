@@ -126,13 +126,18 @@ Therefore the standard three-distinct-anchor design is expected to apply directl
 
 ## Four-bay within-transect site-template diagnostic
 
-A separate baseline-only preflight is frozen before inspecting its result:
+A separate baseline-only preflight was frozen before inspection and has now passed:
 
 - `analysis/62_tnc_anchor_bb_four_bay_preflight.py`
-- minimum >=36 nodes with three distinct quantitative anchors;
-- minimum >=6 nodes per bay.
+- canonical result: `results/tnc_anchor_bb_four_bay_preflight_v1.json`
+- frozen minimum: >=36 nodes with three distinct quantitative anchors;
+- frozen minimum: >=6 nodes per bay;
+- observed eligible nodes: **38**;
+- observed by bay: Old 8, Middle 10, Lower 12, Boca Ciega 8.
 
-If that feasibility gate passes, the secondary spatial diagnostic is:
+This establishes design feasibility only; it is not evidence that TNC predicts a future response.
+
+The secondary spatial diagnostic is:
 
 ```text
 future_BB_anchor
@@ -145,7 +150,7 @@ This asks whether local TNC differences predict local future quantitative state 
 
 It cannot replace or rescue the node-level four-bay TNC primary.
 
-If the feasibility gate fails, retain the already frozen three-bay anchor diagnostic as historical/site-template evidence only; do not relax the four-bay gate.
+The four-bay feasibility gate passed before future outcome access. Do not change anchor eligibility, geography, or the 36-total / 6-per-bay gate after TNC or future outcomes are observed.
 
 ## Dynamic reserve trajectory
 
