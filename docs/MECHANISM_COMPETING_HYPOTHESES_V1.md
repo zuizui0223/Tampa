@@ -339,6 +339,24 @@ However, time-varying turbidity, nutrients, hypoxia and disturbance can still be
 
 Do not reopen Secchi windows, ordinal epiphyte categories, low-light thresholds or favorable PAR aggregation after TNC inspection.
 
+
+### Conditional physiological escalation after optical support
+
+If the frozen optical DLI -> TNC primary is supported, the next question is not simply whether "low light is stressful." A separately frozen process study should distinguish:
+
+- **carbon limitation:** DLI predicts reserve change without a corresponding internal-O2 / tissue-H2S process signal;
+- **aeration failure:** lower DLI predicts lower night/dawn internal meristem/rhizome pO2, which in turn coincides with greater H2S intrusion;
+- **external oxygen limitation:** nocturnal water-column O2 better tracks internal pO2/H2S than recent DLI.
+
+Direct internal pO2 and tissue/meristem H2S are required for a plant aeration-failure claim. Water-column DO and porewater sulfide alone remain external context.
+
+Detailed conditional protocol:
+
+- `docs/OXYGEN_SULFIDE_ESCALATION_V1.md`
+
+This escalation is **not** another current primary and cannot rescue a null optical DLI -> TNC result.
+
+
 ---
 
 ## H5. Community functional insurance
