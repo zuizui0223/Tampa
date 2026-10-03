@@ -17,14 +17,43 @@
     "post_high_standard_carryover_below_loq": null
   },
   "tissue_class": {
-    "candidate_order": [],
+    "candidate_order": [
+      "live horizontal rhizome, proximal 3-cm segment associated with a living short shoot; exclude vertical rhizome and roots",
+      "live horizontal rhizome, proximal 4-cm segment associated with a living short shoot; exclude vertical rhizome and roots"
+    ],
     "selected_horizontal_rhizome_tissue_class": null,
     "classification_success_fraction": null,
     "sufficient_dry_mass_fraction": null,
     "selection_used_tnc_level_or_ecological_state": false
   },
   "core_geometry": {
-    "candidate_order": [],
+    "candidate_order": [
+      {
+        "diameter_cm": 9,
+        "depth_cm": 15,
+        "rationale": "least-destructive first candidate; 9-cm Thalassia biomass cores and ~15-cm belowground coring both have field precedent"
+      },
+      {
+        "diameter_cm": 9,
+        "depth_cm": 20,
+        "rationale": "retain small diameter while extending to the common ~20-cm intact-core depth"
+      },
+      {
+        "diameter_cm": 15,
+        "depth_cm": 15,
+        "rationale": "increase footprint only if small-diameter candidates fail rhizome/dry-mass recovery"
+      },
+      {
+        "diameter_cm": 15,
+        "depth_cm": 20,
+        "rationale": "common intact Thalassia core geometry in experimental/physiological work"
+      },
+      {
+        "diameter_cm": 15,
+        "depth_cm": 25,
+        "rationale": "deeper established belowground-biomass geometry; final candidate, not default"
+      }
+    ],
     "selected_core_diameter_cm": null,
     "selected_core_depth_cm": null,
     "recovery_success_fraction": null,
@@ -38,14 +67,34 @@
     "representative_anchor_placement_test_passed": null
   },
   "preservation": {
-    "candidate_methods": [],
+    "candidate_methods": [
+      "immediate liquid-nitrogen flash-freeze of cleaned target rhizome tissue, then frozen transport/storage and freeze-drying",
+      "rapid direct dry-ice freezing of cleaned target rhizome tissue, then frozen transport/storage and freeze-drying"
+    ],
     "selected_preservation_method": null,
     "tested_delays_minutes": [],
     "selected_maximum_collection_to_preservation_minutes": null,
     "paired_specimens_at_selected_delay": null,
     "median_abs_relative_tnc_difference_pct": null,
     "p90_abs_relative_tnc_difference_pct": null,
-    "monotonic_directional_drift_absent": null
+    "monotonic_directional_drift_absent": null,
+    "candidate_method_order_rule": "Test the operationally feasible rapid-freezing methods above against an immediate-preservation reference. Prefer the method with the shortest feasible field latency; do not add a slower chilled-only method merely to increase convenience after outcome-bearing collection begins."
   },
-  "decision": "Do not copy pilot values into the authoritative precollection freeze until the fail-closed pilot validator reports PASS_METHOD_PILOT."
+  "decision": "Do not copy pilot values into the authoritative precollection freeze until the fail-closed pilot validator reports PASS_METHOD_PILOT.",
+  "literature_backed_candidate_order": {
+    "note": "These are pilot candidates, not selected values. Final tissue class, core geometry and preservation method remain null until the response-independent pilot passes.",
+    "tissue_precedent": [
+      "Lee & Dunton 1999: Thalassia shoot units included healthy leaves, roots and a 3-cm horizontal rhizome after 15-cm-diameter x ~20-cm cores.",
+      "Marine Technology Society 1983 chemical work: rhizome defined as a 4-cm section attached to the short shoot."
+    ],
+    "core_precedent": [
+      "Lee & Dunton 1999: 15-cm diameter x ~20-cm depth intact Thalassia cores; 9-cm diameter cores for biomass sampling.",
+      "Kenworthy & Thayer 1984: 15-cm diameter x 25-cm depth for Thalassia belowground biomass.",
+      "Multiple later Thalassia studies use approximately 15-cm diameter x 20-cm depth intact cores."
+    ],
+    "preservation_precedent": [
+      "General plant/seagrass NSC guidance prioritizes rapid metabolic arrest by liquid nitrogen or dry ice followed by freeze-drying.",
+      "Sørensen et al. 2018 requires species-specific preliminary testing when transferring the standardized seagrass HPLC workflow."
+    ]
+  }
 }
