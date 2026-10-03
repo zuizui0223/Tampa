@@ -6,11 +6,22 @@ on:
     paths:
       - "results/integrated_field_campaign_v1_contract.json"
       - "field/integrated_campaign_resource_freeze.json"
+      - "docs/TNC_V2_EXECUTION_MANIFEST_FREEZE_V1.md"
+      - "field/tnc_v2_execution_manifest_template.csv"
+      - "validation/test_tnc_v2_execution_manifest.py"
+      - "analysis/70_freeze_tnc_v2_execution_manifest.py"
+      - "docs/FIELD_RESOURCE_ENVELOPE_V1.md"
+      - "results/field_resource_scenario_requirements_v1.json"
+      - "analysis/68_resource_scenario_requirements.py"
       - "docs/INTEGRATED_FIELD_CAMPAIGN_V1.md"
       - "validation/verify_integrated_campaign_design.py"
       - "validation/validate_integrated_campaign_readiness.py"
       - "validation/test_integrated_campaign_readiness.py"
       - "results/clonal_state_prospective_v2_contract.json"
+      - "validation/verify_tnc_v2_primary_analysis_freeze.py"
+      - "validation/test_tnc_v2_primary_analysis.py"
+      - "field/tnc_v2_primary_analysis_freeze.json"
+      - "analysis/64_tnc_v2_primary_analysis.py"
       - "results/event_stress_debt_prospective_v1_contract.json"
       - "results/optical_microenvironment_prospective_v1_contract.json"
       - "results/direct_hydrodynamic_prospective_v1_contract.json"
@@ -25,10 +36,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install analysis dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test final TNC execution-manifest freeze
+        run: python validation/test_tnc_v2_execution_manifest.py
+      - name: Verify response-independent resource envelope
+        run: |
+          python analysis/68_resource_scenario_requirements.py
+          git diff --exit-code -- results/field_resource_scenario_requirements_v1.json
       - name: Verify integrated design against source contracts
         run: python validation/verify_integrated_campaign_design.py
+      - name: Verify TNC v2 primary analysis freeze
+        run: python validation/verify_tnc_v2_primary_analysis_freeze.py
+      - name: Test frozen TNC v2 primary analysis
+        run: python validation/test_tnc_v2_primary_analysis.py
       - name: Test completed readiness branches
         run: python validation/test_integrated_campaign_readiness.py
+      - name: Verify committed current readiness snapshot
+        run: python validation/verify_integrated_campaign_current_readiness.py
       - name: Evaluate current resource-freeze readiness
         run: |
           python validation/validate_integrated_campaign_readiness.py \
