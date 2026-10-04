@@ -40,7 +40,7 @@
     "maximum_nominal_sampling_interval_minutes": 15,
     "primary_exposure_window": "Use the common calendar overlap shared by confirmatory nodes after frozen PAR QC; do not extend or shift the window after TNC inspection.",
     "within_canopy_sensor": {
-      "measurement": "underwater scalar or cosine-corrected PAR, converted to photosynthetic photon flux density and daily light integral under one frozen calibration workflow",
+      "measurement": "One frozen underwater photosynthetically active photon measurement quantity with a single angular-response class across all outcome-bearing channels; either 2π cosine-corrected PPFD or 4π scalar photon fluence-rate, never a mixture within the primary study.",
       "placement": "One fixed response-independent within-canopy sampling position per node, targeted at 50% of baseline canopy height above the bed.",
       "minimum_height_m_above_bed": 0.05,
       "geometry_rule": "Exact sensor model, angular orientation, proportional canopy-height placement, allowable height tolerance, mounting hardware and shading-clearance rule must be frozen in a response-independent physical pilot before outcome-bearing deployment.",
@@ -52,6 +52,21 @@
         "no_rescue": "After outcome-bearing deployment begins, do not change sensor height by node or select the vertical level with the strongest TNC association.",
         "acceptance_contract": "results/optical_pilot_acceptance_v1_contract.json",
         "acceptance_summary": "Minimum 12 pilot nodes / >=3 per bay; simultaneous 25%, 50%, 75% canopy-height PAR plus above-canopy reference; selected single height must have median absolute relative DLI error <=15%, >=80% node-days within +/-25%, and bay-specific median relative bias <=20%."
+      },
+      "angular_response_semantics": {
+        "allowed_primary_classes": [
+          "2pi_cosine_ppfd",
+          "4pi_scalar_ppffr"
+        ],
+        "freeze_timing": "Choose exactly one class before the response-independent optical method pilot is interpreted and before outcome-bearing deployment.",
+        "same_class_rule": "Every outcome-bearing within-canopy sensor/channel and every paired above-canopy reference used for canopy transmittance must use the same frozen angular-response class.",
+        "matched_reference_rule": "In-water calibration reference must use the same angular-response class as the primary outcome sensors. Cross-class cosine↔scalar calibration is not accepted in v1.",
+        "reporting": {
+          "2pi_cosine_ppfd": "Report the primary exposure as daily light integral of hemispherical cosine-corrected photosynthetic photon flux density (PPFD).",
+          "4pi_scalar_ppffr": "Report the primary exposure as daily integral of scalar photosynthetic photon flux fluence rate (PPFFR/scalar photon irradiance); do not relabel it as cosine-corrected PPFD."
+        },
+        "rationale": "Cosine and scalar quantum sensors integrate different angular light fields. A canopy changes angular light distribution, so agreement under one calibration geometry does not make the two quantities interchangeable in situ.",
+        "future_transfer_boundary": "A future study may validate cross-class angular transfer under representative underwater directional light fields, but no such transfer is authorized for this v1 primary."
       }
     },
     "coverage_rule": "Each confirmatory node must retain >=85% valid PAR observations across the common overlap after only predeclared QC.",
@@ -84,7 +99,8 @@
       "minimum_bays_with_node_scale_variation": 2,
       "minimum_analyzable_nodes_in_each_counted_bay": 6,
       "rule": "At least two bays must each contain >=6 analyzable nodes and >=3 distinct node-level DLI values. Otherwise the optical primary is non-estimable rather than dropping water_body or selecting a favorable subset."
-    }
+    },
+    "angular_semantics": "The column name mean_daily_within_canopy_dli is a computational placeholder. Scientific reporting must name the frozen angular-response quantity (2π cosine PPFD DLI or 4π scalar photon-fluence integral) recorded in the method freeze."
   },
   "reserve_response": {
     "pre_tnc": "Use the same pre-exposure TNC samples and frozen HPLC/tissue protocol as the event-stress/clonal programme.",
@@ -209,7 +225,8 @@
     "response-independent optical pilot acceptance contract",
     "in-water cross-calibration of every outcome-bearing PAR sensor/channel",
     "fixed 90% daylight coverage / 30-minute maximum daylight gap DLI rule",
-    "frozen cleaning/antifouling interval from optical pilot"
+    "frozen cleaning/antifouling interval from optical pilot",
+    "single primary optical angular-response class (2pi_cosine_ppfd or 4pi_scalar_ppffr) and matched-class calibration reference"
   ],
   "claim_boundary": [
     "This study tests direct canopy-scale light exposure, not the failed bay-segment Secchi proxy.",
@@ -223,6 +240,7 @@
     "Daily-light-integral QC must protect the daylight integral itself; a node cannot remain primary-eligible solely because total row coverage exceeds 85% if daylight gaps make DLI unreliable.",
     "Optical deployment reuses the already planned pre/post TNC rounds and does not justify additional destructive reserve sampling.",
     "The July 24-September 3 calendar was chosen for event-stress climatology, not to maximize optical contrast; optical inference is explicitly interval-specific and cannot be generalized to all seasons from this deployment alone.",
-    "Optical confirmatory readiness additionally requires the response-independent sensor calibration, vertical representativeness, placement-repeatability, fouling-maintenance and DLI missingness gates in results/optical_pilot_acceptance_v1_contract.json."
+    "Optical confirmatory readiness additionally requires the response-independent sensor calibration, vertical representativeness, placement-repeatability, fouling-maintenance and DLI missingness gates in results/optical_pilot_acceptance_v1_contract.json.",
+    "Cosine-corrected PPFD and 4pi scalar photon fluence rate are distinct optical quantities and are not interchangeable in this primary. All outcome-bearing within/above-canopy channels and the calibration reference must use one matched frozen angular-response class."
   ]
 }
