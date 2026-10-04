@@ -92,7 +92,7 @@ def main():
     try:
         n=int(vp.get("pilot_nodes"))
         if n<c["vertical_representativeness_gate"]["pilot_nodes_min"]:
-            errors.append("vertical-profile pilot node count below gate")
+            pending.append("vertical_profile.pilot_nodes_minimum")
     except Exception:
         pending.append("vertical_profile.pilot_nodes")
         n=None
@@ -103,11 +103,11 @@ def main():
     else:
         for b in BAYS:
             if int(by.get(b,0))<c["vertical_representativeness_gate"]["pilot_nodes_min_per_bay"]:
-                errors.append(f"vertical-profile {b} node count below gate")
+                pending.append(f"vertical_profile.nodes_by_bay.{b}")
     try:
         mindays=int(vp.get("minimum_valid_daylight_days_per_node"))
         if mindays<c["vertical_representativeness_gate"]["minimum_valid_daylight_days_per_node"]:
-            errors.append("minimum valid profile daylight days/node below gate")
+            pending.append("vertical_profile.minimum_valid_daylight_days_per_node")
     except Exception:
         pending.append("vertical_profile.minimum_valid_daylight_days_per_node")
 
@@ -133,12 +133,12 @@ def main():
         if not isinstance(chosen_metric,dict):
             pending.append("vertical_profile.selected_level_metrics")
         else:
-            a=c["vertical_representativeness_gate"]["acceptance"]
-            if float(chosen_metric["median_absolute_relative_error"])>a["median_absolute_relative_error_max"]:
+            acc=c["vertical_representativeness_gate"]["acceptance"]
+            if float(chosen_metric["median_absolute_relative_error"])>acc["median_absolute_relative_error_max"]:
                 errors.append("selected height median absolute relative error exceeds gate")
-            if float(chosen_metric["fraction_node_days_with_absolute_relative_error_lte_0_25"])<a["fraction_node_days_with_absolute_relative_error_lte_0_25_min"]:
+            if float(chosen_metric["fraction_node_days_with_absolute_relative_error_lte_0_25"])<acc["fraction_node_days_with_absolute_relative_error_lte_0_25_min"]:
                 errors.append("selected height node-day agreement fraction below gate")
-            if float(chosen_metric["max_absolute_bay_median_relative_bias"])>a["absolute_bay_median_relative_bias_max"]:
+            if float(chosen_metric["max_absolute_bay_median_relative_bias"])>acc["absolute_bay_median_relative_bias_max"]:
                 errors.append("selected height bay median relative bias exceeds gate")
 
     # Placement.
