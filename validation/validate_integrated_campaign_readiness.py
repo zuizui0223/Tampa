@@ -279,6 +279,11 @@ def main():
             errors.append("optical pilot freeze does not point to frozen optical acceptance contract")
         if optical_pilot_freeze.get("status")!="READY":
             errors.append("optical pilot freeze is not READY")
+        opp=optical_pilot_freeze.get("method_pilot_provenance",{})
+        if opp.get("validation_status")!="PASS_OPTICAL_PILOT":
+            errors.append("optical pilot freeze lacks PASS_OPTICAL_PILOT provenance")
+        if not opp.get("candidate_sha256") or not opp.get("raw_pilot_provenance"):
+            errors.append("optical pilot freeze lacks raw-pilot provenance/digest")
         opf=optical_pilot_freeze.get("fields_to_freeze_before_optical_confirmatory_deployment",{})
         clearance=opf.get("above_canopy_clearance_tolerance_rule")
         if attr_intent=="confirmatory" and clearance=="NOT_APPLICABLE_ATTRIBUTION_DISABLED":
