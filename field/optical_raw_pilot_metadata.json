@@ -1,0 +1,11 @@
+{
+  "schema": "tampa.optical_raw_pilot_metadata.v1",
+  "outcome_response_accessed": false,
+  "par_sensor_model": null,
+  "reference_sensor_id_and_calibration_provenance": null,
+  "side_by_side_underwater_hours": null,
+  "fouling_pilot_submerged_days": null,
+  "mounting_geometry_and_height_tolerance_rule": null,
+  "above_canopy_clearance_tolerance_rule": null,
+  "note": "Populate only response-independent optical method-pilot metadata. TNC and future meadow responses are prohibited."
+}
