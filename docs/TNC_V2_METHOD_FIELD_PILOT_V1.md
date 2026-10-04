@@ -130,8 +130,10 @@ A candidate delay passes when:
 
 - median absolute relative TNC difference from immediate preservation is <=10%;
 - 90th percentile absolute relative difference is <=15%;
-- no monotonic directional drift is evident across the tested delay sequence;
+- no monotonic directional drift is evident across the tested delay sequence; **this is derived automatically from the raw paired preservation rows, not entered by hand**;
 - all samples remain physically suitable for the frozen HPLC workflow.
+
+For the directional-drift gate, test **at least three distinct positive delay levels** for any preservation method that could be selected. The builder calculates the signed median TNC change at each delay. If those medians form a non-flat monotonic sequence with increasing delay, the pilot fails that method; with fewer than three positive delays, preservation remains incomplete rather than passing.
 
 Select the **shortest operationally feasible preservation method** and the **longest tested delay that passes** as the maximum allowed collection-to-preservation time.
 
