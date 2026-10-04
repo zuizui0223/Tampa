@@ -1,13 +1,40 @@
 name: TNC v2 response-independent method pilot
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/TNC_V2_METHOD_FIELD_PILOT_V1.md"
+      - "docs/TNC_V2_PILOT_DATA_ENTRY_V1.md"
+      - "field/tnc_v2_method_pilot.json"
+      - "field/tnc_v2_precollection_freeze.json"
+      - "field/tnc_v2_raw_pilot_metadata.json"
+      - "field/tnc_v2_hplc_matrix_pilot.json"
+      - "field/tnc_v2_tissue_class_pilot.csv"
+      - "field/tnc_v2_core_geometry_pilot.csv"
+      - "field/tnc_v2_offset_pilot.csv"
+      - "field/tnc_v2_preservation_pilot.csv"
+      - "validation/build_tnc_v2_method_pilot_summary.py"
+      - "validation/validate_tnc_v2_method_pilot.py"
+      - "validation/test_tnc_v2_method_pilot_pipeline.py"
+      - "analysis/69_apply_tnc_v2_method_pilot.py"
+      - ".github/workflows/tnc-v2-method-pilot.yml"
   pull_request:
     branches: [main]
     paths:
       - "docs/TNC_V2_METHOD_FIELD_PILOT_V1.md"
+      - "docs/TNC_V2_PILOT_DATA_ENTRY_V1.md"
       - "field/tnc_v2_method_pilot.json"
       - "field/tnc_v2_precollection_freeze.json"
+      - "field/tnc_v2_raw_pilot_metadata.json"
+      - "field/tnc_v2_hplc_matrix_pilot.json"
+      - "field/tnc_v2_tissue_class_pilot.csv"
+      - "field/tnc_v2_core_geometry_pilot.csv"
+      - "field/tnc_v2_offset_pilot.csv"
+      - "field/tnc_v2_preservation_pilot.csv"
+      - "validation/build_tnc_v2_method_pilot_summary.py"
       - "validation/validate_tnc_v2_method_pilot.py"
+      - "validation/test_tnc_v2_method_pilot_pipeline.py"
       - "analysis/69_apply_tnc_v2_method_pilot.py"
       - ".github/workflows/tnc-v2-method-pilot.yml"
   workflow_dispatch:
@@ -15,15 +42,29 @@ on:
 jobs:
   pilot:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate current method-pilot state
+
+      - name: Run synthetic fail-closed pipeline tests
+        run: python validation/test_tnc_v2_method_pilot_pipeline.py
+
+      - name: Build candidate from raw response-independent pilot records
+        run: |
+          python validation/build_tnc_v2_method_pilot_summary.py \
+            --out results/generated_tnc_v2_method_pilot_candidate.json \
+            --audit-out results/generated_tnc_v2_raw_pilot_summary.json
+
+      - name: Validate generated candidate
         run: |
           python validation/validate_tnc_v2_method_pilot.py \
+            --pilot results/generated_tnc_v2_method_pilot_candidate.json \
             --out results/generated_tnc_v2_method_pilot_validation.json
+
       - name: Require fail-closed pending or validated pass
         run: |
           python - <<'PY'
@@ -31,6 +72,7 @@ jobs:
           x=json.load(open("results/generated_tnc_v2_method_pilot_validation.json"))
           assert x["status"] in {"STOP_PILOT_INCOMPLETE","PASS_METHOD_PILOT"}, x
           PY
+
       - name: Generate proposed precollection freeze after a passing pilot
         run: |
           python - <<'PY'
@@ -45,11 +87,14 @@ jobs:
                   "--out","results/generated_tnc_v2_precollection_freeze_after_pilot.json",
               ])
           PY
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: tnc-v2-method-pilot-validation
           path: |
+            results/generated_tnc_v2_method_pilot_candidate.json
+            results/generated_tnc_v2_raw_pilot_summary.json
             results/generated_tnc_v2_method_pilot_validation.json
             results/generated_tnc_v2_precollection_freeze_after_pilot.json
           if-no-files-found: error
