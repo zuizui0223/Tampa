@@ -73,9 +73,16 @@ def main():
         except Exception:
             errors.append("manual service interval invalid")
     elif mode=="active_antifouling":
-        pass
+        if f.get("manual_service_interval_days")!="NOT_APPLICABLE_ACTIVE_ANTIFOULING":
+            errors.append("active antifouling requires explicit non-applicable manual interval token")
     else:
         errors.append("maintenance_mode must be manual or active_antifouling")
+
+    clearance=f.get("above_canopy_clearance_tolerance_rule")
+    if clearance in (None,"","PENDING"):
+        errors.append("above_canopy clearance must be frozen or explicitly marked not applicable")
+    elif clearance=="NOT_APPLICABLE_ATTRIBUTION_DISABLED":
+        pass
 
     try:
         if float(f["fouling_median_absolute_relative_change"])>c["fouling_maintenance_gate"]["acceptance"]["median_absolute_relative_change_max"]:
