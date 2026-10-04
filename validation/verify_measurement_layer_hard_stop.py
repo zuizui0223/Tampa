@@ -10,7 +10,14 @@ ROOT=Path(__file__).resolve().parents[1]
 cv=json.loads((ROOT/"results/current_validation_v2.json").read_text())
 stop=cv["measurement_layer_hard_stop"]
 assert stop["status"]=="same_annual_exact_point_mechanism_mining_closed"
-assert stop["next_mechanism_priority"][0]=="below-ground reserve / clonal state"
+assert stop["next_mechanism_priority"]==[
+    "below-ground reserve / regenerative state (four-bay TNC v2)",
+    "direct within-canopy optical DLI / microenvironment",
+    "node-scale hot-fresh event stress (temperature + salinity)",
+    "direct hydrodynamic canopy engineering",
+    "acute disturbance / disease",
+]
+assert stop["priority_rule"].startswith("Authoritative prospective resource order")
 assert "new biological measurement state" in stop["allowed_new_mechanism_gate"]
 assert "additional annual/exact-point reappearance/loss/reloss subgroups" in stop["stopped_lines"]
 
@@ -193,8 +200,10 @@ assert frame["decision"]["recent_frame_passes_30_node_8_per_bay_primary_precisio
 boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
 assert "Observation-state reappearance is not ecological recovery." in boundary
 assert "Do **not** add another retrospective decomposition" in boundary
-assert "Below-ground reserve / clonal state" in boundary
+assert "Below-ground reserve / regenerative state — four-bay TNC v2" in boundary
 assert "Canopy hydrodynamic self-buffering" in boundary
+assert "Direct within-canopy optical DLI / microenvironment" in boundary
+assert "Node-scale hot-fresh event stress — temperature + salinity" in boundary
 assert "TBOFS near-bottom current as meadow exposure" in boundary
 
 program=(ROOT/"docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md").read_text()

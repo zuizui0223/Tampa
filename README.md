@@ -660,15 +660,15 @@ A focal point that is unrecorded and later recorded again is described as **re-r
 
 ### New-measurement mechanism priority
 
-1. **below-ground / clonal state** — rhizome biomass, carbohydrate reserves, branching/architecture, meristem density, clonal continuity;
-2. **high-frequency local stress** — meadow-scale temperature, salinity and PAR at diel/event resolution;
-3. **hydrodynamic exposure / residence time** — current velocity, flushing, freshwater-plume exposure, near-bed flow;
-4. **canopy / epiphyte light microenvironment**;
+1. **below-ground reserve / regenerative state** — authoritative four-bay rhizome TNC v2, meristem/apex capacity and bounded genet diagnostics;
+2. **direct within-canopy optical microenvironment** — high-frequency PAR summarized as DLI over the shared reserve interval;
+3. **node-scale hot-fresh event stress** — synchronized temperature + salinity under the frozen 30 C / 25 ppt compound-condition definition;
+4. **direct hydrodynamic canopy engineering** — measured canopy flow attenuation with matched physical controls;
 5. **acute disturbance / disease**.
 
 The allowed mechanism gate is documented in `docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md`.
 
-The open 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test remains allowed because the exposure comes from a new high-frequency measurement layer and the future biological response is frozen before access.
+The open 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test remains allowed because the exposure comes from a new high-frequency measurement layer and the future biological response is frozen before access. It is a separate small Old Tampa Bay pilot and does not override the network-scale resource priority of TNC v2 > optical DLI > hot-fresh event stress.
 
 The manuscript-level synthesis remains:
 

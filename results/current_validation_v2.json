@@ -1117,10 +1117,10 @@
       "legacy_note": "Existing keys, filenames, schemas and historical branch names containing 'recovery' are retained for provenance only and do not imply recovery."
     },
     "next_mechanism_priority": [
-      "below-ground reserve / clonal state",
-      "node-scale high-frequency temperature, salinity and PAR",
-      "hydrodynamic exposure / residence time",
-      "canopy / epiphyte light microenvironment",
+      "below-ground reserve / regenerative state (four-bay TNC v2)",
+      "direct within-canopy optical DLI / microenvironment",
+      "node-scale hot-fresh event stress (temperature + salinity)",
+      "direct hydrodynamic canopy engineering",
       "acute disturbance / disease"
     ],
     "allowed_new_mechanism_gate": [
@@ -1137,6 +1137,7 @@
       "retuned thresholds, lags or radii on current response"
     ],
     "program_document": "docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md",
-    "prospective_exception": "The open 2026 Old Tampa Bay continuous-temperature -> 2027 fixed-transect test is allowed because it uses a new high-frequency exposure and a future response frozen before access."
+    "prospective_exception": "The open 2026 Old Tampa Bay continuous-temperature -> 2027 fixed-transect test is allowed because it uses a new high-frequency exposure and a future response frozen before access.",
+    "priority_rule": "Authoritative prospective resource order: protect four-bay TNC v2 first; if only one forcing primary can be fully confirmatory without weakening TNC, optical DLI has scientific priority over the hot-fresh event module; hydrodynamics is a separate later module. Priority is not current evidentiary support."
   }
 }
