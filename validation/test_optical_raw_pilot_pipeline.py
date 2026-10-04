@@ -96,12 +96,15 @@ def make_inputs(tmp,missing_side_sensor=False,fouling_day=14):
             for day in (1,2):
                 rows.append({
                   "node_id":node,"water_body":b,"date":f"2027-08-{day:02d}",
+                  "canopy_height_m":0.30+0.05*(i%3),
+                  "canopy_height_class":("low","middle","high")[i%3],
                   "dli_25":8.0,"dli_50":10.0,"dli_75":12.0,"dli_above":15.0,
                   "daylight_coverage_fraction":1.0,
                   "max_daylight_gap_minutes":15
                 })
     write_csv(prof,[
-      "node_id","water_body","date","dli_25","dli_50","dli_75","dli_above",
+      "node_id","water_body","date","canopy_height_m","canopy_height_class",
+      "dli_25","dli_50","dli_75","dli_above",
       "daylight_coverage_fraction","max_daylight_gap_minutes"
     ],rows)
 
