@@ -68,6 +68,15 @@
       "minimum_daylight_coverage_fraction": 0.9,
       "maximum_daylight_gap_minutes": 30,
       "rule": "Only node-days already meeting the frozen daylight DLI QC are eligible for the vertical representativeness pilot."
+    },
+    "canopy_height_class_gate": {
+      "classes": [
+        "low",
+        "middle",
+        "high"
+      ],
+      "minimum_pilot_nodes_per_class": 3,
+      "classification_rule": "Assign baseline canopy-height class response-independently before any pilot PAR is inspected; class boundaries or node membership must be frozen in the pilot sampling manifest."
     }
   },
   "placement_repeatability_gate": {
