@@ -204,3 +204,48 @@ It does **not** mean:
 - any DLI threshold has been identified;
 - epiphytes caused the measured attenuation;
 - the optical mechanism is supported.
+
+
+## Machine-checkable raw-pilot pipeline
+
+Pilot measurements are entered through the standardized response-independent inputs documented in:
+
+- `docs/OPTICAL_PILOT_DATA_ENTRY_V1.md`.
+
+The canonical pipeline is:
+
+```bash
+python validation/build_optical_pilot_summary.py
+python validation/validate_optical_method_pilot.py
+```
+
+A `PASS_OPTICAL_PILOT` result may then be copied mechanically into a proposed optical freeze with:
+
+```bash
+python analysis/72_apply_optical_method_pilot.py \
+  --validation results/optical_method_pilot_validation.json \
+  --out field/optical_pilot_freeze_ready_candidate.json
+```
+
+and audited with:
+
+```bash
+python validation/validate_optical_pilot_readiness.py \
+  --freeze field/optical_pilot_freeze_ready_candidate.json \
+  --strict
+```
+
+The builder records input SHA-256 provenance. The authoritative READY freeze must retain `PASS_OPTICAL_PILOT` provenance; manually typing aggregate pilot metrics or a READY token is not an accepted handoff.
+
+### Frozen numerical semantics added before the pilot
+
+- Calibration relative-error denominator: `max(abs(reference PPFD), 10)`.
+- Dark rows: reference PPFD <=1 µmol m-2 s-1, >=5 dark observations per outcome-bearing sensor.
+- Calibration range must reach the response-independently declared expected maximum field PPFD.
+- Side-by-side DLI checks must contain every declared outcome-bearing sensor/channel.
+- Vertical-profile rows count only when daylight coverage is >=90% and maximum daylight gap is <=30 min.
+- The vertical pilot spans pre-frozen low/middle/high canopy-height classes with >=3 nodes per class.
+- Placement repeatability uses the same pilot nodes as the vertical-profile test.
+- Fouling response-change denominator: `max(abs(post-clean PPFD), 10)`; counted locations must be followed through >=14 submerged days.
+- If all manual service intervals fail, active antifouling must independently pass the same response-change gate.
+- Disabled secondary above-canopy attribution is explicitly recorded as `NOT_APPLICABLE_ATTRIBUTION_DISABLED` and does not block the primary within-canopy method.
