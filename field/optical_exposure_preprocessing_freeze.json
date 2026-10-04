@@ -1,0 +1,82 @@
+{
+  "schema": "tampa.optical_exposure_preprocessing_freeze.v1",
+  "frozen_on": "2026-10-04",
+  "status": "FROZEN_BEFORE_OUTCOME_TNC_INSPECTION",
+  "authoritative_optical_contract": "results/optical_microenvironment_prospective_v1_contract.json",
+  "method_freeze_dependency": "field/optical_pilot_freeze.json",
+  "scripts": {
+    "raw_par_to_dli": {
+      "path": "analysis/73_build_optical_dli_exposure.py",
+      "git_blob_sha1": "d0dbe1a8f086f6e8550bfcfca6c80ad9cfec782d"
+    },
+    "exposure_tnc_join": {
+      "path": "analysis/74_build_optical_primary_input.py",
+      "git_blob_sha1": "c9dac8c0d863aed8ebe2a364abdb3190cf228174"
+    },
+    "primary_model": {
+      "path": "analysis/66_optical_primary_analysis.py",
+      "git_blob_sha1": "6cba7962bcb2697c613ddf08e6f4e03759f5f737"
+    }
+  },
+  "input_schemas": {
+    "deployment_manifest": "field/optical_outcome_deployment_manifest_template.csv",
+    "raw_par": "field/optical_outcome_par_timeseries_template.csv",
+    "prepost_tnc": "field/optical_prepost_tnc_node_template.csv"
+  },
+  "calibration": {
+    "source": "field/optical_pilot_freeze.json",
+    "required_status": "READY",
+    "required_provenance_status": "PASS_OPTICAL_PILOT",
+    "formula": "calibrated_ppfd = intercept + slope * raw_ppfd",
+    "negative_calibrated_ppfd": "truncate to 0",
+    "above_frozen_calibration_range": "treat observation as missing; do not extrapolate calibration"
+  },
+  "timestamp_and_schedule": {
+    "timestamp_standard": "offset-aware UTC input",
+    "maximum_nominal_sampling_interval_minutes": 15,
+    "schedule_definition": "Each node freezes one schedule_anchor_utc and sampling_interval_minutes before outcome-bearing deployment.",
+    "timestamp_match_tolerance_seconds": 120,
+    "duplicate_rule": "More than one valid raw observation mapping to one scheduled timestamp is an error, not an averaging opportunity.",
+    "sensor_rule": "One simultaneously deployed outcome-bearing sensor/channel per node in this v1 builder; sensor reuse across predeclared simultaneous nodes is prohibited."
+  },
+  "common_window": {
+    "fixed_calendar_start_month_day": "07-24",
+    "fixed_calendar_end_month_day": "09-03",
+    "rule": "Before raw PAR QC exclusion, common_start is the later of July 24 local midnight and the latest deployment among every predeclared optical-primary node; common_end is the earlier of September 4 local midnight and the earliest retrieval among those nodes.",
+    "minimum_common_overlap_local_dates": 35,
+    "no_rescue": "Do not remove a sensor-failure node to widen/shift the common exposure window. The failing node may later be complete-case excluded, but the window remains the one frozen from the full predeclared manifest."
+  },
+  "astronomical_daylight": {
+    "timezone": "America/New_York",
+    "sunrise_sunset_algorithm": "NOAA-style geometric sunrise/sunset approximation",
+    "solar_zenith_degrees": 90.833,
+    "daylight_boundary_ppfd": "PPFD fixed to 0 at astronomical sunrise and sunset for DLI trapezoidal integration"
+  },
+  "daily_dli": {
+    "scheduled_daylight_coverage_minimum": 0.90,
+    "maximum_continuous_daylight_gap_minutes": 30,
+    "interpolation": "Linear interpolation only at missing scheduled daylight timestamps bracketed by known points whose separation is <=30 minutes.",
+    "long_gap_rule": "Any daylight known-point gap >30 minutes invalidates the whole node-day.",
+    "integration": "Trapezoidal integration of calibrated/interpolated PPFD over astronomical daylight; divide micromoles by 1e6 to obtain mol photons m-2 d-1.",
+    "nighttime": "zero by definition and excluded from daylight-coverage denominator",
+    "minimum_valid_daily_dli_per_node": 30
+  },
+  "node_exposure": {
+    "primary": "arithmetic mean of valid daily within-canopy DLI values across the frozen common window",
+    "overall_par_coverage": "valid mapped scheduled observations / all scheduled observations across the common window",
+    "minimum_overall_par_coverage": 0.85,
+    "failed_nodes": "Retain in exposure/QC output with optical_exposure_qc_pass=false; do not alter the common window."
+  },
+  "primary_input_join": {
+    "rule": "One-to-one node join of frozen optical exposure/QC with node-level pre/post TNC summary.",
+    "prepost_interval_days": [39, 45],
+    "primary_qc_pass": "optical_exposure_qc_pass AND tnc_pair_qc_pass AND pre/post TNC interval within 39-45 days",
+    "registry_mismatch": "error; do not silently inner-join away nodes"
+  },
+  "claim_boundary": [
+    "Exposure preprocessing is response-independent and does not read TNC or future meadow response.",
+    "The TNC join is deterministic and cannot modify PAR exposure, DLI validity or the common window.",
+    "Do not replace mean daily DLI with a threshold, percentile, above-canopy metric or favorable seasonal window after TNC inspection.",
+    "A supported primary coefficient remains a prospective actual-light/reserve association, not proof that light alone or epiphytes caused reserve change."
+  ]
+}
