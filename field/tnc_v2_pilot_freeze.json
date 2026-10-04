@@ -1,6 +1,6 @@
 {
   "schema": "tampa.tnc_v2_response_independent_pilot_freeze.v1",
-  "status": "PENDING_PRE_PILOT_INPUTS",
+  "status": "DEPRECATED_SUPERSEDED",
   "prospective_contract": "results/clonal_state_prospective_v2_contract.json",
   "literature_method": {
     "primary_reference": "Sørensen et al. 2018 Aquatic Botany 151:71-79",
@@ -74,5 +74,13 @@
     "future_shoot_density",
     "future_decline_class"
   ],
-  "rule": "Pilot validator must STOP while any required pre-pilot field remains null. Analytical acceptance limits are supplied and frozen by the receiving laboratory before pilot results are opened."
+  "rule": "Pilot validator must STOP while any required pre-pilot field remains null. Analytical acceptance limits are supplied and frozen by the receiving laboratory before pilot results are opened.",
+  "superseded_by": {
+    "method_protocol": "docs/TNC_V2_METHOD_FIELD_PILOT_V1.md",
+    "canonical_method_pilot": "field/tnc_v2_method_pilot.json",
+    "method_validator": "validation/validate_tnc_v2_method_pilot.py",
+    "authoritative_precollection_freeze": "field/tnc_v2_precollection_freeze.json"
+  },
+  "do_not_use_for_outcome_bearing_decisions": true,
+  "provenance_note": "Retained only as an earlier pilot-design record. Current method selection is governed by the authoritative method-pilot pipeline."
 }
