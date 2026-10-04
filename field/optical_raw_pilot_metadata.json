@@ -1,0 +1,13 @@
+{
+  "schema": "tampa.optical_raw_pilot_metadata.v2",
+  "outcome_response_accessed": false,
+  "par_sensor_model": null,
+  "reference_sensor_id_and_calibration_provenance": null,
+  "outcome_bearing_sensor_ids": [],
+  "expected_field_ppfd_max_umol_m2_s": null,
+  "mounting_geometry_and_height_tolerance_rule": null,
+  "optical_attribution_intent": null,
+  "above_canopy_clearance_tolerance_rule": null,
+  "source_artifact_manifest": [],
+  "note": "Populate only response-independent optical method-pilot metadata. TNC and future meadow responses are prohibited. optical_attribution_intent must be confirmatory or disabled before final handoff."
+}
