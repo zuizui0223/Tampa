@@ -80,6 +80,29 @@ If the preselected representative mark cannot satisfy the frozen PAR geometry, t
 
 This mirrors the representative-placement rule already used to prevent edge-biased hydrodynamic sensor placement.
 
+## Optical quantity and angular-response class
+
+The outcome-bearing study must measure **one optical quantity consistently**.
+
+Before interpreting the response-independent method pilot, freeze exactly one of:
+
+- `2pi_cosine_ppfd` — hemispherical cosine-corrected photosynthetic photon flux density;
+- `4pi_scalar_ppffr` — scalar photosynthetic photon flux fluence rate / scalar photon irradiance.
+
+The choice is a measurement-design decision, not an ecological-result choice.
+
+Rules:
+
+1. all outcome-bearing within-canopy channels use the same class;
+2. the in-water calibration reference uses the same class;
+3. if the paired above-canopy attribution subset is retained, its reference channels use the same class;
+4. no scalar↔cosine calibration transfer is allowed in this v1 study;
+5. the paper reports the chosen quantity by name rather than calling both variants generic interchangeable "PAR DLI."
+
+The computational primary column may remain `mean_daily_within_canopy_dli`, but its physical meaning must be carried from the method freeze into analysis and reporting.
+
+This matters because canopy leaves alter the angular distribution of underwater light. Two sensors can agree under a calibration field yet respond differently inside a directional or diffuse canopy light field if their angular collectors differ.
+
 ## Within-canopy PAR placement
 
 At each node, measure PAR at one preselected within-canopy position.
@@ -406,7 +429,7 @@ Do not:
 Before the first outcome-bearing optical deployment freeze:
 
 - node list and alternates;
-- PAR sensor model/calibration;
+- optical sensor model, primary angular-response class and matched-class calibration reference;
 - placement geometry and tolerance;
 - anti-fouling / cleaning / drift rules;
 - sampling interval;
