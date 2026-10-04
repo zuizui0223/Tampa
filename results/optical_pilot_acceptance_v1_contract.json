@@ -19,15 +19,31 @@
     "post_correction_acceptance": {
       "r_squared_min": 0.995,
       "median_absolute_relative_error_max": 0.05,
-      "p95_absolute_relative_error_max": 0.10,
-      "dark_offset_abs_umol_m2_s_max": 1.0,
+      "p95_absolute_relative_error_max": 0.1,
+      "dark_offset_abs_umol_m2_s_max": 1,
       "saturation_allowed": false
     },
     "side_by_side_dli_check": {
       "minimum_underwater_hours": 6,
-      "maximum_between_sensor_cv": 0.05
+      "maximum_between_sensor_cv": 0.05,
+      "cv_definition": "sample standard deviation / arithmetic mean of sensor-level integrated light within a check",
+      "all_outcome_bearing_channels_required": true
     },
-    "failure_action": "Exclude the sensor/channel or repeat response-independent calibration after repair. Do not carry a failing channel into outcome-bearing deployment."
+    "failure_action": "Exclude the sensor/channel or repeat response-independent calibration after repair. Do not carry a failing channel into outcome-bearing deployment.",
+    "relative_error_definition": {
+      "formula": "abs(calibrated_ppfd - reference_ppfd) / max(abs(reference_ppfd), 10)",
+      "denominator_floor_umol_m2_s": 10,
+      "rationale": "Near-zero/dark observations are handled by the separate dark-offset gate; a fixed 10 umol m-2 s-1 floor prevents undefined or arbitrarily large percentage error at zero light."
+    },
+    "dark_reference_definition": {
+      "reference_ppfd_max_umol_m2_s": 1,
+      "minimum_dark_observations_per_sensor": 5,
+      "metric": "maximum absolute calibrated PPFD across qualifying dark observations"
+    },
+    "expected_field_range_gate": {
+      "rule": "For every outcome-bearing sensor/channel, the largest reference PPFD in the calibration pilot must be at least the response-independently declared expected field PPFD maximum.",
+      "metadata_field": "expected_field_ppfd_max_umol_m2_s"
+    }
   },
   "vertical_representativeness_gate": {
     "pilot_nodes_min": 12,
@@ -36,37 +52,62 @@
     "measurement": "At each pilot node obtain simultaneous PAR at 25%, 50% and 75% of measured canopy height plus one above-canopy reference.",
     "minimum_valid_daylight_days_per_node": 2,
     "profile_reference": "For each valid node-day, profile-reference DLI is the arithmetic mean of the 25%, 50% and 75% within-canopy DLIs.",
-    "candidate_levels": [0.25, 0.50, 0.75],
+    "candidate_levels": [
+      0.25,
+      0.5,
+      0.75
+    ],
     "selection_rule": "Choose the single proportional level with the smallest median absolute relative error to profile-reference DLI across all valid pilot node-days; exact tie -> 0.50, then 0.25, then 0.75.",
     "acceptance": {
       "median_absolute_relative_error_max": 0.15,
-      "fraction_node_days_with_absolute_relative_error_lte_0_25_min": 0.80,
-      "absolute_bay_median_relative_bias_max": 0.20
+      "fraction_node_days_with_absolute_relative_error_lte_0_25_min": 0.8,
+      "absolute_bay_median_relative_bias_max": 0.2
     },
-    "failure_action": "The one-height optical primary is not field-ready. Do not pick the height with the strongest TNC association. A multi-height optical design would require a separately frozen future contract before outcome-bearing sampling."
+    "failure_action": "The one-height optical primary is not field-ready. Do not pick the height with the strongest TNC association. A multi-height optical design would require a separately frozen future contract before outcome-bearing sampling.",
+    "valid_day_input_rule": {
+      "minimum_daylight_coverage_fraction": 0.9,
+      "maximum_daylight_gap_minutes": 30,
+      "rule": "Only node-days already meeting the frozen daylight DLI QC are eligible for the vertical representativeness pilot."
+    }
   },
   "placement_repeatability_gate": {
     "pilot_nodes_min": 12,
     "repeat_mock_deployments_per_node_min": 3,
     "tolerance_definition": "Absolute vertical error from the selected proportional target must be <= max(0.02 m, 10% of measured canopy height).",
-    "fraction_placements_within_tolerance_min": 0.90,
-    "failure_action": "Revise mounting hardware response-independently and repeat the pilot; do not widen tolerance after outcome-bearing deployment begins."
+    "fraction_placements_within_tolerance_min": 0.9,
+    "failure_action": "Revise mounting hardware response-independently and repeat the pilot; do not widen tolerance after outcome-bearing deployment begins.",
+    "same_nodes_as_vertical_profile_required": true
   },
   "fouling_maintenance_gate": {
     "minimum_submerged_pilot_days": 14,
     "pilot_locations_min": 6,
     "pilot_locations_min_per_bay": 2,
-    "candidate_service_intervals_days": [14, 7, 3],
+    "candidate_service_intervals_days": [
+      14,
+      7,
+      3
+    ],
     "selection_rule": "Test longest to shortest. Select the longest interval for which paired before-clean versus immediately-after-clean response differences remain within the frozen limits.",
     "acceptance": {
       "median_absolute_relative_change_max": 0.05,
-      "p90_absolute_relative_change_max": 0.10
+      "p90_absolute_relative_change_max": 0.1
     },
-    "failure_action": "If no manual-service interval passes, require an active antifouling/wiper solution to pass the same gate or disable the optical primary for the outcome-bearing campaign."
+    "failure_action": "If no manual-service interval passes, require an active antifouling/wiper solution to pass the same gate or disable the optical primary for the outcome-bearing campaign.",
+    "relative_change_definition": {
+      "formula": "abs(pre_clean_ppfd - post_clean_ppfd) / max(abs(post_clean_ppfd), 10)",
+      "denominator_floor_umol_m2_s": 10
+    },
+    "location_duration_rule": "Each counted pilot location must have documented submergence through at least pilot day 14 under the candidate maintenance mode.",
+    "active_antifouling_fallback": {
+      "allowed": true,
+      "rule": "If none of the frozen manual intervals (14,7,3 d) passes, an active-antifouling/wiper configuration may be accepted only if >=6 locations / >=2 per bay are followed through >=14 submerged days and the same median<=5% / p90<=10% before-versus-after reference-check gate passes.",
+      "manual_service_interval_field_when_selected": "integer 14, 7 or 3",
+      "manual_service_interval_field_when_active": "NOT_APPLICABLE_ACTIVE_ANTIFOULING"
+    }
   },
   "daily_dli_qc": {
     "daylight_definition": "Astronomical local sunrise-to-sunset for each node/date; nighttime is integrated as zero but does not count toward daylight coverage.",
-    "minimum_scheduled_daylight_observation_fraction": 0.90,
+    "minimum_scheduled_daylight_observation_fraction": 0.9,
     "maximum_continuous_daylight_gap_minutes": 30,
     "interpolation_rule": "Only gaps <=30 minutes may be linearly interpolated; longer daylight gaps invalidate that node-day.",
     "node_primary_minimum_valid_days": 30,
@@ -85,5 +126,13 @@
     "Do not select calibration coefficients, proportional height, cleaning interval, gap rule or sensor subset using TNC or future meadow response.",
     "Do not weaken the 30-node / 8-per-bay optical primary gate because some channels fail pilot QC.",
     "A response-independent pilot failure disables or redesigns the optical module before outcome-bearing sampling; it does not justify a smaller biological test."
-  ]
+  ],
+  "optional_above_canopy_attribution": {
+    "rule": "above-canopy clearance tolerance is required only when optical_attribution_intent is confirmatory; if attribution is disabled, the pilot freeze must store the explicit token NOT_APPLICABLE_ATTRIBUTION_DISABLED and this does not block the within-canopy optical primary.",
+    "metadata_field": "optical_attribution_intent",
+    "allowed_values": [
+      "confirmatory",
+      "disabled"
+    ]
+  }
 }
