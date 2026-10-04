@@ -40,15 +40,17 @@ def run(cmd,allow_fail=False):
     return cp
 
 
-def make_inputs(tmp,missing_side_sensor=False,fouling_day=14):
+def make_inputs(tmp,missing_side_sensor=False,fouling_day=14,primary_class="2pi_cosine_ppfd",reference_class="2pi_cosine_ppfd"):
     meta=tmp/"meta.json"
     meta.write_text(json.dumps({
       "schema":"synthetic",
       "outcome_response_accessed":False,
       "par_sensor_model":"synthetic_PAR_v1",
       "reference_sensor_id_and_calibration_provenance":"REF1 synthetic calibrated reference",
+      "primary_angular_response_class":primary_class,
+      "reference_angular_response_class":reference_class,
       "outcome_bearing_sensor_ids":["P1","P2"],
-      "expected_field_ppfd_max_umol_m2_s":1000,
+      "expected_field_photon_rate_max_umol_m2_s":1000,
       "mounting_geometry_and_height_tolerance_rule":"selected fraction of measured canopy height; max(2 cm,10% canopy) tolerance",
       "optical_attribution_intent":"disabled",
       "above_canopy_clearance_tolerance_rule":None,
@@ -62,21 +64,21 @@ def make_inputs(tmp,missing_side_sensor=False,fouling_day=14):
             for rep in range(10):
                 rows.append({
                   "sensor_id":sid,"irradiance_level_id":f"L{li}",
-                  "reference_ppfd_umol_m2_s":ref,
-                  "sensor_raw_ppfd_umol_m2_s":ref/scale,
+                  "reference_photon_rate_umol_m2_s":ref,
+                  "sensor_raw_photon_rate_umol_m2_s":ref/scale,
                   "dark":"false","saturated":"false"
                 })
         # Separate dark-offset gate: >=5 observations.
         for rep in range(5):
             rows.append({
               "sensor_id":sid,"irradiance_level_id":"D",
-              "reference_ppfd_umol_m2_s":0,
-              "sensor_raw_ppfd_umol_m2_s":0,
+              "reference_photon_rate_umol_m2_s":0,
+              "sensor_raw_photon_rate_umol_m2_s":0,
               "dark":"true","saturated":"false"
             })
     write_csv(cal,[
-      "sensor_id","irradiance_level_id","reference_ppfd_umol_m2_s",
-      "sensor_raw_ppfd_umol_m2_s","dark","saturated"
+      "sensor_id","irradiance_level_id","reference_photon_rate_umol_m2_s",
+      "sensor_raw_photon_rate_umol_m2_s","dark","saturated"
     ],rows)
 
     side=tmp/"side.csv"
@@ -128,13 +130,13 @@ def make_inputs(tmp,missing_side_sensor=False,fouling_day=14):
               "location_id":f"{bi+1}F{i+1}","water_body":b,
               "maintenance_mode":"manual","service_interval_days":14,
               "pilot_day":fouling_day,"check_id":"end",
-              "pre_clean_ppfd_umol_m2_s":98.0,
-              "post_clean_ppfd_umol_m2_s":100.0
+              "pre_clean_photon_rate_umol_m2_s":98.0,
+              "post_clean_photon_rate_umol_m2_s":100.0
             })
     write_csv(foul,[
       "location_id","water_body","maintenance_mode","service_interval_days",
-      "pilot_day","check_id","pre_clean_ppfd_umol_m2_s",
-      "post_clean_ppfd_umol_m2_s"
+      "pilot_day","check_id","pre_clean_photon_rate_umol_m2_s",
+      "post_clean_photon_rate_umol_m2_s"
     ],rows)
     return meta,cal,side,prof,place,foul
 
@@ -205,6 +207,30 @@ def test_short_fouling_fails(tmp):
     assert any("fouling" in x for x in v["pending_fields"]+v["errors"]),v
 
 
+
+def test_angular_class_mismatch_fails(tmp):
+    _,_,v=build_validate(
+        tmp,"angular_mismatch",
+        primary_class="2pi_cosine_ppfd",
+        reference_class="4pi_scalar_ppffr"
+    )
+    assert v["status"]=="STOP_PILOT_QC_FAILED",v
+    assert any("angular-response" in x or "cross-class" in x for x in v["errors"]),v
+
+
+def test_scalar_matched_class_passes(tmp):
+    _,_,v=build_validate(
+        tmp,"scalar_pass",
+        primary_class="4pi_scalar_ppffr",
+        reference_class="4pi_scalar_ppffr"
+    )
+    assert v["status"]=="PASS_OPTICAL_PILOT",v
+    copy=v["copy_to_optical_pilot_freeze"]
+    assert copy["primary_angular_response_class"]=="4pi_scalar_ppffr"
+    assert copy["reference_angular_response_class"]=="4pi_scalar_ppffr"
+    assert "scalar" in copy["primary_light_quantity_reporting_label"]
+
+
 def main():
     with tempfile.TemporaryDirectory(prefix="optical_pilot_pipeline_") as td:
         tmp=Path(td)
@@ -212,6 +238,8 @@ def main():
         test_pass_and_handoff(tmp)
         test_missing_declared_side_sensor_fails(tmp)
         test_short_fouling_fails(tmp)
+        test_angular_class_mismatch_fails(tmp)
+        test_scalar_matched_class_passes(tmp)
     print("Tampa optical raw-pilot pipeline synthetic tests: OK")
 
 
