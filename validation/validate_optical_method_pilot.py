@@ -69,7 +69,7 @@ def main():
         }
 
     try:
-        hours=float(meta["side_by_side_underwater_hours"])
+        hours=float(x.get("calibration",{}).get("minimum_underwater_hours"))
         if hours<cal["side_by_side_dli_check"]["minimum_underwater_hours"]:
             errors.append("side-by-side underwater duration below calibration gate")
         sidecv=x.get("calibration",{}).get("max_between_sensor_cv")
@@ -78,8 +78,7 @@ def main():
         elif float(sidecv)>cal["side_by_side_dli_check"]["maximum_between_sensor_cv"]:
             errors.append("between-sensor side-by-side DLI CV exceeds gate")
     except (TypeError,ValueError,KeyError):
-        if "metadata.side_by_side_underwater_hours" not in pending:
-            pending.append("metadata.side_by_side_underwater_hours")
+        pending.append("calibration.minimum_underwater_hours")
 
     # Vertical profile and one-height selection.
     vp=x.get("vertical_profile",{})
@@ -111,6 +110,19 @@ def main():
             errors.append("minimum valid profile daylight days/node below gate")
     except Exception:
         pending.append("vertical_profile.minimum_valid_daylight_days_per_node")
+
+    # Recompute the frozen height selection from candidate metrics.
+    metrics=vp.get("candidate_level_metrics",{})
+    complete_levels=[]
+    for lev in c["vertical_representativeness_gate"]["candidate_levels"]:
+        m=metrics.get(str(float(lev))) or metrics.get(f"{float(lev):g}")
+        if isinstance(m,dict) and m.get("median_absolute_relative_error") is not None:
+            complete_levels.append((float(lev),float(m["median_absolute_relative_error"])))
+    if complete_levels and selected is not None:
+        tie={0.5:0,0.25:1,0.75:2}
+        expected=min(complete_levels,key=lambda z:(z[1],tie.get(z[0],99)))[0]
+        if abs(selected-expected)>1e-12:
+            errors.append(f"selected canopy height {selected} does not match frozen minimum-error rule {expected}")
 
     chosen_metric=None
     if selected is not None:
@@ -147,6 +159,17 @@ def main():
             pending.append("metadata.fouling_pilot_submerged_days")
     fouling=x.get("fouling",{})
     interval=fouling.get("selected_manual_service_interval_days")
+    interval_metrics=fouling.get("candidate_interval_metrics",{})
+    passing_intervals=[
+      int(k) for k,v in interval_metrics.items()
+      if isinstance(v,dict) and v.get("pass") is True
+    ]
+    expected_interval=next(
+      (z for z in c["fouling_maintenance_gate"]["candidate_service_intervals_days"] if z in passing_intervals),
+      None
+    )
+    if interval is not None and expected_interval is not None and int(interval)!=int(expected_interval):
+        errors.append("selected fouling interval is not the longest passing frozen candidate")
     if interval is None:
         pending.append("fouling.selected_manual_service_interval_days")
         selected_fouling=None
