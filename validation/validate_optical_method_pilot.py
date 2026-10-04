@@ -154,6 +154,15 @@ def main():
     except Exception:
         pending.append("vertical_profile.minimum_valid_daylight_days_per_node")
 
+    classes=vp.get("nodes_by_canopy_height_class")
+    cg=vpc["canopy_height_class_gate"]
+    if not isinstance(classes,dict):
+        pending.append("vertical_profile.nodes_by_canopy_height_class")
+    else:
+        for cls in cg["classes"]:
+            if int(classes.get(cls,0))<cg["minimum_pilot_nodes_per_class"]:
+                pending.append(f"vertical_profile.canopy_height_class.{cls}")
+
     selected=vp.get("selected_within_canopy_height_fraction")
     if selected is None:
         pending.append("vertical_profile.selected_within_canopy_height_fraction")
