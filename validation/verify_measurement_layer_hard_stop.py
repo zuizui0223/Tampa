@@ -200,8 +200,10 @@ assert frame["decision"]["recent_frame_passes_30_node_8_per_bay_primary_precisio
 boundary=(ROOT/"docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md").read_text()
 assert "Observation-state reappearance is not ecological recovery." in boundary
 assert "Do **not** add another retrospective decomposition" in boundary
-assert "Below-ground reserve / clonal state" in boundary
+assert "Below-ground reserve / regenerative state — four-bay TNC v2" in boundary
 assert "Canopy hydrodynamic self-buffering" in boundary
+assert "Direct within-canopy optical DLI / microenvironment" in boundary
+assert "Node-scale hot-fresh event stress — temperature + salinity" in boundary
 assert "TBOFS near-bottom current as meadow exposure" in boundary
 
 program=(ROOT/"docs/NEXT_MEASUREMENT_LAYER_PROGRAM_V1.md").read_text()
