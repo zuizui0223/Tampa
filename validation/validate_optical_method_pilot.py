@@ -98,7 +98,7 @@ def main():
         pending.append("vertical_profile.pilot_nodes")
         n=None
     by=vp.get("nodes_by_bay")
-    if not isinstance(by,dict):
+    if not isinstance(by,dict) or not by:
         pending.append("vertical_profile.nodes_by_bay")
         by={}
     else:
