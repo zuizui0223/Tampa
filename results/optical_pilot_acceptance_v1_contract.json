@@ -8,10 +8,11 @@
     "Collier et al. 2016 Frontiers in Marine Science 3:106, DOI 10.3389/fmars.2016.00106: cosine-corrected underwater PAR, reference calibration, 15-min logging, DLI.",
     "The amount of light reaching the leaves in seagrass (Zostera marina) meadows, 2021: strong vertical decline in leaf-level PPFD within canopy.",
     "LI-COR LI-192 manufacturer specification: immersion-designed cosine-corrected underwater quantum reference sensor.",
-    "Apogee underwater quantum sensor specifications: approximately +/-5% calibration uncertainty for current underwater quantum meters."
+    "Apogee underwater quantum sensor specifications: approximately +/-5% calibration uncertainty for current underwater quantum meters.",
+    "LI-COR LI-192 and LI-193 specifications distinguish hemispherical cosine-corrected PPFD from all-direction scalar photon flux fluence rate; the two sensor geometries measure different angular quantities and are not treated as interchangeable here."
   ],
   "calibration_gate": {
-    "scope": "Every sensor/channel intended for outcome-bearing within-canopy or above-canopy PAR must pass an in-water cross-calibration against one frozen cosine-corrected underwater quantum reference.",
+    "scope": "Every sensor/channel intended for outcome-bearing within-canopy or above-canopy optical measurement must pass an in-water cross-calibration against one frozen underwater quantum reference with the SAME angular-response class as the primary measurement.",
     "minimum_irradiance_levels": 5,
     "minimum_paired_observations_per_sensor": 50,
     "required_range": "Pilot must span darkness/near-zero and the full expected field PPFD range without sensor saturation.",
@@ -43,7 +44,8 @@
     "expected_field_range_gate": {
       "rule": "For every outcome-bearing sensor/channel, the largest reference PPFD in the calibration pilot must be at least the response-independently declared expected field PPFD maximum.",
       "metadata_field": "expected_field_ppfd_max_umol_m2_s"
-    }
+    },
+    "angular_reference_boundary": "Cross-class calibration between 2pi cosine PPFD and 4pi scalar PPFFR is prohibited in this v1 pilot because the quantities respond differently to the underwater angular light field."
   },
   "vertical_representativeness_gate": {
     "pilot_nodes_min": 12,
@@ -143,5 +145,22 @@
       "confirmatory",
       "disabled"
     ]
+  },
+  "angular_response_gate": {
+    "allowed_classes": [
+      "2pi_cosine_ppfd",
+      "4pi_scalar_ppffr"
+    ],
+    "primary_class_field": "primary_angular_response_class",
+    "reference_class_field": "reference_angular_response_class",
+    "rule": "Exactly one primary angular-response class must be declared before pilot validation, and the calibration reference class must match it exactly.",
+    "outcome_channel_rule": "All declared outcome-bearing within-canopy channels are assumed to belong to the declared primary class; mixed angular-response classes in one primary are prohibited.",
+    "above_canopy_rule": "If optical attribution is confirmatory, above-canopy reference channels must use the same primary class so within/above transmittance is a ratio of the same optical quantity.",
+    "cross_class_transfer_allowed": false,
+    "failure_action": "STOP_PILOT_QC_FAILED. Do not derive a cosine-to-scalar or scalar-to-cosine conversion from the biological campaign.",
+    "semantic_reporting": {
+      "2pi_cosine_ppfd": "hemispherical cosine-corrected PPFD; DLI in mol photons m-2 d-1",
+      "4pi_scalar_ppffr": "scalar photosynthetic photon flux fluence rate / scalar photon irradiance; integrated scalar photon exposure in mol photons m-2 d-1"
+    }
   }
 }
