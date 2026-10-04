@@ -2,7 +2,7 @@
 
 ## Goal
 
-Test whether the light actually experienced inside *Thalassia testudinum* canopies predicts short-term change in below-ground reserve.
+Test whether a standardized local photon environment measured inside *Thalassia testudinum* canopies predicts short-term change in below-ground reserve.
 
 The retrospective Tampa programme already rejected two weaker proxies:
 
@@ -13,7 +13,7 @@ The new mechanism therefore changes the **measurement layer**, not the old categ
 
 Primary question:
 
-> does lower directly measured within-canopy daily light correspond to lower post-exposure rhizome TNC after pre-exposure TNC is represented?
+> does lower photon exposure measured at a frozen standardized within-canopy position correspond to lower post-exposure rhizome TNC after pre-exposure TNC is represented?
 
 Paired contract:
 
@@ -103,6 +103,26 @@ The computational primary column may remain `mean_daily_within_canopy_dli`, but 
 
 This matters because canopy leaves alter the angular distribution of underwater light. Two sensors can agree under a calibration field yet respond differently inside a directional or diffuse canopy light field if their angular collectors differ.
 
+## Biological meaning of the point optical measurement
+
+The primary logger is a **local optical-environment sensor**, not a direct leaf dosimeter.
+
+It does not integrate:
+
+- the changing orientation of individual *Thalassia* leaves;
+- leaf motion in waves/currents;
+- vertical leaf-area distribution;
+- wavelength-specific leaf absorptance;
+- whole-canopy photosynthesis.
+
+The three-level vertical pilot asks whether one fixed proportional height reproducibly represents the **measured local vertical photon field** under the frozen definition. Its equal-weight profile mean is a geometric method reference, not a leaf-area-weighted absorbed-light estimate.
+
+Therefore a supported primary is described as:
+
+> a prospective standardized within-canopy photon-environment / reserve association.
+
+Do not describe the coefficient as the effect of exact photon dose absorbed by leaves.
+
 ## Within-canopy PAR placement
 
 At each node, measure PAR at one preselected within-canopy position.
@@ -188,7 +208,7 @@ Do not reconstruct long daytime gaps from neighboring nodes, weather stations or
 
 ## Nested paired above-canopy optical reference
 
-The primary biological exposure remains actual within-canopy DLI. To identify whether low actual light is locally created by the canopy/leaf layer rather than by incident or water-column light, add a nested paired-reference subset.
+The primary biological exposure remains standardized within-canopy DLI. To identify whether low actual light is locally created by the canopy/leaf layer rather than by incident or water-column light, add a nested paired-reference subset.
 
 Planning target:
 
@@ -220,9 +240,9 @@ Interpretation:
 
 - actual DLI -> TNC supported + positive canopy attenuation -> consistent with biologically consequential low light plus a local canopy-associated optical gradient;
 - actual DLI -> TNC supported + weak canopy attenuation -> light matters, but low light may be driven mainly by cloud/water-column/turbidity forcing;
-- positive canopy attenuation + null actual-DLI primary -> canopy modifies light, but the modification is not shown to deplete reserve over this interval.
+- positive canopy attenuation + null within-canopy DLI primary -> canopy modifies light, but the modification is not shown to deplete reserve over this interval.
 
-The paired-reference metric cannot replace or rescue a null actual-DLI primary.
+The paired-reference metric cannot replace or rescue a null within-canopy DLI primary.
 
 ## Quantitative optical pilot gate
 
