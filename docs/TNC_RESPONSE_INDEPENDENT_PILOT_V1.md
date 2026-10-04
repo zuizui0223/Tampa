@@ -1,3 +1,20 @@
+# DEPRECATED — superseded pilot design record
+
+**Do not use this document to make current TNC-v2 method decisions.**
+
+This is retained only for provenance. The authoritative response-independent method/field pilot is now:
+
+- `docs/TNC_V2_METHOD_FIELD_PILOT_V1.md`
+- `field/tnc_v2_method_pilot.json`
+- `validation/build_tnc_v2_method_pilot_summary.py`
+- `validation/validate_tnc_v2_method_pilot.py`
+- `analysis/69_apply_tnc_v2_method_pilot.py`
+- `field/tnc_v2_precollection_freeze.json`
+
+The legacy `field/tnc_v2_pilot_freeze.json` and `field/tnc_v2_pilot_manifest.csv` must not be used for outcome-bearing protocol decisions.
+
+---
+
 # Tampa TNC response-independent pilot v1
 
 ## Purpose
