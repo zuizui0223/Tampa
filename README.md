@@ -340,7 +340,7 @@ The dynamic-neighborhood audit then recomputed the previous year's state of surr
 - binary detection: log loss **0.15708 → 0.16079**; mean delta **+0.00371**; neighborhood wins 12/22 years; sign-flip **p = 0.692**
 - focal frequency: MAE **0.04702 → 0.04797**; mean delta **+0.000953**; neighborhood wins 7/22; **p = 0.991**
 
-So a simple annually refreshed neighborhood-accessibility signal does not rescue the spatial story. The working ecological hypothesis is now that **persistent local site template and meadow legacy stabilize occurrence, while local plant condition can deteriorate on shorter timescales and eventually cross a recorded-state threshold**. This is a post-hoc hypothesis, not a causal identification. See `docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md`.
+So a simple annually refreshed neighborhood-accessibility signal does not rescue the spatial story. The more defensible ecological interpretation is that **persistent site differences strongly structure coarse occurrence/abundance, while plant condition, focal quantitative state and community composition vary on partially independent axes**. Unmeasured slow biological or physical states may help explain that persistence, but the annual record does **not** establish a condition → thinning → threshold-loss sequence. See `docs/EOG_ECOLOGICAL_HYPOTHESES_V1.md`.
 
 ### 2k. Segment-wide synchrony and local neighborhood both fail beyond own recent state
 
