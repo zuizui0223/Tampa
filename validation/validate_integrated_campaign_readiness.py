@@ -85,6 +85,7 @@ def main():
     ap.add_argument("--freeze",default="field/integrated_campaign_resource_freeze.json")
     ap.add_argument("--contract",default="results/integrated_field_campaign_v1_contract.json")
     ap.add_argument("--tnc-freeze",default="field/tnc_v2_precollection_freeze.json")
+    ap.add_argument("--optical-pilot-freeze",default="field/optical_pilot_freeze.json")
     ap.add_argument("--out",default="results/integrated_campaign_readiness_v1.json")
     ap.add_argument("--strict",action="store_true")
     a=ap.parse_args()
@@ -92,6 +93,7 @@ def main():
     freeze=json.loads(Path(a.freeze).read_text())
     contract=json.loads(Path(a.contract).read_text())
     tnc_freeze=json.loads(Path(a.tnc_freeze).read_text())
+    optical_pilot_freeze=json.loads(Path(a.optical_pilot_freeze).read_text())
     fields=freeze["fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger"]
 
     errors=[]
@@ -137,6 +139,8 @@ def main():
         ):
             if fields.get(k) in (None,"","PENDING"): pending.append(k)
     if optical_intent=="confirmatory":
+        if optical_pilot_freeze.get("status")!="READY":
+            pending.append("optical_pilot_freeze.READY")
         for k in (
             "final_core_three_optical_nodes_by_bay",
             "within_canopy_par_node_systems_available",
@@ -271,6 +275,19 @@ def main():
         notes.append("event-stress outcome-bearing module disabled; no event-specific pre/post TNC is authorized")
 
     if optical_intent=="confirmatory":
+        if optical_pilot_freeze.get("contract")!="results/optical_pilot_acceptance_v1_contract.json":
+            errors.append("optical pilot freeze does not point to frozen optical acceptance contract")
+        if optical_pilot_freeze.get("status")!="READY":
+            errors.append("optical pilot freeze is not READY")
+        opp=optical_pilot_freeze.get("method_pilot_provenance",{})
+        if opp.get("validation_status")!="PASS_OPTICAL_PILOT":
+            errors.append("optical pilot freeze lacks PASS_OPTICAL_PILOT provenance")
+        if not opp.get("candidate_sha256") or not opp.get("raw_pilot_provenance"):
+            errors.append("optical pilot freeze lacks raw-pilot provenance/digest")
+        opf=optical_pilot_freeze.get("fields_to_freeze_before_optical_confirmatory_deployment",{})
+        clearance=opf.get("above_canopy_clearance_tolerance_rule")
+        if attr_intent=="confirmatory" and clearance=="NOT_APPLICABLE_ATTRIBUTION_DISABLED":
+            errors.append("optical attribution is confirmatory but optical pilot freeze marks above-canopy clearance not applicable")
         if len(optical)<30: errors.append(f"optical total {len(optical)} < 30")
         for b in BAYS3:
             if len(opt_by[b])<8: errors.append(f"optical {b} {len(opt_by[b])} < 8")

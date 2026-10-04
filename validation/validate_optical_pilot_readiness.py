@@ -38,6 +38,12 @@ def main():
     if pending:
         errors.append(f"READY status with pending fields: {pending}")
 
+    prov=x.get("method_pilot_provenance",{})
+    if prov.get("validation_status")!="PASS_OPTICAL_PILOT":
+        errors.append("READY freeze lacks PASS_OPTICAL_PILOT provenance")
+    if not prov.get("candidate_sha256") or not prov.get("raw_pilot_provenance"):
+        errors.append("READY freeze lacks candidate/raw pilot provenance")
+
     if f.get("all_outcome_bearing_channels_pass_calibration_gate") is not True:
         errors.append("not all outcome-bearing PAR channels passed calibration gate")
 
@@ -73,9 +79,16 @@ def main():
         except Exception:
             errors.append("manual service interval invalid")
     elif mode=="active_antifouling":
-        pass
+        if f.get("manual_service_interval_days")!="NOT_APPLICABLE_ACTIVE_ANTIFOULING":
+            errors.append("active antifouling requires explicit non-applicable manual interval token")
     else:
         errors.append("maintenance_mode must be manual or active_antifouling")
+
+    clearance=f.get("above_canopy_clearance_tolerance_rule")
+    if clearance in (None,"","PENDING"):
+        errors.append("above_canopy clearance must be frozen or explicitly marked not applicable")
+    elif clearance=="NOT_APPLICABLE_ATTRIBUTION_DISABLED":
+        pass
 
     try:
         if float(f["fouling_median_absolute_relative_change"])>c["fouling_maintenance_gate"]["acceptance"]["median_absolute_relative_change_max"]:

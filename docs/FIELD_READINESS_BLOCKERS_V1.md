@@ -92,6 +92,15 @@ Response-independent acceptance criteria are frozen in:
 - `docs/OPTICAL_PAR_METHOD_PILOT_V1.md`;
 - `field/optical_pilot_freeze.json`.
 
+The pilot values must come through the machine-checkable raw-data pipeline documented in:
+
+- `docs/OPTICAL_PILOT_DATA_ENTRY_V1.md`;
+- `validation/build_optical_pilot_summary.py`;
+- `validation/validate_optical_method_pilot.py`;
+- `analysis/72_apply_optical_method_pilot.py`.
+
+Do **not** type aggregate pilot metrics or a `READY` status directly into the authoritative freeze. Integrated campaign readiness now requires retained `PASS_OPTICAL_PILOT` provenance and raw-input digests.
+
 The pilot must now resolve actual hardware/field outputs under fixed gates for:
 
 - in-water sensor calibration;
