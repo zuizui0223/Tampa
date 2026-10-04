@@ -70,6 +70,7 @@ def main():
       "candidate_source":v.get("pilot_source"),
       "candidate_sha256":v.get("pilot_candidate_sha256"),
       "raw_pilot_provenance":v.get("raw_pilot_provenance"),
+      "source_artifact_manifest":v.get("source_artifact_manifest"),
       "copied_keys":list(KEYS),
       "rule":"Values copied mechanically from PASS_OPTICAL_PILOT; TNC/future response prohibited."
     }
