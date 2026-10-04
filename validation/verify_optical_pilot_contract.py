@@ -9,10 +9,13 @@ assert c["status"]=="response_independent_method_pilot_not_yet_run"
 assert c["calibration_gate"]["minimum_irradiance_levels"]==5
 assert c["calibration_gate"]["minimum_paired_observations_per_sensor"]==50
 assert c["calibration_gate"]["relative_error_definition"]["denominator_floor_umol_m2_s"]==10
-assert c["calibration_gate"]["dark_reference_definition"]["reference_ppfd_max_umol_m2_s"]==1
+assert c["calibration_gate"]["dark_reference_definition"]["reference_photon_rate_max_umol_m2_s"]==1
 assert c["calibration_gate"]["dark_reference_definition"]["minimum_dark_observations_per_sensor"]==5
-assert c["calibration_gate"]["expected_field_range_gate"]["metadata_field"]=="expected_field_ppfd_max_umol_m2_s"
+assert c["calibration_gate"]["expected_field_range_gate"]["metadata_field"]=="expected_field_photon_rate_max_umol_m2_s"
 assert c["calibration_gate"]["side_by_side_dli_check"]["all_outcome_bearing_channels_required"] is True
+assert c["angular_response_gate"]["allowed_classes"]==["2pi_cosine_ppfd","4pi_scalar_ppffr"]
+assert c["angular_response_gate"]["cross_class_transfer_allowed"] is False
+assert "same angular-response class" in c["angular_response_gate"]["rule"]
 a=c["calibration_gate"]["post_correction_acceptance"]
 assert a["r_squared_min"]==0.995
 assert a["median_absolute_relative_error_max"]==0.05
