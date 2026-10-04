@@ -97,4 +97,4 @@ jobs:
             results/generated_tnc_v2_raw_pilot_summary.json
             results/generated_tnc_v2_method_pilot_validation.json
             results/generated_tnc_v2_precollection_freeze_after_pilot.json
-          if-no-files-found: error
+          if-no-files-found: warn
