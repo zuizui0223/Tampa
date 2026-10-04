@@ -142,7 +142,7 @@ def main():
       "interpretation_status":interval if estimable else "nonestimable_or_pilot_gate_failed",
       "family_level_ci97_5":b["ci97_5"],
       "claim_boundary":[
-        "Support is a prospective actual-light/reserve association, not proof that epiphytes or light alone are causal.",
+        "Support is a prospective standardized within-canopy photon-environment/reserve association, not proof that epiphytes or light alone are causal.",
         "Do not introduce a low-light threshold, change PAR aggregation, drop water_body, shift season, or select a favorable node subset after TNC inspection.",
         "A positive canopy attenuation diagnostic cannot rescue a null within-canopy DLI primary.",
         "Interpret the DLI coefficient only for the angular-response quantity frozen before deployment; cosine PPFD and scalar PPFFR are not interchangeable."
