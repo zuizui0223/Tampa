@@ -95,7 +95,26 @@ def boot(x):
     }
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument("--input",required=True);ap.add_argument("--out",required=True);a=ap.parse_args()
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--input",required=True)
+    ap.add_argument("--out",required=True)
+    ap.add_argument("--optical-freeze",default="field/optical_pilot_freeze.json")
+    a=ap.parse_args()
+
+    method=json.loads(Path(a.optical_freeze).read_text())
+    if method.get("status")!="READY":
+        raise RuntimeError("optical method freeze must be READY before primary analysis")
+    mf=method.get("fields_to_freeze_before_optical_confirmatory_deployment",{})
+    angular_class=mf.get("primary_angular_response_class")
+    reference_class=mf.get("reference_angular_response_class")
+    quantity_label=mf.get("primary_light_quantity_reporting_label")
+    if angular_class not in {"2pi_cosine_ppfd","4pi_scalar_ppffr"}:
+        raise RuntimeError("primary optical angular-response class is not valid/frozen")
+    if reference_class!=angular_class:
+        raise RuntimeError("primary/reference optical angular-response classes mismatch")
+    if not quantity_label:
+        raise RuntimeError("primary optical light-quantity reporting label is missing")
+
     x=prep(pd.read_csv(a.input));counts,sample,overall,within,var_bays,distinct=gates(x)
     point=coef(x)
     if not np.isfinite(point): raise RuntimeError("primary design matrix rank-deficient")
@@ -103,9 +122,15 @@ def main():
     interval="supported_positive" if lo>0 else "contradicted_direction" if hi<0 else "unsupported"
     estimable=sample and overall and within
     res={
-      "schema":"tampa.optical_primary_analysis.v1",
+      "schema":"tampa.optical_primary_analysis.v2",
       "model":"tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
-      "primary_coefficient":{"name":"mean_daily_within_canopy_dli","estimate":point,"units":"mg g-1 post-TNC per mol photons m-2 d-1"},
+      "optical_measurement_semantics":{
+        "angular_response_class":angular_class,
+        "reference_angular_response_class":reference_class,
+        "reporting_label":quantity_label,
+        "method_freeze":str(a.optical_freeze)
+      },
+      "primary_coefficient":{"name":"mean_daily_within_canopy_dli","estimate":point,"units":"mg g-1 post-TNC per mol photons m-2 d-1 of the frozen optical quantity"},
       "analytic_nodes":len(x),"nodes_by_water_body":counts,
       "gates":{
         "sample_gate_passed":sample,"overall_distinct_exposure_gate_passed":overall,
@@ -119,7 +144,8 @@ def main():
       "claim_boundary":[
         "Support is a prospective actual-light/reserve association, not proof that epiphytes or light alone are causal.",
         "Do not introduce a low-light threshold, change PAR aggregation, drop water_body, shift season, or select a favorable node subset after TNC inspection.",
-        "A positive canopy attenuation diagnostic cannot rescue a null within-canopy DLI primary."
+        "A positive canopy attenuation diagnostic cannot rescue a null within-canopy DLI primary.",
+        "Interpret the DLI coefficient only for the angular-response quantity frozen before deployment; cosine PPFD and scalar PPFFR are not interchangeable."
       ]
     }
     out=Path(a.out);out.parent.mkdir(parents=True,exist_ok=True)
