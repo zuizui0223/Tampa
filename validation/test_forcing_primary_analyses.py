@@ -77,6 +77,43 @@ assert op.coef(ox)>0
 ob=op.boot(ox)
 assert ob["ci95"][0]>0, ob
 
+# Optical analysis main must carry method-geometry provenance and fail closed when method is not READY.
+with tempfile.TemporaryDirectory() as td:
+    td=Path(td)
+    inp=td/"optical.csv"; out=td/"optical.json"; fr=td/"method.json"
+    pd.DataFrame(orows).to_csv(inp,index=False)
+
+    fr.write_text(json.dumps({
+      "status":"PENDING_RESPONSE_INDEPENDENT_PILOT",
+      "fields_to_freeze_before_optical_confirmatory_deployment":{}
+    }))
+    old_argv=sys.argv[:]
+    try:
+        sys.argv=["66_optical_primary_analysis.py","--input",str(inp),"--out",str(out),"--optical-freeze",str(fr)]
+        stopped=False
+        try:
+            op.main()
+        except RuntimeError:
+            stopped=True
+        assert stopped,"optical primary unexpectedly ran with PENDING method freeze"
+
+        fr.write_text(json.dumps({
+          "status":"READY",
+          "fields_to_freeze_before_optical_confirmatory_deployment":{
+            "primary_angular_response_class":"2pi_cosine_ppfd",
+            "reference_angular_response_class":"2pi_cosine_ppfd",
+            "primary_light_quantity_reporting_label":"hemispherical cosine-corrected PPFD; DLI in mol photons m-2 d-1"
+          }
+        }))
+        sys.argv=["66_optical_primary_analysis.py","--input",str(inp),"--out",str(out),"--optical-freeze",str(fr)]
+        op.main()
+        z=json.loads(out.read_text())
+        assert z["optical_measurement_semantics"]["angular_response_class"]=="2pi_cosine_ppfd"
+        assert z["optical_measurement_semantics"]["reference_angular_response_class"]=="2pi_cosine_ppfd"
+        assert "cosine-corrected PPFD" in z["optical_measurement_semantics"]["reporting_label"]
+    finally:
+        sys.argv=old_argv
+
 # Optical variation fail.
 obad=pd.DataFrame(orows)
 obad["mean_daily_within_canopy_dli"]=obad["water_body"].map({
