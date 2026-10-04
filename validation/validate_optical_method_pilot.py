@@ -32,7 +32,7 @@ def main():
         "reference_sensor_id_and_calibration_provenance",
         "primary_angular_response_class",
         "reference_angular_response_class",
-        "expected_field_ppfd_max_umol_m2_s",
+        "expected_field_photon_rate_max_umol_m2_s",
         "mounting_geometry_and_height_tolerance_rule",
         "optical_attribution_intent",
     ):
@@ -88,7 +88,7 @@ def main():
             continue
         required=(
             "paired_n","irradiance_levels","dark_observations",
-            "maximum_reference_ppfd_umol_m2_s","intercept","slope","r_squared",
+            "maximum_reference_photon_rate_umol_m2_s","intercept","slope","r_squared",
             "median_absolute_relative_error","p95_absolute_relative_error",
             "dark_offset_abs_umol_m2_s","saturated"
         )
@@ -104,11 +104,11 @@ def main():
         if int(m["dark_observations"])<darkdef["minimum_dark_observations_per_sensor"]:
             fail.append("dark_observations")
         try:
-            expected_max=float(meta["expected_field_ppfd_max_umol_m2_s"])
-            if float(m["maximum_reference_ppfd_umol_m2_s"])<expected_max:
+            expected_max=float(meta["expected_field_photon_rate_max_umol_m2_s"])
+            if float(m["maximum_reference_photon_rate_umol_m2_s"])<expected_max:
                 fail.append("expected_field_range")
         except Exception:
-            pending.append("metadata.expected_field_ppfd_max_umol_m2_s")
+            pending.append("metadata.expected_field_photon_rate_max_umol_m2_s")
         if float(m["r_squared"])<ac["r_squared_min"]:
             fail.append("r_squared")
         if float(m["median_absolute_relative_error"])>ac["median_absolute_relative_error_max"]:
@@ -134,7 +134,7 @@ def main():
             "paired_n":int(m["paired_n"]),
             "irradiance_levels":int(m["irradiance_levels"]),
             "dark_observations":int(m["dark_observations"]),
-            "maximum_reference_ppfd_umol_m2_s":float(m["maximum_reference_ppfd_umol_m2_s"]),
+            "maximum_reference_photon_rate_umol_m2_s":float(m["maximum_reference_photon_rate_umol_m2_s"]),
         }
 
     # Side-by-side DLI.
