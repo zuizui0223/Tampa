@@ -1,5 +1,5 @@
 {
-  "schema": "tampa.optical_raw_pilot_metadata.v2",
+  "schema": "tampa.optical_raw_pilot_metadata.v3",
   "outcome_response_accessed": false,
   "par_sensor_model": null,
   "reference_sensor_id_and_calibration_provenance": null,
@@ -9,5 +9,7 @@
   "optical_attribution_intent": null,
   "above_canopy_clearance_tolerance_rule": null,
   "source_artifact_manifest": [],
-  "note": "Populate only response-independent optical method-pilot metadata. TNC and future meadow responses are prohibited. optical_attribution_intent must be confirmatory or disabled before final handoff."
+  "note": "Populate only response-independent optical method-pilot metadata. TNC and future meadow responses are prohibited. Freeze exactly one optical angular-response class before pilot validation; reference class must match primary class. optical_attribution_intent must be confirmatory or disabled before final handoff.",
+  "primary_angular_response_class": null,
+  "reference_angular_response_class": null
 }
