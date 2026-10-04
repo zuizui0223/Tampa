@@ -4,6 +4,5 @@
   "independent_rhizome_specimens": null,
   "collection_locations_or_batches": null,
   "field_core_attempts": null,
-  "monotonic_directional_drift_absent": null,
-  "note": "Fill only from response-independent method/field pilot. Future ecological response is prohibited."
+  "note": "Fill only response-independent method/field pilot metadata. Future ecological response is prohibited. Preservation directional drift is derived automatically from the raw preservation CSV and must not be entered manually."
 }
