@@ -135,39 +135,45 @@ This matters because it closes an obvious explanation for the earlier null scree
 
 The current retrospective evidence therefore points away from further tuning of broad water-quality stress indices. Mechanistic progress now requires **new state information**—especially meadow-scale high-frequency physical exposure, epiphytes/light at the canopy, below-ground carbohydrate/rhizome state, or acute disturbance/disease observations.
 
-## Ecological hypothesis H1 — persistent site template + local meadow buffer
+## Ecological hypothesis H1 — persistent site template + unresolved slow state
 
-**Hypothesis.** Long-lived local habitat properties and meadow legacy stabilize whether *Thalassia* remains established at a transect, while above-ground condition can change substantially before the binary state changes.
+**Hypothesis.** Persistent local site properties and unmeasured slow biological states help structure long-run *Thalassia* occurrence/abundance, while plant condition and community composition can vary more rapidly and need not move in a single ordered sequence.
 
-Simple depth/sediment summaries, a segment-Secchi × visit-depth benthic-light proxy, and the published 30 °C / 25 ppt joint hot–fresh duration have now been tested without recovering the unresolved site/condition signal. Remaining candidates require finer or different state information: node-scale high-frequency physical exposure, epiphyte/canopy light microenvironment, rhizosphere chemistry, acute disturbance or disease, and long-lived below-ground clonal/rhizome structure.
+Simple depth/sediment summaries, a segment-Secchi × visit-depth benthic-light proxy, the published 30 °C / 25 ppt joint hot–fresh duration, and simple annual neighborhood state have been tested without recovering the unresolved site/condition signal. Remaining candidates require genuinely new information: measured rhizome reserve/regenerative state, direct within-canopy optical exposure, node-scale event forcing, hydrodynamics, rhizosphere chemistry, acute disturbance or disease.
 
 ### Existing evidence consistent with H1
 
 - stable node identity strongly structures detection, frequency and Braun–Blanquet levels;
 - blade length and shoot density are far less site-saturated;
 - older-history prediction loses formal support after node identity is added;
-- the simple dynamic-neighborhood augmentation adds no mean heldout benefit;
-- decomposing that signal into water-body-wide state and finer local neighborhood deviation still yields no supported increment at any of the four frozen EOG radii.
+- simple dynamic-neighborhood, segment-state and local-neighborhood augmentations add no supported year-ahead information;
+- direct depth/sediment, coarse light and coarse hot/fresh screens do not explain the unresolved local template.
 
-### Predictions
+### Prospective discriminating predictions
 
-1. richer measured persistent habitat variables—especially benthic light/hydrodynamic and below-ground meadow properties—should explain part of the current node-ID effect; simple depth and sediment alone do not;
-2. plant-condition variables should respond earlier than binary occurrence to short-term stress;
-3. established meadows should often retain presence through periods of declining blade length/density;
-4. the strongest spatial predictor of long-run state should be local habitat template rather than distance to one arbitrary source.
+1. directly measured slow state such as rhizome TNC should predict future quantitative change beyond current above-ground state if it is a relevant hidden state;
+2. within-node anchor TNC and recent reserve trajectory provide stricter tests against a purely time-invariant transect template;
+3. direct within-canopy DLI or node-scale event exposure may predict reserve change if short-timescale forcing updates that slow state;
+4. none of these predictions requires blade length or shoot density to decline before frequency.
 
-## Ecological hypothesis H2 — local degradation crosses a recorded-state threshold
+## Ecological hypothesis H2 — low quantitative state predicts recorded loss, but the transition mechanism is unresolved
 
-**Hypothesis.** Many recorded losses are the endpoint of local meadow thinning or condition decline, not an annual failure of regional accessibility.
+**Supported pattern.** Source-year focal frequency and Braun–Blanquet state contain information about next-year recorded *Thalassia* loss.
 
-This is directly motivated by the existing early-warning result: source-year frequency and Braun–Blanquet state contain information about next-year recorded loss.
+This supports a monitoring statement:
 
-### Predictions
+> a transect can be recorded present while its local quantitative state already indicates elevated risk of later non-detection.
 
-1. local quantitative condition should outperform regional accessibility metrics for next-year recorded loss;
-2. loss risk should rise nonlinearly at low local frequency/abundance;
-3. some apparent loss/return sequences should represent local thinning, detection and recovery rather than extinction/recolonization;
-4. a threshold model of local state should be more useful than a single-source dispersal-distance model.
+It does **not** establish a deterministic biological threshold, a condition → thinning cascade, or extinction/recolonization.
+
+A frozen cross-lag test found that source blade length and shoot density did not add robust one-year-ahead information about next-year frequency or Braun–Blanquet state beyond current quantitative state and stable node identity.
+
+### Predictions / boundaries
+
+1. local quantitative frequency/abundance should remain more useful for next-year recorded loss than the tested regional accessibility metrics;
+2. nonlinear loss-risk shapes may be described if prespecified, but no critical ecological threshold is currently identified;
+3. plant condition, focal abundance and community composition are treated as partially distinct state axes rather than obligatory stages;
+4. later re-recording is an observation-state return, not demonstrated ecological recovery or recolonization.
 
 ## Ecological hypothesis H3 — regional connectivity is saturated for established Tampa meadows
 
@@ -197,30 +203,38 @@ A useful monitoring framework should treat presence, within-transect occupancy, 
 
 ## What this suggests mechanistically
 
-The current best working picture is:
+The current working model is **state augmentation**, not a serial degradation cascade.
 
 ```text
-persistent site template
-(depth / light / sediment / hydrodynamics / meadow legacy)
-                ↓
-       long-run local meadow state
-                ↓
-  strong year-to-year local persistence
-                ↓
-shorter-term physiological / demographic stress
-                ↓
- blade length / shoot density / local frequency decline
-                ↓
-     quantitative degradation accumulates
-                ↓
- possible recorded-state loss after a threshold
+             persistent local site template
+                       +
+             unmeasured slow state
+        (reserve / regenerative / local physical state)
+                       |
+       +---------------+----------------+
+       |               |                |
+ occurrence /      plant condition    community
+ abundance         morphology/density composition
+       \               |                /
+        \              |               /
+         ---- coarse recorded state ----
+                       |
+             future state transitions
 ```
 
-Regional neighborhood geometry may still matter during establishment, recovery after major disturbance, or true range/front movement. The present data do not support it as the dominant annual predictor for already monitored Tampa transects.
+Short-timescale forcing may update one or more slow states, but the annual archive does not establish one universal ordering among the observed axes.
+
+The prospective question is therefore:
+
+> does augmenting the observed state with directly measured slow variables reduce the unexplained future-state information currently carried by stable site identity and history?
+
+Regional neighborhood geometry may still matter during establishment, major-disturbance recovery, or genuine range/front movement. The present data do not support it as the dominant annual predictor for the monitored Tampa transects.
 
 ## Claim boundary
 
-- H1–H4 are ecological hypotheses, not identified causal mechanisms.
+- H1–H4 are ecological hypotheses / interpretation frames, not identified causal mechanisms.
+- The condition → thinning → threshold-loss sequence is not a current supported mechanism; the frozen cross-lag test was negative.
+- Binary re-recording is not ecological recovery or recolonization.
 - `node_id` is a placeholder for persistent site differences, not a biological variable.
 - The dynamic-neighborhood test covers one annual, four-radius formulation only.
 - The EOG failure cannot itself prove clonal buffering, light limitation or local recruitment.
