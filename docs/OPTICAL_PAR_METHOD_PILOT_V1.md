@@ -193,6 +193,46 @@ After the response-independent pilot passes, freeze:
 
 Only then may `optical_vertical_profile_pilot_complete` be set to true in the integrated campaign resource freeze.
 
+## Authoritative raw-record pipeline
+
+The pilot result is **not** entered into the READY freeze by hand.
+
+Raw response-independent records are stored in:
+
+- `field/optical_raw_pilot_metadata.json`;
+- `field/optical_calibration_pilot.csv`;
+- `field/optical_side_by_side_dli_pilot.csv`;
+- `field/optical_vertical_profile_pilot.csv`;
+- `field/optical_placement_pilot.csv`;
+- `field/optical_fouling_pilot.csv`.
+
+The authoritative pipeline is:
+
+```text
+raw pilot records
+  -> validation/build_optical_pilot_summary.py
+  -> field/optical_pilot_candidate.json
+  -> validation/validate_optical_method_pilot.py
+  -> results/optical_method_pilot_validation.json
+  -> analysis/72_apply_optical_method_pilot.py
+  -> field/optical_pilot_freeze.json
+```
+
+The builder computes calibration error, vertical representativeness, placement repeatability and fouling metrics from the raw records.
+
+The validator independently rechecks the frozen selection rules:
+
+- all candidate outcome-bearing PAR channels satisfy calibration limits;
+- the selected 25/50/75% height is the minimum-error level under the frozen tie rule;
+- the selected maintenance interval is the **longest passing** frozen candidate;
+- all vertical-profile / placement / fouling gates pass.
+
+Only `PASS_OPTICAL_PILOT` produces a copy payload.
+
+The apply script refuses any non-PASS validation and refuses to overwrite a conflicting previously frozen value. It adds raw-record hashes and candidate/validation provenance before setting the optical pilot freeze to `READY`.
+
+The integrated campaign validator independently requires this provenance-backed `READY` state whenever the optical module is labeled confirmatory. A manually set `optical_vertical_profile_pilot_complete=true` is not sufficient.
+
 ## Claim boundary
 
 Passing this pilot means the optical exposure can be measured reproducibly enough for the prospective mechanism test.
