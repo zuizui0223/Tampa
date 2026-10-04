@@ -38,6 +38,12 @@ def main():
     if pending:
         errors.append(f"READY status with pending fields: {pending}")
 
+    prov=x.get("method_pilot_provenance",{})
+    if prov.get("validation_status")!="PASS_OPTICAL_PILOT":
+        errors.append("READY freeze lacks PASS_OPTICAL_PILOT provenance")
+    if not prov.get("candidate_sha256") or not prov.get("raw_pilot_provenance"):
+        errors.append("READY freeze lacks candidate/raw pilot provenance")
+
     if f.get("all_outcome_bearing_channels_pass_calibration_gate") is not True:
         errors.append("not all outcome-bearing PAR channels passed calibration gate")
 
