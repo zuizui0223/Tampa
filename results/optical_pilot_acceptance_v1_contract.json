@@ -15,7 +15,7 @@
     "scope": "Every sensor/channel intended for outcome-bearing within-canopy or above-canopy optical measurement must pass an in-water cross-calibration against one frozen underwater quantum reference with the SAME angular-response class as the primary measurement.",
     "minimum_irradiance_levels": 5,
     "minimum_paired_observations_per_sensor": 50,
-    "required_range": "Pilot must span darkness/near-zero and the full expected field PPFD range without sensor saturation.",
+    "required_range": "Pilot must span darkness/near-zero and the full response-independently declared expected field range of the chosen primary photon-rate quantity without sensor saturation.",
     "sensor_specific_correction": "One predeclared linear calibration per sensor/channel may be fit using pilot data only and is then frozen for the campaign.",
     "post_correction_acceptance": {
       "r_squared_min": 0.995,
@@ -32,18 +32,18 @@
     },
     "failure_action": "Exclude the sensor/channel or repeat response-independent calibration after repair. Do not carry a failing channel into outcome-bearing deployment.",
     "relative_error_definition": {
-      "formula": "abs(calibrated_ppfd - reference_ppfd) / max(abs(reference_ppfd), 10)",
+      "formula": "abs(calibrated_primary_photon_rate - reference_primary_photon_rate) / max(abs(reference_primary_photon_rate), 10)",
       "denominator_floor_umol_m2_s": 10,
       "rationale": "Near-zero/dark observations are handled by the separate dark-offset gate; a fixed 10 umol m-2 s-1 floor prevents undefined or arbitrarily large percentage error at zero light."
     },
     "dark_reference_definition": {
-      "reference_ppfd_max_umol_m2_s": 1,
+      "reference_photon_rate_max_umol_m2_s": 1,
       "minimum_dark_observations_per_sensor": 5,
-      "metric": "maximum absolute calibrated PPFD across qualifying dark observations"
+      "metric": "maximum absolute calibrated primary photon-rate reading across qualifying dark observations"
     },
     "expected_field_range_gate": {
-      "rule": "For every outcome-bearing sensor/channel, the largest reference PPFD in the calibration pilot must be at least the response-independently declared expected field PPFD maximum.",
-      "metadata_field": "expected_field_ppfd_max_umol_m2_s"
+      "rule": "For every outcome-bearing sensor/channel, the largest reference photon-rate value in the calibration pilot must be at least the response-independently declared expected field maximum for the chosen angular-response quantity.",
+      "metadata_field": "expected_field_photon_rate_max_umol_m2_s"
     },
     "angular_reference_boundary": "Cross-class calibration between 2pi cosine PPFD and 4pi scalar PPFFR is prohibited in this v1 pilot because the quantities respond differently to the underwater angular light field."
   },
@@ -105,7 +105,7 @@
     },
     "failure_action": "If no manual-service interval passes, require an active antifouling/wiper solution to pass the same gate or disable the optical primary for the outcome-bearing campaign.",
     "relative_change_definition": {
-      "formula": "abs(pre_clean_ppfd - post_clean_ppfd) / max(abs(post_clean_ppfd), 10)",
+      "formula": "abs(pre_clean_primary_photon_rate - post_clean_primary_photon_rate) / max(abs(post_clean_primary_photon_rate), 10)",
       "denominator_floor_umol_m2_s": 10
     },
     "location_duration_rule": "Each counted pilot location must have documented submergence through at least pilot day 14 under the candidate maintenance mode.",
