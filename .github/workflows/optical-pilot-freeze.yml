@@ -7,6 +7,10 @@ on:
       - "field/optical_pilot_freeze.json"
       - "results/optical_pilot_acceptance_v1_contract.json"
       - "validation/validate_optical_pilot_readiness.py"
+      - "docs/OPTICAL_PILOT_DATA_ENTRY_V1.md"
+      - "analysis/72_apply_optical_method_pilot.py"
+      - "validation/build_optical_pilot_summary.py"
+      - "validation/validate_optical_method_pilot.py"
       - ".github/workflows/optical-pilot-freeze.yml"
   workflow_dispatch:
 
