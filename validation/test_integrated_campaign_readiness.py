@@ -9,6 +9,7 @@ VALIDATOR=ROOT/"validation/validate_integrated_campaign_readiness.py"
 CONTRACT=ROOT/"results/integrated_field_campaign_v1_contract.json"
 BASE_FREEZE=json.loads((ROOT/"field/integrated_campaign_resource_freeze.json").read_text())
 BASE_TNC=json.loads((ROOT/"field/tnc_v2_precollection_freeze.json").read_text())
+BASE_OPTICAL=json.loads((ROOT/"field/optical_pilot_freeze.json").read_text())
 
 BAYS3=("Old Tampa Bay","Middle Tampa Bay","Lower Tampa Bay")
 BAYS4=BAYS3+("Boca Ciega Bay",)
@@ -42,6 +43,43 @@ def complete_tnc_freeze():
       "preservation_method":"frozen_v1",
       "assay_batch_randomization_rule":"blocked_random_v1",
     })
+    return x
+
+
+def complete_optical_freeze(attribution_disabled=True):
+    x=copy.deepcopy(BASE_OPTICAL)
+    f=x["fields_to_freeze_before_optical_confirmatory_deployment"]
+    f.update({
+      "par_sensor_model":"synthetic_PAR",
+      "reference_sensor_id_and_calibration_provenance":"synthetic_reference",
+      "sensor_specific_calibration_manifest":{"P1":{"slope":1.0}},
+      "all_outcome_bearing_channels_pass_calibration_gate":True,
+      "selected_within_canopy_height_fraction":0.5,
+      "vertical_profile_pilot_nodes":12,
+      "vertical_profile_nodes_by_bay":{
+        "Old Tampa Bay":4,"Middle Tampa Bay":4,"Lower Tampa Bay":4
+      },
+      "vertical_profile_median_absolute_relative_error":0.05,
+      "vertical_profile_fraction_node_days_within_25pct":0.95,
+      "vertical_profile_max_absolute_bay_median_relative_bias":0.05,
+      "placement_repeatability_fraction_within_tolerance":0.95,
+      "mounting_geometry_and_height_tolerance_rule":"synthetic frozen geometry",
+      "maintenance_mode":"manual",
+      "manual_service_interval_days":14,
+      "fouling_median_absolute_relative_change":0.02,
+      "fouling_p90_absolute_relative_change":0.04,
+      "above_canopy_clearance_tolerance_rule":(
+        "NOT_APPLICABLE_ATTRIBUTION_DISABLED"
+        if attribution_disabled else "0.10 m target +/- 0.02 m"
+      ),
+      "pilot_artifact_or_manifest_digest":"synthetic_digest",
+    })
+    x["method_pilot_provenance"]={
+      "validation_status":"PASS_OPTICAL_PILOT",
+      "candidate_sha256":"synthetic_candidate_sha256",
+      "raw_pilot_provenance":{"synthetic.csv":{"sha256":"synthetic"}},
+    }
+    x["status"]="READY"
     return x
 
 def base_resource(event_intent, optical_intent, attr_intent):
@@ -107,15 +145,19 @@ def add_forcing(x,event=True,optical=True,attr=False,temp_systems=33):
         })
     return x
 
-def run_case(name,resource,expected):
+def run_case(name,resource,expected,optical_freeze=None):
     with tempfile.TemporaryDirectory() as td:
         td=Path(td)
-        rf=td/"resource.json"; tf=td/"tnc.json"; out=td/"out.json"
+        rf=td/"resource.json"; tf=td/"tnc.json"; of=td/"optical.json"; out=td/"out.json"
         rf.write_text(json.dumps(resource))
         tf.write_text(json.dumps(complete_tnc_freeze()))
+        if optical_freeze is None:
+            optical_freeze=BASE_OPTICAL
+        of.write_text(json.dumps(optical_freeze))
         cp=subprocess.run([
           sys.executable,str(VALIDATOR),
           "--freeze",str(rf),"--tnc-freeze",str(tf),
+          "--optical-pilot-freeze",str(of),
           "--contract",str(CONTRACT),"--out",str(out)
         ],cwd=ROOT,text=True,capture_output=True)
         if cp.returncode!=0:
@@ -138,6 +180,7 @@ def main():
       "event_optical_ready_attribution_disabled",
       add_forcing(base_resource("confirmatory","confirmatory","disabled"),True,True,False,33),
       "READY_TNC_CONFIRMATORY_CAMPAIGN",
+      complete_optical_freeze(attribution_disabled=True),
     )
 
     # Complete freeze but declared confirmatory event module lacks one simultaneous system.
@@ -156,6 +199,23 @@ def main():
       "event_calendar_failure",
       bad,
       "STOP_MODULE_INTENT_MISMATCH",
+    )
+
+
+    # Optical confirmatory intent cannot proceed with a pending method-pilot freeze.
+    run_case(
+      "optical_pilot_pending",
+      add_forcing(base_resource("disabled","confirmatory","disabled"),False,True,False,33),
+      "STOP_RESOURCE_FREEZE_INCOMPLETE",
+      BASE_OPTICAL,
+    )
+
+    # Confirmatory above-canopy attribution cannot coexist with an N/A clearance freeze.
+    run_case(
+      "optical_attribution_na_conflict",
+      add_forcing(base_resource("disabled","confirmatory","confirmatory"),False,True,True,33),
+      "STOP_MODULE_INTENT_MISMATCH",
+      complete_optical_freeze(attribution_disabled=True),
     )
 
 if __name__=="__main__":
