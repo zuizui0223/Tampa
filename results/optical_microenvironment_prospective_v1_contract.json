@@ -3,11 +3,11 @@
   "frozen_on": "2026-10-01",
   "status": "future_new_measurement_design_not_yet_deployed",
   "evidence_class": "prospective_new_physical_to_biological_mechanism",
-  "purpose": "Test whether node-scale light actually experienced within Thalassia canopies predicts short-term reserve change, without reopening the failed bulk Secchi x depth proxy or the bounded qualitative epiphyte field.",
+  "purpose": "Test whether the standardized local photon environment measured within Thalassia canopies predicts short-term reserve change, without reopening the failed bulk Secchi x depth proxy or the bounded qualitative epiphyte field.",
   "relationship_to_existing_tampa_results": {
     "bulk_light_result": "The frozen Secchi-derived benthic-light proxy did not support blade-length or shoot-density trajectories.",
     "epiphyte_result": "Qualitative annual EpiphyteDensity did not support the simple prediction that higher burden is a year-ahead stress signal; the primary within-node coefficient was positive and the 2016 sensitivity overlapped zero.",
-    "new_question": "Does direct high-frequency irradiance inside the living canopy, measured over the same biological interval as TNC change, explain reserve depletion that coarse bay-segment light and qualitative epiphyte categories missed?",
+    "new_question": "Does direct high-frequency photon exposure at a frozen standardized position inside the living canopy, measured over the same biological interval as TNC change, explain reserve depletion that coarse bay-segment light and qualitative epiphyte categories missed?",
     "hard_boundary": "Do not reclassify EpiphyteDensity categories, epiphyte types, lags or annual windows. The new test must use direct optical measurements."
   },
   "sampling_frame": {
@@ -100,7 +100,8 @@
       "minimum_analyzable_nodes_in_each_counted_bay": 6,
       "rule": "At least two bays must each contain >=6 analyzable nodes and >=3 distinct node-level DLI values. Otherwise the optical primary is non-estimable rather than dropping water_body or selecting a favorable subset."
     },
-    "angular_semantics": "The column name mean_daily_within_canopy_dli is a computational placeholder. Scientific reporting must name the frozen angular-response quantity (2π cosine PPFD DLI or 4π scalar photon-fluence integral) recorded in the method freeze."
+    "angular_semantics": "The column name mean_daily_within_canopy_dli is a computational placeholder. Scientific reporting must name the frozen angular-response quantity (2π cosine PPFD DLI or 4π scalar photon-fluence integral) recorded in the method freeze.",
+    "biological_quantity_boundary": "The sensor measures the local underwater photon field at one standardized canopy position. It is not a direct measure of photons absorbed by moving Thalassia leaf area, whole-canopy photosynthesis, or leaf-integrated dose."
   },
   "reserve_response": {
     "pre_tnc": "Use the same pre-exposure TNC samples and frozen HPLC/tissue protocol as the event-stress/clonal programme.",
@@ -199,7 +200,7 @@
   "site_template_boundary": {
     "statement": "A cross-node DLI association can still reflect persistent local site properties, but the pre/post TNC response and synchronized common exposure interval provide a dynamic process test that is less compatible with a purely static site-template explanation.",
     "limitation": "Time-varying common causes such as turbidity events, nutrients, hypoxia or disturbance may still covary with light and TNC.",
-    "claim_rule": "Supported DLI -> TNC is described as a prospective actual-light/reserve association; causal optical stress is not claimed without stronger manipulation."
+    "claim_rule": "Supported within-canopy photon exposure -> TNC is described as a prospective local optical-environment/reserve association; causal optical stress and whole-leaf absorbed dose are not claimed without stronger measurement/manipulation."
   },
   "pre_outcome_freeze_required": [
     "final contemporaneous node list and alternates",
@@ -241,6 +242,7 @@
     "Optical deployment reuses the already planned pre/post TNC rounds and does not justify additional destructive reserve sampling.",
     "The July 24-September 3 calendar was chosen for event-stress climatology, not to maximize optical contrast; optical inference is explicitly interval-specific and cannot be generalized to all seasons from this deployment alone.",
     "Optical confirmatory readiness additionally requires the response-independent sensor calibration, vertical representativeness, placement-repeatability, fouling-maintenance and DLI missingness gates in results/optical_pilot_acceptance_v1_contract.json.",
-    "Cosine-corrected PPFD and 4pi scalar photon fluence rate are distinct optical quantities and are not interchangeable in this primary. All outcome-bearing within/above-canopy channels and the calibration reference must use one matched frozen angular-response class."
+    "Cosine-corrected PPFD and 4pi scalar photon fluence rate are distinct optical quantities and are not interchangeable in this primary. All outcome-bearing within/above-canopy channels and the calibration reference must use one matched frozen angular-response class.",
+    "A fixed underwater quantum sensor measures the local photon environment, not whole-leaf or whole-canopy absorbed photon dose. Leaf angle, motion, absorptance and vertical leaf-area distribution remain outside the primary exposure definition."
   ]
 }
