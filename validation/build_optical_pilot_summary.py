@@ -103,12 +103,15 @@ def main():
         }
 
     # Side-by-side integrated light agreement.
-    side=read_csv(Path(a.sideby)); chk=defaultdict(list)
+    side=read_csv(Path(a.sideby)); chk=defaultdict(list); side_hours=[]
     for r in side:
         if r.get("check_id","").strip():
             chk[r["check_id"].strip()].append(float(r["dli_mol_m2"]))
+            if r.get("underwater_hours","").strip():
+                side_hours.append(float(r["underwater_hours"]))
     check_cvs={k:cv(v) for k,v in chk.items()}
     max_side_cv=max(check_cvs.values()) if check_cvs else None
+    min_side_hours=min(side_hours) if side_hours else None
 
     # Vertical profile.
     prof=read_csv(Path(a.profile))
@@ -176,7 +179,7 @@ def main():
       "status":"RAW_PILOT_SUMMARY_CANDIDATE",
       "outcome_response_accessed":False,
       "metadata":meta,
-      "calibration":{"sensor_metrics":sensor_metrics,"side_by_side_check_cv":check_cvs,"max_between_sensor_cv":max_side_cv},
+      "calibration":{"sensor_metrics":sensor_metrics,"side_by_side_check_cv":check_cvs,"max_between_sensor_cv":max_side_cv,"minimum_underwater_hours":min_side_hours},
       "vertical_profile":{
         "pilot_nodes":len(profile_nodes),"nodes_by_bay":dict(profile_by_bay),
         "minimum_valid_daylight_days_per_node":min(node_days.values()) if node_days else None,
