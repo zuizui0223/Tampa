@@ -1,0 +1,89 @@
+{
+  "schema": "tampa.optical_pilot_acceptance_v1.contract",
+  "frozen_on": "2026-10-04",
+  "status": "response_independent_method_pilot_not_yet_run",
+  "purpose": "Turn the already-required PAR calibration / vertical-profile / fouling pilot into fail-closed method criteria before any outcome-bearing optical deployment.",
+  "scientific_boundary": "These are measurement-quality and representativeness gates, not biological light thresholds. Future TNC or meadow outcomes are prohibited from pilot decisions.",
+  "literature_basis": [
+    "Collier et al. 2016 Frontiers in Marine Science 3:106, DOI 10.3389/fmars.2016.00106: cosine-corrected underwater PAR, reference calibration, 15-min logging, DLI.",
+    "The amount of light reaching the leaves in seagrass (Zostera marina) meadows, 2021: strong vertical decline in leaf-level PPFD within canopy.",
+    "LI-COR LI-192 manufacturer specification: immersion-designed cosine-corrected underwater quantum reference sensor.",
+    "Apogee underwater quantum sensor specifications: approximately +/-5% calibration uncertainty for current underwater quantum meters."
+  ],
+  "calibration_gate": {
+    "scope": "Every sensor/channel intended for outcome-bearing within-canopy or above-canopy PAR must pass an in-water cross-calibration against one frozen cosine-corrected underwater quantum reference.",
+    "minimum_irradiance_levels": 5,
+    "minimum_paired_observations_per_sensor": 50,
+    "required_range": "Pilot must span darkness/near-zero and the full expected field PPFD range without sensor saturation.",
+    "sensor_specific_correction": "One predeclared linear calibration per sensor/channel may be fit using pilot data only and is then frozen for the campaign.",
+    "post_correction_acceptance": {
+      "r_squared_min": 0.995,
+      "median_absolute_relative_error_max": 0.05,
+      "p95_absolute_relative_error_max": 0.10,
+      "dark_offset_abs_umol_m2_s_max": 1.0,
+      "saturation_allowed": false
+    },
+    "side_by_side_dli_check": {
+      "minimum_underwater_hours": 6,
+      "maximum_between_sensor_cv": 0.05
+    },
+    "failure_action": "Exclude the sensor/channel or repeat response-independent calibration after repair. Do not carry a failing channel into outcome-bearing deployment."
+  },
+  "vertical_representativeness_gate": {
+    "pilot_nodes_min": 12,
+    "pilot_nodes_min_per_bay": 3,
+    "canopy_structure_span": "Select pilot nodes response-independently to span low, middle and high baseline canopy-height classes within the available core-three frame.",
+    "measurement": "At each pilot node obtain simultaneous PAR at 25%, 50% and 75% of measured canopy height plus one above-canopy reference.",
+    "minimum_valid_daylight_days_per_node": 2,
+    "profile_reference": "For each valid node-day, profile-reference DLI is the arithmetic mean of the 25%, 50% and 75% within-canopy DLIs.",
+    "candidate_levels": [0.25, 0.50, 0.75],
+    "selection_rule": "Choose the single proportional level with the smallest median absolute relative error to profile-reference DLI across all valid pilot node-days; exact tie -> 0.50, then 0.25, then 0.75.",
+    "acceptance": {
+      "median_absolute_relative_error_max": 0.15,
+      "fraction_node_days_with_absolute_relative_error_lte_0_25_min": 0.80,
+      "absolute_bay_median_relative_bias_max": 0.20
+    },
+    "failure_action": "The one-height optical primary is not field-ready. Do not pick the height with the strongest TNC association. A multi-height optical design would require a separately frozen future contract before outcome-bearing sampling."
+  },
+  "placement_repeatability_gate": {
+    "pilot_nodes_min": 12,
+    "repeat_mock_deployments_per_node_min": 3,
+    "tolerance_definition": "Absolute vertical error from the selected proportional target must be <= max(0.02 m, 10% of measured canopy height).",
+    "fraction_placements_within_tolerance_min": 0.90,
+    "failure_action": "Revise mounting hardware response-independently and repeat the pilot; do not widen tolerance after outcome-bearing deployment begins."
+  },
+  "fouling_maintenance_gate": {
+    "minimum_submerged_pilot_days": 14,
+    "pilot_locations_min": 6,
+    "pilot_locations_min_per_bay": 2,
+    "candidate_service_intervals_days": [14, 7, 3],
+    "selection_rule": "Test longest to shortest. Select the longest interval for which paired before-clean versus immediately-after-clean response differences remain within the frozen limits.",
+    "acceptance": {
+      "median_absolute_relative_change_max": 0.05,
+      "p90_absolute_relative_change_max": 0.10
+    },
+    "failure_action": "If no manual-service interval passes, require an active antifouling/wiper solution to pass the same gate or disable the optical primary for the outcome-bearing campaign."
+  },
+  "daily_dli_qc": {
+    "daylight_definition": "Astronomical local sunrise-to-sunset for each node/date; nighttime is integrated as zero but does not count toward daylight coverage.",
+    "minimum_scheduled_daylight_observation_fraction": 0.90,
+    "maximum_continuous_daylight_gap_minutes": 30,
+    "interpolation_rule": "Only gaps <=30 minutes may be linearly interpolated; longer daylight gaps invalidate that node-day.",
+    "node_primary_minimum_valid_days": 30,
+    "overall_common_overlap_coverage_rule": "Retain the existing >=85% overall PAR coverage and >=35-day common-overlap gates in the optical mechanism contract."
+  },
+  "outputs_to_freeze_after_pilot": [
+    "PAR sensor model(s) and sensor-specific calibration coefficients",
+    "reference sensor ID and calibration provenance",
+    "selected proportional within-canopy height",
+    "allowed placement tolerance and mounting geometry",
+    "maintenance/cleaning interval or active-antifouling rule",
+    "daily DLI daylight-coverage and gap rule",
+    "above-canopy clearance tolerance if attribution module is confirmatory"
+  ],
+  "no_rescue_rules": [
+    "Do not select calibration coefficients, proportional height, cleaning interval, gap rule or sensor subset using TNC or future meadow response.",
+    "Do not weaken the 30-node / 8-per-bay optical primary gate because some channels fail pilot QC.",
+    "A response-independent pilot failure disables or redesigns the optical module before outcome-bearing sampling; it does not justify a smaller biological test."
+  ]
+}
