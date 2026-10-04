@@ -1,0 +1,55 @@
+name: Optical raw method-pilot pipeline
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "field/optical_raw_pilot_metadata.json"
+      - "field/optical_calibration_pilot.csv"
+      - "field/optical_side_by_side_dli_pilot.csv"
+      - "field/optical_vertical_profile_pilot.csv"
+      - "field/optical_placement_pilot.csv"
+      - "field/optical_fouling_pilot.csv"
+      - "validation/build_optical_pilot_summary.py"
+      - "validation/validate_optical_method_pilot.py"
+      - "analysis/72_apply_optical_method_pilot.py"
+      - "validation/test_optical_raw_pilot_pipeline.py"
+      - ".github/workflows/optical-raw-pilot-pipeline.yml"
+      - "results/optical_pilot_acceptance_v1_contract.json"
+      - "field/optical_pilot_freeze.json"
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build candidate from current raw pilot templates/records
+        run: |
+          python validation/build_optical_pilot_summary.py             --out field/optical_pilot_candidate.json             --audit-out results/optical_raw_pilot_summary.json
+
+      - name: Validate current candidate fail-closed
+        run: |
+          python validation/validate_optical_method_pilot.py             --pilot field/optical_pilot_candidate.json             --out results/optical_method_pilot_validation.json
+          python - <<'PY'
+          import json
+          x=json.load(open("results/optical_method_pilot_validation.json"))
+          assert x["status"] in {"STOP_PILOT_INCOMPLETE","STOP_PILOT_QC_FAILED","PASS_OPTICAL_PILOT"}, x
+          PY
+
+      - name: Synthetic PASS -> copy -> READY test
+        run: python validation/test_optical_raw_pilot_pipeline.py
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: optical-raw-pilot-pipeline
+          path: |
+            field/optical_pilot_candidate.json
+            results/optical_raw_pilot_summary.json
+            results/optical_method_pilot_validation.json
+          if-no-files-found: error
