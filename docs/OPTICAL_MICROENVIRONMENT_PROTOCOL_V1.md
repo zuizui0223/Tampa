@@ -201,6 +201,34 @@ Interpretation:
 
 The paired-reference metric cannot replace or rescue a null actual-DLI primary.
 
+## Quantitative optical pilot gate
+
+The response-independent method/geometry acceptance contract is:
+
+- `results/optical_pilot_acceptance_v1_contract.json`
+- implementation guide: `docs/OPTICAL_PAR_METHOD_PILOT_V1.md`
+
+Outcome-bearing optical deployment is not authorized merely because a PAR logger is available.
+
+Before deployment, all planned outcome-bearing sensor channels must pass the frozen in-water reference calibration gate, and the single-height canopy design must pass the frozen vertical-representativeness and placement-repeatability gates.
+
+The pilot also freezes the fouling/maintenance rule.
+
+### Daily DLI QC now fixed
+
+A node-day is valid only when:
+
+- >=90% of scheduled astronomical-daylight observations are present;
+- no continuous daylight gap exceeds 30 minutes.
+
+Only daylight gaps <=30 minutes may be linearly interpolated.
+
+A longer daylight gap invalidates the node-day.
+
+The primary node exposure still requires >=30 valid DLIs, >=85% overall PAR coverage and >=35 days of common calendar overlap.
+
+These are measurement-QC rules, not biological light thresholds.
+
 ## Primary exposure
 
 For every valid day, integrate calibrated PAR to:

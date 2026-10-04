@@ -28,7 +28,9 @@
     "optical_attribution_intent_allowed_values": [
       "confirmatory",
       "disabled"
-    ]
+    ],
+    "optical_pilot_acceptance_contract": "results/optical_pilot_acceptance_v1_contract.json",
+    "optical_pilot_result_freeze": "field/optical_pilot_freeze.json"
   },
   "fields_to_freeze_before_first_outcome_bearing_pre_tnc_core_or_logger": {
     "final_core_three_event_nodes_by_bay": null,

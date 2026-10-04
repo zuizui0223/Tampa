@@ -1,0 +1,31 @@
+{
+  "schema": "tampa.optical_pilot_freeze.v1",
+  "contract": "results/optical_pilot_acceptance_v1_contract.json",
+  "status": "PENDING_RESPONSE_INDEPENDENT_PILOT",
+  "fixed_dli_qc": {
+    "minimum_scheduled_daylight_observation_fraction": 0.90,
+    "maximum_continuous_daylight_gap_minutes": 30,
+    "node_primary_minimum_valid_days": 30
+  },
+  "fields_to_freeze_before_optical_confirmatory_deployment": {
+    "par_sensor_model": null,
+    "reference_sensor_id_and_calibration_provenance": null,
+    "sensor_specific_calibration_manifest": null,
+    "all_outcome_bearing_channels_pass_calibration_gate": null,
+    "selected_within_canopy_height_fraction": null,
+    "vertical_profile_pilot_nodes": null,
+    "vertical_profile_nodes_by_bay": null,
+    "vertical_profile_median_absolute_relative_error": null,
+    "vertical_profile_fraction_node_days_within_25pct": null,
+    "vertical_profile_max_absolute_bay_median_relative_bias": null,
+    "placement_repeatability_fraction_within_tolerance": null,
+    "mounting_geometry_and_height_tolerance_rule": null,
+    "maintenance_mode": null,
+    "manual_service_interval_days": null,
+    "fouling_median_absolute_relative_change": null,
+    "fouling_p90_absolute_relative_change": null,
+    "above_canopy_clearance_tolerance_rule": null,
+    "pilot_artifact_or_manifest_digest": null
+  },
+  "rule": "Status may become READY only after the response-independent pilot satisfies every applicable frozen acceptance criterion. Do not populate from TNC or future meadow-response information."
+}

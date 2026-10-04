@@ -24,8 +24,13 @@ assert d["within_canopy_sensor"]["placement"].startswith("One fixed response-ind
 pilot=d["within_canopy_sensor"]["vertical_representativeness_pilot"]
 assert "25%, 50% and 75%" in pilot["design"]
 assert "before the first outcome-bearing TNC sample" in pilot["decision_rule"]
+assert pilot["acceptance_contract"]=="results/optical_pilot_acceptance_v1_contract.json"
+assert "<=15%" in pilot["acceptance_summary"]
 dqc=d["daily_dli_qc"]
-assert "full local photoperiod" in dqc["valid_day_rule"]
+assert ">=90%" in dqc["valid_day_rule"]
+assert "30 minutes" in dqc["valid_day_rule"]
+assert dqc["daylight_definition"].startswith("Astronomical local sunrise-to-sunset")
+assert dqc["acceptance_contract"]=="results/optical_pilot_acceptance_v1_contract.json"
 assert "at least 30 valid daily DLIs" in dqc["node_rule"]
 
 ref=c["secondary_optical_decomposition"]["paired_above_canopy_reference"]
