@@ -4,7 +4,7 @@
   "status": "FROZEN_BEFORE_TNC_INSPECTION",
   "authoritative_contract": "results/optical_microenvironment_prospective_v1_contract.json",
   "script_path": "analysis/66_optical_primary_analysis.py",
-  "script_blob_sha1": "c37550dd96298e0d80f35c91c9a199c40ff4e9cf",
+  "script_blob_sha1": "cab38121e6283a1bdd5670e5101bba775d2d32ac",
   "model": "tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
   "geography": [
     "Old Tampa Bay",
@@ -56,5 +56,5 @@
     ],
     "cross_class_transfer_allowed": false
   },
-  "revision_note": "Pre-outcome amendment: analysis now imports the READY optical method freeze so angular-response quantity semantics cannot be lost between measurement pilot and ecological model."
+  "revision_note": "Pre-outcome amendment: analysis imports the READY optical method freeze, preserves matched angular-response quantity semantics, and bounds interpretation to a standardized local within-canopy photon environment rather than leaf-absorbed dose."
 }
