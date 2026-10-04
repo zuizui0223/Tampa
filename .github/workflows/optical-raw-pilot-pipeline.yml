@@ -17,6 +17,9 @@ on:
       - ".github/workflows/optical-raw-pilot-pipeline.yml"
       - "results/optical_pilot_acceptance_v1_contract.json"
       - "field/optical_pilot_freeze.json"
+      - "docs/OPTICAL_PAR_METHOD_PILOT_V1.md"
+      - "docs/OPTICAL_PILOT_DATA_ENTRY_V1.md"
+      - "validation/validate_optical_pilot_readiness.py"
   workflow_dispatch:
 
 jobs:
