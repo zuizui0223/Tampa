@@ -122,7 +122,7 @@ def main():
     interval="supported_positive" if lo>0 else "contradicted_direction" if hi<0 else "unsupported"
     estimable=sample and overall and within
     res={
-      "schema":"tampa.optical_primary_analysis.v2",
+      "schema":"tampa.optical_primary_analysis.v1",
       "model":"tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
       "optical_measurement_semantics":{
         "angular_response_class":angular_class,
