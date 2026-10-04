@@ -66,6 +66,28 @@ If event or optical is confirmatory, its extra simultaneous-sensor, geometry, ca
 
 If full capacity exists for only one forcing primary, the frozen scientific priority is **within-canopy optical DLI before joint hot-fresh exposure**, while TNC-v2 remains protected above both. This priority does not override feasibility: event may proceed alone if optical fails its own full gate. See `docs/OPTIONAL_FORCING_MODULE_PRIORITY_V1.md`.
 
+## Optical pilot is now method-frozen
+
+The optical module no longer has an open-ended "do a PAR pilot" instruction.
+
+Response-independent acceptance criteria are frozen in:
+
+- `results/optical_pilot_acceptance_v1_contract.json`;
+- `docs/OPTICAL_PAR_METHOD_PILOT_V1.md`;
+- `field/optical_pilot_freeze.json`.
+
+The pilot must now resolve actual hardware/field outputs under fixed gates for:
+
+- in-water sensor calibration;
+- vertical-profile representativeness;
+- placement repeatability;
+- fouling / maintenance;
+- DLI daylight missingness.
+
+Until `field/optical_pilot_freeze.json` becomes `READY`, `optical_vertical_profile_pilot_complete` must remain false/null in the integrated resource freeze.
+
+This changes **method readiness**, not ecological evidence.
+
 ## What can proceed now
 
 Response-independent work can proceed immediately:
