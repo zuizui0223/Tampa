@@ -41,10 +41,12 @@ File:
 
 Freeze before building the candidate:
 
-- PAR sensor model;
+- optical sensor model;
+- `primary_angular_response_class` = `2pi_cosine_ppfd` or `4pi_scalar_ppffr`;
 - calibrated underwater quantum reference identity/provenance;
+- `reference_angular_response_class`, which must exactly match the primary class;
 - exact IDs of every sensor/channel intended for outcome-bearing use;
-- response-independent expected maximum field PPFD;
+- response-independent expected maximum field photon rate for the chosen quantity;
 - mounting geometry description;
 - optical attribution intent: `confirmatory` or `disabled`;
 - above-canopy clearance rule if attribution is confirmatory;
@@ -62,18 +64,20 @@ Columns:
 
 - `sensor_id`
 - `irradiance_level_id`
-- `reference_ppfd_umol_m2_s`
-- `sensor_raw_ppfd_umol_m2_s`
+- `reference_photon_rate_umol_m2_s`
+- `sensor_raw_photon_rate_umol_m2_s`
 - `dark`
 - `saturated`
 
 For each sensor, the builder fits:
 
 ```text
-reference_PPFD = intercept + slope * raw_sensor_PPFD
+reference_PPFD = intercept + slope * raw_sensor_photon_rate
 ```
 
 using the response-independent pilot observations.
+
+The numeric calibration columns are intentionally angular-neutral. Their scientific meaning is supplied by the frozen metadata class. Do not write scalar PPFFR measurements into a field labelled PPFD, and do not mix scalar and cosine channels in the same primary.
 
 The calibration gate requires:
 
@@ -92,14 +96,14 @@ The calibration gate requires:
 The frozen relative error is:
 
 ```text
-abs(calibrated_PPFD - reference_PPFD)
+abs(calibrated_primary_photon_rate - reference_PPFD)
 ------------------------------------
 max(abs(reference_PPFD), 10)
 ```
 
 The fixed 10 µmol m-2 s-1 denominator floor prevents percentage error from becoming undefined near zero. Dark performance is evaluated separately with the dark-offset gate.
 
-A row counts as a qualifying dark observation when the pilot marks it `dark=true` and reference PPFD is <=1 µmol m-2 s-1.
+A row counts as a qualifying dark observation when the pilot marks it `dark=true` and reference photon rate is <=1 µmol m-2 s-1.
 
 ## 3. Side-by-side integrated-light check
 
@@ -224,8 +228,8 @@ Columns:
 - `service_interval_days`
 - `pilot_day`
 - `check_id`
-- `pre_clean_ppfd_umol_m2_s`
-- `post_clean_ppfd_umol_m2_s`
+- `pre_clean_photon_rate_umol_m2_s`
+- `post_clean_photon_rate_umol_m2_s`
 
 For manual maintenance, candidate intervals remain frozen in order:
 
