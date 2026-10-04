@@ -278,7 +278,7 @@ def summarize_offset(path: Path):
     }, candidates
 
 
-def summarize_preservation(path: Path, canonical, drift_absent):
+def summarize_preservation(path: Path, canonical):
     rows = read_csv(path)
     cells = defaultdict(list)
     for r in rows:
@@ -287,6 +287,7 @@ def summarize_preservation(path: Path, canonical, drift_absent):
         if not method or not delay:
             continue
         delay = float(delay)
+        # Delay zero is the reference, not an independently testable maximum.
         if delay <= 0:
             continue
         required = (
@@ -299,10 +300,12 @@ def summarize_preservation(path: Path, canonical, drift_absent):
             continue
         a = float(r["immediate_tnc_mg_g"])
         delayed = float(r["delayed_tnc_mg_g"])
-        rel = abs(delayed-a)/a*100 if a != 0 else math.inf
+        signed = (delayed-a)/a*100 if a != 0 else math.inf
+        rel = abs(signed)
         cells[(method, delay)].append({
             "specimen": r["specimen_id"].strip(),
             "rel": rel,
+            "signed_rel": signed,
             "physically_suitable": as_bool(r["physically_suitable"]),
         })
 
@@ -310,6 +313,7 @@ def summarize_preservation(path: Path, canonical, drift_absent):
     results = []
     for (method, delay), vals in cells.items():
         rel = [v["rel"] for v in vals]
+        signed = [v["signed_rel"] for v in vals]
         n = len({v["specimen"] for v in vals})
         results.append({
             "method": method,
@@ -317,6 +321,7 @@ def summarize_preservation(path: Path, canonical, drift_absent):
             "n_specimens": n,
             "median_abs_relative_tnc_difference_pct": statistics.median(rel),
             "p90_abs_relative_tnc_difference_pct": quantile(rel, 0.90),
+            "median_signed_relative_tnc_difference_pct": statistics.median(signed),
             "all_physically_suitable": all(v["physically_suitable"] for v in vals),
             "pass_numeric": (
                 n >= 6
@@ -326,6 +331,37 @@ def summarize_preservation(path: Path, canonical, drift_absent):
             ),
         })
 
+    # Derive the directional-drift gate from the raw preservation measurements.
+    # A manual metadata boolean is intentionally not consulted.
+    #
+    # At least three distinct positive delays are required. With fewer delays,
+    # monotonicity is not resolved and the downstream validator remains pending.
+    method_drift_absent = {}
+    methods_seen = sorted({x["method"] for x in results})
+    for method in methods_seen:
+        seq = sorted(
+            [x for x in results if x["method"] == method and x["n_specimens"] >= 6],
+            key=lambda x: x["delay_minutes"],
+        )
+        delays = [x["delay_minutes"] for x in seq]
+        meds = [x["median_signed_relative_tnc_difference_pct"] for x in seq]
+        if len(set(delays)) < 3:
+            method_drift_absent[method] = None
+            continue
+
+        nondecreasing = all(b >= a for a, b in zip(meds, meds[1:]))
+        nonincreasing = all(b <= a for a, b in zip(meds, meds[1:]))
+        changed = (max(meds) - min(meds)) > 1e-12
+        material_monotonic_sequence = changed and (nondecreasing or nonincreasing)
+        method_drift_absent[method] = not material_monotonic_sequence
+
+    for x in results:
+        x["method_monotonic_directional_drift_absent"] = method_drift_absent.get(x["method"])
+
+    # Preserve the original predeclared method order. Select the longest
+    # numerically passing delay for the first candidate method that has any.
+    # The derived drift flag is carried forward separately: False -> QC failure;
+    # None -> incomplete pilot; True -> eligible if all other gates pass.
     chosen = None
     for code, idx in sorted(
         METHOD_CODE_TO_CANONICAL_INDEX.items(),
@@ -352,10 +388,9 @@ def summarize_preservation(path: Path, canonical, drift_absent):
         "paired_specimens_at_selected_delay": chosen["n_specimens"],
         "median_abs_relative_tnc_difference_pct": chosen["median_abs_relative_tnc_difference_pct"],
         "p90_abs_relative_tnc_difference_pct": chosen["p90_abs_relative_tnc_difference_pct"],
-        "monotonic_directional_drift_absent": drift_absent,
+        "monotonic_directional_drift_absent": method_drift_absent.get(chosen_code),
         "candidate_method_order_rule": canonical["preservation"]["candidate_method_order_rule"],
     }, results
-
 
 def main():
     ap = argparse.ArgumentParser()
@@ -409,9 +444,8 @@ def main():
     if offset is not None:
         candidate["transect_offset"].update(offset)
 
-    drift = metadata.get("monotonic_directional_drift_absent")
     preservation, preservation_audit = summarize_preservation(
-        Path(args.preservation), canonical, drift
+        Path(args.preservation), canonical
     )
     if preservation is not None:
         candidate["preservation"].update(preservation)
