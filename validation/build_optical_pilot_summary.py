@@ -195,6 +195,8 @@ def profile_summary(rows,contract):
         try:
             cov=float(r["daylight_coverage_fraction"])
             gap=float(r["max_daylight_gap_minutes"])
+            canopy_height=float(r["canopy_height_m"])
+            canopy_class=str(r["canopy_height_class"]).strip().lower()
             vals={lev:float(r[LEVEL_COL[lev]]) for lev in LEVELS}
             above=float(r["dli_above"])
         except Exception:
@@ -206,6 +208,7 @@ def profile_summary(rows,contract):
         profile_rows.append({
             "node_id":node,"water_body":bay,"date":date,
             "ref":ref,"vals":vals,"above":above,
+            "canopy_height_m":canopy_height,"canopy_height_class":canopy_class,
             "daylight_coverage_fraction":cov,"max_daylight_gap_minutes":gap,
         })
 
@@ -241,11 +244,18 @@ def profile_summary(rows,contract):
     ) if valid else None
     days=Counter(z["node_id"] for z in profile_rows)
     node_bay={z["node_id"]:z["water_body"] for z in profile_rows}
+    node_class={}
+    for z in profile_rows:
+        node=z["node_id"]; cls=z["canopy_height_class"]
+        if node in node_class and node_class[node]!=cls:
+            raise RuntimeError(f"canopy-height class drift within node {node}")
+        node_class[node]=cls
     nodes=sorted(days)
     return {
         "pilot_nodes":len(nodes),
         "node_ids":nodes,
         "nodes_by_bay":dict(Counter(node_bay[n] for n in nodes)),
+        "nodes_by_canopy_height_class":dict(Counter(node_class[n] for n in nodes)),
         "valid_daylight_node_days":len(profile_rows),
         "minimum_valid_daylight_days_per_node":min(days.values()) if days else None,
         "candidate_level_metrics":metrics,
