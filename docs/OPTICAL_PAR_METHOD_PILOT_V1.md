@@ -25,7 +25,16 @@ The pilot resolves:
 
 ## Literature basis
 
-Continuous seagrass light studies have used cosine-corrected underwater PAR sensors/loggers, reference calibration and 15-minute observations integrated to daily light integral (DLI). Collier et al. (2016, *Frontiers in Marine Science* 3:106, DOI 10.3389/fmars.2016.00106) calibrated submerged irradiance loggers against a cosine-corrected underwater quantum reference and calculated DLI from 15-minute data.
+Continuous seagrass light studies have used cosine-corrected underwater quantum sensors/loggers, reference calibration and high-frequency observations integrated through the day. Historical Tampa work has also used scalar quantum sensors. Those two geometries are not interchangeable: a cosine collector measures hemispherical photon flux onto a plane, whereas a scalar collector integrates photons arriving from all directions.
+
+The pilot therefore freezes **one angular-response class before method acceptance**:
+
+- `2pi_cosine_ppfd`; or
+- `4pi_scalar_ppffr`.
+
+Every outcome-bearing within-canopy channel, every paired above-canopy channel retained for transmittance, and the calibration reference must use the same class. This v1 pilot does not authorize a scalar↔cosine transfer function.
+
+Collier et al. (2016, *Frontiers in Marine Science* 3:106, DOI 10.3389/fmars.2016.00106) provides an example of cosine-corrected underwater irradiance used for seagrass daily light exposure. LI-COR specifications likewise distinguish the LI-192 cosine quantum sensor from the LI-193 spherical/scalar quantum sensor.
 
 Leaf-scale measurements also show that light can decline strongly from the top toward the base of a seagrass canopy, so one fixed logger height must be validated rather than assumed to represent the whole canopy.
 
@@ -33,7 +42,11 @@ The numerical tolerances below are **method-QC tolerances**, not ecological ligh
 
 ## A. In-water sensor calibration
 
-Every PAR sensor/channel intended for outcome-bearing deployment must be cross-calibrated **underwater** against one frozen cosine-corrected underwater quantum reference.
+Before calibration, freeze `primary_angular_response_class` and `reference_angular_response_class`. They must be identical.
+
+Every optical sensor/channel intended for outcome-bearing deployment must then be cross-calibrated **underwater** against one frozen reference sensor of that same angular-response class.
+
+A cosine outcome sensor calibrated against a scalar reference, or a scalar outcome sensor calibrated against a cosine reference, fails this v1 method gate even if a linear fit looks excellent. The directional light field inside a canopy can differ from the calibration field.
 
 Use at least:
 
@@ -182,6 +195,9 @@ The reference subset remains secondary physical attribution. Failure of referenc
 After the response-independent pilot passes, freeze:
 
 - sensor model(s);
+- frozen primary angular-response class;
+- matched reference angular-response class;
+- scientific reporting label for the chosen light quantity;
 - sensor-specific calibration coefficients;
 - reference sensor provenance;
 - selected proportional height;
