@@ -53,7 +53,7 @@ def write_csv(path, fieldnames, rows):
         w.writerows(rows)
 
 
-def build_candidate(tmp, prefix, hplc_obj, metadata_obj, tissue_rows, geometry_rows, offset_rows, preservation_rows):
+def build_candidate(tmp, prefix, metadata_obj, hplc_obj, tissue_rows, geometry_rows, offset_rows, preservation_rows):
     meta = tmp / f"{prefix}_metadata.json"
     hplc = tmp / f"{prefix}_hplc.json"
     tissue = tmp / f"{prefix}_tissue.csv"
