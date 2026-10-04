@@ -113,6 +113,29 @@ Until `field/optical_pilot_freeze.json` becomes `READY`, `optical_vertical_profi
 
 This changes **method readiness**, not ecological evidence.
 
+## Resource-freeze input is now raw-data auditable
+
+Do **not** populate `field/integrated_campaign_resource_freeze.json` directly from notes or memory.
+
+Use:
+
+- `field/integrated_resource_inputs_template.json`;
+- `field/integrated_forcing_execution_manifest_template.csv`;
+- the validated four-bay TNC execution manifest from `analysis/70_freeze_tnc_v2_execution_manifest.py`;
+- `analysis/73_build_integrated_resource_freeze.py`;
+- `docs/INTEGRATED_RESOURCE_FREEZE_DATA_ENTRY_V1.md`.
+
+The builder writes candidate resource and TNC-precollection freezes only. It never overwrites the authoritative files.
+
+The existing `validate_integrated_campaign_readiness.py` remains the scientific readiness gate. A human-entered `READY` or manually copied node/calendar block is not sufficient provenance.
+
+This means the remaining 16 blockers are now separated into two categories:
+
+1. **real response-independent field/laboratory information still not known** — pilot geometry, preservation, capacity, final node/date manifests and module intent;
+2. **derived freeze fields** — once the raw information exists, these are built and cross-checked automatically rather than retyped.
+
+The pipeline rejects future/outcome columns and rejects forcing nodes assigned to modules that were already frozen as disabled.
+
 ## What can proceed now
 
 Response-independent work can proceed immediately:

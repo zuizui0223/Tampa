@@ -1,0 +1,37 @@
+{
+  "schema": "tampa.integrated_resource_inputs.v1",
+  "status": "PENDING_RESPONSE_INDEPENDENT_INPUT",
+  "response_independent": true,
+  "module_intent": {
+    "event_stress": null,
+    "optical": null,
+    "optical_attribution": null
+  },
+  "inventory": {
+    "complete_temperature_salinity_node_systems_available": null,
+    "within_canopy_par_node_systems_available": null,
+    "above_canopy_par_reference_systems_available": null,
+    "preservation_capacity_for_planned_core_samples": null,
+    "hplc_primary_assay_capacity_for_planned_core_samples": null
+  },
+  "event_method": {
+    "temperature_salinity_sensor_model_and_calibration_rule": null,
+    "event_sensor_geometry_pilot_complete": null
+  },
+  "coring": {
+    "pre_post_core_offset_geometry_frozen": null,
+    "maximum_attempted_cores_per_node_across_pre_post_rounds": null,
+    "minimum_pre_post_core_center_separation_cm": null,
+    "maximum_cumulative_disturbed_area_cm2_per_node": null
+  },
+  "secondary_optical_attribution": {
+    "optical_attribution_analysis_code_frozen": null
+  },
+  "provenance": {
+    "inventory_date": null,
+    "prepared_by": null,
+    "equipment_inventory_source": null,
+    "field_access_or_permission_note": null
+  },
+  "rule": "Populate only from response-independent equipment, pilot, permission and logistics information. Do not include TNC values or future meadow responses."
+}

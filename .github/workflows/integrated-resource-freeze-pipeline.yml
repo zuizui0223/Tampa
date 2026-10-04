@@ -1,0 +1,24 @@
+name: Integrated resource-freeze raw pipeline
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/73_build_integrated_resource_freeze.py"
+      - "validation/test_integrated_resource_freeze_builder.py"
+      - "field/integrated_resource_inputs_template.json"
+      - "field/integrated_forcing_execution_manifest_template.csv"
+      - "docs/INTEGRATED_RESOURCE_FREEZE_DATA_ENTRY_V1.md"
+      - ".github/workflows/integrated-resource-freeze-pipeline.yml"
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run synthetic fail-closed resource pipeline tests
+        run: python validation/test_integrated_resource_freeze_builder.py
