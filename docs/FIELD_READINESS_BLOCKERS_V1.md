@@ -23,6 +23,22 @@ Planning frame:
 
 Do not sacrifice this design to keep an optional logger module alive.
 
+## Pilot-file authority
+
+The authoritative method-pilot path is now singular:
+
+```text
+raw pilot records
+  -> build_tnc_v2_method_pilot_summary.py
+  -> tnc_v2_method_pilot candidate
+  -> validate_tnc_v2_method_pilot.py
+  -> PASS_METHOD_PILOT
+  -> 69_apply_tnc_v2_method_pilot.py
+  -> tnc_v2_precollection_freeze.json
+```
+
+Legacy `field/tnc_v2_pilot_freeze.json`, `field/tnc_v2_pilot_manifest.csv`, and `docs/TNC_RESPONSE_INDEPENDENT_PILOT_V1.md` are provenance only and must not govern outcome-bearing sampling.
+
 ## Blocker group 1 — TNC field/laboratory pilot
 
 Eight TNC-v2 precollection items are still unresolved:
