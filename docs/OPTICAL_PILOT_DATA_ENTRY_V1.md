@@ -175,6 +175,8 @@ For every valid node-day:
 profile_reference_DLI = mean(DLI_25, DLI_50, DLI_75)
 ```
 
+This is an equal-weight **geometric three-level optical reference** for method selection. It is not a leaf-area-weighted absorbed-photon estimate and should not be interpreted as whole-canopy photosynthesis.
+
 The builder chooses the proportional height with smallest median absolute relative error to this profile reference. Tie rule:
 
 1. 50%;
