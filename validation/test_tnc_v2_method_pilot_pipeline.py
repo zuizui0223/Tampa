@@ -131,7 +131,6 @@ def synthetic_passing_inputs(matrix_spikes=None):
         "independent_rhizome_specimens": 8,
         "collection_locations_or_batches": 2,
         "field_core_attempts": 10,
-        "monotonic_directional_drift_absent": True,
     }
 
     hplc = {
@@ -189,17 +188,22 @@ def synthetic_passing_inputs(matrix_spikes=None):
         for i in range(3)
     ]
 
-    preservation_rows = [
-        {
-            "method": "liquid_nitrogen_flash_freeze",
-            "delay_minutes": 15,
-            "specimen_id": f"p{i}",
-            "immediate_tnc_mg_g": 100.0,
-            "delayed_tnc_mg_g": 105.0,
-            "physically_suitable": "true",
-        }
-        for i in range(6)
-    ]
+    # Three positive delays are required for an empirical monotonic-drift audit.
+    # Signed medians +5%, -4%, +3% are deliberately non-monotonic while all
+    # absolute preservation-error gates pass.
+    preservation_rows = []
+    for delay, delayed in ((15, 105.0), (30, 96.0), (60, 103.0)):
+        preservation_rows.extend([
+            {
+                "method": "liquid_nitrogen_flash_freeze",
+                "delay_minutes": delay,
+                "specimen_id": f"p{i}",
+                "immediate_tnc_mg_g": 100.0,
+                "delayed_tnc_mg_g": delayed,
+                "physically_suitable": "true",
+            }
+            for i in range(6)
+        ])
 
     return metadata, hplc, tissue_rows, geometry_rows, offset_rows, preservation_rows
 
@@ -255,12 +259,57 @@ def test_individual_matrix_spike_failure(tmp):
     assert any("matrix-spike" in x for x in result["errors"]), result
 
 
+def test_monotonic_preservation_drift_fails(tmp):
+    inputs = list(synthetic_passing_inputs())
+    preservation_rows = []
+    # All absolute-error gates pass, but signed medians drift monotonically
+    # +2%, +4%, +6% with increasing delay. Builder must derive drift=False.
+    for delay, delayed in ((15, 102.0), (30, 104.0), (60, 106.0)):
+        preservation_rows.extend([
+            {
+                "method": "liquid_nitrogen_flash_freeze",
+                "delay_minutes": delay,
+                "specimen_id": f"p{i}",
+                "immediate_tnc_mg_g": 100.0,
+                "delayed_tnc_mg_g": delayed,
+                "physically_suitable": "true",
+            }
+            for i in range(6)
+        ])
+    inputs[-1] = preservation_rows
+    candidate = build_candidate(tmp, "monotonic_drift", *inputs)
+    result = validate(candidate, tmp / "monotonic_drift_validation.json")
+    assert result["status"] == "STOP_PILOT_QC_FAILED", result
+    assert any("monotonic TNC drift" in x for x in result["errors"]), result
+
+
+def test_too_few_preservation_delays_stays_incomplete(tmp):
+    inputs = list(synthetic_passing_inputs())
+    inputs[-1] = [
+        {
+            "method": "liquid_nitrogen_flash_freeze",
+            "delay_minutes": 30,
+            "specimen_id": f"p{i}",
+            "immediate_tnc_mg_g": 100.0,
+            "delayed_tnc_mg_g": 103.0,
+            "physically_suitable": "true",
+        }
+        for i in range(6)
+    ]
+    candidate = build_candidate(tmp, "too_few_delays", *inputs)
+    result = validate(candidate, tmp / "too_few_delays_validation.json")
+    assert result["status"] == "STOP_PILOT_INCOMPLETE", result
+    assert "preservation.monotonic_directional_drift_absent" in result["pending_fields"], result
+
+
 def main():
     with tempfile.TemporaryDirectory(prefix="tnc_v2_pipeline_") as td:
         tmp = Path(td)
         test_blank_templates(tmp)
         test_pass_and_provenance(tmp)
         test_individual_matrix_spike_failure(tmp)
+        test_monotonic_preservation_drift_fails(tmp)
+        test_too_few_preservation_delays_stays_incomplete(tmp)
     print("TNC-v2 method-pilot pipeline self-test: OK")
 
 
