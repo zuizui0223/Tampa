@@ -88,7 +88,7 @@ def calibration_summary(rows,meta,contract):
         if sid: by[sid].append(r)
 
     floor=float(contract["calibration_gate"]["relative_error_definition"]["denominator_floor_umol_m2_s"])
-    dark_max=float(contract["calibration_gate"]["dark_reference_definition"]["reference_ppfd_max_umol_m2_s"])
+    dark_max=float(contract["calibration_gate"]["dark_reference_definition"]["reference_photon_rate_max_umol_m2_s"])
     metrics={}
     for sid,rr in sorted(by.items()):
         complete=[]
