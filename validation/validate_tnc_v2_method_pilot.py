@@ -62,6 +62,11 @@ def main():
         "pilot_extract_fraction_in_calibration_range","blank_below_loq",
         "post_high_standard_carryover_below_loq"
       ],
+      "analytical_qc_count_freeze":[
+        "frozen_before_results",
+        "minimum_standard_recovery_n","minimum_matrix_spike_n",
+        "minimum_technical_duplicate_pairs_n","minimum_pilot_extracts_n"
+      ],
       "tissue_class":["classification_success_fraction","sufficient_dry_mass_fraction"],
       "core_geometry":[
         "recovery_success_fraction","sufficient_dry_mass_fraction",
@@ -101,6 +106,40 @@ def main():
             errors.append("collection_locations_or_batches < 2")
         if int(p["field_core_attempts"])<10:
             errors.append("field_core_attempts < 10")
+
+        cf=x["analytical_qc_count_freeze"]
+        if cf["frozen_before_results"] is not True:
+            errors.append("analytical QC minimum counts were not frozen before pilot results")
+        count_keys={
+          "standard_recovery_n":"minimum_standard_recovery_n",
+          "matrix_spike_n":"minimum_matrix_spike_n",
+          "technical_duplicate_pairs_n":"minimum_technical_duplicate_pairs_n",
+          "pilot_extracts_n":"minimum_pilot_extracts_n",
+        }
+        minima={}
+        for actual_key,min_key in count_keys.items():
+            try:
+                minimum=int(cf[min_key])
+            except Exception:
+                errors.append(f"{min_key} is not an integer")
+                continue
+            if minimum<1:
+                errors.append(f"{min_key} must be >=1")
+            minima[actual_key]=minimum
+        actual_counts=x.get("raw_gate_detail",{}).get("hplc_counts")
+        if not isinstance(actual_counts,dict):
+            errors.append("raw HPLC count audit is missing")
+        else:
+            for actual_key,minimum in minima.items():
+                try:
+                    actual=int(actual_counts.get(actual_key))
+                except Exception:
+                    errors.append(f"raw HPLC count missing/non-integer: {actual_key}")
+                    continue
+                if actual<minimum:
+                    errors.append(
+                        f"{actual_key}={actual} below pre-frozen minimum {minimum}"
+                    )
 
         q=x["analytical_qc"]
         if q["calibration_identity_unambiguous"] is not True:
