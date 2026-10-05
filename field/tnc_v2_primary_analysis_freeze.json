@@ -4,7 +4,7 @@
   "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
   "authoritative_contract": "results/clonal_state_prospective_v2_contract.json",
   "script_path": "analysis/64_tnc_v2_primary_analysis.py",
-  "script_blob_sha1": "e7ca25d7191d79a251aaa19676b19d03c69ebc8e",
+  "script_blob_sha1": "dd9e7c1c6897cfa2bebb0d555679425662d66875",
   "model": "future_delta_frequency ~ baseline_frequency + baseline_braun_blanquet + z_rhizome_tnc + water_body",
   "standardization": {
     "tnc": "z-score once in the original complete-case analytic sample using sample SD (ddof=1)",
@@ -40,6 +40,9 @@
   "no_rescue": [
     "Do not change bootstrap type, seed, repetitions, standardization, bay coding or interval after future outcome access.",
     "Do not replace a null primary with soluble NSC, starch, nutrient-adjusted TNC, meristem density or selected subgroup.",
-    "Do not revert to the superseded three-bay v1 primary."
-  ]
+    "Do not revert to the superseded three-bay v1 primary.",
+    "A positive network-scale result cannot rescue an unsupported or non-estimable within-node decisive state-augmentation primary."
+  ],
+  "inferential_hierarchy_contract": "results/clonal_state_inference_hierarchy_v1.json",
+  "paper_level_role": "supportive network-scale generality; historical primary filename retained for compatibility"
 }
