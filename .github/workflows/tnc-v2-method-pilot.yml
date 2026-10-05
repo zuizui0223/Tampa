@@ -16,7 +16,7 @@ on:
       - "field/tnc_v2_preservation_pilot.csv"
       - "validation/build_tnc_v2_method_pilot_summary.py"
       - "validation/validate_tnc_v2_method_pilot.py"
-      - "validation/test_tnc_v2_method_pilot_pipeline.py"
+      - "validation/test_tnc_v2_method_pilot_pipeline.py"\n      - "validation/test_tnc_v2_baseline_pipeline.py"\n      - "validation/validate_tnc_v2_baseline.py"
       - "analysis/69_apply_tnc_v2_method_pilot.py"
       - ".github/workflows/tnc-v2-method-pilot.yml"
   pull_request:
@@ -52,6 +52,9 @@ jobs:
 
       - name: Run synthetic fail-closed pipeline tests
         run: python validation/test_tnc_v2_method_pilot_pipeline.py
+
+      - name: Run synthetic baseline-validator tests
+        run: python validation/test_tnc_v2_baseline_pipeline.py
 
       - name: Build candidate from raw response-independent pilot records
         run: |
