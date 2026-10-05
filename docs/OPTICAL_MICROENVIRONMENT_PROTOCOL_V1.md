@@ -272,6 +272,37 @@ The primary node exposure still requires >=30 valid DLIs, >=85% overall PAR cove
 
 These are measurement-QC rules, not biological light thresholds.
 
+## Angular-response class priority
+
+The primary optical quantity must be one angular-response class across the entire confirmatory study.
+
+Scientific preference:
+
+> **4π scalar photon fluence rate (PPFFR / scalar photon irradiance)**
+
+Reason: the biological question is the photon field actually experienced within a submerged, flexible-leaf canopy. Scalar irradiance integrates photons arriving from all directions, whereas a 2π cosine collector measures flux onto one oriented hemispherical surface. Seagrass leaf/phyllosphere optical studies commonly use photon scalar irradiance, and historical Tampa Bay *Thalassia* light-requirement work used scalar irradiance at canopy height.
+
+This is a priority, not a license to weaken the design.
+
+Use 4π scalar only if the response-independent equipment/resource audit can supply enough matched scalar outcome channels and matched scalar calibration/reference channels to satisfy every frozen node, bay, calibration, vertical-profile, fouling, synchronization and DLI-QC gate.
+
+Fallback:
+
+> **2π cosine-corrected PPFD**
+
+is allowed only if scalar cannot meet the full confirmatory envelope and a fully matched cosine system can.
+
+If neither class can satisfy the frozen confirmatory design, disable the optical primary for that campaign.
+
+Once the class is frozen and the method pilot begins:
+
+- do not mix scalar and cosine channels;
+- do not cross-calibrate one class into the other;
+- do not switch class because one produces larger contrast or a stronger later biological association;
+- report the physical quantity with its correct class-specific label.
+
+Relevant basis includes Smith & Wilson (1972, DOI 10.1364/AO.11.000934), Brodersen et al. (2015, DOI 10.3389/fmars.2015.00058), Noisette et al. (2020), and historical Tampa Bay *Thalassia* scalar-irradiance monitoring.
+
 ## Primary exposure
 
 For every valid day, integrate calibrated PAR to:
