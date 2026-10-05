@@ -176,4 +176,6 @@ The sharper question is therefore:
 
 The network-scale four-bay TNC -> future focal-frequency model remains important as a generality/supportive test. It cannot rescue an unsupported within-node primary.
 
+A response-free precision audit is now recorded in `docs/TNC_WITHIN_NODE_PRECISION_AUDIT_V1.md`. Under transparent Gaussian/cluster-bootstrap benchmarks, the 38-node × 3-anchor decisive design mainly resolves moderate within-meadow effects; unsupported results must not be interpreted as excluding smaller reserve effects.
+
 This hierarchy turns the experiment from a reserve-indicator study into a state-augmentation test.
