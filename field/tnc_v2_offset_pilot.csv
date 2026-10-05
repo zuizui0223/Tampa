@@ -1,2 +1,4 @@
-candidate_offset_m,placement_id,permit_boundary_pass,permanent_transect_protected,placement_reproducible,restoration_workspace_pass
-,site01,,,,
+candidate_offset_m,anchor_class,placement_id,permit_boundary_pass,permanent_transect_protected,placement_reproducible,restoration_workspace_pass
+,q25,q25_site01,,,,
+,q50,q50_site01,,,,
+,q75,q75_site01,,,,
