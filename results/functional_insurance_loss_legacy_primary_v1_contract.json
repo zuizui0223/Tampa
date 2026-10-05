@@ -1,0 +1,88 @@
+{
+  "schema": "tampa.functional_insurance_loss_legacy_primary_v1.contract",
+  "frozen_on": "2026-10-05",
+  "status": "FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION",
+  "evidence_class": "prospective_new_physical_measurement_linked_to_open_historical_state",
+  "preflight": "results/functional_insurance_loss_legacy_preflight_v1.json",
+  "measurement_parent_contract": "results/direct_hydrodynamic_prospective_v1_contract.json",
+  "central_question": "After documented local loss of Thalassia, does retention by another seagrass preserve the same measured hydrodynamic attenuation as nearby persistent Thalassia within the same long-monitored meadow?",
+  "ecological_contrast": {
+    "state_A": "loss_legacy_alternative",
+    "definition_A": "historically documented Thalassia loss with seagrass occupancy retained; contemporaneously Thalassia absent and another seagrass present",
+    "state_B": "persistent_thalassia",
+    "definition_B": "same stable node; contemporaneously Thalassia present with >=3-year continuous Thalassia record ending at the deployment baseline",
+    "interpretation": "This directly links observed occupancy insurance to a measured ecosystem physical function rather than inferring functional redundancy from taxonomic persistence."
+  },
+  "cohort": {
+    "confirmatory_geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay"
+    ],
+    "planning_pairs": 18,
+    "minimum_confirmatory_pairs": 16,
+    "minimum_confirmatory_pairs_per_bay": 6,
+    "maximum_pair_separation_m": 100,
+    "pair_selection": "Apply exactly the response-independent algorithm in the preflight to the latest eligible fixed-transect state before any velocity outcome is collected.",
+    "transportability_context": "Qualifying Lower Tampa Bay or Boca Ciega Bay pairs may be measured and reported descriptively, but cannot be added to the confirmatory sample post hoc to rescue the Old+Middle test."
+  },
+  "physical_measurement": {
+    "quantity": "attenuation_p90 = 1 - p90(U_inside) / p90(U_reference)",
+    "sensor_geometry": "Use the same frozen inside-canopy and above-canopy/reference velocity geometry as results/direct_hydrodynamic_prospective_v1_contract.json at both states in each pair.",
+    "synchrony": "Both state points in a node must be measured simultaneously with their own synchronized local reference volume; a sequential pair is not confirmatory.",
+    "target_consecutive_days": 21,
+    "minimum_valid_days": 15,
+    "wave_current_resolution": "Inherit the parent contract burst-level vector-velocity gate. If oscillatory motion cannot be resolved, claims are restricted to current-speed attenuation.",
+    "required_structure_covariates": [
+      "water_depth",
+      "total_vegetated_cover",
+      "canopy_height",
+      "local_shoot_density",
+      "species_specific_cover",
+      "sensor_heights"
+    ]
+  },
+  "primary_analysis": {
+    "inferential_unit": "stable transect node / matched state pair",
+    "model": "attenuation_p90 ~ loss_legacy_alternative_indicator + node_fixed_effect",
+    "focal_coefficient": "loss_legacy_alternative_indicator",
+    "estimand": "mean within-node attenuation difference: loss-legacy alternative state minus persistent-Thalassia state",
+    "direction": "two-sided; both weaker and stronger post-turnover attenuation are biologically informative",
+    "uncertainty": "10000-replicate stable-node paired bootstrap; resample complete node pairs; seed 20261008; percentile two-sided 95% interval",
+    "classification": {
+      "resolved_lower_function_after_turnover": "95% interval entirely below 0",
+      "resolved_higher_attenuation_after_turnover": "95% interval entirely above 0",
+      "unresolved_difference": "95% interval overlaps 0",
+      "pilot_only": "fewer than 16 complete pairs or fewer than 6 complete pairs in either Old or Middle Tampa Bay"
+    },
+    "equivalence_rule": "No equivalence / functional-redundancy claim is authorized from an interval overlapping zero. An equivalence margin would require a separately justified response-independent physical threshold frozen before any velocity outcome and is not part of v1."
+  },
+  "secondary_structure_decomposition": {
+    "model": "attenuation_p90 ~ loss_legacy_alternative_indicator + total_vegetated_cover + canopy_height + node_fixed_effect",
+    "question": "If the unadjusted physical function differs, is that difference largely represented by present canopy structure or does a residual state/composition contrast remain?",
+    "role": "mechanism decomposition only; cannot replace or rescue the primary matched physical contrast",
+    "boundary": "Cover and canopy height can be consequences of species turnover; therefore they are not controlled in the primary total-function contrast."
+  },
+  "ecosystem_engineering_attribution": {
+    "dependency": "results/direct_hydrodynamic_prospective_v1_contract.json canopy_counterfactual_control",
+    "rule": "Use 'canopy ecosystem-engineering difference' only if the parent nested bare-bed physical-attribution gate passes under its frozen rules. Otherwise report a difference in measured within-meadow vertical velocity attenuation.",
+    "no_rescue": "A bare-control result cannot rescue an unsupported matched state contrast, and a matched state contrast cannot rescue a failed bare-control attribution gate."
+  },
+  "relation_to_other_tampa_mechanisms": {
+    "tnc": "Independent mechanism line. Functional-insurance results cannot rescue the decisive within-node TNC state-augmentation primary.",
+    "hydrodynamic_self_facilitation": "The parent future-Thalassia persistence model remains a separate prospective question.",
+    "cross_sectional_composition_model": "The older thalassia_fraction model remains supportive cross-sectional context and cannot supersede this history-linked matched test."
+  },
+  "novelty_boundary": [
+    "Functional redundancy/insurance among foundation species is established ecology.",
+    "The distinctive Tampa test is the longitudinal link: documented focal foundation-species loss -> retained habitat occupancy -> directly measured physical function at the same long-monitored meadow, with a nearby persistent-focal comparator.",
+    "This remains observational with respect to species turnover; node matching reduces stable site confounding but does not prove that loss caused a functional difference."
+  ],
+  "no_post_outcome_changes": [
+    "Do not change the historical loss definition after velocity outcomes.",
+    "Do not switch the comparator from >=3-year persistent Thalassia to a shorter run after velocity outcomes.",
+    "Do not increase the 100 m pair-separation limit after velocity outcomes.",
+    "Do not select a different loss-legacy or comparator point based on velocity.",
+    "Do not promote Lower/Boca observations into the confirmatory population after seeing their attenuation.",
+    "Do not call an overlapping confidence interval functional equivalence."
+  ]
+}
