@@ -108,8 +108,10 @@ Before outcome-bearing sampling:
 
 1. obtain the monitoring authority's no-disturbance / access boundary;
 2. combine that boundary with the selected core radius and safe restoration workspace;
-3. test placement at representative q25/q50/q75 anchors;
+3. test placement at q25/q50/q75 anchors at **>=2 independent pilot locations per anchor class**;
 4. choose one minimum perpendicular offset that can be applied reproducibly across the planned network.
+
+A candidate offset therefore needs at least six complete representative placements (q25/q50/q75 × >=2 independent locations), and every declared placement must pass the permit/no-disturbance, permanent-transect protection, reproducibility and restoration-workspace checks.
 
 The selected minimum must be based on physical protection, permit constraints and placement feasibility only.
 
