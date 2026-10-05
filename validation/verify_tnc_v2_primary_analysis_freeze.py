@@ -6,10 +6,17 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 freeze=json.loads((ROOT/"field/tnc_v2_primary_analysis_freeze.json").read_text())
 contract=json.loads((ROOT/"results/clonal_state_prospective_v2_contract.json").read_text())
+hierarchy=json.loads((ROOT/"results/clonal_state_inference_hierarchy_v1.json").read_text())
+anchor_freeze=json.loads((ROOT/"field/anchor_tnc_future_bb_analysis_freeze.json").read_text())
 resource=json.loads((ROOT/"field/integrated_campaign_resource_freeze.json").read_text())
 tnc_pre=json.loads((ROOT/"field/tnc_v2_precollection_freeze.json").read_text())
 
 assert freeze["status"]=="FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS"
+assert freeze["paper_level_role"].startswith("supportive network-scale")
+assert freeze["inferential_hierarchy_contract"]=="results/clonal_state_inference_hierarchy_v1.json"
+assert hierarchy["decisive_primary"]["analysis_code"]=="analysis/72_anchor_tnc_future_bb_diagnostic.py"
+assert hierarchy["supportive_network_test"]["analysis_code"]=="analysis/64_tnc_v2_primary_analysis.py"
+assert anchor_freeze["role"].startswith("paper-level decisive within-meadow state-augmentation primary")
 assert freeze["script_path"]=="analysis/64_tnc_v2_primary_analysis.py"
 assert freeze["uncertainty"]["repetitions"]==10000
 assert freeze["uncertainty"]["seed"]==20261003
