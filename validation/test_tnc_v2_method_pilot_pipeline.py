@@ -330,6 +330,7 @@ def main():
         tmp = Path(td)
         test_blank_templates(tmp)
         test_pass_and_provenance(tmp)
+        test_offset_requires_all_three_anchor_classes(tmp)
         test_individual_matrix_spike_failure(tmp)
         test_monotonic_preservation_drift_fails(tmp)
         test_too_few_preservation_delays_stays_incomplete(tmp)
