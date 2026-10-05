@@ -1,14 +1,14 @@
-# Tampa ecological mainline: buffered persistence under quantitative degradation
+# Tampa ecological mainline: buffered persistence under state-specific quantitative change
 
 ## Biological puzzle
 
-Long-term Tampa Bay monitoring shows that *Thalassia testudinum* can remain recorded at a fixed transect while finer dimensions of meadow state deteriorate.
+Long-term Tampa Bay monitoring shows that *Thalassia testudinum* can remain recorded at a fixed transect while specific finer dimensions of meadow state decline or reorganize.
 
 This is not just a monitoring-resolution problem.
 
 It creates a biological question:
 
-> **How can a sessile foundation species remain present while abundance, morphology or shoot density deteriorate?**
+> **How can a sessile foundation species remain present while local occupancy/abundance, blade stature or shoot density decline?**
 
 ## Existing pattern
 
@@ -16,7 +16,7 @@ The retrospective record already establishes state decoupling:
 
 - coarse presence is comparatively persistent;
 - frequency, abundance, blade length and shoot density are more labile;
-- different bay segments degrade along different quantitative dimensions;
+- different bay segments change along different quantitative dimensions;
 - simple annual environmental summaries do not identify one common driver;
 - simple neighbourhood propagation does not explain the annual pattern.
 
@@ -113,7 +113,7 @@ The current data motivate:
 
 But this is not yet a demonstrated resilience debt.
 
-The current prospective programme can directly establish **hidden buffer depletion under persistent occurrence** if a measured buffer declines while coarse occurrence remains recorded, and can test whether the remaining buffer state predicts later quantitative deterioration.
+The current prospective programme can directly establish **hidden buffer depletion under persistent occurrence** if a measured buffer declines while coarse occurrence remains recorded, and can test whether the remaining buffer state predicts later quantitative decline.
 
 A strict resilience-debt claim is held to the stronger Johnstone et al. (2016) meaning: diminished recovery capacity that becomes apparent after a subsequent independently characterized disturbance.
 
@@ -249,6 +249,6 @@ The buffered-persistence programme weakens if:
 
 A strong supported result would be:
 
-> **foundation-species persistence is not a single state: coarse presence can outlast deterioration because resilience is stored in biological reserves, self-engineered physical conditions, or community-level functional insurance.**
+> **foundation-species persistence is not a single state: coarse presence can outlast decline in particular quantitative dimensions because persistence can be buffered by biological reserves, self-engineered physical conditions, or community-level functional insurance.**
 
 Which mechanism is supported must come from the prospective measurements, not from retrospective relabelling.
