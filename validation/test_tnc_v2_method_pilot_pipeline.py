@@ -86,7 +86,7 @@ def build_candidate(tmp, prefix, metadata_obj, hplc_obj, tissue_rows, geometry_r
     write_csv(
         offset,
         [
-            "candidate_offset_m","anchor_class","placement_id","permit_boundary_pass",
+            "candidate_offset_m","anchor_class","pilot_location_id","placement_id","permit_boundary_pass",
             "permanent_transect_protected","placement_reproducible",
             "restoration_workspace_pass",
         ],
@@ -180,13 +180,15 @@ def synthetic_passing_inputs(matrix_spikes=None):
         {
             "candidate_offset_m": 1.0,
             "anchor_class": anchor,
-            "placement_id": f"o_{anchor}",
+            "pilot_location_id": location,
+            "placement_id": f"o_{anchor}_{location}",
             "permit_boundary_pass": "true",
             "permanent_transect_protected": "true",
             "placement_reproducible": "true",
             "restoration_workspace_pass": "true",
         }
         for anchor in ("q25", "q50", "q75")
+        for location in ("loc01", "loc02")
     ]
 
     # Three positive delays are required for an empirical monotonic-drift audit.
@@ -217,6 +219,7 @@ def test_offset_requires_all_three_anchor_classes(tmp):
         {
             "candidate_offset_m": 1.0,
             "anchor_class": "q25",
+            "pilot_location_id": f"loc{i+1:02d}",
             "placement_id": f"only_q25_{i}",
             "permit_boundary_pass": "true",
             "permanent_transect_protected": "true",
@@ -227,6 +230,28 @@ def test_offset_requires_all_three_anchor_classes(tmp):
     ]
     candidate = build_candidate(tmp, "offset_missing_anchors", *inputs)
     result = validate(candidate, tmp / "offset_missing_anchors_validation.json")
+    assert result["status"] != "PASS_METHOD_PILOT", result
+    assert "transect_offset.selected_minimum_perpendicular_transect_offset_m" in result.get("pending_fields", []), result
+
+
+def test_offset_requires_two_independent_locations_per_anchor(tmp):
+    inputs = list(synthetic_passing_inputs())
+    # All three anchor classes at only one pilot location are insufficient.
+    inputs[4] = [
+        {
+            "candidate_offset_m": 1.0,
+            "anchor_class": anchor,
+            "pilot_location_id": "loc01",
+            "placement_id": f"one_location_{anchor}",
+            "permit_boundary_pass": "true",
+            "permanent_transect_protected": "true",
+            "placement_reproducible": "true",
+            "restoration_workspace_pass": "true",
+        }
+        for anchor in ("q25", "q50", "q75")
+    ]
+    candidate = build_candidate(tmp, "offset_one_location", *inputs)
+    result = validate(candidate, tmp / "offset_one_location_validation.json")
     assert result["status"] != "PASS_METHOD_PILOT", result
     assert "transect_offset.selected_minimum_perpendicular_transect_offset_m" in result.get("pending_fields", []), result
 
@@ -331,6 +356,7 @@ def main():
         test_blank_templates(tmp)
         test_pass_and_provenance(tmp)
         test_offset_requires_all_three_anchor_classes(tmp)
+        test_offset_requires_two_independent_locations_per_anchor(tmp)
         test_individual_matrix_spike_failure(tmp)
         test_monotonic_preservation_drift_fails(tmp)
         test_too_few_preservation_delays_stays_incomplete(tmp)
