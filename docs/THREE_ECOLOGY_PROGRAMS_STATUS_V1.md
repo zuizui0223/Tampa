@@ -207,6 +207,7 @@ raw response-independent pilot records
 
 The following templates already exist:
 - `field/tnc_v2_raw_pilot_metadata.json`
+  - must include pre-result HPLC analytical-QC minimum counts frozen by the receiving laboratory
 - `field/tnc_v2_hplc_matrix_pilot.json`
 - `field/tnc_v2_tissue_class_pilot.csv`
 - `field/tnc_v2_core_geometry_pilot.csv`
