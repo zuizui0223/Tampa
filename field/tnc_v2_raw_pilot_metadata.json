@@ -4,5 +4,10 @@
   "independent_rhizome_specimens": null,
   "collection_locations_or_batches": null,
   "field_core_attempts": null,
-  "note": "Fill only response-independent method/field pilot metadata. Future ecological response is prohibited. Preservation directional drift is derived automatically from the raw preservation CSV and must not be entered manually."
+  "note": "Fill only response-independent method/field pilot metadata. Future ecological response is prohibited. Before HPLC pilot results are generated/inspected, the receiving laboratory must freeze the four analytical-QC minimum counts here; each minimum must be >=1 and may not be relaxed after results. Preservation directional drift is derived automatically from the raw preservation CSV and must not be entered manually.",
+  "analytical_qc_minimum_counts_frozen_before_results": false,
+  "minimum_standard_recovery_n": null,
+  "minimum_matrix_spike_n": null,
+  "minimum_technical_duplicate_pairs_n": null,
+  "minimum_pilot_extracts_n": null
 }
