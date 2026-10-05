@@ -19,7 +19,10 @@ assert c["angular_response_gate"]["selection_hierarchy"]["preferred_class"]=="4p
 assert c["angular_response_gate"]["selection_hierarchy"]["fallback_class"]=="2pi_cosine_ppfd"
 assert c["angular_response_gate"]["selection_hierarchy"]["no_post_pilot_switch"] is True
 assert "disable the optical primary" in c["angular_response_gate"]["selection_hierarchy"]["fail_closed_rule"]
-assert c["angular_response_gate"]["primary_class_field"]=="primary_angular_response_class"\nassert c["angular_response_gate"]["reference_class_field"]=="reference_angular_response_class"\nassert "match it exactly" in c["angular_response_gate"]["rule"]\nassert "same primary class" in c["angular_response_gate"]["above_canopy_rule"]
+assert c["angular_response_gate"]["primary_class_field"]=="primary_angular_response_class"
+assert c["angular_response_gate"]["reference_class_field"]=="reference_angular_response_class"
+assert "match it exactly" in c["angular_response_gate"]["rule"]
+assert "same primary class" in c["angular_response_gate"]["above_canopy_rule"]
 a=c["calibration_gate"]["post_correction_acceptance"]
 assert a["r_squared_min"]==0.995
 assert a["median_absolute_relative_error_max"]==0.05
