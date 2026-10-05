@@ -1,0 +1,41 @@
+{
+  "schema": "tampa.clonal_state_augmentation_primary_v1.contract",
+  "frozen_on": "2026-10-05",
+  "status": "prospective_before_outcome_sampling",
+  "existing_sampling_design": "results/clonal_state_prospective_v2_contract.json",
+  "central_question": "Within one stable Thalassia meadow, does local rhizome TNC predict future local quantitative state after current local state and stable node identity are represented?",
+  "primary": {
+    "predictor": "within_node_centered_anchor_TNC",
+    "outcome": "future same-meter Thalassia Braun-Blanquet score",
+    "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
+    "uncertainty": "10000-replicate water-body-stratified stable-node cluster bootstrap; seed 20261007; two-sided 95% interval",
+    "expected_direction": "positive",
+    "support": "95% interval entirely above zero"
+  },
+  "gate": {
+    "min_complete_nodes": 36,
+    "min_nodes_per_bay": 6,
+    "preflight_complete_nodes": 38,
+    "preflight_by_bay": {
+      "Old Tampa Bay": 8,
+      "Middle Tampa Bay": 10,
+      "Lower Tampa Bay": 12,
+      "Boca Ciega Bay": 8
+    }
+  },
+  "hierarchy": {
+    "network_cross_node_model": "secondary supportive test only",
+    "rule": "A positive cross-node TNC association cannot rescue an unsupported within-node primary."
+  },
+  "novelty_boundary": [
+    "Carbohydrate reserves as seagrass resilience indicators are established.",
+    "Rhizome starch predicting next-season growth has prior precedent.",
+    "The distinctive test is prospective within-meadow state augmentation after baseline local state and stable site identity are represented."
+  ],
+  "prior_precedent": [
+    "Govers et al. 2015 DOI 10.1016/j.ecolind.2014.10.002",
+    "Carlson et al. 2003 PMID 12620031",
+    "Lee and Dunton 1997 DOI 10.1016/S0022-0981(96)02720-7"
+  ],
+  "no_post_outcome_changes": true
+}
