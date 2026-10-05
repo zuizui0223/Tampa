@@ -15,7 +15,7 @@ assert c["calibration_gate"]["expected_field_range_gate"]["metadata_field"]=="ex
 assert c["calibration_gate"]["side_by_side_dli_check"]["all_outcome_bearing_channels_required"] is True
 assert c["angular_response_gate"]["allowed_classes"]==["2pi_cosine_ppfd","4pi_scalar_ppffr"]
 assert c["angular_response_gate"]["cross_class_transfer_allowed"] is False
-assert "same angular-response class" in c["angular_response_gate"]["rule"]
+assert c["angular_response_gate"]["primary_class_field"]=="primary_angular_response_class"\nassert c["angular_response_gate"]["reference_class_field"]=="reference_angular_response_class"\nassert "match it exactly" in c["angular_response_gate"]["rule"]\nassert "same primary class" in c["angular_response_gate"]["above_canopy_rule"]
 a=c["calibration_gate"]["post_correction_acceptance"]
 assert a["r_squared_min"]==0.995
 assert a["median_absolute_relative_error_max"]==0.05
