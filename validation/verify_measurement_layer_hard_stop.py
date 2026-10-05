@@ -193,6 +193,7 @@ assert direct["eligibility"]["vegetated_sensor_placement"]["prohibited_rescue"].
 loss_pre=json.loads((ROOT/"results/functional_insurance_loss_legacy_preflight_v1.json").read_text())
 loss_contract=json.loads((ROOT/"results/functional_insurance_loss_legacy_primary_v1_contract.json").read_text())
 loss_freeze=json.loads((ROOT/"field/functional_insurance_loss_legacy_analysis_freeze.json").read_text())
+loss_hierarchy=json.loads((ROOT/"results/functional_insurance_inference_hierarchy_v1.json").read_text())
 assert loss_pre["status"]=="response_independent_historical_pairing_feasibility_pass"
 assert loss_pre["feasibility"]["matched_nodes"]==18
 assert loss_pre["feasibility"]["all_pairs_within_100m"] is True
@@ -203,6 +204,10 @@ assert loss_contract["cohort"]["minimum_confirmatory_pairs"]==16
 assert "NOT evidence of equivalence" in loss_contract["primary_analysis"]["equivalence_rule"]
 assert loss_freeze["status"]=="FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION"
 assert loss_freeze["script_path"]=="analysis/75_functional_insurance_loss_legacy_primary.py"
+assert loss_hierarchy["status"]=="FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION"
+assert loss_hierarchy["decisive_primary"]["analysis"]=="analysis/75_functional_insurance_loss_legacy_primary.py"
+assert loss_hierarchy["supportive_cross_sectional_test"]["role"].startswith("supportive cross-sectional")
+assert "Not authorized" in loss_hierarchy["language_gate"]["functional_redundancy"]
 assert "functional equivalence" in " ".join(loss_freeze["no_rescue"])
 
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
