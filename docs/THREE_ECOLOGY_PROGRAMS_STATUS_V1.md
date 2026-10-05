@@ -146,7 +146,7 @@ Mechanism remains prospective.
 
 ### Decisive prospective test
 
-**Four-bay rhizome TNC first.**
+**Four-bay rhizome TNC sampling first; within-meadow state augmentation is the decisive primary inference.**
 
 Planning frame:
 - Old Tampa Bay: 8 recent positive nodes
@@ -163,7 +163,7 @@ Confirmatory gate:
 - paired baseline within +/-14 days;
 - one frozen HPLC workflow.
 
-Primary model is already frozen.
+Primary sampling/model infrastructure is already frozen. The paper-level decisive hierarchy is now refined before outcome-bearing sampling: the within-node anchor test (`results/clonal_state_augmentation_primary_v1_contract.json`) is primary because it controls stable node identity and baseline local state; the cross-node four-bay TNC -> future-frequency model is supportive/generalization evidence.
 
 ### Remote CI verification
 
