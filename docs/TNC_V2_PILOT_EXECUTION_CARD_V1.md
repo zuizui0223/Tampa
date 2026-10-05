@@ -86,8 +86,15 @@ Select the **first passing geometry**.
 
 Obtain the monitoring authority's physical no-disturbance/access boundary.
 
-For each tested offset/placement record:
+For each tested offset, include at least one complete representative placement for **each frozen anchor class**:
 
+- q25;
+- q50;
+- q75.
+
+For every placement record fill:
+
+- anchor_class;
 - permit_boundary_pass;
 - permanent_transect_protected;
 - placement_reproducible;
@@ -97,7 +104,7 @@ File:
 
 - `field/tnc_v2_offset_pilot.csv`.
 
-Select the smallest positive offset for which all tested representative placements pass.
+Select the smallest positive offset only when q25, q50 and q75 are all represented and **every declared placement passes**. One successful placement is not sufficient.
 
 ## 5. HPLC matrix QC
 
