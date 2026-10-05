@@ -3,8 +3,8 @@
   "frozen_on": "2026-10-03",
   "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
   "script_path": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
-  "script_blob_sha1": "12ff87c6798025a6063087eab697be284c8f21e5",
-  "role": "secondary spatial site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay node-level TNC primary",
+  "script_blob_sha1": "d77bf90fe4ee17d4d81379b822aa39c3beef9852",
+  "role": "paper-level decisive within-meadow state-augmentation primary; network-scale four-bay TNC model is supportive/generalization only",
   "geography": [
     "Old Tampa Bay",
     "Middle Tampa Bay",
@@ -31,7 +31,7 @@
     "supported": "95% CI entirely above 0",
     "contradicted_direction": "95% CI entirely below 0",
     "unsupported": "95% CI overlaps 0",
-    "below_gate": "non-estimable secondary diagnostic",
+    "below_gate": "non-estimable decisive primary; do not promote the network-scale model",
     "family_supported": "97.5% family CI entirely above 0",
     "family_contradicted_direction": "97.5% family CI entirely below 0",
     "family_unsupported": "97.5% family CI overlaps 0"
@@ -39,7 +39,7 @@
   "no_rescue": [
     "Do not move anchors after TNC assay or future outcome access.",
     "Do not replace quantitative Braun-Blanquet with binary reappearance.",
-    "Do not use this diagnostic to rescue a null authoritative four-bay node-level TNC primary.",
+    "Do not use a positive network-scale four-bay TNC result to rescue an unsupported or non-estimable within-node decisive primary.",
     "Do not retain a three-anchor node when any anchor fails authoritative TNC QC.",
     "Do not replace a failed anchor with a different meter mark after future outcomes are known."
   ],
@@ -48,5 +48,6 @@
     "anchor_requirement": "All three frozen q25/q50/q75 anchors must have anchor_tnc_qc_pass == true; a failed anchor makes the node ineligible.",
     "no_imputation": "Do not impute, borrow, or replace a failed anchor TNC value after future outcome access.",
     "interpretation": "The diagnostic is intended to compare biological reserve heterogeneity within a transect, not analytical-quality heterogeneity."
-  }
+  },
+  "inferential_hierarchy_contract": "results/clonal_state_inference_hierarchy_v1.json"
 }
