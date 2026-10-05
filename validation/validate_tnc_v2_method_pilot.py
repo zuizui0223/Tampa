@@ -93,6 +93,8 @@ def main():
           "copy_to_precollection_freeze":None,
           "pilot_source":pilot_source,
           "raw_pilot_provenance":raw_pilot_provenance,
+          "analytical_qc_count_freeze":x.get("analytical_qc_count_freeze"),
+          "raw_hplc_counts":x.get("raw_gate_detail",{}).get("hplc_counts"),
           "claim_boundary":"Incomplete pilot is a logistics/method-development state, not ecological evidence."
         }
     else:
@@ -220,6 +222,8 @@ def main():
           "copy_to_precollection_freeze":copy if not errors else None,
           "pilot_source":pilot_source,
           "raw_pilot_provenance":raw_pilot_provenance,
+          "analytical_qc_count_freeze":x.get("analytical_qc_count_freeze"),
+          "raw_hplc_counts":x.get("raw_gate_detail",{}).get("hplc_counts"),
           "claim_boundary":"Pilot pass validates method/field feasibility only; it does not support the ecological TNC hypothesis."
         }
 
