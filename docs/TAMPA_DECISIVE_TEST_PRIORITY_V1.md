@@ -158,3 +158,22 @@ If TNC is null with adequate four-bay precision:
 > the primary measured reserve mechanism is weakened; proceed to the independently frozen physical and community-buffer hypotheses without redefining TNC.
 
 The value of the design is that a null closes a mechanism rather than spawning another retrospective rescue.
+
+
+## 2026-10-05 novelty refinement
+
+The operational sampling priority remains the four-bay TNC campaign, but the **paper-level decisive inferential test** is now the within-meadow state-augmentation contrast frozen in:
+
+- `results/clonal_state_augmentation_primary_v1_contract.json`
+
+This change does not alter field sampling, HPLC methods, anchor geometry, or timing.
+
+Reason: rhizome carbohydrate as a seagrass resilience indicator, and even rhizome starch as a predictor of next-season growth, already have direct precedent. A cross-node TNC -> future-state association alone can also reflect persistent site quality.
+
+The sharper question is therefore:
+
+> **within the same stable meadow, after current local above-ground state and node identity are represented, does local rhizome TNC predict which anchor retains more Thalassia at the next survey?**
+
+The network-scale four-bay TNC -> future focal-frequency model remains important as a generality/supportive test. It cannot rescue an unsupported within-node primary.
+
+This hierarchy turns the experiment from a reserve-indicator study into a state-augmentation test.
