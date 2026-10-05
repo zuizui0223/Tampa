@@ -86,14 +86,14 @@ Among methods that pass both the numeric bias gates and the automatic drift gate
 
 `field/tnc_v2_offset_pilot.csv`
 
-A candidate offset passes only if **q25, q50 and q75 representative anchor classes are all tested** and every declared placement satisfies:
+A candidate offset passes only if **q25, q50 and q75 representative anchor classes are all tested at >=2 independent pilot locations per anchor class** and every declared placement satisfies:
 
 - permit/no-disturbance boundary;
 - permanent-transect protection;
 - reproducible placement;
 - restoration workspace.
 
-At least three complete placement rows are therefore required per candidate offset (one q25, one q50, one q75). Extra representative placements are allowed, but all declared placements must pass.
+At least six complete placement rows are therefore required per candidate offset (q25/q50/q75 × >=2 independent pilot locations). Extra representative placements are allowed, but all declared placements must pass. Use `pilot_location_id` to identify independent locations; repeating the same location does not increase the independent-location count.
 
 The minimum passing offset is selected.
 
