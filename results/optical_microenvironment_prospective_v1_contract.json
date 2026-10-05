@@ -66,7 +66,20 @@
           "4pi_scalar_ppffr": "Report the primary exposure as daily integral of scalar photosynthetic photon flux fluence rate (PPFFR/scalar photon irradiance); do not relabel it as cosine-corrected PPFD."
         },
         "rationale": "Cosine and scalar quantum sensors integrate different angular light fields. A canopy changes angular light distribution, so agreement under one calibration geometry does not make the two quantities interchangeable in situ.",
-        "future_transfer_boundary": "A future study may validate cross-class angular transfer under representative underwater directional light fields, but no such transfer is authorized for this v1 primary."
+        "future_transfer_boundary": "A future study may validate cross-class angular transfer under representative underwater directional light fields, but no such transfer is authorized for this v1 primary.",
+        "selection_hierarchy": {
+          "scientific_preference": "4pi_scalar_ppffr",
+          "preference_rationale": "For the primary question of photon exposure actually experienced within a submerged flexible-leaf canopy, 4pi scalar photon fluence rate is the preferred angular quantity because it integrates photons arriving from all directions. Seagrass leaf/phyllosphere optical studies commonly use photon scalar irradiance, and historical Tampa Thalassia light-requirement monitoring used scalar irradiance at canopy height.",
+          "response_independent_fallback": "Use 2pi_cosine_ppfd only if the pre-outcome resource/instrument audit shows that a full confirmatory-scale matched scalar system cannot satisfy calibration, synchronization, profile, fouling and reference requirements while a full matched cosine system can.",
+          "no_quality_tradeoff": "Do not choose scalar if doing so would reduce the optical primary below its frozen confirmatory node/bay or QC gates. Scientific preference does not override confirmatory feasibility.",
+          "no_post_pilot_switch": "Once the class is frozen and the method pilot begins, do not switch classes because one produces larger DLI contrast, stronger TNC association, or easier biological interpretation.",
+          "literature_basis": [
+            "Smith & Wilson 1972 Applied Optics 11:934-938, DOI 10.1364/AO.11.000934",
+            "Brodersen et al. 2015 Frontiers in Marine Science 2:58, DOI 10.3389/fmars.2015.00058",
+            "Noisette et al. 2020 Journal of the Royal Society Interface 17:20200485",
+            "Tampa Bay BASIS proceedings: annual light regime of light-limited Thalassia used scalar irradiance sensors at canopy height"
+          ]
+        }
       }
     },
     "coverage_rule": "Each confirmatory node must retain >=85% valid PAR observations across the common overlap after only predeclared QC.",
