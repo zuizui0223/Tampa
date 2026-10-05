@@ -224,3 +224,5 @@ Once those values exist, the repository already contains the builder, validator 
 Do not restart exploratory analyses in Azores or Louisiana merely because Tampa is waiting on external field/laboratory input.
 
 The target remains three independent ecological papers.
+
+- [TNC-v2 method pilot execution card](docs/TNC_V2_PILOT_EXECUTION_CARD_V1.md)
