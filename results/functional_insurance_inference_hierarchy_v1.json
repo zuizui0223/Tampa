@@ -1,0 +1,32 @@
+{
+  "schema": "tampa.functional_insurance_inference_hierarchy_v1",
+  "frozen_on": "2026-10-05",
+  "status": "FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION",
+  "decisive_primary": {
+    "contract": "results/functional_insurance_loss_legacy_primary_v1_contract.json",
+    "preflight": "results/functional_insurance_loss_legacy_preflight_v1.json",
+    "analysis": "analysis/75_functional_insurance_loss_legacy_primary.py",
+    "freeze": "field/functional_insurance_loss_legacy_analysis_freeze.json",
+    "question": "Does documented focal foundation-species loss followed by retained alternative-seagrass occupancy preserve the same measured hydrodynamic attenuation as nearby persistent Thalassia within the same long-monitored meadow?",
+    "reason": "Links observed occupancy insurance to physical function and uses a matched within-node comparator, reducing stable transect-level confounding."
+  },
+  "supportive_cross_sectional_test": {
+    "source_contract": "results/direct_hydrodynamic_prospective_v1_contract.json#secondary_mechanism_support.community_functional_insurance",
+    "model": "attenuation_p90 ~ total_vegetated_cover + canopy_height + thalassia_fraction + water_body",
+    "role": "supportive cross-sectional composition/structure context",
+    "rule": "Cannot replace or rescue the history-linked matched primary."
+  },
+  "interpretation_matrix": {
+    "matched_difference_resolved__cross_sectional_composition_resolved": "Strong evidence that occupancy continuity and physical function are not interchangeable; cross-sectional composition helps describe the present structural basis.",
+    "matched_difference_resolved__cross_sectional_composition_unresolved": "Historical turnover is associated with a real physical-function difference, but the present composition fraction alone does not explain it.",
+    "matched_difference_unresolved__cross_sectional_composition_resolved": "Present composition correlates with attenuation, but the stronger history-linked functional-insurance question remains unresolved; do not claim loss caused functional change.",
+    "both_unresolved": "No resolved functional-insurance difference at the designed effect scale; do not claim equivalence without a pre-outcome equivalence margin."
+  },
+  "language_gate": {
+    "physical_function": "May describe measured attenuation differences when the matched primary resolves a difference.",
+    "canopy_ecosystem_engineering": "Requires the separately frozen bare-bed physical-attribution gate from the direct hydrodynamic contract.",
+    "functional_redundancy": "Not authorized from a nonsignificant matched contrast. Requires an independently justified equivalence margin frozen before hydrodynamic outcomes; none is frozen in v1."
+  },
+  "relation_to_tnc": "Independent organizational-level mechanism. Neither functional-insurance branch can rescue the decisive TNC state-augmentation primary, and TNC cannot rescue functional insurance.",
+  "no_post_outcome_changes": true
+}
