@@ -17,25 +17,25 @@ Official management context:
 
 ## What the Tampa data add
 
-### 1. Distribution can lag internal degradation
+### 1. Distribution can lag change in within-meadow quantitative state
 
-In Old Tampa Bay, recorded *Thalassia* occurrence changed weakly while blade length and shoot density declined. In Middle Tampa Bay, blade length declined without a corresponding binary decline. Therefore, a site can remain mapped or recorded as occupied while plant-condition state is deteriorating.
+In Old Tampa Bay, recorded *Thalassia* occurrence changed weakly while blade length and shoot density declined. In Middle Tampa Bay, blade length declined without a corresponding binary decline. Therefore, a site can remain mapped or recorded as occupied while blade stature or shoot density is declining.
 
 Management implication:
 
-> **Stable extent/presence should not close a concern if quantitative condition is declining.**
+> **Stable extent/presence should not close a concern if focal occupancy/abundance, blade stature, shoot density, or composition is changing.**
 
-### 2. Different degradation pathways require different follow-up
+### 2. Different changing state dimensions require different follow-up
 
 Lower Tampa Bay did not primarily show the same plant-condition pattern as Old Tampa Bay. Instead, focal frequency and Braun–Blanquet state declined while the surrounding seagrass community reorganized.
 
 Management implication:
 
-> **One “seagrass health” score can hide biologically different degradation pathways.**
+> **One “seagrass health” score can hide biologically different state changes.**
 
 The follow-up measurement should depend on which state dimension is moving.
 
-### 3. Quantitative weakening can precede instability of the recorded state
+### 3. Low quantitative state can precede instability of the recorded state
 
 Among source-positive Tampa transitions, next-year recorded losses tended to come from much lower source-year focal frequency and Braun–Blanquet state. The strict walk-forward model improved after adding these quantitative states, although it failed strongly in 2016 and lacks untouched external predictive confirmation.
 
@@ -45,6 +45,50 @@ Management implication:
 
 No threshold for intervention is claimed by the present study.
 
+## Relationship to current seagrass monitoring standards
+
+The Tampa result should **not** be framed as an argument against extent, cover, or composition monitoring.
+
+Those variables are the appropriate broad surveillance layer. Current GOOS guidance defines the Seagrass Cover and Composition Essential Ocean Variable around three core sub-variables:
+
+- percent cover;
+- species composition;
+- areal extent.
+
+Supporting measurements include shoot length/canopy height, shoot density, biomass, epiphytes, productivity and tissue nutrient state.
+
+This hierarchy is compatible with Tampa rather than contradicted by it.
+
+A 2026 synthesis of 500 seagrass monitoring studies and an expert survey found that commonly used methods concentrate on environmental parameters, percent cover, biomass, distribution/extent and species composition, whereas physiological-level methods were used much less often (about 10.4% of studies). The same synthesis recommended integrating measurements across biological organization levels rather than replacing the core structural metrics.
+
+References:
+
+- Duffy et al. (2025/2026), *Measuring and Reporting on Seagrass as an Essential Ocean Variable for Science and Management*, *BioScience* 76:359-374. DOI 10.1093/biosci/biaf199.
+- Rising et al. (2026), *Seagrass monitoring methods: Aligning expert opinion with practice*, *iScience* 29:114871. DOI 10.1016/j.isci.2026.114871.
+- GOOS (2025), Essential Ocean Variable specification: Seagrass cover and composition, version 2.1.
+
+### Tampa-specific contribution to monitoring design
+
+Tampa supplies a **trigger rule between monitoring levels**.
+
+The evidence supports separating:
+
+1. **landscape / EOV state** — extent, cover and composition;
+2. **fixed-site quantitative state** — focal frequency/abundance and plant-structure metrics;
+3. **targeted slow-state / process diagnostics** — TNC, direct optical exposure, high-frequency event exposure, or measured ecosystem-engineering function.
+
+The third layer is not justified everywhere and is not yet a validated management indicator.
+
+It becomes scientifically worthwhile when the first two layers disagree—for example when recorded occurrence/extent remains stable while focal frequency, blade stature, shoot density or composition shows a sustained change.
+
+Thus the management principle is:
+
+> **use inexpensive broad state variables for surveillance, and escalate to slow-state/process measurements when coarse persistence and quantitative state decouple.**
+
+This is more specific than simply recommending "multilevel monitoring."
+
+It links the expensive mechanism measurements to an observed state mismatch.
+
 ## Practical monitoring hierarchy
 
 A conservation dashboard should keep at least four layers separate.
@@ -53,7 +97,7 @@ A conservation dashboard should keep at least four layers separate.
 |---|---|---|---|---|
 | 1. Distribution | mapped acreage, recorded presence | Where seagrass is still detected | habitat loss / contraction when it changes | stable value does not mean healthy meadow |
 | 2. Within-meadow state | species-specific frequency, Braun–Blanquet abundance | how much of the monitored meadow is occupied by the focal species | thinning / local contraction | does not identify environmental cause |
-| 3. Plant condition | blade length, shoot density | condition of plants within occupied meadow | physiological/demographic deterioration candidate | does not by itself predict disappearance |
+| 3. Plant structure | blade length, shoot density | plant structure within occupied meadow | decline in one plant-structure dimension | does not by itself identify stressor or predict disappearance |
 | 4. Community context | *Thalassia*, *Halodule*, *Syringodium* trajectories | whether focal decline occurs with community reorganization | changing community structure | does not prove competition or replacement |
 
 ## Management action matrix
@@ -62,8 +106,8 @@ The study does **not** validate hard numeric management thresholds. A defensible
 
 | Observed pattern | Suggested management interpretation | Suggested next action |
 |---|---|---|
-| Extent/presence stable; quantitative states stable | no current evidence of hidden degradation from these indicators | continue routine monitoring |
-| Extent/presence stable; plant condition declining | **hidden-degradation alert** | add local diagnostics: high-frequency PAR, temperature, salinity, epiphytes, below-ground biomass/reserves |
+| Extent/presence stable; quantitative states stable | no detected disagreement among the monitored state layers | continue routine monitoring |
+| Extent/presence stable; blade stature or shoot density declining | **plant-structure alert** | confirm the trajectory and add targeted local diagnostics rather than treating persistence as unchanged condition |
 | Extent/presence stable; focal frequency/abundance declining | **meadow-thinning alert** | increase repeat sampling and map local patch structure |
 | Focal quantitative decline + alternative-species increase | **community-reorganization alert** | monitor species composition and habitat conditions; do not assume competition |
 | Quantitative state very low/declining before recorded loss | **watch-list state** | prioritize near-term resampling; do not label imminent extinction |
@@ -73,7 +117,7 @@ The study does **not** validate hard numeric management thresholds. A defensible
 
 Seagrasses are unusually well suited to revealing state decoupling for four reasons.
 
-1. **They are foundation species.** Meadow structure supports habitat, sediment stabilization, shoreline protection, nutrient cycling, and blue-carbon functions, so deterioration within an occupied meadow can matter before complete local disappearance.
+1. **They are foundation species.** Meadow structure supports habitat, sediment stabilization, shoreline protection, nutrient cycling, and blue-carbon functions, so change in within-meadow abundance, structure, or composition can matter before complete local disappearance.
 
 2. **They are long-lived and clonal.** A meadow can persist through rhizomes and established local structure while above-ground state changes more rapidly. This creates a biologically plausible route for condition to change before recorded presence.
 
@@ -87,11 +131,11 @@ The strongest ecological synthesis is:
 
 > **Established seagrass meadows have a slow, site-anchored occupancy/abundance component and a faster, more labile plant-condition component.**
 
-In the Tampa panel, stable node identity descriptively accounted for much more level variation in detection, focal frequency, and Braun–Blanquet state than in blade length or shoot density. The same site can therefore maintain its broad occupancy state while plant condition changes substantially.
+In the Tampa panel, stable node identity descriptively accounted for much more level variation in detection, focal frequency, and Braun–Blanquet state than in blade length or shoot density. The same site can therefore maintain its broad occupancy state while blade stature or shoot density changes substantially.
 
-The field data further show that the pathway of degradation is spatially heterogeneous:
+The field data further show that the changing quantitative dimension is spatially heterogeneous:
 
-- Old Tampa Bay: condition decline within persistent *Thalassia*;
+- Old Tampa Bay: declining blade length and shoot density within persistent *Thalassia*;
 - Middle Tampa Bay: narrower blade-length decline;
 - Lower Tampa Bay: focal occupancy/abundance contraction plus community reorganization.
 
@@ -103,7 +147,7 @@ The Tampa record does not support a single serial pathway in which plant-conditi
 
 A frozen cross-lag test asked whether source-year blade length and shoot density improved next-year focal frequency or Braun–Blanquet prediction after current frequency/abundance and stable transect identity were already represented. They did not.
 
-The safer ecological model is therefore **multiple partially independent degradation axes**:
+The safer ecological model is therefore **multiple partially independent state axes**:
 
 - occupancy / abundance;
 - plant condition;
@@ -219,30 +263,42 @@ A useful dashboard should therefore separate:
 
 This distinction can identify where biodiversity appears to buffer habitat continuity and where focal-species loss corresponds to complete local vegetation loss.
 
-## A practical two-tier monitoring design
+## A practical three-tier monitoring design
 
 The Tampa results also suggest how to allocate monitoring effort efficiently.
 
-### Tier 1 — broad annual screening
+### Tier 1 — landscape / EOV surveillance
 
-Retain variables that are already available across most fixed transects:
+Retain broad comparable variables used for baywide status and regional interoperability:
 
-- recorded presence;
+- areal extent;
+- percent cover where available;
+- species composition;
+- recorded occurrence.
+
+These are essential surveillance variables. Tampa does not reinterpret a stable extent value as proof that every within-meadow state dimension is stable.
+
+### Tier 2 — fixed-site quantitative screening
+
+Use repeated fixed-transect measurements to determine **which state dimension is changing**:
+
 - species-specific focal frequency;
 - Braun–Blanquet abundance;
-- community composition.
+- blade length;
+- shoot density;
+- community composition at repeated points.
 
-These variables are inexpensive enough for network-wide repeated surveillance and, unlike presence alone, frequency and Braun–Blanquet state contained information about next-year recorded-state instability.
+Frequency/abundance are especially useful as broad network screening variables because they have wider repeated coverage than the condition traits in the Tampa archive.
 
-### Tier 2 — targeted condition and mechanism diagnostics
+### Tier 3 — targeted slow-state and process diagnostics
 
-When a transect remains occupied but its quantitative state declines, intensify measurements locally rather than adding expensive measurements everywhere:
+When a transect remains occupied but a named quantitative state dimension shows a sustained decline, intensify measurements locally rather than adding expensive mechanism measurements everywhere:
 
-- blade length and shoot density;
-- meadow-scale PAR;
+- repeated plant-structure measurements where needed to verify the screen;
+- direct within-canopy optical exposure / DLI;
 - high-frequency temperature and salinity;
-- epiphyte load;
-- below-ground biomass and rhizome carbohydrate reserves;
+- direct epiphyte biomass / optical attenuation where relevant;
+- below-ground biomass, rhizome TNC and meristem/apex state;
 - hydrodynamic exposure;
 - disease / acute disturbance observations.
 
@@ -251,12 +307,24 @@ This design follows the empirical state hierarchy. Blade length and shoot densit
 ### Suggested adaptive sequence
 
 1. screen every stable transect for direction of change in focal frequency/abundance while retaining presence;
-2. flag sites with persistent presence but sustained quantitative deterioration;
+2. flag sites with persistent presence but sustained decline in a named quantitative state dimension;
 3. resample flagged sites at shorter intervals to confirm the trajectory;
-4. add plant-condition and local environmental measurements at flagged sites and matched stable reference sites;
+4. add slow-state and local process measurements at flagged sites and matched stable reference sites;
 5. only after that comparison, evaluate causal restoration or stress-mitigation actions.
 
 This is a more defensible conservation use of the present study than setting a universal numeric threshold from the retrospective Tampa data.
+
+## Biodiversity and "health" boundary
+
+The Tampa result is **not** a demonstrated decline in species diversity.
+
+Community composition changed in Lower Tampa Bay, but the primary focal signals concern *Thalassia* frequency/abundance and species-specific plant structure. A rise in *Halodule* alongside decline in *Thalassia* or *Syringodium* is community reorganization, not by itself loss of richness, Shannon diversity, or ecosystem function.
+
+Likewise, the paper should avoid treating all measured dimensions as one latent "health" variable.
+
+The management question is:
+
+> **which ecological state dimension changed, and what additional measurement is needed to interpret that change?**
 
 ## What not to claim
 
@@ -268,4 +336,4 @@ The present study does not justify:
 - demographic extinction/recolonization from one-year recorded-state changes;
 - using the exploratory early-warning model as a validated collapse forecast.
 
-The conservation contribution is **earlier and more biologically resolved diagnosis**, not a completed causal prescription.
+The conservation contribution is **earlier and more biologically resolved state diagnosis**, not a completed causal prescription.
