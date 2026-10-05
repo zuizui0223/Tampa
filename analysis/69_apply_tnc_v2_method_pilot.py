@@ -57,6 +57,8 @@ def main():
       "validation_status":v.get("status"),
       "source_pilot":v.get("pilot_source","field/tnc_v2_method_pilot.json"),
       "raw_pilot_provenance":v.get("raw_pilot_provenance"),
+      "analytical_qc_count_freeze":v.get("analytical_qc_count_freeze"),
+      "raw_hplc_counts":v.get("raw_hplc_counts"),
       "copied_keys":list(KEYS),
       "rule":"Values copied mechanically from PASS_METHOD_PILOT; no ecological outcome used."
     }
