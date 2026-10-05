@@ -1,0 +1,200 @@
+{
+  "schema": "tampa.functional_insurance_loss_legacy_preflight_v1",
+  "frozen_on": "2026-10-05",
+  "status": "response_independent_historical_pairing_feasibility_pass",
+  "purpose": "Preflight a within-node physical functional-insurance test linking documented historical Thalassia loss with retained alternative-seagrass occupancy to current hydrodynamic function.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "event_blob": "583b4d4e328290ab065346579eb4f29f03ea0f99",
+    "occurrence_blob": "d34aeb5aedb72459d1e04059629cb09450df929e",
+    "historical_loss_window": "target years 2016-2025",
+    "note": "Historical biological states are already open and are used only to define a future response-independent physical-measurement frame. No velocity outcome exists."
+  },
+  "state_definitions": {
+    "loss_legacy_alternative": "Stable meter mark with at least one consecutive-year transition in 2016-2025 from Thalassia present to Thalassia absent while any other seagrass remained present; at the latest preflight year the point is Thalassia absent and seagrass present.",
+    "persistent_thalassia_comparator": "Same stable node; Thalassia present in the latest preflight year with a continuous Thalassia-present run of at least 3 years ending in that year."
+  },
+  "frozen_pair_selection": {
+    "geography": [
+      "Old Tampa Bay",
+      "Middle Tampa Bay"
+    ],
+    "rule": "Within each qualifying node, enumerate all current loss-legacy-alternative points and all current >=3-year persistent-Thalassia points. Choose the pair with minimum absolute along-transect site_m separation; ties choose lower loss-point site_m, then lower Thalassia-point site_m.",
+    "maximum_pair_separation_m": 100,
+    "rationale": "Uses the same pre-existing 100 m local-comparability scale as the direct-hydrodynamic bare-control programme; pair choice does not use any velocity measurement.",
+    "contemporaneous_recheck": "Immediately before deployment, reapply the same state definitions and pairing rule to the latest eligible fixed-transect state available before any hydrodynamic outcome is collected. If a historical candidate no longer satisfies its state definition, it is not retained merely to preserve sample size."
+  },
+  "feasibility": {
+    "matched_nodes": 18,
+    "by_water_body": {
+      "Old Tampa Bay": 8,
+      "Middle Tampa Bay": 10
+    },
+    "all_pairs_within_100m": true,
+    "pair_distance_m": {
+      "median": 25,
+      "p75": 45,
+      "max": 75
+    },
+    "planning_target_pairs": 18,
+    "confirmatory_min_pairs": 16,
+    "confirmatory_min_pairs_per_bay": 6,
+    "approximate_80pct_power_two_sided_paired_standardized_effect": {
+      "n18": 0.701,
+      "n16": 0.749,
+      "interpretation": "Planning benchmark only. The design mainly resolves moderate-to-large paired functional differences; an unsupported test is not evidence of equivalence."
+    }
+  },
+  "pairs": [
+    {
+      "node_id": "TBEP:seagrass:loc:S3T1",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T1:550",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T1:600",
+      "pair_distance_m": 50,
+      "comparator_continuous_thalassia_years": 7
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T11",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T11:920",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T11:900",
+      "pair_distance_m": 20,
+      "comparator_continuous_thalassia_years": 11
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T13",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T13:225",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T13:300",
+      "pair_distance_m": 75,
+      "comparator_continuous_thalassia_years": 10
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T3",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T3:125",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T3:100",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T4",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T4:100",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T4:25",
+      "pair_distance_m": 75,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T5",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T5:100",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T5:125",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T6",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T6:50",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T6:75",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T7",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T7:350",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T7:360",
+      "pair_distance_m": 10,
+      "comparator_continuous_thalassia_years": 3
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T8",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T8:125",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T8:100",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 3
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T9",
+      "water_body": "Middle Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T9:500",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T9:475",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 4
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T14",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T14:600",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T14:625",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T15",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T15:350",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T15:325",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 12
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T16",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T16:700",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T16:750",
+      "pair_distance_m": 50,
+      "comparator_continuous_thalassia_years": 3
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T5",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T5:100",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T5:175",
+      "pair_distance_m": 75,
+      "comparator_continuous_thalassia_years": 3
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T6",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T6:225",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T6:250",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T8",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T8:170",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T8:125",
+      "pair_distance_m": 45,
+      "comparator_continuous_thalassia_years": 6
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S1T9",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S1T9:650",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S1T9:690",
+      "pair_distance_m": 40,
+      "comparator_continuous_thalassia_years": 5
+    },
+    {
+      "node_id": "TBEP:seagrass:loc:S3T10",
+      "water_body": "Old Tampa Bay",
+      "loss_legacy_point_id": "TBEP:seagrass:loc:S3T10:275",
+      "persistent_thalassia_point_id": "TBEP:seagrass:loc:S3T10:300",
+      "pair_distance_m": 25,
+      "comparator_continuous_thalassia_years": 3
+    }
+  ],
+  "boundary": [
+    "This preflight does not test hydrodynamic function; no velocity outcome is used.",
+    "Old and Middle Tampa Bay are the confirmatory geography because matched historical states are sufficiently replicated there before physical outcomes exist. Lower Tampa Bay and Boca Ciega Bay are not excluded from descriptive transportability observations if contemporaneous qualifying pairs exist, but they cannot be added post hoc to rescue the confirmatory test.",
+    "A non-significant future paired contrast is not evidence of functional equivalence unless an equivalence margin is independently frozen before velocity outcomes; no such equivalence claim is authorized by this v1 preflight."
+  ]
+}
