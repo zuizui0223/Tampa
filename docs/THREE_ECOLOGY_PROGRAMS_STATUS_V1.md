@@ -8,7 +8,7 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ### Scientific status
 
-**Analysis closed after endpoint audit; manuscript V3 QC PASS.**
+**Scientific analysis and endpoint audit closed. Manuscript V3 QC PASS. Figure contract V2 QC PASS.**
 
 Primary evidence:
 
@@ -30,46 +30,42 @@ Primary evidence:
 Interpretation:
 > capture-time silvering readiness strongly predicts whether and when migration becomes behaviorally active, whereas the same Durif-stage gradient is absent from generic post-activation migration speed.
 
-### Endpoint-audit boundary
+### Endpoint boundary
 
-The upstream terminal-positive file is **not** a validated binary success/failure variable.
+The upstream terminal-positive file is not a validated binary success/failure variable.
 
 Therefore:
 - terminal-set OR **1.15** is secondary sensitivity only;
 - former initiation/terminal OR-ratio **1.81** is secondary sensitivity only;
-- non-membership must not be called biological migration failure;
-- no escapement probability is estimated in this reanalysis.
+- non-membership is not biological migration failure;
+- no escapement probability is estimated here.
 
-Canonical interpretation:
-- `results/phase_control_canonical_v2.json`
-- `docs/escapement_endpoint_audit.md`
-- `docs/CLAIM_EVIDENCE_MAP_PHASE_CONTROL_V2.md`
+### Canonical artifacts
 
-### Manuscript status
-
-Submission-canonical biological draft:
+Manuscript:
 - `manuscript/AZORES_PHASE_CONTROL_MANUSCRIPT_V3.md`
 
-Numeric contract:
+Numeric/interpretation:
+- `results/phase_control_canonical_v2.json`
 - `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`
+- `manuscript/MANUSCRIPT_QC_V2.json` — **PASS**
 
-QC:
-- `manuscript/MANUSCRIPT_QC_V2.json`
-- status: **PASS**
-- all primary counts/numbers present;
-- threshold-defined onset clock present;
-- terminal endpoint explicitly sensitivity-only;
-- no terminal non-membership = failure claim;
-- no EOG wording in biological manuscript;
-- required core references present.
+Figures:
+- `manuscript/FIGURE_PLAN_V2.md`
+- `manuscript/FIGURE_CAPTIONS_V2.md`
+- `manuscript/FIGURE_DATA_CONTRACT_V2.json`
+- `manuscript/FIGURE_QC_V2.json` — **PASS**
+- `manuscript/figure_data_v2/`
+
+Older V1 completion-centred figure specifications and simplified initiation scripts are explicitly superseded/fail-closed.
 
 ### Remaining non-scientific submission inputs
 
 - author/affiliation/contribution fields;
 - target-journal formatting;
-- final figure rendering under the V3 figure contract;
+- final graphical rendering from the V2 plotting tables;
 - source-study ethics wording check;
-- submission release/archive.
+- release/archive.
 
 **No new exploratory Azores analysis is required.**
 
