@@ -10,6 +10,17 @@ It does **not** change the scientific thresholds. It only converts them into mac
 
 ### HPLC matrix pilot
 
+Before entering analytical results, freeze the receiving laboratory's minimum acceptable observation counts in `field/tnc_v2_raw_pilot_metadata.json`:
+
+- `analytical_qc_minimum_counts_frozen_before_results = true`;
+- minimum standard-recovery count;
+- minimum matrix-spike count;
+- minimum technical-duplicate-pair count;
+- minimum calibration-range extract count.
+
+These are laboratory-method sufficiency counts, not ecological thresholds. Each must be >=1 and cannot be relaxed after pilot results are inspected. The builder records actual counts; the validator fails closed when actual n is below the pre-frozen minimum.
+
+
 `field/tnc_v2_hplc_matrix_pilot.json`
 
 Enter:
