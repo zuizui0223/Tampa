@@ -190,6 +190,21 @@ assert rep["gate"]["by_water_body"]["Lower Tampa Bay"]["thalassia_representative
 assert direct["new_measurements"]["canopy_counterfactual_control"]["representative_placement_preflight"]["status"]=="representative_placement_both_gates_pass"
 assert direct["eligibility"]["vegetated_sensor_placement"]["prohibited_rescue"].startswith("Do not move")
 
+loss_pre=json.loads((ROOT/"results/functional_insurance_loss_legacy_preflight_v1.json").read_text())
+loss_contract=json.loads((ROOT/"results/functional_insurance_loss_legacy_primary_v1_contract.json").read_text())
+loss_freeze=json.loads((ROOT/"field/functional_insurance_loss_legacy_analysis_freeze.json").read_text())
+assert loss_pre["status"]=="response_independent_historical_pairing_feasibility_pass"
+assert loss_pre["feasibility"]["matched_nodes"]==18
+assert loss_pre["feasibility"]["all_pairs_within_100m"] is True
+assert loss_pre["feasibility"]["by_water_body"]=={"Old Tampa Bay":8,"Middle Tampa Bay":10}
+assert loss_contract["status"]=="FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION"
+assert loss_contract["cohort"]["planning_pairs"]==18
+assert loss_contract["cohort"]["minimum_confirmatory_pairs"]==16
+assert "NOT evidence of equivalence" in loss_contract["primary_analysis"]["equivalence_rule"]
+assert loss_freeze["status"]=="FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION"
+assert loss_freeze["script_path"]=="analysis/75_functional_insurance_loss_legacy_primary.py"
+assert "functional equivalence" in " ".join(loss_freeze["no_rescue"])
+
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
 assert frame["registry"]["recent_thalassia_positive_nodes"]==33
