@@ -161,6 +161,15 @@
     "semantic_reporting": {
       "2pi_cosine_ppfd": "hemispherical cosine-corrected PPFD; DLI in mol photons m-2 d-1",
       "4pi_scalar_ppffr": "scalar photosynthetic photon flux fluence rate / scalar photon irradiance; integrated scalar photon exposure in mol photons m-2 d-1"
+    },
+    "selection_hierarchy": {
+      "preferred_class": "4pi_scalar_ppffr",
+      "fallback_class": "2pi_cosine_ppfd",
+      "selection_time": "Before raw method-pilot interpretation and before any outcome-bearing deployment.",
+      "scalar_preference_condition": "Prefer scalar only when the response-independent resource audit shows enough matched scalar outcome channels and matched scalar references to satisfy every frozen confirmatory gate.",
+      "cosine_fallback_condition": "If scalar cannot meet the full confirmatory resource/QC envelope but matched cosine PPFD can, freeze cosine PPFD before pilot interpretation.",
+      "fail_closed_rule": "If neither angular class can meet the full frozen optical primary gates, disable the optical primary for that campaign rather than mix classes or lower sample/QC requirements.",
+      "no_post_pilot_switch": true
     }
   }
 }
