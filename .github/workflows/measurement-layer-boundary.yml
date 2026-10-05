@@ -30,6 +30,11 @@ on:
       - "results/representative_sensor_placement_preflight_v1_contract.json"
       - "docs/BARE_CONTROL_FIELD_RECONNAISSANCE_V1.md"
       - "results/functional_insurance_sampling_preflight_v1.json"
+      - "results/functional_insurance_loss_legacy_preflight_v1.json"
+      - "results/functional_insurance_loss_legacy_primary_v1_contract.json"
+      - "field/functional_insurance_loss_legacy_analysis_freeze.json"
+      - "analysis/75_functional_insurance_loss_legacy_primary.py"
+      - "validation/test_functional_insurance_loss_legacy_primary.py"
       - "results/tbofs_hydrodynamic_preflight_v1.json"
       - "results/tbofs_depth_relevance_audit_v1.json"
       - "results/current_validation_v2.json"
@@ -67,6 +72,11 @@ on:
       - "results/representative_sensor_placement_preflight_v1_contract.json"
       - "docs/BARE_CONTROL_FIELD_RECONNAISSANCE_V1.md"
       - "results/functional_insurance_sampling_preflight_v1.json"
+      - "results/functional_insurance_loss_legacy_preflight_v1.json"
+      - "results/functional_insurance_loss_legacy_primary_v1_contract.json"
+      - "field/functional_insurance_loss_legacy_analysis_freeze.json"
+      - "analysis/75_functional_insurance_loss_legacy_primary.py"
+      - "validation/test_functional_insurance_loss_legacy_primary.py"
       - "results/tbofs_hydrodynamic_preflight_v1.json"
       - "results/tbofs_depth_relevance_audit_v1.json"
       - "results/current_validation_v2.json"
@@ -86,3 +96,4 @@ jobs:
           python-version: "3.12"
       - run: python validation/verify_measurement_layer_hard_stop.py
       - run: python validation/verify_tnc_v2_authority.py
+      - run: python validation/test_functional_insurance_loss_legacy_primary.py
