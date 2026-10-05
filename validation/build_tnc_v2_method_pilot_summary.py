@@ -268,10 +268,24 @@ def summarize_offset(path: Path):
         }
         anchors_complete = complete_anchors == required_anchors
         no_invalid_anchor = declared_anchors <= required_anchors
+        locations_by_anchor = {
+            anchor: {
+                r.get("pilot_location_id", "").strip()
+                for r in rr
+                if r.get("anchor_class", "").strip().lower() == anchor
+                and r.get("pilot_location_id", "").strip()
+            }
+            for anchor in required_anchors
+        }
+        replicated_locations = all(
+            len(locations_by_anchor[anchor]) >= 2
+            for anchor in required_anchors
+        )
         passed = (
             len(rr) == len(declared)
-            and len(declared) >= 3
+            and len(declared) >= 6
             and anchors_complete
+            and replicated_locations
             and no_invalid_anchor
             and all(
                 as_bool(r["permit_boundary_pass"])
@@ -288,6 +302,10 @@ def summarize_offset(path: Path):
             "anchor_classes_complete": sorted(complete_anchors),
             "required_anchor_classes": sorted(required_anchors),
             "anchors_complete": anchors_complete,
+            "pilot_locations_by_anchor": {
+                k: sorted(v) for k, v in locations_by_anchor.items()
+            },
+            "minimum_two_locations_per_anchor": replicated_locations,
             "no_invalid_anchor_class": no_invalid_anchor,
             "pass": passed,
         })
