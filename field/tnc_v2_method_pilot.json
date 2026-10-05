@@ -98,5 +98,13 @@
       "General plant/seagrass NSC guidance prioritizes rapid metabolic arrest by liquid nitrogen or dry ice followed by freeze-drying.",
       "Sørensen et al. 2018 requires species-specific preliminary testing when transferring the standardized seagrass HPLC workflow."
     ]
+  },
+  "analytical_qc_count_freeze": {
+    "frozen_before_results": null,
+    "minimum_standard_recovery_n": null,
+    "minimum_matrix_spike_n": null,
+    "minimum_technical_duplicate_pairs_n": null,
+    "minimum_pilot_extracts_n": null,
+    "rule": "Counts are supplied by the receiving laboratory before pilot results are generated/inspected; each minimum must be >=1 and cannot be relaxed after results."
   }
 }
