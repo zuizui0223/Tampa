@@ -299,3 +299,60 @@ Key prior boundaries include:
 - Hall et al. (2021), Scientific Reports 11:6919, DOI 10.1038/s41598-021-86160-y — decadal natural recovery and succession after Florida Bay *Thalassia* mortality.
 - Furman et al. (2019), Restoration Ecology 27:421–430, DOI 10.1111/rec.12877 — slow/incomplete *Thalassia* recovery after restoration.
 - Functional-redundancy / insurance theory is established; Tampa should test actual function rather than claim novelty for the concept.
+
+
+## 7. History-linked functional-insurance refinement
+
+The prospective functional-insurance question is now stronger than the earlier cross-sectional composition model.
+
+A response-independent historical pairing preflight identified **18** Old + Middle Tampa Bay stable nodes containing both:
+
+- a current alternative-seagrass point that previously underwent a documented consecutive-year *Thalassia* loss while seagrass occupancy was retained; and
+- a current *Thalassia*-positive point with at least three consecutive years of *Thalassia* occupancy.
+
+All 18 frozen preflight pairs are within **100 m** along the same long-monitored transect (median separation **25 m**, maximum **75 m**).
+
+The paper-level decisive functional-insurance test is therefore frozen as:
+
+> **within the same long-monitored meadow, does measured hydrodynamic attenuation at a loss-legacy alternative-seagrass point differ from a nearby persistent-*Thalassia* point?**
+
+Primary physical estimand:
+
+```text
+paired attenuation difference
+  = attenuation_p90(loss-legacy alternative state)
+  - attenuation_p90(persistent Thalassia state)
+```
+
+The primary comparison is intentionally **not adjusted for current cover or canopy height**, because structural change may be part of the functional consequence of species turnover. A structure-adjusted model is secondary mechanism decomposition only.
+
+The earlier cross-sectional model
+
+```text
+attenuation_p90
+  ~ total_vegetated_cover
+  + canopy_height
+  + thalassia_fraction
+  + water_body
+```
+
+remains supportive context. It cannot replace or rescue the history-linked matched primary.
+
+This improves the novelty boundary. Functional redundancy among foundation species is established. The distinctive Tampa question is the longitudinal sequence:
+
+```text
+documented focal foundation-species loss
+        ↓
+alternative seagrass retains habitat occupancy
+        ↓
+is the physical engineering function retained?
+```
+
+The design is frozen in:
+
+- `results/functional_insurance_loss_legacy_preflight_v1.json`;
+- `results/functional_insurance_loss_legacy_primary_v1_contract.json`;
+- `results/functional_insurance_inference_hierarchy_v1.json`;
+- `field/functional_insurance_loss_legacy_analysis_freeze.json`.
+
+A confidence interval overlapping zero is **not** interpreted as functional equivalence. With 18 planned pairs, the design is mainly capable of resolving moderate-to-large paired functional differences; equivalence would require an independently justified pre-outcome margin that is not part of v1.
