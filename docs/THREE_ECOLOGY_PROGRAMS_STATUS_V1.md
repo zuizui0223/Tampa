@@ -8,9 +8,9 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ### Scientific status
 
-**Analysis closed for drafting.**
+**Analysis closed after endpoint audit; manuscript revision required.**
 
-Primary result:
+Primary activation result:
 - initiation Durif OR per FIII -> FIV -> FV increment: **2.08**
 - 95% CI **1.56–2.76**
 - p approximately **4.2e-7**
@@ -20,44 +20,49 @@ Onset:
 - 95% CI **1.13–1.47**
 - p = **0.00016**
 
-Post-initiation:
-- completion OR **1.15**, 95% CI **0.83–1.59**
-- migration-speed ratio **0.983**, 95% CI **0.852–1.134**
-
-Direct phase interaction:
-- OR ratio initiation/completion **1.81**
-- 95% CI **1.15–2.84**
-- p = **0.0099**
+Primary post-activation progression result:
+- migration-speed ratio per stage **0.983**
+- 95% CI **0.852–1.134**
+- p = **0.815**
 
 Interpretation:
-> internal silvering state strongly predicts entry into migration; its general predictive advantage attenuates after activation.
+> capture-time silvering readiness strongly predicts whether and when migration activates, while the same stage gradient is absent from generic post-activation migration speed.
+
+### Endpoint audit correction
+
+The upstream `successful_migrants_final_detection.csv` is a **positive terminal-endpoint set**.
+
+The source Europe-wide paper explicitly did not estimate escapement success rate because the complement can mix:
+- fishing;
+- terminal detection loss;
+- release geometry;
+- route-specific monitoring differences;
+- other study-specific censoring.
+
+Therefore:
+- conditional terminal-endpoint OR **1.15** is retained as a **secondary sensitivity result only**;
+- the former initiation/completion OR-ratio **1.81** is also **secondary sensitivity only**;
+- neither is used as the primary biological phase-control claim.
+
+Canonical interpretation:
+- `results/phase_control_canonical_v2.json`
+- `docs/escapement_endpoint_audit.md`
+- `docs/CLAIM_EVIDENCE_MAP_PHASE_CONTROL_V2.md`
 
 ### Manuscript status
 
-Canonical manuscript:
+Former manuscript:
 - `manuscript/AZORES_PHASE_CONTROL_MANUSCRIPT_V2.md`
 
-Numeric contract:
-- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
+is **not submission-canonical after the endpoint audit** because it still promotes the binary completion contrast too strongly.
 
-Submission QC:
-- logical equivalent of `validation/validate_manuscript_v2.py`: **PASS**
-- no numeric drift detected;
-- expert-corrected initiation counts present;
-- onset clock is the threshold-crossing definition;
-- no EOG wording in the biological manuscript;
-- no prohibited causal/absolute claims;
-- required core references/citations present.
+Required revision:
+- activation and onset remain primary;
+- post-initiation migration speed becomes the primary progression endpoint;
+- terminal endpoint membership and direct phase OR-ratio move to sensitivity/supplement;
+- claims about escapement probability/failure are prohibited.
 
-### Remaining non-scientific submission inputs
-
-- author/affiliation/contribution fields;
-- target-journal formatting;
-- final figure rendering from canonical figure data;
-- source-study ethics wording check;
-- submission release/archive.
-
-**No new exploratory analysis is required.**
+**No new exploratory analysis is required. The remaining Azores task is manuscript/figure/QC revision to the v2 canonical claim boundary.**
 
 ---
 
