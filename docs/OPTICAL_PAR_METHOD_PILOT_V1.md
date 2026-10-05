@@ -62,7 +62,7 @@ After correction, a channel passes only if:
 - median absolute relative error <=5%;
 - 95th percentile absolute relative error <=10%;
 - absolute dark offset <=1 µmol photons m⁻² s⁻¹;
-- no saturation occurs over the expected field PPFD range.
+- no saturation occurs over the expected field photon-rate range for the frozen angular-response quantity.
 
 Then run a >=6-hour underwater side-by-side check. Between-sensor CV for integrated light over that check must be <=5%.
 
@@ -255,14 +255,14 @@ The builder records input SHA-256 provenance. The authoritative READY freeze mus
 
 ### Frozen numerical semantics added before the pilot
 
-- Calibration relative-error denominator: `max(abs(reference PPFD), 10)`.
-- Dark rows: reference PPFD <=1 µmol m-2 s-1, >=5 dark observations per outcome-bearing sensor.
-- Calibration range must reach the response-independently declared expected maximum field PPFD.
+- Calibration relative-error denominator: `max(abs(reference primary photon rate), 10)`.
+- Dark rows: reference primary photon rate <=1 µmol m-2 s-1, >=5 dark observations per outcome-bearing sensor.
+- Calibration range must reach the response-independently declared expected maximum field photon rate for the frozen angular-response quantity.
 - Side-by-side DLI checks must contain every declared outcome-bearing sensor/channel.
 - Vertical-profile rows count only when daylight coverage is >=90% and maximum daylight gap is <=30 min.
 - The vertical pilot spans pre-frozen low/middle/high canopy-height classes with >=3 nodes per class.
 - Placement repeatability uses the same pilot nodes as the vertical-profile test.
-- Fouling response-change denominator: `max(abs(post-clean PPFD), 10)`; counted locations must be followed through >=14 submerged days.
+- Fouling response-change denominator: `max(abs(post-clean primary photon rate), 10)`; counted locations must be followed through >=14 submerged days.
 - If all manual service intervals fail, active antifouling must independently pass the same response-change gate.
 - Disabled secondary above-canopy attribution is explicitly recorded as `NOT_APPLICABLE_ATTRIBUTION_DISABLED` and does not block the primary within-canopy method.
 
