@@ -93,7 +93,7 @@ We reconstructed 29 years of fixed-transect monitoring of *Thalassia testudinum*
 
 ## Results
 
-Recorded *Thalassia* occurrence changed weakly in several bay segments while quantitative state deteriorated. In Old Tampa Bay, blade length declined by about 1.09 mm yr⁻¹ and shoot density by 38.3 shoots m⁻² yr⁻¹. In Middle Tampa Bay, blade length declined by about 0.405 mm yr⁻¹. In Lower Tampa Bay, focal frequency declined by about 0.0128 yr⁻¹ and Braun–Blanquet abundance also declined, while *Halodule wrightii* increased and *Syringodium filiforme* decreased. The external *Zostera* panel likewise retained saturated recorded presence while quantitative cover varied widely and declined at most repeated transects. Within Tampa, low source-year frequency and Braun–Blanquet state improved strict out-of-time prediction of next-year recorded loss.
+Recorded *Thalassia* occurrence changed weakly in several bay segments while particular quantitative state dimensions declined. In Old Tampa Bay, blade length declined by about 1.09 mm yr⁻¹ and shoot density by 38.3 shoots m⁻² yr⁻¹. In Middle Tampa Bay, blade length declined by about 0.405 mm yr⁻¹. In Lower Tampa Bay, focal frequency declined by about 0.0128 yr⁻¹ and Braun–Blanquet abundance also declined, while *Halodule wrightii* increased and *Syringodium filiforme* decreased. The external *Zostera* panel likewise retained saturated recorded presence while quantitative cover varied widely and declined at most repeated transects. Within Tampa, low source-year frequency and Braun–Blanquet state improved strict out-of-time prediction of next-year recorded loss.
 
 ## Conclusion
 
