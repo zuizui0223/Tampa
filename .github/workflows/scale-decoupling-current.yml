@@ -1,0 +1,50 @@
+name: Tampa current scale decoupling
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "analysis/33_community_buffering.py"
+      - "analysis/74_scale_decoupling_current.py"
+      - "data/tbep_seagrass_extent_current.csv"
+      - "results/community_buffering_v1_contract.json"
+      - ".github/workflows/scale-decoupling-current.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  scale-decoupling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rebuild current 1480-node-year community panel
+        run: python analysis/33_community_buffering.py --out results/generated_scale
+
+      - name: Test aerial extent versus fixed-transect states
+        run: |
+          python analysis/74_scale_decoupling_current.py \
+            --annual results/generated_scale/community_buffering_annual.csv \
+            --coverage data/tbep_seagrass_extent_current.csv \
+            --out results/generated_scale/scale_decoupling_current_v1.json
+
+      - name: Show result
+        run: cat results/generated_scale/scale_decoupling_current_v1.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tampa-scale-decoupling-current-v1
+          path: |
+            results/generated_scale/scale_decoupling_current_v1.json
+            results/generated_scale/community_buffering_annual.csv
+          if-no-files-found: error
+          retention-days: 30
