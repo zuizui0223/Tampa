@@ -2,7 +2,7 @@
 
 ## Goal
 
-Test whether the light actually experienced inside *Thalassia testudinum* canopies predicts short-term change in below-ground reserve.
+Test whether a standardized local photon environment measured inside *Thalassia testudinum* canopies predicts short-term change in below-ground reserve.
 
 The retrospective Tampa programme already rejected two weaker proxies:
 
@@ -13,7 +13,7 @@ The new mechanism therefore changes the **measurement layer**, not the old categ
 
 Primary question:
 
-> does lower directly measured within-canopy daily light correspond to lower post-exposure rhizome TNC after pre-exposure TNC is represented?
+> does lower photon exposure measured at a frozen standardized within-canopy position correspond to lower post-exposure rhizome TNC after pre-exposure TNC is represented?
 
 Paired contract:
 
@@ -79,6 +79,49 @@ Do **not** use preliminary PAR, mapped meadow-edge distance, accessibility to a 
 If the preselected representative mark cannot satisfy the frozen PAR geometry, the node is optical-primary-ineligible rather than relocated to a more convenient optical position.
 
 This mirrors the representative-placement rule already used to prevent edge-biased hydrodynamic sensor placement.
+
+## Optical quantity and angular-response class
+
+The outcome-bearing study must measure **one optical quantity consistently**.
+
+Before interpreting the response-independent method pilot, freeze exactly one of:
+
+- `2pi_cosine_ppfd` — hemispherical cosine-corrected photosynthetic photon flux density;
+- `4pi_scalar_ppffr` — scalar photosynthetic photon flux fluence rate / scalar photon irradiance.
+
+The choice is a measurement-design decision, not an ecological-result choice.
+
+Rules:
+
+1. all outcome-bearing within-canopy channels use the same class;
+2. the in-water calibration reference uses the same class;
+3. if the paired above-canopy attribution subset is retained, its reference channels use the same class;
+4. no scalar↔cosine calibration transfer is allowed in this v1 study;
+5. the paper reports the chosen quantity by name rather than calling both variants generic interchangeable "PAR DLI."
+
+The computational primary column may remain `mean_daily_within_canopy_dli`, but its physical meaning must be carried from the method freeze into analysis and reporting.
+
+This matters because canopy leaves alter the angular distribution of underwater light. Two sensors can agree under a calibration field yet respond differently inside a directional or diffuse canopy light field if their angular collectors differ.
+
+## Biological meaning of the point optical measurement
+
+The primary logger is a **local optical-environment sensor**, not a direct leaf dosimeter.
+
+It does not integrate:
+
+- the changing orientation of individual *Thalassia* leaves;
+- leaf motion in waves/currents;
+- vertical leaf-area distribution;
+- wavelength-specific leaf absorptance;
+- whole-canopy photosynthesis.
+
+The three-level vertical pilot asks whether one fixed proportional height reproducibly represents the **measured local vertical photon field** under the frozen definition. Its equal-weight profile mean is a geometric method reference, not a leaf-area-weighted absorbed-light estimate.
+
+Therefore a supported primary is described as:
+
+> a prospective standardized within-canopy photon-environment / reserve association.
+
+Do not describe the coefficient as the effect of exact photon dose absorbed by leaves.
 
 ## Within-canopy PAR placement
 
@@ -165,7 +208,7 @@ Do not reconstruct long daytime gaps from neighboring nodes, weather stations or
 
 ## Nested paired above-canopy optical reference
 
-The primary biological exposure remains actual within-canopy DLI. To identify whether low actual light is locally created by the canopy/leaf layer rather than by incident or water-column light, add a nested paired-reference subset.
+The primary biological exposure remains standardized within-canopy DLI. To identify whether low actual light is locally created by the canopy/leaf layer rather than by incident or water-column light, add a nested paired-reference subset.
 
 Planning target:
 
@@ -197,9 +240,9 @@ Interpretation:
 
 - actual DLI -> TNC supported + positive canopy attenuation -> consistent with biologically consequential low light plus a local canopy-associated optical gradient;
 - actual DLI -> TNC supported + weak canopy attenuation -> light matters, but low light may be driven mainly by cloud/water-column/turbidity forcing;
-- positive canopy attenuation + null actual-DLI primary -> canopy modifies light, but the modification is not shown to deplete reserve over this interval.
+- positive canopy attenuation + null within-canopy DLI primary -> canopy modifies light, but the modification is not shown to deplete reserve over this interval.
 
-The paired-reference metric cannot replace or rescue a null actual-DLI primary.
+The paired-reference metric cannot replace or rescue a null within-canopy DLI primary.
 
 ## Quantitative optical pilot gate
 
@@ -228,6 +271,37 @@ A longer daylight gap invalidates the node-day.
 The primary node exposure still requires >=30 valid DLIs, >=85% overall PAR coverage and >=35 days of common calendar overlap.
 
 These are measurement-QC rules, not biological light thresholds.
+
+## Angular-response class priority
+
+The primary optical quantity must be one angular-response class across the entire confirmatory study.
+
+Scientific preference:
+
+> **4π scalar photon fluence rate (PPFFR / scalar photon irradiance)**
+
+Reason: the biological question is the photon field actually experienced within a submerged, flexible-leaf canopy. Scalar irradiance integrates photons arriving from all directions, whereas a 2π cosine collector measures flux onto one oriented hemispherical surface. Seagrass leaf/phyllosphere optical studies commonly use photon scalar irradiance, and historical Tampa Bay *Thalassia* light-requirement work used scalar irradiance at canopy height.
+
+This is a priority, not a license to weaken the design.
+
+Use 4π scalar only if the response-independent equipment/resource audit can supply enough matched scalar outcome channels and matched scalar calibration/reference channels to satisfy every frozen node, bay, calibration, vertical-profile, fouling, synchronization and DLI-QC gate.
+
+Fallback:
+
+> **2π cosine-corrected PPFD**
+
+is allowed only if scalar cannot meet the full confirmatory envelope and a fully matched cosine system can.
+
+If neither class can satisfy the frozen confirmatory design, disable the optical primary for that campaign.
+
+Once the class is frozen and the method pilot begins:
+
+- do not mix scalar and cosine channels;
+- do not cross-calibrate one class into the other;
+- do not switch class because one produces larger contrast or a stronger later biological association;
+- report the physical quantity with its correct class-specific label.
+
+Relevant basis includes Smith & Wilson (1972, DOI 10.1364/AO.11.000934), Brodersen et al. (2015, DOI 10.3389/fmars.2015.00058), Noisette et al. (2020), and historical Tampa Bay *Thalassia* scalar-irradiance monitoring.
 
 ## Primary exposure
 
@@ -406,7 +480,7 @@ Do not:
 Before the first outcome-bearing optical deployment freeze:
 
 - node list and alternates;
-- PAR sensor model/calibration;
+- optical sensor model, primary angular-response class and matched-class calibration reference;
 - placement geometry and tolerance;
 - anti-fouling / cleaning / drift rules;
 - sampling interval;

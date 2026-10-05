@@ -30,12 +30,33 @@ def main():
     for k in (
         "par_sensor_model",
         "reference_sensor_id_and_calibration_provenance",
-        "expected_field_ppfd_max_umol_m2_s",
+        "primary_angular_response_class",
+        "reference_angular_response_class",
+        "expected_field_photon_rate_max_umol_m2_s",
         "mounting_geometry_and_height_tolerance_rule",
         "optical_attribution_intent",
     ):
         if meta.get(k) in (None,"","PENDING"):
             pending.append(f"metadata.{k}")
+
+
+    # Angular-response semantics.
+    ag=c["angular_response_gate"]
+    primary_class=meta.get("primary_angular_response_class")
+    reference_class=meta.get("reference_angular_response_class")
+    allowed=ag["allowed_classes"]
+    if primary_class not in (None,"","PENDING") and primary_class not in allowed:
+        errors.append(f"primary_angular_response_class must be one of {allowed}")
+    if reference_class not in (None,"","PENDING") and reference_class not in allowed:
+        errors.append(f"reference_angular_response_class must be one of {allowed}")
+    if (
+        primary_class not in (None,"","PENDING")
+        and reference_class not in (None,"","PENDING")
+        and primary_class != reference_class
+    ):
+        errors.append(
+            "primary/reference angular-response classes do not match; cross-class cosine-scalar calibration is prohibited"
+        )
 
     attr_intent=meta.get("optical_attribution_intent")
     if attr_intent not in (None,"","PENDING"):
@@ -67,7 +88,7 @@ def main():
             continue
         required=(
             "paired_n","irradiance_levels","dark_observations",
-            "maximum_reference_ppfd_umol_m2_s","intercept","slope","r_squared",
+            "maximum_reference_photon_rate_umol_m2_s","intercept","slope","r_squared",
             "median_absolute_relative_error","p95_absolute_relative_error",
             "dark_offset_abs_umol_m2_s","saturated"
         )
@@ -83,11 +104,11 @@ def main():
         if int(m["dark_observations"])<darkdef["minimum_dark_observations_per_sensor"]:
             fail.append("dark_observations")
         try:
-            expected_max=float(meta["expected_field_ppfd_max_umol_m2_s"])
-            if float(m["maximum_reference_ppfd_umol_m2_s"])<expected_max:
+            expected_max=float(meta["expected_field_photon_rate_max_umol_m2_s"])
+            if float(m["maximum_reference_photon_rate_umol_m2_s"])<expected_max:
                 fail.append("expected_field_range")
         except Exception:
-            pending.append("metadata.expected_field_ppfd_max_umol_m2_s")
+            pending.append("metadata.expected_field_photon_rate_max_umol_m2_s")
         if float(m["r_squared"])<ac["r_squared_min"]:
             fail.append("r_squared")
         if float(m["median_absolute_relative_error"])>ac["median_absolute_relative_error_max"]:
@@ -102,7 +123,7 @@ def main():
             all_channels_pass=False
             errors.append(f"sensor {sid} fails calibration gate: {fail}")
         manifest[sid]={
-            "reference_from_raw_to_ppfd":{
+            "reference_from_raw_to_primary_light_quantity":{
                 "intercept":float(m["intercept"]),
                 "slope":float(m["slope"]),
             },
@@ -113,7 +134,7 @@ def main():
             "paired_n":int(m["paired_n"]),
             "irradiance_levels":int(m["irradiance_levels"]),
             "dark_observations":int(m["dark_observations"]),
-            "maximum_reference_ppfd_umol_m2_s":float(m["maximum_reference_ppfd_umol_m2_s"]),
+            "maximum_reference_photon_rate_umol_m2_s":float(m["maximum_reference_photon_rate_umol_m2_s"]),
         }
 
     # Side-by-side DLI.
@@ -270,6 +291,9 @@ def main():
         copy={
             "par_sensor_model":meta["par_sensor_model"],
             "reference_sensor_id_and_calibration_provenance":meta["reference_sensor_id_and_calibration_provenance"],
+            "primary_angular_response_class":primary_class,
+            "reference_angular_response_class":reference_class,
+            "primary_light_quantity_reporting_label":ag["semantic_reporting"][primary_class],
             "sensor_specific_calibration_manifest":manifest,
             "all_outcome_bearing_channels_pass_calibration_gate":all_channels_pass,
             "selected_within_canopy_height_fraction":selected_num,

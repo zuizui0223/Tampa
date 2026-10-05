@@ -27,7 +27,7 @@ Hydrodynamics remains a separate later mechanism programme and is not a prerequi
 
 The TNC programme asks whether below-ground carbon reserve buffers future quantitative persistence.
 
-Within-canopy DLI measures the light actually available to support carbon gain over the same 39-45 day reserve interval.
+Within-canopy DLI measures the the local within-canopy photon environment over the same reserve interval over the same 39-45 day reserve interval.
 
 The primary optical model is continuous and direct:
 
@@ -136,4 +136,4 @@ Do not run a smaller outcome-bearing logger study merely because some sensors ar
 
 This priority order is a prospective resource-allocation rule, not evidence that light is already the cause of Tampa decline.
 
-A future supported optical result would identify an actual-light/reserve association over the frozen interval; a future supported event result would identify a hot-fresh event-complex/reserve association. Neither is assumed in advance.
+A future supported optical result would identify an standardized within-canopy photon-environment/reserve association over the frozen interval; a future supported event result would identify a hot-fresh event-complex/reserve association. Neither is assumed in advance.
