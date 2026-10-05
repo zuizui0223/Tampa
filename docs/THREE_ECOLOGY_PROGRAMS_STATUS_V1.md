@@ -8,41 +8,37 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ### Scientific status
 
-**Analysis closed after endpoint audit; manuscript revision required.**
+**Analysis closed after endpoint audit; manuscript V3 QC PASS.**
 
-Primary activation result:
+Primary evidence:
+
+**Migration activation**
 - initiation Durif OR per FIII -> FIV -> FV increment: **2.08**
 - 95% CI **1.56–2.76**
 - p approximately **4.2e-7**
 
-Onset:
-- HR per stage **1.29**
+**Behavioral onset**
+- Cox HR per stage: **1.29**
 - 95% CI **1.13–1.47**
 - p = **0.00016**
 
-Primary post-activation progression result:
-- migration-speed ratio per stage **0.983**
+**Post-activation progression**
+- migration-speed ratio per stage: **0.983**
 - 95% CI **0.852–1.134**
 - p = **0.815**
 
 Interpretation:
-> capture-time silvering readiness strongly predicts whether and when migration activates, while the same stage gradient is absent from generic post-activation migration speed.
+> capture-time silvering readiness strongly predicts whether and when migration becomes behaviorally active, whereas the same Durif-stage gradient is absent from generic post-activation migration speed.
 
-### Endpoint audit correction
+### Endpoint-audit boundary
 
-The upstream `successful_migrants_final_detection.csv` is a **positive terminal-endpoint set**.
-
-The source Europe-wide paper explicitly did not estimate escapement success rate because the complement can mix:
-- fishing;
-- terminal detection loss;
-- release geometry;
-- route-specific monitoring differences;
-- other study-specific censoring.
+The upstream terminal-positive file is **not** a validated binary success/failure variable.
 
 Therefore:
-- conditional terminal-endpoint OR **1.15** is retained as a **secondary sensitivity result only**;
-- the former initiation/completion OR-ratio **1.81** is also **secondary sensitivity only**;
-- neither is used as the primary biological phase-control claim.
+- terminal-set OR **1.15** is secondary sensitivity only;
+- former initiation/terminal OR-ratio **1.81** is secondary sensitivity only;
+- non-membership must not be called biological migration failure;
+- no escapement probability is estimated in this reanalysis.
 
 Canonical interpretation:
 - `results/phase_control_canonical_v2.json`
@@ -51,18 +47,31 @@ Canonical interpretation:
 
 ### Manuscript status
 
-Former manuscript:
-- `manuscript/AZORES_PHASE_CONTROL_MANUSCRIPT_V2.md`
+Submission-canonical biological draft:
+- `manuscript/AZORES_PHASE_CONTROL_MANUSCRIPT_V3.md`
 
-is **not submission-canonical after the endpoint audit** because it still promotes the binary completion contrast too strongly.
+Numeric contract:
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`
 
-Required revision:
-- activation and onset remain primary;
-- post-initiation migration speed becomes the primary progression endpoint;
-- terminal endpoint membership and direct phase OR-ratio move to sensitivity/supplement;
-- claims about escapement probability/failure are prohibited.
+QC:
+- `manuscript/MANUSCRIPT_QC_V2.json`
+- status: **PASS**
+- all primary counts/numbers present;
+- threshold-defined onset clock present;
+- terminal endpoint explicitly sensitivity-only;
+- no terminal non-membership = failure claim;
+- no EOG wording in biological manuscript;
+- required core references present.
 
-**No new exploratory analysis is required. The remaining Azores task is manuscript/figure/QC revision to the v2 canonical claim boundary.**
+### Remaining non-scientific submission inputs
+
+- author/affiliation/contribution fields;
+- target-journal formatting;
+- final figure rendering under the V3 figure contract;
+- source-study ethics wording check;
+- submission release/archive.
+
+**No new exploratory Azores analysis is required.**
 
 ---
 
