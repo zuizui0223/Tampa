@@ -167,6 +167,30 @@ Confirmatory gate:
 
 Primary model is already frozen.
 
+### Remote CI verification
+
+The TNC-v2 method/baseline implementation has been executed on GitHub Actions.
+
+Verified run:
+- workflow: `TNC v2 response-independent method pilot`
+- run id: **37253769624**
+- conclusion: **success**
+- commit: `07bb332a14715aac8eaeac92e7e6a6b7a6d64b54`
+
+Confirmed steps:
+- synthetic fail-closed method-pilot pipeline: **PASS**
+- synthetic baseline-validator tests: **PASS**
+- blank repository pilot records: correctly return **STOP_PILOT_INCOMPLETE**
+- candidate builder/validator/artifact handoff: **PASS**
+
+The logs explicitly contain:
+- `TNC-v2 method-pilot pipeline self-test: OK`
+- `TNC-v2 baseline validator self-test: OK`
+
+Therefore the present Tampa stop is **not a software failure**.
+
+The only valid blocker is missing response-independent physical/laboratory pilot measurements.
+
 ### Software/readiness status
 
 Authoritative pilot path:
