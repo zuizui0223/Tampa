@@ -72,7 +72,7 @@ Columns:
 For each sensor, the builder fits:
 
 ```text
-reference_PPFD = intercept + slope * raw_sensor_photon_rate
+reference_primary_photon_rate = intercept + slope * raw_sensor_photon_rate
 ```
 
 using the response-independent pilot observations.
@@ -84,7 +84,7 @@ The calibration gate requires:
 - >=50 complete paired observations per outcome-bearing sensor/channel;
 - >=5 non-dark irradiance levels;
 - >=5 qualifying dark observations;
-- calibration range reaching the predeclared expected field PPFD maximum;
+- calibration range reaching the predeclared expected field photon-rate maximum for the frozen angular-response quantity;
 - R² >=0.995;
 - median absolute relative error <=5%;
 - p95 absolute relative error <=10%;
@@ -96,9 +96,9 @@ The calibration gate requires:
 The frozen relative error is:
 
 ```text
-abs(calibrated_primary_photon_rate - reference_PPFD)
+abs(calibrated_primary_photon_rate - reference_primary_photon_rate)
 ------------------------------------
-max(abs(reference_PPFD), 10)
+max(abs(reference_primary_photon_rate), 10)
 ```
 
 The fixed 10 µmol m-2 s-1 denominator floor prevents percentage error from becoming undefined near zero. Dark performance is evaluated separately with the dark-offset gate.
@@ -248,9 +248,9 @@ For a candidate configuration to count:
 Relative cleaning change is:
 
 ```text
-abs(pre_clean_PPFD - post_clean_PPFD)
+abs(pre_clean_primary_photon_rate - post_clean_primary_photon_rate)
 -------------------------------------
-max(abs(post_clean_PPFD), 10)
+max(abs(post_clean_primary_photon_rate), 10)
 ```
 
 Pass:
