@@ -240,6 +240,7 @@ def summarize_geometry(path: Path, canonical):
 def summarize_offset(path: Path):
     rows = read_csv(path)
     required_anchors = {"q25", "q50", "q75"}
+    minimum_locations_per_anchor = 2
     by = defaultdict(list)
     for r in rows:
         if not r.get("candidate_offset_m", "").strip():
@@ -252,6 +253,7 @@ def summarize_offset(path: Path):
         rr = [
             r for r in declared
             if r.get("anchor_class", "").strip().lower() in required_anchors
+            and r.get("pilot_location_id", "").strip()
             and r.get("permit_boundary_pass", "").strip()
             and r.get("permanent_transect_protected", "").strip()
             and r.get("placement_reproducible", "").strip()
@@ -266,12 +268,26 @@ def summarize_offset(path: Path):
             r.get("anchor_class", "").strip().lower()
             for r in rr
         }
+        locations_by_anchor = {
+            anchor: sorted({
+                r.get("pilot_location_id", "").strip()
+                for r in rr
+                if r.get("anchor_class", "").strip().lower() == anchor
+                and r.get("pilot_location_id", "").strip()
+            })
+            for anchor in sorted(required_anchors)
+        }
         anchors_complete = complete_anchors == required_anchors
+        locations_complete = all(
+            len(locations_by_anchor[anchor]) >= minimum_locations_per_anchor
+            for anchor in required_anchors
+        )
         no_invalid_anchor = declared_anchors <= required_anchors
         passed = (
             len(rr) == len(declared)
-            and len(declared) >= 3
+            and len(declared) >= len(required_anchors) * minimum_locations_per_anchor
             and anchors_complete
+            and locations_complete
             and no_invalid_anchor
             and all(
                 as_bool(r["permit_boundary_pass"])
@@ -287,7 +303,10 @@ def summarize_offset(path: Path):
             "n_declared": len(declared),
             "anchor_classes_complete": sorted(complete_anchors),
             "required_anchor_classes": sorted(required_anchors),
+            "minimum_independent_locations_per_anchor": minimum_locations_per_anchor,
+            "pilot_locations_by_anchor": locations_by_anchor,
             "anchors_complete": anchors_complete,
+            "independent_locations_complete": locations_complete,
             "no_invalid_anchor_class": no_invalid_anchor,
             "pass": passed,
         })
