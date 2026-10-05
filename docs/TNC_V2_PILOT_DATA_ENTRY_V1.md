@@ -73,11 +73,13 @@ For each method × tested delay:
 
 The numeric gate is machine checked.
 
-The protocol's separate condition **"no monotonic directional drift across the tested delay sequence"** remains a response-independent review gate. The validator reports signed median difference by delay and returns `REVIEW_DIRECTIONAL_DRIFT` until `--drift-reviewed-pass` is explicitly supplied after reviewing the pilot-only diagnostic.
+The condition **"no monotonic directional drift across the tested delay sequence"** is machine-derived from the raw pilot records. At least **three distinct positive delay levels** are required for any method that could be selected.
 
-When drift review passes, choose:
+The builder calculates the signed median TNC difference at each delay and sets `monotonic_directional_drift_absent` automatically. No manual drift-pass flag is accepted by the current validator.
 
-1. the shortest operationally feasible passing preservation method in the predeclared method order;
+Among methods that pass both the numeric bias gates and the automatic drift gate, choose:
+
+1. the first passing preservation method in the predeclared method order;
 2. the longest tested delay that passes for that method.
 
 ### Transect-offset pilot
@@ -99,12 +101,6 @@ The minimum passing offset is selected.
 
 ~~~bash
 python validation/validate_tnc_v2_method_pilot.py
-~~~
-
-After response-independent directional-drift review:
-
-~~~bash
-python validation/validate_tnc_v2_method_pilot.py --drift-reviewed-pass
 ~~~
 
 ## Outputs
