@@ -84,12 +84,14 @@ When drift review passes, choose:
 
 `field/tnc_v2_offset_pilot.csv`
 
-A candidate offset passes only if every tested placement satisfies:
+A candidate offset passes only if **q25, q50 and q75 representative anchor classes are all tested** and every declared placement satisfies:
 
 - permit/no-disturbance boundary;
 - permanent-transect protection;
 - reproducible placement;
 - restoration workspace.
+
+At least three complete placement rows are therefore required per candidate offset (one q25, one q50, one q75). Extra representative placements are allowed, but all declared placements must pass.
 
 The minimum passing offset is selected.
 
