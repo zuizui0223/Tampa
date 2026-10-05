@@ -112,13 +112,41 @@ This supports:
 
 This is useful for monitoring interpretation, but incomplete/slow recovery and seagrass hysteresis are already established broadly.
 
-### D. Pre-loss local history contains return information
+### D. Pre-loss local history contains focal-specific return information
 
 Longer uninterrupted *Thalassia* occurrence at an exact meter mark before a one-year recorded loss predicts subsequent re-recording even after stable transect identity, loss year, immediate vegetation state and source mixture are represented.
 
-This is consistent with residual local biological structure or persistent microsite quality.
+A later frozen decomposition makes this more specific.
 
-It is not direct evidence of clonal memory because below-ground state is unmeasured.
+The history variable was separated into:
+
+- current continuous *Thalassia* run length;
+- generic continuous any-seagrass history preceding that focal run ("habitat headstart").
+
+In the joint within-node model:
+
+- centered *Thalassia* run coefficient = **0.484**;
+- 95% node-bootstrap interval **0.115 to 1.347**;
+- generic habitat-headstart coefficient = **0.160**;
+- 95% interval **-0.219 to 0.362**.
+
+Thus the observational legacy is not fully explained by a meter mark simply having been vegetated for a long time.
+
+Supported statement:
+
+> **The recent persistence history of the focal foundation species contains return information beyond generic seagrass-habitat history.**
+
+Important boundaries remain.
+
+Among the 44 sequences that became completely seagrass-bare in the loss year, the focal-history coefficient was not supported (coefficient **-0.073**, 95% interval **-0.954 to 0.783**; only 8 returns). A formal history-by-community-continuity interaction was also unsupported.
+
+Therefore do not claim that community continuity is statistically proven to be required for the legacy effect.
+
+The result is consistent with residual focal biological structure, recurrent detectability, or a *Thalassia*-specific microsite property. It is **not direct evidence of clonal memory** because below-ground state is unmeasured.
+
+This gives the TNC programme a sharper role:
+
+> **not "do carbohydrate reserves matter?" in general, but "is a directly measured below-ground state one biological carrier of the focal-specific legacy already visible in the long-term record?"**
 
 ---
 
