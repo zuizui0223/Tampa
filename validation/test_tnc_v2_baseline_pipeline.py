@@ -151,24 +151,33 @@ def main():
         freeze_path = tmp / "freeze.json"
         freeze = build_freeze(freeze_path)
 
-        # 1) Confirmatory pass: 9 nodes per bay = 36 total.
+        # 1) Confirmatory pass under a distribution achievable from the
+        # frozen 41-node planning frame: Old 8, Middle 10, Lower 10,
+        # Boca Ciega 8 = 36 total.  Do not test only an impossible 9-per-bay
+        # layout when the two smallest planned bays contain 8 nodes each.
         pass_manifest = tmp / "pass.csv"
-        write_manifest(pass_manifest, freeze, {b: 9 for b in BAYS})
+        pass_counts = {
+            "Old Tampa Bay": 8,
+            "Middle Tampa Bay": 10,
+            "Lower Tampa Bay": 10,
+            "Boca Ciega Bay": 8,
+        }
+        write_manifest(pass_manifest, freeze, pass_counts)
         pass_result = validate(pass_manifest, freeze_path, tmp / "pass.json")
         assert pass_result["status"] == "PASS_CONFIRMATORY_BASELINE", pass_result
         assert pass_result["valid_primary_nodes"] == 36, pass_result
-        assert all(pass_result["valid_nodes_by_bay"][b] == 9 for b in BAYS), pass_result
+        assert pass_result["valid_nodes_by_bay"] == pass_counts, pass_result
 
         # 2) Representation failure without record-level QC error.
-        # 11+11+10+4 = 36 total, but Boca Ciega is below frozen >=6 per-bay gate.
+        # 8+12+12+4 = 36 total, but Boca Ciega is below frozen >=6 per-bay gate.
         pilot_manifest = tmp / "pilot.csv"
         write_manifest(
             pilot_manifest,
             freeze,
             {
-                "Old Tampa Bay": 11,
-                "Middle Tampa Bay": 11,
-                "Lower Tampa Bay": 10,
+                "Old Tampa Bay": 8,
+                "Middle Tampa Bay": 12,
+                "Lower Tampa Bay": 12,
                 "Boca Ciega Bay": 4,
             },
         )
@@ -179,7 +188,7 @@ def main():
 
         # 3) Baseline manifest must never contain future ecological response.
         bad_manifest = tmp / "future_leak.csv"
-        write_manifest(bad_manifest, freeze, {b: 9 for b in BAYS}, add_future=True)
+        write_manifest(bad_manifest, freeze, pass_counts, add_future=True)
         run(
             VALIDATOR,
             "--manifest", bad_manifest,
