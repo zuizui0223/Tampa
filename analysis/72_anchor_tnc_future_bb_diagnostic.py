@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Frozen secondary diagnostic: within-transect centered anchor TNC -> future same-mark BB.
+"""Frozen paper-level decisive primary: within-transect centered anchor TNC -> future same-mark BB.
 
 Input has exactly one row per frozen anchor. Nodes enter only with three complete
 quantitative anchors. Stable-node identity is absorbed by fixed effects and
@@ -94,7 +94,9 @@ def main():
     result={
       "schema":"tampa.within_transect_anchor_tnc_future_bb_v1",
       "status":"NONESTIMABLE_REPLICATION_GATE" if not gate else None,
-      "secondary":True,
+      "primary":True,
+      "inferential_role":"paper_level_decisive_state_augmentation_primary",
+      "hierarchy_contract":"results/clonal_state_inference_hierarchy_v1.json",
       "model":"future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + node_fixed_effect",
       "focal_coefficient":"within_node_centered_anchor_TNC",
       "eligible_nodes":n,
@@ -105,7 +107,7 @@ def main():
       "estimate":None,"ci95":None,"ci97_5_family":None,
       "classification":"nonestimable" if not gate else None,
       "claim_boundary":[
-        "Secondary spatial site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay node-level TNC primary.",
+        "Paper-level decisive state-augmentation primary under results/clonal_state_inference_hierarchy_v1.json; the network cross-node TNC model is supportive and cannot rescue an unsupported within-node primary.",
         "Node fixed effects remove stable transect-level differences, not persistent meter-mark microhabitat or time-varying local common causes.",
         "Braun-Blanquet is analyzed on the frozen quantitative score scale.",
         "Every retained anchor must pass the authoritative TNC sample/assay QC; failed anchor chemistry makes the entire three-anchor node ineligible rather than being imputed or replaced after future outcome access."
