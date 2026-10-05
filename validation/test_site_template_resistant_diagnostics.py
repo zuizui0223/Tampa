@@ -25,6 +25,8 @@ def main():
     assert "perfectly confounded" in dfreeze["measurement_validity_gate"]["assay_batch_round_boundary"]
     assert "<=10%" in dfreeze["measurement_validity_gate"]["analytical_precision_boundary"]
     assert afreeze["uncertainty"]["seed"]==20261007
+    assert afreeze["role"].startswith("paper-level decisive within-meadow state-augmentation primary")
+    assert afreeze["inferential_hierarchy_contract"]=="results/clonal_state_inference_hierarchy_v1.json"
     assert "anchor_tnc_qc_pass" in afreeze["measurement_validity_gate"]["anchor_requirement"]
     assert "Do not impute" in afreeze["measurement_validity_gate"]["no_imputation"]
     event=json.loads((ROOT/"results/event_stress_debt_prospective_v1_contract.json").read_text())
