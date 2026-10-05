@@ -37,6 +37,7 @@ The v2 contract fixes Boca Ciega inclusion **before** future outcome-bearing sam
 
 See:
 - [decisive-test priority](docs/TAMPA_DECISIVE_TEST_PRIORITY_V1.md)
+- [within-node TNC precision audit](docs/TNC_WITHIN_NODE_PRECISION_AUDIT_V1.md)
 - [four-bay TNC contract](results/clonal_state_prospective_v2_contract.json)
 
 ## Scientific mainline
