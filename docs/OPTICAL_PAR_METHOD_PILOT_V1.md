@@ -265,3 +265,18 @@ The builder records input SHA-256 provenance. The authoritative READY freeze mus
 - Fouling response-change denominator: `max(abs(post-clean PPFD), 10)`; counted locations must be followed through >=14 submerged days.
 - If all manual service intervals fail, active antifouling must independently pass the same response-change gate.
 - Disabled secondary above-canopy attribution is explicitly recorded as `NOT_APPLICABLE_ATTRIBUTION_DISABLED` and does not block the primary within-canopy method.
+
+
+## Angular-response selection hierarchy
+
+Before pilot interpretation, freeze exactly one class for all outcome-bearing and paired-reference optical channels.
+
+Priority:
+
+1. 4π scalar PPFFR if the response-independent resource audit can meet the complete confirmatory resource/QC envelope with matched scalar sensors/references.
+2. 2π cosine PPFD only if scalar cannot meet that envelope and a matched cosine system can.
+3. Disable the optical primary if neither class can meet the frozen confirmatory gates.
+
+Do not trade node/bay replication, calibration quality, vertical representativeness or fouling control for the preferred scalar class.
+
+After the pilot begins, angular class cannot be switched on the basis of pilot contrast magnitude or any biological response.
