@@ -8,7 +8,7 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ### Scientific status
 
-**Scientific analysis and endpoint audit closed. Manuscript V3 QC PASS. Figure contract V2 QC PASS.**
+**Scientific analysis and endpoint audit closed. Manuscript V3 QC PASS. Figure contract V2 QC PASS. Reference SVG render QC PASS.**
 
 Primary evidence:
 
@@ -63,7 +63,6 @@ Older V1 completion-centred figure specifications and simplified initiation scri
 
 - author/affiliation/contribution fields;
 - target-journal formatting;
-- final graphical rendering from the V2 plotting tables;
 - source-study ethics wording check;
 - release/archive.
 
@@ -75,7 +74,7 @@ Older V1 completion-centred figure specifications and simplified initiation scri
 
 ### Scientific status
 
-**Analysis closed for drafting.**
+**Analysis closed for drafting. Canonical figure data materialized. Reference Figure 1–5 SVG render QC PASS.**
 
 Primary independent Lake Erie result:
 - **190** valid matched events;
@@ -111,7 +110,7 @@ Canonical manuscript:
 - `manuscript/LOUIS_HYDROLOGICAL_BUFFERING_MANUSCRIPT_V1.md`
 
 Numeric contract:
-- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V2.json`
 
 Submission QC:
 - logical equivalent of `validation/validate_manuscript_v1.py`: **PASS**
@@ -126,7 +125,6 @@ Submission QC:
 
 - author/affiliation/contribution fields;
 - target-journal formatting;
-- final figure rendering from canonical outputs;
 - source ethics wording verification;
 - submission release/archive.
 
