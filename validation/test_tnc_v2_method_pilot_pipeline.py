@@ -86,7 +86,7 @@ def build_candidate(tmp, prefix, metadata_obj, hplc_obj, tissue_rows, geometry_r
     write_csv(
         offset,
         [
-            "candidate_offset_m","placement_id","permit_boundary_pass",
+            "candidate_offset_m","anchor_class","placement_id","permit_boundary_pass",
             "permanent_transect_protected","placement_reproducible",
             "restoration_workspace_pass",
         ],
@@ -179,13 +179,14 @@ def synthetic_passing_inputs(matrix_spikes=None):
     offset_rows = [
         {
             "candidate_offset_m": 1.0,
-            "placement_id": f"o{i}",
+            "anchor_class": anchor,
+            "placement_id": f"o_{anchor}",
             "permit_boundary_pass": "true",
             "permanent_transect_protected": "true",
             "placement_reproducible": "true",
             "restoration_workspace_pass": "true",
         }
-        for i in range(3)
+        for anchor in ("q25", "q50", "q75")
     ]
 
     # Three positive delays are required for an empirical monotonic-drift audit.
@@ -206,6 +207,28 @@ def synthetic_passing_inputs(matrix_spikes=None):
         ])
 
     return metadata, hplc, tissue_rows, geometry_rows, offset_rows, preservation_rows
+
+
+
+def test_offset_requires_all_three_anchor_classes(tmp):
+    inputs = list(synthetic_passing_inputs())
+    # Three successful placements at the same anchor must NOT certify a network-wide offset.
+    inputs[4] = [
+        {
+            "candidate_offset_m": 1.0,
+            "anchor_class": "q25",
+            "placement_id": f"only_q25_{i}",
+            "permit_boundary_pass": "true",
+            "permanent_transect_protected": "true",
+            "placement_reproducible": "true",
+            "restoration_workspace_pass": "true",
+        }
+        for i in range(3)
+    ]
+    candidate = build_candidate(tmp, "offset_missing_anchors", *inputs)
+    result = validate(candidate, tmp / "offset_missing_anchors_validation.json")
+    assert result["status"] != "PASS_METHOD_PILOT", result
+    assert "transect_offset.selected_minimum_perpendicular_transect_offset_m" in result.get("pending_fields", []), result
 
 
 def test_blank_templates(tmp):
