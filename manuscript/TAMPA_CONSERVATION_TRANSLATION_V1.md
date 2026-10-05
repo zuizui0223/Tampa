@@ -106,7 +106,7 @@ The study does **not** validate hard numeric management thresholds. A defensible
 
 | Observed pattern | Suggested management interpretation | Suggested next action |
 |---|---|---|
-| Extent/presence stable; quantitative states stable | no current evidence of hidden degradation from these indicators | continue routine monitoring |
+| Extent/presence stable; quantitative states stable | no detected disagreement among the monitored state layers | continue routine monitoring |
 | Extent/presence stable; blade stature or shoot density declining | **plant-structure alert** | confirm the trajectory and add targeted local diagnostics rather than treating persistence as unchanged condition |
 | Extent/presence stable; focal frequency/abundance declining | **meadow-thinning alert** | increase repeat sampling and map local patch structure |
 | Focal quantitative decline + alternative-species increase | **community-reorganization alert** | monitor species composition and habitat conditions; do not assume competition |
@@ -117,7 +117,7 @@ The study does **not** validate hard numeric management thresholds. A defensible
 
 Seagrasses are unusually well suited to revealing state decoupling for four reasons.
 
-1. **They are foundation species.** Meadow structure supports habitat, sediment stabilization, shoreline protection, nutrient cycling, and blue-carbon functions, so deterioration within an occupied meadow can matter before complete local disappearance.
+1. **They are foundation species.** Meadow structure supports habitat, sediment stabilization, shoreline protection, nutrient cycling, and blue-carbon functions, so change in within-meadow abundance, structure, or composition can matter before complete local disappearance.
 
 2. **They are long-lived and clonal.** A meadow can persist through rhizomes and established local structure while above-ground state changes more rapidly. This creates a biologically plausible route for condition to change before recorded presence.
 
@@ -131,11 +131,11 @@ The strongest ecological synthesis is:
 
 > **Established seagrass meadows have a slow, site-anchored occupancy/abundance component and a faster, more labile plant-condition component.**
 
-In the Tampa panel, stable node identity descriptively accounted for much more level variation in detection, focal frequency, and Braun–Blanquet state than in blade length or shoot density. The same site can therefore maintain its broad occupancy state while plant condition changes substantially.
+In the Tampa panel, stable node identity descriptively accounted for much more level variation in detection, focal frequency, and Braun–Blanquet state than in blade length or shoot density. The same site can therefore maintain its broad occupancy state while blade stature or shoot density changes substantially.
 
 The field data further show that the changing quantitative dimension is spatially heterogeneous:
 
-- Old Tampa Bay: condition decline within persistent *Thalassia*;
+- Old Tampa Bay: declining blade length and shoot density within persistent *Thalassia*;
 - Middle Tampa Bay: narrower blade-length decline;
 - Lower Tampa Bay: focal occupancy/abundance contraction plus community reorganization.
 
@@ -294,11 +294,11 @@ Frequency/abundance are especially useful as broad network screening variables b
 
 When a transect remains occupied but a named quantitative state dimension shows a sustained decline, intensify measurements locally rather than adding expensive mechanism measurements everywhere:
 
-- blade length and shoot density;
-- meadow-scale PAR;
+- repeated plant-structure measurements where needed to verify the screen;
+- direct within-canopy optical exposure / DLI;
 - high-frequency temperature and salinity;
-- epiphyte load;
-- below-ground biomass and rhizome carbohydrate reserves;
+- direct epiphyte biomass / optical attenuation where relevant;
+- below-ground biomass, rhizome TNC and meristem/apex state;
 - hydrodynamic exposure;
 - disease / acute disturbance observations.
 
@@ -309,7 +309,7 @@ This design follows the empirical state hierarchy. Blade length and shoot densit
 1. screen every stable transect for direction of change in focal frequency/abundance while retaining presence;
 2. flag sites with persistent presence but sustained decline in a named quantitative state dimension;
 3. resample flagged sites at shorter intervals to confirm the trajectory;
-4. add plant-condition and local environmental measurements at flagged sites and matched stable reference sites;
+4. add slow-state and local process measurements at flagged sites and matched stable reference sites;
 5. only after that comparison, evaluate causal restoration or stress-mitigation actions.
 
 This is a more defensible conservation use of the present study than setting a universal numeric threshold from the retrospective Tampa data.
