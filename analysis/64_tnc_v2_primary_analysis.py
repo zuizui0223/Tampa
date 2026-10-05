@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Frozen primary analysis for Tampa four-bay prospective TNC v2.
+"""Frozen network-scale supportive analysis for Tampa four-bay prospective TNC v2.
+
+Historical filename retained for compatibility. Paper-level decisive priority is
+frozen separately in results/clonal_state_inference_hierarchy_v1.json.
 
 This script is intended to be frozen before future meadow outcomes are opened.
 
@@ -166,6 +169,8 @@ def main():
 
     result={
         "schema":"tampa.tnc_v2_primary_analysis.v1",
+        "paper_level_role":"supportive_network_generality",
+        "inferential_hierarchy_contract":"results/clonal_state_inference_hierarchy_v1.json",
         "analysis_frozen":True,
         "inferential_unit":"stable transect node",
         "geography":list(BAYS),
@@ -207,7 +212,8 @@ def main():
             else "pilot_only_replication_gate_failed"
         ),
         "claim_boundary":[
-            "A positive supported coefficient is a prospective reserve-state association, not proof of causal clonal buffering.",
+            "A positive supported coefficient is a prospective network-scale reserve-state association, not proof of causal clonal buffering.",
+            "This network-scale result cannot rescue an unsupported or non-estimable within-node decisive state-augmentation primary.",
             "If the replication gate fails, a null/overlapping interval cannot reject reserve buffering.",
             "Do not replace a null TNC primary with soluble sugar, starch, nutrient-adjusted TNC, meristem density or a selected subgroup.",
             "Binary re-recording/reappearance is not the primary outcome and is not ecological recovery."
