@@ -111,7 +111,17 @@ Select the smallest positive offset only when q25, q50 and q75 are all represent
 
 ## 5. HPLC matrix QC
 
-Populate:
+**Before generating or inspecting HPLC pilot results**, the receiving laboratory must first fill in `field/tnc_v2_raw_pilot_metadata.json`:
+
+- `analytical_qc_minimum_counts_frozen_before_results = true`;
+- `minimum_standard_recovery_n`;
+- `minimum_matrix_spike_n`;
+- `minimum_technical_duplicate_pairs_n`;
+- `minimum_pilot_extracts_n`.
+
+Each minimum must be an integer >=1 and may not be reduced after pilot results are visible. The builder compares actual counts with these pre-frozen values.
+
+Then populate:
 
 - `field/tnc_v2_hplc_matrix_pilot.json`.
 
