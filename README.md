@@ -1,4 +1,4 @@
-# Tampa — persistent occurrence and cryptic quantitative degradation in Tampa Bay seagrass
+# Tampa — persistent occurrence and state-specific quantitative change in Tampa Bay seagrass
 
 This repository develops a biological analysis of long-term fixed-transect seagrass monitoring in Tampa Bay. It is intentionally separate from the EOG method-validation endpoint that motivated the question.
 
@@ -9,11 +9,11 @@ Tampa is the **third independent ecological programme**, alongside Azores and Lo
 
 - **Azores:** state-dependent mobility gating;
 - **Louisiana:** within-home-range micro-niche tracking;
-- **Tampa:** buffered persistence under quantitative degradation.
+- **Tampa:** buffered persistence under state-specific quantitative change.
 
 Tampa's specific question is:
 
-> **What allows a sessile foundation species to remain present while its quantitative condition deteriorates, and which hidden buffer actually predicts future persistence?**
+> **What allows a sessile foundation species to remain present while local occupancy/abundance, blade stature or shoot density decline, and which hidden buffer actually predicts future quantitative persistence?**
 
 See:
 - [Tampa ecological mainline](docs/TAMPA_SPECIFIC_ECOLOGICAL_PRINCIPLE_V1.md)
@@ -43,7 +43,7 @@ See:
 
 The paper-level ecological question is now:
 
-> **Can a foundation species remain recorded at long-monitored sites while its quantitative meadow condition deteriorates, and do different parts of the bay degrade through different state dimensions?**
+> **Can a foundation species remain recorded at long-monitored sites while particular quantitative state dimensions decline, and do different parts of the bay change along different state dimensions?**
 
 The analysis distinguishes four nested state dimensions for *Thalassia testudinum*:
 
@@ -119,9 +119,9 @@ For 2016–2025, within-transect models include node fixed effects and adjust fo
 
 The current biological interpretation is therefore:
 
-> **A stable or recovering binary occurrence state can coexist with deterioration of spatial occupancy within a transect, plant stature, or shoot density.**
+> **A stable binary recorded-occurrence state can coexist with declining within-transect occupancy/abundance, blade stature, or shoot density.**
 
-This is treated as a candidate **cryptic degradation / ecological-state decoupling** result, not yet as a climate-causal result.
+This is treated as an **ecological-state decoupling** result: specific quantitative dimensions can decline while recorded occurrence remains stable. It is not a biodiversity-decline or climate-causal claim.
 
 ### 2b. External NPS panel reproduces binary–quantitative state decoupling
 
@@ -425,11 +425,11 @@ The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium 
 
 This is consistent with a shift toward more frequent *Halodule* while *Thalassia* and *Syringodium* decline quantitatively. It does **not** by itself demonstrate competition or a replacement mechanism.
 
-Old Tampa Bay shows a different degradation mode: the stronger signal is declining *Thalassia* blade length and shoot density rather than a monotone alternative-species replacement. Middle Tampa Bay likewise shows declining *Thalassia* blade length, while *Thalassia* and *Syringodium* year-to-year frequency changes tend to move together rather than compensate.
+Old Tampa Bay shows a different state-change pattern: the stronger signal is declining *Thalassia* blade length and shoot density rather than a monotone alternative-species replacement. Middle Tampa Bay likewise shows declining *Thalassia* blade length, while *Thalassia* and *Syringodium* year-to-year frequency changes tend to move together rather than compensate.
 
-The stronger cross-bay result is therefore **heterogeneity in degradation mode**, not one bay-wide decline process.
+The stronger cross-bay result is therefore **heterogeneity in which state dimension changes**, not one bay-wide decline process.
 
-### 4. Quantitative degradation predicts next-year recorded loss
+### 4. Low quantitative state predicts next-year recorded loss
 
 The state-decoupling result was then converted into a forward-looking ecological question:
 
@@ -454,7 +454,7 @@ Across 23 scored target years (2003–2025):
 
 Crucially, target year **2016 is retained in the primary result and is strongly adverse** for the quantitative arm (log loss 0.935 vs 1.223). Excluding 2016 only as a declared sensitivity strengthens the overall contrast, but does not replace the primary result.
 
-This converts cryptic degradation from a descriptive mismatch into an **early-warning hypothesis**:
+This converts state decoupling from a descriptive mismatch into an **early-warning hypothesis**:
 
 > **A transect can remain recorded-positive while its quantitative meadow state already contains information about instability in the following year.**
 
@@ -672,7 +672,7 @@ The open 2026 Old Tampa Bay continuous-temperature → 2027 fixed-transect test 
 
 The manuscript-level synthesis remains:
 
-> **A foundation species can remain present while different components of meadow condition deteriorate through spatially distinct pathways; presence-only monitoring therefore detects degradation late and incompletely.**
+> **A foundation species can remain recorded while different quantitative state dimensions decline or reorganize in different parts of the bay; presence-only monitoring therefore detects those changes late and cannot identify which state dimension changed.**
 
 
 
