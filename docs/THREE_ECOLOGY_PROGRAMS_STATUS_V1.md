@@ -8,7 +8,7 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ### Scientific status
 
-**Scientific analysis and endpoint audit closed. Manuscript V3 QC PASS. Figure contract V2 QC PASS. Reference SVG render QC PASS.**
+**Activation/onset and pooled post-activation speed analyses reproduce exactly. The project-specific speed audit is complete and shows no detectable between-project heterogeneity in the Durif-speed coefficient. Reference SVG render QC PASS.**
 
 Primary evidence:
 
@@ -66,7 +66,7 @@ Older V1 completion-centred figure specifications and simplified initiation scri
 - source-study ethics wording check;
 - release/archive.
 
-**No new exploratory Azores analysis is required.**
+**PASS_SPEED_REPRODUCTION / HETEROGENEITY_AUDIT_COMPLETE:** pooled speed n=418 and ratio 0.983 reproduce exactly from the pinned upstream blobs; project-specific speed effects show no detectable heterogeneity (Q=2.47, df=5, p=0.781, I²=0%). Do not generalize this to every route-specific progression endpoint.
 
 ---
 
@@ -129,6 +129,10 @@ Submission QC:
 - submission release/archive.
 
 **No further Lake Erie post-hoc metric is required unless authoritative coordinate-event linkage appears.**
+
+### Published Godwit boundary
+
+The Senegal Delta Black-tailed Godwit system is retained as an opposite-scale ecological boundary rather than an SRI replication: seasonal movement is associated with habitat-state replacement/resource tracking rather than strict state retention. Louisiana therefore asks the broader question **when local movement buffers experienced environmental variation and when animals must switch or relocate to a different resource state**.
 
 ---
 
