@@ -196,20 +196,41 @@ No correlation threshold is declared as a pass/fail rule.
 | complete reserve + complete engineering pathways supported | consistent with multiple measured buffering mechanisms; independent causal contributions still not demonstrated |
 | all prospective buffer-to-future tests unsupported at adequate precision | buffered-persistence mechanism programme weakens; do not rescue it from retrospective state decoupling |
 
-## Relationship to the four-bay TNC v2 primary
+## Relationship to the frozen TNC inference hierarchy
 
-Boca Ciega Bay is no longer a post-primary extension. It was prospectively incorporated before outcome-bearing TNC sampling and is part of the **authoritative four-bay v2 primary frame** together with Old, Middle and Lower Tampa Bay.
+Boca Ciega Bay was prospectively incorporated before outcome-bearing TNC sampling and remains part of the authoritative four-bay sampling frame together with Old, Middle and Lower Tampa Bay.
 
-This strengthens context breadth and reduces dependence on the three bays emphasized by recent degradation, but it does **not** solve the persistent site-template problem.
+The **paper-level decisive primary** is now the within-meadow state-augmentation test frozen in `results/clonal_state_inference_hierarchy_v1.json`:
 
-The primary model includes a four-level water-body factor, so support means the TNC association is estimated across the prespecified four-bay frame beyond bay mean differences and current above-ground state. Persistent within-bay microsite quality can still influence both TNC and future trajectory.
+~~~text
+future_BB_anchor
+  ~ baseline_BB_anchor
+  + within_node_centered_anchor_TNC
+  + node_fixed_effect
+~~~
+
+This comparison removes stable transect-level differences and asks whether local reserve heterogeneity within the same meadow predicts future local divergence after current local above-ground state is represented.
+
+The four-bay cross-node model remains a **supportive network-scale generality test**:
+
+~~~text
+future_delta_frequency
+  ~ baseline_frequency
+  + baseline_Braun_Blanquet
+  + rhizome_TNC
+  + water_body
+~~~
+
+A positive cross-node result cannot rescue an unsupported or non-estimable within-node decisive primary.
+
+The within-node design weakens the persistent transect-template alternative, but it still does not eliminate persistent meter-mark microhabitat or time-varying local common causes. Stronger mechanism interpretation therefore still depends on the separately frozen temporal/process diagnostics: event -> TNC change and matched-anchor reserve trajectory -> future state.
 
 Therefore:
 
-- four-bay support strengthens generality of the prospective reserve-state association;
-- it is not independent replication;
-- it is not randomized causal evidence;
-- mechanism interpretation still depends on the separate process/site-template-resistant diagnostics: event -> TNC change, dynamic reserve trajectory, and within-transect centered-anchor TNC.
+- within-node support is the decisive evidence for measured state augmentation;
+- four-bay cross-node support strengthens transportability/generalization;
+- neither is randomized causal evidence;
+- complete process chains are required for stronger claims about how buffering occurs.
 
 ## General ecological claim boundary
 
