@@ -1,4 +1,7 @@
-candidate_offset_m,anchor_class,placement_id,permit_boundary_pass,permanent_transect_protected,placement_reproducible,restoration_workspace_pass
-,q25,q25_site01,,,,
-,q50,q50_site01,,,,
-,q75,q75_site01,,,,
+candidate_offset_m,anchor_class,pilot_location_id,placement_id,permit_boundary_pass,permanent_transect_protected,placement_reproducible,restoration_workspace_pass
+,q25,loc01,q25_loc01,,,,
+,q25,loc02,q25_loc02,,,,
+,q50,loc01,q50_loc01,,,,
+,q50,loc02,q50_loc02,,,,
+,q75,loc01,q75_loc01,,,,
+,q75,loc02,q75_loc02,,,,
