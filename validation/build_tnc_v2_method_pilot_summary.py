@@ -470,6 +470,21 @@ def main():
         "collection_locations_or_batches": metadata.get("collection_locations_or_batches"),
         "field_core_attempts": metadata.get("field_core_attempts"),
     }
+    candidate["analytical_qc_count_freeze"] = {
+        "frozen_before_results": metadata.get(
+            "analytical_qc_minimum_counts_frozen_before_results"
+        ),
+        "minimum_standard_recovery_n": metadata.get("minimum_standard_recovery_n"),
+        "minimum_matrix_spike_n": metadata.get("minimum_matrix_spike_n"),
+        "minimum_technical_duplicate_pairs_n": metadata.get(
+            "minimum_technical_duplicate_pairs_n"
+        ),
+        "minimum_pilot_extracts_n": metadata.get("minimum_pilot_extracts_n"),
+        "rule": (
+            "Receiving-laboratory analytical QC minimum counts must be frozen "
+            "before pilot results are generated/inspected and cannot be relaxed afterward."
+        ),
+    }
 
     hplc = summarize_hplc(Path(args.hplc))
     candidate["analytical_qc"].update({
