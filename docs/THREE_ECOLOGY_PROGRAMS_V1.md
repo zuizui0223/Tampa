@@ -1,179 +1,251 @@
-# Three independent ecology programmes derived from EOG
+# Three independent ecology programmes derived from EOG — current scientific state
 
-These are **three separate ecological projects**, not one umbrella paper and not three validation examples of EOG.
+These are three **separate ecological papers**. EOG is provenance/discovery only.
 
-EOG is only the discovery route that exposed three different biological mismatches.
-
-## 1. Azores — state-dependent mobility gating
-
-### EOG clue
-
-A time-updated history representation improved future receiver-week prediction even though the source study recorded **zero valid receiver-to-receiver movement** among 36 yellow eels.
-
-### Ecological question
-
-> **Does internal migratory readiness change how strongly landscape resistance constrains realised movement?**
-
-### Biological mechanism
-
-Mobility is not a fixed species property.
-
-An eel can have high movement capacity but remain resident while its internal state favours growth/refuge use. As silvering advances, movement motivation changes, but barriers and hydrological opportunity determine how fully that latent mobility is expressed.
-
-### Current independent test
-
-Use capture-time Durif stage (FIII/FIV/FV) from the Europe-wide eel panel as an internal-state predictor independent of later movement.
-
-Primary contrast:
-
-~~~text
-later movement
-  ~ Durif stage
-  + landscape resistance
-  + Durif stage × landscape resistance
-  + project/design controls
-~~~
-
-The internal-state signal is already developmentally supported. The general stage × landscape law still requires independent confirmation because WRS is substantially project-confounded.
-
-### Paper identity
-
-**Movement ecology / life-history ecology**
-
-Not:
-- a site-fidelity paper;
-- an EOG paper;
-- a telemetry-method paper.
+The point of keeping them together in this status document is not to force one
+umbrella theory, but to keep the biological distinction and evidence boundary
+clear.
 
 ---
 
-## 2. Louisiana — within-home-range micro-niche tracking
+## 1. Azores — phase-specific control of eel migration
 
-### EOG clue
+### Biological question
 
-King Rail detections retained temporal structure, but all six simple geographic local-propagation worlds failed.
+> **Does internal migratory readiness control the activation of migration more
+> strongly than it controls what happens after migration has begun?**
 
-### Ecological question
+The Flores yellow-eel system supplied the original clue: extreme residency in a
+taxon capable of large-scale migration.
 
-> **Can a resident wetland bird move inside a familiar home range so that the environmental state it experiences remains more stable than the habitat locally available through time?**
+The Europe-wide public eel panel now resolves migration into two sequential
+gates.
 
-### Biological mechanism
+### Gate 1 — activation
 
-In a dynamic marsh, water depth and vegetation state shift through time.
+Expert-corrected initiation rates:
 
-A resident bird need not abandon its home range. It may change fine-scale location so that its **experienced microhabitat** changes less than the surrounding available habitat.
+- FIII: **154/261 = 59.0%**
+- FIV: **53/68 = 77.9%**
+- FV: **215/246 = 87.4%**
 
-This is not ordinary habitat selection and not merely site fidelity.
+Adjusted Durif-stage effect:
 
-### Current independent test
+- OR per FIII -> FIV -> FV increment: **2.08**
+- 95% CI: **1.56–2.76**
+- p approximately **4.2e-7**
 
-Western Lake Erie King Rail telemetry/microhabitat data provide repeated used points with paired nearby random points.
+Time to onset:
 
-Primary individual-level quantity:
+- HR per stage: **1.29**
+- 95% CI: **1.13–1.47**
+- p = **0.00016**
 
-~~~text
-SRI
-= 1 - variance(used environmental state)
-      / median variance(matched-availability pseudo-trajectories)
-~~~
+### Gate 2 — progression/completion after activation
 
-A positive SRI means the bird experiences a more stable environmental state than expected from local time-matched availability.
+Among activated eels:
 
-The stronger test asks whether birds can:
+- completion OR per stage: **1.15**
+- 95% CI: **0.83–1.59**
 
-~~~text
-move in geographic space
-while
-remaining comparatively stable in environmental-state space
-~~~
+Post-activation migration-speed ratio per stage:
 
-### Paper identity
+- **0.983**
+- 95% CI: **0.852–1.134**
 
-**Behavioural ecology / wetland ecology / fine-scale niche tracking**
+### Direct phase test
 
-Not:
-- a monitoring-network methods paper;
-- an occupancy-model paper;
-- a generic habitat-selection paper.
+The stage effect is significantly stronger at activation than at completion:
+
+- initiation/completion OR ratio: **1.81**
+- 95% CI: **1.15–2.84**
+- p = **0.0099**
+- direction preserved in **6/6** leave-one-project-out analyses.
+
+### Current ecological interpretation
+
+> **Internal silvering state strongly controls entry into the migratory movement
+> state, but its general predictive advantage attenuates once migration is
+> underway.**
+
+This separates **readiness to move** from **ability to realise movement through a
+route**.
+
+Project-level WRS alignment is contextual only, not causal.
+
+### Status
+
+**Scientific analysis closed for drafting.**
+
+Canonical source:
+- `results/phase_control_canonical_v1.json`
+- `manuscript/AZORES_PHASE_CONTROL_MANUSCRIPT_V2.md`
+
+---
+
+## 2. Louisiana — hydrological buffering inside resident home ranges
+
+### Biological question
+
+> **Can a resident wetland bird repeatedly use local microhabitats so that the
+> hydrological state it experiences varies less through time than the habitat
+> available around it?**
+
+This is not another habitat-selection analysis.
+
+The western Lake Erie King Rail archive provides time-matched used and nearby
+random microhabitat observations.
+
+### Independent Lake Erie result
+
+After source-defined QC:
+
+- **190** valid matched events;
+- **10** birds.
+
+State Retention Index:
+
+- **10/10** birds positive;
+- median SRI **0.886**;
+- exact sign-test p **0.00098**.
+
+Time-ordered state retention:
+
+- **10/10** positive;
+- median **0.658**.
+
+Hydrological availability coupling:
+
+- observed used-on-availability slope **0.162**;
+- matched pseudo-used null median **1.001**;
+- coupling reduction **83.8%**;
+- **10/10** birds below their own null median.
+
+The pattern survives restriction to flooded habitat.
+
+Under top-quartile local hydrological mismatch:
+
+- **9/10** birds retain positive buffering;
+- median extreme-state retention **0.629**.
+
+### Current ecological interpretation
+
+> **King Rails repeatedly occupy a substantially smoother hydrological
+> trajectory than the local habitat available at the same times.**
+
+This is fine-scale regulation of the **experienced environment** inside resident
+home ranges.
+
+The separate coordinate archive cannot be joined unambiguously to event IDs, so
+the paper does **not** claim that measured geographic displacement caused the
+buffering.
+
+### Status
+
+**Scientific analysis closed for drafting.**
+
+Canonical source:
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
+- `manuscript/LOUIS_HYDROLOGICAL_BUFFERING_MANUSCRIPT_V1.md`
 
 ---
 
 ## 3. Tampa — buffered persistence under quantitative degradation
 
-### EOG clue
+### Biological question
 
-The Tampa EOG endpoint was adverse. The prediction-facing geometry block behaved largely as a static node signature while all declared worlds survived. Replacing that geometry with annually refreshed neighbourhood state also failed to explain the temporal ecology.
+> **What allows a sessile foundation species to remain present while its
+> quantitative condition deteriorates, and which hidden buffer predicts its
+> future state?**
 
-The useful biological implication was negative:
+Unlike the two animal systems, *Thalassia* cannot relocate to reduce ecological
+mismatch.
 
-> **static accessibility and simple spatial propagation are poor explanations for why the same seagrass sites persist or degrade differently through time.**
+### Retrospective result already supported
 
-### Ecological question
+Recorded occurrence can remain stable while finer meadow dimensions change:
 
-> **What allows a sessile foundation species to remain present while its quantitative condition deteriorates, and which hidden buffer actually predicts future persistence?**
-
-### Biological pattern already established
-
-In Tampa Bay, coarse recorded presence can remain stable while finer state dimensions decline:
-
-- within-transect occurrence frequency;
+- focal frequency;
 - Braun–Blanquet abundance;
 - blade length;
 - shoot density;
 - community composition.
 
-An external *Zostera* panel independently shows the same broad binary–quantitative decoupling pattern.
+An external *Zostera marina* panel reproduces the broad binary–quantitative
+state-decoupling pattern.
 
-### Biological mechanism programme
+Simple annual environment, local propagation and several known-truth hidden-state
+explanations do not identify one common mechanism.
 
-A sessile foundation species cannot solve environmental mismatch by relocating.
+### Prospective mechanism programme
 
-Instead, persistence may be buffered at several organizational levels:
+Candidate buffers are deliberately separated.
 
-1. **internal reserve buffer**  
-   rhizome non-structural carbohydrates / regenerative meristem state;
+1. **internal biological reserve**
+   - rhizome TNC;
+   - regenerative meristem state.
 
-2. **engineered physical buffer**  
-   canopy-mediated flow attenuation and self-facilitation;
+2. **self-engineered physical buffer**
+   - canopy-specific hydrodynamic attenuation.
 
-3. **community buffer**  
-   persistence of alternative habitat-forming seagrasses when focal *Thalassia* declines.
+3. **community functional buffer**
+   - whether alternative seagrass canopies preserve function as focal
+     *Thalassia* declines.
 
-External environmental stress is treated as a force that consumes or overwhelms these buffers, not as another buffer.
+### Decisive first test
 
-### Current prospective tests
+**Four-bay rhizome TNC prospective design.**
 
-Primary biological tests are genuinely new measurements:
+Planning frame:
 
-- baseline rhizome TNC -> future quantitative *Thalassia* change;
-- canopy-specific flow attenuation -> future quantitative persistence;
-- alternative-seagrass structure -> retained or altered physical function.
+- Old Tampa Bay: 8 nodes;
+- Middle Tampa Bay: 11;
+- Lower Tampa Bay: 14;
+- Boca Ciega Bay: 8;
+- total: **41**.
 
-The key target is not just whether these mechanisms exist individually. It is:
+Confirmatory gate:
 
-> **which organizational buffer contains prospective information about future quantitative state after the present above-ground state is already known?**
+- >=36 analyzable nodes total;
+- >=6 analyzable nodes per bay;
+- >=3 valid cores per node;
+- one <=28-day campaign;
+- paired baseline within +/-14 days;
+- one frozen HPLC TNC workflow.
 
-### Paper identity
+Primary model is already frozen:
 
-**Foundation-species ecology / resilience / ecosystem engineering**
+~~~text
+future_delta_frequency
+  ~ baseline_frequency
+  + baseline_Braun_Blanquet
+  + rhizome_TNC
+  + water_body
+~~~
 
-Not:
-- another long-term-monitoring reanalysis;
-- an EOG paper;
-- a generic seagrass-health paper.
+### Current hard stop
+
+The analysis is ready; the missing information is **physical field/laboratory
+pilot data**, not another retrospective model.
+
+The repository intentionally stops until response-independent pilot measurements
+fix tissue class, core geometry, preservation timing/method and campaign/resource
+constraints.
+
+### Status
+
+**Active science blocker: TNC method/field pilot.**
 
 ---
 
 # Why these remain three papers
 
-The three systems solve ecological mismatch in fundamentally different ways.
-
-| Project | Biological constraint | Main response | Core question |
+| Project | Biological problem | Main process | Current evidence |
 |---|---|---|---|
-| Azores | mobile organism, internal state changes | mobility can be suppressed or released | when is latent mobility expressed? |
-| Louisiana | mobile resident in dynamic mosaic | move locally to track suitable state | can movement stabilize experienced niche? |
-| Tampa | sessile clonal foundation species | absorb stress through internal/engineered/community buffers | what keeps presence intact while condition degrades? |
+| Azores | when does latent mobility become expressed? | internal readiness -> migration activation, then route filtering | phase attenuation directly supported |
+| Louisiana | how can residency coexist with environmental variability? | repeated local habitat use buffers experienced hydrology | matched-availability buffering directly supported |
+| Tampa | how can a sessile foundation species remain present while condition erodes? | internal / engineered / community buffers | state decoupling supported; mechanism prospective |
 
-They should therefore **not** be merged into one analysis or one generalized endpoint.
+The publication goal remains **three independently strong ecological papers**.
 
-Any later synthesis is secondary. The publication goal is three independently strong ecological results.
+Any later synthesis is secondary.
