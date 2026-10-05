@@ -6,166 +6,141 @@ These are three separate ecological papers. EOG is provenance/discovery only.
 
 ## 1. Azores — phase-specific control of eel migration
 
-### Paper-level question
+### Scientific status
 
-> **Does the effect of internal migratory readiness attenuate after migration has been activated?**
+**Analysis closed for drafting.**
 
-### Current evidence
-
-Gate 1 — activation:
-
-- expert-corrected initiation:
-  - FIII **154/261 = 59.0%**
-  - FIV **53/68 = 77.9%**
-  - FV **215/246 = 87.4%**
-- adjusted initiation OR per FIII -> FIV -> FV increment: **2.08**
+Primary result:
+- initiation Durif OR per FIII -> FIV -> FV increment: **2.08**
 - 95% CI **1.56–2.76**
 - p approximately **4.2e-7**
-- censored onset HR per stage: **1.28**
-- 95% CI **1.12–1.45**
-- p = **0.00022**
 
-Gate 2 — progression after activation:
+Onset:
+- HR per stage **1.29**
+- 95% CI **1.13–1.47**
+- p = **0.00016**
 
-- conditional completion Durif OR **1.15**
-- 95% CI **0.83–1.59**
-- p = **0.412**
-- post-initiation migration-speed stage ratio **0.983**
-- 95% CI **0.852–1.134**
-- p = **0.815**
+Post-initiation:
+- completion OR **1.15**, 95% CI **0.83–1.59**
+- migration-speed ratio **0.983**, 95% CI **0.852–1.134**
 
 Direct phase interaction:
-
-- OR(initiation) / OR(completion) = **1.81**
-- cluster-robust 95% CI **1.15–2.84**
+- OR ratio initiation/completion **1.81**
+- 95% CI **1.15–2.84**
 - p = **0.0099**
 
-### Current interpretation
+Interpretation:
+> internal silvering state strongly predicts entry into migration; its general predictive advantage attenuates after activation.
 
-> **Internal silvering state strongly predicts entry into migration; its general predictive advantage attenuates during progression, when route-specific opportunity increasingly filters realised movement.**
+### Manuscript status
 
-Project-level WRS is bridge evidence only because resistance is project-confounded.
+Canonical manuscript:
+- `manuscript/AZORES_PHASE_CONTROL_MANUSCRIPT_V2.md`
 
-### Status
+Numeric contract:
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
 
-**Analysis/story closed enough for manuscript drafting.**
+Submission QC:
+- logical equivalent of `validation/validate_manuscript_v2.py`: **PASS**
+- no numeric drift detected;
+- expert-corrected initiation counts present;
+- onset clock is the threshold-crossing definition;
+- no EOG wording in the biological manuscript;
+- no prohibited causal/absolute claims;
+- required core references/citations present.
 
-Canonical:
-- `docs/PAPER_SPINE_PHASE_CONTROL_V1.md`
-- `docs/CLAIM_EVIDENCE_MAP_PHASE_CONTROL_V1.md`
+### Remaining non-scientific submission inputs
 
-No new exploratory model family is required before drafting.
+- author/affiliation/contribution fields;
+- target-journal formatting;
+- final figure rendering from canonical figure data;
+- source-study ethics wording check;
+- submission release/archive.
+
+**No new exploratory analysis is required.**
 
 ---
 
 ## 2. Louisiana — hydrological buffering inside resident home ranges
 
-### Paper-level question
+### Scientific status
 
-> **Do resident King Rails buffer the water-depth variation they experience relative to local time-matched habitat availability?**
+**Analysis closed for drafting.**
 
-### Independent Lake Erie result
+Primary independent Lake Erie result:
+- **190** valid matched events;
+- **10** birds;
+- **10/10** positive SRI;
+- median SRI **0.886**;
+- exact sign-test p **0.00098**.
 
-Source-defined QC:
-
-- 607 source microhabitat rows;
-- 17 source-defined missing rows excluded;
-- 2 malformed IDs excluded without repair;
-- **190 valid matched events**
-- **10 individual birds**
-- 173 strict two-random events.
-
-State Retention Index:
-
-- **10/10 birds SRI > 0**
-- median SRI **0.886**
-- range **0.402–0.976**
-- sign-test p **0.00098**
-- strict two-random subset: 10/10 positive, median **0.882**
-
-Time-ordered state retention:
-
-- **10/10 positive**
-- median **0.658**
-- strict subset median **0.667**
-- 10/10 individually p < 0.05.
+Temporal retention:
+- 10/10 positive;
+- median **0.658**.
 
 Availability coupling:
+- observed slope **0.162**;
+- pseudo-used null median **1.001**;
+- coupling reduction **83.8%**;
+- 10/10 birds below own null median.
 
-- pooled used-on-local-availability slope **0.162**
-- pseudo-used null median **1.001**
-- coupling reduction **83.8%**
-- 10/10 birds below own null median
-- flooded-habitat sensitivities retain **82–85.5%** reduction.
+Buffering limit:
+- **9/10** retain positive buffering under top-quartile local mismatch;
+- median extreme retention **0.629**.
 
-Buffering-limit decomposition:
+Interpretation:
+> repeated realised microhabitat use strongly dampens temporal hydrological variation experienced by resident King Rails relative to local time-matched availability.
 
-- 10/10 birds below pseudo-null mismatch slope;
-- **9/10** retain positive buffering during top-quartile local hydrological mismatch;
-- median extreme retention **0.629**;
-- buffering is strong but not unlimited.
+Boundary:
+- coordinate-to-event join remains unresolved;
+- do not claim measured geographic displacement caused the buffering.
 
-### Current interpretation
+### Manuscript status
 
-> **Repeated realised microhabitat use strongly dampens temporal hydrological variation experienced by resident King Rails relative to what is locally available.**
+Canonical manuscript:
+- `manuscript/LOUIS_HYDROLOGICAL_BUFFERING_MANUSCRIPT_V1.md`
 
-### Boundary
+Numeric contract:
+- `manuscript/MANUSCRIPT_NUMERIC_CONTRACT_V1.json`
 
-The public UTM coordinate files lack a verified event/date key.
+Submission QC:
+- logical equivalent of `validation/validate_manuscript_v1.py`: **PASS**
+- no control-character / LaTeX corruption;
+- all canonical sample-flow and SRI/coupling values present;
+- coordinate-linkage boundary explicit;
+- no EOG wording;
+- no forbidden causal claims;
+- Brewer source citation, Zenodo DOI and References section present.
 
-Therefore do **not** say measured geographic displacement caused the hydrological buffering.
+### Remaining non-scientific submission inputs
 
-Supported:
-- realised microhabitat use buffers state.
+- author/affiliation/contribution fields;
+- target-journal formatting;
+- final figure rendering from canonical outputs;
+- source ethics wording verification;
+- submission release/archive.
 
-Unresolved:
-- direct movement-distance -> state-retention mechanism.
-
-### Status
-
-**Paper spine now frozen.**
-
-Canonical:
-- `docs/PAPER_SPINE_HYDROLOGICAL_BUFFERING_V1.md`
-- `docs/CLAIM_EVIDENCE_MAP_HYDROLOGICAL_BUFFERING_V1.md`
-- `docs/lake_erie_state_fidelity_result.md`
-- `docs/lake_erie_availability_coupling.md`
-
-Further Lake Erie post-hoc metrics should stop unless they resolve:
-1. coordinate-event linkage;
-2. exact independent replication;
-3. a dynamic habitat surface that directly tests portfolio failure.
+**No further Lake Erie post-hoc metric is required unless authoritative coordinate-event linkage appears.**
 
 ---
 
 ## 3. Tampa — buffered persistence under quantitative degradation
 
-### Paper-level ecological question
+### Scientific status
 
-> **What allows a sessile foundation species to remain present while quantitative condition deteriorates, and which hidden buffer predicts future persistence?**
+Retrospective ecology is closed.
 
-### Supported retrospective result
+Supported:
+- recorded occurrence can remain stable while frequency, abundance, blade length, shoot density or composition deteriorate;
+- external Zostera panel reproduces broad binary–quantitative state decoupling.
 
-Recorded occurrence can remain stable while:
+Mechanism remains prospective.
 
-- within-transect frequency;
-- abundance;
-- blade length;
-- shoot density;
-- community composition
+### Decisive prospective test
 
-change substantially.
+**Four-bay rhizome TNC first.**
 
-A separate Zostera monitoring panel reproduces broad binary–quantitative state decoupling.
-
-No retrospective candidate mechanism is promoted as causal.
-
-### First decisive prospective mechanism
-
-**Rhizome TNC first.**
-
-Authoritative four-bay v2 planning frame:
-
+Planning frame:
 - Old Tampa Bay: 8 recent positive nodes
 - Middle Tampa Bay: 11
 - Lower Tampa Bay: 14
@@ -173,73 +148,74 @@ Authoritative four-bay v2 planning frame:
 - planning total: **41**
 
 Confirmatory gate:
-
-- **>=36 analyzable nodes total**
-- **>=6 analyzable nodes per bay**
-- >=3 valid cores/node
-- one <=28-day TNC campaign
-- baseline survey within +/-14 d
+- >=36 analyzable nodes total;
+- >=6 analyzable nodes per bay;
+- >=3 valid cores/node;
+- one <=28-day campaign;
+- paired baseline within +/-14 days;
 - one frozen HPLC workflow.
 
-The >=6/bay floor is a representation guardrail allowing limited field/QC attrition; the >=36 total gate carries the main precision requirement.
+Primary model is already frozen.
 
-Primary model is already frozen:
+### Software/readiness status
 
-~~~text
-future_delta_frequency
-  ~ baseline_frequency
-  + baseline_Braun_Blanquet
-  + z_rhizome_TNC
-  + water_body
-~~~
-
-with water-body-stratified node bootstrap, 10,000 replicates, seed 20261003.
-
-### Method-pilot authority
-
-Current authoritative pipeline:
+Authoritative pilot path:
 
 ~~~text
 raw response-independent pilot records
- -> build_tnc_v2_method_pilot_summary.py
- -> validate_tnc_v2_method_pilot.py
+ -> validation/build_tnc_v2_method_pilot_summary.py
+ -> field/tnc_v2_method_pilot_candidate.json
+ -> validation/validate_tnc_v2_method_pilot.py
  -> PASS_METHOD_PILOT
- -> 69_apply_tnc_v2_method_pilot.py
- -> tnc_v2_precollection_freeze.json
- -> validate_tnc_v2_baseline.py
+ -> apply selected values to field/tnc_v2_precollection_freeze.json
+ -> validation/validate_tnc_v2_baseline.py
 ~~~
 
-Legacy `tnc_v2_pilot_freeze.json` is deprecated/provenance only.
+The following templates already exist:
+- `field/tnc_v2_raw_pilot_metadata.json`
+- `field/tnc_v2_hplc_matrix_pilot.json`
+- `field/tnc_v2_tissue_class_pilot.csv`
+- `field/tnc_v2_core_geometry_pilot.csv`
+- `field/tnc_v2_offset_pilot.csv`
+- `field/tnc_v2_preservation_pilot.csv`
 
 ### Current hard stop
 
-Outcome-bearing coring is **not authorized** until response-independent pilot/logistics freeze:
+**STOP_RESOURCE_FREEZE_INCOMPLETE**
 
-- campaign dates;
-- horizontal-rhizome tissue class;
-- transect offset;
-- core diameter/depth;
-- maximum preservation delay;
-- preservation method.
+The unresolved values are physical field/laboratory facts, not analytical choices:
 
-Assay-batch randomization is already frozen.
+1. campaign start date;
+2. campaign end date;
+3. selected horizontal-rhizome tissue class;
+4. minimum perpendicular transect offset;
+5. selected core diameter;
+6. selected core depth;
+7. maximum collection-to-preservation time;
+8. preservation method;
+9. final four-bay node/date/resource manifests;
+10. optional forcing modules must be explicitly confirmatory or disabled.
 
-### Status
+These values cannot be inferred from existing retrospective data and must not be fabricated.
 
-Scientific contract and software are ready.
+### Single next external input
 
-The remaining decisive input is **physical field/laboratory pilot evidence**, not another retrospective analysis.
+The next scientifically valid input is:
+
+> **response-independent TNC method/field pilot measurements entered into the existing pilot files.**
+
+Once those values exist, the repository already contains the builder, validator and fail-closed transition into the outcome-bearing four-bay campaign.
 
 ---
 
 # Active order
 
-1. **Azores:** draft manuscript from frozen phase-control spine.
-2. **Louisiana:** draft manuscript from frozen hydrological-buffering spine; pursue coordinate-event linkage only if an authoritative mapping source appears.
-3. **Tampa:** execute response-independent method/field pilot; do not begin outcome-bearing TNC cores before PASS_METHOD_PILOT and baseline validator readiness.
+1. **Azores:** manuscript scientifically QC-passed; submission formatting only.
+2. **Louisiana:** manuscript scientifically QC-passed; submission formatting only.
+3. **Tampa:** active science blocker is the physical TNC method/field pilot.
 
 ## Hard boundary
 
-The target remains **three independent ecological papers**.
+Do not restart exploratory analyses in Azores or Louisiana merely because Tampa is waiting on external field/laboratory input.
 
-Do not merge them into one universal-rule manuscript.
+The target remains three independent ecological papers.
