@@ -131,6 +131,12 @@ def synthetic_passing_inputs(matrix_spikes=None):
         "independent_rhizome_specimens": 8,
         "collection_locations_or_batches": 2,
         "field_core_attempts": 10,
+        # Lab-specific minimum counts are frozen before synthetic pilot values.
+        "analytical_qc_minimum_counts_frozen_before_results": True,
+        "minimum_standard_recovery_n": 2,
+        "minimum_matrix_spike_n": 3,
+        "minimum_technical_duplicate_pairs_n": 8,
+        "minimum_pilot_extracts_n": 8,
     }
 
     hplc = {
@@ -298,6 +304,18 @@ def test_pass_and_provenance(tmp):
     assert freeze["status"] == "METHOD_PILOT_PASS_LOGISTICS_PENDING", freeze
 
 
+def test_prefrozen_hplc_minimum_count_failure(tmp):
+    inputs = list(synthetic_passing_inputs())
+    # Minimum is declared before results; observed matrix-spike n=3 may not
+    # retrospectively relax a pre-frozen requirement of 4.
+    inputs[0] = dict(inputs[0])
+    inputs[0]["minimum_matrix_spike_n"] = 4
+    candidate = build_candidate(tmp, "too_few_matrix_spikes", *inputs)
+    result = validate(candidate, tmp / "too_few_matrix_spikes_validation.json")
+    assert result["status"] == "STOP_PILOT_QC_FAILED", result
+    assert any("matrix_spike_n=3 below pre-frozen minimum 4" in x for x in result["errors"]), result
+
+
 def test_individual_matrix_spike_failure(tmp):
     # Mean = 110%, which is inside 85-115, but one individual spike is 130%.
     inputs = synthetic_passing_inputs(matrix_spikes=[100.0, 100.0, 130.0])
@@ -357,6 +375,7 @@ def main():
         test_pass_and_provenance(tmp)
         test_offset_requires_all_three_anchor_classes(tmp)
         test_offset_requires_two_independent_locations_per_anchor(tmp)
+        test_prefrozen_hplc_minimum_count_failure(tmp)
         test_individual_matrix_spike_failure(tmp)
         test_monotonic_preservation_drift_fails(tmp)
         test_too_few_preservation_delays_stays_incomplete(tmp)
