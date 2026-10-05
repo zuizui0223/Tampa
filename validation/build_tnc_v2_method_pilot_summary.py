@@ -239,6 +239,7 @@ def summarize_geometry(path: Path, canonical):
 
 def summarize_offset(path: Path):
     rows = read_csv(path)
+    required_anchors = {"q25", "q50", "q75"}
     by = defaultdict(list)
     for r in rows:
         if not r.get("candidate_offset_m", "").strip():
@@ -250,21 +251,45 @@ def summarize_offset(path: Path):
         declared = [r for r in by[offset] if r.get("placement_id", "").strip()]
         rr = [
             r for r in declared
-            if r.get("permit_boundary_pass", "").strip()
+            if r.get("anchor_class", "").strip().lower() in required_anchors
+            and r.get("permit_boundary_pass", "").strip()
             and r.get("permanent_transect_protected", "").strip()
             and r.get("placement_reproducible", "").strip()
             and r.get("restoration_workspace_pass", "").strip()
         ]
-        passed = bool(rr) and len(rr) == len(declared) and all(
-            as_bool(r["permit_boundary_pass"])
-            and as_bool(r["permanent_transect_protected"])
-            and as_bool(r["placement_reproducible"])
-            and as_bool(r["restoration_workspace_pass"])
+        declared_anchors = {
+            r.get("anchor_class", "").strip().lower()
+            for r in declared
+            if r.get("anchor_class", "").strip()
+        }
+        complete_anchors = {
+            r.get("anchor_class", "").strip().lower()
             for r in rr
+        }
+        anchors_complete = complete_anchors == required_anchors
+        no_invalid_anchor = declared_anchors <= required_anchors
+        passed = (
+            len(rr) == len(declared)
+            and len(declared) >= 3
+            and anchors_complete
+            and no_invalid_anchor
+            and all(
+                as_bool(r["permit_boundary_pass"])
+                and as_bool(r["permanent_transect_protected"])
+                and as_bool(r["placement_reproducible"])
+                and as_bool(r["restoration_workspace_pass"])
+                for r in rr
+            )
         )
         candidates.append({
-            "offset_m": offset, "n_complete": len(rr),
-            "n_declared": len(declared), "pass": passed
+            "offset_m": offset,
+            "n_complete": len(rr),
+            "n_declared": len(declared),
+            "anchor_classes_complete": sorted(complete_anchors),
+            "required_anchor_classes": sorted(required_anchors),
+            "anchors_complete": anchors_complete,
+            "no_invalid_anchor_class": no_invalid_anchor,
+            "pass": passed,
         })
 
     selected = next((x for x in candidates if x["pass"]), None)
