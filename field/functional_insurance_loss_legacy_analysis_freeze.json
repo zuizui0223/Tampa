@@ -1,0 +1,44 @@
+{
+  "schema": "tampa.functional_insurance_loss_legacy_analysis_freeze.v1",
+  "frozen_on": "2026-10-05",
+  "status": "FROZEN_BEFORE_HYDRODYNAMIC_OUTCOME_COLLECTION",
+  "contract": "results/functional_insurance_loss_legacy_primary_v1_contract.json",
+  "preflight": "results/functional_insurance_loss_legacy_preflight_v1.json",
+  "script_path": "analysis/75_functional_insurance_loss_legacy_primary.py",
+  "script_blob_sha1": "6fb9a8731b0ce2e2020ee7a91eeaa7dff69a82b3",
+  "primary_estimand": "mean attenuation_p90(loss-legacy alternative) - attenuation_p90(persistent Thalassia)",
+  "confirmatory_geography": [
+    "Old Tampa Bay",
+    "Middle Tampa Bay"
+  ],
+  "pair_rules": {
+    "maximum_separation_m": 100,
+    "minimum_continuous_thalassia_years": 3,
+    "simultaneous_state_measurement_required": true,
+    "minimum_valid_days": 15
+  },
+  "replication_gate": {
+    "minimum_total_pairs": 16,
+    "minimum_pairs_per_bay": 6
+  },
+  "uncertainty": {
+    "method": "Old/Middle-stratified stable-node paired bootstrap",
+    "repetitions": 10000,
+    "seed": 20261008,
+    "interval": "two-sided percentile 95% CI"
+  },
+  "interpretation": {
+    "ci_below_zero": "resolved lower measured attenuation after focal loss with alternative-seagrass occupancy retained",
+    "ci_above_zero": "resolved higher measured attenuation after focal loss with alternative-seagrass occupancy retained",
+    "ci_overlaps_zero": "unresolved physical-function difference; NOT evidence of equivalence",
+    "below_replication_gate": "pilot only; cannot support a decisive null or functional redundancy"
+  },
+  "secondary": "Structure-adjusted state coefficient using total vegetated cover and canopy height; mechanism decomposition only.",
+  "no_rescue": [
+    "Do not change state definitions, pair-selection rule, 100 m limit, valid-day rule, bootstrap or seed after velocity outcomes.",
+    "Do not replace the >=3-year persistent-Thalassia comparator with a shorter-history comparator after velocity outcomes.",
+    "Do not infer functional equivalence from a non-significant difference.",
+    "Do not use Lower/Boca observations to rescue the Old+Middle confirmatory test.",
+    "Do not use this branch to rescue an unsupported TNC state-augmentation primary."
+  ]
+}
