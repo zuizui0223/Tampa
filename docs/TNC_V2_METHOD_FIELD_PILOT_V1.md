@@ -48,6 +48,19 @@ The pilot sample count is a method-feasibility target, not inferential ecologica
 
 Use the same candidate extraction, hydrolysis, chromatographic and dry-mass workflow that would become the primary method.
 
+### Pre-result analytical-count freeze
+
+Before the HPLC pilot results are generated or inspected, the receiving laboratory must freeze in `field/tnc_v2_raw_pilot_metadata.json` the minimum acceptable counts for:
+
+- standard-mixture recovery determinations;
+- matrix-spike recovery determinations;
+- technical-duplicate TNC pairs;
+- pilot extracts evaluated against the frozen calibration range.
+
+The ecology protocol does **not** invent one universal count for every laboratory workflow. Each minimum must be an integer >=1, must be justified by the receiving laboratory's analytical design, and cannot be relaxed after pilot results are available.
+
+The builder records the actual analytical counts and the validator stops if any actual count is below its pre-frozen laboratory minimum.
+
 Required checks:
 
 1. calibration / standard identity is unambiguous for the primary soluble-NSC analytes and starch-derived glucose;
