@@ -245,3 +245,28 @@ The prospective programme may support:
 Only mechanism-specific process gates allow stronger wording about **how** buffering occurs.
 
 The common-site alternative must remain visible whenever the evidence is a cross-node state association alone.
+
+
+## History-linked community-function evidence
+
+The community branch now has a stronger paper-level hierarchy frozen before hydrodynamic outcomes.
+
+The decisive physical comparison is not the cross-sectional `thalassia_fraction` coefficient. It is the matched history-linked contrast in `results/functional_insurance_inference_hierarchy_v1.json`:
+
+```text
+same stable node
+
+loss-legacy alternative-seagrass point
+        versus
+>=3-year persistent-Thalassia point
+```
+
+with both states measured simultaneously under the same frozen velocity protocol.
+
+This comparison weakens broad site-template confounding because both functional states occur inside the same long-monitored meadow. It still does not eliminate meter-mark microhabitat differences or prove that the historical loss caused any measured physical difference.
+
+The cross-sectional composition model remains supportive mechanism context. A positive cross-sectional composition coefficient cannot rescue an unresolved history-linked matched test.
+
+An unresolved matched difference is not evidence of functional redundancy. The present design contains no post-outcome equivalence margin.
+
+If the matched physical difference is resolved and the independently frozen bare-bed attribution gate passes, the result may be described as a difference in canopy ecosystem-engineering function associated with documented community turnover. If the bare-bed gate fails, retain the narrower wording of a difference in measured vertical velocity attenuation.
