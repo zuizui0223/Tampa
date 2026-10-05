@@ -677,3 +677,5 @@ The manuscript-level synthesis remains:
 
 
 - [three-programme current status](docs/THREE_ECOLOGY_PROGRAMS_STATUS_V1.md)
+
+- [TNC-v2 method pilot execution card](docs/TNC_V2_PILOT_EXECUTION_CARD_V1.md)
