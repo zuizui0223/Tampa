@@ -222,6 +222,17 @@ assert loss_hierarchy["replacement_composition_preflight"]["source"]=="results/f
 assert "descriptive only" in loss_hierarchy["replacement_composition_preflight"]["rule"]
 assert "cannot replace, subset, or rescue" in loss_hierarchy["replacement_composition_preflight"]["rule"]
 
+hist=json.loads((ROOT/"results/functional_insurance_history_depth_preflight_v1.json").read_text())
+assert hist["status"]=="RESPONSE_INDEPENDENT_HISTORY_DEPTH_PREFLIGHT_COMPLETE"
+assert hist["loss_legacy_history"]["latest_qualifying_loss_transition_with_same_alternative_already_present_before_loss"]==13
+assert hist["current_alternative_only_persistence"]["points_ge_2_years"]==8
+assert hist["current_alternative_only_persistence"]["points_ge_3_years"]==2
+assert hist["persistent_thalassia_comparator_composition_2025"]["pure_thalassia_only"]==6
+assert hist["persistent_thalassia_comparator_composition_2025"]["thalassia_plus_one_or_more_alternative_seagrasses"]==12
+assert "focal-foundation-species dropout" in hist["revised_ecological_framing"]["preferred"]
+assert loss_hierarchy["history_depth_preflight"]["source"]=="results/functional_insurance_history_depth_preflight_v1.json"
+assert "cannot subset, replace or rescue" in loss_hierarchy["history_depth_preflight"]["rule"]
+
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
 assert frame["registry"]["recent_thalassia_positive_nodes"]==33
