@@ -190,8 +190,10 @@ Response-independent historical preflight identified **18 Old+Middle Tampa Bay m
 The future response is new paired canopy/near-bed velocity, not another transformation of the retrospective biological table.
 
 This separates:
-- **occupancy insurance** — some seagrass remains;
-- **functional insurance** — the physical ecosystem-engineering function is retained.
+- **occupancy continuity** — some seagrass remains;
+- **functional continuity** — the physical ecosystem-engineering function is retained.
+
+Important retrospective boundary: the pooled mixed-versus-*Thalassia*-only retention contrast is +14.3 percentage points, but a new stable-node audit does not resolve the binary mixture effect within transects (centered coefficient 0.312; 95% bootstrap interval -0.006 to 0.605; 18 informative nodes). Therefore the retrospective record does **not** establish local biodiversity insurance; persistent site quality remains a plausible contributor.
 
 A resolved attenuation difference would show that persistence of a vegetated label is not equivalent to persistence of foundation-species function. A null difference is not interpreted as functional equivalence because no equivalence margin is frozen.
 
