@@ -145,7 +145,7 @@ Do not combine TNC x attenuation in the primary model after seeing outcomes.
 
 Community functional insurance is a complementary organizational-level mechanism.
 
-It becomes strongest after direct velocity measurements exist because occupancy insurance is already established, while functional equivalence is not.
+It becomes strongest after direct velocity measurements exist because pooled occupancy continuity is already observed, while the local insurance mechanism and functional equivalence are both unresolved.
 
 ## Paper-level interpretation
 
