@@ -1,0 +1,64 @@
+{
+  "schema": "tampa.functional_insurance_history_depth_preflight_v1",
+  "frozen_on": "2026-10-06",
+  "status": "RESPONSE_INDEPENDENT_HISTORY_DEPTH_PREFLIGHT_COMPLETE",
+  "purpose": "Clarify what the 18 loss-legacy matched pairs biologically represent before any hydrodynamic outcome exists.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "event_blob": "583b4d4e328290ab065346579eb4f29f03ea0f99",
+    "occurrence_blob": "d34aeb5aedb72459d1e04059629cb09450df929e",
+    "history_window": "2015-2025",
+    "outcome_accessed": false
+  },
+  "loss_legacy_history": {
+    "matched_points": 18,
+    "latest_qualifying_loss_transition_with_same_alternative_already_present_before_loss": 13,
+    "all_qualifying_loss_transitions_at_point_preserved_a_preexisting_alternative": 11,
+    "interpretation": "Most recent qualifying focal-loss events more often represent persistence of an already co-occurring alternative seagrass through Thalassia dropout than de-novo post-loss colonization."
+  },
+  "current_alternative_only_persistence": {
+    "continuous_run_to_2025_years": {
+      "min": 1,
+      "median": 1,
+      "max": 7
+    },
+    "points_ge_2_years": 8,
+    "points_ge_3_years": 2,
+    "points_ge_5_years": 2,
+    "points_exactly_1_year": 10,
+    "interpretation": "The full 18-pair cohort must not be described as 18 established long-term replacement states. For most points, the current Thalassia-absent alternative-only state is recent."
+  },
+  "persistent_thalassia_comparator_composition_2025": {
+    "points": 18,
+    "pure_thalassia_only": 6,
+    "thalassia_plus_one_or_more_alternative_seagrasses": 12,
+    "composition_counts": {
+      "Thalassia testudinum": 6,
+      "Syringodium filiforme + Thalassia testudinum": 6,
+      "Halodule wrightii + Thalassia testudinum": 5,
+      "Halodule wrightii + Syringodium filiforme + Thalassia testudinum": 1
+    },
+    "interpretation": "Most persistent-Thalassia comparators are mixed canopies, so the matched primary is not a simple pure-species comparison."
+  },
+  "revised_ecological_framing": {
+    "preferred": "history-linked focal-foundation-species dropout within still-vegetated meadow states",
+    "stronger_mechanistic_candidate": "pre-existing community insurance: an alternative canopy already present before focal loss may preserve occupancy and possibly physical function after Thalassia dropout",
+    "avoid": [
+      "18 stable species-replacement states",
+      "succession from Thalassia to an alternative species",
+      "post-loss colonization as the general mechanism",
+      "pure Thalassia versus pure replacement-species experiment"
+    ]
+  },
+  "inferential_rule": {
+    "primary_unchanged": "Use all qualifying matched pairs under the already frozen history-linked attenuation primary.",
+    "history_depth_role": "History depth, pre-existing-alternative status, and comparator mixture are descriptive scope/transportability diagnostics only.",
+    "no_rescue": [
+      "Do not restrict the primary to >=2-year or >=3-year alternative-only runs after seeing attenuation.",
+      "Do not promote the 13 pre-existing-alternative pairs to a new confirmatory primary after seeing attenuation.",
+      "Do not treat mixed comparator composition as an exclusion criterion after seeing attenuation.",
+      "Any future persistence-duration or pre-existing-versus-new-alternative interaction requires a separately powered prospective design."
+    ]
+  }
+}
