@@ -42,7 +42,7 @@ The Tampa advance is prospective coupling:
 
 > does measured canopy-scale physical buffering explain which long-monitored meadows subsequently maintain versus lose quantitative *Thalassia* state?
 
-A second Tampa-specific question is whether **community occupancy insurance is also functional insurance**. Existing exact-point results show that alternative seagrasses often persist when *Thalassia* is no longer recorded, but persistence of vegetation does not establish equivalent ecosystem engineering.
+A second Tampa-specific question is whether **community-state continuity is also functional continuity**. Existing exact-point results show that alternative seagrasses often persist when *Thalassia* is no longer recorded, but a stable-node audit does not establish a causal/local biodiversity-insurance effect, and persistence of vegetation does not establish equivalent ecosystem engineering.
 
 ## Secondary community-functional-insurance hypothesis
 
