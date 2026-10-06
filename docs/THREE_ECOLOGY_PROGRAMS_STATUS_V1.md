@@ -97,8 +97,14 @@ Buffering limit:
 - **9/10** retain positive buffering under top-quartile local mismatch;
 - median extreme retention **0.629**.
 
+Post-hoc local state-portfolio mechanism:
+- **173** events with both intended random plots;
+- heterogeneity coefficient **-0.0431** versus matched pseudo-used null median **+0.2617**;
+- Monte Carlo **p = 0.000020**;
+- stronger mismatch x heterogeneity interaction unsupported (**p = 0.753**).
+
 Interpretation:
-> repeated realised microhabitat use strongly dampens temporal hydrological variation experienced by resident King Rails relative to local time-matched availability.
+> repeated realised microhabitat use strongly dampens temporal hydrological variation experienced by resident King Rails relative to local time-matched availability, and fine-scale hydrological heterogeneity is compatible with providing a local portfolio of alternative states for that buffering.
 
 Boundary:
 - coordinate-to-event join remains unresolved;
@@ -128,7 +134,7 @@ Submission QC:
 - source ethics wording verification;
 - submission release/archive.
 
-**No further Lake Erie post-hoc metric is required unless authoritative coordinate-event linkage appears.**
+**The local-heterogeneity mechanism decomposition is complete and a bird-level robustness audit is now frozen. Do not add more Lake Erie post-hoc metrics unless an authoritative coordinate-event linkage or genuinely new response dimension becomes available.**
 
 ### Published Godwit boundary
 
