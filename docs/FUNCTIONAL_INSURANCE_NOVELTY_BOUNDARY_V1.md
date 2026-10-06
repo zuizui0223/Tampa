@@ -130,3 +130,10 @@ This is also supported by the comparator structure: **12/18** persistent-*Thalas
 History depth, pre-existing-alternative status and comparator mixture remain descriptive scope diagnostics. They cannot be used to subset or rescue the frozen pooled primary after hydrodynamic outcomes are observed.
 
 See `results/functional_insurance_history_depth_preflight_v1.json`.
+
+
+## Current literature audit
+
+The 2026 literature update confirms that the novelty cannot rest on functional redundancy, species turnover, or seagrass attenuation separately. The protected gap is the history-linked within-meadow direct-function comparison described above.
+
+See `docs/FUNCTIONAL_INSURANCE_LITERATURE_UPDATE_2026_10_06.md`.
