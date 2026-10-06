@@ -57,7 +57,7 @@ The Tampa design combines four features that the precedents above do not jointly
 
 The sharper contribution is therefore:
 
-> **testing whether naturally realised species turnover after documented foundation-species loss preserves a physical ecosystem-engineering function within the same long-monitored meadow.**
+> **testing whether documented focal-foundation-species dropout within a still-vegetated meadow changes a directly measured physical ecosystem-engineering function, using a nearby persistent-focal state in the same long-monitored meadow as the comparator.**
 
 ## Replacement composition is not a single-species contrast
 
@@ -108,3 +108,25 @@ The strongest permitted future statement, if supported, is:
 > **documented focal foundation-species turnover is associated with a resolved change in directly measured physical function within matched long-monitored meadows.**
 
 Causal species-replacement language requires stronger intervention or attribution evidence.
+
+
+## History-depth audit: this is usually persistence through dropout, not established replacement
+
+A response-independent 2015–2025 history audit further narrows the interpretation.
+
+- In **13/18** pairs, the alternative species present immediately after the most recent qualifying *Thalassia* loss was already present in the source year before focal loss.
+- Only **8/18** current alternative-only states have persisted for at least two consecutive observed years through 2025.
+- Only **2/18** have persisted for at least three years.
+- The median current alternative-only run is therefore **1 year**.
+
+The full cohort should not be called 18 established replacement or succession states.
+
+The stronger biological framing is:
+
+> **pre-existing community insurance after focal dropout** — vegetation already embedded in a mixed meadow may preserve occupancy, and perhaps physical function, when *Thalassia* drops out locally.
+
+This is also supported by the comparator structure: **12/18** persistent-*Thalassia* comparator points currently contain another seagrass as well; only 6/18 are *Thalassia*-only. Thus the primary matched contrast often compares two mixed-community states that differ in whether the focal foundation species persists.
+
+History depth, pre-existing-alternative status and comparator mixture remain descriptive scope diagnostics. They cannot be used to subset or rescue the frozen pooled primary after hydrodynamic outcomes are observed.
+
+See `results/functional_insurance_history_depth_preflight_v1.json`.
