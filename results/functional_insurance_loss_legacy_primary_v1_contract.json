@@ -11,7 +11,7 @@
     "definition_A": "historically documented Thalassia loss with seagrass occupancy retained; contemporaneously Thalassia absent and another seagrass present",
     "state_B": "persistent_thalassia",
     "definition_B": "same stable node; contemporaneously Thalassia present with >=3-year continuous Thalassia record ending at the deployment baseline",
-    "interpretation": "This directly links observed occupancy insurance to a measured ecosystem physical function rather than inferring functional redundancy from taxonomic persistence."
+    "interpretation": "This links documented occupancy continuity after focal loss to a measured ecosystem physical function; it does not assume that retrospective community composition already established a local insurance mechanism."
   },
   "cohort": {
     "confirmatory_geography": [
