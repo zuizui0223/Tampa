@@ -130,3 +130,40 @@ Do not claim:
 The state-decoupling result remains intact.
 
 An unsupported adequately powered TNC primary would specifically reject rhizome TNC, under this measurement design, as the main hidden state carrying Tampa's coarse persistence forward. The next mechanism should then move to meristem capacity, measured physical engineering, or another genuinely new state layer rather than retuning the TNC endpoint.
+
+
+## Broader resilience-debt precedent
+
+The broader ecological idea that an ecosystem can retain its visible state while losing future resilience is also established.
+
+Johnstone et al. (2016) defined **resilience debt** as a loss of resilience that may remain unapparent until a later disturbance reveals that ecological memory or legacy capacity has been eroded.
+
+Related reef literature has used **cryptic loss of resilience** for losses in future system capacity that are not evident in standard monitoring metrics.
+
+Therefore Tampa must not claim novelty for:
+
+> a system can look persistent while its resilience has already eroded.
+
+Reference:
+- Johnstone et al. 2016. *Frontiers in Ecology and the Environment* 14:369–378. DOI 10.1002/fee.1311.
+
+## Tampa's sharper identification problem
+
+The unresolved empirical problem is not whether hidden resilience can exist.
+
+It is:
+
+> **Which directly measurable state carrier explains why apparently similar, still-occupied foundation-species meadows subsequently diverge?**
+
+Tampa can address this unusually cleanly because the same stable monitoring nodes provide:
+
+1. a long visible-state history;
+2. contemporaneous quantitative above-ground state;
+3. a new below-ground reserve measurement;
+4. a future quantitative response from the same ecological unit;
+5. within-node anchor contrasts;
+6. a short-term reserve-trajectory test.
+
+Thus the strongest prospective contribution is an **identification test of the carrier of hidden future capacity**, not a reinvention of resilience debt.
+
+If TNC, within-node TNC, and reserve trajectory all fail, that is also informative: it says the hidden capacity implied by coarse persistence is not well represented by carbohydrate reserve under this design, forcing the mechanism toward regenerative meristem state, local physical engineering, or another state variable.
