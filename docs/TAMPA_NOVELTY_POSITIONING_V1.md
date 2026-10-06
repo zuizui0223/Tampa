@@ -62,6 +62,10 @@ Therefore:
 
 > "alternative species may buffer function" is also not sufficient as the novelty claim.
 
+## Specific TNC novelty boundary
+
+Rhizome NSC/TNC as a seagrass resilience indicator and even as a predictor of later cover is already precedented. Tampa's novelty threshold is therefore **incremental prospective information beyond the simultaneously visible meadow state**, strengthened by within-node and reserve-trajectory diagnostics. See `docs/TNC_NOVELTY_BOUNDARY_V1.md`.
+
 ## The Tampa identification problem
 
 The retrospective Tampa record shows that one coarse state can coexist with several different quantitative states:
