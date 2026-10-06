@@ -71,9 +71,9 @@ Thus the main process is not simply post-loss colonization by *Halodule*.
 
 Supported statement:
 
-> **Pre-existing community mixture provides occupancy insurance against immediate conversion from a seagrass habitat to a bare point after focal foundation-species loss.**
+> **Pre-existing community mixture is associated with lower immediate conversion to a bare point after focal foundation-species loss in the pooled record.**
 
-Boundary: shared microsite quality can create the same association; this is not proof of facilitation.
+A stable-node saturation audit does not resolve this effect within transects (centered coefficient 0.312; 95% bootstrap interval -0.006 to 0.605). Persistent site quality therefore remains a plausible contributor; do not call the retrospective result local biodiversity insurance or facilitation.
 
 ### B. Occupancy continuity predicts focal re-recording, but the within-node evidence weakens
 
