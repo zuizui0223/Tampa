@@ -1,0 +1,44 @@
+{
+  "schema": "tampa.community_insurance_node_audit_v1.contract",
+  "frozen_on": "2026-10-06",
+  "status": "posthoc_reference_saturation_audit_frozen_before_binary_within_node_result",
+  "evidence_class": "posthoc robustness audit of already-opened community-insurance endpoint",
+  "motivation": "The pooled exact-point analysis found higher retained seagrass occupancy after Thalassia loss when another seagrass was already present. Test whether the binary mixed-versus-Thalassia-only association persists within stable transect nodes rather than mainly reflecting persistent site quality.",
+  "source": {
+    "transition_population": "exact same 370 transitions used by results/community_insurance_v1.json",
+    "authoritative_artifact_id": 10961464868,
+    "transition_file": "community_insurance_transitions.csv"
+  },
+  "primary_population": {
+    "rule": "retain stable nodes containing at least one source_mixed=true and at least one source_mixed=false transition",
+    "no_subgroup_rescue": true
+  },
+  "predictor": {
+    "raw": "source_mixed",
+    "transformed": "within_node_centered_source_mixed = source_mixed - node mean(source_mixed)",
+    "note": "binary mixed-versus-Thalassia-only state; do not replace with richness after opening this audit"
+  },
+  "outcome": "target_any_seagrass_present",
+  "model": "logistic regression: target_any_seagrass_present ~ standardized target_year + standardized within_node_centered_source_mixed + node_id fixed effects; sklearn LogisticRegression C=1.0 lbfgs, matching the existing diversity node audit reference-saturation framework",
+  "uncertainty": {
+    "method": "stable-node cluster bootstrap; all transitions from sampled nodes travel together and duplicated clusters receive distinct bootstrap node labels",
+    "bootstrap_replicates": 5000,
+    "random_seed": 202610061,
+    "support_rule": "95% bootstrap interval for standardized centered source-mixed coefficient entirely above zero"
+  },
+  "secondary_descriptive": [
+    "number of informative nodes and transitions",
+    "within-node event-weighted occupancy difference orientation",
+    "node-level mixed-minus-alone occupancy differences where both outcomes/groups are observed"
+  ],
+  "interpretation": {
+    "supported": "The mixed-versus-alone occupancy-retention association persists after stable-node saturation; this strengthens a microsite-scale community-insurance interpretation but remains observational and does not prove facilitation.",
+    "unsupported": "The pooled mixed-versus-alone association is not robust after stable-node saturation; persistent transect quality remains a plausible explanation and the retrospective result should be framed as pooled state association rather than demonstrated local insurance."
+  },
+  "claim_boundary": [
+    "Do not call this causal biodiversity insurance or facilitation.",
+    "Do not infer functional equivalence from retained occupancy.",
+    "Do not change the node eligibility rule, predictor, model, bootstrap unit, or support threshold after opening the result.",
+    "Do not subset by bay, species identity, or year to rescue an unsupported primary."
+  ]
+}
