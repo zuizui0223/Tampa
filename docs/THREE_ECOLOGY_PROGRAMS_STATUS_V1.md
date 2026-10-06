@@ -148,6 +148,13 @@ Supported:
 
 Mechanism remains prospective.
 
+A secondary retrospective biological synthesis is also supported:
+- longer uninterrupted exact-point Thalassia history predicts later re-recording after a one-year non-detection within stable transects (centered run coefficient **0.484**, 95% CI **0.115–1.347**);
+- generic seagrass-habitat headstart is unresolved (coefficient **0.160**, CI **-0.219–0.362**);
+- re-recorded points are quantitatively depleted relative to uninterrupted occupancy (mean Braun-Blanquet **1.95 vs 2.93**; adjusted re-recorded coefficient **-0.204**, CI **-0.302 to -0.103**).
+
+This is treated as focal observation-state legacy plus re-recording abundance debt, not as demonstrated clonal memory, recolonization or ecological recovery. It motivates the prospective TNC state-augmentation test; it does not authorize more annual/exact-point mechanism mining.
+
 ### Decisive prospective test
 
 **Four-bay rhizome TNC sampling first; within-meadow state augmentation is the decisive primary inference.**
