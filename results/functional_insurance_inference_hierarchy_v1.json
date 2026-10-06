@@ -28,5 +28,16 @@
     "functional_redundancy": "Not authorized from a nonsignificant matched contrast. Requires an independently justified equivalence margin frozen before hydrodynamic outcomes; none is frozen in v1."
   },
   "relation_to_tnc": "Independent organizational-level mechanism. Neither functional-insurance branch can rescue the decisive TNC state-augmentation primary, and TNC cannot rescue functional insurance.",
-  "no_post_outcome_changes": true
+  "no_post_outcome_changes": true,
+  "replacement_composition_preflight": {
+    "source": "results/functional_insurance_alternative_composition_preflight_v1.json",
+    "status": "RESPONSE_INDEPENDENT_COMPOSITION_PREFLIGHT_COMPLETE",
+    "composition_counts": {
+      "Halodule wrightii only": 9,
+      "Syringodium filiforme only": 7,
+      "Halodule wrightii + Syringodium filiforme": 2
+    },
+    "role": "Pre-outcome transportability/context only. Confirms that the 18 loss-legacy pairs are not a single replacement-species comparison.",
+    "rule": "Species-composition strata are descriptive only and cannot replace, subset, or rescue the pooled matched primary. A species-by-state interaction requires a separately powered prospective contract frozen before velocity outcomes."
+  }
 }
