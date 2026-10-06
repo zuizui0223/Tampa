@@ -40,5 +40,17 @@
     "role": "Pre-outcome transportability/context only. Confirms that the 18 loss-legacy pairs are not a single replacement-species comparison.",
     "rule": "Species-composition strata are descriptive only and cannot replace, subset, or rescue the pooled matched primary. A species-by-state interaction requires a separately powered prospective contract frozen before velocity outcomes."
   },
-  "novelty_boundary_doc": "docs/FUNCTIONAL_INSURANCE_NOVELTY_BOUNDARY_V1.md"
+  "novelty_boundary_doc": "docs/FUNCTIONAL_INSURANCE_NOVELTY_BOUNDARY_V1.md",
+  "history_depth_preflight": {
+    "source": "results/functional_insurance_history_depth_preflight_v1.json",
+    "status": "RESPONSE_INDEPENDENT_HISTORY_DEPTH_PREFLIGHT_COMPLETE",
+    "role": "Descriptive scope diagnostic only. Clarifies that the cohort is primarily focal Thalassia dropout within still-vegetated, often mixed, meadow states rather than 18 established replacement states.",
+    "key_counts": {
+      "latest_loss_with_preexisting_alternative": 13,
+      "current_alternative_only_ge2_years": 8,
+      "current_alternative_only_ge3_years": 2,
+      "mixed_persistent_thalassia_comparators": 12
+    },
+    "rule": "History depth, pre-existing-alternative status and comparator mixture cannot subset, replace or rescue the frozen pooled matched primary."
+  }
 }
