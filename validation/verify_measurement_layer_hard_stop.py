@@ -210,6 +210,18 @@ assert loss_hierarchy["supportive_cross_sectional_test"]["role"].startswith("sup
 assert "Not authorized" in loss_hierarchy["language_gate"]["functional_redundancy"]
 assert "functional equivalence" in " ".join(loss_freeze["no_rescue"])
 
+alt_comp=json.loads((ROOT/"results/functional_insurance_alternative_composition_preflight_v1.json").read_text())
+assert alt_comp["status"]=="RESPONSE_INDEPENDENT_COMPOSITION_PREFLIGHT_COMPLETE"
+assert alt_comp["cohort"]["matched_pairs"]==18
+assert alt_comp["cohort"]["composition_counts"]=={
+    "Halodule wrightii only":9,
+    "Syringodium filiforme only":7,
+    "Halodule wrightii + Syringodium filiforme":2,
+}
+assert loss_hierarchy["replacement_composition_preflight"]["source"]=="results/functional_insurance_alternative_composition_preflight_v1.json"
+assert "descriptive only" in loss_hierarchy["replacement_composition_preflight"]["rule"]
+assert "cannot replace, subset, or rescue" in loss_hierarchy["replacement_composition_preflight"]["rule"]
+
 frame=json.loads((ROOT/"results/functional_insurance_sampling_preflight_v1.json").read_text())
 assert frame["status"]=="recent_sampling_frame_supports_split_primary_and_functional_cohorts"
 assert frame["registry"]["recent_thalassia_positive_nodes"]==33
