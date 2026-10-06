@@ -55,6 +55,11 @@ The analysis distinguishes four nested state dimensions for *Thalassia testudinu
 
 The central result is **state decoupling under persistent occurrence**. Binary presence is a coarse endpoint: it can remain stable while within-transect occupancy, abundance, plant stature, shoot density or community composition change substantially.
 
+A second retrospective synthesis concerns **local state history rather than binary return**. Longer uninterrupted exact-point *Thalassia* history predicts later re-recording after a one-year non-detection even after stable transect identity is represented, whereas generic seagrass-habitat headstart is unresolved. Re-recorded points also return at a lower Braun-Blanquet state than uninterrupted points. This is an observation-state legacy/debt pattern, not proof of ecological recovery or clonal memory.
+
+See:
+- [Thalassia local-state legacy synthesis](docs/THALASSIA_LOCAL_STATE_LEGACY_SYNTHESIS_V1.md)
+
 Temporal-memory analyses are retained as secondary diagnostics. After stable transect identity is included, the formal older-history increment disappears, so the manuscript does not lead with a long biological-memory claim.
 
 ## Frozen source
