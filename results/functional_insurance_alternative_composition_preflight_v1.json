@@ -1,0 +1,179 @@
+{
+  "schema": "tampa.functional_insurance_alternative_composition_preflight_v1",
+  "frozen_on": "2026-10-06",
+  "status": "RESPONSE_INDEPENDENT_COMPOSITION_PREFLIGHT_COMPLETE",
+  "purpose": "Freeze the current alternative-seagrass composition of the 18 historical loss-legacy functional-insurance pairs before any hydrodynamic outcome exists.",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "event_blob": "583b4d4e328290ab065346579eb4f29f03ea0f99",
+    "occurrence_blob": "d34aeb5aedb72459d1e04059629cb09450df929e",
+    "latest_state_year": 2025
+  },
+  "cohort": {
+    "parent_preflight": "results/functional_insurance_loss_legacy_preflight_v1.json",
+    "matched_pairs": 18,
+    "composition_counts": {
+      "Halodule wrightii only": 9,
+      "Syringodium filiforme only": 7,
+      "Halodule wrightii + Syringodium filiforme": 2
+    },
+    "by_bay": {
+      "Middle Tampa Bay": {
+        "Halodule only": 6,
+        "Syringodium only": 4,
+        "mixed": 1
+      },
+      "Old Tampa Bay": {
+        "Halodule only": 3,
+        "Syringodium only": 3,
+        "mixed": 1
+      }
+    }
+  },
+  "interpretation": "The confirmatory history-linked contrast is not a disguised comparison against a single replacement species. Both Halodule- and Syringodium-dominated loss-legacy states are well represented before hydrodynamic outcomes are collected.",
+  "frozen_secondary_reporting": {
+    "rule": "Report primary paired attenuation across all qualifying loss-legacy alternative states exactly as frozen. Report Halodule-only, Syringodium-only and mixed composition strata descriptively only.",
+    "no_rescue": [
+      "Do not select the replacement-species stratum with the largest attenuation difference as a new primary.",
+      "Do not drop mixed points after seeing velocity.",
+      "Do not reinterpret a null pooled primary as species-specific functional insurance from a post-hoc subgroup.",
+      "A future species-by-state interaction requires a separately powered, independently frozen design."
+    ]
+  },
+  "novelty_boundary": [
+    "Comparative seagrass hydrodynamics by species is established.",
+    "The distinctive test remains longitudinal: documented local Thalassia loss followed by alternative-seagrass occupancy and direct physical-function measurement against a nearby persistent-Thalassia comparator.",
+    "Composition strata clarify transportability of the primary matched contrast; they are not independent replications."
+  ],
+  "rows": [
+    {
+      "point_id": "TBEP:seagrass:loc:S3T1:550",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T11:920",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T13:225",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T3:125",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T4:100",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T5:100",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Halodule wrightii",
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T6:50",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T7:350",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T8:125",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T9:500",
+      "water_body": "Middle Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T14:600",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T15:350",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T16:700",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Halodule wrightii",
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T5:100",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T6:225",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T8:170",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Syringodium filiforme"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S1T9:650",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    },
+    {
+      "point_id": "TBEP:seagrass:loc:S3T10:275",
+      "water_body": "Old Tampa Bay",
+      "species": [
+        "Halodule wrightii"
+      ]
+    }
+  ]
+}
