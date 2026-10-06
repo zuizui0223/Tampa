@@ -169,6 +169,33 @@ Confirmatory gate:
 
 Primary sampling/model infrastructure is already frozen. The paper-level decisive hierarchy is now refined before outcome-bearing sampling: the within-node anchor test (`results/clonal_state_augmentation_primary_v1_contract.json`) is primary because it controls stable node identity and baseline local state; the cross-node four-bay TNC -> future-frequency model is supportive/generalization evidence.
 
+### Independent high-novelty functional-insurance branch
+
+A second prospective mechanism question is frozen independently of the TNC line:
+
+> **After documented local loss of Thalassia, does continued occupancy by another seagrass retain the same directly measured hydrodynamic attenuation as nearby persistent Thalassia within the same long-monitored meadow?**
+
+Response-independent historical preflight identified **18 Old+Middle Tampa Bay matched pairs** linking:
+- documented focal Thalassia loss;
+- present alternative-seagrass occupancy at the same stable meter mark;
+- a nearby >=3-year persistent-Thalassia comparator in the same stable node.
+
+The future response is new paired canopy/near-bed velocity, not another transformation of the retrospective biological table.
+
+This separates:
+- **occupancy insurance** — some seagrass remains;
+- **functional insurance** — the physical ecosystem-engineering function is retained.
+
+A resolved attenuation difference would show that persistence of a vegetated label is not equivalent to persistence of foundation-species function. A null difference is not interpreted as functional equivalence because no equivalence margin is frozen.
+
+Canonical files:
+- `docs/FUNCTIONAL_INSURANCE_NOVELTY_BOUNDARY_V1.md`
+- `results/functional_insurance_loss_legacy_preflight_v1.json`
+- `results/functional_insurance_loss_legacy_primary_v1_contract.json`
+- `field/functional_insurance_loss_legacy_analysis_freeze.json`
+
+This branch is scientifically independent of TNC and cannot rescue an unsupported TNC result.
+
 ### Remote CI verification
 
 The TNC-v2 method/baseline implementation has been executed on GitHub Actions.
