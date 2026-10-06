@@ -1,0 +1,66 @@
+{
+  "schema": "tampa.persistence_carrier_discrimination_v1.contract",
+  "frozen_on": "2026-10-06",
+  "status": "prospective_synthesis_before_outcome_sampling",
+  "central_question": "When a foundation species remains present despite quantitative change, what carries persistence forward: stored internal state, self-engineered physical state, community substitution, or persistent site template?",
+  "carrier_classes": {
+    "internal_state": {
+      "candidate_measurements": [
+        "rhizome TNC",
+        "meristem/apex density",
+        "below-ground biomass/architecture",
+        "reserve trajectory"
+      ],
+      "decisive_existing_contract": "results/clonal_state_augmentation_primary_v1_contract.json",
+      "minimum_supported_statement": "hidden below-ground state adds prospective information beyond current visible state and stable node identity"
+    },
+    "engineered_physical_state": {
+      "candidate_measurements": [
+        "paired canopy/reference optical attenuation",
+        "paired canopy/reference flow attenuation"
+      ],
+      "required_links": [
+        "direct paired physical contrast demonstrates canopy-associated modification",
+        "measured engineered state predicts future focal quantitative state after ambient exposure and baseline state"
+      ]
+    },
+    "community_continuity": {
+      "candidate_measurements": [
+        "alternative seagrass canopy state",
+        "direct ecosystem-function measurement"
+      ],
+      "rule": "alternative-species occurrence alone supports occupancy continuity, not functional insurance"
+    },
+    "persistent_site_template": {
+      "role": "principal non-mechanistic alternative",
+      "rule": "cross-node association alone cannot distinguish a carrier from stable site quality"
+    }
+  },
+  "evidence_graph": {
+    "internal_path": [
+      "external forcing -> reserve change",
+      "reserve state -> future local Thalassia state"
+    ],
+    "engineered_path": [
+      "current meadow -> measured physical attenuation",
+      "attenuation -> future local Thalassia state"
+    ],
+    "community_path": [
+      "focal decline -> alternative canopy continuity",
+      "alternative canopy -> retained measured function"
+    ]
+  },
+  "paper_level_gate": {
+    "multicarrier_claim_requires": "direct prospective support for at least two carrier classes",
+    "single_internal_support": "retain narrower state-augmentation claim",
+    "all_unsupported": "retain state-decoupling result and reject measured carrier candidates without reopening retrospective mechanism mining"
+  },
+  "prohibited": [
+    "rank carriers by p-value",
+    "call alternative-species occupancy functional insurance without measured function",
+    "claim self-engineering without paired physical attribution",
+    "claim ecological memory from cross-node association alone",
+    "retune thresholds or endpoints after future outcome access"
+  ],
+  "no_post_outcome_changes": true
+}
