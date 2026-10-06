@@ -363,7 +363,7 @@ This escalation is **not** another current primary and cannot rescue a null opti
 
 ### Mechanism question
 
-Existing exact-point results show **occupancy insurance**: when *Thalassia* is lost from a point, pre-existing alternative seagrasses often keep the point vegetated.
+Existing exact-point results show **pooled occupancy continuity**: when *Thalassia* is lost from a point, pre-existing alternative seagrasses often remain. A stable-node audit does not resolve a local mixed-versus-alone retention advantage, so this is not treated as demonstrated occupancy insurance.
 
 That does not establish functional equivalence.
 
