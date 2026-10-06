@@ -123,7 +123,7 @@ The full cohort should not be called 18 established replacement or succession st
 
 The stronger biological framing is:
 
-> **pre-existing community insurance after focal dropout** — vegetation already embedded in a mixed meadow may preserve occupancy, and perhaps physical function, when *Thalassia* drops out locally.
+> **pre-existing community continuity after focal dropout** — vegetation already embedded in a mixed meadow often remains when *Thalassia* drops out locally, but the within-transect binary insurance effect is unresolved after stable-node saturation.
 
 This is also supported by the comparator structure: **12/18** persistent-*Thalassia* comparator points currently contain another seagrass as well; only 6/18 are *Thalassia*-only. Thus the primary matched contrast often compares two mixed-community states that differ in whether the focal foundation species persists.
 
