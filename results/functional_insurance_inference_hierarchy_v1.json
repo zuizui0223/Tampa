@@ -8,7 +8,7 @@
     "analysis": "analysis/75_functional_insurance_loss_legacy_primary.py",
     "freeze": "field/functional_insurance_loss_legacy_analysis_freeze.json",
     "question": "Does documented focal foundation-species loss followed by retained alternative-seagrass occupancy preserve the same measured hydrodynamic attenuation as nearby persistent Thalassia within the same long-monitored meadow?",
-    "reason": "Links observed occupancy insurance to physical function and uses a matched within-node comparator, reducing stable transect-level confounding."
+    "reason": "Links documented historical occupancy continuity to physical function and uses a matched within-node comparator; the retrospective mixed-versus-alone insurance effect is not treated as established after the stable-node audit."
   },
   "supportive_cross_sectional_test": {
     "source_contract": "results/direct_hydrodynamic_prospective_v1_contract.json#secondary_mechanism_support.community_functional_insurance",
