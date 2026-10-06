@@ -176,6 +176,15 @@ Confirmatory gate:
 
 Primary sampling/model infrastructure is already frozen. The paper-level decisive hierarchy is now refined before outcome-bearing sampling: the within-node anchor test (`results/clonal_state_augmentation_primary_v1_contract.json`) is primary because it controls stable node identity and baseline local state; the cross-node four-bay TNC -> future-frequency model is supportive/generalization evidence.
 
+### Prospective priority is two-dimensional
+
+The two strongest future tests have different roles and should not be ranked on one axis:
+
+- **Operational / first-sampling priority: TNC state augmentation.** It is the cleanest executable test of a hidden biological state and is protected first in the field resource plan.
+- **Highest novelty independent branch: history-linked functional insurance.** It asks whether continued vegetation after focal foundation-species dropout preserves a directly measured ecosystem-engineering function.
+
+These are not competing rescue analyses. A supported TNC result answers **what carries future focal persistence inside the plant/meadow**. A supported functional-insurance result answers **whether community continuity preserves the function supplied by the focal foundation species**. The broader multicarrier synthesis is authorized only if at least two carrier classes receive direct prospective support.
+
 ### Independent high-novelty functional-insurance branch
 
 A second prospective mechanism question is frozen independently of the TNC line:
