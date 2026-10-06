@@ -249,19 +249,22 @@ For conservation, this means that maintaining acreage, maintaining focal-species
 
 A point or transect that is unrecorded and later recorded again is **re-recorded / reappearing in the observation record**. That observation-state event is not called ecological recovery, demographic recovery, or recolonization without independent biological evidence.
 
-## Community insurance as a conservation state
+## Community-state continuity after focal loss
 
-The exact-point analysis adds a useful distinction between **foundation-species persistence** and **continued seagrass habitat occupancy**. Meter marks where *Thalassia* co-occurred with another seagrass were 14.3 percentage points more likely to remain seagrass-occupied after focal loss than *Thalassia*-only points, and most retained occupancy involved species that were already present before focal disappearance.
+The pooled exact-point record shows a useful descriptive distinction between **foundation-species persistence** and **continued seagrass habitat occupancy**. Meter marks where *Thalassia* co-occurred with another seagrass were 14.3 percentage points more likely to remain seagrass-occupied after focal loss than *Thalassia*-only points, and most retained occupancy involved species that were already present before focal disappearance.
 
-For management, this means that multispecies meadows may provide **state insurance against immediate conversion to bare habitat**, even when focal foundation-species identity is lost. This should not be translated into “all seagrasses are interchangeable.” The structural and functional consequences of losing *Thalassia* while retaining *Syringodium*, *Halodule*, or another species may be substantial.
+However, a stable-node saturation audit did not resolve this mixed-versus-alone advantage within the same transects: the centered source-mixture coefficient remained positive but its 95% bootstrap interval crossed zero slightly. The pooled contrast may therefore partly reflect persistent site quality rather than a local biodiversity-insurance mechanism.
+
+For management, the defensible use is not to assume that multispecies meadows causally insure habitat persistence. It is to keep **focal-species identity** and **any-seagrass occupancy** as separate state variables. A site may retain vegetation after *Thalassia* loss, but neither the cause of that continuity nor the equivalence of ecosystem function is established.
 
 A useful dashboard should therefore separate:
 - focal-species state;
 - any-seagrass occupancy;
 - mixed-species versus monospecific point state;
-- transition to bare habitat.
+- transition to bare habitat;
+- direct functional measurements where focal identity changes.
 
-This distinction can identify where biodiversity appears to buffer habitat continuity and where focal-species loss corresponds to complete local vegetation loss.
+This distinction identifies where focal-foundation loss does or does not coincide with immediate habitat vacancy without treating community composition as a validated causal buffer.
 
 ## A practical three-tier monitoring design
 
