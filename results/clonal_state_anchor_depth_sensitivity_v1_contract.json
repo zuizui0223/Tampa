@@ -1,0 +1,32 @@
+{
+  "schema": "tampa.clonal_state_anchor_depth_sensitivity_v1.contract",
+  "frozen_on": "2026-10-07",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "parent_primary": "results/clonal_state_augmentation_primary_v1_contract.json",
+  "purpose": "Test whether the decisive within-node anchor-TNC association survives adjustment for contemporaneous same-meter water depth, reducing persistent meter-mark microhabitat confounding.",
+  "required_extra_measurement": "baseline_depth_m at the same permanent meter mark and baseline survey as baseline_bb_anchor",
+  "model": "future_BB_anchor ~ baseline_BB_anchor + within_node_centered_anchor_TNC + within_node_centered_baseline_depth + node_fixed_effect",
+  "focal_coefficient": "within_node_centered_anchor_TNC",
+  "gate": {
+    "minimum_complete_nodes": 36,
+    "minimum_nodes_per_bay": 6,
+    "three_complete_anchors_per_node": true
+  },
+  "uncertainty": {
+    "method": "water-body-stratified stable-node cluster bootstrap",
+    "repetitions": 10000,
+    "seed": 20261010,
+    "interval": "two-sided percentile 95% CI"
+  },
+  "hierarchy": [
+    "The original within-node anchor-TNC model remains the decisive primary.",
+    "This depth-adjusted sensitivity cannot rescue an unsupported primary.",
+    "A supported primary that remains positive after depth adjustment weakens, but does not eliminate, persistent meter-mark microhabitat confounding.",
+    "If depth coverage falls below the frozen replication gate, report this sensitivity as non-estimable without changing thresholds."
+  ],
+  "claim_boundary": [
+    "Same-meter depth is one measured microhabitat covariate; substrate, direct light, hydrodynamics and other local common causes remain possible.",
+    "A supported depth-adjusted TNC coefficient is prospective state-augmentation evidence, not proof that carbohydrate causally buffers decline."
+  ],
+  "analysis_code": "analysis/76_anchor_tnc_future_bb_depth_sensitivity.py"
+}
