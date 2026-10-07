@@ -214,6 +214,7 @@ A resolved attenuation difference would show that persistence of a vegetated lab
 
 Canonical files:
 - `docs/FUNCTIONAL_INSURANCE_NOVELTY_BOUNDARY_V1.md`
+- `docs/FUNCTIONAL_INSURANCE_DESIGN_FRAGILITY_AUDIT_V1.md`
 - `results/functional_insurance_loss_legacy_preflight_v1.json`
 - `results/functional_insurance_loss_legacy_primary_v1_contract.json`
 - `field/functional_insurance_loss_legacy_analysis_freeze.json`
