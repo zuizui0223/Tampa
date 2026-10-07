@@ -1,0 +1,16 @@
+{
+  "schema": "tampa.anchor_tnc_depth_sensitivity_analysis_freeze.v1",
+  "frozen_on": "2026-10-07",
+  "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
+  "contract": "results/clonal_state_anchor_depth_sensitivity_v1_contract.json",
+  "script_path": "analysis/76_anchor_tnc_future_bb_depth_sensitivity.py",
+  "script_blob_sha1": "c5a332ba8f35a624a61145775fd4f33075285bdf",
+  "parent_primary": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
+  "required_extra_field": "baseline_depth_m",
+  "hierarchy": "Sensitivity only. Cannot replace or rescue the decisive primary.",
+  "no_post_outcome_changes": [
+    "Do not change the depth definition or use a different depth summary after future BB is opened.",
+    "Do not lower the 36-node or 6-per-bay gate to obtain an estimable sensitivity.",
+    "Do not add further meter-mark covariates selected by inspecting the future outcome."
+  ]
+}
