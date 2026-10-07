@@ -180,7 +180,7 @@ Confirmatory gate:
 - paired baseline within +/-14 days;
 - one frozen HPLC workflow.
 
-Primary sampling/model infrastructure is already frozen. The paper-level decisive hierarchy is now refined before outcome-bearing sampling: the within-node anchor test (`results/clonal_state_augmentation_primary_v1_contract.json`) is primary because it controls stable node identity and baseline local state; the cross-node four-bay TNC -> future-frequency model is supportive/generalization evidence.
+Primary sampling/model infrastructure is already frozen. The paper-level decisive hierarchy is now refined before outcome-bearing sampling: the within-node anchor test (`results/clonal_state_augmentation_primary_v1_contract.json`) is primary because it controls stable node identity and baseline local state; the cross-node four-bay TNC -> future-frequency model is supportive/generalization evidence. A pre-outcome same-meter depth sensitivity is now separately frozen (`results/clonal_state_anchor_depth_sensitivity_v1_contract.json`): it tests whether the within-node TNC coefficient survives contemporaneous local-depth adjustment, but cannot rescue an unsupported primary and becomes non-estimable if the original 36-node / 6-per-bay coverage gate is not met.
 
 ### Prospective priority is two-dimensional
 
