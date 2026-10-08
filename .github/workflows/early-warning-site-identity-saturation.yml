@@ -5,6 +5,8 @@ on:
     paths:
       - "analysis/09_quantitative_early_warning.py"
       - "analysis/77_early_warning_site_identity_saturation.py"
+      - "analysis/78_early_warning_monitoring_utility.py"
+      - "results/early_warning_monitoring_utility_v1_contract.json"
       - "results/early_warning_site_identity_saturation_v1_contract.json"
       - ".github/workflows/early-warning-site-identity-saturation.yml"
   workflow_dispatch:
@@ -29,6 +31,10 @@ jobs:
         run: python analysis/05_community_compensation.py --out results/generated_site_warning
       - name: Run stable-node saturated warning audit
         run: python analysis/77_early_warning_site_identity_saturation.py --input results/generated_site_warning --out results/generated_site_warning
+      - name: Self-test monitoring utility audit
+        run: python analysis/78_early_warning_monitoring_utility.py --self-test
+      - name: Audit historical 10/20 percent watchlists
+        run: python analysis/78_early_warning_monitoring_utility.py
       - name: Display summary
         if: always()
         run: cat results/generated_site_warning/early_warning_site_identity_saturation_v1.json || true
@@ -39,5 +45,6 @@ jobs:
           name: tampa-site-saturated-early-warning
           path: |
             results/generated_site_warning/early_warning_site_identity_saturation_v1.json
+            results/generated_site_warning/early_warning_monitoring_utility_v1.json
             results/generated_site_warning/early_warning_site_identity_year_scores.csv
             results/generated_site_warning/early_warning_site_identity_predictions.csv
