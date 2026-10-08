@@ -77,6 +77,32 @@ The scripts verify exact byte sizes and Git blob identities for Event, Occurrenc
 
 The reconstructed frequency-occurrence and Braun-Blanquet abundance definitions follow the TBEP/tbeptools convention: species observations divided by sampled placements, and species-specific Braun-Blanquet scores averaged over sampled placements.
 
+## Open falsification: does quantitative early warning survive stable site identity?
+
+The historical early-warning comparison gives better strict target-year
+prediction when source-year *Thalassia* frequency and Braun–Blanquet state
+are added to a **spatial/time/survey-effort** baseline (pooled AUC
+**0.636 → 0.739**, 17/23 target-year wins, including the adverse 2016 year).
+It did **not** include stable transect identity.
+
+An explicit reference-saturation audit is now [contracted](results/early_warning_site_identity_saturation_v1_contract.json)
+and [implemented](analysis/77_early_warning_site_identity_saturation.py).
+It compares **node ID + spatial/time/effort** against the exact same
+reference plus frequency and Braun–Blanquet, keeping cohort, learner,
+regularization, target-year folds and 2016 identical. The
+[workflow](.github/workflows/early-warning-site-identity-saturation.yml)
+runs from the pinned source and asserts that the original result is fully
+reproduced before interpreting the node-saturated contrast.
+
+**Status: executable; node-saturated outcome not yet confirmed.**
+Until its results are inspected, it is not established whether quantitative
+early warning reflects *dynamic within-node deterioration* instead of
+persistent site vulnerability. Independently, the frozen
+[condition-leading test](results/condition_leads_thinning_v1.json)
+did **not** support an annual blade-length/shoot-density → next-year
+frequency-thinning sequence, so the ecological mainline is
+partially independent state axes rather than a demonstrated serial cascade.
+
 ## Current reproducible result
 
 ### 1. Strong immediate state dependence; older-history gain is reference-dependent
