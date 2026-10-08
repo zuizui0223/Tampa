@@ -1,0 +1,33 @@
+{
+  "schema": "tampa.early_warning_site_identity_saturation_v1.contract",
+  "evidence_class": "post_hoc_reference_saturation_of_already_opened_Tampa_early_warning_endpoint",
+  "parent": "results/quantitative_early_warning_v1.json",
+  "endpoint": "next-year recorded Thalassia loss among source-year recorded-positive stable transects",
+  "scientific_question": "Is out-of-time next-year recorded-loss discrimination from quantitative state distinct from stable transect identity, or mainly explained by persistently low-quality nodes?",
+  "source_cohort": "exact analysis/09_quantitative_early_warning.py build_transitions; no new outcome eligibility, exclusions, folds, training minimums or loss labels",
+  "arms": {
+    "space": "frozen longitude, latitude, year, season, effort and water-body",
+    "space_quant": "space + source-year focal frequency and Braun-Blanquet",
+    "node": "space + stable node_id as one-hot categorical predictor",
+    "node_quant": "node + the identical two quantitative state predictors"
+  },
+  "model": "same StandardScaler + OneHotEncoder(handle_unknown='ignore') + LogisticRegression(C=1.0,max_iter=2000), no hyperparameter search",
+  "year_scoring": "strict target-year walk-forward, train target_year < scored target year; >=5 past loss transitions and >=50 past persistent transitions",
+  "primary": "paired 23-target-year macro log-loss improvement from node to node+quant; 2016 included",
+  "secondary": [
+    "pooled log-loss/AUC/Brier on the exactly matched predictions",
+    "23 target-year wins and year-level paired Wilcoxon, directional test",
+    "sensitivity omitting 2016 but not replacing primary",
+    "legacy space arms must reproduce frozen early-warning primary (570 predictions, 19 losses, 17/23 win years)",
+    "performance of node-only vs original space-only reference as diagnostic"
+  ],
+  "support": "A positive incremental condition warning requires node+quant lower macro log loss than node reference AND >=16/23 scored years improved AND one-sided year sign test p<0.05. Outcome-exposed reference saturation remains developmental and may only constrain interpretation of existing early-warning claim.",
+  "boundary": [
+    "A recorded absence at next survey is not plant death, demographic extinction or loss of all rhizomes.",
+    "Fixed node identity is a categorical proxy for persistent site qualities; it does not explain physical mechanisms.",
+    "The 2016 target year is retained even if adverse.",
+    "The node+quant predictor can still reflect within-node detection sampling variation, not physiological decline.",
+    "Results cannot retrospectively redefine or erase the previously frozen space-only comparator; report both hierarchies.",
+    "No model/threshold/target-year tuning after observing outputs."
+  ]
+}
