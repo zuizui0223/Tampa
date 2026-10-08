@@ -38,7 +38,7 @@ The result is **not** a measured physiological buffer, confirmed earlier interve
 
 ## Conservation implication
 
-The directly supported retrospective advice is to **monitor quantitative state alongside occurrence** rather than treating binary presence as sufficient. Quantitative state can reveal changes not visible on presence maps.
+The directly supported retrospective advice is to **interpret quantitative state alongside occurrence** rather than treating binary presence as sufficient. Quantitative state can reveal changes not visible on presence maps. This is **not a new monitoring protocol**: the existing Tampa Bay Interagency Seagrass Monitoring Program already measures canopy height, short-shoot density, abundance/cover and species frequency along annual transects, alongside biennial aerial-extent assessments (https://tampabay.wateratlas.usf.edu/seagrass-monitoring/). The unresolved contribution is whether these already collected signals support genuinely better prospective targeting of *recorded* losses beyond stable site vulnerability.
 
 An algorithmic Amber/Red watchlist based on one-year recorded-loss prediction is a **separate**, higher-evidence claim. It requires independent validation, operational precision and an explicit management utility/cost framework. Until then, quantitative monitoring is justified as **descriptive surveillance**, not as a verified alarm classifier.
 
