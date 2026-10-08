@@ -1,0 +1,43 @@
+name: Tampa site-saturated early warning
+
+on:
+  push:
+    paths:
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/77_early_warning_site_identity_saturation.py"
+      - "results/early_warning_site_identity_saturation_v1_contract.json"
+      - ".github/workflows/early-warning-site-identity-saturation.yml"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install scientific dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check source syntax
+        run: python -m py_compile analysis/09_quantitative_early_warning.py analysis/77_early_warning_site_identity_saturation.py
+      - name: Rebuild pinned quantitative annual source
+        run: python analysis/03_quantitative_state.py --out results/generated_site_warning
+      - name: Rebuild pinned survey timing effort and community annual source
+        run: python analysis/05_community_compensation.py --out results/generated_site_warning
+      - name: Run stable-node saturated warning audit
+        run: python analysis/77_early_warning_site_identity_saturation.py --input results/generated_site_warning --out results/generated_site_warning
+      - name: Display summary
+        if: always()
+        run: cat results/generated_site_warning/early_warning_site_identity_saturation_v1.json || true
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-site-saturated-early-warning
+          path: |
+            results/generated_site_warning/early_warning_site_identity_saturation_v1.json
+            results/generated_site_warning/early_warning_site_identity_year_scores.csv
+            results/generated_site_warning/early_warning_site_identity_predictions.csv
