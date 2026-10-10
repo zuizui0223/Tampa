@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "analysis/79_tnc_baseline_information_stress_test.py"
+      - "analysis/80_thalassia_bb_intercalibration_external.R"
       - "docs/TNC_BASELINE_INFORMATION_IDENTIFIABILITY_V1.md"
       - ".github/workflows/tnc-baseline-information-audit.yml"
   workflow_dispatch:
@@ -27,6 +28,17 @@ jobs:
         run: |
           python analysis/79_tnc_baseline_information_stress_test.py
           python -m json.tool results/generated_pilot_design/tnc_baseline_information_stress_test_v1.json > /dev/null
+      - name: Install R for pinned upstream calibration
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+      - name: Run source-pinned Thalassia BB intercalibration
+        run: Rscript analysis/80_thalassia_bb_intercalibration_external.R
+      - name: Upload interobserver calibration summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-thalassia-bb-intercalibration-2024-2026
+          path: results/generated_tnc_baseline_calibration/
       - name: Upload response-free results
         uses: actions/upload-artifact@v4
         with:
