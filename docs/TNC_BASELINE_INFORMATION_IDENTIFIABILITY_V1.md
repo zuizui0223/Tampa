@@ -85,6 +85,39 @@ Before first outcome-bearing baseline collection, assess feasibility with monito
 
 Leaf N/P, meristem state, same-meter depth and other existing secondary diagnostics remain distinct; this proposal does **not** replace the frozen within-node TNC primary, the predeclared depth sensitivity, or the broader field campaign.
 
+
+## Real upstream interobserver calibration: no fabricated error variance
+
+A separate, publicly released and version-pinned measurement dataset can test whether actual Tampa Bay survey teams disagree on Thalassia Braun–Blanquet assessments:
+
+- upstream: `tbep-tech/seagrasstransect-training-reports`, commit `9b90538998a0707ddafc13075c1b4715e5fb3290`;
+- source: `data/trndat.rda`, verified Git blob `0335f81880001524541dc66083be9a02b77daa95`;
+- program: Tampa Bay interagency training, in which agencies independently assess **the same calibration quadrats**;
+- period fixed for this descriptive audit: 2024–2026;
+- taxon/measurement: exact `Species == "Thalassia"` and `var == "Abundance"`.
+
+The actual Braun–Blanquet categories are `0, 0.1, 0.5, 1, 2, 3, 4, 5`, i.e. **eight ordinal category positions**, not the five stylized ordinal categories in the known-truth illustration above. The latter is a mathematical counterexample; it was never claimed as an empirical reconstruction of the Tampa observation process.
+
+`analysis/80_thalassia_bb_intercalibration_external.R` verifies the upstream Git blob, preserves these eight categories, and pairs *independent group ratings at exactly the same calibration quadrat and year*. It reports annual total group-pair counts, exact and within-one-category agreement, mean absolute ordinal category difference and explicit-zero-versus-positive disagreement. Unknown or missing species reports are **not** imputed to absence.
+
+No calibration agreement estimates are inserted into this report before actually running the script. The R/CI output is an aggregate descriptive **measurement-layer diagnostic**, not a model of TNC or next-year meadow state.
+
+### Important limitations
+
+1. Training quadrats are not the focal q25/q50/q75 permanent meter marks in the proposed prospective TNC study. They may underrepresent difficult sparse-patch conditions.
+2. Multiple agency pairs within one site/year share observations; pair counts are not independent ecological sample sizes.
+3. Cross-group consensus is not an external truth standard. All agencies could agree on a systematically imperfect BB class.
+4. Raw BB class is ordinal and must never be translated into percent cover or a normally distributed additive error merely from this calibration.
+5. Field-calibration agreement alone cannot identify how much of a future TNC coefficient reflects truly depleted storage versus unmeasured current local condition.
+
+This constitutes a **more empirical test of measurement reliability**, not a new ecological endpoint, a transfer-valid error correction, or an amendment of the frozen TNC primary.
+
+## Separate ecological sign ambiguity: carbohydrate stock is not growth by definition
+
+A published multi-region study of *Thalassia testudinum* found **negative associations between tissue nutrient status and rhizome carbohydrate content**, including in Tampa Bay (reported regional Spearman rho about -0.2). Higher carbohydrate can reflect reserve accumulation when growth is limited by nutrients, not necessarily greater net growth or resistance (https://www.sciencedirect.com/science/article/abs/pii/S0304377012000204).
+
+This reinforces the role of the already-frozen leaf N/P diagnostic. It must be described alongside future positive or negative reserve associations, but must not be added to or substituted for the original confirmatory model after outcomes are opened. The prospective ecological choice remains **buffer versus current-state proxy / allocation regime**, not simply whether stored carbon is numerically high.
+
 ## Gate for honest interpretation
 
 - Primary unsupported: do not rescue it with duplicate-reader BB, post-hoc continuous proxies, alternate TNC transformations or a cross-node result.
