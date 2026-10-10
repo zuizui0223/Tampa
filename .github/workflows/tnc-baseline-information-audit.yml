@@ -7,6 +7,12 @@ on:
       - "analysis/80_thalassia_bb_intercalibration_external.R"
       - "docs/TNC_BASELINE_INFORMATION_IDENTIFIABILITY_V1.md"
       - ".github/workflows/tnc-baseline-information-audit.yml"
+  pull_request:
+    paths:
+      - "analysis/79_tnc_baseline_information_stress_test.py"
+      - "analysis/80_thalassia_bb_intercalibration_external.R"
+      - "docs/TNC_BASELINE_INFORMATION_IDENTIFIABILITY_V1.md"
+      - ".github/workflows/tnc-baseline-information-audit.yml"
   workflow_dispatch:
 
 jobs:
