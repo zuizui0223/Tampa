@@ -16,7 +16,6 @@ url <- paste0(
 outdir <- "results/generated_tnc_baseline_calibration"
 dir.create(outdir, showWarnings = FALSE, recursive = TRUE)
 temp <- tempfile(fileext = ".rda")
-on.exit(unlink(temp), add = TRUE)
 options(timeout = max(120, getOption("timeout")))
 download.file(url, temp, mode = "wb", quiet = TRUE)
 actual_blob <- trimws(system2("git", c("hash-object", temp), stdout = TRUE))
@@ -99,5 +98,6 @@ writeLines(c(
   "Missing species records are not assumed to be zeros. Zero disagreement only for explicit zeros.",
   "Interagency calibration variation is not a complete bound on latent meadow-state measurement error."
 ), file.path(outdir, "claim_boundary.txt"))
+unlink(temp)
 print(result, row.names = FALSE)
 cat("PASS: pinned source verified; aggregate within-quadrat disagreement only\n")
