@@ -12,7 +12,7 @@ This post-hoc diagnostic therefore asks:
 
 ## Completed original reference-saturation result
 
-The [original site-saturated falsification](results/early_warning_site_identity_saturation_v1_contract.json) was fixed as a post-hoc reference audit before this monitoring-utility extension, and succeeded on [GitHub Actions #38109049710](https://github.com/zuizui0223/Tampa/actions/runs/38109049710).
+The [original site-saturated falsification](../results/early_warning_site_identity_saturation_v1_contract.json) was fixed as a post-hoc reference audit before this monitoring-utility extension, and succeeded on [GitHub Actions #38109049710](https://github.com/zuizui0223/Tampa/actions/runs/38109049710).
 
 | Matched frozen reference | Pooled AUC | Macro target-year log loss |
 |---|---:|---:|
@@ -21,7 +21,7 @@ The [original site-saturated falsification](results/early_warning_site_identity_
 
 The node+quant arm won **17 of 23** target years; the one-sided sign-test p was **0.01734**, and the frozen support rule passed. The macro log-loss increment is small (**-0.001037**); 2016 was strongly adverse (**+0.30563**, retained).
 
-This establishes **conditional prediction of a future recorded state** beyond a stable-site signature. It does **not** identify active degradation or rule out finite sampling, detection variation or temporally changing local conditions. The entire endpoint remains internally evaluated and outcome-exposed at the research-program level, not independent external validation.
+This establishes **conditional prediction of a future recorded state** beyond the specified L2-regularized node-ID reference, not beyond every possible persistent-site explanation. It does **not** identify active degradation or rule out finite sampling, detection variation or temporally changing local conditions. The entire endpoint remains internally evaluated and outcome-exposed at the research-program level, not independent external validation.
 
 ## Fixed descriptive comparison
 
@@ -89,7 +89,7 @@ f = m / |P_t|
 
 `analysis/81_early_warning_fixed_mark_overlap.py` reconstructs the original **688 consecutive source-positive transect transitions with 24 recorded losses**, validates mark-level states against the original annual endpoint, and reports positive-mark revisit overlap for those outcomes, 2016 specifically, and the **exact scored 570/19 walk-forward subset**. It uses the already-frozen point-event reconstruction in `analysis/33_community_buffering.py` and verifies pinned raw-source blob hashes; no new predictor, fitted model, sensitivity-window tuning or biological-response exclusion is allowed.
 
-The audit was authored after the long-term outcomes had already been opened. It is a descriptive assessment of **observation-process plausibility**, not a new preregistered test of sea-grass deterioration. No overlap values or positive ecological conclusion are supplied until the empirical workflow succeeds.
+The audit was authored after the long-term outcomes had already been opened. It is a descriptive assessment of **observation-process plausibility**, not a new preregistered test of seagrass deterioration. The computation is now complete: **17/24** full-cohort losses and **14/19** scored losses revisited at least one former positive mark. The none/some/all partitions were 7/7/10 and 5/7/7. All five 2016 losses had a revisit. In the unchanged lists, revisited-event captures increased 4 to 6 at the 10% cap and 7 to 9 at the 20% cap. These descriptive partitions do not identify mortality or justify reranking. See [the verified report](EARLY_WARNING_FIXED_MARK_VERIFIED_V1.md).
 
 ## Interpretation
 
@@ -116,4 +116,4 @@ python analysis/78_early_warning_monitoring_utility.py \
   --out results/generated_site_warning/early_warning_monitoring_utility_v1.json
 ```
 
-The source reconstruction and existing model replay succeeded in GitHub Actions #38109049710; the counts above come from its archived JSON artifact. The fixed-mark overlap follow-up is a separate pending descriptive audit.
+The source reconstruction and existing model replay succeeded in GitHub Actions #38109049710; the counts above come from its archived JSON artifact. The fixed-mark audit also succeeded in run 38109944875; Tables S10–S12 and the verified report now contain its result. No new mechanism test was added.

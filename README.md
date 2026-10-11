@@ -77,24 +77,17 @@ The scripts verify exact byte sizes and Git blob identities for Event, Occurrenc
 
 The reconstructed frequency-occurrence and Braun-Blanquet abundance definitions follow the TBEP/tbeptools convention: species observations divided by sampled placements, and species-specific Braun-Blanquet scores averaged over sampled placements.
 
-## Completed site-identity falsification: annual quantitative state retains recorded-loss prediction
+## Completed recorded-state prediction and fixed-mark audits
 
-The original strict target-year walk-forward analysis improved prediction when source-year *Thalassia* frequency and Braun–Blanquet abundance were added to a spatial/time/survey-effort reference (AUC **0.636 -> 0.739**), but did not control stable transect identity.
+The original space/time/effort comparison is retained (pooled AUC 0.636 to 0.739). Adding the same source frequency and Braun–Blanquet state to the **L2-regularized node-ID reference** gave AUC **0.67055 to 0.73636**, macro annual log loss **0.148268 to 0.147230**, and **17/23** improved target years (frozen one-sided sign p **0.0173448**). The small average improvement includes strongly adverse 2016 (**+0.305633** annual log-loss difference). Support is relative to that specified predictive reference, not proof of a causal within-node deterioration process.
 
-A subsequent **post-hoc reference-saturation falsification** was frozen in [its contract](results/early_warning_site_identity_saturation_v1_contract.json) and implemented in [analysis/77](analysis/77_early_warning_site_identity_saturation.py). The original 570 predictions, 19 recorded losses, 23 target years (2003–2025), learner, regularization and adverse 2016 target year were preserved exactly. [GitHub Actions #38109049710](https://github.com/zuizui0223/Tampa/actions/runs/38109049710) reproduced the original comparator and confirmed:
+The fixed-mark audit is complete. Among **24** recorded losses in 688 source-positive transitions, **17/24** revisited at least one formerly positive mark: 10 all, seven some and seven none. Among the **19** scored losses in 570 predictions, the corresponding partition is seven all, seven some and five none (**14/19** revisited). All five 2016 losses had a revisit. Nominal mark identity does not guarantee identical microquadrat placement or perfect detection; non-detection is not measured mortality.
 
-- **node + geography/time/effort:** pooled AUC **0.671**, macro log loss **0.14827**;
-- **same reference + source-year focal frequency and all-point Braun–Blanquet:** AUC **0.736**, macro log loss **0.14723**;
-- **17/23** target-year log-loss wins, one-sided year sign p **0.01734**, frozen primary rule **PASS**;
-- target year **2016 was strongly adverse** (node+quant minus node annual log loss **+0.30563**), and remains in the primary.
+The unchanged 10%/20% nominal annual lists selected 47/105 alerts. Capture increased **6 to 9** and **9 to 13** of 19 losses. Within the original lists, captures with a prior positive mark revisited increased **4 to 6** and **7 to 9**. No list was refitted or reranked, and the partition adds no new statistical test or intervention claim. Historical targeting is conditional on a next-year survey.
 
-Thus quantitative **observation state retains out-of-time recorded-loss information beyond a categorical persistent-transect signature**. This is not proof of causal deterioration, actual mortality, finite-point detection correction or an intervention-ready early warning.
+See [verified source and interpretation](docs/EARLY_WARNING_FIXED_MARK_VERIFIED_V1.md), [canonical overlap result](results/early_warning_fixed_mark_overlap_verified_v1.json), and [Supplementary Tables S10–S12](manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md). The source computation succeeded in [run 38109944875](https://github.com/zuizui0223/Tampa/actions/runs/38109944875); a separate artifact reaggregation reproduced its counts and probabilities without refitting.
 
-The separate descriptive [capacity-limited operational audit](docs/EARLY_WARNING_MONITORING_UTILITY_V1.md) used exactly those predictions. At a nominal top-10% annual visit cap (realized **47/570 = 8.2%** alerts), node alone captured **6/19** recorded losses while node+quant captured **9/19**. At a nominal top-20% cap (realized **105/570 = 18.4%**), the comparison was **9/19 -> 13/19**. These are retrospective, conditional-on-next-year-visit counts; not validated full-network surveillance or demonstrated benefit from treatment.
-
-**Observation-process issue now being audited separately:** fixed Tampa transects often revisit stable metre-mark IDs, so a simple independent spatial redraw `(1-p)^n` cannot automatically explain all recorded losses. [Analysis/81](analysis/81_early_warning_fixed_mark_overlap.py) is a post-hoc descriptive test of whether marks that were focal-positive at source were actually resampled at target. Its outcome is not yet confirmed and cannot rescue or reinterpret the frozen early-warning primary.
-
-Independently, the frozen [condition-leading test](results/condition_leads_thinning_v1.json) did **not** support an annual blade-length/shoot-density -> next-year frequency-thinning sequence. The ecological mainline therefore remains multiple partially independent state axes rather than a demonstrated serial decline cascade.
+The [condition-leading test](results/condition_leads_thinning_v1.json) did not support an annual blade-length/shoot-density to next-year thinning sequence. The ecological interpretation remains state-specific change, not a demonstrated serial cascade. No future TNC, reserve buffering, mortality or management outcome was measured here.
 
 ## Current reproducible result
 

@@ -1,0 +1,7 @@
+{
+  "schema": "tampa.warning_reporting_sync_v1",
+  "status": "PASS_REPORTING_SYNC",
+  "checks": 53,
+  "failures": [],
+  "scope": "Reporting and existing builder equality only; no raw-source rebuild, model refit, author approval or whole-repository certification."
+}
