@@ -28,7 +28,7 @@ jobs:
         run: git diff --exit-code -- manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
       - name: Audit high-risk wording
         run: |
-          python - <<'PY'
+          python - <<'PYCODE'
           from pathlib import Path
           x=Path("manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md").read_text().lower()
           forbidden=[
@@ -55,4 +55,20 @@ jobs:
           for key in ["ellison","orth","waycott","roca","lefcheck","unsworth","lee","carlson","beck","rising","williams"]:
               assert key in x, f"missing in-text citation key: {key}"
           print("manuscript claim-boundary and bibliography audit: OK")
-          PY
+          PYCODE
+      - name: Archive tracked reproduction inputs
+        if: always()
+        run: |
+          git archive --format=zip --output="$RUNNER_TEMP/tampa-manuscript-source.zip" HEAD
+          git rev-parse HEAD > "$RUNNER_TEMP/tampa-manuscript-source-commit.txt"
+          sha256sum "$RUNNER_TEMP/tampa-manuscript-source.zip" > "$RUNNER_TEMP/tampa-manuscript-source-sha256.txt"
+      - name: Preserve reproduction inputs even when integrity fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-manuscript-reproduction-source
+          path: |
+            ${{ runner.temp }}/tampa-manuscript-source.zip
+            ${{ runner.temp }}/tampa-manuscript-source-commit.txt
+            ${{ runner.temp }}/tampa-manuscript-source-sha256.txt
+          if-no-files-found: error
