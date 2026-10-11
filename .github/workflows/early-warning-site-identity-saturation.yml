@@ -9,6 +9,14 @@ on:
       - "results/early_warning_monitoring_utility_v1_contract.json"
       - "results/early_warning_site_identity_saturation_v1_contract.json"
       - ".github/workflows/early-warning-site-identity-saturation.yml"
+  pull_request:
+    paths:
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/77_early_warning_site_identity_saturation.py"
+      - "analysis/78_early_warning_monitoring_utility.py"
+      - "results/early_warning_monitoring_utility_v1_contract.json"
+      - "results/early_warning_site_identity_saturation_v1_contract.json"
+      - ".github/workflows/early-warning-site-identity-saturation.yml"
   workflow_dispatch:
 
 jobs:
@@ -24,7 +32,7 @@ jobs:
       - name: Install scientific dependencies
         run: python -m pip install -r requirements.txt
       - name: Check source syntax
-        run: python -m py_compile analysis/09_quantitative_early_warning.py analysis/77_early_warning_site_identity_saturation.py
+        run: python -m py_compile analysis/09_quantitative_early_warning.py analysis/77_early_warning_site_identity_saturation.py analysis/78_early_warning_monitoring_utility.py
       - name: Rebuild pinned quantitative annual source
         run: python analysis/03_quantitative_state.py --out results/generated_site_warning
       - name: Rebuild pinned survey timing effort and community annual source
@@ -37,7 +45,9 @@ jobs:
         run: python analysis/78_early_warning_monitoring_utility.py
       - name: Display summary
         if: always()
-        run: cat results/generated_site_warning/early_warning_site_identity_saturation_v1.json || true
+        run: |
+          cat results/generated_site_warning/early_warning_site_identity_saturation_v1.json || true
+          cat results/generated_site_warning/early_warning_monitoring_utility_v1.json || true
       - name: Upload audit
         if: always()
         uses: actions/upload-artifact@v4
