@@ -77,31 +77,24 @@ The scripts verify exact byte sizes and Git blob identities for Event, Occurrenc
 
 The reconstructed frequency-occurrence and Braun-Blanquet abundance definitions follow the TBEP/tbeptools convention: species observations divided by sampled placements, and species-specific Braun-Blanquet scores averaged over sampled placements.
 
-## Open falsification: does quantitative early warning survive stable site identity?
+## Completed site-identity falsification: annual quantitative state retains recorded-loss prediction
 
-The historical early-warning comparison gives better strict target-year
-prediction when source-year *Thalassia* frequency and Braun–Blanquet state
-are added to a **spatial/time/survey-effort** baseline (pooled AUC
-**0.636 → 0.739**, 17/23 target-year wins, including the adverse 2016 year).
-It did **not** include stable transect identity.
+The original strict target-year walk-forward analysis improved prediction when source-year *Thalassia* frequency and Braun–Blanquet abundance were added to a spatial/time/survey-effort reference (AUC **0.636 -> 0.739**), but did not control stable transect identity.
 
-An explicit reference-saturation audit is now [contracted](results/early_warning_site_identity_saturation_v1_contract.json)
-and [implemented](analysis/77_early_warning_site_identity_saturation.py).
-It compares **node ID + spatial/time/effort** against the exact same
-reference plus frequency and Braun–Blanquet, keeping cohort, learner,
-regularization, target-year folds and 2016 identical. The
-[workflow](.github/workflows/early-warning-site-identity-saturation.yml)
-runs from the pinned source and asserts that the original result is fully
-reproduced before interpreting the node-saturated contrast.
+A subsequent **post-hoc reference-saturation falsification** was frozen in [its contract](results/early_warning_site_identity_saturation_v1_contract.json) and implemented in [analysis/77](analysis/77_early_warning_site_identity_saturation.py). The original 570 predictions, 19 recorded losses, 23 target years (2003–2025), learner, regularization and adverse 2016 target year were preserved exactly. [GitHub Actions #38109049710](https://github.com/zuizui0223/Tampa/actions/runs/38109049710) reproduced the original comparator and confirmed:
 
-**Status: executable; node-saturated outcome not yet confirmed.**
-Until its results are inspected, it is not established whether quantitative
-early warning reflects *dynamic within-node deterioration* instead of
-persistent site vulnerability. Independently, the frozen
-[condition-leading test](results/condition_leads_thinning_v1.json)
-did **not** support an annual blade-length/shoot-density → next-year
-frequency-thinning sequence, so the ecological mainline is
-partially independent state axes rather than a demonstrated serial cascade.
+- **node + geography/time/effort:** pooled AUC **0.671**, macro log loss **0.14827**;
+- **same reference + source-year focal frequency and all-point Braun–Blanquet:** AUC **0.736**, macro log loss **0.14723**;
+- **17/23** target-year log-loss wins, one-sided year sign p **0.01734**, frozen primary rule **PASS**;
+- target year **2016 was strongly adverse** (node+quant minus node annual log loss **+0.30563**), and remains in the primary.
+
+Thus quantitative **observation state retains out-of-time recorded-loss information beyond a categorical persistent-transect signature**. This is not proof of causal deterioration, actual mortality, finite-point detection correction or an intervention-ready early warning.
+
+The separate descriptive [capacity-limited operational audit](docs/EARLY_WARNING_MONITORING_UTILITY_V1.md) used exactly those predictions. At a nominal top-10% annual visit cap (realized **47/570 = 8.2%** alerts), node alone captured **6/19** recorded losses while node+quant captured **9/19**. At a nominal top-20% cap (realized **105/570 = 18.4%**), the comparison was **9/19 -> 13/19**. These are retrospective, conditional-on-next-year-visit counts; not validated full-network surveillance or demonstrated benefit from treatment.
+
+**Observation-process issue now being audited separately:** fixed Tampa transects often revisit stable metre-mark IDs, so a simple independent spatial redraw `(1-p)^n` cannot automatically explain all recorded losses. [Analysis/81](analysis/81_early_warning_fixed_mark_overlap.py) is a post-hoc descriptive test of whether marks that were focal-positive at source were actually resampled at target. Its outcome is not yet confirmed and cannot rescue or reinterpret the frozen early-warning primary.
+
+Independently, the frozen [condition-leading test](results/condition_leads_thinning_v1.json) did **not** support an annual blade-length/shoot-density -> next-year frequency-thinning sequence. The ecological mainline therefore remains multiple partially independent state axes rather than a demonstrated serial decline cascade.
 
 ## Current reproducible result
 
