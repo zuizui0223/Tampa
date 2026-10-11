@@ -19,6 +19,8 @@ jobs:
     if: github.repository == 'zuizui0223/Tampa'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,7 +31,7 @@ jobs:
           python-version: '3.12'
       - name: Verify approved source and extract exact reviewed payload
         run: |
-          test "$(git rev-parse HEAD^)" = "27e73daf75815da27b733f7def89638800f065de"
+          test "$(git rev-parse HEAD^)" = "438469a5778108dc0495db0c4c00e50087012848"
           python - <<'PY'
           import base64, hashlib, io, tarfile
           from pathlib import Path
