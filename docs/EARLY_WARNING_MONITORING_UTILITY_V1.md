@@ -10,11 +10,18 @@ This post-hoc diagnostic therefore asks:
 
 > Under a fixed annual monitoring budget, does the quantitative-state model capture more subsequently recorded absences than the same model with stable site identity but without source-year quantitative state?
 
-## Existing endpoint cannot be promoted yet
+## Completed original reference-saturation result
 
-The site-saturated falsification is implemented in `analysis/77_early_warning_site_identity_saturation.py` but was marked **not yet confirmed** in the 2026-10-08 mainline. Its result must be opened and interpreted before asserting within-node early-warning value.
+The [original site-saturated falsification](results/early_warning_site_identity_saturation_v1_contract.json) was fixed as a post-hoc reference audit before this monitoring-utility extension, and succeeded on [GitHub Actions #38109049710](https://github.com/zuizui0223/Tampa/actions/runs/38109049710).
 
-The new audit does not improve or replace that result. If quantitative information fails the node-saturated comparison, an apparently useful top-k watchlist is exploratory operational stratification rather than evidence that **dynamic within-meadow deterioration** is being detected.
+| Matched frozen reference | Pooled AUC | Macro target-year log loss |
+|---|---:|---:|
+| node identity + space/time/effort | 0.67055 | 0.148268 |
+| node identity + same reference + frequency/BB | 0.73636 | 0.147230 |
+
+The node+quant arm won **17 of 23** target years; the one-sided sign-test p was **0.01734**, and the frozen support rule passed. The macro log-loss increment is small (**-0.001037**); 2016 was strongly adverse (**+0.30563**, retained).
+
+This establishes **conditional prediction of a future recorded state** beyond a stable-site signature. It does **not** identify active degradation or rule out finite sampling, detection variation or temporally changing local conditions. The entire endpoint remains internally evaluated and outcome-exposed at the research-program level, not independent external validation.
 
 ## Fixed descriptive comparison
 
@@ -29,6 +36,19 @@ The nominal 10% and 20% are illustrations, not adopted management budgets. Actua
 **Eligibility / prospective deployment limit.** Historical scored rows are conditional on a source-positive transect being **resurveyed in the immediately next calendar year**. This fact is known for the retrospective evaluation, but not necessarily when a manager would issue a forward-looking watchlist. Ranking only these scored rows therefore does not test full-network prospective deployment, where future survey participation, missing visits, inaccessible nodes and unit-level cost are additional unknowns. It is best called a *conditional follow-up audit*, not an implemented annual surveillance program. No missing target survey is imputed to persistence or loss.
 
 **Scale / units.** The index uses annual transect-level recorded absence (zero focal sampled marks), not permanent metre-mark demographic extinction. Sampled point counts vary; low frequency could predict non-detection through finite sampling as well as biological state. The model does not separate those processes.
+
+## Empirical results of historical capacity audit
+
+The same successful run evaluated the frozen 570 matched walk-forward predictions (19 recorded-loss events, 23 years). The annual integer cap yields **47 alerts** for the nominal 10% rule and **105 alerts** for the nominal 20% rule; these correspond to realized **8.25%** and **18.42%** of the scored rows.
+
+| Nominal cap | Fixed-node reference | Node + quantitative state | Additional captured events |
+|---|---|---|---:|
+| 10% (47 alerts) | **6/19** recorded losses (precision 12.8%) | **9/19** (precision 19.1%) | +3 |
+| 20% (105 alerts) | **9/19** (precision 8.6%) | **13/19** (precision 12.4%) | +4 |
+
+The operational advantage occurred without changing the number of flagged transects: 13 annual selections differed at the 10% cap and 35 at the 20% cap. **2016 did not improve at either cap**, with 1/5 recorded losses captured by either model at the 10% or 20% cap.
+
+These are post-hoc **descriptive event capture** counts, not a new significance test. They are potentially useful for prioritizing closer observation of *recorded absence*, but do not quantify preventing losses, treatment efficacy or the benefit of a policy in a fully eligible prospective network.
 
 ## Biological-process boundary: a no-change detection-floor null
 
@@ -96,4 +116,4 @@ python analysis/78_early_warning_monitoring_utility.py \
   --out results/generated_site_warning/early_warning_monitoring_utility_v1.json
 ```
 
-The preceding frozen model and source reconstruction must succeed. No empirical capacity-audit result is stored in this document in advance.
+The source reconstruction and existing model replay succeeded in GitHub Actions #38109049710; the counts above come from its archived JSON artifact. The fixed-mark overlap follow-up is a separate pending descriptive audit.
