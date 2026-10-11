@@ -5,12 +5,18 @@ on:
     paths:
       - "manuscript/**"
       - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - "validation/verify_warning_reporting_sync.py"
+      - "results/warning_reporting_*.json"
+      - "results/early_warning_fixed_mark_overlap_verified_v1.json"
       - ".github/workflows/manuscript-integrity.yml"
   pull_request:
     branches: [main]
     paths:
       - "manuscript/**"
       - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - "validation/verify_warning_reporting_sync.py"
+      - "results/warning_reporting_*.json"
+      - "results/early_warning_fixed_mark_overlap_verified_v1.json"
       - ".github/workflows/manuscript-integrity.yml"
   workflow_dispatch:
 
@@ -26,6 +32,8 @@ jobs:
         run: python manuscript/build_manuscript.py --out manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
       - name: Verify generated manuscript is current
         run: git diff --exit-code -- manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
+      - name: Verify warning results and all three generated manuscripts
+        run: python validation/verify_warning_reporting_sync.py
       - name: Audit high-risk wording
         run: |
           python - <<'PYCODE'
