@@ -30,6 +30,24 @@ The nominal 10% and 20% are illustrations, not adopted management budgets. Actua
 
 **Scale / units.** The index uses annual transect-level recorded absence (zero focal sampled marks), not permanent metre-mark demographic extinction. Sampled point counts vary; low frequency could predict non-detection through finite sampling as well as biological state. The model does not separate those processes.
 
+## Biological-process boundary: a no-change detection-floor null
+
+There is a simpler reason that low source-year focal frequency can predict next-year *recorded absence*, even when there is **no real biological deterioration** between years.
+
+If every sampled mark independently detects focal seagrass with constant probability `p` and `n` marks are sampled next year, the probability of zero recorded detections is
+
+```text
+P(no recorded Thalassia at next visit | p, n) = (1 - p)^n.
+```
+
+For two illustrative **constant** focal occupancy probabilities corresponding approximately to the previously reported median source frequencies of historically lost and persistent groups (`p = 0.0627` vs `0.3022`), and a hypothetical `n=20` independent sampled marks, this detection-only probability is approximately **27.4% versus 0.075%**, despite an unchanged biological state in both cases.
+
+**These numbers are not Tampa estimates of false absence rates.** Actual transect marks are spatially structured and often revisited, conditional detection is not independent, p is measured with finite sampling and a different n, the source groups were defined retrospectively by their later outcomes, and survey schedules/effort can change (notably around 2016).
+
+This analytical counterexample establishes a crucial inferential limit: lower observed source frequency can increase risk of next-year recorded absence **without any decrease in latent occurrence or abundance**. Out-of-time improvement of a frequency-based classifier by itself therefore supports *forecasting a recorded observation transition*, but not a biological condition-to-loss mechanism, an extinction warning, or a measured lead time for habitat decline.
+
+A biological early-warning claim would require external detection-aware observations (e.g. repeat surveys or robust plot-level occupancy/abundance evidence of true change), not reinterpretation or retuning of the existing annual predictor. No further post-hoc occupancy-parameter grids are authorized in this descriptive operational audit.
+
 ## Interpretation
 
 - **Positive node-saturated discrimination + more captured losses at capacity:** evidence of potentially useful historical prioritization, still requiring external operational validation.
