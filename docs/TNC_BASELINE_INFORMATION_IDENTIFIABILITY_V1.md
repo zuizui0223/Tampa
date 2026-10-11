@@ -108,7 +108,17 @@ The first successful CI run (GitHub Actions [#38058934036](https://github.com/zu
 | 2025 | 5 | 180 | 42.8% | 88.3% |
 | 2026 | 5 | 172 | 39.5% | 90.7% |
 
-Because comparisons sharing a quadrat are dependent, these hundreds of pairwise comparisons **cannot** be reported as independent sample sizes or used for binomial confidence intervals. The first successful pipeline did not provide independent-quadrat weighting. The subsequent pipeline version explicitly reports **each quadrat-year first** and uses equal-quadrat means as the primary descriptive calibration summary. Its output, not the pair-weighted table, controls claims about typical site-level rater agreement once verified.
+Because comparisons sharing a quadrat are dependent, these hundreds of pairwise comparisons **cannot** be reported as independent sample sizes or used for binomial confidence intervals.
+
+The second successful CI run ([#38108623222](https://github.com/zuizui0223/Tampa/actions/runs/38108623222), 2026-10-11) reported each **quadrat-year first**, then gave each quadrat equal weight:
+
+| Year | Independent quadrats | Equal-quadrat exact-category agreement | Equal-quadrat within-one-category agreement | Mean absolute ordinal-rank difference |
+|---|---:|---:|---:|---:|
+| 2024 | 6 | **42.98%** | **94.05%** | 0.630 |
+| 2025 | 5 | **42.78%** | **88.33%** | 0.689 |
+| 2026 | 5 | **38.89%** | **90.16%** | 0.715 |
+
+The values confirm appreciable *observer-level ordinal grading variation* under calibration conditions, not a measured bias in long-term Tampa temporal slopes or a longitudinal decline in survey reliability. At only five or six independent quadrats per year, do **not** test an apparent 2024-to-2026 agreement trend or convert the paired agency comparisons into a binomial precision claim. The primary biological inference remains prospective and unobserved.
 
 **Critical endpoint restriction:** The source file is filtered to species-labelled `Thalassia` abundance records. A missing focal species report is not a verified zero. Consequently, the first script's printed zero proportion of group-pair detection discordance **is non-estimable**, not evidence of perfect absence/presence agreement. The revised analysis sets this endpoint to NA and prints `NOT_ESTIMABLE_FOCAL_RECORDS_ONLY`. No ecological presence-loss interpretation may be inferred from the training pairs.
 
