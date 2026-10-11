@@ -96,8 +96,8 @@ summaries <- lapply(2024:2026, function(yr) {
     stop("Site aggregation lost or duplicated comparison pairs")
   data.frame(
     year = yr,
-    original_focal_abundance_records = source_records_per_year[as.character(yr)],
-    explicit_zero_records = explicit_zero_per_year[as.character(yr)],
+    original_focal_abundance_records = source_records_per_year[which(2024:2026 == yr)],
+    explicit_zero_records = explicit_zero_per_year[which(2024:2026 == yr)],
     independent_training_quadrats = nrow(sites),
     dependent_group_pairs = nrow(yrpairs),
     equal_quadrat_exact_agreement = mean(sites$exact_agreement),
