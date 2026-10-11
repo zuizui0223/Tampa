@@ -118,6 +118,8 @@ The second successful CI run ([#38108623222](https://github.com/zuizui0223/Tampa
 | 2025 | 5 | **42.78%** | **88.33%** | 0.689 |
 | 2026 | 5 | **38.89%** | **90.16%** | 0.715 |
 
+Across the 16 available quadrat-years, an equally weighted descriptive average gives **41.6% exact agreement**, **91.0% within-one-category agreement**, and **0.675 BB ordinal-category positions** mean absolute difference. These 16 quadrat-years should **not** be interpreted as 16 geographically independent sites, nor does a one-category deviation have a fixed percent-cover equivalent.
+
 The values confirm appreciable *observer-level ordinal grading variation* under calibration conditions, not a measured bias in long-term Tampa temporal slopes or a longitudinal decline in survey reliability. At only five or six independent quadrats per year, do **not** test an apparent 2024-to-2026 agreement trend or convert the paired agency comparisons into a binomial precision claim. The primary biological inference remains prospective and unobserved.
 
 **Critical endpoint restriction:** The source file is filtered to species-labelled `Thalassia` abundance records. A missing focal species report is not a verified zero. Consequently, the first script's printed zero proportion of group-pair detection discordance **is non-estimable**, not evidence of perfect absence/presence agreement. The revised analysis sets this endpoint to NA and prints `NOT_ESTIMABLE_FOCAL_RECORDS_ONLY`. No ecological presence-loss interpretation may be inferred from the training pairs.
