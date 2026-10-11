@@ -48,6 +48,29 @@ This analytical counterexample establishes a crucial inferential limit: lower ob
 
 A biological early-warning claim would require external detection-aware observations (e.g. repeat surveys or robust plot-level occupancy/abundance evidence of true change), not reinterpretation or retuning of the existing annual predictor. No further post-hoc occupancy-parameter grids are authorized in this descriptive operational audit.
 
+## Fixed-mark revisit falsification of the independent-resampling explanation
+
+The elementary `(1-p)^n` model above **assumes independent new draws of sampling locations**. The actual Tampa monitoring programme uses stable transect identifiers and recurring metre-mark `locationID`s. The fixed-mark geometry provides a sharper discriminating question than the independent-draw example:
+
+> For a transect recorded Thalassia-positive in year t and unrecorded in year t+1, were the **specific metre marks that were Thalassia-positive at t** resampled at t+1?
+
+This is answerable from the source's `Point`-event `locationID` rather than inferred from transect frequency.
+
+Let `P_t` be source-year Thalassia-positive mark IDs and `S_(t+1)` the actually sampled mark IDs in the target year. Define:
+
+```text
+m = |P_t ∩ S_(t+1)|
+f = m / |P_t|
+```
+
+- `m=0`: the original positive marks were not resampled, so a change in the sampling footprint can contribute to recorded disappearance even if those unvisited patches persisted.
+- `m>=1`: at least one previously focal-positive mark was re-examined; if the whole transect is unrecorded, the combination of **unchanged local mark occupancy + perfect detection** is contradicted at that mark. This does not distinguish true shoot loss, temporary non-detection, physical shifting of the survey quadrat, or protocol variation.
+- `m=|P_t|`: all previously positive marks are nominally revisited. A generic independent-redraw explanation is particularly inappropriate, but source and target detection processes still need direct validation.
+
+`analysis/81_early_warning_fixed_mark_overlap.py` reconstructs the original **688 consecutive source-positive transect transitions with 24 recorded losses**, validates mark-level states against the original annual endpoint, and reports positive-mark revisit overlap for those outcomes, 2016 specifically, and the **exact scored 570/19 walk-forward subset**. It uses the already-frozen point-event reconstruction in `analysis/33_community_buffering.py` and verifies pinned raw-source blob hashes; no new predictor, fitted model, sensitivity-window tuning or biological-response exclusion is allowed.
+
+The audit was authored after the long-term outcomes had already been opened. It is a descriptive assessment of **observation-process plausibility**, not a new preregistered test of sea-grass deterioration. No overlap values or positive ecological conclusion are supplied until the empirical workflow succeeds.
+
 ## Interpretation
 
 - **Positive node-saturated discrimination + more captured losses at capacity:** evidence of potentially useful historical prioritization, still requiring external operational validation.
