@@ -61,8 +61,7 @@ for (yr in 2024:2026) {
       idx <- idx + 1L
       rows[[idx]] <- data.frame(
         year = yr, site = s,
-        category_difference = abs(a - b),
-        detection_disagreement = as.integer(xor(a == 0L, b == 0L))
+        category_difference = abs(a - b)
       )
     }
   }
@@ -70,34 +69,68 @@ for (yr in 2024:2026) {
 if (!length(rows)) stop("No independent group pairs on same training quadrats")
 pairs <- do.call(rbind, rows)
 
+# Pair summaries describe all possible agency comparisons, not independent replicates.
+# Use each *quadrat/year* as one equally weighted unit in the primary description.
+site_parts <- split(pairs, paste(pairs$year, pairs$site, sep = "::"))
+by_quadrat <- do.call(rbind, lapply(site_parts, function(a) {
+  data.frame(
+    year = a$year[1L], site = a$site[1L],
+    number_of_group_pairs = nrow(a),
+    exact_agreement = mean(a$category_difference == 0L),
+    within_one_agreement = mean(a$category_difference <= 1L),
+    mean_abs_rank_difference = mean(a$category_difference),
+    stringsAsFactors = FALSE
+  )
+}))
+row.names(by_quadrat) <- NULL
+stopifnot(nrow(by_quadrat) >= 3L)
+source_records_per_year <- vapply(2024:2026, function(y) sum(d$yr == y), integer(1))
+explicit_zero_per_year <- vapply(2024:2026, function(y) sum(d$yr == y & d$cat == 0L), integer(1))
+
 summaries <- lapply(2024:2026, function(yr) {
   yrpairs <- pairs[pairs$year == yr, , drop = FALSE]
-  if (!nrow(yrpairs)) stop(paste("No paired estimates in year", yr))
+  sites <- by_quadrat[by_quadrat$year == yr, , drop = FALSE]
+  if (!nrow(yrpairs) || nrow(sites) < 2L)
+    stop(paste("Insufficient independent training quadrats in year", yr))
+  if(sum(sites$number_of_group_pairs) != nrow(yrpairs))
+    stop("Site aggregation lost or duplicated comparison pairs")
   data.frame(
     year = yr,
-    training_quadrats_with_two_or_more_groups = length(unique(yrpairs$site)),
-    number_of_group_pairs = nrow(yrpairs),
-    exact_BB_category_agreement = mean(yrpairs$category_difference == 0L),
-    within_one_category_agreement = mean(yrpairs$category_difference <= 1L),
-    mean_absolute_category_difference = mean(yrpairs$category_difference),
-    median_absolute_category_difference = stats::median(yrpairs$category_difference),
-    group_pair_presence_zero_disagreement = mean(yrpairs$detection_disagreement),
+    original_focal_abundance_records = source_records_per_year[as.character(yr)],
+    explicit_zero_records = explicit_zero_per_year[as.character(yr)],
+    independent_training_quadrats = nrow(sites),
+    dependent_group_pairs = nrow(yrpairs),
+    equal_quadrat_exact_agreement = mean(sites$exact_agreement),
+    equal_quadrat_within_one_agreement = mean(sites$within_one_agreement),
+    equal_quadrat_mean_abs_rank_difference = mean(sites$mean_abs_rank_difference),
+    quadrat_exact_agreement_min = min(sites$exact_agreement),
+    quadrat_exact_agreement_max = max(sites$exact_agreement),
+    pair_weighted_exact_agreement = mean(yrpairs$category_difference == 0L),
+    pair_weighted_within_one_agreement = mean(yrpairs$category_difference <= 1L),
+    pair_weighted_mean_abs_rank_difference = mean(yrpairs$category_difference),
+    presence_absence_disagreement = NA_real_,
+    detection_estimability = "NOT_ESTIMABLE_FOCAL_RECORDS_ONLY",
     stringsAsFactors = FALSE
   )
 })
 result <- do.call(rbind, summaries)
 utils::write.csv(result, file.path(outdir, "thalassia_bb_intercalibration_2024_2026.csv"), row.names = FALSE)
+utils::write.csv(by_quadrat,
+                 file.path(outdir, "thalassia_bb_intercalibration_by_quadrat_2024_2026.csv"),
+                 row.names = FALSE)
 writeLines(c(
   "MEASUREMENT_LAYER_ONLY / NOT_A_CAUSAL_EFFECT / NOT_A_TAMPA_FUTURE_OUTCOME",
   paste("source_commit:", source_commit),
   paste("verified_upstream_git_blob:", source_blob),
-  "8 raw BB values -> ordinal ranks 0 to 7, without treating ordinal distance as percent cover",
-  "Comparisons are between agencies at same training quadrat; no independent true value",
-  "Pair observations within site/year are dependent. Descriptive agreement only.",
-  "Training quadrats may not represent difficult sparse Thalassia permanent-meter-mark observations.",
-  "Missing species records are not assumed to be zeros. Zero disagreement only for explicit zeros.",
-  "Interagency calibration variation is not a complete bound on latent meadow-state measurement error."
+  "8 raw BB values -> ordinal ranks 0 to 7, not percent cover",
+  "Inference unit is the original calibration quadrat-year, not a group pair",
+  "Equal-quadrat summaries are primary descriptions; pair-weighted summaries are sensitivity",
+  "Only 5-6 independent quadrats per year; no nominal pair-level p values or CIs",
+  "Presence/absence interobserver disagreement is NOT ESTIMABLE: focal Thalassia abundance records are filtered, and unreported species cannot be treated as zero",
+  "Intercalibration quadrats may not represent sparse permanent-meter-mark meadow observations",
+  "Group-agreement is not an independent true value or a calibration of latent biological-state error",
+  "No TNC association, future ecological response or mechanistic inference tested"
 ), file.path(outdir, "claim_boundary.txt"))
 unlink(temp)
 print(result, row.names = FALSE)
-cat("PASS: pinned source verified; aggregate within-quadrat disagreement only\n")
+cat("PASS: pinned source verified; independent quadrat-weighted measurement audit\n")
