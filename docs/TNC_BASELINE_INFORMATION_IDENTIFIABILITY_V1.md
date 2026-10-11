@@ -100,7 +100,19 @@ The actual Braun–Blanquet categories are `0, 0.1, 0.5, 1, 2, 3, 4, 5`, i.e. **
 
 `analysis/80_thalassia_bb_intercalibration_external.R` verifies the upstream Git blob, preserves these eight categories, and pairs *independent group ratings at exactly the same calibration quadrat and year*. It reports annual total group-pair counts, exact and within-one-category agreement, mean absolute ordinal category difference and explicit-zero-versus-positive disagreement. Unknown or missing species reports are **not** imputed to absence.
 
-No calibration agreement estimates are inserted into this report before actually running the script. The R/CI output is an aggregate descriptive **measurement-layer diagnostic**, not a model of TNC or next-year meadow state.
+The first successful CI run (GitHub Actions [#38058934036](https://github.com/zuizui0223/Tampa/actions/runs/38058934036), on 2026-10-10) independently downloaded and Git-blob-verified the upstream data, and produced these **pair-weighted descriptions**:
+
+| Year | Distinct calibration quadrats | Non-independent group comparisons | Exact BB-category agreement | Within-one-category agreement |
+|---|---:|---:|---:|---:|
+| 2024 | 6 | 148 | 43.9% | 93.9% |
+| 2025 | 5 | 180 | 42.8% | 88.3% |
+| 2026 | 5 | 172 | 39.5% | 90.7% |
+
+Because comparisons sharing a quadrat are dependent, these hundreds of pairwise comparisons **cannot** be reported as independent sample sizes or used for binomial confidence intervals. The first successful pipeline did not provide independent-quadrat weighting. The subsequent pipeline version explicitly reports **each quadrat-year first** and uses equal-quadrat means as the primary descriptive calibration summary. Its output, not the pair-weighted table, controls claims about typical site-level rater agreement once verified.
+
+**Critical endpoint restriction:** The source file is filtered to species-labelled `Thalassia` abundance records. A missing focal species report is not a verified zero. Consequently, the first script's printed zero proportion of group-pair detection discordance **is non-estimable**, not evidence of perfect absence/presence agreement. The revised analysis sets this endpoint to NA and prints `NOT_ESTIMABLE_FOCAL_RECORDS_ONLY`. No ecological presence-loss interpretation may be inferred from the training pairs.
+
+The R/CI result is a descriptive **measurement-layer diagnostic**, not a model of TNC or next-year meadow state.
 
 ### Important limitations
 
