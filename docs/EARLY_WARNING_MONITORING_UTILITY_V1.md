@@ -26,6 +26,10 @@ Primary operational contrast is **node+quantitative versus node** at the same ac
 
 The nominal 10% and 20% are illustrations, not adopted management budgets. Actual alert fractions are reported because integer node counts may create deviations.
 
+**Eligibility / prospective deployment limit.** Historical scored rows are conditional on a source-positive transect being **resurveyed in the immediately next calendar year**. This fact is known for the retrospective evaluation, but not necessarily when a manager would issue a forward-looking watchlist. Ranking only these scored rows therefore does not test full-network prospective deployment, where future survey participation, missing visits, inaccessible nodes and unit-level cost are additional unknowns. It is best called a *conditional follow-up audit*, not an implemented annual surveillance program. No missing target survey is imputed to persistence or loss.
+
+**Scale / units.** The index uses annual transect-level recorded absence (zero focal sampled marks), not permanent metre-mark demographic extinction. Sampled point counts vary; low frequency could predict non-detection through finite sampling as well as biological state. The model does not separate those processes.
+
 ## Interpretation
 
 - **Positive node-saturated discrimination + more captured losses at capacity:** evidence of potentially useful historical prioritization, still requiring external operational validation.
