@@ -52,15 +52,21 @@ Among 15 repeatedly sampled transects, the median within-transect cover range wa
 
 This panel therefore does not support a universal seagrass decline. Instead, it reproduces the broader state-decoupling proposition in a different species and monitoring network: a binary presence state can be saturated while quantitative meadow state changes substantially and heterogeneously. Because this analysis followed an earlier opening of the NPS response during an estimability test, it is a post-hoc external ecological comparison rather than untouched predictive replication.
 
-## Low quantitative state preceded some next-year recorded losses within Tampa
+## Quantitative state predicted recorded loss under two specified references
 
-The state-decoupling result motivated a forward-looking question within Tampa: among transects where *Thalassia* was still recorded, did quantitative meadow state contain information about whether the focal species would be unrecorded the following year?
+Across 688 consecutive source-positive transitions, 24 were followed by recorded loss and 664 by persistence. Median source focal frequency was 0.0627 before loss versus 0.302 before persistence; the all-point Braun–Blanquet medians were 0.0495 and 0.713. These are differences in source state, not measurements of the rate of preceding decline.
 
-Across 688 consecutive source-positive transitions, 24 were followed by next-year recorded loss and 664 by recorded persistence. Source-year quantitative state was substantially lower before recorded loss. Median focal frequency was 0.0627 before loss compared with 0.302 before persistence, and median Braun–Blanquet all-point index was 0.0495 before loss compared with 0.713 before persistence.
+The original space/time/effort comparison gave pooled AUC 0.636 to 0.739 and macro annual log loss 0.15563 to 0.14645 after quantitative augmentation. The subsequent regularized node-ID comparison retained the same 570 predictions, 19 losses and 23 target years. AUC increased from 0.67055 to 0.73636 and macro annual log loss decreased from 0.148268 to 0.147230. The augmented arm improved log loss in 17/23 years (one-sided sign test p = 0.0173448), meeting the frozen reference-audit rule. The absolute macro improvement was small. Target year 2016 remained adverse, with an augmented-minus-reference log-loss difference of +0.305633 (Table S10). These are internally evaluated, outcome-exposed results, not external confirmation.
 
-A strict walk-forward comparison trained only on earlier target years. A baseline model containing year, geography, bay segment, survey timing and sampled-point effort achieved a macro mean log loss of 0.1556. Adding source-year focal frequency and Braun–Blanquet state reduced macro mean log loss to 0.1465. The quantitative-state model performed better in 17 of 23 target years, with a one-sided paired Wilcoxon p-value of 0.00271; pooled AUC increased from 0.636 to 0.739.
+At nominal annual capacities of 10% and 20%, the fixed lists selected 47 and 105 historical alerts per model. Quantitative augmentation increased recorded-loss capture from 6 to 9 of 19 and from 9 to 13 of 19, respectively; augmented precision was 19.1% and 12.4%. These counts describe conditional follow-up targeting, not prevention of loss (Table S12).
 
-Target year 2016 was strongly adverse for the quantitative-state model and was retained in the primary analysis. Its presence shows that low current quantitative state is not a deterministic precursor of next-year recorded loss. The result instead supports a narrower hypothesis: quantitative degradation can contain information about instability of the subsequent recorded state before the focal species becomes unrecorded. Because this question was formulated after observing the broader Tampa state-decoupling pattern, it remains an exploratory internally walk-forward-validated result rather than prospective confirmation.
+## Fixed-mark revisits constrain the sampling-footprint explanation
+
+Of the 24 recorded-loss events, 10 revisited all former positive marks, seven revisited some and seven revisited none. Thus 17/24 revisited at least one formerly positive mark. In the scored subset, the partition was seven all, seven some and five none, giving 14/19 with a revisit. The 24 and 19 events involved 18 and 14 nodes, respectively, not independent meadows. All five 2016 loss events revisited a previously positive mark (Table S11).
+
+Using the original lists without refitting or reranking, captures involving at least one revisited positive mark increased from four to six under the 10% capacity and from seven to nine under the 20% capacity. The additional captures split into two revisited and one unvisited event at 10%, and two revisited and two unvisited events at 20%. Neither list lost a previously captured event. The added revisited events differed between capacities; these partitions are descriptive and cannot be added as independent confirmations (Table S12).
+
+The absence of any revisit leaves the fate of former positive points unresolved. A revisit excludes omission of all those points as the sole explanation, but cannot distinguish true local change from imperfect detection, effective quadrat repositioning or protocol variation. No loss was relabelled as a false alarm or as confirmed mortality.
 
 ## Immediate local state was strongly informative, whereas older-history value was reference-dependent
 
@@ -116,13 +122,13 @@ The external panel therefore strengthens a general monitoring proposition rather
 
 This distinction should be relevant beyond seagrasses wherever monitoring compresses a continuously varying foundation-species state into occupied/unoccupied habitat. More broadly, the foundation-species concept emphasizes that structural persistence and ecosystem function need not be interchangeable properties (Ellison et al., 2005).
 
-## Quantitative state may provide earlier warning than recorded loss
+## Conditional prediction is not identification of a decline mechanism
 
-Within Tampa, low focal frequency and low Braun–Blanquet state preceded a subset of next-year recorded losses and improved strict walk-forward prediction beyond space, time and survey-effort covariates. This provides a plausible operational consequence of state decoupling: quantitative degradation can become detectable before the coarse recorded state changes.
+The quantitative-state increment survived the specified L2-regularized node-ID reference. That is evidence of out-of-time recorded-state information beyond that fitted reference, not proof that all stable-site alternatives were eliminated or that within-node physiological decline was identified. Low state and declining state are not interchangeable. The small average log-loss improvement, rare events, adverse 2016 result and dependence on subsequent survey attendance limit operational extrapolation.
 
-The endpoint must be interpreted carefully. A recorded loss is not demographic extinction, and a subsequent return is not necessarily recolonization. Detection, within-transect patchiness and protocol differences can all affect the recorded state. The strongly adverse 2016 target year also demonstrates that quantitative state is not a universal early-warning rule. We therefore treat the analysis as evidence that quantitative state contains information about **recorded-state instability**, not as a validated collapse predictor.
+The fixed-mark audit narrows one alternative explanation: added capture is not confined to events in which no previous positive mark was revisited. Nevertheless, the same nominal metre-mark ID does not ensure identical microquadrat placement or perfect detection. Recorded loss is not demographic extinction, and unvisited positive marks do not establish continuing presence. The independent-new-draw formula (1-p)^n remains an illustrative counterexample, not a fitted detection model for the repeated-mark archive.
 
-Prospective use would require freezing the model before a genuinely future monitoring wave or applying the same contract to a response-unopened external dataset with explicit zero-versus-missing semantics. The current result is best viewed as a testable monitoring hypothesis generated by the Tampa state hierarchy.
+A proposed observation-quality safeguard is to report both the number of sampled points and the number of previously positive points revisited. These are distinct. For example, S1T17 in 2007–2008 shared 109 sampled mark IDs and had 110 target-year marks, yet neither of its two source-positive marks was revisited. This motivates better documentation, not a demonstrated management benefit. Prospective use still requires detection-aware follow-up, frozen eligibility and an explicit cost/false-alarm context.
 
 ## The temporal signal is better described as recent local state plus persistent site heterogeneity than as long memory
 

@@ -76,17 +76,17 @@ Three single-year 2022 Tingles Island identities were flagged as possible revers
 
 # Supplementary Methods S5. Next-year recorded-state instability
 
-The exploratory early-warning analysis was motivated only after the Tampa state-decoupling pattern had been established. The endpoint is therefore internal strict walk-forward validation, not untouched prospective prediction.
+This endpoint was formulated after exposure to the Tampa state-decoupling results. The internal walk-forward comparison and subsequent reference audit are developmental, not untouched external or preregistered ecological confirmation.
 
-Consecutive annual transitions were formed within stable Tampa nodes. A transition was eligible only when the focal species was recorded in the source year. The outcome was next-year recorded loss, defined as the focal species being unrecorded at the same node in the immediately following year. Recorded loss is an observation-state endpoint and is not equated with demographic extinction.
+The registry contains 688 source-positive consecutive annual transitions (24 recorded losses, 664 persistences). A missing next-year visit is not an absence. Recorded loss is non-detection at all eligible sampled points in the next year, not demographic extinction.
 
-The final registry contained 688 source-positive consecutive transitions: 24 next-year recorded losses and 664 recorded persistences.
+The original baseline used **source year**, longitude, latitude, water body, cyclic source-survey date and log source point count. The quantitative arm added source-year frequency and all-point Braun–Blanquet. Each target-year fold trained only on earlier target years and required at least five earlier losses and 50 earlier persistences, yielding 570 predictions, 19 losses and 23 scored years (2003–2025). Standardized numeric and one-hot categorical inputs entered LogisticRegression(C=1.0, max_iter=2000).
 
-Two logistic-regression arms were compared. The baseline included target year, geographic coordinates, water-body identity, cyclic source-survey timing, and sampled-point effort. The quantitative arm added source-year focal frequency and all-point Braun–Blanquet state.
+The post-hoc reference audit added node identity to both arms without changing folds, features, regularization or outcomes. Node coefficients were L2-regularized, so this is not an unpenalized saturated fixed-effect identification design. The frozen rule required lower macro annual log loss, at least 16/23 yearly improvements and a one-sided sign-test probability below 0.05. Pooled AUC is descriptive. The adverse 2016 target year remains primary; its exclusion is sensitivity only (Table S10).
 
-Evaluation was strictly walk-forward by target year. For each target year, training data contained only earlier target years. A training gate required sufficient prior recorded losses and persistences before a target year could be scored. Performance was calculated independently for each target year and summarized by macro mean log loss and Brier score. Pooled AUC is reported descriptively.
+The nominal 10%/20% annual alert lists use max(1, floor(capacity times that year's scored count)), with lexical node-ID tie-breaking. They are retrospective conditional-on-resurvey lists. No capacity was optimized and no extra inferential test was fitted (Table S12).
 
-Target year 2016 remained in the primary score even though the quantitative model was strongly adverse in that year. A declared sensitivity excludes 2016 because the 2016/2017 recorded-state pulse has independent protocol concerns; that sensitivity does not replace the primary result.
+For fixed-mark matching, source-positive IDs and target-sampled IDs were unions over eligible visits within each year. Losses were partitioned according to whether none, some or all previously positive IDs were revisited. The same nominal ID need not imply the same microquadrat position or perfect detectability. Original lists were not reranked after this partition. This is not a new significance test or mortality endpoint (Tables S11–S12).
 
 # Supplementary Methods S6. Temporal-state diagnostics
 
@@ -230,6 +230,40 @@ A manuscript-integrity workflow rebuilds the single-file manuscript from section
 
 The repository-level stopping rule is part of the analysis rather than a housekeeping note. The initial manuscript is considered scientifically complete without identifying a new causal mechanism. A future mechanism claim requires genuinely new state information, a future monitoring wave, or a response-unopened and pre-authorized external source.
 
+# Supplementary Tables S10–S12. Verified recorded-state audits
+
+These tables report existing frozen predictions and post-hoc observation-process descriptions, not new biological outcomes. Source computation: run 38109944875, artifact 11691158710, ZIP SHA256 `18109267f68732c5460a9e4d087e2711282ed71f13f96ed7d0a484ed0320d89e`. Canonical partitions: `results/early_warning_fixed_mark_overlap_verified_v1.json`. A separate archive reaggregation checked the exported probabilities and counts without refitting.
+
+## Table S10. Matched prediction references
+
+| Reference | Macro annual log loss | Pooled AUC | Pooled Brier score |
+|---|---:|---:|---:|
+| Space/time/effort | 0.155629 | 0.63635 | 0.032167 |
+| Space/time/effort + quantity | 0.146452 | 0.73856 | 0.029781 |
+| Regularized node ID + space/time/effort | 0.148268 | 0.67055 | 0.031418 |
+| Same regularized reference + quantity | 0.147230 | 0.73636 | 0.030017 |
+
+All arms use the same 570 predictions, 19 recorded losses and 23 target years. The node-reference increment won 17/23 years (frozen one-sided sign p = 0.0173448); its macro annual log-loss difference was -0.001037 and its 2016 difference +0.305633. A reference-audit PASS is not proof of causal deterioration or independent external validation. "Quantity" denotes source frequency and all-point Braun–Blanquet, not measured biomass.
+
+## Table S11. Previous positive marks revisited during recorded-loss events
+
+| Population | Events | None revisited | Some, not all | All revisited |
+|---|---:|---:|---:|---:|
+| All loss events | 24 | 7 | 7 | 10 |
+| Scored loss events | 19 | 5 | 7 | 7 |
+| 2016 loss events | 5 | 0 | 3 | 2 |
+
+The 24 full-cohort events involve 18 nodes; the 19 scored events involve 14 nodes. These rows are nested populations, not independent replicates. No revisit leaves the fate of the previous positive marks unresolved; at least one revisit rules out omission of every previous positive mark as the sole explanation, not observation error generally.
+
+## Table S12. Original annual alert lists, unchanged after mark classification
+
+| Nominal cap | Alerts/model | All captures: node | All captures: +quantity | Revisited captures: node | Revisited captures: +quantity |
+|---|---:|---:|---:|---:|---:|
+| 10% | 47 | 6 | 9 | 4 | 6 |
+| 20% | 105 | 9 | 13 | 7 | 9 |
+
+The added captures split into two revisited/one unvisited event at 10% and two revisited/two unvisited events at 20%. No previously captured loss was dropped. The two additional revisited events differ across capacities and cannot be added as independent confirmations. Overall augmented precision remains 9/47 = 19.1% and 13/105 = 12.4%; unvisited events were not reclassified as false alarms. The classification is post-hoc, not a new significance test, and the same nominal mark is not proof of identical placement or perfect detection.
+
 # Supplementary display inventory
 
 **Table S1** Post-2016 within-transect state slopes and bootstrap intervals by bay segment  
@@ -248,3 +282,7 @@ The repository-level stopping rule is part of the analysis rather than a houseke
 **Figure S7** Published marginal and compound hot–fresh exposure through time  
 **Table S8** Published joint-stress plant-condition predictive comparisons  
 **Table S9** External early-warning validation terminal ledger
+
+**Table S10** Matched original and regularized node-ID prediction references  
+**Table S11** None/some/all prior positive mark revisits for recorded-loss events  
+**Table S12** Unchanged annual alert-list captures, with the descriptive revisit partition

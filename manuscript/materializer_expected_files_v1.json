@@ -1,0 +1,25 @@
+{
+  "schema": "tampa.verified_warning_materialization_files_v1",
+  "base_source_head": "27e73daf75815da27b733f7def89638800f065de",
+  "files": {
+    "README.md": "05c6f9322af9cbcea526f9aaab707889f0a7f0e99150951a7471b1c168651ea3",
+    "validation/verify_warning_reporting_sync.py": "6527c3890d1d77ecb4ca32f00b267b687d6f407fc2672e03fe4336679783649f",
+    "results/warning_reporting_sync_v1.json": "04653b83bb84680bcbec0a9705003afaea54ffe3af6709cbe2f042981b408a9f",
+    "results/warning_reporting_metrics_v1.json": "156b8d2975843d31518849dcbf0c983b940eb84a0ac19b697df8582aaf318a2a",
+    "docs/EARLY_WARNING_MANUSCRIPT_SYNC_V1.md": "9e8eec76418bc8dae06d005dc298c2ec2f82e875f42b5363bc7cfff28ef3166d",
+    "docs/EARLY_WARNING_MONITORING_UTILITY_V1.md": "e797904a2febef220551a5fd698a69582750442d6e2a0f46a7d82f8c73a71815",
+    "manuscript/sync_verified_warning_v1.py": "a132b76609b48802574b2c986b0eec1eec8012c257f1c92fe97e287268b1f219",
+    "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_CAPTIONS_V1.md": "e2e4cfd9c40fc754c39c1c63cc531224c0b19718c3766d0830437c3e6c4aec9a",
+    "manuscript/TAMPA_ECOLOGY_METHODS_V1.md": "ffc89c5bbd0731cb60b9a913148af97006340a8d0b569642782afbf1abb298d6",
+    "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md": "22ffc433260785c900053c7d9c5cb4e1e7e19e5a852eb6804386943df186298a",
+    "manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md": "dabe95687bb1f09ef4ae71e7dde74fbdca198f573bfc4882c9cbd9de4807aecd",
+    "manuscript/TAMPA_ECOLOGY_ABSTRACT_INTRO_V1.md": "6f1958ce81bfd945f8605f5b3c4ff245d4b584fa5a7b587707f36dd3f50b7d64",
+    "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md": "ac1d5bb7fefdf2b7e72c1a2412d142fb37135b8d8692ec2494e6badb102fab76",
+    "manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md": "c3446559b5c6b8d7ea4fb29430b8f23e630f3a76b7c1f575513aee6d1ae9f92b",
+    "manuscript/TAMPA_ECOLOGY_SUPPLEMENT_V1.md": "7a9e90035490bb6eb43a9ee551ef17de577dc0eecd08f76608c900e3493e3935",
+    "manuscript/TAMPA_ECOLOGY_FIGURE_CAPTIONS_ESCO_V1.md": "10fae4ee383481151cb978cffca7fa25eea2bf05a517244171ae23bdc4970e9a",
+    "manuscript/TAMPA_ECOLOGY_FIGURE_CAPTIONS_V1.md": "d74d12392b892631e02f335f847ec48edebab4b99fa5e22dfb94e809fc174ea1",
+    "docs/superpowers/plans/2026-10-11-warning-reporting-sync.md": "6960527f3b4c391e6fe430aa8a1e28430de28b91ed40cedfadfa19445d472558"
+  },
+  "scientific_analysis_changes": false
+}

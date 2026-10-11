@@ -46,17 +46,17 @@ Because the NPS response had already been opened during the earlier estimability
 
 ## Quantitative state and next-year recorded-state instability
 
-We constructed consecutive annual transitions for stable Tampa transects. The source year was required to record *Thalassia* presence. The endpoint was next-year recorded loss, defined as the focal species being unrecorded at the same transect in the immediately following year. This endpoint describes observation-state instability and is not equated with demographic extinction.
+We constructed 688 consecutive annual transitions from source-year recorded-positive Tampa transects: 24 next-year recorded losses and 664 recorded persistences. Recorded loss means that no eligible sampled point recorded the focal species during the next year; it is not demographic extinction, measured mortality or loss of underground rhizomes. A missing target-year survey was not coded as either loss or persistence.
 
-The transition registry contained 688 source-positive consecutive transitions, of which 24 were followed by recorded loss and 664 by recorded persistence.
+The original logistic-regression comparison used source year, longitude, latitude, water-body identity, cyclic source-survey date and log source sampled-point count. The quantitative arm added source-year focal frequency and the all-point Braun–Blanquet index. Strict walk-forward fitting used only transitions with target years earlier than the scored year. A training gate required at least five earlier losses and 50 earlier persistences. The resulting evaluation contained 570 predictions, including 19 losses, in 23 target years (2003–2025).
 
-We compared two logistic-regression arms under strict target-year walk-forward validation. For each scored target year, models were trained only on transitions from earlier target years.
+A subsequent, outcome-exposed reference audit added categorical stable node identity to both arms without changing the observations, predictors, training folds or learner. Numeric predictors were standardized and categorical predictors one-hot encoded. LogisticRegression(C=1.0, max_iter=2000) was L2-regularized, including the node coefficients. Thus the comparison tests incremental prediction beyond this specified regularized node-ID reference, not removal of every persistent-site explanation or identification of within-node biological deterioration.
 
-The baseline contained source year, longitude, latitude, bay-segment identity, cyclic survey-date terms and log sampled-point effort. The quantitative augmentation added source-year focal frequency and Braun–Blanquet all-point state. Model regularization and training gates were fixed in the analysis script before the scored comparison.
+Log loss and Brier score were calculated by target year; pooled AUC was descriptive. The frozen reference-audit rule required lower macro annual log loss, improvement in at least 16 of 23 years, and a one-sided year sign-test probability below 0.05. Target year 2016 was retained in the primary evaluation; omitting it remained sensitivity only. The audit was fixed before its own result was evaluated but after exposure to the broader Tampa outcomes; it is not an untouched preregistered ecological confirmation.
 
-Performance was summarized by target-year log loss and Brier score, macro-averaged across scored target years. We also reported pooled AUC descriptively. Target year 2016 was retained in the primary analysis even though the quantitative arm performed substantially worse in that year. Exclusion of 2016 was reported only as a declared sensitivity because the 2016/2017 pulse had independent protocol concerns.
+For an operational description, the unchanged out-of-time probabilities ranked eligible transects separately within each target year. Nominal 10% and 20% capacities selected max(1, floor(capacity times the yearly scored count)); ties were ordered by node ID. Actual alert counts, captured recorded losses and precision were reported without optimizing thresholds or adding a significance test. This evaluation is conditional on being resurveyed the next year, not a prospective full-network deployment.
 
-Because this endpoint was formulated after observing Tampa state decoupling, we classify it as exploratory strict walk-forward internal validation.
+The fixed-mark audit matched previously recorded-positive point-event locationIDs to sampled IDs in the target year. A source point was positive if recorded in any eligible source-year visit; a target point was revisited if sampled in any eligible target-year visit. We classified losses into none, some, or all former positive marks revisited. The same nominal mark does not guarantee identical microquadrat placement or perfect detection. The original alert lists were partitioned by revisit status after inspection without refitting or reranking. This is an observation-process description, not a new mechanism test (Supplementary Tables S10–S12).
 
 ## Temporal-state diagnostics
 
@@ -87,7 +87,7 @@ The purpose of this sequence was to constrain causal interpretation, not to iden
 
 ## AI-assisted research and manuscript development
 
-ChatGPT (OpenAI) was used interactively during development of the analysis repository to assist with code drafting, reproducibility auditing, alternative-explanation test design, and manuscript drafting and editing. All scientific questions, frozen decision rules, source selections, analyses, interpretations, code changes, and final manuscript text were reviewed and approved by the human author(s), who take responsibility for the work. The AI system is not listed as an author.
+ChatGPT (OpenAI) was used interactively during development of the analysis repository to assist with code drafting, reproducibility auditing, alternative-explanation test design, and manuscript drafting and editing. Human authors retain responsibility for reviewing the sources, analyses, code and final text before submission. This working draft does not attest that final author review and approval have been completed. The AI system is not listed as an author.
 
 ## Reproducibility and figure data
 

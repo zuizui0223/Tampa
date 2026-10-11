@@ -1,0 +1,46 @@
+{
+  "schema": "tampa.early_warning_monitoring_utility_v1.descriptive_spec",
+  "created_on": "2026-10-08",
+  "evidence_class": "post_hoc_after_historical_outcome_exposure",
+  "parent": "results/early_warning_site_identity_saturation_v1_contract.json",
+  "inputs": "results/generated_site_warning/early_warning_site_identity_predictions.csv produced by analysis/77_early_warning_site_identity_saturation.py",
+  "exact_cohort": {
+    "scored_rows": 570,
+    "recorded_losses": 19,
+    "target_years": 23,
+    "range": [
+      2003,
+      2025
+    ],
+    "must_include_2016": true
+  },
+  "arms": [
+    "space",
+    "space_quant",
+    "node",
+    "node_quant"
+  ],
+  "within_year_ranking": "descending frozen out-of-time predicted loss probability, deterministic node_id lexical tie-break",
+  "capacity_fractions": [
+    0.1,
+    0.2
+  ],
+  "number_flagged": "max(1,floor(capacity_fraction * number_scored_nodes_this_target_year))",
+  "outputs": [
+    "alerts and realized alert fraction",
+    "loss events captured",
+    "event recall",
+    "alert precision",
+    "precision lift over unstratified event prevalence",
+    "net additional events captured and changed watchlist members from node to node_quant",
+    "2016 contributions"
+  ],
+  "rules": [
+    "No probability refitting, no capacity selection based on outcomes, no year deletion",
+    "All metrics are descriptive and exploratory; no formal p value or positive claim threshold",
+    "AUC/log-loss improvement is not evidence of useful alarm precision by itself",
+    "Site-saturated comparator is required; report space results only as legacy comparator",
+    "No capacity limited watchlist is promoted before actual results of the node saturated audit are confirmed and externally validated",
+    "Recorded absence does not imply plant mortality; alert capture is not treatment effect or ecosystem function"
+  ]
+}

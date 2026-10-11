@@ -1,0 +1,38 @@
+{
+  "schema": "tampa.early_warning_fixed_mark_overlap_v1.descriptive_contract",
+  "evidence_class": "posthoc_observation_process_audit_after_annual_outcome_exposure",
+  "date": "2026-10-11",
+  "parent": "results/early_warning_site_identity_saturation_v1_contract.json",
+  "source": {
+    "repository": "tbep-tech/obis-example",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "point_identity": "Point event locationID constructed from Transect plus Site/meter mark",
+    "input_reconstruction": "analysis/33_community_buffering.py"
+  },
+  "population": "Exact frozen source-positive consecutive transect transitions from analysis/09_quantitative_early_warning.py",
+  "registry": {
+    "all_transitions": 688,
+    "all_losses": 24,
+    "scored_rows": 570,
+    "scored_losses": 19,
+    "target_2016_retained": true
+  },
+  "source_positive_rule": "An exact fixed mark is positive if Thalassia occurs in any eligible source-year visit.",
+  "target_sampling_rule": "An exact fixed mark is sampled if its point-event locationID occurs in any eligible target-year visit.",
+  "metrics": [
+    "number of previously Thalassia-positive marks",
+    "number and fraction of those marks resampled in target year",
+    "number of all marks shared between years",
+    "fractions of recorded-loss and recorded-persistence transitions with >=1 source-positive mark revisited",
+    "same diagnostics on 2016 and frozen scored cohort"
+  ],
+  "statistical_status": "Descriptive counts only; no threshold, significance criterion, model refit, subgroup rescue or new early-warning claim",
+  "boundaries": [
+    "Zero positive-mark overlap allows a sampling-footprint alternative but does not prove biological persistence.",
+    "Positive-mark overlap plus loss excludes the joint assumptions of unchanged exact-mark occupancy, perfectly comparable site placement, and perfect detection; it does not tell which assumption failed.",
+    "Nominally repeated meter-mark IDs do not guarantee identical microquadrat placement or perfect detectability.",
+    "Missing subsequent year visits never become loss labels.",
+    "Numeric overlap is not evidence of demographic extinction, stress mechanism, colonization or physiological failure.",
+    "Do not tune the mark definition, overlap threshold or year subset after results."
+  ]
+}

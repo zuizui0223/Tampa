@@ -35,3 +35,10 @@
 **Table S8** Predictive comparison for the exact published 30 °C / 25 ppt joint hot–fresh duration beyond marginal hot/fresh duration and local previous-year state. Primary plant-condition and secondary quantitative-state outcomes are shown together with their frozen evidence class.
 
 **Table S9** Terminal ledger for the two response-opened external early-warning attempts discussed in the manuscript: Caribbean SeagrassNet v1 and NPS Tier-3 v2. The table records terminal status, reason, estimability where applicable, model fits, predictive scores, and whether the endpoint counts as external predictive evidence.
+
+
+**Table S10** Original and regularized node-ID predictive comparisons on exactly the same 570 scored cases. Metrics are not an independent external validation.
+
+**Table S11** Revisit status of previously recorded-positive nominal metre marks during recorded-loss events. Events are repeated observations within nodes, not independent meadows.
+
+**Table S12** Loss captures under the original nominal 10%/20% annual capacities, partitioned by revisit status without refitting or reranking. The partition is descriptive, not a new causal or significance test.
