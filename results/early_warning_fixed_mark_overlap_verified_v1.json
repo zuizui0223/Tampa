@@ -1,0 +1,141 @@
+{
+  "schema": "tampa.early_warning_fixed_mark_overlap_verified_v1",
+  "status": "COMPLETED_OBSERVATION_PROCESS_AUDIT",
+  "verified_on": "2026-10-11",
+  "evidence_class": "posthoc_descriptive_archive_audit_not_new_mechanism_evidence",
+  "source": {
+    "run_id": 38109944875,
+    "head_sha": "fc3792e21f2d34e74de10cdbed6b48ac5603aabe",
+    "artifact_id": 11691158710,
+    "archive_sha256": "18109267f68732c5460a9e4d087e2711282ed71f13f96ed7d0a484ed0320d89e"
+  },
+  "verification_scope": "Independent reaggregation of archived rows and probabilities; no independent raw Event/Occurrence rebuild; no model refitting.",
+  "registry": {
+    "all_transitions": 688,
+    "recorded_losses": 24,
+    "scored_rows": 570,
+    "scored_losses": 19,
+    "scored_years": 23
+  },
+  "loss_partitions": {
+    "all_losses": {
+      "events": 24,
+      "no_positive_mark_revisited": 7,
+      "some_but_not_all_revisited": 7,
+      "all_positive_marks_revisited": 10,
+      "at_least_one_revisited": 17
+    },
+    "scored_losses": {
+      "events": 19,
+      "no_positive_mark_revisited": 5,
+      "some_but_not_all_revisited": 7,
+      "all_positive_marks_revisited": 7,
+      "at_least_one_revisited": 14
+    },
+    "target_2016_losses": {
+      "events": 5,
+      "no_positive_mark_revisited": 0,
+      "some_but_not_all_revisited": 3,
+      "all_positive_marks_revisited": 2,
+      "at_least_one_revisited": 5
+    }
+  },
+  "capacity_decomposition": [
+    {
+      "nominal_capacity": 0.1,
+      "alerts_per_arm": 47,
+      "captured_all_node": 6,
+      "captured_all_node_quant": 9,
+      "captured_revisited_node": 4,
+      "captured_revisited_node_quant": 6,
+      "newly_captured_loss_split": {
+        "events": 3,
+        "no_positive_mark_revisited": 1,
+        "some_but_not_all_revisited": 0,
+        "all_positive_marks_revisited": 2,
+        "at_least_one_revisited": 2
+      },
+      "lost_captures": 0,
+      "selection_changes": 13,
+      "newly_captured_events": [
+        {
+          "node_id": "TBEP:seagrass:loc:S4T8",
+          "source_year": 2002,
+          "target_year": 2003,
+          "source_positive_mark_count": 1,
+          "source_positive_marks_resampled": 0
+        },
+        {
+          "node_id": "TBEP:seagrass:loc:S3T9",
+          "source_year": 2013,
+          "target_year": 2014,
+          "source_positive_mark_count": 2,
+          "source_positive_marks_resampled": 2
+        },
+        {
+          "node_id": "TBEP:seagrass:loc:S1T18",
+          "source_year": 2020,
+          "target_year": 2021,
+          "source_positive_mark_count": 1,
+          "source_positive_marks_resampled": 1
+        }
+      ]
+    },
+    {
+      "nominal_capacity": 0.2,
+      "alerts_per_arm": 105,
+      "captured_all_node": 9,
+      "captured_all_node_quant": 13,
+      "captured_revisited_node": 7,
+      "captured_revisited_node_quant": 9,
+      "newly_captured_loss_split": {
+        "events": 4,
+        "no_positive_mark_revisited": 2,
+        "some_but_not_all_revisited": 2,
+        "all_positive_marks_revisited": 0,
+        "at_least_one_revisited": 2
+      },
+      "lost_captures": 0,
+      "selection_changes": 35,
+      "newly_captured_events": [
+        {
+          "node_id": "TBEP:seagrass:loc:S4T8",
+          "source_year": 2002,
+          "target_year": 2003,
+          "source_positive_mark_count": 1,
+          "source_positive_marks_resampled": 0
+        },
+        {
+          "node_id": "TBEP:seagrass:loc:S1T4",
+          "source_year": 2005,
+          "target_year": 2006,
+          "source_positive_mark_count": 1,
+          "source_positive_marks_resampled": 0
+        },
+        {
+          "node_id": "TBEP:seagrass:loc:S3T2",
+          "source_year": 2005,
+          "target_year": 2006,
+          "source_positive_mark_count": 7,
+          "source_positive_marks_resampled": 2
+        },
+        {
+          "node_id": "TBEP:seagrass:loc:S3T9",
+          "source_year": 2010,
+          "target_year": 2011,
+          "source_positive_mark_count": 5,
+          "source_positive_marks_resampled": 3
+        }
+      ]
+    }
+  ],
+  "model_reference_boundary": "The node-ID one-hot coefficients are L2-regularized. Passing the frozen predictive comparison does not establish fully identified within-node deterioration.",
+  "claim_boundary": [
+    "Same nominal metre mark is not a guarantee of identical microquadrat placement or perfect detection.",
+    "Unvisited previous positive marks do not establish continuing biological presence.",
+    "The flag lists were not reranked or refitted after separating revisited/non-revisited events.",
+    "The capture partition is post-hoc descriptive only, not a new independent significance test.",
+    "Node-ID effects are L2-regularized; surviving prediction is beyond the specified reference model, not elimination of every fixed-site explanation.",
+    "No rhizome TNC, demographic mortality, physiological mechanism or intervention outcome is measured."
+  ]
+}
