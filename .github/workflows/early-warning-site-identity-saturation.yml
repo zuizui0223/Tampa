@@ -16,6 +16,8 @@ on:
       - "analysis/09_quantitative_early_warning.py"
       - "analysis/77_early_warning_site_identity_saturation.py"
       - "analysis/78_early_warning_monitoring_utility.py"
+      - "analysis/81_early_warning_fixed_mark_overlap.py"
+      - "analysis/33_community_buffering.py"
       - "results/early_warning_monitoring_utility_v1_contract.json"
       - "results/early_warning_site_identity_saturation_v1_contract.json"
       - ".github/workflows/early-warning-site-identity-saturation.yml"
