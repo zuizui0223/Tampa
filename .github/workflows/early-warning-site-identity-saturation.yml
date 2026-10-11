@@ -9,6 +9,7 @@ on:
       - "analysis/81_early_warning_fixed_mark_overlap.py"
       - "analysis/33_community_buffering.py"
       - "results/early_warning_monitoring_utility_v1_contract.json"
+      - "results/early_warning_fixed_mark_overlap_v1_contract.json"
       - "results/early_warning_site_identity_saturation_v1_contract.json"
       - ".github/workflows/early-warning-site-identity-saturation.yml"
   pull_request:
@@ -19,6 +20,7 @@ on:
       - "analysis/81_early_warning_fixed_mark_overlap.py"
       - "analysis/33_community_buffering.py"
       - "results/early_warning_monitoring_utility_v1_contract.json"
+      - "results/early_warning_fixed_mark_overlap_v1_contract.json"
       - "results/early_warning_site_identity_saturation_v1_contract.json"
       - ".github/workflows/early-warning-site-identity-saturation.yml"
   workflow_dispatch:
