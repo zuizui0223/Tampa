@@ -81,7 +81,57 @@ def main():
     assert np.linalg.matrix_rank(X)==X.shape[1],"positive-control design unexpectedly singular"
     beta=m.fit(valid)
     assert np.isfinite(beta) and abs(beta-0.08)<1e-7,beta
-    print("PASS: collinear TNC vs baseline fails closed; full-rank TNC effect remains estimable")
+    # The companion predeclared depth sensitivity is just as vulnerable:
+    # a local TNC difference can be exactly aliased with within-node depth.
+    dp_spec=importlib.util.spec_from_file_location(
+        "anchor_depth_frozen",ROOT/"analysis/76_anchor_tnc_future_bb_depth_sensitivity.py")
+    assert dp_spec and dp_spec.loader
+    depth=importlib.util.module_from_spec(dp_spec);dp_spec.loader.exec_module(depth)
+    dx=synthetic(identifiable=True)
+    dx["baseline_depth_m"]=0.5+dx["anchor_tnc"]/1000.0
+    dx["future_bb_anchor"]=0.65*dx["baseline_bb_anchor"]+8.0*dx["baseline_depth_m"]
+    dz=depth.prepare_depth(dx)
+    DX,_,_,_=depth.design(dz)
+    assert np.linalg.matrix_rank(DX)<DX.shape[1],"depth collinearity toy invalid"
+    try:
+        depth.fit(dz)
+    except np.linalg.LinAlgError:
+        pass
+    else:
+        raise AssertionError("DEPTH SENSITIVITY BUG: aliased TNC/depth returned pseudo-coefficient")
+
+    # Node-scale reserve-trajectory diagnostic can likewise alias
+    # delta TNC and current TNC when baseline reserve is constant.
+    dyn_spec=importlib.util.spec_from_file_location(
+        "dynamic_tnc_frozen",ROOT/"analysis/71_dynamic_reserve_future_diagnostic.py")
+    assert dyn_spec and dyn_spec.loader
+    dyn=importlib.util.module_from_spec(dyn_spec);dyn_spec.loader.exec_module(dyn)
+    dynrows=[]
+    for bay in dyn.BAYS:
+        for ni in range(10):
+            node=f"{bay}-{ni}"
+            delta=ni*0.4+0.1
+            for ai,anchor in enumerate(("q25","q50","q75")):
+                dynrows.append({
+                    "node_id":node,"water_body":bay,"anchor_id":anchor,
+                    "tnc_pre_anchor":100.0,"tnc_post_anchor":100.0+delta,
+                    "pre_tnc_date":"2027-07-24","post_tnc_date":"2027-09-03",
+                    "baseline_frequency_post":0.15+ni*0.01,
+                    "future_frequency":0.15+ni*0.01+0.01*delta,
+                    "pre_anchor_tnc_qc_pass":True,"post_anchor_tnc_qc_pass":True
+                })
+    dy=dyn.prepare(pd.DataFrame(dynrows))
+    assert len(dy)==30
+    Xd,_,_=dyn.design(dy)
+    assert np.linalg.matrix_rank(Xd)<Xd.shape[1],"dynamic alias toy invalid"
+    try:
+        dyn.fit(dy)
+    except np.linalg.LinAlgError:
+        pass
+    else:
+        raise AssertionError("RESERVE TRAJECTORY BUG: aliased stock/trajectory returned pseudo-coefficient")
+
+    print("PASS: decisive, depth, dynamic collinear models fail closed; identifiable TNC works")
 
 if __name__=="__main__":
     main()
