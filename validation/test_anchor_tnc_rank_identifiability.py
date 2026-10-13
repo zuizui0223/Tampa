@@ -7,6 +7,7 @@ misinterpreted as a biological positive or null coefficient.
 """
 from __future__ import annotations
 import importlib.util
+import hashlib
 import json
 import subprocess
 import sys
@@ -25,6 +26,29 @@ def load_module():
     module=importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+def assert_frozen_hash(script_path:str,freeze_path:str):
+    freeze=json.loads((ROOT/freeze_path).read_text())
+    data=(ROOT/script_path).read_bytes()
+    blob=hashlib.sha1(f"blob {len(data)}\0".encode()+data).hexdigest()
+    assert freeze["script_path"]==script_path
+    assert freeze["script_blob_sha1"]==blob,(freeze_path,blob)
+    assert freeze["status"]=="FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS"
+
+def run_nonestimable(script:Path,frame:pd.DataFrame,estimate_keys:tuple[str,...]):
+    with tempfile.TemporaryDirectory() as td:
+        csv=Path(td)/"synthetic_input.csv"
+        output=Path(td)/"synthetic_rank_result.json"
+        frame.to_csv(csv,index=False)
+        p=subprocess.run(
+            [sys.executable,str(script),"--input",str(csv),"--out",str(output)],
+            cwd=ROOT,capture_output=True,text=True,timeout=60)
+        assert p.returncode==0,(p.stdout,p.stderr)
+        result=json.loads(output.read_text())
+        assert result["status"]=="NONESTIMABLE_DESIGN_RANK",result
+        assert result["classification"]=="nonestimable",result
+        assert all(result.get(k) is None for k in estimate_keys),result
+        return result
 
 def synthetic(identifiable:bool):
     rng=np.random.default_rng(20261013)
@@ -46,6 +70,12 @@ def synthetic(identifiable:bool):
     return pd.DataFrame(rows)
 
 def main():
+    for model,freeze in (
+        ("analysis/72_anchor_tnc_future_bb_diagnostic.py","field/anchor_tnc_future_bb_analysis_freeze.json"),
+        ("analysis/76_anchor_tnc_future_bb_depth_sensitivity.py","field/anchor_tnc_depth_sensitivity_analysis_freeze.json"),
+        ("analysis/71_dynamic_reserve_future_diagnostic.py","field/dynamic_reserve_future_analysis_freeze.json"),
+    ):
+        assert_frozen_hash(model,freeze)
     m=load_module()
     singular=m.prepare(synthetic(identifiable=False))
     X,_,_=m.design(singular)
@@ -61,20 +91,11 @@ def main():
             "instead of refusing to estimate it"
         )
 
-    with tempfile.TemporaryDirectory() as td:
-        csv=Path(td)/"frozen_anchor_synthetic_input.csv"
-        output=Path(td)/"result.json"
-        synthetic(identifiable=False).to_csv(csv,index=False)
-        run=subprocess.run(
-            [sys.executable,str(SCRIPT),"--input",str(csv),"--out",str(output)],
-            cwd=ROOT,capture_output=True,text=True,timeout=60
-        )
-        assert run.returncode==0,(run.stdout,run.stderr)
-        result=json.loads(output.read_text())
-        assert result["status"]=="NONESTIMABLE_DESIGN_RANK",result
-        assert result["classification"]=="nonestimable",result
-        assert result["estimate"] is None and result["ci95"] is None
-        assert result["eligible_nodes"]==36 and result["eligible_anchor_rows"]==108
+    invalid_primary=run_nonestimable(
+        SCRIPT,synthetic(identifiable=False),("estimate","ci95","ci97_5_family")
+    )
+    assert invalid_primary["eligible_nodes"]==36
+    assert invalid_primary["eligible_anchor_rows"]==108
 
     valid=m.prepare(synthetic(identifiable=True))
     X,_,_=m.design(valid)
@@ -99,6 +120,12 @@ def main():
         pass
     else:
         raise AssertionError("DEPTH SENSITIVITY BUG: aliased TNC/depth returned pseudo-coefficient")
+
+    depth_result=run_nonestimable(
+        ROOT/"analysis/76_anchor_tnc_future_bb_depth_sensitivity.py",dx,
+        ("estimate_tnc","estimate_depth","ci95_tnc")
+    )
+    assert depth_result["eligible_nodes"]==36
 
     # Node-scale reserve-trajectory diagnostic can likewise alias
     # delta TNC and current TNC when baseline reserve is constant.
@@ -130,6 +157,12 @@ def main():
         pass
     else:
         raise AssertionError("RESERVE TRAJECTORY BUG: aliased stock/trajectory returned pseudo-coefficient")
+
+    dynamic_result=run_nonestimable(
+        ROOT/"analysis/71_dynamic_reserve_future_diagnostic.py",pd.DataFrame(dynrows),
+        ("estimate","ci95","ci97_5_family")
+    )
+    assert dynamic_result["eligible_nodes"]==30
 
     print("PASS: decisive, depth, dynamic collinear models fail closed; identifiable TNC works")
 
