@@ -266,7 +266,12 @@ assert "Direct paired canopy/ambient velocity layer" in program
 
 cons=(ROOT/"manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md").read_text()
 assert "buffer-then-threshold meadow model" not in cons
-assert "multiple partially independent degradation axes" in cons
+# The retrospective interpretation is a hierarchy of partially independent
+# *observed states*, not a universal ordered biological-degradation sequence.
+assert "multiple partially independent state axes" in cons
+assert "- occupancy / abundance;" in cons
+assert "- plant condition;" in cons
+assert "- community composition;" in cons
 assert "re-recorded / reappearing in the observation record" in cons
 
 disc=(ROOT/"manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md").read_text()
