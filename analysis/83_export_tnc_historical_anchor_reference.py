@@ -80,7 +80,7 @@ def construct(raw: dict) -> tuple[list[list], list[list], dict]:
                 anchor_rows.append([nid, bay, year, cls, float(site), float(bb),
                                     "HISTORICAL_REFERENCE_ONLY", "Not checked", "", SOURCE_URL])
         else:
-            if selected or by_node[nid] or int(node["positive_meter_marks"]) >= 3:
+            if selected or by_node.get(nid, []) or int(node["positive_meter_marks"]) >= 3:
                 raise ValueError(f"{nid}: sparse node contradicts historical anchor registry")
         node_rows.append([nid, bay, year, int(node["positive_meter_marks"]),
                           "Yes" if is_triplet else "No",
