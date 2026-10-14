@@ -66,6 +66,14 @@ The script classifies **only** candidate mark geometry:
 
 The exported CSV labels each location `sampling_authority_status=NOT_AUTHORIZED`, regardless of candidate status. It is a **candidate survey-linked index** only. It does not mutate `field/tnc_v2_precollection_freeze.json`, `field/integrated_campaign_resource_freeze.json`, any model/code hash, or a final author-approved anchor set.
 
+## Biological scope of the selected anchor cohort
+
+The frozen within-node TNC question is **conditional on current, established focal occupancy sufficient to locate three distinct *Thalassia*-positive marks**. The archival preflight found 38 three-mark nodes among 41 recently positive nodes; three sparse historical nodes had only one or two focal-positive marks. This is a real denominator limitation for interpretation, **not an invitation to relax or reselect the 36-node/6-per-bay design**.
+
+A future supported within-node TNC coefficient would mean measured reserve state helps forecast **divergence among already-occupied local patches with complete matched quantitative records**, after the specified baseline BB and node identity controls. It would not by itself establish a buffer against whole-meadow extinction, explain recovery of near-empty sites, or generalize to nodes unable to supply three current positive anchors. Conversely, a null within that restricted frame would not rule out a different reserve role at severely sparse or newly recolonizing locations.
+
+The selected cohort's current composition and the excluded sparse-node registry should be reported alongside the eventual point estimate rather than hidden. Historical selection eligibility is *not* contemporary eligibility.
+
 ## Non-negotiable downstream checks
 
 Before first outcome-bearing TNC collection, the separate monitoring and permit authority must verify the actual fixed locationID and core separation/no-disturbance geometry; the prospective method pilot must pass its frozen tissue/recovery/HPLC/preservation gates; resources and laboratory capacity must be frozen; every actual TNC sample/core ID must be bound to its **approved q25/q50/q75 mark**, and the original quantitative baseline must be preserved.
