@@ -1,0 +1,90 @@
+{
+  "schema": "tampa.tnc_anchor_triplet_fragility_v1",
+  "status": "ILLUSTRATIVE_RESPONSE_FREE_SCENARIOS_NOT_EMPIRICAL_YIELD_OR_POWER",
+  "source": "results/clonal_state_augmentation_primary_v1_contract.json",
+  "planning_frame": {
+    "three_anchor_nodes": 38,
+    "by_water_body": {
+      "Old Tampa Bay": 8,
+      "Middle Tampa Bay": 10,
+      "Lower Tampa Bay": 12,
+      "Boca Ciega Bay": 8
+    },
+    "minimum_complete_nodes": 36,
+    "minimum_per_bay": 6,
+    "anchors_per_node": 3,
+    "candidate_anchor_rows": 114,
+    "minimum_complete_anchor_rows": 108,
+    "allowed_whole_node_losses": 2
+  },
+  "deterministic_example": {
+    "candidate_anchor_rows": 114,
+    "passing_anchor_rows": 111,
+    "anchor_success_fraction": 0.973684211,
+    "three_failed_anchors_at_three_distinct_nodes": {
+      "complete_nodes": 35,
+      "gate_pass": false
+    },
+    "three_failed_anchors_at_one_node": {
+      "complete_nodes": 37,
+      "gate_pass": true
+    }
+  },
+  "scenarios": [
+    {
+      "hypothetical_single_anchor_completeness": 0.9,
+      "complete_node_probability_if_anchors_independent": 0.729,
+      "expected_complete_nodes_if_fully_independent": 27.702,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.000682229
+    },
+    {
+      "hypothetical_single_anchor_completeness": 0.95,
+      "complete_node_probability_if_anchors_independent": 0.857375,
+      "expected_complete_nodes_if_fully_independent": 32.58025,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.077307743
+    },
+    {
+      "hypothetical_single_anchor_completeness": 0.97,
+      "complete_node_probability_if_anchors_independent": 0.912673,
+      "expected_complete_nodes_if_fully_independent": 34.681574,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.343720134
+    },
+    {
+      "hypothetical_single_anchor_completeness": 0.98,
+      "complete_node_probability_if_anchors_independent": 0.941192,
+      "expected_complete_nodes_if_fully_independent": 35.765296,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.611568461
+    },
+    {
+      "hypothetical_single_anchor_completeness": 0.985,
+      "complete_node_probability_if_anchors_independent": 0.955671625,
+      "expected_complete_nodes_if_fully_independent": 36.315522,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.763273102
+    },
+    {
+      "hypothetical_single_anchor_completeness": 0.99,
+      "complete_node_probability_if_anchors_independent": 0.970299,
+      "expected_complete_nodes_if_fully_independent": 36.871362,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.897328161
+    },
+    {
+      "hypothetical_single_anchor_completeness": 0.995,
+      "complete_node_probability_if_anchors_independent": 0.985074875,
+      "expected_complete_nodes_if_fully_independent": 37.432845,
+      "probability_to_pass_original_replication_gate_if_fully_independent": 0.980987055
+    }
+  ],
+  "hypothetical_minimum_independent_anchor_completeness_to_reach_gate_probability": {
+    "0.5": 0.976187669,
+    "0.8": 0.986261359,
+    "0.9": 0.990117554,
+    "0.95": 0.992658332
+  },
+  "boundary": [
+    "These numerical probabilities assume independent anchor outcomes and independent nodes; correlated/bay-level failures or changing eligibility invalidate them.",
+    "A complete anchor includes TNC QC, quantitative current BB, matching future BB and undisturbed spatial correspondence; p is not merely chemical recovery.",
+    "Method-pilot 9/10 tissue or core yield is not evidence of sufficient complete triplet yield in the later four-bay study.",
+    "Do not alter original anchor IDs, rescue with supportive network-scale TNC, relax 36/6 gates, or impute/reassign anchors after future response access.",
+    "No ecological outcome, HPLC concentration, observed attrition probability or change in frozen inference is used."
+  ]
+}
