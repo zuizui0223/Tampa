@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "analysis/62_tnc_anchor_bb_four_bay_preflight.py"
+      - "analysis/83_export_tnc_historical_anchor_reference.py"
+      - "docs/TNC_HISTORICAL_ANCHOR_FIELD_REFERENCE_V1.md"
       - "results/clonal_state_prospective_v2_contract.json"
       - "docs/CLONAL_STATE_SAMPLING_PROTOCOL_V2.md"
       - ".github/workflows/tnc-anchor-bb-four-bay-preflight.yml"
@@ -22,10 +24,14 @@ jobs:
       - run: python -m pip install numpy
       - name: Audit quantitative anchor-level baseline feasibility
         run: python analysis/62_tnc_anchor_bb_four_bay_preflight.py --out results/generated_tnc_anchor_bb_four_bay/tnc_anchor_bb_four_bay_preflight_v1.json
+      - name: Self-test historical marker crosswalk
+        run: python analysis/83_export_tnc_historical_anchor_reference.py --self-test
+      - name: Export historical field reference from same pinned preflight
+        run: python analysis/83_export_tnc_historical_anchor_reference.py
       - name: Show result
         run: cat results/generated_tnc_anchor_bb_four_bay/tnc_anchor_bb_four_bay_preflight_v1.json
       - uses: actions/upload-artifact@v4
         with:
           name: tnc-anchor-bb-four-bay-preflight
-          path: results/generated_tnc_anchor_bb_four_bay/tnc_anchor_bb_four_bay_preflight_v1.json
+          path: results/generated_tnc_anchor_bb_four_bay/
           if-no-files-found: error
