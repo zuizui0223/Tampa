@@ -9,6 +9,11 @@ on:
       - "field/dynamic_reserve_future_analysis_freeze.json"
       - "field/anchor_tnc_future_bb_analysis_freeze.json"
       - "validation/test_site_template_resistant_diagnostics.py"
+      - "validation/test_anchor_tnc_rank_identifiability.py"
+      - "analysis/82_tnc_anchor_triplet_fragility.py"
+      - "results/tnc_anchor_triplet_fragility_v1.json"
+      - "docs/TNC_ANCHOR_TRIPLET_ATTRITION_V1.md"
+      - "docs/TNC_V2_PILOT_EXECUTION_CARD_V1.md"
       - "docs/TAMPA_SPECIFIC_ECOLOGICAL_PRINCIPLE_V1.md"
       - "results/clonal_state_prospective_v2_contract.json"
       - "results/event_stress_debt_prospective_v1_contract.json"
@@ -24,4 +29,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install -r requirements.txt
+      - name: Verify response-free complete-triplet attrition scenarios
+        run: |
+          python analysis/82_tnc_anchor_triplet_fragility.py --self-test
+          python analysis/82_tnc_anchor_triplet_fragility.py
+          git diff --exit-code -- results/tnc_anchor_triplet_fragility_v1.json
+      - run: python validation/test_anchor_tnc_rank_identifiability.py
       - run: python validation/test_site_template_resistant_diagnostics.py

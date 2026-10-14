@@ -213,6 +213,14 @@ It does **not** resolve:
 Those are the remaining logistics/resource freezes in
 `field/integrated_campaign_resource_freeze.json`.
 
+## Complete-node risk after pilot PASS
+
+Passing the frozen tissue/core/HPLC method pilot does **not** guarantee a confirmatory within-meadow TNC study. The current three-anchor quantitative-baseline preflight has **38 complete candidate nodes** (114 q25/q50/q75 anchors); the paper-level decisive gate is **>=36 complete nodes and >=6 per bay**. Thus only **two whole-node losses** are tolerable in this historical planning frame.
+
+A node fails that decisive eligibility gate if **any one** of its frozen anchors has invalid tissue/HPLC QC, unpaired baseline quantitative Braun–Blanquet, invalid future same-meter quantitative BB, or lost spatial correspondence. A global anchor success fraction can look high while too many different nodes have one missing anchor. This is a retention warning, **not a new pilot acceptance rule** or permission to replace anchors.
+
+Before the outcome-bearing campaign, preserve the authoritative q25/q50/q75 IDs and plan QC records to identify complete three-anchor nodes by bay. The [response-free attrition calculation](TNC_ANCHOR_TRIPLET_ATTRITION_V1.md) provides illustrative risk scenarios, not observed yield or revised thresholds.
+
 ## Hard boundary
 
 No outcome-bearing TNC core may be collected while the integrated readiness status is:

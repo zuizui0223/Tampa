@@ -105,7 +105,12 @@ def design(df:pd.DataFrame):
 
 def fit(df):
     X,y,k=design(df)
-    beta=np.linalg.lstsq(X,y,rcond=None)[0]
+    beta, _, rank, _=np.linalg.lstsq(X,y,rcond=None)
+    # When pre-TNC is constant, trajectory can be aliased with post stock.
+    # Reject unidentifiable coefficients instead of interpreting lstsq's
+    # arbitrary least-norm decomposition as reserve dynamics.
+    if rank<X.shape[1]:
+        raise np.linalg.LinAlgError("non-identifiable stock-versus-reserve-trajectory design")
     return float(beta[k])
 
 def stratified_bootstrap(df):
@@ -173,7 +178,13 @@ def main():
       ]
     }
     if gate:
-        est=fit(d)
+        try:
+            est=fit(d)
+        except np.linalg.LinAlgError:
+            result["status"]="NONESTIMABLE_DESIGN_RANK"
+            result["classification"]="nonestimable"
+            gate=False
+    if gate:
         boots=stratified_bootstrap(d)
         if len(boots)<0.95*BOOT:
             result["status"]="NONESTIMABLE_BOOTSTRAP_FAILURE"

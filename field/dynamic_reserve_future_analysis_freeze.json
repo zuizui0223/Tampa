@@ -3,7 +3,7 @@
   "frozen_on": "2026-10-03",
   "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
   "script_path": "analysis/71_dynamic_reserve_future_diagnostic.py",
-  "script_blob_sha1": "b32151c93a8c9c804b159c3295c3b03469b6a2e3",
+  "script_blob_sha1": "ad3b626df09af85a2470f41f94bd3045e836e9b3",
   "role": "secondary temporal site-template-resistant diagnostic; cannot replace or rescue the authoritative four-bay static TNC primary",
   "geography": [
     "Old Tampa Bay",
@@ -76,5 +76,14 @@
     "mitigation": "Use the authoritative HPLC technical-QC gate, matched anchor neighborhoods, three independent spatial anchors, and report paired-anchor change heterogeneity. Do not hide or residualize measurement error post hoc.",
     "interpretation": "A supported trajectory coefficient is evidence that matched recent reserve change carries information beyond current reserve state; it is not proof of hysteresis, memory or causal depletion.",
     "discrepancy_rule": "If conclusions depend strongly on one anchor or fail under predeclared measurement-sensitivity checks, label the trajectory result measurement-sensitive rather than supported."
+  },
+  "pre_outcome_identifiability_erratum": {
+    "date": "2026-10-13",
+    "status": "response-free synthetic rank-check correction",
+    "original_script_blob_sha1": "b32151c93a8c9c804b159c3295c3b03469b6a2e3",
+    "new_script_blob_sha1": "ad3b626df09af85a2470f41f94bd3045e836e9b3",
+    "reason": "Potential linear aliasing of delta_tnc_42d and tnc_post can yield finite pseudo-coefficients from unguarded least-squares.",
+    "scope": "Rank check and NONESTIMABLE_DESIGN_RANK only; 30/8 replication, 39-45 day interval, seed, confidence intervals and ancillary interpretation remain frozen.",
+    "regression_test": "validation/test_anchor_tnc_rank_identifiability.py"
   }
 }

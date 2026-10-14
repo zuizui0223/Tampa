@@ -3,7 +3,7 @@
   "frozen_on": "2026-10-03",
   "status": "FROZEN_BEFORE_FUTURE_OUTCOME_ACCESS",
   "script_path": "analysis/72_anchor_tnc_future_bb_diagnostic.py",
-  "script_blob_sha1": "d77bf90fe4ee17d4d81379b822aa39c3beef9852",
+  "script_blob_sha1": "2770e83607088b18c077c8bb0ce4a6aeaa6af9d4",
   "role": "paper-level decisive within-meadow state-augmentation primary; network-scale four-bay TNC model is supportive/generalization only",
   "geography": [
     "Old Tampa Bay",
@@ -49,5 +49,16 @@
     "no_imputation": "Do not impute, borrow, or replace a failed anchor TNC value after future outcome access.",
     "interpretation": "The diagnostic is intended to compare biological reserve heterogeneity within a transect, not analytical-quality heterogeneity."
   },
-  "inferential_hierarchy_contract": "results/clonal_state_inference_hierarchy_v1.json"
+  "inferential_hierarchy_contract": "results/clonal_state_inference_hierarchy_v1.json",
+  "pre_outcome_identifiability_erratum": {
+    "date": "2026-10-13",
+    "evidence_class": "synthetic_known_truth_before_any_outcome_bearing_rhizome_TNC_or_future_meadow_response",
+    "original_script_blob_sha1": "d77bf90fe4ee17d4d81379b822aa39c3beef9852",
+    "corrected_script_blob_sha1": "2770e83607088b18c077c8bb0ce4a6aeaa6af9d4",
+    "cause": "np.linalg.lstsq returned a finite minimum-norm TNC coefficient when within-node TNC was exactly collinear with baseline Braun-Blanquet and node fixed effects.",
+    "change": "Only reject rank-deficient design as NONESTIMABLE_DESIGN_RANK, and skip rank-deficient node-bootstrap draws; no refit, predictor selection, threshold, coefficient, interval or sampling-rule change.",
+    "frozen_hierarchy_unmodified": "results/clonal_state_inference_hierarchy_v1.json",
+    "red_test": "validation/test_anchor_tnc_rank_identifiability.py",
+    "claim_boundary": "The amendment guards estimability only. A supported association would still not identify causal rhizome reserve buffering, and the frozen 36-node / 6-per-bay replication gates remain mandatory."
+  }
 }

@@ -53,7 +53,12 @@ def design(df,node_col="node_id"):
 
 def fit(df,node_col="node_id"):
     X,y,k=design(df,node_col)
-    beta=np.linalg.lstsq(X,y,rcond=None)[0]
+    beta, _, rank, _=np.linalg.lstsq(X,y,rcond=None)
+    # A collinear within-node TNC contrast is not identified by the data.
+    # Never allow lstsq's minimum-norm pseudo-coefficient to become
+    # ecological evidence or a falsely precise bootstrap interval.
+    if rank<X.shape[1]:
+        raise np.linalg.LinAlgError("non-identifiable within-node anchor-TNC design")
     return float(beta[k])
 
 def cluster_bootstrap(df):
@@ -114,7 +119,13 @@ def main():
       ]
     }
     if gate:
-        est=fit(d)
+        try:
+            est=fit(d)
+        except np.linalg.LinAlgError:
+            result["status"]="NONESTIMABLE_DESIGN_RANK"
+            result["classification"]="nonestimable"
+            gate=False
+    if gate:
         boots=cluster_bootstrap(d)
         if len(boots)<0.95*BOOT:
             result["status"]="NONESTIMABLE_BOOTSTRAP_FAILURE"

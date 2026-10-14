@@ -78,7 +78,11 @@ def design(df,node_col="node_id"):
 
 def fit(df,node_col="node_id"):
     X,y,k_tnc,k_depth=design(df,node_col)
-    beta=np.linalg.lstsq(X,y,rcond=None)[0]
+    beta, _, rank, _=np.linalg.lstsq(X,y,rcond=None)
+    # Exact collinearity with depth/baseline/node effects makes TNC
+    # unidentifiable; a finite least-norm coefficient is not evidence.
+    if rank<X.shape[1]:
+        raise np.linalg.LinAlgError("non-identifiable depth-adjusted anchor-TNC design")
     return {
         "beta_tnc":float(beta[k_tnc]),
         "beta_depth":float(beta[k_depth]),
@@ -152,7 +156,13 @@ def main():
     }
 
     if gate:
-        est=fit(d)
+        try:
+            est=fit(d)
+        except np.linalg.LinAlgError:
+            result["status"]="NONESTIMABLE_DESIGN_RANK"
+            result["classification"]="nonestimable"
+            gate=False
+    if gate:
         boots=cluster_bootstrap(d)
         result["estimate_tnc"]=est["beta_tnc"]
         result["estimate_depth"]=est["beta_depth"]
