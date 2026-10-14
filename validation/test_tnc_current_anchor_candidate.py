@@ -4,6 +4,11 @@ from __future__ import annotations
 
 import importlib.util
 import unittest
+import subprocess
+import sys
+import csv
+import json
+import tempfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -92,6 +97,42 @@ class ProspectiveAnchorTests(unittest.TestCase):
             mod.build(nodes,[dict(marks[0],baseline_survey_date="2027-08-07")]+marks[1:])
         with self.assertRaises(ValueError):
             mod.build([dict(nodes[0],tnc_date="2027-08-30")]+nodes[1:],marks)
+
+    def test_cli_reports_candidate_not_field_authorization(self):
+        nodes,points=sample()
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            node_file=root/"node_date.csv"
+            point_file=root/"complete_current_point_roster.csv"
+            for path,rows in ((node_file,nodes),(point_file,points)):
+                with path.open("w",newline="",encoding="utf-8") as h:
+                    w=csv.DictWriter(h,fieldnames=list(rows[0]))
+                    w.writeheader()
+                    w.writerows(rows)
+            report=root/"candidate_status.json"
+            roster=root/"candidate_triplets.csv"
+            cmd=[sys.executable,str(SOURCE),"--nodes",str(node_file),
+                 "--points",str(point_file),"--out",str(report),
+                 "--candidate-csv",str(roster)]
+            cp=subprocess.run(cmd,text=True,capture_output=True,timeout=30)
+            self.assertEqual(cp.returncode,0,(cp.stdout,cp.stderr))
+            j=json.loads(report.read_text())
+            self.assertEqual(j["status"],"PASS_ANCHOR_CANDIDATE_GEOMETRY_ONLY")
+            with roster.open(newline="") as h:
+                exported=list(csv.DictReader(h))
+            self.assertEqual(len(exported),114)
+            self.assertTrue(all(x["sampling_authority_status"]=="NOT_AUTHORIZED"
+                                for x in exported))
+            for r in points:
+                if r["node_id"] in {f"synthetic-bay0-node{i}" for i in range(3)} and r["site_m"]=="30":
+                    r["baseline_bb_anchor"]="Reported"
+            with point_file.open("w",newline="",encoding="utf-8") as h:
+                w=csv.DictWriter(h,fieldnames=list(points[0]))
+                w.writeheader();w.writerows(points)
+            cp=subprocess.run(cmd,text=True,capture_output=True,timeout=30)
+            self.assertEqual(cp.returncode,2,(cp.stdout,cp.stderr))
+            self.assertEqual(json.loads(report.read_text())["status"],
+                             "STOP_COMPLETE_TRIPLET_GATE")
 
     def test_tie_break_is_nearest_then_lower_site(self):
         self.assertEqual(mod.quartile_sites([10,20,30,40]),[20.,30.,40.])
