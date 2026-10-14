@@ -13,6 +13,7 @@ on:
       - "analysis/82_tnc_anchor_triplet_fragility.py"
       - "results/tnc_anchor_triplet_fragility_v1.json"
       - "docs/TNC_ANCHOR_TRIPLET_ATTRITION_V1.md"
+      - "docs/TNC_V2_PILOT_EXECUTION_CARD_V1.md"
       - "docs/TAMPA_SPECIFIC_ECOLOGICAL_PRINCIPLE_V1.md"
       - "results/clonal_state_prospective_v2_contract.json"
       - "results/event_stress_debt_prospective_v1_contract.json"
