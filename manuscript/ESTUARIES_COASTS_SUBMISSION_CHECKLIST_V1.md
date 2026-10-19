@@ -11,6 +11,7 @@ Author instructions originally checked 2026-09-28; journal scope rechecked again
 - [x] NPS external comparison remains in the main text to reduce “strongly place-based / primarily descriptive” desk-rejection risk
 - [x] Mechanism-null analyses are secondary rather than the novelty claim
 - [ ] Final cover letter explains why the study tests a generally relevant coastal ecological-state question **rather than being primarily descriptive and place-based**, which CERF says is outside the journal's scope. No automatic Brief Report rescue is claimed.
+- [ ] Corresponding author approves potential desk-rejection risk and fallback to an aquatic-conservation monitoring application venue.
 
 ## Abstract and keywords
 
