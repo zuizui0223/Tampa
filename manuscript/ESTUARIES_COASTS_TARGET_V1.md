@@ -138,6 +138,7 @@ To minimize that risk:
 - no environmental variable is promoted merely because it is locally interesting;
 - the manuscript explicitly cites **Peng et al. (2026)** to acknowledge that dense-to-sparse seagrass mapping already exists globally, while Tampa contributes species-specific trait and community trajectories in fixed transects;
 - even with these safeguards, an editor may reasonably find the contribution too place-based; journal suitability is an **unresolved editorial judgement**, not a code-QC PASS.
+- the prospective **first fallback** is *Aquatic Conservation: Marine and Freshwater Ecosystems*, whose official Wiley scope explicitly accepts local-to-global research with conservation relevance (https://onlinelibrary.wiley.com/page/journal/10990755/homepage/productinformation.html). For Tampa, the contribution would be state-specific monitoring decisions, not validated causal remediation. Alternative journals also require substantive general/management relevance; switching titles alone cannot substitute for it.
 
 ## Current submission message
 
