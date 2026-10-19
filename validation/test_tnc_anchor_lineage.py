@@ -48,7 +48,8 @@ def fixtures():
            "approved_before_collection":"true","anchor_freeze_date":"2027-08-01"})
         tnc.append({**key,"core_id":f"SYNTH-CORE-{ai}",
             "core_collection_date":"2027-08-03",
-            "anchor_tnc":str(80+ai%3*10+ai//3*.03),
+            "soluble_nsc_mg_g":str(35+ai%3*2),
+            "starch_mg_g":str(45+ai%3*8+ai//3*.03),
             "anchor_tnc_qc_pass":"true"})
         future.append({
             "node_id":row["node_id"],"water_body":row["water_body"],
@@ -79,6 +80,7 @@ class TNCLineageTests(unittest.TestCase):
         self.assertEqual(result["lineage_rows"][0]["point_location_id"],
                          self.data[0][0]["point_location_id"])
         self.assertEqual(result["lineage_rows"][0]["core_id"],"SYNTH-CORE-0")
+        self.assertAlmostEqual(result["primary_input_rows"][0]["anchor_tnc"],80.0,places=10)
         self.assertEqual(result["lineage_rows"][0]["future_survey_date"],"2028-08-01")
         self.assertEqual(result["evidence_class"],"SYNTHETIC_OR_EXTERNALLY_SUPPLIED_UNVERIFIED_SOURCE_ONLY")
 
@@ -146,6 +148,21 @@ class TNCLineageTests(unittest.TestCase):
         result=self.m.build(candidates,approved,tnc,future)
         self.assertEqual(result["status"],"STOP_COMPLETE_TRIPLET_GATE")
         self.assertEqual(result["complete_nodes"],35)
+
+    def test_TNC_is_computed_from_both_frozen_HPLC_components(self):
+        candidates,approved,tnc,future=copy.deepcopy(self.data)
+        tnc[0]["starch_mg_g"]=""
+        result=self.m.build(candidates,approved,tnc,future)
+        self.assertEqual(result["status"],"STOP_COMPLETE_TRIPLET_GATE")
+        self.assertEqual(result["complete_nodes"],35)
+        candidates,approved,tnc,future=copy.deepcopy(self.data)
+        tnc[0]["soluble_nsc_mg_g"]="-5"
+        result=self.m.build(candidates,approved,tnc,future)
+        self.assertEqual(result["complete_nodes"],35)
+        candidates,approved,tnc,future=copy.deepcopy(self.data)
+        tnc[0]["anchor_tnc"]="1000"
+        with self.assertRaises(ValueError):
+            self.m.build(candidates,approved,tnc,future)
 
     def test_no_unapproved_or_post_collection_approval(self):
         candidates,approved,tnc,future=copy.deepcopy(self.data)
