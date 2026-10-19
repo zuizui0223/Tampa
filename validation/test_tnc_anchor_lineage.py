@@ -80,7 +80,13 @@ class TNCLineageTests(unittest.TestCase):
         self.assertEqual(result["lineage_rows"][0]["point_location_id"],
                          self.data[0][0]["point_location_id"])
         self.assertEqual(result["lineage_rows"][0]["core_id"],"SYNTH-CORE-0")
-        self.assertAlmostEqual(result["primary_input_rows"][0]["anchor_tnc"],80.0,places=10)
+        reference=self.data[2][0]
+        linked=next(z for z in result["primary_input_rows"]
+                    if z["node_id"]==reference["node_id"] and
+                    z["anchor_id"]==reference["anchor_id"])
+        self.assertAlmostEqual(linked["anchor_tnc"],
+                               float(reference["soluble_nsc_mg_g"])+
+                               float(reference["starch_mg_g"]),places=10)
         self.assertEqual(result["lineage_rows"][0]["future_survey_date"],"2028-08-01")
         self.assertEqual(result["evidence_class"],"SYNTHETIC_OR_EXTERNALLY_SUPPLIED_UNVERIFIED_SOURCE_ONLY")
 
