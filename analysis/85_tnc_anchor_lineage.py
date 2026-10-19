@@ -79,6 +79,7 @@ def build(candidates,approvals,cores,future):
     if set(approved)!=set(selection): raise ValueError("incomplete frozen approved triplet registry")
 
     measured,ids={},set()
+    core_ids_by_anchor={}
     for row in cores:
         check(row,CORE,"TNC core")
         key=row["node_id"],row["anchor_id"]
@@ -89,6 +90,7 @@ def build(candidates,approvals,cores,future):
         cid=str(row["core_id"]).strip()
         if not cid or cid in ids: raise ValueError("core_id duplicate or blank")
         ids.add(cid)
+        core_ids_by_anchor[key]=cid
         when=day(row["core_collection_date"],"TNC core collection")
         if when!=source["planned"] or when<approved[key]:
             raise ValueError("core collection or approval timing mismatch")
@@ -134,13 +136,33 @@ def build(candidates,approvals,cores,future):
     n=sum(complete.values())
     status=("PASS_LINEAGE_FOR_FROZEN_PRIMARY_INPUT" if n>=36 and all(complete[b]>=6 for b in BAYS)
             else "STOP_COMPLETE_TRIPLET_GATE")
+    # Preserve a point-level audit trail separate from the frozen statistical
+    # 7-column design. Do not place numerical future BB/TNC values here.
+    lineage_rows=[]
+    for key,item in sorted(selection.items(),key=lambda t:(
+            BAYS.index(t[1]["water_body"]),t[0][0],ANCHORS.index(t[0][1]))):
+        node=key[0]
+        observed=observed_dates.get(node,set())
+        lineage_rows.append({
+            "node_id":node,"water_body":item["water_body"],
+            "anchor_id":key[1],
+            "point_location_id":item["point_location_id"],
+            "core_id":core_ids_by_anchor.get(key),
+            "baseline_survey_date":item["baseline"].isoformat(),
+            "anchor_approval_date":approved[key].isoformat(),
+            "core_collection_date":item["planned"].isoformat() if key in measured else None,
+            "future_survey_date":next(iter(observed)).isoformat() if len(observed)==1 else None,
+            "anchor_tnc_qc_pass":measured[key][1] if key in measured else False,
+            "future_bb_numeric_available":key in outcomes and outcomes[key] is not None
+        })
     return {
        "schema":"tampa.anchor_TNC_original_mark_lineage_v1",
        "status":status,
        "evidence_class":"SYNTHETIC_OR_EXTERNALLY_SUPPLIED_UNVERIFIED_SOURCE_ONLY",
        "candidate_nodes":len(by_node),"complete_nodes":n,
        "complete_nodes_by_bay":{b:complete[b] for b in BAYS},
-       "excluded_nodes":excluded,"primary_input_rows":rows,"primary_input_columns":list(PRIMARY),
+       "excluded_nodes":excluded,"lineage_rows":lineage_rows,
+       "primary_input_rows":rows,"primary_input_columns":list(PRIMARY),
        "boundaries":[
          "Passing lineage cannot authenticate survey or permit; human provenance must be independently reviewed.",
          "Identity is matched on official node and point-location ID before emitting the original frozen seven-column model input.",
@@ -166,7 +188,11 @@ def main():
     files=((a.candidate,CAND),(a.approval,APPR),(a.tnc,CORE),(a.future,FUT))
     result=build(*(csv_rows(path,cols) for path,cols in files))
     public={k:v for k,v in result.items() if k!="primary_input_rows"}
-    public["sha256_inputs"]={path.name:hashlib.sha256(path.read_bytes()).hexdigest() for path,_ in files}
+    # Semantic role keys are independent of potentially colliding basenames.
+    public["sha256_inputs"]={
+        name:hashlib.sha256(path.read_bytes()).hexdigest()
+        for name,(path,_) in zip(("candidate","approval","tnc","future"),files)
+    }
     a.report.parent.mkdir(parents=True,exist_ok=True)
     a.report.write_text(json.dumps(public,indent=2,sort_keys=True)+"\n")
     if result["status"]!="PASS_LINEAGE_FOR_FROZEN_PRIMARY_INPUT":
