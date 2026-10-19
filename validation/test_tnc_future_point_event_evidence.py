@@ -45,7 +45,11 @@ class SampledPointEvidenceTests(unittest.TestCase):
         result=source.build(self.c,self.a,self.t,self.f,self.ledger)
         self.assertEqual(result["status"],"PASS_LINEAGE_FOR_FROZEN_PRIMARY_INPUT")
         self.assertEqual(result["complete_nodes"],36)
-        self.assertEqual(result["primary_input_rows"][0]["future_bb_anchor"],0.0)
+        original=self.f[0]
+        frozen_anchor=next(row for row in result["primary_input_rows"]
+                           if row["node_id"]==original["node_id"]
+                           and row["anchor_id"]=="q25")
+        self.assertEqual(frozen_anchor["future_bb_anchor"],0.0)
 
     def test_recorded_zero_without_sampled_point_event_is_not_loss(self):
         ledger=[x for x in self.ledger if x["point_location_id"]!=self.f[0]["point_location_id"]]
