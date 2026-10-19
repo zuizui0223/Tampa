@@ -1,1 +1,1 @@
-sensor_id,irradiance_level_id,reference_ppfd_umol_m2_s,sensor_raw_ppfd_umol_m2_s,dark,saturated
+sensor_id,irradiance_level_id,reference_photon_rate_umol_m2_s,sensor_raw_photon_rate_umol_m2_s,dark,saturated

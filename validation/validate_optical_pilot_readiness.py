@@ -47,6 +47,20 @@ def main():
     if f.get("all_outcome_bearing_channels_pass_calibration_gate") is not True:
         errors.append("not all outcome-bearing PAR channels passed calibration gate")
 
+    ag=c["angular_response_gate"]
+    pc=f.get("primary_angular_response_class")
+    rc=f.get("reference_angular_response_class")
+    if pc not in ag["allowed_classes"]:
+        errors.append("primary angular-response class is not frozen to an allowed value")
+    if rc not in ag["allowed_classes"]:
+        errors.append("reference angular-response class is not frozen to an allowed value")
+    if pc in ag["allowed_classes"] and rc in ag["allowed_classes"] and pc!=rc:
+        errors.append("primary/reference angular-response classes mismatch")
+    if pc in ag["allowed_classes"]:
+        expected_label=ag["semantic_reporting"][pc]
+        if f.get("primary_light_quantity_reporting_label")!=expected_label:
+            errors.append("primary light-quantity reporting label does not match angular-response class")
+
     level=f.get("selected_within_canopy_height_fraction")
     if level not in (0.25,0.5,0.75):
         errors.append("selected height must be one of 0.25, 0.50, 0.75")

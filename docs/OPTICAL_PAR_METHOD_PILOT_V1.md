@@ -25,7 +25,16 @@ The pilot resolves:
 
 ## Literature basis
 
-Continuous seagrass light studies have used cosine-corrected underwater PAR sensors/loggers, reference calibration and 15-minute observations integrated to daily light integral (DLI). Collier et al. (2016, *Frontiers in Marine Science* 3:106, DOI 10.3389/fmars.2016.00106) calibrated submerged irradiance loggers against a cosine-corrected underwater quantum reference and calculated DLI from 15-minute data.
+Continuous seagrass light studies have used cosine-corrected underwater quantum sensors/loggers, reference calibration and high-frequency observations integrated through the day. Historical Tampa work has also used scalar quantum sensors. Those two geometries are not interchangeable: a cosine collector measures hemispherical photon flux onto a plane, whereas a scalar collector integrates photons arriving from all directions.
+
+The pilot therefore freezes **one angular-response class before method acceptance**:
+
+- `2pi_cosine_ppfd`; or
+- `4pi_scalar_ppffr`.
+
+Every outcome-bearing within-canopy channel, every paired above-canopy channel retained for transmittance, and the calibration reference must use the same class. This v1 pilot does not authorize a scalar↔cosine transfer function.
+
+Collier et al. (2016, *Frontiers in Marine Science* 3:106, DOI 10.3389/fmars.2016.00106) provides an example of cosine-corrected underwater irradiance used for seagrass daily light exposure. LI-COR specifications likewise distinguish the LI-192 cosine quantum sensor from the LI-193 spherical/scalar quantum sensor.
 
 Leaf-scale measurements also show that light can decline strongly from the top toward the base of a seagrass canopy, so one fixed logger height must be validated rather than assumed to represent the whole canopy.
 
@@ -33,7 +42,11 @@ The numerical tolerances below are **method-QC tolerances**, not ecological ligh
 
 ## A. In-water sensor calibration
 
-Every PAR sensor/channel intended for outcome-bearing deployment must be cross-calibrated **underwater** against one frozen cosine-corrected underwater quantum reference.
+Before calibration, freeze `primary_angular_response_class` and `reference_angular_response_class`. They must be identical.
+
+Every optical sensor/channel intended for outcome-bearing deployment must then be cross-calibrated **underwater** against one frozen reference sensor of that same angular-response class.
+
+A cosine outcome sensor calibrated against a scalar reference, or a scalar outcome sensor calibrated against a cosine reference, fails this v1 method gate even if a linear fit looks excellent. The directional light field inside a canopy can differ from the calibration field.
 
 Use at least:
 
@@ -49,7 +62,7 @@ After correction, a channel passes only if:
 - median absolute relative error <=5%;
 - 95th percentile absolute relative error <=10%;
 - absolute dark offset <=1 µmol photons m⁻² s⁻¹;
-- no saturation occurs over the expected field PPFD range.
+- no saturation occurs over the expected field photon-rate range for the frozen angular-response quantity.
 
 Then run a >=6-hour underwater side-by-side check. Between-sensor CV for integrated light over that check must be <=5%.
 
@@ -182,6 +195,9 @@ The reference subset remains secondary physical attribution. Failure of referenc
 After the response-independent pilot passes, freeze:
 
 - sensor model(s);
+- frozen primary angular-response class;
+- matched reference angular-response class;
+- scientific reporting label for the chosen light quantity;
 - sensor-specific calibration coefficients;
 - reference sensor provenance;
 - selected proportional height;
@@ -239,13 +255,28 @@ The builder records input SHA-256 provenance. The authoritative READY freeze mus
 
 ### Frozen numerical semantics added before the pilot
 
-- Calibration relative-error denominator: `max(abs(reference PPFD), 10)`.
-- Dark rows: reference PPFD <=1 µmol m-2 s-1, >=5 dark observations per outcome-bearing sensor.
-- Calibration range must reach the response-independently declared expected maximum field PPFD.
+- Calibration relative-error denominator: `max(abs(reference primary photon rate), 10)`.
+- Dark rows: reference primary photon rate <=1 µmol m-2 s-1, >=5 dark observations per outcome-bearing sensor.
+- Calibration range must reach the response-independently declared expected maximum field photon rate for the frozen angular-response quantity.
 - Side-by-side DLI checks must contain every declared outcome-bearing sensor/channel.
 - Vertical-profile rows count only when daylight coverage is >=90% and maximum daylight gap is <=30 min.
 - The vertical pilot spans pre-frozen low/middle/high canopy-height classes with >=3 nodes per class.
 - Placement repeatability uses the same pilot nodes as the vertical-profile test.
-- Fouling response-change denominator: `max(abs(post-clean PPFD), 10)`; counted locations must be followed through >=14 submerged days.
+- Fouling response-change denominator: `max(abs(post-clean primary photon rate), 10)`; counted locations must be followed through >=14 submerged days.
 - If all manual service intervals fail, active antifouling must independently pass the same response-change gate.
 - Disabled secondary above-canopy attribution is explicitly recorded as `NOT_APPLICABLE_ATTRIBUTION_DISABLED` and does not block the primary within-canopy method.
+
+
+## Angular-response selection hierarchy
+
+Before pilot interpretation, freeze exactly one class for all outcome-bearing and paired-reference optical channels.
+
+Priority:
+
+1. 4π scalar PPFFR if the response-independent resource audit can meet the complete confirmatory resource/QC envelope with matched scalar sensors/references.
+2. 2π cosine PPFD only if scalar cannot meet that envelope and a matched cosine system can.
+3. Disable the optical primary if neither class can meet the frozen confirmatory gates.
+
+Do not trade node/bay replication, calibration quality, vertical representativeness or fouling control for the preferred scalar class.
+
+After the pilot begins, angular class cannot be switched on the basis of pilot contrast magnitude or any biological response.

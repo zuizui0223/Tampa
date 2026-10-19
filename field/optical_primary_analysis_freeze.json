@@ -1,10 +1,10 @@
 {
   "schema": "tampa.optical_primary_analysis_freeze.v1",
-  "frozen_on": "2026-10-03",
+  "frozen_on": "2026-10-04",
   "status": "FROZEN_BEFORE_TNC_INSPECTION",
   "authoritative_contract": "results/optical_microenvironment_prospective_v1_contract.json",
   "script_path": "analysis/66_optical_primary_analysis.py",
-  "script_blob_sha1": "6cba7962bcb2697c613ddf08e6f4e03759f5f737",
+  "script_blob_sha1": "cab38121e6283a1bdd5670e5101bba775d2d32ac",
   "model": "tnc_post ~ tnc_pre + mean_daily_within_canopy_dli + water_body",
   "geography": [
     "Old Tampa Bay",
@@ -44,6 +44,17 @@
   "no_rescue": [
     "Do not introduce a low-light threshold after TNC inspection.",
     "Do not change PAR aggregation, season, sensor subset or water_body control to rescue the primary.",
-    "Do not replace a null within-canopy DLI primary with canopy attenuation, epiphyte biomass or above-canopy DLI."
-  ]
+    "Do not replace a null within-canopy DLI primary with canopy attenuation, epiphyte biomass or above-canopy DLI.",
+    "Do not reinterpret or convert the frozen optical primary between cosine PPFD and scalar PPFFR after outcome inspection."
+  ],
+  "method_semantics_dependency": {
+    "optical_method_freeze": "field/optical_pilot_freeze.json",
+    "requirement": "Primary analysis refuses to run unless optical method freeze is READY, primary/reference angular-response classes match, and the physical light-quantity reporting label is frozen.",
+    "allowed_angular_response_classes": [
+      "2pi_cosine_ppfd",
+      "4pi_scalar_ppffr"
+    ],
+    "cross_class_transfer_allowed": false
+  },
+  "revision_note": "Pre-outcome amendment: analysis imports the READY optical method freeze, preserves matched angular-response quantity semantics, and bounds interpretation to a standardized local within-canopy photon environment rather than leaf-absorbed dose."
 }

@@ -3,7 +3,7 @@
   "contract": "results/optical_pilot_acceptance_v1_contract.json",
   "status": "PENDING_RESPONSE_INDEPENDENT_PILOT",
   "fixed_dli_qc": {
-    "minimum_scheduled_daylight_observation_fraction": 0.90,
+    "minimum_scheduled_daylight_observation_fraction": 0.9,
     "maximum_continuous_daylight_gap_minutes": 30,
     "node_primary_minimum_valid_days": 30
   },
@@ -25,7 +25,10 @@
     "fouling_median_absolute_relative_change": null,
     "fouling_p90_absolute_relative_change": null,
     "above_canopy_clearance_tolerance_rule": null,
-    "pilot_artifact_or_manifest_digest": null
+    "pilot_artifact_or_manifest_digest": null,
+    "primary_angular_response_class": null,
+    "reference_angular_response_class": null,
+    "primary_light_quantity_reporting_label": null
   },
-  "rule": "Status may become READY only after the response-independent pilot satisfies every applicable frozen acceptance criterion. Do not populate from TNC or future meadow-response information."
+  "rule": "Status may become READY only after the response-independent pilot satisfies every applicable frozen acceptance criterion, including the matched angular-response gate. Do not populate from TNC or future meadow-response information."
 }

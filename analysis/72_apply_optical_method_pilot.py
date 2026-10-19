@@ -11,6 +11,9 @@ from pathlib import Path
 KEYS=(
   "par_sensor_model",
   "reference_sensor_id_and_calibration_provenance",
+  "primary_angular_response_class",
+  "reference_angular_response_class",
+  "primary_light_quantity_reporting_label",
   "sensor_specific_calibration_manifest",
   "all_outcome_bearing_channels_pass_calibration_gate",
   "selected_within_canopy_height_fraction",

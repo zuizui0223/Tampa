@@ -88,14 +88,14 @@ def calibration_summary(rows,meta,contract):
         if sid: by[sid].append(r)
 
     floor=float(contract["calibration_gate"]["relative_error_definition"]["denominator_floor_umol_m2_s"])
-    dark_max=float(contract["calibration_gate"]["dark_reference_definition"]["reference_ppfd_max_umol_m2_s"])
+    dark_max=float(contract["calibration_gate"]["dark_reference_definition"]["reference_photon_rate_max_umol_m2_s"])
     metrics={}
     for sid,rr in sorted(by.items()):
         complete=[]
         for r in rr:
             try:
-                raw=float(r["sensor_raw_ppfd_umol_m2_s"])
-                ref=float(r["reference_ppfd_umol_m2_s"])
+                raw=float(r["sensor_raw_photon_rate_umol_m2_s"])
+                ref=float(r["reference_photon_rate_umol_m2_s"])
                 dark=as_bool(r["dark"])
                 saturated=as_bool(r["saturated"])
             except Exception:
@@ -122,7 +122,7 @@ def calibration_summary(rows,meta,contract):
             "paired_n":len(complete),
             "irradiance_levels":len(non_dark_levels),
             "dark_observations":len(dark_corr),
-            "maximum_reference_ppfd_umol_m2_s":max(ys),
+            "maximum_reference_photon_rate_umol_m2_s":max(ys),
             "intercept":intercept,
             "slope":slope,
             "r_squared":r2,
@@ -312,8 +312,8 @@ def fouling_cell(rows,mode,interval,contract):
         if not loc or bay not in BAYS: continue
         try:
             day=float(r["pilot_day"])
-            pre=float(r["pre_clean_ppfd_umol_m2_s"])
-            post=float(r["post_clean_ppfd_umol_m2_s"])
+            pre=float(r["pre_clean_photon_rate_umol_m2_s"])
+            post=float(r["post_clean_photon_rate_umol_m2_s"])
         except Exception:
             continue
         rel=abs(pre-post)/max(abs(post),floor)

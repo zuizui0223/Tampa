@@ -164,10 +164,18 @@ def optical_rule(optical_freeze):
     manifest=f.get("sensor_specific_calibration_manifest")
     ok=f.get("all_outcome_bearing_channels_pass_calibration_gate") is True
     frac=f.get("selected_within_canopy_height_fraction")
-    if not (model and manifest and ok and frac is not None):
+    primary_class=f.get("primary_angular_response_class")
+    reference_class=f.get("reference_angular_response_class")
+    quantity_label=f.get("primary_light_quantity_reporting_label")
+    if not (model and manifest and ok and frac is not None and primary_class and reference_class and quantity_label):
+        return None,False
+    if primary_class != reference_class:
         return None,False
     rule={
         "par_sensor_model":model,
+        "primary_angular_response_class":primary_class,
+        "reference_angular_response_class":reference_class,
+        "primary_light_quantity_reporting_label":quantity_label,
         "sensor_specific_calibration_manifest":manifest,
         "selected_within_canopy_height_fraction":frac,
         "method_pilot_digest":f.get("pilot_artifact_or_manifest_digest"),
