@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "analysis/84_tnc_current_anchor_candidate.py"
+      - "analysis/85_tnc_anchor_lineage.py"
+      - "validation/test_tnc_anchor_lineage.py"
+      - "docs/TNC_ANCHOR_LINEAGE_BRIDGE_V1.md"
       - "validation/test_tnc_current_anchor_candidate.py"
       - "field/tnc_current_point_roster_template.csv"
       - "docs/TNC_CURRENT_ANCHOR_RECONCILIATION_V1.md"
@@ -24,3 +27,5 @@ jobs:
         run: python validation/test_tnc_v2_execution_manifest.py
       - name: Test exact contemporary meter-mark anchor selection
         run: python validation/test_tnc_current_anchor_candidate.py
+      - name: Test prospective sample-to-frozen-point/future-state identity
+        run: python validation/test_tnc_anchor_lineage.py
