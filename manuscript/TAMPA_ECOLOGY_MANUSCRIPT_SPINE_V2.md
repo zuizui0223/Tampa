@@ -2,19 +2,19 @@
 
 ## Working title
 
-**Persistent occurrence conceals spatially heterogeneous degradation in a seagrass foundation species**
+**Persistent occurrence conceals spatially heterogeneous quantitative state change in a seagrass foundation species**
 
 Alternatives:
 
-- **Presence persists while meadow condition degrades across distinct pathways in Tampa Bay seagrass**
-- **Binary persistence masks multiple modes of quantitative degradation in a foundation seagrass**
+- **Presence persists while different meadow-state dimensions decline across Tampa Bay**
+- **Binary persistence masks multiple modes of quantitative state decline in a foundation seagrass**
 - **Stable occurrence is not stable condition: long-term state decoupling in seagrass meadows**
 
 The first title is the default because it states the ecological result without implying an identified mechanism.
 
 ## One-sentence paper
 
-Across 29 years of fixed-transect monitoring, *Thalassia testudinum* often remained recorded while within-transect occupancy, abundance, plant stature, shoot density or community composition deteriorated, and the degraded state dimension differed among bay segments.
+Across 29 years of fixed-transect monitoring, *Thalassia testudinum* often remained recorded while within-transect occupancy/abundance, plant stature or shoot density declined, or community composition reorganized; the changing state dimension differed among bay segments.
 
 ## Why the paper matters
 
@@ -28,7 +28,7 @@ The Tampa data provide a long-term repeated-site test of this problem because th
 4. plant-condition traits;
 5. co-occurring seagrass composition.
 
-The key ecological contribution is not that one particular stressor caused decline. It is that **different degradation pathways can remain hidden beneath the same apparently persistent occurrence state**.
+The key ecological contribution is not that one particular stressor caused decline. It is that **different quantitative state changes can remain hidden beneath the same apparently persistent occurrence state**.
 
 ## Evidence base
 
@@ -49,7 +49,7 @@ External ecological context:
 
 ### Primary claim
 
-**Persistent recorded occurrence can conceal substantial quantitative degradation, and the degraded state dimension differs among bay segments.**
+**Persistent recorded occurrence can conceal substantial change in quantitative meadow state, and the changing state dimension differs among bay segments.**
 
 ### Secondary claim
 
@@ -65,7 +65,7 @@ This result is strict walk-forward internally but exploratory because the hypoth
 
 ### Mechanism boundary
 
-The current data do not identify the cause of post-2016 degradation. A bounded sequence of alternative explanations failed to supply a general mechanism:
+The current data do not identify a single cause of the post-2016 state-specific declines and compositional change. A bounded sequence of alternative explanations failed to supply a general mechanism:
 
 - static EOG geometry;
 - annually refreshed neighboring-meadow state;
@@ -85,19 +85,19 @@ These negative results belong mainly in the Discussion and Supplement. They defi
 
 ## Background
 
-Presence/absence monitoring is efficient but can collapse multiple dimensions of foundation-species condition into a single endpoint. If quantitative degradation precedes loss of recorded occurrence, presence maps may detect ecological deterioration only after substantial internal change.
+Presence/absence monitoring is efficient but can collapse multiple dimensions of foundation-species state into a single endpoint. If local frequency/abundance, blade stature or shoot density decline before recorded occurrence changes, presence maps detect those changes only after substantial quantitative state change has already occurred.
 
 ## Methods
 
-We reconstructed 29 years of fixed-transect monitoring of *Thalassia testudinum* in Tampa Bay, USA, resolving annual recorded presence, within-transect frequency, Braun–Blanquet abundance, blade length and shoot density at 71 stable transects. We quantified post-2016 within-transect trends, compared degradation modes among bay segments, examined community reorganization, and tested whether source-year quantitative state improved strict out-of-time prediction of next-year recorded loss. A post-hoc *Zostera marina* panel provided an external ecological comparison.
+We reconstructed 29 years of fixed-transect monitoring of *Thalassia testudinum* in Tampa Bay, USA, resolving annual recorded presence, within-transect frequency, Braun–Blanquet abundance, blade length and shoot density at 71 stable transects. We quantified post-2016 within-transect trends, compared which quantitative state dimensions changed among bay segments, examined community reorganization, and tested whether source-year quantitative state improved strict out-of-time prediction of next-year recorded loss. A post-hoc *Zostera marina* panel provided an external ecological comparison.
 
 ## Results
 
-Recorded *Thalassia* occurrence changed weakly in several bay segments while quantitative state deteriorated. In Old Tampa Bay, blade length declined by about 1.09 mm yr⁻¹ and shoot density by 38.3 shoots m⁻² yr⁻¹. In Middle Tampa Bay, blade length declined by about 0.405 mm yr⁻¹. In Lower Tampa Bay, focal frequency declined by about 0.0128 yr⁻¹ and Braun–Blanquet abundance also declined, while *Halodule wrightii* increased and *Syringodium filiforme* decreased. The external *Zostera* panel likewise retained saturated recorded presence while quantitative cover varied widely and declined at most repeated transects. Within Tampa, low source-year frequency and Braun–Blanquet state improved strict out-of-time prediction of next-year recorded loss.
+Recorded *Thalassia* occurrence changed weakly in several bay segments while particular quantitative state dimensions declined. In Old Tampa Bay, blade length declined by about 1.09 mm yr⁻¹ and shoot density by 38.3 shoots m⁻² yr⁻¹. In Middle Tampa Bay, blade length declined by about 0.405 mm yr⁻¹. In Lower Tampa Bay, focal frequency declined by about 0.0128 yr⁻¹ and Braun–Blanquet abundance also declined, while *Halodule wrightii* increased and *Syringodium filiforme* decreased. The external *Zostera* panel likewise retained saturated recorded presence while quantitative cover varied widely and declined at most repeated transects. Within Tampa, low source-year frequency and Braun–Blanquet state improved strict out-of-time prediction of next-year recorded loss.
 
 ## Conclusion
 
-A persistent foundation-species occurrence state can conceal multiple, spatially distinct forms of degradation. Monitoring frameworks that treat occurrence as equivalent to ecological condition may therefore detect deterioration late and fail to distinguish mechanistically different degradation pathways.
+A persistent foundation-species occurrence state can conceal multiple, spatially distinct quantitative changes. Monitoring frameworks that treat occurrence as equivalent to ecological condition may therefore detect local occupancy/abundance, plant-structure or compositional change late and fail to distinguish which state dimension is changing.
 
 ---
 
@@ -107,7 +107,7 @@ A persistent foundation-species occurrence state can conceal multiple, spatially
 
 Foundation species organize habitat and ecosystem function, but monitoring often reduces their status to distribution, occupancy or presence. Those endpoints are useful for broad surveillance yet need not track plant condition, local abundance or community composition on the same timescale.
 
-## Paragraph 2 — degradation can precede disappearance
+## Paragraph 2 — quantitative state decline can precede recorded loss
 
 A meadow can thin, lose stature or density, shift composition, or become physiologically stressed while the focal species remains detectable. This creates a monitoring problem: **persistence of the coarse state may be mistaken for persistence of ecological condition**.
 
@@ -122,7 +122,7 @@ Tampa Bay has long-term fixed-transect monitoring with repeated observations of 
 The manuscript asks four ordered questions:
 
 1. Does recorded occurrence remain stable where quantitative meadow condition declines?
-2. Do different bay segments show different degradation pathways?
+2. Do different bay segments change along different quantitative state dimensions?
 3. Does the state-decoupling pattern appear in a second long-term seagrass monitoring system?
 4. Does quantitative state contain information about future recorded-state instability?
 
@@ -142,7 +142,7 @@ Lead with the post-2016 within-transect models, not the memory analysis.
 - blade length: **-1.09 mm yr⁻¹**, bootstrap 95% interval approximately [-1.69, -0.68];
 - shoot density: **-38.3 shoots m⁻² yr⁻¹**, interval approximately [-49.8, -21.9].
 
-Interpretation: plant-condition degradation beneath weak binary change.
+Interpretation: declining plant-structure metrics beneath weak binary change.
 
 ### Middle Tampa Bay
 
@@ -165,7 +165,7 @@ Does not show the same clear decoupling signal. Retain this negative spatial cou
 
 ### Result sentence
 
-> The same binary state can conceal different quantitative degradation modes in different parts of the estuary.
+> The same binary state can conceal decline in different quantitative dimensions in different parts of the estuary.
 
 ## Result 2 — Lower Tampa Bay also reorganizes compositionally
 
@@ -177,7 +177,7 @@ Lower Tampa Bay:
 
 Do not call this competitive replacement. Phrase as **compositional reorganization consistent with increasing relative prominence of *Halodule***.
 
-Old and Middle Tampa Bay do not show the same pattern, which strengthens the claim of heterogeneous degradation pathways.
+Old and Middle Tampa Bay do not show the same pattern, strengthening the claim that the changing quantitative dimension differs spatially.
 
 ## Result 3 — an external seagrass panel reproduces state decoupling
 
@@ -195,7 +195,7 @@ Use this as external ecological replication of **binary–quantitative decouplin
 
 Moriches Bay is a useful positive-trend counterexample and should remain visible.
 
-## Result 4 — quantitative degradation is an internal early-warning candidate
+## Result 4 — low quantitative state is an internal early-warning candidate
 
 Across 688 source-positive consecutive transitions:
 
@@ -219,7 +219,7 @@ Retain adverse 2016 in the primary endpoint.
 
 Interpretation:
 
-> Quantitative degradation may precede instability of the coarse recorded state.
+> Low or declining quantitative state may precede instability of the coarse recorded state.
 
 Do not use the words extinction risk or collapse prediction.
 
@@ -252,7 +252,7 @@ Main text should summarize this in one compact paragraph or one boundary panel:
 
 The interpretation is not “nothing causes the decline.” It is:
 
-> **The available retrospective covariates do not identify a single common mechanism for spatially heterogeneous degradation.**
+> **The available retrospective covariates do not identify a single common mechanism for the spatially heterogeneous quantitative state changes.**
 
 ---
 
@@ -272,7 +272,7 @@ Presence can remain unchanged while:
 
 This is especially important for foundation species because substantial ecosystem-function change can precede complete local disappearance.
 
-## Discussion 2 — multiple degradation pathways
+## Discussion 2 — multiple state-change pathways
 
 Do not force Old, Middle and Lower Tampa Bay into one mechanism.
 
@@ -282,7 +282,7 @@ The spatial heterogeneity is itself informative:
 - Middle: blade-length decline;
 - Lower: occupancy/abundance contraction plus community reorganization.
 
-The general principle is **many-to-one mapping from degradation processes to the same binary presence state**.
+The general principle is **many-to-one mapping from distinct quantitative state changes to the same binary recorded-presence state**.
 
 ## Discussion 3 — external state decoupling increases generality
 
@@ -363,10 +363,10 @@ Annotations:
 - Lower: frequency + abundance;
 - Boca Ciega: no comparable signal.
 
-## Figure 3 — Multiple degradation pathways and external replication
+## Figure 3 — Multiple quantitative state-change pathways and external replication
 
 A. Lower Tampa Bay community trajectories: *Thalassia*, *Syringodium*, *Halodule*.  
-B. Conceptual summary of the three Tampa degradation modes.  
+B. Conceptual summary of the three Tampa state-change patterns.  
 C. NPS *Zostera* panel: binary presence saturated at 1 while quantitative cover trajectories vary by repeated transect/location.  
 D. Cross-system state-decoupling schematic.
 
@@ -409,7 +409,7 @@ Columns:
 - temporal coverage;
 - missingness / measurement caveat.
 
-## Table 2 — Bay-specific post-2016 degradation modes
+## Table 2 — Bay-specific post-2016 state-change patterns
 
 Rows: bay segments.  
 Columns:
@@ -420,7 +420,7 @@ Columns:
 - blade length;
 - shoot density;
 - community signal;
-- interpreted degradation mode.
+- interpreted state-change pattern.
 
 This table can replace several paragraphs of numeric detail in the main text.
 
@@ -456,7 +456,7 @@ Do not headline:
 - 2016/2017 extinction/recolonization;
 - hot/fresh climate causation;
 - *Halodule* competitive replacement;
-- a single Tampa-wide degradation mechanism.
+- a single Tampa-wide mechanism for all observed quantitative changes.
 
 These can remain as bounded diagnostics or future hypotheses.
 
@@ -466,7 +466,7 @@ These can remain as bounded diagnostics or future hypotheses.
 
 The strongest conclusion is:
 
-> **Long-term persistence of a foundation species does not imply persistence of meadow condition. Across Tampa Bay, *Thalassia testudinum* remained recorded at many transects while different bay segments lost plant stature, shoot density, local occupancy or abundance, and one segment reorganized compositionally. A second seagrass monitoring system reproduced the broader decoupling between saturated presence and quantitative change. Presence-only monitoring can therefore detect degradation late and cannot distinguish the pathways by which foundation-species condition deteriorates.**
+> **Long-term recorded persistence of a foundation species does not imply stability of every meadow-state dimension. Across Tampa Bay, *Thalassia testudinum* remained recorded at many transects while different bay segments lost plant stature, shoot density, local occupancy or abundance, and one segment reorganized compositionally. A second seagrass monitoring system reproduced the broader decoupling between saturated presence and quantitative change. Presence-only monitoring can therefore detect those quantitative changes late and cannot distinguish which state dimension is changing.**
 
 Mechanism remains unresolved and should remain unresolved in the paper unless genuinely new data are introduced.
 

@@ -457,7 +457,7 @@ The same fixed-transect panel was expanded to *Halodule wrightii*, *Syringodium 
 
 This is consistent with a shift toward more frequent *Halodule* while *Thalassia* and *Syringodium* decline quantitatively. It does **not** by itself demonstrate competition or a replacement mechanism.
 
-Old Tampa Bay shows a different degradation mode: the stronger signal is declining *Thalassia* blade length and shoot density rather than a monotone alternative-species replacement. Middle Tampa Bay likewise shows declining *Thalassia* blade length, while *Thalassia* and *Syringodium* year-to-year frequency changes tend to move together rather than compensate.
+Old Tampa Bay shows a different state-change pattern: the stronger signal is declining *Thalassia* blade length and shoot density rather than a monotone alternative-species replacement. Middle Tampa Bay likewise shows declining *Thalassia* blade length, while *Thalassia* and *Syringodium* year-to-year frequency changes tend to move together rather than compensate.
 
 The stronger cross-bay result is therefore **heterogeneity in which state dimension changes**, not one bay-wide decline process.
 
