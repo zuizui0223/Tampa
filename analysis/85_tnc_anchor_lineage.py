@@ -12,7 +12,7 @@ BAYS=("Old Tampa Bay","Middle Tampa Bay","Lower Tampa Bay","Boca Ciega Bay")
 ANCHORS=("q25","q50","q75")
 CAND={"node_id","water_body","anchor_id","point_location_id","site_m","baseline_bb_anchor","baseline_survey_date","planned_tnc_date","current_eligibility_evidence","sampling_authority_status"}
 APPR={"node_id","water_body","anchor_id","point_location_id","approval_reference_id","approved_before_collection","anchor_freeze_date"}
-CORE={"node_id","water_body","anchor_id","point_location_id","core_id","core_collection_date","anchor_tnc","anchor_tnc_qc_pass"}
+CORE={"node_id","water_body","anchor_id","point_location_id","core_id","core_collection_date","soluble_nsc_mg_g","starch_mg_g","anchor_tnc_qc_pass"}
 FUT={"node_id","water_body","point_location_id","future_survey_date","future_bb_anchor"}
 PRIMARY=("node_id","water_body","anchor_id","baseline_bb_anchor","anchor_tnc","future_bb_anchor","anchor_tnc_qc_pass")
 
@@ -94,7 +94,13 @@ def build(candidates,approvals,cores,future):
         when=day(row["core_collection_date"],"TNC core collection")
         if when!=source["planned"] or when<approved[key]:
             raise ValueError("core collection or approval timing mismatch")
-        measured[key]=(num(row["anchor_tnc"],0,float("inf")),yes(row["anchor_tnc_qc_pass"],"TNC QC"))
+        # The authoritative biochemical predictor is total nonstructural
+        # carbohydrate = measured soluble NSC + measured starch (mg/g).
+        # Do not let a manually entered aggregate override either component.
+        soluble=num(row["soluble_nsc_mg_g"],0,float("inf"))
+        starch=num(row["starch_mg_g"],0,float("inf"))
+        tnc=soluble+starch if soluble is not None and starch is not None else None
+        measured[key]=(tnc,yes(row["anchor_tnc_qc_pass"],"TNC QC"))
     # A missing or nonpassing core invalidates the original full triplet.
 
     point_to_key={source["point_location_id"]:key for key,source in selection.items()}
