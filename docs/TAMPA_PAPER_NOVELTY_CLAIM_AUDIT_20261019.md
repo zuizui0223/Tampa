@@ -84,10 +84,10 @@ Do not claim this single estuary proves the same process for forests, salt marsh
 
 **Paper A — submit the observed ecology now, do not wait for the TNC field pilot.**
 
-- Primary journal: **Estuaries and Coasts**. Its stated scope includes physical, biological and management aspects of estuaries and near-coastal waters; the existing submission-format workflow and 53-reporting-check QC are already built in this repository.
+- **Conditional first journal candidate: *Estuaries and Coasts*.** Although coastal biology is within its remit, its official federation publisher explicitly excludes submissions that are *primarily descriptive or strongly place-based* (CERF, checked 19 October 2026: https://www.cerf.science/journal). A local estuary monitoring retrospective therefore faces **real desk-rejection risk**. The editorial case rests on the testable general state-axis divergence, the within-node long-term design, carefully qualified external *Zostera* comparison, and bounded predictive/management assessment, not on simply changing the category to a Brief Report. Journal fit is **not verified** by formatting or CI.
 - Alternative: **Ecological Indicators**, only if the editor sees a substantive analysis of indication and management rather than just descriptive single-estuary monitoring. The journal's own scope excludes simple single-case monitoring lacking indicator development/theory/management interpretation. Do not assume placement.
 - Keep the current manuscript headline: **“Persistent occurrence conceals spatially heterogeneous degradation in a seagrass foundation species.”**
-- Before an actual submission: author review; source/figure/references checks; correct any claim implying a proved universal temporal order; include Peng 2026 as background while retaining Rising 2026; verify author contribution/permissions and actual journal compliance.
+- Before an actual submission: author review; source/figure/references checks; retain the no-universal-sequence and no-causal-attribution bounds; verify **Peng 2026 and Rising 2026** are both included in the canonical Introduction, Discussion and references and consistently regenerated into the manuscript; obtain real author contributions, permissions, author approvals and journal compliance.
 
 **Paper B — prospective within-meadow TNC state augmentation later**, if genuine method field pilot, full current anchor identity, assay QC and subsequent same-mark quantitative outcome become available and pass the frozen 36/6 coverage gate. Do not promote it from unmeasured hypothesis to Result in Paper A.
 
@@ -101,4 +101,4 @@ Do not claim this single estuary proves the same process for forests, salt marsh
 - PR #156 documents original real interobserver calibration, not TNC biological validation.
 - PR #157–160 concern prospective verifier/lineage infrastructure and remain unmerged; they should not block initial submission of Paper A, nor be presented as ecological outcomes.
 
-**This note changes editorial positioning only.** It contains no fitted Tampa analysis and does not edit or silently regenerate the already-QC-passed submission manuscript.
+**This audit note changes editorial positioning only.** In the same PR, separate canonical manuscript-source changes explicitly add the peer-reviewed Peng 2026 comparison and regenerate both the assembled manuscript and journal-body text using the existing builders. No fitted Tampa analysis, score, sample, statistical gate or figure was changed. A new CI run must verify the refreshed generated files before declaring this submission revision complete.
