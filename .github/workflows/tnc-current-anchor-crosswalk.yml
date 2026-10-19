@@ -7,6 +7,8 @@ on:
       - "analysis/84_tnc_current_anchor_candidate.py"
       - "analysis/85_tnc_anchor_lineage.py"
       - "validation/test_tnc_anchor_lineage.py"
+      - "validation/test_tnc_future_point_event_evidence.py"
+      - "field/tnc_future_sampled_point_event_template.csv"
       - "field/tnc_approved_anchor_template.csv"
       - "field/tnc_core_mark_linkage_template.csv"
       - "field/tnc_future_same_mark_bb_template.csv"
@@ -32,3 +34,5 @@ jobs:
         run: python validation/test_tnc_current_anchor_candidate.py
       - name: Test prospective sample-to-frozen-point/future-state identity
         run: python validation/test_tnc_anchor_lineage.py
+      - name: Require sampled future mark-event evidence for absence
+        run: python validation/test_tnc_future_point_event_evidence.py
