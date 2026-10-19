@@ -39,8 +39,7 @@ def sampled_ledger(future):
 
 class SampledPointEvidenceTests(unittest.TestCase):
     def setUp(self):
-        self.c,self.a,self.t,self.f=copy.deepcopy(fixtures())
-        self.ledger=sampled_ledger(self.f)
+        self.c,self.a,self.t,self.f,self.ledger=copy.deepcopy(fixtures())
 
     def test_frozen_future_zero_is_real_sampled_non_detection(self):
         result=source.build(self.c,self.a,self.t,self.f,self.ledger)
