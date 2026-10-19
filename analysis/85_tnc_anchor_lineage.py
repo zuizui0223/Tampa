@@ -14,6 +14,7 @@ CAND={"node_id","water_body","anchor_id","point_location_id","site_m","baseline_
 APPR={"node_id","water_body","anchor_id","point_location_id","approval_reference_id","approved_before_collection","anchor_freeze_date"}
 CORE={"node_id","water_body","anchor_id","point_location_id","core_id","core_collection_date","soluble_nsc_mg_g","starch_mg_g","anchor_tnc_qc_pass"}
 FUT={"node_id","water_body","point_location_id","future_survey_date","future_bb_anchor"}
+FUT_POINT={"node_id","water_body","point_location_id","future_survey_date","point_event_id","thalassia_present","raw_thalassia_bb"}
 PRIMARY=("node_id","water_body","anchor_id","baseline_bb_anchor","anchor_tnc","future_bb_anchor","anchor_tnc_qc_pass")
 
 def check(r,expected,kind):
@@ -32,8 +33,50 @@ def num(x,low,high):
         return v if math.isfinite(v) and low<=v<=high else None
     except (ValueError,TypeError): return None
 
-def build(candidates,approvals,cores,future):
-    if not all((candidates,approvals,cores,future)):
+def verify_sampled_future_events(sampled_events,selection):
+    """An official sampled Point event is required before 0 can mean absence.
+
+    The supplied point-event ledger may contain non-selected marks from the
+    same surveyed transects. Completeness of that external raw-event census
+    still requires an independent monitoring-authority provenance audit.
+    """
+    nodes={r["node_id"]:r["water_body"] for r in selection.values()}
+    point_records={}
+    event_ids=set()
+    node_dates=defaultdict(set)
+    for row in sampled_events:
+        check(row,FUT_POINT,"sampled future point event")
+        nid=str(row["node_id"]).strip()
+        bay=str(row["water_body"]).strip()
+        pid=str(row["point_location_id"]).strip()
+        eid=str(row["point_event_id"]).strip()
+        if nid not in nodes or bay!=nodes[nid] or not pid or not eid:
+            raise ValueError("sampled future point event lacks approved node/bay/event/mark provenance")
+        if pid in point_records or eid in event_ids:
+            raise ValueError("duplicate future mark or point_event_id in sampled-event census")
+        event_ids.add(eid)
+        when=day(row["future_survey_date"],"sampled future point-event visit")
+        node_dates[nid].add(when)
+        present=yes(row["thalassia_present"],"raw future focal occurrence")
+        raw=str(row["raw_thalassia_bb"]).strip()
+        if not present:
+            if raw:
+                raise ValueError("sampled focal absence must not contain a positive raw BB measurement")
+            validated=0.0
+        else:
+            if raw in ("","Reported"):
+                validated=None # sampled focal-present but no quantitative value
+            else:
+                validated=num(raw,0,5)
+                if validated is None or validated<=0:
+                    raise ValueError("present focal occurrence lacks valid positive numeric raw BB")
+        point_records[pid]=(nid,bay,when,eid,validated)
+    if any(len(ds)>1 for ds in node_dates.values()):
+        raise ValueError("future point-event census mixes different dates for the same node")
+    return point_records,node_dates
+
+def build(candidates,approvals,cores,future,sampled_events):
+    if not all((candidates,approvals,cores,future,sampled_events)):
         raise ValueError("all four externally supplied input registries required")
     selection,by_node,seen={},defaultdict(list),set()
     for row in candidates:
@@ -103,6 +146,7 @@ def build(candidates,approvals,cores,future):
         measured[key]=(tnc,yes(row["anchor_tnc_qc_pass"],"TNC QC"))
     # A missing or nonpassing core invalidates the original full triplet.
 
+    sampled_marks, ledger_dates=verify_sampled_future_events(sampled_events,selection)
     point_to_key={source["point_location_id"]:key for key,source in selection.items()}
     outcomes={};observed_dates=defaultdict(set)
     for row in future:
@@ -117,7 +161,24 @@ def build(candidates,approvals,cores,future):
         if when<=source["baseline"] or when<=source["planned"]:
             raise ValueError("future mark survey must occur after baseline and TNC")
         observed_dates[key[0]].add(when)
-        outcomes[key]=num(row["future_bb_anchor"],0,5)
+        evidence=sampled_marks.get(source["point_location_id"])
+        if evidence is None:
+            # Do NOT accept a user-entered zero for a point not actually
+            # represented by a sampled future point event.
+            outcomes[key]=None
+            continue
+        evnode,evbay,evdate,event_id,raw_bb=evidence
+        if evnode!=source["node_id"] or evbay!=source["water_body"] or evdate!=when:
+            raise ValueError("future BB contradicts actual sampled point-event node or date")
+        entered=num(row["future_bb_anchor"],0,5)
+        if raw_bb is None:
+            if entered is not None:
+                raise ValueError("nonnumeric raw BB cannot become a quantitative future state")
+            outcomes[key]=None
+        else:
+            if entered is None or not math.isclose(entered,raw_bb,rel_tol=0,abs_tol=1e-9):
+                raise ValueError("future BB disagrees with independently supplied point-event occurrence/BB")
+            outcomes[key]=raw_bb
     if any(len(dates)!=1 for dates in observed_dates.values()):
         raise ValueError("a node has multiple target visit dates; do not choose a favorable visit")
 
@@ -159,7 +220,10 @@ def build(candidates,approvals,cores,future):
             "core_collection_date":item["planned"].isoformat() if key in measured else None,
             "future_survey_date":next(iter(observed)).isoformat() if len(observed)==1 else None,
             "anchor_tnc_qc_pass":measured[key][1] if key in measured else False,
-            "future_bb_numeric_available":key in outcomes and outcomes[key] is not None
+            "future_bb_numeric_available":key in outcomes and outcomes[key] is not None,
+            "future_point_event_id":sampled_marks[item["point_location_id"]][3]
+                if item["point_location_id"] in sampled_marks else None,
+            "sampled_future_point_event_verified":item["point_location_id"] in sampled_marks
         })
     return {
        "schema":"tampa.anchor_TNC_original_mark_lineage_v1",
@@ -172,6 +236,7 @@ def build(candidates,approvals,cores,future):
        "boundaries":[
          "Passing lineage cannot authenticate survey or permit; human provenance must be independently reviewed.",
          "Identity is matched on official node and point-location ID before emitting the original frozen seven-column model input.",
+         "Recorded next-year absence=0 requires a distinct sampled Point-event ID and focal-absent occurrence status; unvisited marks are missing, not absent.",
          "Unmeasured/nonnumeric future BB is missing, not focal absence; sampled focal absence may be numeric zero.",
          "No TNC effect, demographic mortality, physiological mechanism or restoration benefit is inferred here.",
          "Do not impute/reassign anchors, relax 36/6 gates, or rescue the primary with a supportive model."
@@ -189,15 +254,17 @@ def main():
     p=argparse.ArgumentParser()
     for flag in ("candidate","approval","tnc","future","report"):
         p.add_argument("--"+flag,type=Path,required=True)
+    p.add_argument("--future-point-events",type=Path,required=True)
     p.add_argument("--primary-input",type=Path)
     a=p.parse_args()
-    files=((a.candidate,CAND),(a.approval,APPR),(a.tnc,CORE),(a.future,FUT))
+    files=((a.candidate,CAND),(a.approval,APPR),(a.tnc,CORE),(a.future,FUT),
+           (a.future_point_events,FUT_POINT))
     result=build(*(csv_rows(path,cols) for path,cols in files))
     public={k:v for k,v in result.items() if k!="primary_input_rows"}
     # Semantic role keys are independent of potentially colliding basenames.
     public["sha256_inputs"]={
         name:hashlib.sha256(path.read_bytes()).hexdigest()
-        for name,(path,_) in zip(("candidate","approval","tnc","future"),files)
+        for name,(path,_) in zip(("candidate","approval","tnc","future","future_point_events"),files)
     }
     a.report.parent.mkdir(parents=True,exist_ok=True)
     a.report.write_text(json.dumps(public,indent=2,sort_keys=True)+"\n")
