@@ -5,6 +5,11 @@ from __future__ import annotations
 import copy
 import importlib.util
 import unittest
+import csv
+import json
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -70,7 +75,48 @@ class TNCLineageTests(unittest.TestCase):
         self.assertEqual(next(r for r in result["primary_input_rows"]
             if r["node_id"]==self.data[0][0]["node_id"] and r["anchor_id"]=="q25")["future_bb_anchor"],0.0)
         self.assertNotIn("point_location_id",result["primary_input_rows"][0])
+        self.assertEqual(len(result["lineage_rows"]),108)
+        self.assertEqual(result["lineage_rows"][0]["point_location_id"],
+                         self.data[0][0]["point_location_id"])
+        self.assertEqual(result["lineage_rows"][0]["core_id"],"SYNTH-CORE-0")
+        self.assertEqual(result["lineage_rows"][0]["future_survey_date"],"2028-08-01")
         self.assertEqual(result["evidence_class"],"SYNTHETIC_OR_EXTERNALLY_SUPPLIED_UNVERIFIED_SOURCE_ONLY")
+
+    def test_cli_produces_exact_frozen_model_input_and_hashed_mark_lineage(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            paths={}
+            for name,rows in zip(("candidate","approval","tnc","future"),self.data):
+                path=root/(name+".csv")
+                with path.open("w",newline="") as h:
+                    w=csv.DictWriter(h,fieldnames=list(rows[0]))
+                    w.writeheader()
+                    w.writerows(rows)
+                paths[name]=path
+            result_path=root/"lineage.json"
+            output=root/"frozen_primary.csv"
+            cmd=[sys.executable,str(SCRIPT),
+                 "--candidate",str(paths["candidate"]),
+                 "--approval",str(paths["approval"]),
+                 "--tnc",str(paths["tnc"]),
+                 "--future",str(paths["future"]),
+                 "--report",str(result_path),
+                 "--primary-input",str(output)]
+            cp=subprocess.run(cmd,capture_output=True,text=True,timeout=45)
+            self.assertEqual(cp.returncode,0,(cp.stdout,cp.stderr))
+            report=json.loads(result_path.read_text())
+            self.assertEqual(set(report["sha256_inputs"]),{"candidate","approval","tnc","future"})
+            self.assertEqual(len(report["lineage_rows"]),108)
+            self.assertNotIn("primary_input_rows",report)
+            with output.open(newline="") as h:
+                reader=csv.DictReader(h)
+                self.assertEqual(tuple(reader.fieldnames),self.m.PRIMARY)
+                self.assertEqual(len(list(reader)),108)
+
+            # A failed new attempt must not overwrite an older model input.
+            cp=subprocess.run(cmd,capture_output=True,text=True,timeout=45)
+            self.assertNotEqual(cp.returncode,0)
+            self.assertIn("do not overwrite",cp.stderr+cp.stdout)
 
     def test_swapped_core_point_id_cannot_make_false_future_effect(self):
         candidates,approved,tnc,future=copy.deepcopy(self.data)
