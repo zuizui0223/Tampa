@@ -1,0 +1,38 @@
+name: TNC contemporary anchor crosswalk
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "analysis/84_tnc_current_anchor_candidate.py"
+      - "analysis/85_tnc_anchor_lineage.py"
+      - "validation/test_tnc_anchor_lineage.py"
+      - "validation/test_tnc_future_point_event_evidence.py"
+      - "field/tnc_future_sampled_point_event_template.csv"
+      - "field/tnc_approved_anchor_template.csv"
+      - "field/tnc_core_mark_linkage_template.csv"
+      - "field/tnc_future_same_mark_bb_template.csv"
+      - "docs/TNC_ANCHOR_LINEAGE_BRIDGE_V1.md"
+      - "validation/test_tnc_current_anchor_candidate.py"
+      - "field/tnc_current_point_roster_template.csv"
+      - "docs/TNC_CURRENT_ANCHOR_RECONCILIATION_V1.md"
+      - ".github/workflows/tnc-current-anchor-crosswalk.yml"
+  workflow_dispatch:
+
+jobs:
+  verify_without_ecological_outcomes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Guard original node-date eligibility
+        run: python validation/test_tnc_v2_execution_manifest.py
+      - name: Test exact contemporary meter-mark anchor selection
+        run: python validation/test_tnc_current_anchor_candidate.py
+      - name: Test prospective sample-to-frozen-point/future-state identity
+        run: python validation/test_tnc_anchor_lineage.py
+      - name: Require sampled future mark-event evidence for absence
+        run: python validation/test_tnc_future_point_event_evidence.py
