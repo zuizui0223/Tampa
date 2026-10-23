@@ -1,0 +1,142 @@
+name: ESCO Word PDF and figure author-review package
+
+on:
+  push:
+    paths:
+      - "manuscript/export_esco_author_review_package.py"
+      - ".github/workflows/esco-author-review-export.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install original analysis and document-export dependencies
+        run: |
+          python -m pip install -r requirements.txt \
+            "matplotlib>=3.10,<4" "pillow>=11,<12" \
+            pypandoc_binary python-docx pymupdf
+          which libreoffice || (sudo apt-get -qq update && sudo apt-get -y install libreoffice-writer)
+          python -c "import pypandoc; print('Pandoc',pypandoc.get_pandoc_version())"
+      - name: Verify original Markdown builders and monitoring facts
+        run: |
+          python manuscript/build_esco_submission.py --out manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md
+          python manuscript/build_supplement.py --out manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md
+          git diff --exit-code -- manuscript/TAMPA_ECOLOGY_ESCO_SUBMISSION_V1.md manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md
+          python validation/verify_warning_reporting_sync.py
+          python validation/verify_tampa_conservation_translation_20261023.py
+      - name: Verify the original PR-head scientific artifact provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          expected="ea51e975e8aae2af0312442f28bd497a82bc41ae"
+          for run in (39880446814,39880446784):
+              result=subprocess.check_output(["gh","api",f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run}"])
+              d=json.loads(result)
+              assert d["head_sha"]==expected and d["conclusion"]=="success",(run,d.get("conclusion"),d.get("head_sha"))
+          print("PASS pinned original source-head Supplement figures and tables")
+          PY
+      - name: Download audited Supplement Figures S1-S7
+        uses: actions/download-artifact@v4
+        with:
+          name: tampa-supplement-figures-v1
+          run-id: 39880446814
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: results/generated_supplement_figures_rendered
+      - name: Download audited Supplementary Tables S1-S9
+        uses: actions/download-artifact@v4
+        with:
+          name: tampa-supplement-tables-v1
+          run-id: 39880446784
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: results/generated_supplement_tables
+      - name: Regenerate Tampa primary and secondary ecology figure data
+        run: |
+          python analysis/03_quantitative_state.py --out results/generated
+          python analysis/05_community_compensation.py --out results/generated
+          python analysis/09_quantitative_early_warning.py --input results/generated --out results/generated
+          python analysis/30_main_figure_data.py --input results/generated --out results/generated/figure_data
+          python analysis/11_nps_persistent_cover.py --out results/generated_nps_figure
+          python analysis/31_nps_figure_data.py --input results/generated_nps_figure --out results/generated_nps_figure/figure_data
+      - name: Render figures 1-4 as EPS TIFF and QA PNG
+        run: |
+          python figures/render_esco_figures.py \
+            --primary results/generated/figure_data \
+            --nps results/generated_nps_figure/figure_data \
+            --out results/generated_esco_figures
+      - name: Verify original figures and Supplement assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          for root,stem,n in [
+              (Path("results/generated_esco_figures"),"Fig",4),
+              (Path("results/generated_supplement_figures_rendered"),"FigS",7)]:
+              for i in range(1,n+1):
+                  for ext in ("eps","tif"):
+                      p=root/f"{stem}{i}.{ext}"
+                      assert p.exists() and p.stat().st_size>3000,p
+                  qa=root/f"{stem}{i}_QA.png"
+                  assert qa.exists() and qa.stat().st_size>5000,qa
+                  with Image.open(root/f"{stem}{i}.tif") as im:
+                      assert im.info.get("dpi",(0,0))[0]>=590,im.info
+          assert len(list(Path("results/generated_supplement_tables").glob("Table_S*.csv")))==9
+          print("PASS four main and seven supplementary high-resolution figures")
+          PY
+      - name: Export original scientific paper as Word, SI PDF and 12 CSV Online Resources
+        run: |
+          python manuscript/export_esco_author_review_package.py \
+            --out results/generated_esco_author_review \
+            --main-figures results/generated_esco_figures \
+            --supp-figures results/generated_supplement_figures_rendered \
+            --supp-tables results/generated_supplement_tables
+      - name: Verify all deliverables have provenance and review boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("results/generated_esco_author_review")
+          audit=json.loads((root/"SOURCE_AND_LAYOUT_AUDIT.json").read_text())
+          assert audit["status"]=="AUTHOR_REVIEW_ARTIFACTS_ONLY_NOT_SUBMITTED"
+          assert audit["exported_tables_count"]==12
+          assert len(audit["render_checks"])==3
+          assert audit["render_checks"][1]["image_references"]>=7
+          assert audit["render_checks"][1]["pages"]>=10
+          assert len(audit["author_approval_blockers"])>=5
+          archive=Path("results/Tampa_ESCO_AUTHOR_REVIEW_PACKAGE.zip")
+          assert archive.is_file() and archive.stat().st_size>100000
+          print("PASS DOCX, supplement PDF, cover letter, figures and source CSV audit")
+          PY
+      - name: Upload author-review ZIP bundle (no submission or attestations)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-esco-author-review-complete-package
+          retention-days: 90
+          if-no-files-found: warn
+          compression-level: 0
+          path: results/Tampa_ESCO_AUTHOR_REVIEW_PACKAGE.zip
+      - name: Upload independent provenance and layout audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-esco-author-review-provenance
+          retention-days: 90
+          if-no-files-found: warn
+          path: |
+            results/generated_esco_author_review/SOURCE_AND_LAYOUT_AUDIT.json
+            results/generated_esco_author_review/AUTHOR_ACTIONS_BEFORE_SUBMISSION.md
