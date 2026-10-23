@@ -1,0 +1,32 @@
+name: Tampa conservation translation source evidence guard
+
+on:
+  push:
+    paths:
+      - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"
+      - "validation/verify_tampa_conservation_translation_20261023.py"
+      - ".github/workflows/tampa-conservation-translation-qc.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit conservation mark-revisit and ranked capacity claims
+        run: python validation/verify_tampa_conservation_translation_20261023.py
+      - name: Store author-review evidence audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-conservation-translation-science-qc
+          retention-days: 90
+          if-no-files-found: warn
+          path: results/tampa_conservation_translation_qc_20261023.json
