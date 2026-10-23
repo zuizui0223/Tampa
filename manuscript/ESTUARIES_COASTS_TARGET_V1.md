@@ -5,9 +5,9 @@
 **Primary target:** *Estuaries and Coasts*  
 **Article type:** Original Article
 
-## Why Original Article rather than Brief Report
+## Original-research editorial case versus a descriptive place-based report
 
-The journal states that primarily descriptive or strongly place-based studies should be submitted as Brief Reports. The Tampa paper is therefore framed around a general ecological and monitoring question rather than a Tampa-only inventory:
+**Official journal scope check (19 October 2026):** The Coastal and Estuarine Research Federation says that submissions which are primarily descriptive or strongly place-based **fall outside the journal's scope**; the policy does **not** say those manuscripts can simply be reassigned as Brief Reports. See https://www.cerf.science/journal . This poses a genuine editorial-fit risk for the Tampa study unless the paper establishes findings of general interest beyond a Tampa Bay inventory. We therefore frame the testable ecological and monitoring question as follows:
 
 > Persistent occurrence can conceal quantitative degradation, and different state dimensions can diverge through time within the same repeatedly monitored foundation-species populations.
 
@@ -16,13 +16,13 @@ The Original Article case rests on four features:
 1. a 29-year repeated-site test of divergence among nested ecological state dimensions;
 2. spatially distinct degradation pathways within one estuary rather than a single local trend description;
 3. post-hoc external ecological replication in an independent *Zostera marina* monitoring network;
-4. a strict out-of-time test showing that quantitative weakening can precede instability of the coarse recorded state.
+4. a strict, internally scored out-of-time test showing that **source-year quantitative state** predicts some subsequent **recorded non-detections** beyond an L2-regularized node-ID reference; it does not prove biological decline or independently validated management utility.
 
 The manuscript should not be pitched as a “description of Tampa Bay seagrass decline.” Tampa Bay is the empirical system used to test a more general monitoring/ecological-state hypothesis.
 
 ## Current journal requirements mapped to this manuscript
 
-Source: Springer Nature *Estuaries and Coasts* Submission Guidelines, checked 2026-09-28.
+Sources: CERF official current journal scope, checked **2026-10-19**, https://www.cerf.science/journal ; Springer Nature submission guidance as previously documented on 2026-09-28. Submission category and detailed file-format requirements must be reverified at the final upload.
 
 ### Manuscript type and structure
 
@@ -132,10 +132,13 @@ To minimize that risk:
 
 - title and abstract lead with the general foundation-species state-decoupling result, not Tampa Bay;
 - Introduction explicitly identifies a general monitoring/state-dimension gap;
-- NPS *Zostera* comparison remains in the main text;
+- NPS *Zostera* comparison remains in the main text **as post-hoc ecological context**, not untouched predictive replication;
 - Discussion leads with the many-to-one mapping from degradation processes to binary presence;
 - Tampa-specific mechanism hunting remains secondary/Supplementary;
-- no environmental variable is promoted merely because it is locally interesting.
+- no environmental variable is promoted merely because it is locally interesting;
+- the manuscript explicitly cites **Peng et al. (2026)** to acknowledge that dense-to-sparse seagrass mapping already exists globally, while Tampa contributes species-specific trait and community trajectories in fixed transects;
+- even with these safeguards, an editor may reasonably find the contribution too place-based; journal suitability is an **unresolved editorial judgement**, not a code-QC PASS.
+- the prospective **first fallback** is *Aquatic Conservation: Marine and Freshwater Ecosystems*, whose official Wiley scope explicitly accepts local-to-global research with conservation relevance (https://onlinelibrary.wiley.com/page/journal/10990755/homepage/productinformation.html). For Tampa, the contribution would be state-specific monitoring decisions, not validated causal remediation. Alternative journals also require substantive general/management relevance; switching titles alone cannot substitute for it.
 
 ## Current submission message
 

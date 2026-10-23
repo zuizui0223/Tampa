@@ -38,6 +38,15 @@ Use for:
 - physiological- and organism-level approaches are comparatively underused;
 - supports the manuscript's recommendation to integrate state dimensions rather than replace occurrence monitoring.
 
+## Global extent-versus-density distinction already established
+
+**Peng, J. et al. (2026).** Global high-resolution mapping of seagrass to support conservation. *Nature* **655**, 663–669. DOI: **10.1038/s41586-026-10704-3**. Published 24 June 2026.
+
+Use for:
+- a global satellite-based baseline that already separates mapped seagrass areal loss from dense-to-sparse cover changes;
+- refining Tampa novelty to what 29 years of species-specific, fixed-point, organism-level observations add beyond the mapped global cover distinction;
+- explicit caution: the 10-m satellite dense/sparse classification is *not the same measurement* as Tampa's Braun–Blanquet ordinal index, shoot density, blade length, or point-level focal frequency; no spatial-temporal effect-size comparison is valid without harmonized data.
+
 ## State variables / indicator response times
 
 **Roca, G. et al. (2016).** Response of seagrass indicators to shifts in environmental stressors: A global review and management synthesis. *Ecological Indicators* 63: 310–323.  

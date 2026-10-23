@@ -24,7 +24,9 @@
 
 ## Required before initial journal submission
 
-- [x] Select target journal: **Estuaries and Coasts — Original Article**.
+- [x] Select **provisional** first target: *Estuaries and Coasts* — Original Article; its official scope expressly excludes primarily descriptive/strongly place-based studies (scope verified 2026-10-19), so journal fit is an **unresolved editor decision**, not author-formatting QC.
+- [x] Identify realistic first fallback: *Aquatic Conservation: Marine and Freshwater Ecosystems* (accepts local-to-global aquatic conservation research when management implications are clear; no acceptance implied).
+- [ ] Corresponding author reviews this scope/novelty risk and approves the actual target before submission.
 - [x] Apply journal Abstract/keyword/citation/caption constraints in the ESCO submission build.
 - [x] Complete provisional bibliography for all current in-text citations.
 - [x] Check every current in-text author–year citation against the bibliography.

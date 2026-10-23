@@ -77,31 +77,17 @@ The scripts verify exact byte sizes and Git blob identities for Event, Occurrenc
 
 The reconstructed frequency-occurrence and Braun-Blanquet abundance definitions follow the TBEP/tbeptools convention: species observations divided by sampled placements, and species-specific Braun-Blanquet scores averaged over sampled placements.
 
-## Open falsification: does quantitative early warning survive stable site identity?
+## Completed recorded-state prediction and fixed-mark audits
 
-The historical early-warning comparison gives better strict target-year
-prediction when source-year *Thalassia* frequency and Braun–Blanquet state
-are added to a **spatial/time/survey-effort** baseline (pooled AUC
-**0.636 → 0.739**, 17/23 target-year wins, including the adverse 2016 year).
-It did **not** include stable transect identity.
+The original space/time/effort comparison is retained (pooled AUC 0.636 to 0.739). Adding the same source frequency and Braun–Blanquet state to the **L2-regularized node-ID reference** gave AUC **0.67055 to 0.73636**, macro annual log loss **0.148268 to 0.147230**, and **17/23** improved target years (frozen one-sided sign p **0.0173448**). The small average improvement includes strongly adverse 2016 (**+0.305633** annual log-loss difference). Support is relative to that specified predictive reference, not proof of a causal within-node deterioration process.
 
-An explicit reference-saturation audit is now [contracted](results/early_warning_site_identity_saturation_v1_contract.json)
-and [implemented](analysis/77_early_warning_site_identity_saturation.py).
-It compares **node ID + spatial/time/effort** against the exact same
-reference plus frequency and Braun–Blanquet, keeping cohort, learner,
-regularization, target-year folds and 2016 identical. The
-[workflow](.github/workflows/early-warning-site-identity-saturation.yml)
-runs from the pinned source and asserts that the original result is fully
-reproduced before interpreting the node-saturated contrast.
+The fixed-mark audit is complete. Among **24** recorded losses in 688 source-positive transitions, **17/24** revisited at least one formerly positive mark: 10 all, seven some and seven none. Among the **19** scored losses in 570 predictions, the corresponding partition is seven all, seven some and five none (**14/19** revisited). All five 2016 losses had a revisit. Nominal mark identity does not guarantee identical microquadrat placement or perfect detection; non-detection is not measured mortality.
 
-**Status: executable; node-saturated outcome not yet confirmed.**
-Until its results are inspected, it is not established whether quantitative
-early warning reflects *dynamic within-node deterioration* instead of
-persistent site vulnerability. Independently, the frozen
-[condition-leading test](results/condition_leads_thinning_v1.json)
-did **not** support an annual blade-length/shoot-density → next-year
-frequency-thinning sequence, so the ecological mainline is
-partially independent state axes rather than a demonstrated serial cascade.
+The unchanged 10%/20% nominal annual lists selected 47/105 alerts. Capture increased **6 to 9** and **9 to 13** of 19 losses. Within the original lists, captures with a prior positive mark revisited increased **4 to 6** and **7 to 9**. No list was refitted or reranked, and the partition adds no new statistical test or intervention claim. Historical targeting is conditional on a next-year survey.
+
+See [verified source and interpretation](docs/EARLY_WARNING_FIXED_MARK_VERIFIED_V1.md), [canonical overlap result](results/early_warning_fixed_mark_overlap_verified_v1.json), and [Supplementary Tables S10–S12](manuscript/TAMPA_ECOLOGY_SUPPLEMENT_ASSEMBLED_V1.md). The source computation succeeded in [run 38109944875](https://github.com/zuizui0223/Tampa/actions/runs/38109944875); a separate artifact reaggregation reproduced its counts and probabilities without refitting.
+
+The [condition-leading test](results/condition_leads_thinning_v1.json) did not support an annual blade-length/shoot-density to next-year thinning sequence. The ecological interpretation remains state-specific change, not a demonstrated serial cascade. No future TNC, reserve buffering, mortality or management outcome was measured here.
 
 ## Current reproducible result
 

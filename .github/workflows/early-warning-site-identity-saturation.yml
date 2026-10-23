@@ -5,6 +5,22 @@ on:
     paths:
       - "analysis/09_quantitative_early_warning.py"
       - "analysis/77_early_warning_site_identity_saturation.py"
+      - "analysis/78_early_warning_monitoring_utility.py"
+      - "analysis/81_early_warning_fixed_mark_overlap.py"
+      - "analysis/33_community_buffering.py"
+      - "results/early_warning_monitoring_utility_v1_contract.json"
+      - "results/early_warning_fixed_mark_overlap_v1_contract.json"
+      - "results/early_warning_site_identity_saturation_v1_contract.json"
+      - ".github/workflows/early-warning-site-identity-saturation.yml"
+  pull_request:
+    paths:
+      - "analysis/09_quantitative_early_warning.py"
+      - "analysis/77_early_warning_site_identity_saturation.py"
+      - "analysis/78_early_warning_monitoring_utility.py"
+      - "analysis/81_early_warning_fixed_mark_overlap.py"
+      - "analysis/33_community_buffering.py"
+      - "results/early_warning_monitoring_utility_v1_contract.json"
+      - "results/early_warning_fixed_mark_overlap_v1_contract.json"
       - "results/early_warning_site_identity_saturation_v1_contract.json"
       - ".github/workflows/early-warning-site-identity-saturation.yml"
   workflow_dispatch:
@@ -22,16 +38,27 @@ jobs:
       - name: Install scientific dependencies
         run: python -m pip install -r requirements.txt
       - name: Check source syntax
-        run: python -m py_compile analysis/09_quantitative_early_warning.py analysis/77_early_warning_site_identity_saturation.py
+        run: python -m py_compile analysis/09_quantitative_early_warning.py analysis/77_early_warning_site_identity_saturation.py analysis/78_early_warning_monitoring_utility.py analysis/81_early_warning_fixed_mark_overlap.py
       - name: Rebuild pinned quantitative annual source
         run: python analysis/03_quantitative_state.py --out results/generated_site_warning
       - name: Rebuild pinned survey timing effort and community annual source
         run: python analysis/05_community_compensation.py --out results/generated_site_warning
       - name: Run stable-node saturated warning audit
         run: python analysis/77_early_warning_site_identity_saturation.py --input results/generated_site_warning --out results/generated_site_warning
+      - name: Self-test monitoring utility audit
+        run: python analysis/78_early_warning_monitoring_utility.py --self-test
+      - name: Audit historical 10/20 percent watchlists
+        run: python analysis/78_early_warning_monitoring_utility.py
+      - name: Self-test fixed meter-mark observation audit
+        run: python analysis/81_early_warning_fixed_mark_overlap.py --self-test
+      - name: Reconstruct fixed mark overlap against the 688/24 registry and scored 570/19 cohort
+        run: python analysis/81_early_warning_fixed_mark_overlap.py
       - name: Display summary
         if: always()
-        run: cat results/generated_site_warning/early_warning_site_identity_saturation_v1.json || true
+        run: |
+          cat results/generated_site_warning/early_warning_site_identity_saturation_v1.json || true
+          cat results/generated_site_warning/early_warning_monitoring_utility_v1.json || true
+          cat results/generated_site_warning/early_warning_fixed_mark_overlap_v1.json || true
       - name: Upload audit
         if: always()
         uses: actions/upload-artifact@v4
@@ -39,5 +66,8 @@ jobs:
           name: tampa-site-saturated-early-warning
           path: |
             results/generated_site_warning/early_warning_site_identity_saturation_v1.json
+            results/generated_site_warning/early_warning_monitoring_utility_v1.json
+            results/generated_site_warning/early_warning_fixed_mark_overlap_v1.json
+            results/generated_site_warning/early_warning_fixed_mark_overlap_transitions_v1.csv
             results/generated_site_warning/early_warning_site_identity_year_scores.csv
             results/generated_site_warning/early_warning_site_identity_predictions.csv

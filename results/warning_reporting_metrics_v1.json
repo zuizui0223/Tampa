@@ -1,0 +1,37 @@
+{
+  "schema": "tampa.warning_reporting_metrics_v1",
+  "evidence_class": "display_only_reaggregation_of_archived_predictions",
+  "source": {
+    "run_id": 38109944875,
+    "head_sha": "fc3792e21f2d34e74de10cdbed6b48ac5603aabe",
+    "artifact_id": 11691158710,
+    "archive_sha256": "18109267f68732c5460a9e4d087e2711282ed71f13f96ed7d0a484ed0320d89e"
+  },
+  "metrics": {
+    "space": {
+      "log_loss": 0.14971493590809562,
+      "brier": 0.03216681846779974,
+      "auc": 0.636354952717547,
+      "macro_log_loss": 0.1556293347558577
+    },
+    "space_quant": {
+      "log_loss": 0.13804604022180997,
+      "brier": 0.029781448477710918,
+      "auc": 0.7385614671888433,
+      "macro_log_loss": 0.14645165934327545
+    },
+    "node": {
+      "log_loss": 0.14335738584231025,
+      "brier": 0.03141783406376481,
+      "auc": 0.6705511510172891,
+      "macro_log_loss": 0.14826766946459452
+    },
+    "node_quant": {
+      "log_loss": 0.13887333640527613,
+      "brier": 0.030017389281513655,
+      "auc": 0.7363645047282453,
+      "macro_log_loss": 0.14723029062512885
+    }
+  },
+  "changes_to_models_or_thresholds": false
+}

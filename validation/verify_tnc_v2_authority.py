@@ -69,7 +69,7 @@ assert ">=6 analyzable nodes in each bay" in priority
 assert "six-node per-bay floor is a representation guardrail" in priority
 
 status=(ROOT/"docs/THREE_ECOLOGY_PROGRAMS_STATUS_V1.md").read_text()
-assert "- >=36 analyzable nodes;" in status
-assert "- >=6 per bay;" in status
+assert "- >=36 analyzable nodes total;" in status
+assert "- >=6 analyzable nodes per bay;" in status
 
 print("Tampa TNC v2 authority boundary: OK")

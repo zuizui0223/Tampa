@@ -41,6 +41,7 @@ on:
       - "results/current_validation_v2.json"
       - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"
       - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"
+      - "requirements.txt"
       - "validation/verify_measurement_layer_hard_stop.py"
       - ".github/workflows/measurement-layer-boundary.yml"
   pull_request:
@@ -84,6 +85,7 @@ on:
       - "results/current_validation_v2.json"
       - "manuscript/TAMPA_ECOLOGY_RESULTS_DISCUSSION_V1.md"
       - "manuscript/TAMPA_CONSERVATION_TRANSLATION_V1.md"
+      - "requirements.txt"
       - "validation/verify_measurement_layer_hard_stop.py"
       - ".github/workflows/measurement-layer-boundary.yml"
   workflow_dispatch:
@@ -96,6 +98,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install frozen scientific dependencies
+        run: python -m pip install -r requirements.txt
       - run: python validation/verify_measurement_layer_hard_stop.py
       - run: python validation/verify_tnc_v2_authority.py
       - run: python validation/test_functional_insurance_loss_legacy_primary.py

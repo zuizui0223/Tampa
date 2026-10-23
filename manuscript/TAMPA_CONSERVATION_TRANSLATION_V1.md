@@ -89,6 +89,25 @@ This is more specific than simply recommending "multilevel monitoring."
 
 It links the expensive mechanism measurements to an observed state mismatch.
 
+## Historical quantitative triage evidence — what is and is not actionable
+
+A fixed-capacity **confirmation-sampling priority list** is the defensible operational interpretation of the retrospective 2003–2025 recorded-state forecasts. The strict walk-forward evaluation scored **570** source-positive node-year transitions and **19** next-year recorded non-detections across **23** scored target years, retaining adverse **2016**. Quantitative source-year frequency/Braun–Blanquet information added to a reference including **L2-regularized node identity**, geography, time and effort increased pooled AUC from **0.671 to 0.736**; mean annual log loss improved only from **0.14827 to 0.14723** (approximately **0.7%** relative). These are different measures of ranking and calibrated risk and must not be treated as a single validated management alarm.
+
+For the *unchanged* year-by-year nominal monitoring fractions, the original model ranked the following node-year watch lists:
+
+| Historical nominal capacity | Flagged source-positive node-years, summed across 23 target years | Recorded next-year losses captured: site-reference model | Captured after quantitative states added | Interpretation |
+|---|---:|---:|---:|---|
+| 10% per scored year | **47** | **6/19** | **9/19** | +3 historical records captured at an unchanged nominal monitoring capacity |
+| 20% per scored year | **105** | **9/19** | **13/19** | +4 historical records captured at an unchanged nominal monitoring capacity |
+
+The percentages are **capacity rules**, not the proportion of historical observations that ultimately disappeared, and 47/105 are summed **node-year priority assignments**, not necessarily independent meadows. The model's 2016 performance was strongly adverse, and no untouched future-year validation or management intervention has shown that one of these capacities is optimal. Ranking cannot be promoted into a legally or biologically validated threshold for restoration action, extinction risk or meadow death. The watch list is **not a collapse forecast**.
+
+**Required confirmation layer before biological interpretation:** archived source-year positive marks were nominally revisited in only **17 of 24** recorded non-detection transitions; in **7 of 24**, *none* of the previously positive marks was sampled the following year. Among 19 scored losses, 14 revisited at least one positive mark and 5 revisited none. Therefore a priority visit should first reconstruct which historical meter-mark locations were actually sampled; confirm matching sampling footprint/effort and repeat the same eligible marks or document why they could not be revisited. A named historical mark is not proof of identical microquadrat placement, and an unvisited mark must not be coded as sampled absence. Even at an apparently revisited mark, apparent absence may reflect detection or survey variability rather than biological mortality.
+
+**Proposed management workflow, not tested as an intervention:** use the historical quantitative state to schedule **verification and additional state measurement**; then distinguish (a) no return to a previously occupied mark, (b) a sampled point with non-detection, (c) reduced focal frequency/abundance despite detection, and (d) measured plant structure or species-composition change. Only after confirming the observation layer should local water/light, sediment, rhizome reserves or other process measures be used to ask *why* the state changed. Do **not** trigger a restoration treatment based solely on the retrospective watch-list probability.
+
+Evidence: [frozen capacity specification](../results/early_warning_monitoring_utility_v1_contract.json), [archived prediction metrics](../results/warning_reporting_metrics_v1.json), [independent fixed-mark aggregation](../results/early_warning_fixed_mark_overlap_verified_v1.json), and [mechanistic non-sequence audit](../results/condition_leads_thinning_v1.json).
+
 ## Practical monitoring hierarchy
 
 A conservation dashboard should keep at least four layers separate.
@@ -129,9 +148,9 @@ Seagrasses are unusually well suited to revealing state decoupling for four reas
 
 The strongest ecological synthesis is:
 
-> **Established seagrass meadows have a slow, site-anchored occupancy/abundance component and a faster, more labile plant-condition component.**
+> **In the Tampa monitoring record, coarse recorded state and focal abundance are more strongly differentiated among persistent transect identities than blade length and shoot density; they need not change in parallel.**
 
-In the Tampa panel, stable node identity descriptively accounted for much more level variation in detection, focal frequency, and Braun–Blanquet state than in blade length or shoot density. The same site can therefore maintain its broad occupancy state while blade stature or shoot density changes substantially.
+In the Tampa panel, stable node identity descriptively accounted for much more level variation in detection, focal frequency, and Braun–Blanquet state than in blade length or shoot density. The same site can therefore maintain its coarse detection state while blade stature or shoot density changes substantially. The node-identity shares are **descriptive spatial level differences** (approximately 0.823/0.874/0.862 for detection/frequency/Braun–Blanquet versus 0.259/0.232 for blade length/shoot density). They do **not** measure biological memory duration, turnover rates, rhizome buffering or a causal temporal lag.
 
 The field data further show that the changing quantitative dimension is spatially heterogeneous:
 

@@ -1,6 +1,6 @@
 # Estuaries and Coasts submission checklist v1
 
-Guideline source checked 2026-09-28.
+Author instructions originally checked 2026-09-28; journal scope rechecked against CERF official site on 2026-10-19 (https://www.cerf.science/journal).
 
 ## Article type and editorial fit
 
@@ -10,7 +10,8 @@ Guideline source checked 2026-09-28.
 - [x] General ecological question leads the paper
 - [x] NPS external comparison remains in the main text to reduce “strongly place-based / primarily descriptive” desk-rejection risk
 - [x] Mechanism-null analyses are secondary rather than the novelty claim
-- [ ] Final cover letter explicitly states why the manuscript is an Original Article rather than a place-based Brief Report
+- [ ] Final cover letter explains why the study tests a generally relevant coastal ecological-state question **rather than being primarily descriptive and place-based**, which CERF says is outside the journal's scope. No automatic Brief Report rescue is claimed.
+- [ ] Corresponding author approves potential desk-rejection risk and fallback to an aquatic-conservation monitoring application venue.
 
 ## Abstract and keywords
 
@@ -35,6 +36,7 @@ Guideline source checked 2026-09-28.
 - [x] Parenthetical citations use comma before year
 - [x] Reference list alphabetized by first author
 - [x] DOI links included where available
+- [x] 2026 global dense-to-sparse mapping (Peng et al., *Nature*) explicitly credited; no first-discovery claim
 - [x] Reference entries reformatted toward APA 7 / journal guidance
 - [ ] Final Word export: verify italics, en dashes, author punctuation, and any issue numbers
 
@@ -89,7 +91,7 @@ Guideline source checked 2026-09-28.
 ## Submission letter
 
 - [ ] Confirm not published / not under consideration elsewhere
-- [ ] Confirm all coauthor approvals
+- [ ] Confirm all coauthor approvals **before making any submission attestation**
 - [ ] Describe author contributions
 - [ ] Disclose permissions/reused material if any
 - [ ] Disclose preprint DOI/license if applicable

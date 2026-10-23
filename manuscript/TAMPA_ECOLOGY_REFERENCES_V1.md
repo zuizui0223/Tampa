@@ -14,6 +14,8 @@ Lefcheck, J. S., Wilcox, D. J., Murphy, R. R., Marion, S. R., & Orth, R. J. (201
 
 Orth, R. J., Carruthers, T. J. B., Dennison, W. C., Duarte, C. M., Fourqurean, J. W., Heck, K. L., Jr., Hughes, A. R., Kendrick, G. A., Kenworthy, W. J., Olyarnik, S., Short, F. T., Waycott, M., & Williams, S. L. (2006). A global crisis for seagrass ecosystems. *BioScience, 56*, 987–996. https://doi.org/10.1641/0006-3568(2006)56[987:AGCFSE]2.0.CO;2
 
+Peng, J., Li, J., Krause, J. R., Lyons, M. B., Murray, N. J., Schill, S. R., Roelfsema, C. M., & Asner, G. P. (2026). Global high-resolution mapping of seagrass to support conservation. *Nature, 655*, 663–669. https://doi.org/10.1038/s41586-026-10704-3
+
 Rising, K., Bulling, M., & Sweet, M. (2026). Seagrass monitoring methods: Aligning expert opinion with practice. *iScience, 29*, 114871. https://doi.org/10.1016/j.isci.2026.114871
 
 Roca, G., Alcoverro, T., Krause-Jensen, D., Balsby, T. J. S., van Katwijk, M. M., Marbà, N., Santos, R., Arthur, R., Mascaró, O., Fernández-Torquemada, Y., Pérez, M., Duarte, C. M., & Romero, J. (2016). Response of seagrass indicators to shifts in environmental stressors: A global review and management synthesis. *Ecological Indicators, 63*, 310–323. https://doi.org/10.1016/j.ecolind.2015.12.007

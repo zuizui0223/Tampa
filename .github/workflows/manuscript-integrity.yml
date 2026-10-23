@@ -5,12 +5,18 @@ on:
     paths:
       - "manuscript/**"
       - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - "validation/verify_warning_reporting_sync.py"
+      - "results/warning_reporting_*.json"
+      - "results/early_warning_fixed_mark_overlap_verified_v1.json"
       - ".github/workflows/manuscript-integrity.yml"
   pull_request:
     branches: [main]
     paths:
       - "manuscript/**"
       - "docs/ECOLOGICAL_MECHANISM_BOUNDARY_V1.md"
+      - "validation/verify_warning_reporting_sync.py"
+      - "results/warning_reporting_*.json"
+      - "results/early_warning_fixed_mark_overlap_verified_v1.json"
       - ".github/workflows/manuscript-integrity.yml"
   workflow_dispatch:
 
@@ -26,9 +32,11 @@ jobs:
         run: python manuscript/build_manuscript.py --out manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
       - name: Verify generated manuscript is current
         run: git diff --exit-code -- manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md
+      - name: Verify warning results and all three generated manuscripts
+        run: python validation/verify_warning_reporting_sync.py
       - name: Audit high-risk wording
         run: |
-          python - <<'PY'
+          python - <<'PYCODE'
           from pathlib import Path
           x=Path("manuscript/TAMPA_ECOLOGY_MANUSCRIPT_V1.md").read_text().lower()
           forbidden=[
@@ -55,4 +63,20 @@ jobs:
           for key in ["ellison","orth","waycott","roca","lefcheck","unsworth","lee","carlson","beck","rising","williams"]:
               assert key in x, f"missing in-text citation key: {key}"
           print("manuscript claim-boundary and bibliography audit: OK")
-          PY
+          PYCODE
+      - name: Archive tracked reproduction inputs
+        if: always()
+        run: |
+          git archive --format=zip --output="$RUNNER_TEMP/tampa-manuscript-source.zip" HEAD
+          git rev-parse HEAD > "$RUNNER_TEMP/tampa-manuscript-source-commit.txt"
+          sha256sum "$RUNNER_TEMP/tampa-manuscript-source.zip" > "$RUNNER_TEMP/tampa-manuscript-source-sha256.txt"
+      - name: Preserve reproduction inputs even when integrity fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tampa-manuscript-reproduction-source
+          path: |
+            ${{ runner.temp }}/tampa-manuscript-source.zip
+            ${{ runner.temp }}/tampa-manuscript-source-commit.txt
+            ${{ runner.temp }}/tampa-manuscript-source-sha256.txt
+          if-no-files-found: error
