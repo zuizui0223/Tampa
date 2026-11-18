@@ -81,3 +81,18 @@ Inputs and precise scope registry:
 - \`results/regional_extent_public_sources_v1_registry.json\`
 
 The script **fails closed** if an anchor value or a source ID is changed, missing or duplicated. It does not fetch biological outcome data, fit a response model, or convert unvisited marks to zero.
+
+
+## Mechanistic hypothesis for a distinct future study: macroalgal recovery gate
+
+The same 2026 district report describes Charlotte Harbor's 2018–2020 losses as coincident with a major expansion of filamentous macroalgae. It also describes the **2022–2024 Sarasota Bay areal rebound** alongside improving water quality and a reduction in macroalgae. These are **agency interpretations of associations**, not a quantitative matched-site cause-and-effect test, nor evidence of a uniquely new mechanism.
+
+A testable cross-estuary prediction follows:
+
+> Following extensive mapped seagrass loss, *future reoccupation* of previously vegetated bottom is less likely where macroalgal cover remains high at the **start** of a recovery interval, conditional on prior seagrass history, depth, mapped habitat suitability, and bay-wide time effects.
+
+Candidate independent analysis unit: fixed spatial cells historically classified as seagrass in 2016, then recorded without seagrass in a **consistent 2022 mapping product**, followed forward to 2024, with raw macroalgae polygons and stable mapping footprint validation. Explicitly distinguish never-vegetated habitat from previously vegetated but subsequently lost cells. Treat macroalgae observed concurrently in 2024 as a **post-outcome correlate**, never an unlagged causal predictor.
+
+Pre-outcome exposure: fractional macroalgal cover of each cell in 2022 (or earlier), with clear distinction between *attached* and *drift* macroalgae and evidence of mapping comparability. Primary endpoint: reappearance of mapped seagrass in 2024 in the previously vegetated/lost cells. Spatial dependence, classification error and the fact that "algae" and "seagrass" may be mutually exclusive map labels must be audited; apparent anticorrelation from exclusive classification is not ecological competition. Report temporal association only, not competition or restoration effect.
+
+For generality, require at least multiple independent estuaries, hold out an entire estuary when evaluating transportability, and show uncertainty clustered spatially rather than treating adjacent 10–30 m cells as independent replicates. **No macroalgae areas, cell transitions or coefficients were downloaded or estimated here**. This hypothesis is a proposed discriminating experiment following the source-backed descriptive contrast.
