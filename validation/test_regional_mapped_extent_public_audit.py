@@ -26,7 +26,7 @@ class SourceAudit(unittest.TestCase):
         self.assertTrue(r["not_untouched_prediction"])
 
     def test_source_anchor_tamper_fails(self):
-        bad=CSV.replace("Charlotte Harbor\\\",2024,14020", "Charlotte Harbor\\\",2024,14021")
+        bad=CSV.replace('SWFWMD_2026,"Charlotte Harbor",2024,14020', 'SWFWMD_2026,"Charlotte Harbor",2024,14021')
         self.assertNotEqual(CSV,bad)
         with self.assertRaisesRegex(ValueError,"source anchor drift"): M.evaluate(bad,REGISTRY)
 
@@ -35,8 +35,8 @@ class SourceAudit(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"duplicated year"): M.evaluate(bad,REGISTRY)
 
     def test_unverified_source_id_fails(self):
-        bad=CSV.replace("SWFWMD_2026,Tampa Bay,2016,41655,SWFWMD_2026",
-                        "SWFWMD_2026,Tampa Bay,2016,41655,CHNEP_FACTSHEET_2023")
+        bad=CSV.replace('SWFWMD_2026,"Tampa Bay",2016,41655,SWFWMD_2026',
+                        'SWFWMD_2026,"Tampa Bay",2016,41655,CHNEP_FACTSHEET_2023')
         with self.assertRaisesRegex(ValueError,"mixed series"): M.evaluate(bad,REGISTRY)
 
     def test_missing_registry_source_fails(self):
@@ -46,7 +46,7 @@ class SourceAudit(unittest.TestCase):
 
     def test_missing_required_2024_fails(self):
         bad="\n".join(x for x in CSV.splitlines()
-                     if "Charlotte Harbor,2024,14020" not in x)+"\n"
+                     if '"Charlotte Harbor",2024,14020' not in x)+"\n"
         with self.assertRaisesRegex(ValueError,"source anchor drift"):M.evaluate(bad,REGISTRY)
 
 if __name__=="__main__":
