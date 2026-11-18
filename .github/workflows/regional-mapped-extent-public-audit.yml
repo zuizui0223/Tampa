@@ -1,0 +1,35 @@
+name: Tampa three-estuary mapped area source audit
+
+on:
+  push:
+    paths:
+      - "analysis/90_regional_mapped_extent_public_audit.py"
+      - "results/regional_extent_public_sources_v1*"
+      - "validation/test_regional_mapped_extent_public_audit.py"
+      - ".github/workflows/regional-mapped-extent-public-audit.yml"
+  pull_request:
+    paths:
+      - "analysis/90_regional_mapped_extent_public_audit.py"
+      - "results/regional_extent_public_sources_v1*"
+      - "validation/test_regional_mapped_extent_public_audit.py"
+      - ".github/workflows/regional-mapped-extent-public-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-scope-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run fail-closed source-value and scope tests
+        run: python -m unittest discover -s validation -p 'test_regional_mapped_extent_public_audit.py' -v
+      - name: Regenerate public mapped-acreage contrasts
+        run: python analysis/90_regional_mapped_extent_public_audit.py --output results/generated_regional_extent_public_audit_v1.json
+      - name: Publish audit report (not a biological mechanism validation)
+        uses: actions/upload-artifact@v4
+        with:
+          name: regional-extent-public-report
+          path: results/generated_regional_extent_public_audit_v1.json
+          retention-days: 30
