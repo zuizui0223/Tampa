@@ -1,6 +1,6 @@
 {
   "schema": "tampa.chap_external_state_axes_v1.metadata_manifest",
-  "notice": "INTENTIONALLY BLOCKING TEMPLATE: fill only with independently verified source/protocol evidence; no biological response values",
+  "notice": "INTENTIONALLY BLOCKING TEMPLATE: original registered field-level workbook not opened; independent CHNEP species-trend summary and mapped acreage outcomes already visible, so no untouched validation claim.",
   "program_id": 570,
   "official_program_url": "https://data.florida-seacar.org/programs/details/570",
   "authorization": "pending",
@@ -96,5 +96,7 @@
     "PI11",
     "SC04",
     "SC05"
-  ]
+  ],
+  "published_aggregate_outcomes_seen": true,
+  "external_predictive_validation_eligible": false
 }
