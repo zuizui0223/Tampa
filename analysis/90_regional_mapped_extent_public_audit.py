@@ -84,6 +84,11 @@ def evaluate(csv_text, registry):
     if set(signs.values())!={"increase","decline"}:
         raise ValueError("Expected directional divergence not reproduced")
 
+    indexed_spread = {}
+    for year in (2022, 2024):
+        values = [primary[estuary]["2016_index_100"][str(year)] for estuary in EXPECTED_SWFWMD]
+        indexed_spread[str(year)] = round(max(values) - min(values),4)
+    # Descriptive cross-estuary dispersion at two time points, not independent inference.
     chdiff={str(y):data[(PRIMARY_ID,"Charlotte Harbor")][y]-chnep[y]
             for y in (2016,2018,2020,2022)}
     return {
@@ -95,6 +100,7 @@ def evaluate(csv_text, registry):
         "primary":primary,
         "shared_2018_to_2020_decline":True,
         "2022_to_2024_recovery_direction":signs,
+        "regional_2016_index_spread_points":indexed_spread,
         "alternate_chnep_distinct_spatial_scope":{
             "2018_to_2020":change(chnep[2018],chnep[2020]),
             "2016_to_2022":change(chnep[2016],chnep[2022]),
