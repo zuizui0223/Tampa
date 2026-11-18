@@ -56,3 +56,37 @@ An external Charlotte Harbor replication would ask whether the **multi-axis obse
 **METADATA SCREEN COMPLETE / BIOLOGICAL OUTCOME UNOPENED / NO EXTERNAL REPLICATION RESULT.**
 
 The scientific paper and existing tests are unchanged. No human field permission, data-access registration, manuscript submission, or PR merge is implied.
+
+
+## Verified methodology amendment (2026-11-18; no outcome access)
+
+Independent reading of the [agency program page](https://data.florida-seacar.org/programs/details/570), [2019 field protocol](https://chnep.wateratlas.usf.edu/upload/documents/CHAP_Seagrass_Monitoring_Protocols_2019_Update.pdf) and [1999–2016 agency report](https://floridadep.gov/sites/default/files/CHAP-Seagrass-Report-1999-2016.pdf) disclosed additional comparison threats:
+
+- **Stable marked quadrats vs moving edge quadrats:** field protocol II.E–G distinguishes site-specific repeatedly measured 1 m² quadrats from annual start/end-of-bed positions that move with bed margins. Limit repeated-identity tests to documented repeat quadrats; do not reconstruct absence from missing edge rows.
+- **Species abundance coding:** field protocol uses r = solitary and + = few; the portal renders these as 0.1 and 0.5 while one historical PDF text entry says 0.05 for few. Treat original workbook BB values as unresolved until the source dictionary proves their encoding. Do not assume a silent numeric transform.
+- **Leaf-selection limitation:** field protocol II.G measures five representative blades per species and only rounded, healthy green-tipped Thalassia blades. A change in this statistic need not reflect mean length across *all* shoots/tissues. Retain this conditioning when interpreting Tampa parallels.
+- **Shoot-density construction:** counts are sampled in a subset of 10 × 10 cm squares, with counting pattern set by the BB class and resulting extrapolation. The historical report indicates density monitoring started in 2005. Validate raw-count vs derived-density units before fitting slopes or equating to Tampa shoots m⁻².
+- **Survey protocol history:** the historical report notes that some repeat quadrats were added in 2007. The 2019 manual says three named transects are monitored quarterly (MP04, MP05, SC03). Prevent accidental double annual sampling; freeze a season/date selection before biological inspection.
+- **Program mixture:** the SEACAR program-page notes acknowledge site-program mixtures (570, 571, 5721) and explicit excluded stations, including CR01–CR05 variants, PI10/PI11 and SC04/SC05.
+
+These are **method-document findings, not a measured ecological change**.
+
+### Executable source preflight
+
+- \`validation/chap_external_state_axes_v1/check_metadata.py\` reads a JSON metadata **manifest**, not a workbook, and refuses undocumented stable IDs, zero semantics, program scope, BB coding, healthy-blade selection, and shoot-area extrapolation.
+- \`validation/chap_external_state_axes_v1/metadata_manifest_TEMPLATE.json\` is intentionally incomplete; its correct result is \`STOP_METADATA_GATE\`.
+- \`validation/chap_external_state_axes_v1/test_check_metadata.py\` tests positive *synthetic* documentation and failure cases without accessing biology.
+- \`.github/workflows/chap-metadata-gate.yml\` runs the synthetic checks in CI.
+
+Example after properly authorized source retrieval and source schema verification:
+
+\`\`\`bash
+python validation/chap_external_state_axes_v1/check_metadata.py \
+  --manifest validation/chap_external_state_axes_v1/metadata_manifest_TEMPLATE.json \
+  --out /tmp/chap_metadata_gate.json
+# Expected on unfilled template: STOP_METADATA_GATE, exit code 2.
+python -m unittest discover -s validation/chap_external_state_axes_v1 \
+  -p 'test_check_metadata.py' -v
+\`\`\`
+
+Even a later metadata-gate PASS is just an attested provenance/schema screen, not proof of adequate biological sample size, reproducibility, ecological mechanism, or lawful data access by a third party. The present status remains **external biological data unopened; no new positive replicate**.
