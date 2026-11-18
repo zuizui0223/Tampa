@@ -1,0 +1,61 @@
+{
+  "schema": "tampa.regional_mapped_extent_source_registry_v1",
+  "evidence_type": "externally published descriptive mapped areal acreage; NOT original transect biological data",
+  "sources": {
+    "SWFWMD_2026": {
+      "url": "https://www.swfwmd.state.fl.us/sites/default/files/medias/documents/Board%20Approved%202026%20Consolidated%20Annual%20Report.pdf",
+      "title": "Southwest Florida Water Management District, Board-approved Consolidated Annual Report 2026",
+      "publication_date": "2026-03-01",
+      "section": "Strategic Plan Annual Work Plan - seagrass mapped acreage charts, Tampa Bay/Charlotte Harbor/Sarasota Bay",
+      "extract_method": "manual independent reading of source reported numeric tables; chart years/values only",
+      "source_family": "same reporting agency; regional boundaries not assumed identical to CHNEP"
+    },
+    "CHNEP_FACTSHEET_2023": {
+      "url": "https://chnep.wateratlas.usf.edu/upload/documents/Charlotte-Harbor-Seagrass-Fact-Sheet.pdf",
+      "title": "CHNEP - Seagrass in Charlotte Harbor fact sheet",
+      "date": "2023 approx; uses 2022 monitoring",
+      "section": "Seagrass Acreage Variation within Charlotte Harbor",
+      "extract_method": "chart printed numerical labels; observed report text additionally mentions 2016-2017 monitoring declines",
+      "source_family": "different mapped extent spatial/interpretative scope from SWFWMD_2026; NOT interchangeably pooled"
+    }
+  },
+  "important_discrepancies": [
+    {
+      "example": "Charlotte Harbor 2016",
+      "swfwmd_acres": 20280,
+      "chnep_acres": 17329,
+      "difference_acres": 2951,
+      "interpretation": "boundary/mapping product/processing distinction unresolved; cannot attribute offset without a crosswalk"
+    },
+    {
+      "example": "Charlotte Harbor 2020",
+      "swfwmd_acres": 15273,
+      "chnep_acres": 13355,
+      "difference_acres": 1918,
+      "interpretation": "different source products, avoid data splicing"
+    },
+    {
+      "example": "CHNEP narrative versus plotted labels 2018-2020",
+      "text_reported_decline_acres": 3648,
+      "figure_label_2018": 16938,
+      "figure_label_2020": 13355,
+      "figure_implied_decline_acres": 3583,
+      "narrative_figure_difference_acres": 65,
+      "interpretation": "internal text/graph mismatch; use printed figure labels for consistent series and report inconsistency"
+    },
+    {
+      "example": "SWFWMD Sarasota 2022",
+      "figure_label_acres": 9963,
+      "narrative_label_acres": 9962,
+      "interpretation": "1-acre internal rounding or editorial difference; preserve plotted table as analytical source"
+    }
+  ],
+  "never_conclude": [
+    "CHNEP and SWFWMD Charlotte acreage series share exact spatial denominators",
+    "local transect condition to future extent causal mechanism",
+    "detectability validated",
+    "regional changes imply one general ecological memory timescale",
+    "equal monitoring footprint across agencies",
+    "three estuaries constitute statistical population for a universal recovery model"
+  ]
+}
