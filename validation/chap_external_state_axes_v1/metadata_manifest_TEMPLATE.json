@@ -1,0 +1,102 @@
+{
+  "schema": "tampa.chap_external_state_axes_v1.metadata_manifest",
+  "notice": "INTENTIONALLY BLOCKING TEMPLATE: original registered field-level workbook not opened; independent CHNEP species-trend summary and mapped acreage outcomes already visible, so no untouched validation claim.",
+  "program_id": 570,
+  "official_program_url": "https://data.florida-seacar.org/programs/details/570",
+  "authorization": "pending",
+  "response_values_opened": false,
+  "source": {
+    "original_workbook_filename": "SEACAR_CHAP Seagrass Data_1999-2025_2025 submission.xlsx",
+    "original_workbook_sha256": null,
+    "provenance_method": "",
+    "raw_response_opened": false
+  },
+  "documentation": {
+    "source_workbook_metadata": {
+      "url": "",
+      "locator": ""
+    },
+    "longitudinal_identifier_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "sampling_zero_missing_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "bb_scale_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "measurement_area_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "annual_survey_season_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "program_570_filter_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "healthy_blade_selection_protocol": {
+      "url": "",
+      "locator": ""
+    },
+    "shoot_subquadrat_extrapolation_protocol": {
+      "url": "",
+      "locator": ""
+    }
+  },
+  "column_roles": {
+    "program_id": "",
+    "aquatic_preserve": "",
+    "transect_id": "",
+    "survey_date": "",
+    "quadrat_id": "",
+    "quadrat_role": "",
+    "surveyed_quadrat_roster": "",
+    "species_code": "",
+    "braun_blanquet": "",
+    "blade_length_cm": "",
+    "shoot_count": ""
+  },
+  "identity_and_observation": {
+    "stable_transect_id_documented": false,
+    "stable_repeat_quadrat_id_documented": false,
+    "repeat_quadrats_only": false,
+    "exclude_variable_bed_edges": false,
+    "complete_surveyed_quadrat_roster_documented": false,
+    "explicit_surveyed_absence_distinct_from_missing": false,
+    "repeated_season_comparability_documented": false,
+    "shoot_count_per_area_documented": false,
+    "blade_length_unit_cm_documented": false,
+    "healthy_thalassia_blade_selection_documented": false,
+    "shoot_subquadrat_extrapolation_documented": false,
+    "multiple_surveys_per_year_rule_documented": false,
+    "protocol_changes_identified": false,
+    "separate_570_from_5721_and_571": false,
+    "exclude_documented_noncore_stations": false,
+    "raw_bb_few_category_resolution": "unresolved",
+    "zero_assignment": "undocumented",
+    "primary_start_year": 2016,
+    "primary_end_year": 2025
+  },
+  "excluded_station_codes": [
+    "CR01",
+    "CR02",
+    "CR02A",
+    "CR02B",
+    "CR03",
+    "CR04A",
+    "CR04B",
+    "CR05",
+    "PI10",
+    "PI11",
+    "SC04",
+    "SC05"
+  ],
+  "published_aggregate_outcomes_seen": true,
+  "external_predictive_validation_eligible": false
+}

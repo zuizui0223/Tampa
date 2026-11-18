@@ -1,0 +1,125 @@
+{
+  "schema": "tampa.chap_external_state_axes_v1.pre_response_contract",
+  "frozen_on": "2026-11-18",
+  "status": "REGISTERED_WORKBOOK_UNOPENED_BUT_PUBLISHED_AGGREGATE_OUTCOMES_EXPOSED",
+  "relation_to_mainline": "Independent external descriptive state-axis replication candidate, not an extension or rescue of the frozen Tampa next-year early-warning endpoint.",
+  "source": {
+    "name": "Charlotte Harbor Seagrass Monitoring (Florida SEACAR Program 570)",
+    "publisher": "Florida Department of Environmental Protection, Office of Resilience and Coastal Protection, Charlotte Harbor Aquatic Preserves",
+    "program_url": "https://data.florida-seacar.org/programs/details/570",
+    "external_metadata_checked": "2026-11-18",
+    "declared_temporal_scope": "1999-current, annual",
+    "listed_latest_workbook": "SEACAR_CHAP Seagrass Data_1999-2025_2025 submission.xlsx",
+    "declared_sampling": "Fixed transects with recurring stations, regularly spaced 1 m x 1 m quadrats; beginning and end of meadow may change among years",
+    "named_metrics": [
+      "species-specific Braun-Blanquet cover-abundance",
+      "blade length (cm)",
+      "shoot counts",
+      "epiphyte loading",
+      "sample depth and sediment"
+    ],
+    "declared_access": "Download portal asks for valid email and registration; do not bypass, impersonate or claim download",
+    "response_file_downloaded": false,
+    "response_values_opened": false,
+    "response_statistics_computed": false,
+    "raw_file_sha256": null
+  },
+  "pre_response_documentation_gate": {
+    "must_verify_before_response_access": [
+      "The original workbook/version and accompanying metadata document identify an unambiguous stable transect ID over years.",
+      "Identify true surveyed species absence separately from unreported/missing species records.",
+      "Identify repeat sampled-quadrat or meter-mark IDs; if not stable, use transect-year only and do not assert point-level continuity.",
+      "Identify measured area and units for shoot counts and blade length and any changes in definitions/protocols.",
+      "Distinguish Program 570 records from Estero Bay/other programs 5721/571 and documented excluded stations.",
+      "Document survey date/day-of-year, number of sampled quadrats and incomplete visits.",
+      "Record exact supplied file SHA256 and unmodified provenance before viewing outcome columns."
+    ],
+    "failure": "STOP_SCHEMA_OR_IDENTITY_UNRESOLVED; do not improvise respondent-dependent ID joins or replace missing with zero."
+  },
+  "hypothesis": "Within established long-term Thalassia transects, recorded focal presence may remain positive across sampled years while plant stature, shoot density, or species-specific abundance changes; signs and magnitudes need not agree among subregions.",
+  "analysis_scope": {
+    "focal_taxon": "Thalassia testudinum",
+    "primary_year_window": [
+      2016,
+      2025
+    ],
+    "secondary_window": "1999-2025, descriptive context only if comparable",
+    "stable_unit": "Program 570 stable transect x calendar survey year, one annual aggregated record per stable transect, with documented within-year repeat rule",
+    "positive": "At least one explicitly sampled quadrat has a positive, numeric focal Braun-Blanquet entry; verify source-specific encoding before assigning",
+    "absence": "Only an explicitly sampled, complete focal-negative unit after inspection of the complete species and effort roster; never infer from missing species rows",
+    "quantitative_states": [
+      "focal BB aggregate over all sampled quadrats after verifying documented convention",
+      "mean focal blade length among eligible measured plants",
+      "focal shoot count per known sampled area"
+    ],
+    "primary_cohort_gate": "At least 20 independently identified eligible transects with at least 5 annual sampled years each in 2016-2025, with usable positive-year quantitative observations for the targeted response; otherwise report NON_ESTIMABLE.",
+    "effort_gate": "Record sampled quadrat count/area per site-year; do not pool incomparable units or changes of protocol without a documented harmonization.",
+    "comparison": "Report stable-identity-adjusted trends and node-bootstrap 95% intervals for both plant dimensions, stratified by documented subregions; report full signs, non-significant results and spatial counterexamples.",
+    "multiple_outcomes": "Holm-adjust the two primary plant-dimension tests; focal BB and composition are secondary.",
+    "caveats": [
+      "An observed positive year is not a guarantee of survival of the same genet.",
+      "Conditioning on recorded presence can create selection bias; report all eligible positive-year denominators.",
+      "Differences between sources in protocol and taxonomy may prevent harmonization.",
+      "No universal serial condition-to-thinning-to-loss sequence is asserted."
+    ]
+  },
+  "prohibited_moves": [
+    "Do not infer causal reserve buffering, resilience debt, mortality, or restoration benefit from annual association.",
+    "Do not claim predictive external replication from a descriptive result.",
+    "Do not alter the prior Tampa or SeagrassNet/MarineGEO frozen endpoints or stop rules.",
+    "Do not retrospectively select favorable subregions, metrics or years.",
+    "Do not use SEACAR download credentials or a user's personal email without explicit user authorization."
+  ],
+  "next_status": "Need authorized raw workbook, original zero-vs-missing and stable point ID mapping; any later external replication here is now outcome-context-exposed, not unseen validation.",
+  "protocol_sensitive_addendum": {
+    "added_on": "2026-11-18",
+    "data_exposure": "No biological CHAP 1999-2025 workbook opened; response-unopened methodology refinement only",
+    "verified_public_links": {
+      "current_program": "https://data.florida-seacar.org/programs/details/570",
+      "official_2019_protocol_pdf": "https://chnep.wateratlas.usf.edu/upload/documents/CHAP_Seagrass_Monitoring_Protocols_2019_Update.pdf",
+      "official_1999_2016_report": "https://floridadep.gov/sites/default/files/CHAP-Seagrass-Report-1999-2016.pdf",
+      "agency_program_summary": "https://floridadep.gov/rcp/aquatic-preserve/content/seagrass-monitoring-charlotte-harbor-aquatic-preserves"
+    },
+    "prior_protocol_warnings": [
+      "Documented repeat quadrats use permanent stakes; annual beginning/end-of-bed points move with the meadow edge and must not be mistaken for fixed repeated quadrats.",
+      "Some documented monitoring sites have multiple seasonal visits, and annual selection must be fixed before viewing outcomes.",
+      "Shoot density measurement method began in 2005 (historical agency report) and uses BB-dependent subsquare counting/extrapolation, not necessarily a raw 1-m2 exhaustive count.",
+      "2019 field protocol says five representative blade lengths, and Thalassia measures only rounded healthy green blade tips. External blade-length outcome conditions on that selection.",
+      "The 2019 protocol describes Braun-Blanquet r=solitary and +=few; web program encodes 0.1 and 0.5, while historical report text writes 0.05 for few. The 1999-2025 workbook's actual field coding needs verified source-specific mapping before numeric aggregation.",
+      "The 2007 addition of repeat quadrats documented in the historical summary can alter aggregate denominators. Keep consistent IDs and changing sampling effort explicit.",
+      "Program source packages additional program 5721/571 sites and explicitly excluded station codes."
+    ],
+    "primary_comparability_adjustment": "Do not pool CHAP's healthy-tip-only blade length with an unknown Tampa blade-length sampling frame as the same physiological trait. Report parallel descriptive changes with source-specific definitions and qualify direct magnitude comparison.",
+    "mandatory_evidence_for_future_schema_gate": [
+      "Independent current metadata/protocol documentation linking workbook columns to stable repeated quadrat IDs",
+      "Documented per-visit complete sampling roster and explicit zero vs missing distinctions",
+      "Source-specific r/+ or 0.1/0.5/0.05 BB code mapping",
+      "Source-specific shoot subsquare sampling area and extrapolation rule",
+      "Source-specific healthy-blade selection and within-quadrat five-blade summary",
+      "Program 570 only and official excluded station codes",
+      "Authorized data download provenance and exact SHA-256 of frozen workbook"
+    ],
+    "executable_validator": "validation/chap_external_state_axes_v1/check_metadata.py",
+    "tests": "validation/chap_external_state_axes_v1/test_check_metadata.py",
+    "automated_ci": ".github/workflows/chap-metadata-gate.yml",
+    "warning": "Metadata-gate PASS after curator attestation does NOT authenticate permissions or verify ecological eligibility and is not data analysis."
+  },
+  "published_outcome_exposure_20261118": {
+    "published_aggregate_outcomes_seen": true,
+    "original_registered_workbook_unopened": true,
+    "registered_source_raw_response_values_opened": false,
+    "unseen_predictive_validation_eligible": false,
+    "first_party_reported_biological_information": [
+      "CHNEP Seagrass in Charlotte Harbor fact sheet: Thalassia/Halodule monitoring declines from 2016-2017 at multiple locations, preceding 2018-2020 mapped acreage decline",
+      "SWFWMD 2026 annual report: mapped Charlotte Harbor acreage 2016 20,280; 2018 19,715; 2020 15,273; 2022 14,913; 2024 14,020",
+      "CHNEP fact-sheet Charlotte Harbor mapped acreage follows a different unharmonized series (2016 17,329; 2018 16,938; 2020 13,355; 2022 13,098)."
+    ],
+    "correct_future_evidence_label": "Outcome-exposed source-specific exploratory quantitative ecology or independent descriptive replication only; NOT untouched prospective prediction or registered blind external confirmation.",
+    "caveat": "No original workbook response rows have been accessed. Already-published broad qualitative/areal outcomes are nevertheless known and must be disclosed.",
+    "external_source_audit_pr": "https://github.com/zuizui0223/Tampa/pull/163",
+    "published_sources": [
+      "https://chnep.wateratlas.usf.edu/upload/documents/Charlotte-Harbor-Seagrass-Fact-Sheet.pdf",
+      "https://www.swfwmd.state.fl.us/sites/default/files/medias/documents/Board%20Approved%202026%20Consolidated%20Annual%20Report.pdf"
+    ]
+  }
+}
