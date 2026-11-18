@@ -70,5 +70,38 @@
     "Do not retrospectively select favorable subregions, metrics or years.",
     "Do not use SEACAR download credentials or a user's personal email without explicit user authorization."
   ],
-  "next_status": "Await lawful registered source access plus independent variable-schema and stable-ID preflight."
+  "next_status": "Source documentation and code gate in progress; lawful workbook download, exact schema mapping, and biological outcomes still unavailable",
+  "protocol_sensitive_addendum": {
+    "added_on": "2026-11-18",
+    "data_exposure": "No biological CHAP 1999-2025 workbook opened; response-unopened methodology refinement only",
+    "verified_public_links": {
+      "current_program": "https://data.florida-seacar.org/programs/details/570",
+      "official_2019_protocol_pdf": "https://chnep.wateratlas.usf.edu/upload/documents/CHAP_Seagrass_Monitoring_Protocols_2019_Update.pdf",
+      "official_1999_2016_report": "https://floridadep.gov/sites/default/files/CHAP-Seagrass-Report-1999-2016.pdf",
+      "agency_program_summary": "https://floridadep.gov/rcp/aquatic-preserve/content/seagrass-monitoring-charlotte-harbor-aquatic-preserves"
+    },
+    "prior_protocol_warnings": [
+      "Documented repeat quadrats use permanent stakes; annual beginning/end-of-bed points move with the meadow edge and must not be mistaken for fixed repeated quadrats.",
+      "Some documented monitoring sites have multiple seasonal visits, and annual selection must be fixed before viewing outcomes.",
+      "Shoot density measurement method began in 2005 (historical agency report) and uses BB-dependent subsquare counting/extrapolation, not necessarily a raw 1-m2 exhaustive count.",
+      "2019 field protocol says five representative blade lengths, and Thalassia measures only rounded healthy green blade tips. External blade-length outcome conditions on that selection.",
+      "The 2019 protocol describes Braun-Blanquet r=solitary and +=few; web program encodes 0.1 and 0.5, while historical report text writes 0.05 for few. The 1999-2025 workbook's actual field coding needs verified source-specific mapping before numeric aggregation.",
+      "The 2007 addition of repeat quadrats documented in the historical summary can alter aggregate denominators. Keep consistent IDs and changing sampling effort explicit.",
+      "Program source packages additional program 5721/571 sites and explicitly excluded station codes."
+    ],
+    "primary_comparability_adjustment": "Do not pool CHAP's healthy-tip-only blade length with an unknown Tampa blade-length sampling frame as the same physiological trait. Report parallel descriptive changes with source-specific definitions and qualify direct magnitude comparison.",
+    "mandatory_evidence_for_future_schema_gate": [
+      "Independent current metadata/protocol documentation linking workbook columns to stable repeated quadrat IDs",
+      "Documented per-visit complete sampling roster and explicit zero vs missing distinctions",
+      "Source-specific r/+ or 0.1/0.5/0.05 BB code mapping",
+      "Source-specific shoot subsquare sampling area and extrapolation rule",
+      "Source-specific healthy-blade selection and within-quadrat five-blade summary",
+      "Program 570 only and official excluded station codes",
+      "Authorized data download provenance and exact SHA-256 of frozen workbook"
+    ],
+    "executable_validator": "validation/chap_external_state_axes_v1/check_metadata.py",
+    "tests": "validation/chap_external_state_axes_v1/test_check_metadata.py",
+    "automated_ci": ".github/workflows/chap-metadata-gate.yml",
+    "warning": "Metadata-gate PASS after curator attestation does NOT authenticate permissions or verify ecological eligibility and is not data analysis."
+  }
 }
