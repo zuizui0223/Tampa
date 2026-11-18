@@ -1,0 +1,22 @@
+name: Charlotte Harbor metadata gate synthetic regression
+
+on:
+  pull_request:
+    paths:
+      - 'validation/chap_external_state_axes_v1/**'
+      - '.github/workflows/chap-metadata-gate.yml'
+  push:
+    paths:
+      - 'validation/chap_external_state_axes_v1/**'
+      - '.github/workflows/chap-metadata-gate.yml'
+  workflow_dispatch:
+
+jobs:
+  synthetic-pre-response-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify metadata-only CHAP validator without biological response access
+        run: python -m unittest discover -s validation/chap_external_state_axes_v1 -p 'test_check_metadata.py' -v
