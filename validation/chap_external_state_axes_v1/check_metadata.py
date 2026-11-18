@@ -50,6 +50,12 @@ def gate(manifest):
     demand(manifest.get("schema")==SCHEMA,"SCHEMA_MISMATCH")
     demand(manifest.get("program_id")==570,"PROGRAM_NOT_570")
     demand(manifest.get("response_values_opened") is False,"RESPONSES_ALREADY_OPENED")
+    # Public mapped-area and species-trend aggregate responses have been reviewed.
+    # Raw workbook not opened != untouched hypothesis-independent confirmation.
+    demand(manifest.get("published_aggregate_outcomes_seen") is True,
+           "PUBLISHED_OUTCOME_EXPOSURE_NOT_ACKNOWLEDGED")
+    demand(manifest.get("external_predictive_validation_eligible") is False,
+           "UNTOUCHED_PREDICTION_CLAIM_FORBIDDEN")
     demand(manifest.get("authorization")=="confirmed_by_data_requester","DATA_ACCESS_UNCONFIRMED")
     url=manifest.get("official_program_url")
     p=urlparse(url) if good_url(url) else None
@@ -95,6 +101,8 @@ def gate(manifest):
             "errors":sorted(set(errors)), "response_rows_read":0,
             "source_workbook_opened_by_gate":False,"model_fits":0,
             "external_replication_observed":False,
+            "published_aggregate_outcomes_seen":True,
+            "untouched_external_prediction_eligible":False,
             "meaning_of_pass":"Curator assertions and locators only; no independent source audit or empirical estimability"}
 
 def main():
