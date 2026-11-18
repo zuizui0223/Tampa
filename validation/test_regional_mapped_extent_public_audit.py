@@ -24,6 +24,8 @@ class SourceAudit(unittest.TestCase):
         self.assertEqual(r["alternate_chnep_distinct_spatial_scope"]["swfwmd_minus_chnep_acres_same_year"]["2016"],2951)
         self.assertEqual(r["alternate_chnep_distinct_spatial_scope"]["text_minus_chart_loss_acres"],65)
         self.assertTrue(r["not_untouched_prediction"])
+        self.assertAlmostEqual(r["regional_2016_index_spread_points"]["2022"],1.6256,places=3)
+        self.assertAlmostEqual(r["regional_2016_index_spread_points"]["2024"],19.0407,places=3)
 
     def test_source_anchor_tamper_fails(self):
         bad=CSV.replace('SWFWMD_2026,"Charlotte Harbor",2024,14020', 'SWFWMD_2026,"Charlotte Harbor",2024,14021')
