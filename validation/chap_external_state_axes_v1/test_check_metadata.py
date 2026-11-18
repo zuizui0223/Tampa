@@ -9,6 +9,8 @@ def fake_manifest():
     return {
         "schema": SCHEMA, "program_id": 570, "response_values_opened": False,
         "authorization": "confirmed_by_data_requester",
+        "published_aggregate_outcomes_seen": True,
+        "external_predictive_validation_eligible": False,
         "official_program_url": "https://data.florida-seacar.org/programs/details/570",
         "source": {
             "original_workbook_filename": "SYNTHETIC-NOT-AN-EXISTING-WORKBOOK.xlsx",
@@ -45,6 +47,12 @@ class MetadataGateTests(unittest.TestCase):
         self.assertEqual(r["model_fits"],0)
         self.assertEqual(r["response_rows_read"],0)
 
+    def test_published_exposure_cannot_be_silently_omitted(self):
+        self.blocked(lambda m:m.update(published_aggregate_outcomes_seen=False),
+                     "PUBLISHED_OUTCOME_EXPOSURE_NOT_ACKNOWLEDGED")
+    def test_untouched_validation_claim_is_forbidden(self):
+        self.blocked(lambda m:m.update(external_predictive_validation_eligible=True),
+                     "UNTOUCHED_PREDICTION_CLAIM_FORBIDDEN")
     def test_postresponse_access(self):
         self.blocked(lambda m:m.update(response_values_opened=True),"RESPONSES_ALREADY_OPENED")
     def test_wrong_program(self):
