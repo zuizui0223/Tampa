@@ -90,3 +90,15 @@ python -m unittest discover -s validation/chap_external_state_axes_v1 \
 \`\`\`
 
 Even a later metadata-gate PASS is just an attested provenance/schema screen, not proof of adequate biological sample size, reproducibility, ecological mechanism, or lawful data access by a third party. The present status remains **external biological data unopened; no new positive replicate**.
+
+
+## Evidence-status correction following public report review (2026-11-18)
+
+The original **1999–2025 registered SEACAR field-level workbook remains unopened**. However, published *Charlotte Harbor* ecological outcome summaries have now been explicitly read:
+
+- [CHNEP *Seagrass in Charlotte Harbor* fact sheet](https://chnep.wateratlas.usf.edu/upload/documents/Charlotte-Harbor-Seagrass-Fact-Sheet.pdf) reports that *Thalassia* and *Halodule* declined at multiple annual monitoring locations from 2016–2017 before 2018–2020 mapped acreage declines. This is **retrospective qualitative external corroboration**, not a matched-transect predictive test.
+- [SWFWMD 2026 consolidated report](https://www.swfwmd.state.fl.us/sites/default/files/medias/documents/Board%20Approved%202026%20Consolidated%20Annual%20Report.pdf) published Charlotte mapped acreage falling from 20,280 (2016) to 14,020 acres (2024); a separate CHNEP source uses a different mapping series, with irreconciled acreage discrepancies. See independent [regional source audit PR #163](https://github.com/zuizui0223/Tampa/pull/163).
+
+Consequently, future CHAP workbook analysis **cannot be labeled fully response-unseen independent predictive confirmation** even though original raw records were not examined. The fully pre-response workbook unit/effort/zero-comparability gates remain useful for rigorous descriptive replication, with explicit external-report exposure. The executable metadata gate now requires the two corresponding exposure fields and fail-closes on an untouched-prediction claim.
+
+This correction does **not** change the immutable Tampa annual early-warning endpoint, authorize CHAP registered data access or establish a causal biological lag.
