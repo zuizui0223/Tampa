@@ -1,7 +1,7 @@
 {
   "schema": "tampa.chap_external_state_axes_v1.pre_response_contract",
   "frozen_on": "2026-11-18",
-  "status": "METADATA_ONLY_SOURCE_SCREEN; NO BIOLOGICAL RESPONSE FILE ACCESSED",
+  "status": "REGISTERED_WORKBOOK_UNOPENED_BUT_PUBLISHED_AGGREGATE_OUTCOMES_EXPOSED",
   "relation_to_mainline": "Independent external descriptive state-axis replication candidate, not an extension or rescue of the frozen Tampa next-year early-warning endpoint.",
   "source": {
     "name": "Charlotte Harbor Seagrass Monitoring (Florida SEACAR Program 570)",
@@ -70,7 +70,7 @@
     "Do not retrospectively select favorable subregions, metrics or years.",
     "Do not use SEACAR download credentials or a user's personal email without explicit user authorization."
   ],
-  "next_status": "Source documentation and code gate in progress; lawful workbook download, exact schema mapping, and biological outcomes still unavailable",
+  "next_status": "Need authorized raw workbook, original zero-vs-missing and stable point ID mapping; any later external replication here is now outcome-context-exposed, not unseen validation.",
   "protocol_sensitive_addendum": {
     "added_on": "2026-11-18",
     "data_exposure": "No biological CHAP 1999-2025 workbook opened; response-unopened methodology refinement only",
@@ -103,5 +103,23 @@
     "tests": "validation/chap_external_state_axes_v1/test_check_metadata.py",
     "automated_ci": ".github/workflows/chap-metadata-gate.yml",
     "warning": "Metadata-gate PASS after curator attestation does NOT authenticate permissions or verify ecological eligibility and is not data analysis."
+  },
+  "published_outcome_exposure_20261118": {
+    "published_aggregate_outcomes_seen": true,
+    "original_registered_workbook_unopened": true,
+    "registered_source_raw_response_values_opened": false,
+    "unseen_predictive_validation_eligible": false,
+    "first_party_reported_biological_information": [
+      "CHNEP Seagrass in Charlotte Harbor fact sheet: Thalassia/Halodule monitoring declines from 2016-2017 at multiple locations, preceding 2018-2020 mapped acreage decline",
+      "SWFWMD 2026 annual report: mapped Charlotte Harbor acreage 2016 20,280; 2018 19,715; 2020 15,273; 2022 14,913; 2024 14,020",
+      "CHNEP fact-sheet Charlotte Harbor mapped acreage follows a different unharmonized series (2016 17,329; 2018 16,938; 2020 13,355; 2022 13,098)."
+    ],
+    "correct_future_evidence_label": "Outcome-exposed source-specific exploratory quantitative ecology or independent descriptive replication only; NOT untouched prospective prediction or registered blind external confirmation.",
+    "caveat": "No original workbook response rows have been accessed. Already-published broad qualitative/areal outcomes are nevertheless known and must be disclosed.",
+    "external_source_audit_pr": "https://github.com/zuizui0223/Tampa/pull/163",
+    "published_sources": [
+      "https://chnep.wateratlas.usf.edu/upload/documents/Charlotte-Harbor-Seagrass-Fact-Sheet.pdf",
+      "https://www.swfwmd.state.fl.us/sites/default/files/medias/documents/Board%20Approved%202026%20Consolidated%20Annual%20Report.pdf"
+    ]
   }
 }
