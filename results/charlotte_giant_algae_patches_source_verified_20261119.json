@@ -7,7 +7,16 @@
     "source_analytic_head": "9d0b759959f5c506c3f048bafec1e6750d003fe6",
     "artifact_id": 14501791637,
     "artifact_zip_sha256": "sha256:12a13dcc1a6507dfc30264ecd17cbe7d2362657bb3519da7365efb718a5e7971",
-    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44464484860"
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44464484860",
+    "second_independent_execution": {
+      "run_id": 44464768571,
+      "job_id": 135359784446,
+      "source_analytic_head": "70199232e4b14c303da7fe3e5c1004384c0d2dc9",
+      "artifact_id": 14501384077,
+      "artifact_zip_sha256": "sha256:ea0f82bc046404a307ff255a90996b9b79f67af28e5a39d8cc2c62d42fd6be77",
+      "status": "completed_success",
+      "numeric_output_identical_to_first_successful_execution": true
+    }
   },
   "report": {
     "all_95_patch_level_source_compositions": [
