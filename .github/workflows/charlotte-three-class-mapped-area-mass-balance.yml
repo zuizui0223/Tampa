@@ -1,0 +1,40 @@
+name: Charlotte three-class agency mapped area mass-balance reconciliation
+
+on:
+  push:
+    paths:
+      - "analysis/117_charlotte_three_class_net_map_change_decomposition.py"
+      - "validation/test_charlotte_three_class_net_map_change_decomposition.py"
+      - "results/charlotte_public_gis_transition_verified_20261119.json"
+      - "results/charlotte_official_change_map_giant_source_concordance_verified_20261119.json"
+      - ".github/workflows/charlotte-three-class-mapped-area-mass-balance.yml"
+  pull_request:
+    paths:
+      - "analysis/117_charlotte_three_class_net_map_change_decomposition.py"
+      - "validation/test_charlotte_three_class_net_map_change_decomposition.py"
+      - "results/charlotte_public_gis_transition_verified_20261119.json"
+      - "results/charlotte_official_change_map_giant_source_concordance_verified_20261119.json"
+      - ".github/workflows/charlotte-three-class-mapped-area-mass-balance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reconcile-all-map-classes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test independent archived source area reconciliation and source mutation failures
+        run: python -m unittest discover -s validation -p 'test_charlotte_three_class_net_map_change_decomposition.py' -v
+      - name: Publish verified mapped coverage vs class reclassification components
+        run: python analysis/117_charlotte_three_class_net_map_change_decomposition.py --out results/generated_charlotte_three_class_net_map_change_decomposition_v1.json
+      - name: Preserve entire class area mass balance audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-official-seagrass-algae-mapped-area-decomposition
+          path: results/generated_charlotte_three_class_net_map_change_decomposition_v1.json
+          retention-days: 30
+          if-no-files-found: warn
