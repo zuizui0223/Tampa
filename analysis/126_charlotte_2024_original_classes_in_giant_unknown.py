@@ -20,7 +20,7 @@ import argparse,hashlib,importlib.util,json,math,sys
 from pathlib import Path
 from collections import defaultdict
 
-from shapely.geometry import shape
+from shapely.geometry import shape,mapping
 from shapely.ops import transform,unary_union
 from shapely.validation import make_valid
 from pyproj import Transformer
@@ -43,6 +43,7 @@ MAX_OIDS=4000
 BATCH=60
 AREA=G.M2_PER_ACRE
 UTM_MERC=Transformer.from_crs("EPSG:6933","EPSG:3857",always_xy=True).transform
+BACK_TO_WGS84=Transformer.from_crs("EPSG:6933","EPSG:4326",always_xy=True).transform
 SCHEMA="tampa.charlotte_giant_2024_original_all_map_class_overlay_v1"
 class Stop(ValueError):pass
 
@@ -156,13 +157,64 @@ def independent_source_overlap(giant,target,shapes):
       "not_bare_substrate_or_biological_absence":True
     }
 
+def strictly_inside_source_sand(g,hosted_three,sand2024,history,dists=(0,25,50)):
+    """Erode source 2022 algae / 2024 7210 sand / hosted-unknown union together.
+
+    A 25m core is at least 25m inside *all three* category boundaries,
+    not simply 25m inside a legacy source patch. All stages are map labels.
+    """
+    if tuple(dists)!=(0,25,50):raise Stop("SAND_CORE_DISTANCE_CHANGED")
+    overlap=g.difference(hosted_three).intersection(sand2024)
+    if overlap.is_empty or not overlap.is_valid:raise Stop("INVALID_7210_SAND_SOURCE_OVERLAP")
+    area0=overlap.area/AREA
+    if area0<=0:raise Stop("MISSING_2024_CODE_7210_SAND_IN_TARGET")
+    report={};features=[]
+    previous=area0+.01
+    for dist in dists:
+        core=overlap if dist==0 else overlap.buffer(-dist)
+        if not core.is_valid:raise Stop("INVALID_ERODED_2024_SAND_GEOMETRY")
+        acres=core.area/AREA
+        if acres>previous+.002:raise Stop("SAND_INTERIOR_INCREASES_WITH_EROSION")
+        his=core.intersection(history).area/AREA
+        if his>acres+.001:raise Stop("HISTORIC_SEA_OVERLAP_EXCEEDS_SAND")
+        report[str(dist)]={
+           "mapped_sand_7210_interior_acres":round(acres,5),
+           "share_original_7210_mapped_area_percent":round(100*acres/area0,4),
+           "inside_2016_mapped_seagrass_positive_acres":round(his,5),
+           "inside_2016_mapped_seagrass_positive_percent":round(100*his/acres,4) if acres>0 else None,
+        }
+        previous=acres
+        if dist in (25,50):
+            for poly in G.polygon_parts(core):
+                a=poly.area/AREA
+                if a<.25:continue
+                mid=poly.representative_point()
+                lon,lat=BACK_TO_WGS84(mid.x,mid.y)
+                if not(-83.5<lon<-81.0 and 25<lat<28):
+                    raise Stop("SOURCE_SAND_CORE_OUTSIDE_EXPECTED_REGION")
+                features.append({
+                    "type":"Feature",
+                    "properties":{
+                       "code_2024":7210,
+                       "official_2024_class":"SWFWMD mapped submerged sand (7210)",
+                       "distance_inside_original2022_algae_and_2024_sand_and_outside_hosted_2024_classes_m":dist,
+                       "mapped_core_acres":round(a,5),
+                       "2016_source_mapped_seagrass_positive_intersection_acres":round(poly.intersection(history).area/AREA,5),
+                       "representative_lat":round(lat,7),
+                       "representative_lon":round(lon,7),
+                       "not_an_approved_field_site":True,
+                       "not_plant_mortality_or_vegetation_absence_measure":True},
+                    "geometry":mapping(transform(BACK_TO_WGS84,poly))
+                })
+    return report,features
+
 def run(archive_root,query=G.query):
     prior,old=read_source_release()
     meta=query(D.LAYER,{"f":"json"})
     if D.sha(meta)!=prior["source_metadata_sha256"]:
         raise Stop("ORIGINAL_2024_SOURCE_METADATA_CHANGED")
     giants,target,hist,existing,frozen,qcs,qc16=M.load_sources(archive_root)
-    rows={}; all_ids=set(); per_ids={}
+    rows={}; all_ids=set(); per_ids={}; sand_cores={}; all_core_features=[]
     for fid in (37,2166):
         ids,bbox=source_ids_by_bbox(giants[fid],query)
         per_ids[str(fid)]={"count_bbox":len(ids),"bbox_source_ids_sha256":sha(ids)}
@@ -178,6 +230,14 @@ def run(archive_root,query=G.query):
         oldarea=source_row["2024_unmapped_area_acres"]
         if abs(rows[str(fid)]["unknown_2024_3class_area_acres"]-oldarea)>.01:
             raise Stop("ORIGINAL_GIANT_2024_UNKNOWN_SOURCE_ACREAGE_DRIFT")
+        depth,feats=strictly_inside_source_sand(giants[fid],target,shapes[7210],hist)
+        if abs(depth["0"]["mapped_sand_7210_interior_acres"]-
+               rows[str(fid)]["source_2024_original_code_overlaps_unknown_acres"]["7210"])>.003:
+            raise Stop("SOURCE_SAND_GIS_CORE_DOES_NOT_CLOSE_TO_ORIGINAL_SOURCE_AREA")
+        sand_cores[str(fid)]=depth
+        for feat in feats:
+            feat["properties"]["source_2022_attached_algae_FID"]=fid
+            all_core_features.append(feat)
     summary={k:round(sum(rows[str(fid)][k] for fid in (37,2166)),6)
              for k in ("unknown_2024_3class_area_acres",
               "source_2024_original_non_three_code_coverage_acres",
@@ -185,8 +245,17 @@ def run(archive_root,query=G.query):
               "source_2024_original_all_class_coverage_acres",
               "no_2024_original_class_map_polygon_overlapping_acres",
               "possible_double_class_overlap_acres")}
+    raw_descriptions={str(code):sorted({str(f.get("properties",{}).get("FLUCCSDESC") or "").strip()[:200]
+        for f in features if f.get("properties",{}).get("FLUCCSCODE")==code}) for code in CODES}
+    sand_sum={str(d):round(sum(sand_cores[str(fid)][str(d)]["mapped_sand_7210_interior_acres"]
+                    for fid in (37,2166)),5) for d in (0,25,50)}
     return {
       "schema":SCHEMA,
+      "source_2024_actual_raw_class_descriptions":raw_descriptions,
+      "sand_7210_three_map_boundary_interior_by_original_giant_FID":sand_cores,
+      "sand_7210_combined_interior_acres":sand_sum,
+      "field_verification_geojson_candidate_count":len(all_core_features),
+      "_source_verified_sand_candidate_geojson":{"type":"FeatureCollection","features":all_core_features},
       "status":"SOURCE_GATED_ORIGINAL_2024_ALL_CODE_POLYGON_INTERSECTION_DESCRIPTIVE",
       "original_2024_district_layer":D.LAYER,
       "source_2024_metadata_sha256":prior["source_metadata_sha256"],
@@ -212,6 +281,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--archive-root",required=True)
     p.add_argument("--out",required=True)
+    p.add_argument("--geojson-out")
     a=p.parse_args()
     clock=D.M.official_service_window()
     if not clock["portal_open_time"]:
@@ -223,8 +293,12 @@ def main():
             report={"schema":SCHEMA,"status":"STOP_ORIGINAL_DISTRICT_GEOMETRY_SOURCE_AUDIT",
                     "reason":str(e),"no_benthic_class_fate_inferred":True,
                     "access_window":clock};rc=2
+    geojson=report.pop("_source_verified_sand_candidate_geojson",{"type":"FeatureCollection","features":[]})
     output=Path(a.out);output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(report,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+    if a.geojson_out:
+        outfile=Path(a.geojson_out);outfile.parent.mkdir(parents=True,exist_ok=True)
+        outfile.write_text(json.dumps(geojson,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
     print(json.dumps(report,indent=2,sort_keys=True))
     return rc
 if __name__=="__main__":sys.exit(main())
