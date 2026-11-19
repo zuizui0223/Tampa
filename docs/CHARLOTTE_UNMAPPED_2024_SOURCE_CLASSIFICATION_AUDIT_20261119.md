@@ -77,3 +77,24 @@ For each source polygon P, with H the 2016 sea-positive mapped subset and U the 
 | **Combined** | 312.477311 | 311.950686 | 222.092455 | **221.565830 acres** |
 
 Thus **at least 99.7629%** of the two giant-polygon mapped target-unmapped area lies within the 2016 source's mapped seagrass-positive polygons, subject only to the already audited original geometry and area. This is a **map history overlap lower bound**, NOT a confirmation of 2016–2024 true biological seagrass death, 2024 vegetation absence, or causal algal inhibition. It motivates historical habitat-focused field verification, not algae removal or restoration action.
+
+## 2026-11-19 definitive source-only result: official gain/loss = three-class set difference
+
+Full independent original 2022/2024 public GIS geometry was projected equal-area (EPSG:6933), independently source-area verified, and combined to calculate all six expected source-only map differences:
+
+- For each of 9113/9116/9121, `gain_class = 2024_class_polygon MINUS union_of_all_2022_three_mapped_classes`.
+- For each of 9113/9116/9121, `loss_class = 2022_class_polygon MINUS union_of_all_2024_three_mapped_classes`.
+
+Separately downloaded official `Seagrass Gain` and `Seagrass Loss` layers (including original 9121 algae features, not only seagrass) were then compared with these computed polygon locations. Source archive/mapped-area checks and all six geometry comparisons **PASSED**, [GitHub Actions #44479894122](https://github.com/zuizui0223/Tampa/actions/runs/44479894122). The minimum six-class **Jaccard overlap was 0.9999944**, and every class's source/agency symmetric-difference area was <0.02 acres. Numerical release with source hashes and artifact digest: `results/charlotte_agency_change_set_difference_spatial_verified_20261119.json`.
+
+| Mapped source class | Official Gain acreage | Official Loss acreage |
+|---|---:|---:|
+| 9113 patchy seagrass | 305.057 | 679.535 |
+| 9116 continuous seagrass | 69.912 | 314.384 |
+| **9121 attached macroalgae** | **413.285** | **345.596** |
+
+**Important ontology correction:** a 2022 seagrass class changing to attached algae in the same mapped spatial location (or the reverse) is not 'gain' or 'loss' in the official derivative map. The mapped *coverage* did not disappear from the combined three-class universe. The 83.433 acres of 2022 algae→2024 sea category reclassification is therefore *separate* from official seagrass 'gain'. Indeed, inside giant source attached-algae FIDs 37/2166, official gain 9113+9116 overlap is zero, while their 2024 sea class area is 22.683+16.086=38.769 acres. The agency's official loss class 9121 equals the two giants' 2024 three-class-unmapped area of 117.34986+104.74259=222.09245 acres, showing the so-called *Loss* is a three-class map support loss, not a field-confirmed organism death.
+
+Net three-class mapped area change must also reconcile: official all-class gain total 788.253 acres, loss total 1,339.515 acres, difference **−551.262 acres** (rounding). Meanwhile mapped seagrass net area is **−816.474 acres** and algae net area **+265.213 acres**; these require internal class-transition accounting beyond the agency gain/loss support polygons. Independent algebraic mass-balance QC is implemented in `analysis/117_charlotte_three_class_net_map_change_decomposition.py` and its CI, with the biological interpretation disallowed.
+
+**Conservation inference:** 2024 'unmapped' cannot be renamed 'bare bottom', 2016-positive history does not imply 2024 mortality, and official 'gain' cannot be used as a live seagrass recovery rate. A management claim requires the original complete full-class mapping dictionary/footprint and real same-season independent field point/quadrat observations. The mapped GIS outputs are useful for targeted verification, not to recommend transplant or algal removal actions.
