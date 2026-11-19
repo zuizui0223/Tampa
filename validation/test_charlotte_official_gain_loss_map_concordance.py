@@ -76,9 +76,9 @@ class TestChangeGeometry(unittest.TestCase):
         g=box(0,0,100,100)
         sample={"report":{"two_largest_source_algae_patches":[
             {"source_2022_FID":37,"source_algae_acres":2,
-             "2024_mapped_seagrass_acres":1},
+             "2024_mapped_seagrass_acres":1,"2024_unmapped_area_acres":0.8},
             {"source_2022_FID":2166,"source_algae_acres":2,
-             "2024_mapped_seagrass_acres":1}]}}
+             "2024_mapped_seagrass_acres":1,"2024_unmapped_area_acres":0.8}]}}
         gain={"geometries_by_class":{9113:box(0,0,50,100),9116:GeometryCollection(),9121:box(50,0,75,100)}}
         loss={"geometries_by_class":{9113:GeometryCollection(),9116:box(90,0,100,100),9121:box(80,0,90,100)}}
         r=M.compare({"37":g,"2166":g},gain,loss,sample)
