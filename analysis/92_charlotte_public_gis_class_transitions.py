@@ -63,6 +63,9 @@ def download_year(year,query_fn=query):
         raise GateStop(year+":METADATA_GEOMETRY_OR_CODE_DRIFT")
     if meta.get("objectIdField")!="FID":
         raise GateStop(year+":OBJECTID_FIELD_DRIFT")
+    area_field="Geodesic" if year=="2022" else "ACRES"
+    if names.get(area_field)!="esriFieldTypeDouble":
+        raise GateStop(year+":SOURCE_ACRE_FIELD_MISSING")
     count=query_fn(url+"/query",{"where":"1=1","returnCountOnly":"true","f":"json"}).get("count")
     ids_resp=query_fn(url+"/query",{"where":"1=1","returnIdsOnly":"true","f":"json"})
     ids=ids_resp.get("objectIds")
@@ -77,7 +80,7 @@ def download_year(year,query_fn=query):
         batch=ids[i:i+BATCH_SIZE]
         data=query_fn(url+"/query",{
             "objectIds":",".join(str(x) for x in batch),
-            "outFields":"FID,FLUCCSCODE,FLUCCSDESC",
+            "outFields":"FID,FLUCCSCODE,FLUCCSDESC,"+area_field,
             "returnGeometry":"true",
             "outSR":"4326","f":"geojson"})
         feats=data.get("features")
@@ -98,7 +101,7 @@ def download_year(year,query_fn=query):
     if not any(c==9121 for c in codes):
         raise GateStop(year+":NO_ATTACHED_MACROALGAE_CLASS")
     return {
-        "year":year,"url":url,"source_metadata_sha256":sha(meta),
+        "year":year,"url":url,"official_acre_field":area_field,"source_metadata_sha256":sha(meta),
         "oid_count":count,"oid_inventory_sha256":sha(ids),
         "raw_geojson_canonical_sha256":sha(features),
         "code_counts":{str(k):codes.count(k) for k in sorted(CODES)},
@@ -146,9 +149,10 @@ def polygon_parts(g):
         return out
     return []
 
-def prepare(features):
+def prepare(features,area_field):
     groups={code:[] for code in CODES}
     invalid=0; repaired_area_delta_max=0.0
+    max_source_diff_acres=0.0
     for f in features:
         p=f["properties"];g=f.get("geometry")
         if not g:raise GateStop("MISSING_GEOMETRY")
@@ -167,12 +171,22 @@ def prepare(features):
             if not pieces: raise GateStop("NONPOLYGONAL_INVALID_GEOMETRY")
             fixed=unary_union(pieces)
             rel=abs(fixed.area-geom.area)/max(geom.area,1e-18)
-            if rel>0.001: raise GateStop("REPAIR_AREA_CHANGE_TOO_LARGE")
             repaired_area_delta_max=max(rel,repaired_area_delta_max)
             geom=fixed
         proj=transform(TRANSFORM,geom)
         if not proj.is_valid or proj.area<=0:
             raise GateStop("INVALID_PROJECTED_GEOMETRY")
+        # Independent original source area fields test which ring/hole
+        # interpretation is correct. This check is applied to EVERY polygon,
+        # including syntactically valid input, before inspecting transitions.
+        official=p.get(area_field)
+        if isinstance(official,bool) or not isinstance(official,(int,float)) or not math.isfinite(official) or official<=0:
+            raise GateStop("MISSING_OR_INVALID_SOURCE_ACRE_FIELD:"+str(p.get("FID")))
+        computed=proj.area/M2_PER_ACRE
+        diff=abs(computed-official)
+        max_source_diff_acres=max(diff,max_source_diff_acres)
+        if diff>max(0.005,0.002*official):
+            raise GateStop("VALIDATED_AREA_MISMATCH:"+str(p.get("FID"))+":"+str(round(diff,4)))
         groups[p["FLUCCSCODE"]].append(proj)
     unioned={c:unary_union(geoms) for c,geoms in groups.items()}
     sums={c:sum(g.area for g in geoms) for c,geoms in groups.items()}
@@ -184,6 +198,9 @@ def prepare(features):
         raise GateStop(f"EXCESSIVE_WITHIN_YEAR_OVERLAP:{duplication:.6f}")
     return unioned,{"polygon_count":len(features),"invalid_repaired":invalid,
                     "max_repair_relative_area_change":round(repaired_area_delta_max,8),
+                    "independent_source_area_field":area_field,
+                    "all_polygons_checked_against_original_area_field":True,
+                    "maximum_source_area_absolute_difference_acres":round(max_source_diff_acres,4),
                     "within_year_overlap_fraction":round(duplication,8),
                     "class_area_acres":{str(c):round(union_areas[c]/M2_PER_ACRE,3) for c in CODES}}
 
@@ -211,8 +228,8 @@ def transitions(source,target):
     return out
 
 def calculate(record22,record24):
-    groups22,qc22=prepare(record22["features"])
-    groups24,qc24=prepare(record24["features"])
+    groups22,qc22=prepare(record22["features"],"Geodesic")
+    groups24,qc24=prepare(record24["features"],"ACRES")
     tab=transitions(groups22,groups24)
     ac=tab["9121"]
     return {
@@ -224,6 +241,7 @@ def calculate(record22,record24):
           for y,record in (("2022",record22),("2024",record24))
         },
         "quality_control":{"2022":qc22,"2024":qc24},
+        "topology_repair_rule":"Use make_valid on invalid source shells ONLY if equal-area repaired polygon matches source's independent Geodesic or ACRES field within max(0.005 acre, 0.2%). Never accept NaN, missing official area, or major mismatch.",
         "source_area_to_target_class":tab,
         "2022_attached_macroalgae_area_reclassified_as_2024_seagrass_acres":round(
             ac["target_area_acres"]["9113"]+ac["target_area_acres"]["9116"],3),
