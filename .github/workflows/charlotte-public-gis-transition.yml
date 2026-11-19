@@ -1,0 +1,40 @@
+name: Charlotte public GIS area transition (descriptive)
+
+on:
+  push:
+    paths:
+      - "analysis/92_charlotte_public_gis_class_transitions.py"
+      - "validation/test_charlotte_public_gis_class_transitions.py"
+      - ".github/workflows/charlotte-public-gis-transition.yml"
+  pull_request:
+    paths:
+      - "analysis/92_charlotte_public_gis_class_transitions.py"
+      - "validation/test_charlotte_public_gis_class_transitions.py"
+      - ".github/workflows/charlotte-public-gis-transition.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  matched-mapped-class-transition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned geometry dependency versions
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Test synthetic spatial transition and strict source identity
+        run: python -m unittest discover -s validation -p 'test_charlotte_public_gis_class_transitions.py' -v
+      - name: Query public polygon rosters and compute equal-area class transitions
+        run: python analysis/92_charlotte_public_gis_class_transitions.py --output results/generated_charlotte_public_gis_transition_v1.json --raw-dir results/generated_charlotte_public_gis_raw
+      - name: Upload auditable sourced outputs or strict STOP record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2022-2024-gis-class-transitions
+          path: |
+            results/generated_charlotte_public_gis_transition_v1.json
+            results/generated_charlotte_public_gis_raw/
+          if-no-files-found: warn
+          retention-days: 30
