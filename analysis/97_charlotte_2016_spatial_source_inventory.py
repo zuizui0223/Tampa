@@ -36,7 +36,12 @@ def request(url,params):
     try:res=json.loads(raw)
     except (ValueError,UnicodeDecodeError) as e:raise GateStop("SOURCE_NON_JSON") from e
     if not isinstance(res,dict) or res.get("error"):
-        raise GateStop("ARCGIS_SOURCE_ERROR:"+str(res.get("error",res))[:300])
+        stage=("LEGACY_DISTINCT" if params.get("returnDistinctValues") else
+               "LEGACY_SPATIAL_COUNT" if params.get("returnCountOnly") and "geometry" in params else
+               "LEGACY_WHOLE_COUNT" if params.get("returnCountOnly") else
+               "METADATA")
+        where=str(params.get("where",""))[:80]
+        raise GateStop("ARCGIS_SOURCE_ERROR_STAGE_"+stage+":where="+where+":"+str(res.get("error",res))[:300])
     return res
 
 def checksum(data):
