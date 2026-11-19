@@ -151,3 +151,24 @@ This is a **post-hoc descriptive area contrast** across mapped polygons in the s
 ### Consequence for ecology and conservation
 
 Reframe from **'algae favors former seagrass habitat'** to **'both 2022 seagrass and attached algae occupy a landscape historically mapped mainly as seagrass; the relative mapped transitions and observation quality differ'**. Ecological management cannot infer algae removal efficacy from these maps. Prioritize the verified 10m and 25m interior field-confirmation polygons, and collect actual *Thalassia* / *Halodule*, algae (attached vs drift), water clarity, below-canopy light and sampling-process observations. Inference about true recruitment, physiological buffers and large-scale transferability remains open.
+
+
+## Mapped-class temporal stability: distinct from biological persistence (2026-11-19)
+
+The **archived-source class-retention sensitivity** has been verified at [GitHub Actions #44453758649](https://github.com/zuizui0223/Tampa/actions/runs/44453758649), with exact archive SHA, 2022/2024 source feature hashes, source-reported original polygon acreage checks, and synthetic boundary tests passing. The durable numerical output is `results/charlotte_map_class_retention_source_verified_20261119.json`.
+
+| Retained 2022 source area mapped as the same class in 2024 | No erosion | 5m inside both class boundaries | 10m | 25m |
+|---|---:|---:|---:|---:|
+| **Seagrass** (patchy + continuous combined) | **90.266%** | 79.862% | 70.639% | 50.491% |
+| **Attached macroalgae** | **36.364%** | 27.438% | 20.284% | 8.253% |
+
+The percentage denominator is always the original **2022 source class area**, not the reduced eroded area. Original same-class retained area is **11,822.685 acres for seagrass** and **245.158 acres for attached macroalgae**, a 53.902-percentage-point *descriptive map-class stability contrast*. For 10m erosion, the additional **within-eroded-source-area** stability ratios are 86.176% for seagrass and 30.651% for algae; these differ from the fixed-denominator figures and should never be mixed.
+
+**Key scientific distinction:** this result supports stronger *mapped category persistence* for seagrass in Charlotte Harbor, even when considering class boundaries, not seagrass shoot survival or ephemeral biological lifespan of algal individuals. Algae may be temporally ephemeral, but their imagery detectability, phenology, shape fragmentation and mapping thresholds may also differ. The 2022–2024 interval cannot identify competition, mechanism or change in resilience reserves. Do not infer a genuine alternative stable state or hysteresis from two dates.
+
+### Integrated negative and non-estimable evidence
+
+- **Negative specificity check:** [source archive replay #44452243281](https://github.com/zuizui0223/Tampa/actions/runs/44452243281) found 2016 mapped-seagrass overlap of **92.979% for 2022 algae versus 96.945% for contemporaneous 2022 mapped seagrass**. Algae does not show exceptional historical seagrass-map association in this simple map-reference contrast; `results/charlotte_historical_overlap_reference_verified_20261119.json`.
+- **External preselected source check:** [PR #165](https://github.com/zuizui0223/Tampa/pull/165) measured **zero mapped 2022 attached-algae polygons in both Lemon Bay and Dona/Roberts Bays** (and 2024 counts of two and zero, respectively). The registered 2022 algae → 2024 seagrass class-turnover endpoint is **NON_ESTIMABLE**, not a transferability confirmation or contradiction of real biological algae abundance. No favorable replacement estuary was selected.
+
+**Updated ecological interpretation:** the long-term Tampa transect study identifies partially independent quantitative meadow-state axes beneath coarse persistence. Public Charlotte GIS independently documents a category-specific, boundary-sensitive map mosaic with mapped seagrass more class-persistent than mapped attached algae. These observations do not yet establish a common biological buffering mechanism. They support a specific next field measurement task: repeated observations of true focal shoot occurrence, attached/drifting algal abundance, benthic light, mapped microquadrats and observation effort in source-bounded candidate polygons, with site and within-area matching prior to physiological/causal claims.
