@@ -105,6 +105,37 @@ def download_year(year,query_fn=query):
         "batch_checksums":batches,"features":features
     }
 
+def geometry_repair_diagnostics(features):
+    """Response-independent source-shape QC; no cross-year intersection."""
+    from shapely.validation import explain_validity
+    flagged=[]
+    for f in features:
+        p=f.get("properties",{})
+        geom=shape(f["geometry"])
+        if geom.is_valid:continue
+        new=make_valid(geom)
+        pieces=polygon_parts(new)
+        if not pieces:
+            flagged.append({"oid":p.get("FID"),"class":p.get("FLUCCSCODE"),
+                            "reason":"no_polygonal_valid_repair"})
+            continue
+        fixed=unary_union(pieces)
+        old_area=transform(TRANSFORM,geom).area
+        new_area=transform(TRANSFORM,fixed).area
+        relative=abs(new_area-old_area)/max(old_area,1e-8)
+        flagged.append({
+          "oid":p.get("FID"),"class":p.get("FLUCCSCODE"),
+          "validity":explain_validity(geom)[:160],
+          "original_projected_area_acres":round(old_area/M2_PER_ACRE,6),
+          "valid_projected_area_acres":round(new_area/M2_PER_ACRE,6),
+          "area_delta_acres":round((new_area-old_area)/M2_PER_ACRE,6),
+          "relative_change":round(relative,7)})
+    flagged.sort(key=lambda p:abs(p.get("area_delta_acres",0)),reverse=True)
+    return {"invalid_source_features":len(flagged),
+            "largest_absolute_area_repair_candidates":flagged[:15],
+            "total_abs_delta_acres":round(sum(abs(p.get("area_delta_acres",0)) for p in flagged),3),
+            "not_a_justification_to_relax_a_threshold":True}
+
 def polygon_parts(g):
     if g.is_empty:return []
     if g.geom_type=="Polygon": return [g]
@@ -224,12 +255,17 @@ def main(argv=None):
                 p.parent.mkdir(parents=True,exist_ok=True)
                 p.write_text(json.dumps({"type":"FeatureCollection",
                      "features":data[year]["features"]},separators=(",",":"))+"\n",encoding="utf-8")
+        diag={year:geometry_repair_diagnostics(data[year]["features"])
+              for year in ("2022","2024")}
         report=calculate(data["2022"],data["2024"])
+        report["source_geometry_repair_audit"]=diag
         rc=0
     except (GateStop,ValueError,TypeError) as e:
         report={"schema":"tampa.charlotte_public_gis_transition_v1",
                 "status":"STOP_SOURCE_OR_TOPOLOGY_GATE",
                 "reason":str(e),
+                "source_geometry_repair_audit":locals().get("diag"),
+                "raw_source_rosters_fetched":{y:len(v["features"]) for y,v in locals().get("data",{}).items()},
                 "ecological_transition_estimated":False}
         rc=2
     p=Path(x.output);p.parent.mkdir(parents=True,exist_ok=True)
