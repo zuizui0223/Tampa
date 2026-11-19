@@ -1,0 +1,129 @@
+{
+  "schema": "tampa.charlotte_historical_field_verification_geojson_release_v1",
+  "status": "GIS_SOURCE_VERIFIED_NOT_AUTHORITATIVE_FIELD_SITE_OR_RESTORATION_PRIORITY",
+  "verified_run": {
+    "run_id": 44447818585,
+    "job_id": 135304147314,
+    "artifact_id": 14494236985,
+    "artifact_zip_digest": "sha256:45c9e98e00459555f529e1112cc6f37cfeb2f4213c11e6826802c73159c3074f",
+    "artifact_url": "https://github.com/zuizui0223/Tampa/actions/runs/44447818585/artifacts/14494236985",
+    "checks": "Completed success; synthetic valid-GeoJSON test, exact 2016/2022/2024 source SHA verification and live GIS candidate generation passed"
+  },
+  "summary": {
+    "candidate_area_summaries": {
+      "10m::2024_mapped_attached_algae": {
+        "candidate_polygon_count": 43,
+        "eligible_core_acres_ge_0_25_acre": 108.071,
+        "excluded_sliver_acres": 3.672,
+        "mapped_core_acres_all_fragments": 111.743
+      },
+      "10m::2024_mapped_seagrass": {
+        "candidate_polygon_count": 21,
+        "eligible_core_acres_ge_0_25_acre": 24.464,
+        "excluded_sliver_acres": 2.954,
+        "mapped_core_acres_all_fragments": 27.418
+      },
+      "10m::2024_unmapped": {
+        "candidate_polygon_count": 37,
+        "eligible_core_acres_ge_0_25_acre": 211.651,
+        "excluded_sliver_acres": 2.796,
+        "mapped_core_acres_all_fragments": 214.447
+      },
+      "25m::2024_mapped_attached_algae": {
+        "candidate_polygon_count": 23,
+        "eligible_core_acres_ge_0_25_acre": 39.103,
+        "excluded_sliver_acres": 1.278,
+        "mapped_core_acres_all_fragments": 40.382
+      },
+      "25m::2024_mapped_seagrass": {
+        "candidate_polygon_count": 2,
+        "eligible_core_acres_ge_0_25_acre": 4.464,
+        "excluded_sliver_acres": 0.443,
+        "mapped_core_acres_all_fragments": 4.907
+      },
+      "25m::2024_unmapped": {
+        "candidate_polygon_count": 19,
+        "eligible_core_acres_ge_0_25_acre": 113.249,
+        "excluded_sliver_acres": 0.909,
+        "mapped_core_acres_all_fragments": 114.158
+      }
+    },
+    "evidence_class": "POSTHOC_PUBLIC_GIS_MAP_CORES_ONLY",
+    "feature_count": 145,
+    "field_confirmation_required": [
+      "2024 field revisit status, physical quadrat/point identity and complete sample effort",
+      "focal Thalassia, Halodule and attached/detached algal abundance measured independently",
+      "benthic light, epiphyte load, depth, sediment and field accessibility",
+      "vegetated vs bare/undetected fate of 2024 unmapped categories"
+    ],
+    "field_site_ids_are_generated_not_official": true,
+    "geometry_type": "EPSG:4326 GeoJSON Polygon or MultiPolygon",
+    "interior_metre_thresholds": [
+      10,
+      25
+    ],
+    "interpretation": "GIS-mapped verification areas only; classes cannot prove true death, recolonization, competition or suitability for restoration.",
+    "min_candidate_area_acres": 0.25,
+    "no_permits_or_site_approval": true,
+    "schema": "tampa.charlotte_historical_map_field_verification_candidates_v1",
+    "source_oids_sha256": {
+      "2016": "54456876cea77c54e7c8fb88f2ddc97951da2759cffa8010c272960e4a0268d3",
+      "2022": "03069023f1d6aef9c819914da5467301417c02c7bc35c092b2f3850a93276aaa",
+      "2024": "6140b40def8ede7f79ebda544a0189ceb372748d8a9ce49e28abdc2412ee5573"
+    },
+    "source_quality": {
+      "2016": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 7314.15,
+          "9116": 12404.655,
+          "9121": 0
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 0,
+        "max_repair_relative_area_change": 0,
+        "maximum_source_area_absolute_difference_acres": 0.3802,
+        "polygon_count": 1382,
+        "within_year_overlap_fraction": 0
+      },
+      "2022": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4520.896,
+          "9116": 8576.666,
+          "9121": 674.188
+        },
+        "independent_source_area_field": "Geodesic",
+        "invalid_repaired": 4,
+        "max_repair_relative_area_change": 0.13984703,
+        "maximum_source_area_absolute_difference_acres": 0.0138,
+        "polygon_count": 2303,
+        "within_year_overlap_fraction": 0
+      },
+      "2024": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4301.811,
+          "9116": 7979.277,
+          "9121": 939.401
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 7,
+        "max_repair_relative_area_change": 0.37113117,
+        "maximum_source_area_absolute_difference_acres": 0,
+        "polygon_count": 3209,
+        "within_year_overlap_fraction": 0
+      }
+    },
+    "status": "SOURCE_MAPPED_VERIFICATION_LOCATIONS_NOT_FIELDPERMITS",
+    "type": "FeatureCollection",
+    "verified_source_map_sha256": {
+      "2016": "0884ed7f9bd87d879c4f29c9a85738ac668aa30af1eae1a91baa46448de7dbf0",
+      "2022": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+      "2024": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e"
+    }
+  },
+  "candidate_semantics": "145 polygon features across nested 10 m and 25 m source-boundary criteria. Candidate count is not a count of independent sites. Original field survey, permits and ecological outcome validation do not exist.",
+  "source_file": "analysis/101_charlotte_historical_verification_polygons.py",
+  "field_use": "Only spatial verification candidates; no ranking, intervention advice, actual seagrass demographic response, or restoration authorization."
+}
