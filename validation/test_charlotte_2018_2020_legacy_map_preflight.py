@@ -65,6 +65,19 @@ class PreflightTest(unittest.TestCase):
     def test_official_portal_window_rejects_naive_utc(self):
         with self.assertRaisesRegex(M.Stop,"UTC_CLOCK_NOT_TZ_AWARE"):
             M.official_service_window(datetime(2026,11,19,11,30))
+    def test_legacy_count_mode_allows_missing_oid_without_geometry_approval(self):
+        class NoOID(API):
+            def __call__(self,url,params):
+                result=super().__call__(url,params)
+                if not url.endswith("/query"):
+                    result.pop("objectIdField",None)
+                    result["fields"]=[f for f in result["fields"] if f["name"]!="OBJECTID"]
+                return result
+        r=M.collect(NoOID(),pinned)
+        self.assertEqual(r["status"],"PASS_OFFICIAL_LEGACY_MAP_METADATA_AND_CLASS_COUNTS_ONLY")
+        self.assertFalse(r["years"]["2018"]["exact_feature_geometry_source_oid_gate_passed"])
+        self.assertFalse(r["years"]["2020"]["exact_feature_geometry_source_oid_gate_passed"])
+        self.assertTrue(r["no_feature_geometries_opened"])
     def test_spatial_envelope_stays_source_locked(self):
         self.assertEqual(M.LAYERS,{"2018":0,"2020":1})
         self.assertEqual(set(M.CLASSES),{9113,9116,9121})
