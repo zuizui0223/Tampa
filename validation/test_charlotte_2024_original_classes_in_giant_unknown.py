@@ -1,6 +1,6 @@
 """Synthetic source-locked 2024 original district GIS all-class overlap tests."""
 from __future__ import annotations
-import importlib.util,unittest
+import importlib.util,unittest,json
 from pathlib import Path
 from shapely.geometry import box,GeometryCollection,mapping
 from shapely.ops import transform
@@ -58,6 +58,12 @@ class OriginalClassUnknown(unittest.TestCase):
         self.assertGreater(geoms[5400].area,0)
         self.assertTrue(geoms[5400].is_valid)
         self.assertEqual(repaired,0)
+    def test_giant_pinned_source_release_uses_actual_two_largest_rows(self):
+        r=json.loads((ROOT/"results/charlotte_giant_algae_patches_source_verified_20261119.json").read_text())
+        top=r["report"]["two_largest_source_algae_patches"]
+        self.assertEqual([x["source_2022_FID"] for x in top],[37,2166])
+        self.assertAlmostEqual(sum(x["2024_unmapped_area_acres"] for x in top),222.092455,places=3)
+        self.assertNotIn("two_giant_fid_rows",r["report"])
     def test_pinned_code_registry_includes_extra_9122(self):
         self.assertEqual(M.CODES,(0,5400,6510,6540,7210,9113,9116,9121,9122))
         self.assertEqual(M.BACKGROUND,(0,5400,6510,6540,7210,9122))
