@@ -1,0 +1,140 @@
+{
+  "schema": "tampa.florida_two_estuary_algae_map_source_verified_v1",
+  "status": "CONFIRMED_ZERO_2022_MAPPED_ALGAE_NONESTIMABLE_ALGAE_TO_SEAGRASS_CONVERSION_IN_BOTH_PRESELECTED_AREAS",
+  "verified_ci": {
+    "run_id": 44453099273,
+    "job_id": 135321555274,
+    "artifact_id": 14496826201,
+    "artifact_zip_sha256": "sha256:15edee1951ed24523b3b445d6f690a8a3583b2061449cf2eb489b8633a2f3bf0",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44453099273"
+  },
+  "report": {
+    "areal_overlap_computed": false,
+    "classes": {
+      "9113": "patchy_seagrass",
+      "9116": "continuous_seagrass",
+      "9121": "attached_macroalgae"
+    },
+    "data_are_outcome_context_exposed": true,
+    "locations": {
+      "Dona and Roberts Bays": {
+        "2022": {
+          "class_counts": {
+            "9113": 47,
+            "9116": 20,
+            "9121": 0
+          },
+          "extent_3857": {
+            "xmax": -9177968.975567076,
+            "xmin": -9182306.085807325,
+            "ymax": 3144357.8423003233,
+            "ymin": 3136555.7156136115
+          },
+          "focal_algae_present_in_map": false,
+          "last_edit_date": 1679327322330,
+          "layer_metadata_sha256": "f3449c84a32430071945416161a602e2feb39ef2582ad79aa93b6df37be22e02",
+          "service_metadata_sha256": "82122b873ce09c54accba3a52a45594879361ff6ab0dd131e14bab8310d7a21d",
+          "source_area_field": "Geodesic",
+          "source_id_field": "FID",
+          "source_layer": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2022_in_Dona_and_Roberts_Bay/FeatureServer/1",
+          "total_feature_count": 67
+        },
+        "2024": {
+          "class_counts": {
+            "9113": 66,
+            "9116": 27,
+            "9121": 0
+          },
+          "extent_3857": {
+            "xmax": -9176731.858290982,
+            "xmin": -9182306.056110261,
+            "ymax": 3144362.1380082835,
+            "ymin": 3130408.8336141263
+          },
+          "focal_algae_present_in_map": false,
+          "last_edit_date": 1752783506740,
+          "layer_metadata_sha256": "9fb52285421f3fbb7c523bce0f6734aab88fe38659bf8c3e17e6eca660bb3787",
+          "service_metadata_sha256": "e386ba68c45c15432f50738cf2180c44e1c49f68c75443ea45aed80a3a2d10b5",
+          "source_area_field": "ACRES",
+          "source_id_field": "FID",
+          "source_layer": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2024_in_Dona_and_Roberts_Bays/FeatureServer/1",
+          "total_feature_count": 93
+        },
+        "extent_intersection_warning": {
+          "not_a_benthic_observation_or_areal_recovery_measure": true,
+          "overlap_bbox_area_3857_units2": 33838451.85,
+          "overlapping_bounding_rectangles": true,
+          "strictly_equal_map_footprints_verified": false
+        }
+      },
+      "Lemon Bay": {
+        "2022": {
+          "class_counts": {
+            "9113": 666,
+            "9116": 290,
+            "9121": 0
+          },
+          "extent_3857": {
+            "xmax": -9157183.14609565,
+            "xmin": -9177004.903844474,
+            "ymax": 3129995.810358621,
+            "ymin": 3100578.5634055277
+          },
+          "focal_algae_present_in_map": false,
+          "last_edit_date": 1679327276630,
+          "layer_metadata_sha256": "913e28bea1348dc2f2d87fb7d81bbee8f29f2b2bfa46dad41c441ac85a1b458f",
+          "service_metadata_sha256": "8cd1ac64075b7fe28e45f147272b5e2b9f20530900d922252b75466c59532a68",
+          "source_area_field": "Geodesic",
+          "source_id_field": "FID",
+          "source_layer": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2022_in_Lemon_Bay/FeatureServer/1",
+          "total_feature_count": 956
+        },
+        "2024": {
+          "class_counts": {
+            "9113": 813,
+            "9116": 366,
+            "9121": 2
+          },
+          "extent_3857": {
+            "xmax": -9157182.777552852,
+            "xmin": -9177627.303183593,
+            "ymax": 3131049.4013013784,
+            "ymin": 3100575.799153688
+          },
+          "focal_algae_present_in_map": true,
+          "last_edit_date": 1752783650785,
+          "layer_metadata_sha256": "12c567beaf3e35cf30292fa48b9e8f2874302731c443cbbf7d4aea10bf18253f",
+          "service_metadata_sha256": "ee387a947e5748de417f032693fa54937b1d9376eba62defb02603be513fefe5",
+          "source_area_field": "ACRES",
+          "source_id_field": "FID",
+          "source_layer": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2024_in_Lemon_Bay/FeatureServer/1",
+          "total_feature_count": 1181
+        },
+        "extent_intersection_warning": {
+          "not_a_benthic_observation_or_areal_recovery_measure": true,
+          "overlap_bbox_area_3857_units2": 583101542.74,
+          "overlapping_bounding_rectangles": true,
+          "strictly_equal_map_footprints_verified": false
+        }
+      }
+    },
+    "map_regions_are_not_independent_studies": true,
+    "not_untouched_external_confirmatory_validation": true,
+    "polygon_geometry_downloaded": false,
+    "regional_recovery_cause_estimated": false,
+    "schema": "tampa.florida_cross_estuary_algae_map_preflight_v1",
+    "source_family": "SWFWMD public ArcGIS Suncoast biennial mapped benthic vegetation",
+    "status": "PASS_SOURCE_METADATA_AND_CATEGORY_COUNTS_ONLY",
+    "two_preselected_map_regions": [
+      "Lemon Bay",
+      "Dona and Roberts Bays"
+    ]
+  },
+  "evidence_limits": [
+    "Both preselected areas report zero class-9121 polygons in 2022; do not fit 2022 algae -> 2024 seagrass conversion there.",
+    "Lemon Bay reports two mapped class-9121 polygons in 2024; Dona/Roberts Bays zero. Counts are not areas, neither state zero proves biological algal absence.",
+    "Do not replace these failed/non-estimable comparisons with a favorable estuary; report these sites as preselected zero cases.",
+    "Source schema comparability PASSED but biological ecological turnover generality was NOT tested or confirmed.",
+    "Same agency, shared mapping interpretation, spatially nearby estuaries: not independent global ecological replication."
+  ]
+}

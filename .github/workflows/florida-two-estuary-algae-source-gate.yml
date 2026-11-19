@@ -1,0 +1,36 @@
+name: Two Florida estuary seagrass-algae source schema comparison
+
+on:
+  push:
+    paths:
+      - "analysis/104_two_estuary_algae_map_source_gate.py"
+      - "validation/test_two_estuary_algae_map_source_gate.py"
+      - ".github/workflows/florida-two-estuary-algae-source-gate.yml"
+  pull_request:
+    paths:
+      - "analysis/104_two_estuary_algae_map_source_gate.py"
+      - "validation/test_two_estuary_algae_map_source_gate.py"
+      - ".github/workflows/florida-two-estuary-algae-source-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-external-2022-2024-source-maps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test frozen candidate site and class-source gates
+        run: python -m unittest discover -s validation -p 'test_two_estuary_algae_map_source_gate.py' -v
+      - name: Inspect official 2022/2024 Lemon and Dona Roberts source categories
+        run: python analysis/104_two_estuary_algae_map_source_gate.py --out results/generated_florida_two_estuary_algae_source_gate_v1.json
+      - name: Preserve PASS or STOP source-only report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: florida-two-estuary-map-comparability
+          path: results/generated_florida_two_estuary_algae_source_gate_v1.json
+          retention-days: 30
+          if-no-files-found: warn
