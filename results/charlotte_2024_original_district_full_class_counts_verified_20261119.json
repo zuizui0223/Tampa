@@ -1,0 +1,89 @@
+{
+  "schema": "tampa.charlotte_2024_district_full_original_legend_preflight_v1_verified_release_v1",
+  "status": "SOURCE_VERIFIED_METADATA_AND_CLASS_OR_OID_INVENTORY_ONLY",
+  "verified_ci": {
+    "run_id": 44516615481,
+    "job_id": 135534146026,
+    "artifact_id": 14527040923,
+    "artifact_zip_sha256": "sha256:da421df6032cf36e27a5e7913d7e1630b9a7f4147b9238f5b83811c062d51f69"
+  },
+  "report": {
+    "all_original_features_intersecting_fixed_Charlotte_envelope": 6866,
+    "claim_boundary": "The official original district map may include extra classes, but their exact biological meaning, mapping footprint, and overlap with FID37/2166 2024 three-class-unmapped areas need exact original source geometry verification. Counts cannot establish 2024 benthic fate.",
+    "contains_background_benthic_map_categories": true,
+    "exhaustive_original_source_code_counts": {
+      "0": 587,
+      "5400": 101,
+      "6510": 630,
+      "6540": 259,
+      "7210": 1694,
+      "9113": 2349,
+      "9116": 1014,
+      "9121": 227,
+      "9122": 5
+    },
+    "giant_unmapped_habitat_state_identified": false,
+    "hosted_2024_three_code_counts_from_previous_verified_source": {
+      "9113": 2087,
+      "9116": 912,
+      "9121": 210
+    },
+    "n_source_polygons_of_other_classes": 3276,
+    "no_geometry_downloaded": true,
+    "original_categories_other_than_9113_9116_9121": {
+      "0": 587,
+      "5400": 101,
+      "6510": 630,
+      "6540": 259,
+      "7210": 1694,
+      "9122": 5
+    },
+    "original_independent_area_field_candidates": [
+      "Shape.STArea()"
+    ],
+    "original_mapped_code_names_are_from_provisional_external_legend_only": {
+      "0": "land",
+      "5400": "open_water_or_unvegetated_as_defined_by_original_key",
+      "6510": "tidal_flat",
+      "6540": "oyster_reef",
+      "7210": "coastal_intertidal",
+      "9113": "patchy_seagrass",
+      "9116": "continuous_seagrass",
+      "9121": "attached_macroalgae",
+      "9122": "composite_colonized_algae"
+    },
+    "reference_2016_2022_2024_map_envelope_sha256": "81a6f6cefd0fbf936d2b99ad670686eae61fc33c88f81905611dbc5f86a773cc",
+    "schema": "tampa.charlotte_2024_district_full_original_legend_preflight_v1",
+    "source": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/3",
+    "source_2024_all_original_code_semantics_verified": false,
+    "source_2024_full_survey_footprint_confirmed": false,
+    "source_access_window": {
+      "declared_portal_open_window_local": "06:00-22:00",
+      "local_date_time": "2026-11-19T06:52:20.179646-05:00",
+      "local_timezone": "America/New_York",
+      "official_portal_hours_reference": "https://www.swfwmd.state.fl.us/resources/data-maps/gis-maps-survey",
+      "portal_open_time": true,
+      "service_specific_availability_not_guaranteed": true
+    },
+    "source_classes_overlapping_hosted_2024_count_nocrosswalk": {
+      "9113": 2349,
+      "9116": 1014,
+      "9121": 227
+    },
+    "source_extent_3857": {
+      "xmax": -9133636.733688185,
+      "xmin": -9159637.622929975,
+      "ymax": 3115537.8056237204,
+      "ymin": 3085497.118059525
+    },
+    "source_metadata_sha256": "8a59e6d68aee8882670f38878f4ead0fc59b38193ca19b069864a8ba110fd55a",
+    "source_oid_field_advertised": null,
+    "source_oid_field_typed": "OBJECTID",
+    "status": "PASS_OFFICIAL_2024_ORIGINAL_DISTRICT_YEAR_CODE_DICTIONARY_ONLY"
+  },
+  "limits": [
+    "Original district layer is broader than Charlotte's hosted three-code FeatureServer; bounding envelope intersects out-of-scope polygons; do not infer area by counts.",
+    "No 2024 giant algae unknown habitat geometry classified here, and no independent field bottom condition acquired.",
+    "No biological recruitment, true death, algae competition or source-photo survey coverage is identified."
+  ]
+}
