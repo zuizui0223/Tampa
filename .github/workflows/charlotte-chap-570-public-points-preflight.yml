@@ -1,0 +1,36 @@
+name: Charlotte SEACAR CHAP570 public monitoring station source gate
+
+on:
+  push:
+    paths:
+      - "analysis/121_chap_570_public_point_preflight.py"
+      - "validation/test_chap_570_public_point_preflight.py"
+      - ".github/workflows/charlotte-chap-570-public-points-preflight.yml"
+  pull_request:
+    paths:
+      - "analysis/121_chap_570_public_point_preflight.py"
+      - "validation/test_chap_570_public_point_preflight.py"
+      - ".github/workflows/charlotte-chap-570-public-points-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-seacar-570-public-points:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test exact point source identity and non-biological limits
+        run: python -m unittest discover -s validation -p 'test_chap_570_public_point_preflight.py' -v
+      - name: Query publicly registered CHAP field station point metadata and IDs only
+        run: python analysis/121_chap_570_public_point_preflight.py --out results/generated_chap570_public_station_source_gate_v1.json
+      - name: Preserve source pass or stop record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chap570-public-points-source-audit
+          path: results/generated_chap570_public_station_source_gate_v1.json
+          retention-days: 30
+          if-no-files-found: warn
