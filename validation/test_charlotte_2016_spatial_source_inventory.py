@@ -44,10 +44,9 @@ class SourceInventoryTests(unittest.TestCase):
         self.assertFalse(r["source_feature_geometries_downloaded"])
         self.assertFalse(r["2016_to_2022_2024_overlap_computed"])
         self.assertTrue(all(p.get("returnGeometry")!="true" for _,p in stub.calls))
-    def test_outside_distinct_class_is_reported_not_excluded(self):
-        r=m.spatial_counts(Stub(bad=True))
-        self.assertEqual(r["2016_envelope_unmatched_code_count"],1)
-        self.assertIn("9999",r["2016_envelope_distinct_raw_class_codes"])
+    def test_unexpected_class_count_is_stopped_not_ignored(self):
+        with self.assertRaisesRegex(m.GateStop,"UNKNOWN_CLASS_COUNT_IN_2016_ENVELOPE"):
+            m.spatial_counts(Stub(bad=True))
     def test_wrong_legacy_crs_stops(self):
         base=Stub()
         def f(url,params):
@@ -56,13 +55,11 @@ class SourceInventoryTests(unittest.TestCase):
             return x
         with self.assertRaisesRegex(m.GateStop,"LEGACY_CRS_UNEXPECTED"):
             m.spatial_counts(f)
-    def test_truncated_class_dictionary_stops(self):
-        base=Stub()
-        def f(url,params):
-            x=base(url,params)
-            if params.get("returnDistinctValues"):x["exceededTransferLimit"]=True
-            return x
-        with self.assertRaisesRegex(m.GateStop,"DISTINCT_CODE_DICTIONARY_TRUNCATED"):
-            m.spatial_counts(f)
+    def test_unavailable_distinct_endpoint_is_not_needed(self):
+        stub=Stub()
+        r=m.spatial_counts(stub)
+        self.assertEqual(r["2016_envelope_unmatched_code_count"],0)
+        self.assertIn("9116",r["2016_envelope_documented_codes_with_positive_counts"])
+        self.assertFalse(any(p.get("returnDistinctValues") for _,p in stub.calls))
 
 if __name__=="__main__":unittest.main()
