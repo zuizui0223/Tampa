@@ -1,0 +1,35 @@
+name: Charlotte mapped 2024 origin decomposition (archive-only)
+
+on:
+  push:
+    paths:
+      - "analysis/98_charlotte_2024_reverse_class_provenance.py"
+      - "validation/test_charlotte_2024_reverse_class_provenance.py"
+      - "results/charlotte_public_gis_transition_verified_20261119.json"
+      - ".github/workflows/charlotte-2024-origin-decomposition.yml"
+  pull_request:
+    paths:
+      - "analysis/98_charlotte_2024_reverse_class_provenance.py"
+      - "validation/test_charlotte_2024_reverse_class_provenance.py"
+      - "results/charlotte_public_gis_transition_verified_20261119.json"
+      - ".github/workflows/charlotte-2024-origin-decomposition.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-2024-algae-origin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Source-pinned deterministic origin test (no new GIS query)
+        run: python -m unittest discover -s validation -p 'test_charlotte_2024_reverse_class_provenance.py' -v
+      - name: Generate reverse-area attribution
+        run: python analysis/98_charlotte_2024_reverse_class_provenance.py --output results/generated_charlotte_2024_origin_decomposition_v1.json
+      - name: Preserve original source-identity result
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2024-reverse-origin-source-audit
+          path: results/generated_charlotte_2024_origin_decomposition_v1.json
+          retention-days: 30
