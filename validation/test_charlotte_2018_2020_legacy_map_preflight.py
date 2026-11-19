@@ -1,5 +1,6 @@
 """Synthetic source-only tests for official 2018/2020 legacy seagrass mapping layers."""
 import importlib.util,unittest
+from datetime import datetime,timezone
 from pathlib import Path
 S=importlib.util.spec_from_file_location("ch110",Path(__file__).resolve().parents[1]/"analysis/110_charlotte_2018_2020_legacy_map_preflight.py")
 M=importlib.util.module_from_spec(S);S.loader.exec_module(M)
@@ -49,6 +50,21 @@ class PreflightTest(unittest.TestCase):
                 return d
         with self.assertRaisesRegex(M.Stop,"FOCAL_CLASS_COUNTS_EXCEED"):
             M.collect(Bad(),pinned)
+    def test_official_portal_window_in_est_november(self):
+        close=M.official_service_window(datetime(2026,11,19,10,30,tzinfo=timezone.utc))
+        open_=M.official_service_window(datetime(2026,11,19,11,30,tzinfo=timezone.utc))
+        self.assertFalse(close["portal_open_time"])
+        self.assertTrue(open_["portal_open_time"])
+        self.assertTrue(close["service_specific_availability_not_guaranteed"])
+        self.assertEqual(close["local_timezone"],"America/New_York")
+    def test_official_portal_window_in_summer_daylight_saving(self):
+        close=M.official_service_window(datetime(2026,7,19,9,30,tzinfo=timezone.utc))
+        open_=M.official_service_window(datetime(2026,7,19,10,30,tzinfo=timezone.utc))
+        self.assertFalse(close["portal_open_time"])
+        self.assertTrue(open_["portal_open_time"])
+    def test_official_portal_window_rejects_naive_utc(self):
+        with self.assertRaisesRegex(M.Stop,"UTC_CLOCK_NOT_TZ_AWARE"):
+            M.official_service_window(datetime(2026,11,19,11,30))
     def test_spatial_envelope_stays_source_locked(self):
         self.assertEqual(M.LAYERS,{"2018":0,"2020":1})
         self.assertEqual(set(M.CLASSES),{9113,9116,9121})
