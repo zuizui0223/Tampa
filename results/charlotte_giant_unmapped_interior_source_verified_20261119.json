@@ -1,0 +1,203 @@
+{
+  "schema": "tampa.charlotte_giant_unmapped_interior_source_verified_release_v1",
+  "status": "SIX_DISTANCE_SOURCE_LOCKED_HISTORIC_SEAGRASS_POSITIVE_GIS_CORE_VERIFIED_NOT_FIELD_ABSENCE",
+  "verified_ci": {
+    "run_id": 44509444813,
+    "job_id": 135509518230,
+    "artifact_id": 14522875056,
+    "artifact_zip_sha256": "sha256:f43571dbf529c55725420f934fde4b4743897101b953c303a3b70c7db72be802",
+    "source_archive_id": 14494425181,
+    "source_archive_run": 44446913647,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44509444813"
+  },
+  "report": {
+    "classification_scope": "2024 absent from codes 9113/9116/9121 only",
+    "combined_boundary_sensitivity": {
+      "0": {
+        "combined_far_unmapped_acres": 222.093,
+        "combined_far_unmapped_also_2016_sea_positive_acres": 222.074
+      },
+      "5": {
+        "combined_far_unmapped_acres": 190.283,
+        "combined_far_unmapped_also_2016_sea_positive_acres": 190.283
+      },
+      "10": {
+        "combined_far_unmapped_acres": 162.478,
+        "combined_far_unmapped_also_2016_sea_positive_acres": 162.478
+      },
+      "25": {
+        "combined_far_unmapped_acres": 100.939,
+        "combined_far_unmapped_also_2016_sea_positive_acres": 100.939
+      },
+      "50": {
+        "combined_far_unmapped_acres": 37.262,
+        "combined_far_unmapped_also_2016_sea_positive_acres": 37.262
+      },
+      "100": {
+        "combined_far_unmapped_acres": 0.277,
+        "combined_far_unmapped_also_2016_sea_positive_acres": 0.277
+      }
+    },
+    "geojson_candidate_feature_count": 19,
+    "mapped_core_min_area_acres": 0.25,
+    "no_full_habitat_source_or_footprint_acquired": true,
+    "not_authorized_field_site": true,
+    "not_independent_biological_detection": true,
+    "not_plant_mortality_or_algal_disappearance": true,
+    "not_true_bare_bottom": true,
+    "original_unmapped_2024_area_acres": 222.093,
+    "schema": "tampa.charlotte_giant_algae_unmapped_boundary_distance_v1",
+    "source_original_sha256": {
+      "2016": "0884ed7f9bd87d879c4f29c9a85738ac668aa30af1eae1a91baa46448de7dbf0",
+      "2022": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+      "2024": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e"
+    },
+    "source_qc": {
+      "2016": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 7314.15,
+          "9116": 12404.655,
+          "9121": 0
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 0,
+        "max_repair_relative_area_change": 0,
+        "maximum_source_area_absolute_difference_acres": 0.3802,
+        "polygon_count": 1382,
+        "within_year_overlap_fraction": 0
+      },
+      "2022": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4520.896,
+          "9116": 8576.666,
+          "9121": 674.188
+        },
+        "independent_source_area_field": "Geodesic",
+        "invalid_repaired": 4,
+        "max_repair_relative_area_change": 0.13984703,
+        "maximum_source_area_absolute_difference_acres": 0.0138,
+        "polygon_count": 2303,
+        "within_year_overlap_fraction": 0
+      },
+      "2024": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4301.811,
+          "9116": 7979.277,
+          "9121": 939.401
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 7,
+        "max_repair_relative_area_change": 0.37113117,
+        "maximum_source_area_absolute_difference_acres": 0,
+        "polygon_count": 3209,
+        "within_year_overlap_fraction": 0
+      }
+    },
+    "source_years": [
+      2016,
+      2022,
+      2024
+    ],
+    "status": "SOURCE_PINNED_THREE_CLASS_UNMAPPED_INTERIOR_GEOMETRY_ONLY",
+    "two_giant_fid_rows": {
+      "37": {
+        "2016_mapped_seagrass_positive_overlap_with_2024_unmapped_acres": 117.35,
+        "2024_absent_from_three_class_map_acres": 117.35,
+        "fixed_distance_threshold_m": {
+          "0": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 117.35,
+            "unmapped_area_both_boundaries_interior_acres": 117.35,
+            "unmapped_area_fraction_of_original_unmapped_percent": 100
+          },
+          "5": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 100.527,
+            "unmapped_area_both_boundaries_interior_acres": 100.527,
+            "unmapped_area_fraction_of_original_unmapped_percent": 85.664
+          },
+          "10": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 85.448,
+            "unmapped_area_both_boundaries_interior_acres": 85.448,
+            "unmapped_area_fraction_of_original_unmapped_percent": 72.814
+          },
+          "25": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 52.571,
+            "unmapped_area_both_boundaries_interior_acres": 52.571,
+            "unmapped_area_fraction_of_original_unmapped_percent": 44.799
+          },
+          "50": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 18.298,
+            "unmapped_area_both_boundaries_interior_acres": 18.298,
+            "unmapped_area_fraction_of_original_unmapped_percent": 15.593
+          },
+          "100": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 0.016,
+            "unmapped_area_both_boundaries_interior_acres": 0.016,
+            "unmapped_area_fraction_of_original_unmapped_percent": 0.014
+          }
+        },
+        "not_field_absence_or_substrate_measure": true,
+        "source_2022_giant_algae_acres": 186.62
+      },
+      "2166": {
+        "2016_mapped_seagrass_positive_overlap_with_2024_unmapped_acres": 104.724,
+        "2024_absent_from_three_class_map_acres": 104.743,
+        "fixed_distance_threshold_m": {
+          "0": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 99.983,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 104.724,
+            "unmapped_area_both_boundaries_interior_acres": 104.743,
+            "unmapped_area_fraction_of_original_unmapped_percent": 100
+          },
+          "5": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 89.756,
+            "unmapped_area_both_boundaries_interior_acres": 89.756,
+            "unmapped_area_fraction_of_original_unmapped_percent": 85.692
+          },
+          "10": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 77.03,
+            "unmapped_area_both_boundaries_interior_acres": 77.03,
+            "unmapped_area_fraction_of_original_unmapped_percent": 73.543
+          },
+          "25": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 48.368,
+            "unmapped_area_both_boundaries_interior_acres": 48.368,
+            "unmapped_area_fraction_of_original_unmapped_percent": 46.178
+          },
+          "50": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 18.964,
+            "unmapped_area_both_boundaries_interior_acres": 18.964,
+            "unmapped_area_fraction_of_original_unmapped_percent": 18.105
+          },
+          "100": {
+            "fraction_interior_also_2016_seagrass_positive_percent": 100,
+            "minimum_2016_seagrass_positive_overlap_acres_exact_geometry": 0.261,
+            "unmapped_area_both_boundaries_interior_acres": 0.261,
+            "unmapped_area_fraction_of_original_unmapped_percent": 0.249
+          }
+        },
+        "not_field_absence_or_substrate_measure": true,
+        "source_2022_giant_algae_acres": 125.857
+      }
+    }
+  },
+  "critical_conclusions": [
+    "Original 2022 attached algae giant FIDs 37 and 2166 have 222.093 acres outside all 3 tracked 2024 mapped vegetation categories; exact 2016 original mapped seagrass-positive intersection 222.074 acres.",
+    "At least 25m from both 2022 source patch boundaries and all 2024 mapped seagrass/algae polygon boundaries, 100.939 acres of 2024 3-class-unmapped area remains; at 50m 37.262 acres remains.",
+    "Thus this map support gap includes substantial interior area, not solely GIS boundary slivers. These are not classified bare bottom and cannot identify seagrass or algae biological absence.",
+    "A valid EPSG:4326 candidate-core GeoJSON (19 features across nested 25m,50m,100m thresholds, min 0.25 acre per fragment) is preserved in the signed original GitHub Actions artifact. This is not 19 independent authorized field survey sites.",
+    "The source uses exact published 2016/2022/2024 geometry SHA and all original official area fields; no live unstable 2016 MapServer dependence."
+  ]
+}
