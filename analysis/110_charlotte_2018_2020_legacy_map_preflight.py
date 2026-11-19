@@ -12,11 +12,13 @@ pre-outcome metadata-access-route correction, NOT another bay/time window.
 
 No feature geometry, no area conversions and no ecological recovery outputs.
 The spatial envelope is source-locked to a previously validated 2016/22/24
-Charlotte GIS report. The source service may be unavailable or changed; stop
+Charlotte GIS report. The District's open data site has a 06:00–22:00 America/New_York window; outside the official portal window mark SKIP, NOT source schema drift. During official hours, the service may still be unavailable; then stop
 without substituting another year or interpreting zero mapped algae as absence.
 """
 from __future__ import annotations
 import argparse,hashlib,json,math,sys
+from datetime import datetime,timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request,urlopen
@@ -33,6 +35,28 @@ REFERENCE_SCHEMA="tampa.charlotte_three_date_positive_only_source_release_v1"
 PREVIOUS_SOURCE_GIS_RUN=44446322239
 USER_AGENT="Academic source class inventory, SWFWMD seagrass maps 2018-2020/1.0"
 class Stop(ValueError):pass
+
+OFFICIAL_SOURCE_HOURS_LOCAL=(6,22)
+OFFICIAL_HOURS_REFERENCE="https://www.swfwmd.state.fl.us/resources/data-maps/gis-maps-survey"
+
+def official_service_window(now_utc=None):
+    """Distinguish SWFWMD declared REST office window from missing source data.
+
+    The District GIS Open Data portal is available 06:00-22:00 local, but
+    the exact MapServer's own per-service uptime may differ. Mark outside
+    window as a *possible* source access block; do not claim source absent.
+    """
+    if now_utc is None:now_utc=datetime.now(timezone.utc)
+    if now_utc.tzinfo is None:raise Stop("UTC_CLOCK_NOT_TZ_AWARE")
+    local=now_utc.astimezone(ZoneInfo("America/New_York"))
+    return {
+      "local_date_time":local.isoformat(),
+      "local_timezone":"America/New_York",
+      "declared_portal_open_window_local":"06:00-22:00",
+      "portal_open_time":OFFICIAL_SOURCE_HOURS_LOCAL[0]<=local.hour<OFFICIAL_SOURCE_HOURS_LOCAL[1],
+      "official_portal_hours_reference":OFFICIAL_HOURS_REFERENCE,
+      "service_specific_availability_not_guaranteed":True
+    }
 
 def request(url,params):
     uri=url+"?"+urlencode(params)
@@ -134,11 +158,26 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out",required=True)
     args=ap.parse_args()
-    try:out=collect();rc=0
-    except (Stop,TypeError,KeyError,ValueError) as e:
+    window=official_service_window()
+    if not window["portal_open_time"]:
+        # Do not query or label source 'schema drift' during documented
+        # SWFWMD portal closure. This is a SKIP, not a passed data gate.
         out={"schema":"tampa.charlotte_2018_2020_official_map_preflight_v1",
-             "status":"STOP_HISTORIC_SOURCE_PREFLIGHT","reason":str(e),
-             "no_areal_transitions_estimated":True};rc=2
+             "status":"SKIP_OUTSIDE_DISTRICT_PUBLISHED_SOURCE_HOURS",
+             "access_window":window,"years_checked":[],"source_class_results_unavailable":True,
+             "no_areal_transitions_estimated":True}
+        rc=0
+    else:
+        try:
+            out=collect()
+            out["access_window"]=window
+            rc=0
+        except (Stop,TypeError,KeyError,ValueError) as e:
+            out={"schema":"tampa.charlotte_2018_2020_official_map_preflight_v1",
+                 "status":"STOP_HISTORIC_SOURCE_PREFLIGHT_IN_PUBLISHED_HOURS",
+                 "access_window":window,
+                 "reason":str(e),"no_areal_transitions_estimated":True}
+            rc=2
     p=Path(args.out);p.parent.mkdir(parents=True,exist_ok=True)
     p.write_text(json.dumps(out,sort_keys=True,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(out,sort_keys=True,indent=2))
