@@ -1,0 +1,36 @@
+name: Charlotte mapped seagrass gain-loss official source preflight
+
+on:
+  push:
+    paths:
+      - "analysis/112_charlotte_official_gain_loss_source_gate.py"
+      - "validation/test_charlotte_official_gain_loss_source_gate.py"
+      - ".github/workflows/charlotte-official-gain-loss-source-gate.yml"
+  pull_request:
+    paths:
+      - "analysis/112_charlotte_official_gain_loss_source_gate.py"
+      - "validation/test_charlotte_official_gain_loss_source_gate.py"
+      - ".github/workflows/charlotte-official-gain-loss-source-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mapped-change-layer-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run strict synthetic source-only gate
+        run: python -m unittest discover -s validation -p 'test_charlotte_official_gain_loss_source_gate.py' -v
+      - name: Inspect official Charlotte seagrass change layer schema and class descriptors
+        run: python analysis/112_charlotte_official_gain_loss_source_gate.py --out results/generated_charlotte_official_gain_loss_source_gate_v1.json
+      - name: Preserve accurate PASS or STOP source record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-official-mapped-seagrass-change-source
+          path: results/generated_charlotte_official_gain_loss_source_gate_v1.json
+          retention-days: 30
+          if-no-files-found: warn
