@@ -172,8 +172,10 @@ def run(archive_root,query=G.query):
     shapes,repaired=mapped_shapes(features)
     for fid in (37,2166):
         rows[str(fid)]=independent_source_overlap(giants[fid],target,shapes)
-        oldarea=next(x["2024_absent_from_three_class_map_acres"] for k,x in
-            [(fid,existing["report"]["two_giant_fid_rows"][str(fid)])])
+        source_row=next((x for x in existing["report"]["two_largest_source_algae_patches"]
+            if x["source_2022_FID"]==fid),None)
+        if source_row is None:raise Stop("PINNED_SOURCE_GIANT_FID_MISSING:"+str(fid))
+        oldarea=source_row["2024_unmapped_area_acres"]
         if abs(rows[str(fid)]["unknown_2024_3class_area_acres"]-oldarea)>.01:
             raise Stop("ORIGINAL_GIANT_2024_UNKNOWN_SOURCE_ACREAGE_DRIFT")
     summary={k:round(sum(rows[str(fid)][k] for fid in (37,2166)),6)
@@ -217,7 +219,7 @@ def main():
                 "access_window":clock,"no_benthic_class_fate_inferred":True};rc=0
     else:
         try:report=run(a.archive_root);report["access_window"]=clock;rc=0
-        except (Stop,M.Stop,M.REF.Stop,G.GateStop,ValueError,TypeError,KeyError,OSError) as e:
+        except (Stop,G.GateStop,ValueError,TypeError,KeyError,OSError,RuntimeError) as e:
             report={"schema":SCHEMA,"status":"STOP_ORIGINAL_DISTRICT_GEOMETRY_SOURCE_AUDIT",
                     "reason":str(e),"no_benthic_class_fate_inferred":True,
                     "access_window":clock};rc=2
