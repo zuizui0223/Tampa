@@ -43,3 +43,19 @@ Minimum required metadata/datasets for interpreting the 222 acres: original 2022
 Within the two FID polygons, split the currently unknown 222 acres into (a) source 2024 category known but omitted by the restricted three-class FeatureServer, (b) inside documented surveyed/photo-interpreted mask with no vegetation class, (c) outside surveyed mask/occluded and thus genuinely unobserved. These must be mutually exclusive and area-closed. Only the second case would give evidence for *mapped absence of the three classes*, not perfect biological absence. If no explicit coverage mask exists, leave (b) and (c) unresolved instead of calling it bare.
 
 Even after this source reconciliation, seagrass persistence/death and the role of algae in future cover require independent quadrat-level field data. No ecological intervention was made.
+
+## Original ZIP intake is now an executable, synthetic-tested gate
+
+The new source-only program `analysis/119_swfmd_original_seagrass_zip_intake_gate.py` checks any **locally obtained, authorized** official SWFWMD/SEACAR shapefile ZIP, without submitting an email address or downloading through a restricted registration form. It inventories each original polygon shapefile's source code field, complete FLUCCSCODE value counts, possible acreage fields, projection-WKT hash, and the ZIP digest before any overlay.
+
+Execution once authorized ZIP file is already available:
+
+```bash
+python analysis/119_swfmd_original_seagrass_zip_intake_gate.py \
+  --source-zip /path/to/Seagrass_in_2024.zip \
+  --out results/local_2024_original_zip_source_class_gate.json
+```
+
+**Strict semantic result:** if source code values are only `9113`, `9116`, and `9121`, the ZIP is *not* eligible to resolve 2024 target 'unmapped' bottom. If extra values are present, the archive is potentially more informative but still does not prove full photo-survey coverage. A ZIP containing only ESRI geodatabase (.gdb) rather than shapefile is explicitly STOP until a documented GIS-geodatabase parser is implemented. This prevents pretending a file-format failure is a negative biological finding.
+
+Synthetic CI tests of three-code and background-code ZIPs, malformed member sets, unsafe relative ZIP paths and geodatabase-only inputs completed successfully in [GitHub Actions #44510315069](https://github.com/zuizui0223/Tampa/actions/runs/44510315069). **The actual original 2024 SEACAR ZIP has not been downloaded by this analysis**; its class contents and full coverage remain unknown.
