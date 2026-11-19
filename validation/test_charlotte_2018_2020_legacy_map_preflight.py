@@ -9,7 +9,7 @@ class API:
     def __init__(self,wrong=False,empty=False):self.wrong=wrong;self.empty=empty;self.calls=[]
     def __call__(self,url,params):
         self.calls.append((url,params))
-        year="2018" if url.split("FeatureServer/")[1].split("/")[0]=="0" else "2020"
+        year="2018" if url.split(M.SOURCE_BASE+"/")[1].split("/")[0]=="0" else "2020"
         if url.endswith("/query"):
             where=params["where"]
             if where=="1=1":return {"count":5}
