@@ -1,0 +1,77 @@
+{
+  "schema": "tampa.chap_570_public_seagrass_station_registry_preflight_v1_source_pinned_release",
+  "verified_ci": {
+    "run_id": 44512764413,
+    "job_id": 135520930918,
+    "artifact_id": 14523992491,
+    "artifact_zip_sha256": "sha256:376068f2467acd20c6e167c9ed2a940de05cca75b20a688174cf49f47ca12d42",
+    "conclusion": "success"
+  },
+  "report": {
+    "count_all_layer_features": 63,
+    "count_program570_point_features": 63,
+    "declared_extent": {
+      "spatialReference": {
+        "falseM": -100000,
+        "falseX": -20037700,
+        "falseY": -30241100,
+        "falseZ": 0,
+        "latestWkid": 3857,
+        "mTolerance": 0.001,
+        "mUnits": 10000,
+        "wkid": 102100,
+        "xyTolerance": 0.001,
+        "xyUnits": 148923141.92838538,
+        "zTolerance": 2,
+        "zUnits": 10000
+      },
+      "xmax": 9060749.7656,
+      "xmin": -17786628.2389,
+      "ymax": 6273967.4021999985,
+      "ymin": 1355164.3385000005
+    },
+    "field_types": {
+      "CHIMMP": "esriFieldTypeString",
+      "End_Year": "esriFieldTypeString",
+      "GDB_GEOMATTR_DATA": "esriFieldTypeBlob",
+      "IN_MNGArea": "esriFieldTypeSmallInteger",
+      "In_MA": "esriFieldTypeString",
+      "Latitude_DD": "esriFieldTypeDouble",
+      "LocationID": "esriFieldTypeInteger",
+      "LogoHTML": "esriFieldTypeString",
+      "Longitude_DD": "esriFieldTypeDouble",
+      "ManagedAreaName": "esriFieldTypeString",
+      "Managing_Entity": "esriFieldTypeString",
+      "OBJECTID_1": "esriFieldTypeOID",
+      "OIMMP": "esriFieldTypeString",
+      "ObjectID": "esriFieldTypeInteger",
+      "Online_Portal": "esriFieldTypeSmallInteger",
+      "ProgramID": "esriFieldTypeInteger",
+      "ProgramLocationID": "esriFieldTypeString",
+      "ProgramName": "esriFieldTypeString",
+      "Shape": "esriFieldTypeGeometry",
+      "Start_Year": "esriFieldTypeString"
+    },
+    "geometryType": "esriGeometryPoint",
+    "interpretation": "A point-source roster only documents locations in the public SEACAR registry, not which site was visited in 2016/2022/2024 or any field condition. Data-source representativeness/temporal recency must be independently verified before comparing to GIS map classes.",
+    "layer_metadata_sha256": "01bc3ba5289836edc84cd3cfd767e5854978b830c11745c03c15b156abaf7281",
+    "metadata_advertised_object_id_field": null,
+    "not_an_independent_field_ground_truth_of_unmapped_2024": true,
+    "object_id_field": "OBJECTID_1",
+    "object_id_resolved_from_single_typed_esri_oid": true,
+    "original_quadrat_data_opened": false,
+    "point_ids_sha256": "9c6e47c8845bb024fad6e4d61e207d78d95e3d1989b75ed1cdae2388c8f52003",
+    "points_confirmed_current_2024_survey": false,
+    "public_source_reference": "https://data.florida-seacar.org/programs/details/570",
+    "query_id_roster_identified_field": "OBJECTID_1",
+    "schema": "tampa.chap_570_public_seagrass_station_registry_preflight_v1",
+    "source_location_points_are_not_abundance_or_coverage": true,
+    "status": "PASS_PUBLIC_CHAP_570_POINT_LAYER_AND_OID_INVENTORY_ONLY",
+    "url": "https://gis.waterinstitute.usf.edu/arcgis/rest/services/Maps/SEACAR_Datazoom/MapServer/179"
+  },
+  "warnings": [
+    "63 program 570 point records are public monitoring site registry, not evidence all 63 were sampled in 2016, 2022 or 2024.",
+    "SEACAR station registry does not contain independent site-level benthic biology, so no ecological validation or false field absence is inferred.",
+    "Underlying program 570 workbook may include program 571/other sites, exclusion sites and annual differences; original field data remain separately gated."
+  ]
+}
