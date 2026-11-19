@@ -1,0 +1,36 @@
+name: Historical 2016 seagrass map metadata-only gate
+
+on:
+  push:
+    paths:
+      - "analysis/96_charlotte_2016_historical_gis_metadata_gate.py"
+      - "validation/test_charlotte_2016_historical_gis_metadata_gate.py"
+      - ".github/workflows/charlotte-2016-legacy-gis-metadata.yml"
+  pull_request:
+    paths:
+      - "analysis/96_charlotte_2016_historical_gis_metadata_gate.py"
+      - "validation/test_charlotte_2016_historical_gis_metadata_gate.py"
+      - ".github/workflows/charlotte-2016-legacy-gis-metadata.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-historical-source-2016:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Synthetic source gate (no biological response)
+        run: python -m unittest discover -s validation -p 'test_charlotte_2016_historical_gis_metadata_gate.py' -v
+      - name: Inspect authoritative 2016 GIS layer metadata and whole-layer record count
+        run: python analysis/96_charlotte_2016_historical_gis_metadata_gate.py --out results/generated_charlotte_2016_gis_source_metadata_v1.json
+      - name: Preserve PASS or hard STOP record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2016-historical-gis-source-gate
+          path: results/generated_charlotte_2016_gis_source_metadata_v1.json
+          retention-days: 30
+          if-no-files-found: warn
