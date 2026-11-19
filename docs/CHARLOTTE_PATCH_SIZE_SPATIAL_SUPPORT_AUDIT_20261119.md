@@ -51,3 +51,10 @@ An additional **classification granularity** check found that sea-class retentio
 The mechanistic test needs genuine repeated site/quadrat observations: actual species-specific seagrass shoot occurrence/condition, attached versus drift-algal abundance, imagery/interobserver classification uncertainty, sampling effort, season and below-canopy light. Pre-specify how to separate observation error from biological transitions, and use prospective same-mark seagrass responses. No such new biological field or carbohydrate data were acquired in this audit.
 
 This is an outcome-context-exposed source analysis with spatial dependence and no causal effect size. The raw original class map is a categorical observation, not a 0/1 record of organisms or a verified treatment effect.
+
+
+### Direction can reverse within jointly matched geographic patches
+
+The verified source report contains 18 **size-bin × 5km representative-point grid** cells that meet both class-support gates. Their descriptive cell-level difference is not uniformly positive: 15 cells have higher seagrass same-class persistence, while **3 cells have higher algae same-class persistence**. Those 3 cells account for **31.248%** of the mapped algae area within the eligible jointly matched cells. Hence even within the partial common-support region, there are meaningful local reversals. This is not a spatial sign test, and the 18 cells are neither independent estuaries nor independent ecological experiments.
+
+Most importantly, there is no statistical basis from this analysis to elevate the +8.020 percentage-point conditional weighted mean to a spatially universal advantage. The entire source-weight/area design and detailed cell counts remain inspectable in the verified JSON; avoid turning exploratory cell counts into p-values.
