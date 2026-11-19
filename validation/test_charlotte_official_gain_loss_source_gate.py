@@ -11,7 +11,10 @@ class Fixture:
         if url.endswith("/FeatureServer"):
             return {"layers":[{"id":1}],"serviceDescription":"2022–2024 map interpretation"}
         if url.endswith("/query"):
-            return {"count":0 if self.zero else 15}
+            if self.zero:return {"count":0}
+            where=params.get("where","")
+            if where=="1=1":return {"count":15}
+            return {"count":{9113:7,9116:5,9121:3}.get(int(where.split("=")[1]),0)}
         return {"name":"2022–2024 gain/loss map",
                 "type":"Table" if self.wrong else "Feature Layer",
                 "geometryType":"esriGeometryPolygon",
@@ -28,6 +31,9 @@ class SourceMapAudit(unittest.TestCase):
         r=M.inspect(fetch)
         self.assertEqual(r["status"],"PASS_MAP_CHANGE_GIS_SOURCE_METADATA_COUNTS_ONLY")
         self.assertEqual(r["records"]["mapped_seagrass_gain"]["official_polygon_count"],15)
+        self.assertEqual(r["records"]["mapped_seagrass_gain"]["mapped_class_counts_9113_9116_9121"]["9121"],3)
+        self.assertTrue(r["records"]["mapped_seagrass_gain"]["title_cannot_imply_all_features_are_seagrass"])
+        self.assertFalse(r["records"]["mapped_seagrass_gain"]["strictly_seagrass_9113_9116_only"])
         self.assertFalse(r["records"]["mapped_seagrass_loss"]["source_class_semantics_directly_verified"])
         self.assertFalse(r["records"]["mapped_seagrass_gain"]["evidence_is_independent_of_2022_2024_seagrass_maps"])
         self.assertTrue(r["no_geometry_downloaded"])
