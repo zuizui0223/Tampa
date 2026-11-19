@@ -67,7 +67,7 @@ class SourcePreflightTest(unittest.TestCase):
             M.inspect_layer(d)
     def test_service_error_stops(self):
         with self.assertRaisesRegex(M.SourceStop,"ARCGIS_SERVICE_ERROR"):
-            M.arcgis_json("fake",{},opener=lambda req,timeout: BadResponse())
+            M.arcgis_json("https://example.org/fake",{},opener=lambda req,timeout: BadResponse())
 
 class BadResponse:
     def __enter__(self):return self
