@@ -98,3 +98,20 @@ Separately downloaded official `Seagrass Gain` and `Seagrass Loss` layers (inclu
 Net three-class mapped area change must also reconcile: official all-class gain total 788.253 acres, loss total 1,339.515 acres, difference **−551.262 acres** (rounding). Meanwhile mapped seagrass net area is **−816.474 acres** and algae net area **+265.213 acres**; these require internal class-transition accounting beyond the agency gain/loss support polygons. Independent algebraic mass-balance QC is implemented in `analysis/117_charlotte_three_class_net_map_change_decomposition.py` and its CI, with the biological interpretation disallowed.
 
 **Conservation inference:** 2024 'unmapped' cannot be renamed 'bare bottom', 2016-positive history does not imply 2024 mortality, and official 'gain' cannot be used as a live seagrass recovery rate. A management claim requires the original complete full-class mapping dictionary/footprint and real same-season independent field point/quadrat observations. The mapped GIS outputs are useful for targeted verification, not to recommend transplant or algal removal actions.
+
+## Independent full map-class area accounting passed (2026-11-19)
+
+The complete 2022/2024 source-area/QC and separately sourced official mapped change layers now close as a six-class area-conservation identity under source-algebra tests. [GitHub Actions #44480189082](https://github.com/zuizui0223/Tampa/actions/runs/44480189082) **succeeded** with altered-source and area-mass-balance failure tests. The exact output and signed artifact SHA are pinned in `results/charlotte_three_class_net_map_change_source_verified_20261119.json`.
+
+| Area change component | Mapped seagrass | Mapped attached macroalgae |
+|---|---:|---:|
+| 2024 source category area outside all 2022 three-class polygons (agency mapped gain) | +374.969 ac | +413.285 ac |
+| 2022 source category area outside all 2024 three-class polygons (agency mapped loss) | −993.919 ac | −345.596 ac |
+| Within-mapped-universe classification swaps (sea→algae=280.957 ac, algae→sea=83.433 ac) | −197.524 ac | +197.524 ac |
+| **Original source GIS mapped net area (2024−2022)** | **−816.474 ac** | **+265.213 ac** |
+
+The full three-class map area changes by **−551.261 acres** (source-rounded; agency gain−loss differs by ≈0.001 ac). Official gain/loss map labels are accurately accounted for **only as entry/exit of the three-class mapped geometry**. The agency gain-seagrass class area is not the same as 2022 algae→2024 sea class switches. Thus sea net loss contains a −618.950-ac mapped-support component and a −197.524-ac net class-switch component. Algae net gain contains a +67.690-ac mapped-support component and a +197.524-ac net class-switch component.
+
+This outcome is a **map-category measurement-model decomposition**, not an estimated ecological treatment effect, independent physical field observation or proof of true organismal recruitment/death. The derived class 'unmapped' remains uncertain substrate/photographic coverage, not confirmed bare ground.
+
+An independent, whole-shape verification of the official agency gain/loss source overlay was completed successfully twice: [CI #44479894122](https://github.com/zuizui0223/Tampa/actions/runs/44479894122) and [CI #44480189138](https://github.com/zuizui0223/Tampa/actions/runs/44480189138), both matching original calculated gain/loss class sets with minimum six-class Jaccard 0.9999944. Their exact source and artifact identities are released in `results/charlotte_agency_change_set_difference_spatial_verified_20261119.json`.
