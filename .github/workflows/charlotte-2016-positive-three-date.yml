@@ -1,0 +1,40 @@
+name: Charlotte 2016 positive seagrass to 2022 algae to 2024 class overlap
+
+on:
+  push:
+    paths:
+      - "analysis/100_charlotte_2016_2022_2024_positive_only_overlay.py"
+      - "validation/test_charlotte_three_date_positive_overlay.py"
+      - ".github/workflows/charlotte-2016-positive-three-date.yml"
+  pull_request:
+    paths:
+      - "analysis/100_charlotte_2016_2022_2024_positive_only_overlay.py"
+      - "validation/test_charlotte_three_date_positive_overlay.py"
+      - ".github/workflows/charlotte-2016-positive-three-date.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  historical-positive-only-map-overlap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned geospatial libraries
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Test positive history only and observation boundary
+        run: python -m unittest discover -s validation -p 'test_charlotte_three_date_positive_overlay.py' -v
+      - name: Download exact 2016 source positive class and verified 2022 and 2024 mapped classes
+        run: python analysis/100_charlotte_2016_2022_2024_positive_only_overlay.py --out results/generated_charlotte_historical_positive_overlay_v1.json --raw-dir results/generated_charlotte_historical_source_geom
+      - name: Preserve source records and result or STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          path: |
+            results/generated_charlotte_historical_positive_overlay_v1.json
+            results/generated_charlotte_historical_source_geom/
+          retention-days: 30
+          if-no-files-found: warn

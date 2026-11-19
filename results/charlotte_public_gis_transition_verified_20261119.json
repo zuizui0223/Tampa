@@ -1,0 +1,320 @@
+{
+  "schema": "tampa.charlotte_public_gis_transition_verified_release_v1",
+  "status": "SOURCE_VERIFIED_OUTCOME_CONTEXT_EXPOSED_DESCRIPTIVE_MAP_OVERLAY_NOT_CAUSAL",
+  "verified_workflow": {
+    "run_id": 44431639618,
+    "job_id": 135250178216,
+    "head_sha": "1b242d097334f5d2623be25a20905fd0389a9704",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44431639618",
+    "artifact_id": 14487067188,
+    "artifact_zip_sha256": "sha256:d712335ef03178de292d643efa7eb580ecd6e9c65990cd8273d5e5b6b73eb4c7",
+    "git_repo": "zuizui0223/Tampa",
+    "script": "analysis/92_charlotte_public_gis_class_transitions.py",
+    "area_crs": "EPSG:6933",
+    "independent_source_area_fields": {
+      "2022": "Geodesic",
+      "2024": "ACRES"
+    }
+  },
+  "result": {
+    "2022_attached_macroalgae_area_reclassified_as_2024_seagrass_acres": 83.433,
+    "2022_attached_macroalgae_percent_reclassified_as_2024_seagrass": 12.375,
+    "algae_definition": "Code 9121 attached macroalgae only; drifting or loose algae are not quantified.",
+    "disallowed_claims": [
+      "algae inhibits recolonization",
+      "seagrass mortality",
+      "universal recovery mechanism",
+      "independent cell-level replicates",
+      "causal proof of competition"
+    ],
+    "evidence_class": "OUTCOME_CONTEXT_EXPOSED_DESCRIPTIVE_SPATIAL_CLASS_CONVERSION",
+    "mapped_boundary_interior_sensitivity": {
+      "boundary_sensitivity": {
+        "5": {
+          "interior_mapped_conversion_acres": {
+            "algae_to_seagrass_acres": 49.296,
+            "seagrass_to_algae_acres": 199.364
+          },
+          "minimum_interior_distance_m_each_year": 5,
+          "percent_of_original_mapped_conversion_relying_on_interior": {
+            "algae_to_seagrass_acres": 59.08,
+            "seagrass_to_algae_acres": 70.96
+          }
+        },
+        "10": {
+          "interior_mapped_conversion_acres": {
+            "algae_to_seagrass_acres": 27.616,
+            "seagrass_to_algae_acres": 141.08
+          },
+          "minimum_interior_distance_m_each_year": 10,
+          "percent_of_original_mapped_conversion_relying_on_interior": {
+            "algae_to_seagrass_acres": 33.1,
+            "seagrass_to_algae_acres": 50.21
+          }
+        },
+        "25": {
+          "interior_mapped_conversion_acres": {
+            "algae_to_seagrass_acres": 4.907,
+            "seagrass_to_algae_acres": 46.047
+          },
+          "minimum_interior_distance_m_each_year": 25,
+          "percent_of_original_mapped_conversion_relying_on_interior": {
+            "algae_to_seagrass_acres": 5.88,
+            "seagrass_to_algae_acres": 16.39
+          }
+        }
+      },
+      "interpretation": "Geomorphological mapping-boundary sensitivity only, not a causal or detection-corrected biological change.",
+      "original_mapped_conversion_acres": {
+        "algae_to_seagrass_acres": 83.433,
+        "seagrass_to_algae_acres": 280.958
+      }
+    },
+    "mapping_minimum_unit_acres": 0.25,
+    "no_predictor_from_2025": true,
+    "not_a_causal_effect": true,
+    "not_new_blind_confirmation": true,
+    "not_seagrass_recovery_effect_with_control": true,
+    "not_true_bare_or_extinction": true,
+    "projected_equal_area_crs": "EPSG:6933",
+    "quality_control": {
+      "2022": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4520.896,
+          "9116": 8576.666,
+          "9121": 674.188
+        },
+        "independent_source_area_field": "Geodesic",
+        "invalid_repaired": 4,
+        "max_repair_relative_area_change": 0.13984703,
+        "maximum_source_area_absolute_difference_acres": 0.0138,
+        "polygon_count": 2303,
+        "within_year_overlap_fraction": 0
+      },
+      "2024": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4301.811,
+          "9116": 7979.277,
+          "9121": 939.401
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 7,
+        "max_repair_relative_area_change": 0.37113117,
+        "maximum_source_area_absolute_difference_acres": 0,
+        "polygon_count": 3209,
+        "within_year_overlap_fraction": 0
+      }
+    },
+    "schema": "tampa.charlotte_public_gis_transition_v1",
+    "scope_warning": "Area transitions are confined to mapped 2022 class polygons, not the full seabed or necessarily the entire baywide published-area footprint. A 2024 unmapped polygon is NOT true biological absence.",
+    "source_area_to_target_class": {
+      "9113": {
+        "source_mapped_acres": 4520.896,
+        "sum_minus_source_area_relative": 0,
+        "target_area_acres": {
+          "9113": 3040.975,
+          "9116": 592.315,
+          "9121": 208.071,
+          "unmapped": 679.535
+        },
+        "target_fraction_percent": {
+          "9113": 67.265,
+          "9116": 13.102,
+          "9121": 4.602,
+          "unmapped": 15.031
+        }
+      },
+      "9116": {
+        "source_mapped_acres": 8576.666,
+        "sum_minus_source_area_relative": 0,
+        "target_area_acres": {
+          "9113": 899.36,
+          "9116": 7290.036,
+          "9121": 72.886,
+          "unmapped": 314.384
+        },
+        "target_fraction_percent": {
+          "9113": 10.486,
+          "9116": 84.998,
+          "9121": 0.85,
+          "unmapped": 3.666
+        }
+      },
+      "9121": {
+        "source_mapped_acres": 674.188,
+        "sum_minus_source_area_relative": 0,
+        "target_area_acres": {
+          "9113": 56.419,
+          "9116": 27.014,
+          "9121": 245.158,
+          "unmapped": 345.596
+        },
+        "target_fraction_percent": {
+          "9113": 8.368,
+          "9116": 4.007,
+          "9121": 36.364,
+          "unmapped": 51.261
+        }
+      }
+    },
+    "source_geometry_repair_audit": {
+      "2022": {
+        "invalid_source_features": 4,
+        "largest_absolute_area_repair_candidates": [
+          {
+            "area_delta_acres": -66.539881,
+            "class": 9116,
+            "oid": 2284,
+            "original_projected_area_acres": 477.401998,
+            "relative_change": 0.1393791,
+            "valid_projected_area_acres": 410.862116,
+            "validity": "Nested shells[-82.1892806408731 26.7122548600249]"
+          },
+          {
+            "area_delta_acres": -37.108859,
+            "class": 9116,
+            "oid": 2181,
+            "original_projected_area_acres": 265.352103,
+            "relative_change": 0.1398476,
+            "valid_projected_area_acres": 228.243244,
+            "validity": "Nested shells[-82.1358592066128 26.7053164173929]"
+          },
+          {
+            "area_delta_acres": -0.784469,
+            "class": 9116,
+            "oid": 2297,
+            "original_projected_area_acres": 11.536941,
+            "relative_change": 0.0679962,
+            "valid_projected_area_acres": 10.752472,
+            "validity": "Nested shells[-82.2764267040203 26.8171865275386]"
+          },
+          {
+            "area_delta_acres": -0.140285,
+            "class": 9113,
+            "oid": 2273,
+            "original_projected_area_acres": 1.658398,
+            "relative_change": 0.0845904,
+            "valid_projected_area_acres": 1.518114,
+            "validity": "Nested shells[-82.1209466532574 26.7004126298353]"
+          }
+        ],
+        "not_a_justification_to_relax_a_threshold": true,
+        "total_abs_delta_acres": 104.573
+      },
+      "2024": {
+        "invalid_source_features": 7,
+        "largest_absolute_area_repair_candidates": [
+          {
+            "area_delta_acres": -1971.385524,
+            "class": 9116,
+            "oid": 2997,
+            "original_projected_area_acres": 5311.855069,
+            "relative_change": 0.3711294,
+            "valid_projected_area_acres": 3340.469545,
+            "validity": "Nested shells[-82.260217781637 26.8293634307177]"
+          },
+          {
+            "area_delta_acres": -125.335029,
+            "class": 9116,
+            "oid": 1620,
+            "original_projected_area_acres": 500.228916,
+            "relative_change": 0.2505553,
+            "valid_projected_area_acres": 374.893886,
+            "validity": "Ring Self-intersection[-82.1997598684755 26.7050477819653]"
+          },
+          {
+            "area_delta_acres": -51.595944,
+            "class": 9116,
+            "oid": 1612,
+            "original_projected_area_acres": 266.449861,
+            "relative_change": 0.1936422,
+            "valid_projected_area_acres": 214.853917,
+            "validity": "Nested shells[-82.1358592066128 26.7053164173929]"
+          },
+          {
+            "area_delta_acres": -0.49973,
+            "class": 9113,
+            "oid": 1298,
+            "original_projected_area_acres": 2.371752,
+            "relative_change": 0.2107007,
+            "valid_projected_area_acres": 1.872022,
+            "validity": "Nested shells[-82.1210591296123 26.7004736076392]"
+          },
+          {
+            "area_delta_acres": -0.328408,
+            "class": 9113,
+            "oid": 1428,
+            "original_projected_area_acres": 2.22502,
+            "relative_change": 0.1475979,
+            "valid_projected_area_acres": 1.896612,
+            "validity": "Nested shells[-82.1625070616938 26.7065231018869]"
+          },
+          {
+            "area_delta_acres": 0,
+            "class": 9113,
+            "oid": 969,
+            "original_projected_area_acres": 5.001645,
+            "relative_change": 0,
+            "valid_projected_area_acres": 5.001645,
+            "validity": "Ring Self-intersection[-82.1941464518641 26.781279568432]"
+          },
+          {
+            "area_delta_acres": 0,
+            "class": 9113,
+            "oid": 2139,
+            "original_projected_area_acres": 2.112413,
+            "relative_change": 0,
+            "valid_projected_area_acres": 2.112413,
+            "validity": "Ring Self-intersection[-82.2731480977246 26.805545370266]"
+          }
+        ],
+        "not_a_justification_to_relax_a_threshold": true,
+        "total_abs_delta_acres": 2149.145
+      }
+    },
+    "source_metadata": {
+      "2022": {
+        "code_counts": {
+          "9113": 1634,
+          "9116": 574,
+          "9121": 95
+        },
+        "official_acre_field": "Geodesic",
+        "oid_count": 2303,
+        "oid_inventory_sha256": "03069023f1d6aef9c819914da5467301417c02c7bc35c092b2f3850a93276aaa",
+        "raw_geojson_canonical_sha256": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+        "source_metadata_sha256": "7f4d975f41251ac5387444a3096e4edafea246bc78e60baad0e459450d3c7739",
+        "url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2022_in_Charlotte_Harbor/FeatureServer/1",
+        "year": "2022"
+      },
+      "2024": {
+        "code_counts": {
+          "9113": 2087,
+          "9116": 912,
+          "9121": 210
+        },
+        "official_acre_field": "ACRES",
+        "oid_count": 3209,
+        "oid_inventory_sha256": "6140b40def8ede7f79ebda544a0189ceb372748d8a9ce49e28abdc2412ee5573",
+        "raw_geojson_canonical_sha256": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e",
+        "source_metadata_sha256": "8f14caea5f9ba5661d0a88926bc0a6a7a92ba9b2554ea7c794554e89b9937530",
+        "url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2024_in_Charlotte_Harbor/FeatureServer/1",
+        "year": "2024"
+      }
+    },
+    "source_year": "2022",
+    "target_year": "2024",
+    "topology_repair_rule": "Use make_valid on invalid source shells ONLY if equal-area repaired polygon matches source's independent Geodesic or ACRES field within max(0.005 acre, 0.2%). Never accept NaN, missing official area, or major mismatch."
+  },
+  "release_notes": [
+    "This source-derived report was parsed directly from the completed successful GitHub job log and pinned to the run's artifact digest.",
+    "Source polygon raw feature payloads in the workflow artifact; this durable repository JSON contains results and SHA256 source inventories but no raw polygons.",
+    "GIS FeatureServer Charlotte Harbor footprint is not the same as separately reported baywide acreage. Do not splice or compare absolute totals.",
+    "No equivalent surveyed unvegetated footprint or 2016 crosswalk; cannot identify true recovery, survival, macroalgae competition, intervention effects, or causal buffering.",
+    "Mapped 'unmapped' is not bare bottom, absence or death.",
+    "Five, ten and twenty-five metre interior filters are sensitivity comparisons, not correction of thematic classification errors or physical survey location error.",
+    "Prior regional public outcome summaries were opened; result is explicitly not a blind external holdout."
+  ]
+}

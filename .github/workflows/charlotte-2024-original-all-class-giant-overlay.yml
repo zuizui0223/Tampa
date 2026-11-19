@@ -1,0 +1,58 @@
+name: Charlotte 2024 original district all-class mapped unknown overlay
+
+on:
+  push:
+    paths:
+      - "analysis/126_charlotte_2024_original_classes_in_giant_unknown.py"
+      - "validation/test_charlotte_2024_original_classes_in_giant_unknown.py"
+      - "results/charlotte_2024_original_district_full_class_counts_verified_20261119.json"
+      - ".github/workflows/charlotte-2024-original-all-class-giant-overlay.yml"
+  pull_request:
+    paths:
+      - "analysis/126_charlotte_2024_original_classes_in_giant_unknown.py"
+      - "validation/test_charlotte_2024_original_classes_in_giant_unknown.py"
+      - "results/charlotte_2024_original_district_full_class_counts_verified_20261119.json"
+      - ".github/workflows/charlotte-2024-original-all-class-giant-overlay.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  classify-previously-unmapped-original-giant-patches:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install source-pinned equal-area geometry libraries
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Verify previously successful original 2016/2022/2024 polygon archive digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          A="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .workflow_run.id)"
+          test "$A" = "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Test exclusive background/hosted original 2024 class semantics and source OID gates
+        run: python -m unittest discover -s validation -p 'test_charlotte_2024_original_classes_in_giant_unknown.py' -v
+      - name: Query official 2024 original district all-class polygon intersection with exact giant FIDs
+        run: python analysis/126_charlotte_2024_original_classes_in_giant_unknown.py --archive-root results/archived_source --out results/generated_charlotte_original_2024_giant_all_class_unknown_v1.json --geojson-out results/generated_charlotte_2024_original_sand_7210_25_50m_verification_cores.geojson
+      - name: Preserve exact source geojson hashes and class-area partition or explicit STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-original-2024-giant-class-source-partition
+          path: |
+            results/generated_charlotte_original_2024_giant_all_class_unknown_v1.json
+            results/generated_charlotte_2024_original_sand_7210_25_50m_verification_cores.geojson
+          retention-days: 30
+          if-no-files-found: warn

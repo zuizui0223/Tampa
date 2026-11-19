@@ -1,0 +1,97 @@
+{
+  "schema": "tampa.charlotte_historical_positive_sensitivity_release_v1",
+  "evidence_status": "SOURCE_VERIFIED_MAPPED_INTERIOR_AREA_SENSITIVITY_NOT_A_BIOLOGICAL_RECOVERY_RATE",
+  "source_run": {
+    "run_id": 44446913647,
+    "job_id": 135301171219,
+    "artifact_id": 14494425181,
+    "artifact_sha256": "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea",
+    "verified_script": "analysis/100_charlotte_2016_2022_2024_positive_only_overlay.py",
+    "completed_success": true
+  },
+  "sensitivity": {
+    "metre_inside_each_of_three_mapped_class_boundaries": {
+      "0": {
+        "2016_positive_and_2022_algae_interior_acres": 626.854,
+        "2024_mapped_algae_interior_acres": 210.417,
+        "2024_mapped_seagrass_interior_acres": 81.455,
+        "2024_seagrass_share_of_reduced_historical_algae_mask_percent": 12.994,
+        "2024_unmapped_interior_acres": 334.983
+      },
+      "5": {
+        "2016_positive_and_2022_algae_interior_acres": 509.615,
+        "2024_mapped_algae_interior_acres": 155.207,
+        "2024_mapped_seagrass_interior_acres": 48.238,
+        "2024_seagrass_share_of_reduced_historical_algae_mask_percent": 9.466,
+        "2024_unmapped_interior_acres": 306.17
+      },
+      "10": {
+        "2016_positive_and_2022_algae_interior_acres": 412.266,
+        "2024_mapped_algae_interior_acres": 111.743,
+        "2024_mapped_seagrass_interior_acres": 27.418,
+        "2024_seagrass_share_of_reduced_historical_algae_mask_percent": 6.651,
+        "2024_unmapped_interior_acres": 273.105
+      },
+      "25": {
+        "2016_positive_and_2022_algae_interior_acres": 229.382,
+        "2024_mapped_algae_interior_acres": 40.382,
+        "2024_mapped_seagrass_interior_acres": 4.907,
+        "2024_seagrass_share_of_reduced_historical_algae_mask_percent": 2.139,
+        "2024_unmapped_interior_acres": 184.094
+      }
+    },
+    "not_positional_or_thematic_accuracy_correction": true,
+    "scope": "Each erosion changes the denominator; interior shares are not treatment effects or evidence of true recolonization."
+  },
+  "historical_input_sha256": "0884ed7f9bd87d879c4f29c9a85738ac668aa30af1eae1a91baa46448de7dbf0",
+  "inputs": {
+    "n_2016": 1382,
+    "n_2022": 2303,
+    "n_2024": 3209
+  },
+  "metadata_qc": {
+    "2016": {
+      "all_polygons_checked_against_original_area_field": true,
+      "class_area_acres": {
+        "9113": 7314.15,
+        "9116": 12404.655,
+        "9121": 0
+      },
+      "independent_source_area_field": "ACRES",
+      "invalid_repaired": 0,
+      "max_repair_relative_area_change": 0,
+      "maximum_source_area_absolute_difference_acres": 0.3802,
+      "polygon_count": 1382,
+      "within_year_overlap_fraction": 0
+    },
+    "2022": {
+      "all_polygons_checked_against_original_area_field": true,
+      "class_area_acres": {
+        "9113": 4520.896,
+        "9116": 8576.666,
+        "9121": 674.188
+      },
+      "independent_source_area_field": "Geodesic",
+      "invalid_repaired": 4,
+      "max_repair_relative_area_change": 0.13984703,
+      "maximum_source_area_absolute_difference_acres": 0.0138,
+      "polygon_count": 2303,
+      "within_year_overlap_fraction": 0
+    },
+    "2024": {
+      "all_polygons_checked_against_original_area_field": true,
+      "class_area_acres": {
+        "9113": 4301.811,
+        "9116": 7979.277,
+        "9121": 939.401
+      },
+      "independent_source_area_field": "ACRES",
+      "invalid_repaired": 7,
+      "max_repair_relative_area_change": 0.37113117,
+      "maximum_source_area_absolute_difference_acres": 0,
+      "polygon_count": 3209,
+      "within_year_overlap_fraction": 0
+    }
+  },
+  "interpretation_boundary": "Eroding 2016/2022/2024 polygon masks in EPSG:6933 tests mapped boundary sensitivity, but does not measure thematic/positional classification accuracy, biological survival or a management intervention. Each erosion changes the denominator."
+}

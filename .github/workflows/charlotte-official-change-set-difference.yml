@@ -1,0 +1,56 @@
+name: Charlotte full-area official change-map shape concordance
+
+on:
+  push:
+    paths:
+      - "analysis/116_charlotte_agency_change_set_difference_audit.py"
+      - "validation/test_charlotte_agency_change_set_difference_audit.py"
+      - "results/charlotte_official_change_map_giant_source_concordance_verified_20261119.json"
+      - ".github/workflows/charlotte-official-change-set-difference.yml"
+  pull_request:
+    paths:
+      - "analysis/116_charlotte_agency_change_set_difference_audit.py"
+      - "validation/test_charlotte_agency_change_set_difference_audit.py"
+      - "results/charlotte_official_change_map_giant_source_concordance_verified_20261119.json"
+      - ".github/workflows/charlotte-official-change-set-difference.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  full-agency-map-source-set-difference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install verified source geometry libraries
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Verify sealed 2022-2024 full-category GIS artifact SHA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          H="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          test "$H" = "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .workflow_run.id)"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Test classification swap is not new map coverage and shape location matters
+        run: python -m unittest discover -s validation -p 'test_charlotte_agency_change_set_difference_audit.py' -v
+      - name: Reconcile each official change class by intersection, union, and symmetric difference
+        run: python analysis/116_charlotte_agency_change_set_difference_audit.py --archive-root results/archived_source --out results/generated_charlotte_official_change_set_difference_v1.json
+      - name: Retain exact source location QC or reason for STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-official-complete-change-map-spatial-concordance
+          path: results/generated_charlotte_official_change_set_difference_v1.json
+          retention-days: 30
+          if-no-files-found: warn

@@ -1,0 +1,56 @@
+name: Charlotte giant-algae official mapped seagrass gain/loss concordance
+
+on:
+  push:
+    paths:
+      - "analysis/114_charlotte_official_gain_loss_map_concordance.py"
+      - "validation/test_charlotte_official_gain_loss_map_concordance.py"
+      - ".github/workflows/charlotte-official-gain-loss-concordance.yml"
+      - "results/charlotte_official_gain_loss_source_verified_20261119.json"
+  pull_request:
+    paths:
+      - "analysis/114_charlotte_official_gain_loss_map_concordance.py"
+      - "validation/test_charlotte_official_gain_loss_map_concordance.py"
+      - ".github/workflows/charlotte-official-gain-loss-concordance.yml"
+      - "results/charlotte_official_gain_loss_source_verified_20261119.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  exact-original-giant-fid-map-source-concordance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install exact geospatial reproducibility package versions
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Verify original SHA256 of archived SWFWMD GIS
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TEST="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          test "$TEST" = "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .workflow_run.id)"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Synthetic source metadata and source acreage/geometry guards
+        run: python -m unittest discover -s validation -p 'test_charlotte_official_gain_loss_map_concordance.py' -v
+      - name: Download exact official 2022-2024 gain/loss polygon maps and compare giant 2022 algae source FIDs
+        run: python analysis/114_charlotte_official_gain_loss_map_concordance.py --archive-root results/archived_source --out results/generated_charlotte_giant_algae_official_gain_loss_concordance_v1.json
+      - name: Preserve source provenance and code-specific comparison or explicit STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-giant-algae-official-gain-loss-concordance
+          path: results/generated_charlotte_giant_algae_official_gain_loss_concordance_v1.json
+          retention-days: 30
+          if-no-files-found: warn

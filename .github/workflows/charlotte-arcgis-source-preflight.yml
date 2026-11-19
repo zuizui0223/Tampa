@@ -1,0 +1,41 @@
+name: Charlotte Harbor attached-algae GIS source preflight
+
+on:
+  push:
+    paths:
+      - "analysis/91_charlotte_arcgis_source_preflight.py"
+      - "analysis/94_charlotte_source_area_attribute_audit.py"
+      - "validation/test_charlotte_arcgis_source_preflight.py"
+      - ".github/workflows/charlotte-arcgis-source-preflight.yml"
+  pull_request:
+    paths:
+      - "analysis/91_charlotte_arcgis_source_preflight.py"
+      - "validation/test_charlotte_arcgis_source_preflight.py"
+      - ".github/workflows/charlotte-arcgis-source-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-public-arcgis-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test synthetic metadata and count gates
+        run: python -m unittest discover -s validation -p 'test_charlotte_arcgis_source_preflight.py' -v
+      - name: Fetch live official ArcGIS metadata and category counts only
+        run: python analysis/91_charlotte_arcgis_source_preflight.py --output results/generated_charlotte_arcgis_source_preflight_v1.json
+      - name: Compare official original-area attributes on failed topology OIDs
+        run: python analysis/94_charlotte_source_area_attribute_audit.py --output results/generated_charlotte_source_area_attributes_v1.json
+      - name: Store auditable live source inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2022-2024-public-gis-preflight
+          path: |
+            results/generated_charlotte_arcgis_source_preflight_v1.json
+            results/generated_charlotte_source_area_attributes_v1.json
+          if-no-files-found: warn
+          retention-days: 30

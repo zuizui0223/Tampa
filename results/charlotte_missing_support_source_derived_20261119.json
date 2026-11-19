@@ -1,0 +1,106 @@
+{
+  "schema": "tampa.charlotte_missing_support_source_derivative_v1",
+  "status": "DERIVED_FROM_PREVIOUSLY_CI_VERIFIED_SOURCE_JSON_IN_CURRENT_TURN;_NEW_PYTHON_CI_PENDING",
+  "derived_data_source": {
+    "path": "results/charlotte_patch_size_spatial_support_verified_20261119.json",
+    "blob_sha": "28a51b591f96392fdc645a125230320f1a1f96ab",
+    "run_id": 44455648817,
+    "archive_zip_sha256": "sha256:fff3f0961ca079576e59940d5777186949bfb80a6ee9e2308ad56db91baa8bc0"
+  },
+  "calculation": "Known algae retention in unmatched strata kept fixed; hypothetical sea map retention in unmatched strata ranges 0-100%. Exact rate computations use 3-decimal source strata. These are sensitivity envelopes not CIs.",
+  "results": {
+    "size": {
+      "matched_algae_area_acres": 361.71,
+      "matched_algae_area_percent": 53.651,
+      "unmatched_algae_area_acres": 312.478,
+      "observed_unmatched_algae_retained_acres": 51.615,
+      "matched_observed_gap_pp": 27.186,
+      "whole_source_hypothetical_gap_lower_pp": 6.93,
+      "whole_source_hypothetical_gap_upper_pp": 53.279,
+      "can_cross_zero": false,
+      "matched_n_strata": 4,
+      "leave_one_5km_grid_out": [],
+      "leave_one_5km_grid_out_range_pp": null
+    },
+    "space": {
+      "matched_algae_area_acres": 674.189,
+      "matched_algae_area_percent": 100,
+      "unmatched_algae_area_acres": 0,
+      "observed_unmatched_algae_retained_acres": 0,
+      "matched_observed_gap_pp": 42.38,
+      "whole_source_hypothetical_gap_lower_pp": 42.38,
+      "whole_source_hypothetical_gap_upper_pp": 42.38,
+      "can_cross_zero": false,
+      "matched_n_strata": 8,
+      "leave_one_5km_grid_out": [],
+      "leave_one_5km_grid_out_range_pp": null
+    },
+    "size_and_space": {
+      "matched_algae_area_acres": 318.808,
+      "matched_algae_area_percent": 47.288,
+      "unmatched_algae_area_acres": 355.38,
+      "observed_unmatched_algae_retained_acres": 73.508,
+      "matched_observed_gap_pp": 8.02,
+      "whole_source_hypothetical_gap_lower_pp": -7.111,
+      "whole_source_hypothetical_gap_upper_pp": 45.601,
+      "can_cross_zero": true,
+      "matched_n_strata": 18,
+      "leave_one_5km_grid_out": [
+        {
+          "grid": "-1584:657",
+          "omitted_algae_acres": 5.365,
+          "percent_eligible_algae": 1.683,
+          "remaining_gap_pp": 7.379
+        },
+        {
+          "grid": "-1584:658",
+          "omitted_algae_acres": 3.131,
+          "percent_eligible_algae": 0.982,
+          "remaining_gap_pp": 7.513
+        },
+        {
+          "grid": "-1584:659",
+          "omitted_algae_acres": 80.92,
+          "percent_eligible_algae": 25.382,
+          "remaining_gap_pp": -0.224
+        },
+        {
+          "grid": "-1584:660",
+          "omitted_algae_acres": 113.833,
+          "percent_eligible_algae": 35.706,
+          "remaining_gap_pp": 10.145
+        },
+        {
+          "grid": "-1584:661",
+          "omitted_algae_acres": 28.349,
+          "percent_eligible_algae": 8.892,
+          "remaining_gap_pp": 7.239
+        },
+        {
+          "grid": "-1586:659",
+          "omitted_algae_acres": 2.102,
+          "percent_eligible_algae": 0.659,
+          "remaining_gap_pp": 7.899
+        },
+        {
+          "grid": "-1586:660",
+          "omitted_algae_acres": 85.108,
+          "percent_eligible_algae": 26.696,
+          "remaining_gap_pp": 17.225
+        }
+      ],
+      "leave_one_5km_grid_out_range_pp": [
+        -0.224,
+        17.225
+      ]
+    }
+  },
+  "inferential_caveats": [
+    "Not adjusted or causal biological class persistence effect",
+    "Not an empirical plant survival estimate",
+    "No p-value or 95% uncertainty",
+    "Source strata rounded, last decimals approximated",
+    "2016 historical live service latest checks sometimes STOP; this report relies only on verified frozen 2022/2024 source",
+    "Joint matching covers <50% of original algae source area and whole-source sign is not identified"
+  ]
+}

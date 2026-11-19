@@ -1,0 +1,70 @@
+{
+  "2022_algae_to_2024_seagrass_acres": 83.433,
+  "2024_attached_algae_of_2022_mapped_seagrass_origin_acres": 280.957,
+  "2024_attached_algae_of_2022_mapped_seagrass_origin_percent": 29.908,
+  "2024_attached_algae_on_2022_algae_area_acres": 245.158,
+  "2024_attached_algae_outside_2022_mapped_classes_acres": 413.286,
+  "2024_attached_algae_outside_2022_mapped_classes_percent": 43.995,
+  "2024_mapped_seagrass_total_acres": 12281.088,
+  "2024_targets_with_2022_class_provenance": {
+    "9113": {
+      "source_2022_area_acres": {
+        "9113": 3040.975,
+        "9116": 899.36,
+        "9121": 56.419,
+        "unmapped_in_2022": 305.057
+      },
+      "source_2022_fraction_percent": {
+        "9113": 70.691,
+        "9116": 20.907,
+        "9121": 1.312,
+        "unmapped_in_2022": 7.091
+      },
+      "target_area_acres": 4301.811
+    },
+    "9116": {
+      "source_2022_area_acres": {
+        "9113": 592.315,
+        "9116": 7290.036,
+        "9121": 27.014,
+        "unmapped_in_2022": 69.912
+      },
+      "source_2022_fraction_percent": {
+        "9113": 7.423,
+        "9116": 91.362,
+        "9121": 0.339,
+        "unmapped_in_2022": 0.876
+      },
+      "target_area_acres": 7979.277
+    },
+    "9121": {
+      "source_2022_area_acres": {
+        "9113": 208.071,
+        "9116": 72.886,
+        "9121": 245.158,
+        "unmapped_in_2022": 413.286
+      },
+      "source_2022_fraction_percent": {
+        "9113": 22.149,
+        "9116": 7.759,
+        "9121": 26.097,
+        "unmapped_in_2022": 43.995
+      },
+      "target_area_acres": 939.401
+    }
+  },
+  "evidence_class": "POST_HOC_DETERMINISTIC_REAGGREGATION_OF_VERIFIED_MAPPED_CLASSES",
+  "explicit_no_recovery_effect_inference": true,
+  "schema": "tampa.charlotte_2024_mapped_origin_decomposition_v1",
+  "source_report_sha256": "fd11d680e685f0eb88389ee696f5d72391737c69a2f80012236e783d6fa8a08b",
+  "source_verification_artifact_digest": "sha256:d712335ef03178de292d643efa7eb580ecd6e9c65990cd8273d5e5b6b73eb4c7",
+  "source_verification_run": 44431639618,
+  "warning": "A 2024 class mapped on area outside 2022 class polygons is NOT proven newly established vegetation; the 2022 no-polygon classification, full survey footprint and observation process are unknown. Areas are not comparable with broader district baywide mapped acreage without footprint crosswalk.",
+  "authoritative_reaggregation_run": {
+    "run_id": 44445217948,
+    "job_id": 135295602266,
+    "artifact_id": 14492089623,
+    "artifact_zip_sha256": "sha256:26f6aa7fc8a0994d76f27690d5ed2405395692b5af7de3a8d5671a8d928b4a94",
+    "verified_from_live_successful_job_log": true
+  }
+}

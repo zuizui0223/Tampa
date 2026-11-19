@@ -1,0 +1,36 @@
+name: Charlotte 2018 and 2020 original GIS exact OID eligibility
+
+on:
+  push:
+    paths:
+      - "analysis/123_charlotte_2018_2020_exact_oid_source_gate.py"
+      - "validation/test_charlotte_2018_2020_exact_oid_source_gate.py"
+      - ".github/workflows/charlotte-2018-2020-source-oid-gate.yml"
+  pull_request:
+    paths:
+      - "analysis/123_charlotte_2018_2020_exact_oid_source_gate.py"
+      - "validation/test_charlotte_2018_2020_exact_oid_source_gate.py"
+      - ".github/workflows/charlotte-2018-2020-source-oid-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  historical-2018-2020-exact-id-source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test exact source identity, category 9121 zero and no-geometry claims
+        run: python -m unittest discover -s validation -p 'test_charlotte_2018_2020_exact_oid_source_gate.py' -v
+      - name: Validate original SWFWMD historical map feature identity and original acreage fields in official 6am–10pm ET window
+        run: python analysis/123_charlotte_2018_2020_exact_oid_source_gate.py --out results/generated_charlotte_2018_2020_original_oid_source_gate_v1.json
+      - name: Preserve historical OID pass, source-hours skip, or STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2018-2020-original-source-oid-eligibility
+          path: results/generated_charlotte_2018_2020_original_oid_source_gate_v1.json
+          retention-days: 30
+          if-no-files-found: warn

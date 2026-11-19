@@ -1,0 +1,95 @@
+{
+  "schema": "tampa.charlotte_three_class_mapped_change_source_verified_release_v1",
+  "status": "OFFICIAL_GAIN_LOSS_CLASS_AREAS_PLUS_CROSS_CLASS_TRANSITIONS_RECONCILE_MAP_NET_CHANGE",
+  "verified_ci": {
+    "run_id": 44480189082,
+    "job_id": 135410268650,
+    "artifact_id": 14507699231,
+    "artifact_zip_sha256": "sha256:8272b617e36268fddabbae2e93d73cabdae0e3ea1f6176a4dd25f5af833fe12a",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44480189082"
+  },
+  "report": {
+    "code_9121_in_nominal_seagrass_change_layers_is_attached_macroalgae": true,
+    "cross_class_mapped_area_acres": {
+      "2022_attached_algae_to_2024_seagrass": 83.433,
+      "2022_seagrass_to_2024_attached_algae": 280.957,
+      "net_attached_algae_from_class_reclassification": 197.524,
+      "net_seagrass_from_class_reclassification": -197.524
+    },
+    "independently_derived_map_gain_area_per_class_acres": {
+      "9113": 305.057,
+      "9116": 69.912,
+      "9121": 413.286
+    },
+    "independently_derived_map_loss_area_per_class_acres": {
+      "9113": 679.535,
+      "9116": 314.384,
+      "9121": 345.596
+    },
+    "input_file_sha256": {
+      "official": "e4424c460023364015ed172ef6c2b59da85e5b4dd786617fe7b7a9085b999df6",
+      "original": "fd11d680e685f0eb88389ee696f5d72391737c69a2f80012236e783d6fa8a08b"
+    },
+    "interpretation": "Agency gain/loss maps reflect year-to-year mapped-coverage set differences, while class swaps between seagrass and algae are separate. Both are remote-sensing map labels, not independent biological recovery or plant mortality.",
+    "mapped_area_acres": {
+      "2022_attached_algae": 674.188,
+      "2022_seagrass": 13097.562,
+      "2024_attached_algae": 939.401,
+      "2024_seagrass": 12281.088,
+      "attached_algae_net_change": 265.213,
+      "seagrass_net_change": -816.474,
+      "three_class_net_change": -551.261
+    },
+    "mass_balance_residual_acres": {
+      "algae_actual_minus_decomposition_acres": -0.001,
+      "seagrass_actual_minus_decomposition_acres": 0,
+      "three_classes_actual_minus_decomposition_acres": -0.001
+    },
+    "not_independent_field_validation": true,
+    "not_true_establishment_mortality_or_algae_inhibition": true,
+    "official_change_gis_source_run": 44478539061,
+    "official_gain_area_per_class_acres": {
+      "9113": 305.057,
+      "9116": 69.912,
+      "9121": 413.285
+    },
+    "official_loss_area_per_class_acres": {
+      "9113": 679.535,
+      "9116": 314.384,
+      "9121": 345.596
+    },
+    "official_minus_derived_source_area_residual_acres": {
+      "gain_9113": 0,
+      "gain_9116": 0,
+      "gain_9121": -0.001,
+      "loss_9113": 0,
+      "loss_9116": 0,
+      "loss_9121": 0
+    },
+    "precision": "Source values rounded to 0.001 acres; absolute source residual tolerance 0.025 acre.",
+    "schema": "tampa.charlotte_three_class_mapped_net_change_decomposition_v1",
+    "source_map_coverage_change_acres": {
+      "mapped_algae_net_coverage_component": 67.69,
+      "mapped_algae_new_source_coverage": 413.286,
+      "mapped_algae_source_coverage_removed": 345.596,
+      "mapped_seagrass_net_coverage_component": -618.95,
+      "mapped_seagrass_new_source_coverage": 374.969,
+      "mapped_seagrass_source_coverage_removed": 993.919
+    },
+    "source_original_gis_run": 44431639618,
+    "source_validation_type": "Originally independent source acreage/geometries but shared SWFWMD remote sensing; not independent ecological studies",
+    "source_years": [
+      2022,
+      2024
+    ],
+    "status": "SUCCESS_VERIFIED_TWO_SOURCE_GIS_AREA_MASS_BALANCE_NOT_CAUSAL",
+    "unmapped_is_not_bare_or_unvegetated": true
+  },
+  "interpretation": [
+    "Source-verified 2022-to-2024 mapped seagrass net area −816.474 acres is decomposed into −618.950 acres from map-class universe entry/exit and −197.524 acres net cross-class transition with attached algae.",
+    "Source-verified attached macroalgae net +265.213 acres is decomposed into +67.690 acres from map-class universe entry/exit and +197.524 acres net sea-to-algae cross-class transitions.",
+    "The full three-class map area net decrease is −551.261 acres, reconciling official three-class Gain−Loss acreage and independent 2022/2024 source map area within 0.001-acre rounding.",
+    "Official nominal Seagrass Gain/Loss layers include 9121 attached-algae polygons and are derived from the same original imagery, not independent biological response data.",
+    "2024 unmapped source area is a classification-map universe exclusion and does not establish biological vegetative absence or true sea/algal death."
+  ]
+}

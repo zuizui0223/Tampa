@@ -1,0 +1,126 @@
+{
+  "schema": "tampa.charlotte_2024_original_district_giant_unknown_codes_verified_release_v1",
+  "status": "OFFICIAL_SOURCE_GIS_GEOMETRY_IDENTIFIES_99_649_PERCENT_OF_HOSTED_THREE_CLASS_UNMAPPED_AS_CODE_7210",
+  "verified_ci": {
+    "run_id": 44521549226,
+    "job_id": 135551157449,
+    "artifact_id": 14529181444,
+    "artifact_zip_sha256": "sha256:f655a27f14a66792aab608d786e9ad70413a197bf2db5f8811bbcb5b71c1b4ee",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44521549226",
+    "original_layer": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/3",
+    "source_focal_bbox_feature_count": 266,
+    "metadata_sha256": "8a59e6d68aee8882670f38878f4ead0fc59b38193ca19b069864a8ba110fd55a",
+    "source_geojson_sha256": "0692ebd849f90dac2642d731eaab7e40e862fa2624eff9fef0f53144eebcbb05"
+  },
+  "report": {
+    "access_window": {
+      "declared_portal_open_window_local": "06:00-22:00",
+      "local_date_time": "2026-11-19T07:23:40.568505-05:00",
+      "local_timezone": "America/New_York",
+      "official_portal_hours_reference": "https://www.swfwmd.state.fl.us/resources/data-maps/gis-maps-survey",
+      "portal_open_time": true,
+      "service_specific_availability_not_guaranteed": true
+    },
+    "background_code_semantics_require_original_key": true,
+    "bbox_original_2024_source_rosters": {
+      "37": {
+        "bbox_source_ids_sha256": "9095b55260bb120188fe1cba72cef582178189b3ae3ea9e75556c3ce4a7694e4",
+        "count_bbox": 155
+      },
+      "2166": {
+        "bbox_source_ids_sha256": "c3f1d6812bbeb065db771daea41f39a8f3df51e1563a940ffa1ef1a4400f5d7c",
+        "count_bbox": 115
+      }
+    },
+    "combined_two_giant_area_summaries": {
+      "no_2024_original_class_map_polygon_overlapping_acres": 0,
+      "possible_double_class_overlap_acres": 0.000001,
+      "source_2024_original_all_class_coverage_acres": 222.092455,
+      "source_2024_original_non_three_code_coverage_acres": 221.476446,
+      "source_2024_original_three_code_coverage_acres": 0.616008,
+      "unknown_2024_3class_area_acres": 222.092455
+    },
+    "data_classification_limits": [
+      "Unknown means absent from hosted 2024 three category polygons, not absent from all original 2024 district categories.",
+      "Original district 2024 classes 0,5400,6510,6540,7210,9122 are raw codes; meanings and imagery footprint need official key and QA before habitat narrative.",
+      "Original district 2024 MapServer has Shape.STArea() but no verified original ACRES field; source geometry and hosted overlap are descriptive, not independent field accuracy.",
+      "Area across different code unions can overlap. Never force counts to be exclusive unless area-overlap is independently negligible.",
+      "No confirmed seagrass mortality, algae disappearance, colonization or conservation intervention effect."
+    ],
+    "fetched_2024_district_source_feature_count": 266,
+    "fetched_2024_district_source_ids_sha256": "a65d46b46becfd6b61567b40900fb3b946eb6dd24cbe76fbd9eadbe53b1931ab",
+    "original_2024_district_layer": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/3",
+    "original_polygon_repairs": 0,
+    "per_giant_2022_attached_algae_source_FID": {
+      "37": {
+        "no_2024_original_class_map_polygon_overlapping_acres": 0,
+        "not_bare_substrate_or_biological_absence": true,
+        "possible_double_class_overlap_acres": 0.000001,
+        "source_2024_original_all_class_coverage_acres": 117.349861,
+        "source_2024_original_code_overlaps_unknown_acres": {
+          "0": 0,
+          "5400": 0,
+          "6510": 0.002978,
+          "6540": 0,
+          "7210": 116.943862,
+          "9113": 0.244316,
+          "9116": 0.070001,
+          "9121": 0.088705,
+          "9122": 0
+        },
+        "source_2024_original_non_three_code_coverage_acres": 116.94684,
+        "source_2024_original_three_code_coverage_acres": 0.403021,
+        "unknown_2024_3class_area_acres": 117.349861
+      },
+      "2166": {
+        "no_2024_original_class_map_polygon_overlapping_acres": 0,
+        "not_bare_substrate_or_biological_absence": true,
+        "possible_double_class_overlap_acres": 0,
+        "source_2024_original_all_class_coverage_acres": 104.742594,
+        "source_2024_original_code_overlaps_unknown_acres": {
+          "0": 0.000244,
+          "5400": 0.01791,
+          "6510": 0.142626,
+          "6540": 0,
+          "7210": 104.368826,
+          "9113": 0.187618,
+          "9116": 0.000742,
+          "9121": 0.024627,
+          "9122": 0
+        },
+        "source_2024_original_non_three_code_coverage_acres": 104.529606,
+        "source_2024_original_three_code_coverage_acres": 0.212987,
+        "unknown_2024_3class_area_acres": 104.742594
+      }
+    },
+    "schema": "tampa.charlotte_giant_2024_original_all_map_class_overlay_v1",
+    "source_2024_metadata_sha256": "8a59e6d68aee8882670f38878f4ead0fc59b38193ca19b069864a8ba110fd55a",
+    "source_geojson_canonical_sha256": "0692ebd849f90dac2642d731eaab7e40e862fa2624eff9fef0f53144eebcbb05",
+    "source_years": [
+      2022,
+      2024
+    ],
+    "status": "SOURCE_GATED_ORIGINAL_2024_ALL_CODE_POLYGON_INTERSECTION_DESCRIPTIVE"
+  },
+  "derived_stats": {
+    "source_2022_giant_fids": [
+      37,
+      2166
+    ],
+    "total_restricted_2024_unknown_acres": 222.092455,
+    "original_2024_code7210_acres": 221.312688,
+    "original_2024_code7210_share_percent": 99.6489,
+    "original_2024_non_three_codes_acres": 221.476446,
+    "original_2024_restricted_three_class_codes_left_out_of_hosted_area_acres": 0.616008,
+    "no_official_2024_original_class_polygon_overlap_acres": 0,
+    "background_class_counted_in_fixed_chalotte_envelope": 3276
+  },
+  "scientific_limits": [
+    "Code 7210 is 'Sand Other Than Beaches - Submerged', an interpreted mapped unvegetated substrate category, not field-confirmed disappearance of all belowground shoots/rhizomes.",
+    "Code 7210 assigned in original year-2024 District districtwide original source map; hosted 3-code public Charlotte FeatureServer omitted this background code.",
+    "2022 mapped attached algae -> 2024 sand classification in a 2-year map interval is not evidence of season of death, causal algal shading, changes in individual plants, or restoration success.",
+    "These giant original 2022 algae source FIDs are near each other, so their huge fraction is not independent environmental replication.",
+    "The 2024 original MapServer has no independently verified official ACRES field, but source metadata/category/OID count and complete 2022/2024 hosted source area checks passed; actual image classification accuracy is unobserved.",
+    "Historic 2016 mapped-seagrass-positive history adds spatial description but not demographic persistence or causal mechanism."
+  ]
+}

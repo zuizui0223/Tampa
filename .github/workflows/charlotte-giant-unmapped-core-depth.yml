@@ -1,0 +1,58 @@
+name: Charlotte giant 2024 three-class-unmapped interior boundary depth
+
+on:
+  push:
+    paths:
+      - "analysis/118_charlotte_giant_unmapped_core_depth.py"
+      - "validation/test_charlotte_giant_unmapped_core_depth.py"
+      - ".github/workflows/charlotte-giant-unmapped-core-depth.yml"
+  pull_request:
+    paths:
+      - "analysis/118_charlotte_giant_unmapped_core_depth.py"
+      - "validation/test_charlotte_giant_unmapped_core_depth.py"
+      - ".github/workflows/charlotte-giant-unmapped-core-depth.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  audit-giant-unmapped-interior:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned equal-area GIS geometry toolkit
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Verify previous successful archive SHA256 and exact originating workflow run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          EXPECT="sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          HASH="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .workflow_run.id)"
+          test "$HASH" = "$EXPECT"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Synthetic source exclusion, historical positive and interior erosion tests
+        run: python -m unittest discover -s validation -p 'test_charlotte_giant_unmapped_core_depth.py' -v
+      - name: Compute 2016-history-covered deep interior of the two original giant 2022 algae polygons
+        run: |
+          python analysis/118_charlotte_giant_unmapped_core_depth.py             --archive-root results/archived_source             --out results/generated_charlotte_giant_unmapped_interior_v1.json             --geojson-out results/generated_charlotte_giant_2024_unmapped_verification_cores_v1.geojson
+      - name: Preserve complete derived source-area/QC and field-verification candidate geometry or STOP record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-giant-2024-unmapped-deep-interior
+          path: |
+            results/generated_charlotte_giant_unmapped_interior_v1.json
+            results/generated_charlotte_giant_2024_unmapped_verification_cores_v1.geojson
+          retention-days: 30
+          if-no-files-found: warn

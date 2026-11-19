@@ -1,0 +1,38 @@
+name: Charlotte unmatched algae source area sensitivity bounds
+
+on:
+  push:
+    paths:
+      - "analysis/108_charlotte_unmatched_algae_support_bounds.py"
+      - "validation/test_charlotte_unmatched_algae_support_bounds.py"
+      - "results/charlotte_patch_size_spatial_support_verified_20261119.json"
+      - ".github/workflows/charlotte-unmatched-algae-support-bounds.yml"
+  pull_request:
+    paths:
+      - "analysis/108_charlotte_unmatched_algae_support_bounds.py"
+      - "validation/test_charlotte_unmatched_algae_support_bounds.py"
+      - "results/charlotte_patch_size_spatial_support_verified_20261119.json"
+      - ".github/workflows/charlotte-unmatched-algae-support-bounds.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-locked-missing-support-bounds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run synthetic and immutable-source mass-balance tests
+        run: python -m unittest discover -s validation -p 'test_charlotte_unmatched_algae_support_bounds.py' -v
+      - name: Compute sharp algebraic bounds on the unmatched algae reference
+        run: python analysis/108_charlotte_unmatched_algae_support_bounds.py --out results/generated_charlotte_unmatched_algae_support_bounds_v1.json
+      - name: Preserve source-pinned bounds and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-unmatched-algae-area-sensitivity-bounds
+          path: results/generated_charlotte_unmatched_algae_support_bounds_v1.json
+          retention-days: 30
+          if-no-files-found: warn

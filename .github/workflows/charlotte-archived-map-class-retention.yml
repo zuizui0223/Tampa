@@ -1,0 +1,56 @@
+name: Charlotte source-pinned seagrass versus algae map-class persistence
+
+on:
+  push:
+    paths:
+      - "analysis/106_charlotte_archived_map_class_retention.py"
+      - "validation/test_charlotte_archived_map_class_retention.py"
+      - ".github/workflows/charlotte-archived-map-class-retention.yml"
+      - "results/charlotte_public_gis_transition_verified_20261119.json"
+  pull_request:
+    paths:
+      - "analysis/106_charlotte_archived_map_class_retention.py"
+      - "validation/test_charlotte_archived_map_class_retention.py"
+      - ".github/workflows/charlotte-archived-map-class-retention.yml"
+      - "results/charlotte_public_gis_transition_verified_20261119.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  mapped-class-retention:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned geometric dependencies
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Enforce exact successful historical GIS source artifact SHA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          A="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          test "$A" = "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq '.workflow_run.id')"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Synthetic noncausal map-retention boundary tests
+        run: python -m unittest discover -s validation -p 'test_charlotte_archived_map_class_retention.py' -v
+      - name: Compute equal-area source-class persistence and interior sensitivity
+        run: python analysis/106_charlotte_archived_map_class_retention.py --archive-root results/archived_source --out results/generated_charlotte_mapped_class_stability_v1.json
+      - name: Save source-verified stability and mapping caveats
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2022-2024-map-class-retention
+          path: results/generated_charlotte_mapped_class_stability_v1.json
+          retention-days: 30
+          if-no-files-found: warn

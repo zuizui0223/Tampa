@@ -1,0 +1,58 @@
+name: Charlotte frozen-source historical-coverage reference audit
+
+on:
+  push:
+    paths:
+      - "analysis/102_charlotte_historical_overlap_archived_reference.py"
+      - "validation/test_charlotte_historical_overlap_archived_reference.py"
+      - "results/charlotte_historical_positive_three_date_verified_20261119.json"
+      - ".github/workflows/charlotte-archived-history-reference.yml"
+  pull_request:
+    paths:
+      - "analysis/102_charlotte_historical_overlap_archived_reference.py"
+      - "validation/test_charlotte_historical_overlap_archived_reference.py"
+      - "results/charlotte_historical_positive_three_date_verified_20261119.json"
+      - ".github/workflows/charlotte-archived-history-reference.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  historical-reference-archive-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned geometrical tools
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Refuse unexpected archived artifact provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          AR_ID="14494425181"
+          D="sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          source="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${AR_ID}" --jq .digest)"
+          test "$source" = "$D"
+          actual_run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${AR_ID}" --jq '.workflow_run.id')"
+          test "$actual_run" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Source-pinned no-network synthetic tests
+        run: python -m unittest discover -s validation -p 'test_charlotte_historical_overlap_archived_reference.py' -v
+      - name: Recompute 2016 historical-positive coverage against BOTH mapped 2022 classes
+        run: python analysis/102_charlotte_historical_overlap_archived_reference.py --archive-root results/archived_source --out results/generated_charlotte_historical_coverage_reference_v1.json
+      - name: Archive matched source-verified contrast or fail-closed reason
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2016-history-reference-source-replay
+          path: results/generated_charlotte_historical_coverage_reference_v1.json
+          if-no-files-found: warn
+          retention-days: 30

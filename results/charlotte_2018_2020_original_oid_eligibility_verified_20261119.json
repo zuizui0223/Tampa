@@ -1,0 +1,86 @@
+{
+  "schema": "tampa.charlotte_2018_2020_historical_unique_geometry_eligibility_v1_verified_release_v1",
+  "status": "SOURCE_VERIFIED_METADATA_AND_CLASS_OR_OID_INVENTORY_ONLY",
+  "verified_ci": {
+    "run_id": 44516615621,
+    "job_id": 135534146404,
+    "artifact_id": 14526084061,
+    "artifact_zip_sha256": "sha256:79ce87ebe01d4bef7577b28c50ecf2b8a88ca6ec6417fc971548efff6dd7b569"
+  },
+  "report": {
+    "2018_and_2020_polygon_areas_computed": false,
+    "access_window": {
+      "declared_portal_open_window_local": "06:00-22:00",
+      "local_date_time": "2026-11-19T06:49:15.213217-05:00",
+      "local_timezone": "America/New_York",
+      "official_portal_hours_reference": "https://www.swfwmd.state.fl.us/resources/data-maps/gis-maps-survey",
+      "portal_open_time": true,
+      "service_specific_availability_not_guaranteed": true
+    },
+    "do_not_use_polygon_counts_as_area_or_biomass": true,
+    "independent_source_acre_validation_may_be_unavailable": true,
+    "interpretation": "Exact official 2018/2020 OID rosters confirm whether original geometries could in principle be opened, but do not prove source mapping coverage, original-acre attributes, true attached algae absence or reproducible area transitions.",
+    "not_a_causal_or_field_biological_result": true,
+    "schema": "tampa.charlotte_2018_2020_historical_unique_geometry_eligibility_v1",
+    "status": "PASS_HISTORICAL_GIS_EXACT_SOURCE_ID_INVENTORIES_ONLY",
+    "years": {
+      "2018": {
+        "bbox_all_oid_count": 3429,
+        "bbox_all_source_oid_sha256": "1b6c6e81835209b35575a54affa0e18e290c7405164d08b7bad92c1309790eb3",
+        "focal_class_id_audits": {
+          "9113": {
+            "OID_set_sha256": "7cea7d3037c614cc0f5895117df02582d352dd63ec650a6ab2ce3a5765cbbe41",
+            "count": 897
+          },
+          "9116": {
+            "OID_set_sha256": "f7cee7623f0a116f38bcd348b08235391d3ee608f4136ffd4d0ae8d61602115f",
+            "count": 429
+          },
+          "9121": {
+            "OID_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "count": 0
+          }
+        },
+        "future_polygon_geometry_and_area_transition_fitted": false,
+        "layer_metadata_sha256": "e02ff7486c56c6b280a5a8f70532c4e5662d7c7ce36d7a8ac415f8322937d474",
+        "no_polygon_geometries_downloaded": true,
+        "official_original_area_attributes": [],
+        "oid_field_verified_by_single_typed_esri_oid": "OBJECTID",
+        "returnIdsOnly_objectIdFieldName": "OBJECTID",
+        "source_url": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/0",
+        "strict_original_source_acreage_crosscheck_possible": false
+      },
+      "2020": {
+        "bbox_all_oid_count": 4392,
+        "bbox_all_source_oid_sha256": "782e991542984950ded1f6c40b5f18e46f4235e40ba94865b2e9f231a3295b82",
+        "focal_class_id_audits": {
+          "9113": {
+            "OID_set_sha256": "1357e182403ee67df1de4ea991e30bc9e4ea3cad29e7ca1d7ed8968392c2e15f",
+            "count": 1267
+          },
+          "9116": {
+            "OID_set_sha256": "c680fa824cb12a1862379ab310cf12ed9c2fda2a98a7e0998026f80d51e58edc",
+            "count": 403
+          },
+          "9121": {
+            "OID_set_sha256": "5017e8656ebed1e82629203dd821cf296abc607a76f2d956630911b23133c1ae",
+            "count": 70
+          }
+        },
+        "future_polygon_geometry_and_area_transition_fitted": false,
+        "layer_metadata_sha256": "8d959bb71df38e985ca898a72d307aec0fdd693d656ec6fa615dc61633251ea5",
+        "no_polygon_geometries_downloaded": true,
+        "official_original_area_attributes": [],
+        "oid_field_verified_by_single_typed_esri_oid": "OBJECTID",
+        "returnIdsOnly_objectIdFieldName": "OBJECTID",
+        "source_url": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/1",
+        "strict_original_source_acreage_crosscheck_possible": false
+      }
+    }
+  },
+  "limits": [
+    "Original district layer is broader than Charlotte's hosted three-code FeatureServer; bounding envelope intersects out-of-scope polygons; do not infer area by counts.",
+    "No 2024 giant algae unknown habitat geometry classified here, and no independent field bottom condition acquired.",
+    "No biological recruitment, true death, algae competition or source-photo survey coverage is identified."
+  ]
+}

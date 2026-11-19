@@ -1,0 +1,118 @@
+{
+  "schema": "tampa.charlotte_2018_2020_official_map_preflight_v1_source_pinned_release",
+  "verified_ci": {
+    "run_id": 44512363799,
+    "job_id": 135519561579,
+    "artifact_id": 14524322999,
+    "artifact_zip_sha256": "sha256:9d64a36299048e5cb9a78827060f03b7e4ad8d1ec9b2a9b9d9f87fc9b9fde08c",
+    "conclusion": "success"
+  },
+  "report": {
+    "access_window": {
+      "declared_portal_open_window_local": "06:00-22:00",
+      "local_date_time": "2026-11-19T06:14:19.445243-05:00",
+      "local_timezone": "America/New_York",
+      "official_portal_hours_reference": "https://www.swfwmd.state.fl.us/resources/data-maps/gis-maps-survey",
+      "portal_open_time": true,
+      "service_specific_availability_not_guaranteed": true
+    },
+    "claim_boundary": "The original 2018/2020 district-wide legacy source has its own survey footprint and attributes. A count inside a common envelope is not a matched historical habitat area; do not assume a map area without source polygon/acreage QC.",
+    "no_areal_transitions_estimated": true,
+    "no_feature_geometries_opened": true,
+    "no_temporary_algae_absence_inferred_from_zero_map_labels": true,
+    "reference_pinned_release": "results/charlotte_historical_positive_three_date_verified_20261119.json",
+    "reference_sha256": "81a6f6cefd0fbf936d2b99ad670686eae61fc33c88f81905611dbc5f86a773cc",
+    "schema": "tampa.charlotte_2018_2020_official_map_preflight_v1",
+    "source_base": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer",
+    "status": "PASS_OFFICIAL_LEGACY_MAP_METADATA_AND_CLASS_COUNTS_ONLY",
+    "years": {
+      "2018": {
+        "algae_map_class_supported": false,
+        "declared_source_crs": {
+          "falseM": -100000,
+          "falseX": -17791300,
+          "falseY": -41645400,
+          "falseZ": -100000,
+          "latestWkid": 2882,
+          "mTolerance": 0.001,
+          "mUnits": 10000,
+          "wkid": 2882,
+          "xyTolerance": 0.003280833333333333,
+          "xyUnits": 3048.0060960121928,
+          "zTolerance": 0.001,
+          "zUnits": 10000
+        },
+        "exact_feature_geometry_source_oid_gate_passed": false,
+        "future_geometry_claim_authorized": false,
+        "map_extent_2016_2024_reference_envelope_3857": {
+          "xmax": -9133636.733688185,
+          "xmin": -9159637.622929975,
+          "ymax": 3115537.8056237204,
+          "ymin": 3085497.118059525
+        },
+        "metadata_sha256": "e02ff7486c56c6b280a5a8f70532c4e5662d7c7ce36d7a8ac415f8322937d474",
+        "n_by_focal_legacy_flucss_code": {
+          "9113": 897,
+          "9116": 429,
+          "9121": 0
+        },
+        "n_legacy_source_features_intersecting_envelope": 3429,
+        "n_other_classes_uninterpreted": 2103,
+        "nonspatial_area_field_metadata": {},
+        "object_id_field": null,
+        "object_id_field_is_esri_oid": false,
+        "source_candidate_esri_oid_field_names": [
+          "OBJECTID"
+        ],
+        "source_name": "Seagrass in 2018",
+        "source_url": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/0"
+      },
+      "2020": {
+        "algae_map_class_supported": true,
+        "declared_source_crs": {
+          "falseM": -100000,
+          "falseX": -17791300,
+          "falseY": -41645400,
+          "falseZ": -100000,
+          "latestWkid": 2882,
+          "mTolerance": 0.001,
+          "mUnits": 10000,
+          "wkid": 2882,
+          "xyTolerance": 0.003280833333333333,
+          "xyUnits": 3048.0060960121928,
+          "zTolerance": 0.001,
+          "zUnits": 10000
+        },
+        "exact_feature_geometry_source_oid_gate_passed": false,
+        "future_geometry_claim_authorized": false,
+        "map_extent_2016_2024_reference_envelope_3857": {
+          "xmax": -9133636.733688185,
+          "xmin": -9159637.622929975,
+          "ymax": 3115537.8056237204,
+          "ymin": 3085497.118059525
+        },
+        "metadata_sha256": "8d959bb71df38e985ca898a72d307aec0fdd693d656ec6fa615dc61633251ea5",
+        "n_by_focal_legacy_flucss_code": {
+          "9113": 1267,
+          "9116": 403,
+          "9121": 70
+        },
+        "n_legacy_source_features_intersecting_envelope": 4392,
+        "n_other_classes_uninterpreted": 2652,
+        "nonspatial_area_field_metadata": {},
+        "object_id_field": null,
+        "object_id_field_is_esri_oid": false,
+        "source_candidate_esri_oid_field_names": [
+          "OBJECTID"
+        ],
+        "source_name": "Seagrass in 2020",
+        "source_url": "https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer/1"
+      }
+    }
+  },
+  "warnings": [
+    "These are original district MapServer class polygon counts within a Charlotte map bounding rectangle, not area, true biological abundance, or unchanged monitoring footprint.",
+    "2018 zero FLUCCSCODE 9121 polygons is a mapping zero, not evidence of ecological macroalgae absence.",
+    "Legacy MapServer omits advertised objectIdField despite one field typed OID; polygon-level historical source identity and 2018/2020 area not validated yet."
+  ]
+}

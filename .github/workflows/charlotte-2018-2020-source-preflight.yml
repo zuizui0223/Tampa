@@ -1,0 +1,36 @@
+name: Charlotte historic 2018 and 2020 mapped class source preflight
+
+on:
+  push:
+    paths:
+      - "analysis/110_charlotte_2018_2020_legacy_map_preflight.py"
+      - "validation/test_charlotte_2018_2020_legacy_map_preflight.py"
+      - ".github/workflows/charlotte-2018-2020-source-preflight.yml"
+  pull_request:
+    paths:
+      - "analysis/110_charlotte_2018_2020_legacy_map_preflight.py"
+      - "validation/test_charlotte_2018_2020_legacy_map_preflight.py"
+      - ".github/workflows/charlotte-2018-2020-source-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-older-map-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test source-year and no-geometry safety gates
+        run: python -m unittest discover -s validation -p 'test_charlotte_2018_2020_legacy_map_preflight.py' -v
+      - name: Retrieve official 2018 and 2020 Charlotte envelope class counts only
+        run: python analysis/110_charlotte_2018_2020_legacy_map_preflight.py --out results/generated_charlotte_2018_2020_legacy_class_preflight_v1.json
+      - name: Preserve source eligibility or STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2018-2020-legacy-source-preflight
+          path: results/generated_charlotte_2018_2020_legacy_class_preflight_v1.json
+          retention-days: 30
+          if-no-files-found: warn

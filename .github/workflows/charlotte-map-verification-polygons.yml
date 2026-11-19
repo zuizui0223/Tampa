@@ -1,0 +1,38 @@
+name: Charlotte historic seagrass-algae mapped verification site polygons
+
+on:
+  push:
+    paths:
+      - "analysis/101_charlotte_historical_verification_polygons.py"
+      - "validation/test_charlotte_historical_verification_polygons.py"
+      - ".github/workflows/charlotte-map-verification-polygons.yml"
+  pull_request:
+    paths:
+      - "analysis/101_charlotte_historical_verification_polygons.py"
+      - "validation/test_charlotte_historical_verification_polygons.py"
+      - ".github/workflows/charlotte-map-verification-polygons.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-gis-verification-map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned geospatial packages
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Test eligible cores and prevent unsupported site interpretation
+        run: python -m unittest discover -s validation -p 'test_charlotte_historical_verification_polygons.py' -v
+      - name: Generate mapped-class field verification GeoJSON
+        run: python analysis/101_charlotte_historical_verification_polygons.py --out results/generated_charlotte_historical_verification_polygons_v1.geojson
+      - name: Preserve mapped candidate geometry artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-history-mapped-field-verification-polygons
+          path: results/generated_charlotte_historical_verification_polygons_v1.geojson
+          retention-days: 30
+          if-no-files-found: warn
