@@ -130,6 +130,41 @@ def masked_overlap(positive_2016,sea22,algae22,sea24,algae24):
     }
     return out
 
+def historic_positive_coverage_reference(pos16,modern22):
+    """Descriptive reference for how widespread 2016 mapped-seagrass overlap is.
+
+    Matched area denominator within each 2022 positive class. No unobserved
+    substrate is labeled negative; this is NOT a spatially independent null.
+    """
+    out={}
+    for cls in (9113,9116,9121):
+        g=modern22[cls]
+        total=g.area
+        if total<=0:raise M.GateStop("EMPTY_2022_REFERENCE_CLASS:"+str(cls))
+        overlap=g.intersection(pos16).area
+        if overlap<0 or overlap>total+1e-4:raise M.GateStop("BAD_HISTORIC_COVERAGE")
+        out[str(cls)]={
+            "2022_source_class_area_acres":round(total/M.M2_PER_ACRE,3),
+            "overlaps_2016_mapped_seagrass_acres":round(overlap/M.M2_PER_ACRE,3),
+            "overlaps_2016_mapped_seagrass_percent":round(100*overlap/total,3),
+        }
+    seagrass_total=sum(modern22[cls].area for cls in (9113,9116))
+    seagrass_overlap=sum(modern22[cls].intersection(pos16).area for cls in (9113,9116))
+    out["2022_seagrass_combined"]={
+       "2022_source_class_area_acres":round(seagrass_total/M.M2_PER_ACRE,3),
+       "overlaps_2016_mapped_seagrass_acres":round(seagrass_overlap/M.M2_PER_ACRE,3),
+       "overlaps_2016_mapped_seagrass_percent":round(100*seagrass_overlap/seagrass_total,3)
+    }
+    # Difference measured on the map only. No ecological preference test
+    # without equivalent sampling universe and spatial independence.
+    algae_percent=100*modern22[9121].intersection(pos16).area/modern22[9121].area
+    sea_percent=100*seagrass_overlap/seagrass_total
+    return {
+       "class_specific":out,
+       "algae_minus_seagrass_historical_positive_overlap_percentage_points":round(algae_percent-sea_percent,3),
+       "no_selection_or_legacy_significance_test":True,
+       "interpretation":"Area fractions of 2016 map-positive source within each 2022 mapped class; no causal history effect, no known full sampling background or independent units."
+    }
 def historical_interior_sensitivity(pos16,algae22,sea24,algae24,distances=(0.0,5.0,10.0,25.0)):
     """3-date class overlap with every mapped class eroded inside by d metres."""
     results={}
@@ -168,6 +203,7 @@ def calc(dat16,dat22,dat24):
     src16_positive=unary_union([historic[9113],historic[9116]])
     sea22=unary_union([s22[9113],s22[9116]])
     sea24=unary_union([s24[9113],s24[9116]])
+    reference=historic_positive_coverage_reference(src16_positive,s22)
     result=masked_overlap(src16_positive,sea22,s22[9121],sea24,s24[9121])
     sensitivity=historical_interior_sensitivity(src16_positive,s22[9121],sea24,s24[9121])
     if abs(sensitivity["metre_inside_each_of_three_mapped_class_boundaries"]["0"]["2016_positive_and_2022_algae_interior_acres"]-result["2016_seagrass_positive_within_2022_algae_acres"])>.005:
@@ -183,6 +219,7 @@ def calc(dat16,dat22,dat24):
             for yr,dat in (("2022",dat22),("2024",dat24))},
         "area_qc":{"2016":qc16,"2022":qc22,"2024":qc24},
         "map_history":result,
+        "historic_positive_source_coverage_reference":reference,
         "historical_map_boundary_interior_sensitivity":sensitivity,
         "biological_recolonization_confirmed":False,
         "absence_or_survey_footprint_confirmed":False,
