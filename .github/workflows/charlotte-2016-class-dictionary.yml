@@ -1,0 +1,36 @@
+name: Charlotte 2016 historical class dictionary diagnostic
+
+on:
+  push:
+    paths:
+      - "analysis/99_charlotte_2016_legacy_class_dictionary.py"
+      - "validation/test_charlotte_2016_legacy_class_dictionary.py"
+      - ".github/workflows/charlotte-2016-class-dictionary.yml"
+  pull_request:
+    paths:
+      - "analysis/99_charlotte_2016_legacy_class_dictionary.py"
+      - "validation/test_charlotte_2016_legacy_class_dictionary.py"
+      - ".github/workflows/charlotte-2016-class-dictionary.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-official-class-groups:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test source group and unknown-code handling
+        run: python -m unittest discover -s validation -p 'test_charlotte_2016_legacy_class_dictionary.py' -v
+      - name: Get grouped published 2016 class counts without geometry
+        run: python analysis/99_charlotte_2016_legacy_class_dictionary.py --out results/generated_charlotte_2016_class_dictionary_v1.json
+      - name: Save code dictionary for audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2016-class-dictionary
+          path: results/generated_charlotte_2016_class_dictionary_v1.json
+          retention-days: 30
+          if-no-files-found: warn
