@@ -6,7 +6,7 @@ mod=Path(__file__).resolve().parents[1]/"analysis/97_charlotte_2016_spatial_sour
 spec=importlib.util.spec_from_file_location("ch97",mod)
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
-CODES={"9113":20,"9116":35,"9121":5,"6510":10,"6540":7,"7210":3}
+CODES={"9113":20,"9116":35,"9121":5,"6510":10,"6540":7,"7210":3,"0":0,"5400":0}
 class Stub:
     def __init__(self,bad=False):self.calls=[];self.bad=bad
     def __call__(self,url,params):
