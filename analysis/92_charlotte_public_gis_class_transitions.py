@@ -227,10 +227,44 @@ def transitions(source,target):
             "sum_minus_source_area_relative":round(closure,7)}
     return out
 
+def boundary_interior_sensitivity(source,target,distances=(5.0,10.0,25.0)):
+    """Retain only class-overlap areas >= d metres inside both mapped classes."""
+    src_seagrass=unary_union([source[9113],source[9116]])
+    tgt_seagrass=unary_union([target[9113],target[9116]])
+    raw={
+        "algae_to_seagrass_acres":source[9121].intersection(tgt_seagrass).area/M2_PER_ACRE,
+        "seagrass_to_algae_acres":src_seagrass.intersection(target[9121]).area/M2_PER_ACRE,
+    }
+    output={}
+    for d in distances:
+        if d<0:raise GateStop('NEGATIVE_BOUNDARY_DISTANCE')
+        eroded_src_algae=source[9121].buffer(-d)
+        eroded_tgt_seagrass=tgt_seagrass.buffer(-d)
+        eroded_src_seagrass=src_seagrass.buffer(-d)
+        eroded_tgt_algae=target[9121].buffer(-d)
+        interior={
+            "algae_to_seagrass_acres":eroded_src_algae.intersection(eroded_tgt_seagrass).area/M2_PER_ACRE,
+            "seagrass_to_algae_acres":eroded_src_seagrass.intersection(eroded_tgt_algae).area/M2_PER_ACRE,
+        }
+        for name,v in interior.items():
+            if v<0 or v>raw[name]+1e-8:
+                raise GateStop("INTERIOR_BOUNDARY_SENSITIVITY_INCONSISTENT")
+        output[str(int(d))]={
+          "minimum_interior_distance_m_each_year":d,
+          "interior_mapped_conversion_acres":{k:round(v,3) for k,v in interior.items()},
+          "percent_of_original_mapped_conversion_relying_on_interior":{
+             k:(round(100*v/raw[k],2) if raw[k]>0 else None) for k,v in interior.items()},
+        }
+    return {
+      "original_mapped_conversion_acres":{k:round(v,3) for k,v in raw.items()},
+      "boundary_sensitivity":output,
+      "interpretation":"Geomorphological mapping-boundary sensitivity only, not a causal or detection-corrected biological change.",
+    }
 def calculate(record22,record24):
     groups22,qc22=prepare(record22["features"],"Geodesic")
     groups24,qc24=prepare(record24["features"],"ACRES")
     tab=transitions(groups22,groups24)
+    interior=boundary_interior_sensitivity(groups22,groups24)
     ac=tab["9121"]
     return {
         "schema":"tampa.charlotte_public_gis_transition_v1",
@@ -243,6 +277,7 @@ def calculate(record22,record24):
         "quality_control":{"2022":qc22,"2024":qc24},
         "topology_repair_rule":"Use make_valid on invalid source shells ONLY if equal-area repaired polygon matches source's independent Geodesic or ACRES field within max(0.005 acre, 0.2%). Never accept NaN, missing official area, or major mismatch.",
         "source_area_to_target_class":tab,
+        "mapped_boundary_interior_sensitivity":interior,
         "2022_attached_macroalgae_area_reclassified_as_2024_seagrass_acres":round(
             ac["target_area_acres"]["9113"]+ac["target_area_acres"]["9116"],3),
         "2022_attached_macroalgae_percent_reclassified_as_2024_seagrass":round(
