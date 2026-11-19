@@ -111,8 +111,12 @@ def collect(fetch=request,ref=get_reference):
             fields.get("FLUCCSDESC")!="esriFieldTypeString"):
             raise Stop("SOURCE_CLASS_FIELDS_DRIFT:"+year)
         oid=meta.get("objectIdField")
-        if not oid or fields.get(oid)!="esriFieldTypeOID":
-            raise Stop("SOURCE_OBJECT_ID_MISSING:"+year)
+        oid_candidates=[key for key,typ in fields.items() if typ=="esriFieldTypeOID"]
+        oid_verified=bool(isinstance(oid,str) and fields.get(oid)=="esriFieldTypeOID")
+        # A MapServer can expose classification/count queries but omit its
+        # object-id advertisement. Preserve that distinction explicitly:
+        # count-only research is allowed; feature-geometry acquisition is NOT.
+        # Later exact OID inventories must validate unique source identities.
         crs=(meta.get("extent") or {}).get("spatialReference") or {}
         if crs.get("wkid")!=LEGACY_CRS:
             raise Stop("LEGACY_SOURCE_CRS_DRIFT:"+year)
@@ -131,6 +135,9 @@ def collect(fetch=request,ref=get_reference):
             "source_name":meta.get("name"),
             "declared_source_crs":crs,
             "object_id_field":oid,
+            "object_id_field_is_esri_oid":oid_verified,
+            "source_candidate_esri_oid_field_names":oid_candidates,
+            "exact_feature_geometry_source_oid_gate_passed":oid_verified,
             "nonspatial_area_field_metadata":{
                 name:fields.get(name) for name in ("Geodesic","ACRES","Shape__Area","Shape.STArea()")
                 if name in fields},
