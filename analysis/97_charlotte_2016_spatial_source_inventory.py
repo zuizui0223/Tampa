@@ -21,7 +21,7 @@ CURRENT={
 }
 HIST_CODES={"9113":"patchy_seagrass","9116":"continuous_seagrass",
             "9121":"attached_macroalgae"}
-BACKGROUND_CODES=("6510","6540","7210")
+BACKGROUND_CODES=("6510","6540","7210","0","5400")
 USER_AGENT="Charlotte Harbor historical GIS schema and selection audit/1.0"
 class GateStop(Exception):pass
 
@@ -105,6 +105,10 @@ def spatial_counts(req=request):
       "2016_envelope_counts_by_code":per,
       "2016_envelope_unmatched_code_count":unknown,
       "2016_envelope_documented_codes_with_positive_counts":verified_codes,
+      "original_mapping_class_dictionary_reference":"https://manatee.wateratlas.usf.edu/upload/documents/TBEP_03_17_Hard_Bottom.pdf",
+      "2016_explicit_land_code":"0",
+      "2016_explicit_open_water_code":"5400",
+      "land_or_mapped_open_water_does_not_prove_seagrass_demographic_absence":True,
       "spatial_distinct_query_status":"UNSUPPORTED_BY_LEGACY_SERVER; six official 2016 mapped classes verified by exhaustive category-count closure",
       "strictly_seagrass_only_historical_codes":["9113","9116"],
       "attached_macroalgae_code":"9121",
