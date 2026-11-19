@@ -36,7 +36,7 @@ def source_docs():
     src=json.loads(SRC.read_text(encoding="utf-8"))
     if src.get("schema")!="tampa.charlotte_official_gain_loss_source_verified_release_v1":
         raise Stop("UNVERIFIED_GAIN_LOSS_SOURCE_RELEASE")
-    if src.get("verified_run",{}).get("run_id")!=44475344451:
+    if src.get("verified_run",{}).get("run_id")!=44476649845:
         raise Stop("UNEXPECTED_GAIN_LOSS_SOURCE_RUN")
     p=src["report"]
     if p.get("status")!="PASS_MAP_CHANGE_GIS_SOURCE_METADATA_COUNTS_ONLY":
@@ -129,6 +129,9 @@ def get_change(role, pinned, fetch=None):
         geoms.append(p)
         class_geoms[int(code)].append(p)
         classes[int(code)]+=1
+    pinned_counts=prior.get("mapped_class_counts_9113_9116_9121")
+    if not isinstance(pinned_counts,dict) or {str(x):classes[x] for x in SOURCE_CODES}!=pinned_counts:
+        raise Stop("OFFICIAL_MIXED_CHANGE_CODE_COUNTS_NOT_REPRODUCED:"+role)
     merged=unary_union(geoms)
     total=sum(p.area for p in geoms)
     if (total-merged.area)/max(1,merged.area)>.01:
