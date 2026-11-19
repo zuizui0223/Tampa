@@ -1,0 +1,312 @@
+{
+  "schema": "tampa.chap570_public_to_charlotte_giant_unknown_proximity_verified_release_v1",
+  "status": "SOURCE_VERIFIED_PUBLIC_CHAP_REGISTRY_PROXIMITY_ONLY_NOT_YEAR_SPECIFIC_FIELD_ECOLOGY",
+  "verified_ci": {
+    "run_id": 44514210131,
+    "job_id": 135525877674,
+    "artifact_id": 14526135128,
+    "artifact_zip_sha256": "sha256:0c241c4fa0d524d66cc8c0288c5807842bf28d730b7e326a5e83587db57cc1da",
+    "source_2016_2022_2024_original_archive_run": 44446913647,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44514210131"
+  },
+  "report": {
+    "coordinate_discrepancies": 0,
+    "does_not_establish_no_historical_field_surveys_near_patches": true,
+    "n_public_program570_registry_points": 63,
+    "no_field_cover_shoot_density_or_algae_abundance_read": true,
+    "no_true_2024_benthic_absence_concluded": true,
+    "public_source_registry_sha256": "9c6e47c8845bb024fad6e4d61e207d78d95e3d1989b75ed1cdae2388c8f52003",
+    "public_station_point_geojson_sha256": "799d06d056dced55e84fcbe45dddd1aa14910a96c8255d0cc6456551f96d45f8",
+    "regional_outlier_public_point_count": 0,
+    "registry_station_ids_not_actual_annual_quadrat_locations": true,
+    "schema": "tampa.chap_570_public_station_to_charlotte_giant_map_unknown_proximity_v1",
+    "scientific_scope": "Registered CHAP sites (transect midpoints) are not a crosswalk to actual year-specific quadrat measurements; nearest registry site proximity alone cannot validate source mapping or infer biological recovery.",
+    "spatial_distances_source": "EPSG:32617, original SWFWMD 2022/2024 mapped class masks",
+    "status": "PUBLIC_REGISTRY_TO_SOURCE_PINNED_GIS_PROXIMITY_ONLY_NOT_BIOLOGICAL_VALIDATION",
+    "zones": {
+      "FID2166_unknown_0m": {
+        "min_distance_to_registered_public_station_metres": 3630.02,
+        "nearest_public_station_point_ids": [
+          {
+            "distance_metres": 3630.02,
+            "public_program_location_id": "MC03",
+            "public_registry_oid": 348691,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 3817.86,
+            "public_program_location_id": "PIS01",
+            "public_registry_oid": 348717,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 5141.46,
+            "public_program_location_id": "PIS02",
+            "public_registry_oid": 348718,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 7631.44,
+            "public_program_location_id": "MC02",
+            "public_registry_oid": 348690,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 8211.16,
+            "public_program_location_id": "MC04",
+            "public_registry_oid": 348692,
+            "station_point_not_a_verifed_2024_survey": true
+          }
+        ],
+        "no_annual_field_visit_or_quadrat_measurement_retrieved": true,
+        "public_point_counts_within_radius_metres": {
+          "0": 0,
+          "250": 0,
+          "500": 0,
+          "1000": 0,
+          "2000": 0,
+          "5000": 2
+        },
+        "site_registry_points_total": 63,
+        "zone_area_utm17_square_metres": 423655.05
+      },
+      "FID2166_unknown_25m": {
+        "min_distance_to_registered_public_station_metres": 3693.06,
+        "nearest_public_station_point_ids": [
+          {
+            "distance_metres": 3693.06,
+            "public_program_location_id": "MC03",
+            "public_registry_oid": 348691,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 3844.41,
+            "public_program_location_id": "PIS01",
+            "public_registry_oid": 348717,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 5167.81,
+            "public_program_location_id": "PIS02",
+            "public_registry_oid": 348718,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 7731.38,
+            "public_program_location_id": "MC02",
+            "public_registry_oid": 348690,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 8475.54,
+            "public_program_location_id": "MC04",
+            "public_registry_oid": 348692,
+            "station_point_not_a_verifed_2024_survey": true
+          }
+        ],
+        "no_annual_field_visit_or_quadrat_measurement_retrieved": true,
+        "public_point_counts_within_radius_metres": {
+          "0": 0,
+          "250": 0,
+          "500": 0,
+          "1000": 0,
+          "2000": 0,
+          "5000": 2
+        },
+        "site_registry_points_total": 63,
+        "zone_area_utm17_square_metres": 195635.29
+      },
+      "FID2166_unknown_50m": {
+        "min_distance_to_registered_public_station_metres": 3732.86,
+        "nearest_public_station_point_ids": [
+          {
+            "distance_metres": 3732.86,
+            "public_program_location_id": "MC03",
+            "public_registry_oid": 348691,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 3885.21,
+            "public_program_location_id": "PIS01",
+            "public_registry_oid": 348717,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 5208.62,
+            "public_program_location_id": "PIS02",
+            "public_registry_oid": 348718,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 7807.93,
+            "public_program_location_id": "MC02",
+            "public_registry_oid": 348690,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 8562.97,
+            "public_program_location_id": "MC04",
+            "public_registry_oid": 348692,
+            "station_point_not_a_verifed_2024_survey": true
+          }
+        ],
+        "no_annual_field_visit_or_quadrat_measurement_retrieved": true,
+        "public_point_counts_within_radius_metres": {
+          "0": 0,
+          "250": 0,
+          "500": 0,
+          "1000": 0,
+          "2000": 0,
+          "5000": 2
+        },
+        "site_registry_points_total": 63,
+        "zone_area_utm17_square_metres": 76704.25
+      },
+      "FID37_unknown_0m": {
+        "min_distance_to_registered_public_station_metres": 28.51,
+        "nearest_public_station_point_ids": [
+          {
+            "distance_metres": 28.51,
+            "public_program_location_id": "MC03",
+            "public_registry_oid": 348691,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 3478.39,
+            "public_program_location_id": "MC02",
+            "public_registry_oid": 348690,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 5266.89,
+            "public_program_location_id": "PIS01",
+            "public_registry_oid": 348717,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 6547.06,
+            "public_program_location_id": "PIS02",
+            "public_registry_oid": 348718,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 8155.27,
+            "public_program_location_id": "MC01",
+            "public_registry_oid": 348689,
+            "station_point_not_a_verifed_2024_survey": true
+          }
+        ],
+        "no_annual_field_visit_or_quadrat_measurement_retrieved": true,
+        "public_point_counts_within_radius_metres": {
+          "0": 0,
+          "250": 1,
+          "500": 1,
+          "1000": 1,
+          "2000": 1,
+          "5000": 2
+        },
+        "site_registry_points_total": 63,
+        "zone_area_utm17_square_metres": 474649.37
+      },
+      "FID37_unknown_25m": {
+        "min_distance_to_registered_public_station_metres": 153.62,
+        "nearest_public_station_point_ids": [
+          {
+            "distance_metres": 153.62,
+            "public_program_location_id": "MC03",
+            "public_registry_oid": 348691,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 3513.91,
+            "public_program_location_id": "MC02",
+            "public_registry_oid": 348690,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 5719.81,
+            "public_program_location_id": "PIS01",
+            "public_registry_oid": 348717,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 6999.95,
+            "public_program_location_id": "PIS02",
+            "public_registry_oid": 348718,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 8182.1,
+            "public_program_location_id": "MC01",
+            "public_registry_oid": 348689,
+            "station_point_not_a_verifed_2024_survey": true
+          }
+        ],
+        "no_annual_field_visit_or_quadrat_measurement_retrieved": true,
+        "public_point_counts_within_radius_metres": {
+          "0": 0,
+          "250": 1,
+          "500": 1,
+          "1000": 1,
+          "2000": 1,
+          "5000": 2
+        },
+        "site_registry_points_total": 63,
+        "zone_area_utm17_square_metres": 212636.63
+      },
+      "FID37_unknown_50m": {
+        "min_distance_to_registered_public_station_metres": 309.33,
+        "nearest_public_station_point_ids": [
+          {
+            "distance_metres": 309.33,
+            "public_program_location_id": "MC03",
+            "public_registry_oid": 348691,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 3754,
+            "public_program_location_id": "MC02",
+            "public_registry_oid": 348690,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 6242.46,
+            "public_program_location_id": "PIS01",
+            "public_registry_oid": 348717,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 7530.92,
+            "public_program_location_id": "PIS02",
+            "public_registry_oid": 348718,
+            "station_point_not_a_verifed_2024_survey": true
+          },
+          {
+            "distance_metres": 8377.77,
+            "public_program_location_id": "MC01",
+            "public_registry_oid": 348689,
+            "station_point_not_a_verifed_2024_survey": true
+          }
+        ],
+        "no_annual_field_visit_or_quadrat_measurement_retrieved": true,
+        "public_point_counts_within_radius_metres": {
+          "0": 0,
+          "250": 0,
+          "500": 1,
+          "1000": 1,
+          "2000": 1,
+          "5000": 2
+        },
+        "site_registry_points_total": 63,
+        "zone_area_utm17_square_metres": 74010.54
+      }
+    }
+  },
+  "interpretation": [
+    "Exactly 63 public registered SEACAR Program 570 station midpoints were geo-located by full original OID roster and mapped onto SHA256-verified SWFWMD 2022 giant-algae 2024 3-class-unmapped masks.",
+    "FID37 2024 map-class unknown footprint is 28.51m from nearest registered station MC03 (OID348691), and the 25m and 50m interiors are 153.62m and 309.33m away.",
+    "FID2166 2024 map-class unknown footprint is 3630.02m from nearest registered station MC03; no public registered station midpoint lies within 2km, two lie within 5km.",
+    "No registered station midpoint falls inside either giant 2024 map unknown mask (0m threshold). These are PUBLIC REGISTERED TRANSECT MIDPOINTS, not year-specific quadrat locations or proof that no independent field survey exists.",
+    "Program 570 original quadrat cover/shoot-density/epiphyte observations and exact 2024 field site visit dates were not opened. No biology, map detection rate, algal survival or restoration effect has been estimated."
+  ]
+}
