@@ -1,0 +1,54 @@
+name: Charlotte two largest mapped 2022 algae patch source audit
+
+on:
+  push:
+    paths:
+      - "analysis/111_charlotte_two_giant_algae_patches.py"
+      - "validation/test_charlotte_two_giant_algae_patches.py"
+      - ".github/workflows/charlotte-two-giant-algae-patches.yml"
+  pull_request:
+    paths:
+      - "analysis/111_charlotte_two_giant_algae_patches.py"
+      - "validation/test_charlotte_two_giant_algae_patches.py"
+      - ".github/workflows/charlotte-two-giant-algae-patches.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  source-locked-giant-algae-patch-decomposition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned geospatial source validation tools
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Verify original completed GIS archive hash and run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          A="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          test "$A" = "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq '.workflow_run.id')"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Run synthetic area-conservation tests
+        run: python -m unittest discover -s validation -p 'test_charlotte_two_giant_algae_patches.py' -v
+      - name: Verify individual largest source polygon FIDs, transitions, and source-area totals
+        run: python analysis/111_charlotte_two_giant_algae_patches.py --archive-root results/archived_source --out results/generated_charlotte_two_giant_algae_source_patches_v1.json
+      - name: Store source-specific geometry audit or STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-two-largest-algae-source-patches
+          path: results/generated_charlotte_two_giant_algae_source_patches_v1.json
+          retention-days: 30
+          if-no-files-found: warn
