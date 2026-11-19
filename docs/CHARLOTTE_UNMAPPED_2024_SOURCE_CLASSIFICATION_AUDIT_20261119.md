@@ -63,3 +63,17 @@ Therefore **132/832 = 15.865%** of features in the nominal gain layer are coded 
 The original 2022/2024 3-class source FeatureServer contained **95 and 210** attached algae polygons, a +115 feature count change. That is **not equal** to 132 nominal gain minus 53 nominal loss (79), illustrating that patch fragmentation, source revision and/or difference-map geometry cannot be inferred from count arithmetic. Do not assert a class-change mass balance without equal-area geometry and original source masks.
 
 The revised GIS intersection workflow explicitly keeps gain/loss code 9121 unions separate from source code 9113/9116 unions. Its exact per-feature source acreage and original archive checks must pass before quoting any areal concordance. The nominal layer names are metadata, not evidence that all features represent seagrass.
+
+### Rigorous bound on the source-mapped 2016 history of the 222.092-acre 2024 unknown category
+
+Based on the successful 95-source-FID areal audit in `results/charlotte_giant_algae_patches_source_verified_20261119.json`, two large 2022 algae polygons were nearly completely mapped seagrass in 2016. Without needing any new 2024 substrate classification, the within-source-polygon inclusion-exclusion inequality gives a conservative **minimum** for the historically sea-mapped subset of the 2024 target-unmapped area:
+
+For each source polygon P, with H the 2016 sea-positive mapped subset and U the 2024 3-class-unmapped subset: `area(H ∩ U) >= max(0, area(U) - (area(P) - area(H)))`.
+
+| Original 2022 algae FID | P source area | H 2016 sea-positive area | U 2024 target-unmapped | Guaranteed minimum H ∩ U |
+|---|---:|---:|---:|---:|
+| 37 | 186.620450 | 186.616124 | 117.349861 | **117.345535** |
+| 2166 | 125.856861 | 125.334562 | 104.742594 | **104.220295** |
+| **Combined** | 312.477311 | 311.950686 | 222.092455 | **221.565830 acres** |
+
+Thus **at least 99.7629%** of the two giant-polygon mapped target-unmapped area lies within the 2016 source's mapped seagrass-positive polygons, subject only to the already audited original geometry and area. This is a **map history overlap lower bound**, NOT a confirmation of 2016–2024 true biological seagrass death, 2024 vegetation absence, or causal algal inhibition. It motivates historical habitat-focused field verification, not algae removal or restoration action.
