@@ -18,7 +18,7 @@ class Stub:
         if params.get("returnCountOnly"):
             return {"count":12 if params["where"]=="1=1" else 5}
         if params.get("returnIdsOnly"):
-            return {"objectIds":[1,2,3,4,4 if self.bad else 5]}
+            return {"objectIdFieldName":"OBJECTID_1","objectIds":[1,2,3,4,4 if self.bad else 5]}
         raise AssertionError("unexpected request")
 class Tests(unittest.TestCase):
     def test_complete_station_schema_and_oids(self):
@@ -28,6 +28,24 @@ class Tests(unittest.TestCase):
         self.assertFalse(r["original_quadrat_data_opened"])
         self.assertFalse(r["points_confirmed_current_2024_survey"])
         self.assertTrue(all(x.get("returnGeometry")!="true" for _,x in source.calls))
+    def test_missing_metadata_advertised_oid_resolved_from_unique_typed_field(self):
+        class MissingOid(Stub):
+            def __call__(self,url,params):
+                v=super().__call__(url,params)
+                if not url.endswith("/query"):v.pop("objectIdField",None)
+                return v
+        r=M.audit(MissingOid())
+        self.assertTrue(r["object_id_resolved_from_single_typed_esri_oid"])
+        self.assertEqual(r["object_id_field"],"OBJECTID_1")
+        self.assertEqual(r["query_id_roster_identified_field"],"OBJECTID_1")
+    def test_conflicted_returned_oid_is_rejected(self):
+        class BadOidName(Stub):
+            def __call__(self,url,params):
+                v=super().__call__(url,params)
+                if params.get("returnIdsOnly"):v["objectIdFieldName"]="ANOTHER_ID"
+                return v
+        with self.assertRaisesRegex(M.Stop,"QUERY_OID_NAME_CONFLICT"):
+            M.audit(BadOidName())
     def test_duplicate_oid_hard_stops(self):
         with self.assertRaisesRegex(M.Stop,"BAD_STATION_OID_ROSTER"):
             M.audit(Stub(bad=True))
