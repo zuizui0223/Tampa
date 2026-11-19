@@ -25,6 +25,16 @@ class TriplePositiveOnly(unittest.TestCase):
         with self.assertRaisesRegex(m.M.GateStop,"2022_ALGAE_AREA_EMPTY"):
             m.masked_overlap(box(0,0,1,1),box(0,0,1,1),
                              box(0,0,0,0),box(0,0,1,1),box(0,0,1,1))
+    def test_historical_positive_coverage_must_be_compared_to_2022_seagrass(self):
+        legacy=box(0,0,15,10)
+        current={9113:box(0,0,10,10),9116:box(10,0,20,10),9121:box(10,0,20,10)}
+        v=m.historic_positive_coverage_reference(legacy,current)
+        self.assertEqual(v["class_specific"]["9113"]["overlaps_2016_mapped_seagrass_percent"],100)
+        self.assertEqual(v["class_specific"]["9116"]["overlaps_2016_mapped_seagrass_percent"],50)
+        self.assertEqual(v["class_specific"]["9121"]["overlaps_2016_mapped_seagrass_percent"],50)
+        self.assertEqual(v["class_specific"]["2022_seagrass_combined"]["overlaps_2016_mapped_seagrass_percent"],75)
+        self.assertEqual(v["algae_minus_seagrass_historical_positive_overlap_percentage_points"],-25)
+        self.assertTrue(v["no_selection_or_legacy_significance_test"])
     def test_three_date_interior_overlap_monotonic(self):
         p16=box(0,0,100,100)
         a22=box(0,0,100,100)
