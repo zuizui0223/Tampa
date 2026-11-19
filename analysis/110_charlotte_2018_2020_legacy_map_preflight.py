@@ -72,7 +72,11 @@ def collect(fetch=request,ref=get_reference):
         url=SOURCE_BASE+"/"+str(layerid)
         meta=fetch(url,{"f":"json"})
         if meta.get("name")!=f"Seagrass in {year}" or meta.get("geometryType")!="esriGeometryPolygon":
-            raise Stop("SOURCE_YEAR_OR_POLYGON_IDENTITY_DRIFT:"+year)
+            raise Stop("SOURCE_YEAR_OR_POLYGON_IDENTITY_DRIFT:"+year+
+                       ":name="+repr(meta.get("name"))+
+                       ":geometry="+repr(meta.get("geometryType"))+
+                       ":type="+repr(meta.get("type"))+
+                       ":first_keys="+repr(sorted(meta.keys())[:18]))
         fields={f.get("name"):f.get("type") for f in meta.get("fields",[]) if isinstance(f,dict)}
         if (fields.get("FLUCCSCODE") not in ("esriFieldTypeInteger","esriFieldTypeSmallInteger") or
             fields.get("FLUCCSDESC")!="esriFieldTypeString"):
