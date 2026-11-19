@@ -1,0 +1,140 @@
+{
+  "schema": "tampa.charlotte_agency_change_map_full_spatial_set_difference_verified_release_v1",
+  "status": "SIX_OF_SIX_SOURCE_POLYGON_CLASSES_SPATIALLY_REPRODUCE_EXACT_SET_DIFFERENCES_NOT_BIOLOGY",
+  "verified_ci": {
+    "run_id": 44479894122,
+    "job_id": 135409305329,
+    "artifact_id": 14508131378,
+    "artifact_zip_sha256": "sha256:e86589ca356f1b83be106e2d8ade7be59780b7c5ecc86ab2f0711223f3e21de1",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44479894122",
+    "full_source_code_sha": "5820704ef2c7357aeabb96e2c67c9e4e2e0f8566",
+    "success": true
+  },
+  "report": {
+    "agency_source_raw_sha256": {
+      "gain": "f0fcd6aa3a4478813bbf6957634d8d4a7744d12b11b407a6d395370028d69b2d",
+      "loss": "470638adfc14bf72a5e538162ef79620a3e82364da63c17c4c528205d0468b10"
+    },
+    "all_6_class_differences_within_0_02_acre": true,
+    "loss_does_not_imply_bare_bottom": true,
+    "map_class_swaps_are_not_map_gain_or_map_loss": true,
+    "next_gate": "Complete mapped sampling footprint, every FLUCCS background class and/or independent quadrat field data for true 2024 benthic fate.",
+    "not_independent_biological_observation": true,
+    "per_class_area_geometry_comparison": {
+      "gain": {
+        "9113": {
+          "agency_change_not_in_source_map_acres": 0,
+          "agency_change_source_acres": 305.05669,
+          "geometric_equivalence_within_0_02_acres": true,
+          "no_organismal_gain_or_loss_inference": true,
+          "source_agency_jaccard": 1,
+          "source_agency_same_mapped_area_acres": 305.05669,
+          "source_map_not_in_agency_change_acres": 0.00007,
+          "source_map_set_difference_acres": 305.05676
+        },
+        "9116": {
+          "agency_change_not_in_source_map_acres": 0,
+          "agency_change_source_acres": 69.9115,
+          "geometric_equivalence_within_0_02_acres": true,
+          "no_organismal_gain_or_loss_inference": true,
+          "source_agency_jaccard": 0.9999944,
+          "source_agency_same_mapped_area_acres": 69.9115,
+          "source_map_not_in_agency_change_acres": 0.00042,
+          "source_map_set_difference_acres": 69.91193
+        },
+        "9121": {
+          "agency_change_not_in_source_map_acres": 0.00001,
+          "agency_change_source_acres": 413.28504,
+          "geometric_equivalence_within_0_02_acres": true,
+          "no_organismal_gain_or_loss_inference": true,
+          "source_agency_jaccard": 1,
+          "source_agency_same_mapped_area_acres": 413.28503,
+          "source_map_not_in_agency_change_acres": 0.00001,
+          "source_map_set_difference_acres": 413.28504
+        }
+      },
+      "loss": {
+        "9113": {
+          "agency_change_not_in_source_map_acres": 0.00004,
+          "agency_change_source_acres": 679.53525,
+          "geometric_equivalence_within_0_02_acres": true,
+          "no_organismal_gain_or_loss_inference": true,
+          "source_agency_jaccard": 0.9999998,
+          "source_agency_same_mapped_area_acres": 679.5352,
+          "source_map_not_in_agency_change_acres": 0.00008,
+          "source_map_set_difference_acres": 679.53529
+        },
+        "9116": {
+          "agency_change_not_in_source_map_acres": 0.00001,
+          "agency_change_source_acres": 314.38389,
+          "geometric_equivalence_within_0_02_acres": true,
+          "no_organismal_gain_or_loss_inference": true,
+          "source_agency_jaccard": 1,
+          "source_agency_same_mapped_area_acres": 314.38388,
+          "source_map_not_in_agency_change_acres": 0.00004,
+          "source_map_set_difference_acres": 314.38392
+        },
+        "9121": {
+          "agency_change_not_in_source_map_acres": 0,
+          "agency_change_source_acres": 345.59589,
+          "geometric_equivalence_within_0_02_acres": true,
+          "no_organismal_gain_or_loss_inference": true,
+          "source_agency_jaccard": 1,
+          "source_agency_same_mapped_area_acres": 345.59589,
+          "source_map_not_in_agency_change_acres": 0.00001,
+          "source_map_set_difference_acres": 345.5959
+        }
+      }
+    },
+    "previous_official_source": "results/charlotte_official_change_map_giant_source_concordance_verified_20261119.json",
+    "schema": "tampa.charlotte_agency_change_set_difference_source_qc_v1",
+    "source_acre_qc": {
+      "2022": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4520.896,
+          "9116": 8576.666,
+          "9121": 674.188
+        },
+        "independent_source_area_field": "Geodesic",
+        "invalid_repaired": 4,
+        "max_repair_relative_area_change": 0.13984703,
+        "maximum_source_area_absolute_difference_acres": 0.0138,
+        "polygon_count": 2303,
+        "within_year_overlap_fraction": 0
+      },
+      "2024": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4301.811,
+          "9116": 7979.277,
+          "9121": 939.401
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 7,
+        "max_repair_relative_area_change": 0.37113117,
+        "maximum_source_area_absolute_difference_acres": 0,
+        "polygon_count": 3209,
+        "within_year_overlap_fraction": 0
+      }
+    },
+    "source_original_2022_2024_sha256": {
+      "2022": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+      "2024": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e"
+    },
+    "source_years": [
+      2022,
+      2024
+    ],
+    "status": "VERIFIED_COMPLETE_SOURCE_SHAPE_DIFFERENCE_CONCORDANCE_OR_DISCORDANCE_REPORTED"
+  },
+  "min_six_class_jaccard": 0.9999944,
+  "interpretation": [
+    "Official agency 'Seagrass Gain' comprises map-year 2024 class pixels outside the union of the three 2022 mapped classes, independently checked per 9113, 9116, 9121.",
+    "Official 'Seagrass Loss' comprises map-year 2022 class pixels outside the union of the three 2024 mapped classes, independently checked per 9113, 9116, 9121.",
+    "All six original source set-difference shapes match the separately published agency derivative maps at Jaccard > 0.99999 (minimum 0.9999944) with symdiff below 0.02 acre per category.",
+    "Replacing one mapped vegetation class with a different mapped vegetation class in the same place is NOT agency mapped gain/loss, so 2022 algae -> 2024 sea 83.433 acres is distinct from official sea-class gain.",
+    "For 2022 giant source algae polygons, agency loss code 9121 was 117.34986 + 104.74259=222.09245 acres, matching three-class 2024-unmapped source exactly by previously independently validated original geometries.",
+    "Derived map products share SWFWMD aerial imagery; no independent field biological abundance, mortality, or restoration evidence is generated."
+  ]
+}
