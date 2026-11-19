@@ -14,10 +14,12 @@ def fake_layer():
                  {"name":"FLUCCSDESC","type":"esriFieldTypeString"},
                  {"name":"ACRES","type":"esriFieldTypeDouble"},
                  {"name":"Geodesic","type":"esriFieldTypeDouble"}]}
-def pinned(meta,role,official=1):
+def pinned(meta,role,official=1,classes=None):
     h=hashlib.sha256(json.dumps(meta,sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()).hexdigest()
+    if classes is None:classes={"9113":1,"9116":0,"9121":0}
     return {"records":{role:{"layer_url":"https://example.org/test/"+role,
-           "layer_metadata_sha256":h,"oid_field":"FID","official_polygon_count":official}}}
+           "layer_metadata_sha256":h,"oid_field":"FID","official_polygon_count":official,
+           "mapped_class_counts_9113_9116_9121":classes}}}
 def mock(url,query):
     if not url.endswith("/query"):return fake_layer()
     if query.get("returnCountOnly"):return {"count":1}
@@ -34,7 +36,7 @@ class TestChangeGeometry(unittest.TestCase):
         a=M.get_change("mapped_seagrass_gain",pinned(meta,"mapped_seagrass_gain"),fetch=mock)
         self.assertEqual(a["count"],1)
         self.assertEqual(a["flucss_class_counts"]["9113"],1)
-        self.assertGreater(a["mapped_acres"],0)
+        self.assertGreater(a["mapped_all_three_class_acres"],0)
         self.assertLess(a["max_source_area_error_acres"],.005)
     def test_unknown_code_stops_not_assumed_seagrass(self):
         def bad(url,query):
@@ -50,11 +52,19 @@ class TestChangeGeometry(unittest.TestCase):
             if url.endswith("/query") and query.get("f")=="geojson":
                 r["features"][0]["properties"]["FLUCCSCODE"]=9121
             return r
-        v=M.get_change("mapped_seagrass_gain",pinned(fake_layer(),"mapped_seagrass_gain"),fetch=algae)
+        v=M.get_change("mapped_seagrass_gain",pinned(fake_layer(),"mapped_seagrass_gain",classes={"9113":0,"9116":0,"9121":1}),fetch=algae)
         self.assertEqual(v["flucss_class_counts"]["9121"],1)
         self.assertEqual(v["flucss_class_counts"]["9113"],0)
         self.assertTrue(v["class_9121_attached_algae_present"])
         self.assertEqual(v["mapped_class_areas_acres"]["9113"],0)
+    def test_frozen_mixed_source_code_counts_cannot_change(self):
+        def algae(url,query):
+            r=mock(url,query)
+            if url.endswith("/query") and query.get("f")=="geojson":
+                r["features"][0]["properties"]["FLUCCSCODE"]=9121
+            return r
+        with self.assertRaisesRegex(M.Stop,"MIXED_CHANGE_CODE_COUNTS_NOT_REPRODUCED"):
+            M.get_change("mapped_seagrass_gain",pinned(fake_layer(),"mapped_seagrass_gain"),fetch=algae)
     def test_oid_count_mismatch_stops(self):
         def wrong(url,query):
             r=mock(url,query)
