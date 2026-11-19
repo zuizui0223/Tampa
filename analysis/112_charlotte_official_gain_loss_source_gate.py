@@ -69,6 +69,16 @@ def inspect(fetch=request):
         n=fetch(url+"/query",{"f":"json","where":"1=1","returnCountOnly":"true"}).get("count")
         if not isinstance(n,int) or n<=0:
             raise Stop("MAP_CHANGE_EMPTY_OR_INACCESSIBLE_SOURCE:"+role)
+        counts={}
+        for code in (9113,9116,9121):
+            k=fetch(url+"/query",{"f":"json","where":"FLUCCSCODE="+str(code),
+                                      "returnCountOnly":"true"}).get("count")
+            if not isinstance(k,int) or k<0:
+                raise Stop("MAP_CHANGE_SOURCE_CODE_COUNT_FAILED:"+role+":"+str(code))
+            counts[str(code)]=k
+        unknown=n-sum(counts.values())
+        if unknown<0:
+            raise Stop("MAP_CHANGE_CLASSES_GREATER_THAN_SOURCE_TOTAL:"+role)
         result[role]={
             "service_url":base,"layer_url":url,"layer_id":lid,
             "source_name":meta.get("name"),
@@ -78,6 +88,10 @@ def inspect(fetch=request):
             "oid_field":oid,
             "source_extent":extent,
             "official_polygon_count":n,
+            "mapped_class_counts_9113_9116_9121":counts,
+            "source_polygons_of_unlisted_class_count":unknown,
+            "strictly_seagrass_9113_9116_only":counts["9121"]==0 and unknown==0,
+            "title_cannot_imply_all_features_are_seagrass":counts["9121"]>0 or unknown>0,
             "layer_metadata_sha256":sha(meta),
             "service_metadata_sha256":sha(server),
             "source_class_semantics_directly_verified":False,
