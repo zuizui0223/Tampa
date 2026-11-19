@@ -56,6 +56,7 @@ def audit(archive_root):
     hist=unary_union([his[9113],his[9116]])
     sea24=unary_union([tgt[9113],tgt[9116]])
     algae24=tgt[9121]
+    target_union24=unary_union([sea24,algae24])
     f22,_=REF.load_source_features(archive_root,"2022",
                    old["modern_source"]["2022"]["raw_geojson_canonical_sha256"],2303)
     patches=[]
@@ -75,7 +76,7 @@ def audit(archive_root):
         covered=geom.intersection(hist).area/AC
         a=geom.intersection(algae24).area/AC
         s=geom.intersection(sea24).area/AC
-        unmapped=max(0.,acres-geom.intersection(unary_union([sea24,algae24])).area/AC)
+        unmapped=max(0.,acres-geom.intersection(target_union24).area/AC)
         if abs(a+s+unmapped-acres)>max(.0001,.001*acres):
             raise Stop("PER_PATCH_2024_CLASS_AREA_NONCLOSURE:"+str(fid))
         point=geom.representative_point()
