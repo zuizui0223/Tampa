@@ -1,12 +1,12 @@
 {
   "schema": "tampa.charlotte_official_gain_loss_source_verified_release_v1",
-  "status": "SOURCE_METADATA_VERIFIED_NO_INTERSECTION_AND_NO_INDEPENDENT_BIOLOGY",
+  "status": "SOURCE_METADATA_AND_CODE_COUNTS_VERIFIED_NOMINAL_SEAGRASS_GAIN_LOSS_INCLUDE_ATTACHED_ALGAE",
   "verified_run": {
-    "run_id": 44475344451,
-    "job_id": 135394421124,
-    "artifact_id": 14506560477,
-    "artifact_zip_sha256": "sha256:35a5aeda671d07aa85f3389d3595e5b88913690258966b032b8de3a876d6db56",
-    "source_head": "875234119b87b6d2bbcf3e00dd6cf5d0bae39f10"
+    "run_id": 44476649845,
+    "job_id": 135398709534,
+    "artifact_id": 14506846898,
+    "artifact_zip_sha256": "sha256:01131ba067bef24f0d3bbc402b175c5eded6ae613e9406b8ac1b6d51fb597433",
+    "source_head": "1fc494cb361a2e240053db22d95fcd6597dfd41b"
   },
   "report": {
     "no_2022_algae_to_2024_seagrass_overlay_computed": true,
@@ -19,6 +19,11 @@
         "layer_id": 1,
         "layer_metadata_sha256": "c8fef37b4f13d5faeb5e8046690688c17fe8f841fe742e81a7213a6550a61738",
         "layer_url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_Gain_in_Charlotte_Harbor_between_2022_and_2024/FeatureServer/1",
+        "mapped_class_counts_9113_9116_9121": {
+          "9113": 513,
+          "9116": 187,
+          "9121": 132
+        },
         "official_polygon_count": 832,
         "oid_field": "FID",
         "service_description": "",
@@ -48,7 +53,10 @@
           "Shape__Area": "esriFieldTypeDouble",
           "Shape__Length": "esriFieldTypeDouble"
         },
-        "source_name": "Seagrass Gain in Charlotte Harbor between 2022 and 2024"
+        "source_name": "Seagrass Gain in Charlotte Harbor between 2022 and 2024",
+        "source_polygons_of_unlisted_class_count": 0,
+        "strictly_seagrass_9113_9116_only": false,
+        "title_cannot_imply_all_features_are_seagrass": true
       },
       "mapped_seagrass_loss": {
         "evidence_is_independent_of_2022_2024_seagrass_maps": false,
@@ -56,6 +64,11 @@
         "layer_id": 1,
         "layer_metadata_sha256": "747a0fea7f73f8caf4254358ae5898a20372758ef1eeda4128c88cf63705ef56",
         "layer_url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_Loss_in_Charlotte_Harbor_between_2022_and_2024/FeatureServer/1",
+        "mapped_class_counts_9113_9116_9121": {
+          "9113": 496,
+          "9116": 218,
+          "9121": 53
+        },
         "official_polygon_count": 767,
         "oid_field": "FID",
         "service_description": "",
@@ -84,7 +97,10 @@
           "Shape__Area": "esriFieldTypeDouble",
           "Shape__Length": "esriFieldTypeDouble"
         },
-        "source_name": "Seagrass Loss in Charlotte Harbor between 2022 and 2024"
+        "source_name": "Seagrass Loss in Charlotte Harbor between 2022 and 2024",
+        "source_polygons_of_unlisted_class_count": 0,
+        "strictly_seagrass_9113_9116_only": false,
+        "title_cannot_imply_all_features_are_seagrass": true
       }
     },
     "safeguards": [
@@ -96,5 +112,6 @@
     "schema": "tampa.charlotte_official_seagrass_change_map_metadata_preflight_v1",
     "source_family": "CHNEP web feature layers derived from SWFWMD 2022/2024 mapped seagrass outputs",
     "status": "PASS_MAP_CHANGE_GIS_SOURCE_METADATA_COUNTS_ONLY"
-  }
+  },
+  "classification_warning": "Of nominal 'Seagrass Gain' 832 features, 132 are attached algae class 9121; of nominal 'Seagrass Loss' 767 features, 53 are class 9121. These are mapped source codes and not biological gain/loss or land cover area."
 }
