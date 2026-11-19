@@ -61,3 +61,19 @@ The science remains:
 All endpoint outcomes are outcome-context-exposed and exploratory. No intervention was made and no physiological reserve buffering, seedling survival or macroalgae competition was measured.
 
 **Status when authored:** public service metadata/count preflight coded; no source class count or polygon geometry for these two new sites has yet been inspected in this branch.
+
+
+## Completed Gate 0 (2026-11-19): mandatory zero-class results
+
+The [live public-source CI #44453099273](https://github.com/zuizui0223/Tampa/actions/runs/44453099273) **PASSED** all schema, code-group, area-attribute-field, class-count closure and source-sha tests for both areas. Source inventory and exact run/artifact digest are pinned in `results/florida_two_estuary_algae_map_source_verified_20261119.json`.
+
+| Mapped estuary | 2022 9113 / 9116 / 9121 polygon counts | 2024 9113 / 9116 / 9121 polygon counts |
+|---|---|---|
+| Lemon Bay | 666 / 290 / **0** | 813 / 366 / **2** |
+| Dona and Roberts Bays | 47 / 20 / **0** | 66 / 27 / **0** |
+
+All figures are *polygon feature counts*, not mapped acres. There are **zero mapped attached-macroalgae class polygons in 2022 for both preselected regions**. Therefore the predeclared **2022 algae → 2024 seagrass conversion endpoint is non-estimable for both**, without any substitute estuary, threshold retuning, or reinterpretation of no mapped class as verified biological absence. Lemon Bay has two mapped attached-macroalgae polygons in 2024; Dona/Roberts has none. In the registered mapping system these are reportable missing class supports, not evidence that algae were physically absent. The non-estimable outcome is a substantive boundary on generalizing Charlotte's two-way category transitions.
+
+**Do not present zero mapped 2022 algae as biological evidence that Charlotte alone experiences algae competition, nor use it to support any causal recovery story.** The low/absent class could reflect ecology, regional mapping interpretation, water clarity, minimum mapping unit, or source-class requirements. Resolving which mechanism holds requires comparable independent field algae abundance and sampling-process metadata.
+
+This PR remains a descriptive geographic source check. Cross-region area or transitions have not been estimated; the original primary matched algae-transition endpoint is intentionally not rescued.
