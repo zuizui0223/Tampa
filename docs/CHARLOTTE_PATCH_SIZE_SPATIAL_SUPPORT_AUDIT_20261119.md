@@ -58,3 +58,27 @@ This is an outcome-context-exposed source analysis with spatial dependence and n
 The verified source report contains 18 **size-bin × 5km representative-point grid** cells that meet both class-support gates. Their descriptive cell-level difference is not uniformly positive: 15 cells have higher seagrass same-class persistence, while **3 cells have higher algae same-class persistence**. Those 3 cells account for **31.248%** of the mapped algae area within the eligible jointly matched cells. Hence even within the partial common-support region, there are meaningful local reversals. This is not a spatial sign test, and the 18 cells are neither independent estuaries nor independent ecological experiments.
 
 Most importantly, there is no statistical basis from this analysis to elevate the +8.020 percentage-point conditional weighted mean to a spatially universal advantage. The entire source-weight/area design and detailed cell counts remain inspectable in the verified JSON; avoid turning exploratory cell counts into p-values.
+
+## Exact individual source polygons driving the 2022 algae contrast
+
+A direct 95-feature 2022 algae source-polygon audit, based on the previously SHA256-pinned original 2016/2022/2024 GeoJSON and independent reported area fields, now identifies the **two source FIDs** comprising the entire 2022 algae ≥50-acre size tail. The complete FID-by-FID map area partition is frozen in `results/charlotte_giant_algae_patches_source_verified_20261119.json` and was **reproduced byte-for-byte identically at the numerical-result level in two completed successful CI runs**:
+
+- [Original source-area and per-FID run #44464484860](https://github.com/zuizui0223/Tampa/actions/runs/44464484860)
+- [Cache-optimized independent successful rerun #44464768571](https://github.com/zuizui0223/Tampa/actions/runs/44464768571)
+
+| Original source 2022 attached-algae FID | 2022 area | 2016 mapped sea history | 2024 algae | 2024 sea | 2024 unmapped |
+|---|---:|---:|---:|---:|---:|
+| FID 37 | 186.620 acres | 186.616 acres | 46.588 acres | 22.683 acres | 117.350 acres |
+| FID 2166 | 125.857 acres | 125.335 acres | 5.028 acres | 16.086 acres | 104.743 acres |
+| **Both source giant polygons** | **312.477 acres** | **311.951 acres** | **51.616 acres** | **38.769 acres** | **222.092 acres** |
+| **Remaining 93 original algae polygons** | **361.710 acres** | **314.904 acres** | **193.543 acres** | **44.664 acres** | **123.503 acres** |
+
+The two giant source polygons account for **46.349%** of the 2022 algae mapped area. They are **71.075% unmapped in the 2024 target three vegetation classes**, versus **34.144% unmapped** for the remaining 93 original algae polygons. But their *algae→seagrass mapped-class reclassification fraction* is **12.407%**, almost identical to the remaining 93 polygons (**12.348%**). Their mapped algae self-retention is only **16.518%** versus **53.508%** for smaller polygons.
+
+Removing the two giants from the algae source changes algae mapped-class retention from **36.364% to 53.508%** (+17.144 percentage points). Comparing this to all 2022 sea source-area retention would yield a raw, **unmatched** 90.266−53.508 = 36.758 point gap; it is NOT a size/space-matched effect and must not replace the previous gated standardization.
+
+Crucially, the 2016 history is nearly complete **within the two giant polygons (311.951/312.477 ≈99.832%)**, but only **87.060%** in the 93 other source algae polygons. This confirms that the historical 2016 sea-map-positive signal and the low 2024 algae map-class retention are both heavily influenced by these large mapped polygons; this is an observation-geometry statement, not evidence for physiological biological legacy.
+
+The original 2022 FID 37 and 2166 source-polygon representative points are only about **2.84 km apart geodesically** (coordinates converted from the verified EPSG:6933 representative points, not official field survey positions). This further cautions against treating these two source polygons as independent environmental replicates. The mapping points do not grant access or identify actual live algae in 2026.
+
+**Updated ecological interpretation:** within the public Charlotte map, a large part of the apparent short-term algae instability is the conversion of two extensive formerly seagrass-mapped algae polygons into **target-year unmapped** areas, *not* an excess of algae→seagrass mapped returns. The actual substrate/vegetation state in unmapped regions, image timing, water clarity and map-footprint interpretation must be measured before concluding a biological disappearance or a restoration opportunity.
