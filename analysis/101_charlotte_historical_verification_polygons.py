@@ -94,6 +94,7 @@ def analyze(d16,d22,d24):
     sea24=unary_union([a24[9113],a24[9116]])
     features,summary=candidate_components(pos16,a22[9121],sea24,a24[9121])
     return {
+     "type":"FeatureCollection",
      "schema":"tampa.charlotte_historical_map_field_verification_candidates_v1",
      "status":"SOURCE_MAPPED_VERIFICATION_LOCATIONS_NOT_FIELDPERMITS",
      "evidence_class":"POSTHOC_PUBLIC_GIS_MAP_CORES_ONLY",
@@ -122,7 +123,15 @@ def main():
     a=p.parse_args()
     try:
         d16=M.source16();d22=M.M.download_year("2022");d24=M.M.download_year("2024")
+        pin=json.loads((BASE/"results/charlotte_historical_positive_three_date_verified_20261119.json").read_text(encoding="utf-8"))
+        expected16=pin["report"]["historical_source"]["source_raw_features_sha256"]
+        expected22=pin["report"]["modern_source"]["2022"]["raw_geojson_canonical_sha256"]
+        expected24=pin["report"]["modern_source"]["2024"]["raw_geojson_canonical_sha256"]
+        if d16["source_raw_features_sha256"]!=expected16 or d22["raw_geojson_canonical_sha256"]!=expected22 or d24["raw_geojson_canonical_sha256"]!=expected24:
+            raise M.M.GateStop("ORIGINAL_VERIFIED_PUBLIC_SOURCE_BYTES_DRIFT")
         res=analyze(d16,d22,d24)
+        res["verified_source_map_sha256"]={"2016":expected16,"2022":expected22,"2024":expected24}
+        res["field_site_ids_are_generated_not_official"]=True
         rc=0
     except (M.M.GateStop,ValueError,TypeError,KeyError) as e:
         res={"schema":"tampa.charlotte_historical_map_field_verification_candidates_v1",
