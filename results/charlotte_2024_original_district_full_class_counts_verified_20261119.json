@@ -85,5 +85,12 @@
     "Original district layer is broader than Charlotte's hosted three-code FeatureServer; bounding envelope intersects out-of-scope polygons; do not infer area by counts.",
     "No 2024 giant algae unknown habitat geometry classified here, and no independent field bottom condition acquired.",
     "No biological recruitment, true death, algae competition or source-photo survey coverage is identified."
-  ]
+  ],
+  "codebook_correction": {
+    "code": "7210",
+    "prior_provisional_label_in_original_ci_report": "coastal_intertidal",
+    "corrected_documented_SWFWMD_2016_district_label": "Sand Other Than Beaches – Submerged; subtidal non-vegetated sand / sometimes muddy sand",
+    "official_definition_url": "https://sarasota.wateratlas.usf.edu/upload/documents/SWFWMD-2016-Seagrass-Mapping-Results-Kaufman-Seagrass-Working-Group-2017.pdf",
+    "note": "Preserve original live source run unchanged. Use this explicit correction, not the old provisional label, when interpreting 2024 extra-code geometry. 2024 FLUCCSDESC still requires direct source inspection."
+  }
 }
