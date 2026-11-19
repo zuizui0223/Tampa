@@ -181,7 +181,7 @@ def main():
     ap.add_argument("--out",required=True)
     args=ap.parse_args()
     try:r=compute(args.archive_root);code=0
-    except (Stop,M.Stop,G.GateStop,M.M.REF.Stop,TypeError,KeyError,ValueError,FileNotFoundError) as e:
+    except (Stop,M.Stop,M.REF.Stop,G.GateStop,TypeError,KeyError,ValueError,FileNotFoundError) as e:
         r={"schema":SCHEMA,"status":"STOP_REGISTRY_OR_SOURCE_GIS_INTEGRITY","reason":str(e),
            "field_biology_claim_supported":False};code=2
     p=Path(args.out);p.parent.mkdir(parents=True,exist_ok=True)
