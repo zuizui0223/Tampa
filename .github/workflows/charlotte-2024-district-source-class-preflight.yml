@@ -1,0 +1,36 @@
+name: Charlotte original 2024 District full-code classification source preflight
+
+on:
+  push:
+    paths:
+      - "analysis/125_charlotte_2024_district_original_full_class_preflight.py"
+      - "validation/test_charlotte_2024_district_original_full_class_preflight.py"
+      - ".github/workflows/charlotte-2024-district-source-class-preflight.yml"
+  pull_request:
+    paths:
+      - "analysis/125_charlotte_2024_district_original_full_class_preflight.py"
+      - "validation/test_charlotte_2024_district_original_full_class_preflight.py"
+      - ".github/workflows/charlotte-2024-district-source-class-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-all-2024-district-map-class-codes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Synthetic complete original source class-count closure tests
+        run: python -m unittest discover -s validation -p 'test_charlotte_2024_district_original_full_class_preflight.py' -v
+      - name: Query official 2024 District all-class frequencies within fixed Charlotte envelope during 6am–10pm Eastern portal hours
+        run: python analysis/125_charlotte_2024_district_original_full_class_preflight.py --out results/generated_charlotte_district_original_2024_all_class_gate_v1.json
+      - name: Retain exact original source metadata and PASS or STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-district-original-2024-all-class-codes
+          path: results/generated_charlotte_district_original_2024_all_class_gate_v1.json
+          retention-days: 30
+          if-no-files-found: warn
