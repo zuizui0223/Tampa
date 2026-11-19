@@ -1,0 +1,133 @@
+{
+  "schema": "tampa.charlotte_map_class_retention_source_verified_v1",
+  "status": "VERIFIED_LIVE_CI_IMMUTABLE_ARCHIVED_SOURCE_DESCRIPTIVE_CLASS_RETENTION",
+  "verified_ci": {
+    "run_id": 44453758649,
+    "job_id": 135323710395,
+    "artifact_id": 14496942139,
+    "artifact_zip_sha256": "sha256:002f29262aac0b1c8a4a15bf0749d806c4771eabd0794b2727c4e3a894d563d2",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44453758649"
+  },
+  "report": {
+    "evidence_limits": [
+      "Mapped classes, not individual plants or lifespans",
+      "2024 missing class means unrecorded, not verified bare bottom",
+      "No control for mapping effort/season, water clarity, photo interpretation, or hydrodynamics",
+      "Fragmented polygons are spatially dependent, not independent samples",
+      "This is outcome-exposed descriptive within Charlotte; not transportability or causal proof"
+    ],
+    "qcs": {
+      "2022": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4520.896,
+          "9116": 8576.666,
+          "9121": 674.188
+        },
+        "independent_source_area_field": "Geodesic",
+        "invalid_repaired": 4,
+        "max_repair_relative_area_change": 0.13984703,
+        "maximum_source_area_absolute_difference_acres": 0.0138,
+        "polygon_count": 2303,
+        "within_year_overlap_fraction": 0
+      },
+      "2024": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4301.811,
+          "9116": 7979.277,
+          "9121": 939.401
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 7,
+        "max_repair_relative_area_change": 0.37113117,
+        "maximum_source_area_absolute_difference_acres": 0,
+        "polygon_count": 3209,
+        "within_year_overlap_fraction": 0
+      }
+    },
+    "results": {
+      "classes": {
+        "attached_macroalgae": {
+          "2022_class_area_acres": 674.188,
+          "boundary_interior_m": {
+            "0": {
+              "area_fraction_of_eroded_2022_class_percent": 36.364,
+              "area_within_2022_class_interior_acres": 674.188,
+              "fixed_2022_source_area_retained_percent": 36.364,
+              "same_class_overlap_acres": 245.158
+            },
+            "5": {
+              "area_fraction_of_eroded_2022_class_percent": 33.626,
+              "area_within_2022_class_interior_acres": 550.129,
+              "fixed_2022_source_area_retained_percent": 27.438,
+              "same_class_overlap_acres": 184.985
+            },
+            "10": {
+              "area_fraction_of_eroded_2022_class_percent": 30.651,
+              "area_within_2022_class_interior_acres": 446.163,
+              "fixed_2022_source_area_retained_percent": 20.284,
+              "same_class_overlap_acres": 136.755
+            },
+            "25": {
+              "area_fraction_of_eroded_2022_class_percent": 22.235,
+              "area_within_2022_class_interior_acres": 250.252,
+              "fixed_2022_source_area_retained_percent": 8.253,
+              "same_class_overlap_acres": 55.643
+            }
+          }
+        },
+        "seagrass": {
+          "2022_class_area_acres": 13097.562,
+          "boundary_interior_m": {
+            "0": {
+              "area_fraction_of_eroded_2022_class_percent": 90.266,
+              "area_within_2022_class_interior_acres": 13097.562,
+              "fixed_2022_source_area_retained_percent": 90.266,
+              "same_class_overlap_acres": 11822.685
+            },
+            "5": {
+              "area_fraction_of_eroded_2022_class_percent": 88.181,
+              "area_within_2022_class_interior_acres": 11861.901,
+              "fixed_2022_source_area_retained_percent": 79.862,
+              "same_class_overlap_acres": 10459.976
+            },
+            "10": {
+              "area_fraction_of_eroded_2022_class_percent": 86.176,
+              "area_within_2022_class_interior_acres": 10736.119,
+              "fixed_2022_source_area_retained_percent": 70.639,
+              "same_class_overlap_acres": 9251.954
+            },
+            "25": {
+              "area_fraction_of_eroded_2022_class_percent": 81.029,
+              "area_within_2022_class_interior_acres": 8161.42,
+              "fixed_2022_source_area_retained_percent": 50.491,
+              "same_class_overlap_acres": 6613.124
+            }
+          }
+        }
+      },
+      "interpretation": "The two mapped classes differ in how much of their 2022 *area* retains the same class in 2024. This may reflect morphology, thematic accuracy, observation timing, or genuine cover change; it is not evidence of differential lifespans.",
+      "no_biological_survival_conclusion": true,
+      "no_equivalence_of_detection_or_mapping": true,
+      "no_independent_polygon_sample_size": true,
+      "seagrass_minus_algae_same_class_retention_percentage_points": 53.902
+    },
+    "schema": "tampa.charlotte_same_mapped_class_area_retention_v1",
+    "source": {
+      "archive_artifact_id": 14494425181,
+      "archive_run_id": 44446913647,
+      "archive_sha256": "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea",
+      "original_2022_sha256": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+      "original_2024_sha256": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e"
+    },
+    "status": "SUCCESS_ARCHIVED_SOURCE_DESCRIPTIVE_CLASS_STABILITY_ONLY"
+  },
+  "interpretation": [
+    "Source-year 2022 mapped seagrass area remained mapped seagrass in 2024 at 90.266%; attached macroalgae remained mapped attached macroalgae at 36.364%. This is a map-class area stability contrast, not a measured taxon survival rate.",
+    "Absolute same-class interior area divided by original 2022 class area remains larger for seagrass at 5m,10m,25m boundary exclusions, but selective eroding of fragment sizes may differ by map class.",
+    "Different leaf/shoot longevity, historical biological memory, or differential restoration efficacy are not identifiable from aerial imagery categorical maps.",
+    "These are dependent polygons within one region, not spatially independent replication. Other preselected map regions had zero 2022 mapped algae (PR165), so geographic transportability is not supported.",
+    "Future independent field observations with explicit algal abundance, light, measurement effort and dates are needed to separate ecological turnover from mapping detectability."
+  ]
+}
