@@ -25,6 +25,20 @@ class TriplePositiveOnly(unittest.TestCase):
         with self.assertRaisesRegex(m.M.GateStop,"2022_ALGAE_AREA_EMPTY"):
             m.masked_overlap(box(0,0,1,1),box(0,0,1,1),
                              box(0,0,0,0),box(0,0,1,1),box(0,0,1,1))
+    def test_three_date_interior_overlap_monotonic(self):
+        p16=box(0,0,100,100)
+        a22=box(0,0,100,100)
+        s24=box(0,0,50,100)
+        a24=box(50,0,100,100)
+        r=m.historical_interior_sensitivity(p16,a22,s24,a24)
+        d=r["metre_inside_each_of_three_mapped_class_boundaries"]
+        self.assertAlmostEqual(d["0"]["2024_seagrass_share_of_reduced_historical_algae_mask_percent"],50)
+        self.assertGreater(d["0"]["2016_positive_and_2022_algae_interior_acres"],d["10"]["2016_positive_and_2022_algae_interior_acres"])
+        self.assertGreater(d["10"]["2016_positive_and_2022_algae_interior_acres"],d["25"]["2016_positive_and_2022_algae_interior_acres"])
+        self.assertTrue(r["not_positional_or_thematic_accuracy_correction"])
+    def test_negative_interior_distance_fails(self):
+        with self.assertRaisesRegex(m.M.GateStop,"NEGATIVE_BOUNDARY_DISTANCE"):
+            m.historical_interior_sensitivity(box(0,0,100,100),box(0,0,100,100),box(0,0,100,100),box(0,0,0,0),distances=(-1,))
     def test_historical_only_positive_codes(self):
         self.assertEqual(m.EXPECTED_CLASS_COUNT,{"9113":954,"9116":428})
         self.assertTrue(m.BBOX_2022_2024["xmin"]<m.BBOX_2022_2024["xmax"])
