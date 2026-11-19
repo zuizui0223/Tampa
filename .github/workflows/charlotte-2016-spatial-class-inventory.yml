@@ -1,0 +1,36 @@
+name: Charlotte 2016 spatial class inventory (no feature geometry)
+
+on:
+  push:
+    paths:
+      - "analysis/97_charlotte_2016_spatial_source_inventory.py"
+      - "validation/test_charlotte_2016_spatial_source_inventory.py"
+      - ".github/workflows/charlotte-2016-spatial-class-inventory.yml"
+  pull_request:
+    paths:
+      - "analysis/97_charlotte_2016_spatial_source_inventory.py"
+      - "validation/test_charlotte_2016_spatial_source_inventory.py"
+      - ".github/workflows/charlotte-2016-spatial-class-inventory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-2016-spatial-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Synthetic no-geometry 2016 gate
+        run: python -m unittest discover -s validation -p 'test_charlotte_2016_spatial_source_inventory.py' -v
+      - name: Live historical layer class and envelope counts only
+        run: python analysis/97_charlotte_2016_spatial_source_inventory.py --out results/generated_charlotte_2016_spatial_class_inventory_v1.json
+      - name: Preserve source inventory or STOP record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-2016-spatial-class-inventory
+          path: results/generated_charlotte_2016_spatial_class_inventory_v1.json
+          retention-days: 30
+          if-no-files-found: warn
