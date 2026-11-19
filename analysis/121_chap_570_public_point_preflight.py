@@ -48,7 +48,9 @@ def audit(fetch=get):
         raise Stop("CHAP_570_MISSING_PROGRAM_ID")
     oid=meta.get("objectIdField")
     if not isinstance(oid,str) or fields.get(oid)!="esriFieldTypeOID":
-        raise Stop("CHAP_570_MISSING_SOURCE_OID")
+        raise Stop("CHAP_570_MISSING_SOURCE_OID:reported="+repr(oid)+
+                   ":uniqueId="+repr(meta.get("uniqueIdField"))+
+                   ":actual_oid_fields="+repr([k for k,v in fields.items() if v=="esriFieldTypeOID"]))
     if "ProgramLocationID" not in fields:
         raise Stop("CHAP_570_MISSING_SITE_KEY")
     count=fetch(URL+"/query",{"f":"json","where":"ProgramID=570","returnCountOnly":"true"}).get("count")
