@@ -85,16 +85,14 @@ def spatial_counts(req=request):
         per[code]=n
     unknown=all_count-sum(per.values())
     if unknown<0:raise GateStop("COUNTS_EXCEED_TOTAL")
-    # Force full dictionary audit: unexplained classes remain an eligibility STOP.
-    distinct=req(HIST+"/query",{
-        **base,"where":"1=1","outFields":"FLUCCS_CODE",
-        "returnDistinctValues":"true","returnGeometry":"false"})
-    feats=distinct.get("features")
-    if not isinstance(feats,list) or distinct.get("exceededTransferLimit"):
-        raise GateStop("DISTINCT_CODE_DICTIONARY_TRUNCATED")
-    raw_codes=sorted({str(f.get("attributes",{}).get("FLUCCS_CODE")) for f in feats})
-    if unknown and set(raw_codes).issubset(set(per)):
-        raise GateStop("UNEXPLAINED_CLASS_COUNTS")
+    # The legacy MapServer rejects spatially filtered returnDistinctValues
+    # (HTTP 400), despite advertising distinct support. Do NOT weaken class
+    # coverage: accept only if all intersecting polygons are exhaustively
+    # accounted for by independently checked official 2016 legend classes.
+    # A positive count of any unspecified class remains a terminal STOP.
+    if unknown != 0:
+        raise GateStop("UNKNOWN_CLASS_COUNT_IN_2016_ENVELOPE:"+str(unknown))
+    verified_codes=[code for code,num in per.items() if num>0]
     return {
       "schema":"tampa.charlotte_2016_spatial_source_inventory_v1",
       "status":"PASS_METADATA_SPATIAL_COUNTS_ONLY",
@@ -106,7 +104,8 @@ def spatial_counts(req=request):
       "2016_envelope_intersecting_polygon_count":all_count,
       "2016_envelope_counts_by_code":per,
       "2016_envelope_unmatched_code_count":unknown,
-      "2016_envelope_distinct_raw_class_codes":raw_codes,
+      "2016_envelope_documented_codes_with_positive_counts":verified_codes,
+      "spatial_distinct_query_status":"UNSUPPORTED_BY_LEGACY_SERVER; six official 2016 mapped classes verified by exhaustive category-count closure",
       "strictly_seagrass_only_historical_codes":["9113","9116"],
       "attached_macroalgae_code":"9121",
       "source_feature_geometries_downloaded":False,
