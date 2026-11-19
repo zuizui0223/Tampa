@@ -48,3 +48,18 @@ The CHNEP hosted mapping-derived source services for Charlotte Harbor published 
 After documenting the source code, updated preflight logic counts 9113/9116/9121 separately **in both 'gain' and 'loss' layers** and explicitly flags any 9121 records as not-seagrass. The corrected map-concordance logic keeps separate polygon unions and reported areas by class rather than relaxing a binary seagrass-gain definition. This is a transparent, post-hoc source-format correction. Until those live source-class tests succeed, do NOT quote the nominal 832 as '832 seagrass gain features', or the nominal 767 as biological plant deaths.
 
 Even after classification reconciliation, the mapping gain/loss source series uses the same underlying official 2022/2024 aerial imagery. Source concordance can audit whether the independently calculated mapped 38.769-acre algae→sea region inside the giant 2022 algae FIDs is reproduced by the official change map. It **cannot** independently establish true recruitment or determine the actual vegetation/substrate in the 222.092 acres absent from the three-class 2024 vegetation layer. The original complete photo interpretation categories and surveyed footprint remain necessary.
+
+### Live audited source-code totals: not all nominal 'gain' or 'loss' features are seagrass
+
+The completed [source-code CI #44476649845](https://github.com/zuizui0223/Tampa/actions/runs/44476649845) independently queried all three FLUCCS code counts in the official hosted change layers; no geometry and no field outcome were accessed. The revised source release with checksum and exact field dictionary is `results/charlotte_official_gain_loss_source_verified_20261119.json`.
+
+| Nominal mapped change layer | 9113 patchy sea | 9116 continuous sea | 9121 attached algae | All original polygons |
+|---|---:|---:|---:|---:|
+| 'Seagrass Gain' | 513 | 187 | **132** | 832 |
+| 'Seagrass Loss' | 496 | 218 | **53** | 767 |
+
+Therefore **132/832 = 15.865%** of features in the nominal gain layer are coded attached algae and **53/767 = 6.910%** of the nominal loss features are coded attached algae. No unknown FLUCCS codes remain in either count ledger. These counts refer to original change-map polygons and do **not** measure acres or independent organisms gained/lost.
+
+The original 2022/2024 3-class source FeatureServer contained **95 and 210** attached algae polygons, a +115 feature count change. That is **not equal** to 132 nominal gain minus 53 nominal loss (79), illustrating that patch fragmentation, source revision and/or difference-map geometry cannot be inferred from count arithmetic. Do not assert a class-change mass balance without equal-area geometry and original source masks.
+
+The revised GIS intersection workflow explicitly keeps gain/loss code 9121 unions separate from source code 9113/9116 unions. Its exact per-feature source acreage and original archive checks must pass before quoting any areal concordance. The nominal layer names are metadata, not evidence that all features represent seagrass.
