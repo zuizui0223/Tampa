@@ -90,3 +90,20 @@ The observed map contains **two-way reclassification**, rather than a simple det
 The existing 2016 historical mapped-seagrass layer needs a source-area/coordinate/footprint crosswalk before the 2022→2024 mapping could be called **recovery of previously vegetated bottom**. No source data establish that any particular mapped 2022 algae patch prevented seagrass 2024 colonization, no valid 2022 non-seagrass counterfactual control was evaluated, and the public regional reports had already exposed broad outcomes. This result is descriptive GIS class conversion only, not a causal ecological mechanism or blind holdout.
 
 Validation steps: `analysis/91_charlotte_arcgis_source_preflight.py`; `analysis/94_charlotte_source_area_attribute_audit.py`; `analysis/92_charlotte_public_gis_class_transitions.py`. Source reports: the completed CI logs and downloadable GIS/source-checksum artifact of Actions #44430960343.
+
+## Boundary-interior sensitivity (validated live result)
+
+To challenge an artifactual 2022→2024 class swap caused merely by map polygon outlines, the same successful public GIS overlay script eroded **both** mapped source and target class unions by 5 m, 10 m and 25 m in an equal-area projected CRS. The resulting intersection counts only spatial regions which are at least that far inside each year's mapped class. These are **absolute area sensitivities**, not probabilities conditioned on the post-erosion remnant or measurements of independent plant colonizations.
+
+| Both-year minimum interior distance | 2022 algae → 2024 seagrass acres | 2022 seagrass → 2024 algae acres |
+|---|---:|---:|
+| 0 m (original overlap) | 83.433 | 280.958 |
+| 5 m | 49.296 | 199.364 |
+| 10 m | 27.616 | 141.080 |
+| 25 m | 4.907 | 46.047 |
+
+The sensitivity indicates that a substantial share of the apparent area change occurs near class boundaries, while some changes remain inside both original class polygons even with a 25 m interior criterion. At 10 m, approximately **33.10%** of the original algae→seagrass overlap and **50.21%** of the original seagrass→algae overlap remain. Not all interior class turnover is biological turnover: differences in imagery, classification, seasonal algal persistence, water clarity or map footprint can still account for changes. Thus the comparison remains **a mapped category spatial contrast**, not proof that macroalgae blocked seagrass recovery.
+
+The successful full synthetic + source-area + GIS overlay + boundary-sensitivity workflow is [GitHub Actions #44431639618](https://github.com/zuizui0223/Tampa/actions/runs/44431639618), from code head `1b242d097334f5d2623be25a20905fd0389a9704`. Its original GeoJSON source inventory and exact feature SHA256s are in the archive (artifact #14487067188; ZIP SHA256 `d712335ef03178de292d643efa7eb580ecd6e9c65990cd8273d5e5b6b73eb4c7`).
+
+The **full verified numerical report** has now been copied as an exact parsed output from the completed successful job into `results/charlotte_public_gis_transition_verified_20261119.json`, which retains the source reference, per-class 2022→2024 area matrix, both-year polygon-level original-area verification, all repaired geometry audits, and 5/10/25 m sensitivity results. No scientific coefficients were refitted and no positive causal conclusions were fabricated.
