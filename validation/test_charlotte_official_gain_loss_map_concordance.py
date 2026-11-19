@@ -81,11 +81,18 @@ class TestChangeGeometry(unittest.TestCase):
              "2024_mapped_seagrass_acres":1,"2024_unmapped_area_acres":0.8}]}}
         gain={"geometries_by_class":{9113:box(0,0,50,100),9116:GeometryCollection(),9121:box(50,0,75,100)}}
         loss={"geometries_by_class":{9113:GeometryCollection(),9116:box(90,0,100,100),9121:box(80,0,90,100)}}
-        r=M.compare({"37":g,"2166":g},gain,loss,sample)
+        target={"seagrass":box(0,0,M.AREA/100,100)}
+        r=M.compare({"37":g,"2166":g},gain,loss,sample,target=target)
         self.assertEqual(len(r),2)
         self.assertTrue(r["37"]["same_original_imagery_not_independent_ecology"])
         self.assertGreater(r["37"]["agency_gain_9113_9116_overlap_acres"],0)
         self.assertGreater(r["37"]["agency_loss_9121_overlap_acres"],0)
         self.assertGreater(r["37"]["official_change_layer_code_specific_overlap_acres"]["gain_code_9121_overlap_acres"],0)
         self.assertTrue(r["37"]["agency_gain_code_9121_overlaps_are_not_seagrass"])
+        spatial=r["37"]["spatial_location_concordance"]
+        self.assertAlmostEqual(spatial["source_2024_mapped_seagrass_acres"],1,places=3)
+        self.assertAlmostEqual(spatial["same_area_both_maps_seagrass_acres"],1,places=3)
+        self.assertAlmostEqual(spatial["source_2024_seagrass_covered_by_gain_percent"],100,places=2)
+        self.assertGreater(spatial["agency_gain_seagrass_not_in_source_2024_seagrass_acres"],0)
+        self.assertTrue(spatial["these_are_not_independent_field_observations"])
 if __name__=="__main__": unittest.main()
