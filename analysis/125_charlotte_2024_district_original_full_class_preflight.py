@@ -22,7 +22,7 @@ SOURCE="tampa.charlotte_2024_district_full_original_legend_preflight_v1"
 EXPECTED="Seagrass in 2024"
 HOSTED={"9113":2087,"9116":912,"9121":210}
 KNOWN={"0":"land","5400":"open_water_or_unvegetated_as_defined_by_original_key",
-       "6510":"tidal_flat","6540":"oyster_reef","7210":"coastal_intertidal",
+       "6510":"tidal_flat","6540":"oyster_reef","7210":"submerged_nonvegetated_sand_per_2016_SWFWMD_mapping_class_key_check_2024_descriptor",
        "9113":"patchy_seagrass","9116":"continuous_seagrass",
        "9121":"attached_macroalgae","9122":"composite_colonized_algae"}
 class Stop(ValueError):pass
