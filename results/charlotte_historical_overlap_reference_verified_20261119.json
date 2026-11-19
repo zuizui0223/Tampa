@@ -1,0 +1,83 @@
+{
+  "schema": "tampa.charlotte_historical_overlap_reference_verified_release_v1",
+  "status": "REPRODUCED_FROZEN_SOURCE_NEGATIVE_SPECIFICITY_CHECK",
+  "verified_ci": {
+    "run_id": 44452243281,
+    "job_id": 135318752586,
+    "artifact_id": 14495817575,
+    "artifact_zip_sha256": "sha256:bfa0603bc8f69e3375d7528d8b3ecf13dc183c962792e9155b40f176498ebeed",
+    "source_run_id": 44446913647,
+    "source_artifact_id": 14494425181,
+    "source_artifact_zip_sha256": "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+  },
+  "report": {
+    "falsification_interpretation": {
+      "independent_estuaries": 0,
+      "no_intervention_or_recovery_claim": true,
+      "no_proven_algal_inhibition": true,
+      "no_source_2016_demographic_absence": true,
+      "pre_specified_logic": "If contemporaneous mapped seagrass has similar or higher 2016 overlap, 92.979% alone cannot support a special historical seagrass-to-algae conversion preference.",
+      "result_not_blind": true,
+      "spatially_independent_statistical_test": false,
+      "test": "Is historical seagrass-positive coverage of 2022 attached algae unusually high compared with 2022 mapped seagrass under the identical 2016 positive map?"
+    },
+    "geometry_archive_input_names": {
+      "2016": "charlotte_2016_positive_only_or_full.geojson",
+      "2022": "charlotte_2022_positive_only_or_full.geojson"
+    },
+    "interpretation": "Descriptive geometric context only: denominator is each 2022 mapped class and background unmapped habitat is NOT observed bare ground. Comparisons may reflect the extent of historical vegetation/mapping rather than biological specialization.",
+    "original_successful_feature_archive": {
+      "artifact_id": 14494425181,
+      "artifact_zip_sha256": "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea",
+      "run_id": 44446913647
+    },
+    "reference": {
+      "algae_minus_seagrass_historical_positive_overlap_percentage_points": -3.966,
+      "class_specific": {
+        "9113": {
+          "2022_source_class_area_acres": 4520.896,
+          "overlaps_2016_mapped_seagrass_acres": 4233.181,
+          "overlaps_2016_mapped_seagrass_percent": 93.636
+        },
+        "9116": {
+          "2022_source_class_area_acres": 8576.666,
+          "overlaps_2016_mapped_seagrass_acres": 8464.315,
+          "overlaps_2016_mapped_seagrass_percent": 98.69
+        },
+        "9121": {
+          "2022_source_class_area_acres": 674.188,
+          "overlaps_2016_mapped_seagrass_acres": 626.854,
+          "overlaps_2016_mapped_seagrass_percent": 92.979
+        },
+        "2022_seagrass_combined": {
+          "2022_source_class_area_acres": 13097.562,
+          "overlaps_2016_mapped_seagrass_acres": 12697.496,
+          "overlaps_2016_mapped_seagrass_percent": 96.945
+        }
+      },
+      "interpretation": "Area fractions of 2016 map-positive source within each 2022 mapped class; no causal history effect, no known full sampling background or independent units.",
+      "no_selection_or_legacy_significance_test": true
+    },
+    "schema": "tampa.charlotte_historical_overlap_reference_v1",
+    "source_ids": {
+      "2016": {
+        "n_features": 1382,
+        "original_revalidated_area_fields": true,
+        "source_features_sha256": "0884ed7f9bd87d879c4f29c9a85738ac668aa30af1eae1a91baa46448de7dbf0"
+      },
+      "2022": {
+        "n_features": 2303,
+        "original_revalidated_area_fields": true,
+        "source_features_sha256": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e"
+      }
+    },
+    "status": "SOURCE_ARCHIVED_VERIFIED_POSTHOC_DESCRIPTIVE_REFERENCE_ONLY"
+  },
+  "interpretation": [
+    "Among 2022 mapped attached algae, 92.979% overlaps 2016 mapped seagrass. However among contemporaneous 2022 mapped seagrass, 96.945% overlaps 2016 mapped seagrass. The historical mapped seagrass footprint is therefore not particularly enriched for attached algae relative to seagrass.",
+    "This descriptive area contrast falsifies an interpretation of the 92.979% figure alone as selective seagrass-to-algae conversion.",
+    "The result does not refute real algae turnover, does not test algae competition/causal inhibition and is not a spatially independent population inference.",
+    "The 2016-to-2022 6-year gap and 2022-to-2024 classification changes still require matched field-confirmation and exact map-footprint work.",
+    "2016 nonpositive map class is not confirmed biological absence; a future contrast must preserve it as unknown, and the 2016 mapped algae code was absent in legacy maps but not ecologically absent."
+  ]
+}
