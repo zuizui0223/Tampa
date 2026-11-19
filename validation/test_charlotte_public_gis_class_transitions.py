@@ -21,6 +21,19 @@ class SpatialTests(unittest.TestCase):
         self.assertEqual(result["9116"]["target_fraction_percent"]["9121"],50)
         self.assertEqual(result["9113"]["target_fraction_percent"]["9116"],100)
         self.assertEqual(result["9113"]["target_fraction_percent"]["unmapped"],0)
+    def test_boundary_interior_reduces_false_edge_swaps(self):
+        src={9113:box(-300,0,-200,100),9116:box(-200,0,-100,100),9121:box(0,0,100,100)}
+        tgt={9113:box(25,25,125,125),9116:box(200,200,300,300),9121:box(-290,10,-190,110)}
+        r=M.boundary_interior_sensitivity(src,tgt,distances=(5.0,10.0,25.0))
+        self.assertGreater(r["original_mapped_conversion_acres"]["algae_to_seagrass_acres"],0)
+        self.assertGreater(r["original_mapped_conversion_acres"]["seagrass_to_algae_acres"],0)
+        for k in ("algae_to_seagrass_acres","seagrass_to_algae_acres"):
+            self.assertLess(r["boundary_sensitivity"]["5"]["interior_mapped_conversion_acres"][k],
+                            r["original_mapped_conversion_acres"][k])
+            self.assertGreaterEqual(r["boundary_sensitivity"]["5"]["interior_mapped_conversion_acres"][k],
+                                    r["boundary_sensitivity"]["10"]["interior_mapped_conversion_acres"][k])
+            self.assertGreaterEqual(r["boundary_sensitivity"]["10"]["interior_mapped_conversion_acres"][k],
+                                    r["boundary_sensitivity"]["25"]["interior_mapped_conversion_acres"][k])
     def test_transition_fails_overlapping_target_classes(self):
         src={9113:box(0,0,10,10),9116:box(10,0,20,10),9121:box(20,0,30,10)}
         tgt={9113:box(20,0,30,10),9116:box(20,0,30,10),
