@@ -1,0 +1,145 @@
+{
+  "schema": "tampa.charlotte_three_date_positive_only_source_release_v1",
+  "status": "OFFICIAL_SOURCE_AREA_VERIFIED_DESCRIPTIVE_MAP_HISTORY_NOT_DEMOGRAPHIC_RECOVERY",
+  "verified_ci": {
+    "run_id": 44446322239,
+    "job_id": 135299235002,
+    "source_analytic_head": "d538d394583d14c2f9e24214eb3fb9aae2b9fdd5",
+    "url": "https://github.com/zuizui0223/Tampa/actions/runs/44446322239",
+    "artifact_id": 14493596235,
+    "artifact_zip_sha256": "sha256:954dc9c18859f4ffe0879530ef8e9e32a71225b25086b002670c2b0666a46e56"
+  },
+  "report": {
+    "2016_9121_zero_count_does_not_prove_algal_absence": true,
+    "2016_legacy_undefined_codes_excluded_from_positive_mask": [
+      "0",
+      "5400"
+    ],
+    "absence_or_survey_footprint_confirmed": false,
+    "area_qc": {
+      "2016": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 7314.15,
+          "9116": 12404.655,
+          "9121": 0
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 0,
+        "max_repair_relative_area_change": 0,
+        "maximum_source_area_absolute_difference_acres": 0.3802,
+        "polygon_count": 1382,
+        "within_year_overlap_fraction": 0
+      },
+      "2022": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4520.896,
+          "9116": 8576.666,
+          "9121": 674.188
+        },
+        "independent_source_area_field": "Geodesic",
+        "invalid_repaired": 4,
+        "max_repair_relative_area_change": 0.13984703,
+        "maximum_source_area_absolute_difference_acres": 0.0138,
+        "polygon_count": 2303,
+        "within_year_overlap_fraction": 0
+      },
+      "2024": {
+        "all_polygons_checked_against_original_area_field": true,
+        "class_area_acres": {
+          "9113": 4301.811,
+          "9116": 7979.277,
+          "9121": 939.401
+        },
+        "independent_source_area_field": "ACRES",
+        "invalid_repaired": 7,
+        "max_repair_relative_area_change": 0.37113117,
+        "maximum_source_area_absolute_difference_acres": 0,
+        "polygon_count": 3209,
+        "within_year_overlap_fraction": 0
+      }
+    },
+    "biological_recolonization_confirmed": false,
+    "causal_macroalgae_inhibition_estimated": false,
+    "conclusion_boundary": "The 2016-mapped seagrass-positive footprint is a historical map state, not a longitudinal demographic observation or eligibility of all unclassified area. 2022 attached algae mapping does not imply plant death. 2024 seagrass mapping is a class return, not proven clonal/seed recovery.",
+    "evidence": "OUTCOME_CONTEXT_EXPOSED_DESCRIPTIVE_2016_POSITIVE_ONLY_GEOMETRY",
+    "historical_source": {
+      "2016_source_class_counts": {
+        "9113": 954,
+        "9116": 428
+      },
+      "bounding_envelope_3857": {
+        "xmax": -9133636.733688185,
+        "xmin": -9159637.622929975,
+        "ymax": 3115537.8056237204,
+        "ymin": 3085497.118059525
+      },
+      "exact_source_ids": 1382,
+      "legacy_metadata_sha256": "9a24699b386bf01b59e5cde2d605413d4d6460752835bfbfb3be3d94523c4ac6",
+      "source_oids_sha256": "54456876cea77c54e7c8fb88f2ddc97951da2759cffa8010c272960e4a0268d3",
+      "source_raw_features_sha256": "0884ed7f9bd87d879c4f29c9a85738ac668aa30af1eae1a91baa46448de7dbf0"
+    },
+    "map_history": {
+      "2016_positive_2022_algae_to_2024_class_acres": {
+        "attached_macroalgae": 210.417,
+        "seagrass": 81.455,
+        "unmapped": 334.983
+      },
+      "2016_positive_2022_algae_to_2024_class_fraction_percent": {
+        "attached_macroalgae": 33.567,
+        "seagrass": 12.994,
+        "unmapped": 53.439
+      },
+      "2016_seagrass_positive_share_of_2022_algae_percent": 92.979,
+      "2016_seagrass_positive_within_2022_algae_acres": 626.854,
+      "2022_algae_total_acres": 674.188,
+      "non_2016_positive_2022_algae_acres": 47.333,
+      "not_positive_2016_is_not_verified_2016_absence": true
+    },
+    "modern_source": {
+      "2022": {
+        "code_counts": {
+          "9113": 1634,
+          "9116": 574,
+          "9121": 95
+        },
+        "official_acre_field": "Geodesic",
+        "oid_count": 2303,
+        "oid_inventory_sha256": "03069023f1d6aef9c819914da5467301417c02c7bc35c092b2f3850a93276aaa",
+        "raw_geojson_canonical_sha256": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+        "source_metadata_sha256": "7f4d975f41251ac5387444a3096e4edafea246bc78e60baad0e459450d3c7739",
+        "url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2022_in_Charlotte_Harbor/FeatureServer/1",
+        "year": "2022"
+      },
+      "2024": {
+        "code_counts": {
+          "9113": 2087,
+          "9116": 912,
+          "9121": 210
+        },
+        "official_acre_field": "ACRES",
+        "oid_count": 3209,
+        "oid_inventory_sha256": "6140b40def8ede7f79ebda544a0189ceb372748d8a9ce49e28abdc2412ee5573",
+        "raw_geojson_canonical_sha256": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e",
+        "source_metadata_sha256": "8f14caea5f9ba5661d0a88926bc0a6a7a92ba9b2554ea7c794554e89b9937530",
+        "url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_in_2024_in_Charlotte_Harbor/FeatureServer/1",
+        "year": "2024"
+      }
+    },
+    "schema": "tampa.charlotte_three_date_positive_only_map_overlap_v1",
+    "source_years": [
+      2016,
+      2022,
+      2024
+    ]
+  },
+  "warnings": [
+    "This result maps prior 2016 seagrass-positive geometry, then 2022 attached macroalgae and 2024 map classes; it is not a causal algal inhibition estimate.",
+    "Only positively mapped 2016 seagrass (codes 9113 and 9116) is used; 2016 code 0 or 5400 and all source-unknown regions are not asserted seagrass-absent.",
+    "2016 no mapped attached algae in the filtered legacy layer does not prove true algae absence.",
+    "2024 unmapped portions are neither true bare substrate nor confirmed ecological death.",
+    "Full mapped survey footprint, field detection/vegetation overlap and positional uncertainty have not been independently reconciled.",
+    "This is outcome-context-exposed public imagery classification, not preregistered or untouched ecological validation."
+  ]
+}
