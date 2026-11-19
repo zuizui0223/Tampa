@@ -129,6 +129,25 @@ def bounds(section,total,total_ret):
         leave=[]
         neg_cells=[]
 
+    # An explicitly geographical *leave-one-entire-5km-cell-out* audit for
+    # size-by-grid strata. Removing only one size-cell can understate spatial
+    # leverage because multiple strata may belong to the same 5km grid.
+    geographical_leave=[]
+    if supported and all("|" in r["stratum"] for r in supported):
+        grid_names=sorted({r["stratum"].split("|",1)[1] for r in supported})
+        for grid in grid_names:
+            excluded=[r for r in supported if r["stratum"].split("|",1)[1]==grid]
+            omitted_area=sum(r["algae_area"] for r in excluded)
+            omitted_gap_area=sum(r["algae_area"]*r["class_difference_points"]/100 for r in excluded)
+            remain_area=matched_area-omitted_area
+            if remain_area<=0:continue
+            geographical_leave.append({
+              "grid_id":grid,"omitted_strata":len(excluded),
+              "omitted_matched_algae_area_acres":round(omitted_area,3),
+              "omitted_matched_algae_area_percent":round(100*omitted_area/matched_area,3),
+              "remaining_matched_algae_gap_points":round(
+                  100*(matched_gap_weighted_area-omitted_gap_area)/remain_area,3)
+            })
     # Sharp algebraic envelope under ONLY the 0-100% unknown seagrass
     # same-map-class retention in unsupported strata. Observed algae same-class
     # retention there is known and never replaced by guessed values.
@@ -164,6 +183,14 @@ def bounds(section,total,total_ret):
         "weighted_effective_n_matched_strata":None if effective_n is None else round(effective_n,3),
         "reverse_direction_matched_strata_count":len(neg_cells),
         "reverse_direction_algae_area_percent_of_matched":round(100*sum(x["algae_area"] for x in neg_cells)/matched_area,3) if matched_area else None,
+        "leave_one_entire_5km_grid_out_results":geographical_leave,
+        "leave_one_entire_5km_grid_out_gap_range_points":[
+            round(min(x["remaining_matched_algae_gap_points"] for x in geographical_leave),3),
+            round(max(x["remaining_matched_algae_gap_points"] for x in geographical_leave),3)
+        ] if geographical_leave else None,
+        "leave_one_5km_grid_out_can_reverse_conditional_sign":(
+            any(x["remaining_matched_algae_gap_points"]<0 for x in geographical_leave)
+            and matched_contrast is not None and matched_contrast>0),
         "leave_one_matched_stratum_out_conditional_gap_range_points":
            [round(min(x["recomputed_conditional_contrast_points"] for x in leave),3),
             round(max(x["recomputed_conditional_contrast_points"] for x in leave),3)] if leave else None,
