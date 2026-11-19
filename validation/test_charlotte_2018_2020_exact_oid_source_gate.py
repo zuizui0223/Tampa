@@ -38,6 +38,25 @@ class Tests(unittest.TestCase):
         self.assertTrue(r["years"]["2018"]["strict_original_source_acreage_crosscheck_possible"])
         self.assertTrue(all(p.get("returnGeometry")!="true" for _,p in q.calls))
         self.assertFalse(r["2018_and_2020_polygon_areas_computed"])
+    def test_arcgis_null_id_list_accepted_only_for_frozen_zero_algae_code(self):
+        class SourceNull(APITest):
+            def __call__(self,url,params):
+                v=super().__call__(url,params)
+                if url.endswith("/query") and params.get("where")=="FLUCCSCODE=9121":
+                    v["objectIds"]=None
+                return v
+        r=M.audit(SourceNull(),source)
+        self.assertEqual(r["years"]["2018"]["focal_class_id_audits"]["9121"]["count"],0)
+        self.assertEqual(r["years"]["2020"]["focal_class_id_audits"]["9121"]["count"],0)
+    def test_arcgis_null_positive_class_ids_is_hard_stop(self):
+        class SourceNullPositive(APITest):
+            def __call__(self,url,params):
+                v=super().__call__(url,params)
+                if url.endswith("/query") and params.get("where")=="FLUCCSCODE=9113":
+                    v["objectIds"]=None
+                return v
+        with self.assertRaisesRegex(M.Stop,"LEGACY_CLASS_EXACT_SOURCE_ID_COUNT_DRIFT"):
+            M.audit(SourceNullPositive(),source)
     def test_duplicate_focal_code_ids_refused(self):
         with self.assertRaisesRegex(M.Stop,"EXACT_SOURCE_ID_COUNT_DRIFT"):
             M.audit(APITest(bad=True),source)
