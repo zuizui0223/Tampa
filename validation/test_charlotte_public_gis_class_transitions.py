@@ -32,23 +32,31 @@ class SpatialTests(unittest.TestCase):
          {"properties":{"FLUCCSCODE":c},
           "geometry":mapping(box(-82.3+i*0.025,26.7,-82.3+i*0.025+0.01,26.71))}
          for i,c in enumerate((9113,9116,9121))]
-        union,qc=M.prepare(polys)
+        for poly in polys:
+            poly["properties"]["ACRES"]=M.transform(M.TRANSFORM,M.shape(poly["geometry"])).area/M.M2_PER_ACRE
+        union,qc=M.prepare(polys,"ACRES")
         self.assertEqual(qc["polygon_count"],3)
         self.assertEqual(qc["invalid_repaired"],0)
         self.assertEqual(qc["within_year_overlap_fraction"],0)
         self.assertTrue(all(v.area>0 for v in union.values()))
         self.assertGreater(qc["class_area_acres"]["9121"],0)
+    def test_independent_original_acre_attribute_catches_wrong_hole_area(self):
+        g=mapping(box(-82.3,26.7,-82.29,26.71))
+        polys=[{"properties":{"FLUCCSCODE":9113,"FID":99,"ACRES":0.001},"geometry":g}]
+        with self.assertRaisesRegex(M.GateStop,"VALIDATED_AREA_MISMATCH"):
+            M.prepare(polys,"ACRES")
     def test_invalid_coordinates_stop(self):
         polys=[{"properties":{"FLUCCSCODE":9113},
                 "geometry":mapping(box(-120,45,-119,46))}]
         with self.assertRaisesRegex(M.GateStop,"OUTSIDE_CHARLOTTE"):
-            M.prepare(polys)
+            M.prepare(polys,"ACRES")
     def test_duplicate_id_inventory_rejected(self):
         def fetch(url,params):
             if url.endswith("/query"):
                 if params.get("returnCountOnly"):return {"count":2}
                 if params.get("returnIdsOnly"):return {"objectIds":[1,1]}
-            return {"fields":[{"name":"FLUCCSCODE","type":"esriFieldTypeInteger"}],
+            return {"fields":[{"name":"FLUCCSCODE","type":"esriFieldTypeInteger"},
+                              {"name":"Geodesic","type":"esriFieldTypeDouble"}],
                     "geometryType":"esriGeometryPolygon","objectIdField":"FID"}
         with self.assertRaisesRegex(M.GateStop,"BAD_OBJECTID_LIST"):
             M.download_year("2022",fetch)
@@ -60,7 +68,8 @@ class SpatialTests(unittest.TestCase):
                 return {"type":"FeatureCollection","features":[
                   {"properties":{"FID":i,"FLUCCSCODE":c}, "geometry":mapping(box(-82.3,26.7,-82.29,26.71))}
                   for i,c in zip((1,2,3),(9113,9116,9900))]}
-            return {"fields":[{"name":"FLUCCSCODE","type":"esriFieldTypeInteger"}],
+            return {"fields":[{"name":"FLUCCSCODE","type":"esriFieldTypeInteger"},
+                              {"name":"Geodesic","type":"esriFieldTypeDouble"}],
                     "geometryType":"esriGeometryPolygon","objectIdField":"FID"}
         with self.assertRaisesRegex(M.GateStop,"UNAPPROVED_CLASS_CODE"):
             M.download_year("2022",fetch)
