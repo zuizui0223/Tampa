@@ -130,6 +130,37 @@ def masked_overlap(positive_2016,sea22,algae22,sea24,algae24):
     }
     return out
 
+def historical_interior_sensitivity(pos16,algae22,sea24,algae24,distances=(0.0,5.0,10.0,25.0)):
+    """3-date class overlap with every mapped class eroded inside by d metres."""
+    results={}
+    previous=None
+    for d in distances:
+        if d<0: raise M.GateStop("NEGATIVE_BOUNDARY_DISTANCE")
+        h16=pos16.buffer(-d) if d else pos16
+        a22=algae22.buffer(-d) if d else algae22
+        s24=sea24.buffer(-d) if d else sea24
+        a24=algae24.buffer(-d) if d else algae24
+        hist=h16.intersection(a22)
+        histarea=hist.area
+        sea=hist.intersection(s24).area
+        algae=hist.intersection(a24).area
+        uncovered=max(0.0,histarea-hist.intersection(unary_union([s24,a24])).area)
+        if abs(sea+algae+uncovered-histarea)>max(5.0,0.001*histarea):
+            raise M.GateStop("HISTORICAL_INTERIOR_ROW_NOT_CLOSED")
+        val={"2016_positive_and_2022_algae_interior_acres":round(histarea/M.M2_PER_ACRE,3),
+             "2024_mapped_seagrass_interior_acres":round(sea/M.M2_PER_ACRE,3),
+             "2024_mapped_algae_interior_acres":round(algae/M.M2_PER_ACRE,3),
+             "2024_unmapped_interior_acres":round(uncovered/M.M2_PER_ACRE,3),
+             "2024_seagrass_share_of_reduced_historical_algae_mask_percent":(round(100*sea/histarea,3) if histarea else None)}
+        if previous is not None:
+            for k in ("2016_positive_and_2022_algae_interior_acres","2024_mapped_seagrass_interior_acres","2024_mapped_algae_interior_acres"):
+                if val[k]>previous[k]+0.003:raise M.GateStop("EROSION_INCREASES_OVERLAP")
+        results[str(int(d))]=val;previous=val
+    return {
+      "metre_inside_each_of_three_mapped_class_boundaries":results,
+      "not_positional_or_thematic_accuracy_correction":True,
+      "scope":"Each erosion changes the denominator; interior shares are not treatment effects or evidence of true recolonization."
+    }
 def calc(dat16,dat22,dat24):
     historic,qc16=M.prepare(dat16["features"],"ACRES")
     s22,qc22=M.prepare(dat22["features"],"Geodesic")
@@ -138,6 +169,9 @@ def calc(dat16,dat22,dat24):
     sea22=unary_union([s22[9113],s22[9116]])
     sea24=unary_union([s24[9113],s24[9116]])
     result=masked_overlap(src16_positive,sea22,s22[9121],sea24,s24[9121])
+    sensitivity=historical_interior_sensitivity(src16_positive,s22[9121],sea24,s24[9121])
+    if abs(sensitivity["metre_inside_each_of_three_mapped_class_boundaries"]["0"]["2016_positive_and_2022_algae_interior_acres"]-result["2016_seagrass_positive_within_2022_algae_acres"])>.005:
+        raise M.GateStop("SENSITIVITY_DOES_NOT_MATCH_FROZEN_PRIMARY")
     return {
         "schema":"tampa.charlotte_three_date_positive_only_map_overlap_v1",
         "evidence":"OUTCOME_CONTEXT_EXPOSED_DESCRIPTIVE_2016_POSITIVE_ONLY_GEOMETRY",
@@ -149,6 +183,7 @@ def calc(dat16,dat22,dat24):
             for yr,dat in (("2022",dat22),("2024",dat24))},
         "area_qc":{"2016":qc16,"2022":qc22,"2024":qc24},
         "map_history":result,
+        "historical_map_boundary_interior_sensitivity":sensitivity,
         "biological_recolonization_confirmed":False,
         "absence_or_survey_footprint_confirmed":False,
         "causal_macroalgae_inhibition_estimated":False,
