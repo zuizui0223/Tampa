@@ -129,3 +129,25 @@ These results supersede the earlier **metadata-only/pending** status above, but 
 **Field-verification polygon export:** a stricter map-core procedure uses 10m and 25m interiors, fixed minimum retained polygon area 0.25 acre, a valid EPSG:4326 GeoJSON `FeatureCollection`, generated nonofficial IDs and independent source SHA256 checks. The fully passed map build is [CI #44447818585](https://github.com/zuizui0223/Tampa/actions/runs/44447818585), ZIP [artifact #14494236985](https://github.com/zuizui0223/Tampa/actions/runs/44447818585/artifacts/14494236985), SHA256 `45c9e98e00459555f529e1112cc6f37cfeb2f4213c11e6826802c73159c3074f`. Its **145 mapped core polygons** include overlap/nesting between the 10m and 25m thresholds, NOT 145 independent approved field sites. At 10m, 21 mapped return-to-seagrass cores (24.464 acres), 43 persistent attached algae cores (108.071 acres), 37 target-unmapped cores (211.651 acres). At 25m, corresponding groups have 2 / 23 / 19 polygons, respectively. This is a geometry-derived *confirmation-survey candidate layer*, not legal field access, restoration site authorization or a ranked impact map.
 
 **Essential ecological limitation and next falsification:** the 2016 mapped-seagrass footprint is extensive. A 92.979% overlap with 2022 algae is not evidence of selective ecological history unless its rate is compared to the 2016 seagrass overlap of contemporaneous 2022 mapped seagrass under the same map geometry. A new diagnostic in `analysis/100_charlotte_2016_2022_2024_positive_only_overlay.py` quantifies all three 2022 class overlaps with the 2016-positive mask; any future estimate is an area-context comparison without spatially independent null or causal claims. Interpretation must remain **historical mapped habitat ↔ later mapped class association, with strong three-year boundary sensitivity and unobserved nonmapped substrate**. Field confirmation must check species-specific *Thalassia*/*Halodule*, attached/drift algae, visibility, benthic light, sampling footprint, and permits.
+
+
+## 2016 historical-footprint specificity falsification — source-replayed result (2026-11-19)
+
+**Prior tempting claim:** 92.979% of 2022 attached-macroalgae map area overlapped 2016 mapped seagrass, possibly suggesting selective algae encroachment into former seagrass. That interpretation requires a *same-map-class reference*. The previously frozen 2016/2022 GeoJSON source archive from successful Actions run #44446913647 was downloaded through a SHA256-pinned exact artifact, with original 2016 and 2022 OID counts, raw feature hashes, independent per-feature source acreage and all class totals reverified. This avoids live dependence on the intermittently changing 2016 legacy MapServer, whose later runs halted on source-schema drift. It does not use a newly selected favorable population or a different history map.
+
+**Completed [Actions #44452243281](https://github.com/zuizui0223/Tampa/actions/runs/44452243281)**, archived-source replay verified:
+
+| 2022 mapped source class | Area (acres) | Intersected 2016 mapped seagrass (acres) | Percent overlapping historical map |
+|---|---:|---:|---:|
+| Patchy seagrass (9113) | 4,520.896 | 4,233.181 | 93.636% |
+| Continuous seagrass (9116) | 8,576.666 | 8,464.315 | 98.690% |
+| **2022 mapped seagrass combined** | **13,097.562** | **12,697.496** | **96.945%** |
+| **2022 mapped attached algae (9121)** | **674.188** | **626.854** | **92.979%** |
+
+The algae minus seagrass historical-positive area overlap is **−3.966 percentage points**. **Thus the 92.979% overlap is NOT distinctive to algae; 2022 seagrass has greater historical overlap. Do not claim selective historic seagrass → algae encroachment from the raw 92.979% alone.** This is a substantive negative control and should be foregrounded rather than hidden. It does **not** show that no vegetation replacement or no competitive suppression occurred; those are different questions not answered by this contrast.
+
+This is a **post-hoc descriptive area contrast** across mapped polygons in the same 2016 historical layer, *not* an independent-site significance test, a biological time-series survival study, proof of perfect 2016 detection or a claim of a universal causal process. Original source count checks succeeded and final validated result and artifact SHA are in `results/charlotte_historical_overlap_reference_verified_20261119.json`.
+
+### Consequence for ecology and conservation
+
+Reframe from **'algae favors former seagrass habitat'** to **'both 2022 seagrass and attached algae occupy a landscape historically mapped mainly as seagrass; the relative mapped transitions and observation quality differ'**. Ecological management cannot infer algae removal efficacy from these maps. Prioritize the verified 10m and 25m interior field-confirmation polygons, and collect actual *Thalassia* / *Halodule*, algae (attached vs drift), water clarity, below-canopy light and sampling-process observations. Inference about true recruitment, physiological buffers and large-scale transferability remains open.
