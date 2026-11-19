@@ -26,6 +26,27 @@ LARGE_ACRES=50
 
 class Stop(ValueError):pass
 
+def summarize_patches(patches):
+    if not patches:raise Stop("EMPTY_PATCH_SET")
+    a=sum(x["source_algae_acres"] for x in patches)
+    if a<=0:raise Stop("EMPTY_PATCH_AREA")
+    same=sum(x["2024_same_attached_algae_acres"] for x in patches)
+    sea=sum(x["2024_mapped_seagrass_acres"] for x in patches)
+    unmapped=sum(x["2024_unmapped_area_acres"] for x in patches)
+    historic=sum(x["2016_mapped_seagrass_positive_overlap_acres"] for x in patches)
+    if abs((same+sea+unmapped)-a)>max(.01,.0001*a):
+        raise Stop("PATCH_SUMMARY_AREA_NOT_CLOSED")
+    if historic<0 or historic>a+.01:
+        raise Stop("HISTORIC_OVERLAP_OUTSIDE_PATCH_SET")
+    return {
+       "source_algae_acres":round(a,3),
+       "mapped_class_remains_algae_acres":round(same,3),
+       "mapped_class_becomes_seagrass_acres":round(sea,3),
+       "mapped_class_unmapped_acres":round(unmapped,3),
+       "historical_2016_seagrass_positive_acres":round(historic,3),
+       "2024_same_algae_percent_of_source_area":round(100*same/a,3)
+    }
+
 def audit(archive_root):
     old=REF.load_frozen_report()
     src,tgt,qc=M.get_locked_geometries(archive_root,old)
@@ -87,17 +108,7 @@ def audit(archive_root):
         abs(sea-83.433)>.01 or abs(historic-626.854)>.01 or
         abs(stable["boundary_interior_m"]["0"]["same_class_overlap_acres"]-same)>.01):
         raise Stop("PER_PATCH_AREA_DOES_NOT_REPRODUCE_3DATE_SOURCE_MATRICES")
-    def reduce(p):
-        area=sum(x["source_algae_acres"] for x in p)
-        return {
-            "source_algae_acres":round(area,3),
-            "mapped_class_remains_algae_acres":round(sum(x["2024_same_attached_algae_acres"] for x in p),3),
-            "mapped_class_becomes_seagrass_acres":round(sum(x["2024_mapped_seagrass_acres"] for x in p),3),
-            "mapped_class_unmapped_acres":round(sum(x["2024_unmapped_area_acres"] for x in p),3),
-            "historical_2016_seagrass_positive_acres":round(sum(x["2016_mapped_seagrass_positive_overlap_acres"] for x in p),3),
-            "2024_same_algae_percent_of_source_area":round(100*sum(x["2024_same_attached_algae_acres"] for x in p)/area,3),
-        }
-    large=reduce(two);rest=reduce(other)
+    large=summarize_patches(two);rest=summarize_patches(other)
     return {
        "schema":"tampa.charlotte_two_large_attached_algae_source_patch_audit_v1",
        "status":"ARCHIVED_SOURCE_AREA_VERIFIED_PATCH_DECOMPOSITION_NOT_BIOLOGICAL_TURNOVER",
