@@ -68,6 +68,10 @@ def audit(query=M.request,source=released_source):
             response=query(layer+"/query",{**envelope,"where":where,"returnIdsOnly":"true"})
             r=response.get("objectIds")
             expected=fixed[year]["n_by_focal_legacy_flucss_code"][str(code)]
+            # ArcGIS MapServer commonly emits null rather than [] for an
+            # empty ID set. Normalize ONLY for an independently verified
+            # zero-count class and never invent missing positive responses.
+            if expected==0 and r is None:r=[]
             if not isinstance(r,list) or len(r)!=expected or len(set(r))!=len(r):
                 raise Stop("LEGACY_CLASS_EXACT_SOURCE_ID_COUNT_DRIFT:"+year+":"+str(code))
             if set(r)-set(ids):
