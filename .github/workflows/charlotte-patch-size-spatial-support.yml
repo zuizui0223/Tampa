@@ -1,0 +1,56 @@
+name: Charlotte patch-size and geography map-class stability audit
+
+on:
+  push:
+    paths:
+      - "analysis/107_charlotte_patch_size_spatial_support_audit.py"
+      - "validation/test_charlotte_patch_size_spatial_support_audit.py"
+      - ".github/workflows/charlotte-patch-size-spatial-support.yml"
+      - "results/charlotte_map_class_retention_source_verified_20261119.json"
+  pull_request:
+    paths:
+      - "analysis/107_charlotte_patch_size_spatial_support_audit.py"
+      - "validation/test_charlotte_patch_size_spatial_support_audit.py"
+      - ".github/workflows/charlotte-patch-size-spatial-support.yml"
+      - "results/charlotte_map_class_retention_source_verified_20261119.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  archived-geometry-size-support:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned source geometry toolkit
+        run: python -m pip install --disable-pip-version-check "shapely==2.1.2" "pyproj==3.7.2"
+      - name: Enforce original geojson artifact provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          A="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq .digest)"
+          test "$A" = "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+          RUN="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/14494425181" --jq '.workflow_run.id')"
+          test "$RUN" = "44446913647"
+      - uses: actions/download-artifact@v4
+        with:
+          name: charlotte-2016-positive-three-date-overlay
+          run-id: 44446913647
+          github-token: ${{ github.token }}
+          path: results/archived_source
+      - name: Unit tests including impossible source and weak-support cases
+        run: python -m unittest discover -s validation -p 'test_charlotte_patch_size_spatial_support_audit.py' -v
+      - name: Run exact source area and size-space contrast
+        run: python analysis/107_charlotte_patch_size_spatial_support_audit.py --archive-root results/archived_source --out results/generated_charlotte_patch_size_spatial_support_v1.json
+      - name: Preserve full descriptive support matrix or source STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-patch-size-spatial-support-audit
+          path: results/generated_charlotte_patch_size_spatial_support_v1.json
+          retention-days: 30
+          if-no-files-found: warn
