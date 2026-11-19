@@ -1,0 +1,32 @@
+name: Charlotte eight-subregion public acreage audit
+
+on:
+  push:
+    paths:
+      - "analysis/93_charlotte_segment_published_area_audit.py"
+      - "results/charlotte_segments_2022_2024_official_v1.csv"
+      - "validation/test_charlotte_segment_published_area_audit.py"
+      - ".github/workflows/charlotte-segment-public-area-audit.yml"
+  pull_request:
+    paths:
+      - "analysis/93_charlotte_segment_published_area_audit.py"
+      - "results/charlotte_segments_2022_2024_official_v1.csv"
+      - "validation/test_charlotte_segment_published_area_audit.py"
+      - ".github/workflows/charlotte-segment-public-area-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-segment-source-reaggregation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest discover -s validation -p 'test_charlotte_segment_published_area_audit.py' -v
+      - run: python analysis/93_charlotte_segment_published_area_audit.py --out results/generated_charlotte_segments_audit_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: charlotte-eight-segment-public-area-audit
+          path: results/generated_charlotte_segments_audit_v1.json
+          retention-days: 30
