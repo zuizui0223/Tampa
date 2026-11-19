@@ -45,12 +45,14 @@ jobs:
       - name: Test exclusive background/hosted original 2024 class semantics and source OID gates
         run: python -m unittest discover -s validation -p 'test_charlotte_2024_original_classes_in_giant_unknown.py' -v
       - name: Query official 2024 original district all-class polygon intersection with exact giant FIDs
-        run: python analysis/126_charlotte_2024_original_classes_in_giant_unknown.py --archive-root results/archived_source --out results/generated_charlotte_original_2024_giant_all_class_unknown_v1.json
+        run: python analysis/126_charlotte_2024_original_classes_in_giant_unknown.py --archive-root results/archived_source --out results/generated_charlotte_original_2024_giant_all_class_unknown_v1.json --geojson-out results/generated_charlotte_2024_original_sand_7210_25_50m_verification_cores.geojson
       - name: Preserve exact source geojson hashes and class-area partition or explicit STOP
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: charlotte-original-2024-giant-class-source-partition
-          path: results/generated_charlotte_original_2024_giant_all_class_unknown_v1.json
+          path: |
+            results/generated_charlotte_original_2024_giant_all_class_unknown_v1.json
+            results/generated_charlotte_2024_original_sand_7210_25_50m_verification_cores.geojson
           retention-days: 30
           if-no-files-found: warn
