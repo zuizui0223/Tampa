@@ -1,0 +1,141 @@
+{
+  "schema": "tampa.charlotte_original_source_versus_agency_change_layer_verified_release_v1",
+  "status": "CI_SOURCE_VALIDATED_OFFICIAL_GAIN_LOSS_CATEGORY_AUDIT_SAME_AERIAL_MAP_NOT_NEW_ECOLOGY",
+  "verified_ci": {
+    "run_id": 44478539061,
+    "job_id": 135404863615,
+    "artifact_id": 14508205132,
+    "artifact_zip_sha256": "sha256:04a922966245301b375a958a0f5113037b2443150d23e6946995d368bacb3d76",
+    "source_run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44478539061",
+    "validated_source_area_and_oid": true
+  },
+  "report": {
+    "gain_loss_source_may_contain_9121_attached_macroalgae": true,
+    "giant_2022_attached_algae_fid_comparisons": {
+      "37": {
+        "agency_gain_9113_9116_overlap_acres": 0,
+        "agency_gain_code_9121_overlaps_are_not_seagrass": true,
+        "agency_loss_9121_overlap_acres": 117.34986,
+        "gain_seagrass_minus_our_2024_seagrass_acres": -22.68288,
+        "loss_algae_minus_our_2024_unmapped_acres": 0,
+        "official_change_layer_code_specific_overlap_acres": {
+          "gain_code_9113_overlap_acres": 0,
+          "gain_code_9116_overlap_acres": 0,
+          "gain_code_9121_overlap_acres": 0,
+          "loss_code_9113_overlap_acres": 0,
+          "loss_code_9116_overlap_acres": 0,
+          "loss_code_9121_overlap_acres": 117.34986
+        },
+        "our_2024_mapped_seagrass_overlap_acres": 22.682877,
+        "our_2024_unmapped_three_class_area_acres": 117.349861,
+        "same_original_imagery_not_independent_ecology": true,
+        "source_2022_algae_acres": 186.62045
+      },
+      "2166": {
+        "agency_gain_9113_9116_overlap_acres": 0,
+        "agency_gain_code_9121_overlaps_are_not_seagrass": true,
+        "agency_loss_9121_overlap_acres": 104.74259,
+        "gain_seagrass_minus_our_2024_seagrass_acres": -16.08627,
+        "loss_algae_minus_our_2024_unmapped_acres": 0,
+        "official_change_layer_code_specific_overlap_acres": {
+          "gain_code_9113_overlap_acres": 0,
+          "gain_code_9116_overlap_acres": 0,
+          "gain_code_9121_overlap_acres": 0,
+          "loss_code_9113_overlap_acres": 0,
+          "loss_code_9116_overlap_acres": 0,
+          "loss_code_9121_overlap_acres": 104.74259
+        },
+        "our_2024_mapped_seagrass_overlap_acres": 16.086272,
+        "our_2024_unmapped_three_class_area_acres": 104.742594,
+        "same_original_imagery_not_independent_ecology": true,
+        "source_2022_algae_acres": 125.856861
+      }
+    },
+    "no_survey_footprint_or_extra_benthic_classes_observed": true,
+    "not_biological_or_independent_field_validation": true,
+    "not_inference_on_2024_unmapped_benthic_state": true,
+    "official_gain_loss_sources": {
+      "gain": {
+        "batch_hashes": [
+          "52870c33a33f41a581be49cdf0f091a98b5c91d6c9c87555ae67264baf9395bd",
+          "72d26e7394dff6b63e559b75f1ecb78894d8e8c18738deed84e5b5c3225d38e2",
+          "97f7895ee1eb1c055cab242abe52050f40db269c11ad5c682240ec455682af41",
+          "12c5275dddcb3ca7f00ca1f33fd99519a8dd7e2780fab58e65da67504bf6b6d6",
+          "a409456de4e00ea9c7321e3bafa56b75164497cd6d1df5398d8cd94a38a5655e",
+          "4d9cc62ee0ba6f20d8c60bf8f5ee9d75d3dd68f5c9e8271e31d4919ff17a552f",
+          "50e5e376de0bd4d8d2a72b77497002b3e253b462675427d48e3482a9bebf2180",
+          "a7cc59b03ad93f8573eb3d14d99ef95832e866bef71d364e4c0fe4f69d2e0aec",
+          "b39169cca0abdbd957d4dd62ccf199e052a8164b468a20499558f7358bf46d61"
+        ],
+        "class_9121_attached_algae_present": true,
+        "count": 832,
+        "flucss_class_counts": {
+          "9113": 513,
+          "9116": 187,
+          "9121": 132
+        },
+        "geojson_feature_sha256": "f0fcd6aa3a4478813bbf6957634d8d4a7744d12b11b407a6d395370028d69b2d",
+        "mapped_all_three_class_acres": 788.253,
+        "mapped_class_areas_acres": {
+          "9113": 305.057,
+          "9116": 69.912,
+          "9121": 413.285
+        },
+        "max_source_area_error_acres": 0.00001,
+        "n_repaired_features": 5,
+        "name_seagrass_gain_or_loss_does_not_make_9121_seagrass": true,
+        "oid_roster_sha256": "c698250a80eb7cc18f530945702595da5fabbb7cdac94f017b0dfd67595cc961",
+        "original_area_field": "ACRES",
+        "url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_Gain_in_Charlotte_Harbor_between_2022_and_2024/FeatureServer/1"
+      },
+      "loss": {
+        "batch_hashes": [
+          "3d266fd360ac5b98f07863c4f42f7d32f9b824919de5fc0f8781d8dc90e7b401",
+          "c66972e29ece7be60a1c759a16a58b7144cfc98577df3c02722cf689ab35aacd",
+          "0a57a69d77fc1ecdce7d45334a433e6018a78d2654a76efbe3f0cfbeb8d88d37",
+          "b45c17b246c72602427a5aad57d50f30c02ef850ad0cc977b9282bffaf32620e",
+          "5ac55b90d3e947c3ea9f0a514b9e417c25d6fc3f91adeeb40b74106fb944423c",
+          "2def4b590ad7d723b974145c92e81c5a9365d81e84a11d6f3695cc8f869853bc",
+          "546e6863696ada9f07e2fc9df612533fbe19e4d450d996606ba788b4e0acccd2",
+          "a537a67cb08a02f8885923325c519c296358af1ff325c5e762af573fc01bea54"
+        ],
+        "class_9121_attached_algae_present": true,
+        "count": 767,
+        "flucss_class_counts": {
+          "9113": 496,
+          "9116": 218,
+          "9121": 53
+        },
+        "geojson_feature_sha256": "470638adfc14bf72a5e538162ef79620a3e82364da63c17c4c528205d0468b10",
+        "mapped_all_three_class_acres": 1339.515,
+        "mapped_class_areas_acres": {
+          "9113": 679.535,
+          "9116": 314.384,
+          "9121": 345.596
+        },
+        "max_source_area_error_acres": 0.00005,
+        "n_repaired_features": 21,
+        "name_seagrass_gain_or_loss_does_not_make_9121_seagrass": true,
+        "oid_roster_sha256": "74c179a27c835f01ea814a45f50d4c9b3bf053986465345612fa09f1f5c89272",
+        "original_area_field": "Geodesic",
+        "url": "https://services2.arcgis.com/7XOSGW3VgfWJK7Ia/ArcGIS/rest/services/Seagrass_Loss_in_Charlotte_Harbor_between_2022_and_2024/FeatureServer/1"
+      }
+    },
+    "original_giant_report_source": "results/charlotte_giant_algae_patches_source_verified_20261119.json",
+    "schema": "tampa.charlotte_source_gain_loss_map_concordance_v1",
+    "source_2022_fids": [
+      37,
+      2166
+    ],
+    "source_role_not_an_independent_replicate": true,
+    "source_roles_are_not_seagrass_only": true,
+    "status": "SOURCE_VERIFIED_SAME_MAP_FAMILY_CONCORDANCE_ONLY"
+  },
+  "interpretation": [
+    "Official nominal gain layer source feature counts by FLUCCS: 9113=513,9116=187,9121 algae=132. Loss: 9113=496,9116=218,9121 algae=53.",
+    "Official gain mapped class areas 305.057/69.912/413.285 acres and official loss mapped class areas 679.535/314.384/345.596, which match source 2024 categories outside 2022 map and source 2022 categories outside 2024 map, respectively. This is source-relative map-class overlap accounting, not de novo seagrass recruitment or mortality.",
+    "2022 algae source FIDs 37/2166 have 2024 three-class unmapped areas 117.349861/104.742594 acres, exactly reproduced to about 0.00001 acre by the official nominal LOSS layer category 9121.",
+    "Official gain 9113/9116 has zero geometric overlap inside 2022 algae giant source FIDs, because these areas were mapped in 2022, whereas their observed 2024 algae-to-seagrass class reclassification areas are 22.682877/16.086272 acres; classification conversion is not equivalent to map gain/loss.",
+    "The derived gain/loss map reuses the same SWFWMD imagery and source maps; it is not independent ecological confirmation and cannot resolve actual vegetation/substrate in 2024 unmapped regions."
+  ]
+}
