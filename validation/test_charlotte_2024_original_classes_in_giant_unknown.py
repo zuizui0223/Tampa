@@ -36,6 +36,33 @@ class OriginalClassUnknown(unittest.TestCase):
         r=M.independent_source_overlap(giant,hosted,orig)
         self.assertGreater(r["source_2024_original_three_code_coverage_acres"],0)
         self.assertEqual(r["source_2024_original_non_three_code_coverage_acres"],0)
+    def test_2024_sand_boundary_interior_and_history_are_separate(self):
+        cx,cy=M.G.TRANSFORM(-82.2,26.8)
+        giant=box(cx,cy,cx+300,cy+300)
+        hosted=box(cx,cy,cx+100,cy+300)
+        sand=box(cx+100,cy,cx+300,cy+300)
+        history=giant
+        v,geoms=M.strictly_inside_source_sand(giant,hosted,sand,history)
+        self.assertAlmostEqual(v["0"]["mapped_sand_7210_interior_acres"],60000/M.AREA,places=5)
+        self.assertAlmostEqual(v["25"]["mapped_sand_7210_interior_acres"],150*250/M.AREA,places=5)
+        self.assertAlmostEqual(v["50"]["mapped_sand_7210_interior_acres"],100*200/M.AREA,places=5)
+        self.assertEqual(v["25"]["inside_2016_mapped_seagrass_positive_percent"],100)
+        self.assertEqual(len(geoms),2)
+        self.assertTrue(all(f["properties"]["not_an_approved_field_site"] for f in geoms))
+        self.assertTrue(all(f["geometry"]["type"]=="Polygon" for f in geoms))
+    def test_partial_historical_positive_does_not_become_assumed_100_percent(self):
+        cx,cy=M.G.TRANSFORM(-82.2,26.8)
+        g=box(cx,cy,cx+300,cy+300)
+        hosted=box(cx,cy,cx+100,cy+300)
+        sand=box(cx+100,cy,cx+300,cy+300)
+        history=box(cx,cy,cx+220,cy+300)
+        report,_=M.strictly_inside_source_sand(g,hosted,sand,history)
+        self.assertLess(report["0"]["inside_2016_mapped_seagrass_positive_percent"],100)
+    def test_sand_boundary_thresholds_cannot_be_changed_after_analysis(self):
+        cx,cy=M.G.TRANSFORM(-82.2,26.8)
+        g=box(cx,cy,cx+300,cy+300)
+        with self.assertRaisesRegex(M.Stop,"SAND_CORE_DISTANCE_CHANGED"):
+            M.strictly_inside_source_sand(g,GeometryCollection(),g,g,dists=(0,10,20))
     def test_source_id_query_rejects_duplicate_and_count_drift(self):
         def bad(url,params):
             if params.get("returnIdsOnly")=="true":return {"objectIdFieldName":"OBJECTID","objectIds":[1,2,2]}
