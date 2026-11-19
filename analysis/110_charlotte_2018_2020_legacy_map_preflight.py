@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Preflight 2018/2020 SWFWMD polygon-map category support in Charlotte Harbor.
 
-Source (official District legacy FeatureServer):
-https://www25.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/FeatureServer
+Source (official District legacy MapServer):
+https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer
 layers 0 (2018) and 1 (2020).
+
+The same official service family also has a FeatureServer on www25 whose
+2018 layer returned status/messages instead of a layer schema in 2026-11-19
+live CI; that endpoint is not treated as a valid source response. This is a
+pre-outcome metadata-access-route correction, NOT another bay/time window.
 
 No feature geometry, no area conversions and no ecological recovery outputs.
 The spatial envelope is source-locked to a previously validated 2016/22/24
@@ -18,7 +23,7 @@ from urllib.request import Request,urlopen
 from urllib.error import URLError,HTTPError
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE_BASE="https://www25.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/FeatureServer"
+SOURCE_BASE="https://www45.swfwmd.state.fl.us/arcgis12/rest/services/OpenData/Environmental_Seagrass2018_sql/MapServer"
 LAYERS={"2018":0,"2020":1}
 CLASSES={9113:"patchy_seagrass",9116:"continuous_seagrass",9121:"mapped_attached_macroalgae"}
 LEGACY_CRS=2882
