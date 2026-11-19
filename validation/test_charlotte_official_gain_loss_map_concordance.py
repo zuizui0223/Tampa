@@ -1,7 +1,7 @@
 """Synthetic pre-exposure source-concordance tests. No new ecological field data."""
 from pathlib import Path
 import importlib.util, unittest, json, hashlib
-from shapely.geometry import box,mapping
+from shapely.geometry import box,mapping,GeometryCollection
 from shapely.ops import transform
 ROOT=Path(__file__).resolve().parents[1]
 sp=importlib.util.spec_from_file_location("ch114",ROOT/"analysis/114_charlotte_official_gain_loss_map_concordance.py")
@@ -33,17 +33,28 @@ class TestChangeGeometry(unittest.TestCase):
         meta=fake_layer()
         a=M.get_change("mapped_seagrass_gain",pinned(meta,"mapped_seagrass_gain"),fetch=mock)
         self.assertEqual(a["count"],1)
-        self.assertEqual(a["flucss_seagrass_code_counts"]["9113"],1)
+        self.assertEqual(a["flucss_class_counts"]["9113"],1)
         self.assertGreater(a["mapped_acres"],0)
         self.assertLess(a["max_source_area_error_acres"],.005)
     def test_unknown_code_stops_not_assumed_seagrass(self):
         def bad(url,query):
             r=mock(url,query)
             if url.endswith("/query") and query.get("f")=="geojson":
+                r["features"][0]["properties"]["FLUCCSCODE"]=9230
+            return r
+        with self.assertRaisesRegex(M.Stop,"UNRECOGNIZED_BENTHIC_CODE"):
+            M.get_change("mapped_seagrass_gain",pinned(fake_layer(),"mapped_seagrass_gain"),fetch=bad)
+    def test_9121_record_kept_as_algae_not_added_to_seagrass(self):
+        def algae(url,query):
+            r=mock(url,query)
+            if url.endswith("/query") and query.get("f")=="geojson":
                 r["features"][0]["properties"]["FLUCCSCODE"]=9121
             return r
-        with self.assertRaisesRegex(M.Stop,"NON_SEAGRASS_CODE"):
-            M.get_change("mapped_seagrass_gain",pinned(fake_layer(),"mapped_seagrass_gain"),fetch=bad)
+        v=M.get_change("mapped_seagrass_gain",pinned(fake_layer(),"mapped_seagrass_gain"),fetch=algae)
+        self.assertEqual(v["flucss_class_counts"]["9121"],1)
+        self.assertEqual(v["flucss_class_counts"]["9113"],0)
+        self.assertTrue(v["class_9121_attached_algae_present"])
+        self.assertEqual(v["mapped_class_areas_acres"]["9113"],0)
     def test_oid_count_mismatch_stops(self):
         def wrong(url,query):
             r=mock(url,query)
@@ -58,11 +69,13 @@ class TestChangeGeometry(unittest.TestCase):
              "2024_mapped_seagrass_acres":1},
             {"source_2022_FID":2166,"source_algae_acres":2,
              "2024_mapped_seagrass_acres":1}]}}
-        gain={"geometry":box(0,0,50,100)}
-        loss={"geometry":box(90,0,100,100)}
+        gain={"geometries_by_class":{9113:box(0,0,50,100),9116:GeometryCollection(),9121:box(50,0,75,100)}}
+        loss={"geometries_by_class":{9113:GeometryCollection(),9116:box(90,0,100,100),9121:box(80,0,90,100)}}
         r=M.compare({"37":g,"2166":g},gain,loss,sample)
         self.assertEqual(len(r),2)
         self.assertTrue(r["37"]["same_original_imagery_not_independent_ecology"])
-        self.assertGreater(r["37"]["official_gain_map_overlap_acres"],0)
-        self.assertGreater(r["37"]["official_loss_map_overlap_acres"],0)
+        self.assertGreater(r["37"]["agency_gain_9113_9116_overlap_acres"],0)
+        self.assertGreater(r["37"]["agency_loss_9121_overlap_acres"],0)
+        self.assertGreater(r["37"]["official_change_layer_code_specific_overlap_acres"]["gain_code_9121_overlap_acres"],0)
+        self.assertTrue(r["37"]["agency_gain_code_9121_overlaps_are_not_seagrass"])
 if __name__=="__main__": unittest.main()
