@@ -25,7 +25,9 @@ AREA=G.M2_PER_ACRE
 SRC=ROOT/"results/charlotte_official_gain_loss_source_verified_20261119.json"
 GIANT=ROOT/"results/charlotte_giant_algae_patches_source_verified_20261119.json"
 ROLES=("mapped_seagrass_gain","mapped_seagrass_loss")
-SOURCE_CODES=(9113,9116)
+SOURCE_CODES=(9113,9116,9121)
+SEAGRASS_CODES=(9113,9116)
+ATTACHED_ALGAE_CODE=9121
 SMALL_BATCH=100
 
 class Stop(ValueError):pass
@@ -97,14 +99,15 @@ def get_change(role, pinned, fetch=None):
             raise Stop("UNRECONCILED_CHANGE_MAP_OIDS:"+role)
         features.extend(fs)
         digests.append(G.sha(fs))
-    classes={9113:0,9116:0}
+    classes={9113:0,9116:0,9121:0}
     geoms=[]
+    class_geoms={code:[] for code in SOURCE_CODES}
     max_error=0;repair=0
     for f in features:
         props=f["properties"]
         code=props.get("FLUCCSCODE")
         if code not in SOURCE_CODES:
-            raise Stop("CHANGE_MAP_HAS_NON_SEAGRASS_CODE:"+role+":"+str(code))
+            raise Stop("CHANGE_MAP_HAS_UNRECOGNIZED_BENTHIC_CODE:"+role+":"+str(code))
         official=props.get(area_field)
         if isinstance(official,bool) or not isinstance(official,(int,float)) or not math.isfinite(official) or official<=0:
             raise Stop("CHANGE_MAP_OFFICIAL_ACRES_INVALID")
@@ -124,11 +127,13 @@ def get_change(role, pinned, fetch=None):
         if diff>max(0.005,0.002*official):
             raise Stop("CHANGE_MAP_INDEPENDENT_AREA_MISMATCH:"+role)
         geoms.append(p)
+        class_geoms[int(code)].append(p)
         classes[int(code)]+=1
     merged=unary_union(geoms)
     total=sum(p.area for p in geoms)
     if (total-merged.area)/max(1,merged.area)>.01:
         raise Stop("EXCESSIVE_CHANGE_LAYER_POLYGON_OVERLAP")
+    class_unions={code:unary_union(class_geoms[code]) for code in SOURCE_CODES}
     return {
        "url":url,
        "count":count,"oid_roster_sha256":G.sha(sorted(roster)),
@@ -136,9 +141,12 @@ def get_change(role, pinned, fetch=None):
        "batch_hashes":digests,"original_area_field":area_field,
        "max_source_area_error_acres":round(max_error,5),
        "n_repaired_features":repair,
-       "flucss_seagrass_code_counts":{str(k):v for k,v in classes.items()},
-       "mapped_acres":round(merged.area/AREA,3),
-       "geometry":merged
+       "flucss_class_counts":{str(k):v for k,v in classes.items()},
+       "class_9121_attached_algae_present":classes[9121]>0,
+       "name_seagrass_gain_or_loss_does_not_make_9121_seagrass":True,
+       "mapped_all_three_class_acres":round(merged.area/AREA,3),
+       "mapped_class_areas_acres":{str(code):round(class_unions[code].area/AREA,3) for code in SOURCE_CODES},
+       "geometries_by_class":class_unions
     }
 
 def source_giant_shapes(root):
@@ -164,19 +172,25 @@ def compare(giants,gain,loss,pinned_giant):
     for fid,geometry in giants.items():
         original=next(f for f in pinned_giant["report"]["two_largest_source_algae_patches"]
                       if str(f["source_2022_FID"])==fid)
-        gain_area=geometry.intersection(gain["geometry"]).area/AREA
-        loss_area=geometry.intersection(loss["geometry"]).area/AREA
+        # The agency's named "seagrass gain" layer can contain original
+        # class 9121 attached algae! NEVER pool it with the 9113/9116 gains.
+        areas={}
+        for role,data in (("gain",gain),("loss",loss)):
+            for cls,g in data["geometries_by_class"].items():
+                areas[f"{role}_code_{cls}_overlap_acres"]=round(geometry.intersection(g).area/AREA,5)
         expected_sea=original["2024_mapped_seagrass_acres"]
-        # Never require an overlap to match by convenience. If sources differ,
-        # report disagreement as source-map discordance, not a scientific result.
+        gain_sea=sum(areas[f"gain_code_{cls}_overlap_acres"] for cls in SEAGRASS_CODES)
+        loss_algae=areas["loss_code_9121_overlap_acres"]
         out[fid]={
             "source_2022_algae_acres":original["source_algae_acres"],
-            "2024_our_own_seagrass_overlap_acres":expected_sea,
-            "official_gain_map_overlap_acres":round(gain_area,5),
-            "official_loss_map_overlap_acres":round(loss_area,5),
-            "gain_minus_our_seagrass_overlap_acres":round(gain_area-expected_sea,5),
-            "gain_source_concordance_fraction_of_our_reclassified_sea":
-                round(min(gain_area,expected_sea)/expected_sea,5) if expected_sea>0 else None,
+            "our_2024_mapped_seagrass_overlap_acres":expected_sea,
+            "our_2024_unmapped_three_class_area_acres":original["2024_unmapped_area_acres"],
+            "official_change_layer_code_specific_overlap_acres":areas,
+            "agency_gain_9113_9116_overlap_acres":round(gain_sea,5),
+            "agency_gain_code_9121_overlaps_are_not_seagrass":True,
+            "agency_loss_9121_overlap_acres":round(loss_algae,5),
+            "gain_seagrass_minus_our_2024_seagrass_acres":round(gain_sea-expected_sea,5),
+            "loss_algae_minus_our_2024_unmapped_acres":round(loss_algae-original["2024_unmapped_area_acres"],5),
             "same_original_imagery_not_independent_ecology":True,
         }
     return out
@@ -200,9 +214,11 @@ def main():
           "status":"SOURCE_VERIFIED_SAME_MAP_FAMILY_CONCORDANCE_ONLY",
           "giant_2022_attached_algae_fid_comparisons":comparison,
           "official_gain_loss_sources":{
-            role:{k:v for k,v in data.items() if k!="geometry"}
+            role:{k:v for k,v in data.items() if k!="geometries_by_class"}
             for role,data in [("gain",gain),("loss",loss)]},
           "source_2022_fids":[37,2166],
+          "gain_loss_source_may_contain_9121_attached_macroalgae":True,
+          "source_roles_are_not_seagrass_only":True,
           "original_giant_report_source":"results/charlotte_giant_algae_patches_source_verified_20261119.json",
           "no_survey_footprint_or_extra_benthic_classes_observed":True,
           "not_biological_or_independent_field_validation":True,
