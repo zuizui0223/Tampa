@@ -170,7 +170,24 @@ def source_giant_shapes(root):
         raw[str(props["FID"])]=geom
     return raw
 
-def compare(giants,gain,loss,pinned_giant):
+def source_target_map_2024(root):
+    """Load and re-verify exact original 2024 source seagrass/algae masks."""
+    old=M.REF.load_frozen_report()
+    file=M.REF._one_archive_file(root,"charlotte_2024_positive_only_or_full.geojson")
+    data=json.loads(file.read_text(encoding="utf-8"))
+    features=data.get("features")
+    if data.get("type")!="FeatureCollection" or not isinstance(features,list) or len(features)!=3209:
+        raise Stop("PINNED_2024_SOURCE_FEATURES_UNAVAILABLE")
+    expected=old["modern_source"]["2024"]["raw_geojson_canonical_sha256"]
+    if G.sha(features)!=expected:
+        raise Stop("PINNED_2024_SOURCE_FEATURES_SHA_CHANGED")
+    groups,qc=G.prepare(features,"ACRES")
+    if qc["polygon_count"]!=3209 or not qc["all_polygons_checked_against_original_area_field"]:
+        raise Stop("PINNED_2024_SOURCE_ACRE_QC_FAILED")
+    return {"seagrass":unary_union([groups[9113],groups[9116]]),
+            "attached_macroalgae":groups[9121]}
+
+def compare(giants,gain,loss,pinned_giant,target=None):
     out={}
     for fid,geometry in giants.items():
         original=next(f for f in pinned_giant["report"]["two_largest_source_algae_patches"]
@@ -184,6 +201,28 @@ def compare(giants,gain,loss,pinned_giant):
         expected_sea=original["2024_mapped_seagrass_acres"]
         gain_sea=sum(areas[f"gain_code_{cls}_overlap_acres"] for cls in SEAGRASS_CODES)
         loss_algae=areas["loss_code_9121_overlap_acres"]
+        spatial={}
+        if target is not None:
+            target_sea=geometry.intersection(target["seagrass"])
+            gain_sea_geom=geometry.intersection(unary_union([gain["geometries_by_class"][cls] for cls in SEAGRASS_CODES]))
+            overlap=target_sea.intersection(gain_sea_geom).area
+            union=target_sea.union(gain_sea_geom).area
+            target_area=target_sea.area
+            gain_area=gain_sea_geom.area
+            if abs(target_area/AREA-expected_sea)>max(.005,.001*expected_sea):
+                raise Stop("2024_SEAGRASS_GIANT_SOURCE_AREA_DRIFT:"+fid)
+            if overlap>min(target_area,gain_area)+1e-4:
+                raise Stop("OFFICIAL_GAIN_CONCORDANCE_AREA_INVALID:"+fid)
+            spatial={
+              "source_2024_mapped_seagrass_acres":round(target_area/AREA,5),
+              "agency_gain_mapped_seagrass_acres":round(gain_area/AREA,5),
+              "same_area_both_maps_seagrass_acres":round(overlap/AREA,5),
+              "source_2024_seagrass_not_in_agency_gain_acres":round((target_area-overlap)/AREA,5),
+              "agency_gain_seagrass_not_in_source_2024_seagrass_acres":round((gain_area-overlap)/AREA,5),
+              "source_map_agency_gain_seagrass_jaccard":round(overlap/union,5) if union else None,
+              "source_2024_seagrass_covered_by_gain_percent":round(100*overlap/target_area,3) if target_area else None,
+              "these_are_not_independent_field_observations":True,
+            }
         out[fid]={
             "source_2022_algae_acres":original["source_algae_acres"],
             "our_2024_mapped_seagrass_overlap_acres":expected_sea,
@@ -195,6 +234,7 @@ def compare(giants,gain,loss,pinned_giant):
             "gain_seagrass_minus_our_2024_seagrass_acres":round(gain_sea-expected_sea,5),
             "loss_algae_minus_our_2024_unmapped_acres":round(loss_algae-original["2024_unmapped_area_acres"],5),
             "same_original_imagery_not_independent_ecology":True,
+            "spatial_location_concordance":spatial,
         }
     return out
 
@@ -209,7 +249,8 @@ def main():
         giant=source_giant_shapes(a.archive_root)
         gain=get_change("mapped_seagrass_gain",previous)
         loss=get_change("mapped_seagrass_loss",previous)
-        comparison=compare(giant,gain,loss,pinned_giant)
+        target=source_target_map_2024(a.archive_root)
+        comparison=compare(giant,gain,loss,pinned_giant,target=target)
         # Add no source geometry to the JSON summary and do not expose
         # FID OIDs as real-world biological study-site identifiers.
         out={
