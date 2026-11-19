@@ -1,0 +1,2127 @@
+{
+  "schema": "tampa.charlotte_patch_size_space_support_verified_release_v1",
+  "status": "SOURCE_VERIFIED_POSTHOC_DESCRIPTIVE_SIZE_AND_SPATIAL_SUPPORT_CONSTRAINT",
+  "audited_ci": {
+    "run_id": 44455648817,
+    "job_id": 135329893539,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/44455648817",
+    "artifact_id": 14497204622,
+    "artifact_zip_sha256": "sha256:fff3f0961ca079576e59940d5777186949bfb80a6ee9e2308ad56db91baa8bc0",
+    "completed_success": true,
+    "source_original_run": 44446913647,
+    "source_original_artifact_id": 14494425181,
+    "source_original_zip_digest": "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+  },
+  "report": {
+    "five_kilometre_representative_point_grid": {
+      "algae_source_area_with_comparable_seagrass_percent": 100,
+      "all_n_cells": 21,
+      "can_generalize_to_full_algae_area": true,
+      "cell_data": {
+        "-1584:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 78.838,
+            "patches": 9,
+            "retained_area_acres": 21.912,
+            "same_class_rate_percent": 78.838,
+            "source_area_acres": 27.793
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 64.793,
+            "patches": 31,
+            "retained_area_acres": 28.496,
+            "same_class_rate_percent": 84.504,
+            "source_area_acres": 33.721
+          }
+        },
+        "-1584:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 20.447,
+            "patches": 7,
+            "retained_area_acres": 2.096,
+            "same_class_rate_percent": 20.447,
+            "source_area_acres": 10.249
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 89.032,
+            "patches": 69,
+            "retained_area_acres": 903.903,
+            "same_class_rate_percent": 96.928,
+            "source_area_acres": 932.55
+          }
+        },
+        "-1584:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 12.837,
+            "patches": 28,
+            "retained_area_acres": 26.543,
+            "same_class_rate_percent": 12.837,
+            "source_area_acres": 206.777
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 60.893,
+            "patches": 82,
+            "retained_area_acres": 401.742,
+            "same_class_rate_percent": 71.328,
+            "source_area_acres": 563.229
+          }
+        },
+        "-1584:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 39.699,
+            "patches": 19,
+            "retained_area_acres": 119.276,
+            "same_class_rate_percent": 39.699,
+            "source_area_acres": 300.453
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 59.27,
+            "patches": 52,
+            "retained_area_acres": 574.453,
+            "same_class_rate_percent": 79.826,
+            "source_area_acres": 719.636
+          }
+        },
+        "-1584:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 24.023,
+            "patches": 10,
+            "retained_area_acres": 9.75,
+            "same_class_rate_percent": 24.023,
+            "source_area_acres": 40.586
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 63.851,
+            "patches": 27,
+            "retained_area_acres": 102.241,
+            "same_class_rate_percent": 79.152,
+            "source_area_acres": 129.171
+          }
+        },
+        "-1585:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 80.804,
+            "patches": 2,
+            "retained_area_acres": 0.905,
+            "same_class_rate_percent": 80.804,
+            "source_area_acres": 1.12
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 73.961,
+            "patches": 112,
+            "retained_area_acres": 427.554,
+            "same_class_rate_percent": 92.717,
+            "source_area_acres": 461.138
+          }
+        },
+        "-1585:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 57.789,
+            "patches": 24,
+            "retained_area_acres": 177.193,
+            "same_class_rate_percent": 73.462,
+            "source_area_acres": 241.202
+          }
+        },
+        "-1585:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 50.767,
+            "patches": 9,
+            "retained_area_acres": 35.774,
+            "same_class_rate_percent": 62.755,
+            "source_area_acres": 57.007
+          }
+        },
+        "-1586:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 63.143,
+            "patches": 171,
+            "retained_area_acres": 499.399,
+            "same_class_rate_percent": 78.532,
+            "source_area_acres": 635.916
+          }
+        },
+        "-1586:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 61.815,
+            "patches": 2,
+            "retained_area_acres": 1.299,
+            "same_class_rate_percent": 61.815,
+            "source_area_acres": 2.102
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 58.892,
+            "patches": 146,
+            "retained_area_acres": 758.136,
+            "same_class_rate_percent": 80.86,
+            "source_area_acres": 937.588
+          }
+        },
+        "-1586:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 74.467,
+            "patches": 18,
+            "retained_area_acres": 63.378,
+            "same_class_rate_percent": 74.467,
+            "source_area_acres": 85.109
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 82.209,
+            "patches": 80,
+            "retained_area_acres": 1533.925,
+            "same_class_rate_percent": 88.438,
+            "source_area_acres": 1734.456
+          }
+        },
+        "-1586:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 75.879,
+            "patches": 16,
+            "retained_area_acres": 20.198,
+            "same_class_rate_percent": 85.82,
+            "source_area_acres": 23.536
+          }
+        },
+        "-1586:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 77.589,
+            "patches": 7,
+            "retained_area_acres": 32.644,
+            "same_class_rate_percent": 94.346,
+            "source_area_acres": 34.6
+          }
+        },
+        "-1587:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 83.167,
+            "patches": 36,
+            "retained_area_acres": 451.046,
+            "same_class_rate_percent": 94.034,
+            "source_area_acres": 479.664
+          }
+        },
+        "-1587:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 75.538,
+            "patches": 36,
+            "retained_area_acres": 116.146,
+            "same_class_rate_percent": 95.009,
+            "source_area_acres": 122.248
+          }
+        },
+        "-1587:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 83.075,
+            "patches": 615,
+            "retained_area_acres": 558.791,
+            "same_class_rate_percent": 93.214,
+            "source_area_acres": 599.474
+          }
+        },
+        "-1587:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 64.57,
+            "patches": 6,
+            "retained_area_acres": 36.895,
+            "same_class_rate_percent": 79.815,
+            "source_area_acres": 46.226
+          }
+        },
+        "-1588:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 72.281,
+            "patches": 7,
+            "retained_area_acres": 1.525,
+            "same_class_rate_percent": 92.366,
+            "source_area_acres": 1.651
+          }
+        },
+        "-1588:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 67.136,
+            "patches": 121,
+            "retained_area_acres": 350.303,
+            "same_class_rate_percent": 94.198,
+            "source_area_acres": 371.881
+          }
+        },
+        "-1588:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 91.113,
+            "patches": 338,
+            "retained_area_acres": 4426.518,
+            "same_class_rate_percent": 97.168,
+            "source_area_acres": 4555.529
+          }
+        },
+        "-1588:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 65.345,
+            "patches": 223,
+            "retained_area_acres": 385.801,
+            "same_class_rate_percent": 92.487,
+            "source_area_acres": 417.14
+          }
+        }
+      },
+      "if_low_support": "If algae coverage <80%, weighted contrast is explicitly conditional on matched bins, not a classwide adjusted effect.",
+      "matched_algae_area_acres": 674.188,
+      "matched_n_cells": 8,
+      "matched_seagrass_area_acres": 5511.49,
+      "seagrass_source_area_with_comparable_algae_percent": 42.08,
+      "standardization_target": "source-area share of attached macroalgae in eligible bins/cells",
+      "weighted_mapped_same_class_persistence_percent": {
+        "attached_macroalgae": 36.364,
+        "seagrass": 78.744
+      },
+      "weighted_seagrass_minus_algae_points": 42.38
+    },
+    "fixed_bins_acres": [
+      [
+        0,
+        0.5,
+        "lt0.5ac"
+      ],
+      [
+        0.5,
+        2,
+        "0.5-2ac"
+      ],
+      [
+        2,
+        10,
+        "2-10ac"
+      ],
+      [
+        10,
+        50,
+        "10-50ac"
+      ],
+      [
+        50,
+        "inf",
+        "ge50ac"
+      ]
+    ],
+    "fixed_grid_width_metres": 5000,
+    "limitations": [
+      "A size-matched map-class retention contrast does NOT control photographic detection, phenology, water depth, patch shape or plant demographic survival.",
+      "Source polygons are spatially dependent; no p values or independent observational replicates are inferred.",
+      "The 5km grid is based on representative point of each source polygon; large polygons cross grid cells, so the grid is only a coarse geographic common-support screen.",
+      "Both class aggregation (patchy+continuous seagrass) and strict original FLUCCS code are reported to expose categorical coarsening.",
+      "If common-support algae area <80%, do not generalize to entire algae mapped footprint.",
+      "Same region, same remote sensing agency, post-hoc; not independent external validation."
+    ],
+    "no_causal_or_demographic_interpretation": true,
+    "no_independent_polygon_sample_size": true,
+    "no_unmapped_as_bare": true,
+    "original_archive": {
+      "artifact_id": 14494425181,
+      "run_id": 44446913647,
+      "zip_digest": "sha256:fb22443b6d0b8bf1a86cf82670342adf18c6d76971074b65f7cbafbfe9db1bea"
+    },
+    "schema": "tampa.charlotte_patch_size_spatial_support_retention_v1",
+    "size_by_grid_stratification": {
+      "algae_source_area_with_comparable_seagrass_percent": 47.288,
+      "all_n_cells": 90,
+      "can_generalize_to_full_algae_area": false,
+      "cell_data": {
+        "0.5-2ac|-1584:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 28.28,
+            "patches": 4,
+            "retained_area_acres": 1.167,
+            "same_class_rate_percent": 28.28,
+            "source_area_acres": 4.126
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 50.918,
+            "patches": 9,
+            "retained_area_acres": 6.022,
+            "same_class_rate_percent": 77.679,
+            "source_area_acres": 7.753
+          }
+        },
+        "0.5-2ac|-1584:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 28.602,
+            "patches": 4,
+            "retained_area_acres": 0.747,
+            "same_class_rate_percent": 28.602,
+            "source_area_acres": 2.613
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 83.534,
+            "patches": 22,
+            "retained_area_acres": 18.342,
+            "same_class_rate_percent": 93.114,
+            "source_area_acres": 19.698
+          }
+        },
+        "0.5-2ac|-1584:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 31.247,
+            "patches": 7,
+            "retained_area_acres": 2.028,
+            "same_class_rate_percent": 31.247,
+            "source_area_acres": 6.491
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 55.692,
+            "patches": 23,
+            "retained_area_acres": 17.572,
+            "same_class_rate_percent": 63.164,
+            "source_area_acres": 27.819
+          }
+        },
+        "0.5-2ac|-1584:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 35.519,
+            "patches": 8,
+            "retained_area_acres": 3.631,
+            "same_class_rate_percent": 35.519,
+            "source_area_acres": 10.223
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 49.325,
+            "patches": 11,
+            "retained_area_acres": 5.049,
+            "same_class_rate_percent": 49.609,
+            "source_area_acres": 10.177
+          }
+        },
+        "0.5-2ac|-1584:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 25.098,
+            "patches": 3,
+            "retained_area_acres": 0.888,
+            "same_class_rate_percent": 25.098,
+            "source_area_acres": 3.538
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 50.487,
+            "patches": 7,
+            "retained_area_acres": 3.335,
+            "same_class_rate_percent": 54.039,
+            "source_area_acres": 6.171
+          }
+        },
+        "0.5-2ac|-1585:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 76.382,
+            "patches": 1,
+            "retained_area_acres": 0.553,
+            "same_class_rate_percent": 76.382,
+            "source_area_acres": 0.724
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 67.816,
+            "patches": 24,
+            "retained_area_acres": 20.707,
+            "same_class_rate_percent": 90.449,
+            "source_area_acres": 22.894
+          }
+        },
+        "0.5-2ac|-1585:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 40.182,
+            "patches": 3,
+            "retained_area_acres": 1.63,
+            "same_class_rate_percent": 65.442,
+            "source_area_acres": 2.491
+          }
+        },
+        "0.5-2ac|-1585:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 24.397,
+            "patches": 3,
+            "retained_area_acres": 2.264,
+            "same_class_rate_percent": 80.408,
+            "source_area_acres": 2.816
+          }
+        },
+        "0.5-2ac|-1586:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 59.994,
+            "patches": 45,
+            "retained_area_acres": 36.77,
+            "same_class_rate_percent": 83.309,
+            "source_area_acres": 44.137
+          }
+        },
+        "0.5-2ac|-1586:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 61.815,
+            "patches": 2,
+            "retained_area_acres": 1.299,
+            "same_class_rate_percent": 61.815,
+            "source_area_acres": 2.102
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 75.824,
+            "patches": 55,
+            "retained_area_acres": 48.184,
+            "same_class_rate_percent": 88.079,
+            "source_area_acres": 54.705
+          }
+        },
+        "0.5-2ac|-1586:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 41.838,
+            "patches": 7,
+            "retained_area_acres": 3.914,
+            "same_class_rate_percent": 41.838,
+            "source_area_acres": 9.355
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 44.014,
+            "patches": 30,
+            "retained_area_acres": 22.463,
+            "same_class_rate_percent": 82.27,
+            "source_area_acres": 27.304
+          }
+        },
+        "0.5-2ac|-1586:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 0,
+            "patches": 2,
+            "retained_area_acres": 0.579,
+            "same_class_rate_percent": 44.269,
+            "source_area_acres": 1.308
+          }
+        },
+        "0.5-2ac|-1586:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 99.291,
+            "patches": 1,
+            "retained_area_acres": 0.549,
+            "same_class_rate_percent": 100,
+            "source_area_acres": 0.549
+          }
+        },
+        "0.5-2ac|-1587:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 93.012,
+            "patches": 7,
+            "retained_area_acres": 5.393,
+            "same_class_rate_percent": 99.924,
+            "source_area_acres": 5.397
+          }
+        },
+        "0.5-2ac|-1587:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 58.764,
+            "patches": 10,
+            "retained_area_acres": 8.122,
+            "same_class_rate_percent": 89.062,
+            "source_area_acres": 9.119
+          }
+        },
+        "0.5-2ac|-1587:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 79.769,
+            "patches": 154,
+            "retained_area_acres": 137.559,
+            "same_class_rate_percent": 90.852,
+            "source_area_acres": 151.41
+          }
+        },
+        "0.5-2ac|-1587:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 84.752,
+            "patches": 2,
+            "retained_area_acres": 2.083,
+            "same_class_rate_percent": 94.145,
+            "source_area_acres": 2.213
+          }
+        },
+        "0.5-2ac|-1588:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 37.535,
+            "patches": 1,
+            "retained_area_acres": 0.531,
+            "same_class_rate_percent": 100,
+            "source_area_acres": 0.531
+          }
+        },
+        "0.5-2ac|-1588:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 87.007,
+            "patches": 27,
+            "retained_area_acres": 25.62,
+            "same_class_rate_percent": 93.856,
+            "source_area_acres": 27.297
+          }
+        },
+        "0.5-2ac|-1588:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 76.329,
+            "patches": 93,
+            "retained_area_acres": 81.921,
+            "same_class_rate_percent": 90.525,
+            "source_area_acres": 90.495
+          }
+        },
+        "0.5-2ac|-1588:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 72.548,
+            "patches": 79,
+            "retained_area_acres": 71.962,
+            "same_class_rate_percent": 90.004,
+            "source_area_acres": 79.955
+          }
+        },
+        "10-50ac|-1584:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 89.044,
+            "patches": 1,
+            "retained_area_acres": 16.773,
+            "same_class_rate_percent": 89.044,
+            "source_area_acres": 18.837
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 62.841,
+            "patches": 1,
+            "retained_area_acres": 10.228,
+            "same_class_rate_percent": 76.47,
+            "source_area_acres": 13.375
+          }
+        },
+        "10-50ac|-1584:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 81.089,
+            "patches": 1,
+            "retained_area_acres": 10.984,
+            "same_class_rate_percent": 84.07,
+            "source_area_acres": 13.066
+          }
+        },
+        "10-50ac|-1584:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 27.371,
+            "patches": 3,
+            "retained_area_acres": 11.929,
+            "same_class_rate_percent": 27.371,
+            "source_area_acres": 43.581
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 47.222,
+            "patches": 10,
+            "retained_area_acres": 144.572,
+            "same_class_rate_percent": 56.921,
+            "source_area_acres": 253.986
+          }
+        },
+        "10-50ac|-1584:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 66.307,
+            "patches": 5,
+            "retained_area_acres": 52.312,
+            "same_class_rate_percent": 66.307,
+            "source_area_acres": 78.894
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 57.52,
+            "patches": 4,
+            "retained_area_acres": 65.455,
+            "same_class_rate_percent": 76.169,
+            "source_area_acres": 85.934
+          }
+        },
+        "10-50ac|-1584:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 0,
+            "patches": 1,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": 0,
+            "source_area_acres": 12.237
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 66.111,
+            "patches": 6,
+            "retained_area_acres": 91.273,
+            "same_class_rate_percent": 83.187,
+            "source_area_acres": 109.721
+          }
+        },
+        "10-50ac|-1585:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 79.57,
+            "patches": 1,
+            "retained_area_acres": 20.875,
+            "same_class_rate_percent": 100,
+            "source_area_acres": 20.875
+          }
+        },
+        "10-50ac|-1585:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 52.702,
+            "patches": 2,
+            "retained_area_acres": 32.69,
+            "same_class_rate_percent": 61.251,
+            "source_area_acres": 53.371
+          }
+        },
+        "10-50ac|-1586:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 54.835,
+            "patches": 14,
+            "retained_area_acres": 203.803,
+            "same_class_rate_percent": 70.484,
+            "source_area_acres": 289.15
+          }
+        },
+        "10-50ac|-1586:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 56.579,
+            "patches": 17,
+            "retained_area_acres": 250.156,
+            "same_class_rate_percent": 74.041,
+            "source_area_acres": 337.864
+          }
+        },
+        "10-50ac|-1586:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 84.943,
+            "patches": 2,
+            "retained_area_acres": 42.354,
+            "same_class_rate_percent": 84.943,
+            "source_area_acres": 49.862
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 42.145,
+            "patches": 3,
+            "retained_area_acres": 27.327,
+            "same_class_rate_percent": 47.707,
+            "source_area_acres": 57.28
+          }
+        },
+        "10-50ac|-1586:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 88.119,
+            "patches": 1,
+            "retained_area_acres": 10.492,
+            "same_class_rate_percent": 93.937,
+            "source_area_acres": 11.169
+          }
+        },
+        "10-50ac|-1586:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 75.404,
+            "patches": 1,
+            "retained_area_acres": 23.544,
+            "same_class_rate_percent": 98.959,
+            "source_area_acres": 23.792
+          }
+        },
+        "10-50ac|-1587:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 45.813,
+            "patches": 1,
+            "retained_area_acres": 29.144,
+            "same_class_rate_percent": 85.136,
+            "source_area_acres": 34.233
+          }
+        },
+        "10-50ac|-1587:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 78.049,
+            "patches": 4,
+            "retained_area_acres": 83.285,
+            "same_class_rate_percent": 97.021,
+            "source_area_acres": 85.842
+          }
+        },
+        "10-50ac|-1587:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 83.803,
+            "patches": 7,
+            "retained_area_acres": 122.61,
+            "same_class_rate_percent": 95.699,
+            "source_area_acres": 128.12
+          }
+        },
+        "10-50ac|-1587:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 66.668,
+            "patches": 1,
+            "retained_area_acres": 24.613,
+            "same_class_rate_percent": 76.942,
+            "source_area_acres": 31.989
+          }
+        },
+        "10-50ac|-1588:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 90.232,
+            "patches": 6,
+            "retained_area_acres": 159.388,
+            "same_class_rate_percent": 96.923,
+            "source_area_acres": 164.449
+          }
+        },
+        "10-50ac|-1588:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 77.98,
+            "patches": 6,
+            "retained_area_acres": 127.163,
+            "same_class_rate_percent": 91.088,
+            "source_area_acres": 139.605
+          }
+        },
+        "10-50ac|-1588:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 62.53,
+            "patches": 9,
+            "retained_area_acres": 180.789,
+            "same_class_rate_percent": 96.901,
+            "source_area_acres": 186.572
+          }
+        },
+        "2-10ac|-1584:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 88.81,
+            "patches": 1,
+            "retained_area_acres": 3.19,
+            "same_class_rate_percent": 88.81,
+            "source_area_acres": 3.592
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 90.888,
+            "patches": 2,
+            "retained_area_acres": 8.079,
+            "same_class_rate_percent": 98.235,
+            "source_area_acres": 8.224
+          }
+        },
+        "2-10ac|-1584:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 14.409,
+            "patches": 1,
+            "retained_area_acres": 1.026,
+            "same_class_rate_percent": 14.409,
+            "source_area_acres": 7.118
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 73.587,
+            "patches": 4,
+            "retained_area_acres": 23.131,
+            "same_class_rate_percent": 99.837,
+            "source_area_acres": 23.168
+          }
+        },
+        "2-10ac|-1584:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 26.166,
+            "patches": 6,
+            "retained_area_acres": 7.146,
+            "same_class_rate_percent": 26.166,
+            "source_area_acres": 27.311
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 42.697,
+            "patches": 17,
+            "retained_area_acres": 45.972,
+            "same_class_rate_percent": 57.083,
+            "source_area_acres": 80.535
+          }
+        },
+        "2-10ac|-1584:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 67.753,
+            "patches": 5,
+            "retained_area_acres": 16.746,
+            "same_class_rate_percent": 67.753,
+            "source_area_acres": 24.716
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 33.241,
+            "patches": 16,
+            "retained_area_acres": 34.275,
+            "same_class_rate_percent": 49.754,
+            "source_area_acres": 68.89
+          }
+        },
+        "2-10ac|-1584:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 35.717,
+            "patches": 6,
+            "retained_area_acres": 8.862,
+            "same_class_rate_percent": 35.717,
+            "source_area_acres": 24.811
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 47.209,
+            "patches": 2,
+            "retained_area_acres": 4.635,
+            "same_class_rate_percent": 49.89,
+            "source_area_acres": 9.291
+          }
+        },
+        "2-10ac|-1585:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 64.569,
+            "patches": 11,
+            "retained_area_acres": 45.959,
+            "same_class_rate_percent": 83.503,
+            "source_area_acres": 55.039
+          }
+        },
+        "2-10ac|-1586:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 57.713,
+            "patches": 27,
+            "retained_area_acres": 87.789,
+            "same_class_rate_percent": 73.602,
+            "source_area_acres": 119.274
+          }
+        },
+        "2-10ac|-1586:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 60.41,
+            "patches": 36,
+            "retained_area_acres": 134.483,
+            "same_class_rate_percent": 84.064,
+            "source_area_acres": 159.977
+          }
+        },
+        "2-10ac|-1586:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 68.322,
+            "patches": 6,
+            "retained_area_acres": 17.11,
+            "same_class_rate_percent": 68.322,
+            "source_area_acres": 25.042
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 47.869,
+            "patches": 9,
+            "retained_area_acres": 25.849,
+            "same_class_rate_percent": 65.721,
+            "source_area_acres": 39.331
+          }
+        },
+        "2-10ac|-1586:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 90.731,
+            "patches": 1,
+            "retained_area_acres": 8.424,
+            "same_class_rate_percent": 95.344,
+            "source_area_acres": 8.836
+          }
+        },
+        "2-10ac|-1586:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 82.388,
+            "patches": 3,
+            "retained_area_acres": 7.993,
+            "same_class_rate_percent": 82.388,
+            "source_area_acres": 9.701
+          }
+        },
+        "2-10ac|-1587:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 50.975,
+            "patches": 6,
+            "retained_area_acres": 13.357,
+            "same_class_rate_percent": 53.789,
+            "source_area_acres": 24.833
+          }
+        },
+        "2-10ac|-1587:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 77.175,
+            "patches": 6,
+            "retained_area_acres": 22.639,
+            "same_class_rate_percent": 95.265,
+            "source_area_acres": 23.764
+          }
+        },
+        "2-10ac|-1587:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 83.301,
+            "patches": 49,
+            "retained_area_acres": 169.836,
+            "same_class_rate_percent": 90.935,
+            "source_area_acres": 186.766
+          }
+        },
+        "2-10ac|-1587:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 55.273,
+            "patches": 3,
+            "retained_area_acres": 10.199,
+            "same_class_rate_percent": 84.821,
+            "source_area_acres": 12.024
+          }
+        },
+        "2-10ac|-1588:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 75.312,
+            "patches": 20,
+            "retained_area_acres": 74.896,
+            "same_class_rate_percent": 84.937,
+            "source_area_acres": 88.178
+          }
+        },
+        "2-10ac|-1588:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 68.382,
+            "patches": 34,
+            "retained_area_acres": 127.233,
+            "same_class_rate_percent": 89.168,
+            "source_area_acres": 142.689
+          }
+        },
+        "2-10ac|-1588:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 62.434,
+            "patches": 34,
+            "retained_area_acres": 113.02,
+            "same_class_rate_percent": 87.295,
+            "source_area_acres": 129.47
+          }
+        },
+        "ge50ac|-1584:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 89.724,
+            "patches": 2,
+            "retained_area_acres": 841.146,
+            "same_class_rate_percent": 97.166,
+            "source_area_acres": 865.675
+          }
+        },
+        "ge50ac|-1584:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 3.995,
+            "patches": 1,
+            "retained_area_acres": 5.028,
+            "same_class_rate_percent": 3.995,
+            "source_area_acres": 125.857
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 86.634,
+            "patches": 2,
+            "retained_area_acres": 186.796,
+            "same_class_rate_percent": 96.714,
+            "source_area_acres": 193.144
+          }
+        },
+        "ge50ac|-1584:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 24.964,
+            "patches": 1,
+            "retained_area_acres": 46.588,
+            "same_class_rate_percent": 24.964,
+            "source_area_acres": 186.62
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 62.958,
+            "patches": 3,
+            "retained_area_acres": 466.524,
+            "same_class_rate_percent": 84.792,
+            "source_area_acres": 550.196
+          }
+        },
+        "ge50ac|-1585:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 75.618,
+            "patches": 3,
+            "retained_area_acres": 327.083,
+            "same_class_rate_percent": 93.938,
+            "source_area_acres": 348.191
+          }
+        },
+        "ge50ac|-1585:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 58.114,
+            "patches": 2,
+            "retained_area_acres": 173.058,
+            "same_class_rate_percent": 73.479,
+            "source_area_acres": 235.519
+          }
+        },
+        "ge50ac|-1586:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 85.228,
+            "patches": 2,
+            "retained_area_acres": 155.693,
+            "same_class_rate_percent": 96.145,
+            "source_area_acres": 161.936
+          }
+        },
+        "ge50ac|-1586:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 57.981,
+            "patches": 4,
+            "retained_area_acres": 317.256,
+            "same_class_rate_percent": 84.431,
+            "source_area_acres": 375.758
+          }
+        },
+        "ge50ac|-1586:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 85.247,
+            "patches": 4,
+            "retained_area_acres": 1450.681,
+            "same_class_rate_percent": 90.559,
+            "source_area_acres": 1601.919
+          }
+        },
+        "ge50ac|-1587:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 88.034,
+            "patches": 1,
+            "retained_area_acres": 398.943,
+            "same_class_rate_percent": 97.099,
+            "source_area_acres": 410.862
+          }
+        },
+        "ge50ac|-1587:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 89.461,
+            "patches": 1,
+            "retained_area_acres": 52.501,
+            "same_class_rate_percent": 99.363,
+            "source_area_acres": 52.838
+          }
+        },
+        "ge50ac|-1588:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 0,
+            "patches": 1,
+            "retained_area_acres": 76.576,
+            "same_class_rate_percent": 100,
+            "source_area_acres": 76.576
+          }
+        },
+        "ge50ac|-1588:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 92.785,
+            "patches": 3,
+            "retained_area_acres": 4047.677,
+            "same_class_rate_percent": 97.835,
+            "source_area_acres": 4137.228
+          }
+        },
+        "lt0.5ac|-1584:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 63.122,
+            "patches": 3,
+            "retained_area_acres": 0.782,
+            "same_class_rate_percent": 63.122,
+            "source_area_acres": 1.239
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 46.271,
+            "patches": 19,
+            "retained_area_acres": 4.166,
+            "same_class_rate_percent": 95.364,
+            "source_area_acres": 4.369
+          }
+        },
+        "lt0.5ac|-1584:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 62.309,
+            "patches": 2,
+            "retained_area_acres": 0.323,
+            "same_class_rate_percent": 62.309,
+            "source_area_acres": 0.518
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 86.322,
+            "patches": 40,
+            "retained_area_acres": 10.3,
+            "same_class_rate_percent": 94.124,
+            "source_area_acres": 10.943
+          }
+        },
+        "lt0.5ac|-1584:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 11.642,
+            "patches": 11,
+            "retained_area_acres": 0.412,
+            "same_class_rate_percent": 11.642,
+            "source_area_acres": 3.537
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 75.185,
+            "patches": 30,
+            "retained_area_acres": 6.83,
+            "same_class_rate_percent": 88.19,
+            "source_area_acres": 7.745
+          }
+        },
+        "lt0.5ac|-1584:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 62.828,
+            "patches": 18,
+            "retained_area_acres": 3.15,
+            "same_class_rate_percent": 70.964,
+            "source_area_acres": 4.438
+          }
+        },
+        "lt0.5ac|-1584:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 61.112,
+            "patches": 12,
+            "retained_area_acres": 2.998,
+            "same_class_rate_percent": 75.162,
+            "source_area_acres": 3.988
+          }
+        },
+        "lt0.5ac|-1585:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 88.893,
+            "patches": 1,
+            "retained_area_acres": 0.352,
+            "same_class_rate_percent": 88.893,
+            "source_area_acres": 0.396
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 71.389,
+            "patches": 73,
+            "retained_area_acres": 12.93,
+            "same_class_rate_percent": 91.451,
+            "source_area_acres": 14.139
+          }
+        },
+        "lt0.5ac|-1585:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 47.49,
+            "patches": 19,
+            "retained_area_acres": 2.505,
+            "same_class_rate_percent": 78.474,
+            "source_area_acres": 3.192
+          }
+        },
+        "lt0.5ac|-1585:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 15.398,
+            "patches": 4,
+            "retained_area_acres": 0.82,
+            "same_class_rate_percent": 100,
+            "source_area_acres": 0.82
+          }
+        },
+        "lt0.5ac|-1586:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 45.069,
+            "patches": 83,
+            "retained_area_acres": 15.343,
+            "same_class_rate_percent": 71.638,
+            "source_area_acres": 21.418
+          }
+        },
+        "lt0.5ac|-1586:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 54.014,
+            "patches": 34,
+            "retained_area_acres": 8.056,
+            "same_class_rate_percent": 86.774,
+            "source_area_acres": 9.284
+          }
+        },
+        "lt0.5ac|-1586:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 0,
+            "patches": 3,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": 0,
+            "source_area_acres": 0.849
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 61.47,
+            "patches": 34,
+            "retained_area_acres": 7.605,
+            "same_class_rate_percent": 88.212,
+            "source_area_acres": 8.622
+          }
+        },
+        "lt0.5ac|-1586:661": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 0,
+            "patches": 12,
+            "retained_area_acres": 0.703,
+            "same_class_rate_percent": 31.635,
+            "source_area_acres": 2.223
+          }
+        },
+        "lt0.5ac|-1586:662": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 65.995,
+            "patches": 2,
+            "retained_area_acres": 0.558,
+            "same_class_rate_percent": 100,
+            "source_area_acres": 0.558
+          }
+        },
+        "lt0.5ac|-1587:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 89.007,
+            "patches": 21,
+            "retained_area_acres": 4.209,
+            "same_class_rate_percent": 96.998,
+            "source_area_acres": 4.339
+          }
+        },
+        "lt0.5ac|-1587:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 46.725,
+            "patches": 16,
+            "retained_area_acres": 2.101,
+            "same_class_rate_percent": 59.638,
+            "source_area_acres": 3.523
+          }
+        },
+        "lt0.5ac|-1587:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 83.417,
+            "patches": 404,
+            "retained_area_acres": 76.285,
+            "same_class_rate_percent": 94.955,
+            "source_area_acres": 80.339
+          }
+        },
+        "lt0.5ac|-1588:657": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 88.748,
+            "patches": 6,
+            "retained_area_acres": 0.994,
+            "same_class_rate_percent": 88.748,
+            "source_area_acres": 1.12
+          }
+        },
+        "lt0.5ac|-1588:658": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 72.321,
+            "patches": 67,
+            "retained_area_acres": 13.824,
+            "same_class_rate_percent": 89.877,
+            "source_area_acres": 15.381
+          }
+        },
+        "lt0.5ac|-1588:659": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 80.056,
+            "patches": 202,
+            "retained_area_acres": 42.524,
+            "same_class_rate_percent": 93.437,
+            "source_area_acres": 45.511
+          }
+        },
+        "lt0.5ac|-1588:660": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": null,
+            "patches": 0,
+            "retained_area_acres": 0,
+            "same_class_rate_percent": null,
+            "source_area_acres": 0
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 80.77,
+            "patches": 101,
+            "retained_area_acres": 20.029,
+            "same_class_rate_percent": 94.729,
+            "source_area_acres": 21.144
+          }
+        }
+      },
+      "if_low_support": "If algae coverage <80%, weighted contrast is explicitly conditional on matched bins, not a classwide adjusted effect.",
+      "matched_algae_area_acres": 318.807,
+      "matched_n_cells": 18,
+      "matched_seagrass_area_acres": 780.554,
+      "seagrass_source_area_with_comparable_algae_percent": 5.96,
+      "standardization_target": "source-area share of attached macroalgae in eligible bins/cells",
+      "weighted_mapped_same_class_persistence_percent": {
+        "attached_macroalgae": 53.841,
+        "seagrass": 61.861
+      },
+      "weighted_seagrass_minus_algae_points": 8.02
+    },
+    "size_stratification": {
+      "algae_source_area_with_comparable_seagrass_percent": 53.651,
+      "all_n_cells": 5,
+      "can_generalize_to_full_algae_area": false,
+      "cell_data": {
+        "0.5-2ac": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 36.322,
+            "patches": 36,
+            "retained_area_acres": 14.228,
+            "same_class_rate_percent": 36.322,
+            "source_area_acres": 39.171
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 71.659,
+            "patches": 608,
+            "retained_area_acres": 516.657,
+            "same_class_rate_percent": 86.944,
+            "source_area_acres": 594.24
+          }
+        },
+        "10-50ac": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 60.65,
+            "patches": 12,
+            "retained_area_acres": 123.368,
+            "same_class_rate_percent": 60.65,
+            "source_area_acres": 203.41
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 63.349,
+            "patches": 95,
+            "retained_area_acres": 1618.394,
+            "same_class_rate_percent": 79.318,
+            "source_area_acres": 2040.392
+          }
+        },
+        "2-10ac": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 48.031,
+            "patches": 25,
+            "retained_area_acres": 54.079,
+            "same_class_rate_percent": 48.031,
+            "source_area_acres": 112.591
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 63.873,
+            "patches": 280,
+            "retained_area_acres": 957.768,
+            "same_class_rate_percent": 80.485,
+            "source_area_acres": 1189.992
+          }
+        },
+        "ge50ac": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 16.518,
+            "patches": 2,
+            "retained_area_acres": 51.616,
+            "same_class_rate_percent": 16.518,
+            "source_area_acres": 312.477
+          },
+          "in_common_support": false,
+          "seagrass": {
+            "exact_code_rate_percent": 85.016,
+            "patches": 28,
+            "retained_area_acres": 8493.934,
+            "same_class_rate_percent": 94.274,
+            "source_area_acres": 9009.842
+          }
+        },
+        "lt0.5ac": {
+          "attached_macroalgae": {
+            "exact_code_rate_percent": 28.574,
+            "patches": 20,
+            "retained_area_acres": 1.868,
+            "same_class_rate_percent": 28.574,
+            "source_area_acres": 6.538
+          },
+          "in_common_support": true,
+          "seagrass": {
+            "exact_code_rate_percent": 73.259,
+            "patches": 1197,
+            "retained_area_acres": 235.932,
+            "same_class_rate_percent": 89.675,
+            "source_area_acres": 263.096
+          }
+        }
+      },
+      "if_low_support": "If algae coverage <80%, weighted contrast is explicitly conditional on matched bins, not a classwide adjusted effect.",
+      "matched_algae_area_acres": 361.71,
+      "matched_n_cells": 4,
+      "matched_seagrass_area_acres": 4087.72,
+      "seagrass_source_area_with_comparable_algae_percent": 31.21,
+      "standardization_target": "source-area share of attached macroalgae in eligible bins/cells",
+      "weighted_mapped_same_class_persistence_percent": {
+        "attached_macroalgae": 53.508,
+        "seagrass": 80.694
+      },
+      "weighted_seagrass_minus_algae_points": 27.186
+    },
+    "source_sha256": {
+      "2022": "e05d4f95cac9eedf5913d820ae1f90b56a17f793795a29f5d6a0488c7c9fa15e",
+      "2024": "4bb3530efebc5a8ae7866fd4e23a13f62110a602565534b800bb6cd38110d42e"
+    },
+    "status": "SOURCE_ARCHIVE_VERIFIED_POSTHOC_DESCRIPTIVE_SIZE_AND_GRID_SUPPORT",
+    "support_gates": {
+      "minimum_algae_source_area_support_percent": 80,
+      "size_area_each_acres": 1,
+      "size_n_each": 3,
+      "spatial_area_each_acres": 0.5,
+      "spatial_n_each": 2
+    },
+    "unmatched_original": {
+      "by_2022_class": {
+        "attached_macroalgae": {
+          "exact_code_rate_percent": 36.364,
+          "patches": 95,
+          "retained_area_acres": 245.158,
+          "same_class_rate_percent": 36.364,
+          "source_area_acres": 674.188
+        },
+        "seagrass": {
+          "exact_code_rate_percent": 78.877,
+          "patches": 2208,
+          "retained_area_acres": 11822.685,
+          "same_class_rate_percent": 90.266,
+          "source_area_acres": 13097.562
+        }
+      },
+      "strict_same_FLUCCS_code_seagrass_percent": 78.877
+    }
+  },
+  "explicit_scientific_conclusions": [
+    "Before adjustment, sea and attached-algae same-broad-map-class retention differ by +53.902 percentage points.",
+    "Class-specific size distribution matters: the two source algae polygons >=50 acres account for about 46% of 2022 mapped algae area and have 16.518% same-class retention.",
+    "On the source-area common support in 4 fixed size bins (53.651% of algae area), sea vs algae standardized retention rates are 80.694% vs 53.508%, +27.186 points. Do not generalize to unmatched large algae polygons.",
+    "On size-bin + 5km representative-point grid support (47.288% of algae area), the descriptive difference is +8.020 points: sea 61.861%, algae 53.841%. This is CONDITIONAL on a minority of algae area, not a classwide adjusted result.",
+    "Strict same original FLUCCS classification is 78.877% for 2022 sea rather than 90.266% for patchy-plus-continuous combined, showing that category aggregation matters.",
+    "Neither mapped class contrasts nor strata establish biological survival, competition, or a causal algae effect; map detectability, source patch geometry, imagery dates, and spatial autocorrelation remain unresolved."
+  ]
+}
