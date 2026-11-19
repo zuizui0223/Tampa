@@ -17,7 +17,7 @@ class SegmentAudit(unittest.TestCase):
         self.assertEqual(r["east_wall_north_decline_acres"],-270)
         self.assertEqual(r["myakka_river_reported_gain_acres"],12)
         self.assertEqual(r["top_three_reported_absolute_decline_segments"],
-                         [["East Wall North",270],["Southern Charlotte",211],["West Wall",130]])
+                         [("East Wall North",270),("Southern Charlotte",211),("West Wall",130)])
         self.assertAlmostEqual(r["share_of_reported_bay_net_loss_attributable_to_top_three_negative_deltas_percent"],68.42,places=2)
         self.assertTrue(r["one_acre_rounding_inconsistency_disclosed"])
     def test_source_value_change_refused(self):
