@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-22  
 **Status:** Exact mathematical sufficiency example / no new response fitting / no new causal inference  
-**Source:** \`results/return_fragility_v1.json\`, \`results/return_fragility_v1_contract.json\` (Tampa main)
+**Source:** `results/return_fragility_v1.json`, `results/return_fragility_v1_contract.json` (Tampa main)
 
 ## Scientific motivation
 
@@ -61,7 +61,7 @@ Take *prior* across-mark recording probabilities \(p_i\sim\mathrm{Beta}(\alpha=1
 
 ## Why a node-fixed-effect model does not close this alternative
 
-A fixed transect node may include many distinct meter marks. The existing model controls \`node_id\` and return year, but **does not estimate one persistent recording probability per exact mark from independent repeat visits**. Permanent among-mark differences in abundance, placement or detection can therefore retain the same selection effect inside a fixed transect.
+A fixed transect node may include many distinct meter marks. The existing model controls `node_id` and return year, but **does not estimate one persistent recording probability per exact mark from independent repeat visits**. Permanent among-mark differences in abundance, placement or detection can therefore retain the same selection effect inside a fixed transect.
 
 The adjacent 701-sequence Braun–Blanquet result (1.95 vs 2.93 after a gap) is biologically interesting, but a low/unstable patch-recording propensity could also correlate with recorded abundance. The separately frozen quantitative-mediation test did **not** establish that return BB drives later recorded loss. These distinct sequence cohorts cannot be merged.
 
@@ -73,7 +73,7 @@ The adjacent 701-sequence Braun–Blanquet result (1.95 vs 2.93 after a gap) is 
 4. **Hold out actual next-year same-mark outcomes** and compare calibration/log loss under a previously frozen protocol. A biological claim requires improved latent-state prediction beyond the detection-only model, together with direct state measurements; a risk-ranking gain alone is not a regeneration mechanism.
 5. **No retrospective rescue:** do not retune the already-opened 2016–2025 four-year events, select new mark subsets based on risk, infer an effective p distribution from the observed 2.81 risk ratio, or label a post-hoc calibration an independent validation.
 
-Occupancy models explicitly separate occupancy from imperfect detection and, in dynamic settings, estimated colonization/extinction (MacKenzie et al., 2002, *Ecology* 83:2248–2255, DOI 10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2; MacKenzie et al. 2003 *Ecology* 84:2200–2207, DOI 10.1890/02-3090). Aquatic-plant occupancy has also been studied with spatial sub-sampling to address imperfect detection (e.g. Journal of Environmental Management 2011, https://www.sciencedirect.com/science/article/pii/S0304377011001045). These are methodological precedents, not claims about Tampa-specific estimates.
+Occupancy models explicitly separate occupancy from imperfect detection and, in dynamic settings, estimated colonization/extinction (MacKenzie et al., 2002, *Ecology* 83:2248–2255, DOI 10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2; MacKenzie et al. 2003 *Ecology* 84:2200–2207, DOI 10.1890/02-3090). Aquatic-plant occupancy has also been studied with spatial sub-sampling to address imperfect detection (e.g. Nielson et al. 2011, *Aquatic Botany* 95:221–225, DOI 10.1016/j.aquabot.2011.06.004). These are methodological precedents, not claims about Tampa-specific estimates.
 
 ## Implication for conservation and novelty
 
@@ -83,7 +83,7 @@ Occupancy models explicitly separate occupancy from imperfect detection and, in 
 
 ## Reproduce
 
-This code reads only the frozen canonical \`results/return_fragility_v1.json\` summary and uses standard-library exact probability identities. It never accesses original individual event-level outcomes.
+This code reads only the frozen canonical `results/return_fragility_v1.json` summary and uses standard-library exact probability identities. It never accesses original individual event-level outcomes.
 
 ~~~bash
 python -m unittest discover -s validation -p 'test_return_fragility_detection_only_counterexample.py' -v
@@ -92,4 +92,4 @@ python analysis/110_return_fragility_detection_only_counterexample.py \
   --out /tmp/return_fragility_detection_only_counterexample.json
 ~~~
 
-This is a separate falsification note. It neither alters \`results/return_fragility_v1.json\` nor the original manuscript, TNC programme, early-warning endpoint or prospective field contracts.
+This is a separate falsification note. It neither alters `results/return_fragility_v1.json` nor the original manuscript, TNC programme, early-warning endpoint or prospective field contracts.
