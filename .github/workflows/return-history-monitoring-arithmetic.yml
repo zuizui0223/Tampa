@@ -1,0 +1,30 @@
+name: Tampa return-history monitoring arithmetic
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/109_return_history_monitoring_arithmetic.py'
+      - 'validation/test_return_history_monitoring_arithmetic.py'
+      - 'docs/RETURN_HISTORY_MONITORING_TRANSLATION_20261122.md'
+      - 'results/return_fragility_v1.json'
+      - '.github/workflows/return-history-monitoring-arithmetic.yml'
+jobs:
+  account:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic fail-closed tests
+        run: python -m unittest discover -s validation -p 'test_return_history_monitoring_arithmetic.py' -v
+      - name: Derive from canonical frozen source
+        run: |
+          python analysis/109_return_history_monitoring_arithmetic.py \
+            --source results/return_fragility_v1.json \
+            --out /tmp/tampa_return_history_monitoring_arithmetic.json
+          cat /tmp/tampa_return_history_monitoring_arithmetic.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tampa-return-history-monitoring-arithmetic
+          path: /tmp/tampa_return_history_monitoring_arithmetic.json
