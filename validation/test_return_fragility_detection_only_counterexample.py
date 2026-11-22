@@ -61,7 +61,7 @@ class CounterexampleTests(unittest.TestCase):
         self.assertEqual(o["later_non_detections_gap_group"], 30)
         self.assertEqual(o["later_non_detections_uninterrupted"], 64)
         self.assertAlmostEqual(o["risk_ratio"], (30 / 83) / (64 / 497))
-        self.assertIn("post", x["limits"][0].lower())
+        self.assertIn("after the published outcome", x["limits"][0].lower())
 
     def test_bad_source_fails_closed(self):
         for mutation in ("schema", "status", "events", "rounding"):
