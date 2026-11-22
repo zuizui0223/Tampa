@@ -1,0 +1,30 @@
+name: Tampa known-truth detection-only counterexample
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/110_return_fragility_detection_only_counterexample.py'
+      - 'validation/test_return_fragility_detection_only_counterexample.py'
+      - 'docs/RETURN_FRAGILITY_DETECTION_ONLY_COUNTEREXAMPLE_20261122.md'
+      - 'results/return_fragility_v1.json'
+      - '.github/workflows/return-fragility-detection-only-counterexample.yml'
+jobs:
+  analytic-selection-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exact source-independent analytic proof and contract tests
+        run: python -m unittest discover -s validation -p 'test_return_fragility_detection_only_counterexample.py' -v
+      - name: Reaggregate only the frozen source summary and generate exact counterexample
+        run: |
+          python analysis/110_return_fragility_detection_only_counterexample.py \
+            --source results/return_fragility_v1.json \
+            --out /tmp/tampa_return_fragility_detection_only_counterexample.json
+          cat /tmp/tampa_return_fragility_detection_only_counterexample.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tampa-return-fragility-detection-only-known-truth
+          path: /tmp/tampa_return_fragility_detection_only_counterexample.json
