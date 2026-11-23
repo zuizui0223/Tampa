@@ -53,6 +53,12 @@ Three independent observations only exceed a 95% cumulative detection probabilit
 
 **Existing frozen TNC study has priority.** Historical feasibility is 41 recent Thalassia-positive nodes across four bays; 38 nodes have 3 distinct quantitative q25/q50/q75 baseline anchors (114 historical anchors). These are NOT approved contemporary sites. The separate TNC-v2 primary requires >=36 analyzable nodes, >=6 per bay, one synchronized <=28-day campaign, lab pilot and sampling permits. Project documentation currently reports STOP_RESOURCE_FREEZE_INCOMPLETE. An optional detection pilot must not alter that registration or consume its outcome-bearing field budget.
 
+## Raw field input protocol (new, no observations)
+
+An **empty, explicitly non-ready** CSV is provided at field/return_detection_pilot_raw_v1_template.csv. Each row is one observer/mark/visit/mode record, with a timezone-offset timestamp and an auditable image ID. Accepted modes are **registered_revisit** (fixed footprint repeated in a new field round), **blind_photo_recheck** (a second reading of the same image), and **offset_subquadrat** (a different physical subunit). Unvisited and unread rows carry was_sampled=0 with *blank* Thalassia state and Braun-Blanquet score, **never a zero**. The input is invalid if an unvisited row is labelled as a zero, a sampled image lacks an explicit 0/1 recorded state, the same photo is reused as an allegedly independent field revisit, or an offset subquadrat is presented without an offset identifier.
+
+The fail-closed Python validator is validation/validate_return_detection_pilot_raw_v1.py and its synthetic-only test is validation/test_return_detection_pilot_raw_v1.py. Its successful return is always **RAW_SYNTAX_QC_ONLY_NOT_FIELD_READY**, and it deliberately sets both independence_certified and closure_certified to false; it cannot authorize fieldwork or claim an occupancy estimate. A candidate mark with >=2 distinct recorded visit IDs is merely a candidate for **human** independent-repeat certification.
+
 ## Prior work and novelty
 
 Detection-adjusted dynamic occupancy and repeat-survey designs are already established: MacKenzie et al. (2003), Ecology 84:2200-2207 (https://doi.org/10.1890/02-3090); MacKenzie & Royle (2005), Journal of Applied Ecology 42:1105-1114 (https://doi.org/10.1111/j.1365-2664.2005.01098.x). Seagrass-Watch monitoring guidance (https://www.seagrasswatch.org/seagrass-monitoring/) documents permanent-transect designs and seasonal consistency. None is direct confirmation about Tampa.
