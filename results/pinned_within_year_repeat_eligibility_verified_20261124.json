@@ -1,0 +1,818 @@
+{
+  "evidence_class": "response_blind_source_metadata_audit_not_detection_estimation",
+  "hard_boundaries": [
+    "No Occurrence or eMoF observations are read; no species recorded/non-recorded outcomes inferred.",
+    "Distinct parent event dates can be administrative/default dates; real survey timestamps are not verified.",
+    "Overlapping Point locationIDs are candidate sampled-mark roster repeats, not identical photographed quadrat footprints.",
+    "Same-day multiple parent events cannot be counted as independent temporal field revisits.",
+    "Metadata-only dates and marks do not establish closure, conditional independence, observer identity, or sampling comparability.",
+    "An eligible node-year with two visits provides at most one additional visit, not automatically independent detections.",
+    "No detection probability, demographic loss, true recovery, TNC mechanism or posterior absence is estimated.",
+    "This is a historical feasibility audit only, not permission or redefinition of prospective TNC-v2 protocol."
+  ],
+  "registry": {
+    "all_point_events": 45849,
+    "all_transect_events": 1497,
+    "eligible_node_years": 1480,
+    "eligible_transect_visits": 1497,
+    "eligible_unique_nodes": 71
+  },
+  "repeated_node_year_details": [
+    {
+      "all_parent_dates": [
+        "2016-01-26",
+        "2016-12-25"
+      ],
+      "all_unique_sampled_mark_ids": 22,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S2T111:2016-01-26",
+        "TBEP:seagrass:event:S2T111:2016-12-25"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 21,
+      "node_id": "TBEP:seagrass:loc:S2T111",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2016-01-26",
+          "date_b": "2016-12-25",
+          "day_gap": 334,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.9545454545454546,
+          "marks_a": 22,
+          "marks_b": 21,
+          "shared_mark_ids": 21
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Hillsborough Bay"
+      ],
+      "year": 2016
+    },
+    {
+      "all_parent_dates": [
+        "2016-01-26",
+        "2016-12-25"
+      ],
+      "all_unique_sampled_mark_ids": 26,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S2T112:2016-01-26",
+        "TBEP:seagrass:event:S2T112:2016-12-25"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 16,
+      "node_id": "TBEP:seagrass:loc:S2T112",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2016-01-26",
+          "date_b": "2016-12-25",
+          "day_gap": 334,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.6153846153846154,
+          "marks_a": 26,
+          "marks_b": 16,
+          "shared_mark_ids": 16
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Hillsborough Bay"
+      ],
+      "year": 2016
+    },
+    {
+      "all_parent_dates": [
+        "2011-02-17",
+        "2011-11-29"
+      ],
+      "all_unique_sampled_mark_ids": 9,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S2T8:2011-02-17",
+        "TBEP:seagrass:event:S2T8:2011-11-29"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 8,
+      "node_id": "TBEP:seagrass:loc:S2T8",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2011-02-17",
+          "date_b": "2011-11-29",
+          "day_gap": 285,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.8888888888888888,
+          "marks_a": 8,
+          "marks_b": 9,
+          "shared_mark_ids": 8
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Hillsborough Bay"
+      ],
+      "year": 2011
+    },
+    {
+      "all_parent_dates": [
+        "2011-02-17",
+        "2011-11-29"
+      ],
+      "all_unique_sampled_mark_ids": 23,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S2T9:2011-02-17",
+        "TBEP:seagrass:event:S2T9:2011-11-29"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 16,
+      "node_id": "TBEP:seagrass:loc:S2T9",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2011-02-17",
+          "date_b": "2011-11-29",
+          "day_gap": 285,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.6956521739130435,
+          "marks_a": 19,
+          "marks_b": 20,
+          "shared_mark_ids": 16
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Hillsborough Bay"
+      ],
+      "year": 2011
+    },
+    {
+      "all_parent_dates": [
+        "2011-02-16",
+        "2011-12-13"
+      ],
+      "all_unique_sampled_mark_ids": 50,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T11:2011-02-16",
+        "TBEP:seagrass:event:S3T11:2011-12-13"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 35,
+      "node_id": "TBEP:seagrass:loc:S3T11",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2011-02-16",
+          "date_b": "2011-12-13",
+          "day_gap": 300,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.7,
+          "marks_a": 40,
+          "marks_b": 45,
+          "shared_mark_ids": 35
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 2011
+    },
+    {
+      "all_parent_dates": [
+        "2012-03-13",
+        "2012-10-05"
+      ],
+      "all_unique_sampled_mark_ids": 48,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T12:2012-03-13",
+        "TBEP:seagrass:event:S3T12:2012-10-05"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 16,
+      "node_id": "TBEP:seagrass:loc:S3T12",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2012-03-13",
+          "date_b": "2012-10-05",
+          "day_gap": 206,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.3333333333333333,
+          "marks_a": 16,
+          "marks_b": 48,
+          "shared_mark_ids": 16
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 2012
+    },
+    {
+      "all_parent_dates": [
+        "2024-09-16",
+        "2024-12-05"
+      ],
+      "all_unique_sampled_mark_ids": 57,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T13:2024-09-16",
+        "TBEP:seagrass:event:S3T13:2024-12-05"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 2,
+      "node_id": "TBEP:seagrass:loc:S3T13",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2024-09-16",
+          "date_b": "2024-12-05",
+          "day_gap": 80,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.03508771929824561,
+          "marks_a": 33,
+          "marks_b": 26,
+          "shared_mark_ids": 2
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 2024
+    },
+    {
+      "all_parent_dates": [
+        "2007-01-18",
+        "2007-10-16"
+      ],
+      "all_unique_sampled_mark_ids": 49,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T3:2007-01-18",
+        "TBEP:seagrass:event:S3T3:2007-10-16"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 23,
+      "node_id": "TBEP:seagrass:loc:S3T3",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2007-01-18",
+          "date_b": "2007-10-16",
+          "day_gap": 271,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.46938775510204084,
+          "marks_a": 31,
+          "marks_b": 41,
+          "shared_mark_ids": 23
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 2007
+    },
+    {
+      "all_parent_dates": [
+        "2021-04-07",
+        "2021-10-12"
+      ],
+      "all_unique_sampled_mark_ids": 39,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T5:2021-04-07",
+        "TBEP:seagrass:event:S3T5:2021-10-12"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 28,
+      "node_id": "TBEP:seagrass:loc:S3T5",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2021-04-07",
+          "date_b": "2021-10-12",
+          "day_gap": 188,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.717948717948718,
+          "marks_a": 28,
+          "marks_b": 39,
+          "shared_mark_ids": 28
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 2021
+    },
+    {
+      "all_parent_dates": [
+        "2021-04-07",
+        "2021-10-14"
+      ],
+      "all_unique_sampled_mark_ids": 29,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T6:2021-04-07",
+        "TBEP:seagrass:event:S3T6:2021-10-14"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 21,
+      "node_id": "TBEP:seagrass:loc:S3T6",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2021-04-07",
+          "date_b": "2021-10-14",
+          "day_gap": 190,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.7241379310344828,
+          "marks_a": 21,
+          "marks_b": 29,
+          "shared_mark_ids": 21
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 2021
+    },
+    {
+      "all_parent_dates": [
+        "1999-01-13",
+        "1999-11-11"
+      ],
+      "all_unique_sampled_mark_ids": 7,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S3T7:1999-01-13",
+        "TBEP:seagrass:event:S3T7:1999-11-11"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 7,
+      "node_id": "TBEP:seagrass:loc:S3T7",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "1999-01-13",
+          "date_b": "1999-11-11",
+          "day_gap": 302,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 1,
+          "marks_a": 7,
+          "marks_b": 7,
+          "shared_mark_ids": 7
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Middle Tampa Bay"
+      ],
+      "year": 1999
+    },
+    {
+      "all_parent_dates": [
+        "2021-04-08",
+        "2021-09-13"
+      ],
+      "all_unique_sampled_mark_ids": 44,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S4T1:2021-04-08",
+        "TBEP:seagrass:event:S4T1:2021-09-13"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 7,
+      "node_id": "TBEP:seagrass:loc:S4T1",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2021-04-08",
+          "date_b": "2021-09-13",
+          "day_gap": 158,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.1590909090909091,
+          "marks_a": 14,
+          "marks_b": 37,
+          "shared_mark_ids": 7
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Lower Tampa Bay"
+      ],
+      "year": 2021
+    },
+    {
+      "all_parent_dates": [
+        "2010-01-28",
+        "2010-10-01"
+      ],
+      "all_unique_sampled_mark_ids": 16,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S4T13:2010-01-28",
+        "TBEP:seagrass:event:S4T13:2010-10-01"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 1,
+      "node_id": "TBEP:seagrass:loc:S4T13",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2010-01-28",
+          "date_b": "2010-10-01",
+          "day_gap": 246,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.0625,
+          "marks_a": 6,
+          "marks_b": 11,
+          "shared_mark_ids": 1
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Lower Tampa Bay"
+      ],
+      "year": 2010
+    },
+    {
+      "all_parent_dates": [
+        "2010-01-28",
+        "2010-10-05"
+      ],
+      "all_unique_sampled_mark_ids": 25,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S4T15:2010-01-28",
+        "TBEP:seagrass:event:S4T15:2010-10-05"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 3,
+      "node_id": "TBEP:seagrass:loc:S4T15",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2010-01-28",
+          "date_b": "2010-10-05",
+          "day_gap": 250,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.12,
+          "marks_a": 9,
+          "marks_b": 19,
+          "shared_mark_ids": 3
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Lower Tampa Bay"
+      ],
+      "year": 2010
+    },
+    {
+      "all_parent_dates": [
+        "2021-04-08",
+        "2021-09-13"
+      ],
+      "all_unique_sampled_mark_ids": 19,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S4T3:2021-04-08",
+        "TBEP:seagrass:event:S4T3:2021-09-13"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 3,
+      "node_id": "TBEP:seagrass:loc:S4T3",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2021-04-08",
+          "date_b": "2021-09-13",
+          "day_gap": 158,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.15789473684210525,
+          "marks_a": 6,
+          "marks_b": 16,
+          "shared_mark_ids": 3
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Lower Tampa Bay"
+      ],
+      "year": 2021
+    },
+    {
+      "all_parent_dates": [
+        "2009-01-06",
+        "2009-10-15"
+      ],
+      "all_unique_sampled_mark_ids": 18,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S5T7:2009-01-06",
+        "TBEP:seagrass:event:S5T7:2009-10-15"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 5,
+      "node_id": "TBEP:seagrass:loc:S5T7",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2009-01-06",
+          "date_b": "2009-10-15",
+          "day_gap": 282,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.2777777777777778,
+          "marks_a": 5,
+          "marks_b": 18,
+          "shared_mark_ids": 5
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Boca Ciega Bay"
+      ],
+      "year": 2009
+    },
+    {
+      "all_parent_dates": [
+        "2009-01-06",
+        "2009-10-30"
+      ],
+      "all_unique_sampled_mark_ids": 25,
+      "candidate_distinct_date_pair_count": 1,
+      "candidate_pairs_with_14_day_gap_or_less": 0,
+      "candidate_pairs_with_30_day_gap_or_less": 0,
+      "candidate_pairs_with_7_day_gap_or_less": 0,
+      "distinct_parent_event_dates": 2,
+      "event_ids": [
+        "TBEP:seagrass:event:S5T9:2009-01-06",
+        "TBEP:seagrass:event:S5T9:2009-10-30"
+      ],
+      "extra_visits": 1,
+      "institution_codes": [
+        "TBEP"
+      ],
+      "marks_repeated_across_distinct_parent_dates": 10,
+      "node_id": "TBEP:seagrass:loc:S5T9",
+      "pair_count": 1,
+      "pair_metadata": [
+        {
+          "candidate_mark_revisits_on_different_dates": true,
+          "date_a": "2009-01-06",
+          "date_b": "2009-10-30",
+          "day_gap": 297,
+          "distinct_dates": true,
+          "jaccard_mark_roster": 0.4,
+          "marks_a": 11,
+          "marks_b": 24,
+          "shared_mark_ids": 10
+        }
+      ],
+      "sampling_protocols": [
+        "seagrass transect survey"
+      ],
+      "valid_independent_detection_replicates_verified": false,
+      "visits": 2,
+      "water_bodies": [
+        "Boca Ciega Bay"
+      ],
+      "year": 2009
+    }
+  ],
+  "schema": "tampa.pinned_source_within_year_repeat_eligibility_audit_v1",
+  "source": {
+    "blob": "583b4d4e328290ab065346579eb4f29f03ea0f99",
+    "commit": "6c567beff95ea04f0e397101befb49d5233ace8f",
+    "sha256": "45c5fec414cb9c63a2a63fbd4f8dcd823ae05239dee598d5dd53dbcb34359b62",
+    "size": 24654717,
+    "url": "https://raw.githubusercontent.com/tbep-tech/obis-example/6c567beff95ea04f0e397101befb49d5233ace8f/dwc/event.csv"
+  },
+  "summary": {
+    "distinct_date_pairs_sharing_mark_ids": 17,
+    "eligible_node_years": 1480,
+    "eligible_nodes": 71,
+    "eligible_visits": 1497,
+    "extra_visits_beyond_first_node_year": 17,
+    "node_year_groups_with_multiple_eligible_visits": 17,
+    "node_year_groups_with_multiple_parent_dates": 17,
+    "node_year_groups_with_repeated_marks_across_distinct_dates": 17,
+    "parent_event_visit_pairs_same_node_year": 17,
+    "total_marks_repeated_across_distinct_dates_sum_across_node_years": 222,
+    "within_14_days_pairs": 0,
+    "within_30_days_pairs": 0,
+    "within_7_days_pairs": 0
+  },
+  "source_verified_run": {
+    "run_id": 45246024947,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45246024947",
+    "job_id": 137942876524,
+    "artifact_id": 14854212197,
+    "artifact_zip_sha256": "1de47c0d84c731c41f9b16c43f1cc751d40cd8ca85dea0ea8cb63af435af7747",
+    "completed_success": true
+  }
+}
