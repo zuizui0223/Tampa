@@ -7,6 +7,9 @@ on:
       - 'validation/test_return_fragility_exchangeability_audit.py'
       - 'docs/RETURN_FRAGILITY_EXCHANGEABILITY_FIELD_GATE_20261124.md'
       - 'results/return_fragility_v1.json'
+      - 'field/return_detection_pilot_raw_v1_template.csv'
+      - 'validation/validate_return_detection_pilot_raw_v1.py'
+      - 'validation/test_return_detection_pilot_raw_v1.py'
       - '.github/workflows/return-fragility-exchangeability-audit.yml'
 jobs:
   audit:
@@ -24,7 +27,17 @@ jobs:
             --source results/return_fragility_v1.json \
             --out /tmp/tampa_return_exchangeability_v1.json
           cat /tmp/tampa_return_exchangeability_v1.json
+      - name: Test optional detection pilot raw-record fail-closed semantics
+        run: python -m unittest discover -s validation -p 'test_return_detection_pilot_raw_v1.py' -v
+      - name: Verify raw template remains empty and NOT field ready
+        run: |
+          python validation/validate_return_detection_pilot_raw_v1.py \
+            --input field/return_detection_pilot_raw_v1_template.csv \
+            --out /tmp/tampa_optional_detection_pilot_qc.json
+          cat /tmp/tampa_optional_detection_pilot_qc.json
       - uses: actions/upload-artifact@v4
         with:
           name: tampa-return-history-exchangeability-audit
-          path: /tmp/tampa_return_exchangeability_v1.json
+          path: |
+            /tmp/tampa_return_exchangeability_v1.json
+            /tmp/tampa_optional_detection_pilot_qc.json
