@@ -10,6 +10,9 @@ on:
       - 'field/return_detection_pilot_raw_v1_template.csv'
       - 'validation/validate_return_detection_pilot_raw_v1.py'
       - 'validation/test_return_detection_pilot_raw_v1.py'
+      - 'analysis/112_detection_revisit_dependence_sensitivity.py'
+      - 'validation/test_detection_revisit_dependence_sensitivity.py'
+      - 'docs/DETECTION_REVISIT_DEPENDENCE_SENSITIVITY_20261124.md'
       - '.github/workflows/return-fragility-exchangeability-audit.yml'
 jobs:
   audit:
@@ -29,6 +32,12 @@ jobs:
           cat /tmp/tampa_return_exchangeability_v1.json
       - name: Test optional detection pilot raw-record fail-closed semantics
         run: python -m unittest discover -s validation -p 'test_return_detection_pilot_raw_v1.py' -v
+      - name: Test dependence and structural-zero effort math
+        run: python -m unittest discover -s validation -p 'test_detection_revisit_dependence_sensitivity.py' -v
+      - name: Generate response-free dependence-sensitivity table
+        run: |
+          python analysis/112_detection_revisit_dependence_sensitivity.py --out /tmp/tampa_detection_dependence_v1.json
+          cat /tmp/tampa_detection_dependence_v1.json
       - name: Verify raw template remains empty and NOT field ready
         run: |
           python validation/validate_return_detection_pilot_raw_v1.py \
@@ -41,3 +50,4 @@ jobs:
           path: |
             /tmp/tampa_return_exchangeability_v1.json
             /tmp/tampa_optional_detection_pilot_qc.json
+            /tmp/tampa_detection_dependence_v1.json
