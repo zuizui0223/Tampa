@@ -1,0 +1,43 @@
+name: Tampa pinned Event same-year repeat eligibility
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/113_pinned_event_within_year_repeat_eligibility.py'
+      - 'validation/test_pinned_event_within_year_repeat_eligibility.py'
+      - '.github/workflows/tampa-within-year-repeat-eligibility.yml'
+      - 'docs/TAMPA_PINNED_WITHIN_YEAR_REPEAT_ELIGIBILITY_20261124.md'
+      - 'results/pinned_within_year_repeat_eligibility_verified_20261124.json'
+jobs:
+  metadata-only-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic response-blind event tests
+        run: python -m unittest discover -s validation -p 'test_pinned_event_within_year_repeat_eligibility.py' -v
+      - name: Fetch exact pinned Event bytes and audit node/year/mark/date repeat eligibility
+        run: |
+          python analysis/113_pinned_event_within_year_repeat_eligibility.py \
+            --out /tmp/tampa_pinned_repeat_eligibility.json
+          cat /tmp/tampa_pinned_repeat_eligibility.json
+      - name: Assert live reconstruction equals pinned exact source-only summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          live=json.loads(Path('/tmp/tampa_pinned_repeat_eligibility.json').read_text())
+          pinned=json.loads(Path('results/pinned_within_year_repeat_eligibility_verified_20261124.json').read_text())
+          provenance=pinned.pop('source_verified_run')
+          if live != pinned:
+              raise SystemExit('Pinned metadata ledger differs from live source-only reconstruction')
+          if provenance['completed_success'] is not True:
+              raise SystemExit('Pinned source has no verified provenance')
+          print('PASS: live original Event metadata result exactly equals frozen source-verified JSON')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tampa-pinned-source-repeat-eligibility
+          path: /tmp/tampa_pinned_repeat_eligibility.json
