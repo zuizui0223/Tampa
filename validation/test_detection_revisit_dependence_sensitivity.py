@@ -52,6 +52,38 @@ class DetectionDependenceTests(unittest.TestCase):
         self.assertEqual(d["status"],"NOT_MET_WITHIN_DECLARED_MAXIMUM")
         self.assertGreater(d["all_miss_at_declared_maximum"],.05)
 
+    def test_posterior_presence_differs_from_conditional_false_negative(self):
+        p=.6
+        rho=.2
+        miss=M.miss_probability(6,p,rho)
+        self.assertAlmostEqual(miss,.0420992,places=7)
+        for prior in (.5,.8,.9,.95):
+            got=M.posterior_true_presence_after_no_records(6,p,rho,prior)
+            expected=prior*miss/(1-prior+prior*miss)
+            self.assertAlmostEqual(got,expected)
+        self.assertAlmostEqual(
+            M.posterior_true_presence_after_no_records(6,p,rho,.95),
+            .4444,delta=.0001
+        )
+
+    def test_high_prior_requires_more_repeats_to_infer_absence(self):
+        expected={.5:6,.8:12,.9:17,.95:24}
+        for prior,k in expected.items():
+            result=M.visits_for_posterior_absence(.6,.2,prior)
+            self.assertEqual(result["minimum_rounds"],k)
+            self.assertLessEqual(result["posterior_true_presence_at_minimum_rounds"],.05+1e-12)
+            before=M.posterior_true_presence_after_no_records(k-1,.6,.2,prior)
+            self.assertGreater(before,.05-1e-12)
+        self.assertEqual(
+            M.visits_for_posterior_absence(.4,.2,.95)["minimum_rounds"],
+            104
+        )
+
+    def test_structural_zero_can_make_posterior_absence_unattainable(self):
+        r=M.visits_for_posterior_absence(.6,.2,.95,z=.08)
+        self.assertEqual(r["status"],"NO_FINITE_ROUNDS_CAN_MEET_TARGET")
+        self.assertIsNone(r["minimum_rounds"])
+
     def test_invalid_parameters_rejected(self):
         cases=[
             lambda: M.required_visits(0,.1),lambda: M.required_visits(1,.1),
