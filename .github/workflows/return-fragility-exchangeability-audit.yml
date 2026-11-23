@@ -1,0 +1,30 @@
+name: Tampa return-fragility exchangeability audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/111_return_fragility_exchangeability_audit.py'
+      - 'validation/test_return_fragility_exchangeability_audit.py'
+      - 'docs/RETURN_FRAGILITY_EXCHANGEABILITY_FIELD_GATE_20261124.md'
+      - 'results/return_fragility_v1.json'
+      - '.github/workflows/return-fragility-exchangeability-audit.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test source ledger reconstruction and analytical bounds
+        run: python -m unittest discover -s validation -p 'test_return_fragility_exchangeability_audit.py' -v
+      - name: Build audit strictly from frozen aggregated result
+        run: |
+          python analysis/111_return_fragility_exchangeability_audit.py \
+            --source results/return_fragility_v1.json \
+            --out /tmp/tampa_return_exchangeability_v1.json
+          cat /tmp/tampa_return_exchangeability_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tampa-return-history-exchangeability-audit
+          path: /tmp/tampa_return_exchangeability_v1.json
