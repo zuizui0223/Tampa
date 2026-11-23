@@ -46,8 +46,29 @@ The frozen four-bay TNC-v2 study remains first priority, with a 41-node historic
 
 The strongest *current ecological evidence* remains the geographically distinct decline in measured plant morphology/density or local species frequency/composition under partly persistent recorded Thalassia. The re-recording effect remains an observation-state signal until real detection and biological state are jointly measured.
 
+## Conditional miss probability is NOT posterior absence confidence
+
+The model's 5% criterion is P(K consecutive zeros | TRUE occupancy) <= .05. That must not be paraphrased as P(TRUE absence | K zeros) >= .95. Under *illustrative assumptions* of prior true occupancy psi, perfect specificity, and the same detection model, Bayes' rule gives
+
+P(TRUE occupied | all K zeros) = psi * M(K) / ((1-psi) + psi * M(K)),
+
+where M(K) is the previously computed conditional all-miss probability.
+
+At mean p=.6, ICC=.2, and K=6, M(K)=0.0420992. The implications differ sharply by assumed historical occupancy prior:
+
+| Prior true occupancy psi (assumed) | P(still truly present | 6 zeros) | K for posterior true presence <=5% |
+| ---: | ---: | ---: |
+| .50 | 4.04% | 6 |
+| .80 | 14.41% | 12 |
+| .90 | 27.48% | 17 |
+| .95 | **44.44%** | **24** |
+
+For the lower illustrative detection case mean p=.4 and ICC=.2, psi=.95 requires K=104 to reach <=5% posterior true occupancy in this exact model. Such numbers illustrate why an intensive repeat-only design can be impractical; they are **not feasible target survey schedules for real Tampa sites**.
+
+The relevant priors psi, recording mean, dependence and specificity are **unknown** for Tampa's actual historical marks. Structural-zero recording also creates a posterior floor that can prevent the target being achieved by repeats alone. This extension supplies no site-specific absence probabilities, loss estimates or independent forecasting performance.
+
 ## Reproduction
 
 - analysis/112_detection_revisit_dependence_sensitivity.py: standard-library-only Beta-mixed all-miss probability and repeat-effort grid with a structural-zero floor.
-- validation/test_detection_revisit_dependence_sensitivity.py: eight synthetic tests for analytic moments, repeat minima and non-estimability.
+- validation/test_detection_revisit_dependence_sensitivity.py: eleven synthetic tests for analytic moments, repeat minima and non-estimability.
 - CI extends the existing response-free return-fragility exchangeability workflow and emits an inspectable JSON artifact.
