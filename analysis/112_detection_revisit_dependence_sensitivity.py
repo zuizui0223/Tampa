@@ -90,6 +90,64 @@ def required_visits(mean_p: float, rho: float, target_miss: float = TARGET_MISS,
     return out
 
 
+
+def posterior_true_presence_after_no_records(
+    k: int, mean_p: float, rho: float, prior_true_presence: float,
+    z: float = 0,
+) -> float:
+    """Pr(true presence | k zeros) with perfect specificity and known prior."""
+    if not math.isfinite(prior_true_presence) or not 0 < prior_true_presence < 1:
+        raise ValueError("prior_true_presence must lie in (0,1)")
+    miss = miss_probability(k, mean_p, rho, z)
+    return prior_true_presence*miss / (
+        1-prior_true_presence+prior_true_presence*miss
+    )
+
+
+def visits_for_posterior_absence(
+    mean_p: float, rho: float, prior_true_presence: float,
+    target_posterior_presence: float = 0.05,
+    max_visits: int = MAX_VISITS, z: float = 0,
+) -> dict:
+    """Required rounds for illustrative >=95% posterior absence confidence.
+
+    This is *not* estimable for Tampa without an independently defensible
+    occupancy prior, specificity and a calibrated recording process.
+    """
+    if not math.isfinite(prior_true_presence) or not 0 < prior_true_presence < 1:
+        raise ValueError("prior_true_presence must lie in (0,1)")
+    if not math.isfinite(target_posterior_presence) or not 0 < target_posterior_presence < 1:
+        raise ValueError("target_posterior_presence must lie in (0,1)")
+    threshold = (
+        target_posterior_presence*(1-prior_true_presence)
+        / (prior_true_presence*(1-target_posterior_presence))
+    )
+    if threshold >= 1:
+        # Prior presence is already at or below the requested posterior target.
+        # Not relevant for monitoring an initially occupied mark.
+        return {
+            "status":"PRIOR_ALREADY_MEETS_POSTERIOR_TARGET",
+            "minimum_rounds":0,
+            "prior_true_presence_assumed":prior_true_presence,
+            "target_posterior_true_presence":target_posterior_presence,
+            "required_conditional_all_miss_probability":threshold,
+        }
+    d = required_visits(mean_p, rho, target_miss=threshold, max_visits=max_visits, z=z)
+    return {
+        "status":d["status"],
+        "minimum_rounds":d["minimum_rounds"],
+        "prior_true_presence_assumed":prior_true_presence,
+        "target_posterior_true_presence":target_posterior_presence,
+        "required_conditional_all_miss_probability":threshold,
+        "conditional_all_miss_at_minimum_rounds":d.get("all_miss_at_minimum_rounds"),
+        "posterior_true_presence_at_minimum_rounds":(
+            posterior_true_presence_after_no_records(
+                d["minimum_rounds"],mean_p,rho,prior_true_presence,z
+            ) if d["minimum_rounds"] is not None else None
+        ),
+    }
+
+
 def report() -> dict:
     cases=[required_visits(p,rho) for p in PRIMARY_MEANS for rho in PRIMARY_ICCS]
     return {
@@ -97,6 +155,15 @@ def report() -> dict:
         "evidence_class":"response_free_illustrative_measurement_design_not_field_data",
         "primary_grid":cases,
         "structural_unrecordability_example":required_visits(.6,.1,z=.08),
+        "posterior_absence_prior_sensitivity_at_mean_p_0_6_rho_0_2": [
+            {
+                "prior": psi,
+                "posterior_true_presence_after_6_zeros":posterior_true_presence_after_no_records(6,.6,.2,psi),
+                "rounds_for_posterior_true_presence_at_most_5pct":visits_for_posterior_absence(.6,.2,psi),
+            }
+            for psi in (.5,.8,.9,.95)
+        ],
+        "posterior_absence_high_prior_and_lower_detection":visits_for_posterior_absence(.4,.2,.95),
         "interpretation": (
             "Stable across-mark variation in effective p makes same-mark repeat "
             "observations marginally positively correlated; naive independent-repeat "
@@ -110,6 +177,7 @@ def report() -> dict:
             "Repeated observations require independently supported temporary occupancy closure.",
             "A recording probability includes quadrat-footprint mismatch and observer errors; these need separate audits.",
             "This calculation is not power for estimating a latent colonization or extinction parameter.",
+            "A 5% conditional all-miss rate is NOT a 95% posterior probability of true absence; posterior absence depends on an unmeasured prior occupancy probability and assumed perfect specificity.",
             "The frozen four-bay TNC primary, mark selections, outcome and permits are unchanged.",
         ],
     }
