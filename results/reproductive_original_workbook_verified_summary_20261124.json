@@ -1,0 +1,87 @@
+{
+  "schema": "tampa.reproductive_original_workbook_verified_summary.v1",
+  "status": "executed locally from original source artifact; response-open exploratory",
+  "artifact": {
+    "run": 45375624681,
+    "job": 138381009264,
+    "id": 14911201555,
+    "sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c"
+  },
+  "carcinus": {
+    "n": [
+      15,
+      10,
+      10
+    ],
+    "any_loss": [
+      12,
+      3,
+      0
+    ],
+    "overall": [
+      0.56,
+      0.2,
+      0
+    ],
+    "conditional": [
+      0.7,
+      0.6666666666666666,
+      null
+    ],
+    "surface_minus_1": 0.36,
+    "ci": [
+      0.04,
+      0.6533333333333334
+    ],
+    "incidence_component": 0.3416666666666667,
+    "conditional_component": 0.018333333333333392
+  },
+  "week": {
+    "crab_surface": 0.18333333333333335,
+    "crab_buried": 0.7191666666666666,
+    "crab_absent": 0.9158333333333334,
+    "burial_gain": 0.5358333333333334,
+    "trial_differences": [
+      0.395,
+      0.6766666666666666
+    ],
+    "conditional_ci": [
+      0.435,
+      0.6283333333333333
+    ]
+  },
+  "eight_month": {
+    "closed": [
+      15,
+      16,
+      14,
+      13
+    ],
+    "open": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "uncaged": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "ratio": 29,
+    "difference": 14,
+    "p_exact": 0.02857142857142857,
+    "denominator_conflict": true
+  },
+  "flume": {
+    "three_component_mean": 0.6333333333333333,
+    "three_component_min": 0.43333333333333335,
+    "mean_gain_vs_pointwise_best": 0.25333333333333335,
+    "velocities_above_best": 10,
+    "union_residual": 0.09192962962962965,
+    "dense_long_shoot_mean": 0.7033333333333334,
+    "dense_long_shoot_min": 0.4666666666666667,
+    "location_mismatch_n": 8
+  }
+}
