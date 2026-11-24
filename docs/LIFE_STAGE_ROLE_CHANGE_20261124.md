@@ -1,0 +1,25 @@
+# Life-stage role change and seed-size fate accounting
+
+2026-11-24 | Exploratory, response-open. No newly fitted multi-partner reproductive factorial or meta-analysis.
+
+## 1. Original-data follow-up
+Jørgensen et al. 2019, 10.1371/journal.pone.0215157, S2/S3, verified artifact 14919780256, archive SHA256 9286792a9cca0b46ec1e9d1add5a869625b91c57bb53ee32788b982b825bbfa3. 30 pots with sorted large/small seeds at three fixed depths (2/4/6 cm), one pot per combination per each of 5 tanks. Ten-week harvest. Four pots report fewer than 15 total seed states; use recorded total for fate fractions, nominal 15 for emergence. Three depths averaged equally within each tank, then tanks equally weighted. 50,000 paired tank bootstrap resamples, exact 32 sign flips under symmetry/exchangeability. Local Python executed on original artifact. Reproduce with python analysis/153_seed_size_fate.py ARTIFACT.zip --out result.json. Repository JSON is compact summary, script writes full by-depth results.
+
+| Endpoint | Small | Large | Difference (conditional 95% bootstrap) |
+|---|---:|---:|---:|
+| Emergence per 15 planted |36.89%|39.11%|+2.22 pp [-6.22,14.22]|
+| Viable unemerged per recorded total |23.08%|37.49%|+14.41 pp [9.05,21.97]|
+| Failed emergence per recorded total |25.24%|11.14%|-14.10 pp [-19.62,-8.95]|
+| Dead per recorded total |14.38%|12.00%|-2.38 pp [-10.67,4.57]|
+| Failure or death per recorded total |39.62%|23.14%|-16.48 pp [-25.71,-7.65]|
+
+All five tanks agree on increased viable and decreased failed emergence; exact sign-flip p=.0625 in each case. Original authors explicitly report greater longevity and lower failed emergence in large seeds, and no clear overall emergence advantage. This is not a new biological discovery, but an additional tank-level sensitivity accounting. No proof of equivalence. No later recruitment measured after harvest. Seed size may affect time spent in particular states, but no predator exposure was varied in this trial. Do not treat viable seeds as successfully recruited.
+
+## 2. A taxonomically matched contrast, but different cohorts and designs
+2012 burial experiment 10.1016/j.seares.2012.04.006: Hediste diversicolor moved intact Zostera marina seeds into burrows rapidly, median depth ~0.5 cm; 97–100% seed recovery across polychaete treatments. Arenicola marina at highest density buried to median 6.7 cm after one month. 2023 Kwakernaak et al., 10.1016/j.jembe.2022.151853: H. diversicolor consumed germinated seeds; high biomass impeded seedling establishment even with supplementary food; smaller worms did not produce the same effect at equal biomass. Data on request, not obtained. The matched species makes ontogenetic change in interaction sign plausible; not direct evidence of sign reversal within one experiment or individual. Prior literature already describes bioturbation costs and benefit hypotheses. Japanese pre-dispersal seed predation: Nakaoka 2002, 10.1016/S0304-3770(01)00213-3, Zeuxo sp. damaged 14% of Z. marina and 27% of Z. caulescens seeds in August. This is not evidence that the same taxa observed visiting Caribbean Thalassia flowers are seed predators. Distinguish exact species and plant stage.
+
+## 3. Direct multi-partner experiment exists for adult plants
+Cronau et al. 2023, J Appl Ecol 10.1111/1365-2664.14381, 32 aquaria, 4 blocks, 2x2x2 Littorina x Platynereis x nutrients. Reported Littorina x Platynereis interaction F(1,24) = 9.183 (shoots), 16.36 (leaves), 19.71 (belowground biomass). Arithmetic partial eta squared F/(F+24) = .277, .405, .451, respectively (not comparable signed effects or additional estimates). Field addition increased plant survival by 58.3% relative to controls as reported by authors; no absolute survival contrast extracted. Existing direct evidence of one interaction changing another, not a new discovery, and adult endpoints not seed recruitment. Data DOI 10.17026/dans-x38-abzq. No raw-data fit yet. The precise claim for future reproductive work is whether seed-burying animal access before germination, and access after germination, have opposite net effects, and whether a second predator changes them. Randomize access/withdrawal timing, track marked seeds and viable germinated/ungerminated states, control physical burial and food. Avoid assuming otters control European ragworms or that Caribbean pollinators and Japanese seed predators are the same taxon.
+
+## 4. New independent source gates
+Zander et al. 2026 10.1111/rec.70396; data 10.1594/PANGAEA.984655 (lab), 984656 (field), 62 field plots of 100 seeds with repeated emergence and Arenicola mounds. Reported no lugworm association; mound density observational, not randomized worm exposure. Direct local DNS and web table retrieval failed. Potter et al. 2026 10.1371/journal.pone.0351822 data DOI 10.6084/m9.figshare.32328606, physical seed-ball treatments, emergence and early growth; not a biotic factorial. Cronau DANS link not retrievable in web tool. Added source-only workflow for all three, no acquisition success asserted. Registry expanded from 17 to 23 publications. No pooled effect; no independent meta-analysis yet.

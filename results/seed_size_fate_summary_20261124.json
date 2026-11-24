@@ -1,0 +1,105 @@
+{
+  "status": "locally executed reanalysis; condensed summary, not full output",
+  "source": "10.1371/journal.pone.0215157 S2/S3",
+  "artifact": 14919780256,
+  "sha256": "9286792a9cca0b46ec1e9d1add5a869625b91c57bb53ee32788b982b825bbfa3",
+  "n_pots": 30,
+  "n_tanks": 5,
+  "fixed_depths_cm": [
+    2,
+    4,
+    6
+  ],
+  "n_reported_total_below15": 4,
+  "contrasts": {
+    "emerged_nominal": {
+      "small": 0.36888888888888893,
+      "large": 0.39111111111111113,
+      "delta": 0.02222222222222222,
+      "ci": [
+        -0.062222222222222213,
+        0.1422222222222222
+      ],
+      "p": 0.9375
+    },
+    "emerged_reported": {
+      "small": 0.373015873015873,
+      "large": 0.3936507936507937,
+      "delta": 0.020634920634920617,
+      "ci": [
+        -0.0653968253968254,
+        0.14571428571428566
+      ],
+      "p": 0.9375
+    },
+    "dead_reported": {
+      "small": 0.1438095238095238,
+      "large": 0.12,
+      "delta": -0.023809523809523815,
+      "ci": [
+        -0.10666666666666666,
+        0.04571428571428571
+      ],
+      "p": 0.6875
+    },
+    "viable_reported": {
+      "small": 0.23079365079365083,
+      "large": 0.3749206349206349,
+      "delta": 0.1441269841269841,
+      "ci": [
+        0.09047619047619046,
+        0.21968253968253965
+      ],
+      "p": 0.0625
+    },
+    "failed_reported": {
+      "small": 0.2523809523809524,
+      "large": 0.11142857142857143,
+      "delta": -0.14095238095238094,
+      "ci": [
+        -0.1961904761904762,
+        -0.08952380952380953
+      ],
+      "p": 0.0625
+    },
+    "failed_or_dead_reported": {
+      "small": 0.3961904761904762,
+      "large": 0.23142857142857146,
+      "delta": -0.16476190476190475,
+      "ci": [
+        -0.25714285714285723,
+        -0.07650793650793648
+      ],
+      "p": 0.0625
+    },
+    "early_stock_area": {
+      "small": 0.33603864734299516,
+      "large": 0.3571980676328502,
+      "delta": 0.021159420289855114,
+      "ci": [
+        -0.06463768115942026,
+        0.12763285024154594
+      ],
+      "p": 0.875
+    }
+  },
+  "published_factorial_nonreproductive": {
+    "source": "10.1111/1365-2664.14381",
+    "F1_24": {
+      "shoots": 9.183,
+      "leaves": 16.36,
+      "belowground": 19.71
+    },
+    "partial_eta_squared": {
+      "shoots": 0.27673808878039957,
+      "leaves": 0.4053518334985134,
+      "belowground": 0.45092656142759097
+    }
+  },
+  "limits": [
+    "Original paper reported same seed-size qualitative patterns; additional tank-level reaggregation, no novel trait effect claim.",
+    "Five tanks, exploratory unadjusted intervals conditional on observed tanks, exact sign flips require symmetry.",
+    "Four pots recorded fewer than 15 seeds; reported fate fractions use observed denominators.",
+    "No predator manipulation or later survival. Cronau statistics are published vegetative endpoints, not a reproductive experiment."
+  ]
+}
