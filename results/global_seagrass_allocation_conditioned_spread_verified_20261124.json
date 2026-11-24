@@ -1,0 +1,428 @@
+{
+  "bioregion": [
+    {
+      "group": "Tropical Atlantic",
+      "median_reference_equal_below_above_ratio": 1.7505437864657056,
+      "median_row_below_above_ratio": 1.6787352160270337,
+      "paired_observation_rows": 434,
+      "raw_reference_string_clusters_not_verified_unique_papers": 32,
+      "reference_equal_log_ratio_iqr": [
+        0.150384851067637,
+        1.2456923080989033
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Tropical Indo Pacific",
+      "median_reference_equal_below_above_ratio": 1.8775692830254733,
+      "median_row_below_above_ratio": 2.1099447513812155,
+      "paired_observation_rows": 379,
+      "raw_reference_string_clusters_not_verified_unique_papers": 38,
+      "reference_equal_log_ratio_iqr": [
+        0.17496499318033942,
+        1.2530147678534904
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Temperate North Pacific",
+      "median_reference_equal_below_above_ratio": 0.7307692248444579,
+      "median_row_below_above_ratio": 0.6137865911237016,
+      "paired_observation_rows": 339,
+      "raw_reference_string_clusters_not_verified_unique_papers": 18,
+      "reference_equal_log_ratio_iqr": [
+        -0.7191530169165066,
+        -0.13239737541941746
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Temperate North Atlantic",
+      "median_reference_equal_below_above_ratio": 1.1049535084551665,
+      "median_row_below_above_ratio": 1.032204789430223,
+      "paired_observation_rows": 301,
+      "raw_reference_string_clusters_not_verified_unique_papers": 18,
+      "reference_equal_log_ratio_iqr": [
+        -0.2669859758159898,
+        0.396411512105208
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Temperate Southern",
+      "median_reference_equal_below_above_ratio": 2.057286061311174,
+      "median_row_below_above_ratio": 0.8609290461981091,
+      "paired_observation_rows": 234,
+      "raw_reference_string_clusters_not_verified_unique_papers": 13,
+      "reference_equal_log_ratio_iqr": [
+        0.08594242980072463,
+        1.3674140016707794
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Mediterranean",
+      "median_reference_equal_below_above_ratio": 1.896274259199103,
+      "median_row_below_above_ratio": 1.9332686241203592,
+      "paired_observation_rows": 229,
+      "raw_reference_string_clusters_not_verified_unique_papers": 22,
+      "reference_equal_log_ratio_iqr": [
+        0.10088636668385917,
+        1.331148939375702
+      ],
+      "supported_descriptive_coverage_gate": true
+    }
+  ],
+  "evidence_class": "exploratory_global_cross_sectional_literature_compilation",
+  "genus": [
+    {
+      "group": "Zostera",
+      "median_reference_equal_below_above_ratio": 0.9210114179995607,
+      "median_row_below_above_ratio": 0.8580323785803238,
+      "paired_observation_rows": 775,
+      "raw_reference_string_clusters_not_verified_unique_papers": 55,
+      "reference_equal_log_ratio_iqr": [
+        -0.5521904571505272,
+        0.6924370007325351
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Halodule",
+      "median_reference_equal_below_above_ratio": 2.815111111111112,
+      "median_row_below_above_ratio": 2.2222222222222223,
+      "paired_observation_rows": 276,
+      "raw_reference_string_clusters_not_verified_unique_papers": 23,
+      "reference_equal_log_ratio_iqr": [
+        0.5599264747905235,
+        1.5577470792078265
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Halophila",
+      "median_reference_equal_below_above_ratio": 1.2366345311130587,
+      "median_row_below_above_ratio": 0.8421052631578948,
+      "paired_observation_rows": 253,
+      "raw_reference_string_clusters_not_verified_unique_papers": 23,
+      "reference_equal_log_ratio_iqr": [
+        -0.0270336106351379,
+        0.5295277637510686
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Thalassia",
+      "median_reference_equal_below_above_ratio": 1.7670452681218545,
+      "median_row_below_above_ratio": 3.8231759656652358,
+      "paired_observation_rows": 195,
+      "raw_reference_string_clusters_not_verified_unique_papers": 31,
+      "reference_equal_log_ratio_iqr": [
+        0.2637919088013384,
+        1.3566440431535485
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Cymodocea",
+      "median_reference_equal_below_above_ratio": 1.896274259199103,
+      "median_row_below_above_ratio": 2.310958904109589,
+      "paired_observation_rows": 167,
+      "raw_reference_string_clusters_not_verified_unique_papers": 24,
+      "reference_equal_log_ratio_iqr": [
+        0.3949740055614382,
+        1.3226641364436467
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Ruppia",
+      "median_reference_equal_below_above_ratio": 0.8032029130579057,
+      "median_row_below_above_ratio": 0.9901023890784982,
+      "paired_observation_rows": 128,
+      "raw_reference_string_clusters_not_verified_unique_papers": 8,
+      "reference_equal_log_ratio_iqr": [
+        -0.8064992619223996,
+        0.27811192944547614
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Enhalus",
+      "median_reference_equal_below_above_ratio": 3.0480472460672874,
+      "median_row_below_above_ratio": 6.960464412196195,
+      "paired_observation_rows": 60,
+      "raw_reference_string_clusters_not_verified_unique_papers": 8,
+      "reference_equal_log_ratio_iqr": [
+        0.8197200680710692,
+        2.0359806145131354
+      ],
+      "supported_descriptive_coverage_gate": true
+    },
+    {
+      "group": "Syringodium",
+      "median_reference_equal_below_above_ratio": null,
+      "median_row_below_above_ratio": 1.1819710729902455,
+      "paired_observation_rows": 19,
+      "raw_reference_string_clusters_not_verified_unique_papers": 9,
+      "reference_equal_log_ratio_iqr": null,
+      "supported_descriptive_coverage_gate": false
+    },
+    {
+      "group": "Posidonia",
+      "median_reference_equal_below_above_ratio": null,
+      "median_row_below_above_ratio": 3.5307328907381996,
+      "paired_observation_rows": 16,
+      "raw_reference_string_clusters_not_verified_unique_papers": 4,
+      "reference_equal_log_ratio_iqr": null,
+      "supported_descriptive_coverage_gate": false
+    },
+    {
+      "group": "Thalassodendron",
+      "median_reference_equal_below_above_ratio": null,
+      "median_row_below_above_ratio": 1.6695544554455446,
+      "paired_observation_rows": 15,
+      "raw_reference_string_clusters_not_verified_unique_papers": 7,
+      "reference_equal_log_ratio_iqr": null,
+      "supported_descriptive_coverage_gate": false
+    },
+    {
+      "group": "Phyllospadix",
+      "median_reference_equal_below_above_ratio": null,
+      "median_row_below_above_ratio": 0.6232687322153856,
+      "paired_observation_rows": 12,
+      "raw_reference_string_clusters_not_verified_unique_papers": 1,
+      "reference_equal_log_ratio_iqr": null,
+      "supported_descriptive_coverage_gate": false
+    }
+  ],
+  "hard_interpretation_stops": [
+    "Positive AG and BG biomass must be co-reported in exactly one source row.",
+    "A raw reference string is a provisional publication cluster; bibliographic corruption may split studies.",
+    "Unequal measurement coverage can induce selection bias: no missing-as-zero.",
+    "The source is a literature compilation; neither simultaneous quadrat identity nor matched season is independently audited.",
+    "Measured belowground biomass is NOT rhizome carbohydrates or physiological TNC.",
+    "Study-equal medians and central-bin spreads are descriptive, not a causal macroecological coefficient.",
+    "No sampled true species absences, dynamic site persistence, longitudinal cover thinning or ecosystem functions are inferred.",
+    "Do not treat a 2025 published global genus/bioregion analysis as unreported prior work."
+  ],
+  "overall": {
+    "excluded_row_flags_not_disjoint": {
+      "invalid_reference_genus_or_bioregion": 0,
+      "missing_or_nonpositive_above": 3272,
+      "missing_or_nonpositive_below": 1470
+    },
+    "median_paired_below_above_ratio": 1.2814593547385125,
+    "raw_reference_string_clusters": 139,
+    "reference_equal_median_ratio": 1.5085381693545565,
+    "reference_equal_q25_q75_log_ratio": [
+      -0.11060424305409669,
+      1.1645162268327298
+    ],
+    "same_row_positive_above_below_records": 1916
+  },
+  "schema": "tampa.global_seagrass_allocation_conditioned_spread_v1",
+  "source": {
+    "byte_sha256": "84e067f41637bc1031ee64487b5cb634500d6507698f0b11c42d25a6985946a5",
+    "doi": "10.1594/PANGAEA.929968",
+    "header": {
+      "header": [
+        "Latitude",
+        "Longitude",
+        "Seagr bioregion",
+        "Habitat",
+        "Genus",
+        "Year obs [a AD]",
+        "Seagr biom above dm [g/m**2]",
+        "Seagr biom below dm [g/m**2]",
+        "Seagr biom tot dm [g/m**2]",
+        "Seagr shoot dens [#/m**2]",
+        "Seagr cov [%]",
+        "Seagr leaf dens [#/m**2]",
+        "Seagr prod above dm [g/m**2/day]",
+        "Seagr prod below dm [g/m**2/day]",
+        "Seagr prod total dm [g/m**2/day]",
+        "Seagr shoot prod dm [g/m**2/day]",
+        "Seagr leaf prod dm [g/m**2/day]",
+        "Reference"
+      ],
+      "header_line": 410
+    }
+  },
+  "within_genus_central_aboveground_conditioned_bg_spread": [
+    {
+      "all_paired_rows": 775,
+      "central_above_quantiles_g_m2": [
+        58.48200000000001,
+        98.112
+      ],
+      "central_band_bg_median_g_m2": 76.19,
+      "central_band_bg_q25_g_m2": 44.825,
+      "central_band_bg_q75_g_m2": 137.15,
+      "central_band_bg_q75_to_q25": 3.0596765197992193,
+      "central_band_raw_reference_strings": 39,
+      "central_band_same_row_records": 155,
+      "coverage_gate": true,
+      "genus": "Zostera"
+    },
+    {
+      "all_paired_rows": 276,
+      "central_above_quantiles_g_m2": [
+        19.3,
+        38.57
+      ],
+      "central_band_bg_median_g_m2": 64.63,
+      "central_band_bg_q25_g_m2": 28.7,
+      "central_band_bg_q75_g_m2": 133.91,
+      "central_band_bg_q75_to_q25": 4.6658536585365855,
+      "central_band_raw_reference_strings": 13,
+      "central_band_same_row_records": 57,
+      "coverage_gate": true,
+      "genus": "Halodule"
+    },
+    {
+      "all_paired_rows": 253,
+      "central_above_quantiles_g_m2": [
+        13.986,
+        38.02
+      ],
+      "central_band_bg_median_g_m2": 20,
+      "central_band_bg_q25_g_m2": 16.2475,
+      "central_band_bg_q75_g_m2": 34.115,
+      "central_band_bg_q75_to_q25": 2.0997076473303586,
+      "central_band_raw_reference_strings": 10,
+      "central_band_same_row_records": 52,
+      "coverage_gate": true,
+      "genus": "Halophila"
+    },
+    {
+      "all_paired_rows": 195,
+      "central_above_quantiles_g_m2": [
+        91.732,
+        139.10399999999998
+      ],
+      "central_band_bg_median_g_m2": 626.39,
+      "central_band_bg_q25_g_m2": 425.86,
+      "central_band_bg_q75_g_m2": 987.5,
+      "central_band_bg_q75_to_q25": 2.31883717653689,
+      "central_band_raw_reference_strings": 9,
+      "central_band_same_row_records": 39,
+      "coverage_gate": true,
+      "genus": "Thalassia"
+    },
+    {
+      "all_paired_rows": 167,
+      "central_above_quantiles_g_m2": [
+        47.64,
+        88.42799999999997
+      ],
+      "central_band_bg_median_g_m2": 288,
+      "central_band_bg_q25_g_m2": 165.73,
+      "central_band_bg_q75_g_m2": 359,
+      "central_band_bg_q75_to_q25": 2.166173897302842,
+      "central_band_raw_reference_strings": 11,
+      "central_band_same_row_records": 33,
+      "coverage_gate": true,
+      "genus": "Cymodocea"
+    },
+    {
+      "all_paired_rows": 128,
+      "central_above_quantiles_g_m2": [
+        6.748000000000001,
+        18.18
+      ],
+      "central_band_bg_median_g_m2": 14.7,
+      "central_band_bg_q25_g_m2": 8.315,
+      "central_band_bg_q75_g_m2": 17.65,
+      "central_band_bg_q75_to_q25": 2.122669873722189,
+      "central_band_raw_reference_strings": 5,
+      "central_band_same_row_records": 27,
+      "coverage_gate": true,
+      "genus": "Ruppia"
+    },
+    {
+      "all_paired_rows": 60,
+      "central_above_quantiles_g_m2": [
+        118.362,
+        158.44
+      ],
+      "central_band_bg_median_g_m2": null,
+      "central_band_bg_q25_g_m2": null,
+      "central_band_bg_q75_g_m2": null,
+      "central_band_bg_q75_to_q25": null,
+      "central_band_raw_reference_strings": 4,
+      "central_band_same_row_records": 12,
+      "coverage_gate": false,
+      "genus": "Enhalus"
+    },
+    {
+      "all_paired_rows": 19,
+      "central_above_quantiles_g_m2": [
+        44.476000000000006,
+        243.8479999999998
+      ],
+      "central_band_bg_median_g_m2": null,
+      "central_band_bg_q25_g_m2": null,
+      "central_band_bg_q75_g_m2": null,
+      "central_band_bg_q75_to_q25": null,
+      "central_band_raw_reference_strings": 2,
+      "central_band_same_row_records": 3,
+      "coverage_gate": false,
+      "genus": "Syringodium"
+    },
+    {
+      "all_paired_rows": 16,
+      "central_above_quantiles_g_m2": [
+        295.66,
+        335.32
+      ],
+      "central_band_bg_median_g_m2": null,
+      "central_band_bg_q25_g_m2": null,
+      "central_band_bg_q75_g_m2": null,
+      "central_band_bg_q75_to_q25": null,
+      "central_band_raw_reference_strings": 2,
+      "central_band_same_row_records": 4,
+      "coverage_gate": false,
+      "genus": "Posidonia"
+    },
+    {
+      "all_paired_rows": 15,
+      "central_above_quantiles_g_m2": [
+        148.60000000000002,
+        278.08
+      ],
+      "central_band_bg_median_g_m2": null,
+      "central_band_bg_q25_g_m2": null,
+      "central_band_bg_q75_g_m2": null,
+      "central_band_bg_q75_to_q25": null,
+      "central_band_raw_reference_strings": 3,
+      "central_band_same_row_records": 3,
+      "coverage_gate": false,
+      "genus": "Thalassodendron"
+    },
+    {
+      "all_paired_rows": 12,
+      "central_above_quantiles_g_m2": [
+        591.054,
+        653.342
+      ],
+      "central_band_bg_median_g_m2": null,
+      "central_band_bg_q25_g_m2": null,
+      "central_band_bg_q75_g_m2": null,
+      "central_band_bg_q75_to_q25": null,
+      "central_band_raw_reference_strings": 1,
+      "central_band_same_row_records": 2,
+      "coverage_gate": false,
+      "genus": "Phyllospadix"
+    }
+  ],
+  "source_verified_run": {
+    "id": 45322310487,
+    "job_id": 138203514342,
+    "head_sha": "6e473fc836d0228084bb1ac5c2e3bb512e42f2b6",
+    "artifact_ids": [
+      14887787930
+    ],
+    "status": "success"
+  }
+}
