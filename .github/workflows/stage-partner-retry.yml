@@ -1,0 +1,23 @@
+name: Stage partner source retry
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/157_stage_partner_source_retry.py'
+      - '.github/workflows/stage-partner-retry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/157_stage_partner_source_retry.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage-partner-retry
+          path: stage_partner_retry/
+          if-no-files-found: error
