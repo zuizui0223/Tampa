@@ -74,7 +74,7 @@ class ZENAnalysisTests(unittest.TestCase):
 
     def test_requires_complete_treatment_assignment(self):
         b=fake_csv().decode().splitlines()
-        b=[line for line in b if "A,D+N+," not in line]
+        b=[line for line in b if not (line.startswith("A,") and ",D+N+," in line)]
         with self.assertRaises(ValueError):
             M.by_site(M.parse_core(("\n".join(b)+"\n").encode()))
 
