@@ -89,6 +89,23 @@ The post-hoc scale-invariant D+ epiphyte response is positive in **12/15 sites**
 
 **What is biologically learned, and what is not:** In one **already published** 15-site coordinated Zostera experiment, reducing mesograzers tends to increase epiphyte chlorophyll, while simply adding nutrients has no consistent site-equal mean signal in this reaggregation; a strong global mean D×N interaction is not resolved. This reinforces the pathway *mesograzers consume epiphytes*, already reported by Duffy et al. (2015), not a first discovery. The actual original CSV contains no matched **Zostera biomass, cover, survival, rhizome TNC or belowground biomass endpoint**, so this reanalysis cannot demonstrate improved host persistence or a hidden belowground reserve effect. The sites represent **one coordinated study**, not 15 independent published studies or 600 independent estuaries. The 95% intervals do not correct source selection or publication confounding, and the scale sensitivity was selected post-outcome. Cross-site temperature/latitude associations are post-hoc ecological moderators; without manipulations and further sites they cannot identify a general switching mechanism.
 
+## Published 2020 field experimental contrast: biotic protection without immediate biomass gain
+
+**Source:** van der Geest et al. 2020 *Frontiers in Marine Science* DOI [10.3389/fmars.2020.00011](https://doi.org/10.3389/fmars.2020.00011), Table 1 and reported original analysis, **one** Thau-lagoon factorial experiment with **n=6 plots per arm**: control C, added lucinids L, added organic matter OM, added lucinids plus organic matter L+OM. The new repository script `analysis/122_lucinid_field_published_factorial_contrast.py` reaggregates only the **published means and reported SE**, not original plot data or a novel trial/meta-analysis.
+
+| Endpoint | C | L | OM | L+OM | Original author's inference |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Seagrass leaf sulfide-derived sulfur fraction F_sulfide (%) | 20.3 | 19.1 | 25.3 | 22.3 | Lucinid main effect P=0.048, reduces sulfide intrusion |
+| Rhizome biomass (g dry m−2) | 65.9 | 70.4 | 48.4 | 48.8 | Lucinid main effect P=0.80; organic addition reduces biomass P=0.048 |
+| Leaf biomass (g dry m−2) | 76.7 | 85.2 | 91.5 | 64.8 | Lucinid main effect P=0.56 |
+| Porewater sulfide (µmol L−1) | 0.1 | 0.4 | 1170.9 | 716.4 | OM vs OM+L comparison P=0.34, not resolved |
+
+The simple *published mean contrasts* for adding lucinids are **−1.2 percentage points** F_sulfide without organic input and **−3.0 percentage points** with added organic input. The ratio of magnitudes is 2.5, but the source publication reports **no supported interaction**: it would be invalid to declare stronger underlying biology from that difference alone. The equal-cell lucinid main contrast for rhizome biomass is only **+2.45 g dry m−2**, and the authors' factorial test P=0.80. The porewater pool reduction in the high-organic group is a nonsupported difference (P=0.34), not demonstrated removal from porewater.
+
+**Interpretive insight:** *Proximal stress buffering and immediate quantity of the foundation species are not the same measurable outcome*. That is a sharper ecological extension of the Tampa state-axis question, but it is a **post-hoc reaggregation of a previously published field experiment**. It is not global, not time-to-persistence, and not direct evidence of rhizome carbohydrate reserves or long-term rescue.
+
+An independent public raw-table attempt is tracked in `analysis/121_lucinid_2020_field_experiment_source_gate.py` from Dryad DOI **10.5061/dryad.jm63xsj6n**, including source Table 7 (sulfide) and Table 9 (plot seagrass and lucinid responses). That will allow an exploratory plot-level reanalysis *only if* treatment IDs, blocks and units can be verified. The published 2020 paper already reported no significant interactions. Do not override that status with raw percentages from one plot group.
+
 ## Additional already-published experimental sign changes
 
 - Fuggle et al. (2023) J Ecology DOI 10.1111/1365-2745.14081: under nutrient addition, intact root microbiomes helped Zostera growth differently from ambient conditions. This is **prior experimental evidence for context-dependent microbial facilitation**, not a new hypothesis confirmation from this repository.
@@ -99,7 +116,7 @@ The post-hoc scale-invariant D+ epiphyte response is positive in **12/15 sites**
 
 ## Implementation
 
-- `data/seagrass_interactions_v1/study_evidence_registry.csv`: 15 evidence records, 6 arms, DOI/URL/estimand/source status.
+- `data/seagrass_interactions_v1/study_evidence_registry.csv`: 18 evidence records, 6 arms, DOI/URL/estimand/source status.
 - `analysis/116_seagrass_six_interactions_evidence_screen.py`: exact published contrast arithmetic + original Tampa epiphyte and community falsification boundaries.
 - `analysis/117_seagrass_interaction_original_data_preflight.py`: source-only CSV/JSON/workbook inventory for ZEN 2011, Dryad 2012 and Nature 2021 source data. Per-source HTTPS or schema stop is explicit, not zero effect.
 - `.github/workflows/seagrass-six-interactions-exploratory.yml`: independent reproducibility and source artifacts; tests do not require internet.
