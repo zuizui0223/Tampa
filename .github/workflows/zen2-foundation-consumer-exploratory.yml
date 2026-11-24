@@ -11,6 +11,8 @@ on:
       - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
       - 'analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py'
       - 'analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py'
+      - 'results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json'
+      - 'results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json'
       - 'validation/test_zen2_crossyear_structure_vs_trophic_site_cv.py'
       - 'validation/test_zen2_crossyear_basin_latitude_rank_sensitivity.py'
       - 'results/zen2_2014_2015_geographic_link_verified_20261124.json'
@@ -209,6 +211,18 @@ jobs:
         run: |
           python analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py --out /tmp/zen2_crossyear_basin_robustness.json
           cat /tmp/zen2_crossyear_basin_robustness.json
+      - name: Confirm Basin and latitude sensitivity reproduces the archived result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_crossyear_basin_robustness.json').read_text())
+          frozen=json.loads(Path('results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json').read_text())
+          verified=frozen.pop('source_verified_run',None)
+          if verified is None or verified.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('Original ZEN2 result drift: results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json')
+          print('PASS: exact source-validated cross-year result')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen2-crossyear-shoot-density-basin-latitude-robustness
@@ -227,6 +241,18 @@ jobs:
         run: |
           python analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py --out /tmp/zen2_crossyear_host_interaction_site_cv.json
           cat /tmp/zen2_crossyear_host_interaction_site_cv.json
+      - name: Confirm Site leave-one-out structural versus trophic predictions reproduces the archived result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_crossyear_host_interaction_site_cv.json').read_text())
+          frozen=json.loads(Path('results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json').read_text())
+          verified=frozen.pop('source_verified_run',None)
+          if verified is None or verified.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('Original ZEN2 result drift: results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json')
+          print('PASS: exact source-validated cross-year result')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen2-crossyear-host-vs-interaction-14site-cv
