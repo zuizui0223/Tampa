@@ -44,6 +44,24 @@ class DryadOriginalExperimentTests(unittest.TestCase):
         self.assertEqual(x["status"],"ORIGINAL_WORKBOOK_RETRIEVED_TREATMENT_MAPPING_REQUIRED")
         self.assertEqual(x["workbook"]["sheet_names"],["Experiment"])
 
+    def test_official_bulk_download_fallback_after_401(self):
+        import urllib.error
+        meta_url="https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.210mp"
+        meta=json.dumps({"_links":{"stash:download":{"href":
+                    "/api/v2/datasets/doi%3A10.5061%2Fdryad.210mp/download"}}}).encode()
+        b=io.BytesIO()
+        with zipfile.ZipFile(b,"w") as z:
+            z.writestr("Original/Experimental_data.xlsx",workbook())
+        def fake(url):
+            if url==M.VERSION_FILES:
+                raise urllib.error.HTTPError(url,401,"synthetic auth",hdrs=None,fp=None)
+            if url==meta_url:return meta
+            return b.getvalue()
+        x=M.report(fetcher=fake)
+        self.assertEqual(x["status"],"ORIGINAL_WORKBOOK_RETRIEVED_TREATMENT_MAPPING_REQUIRED")
+        self.assertEqual(x["access_method"],"official_bulk_zip_after_version_file_auth_stop")
+        self.assertEqual(x["workbook"]["sheet_names"],["Experiment"])
+
     def test_no_workbook_download_counted_as_no_effect(self):
         def blocked(url):raise ValueError("synthetic HTTP 403")
         x=M.report(fetcher=blocked)
