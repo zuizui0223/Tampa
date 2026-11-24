@@ -31,11 +31,12 @@ def parse(raw):
         assert sum(ns)==n>0 and sum(gs)==g and all(0<=b<=a for a,b in zip(ns,gs))
         f,t=row["fauna"],row["temp"]
         assert f in FAUNA and t in TEMPS
-        rows.append(dict(key=key,run=run,block=block,fauna=f,temp=t,n=n,g=g,s=ns[0],sg=gs[0],reported_rate=float(row["germinated_perc"])))
+        rows.append(dict(key=key,run=run,block=block,fauna=f,temp=t,n=n,g=g,s=ns[0],sg=gs[0],reported_rate=float(row["germinated_perc"]) if row["germinated_perc"].strip() else None))
     assert len(rows)==240
     # Author R code explicitly selects rows 81:240 (runs 2 and 3 in deposit).
     a=rows[80:]
     assert [r["run"] for r in rows]==[1]*80+[2]*80+[3]*80
+    assert all(r["reported_rate"] is not None for r in a)
     return a
 def summary(a):
     N,G,S,SG=(sum(r[k] for r in a) for k in ("n","g","s","sg"))
