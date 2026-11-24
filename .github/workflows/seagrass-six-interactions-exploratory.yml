@@ -7,6 +7,8 @@ on:
       - 'analysis/116_seagrass_six_interactions_evidence_screen.py'
       - 'analysis/117_seagrass_interaction_original_data_preflight.py'
       - 'analysis/118_zen_15site_mesograzer_factorial.py'
+      - 'analysis/119_lucinid_dryad_original_workbook_preflight.py'
+      - 'validation/test_lucinid_dryad_original_workbook_preflight.py'
       - 'validation/test_zen_15site_mesograzer_factorial.py'
       - 'validation/test_seagrass_six_interactions_evidence_screen.py'
       - 'validation/test_seagrass_interaction_original_data_preflight.py'
@@ -68,3 +70,22 @@ jobs:
         with:
           name: zen-15site-grazer-nutrient-site-equal-contrasts
           path: /tmp/zen15_grazer_nutrient_exploratory.json
+
+  lucinid_original_experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate official Dryad workbook and factor header reader
+        run: python -m unittest discover -s validation -p 'test_lucinid_dryad_original_workbook_preflight.py' -v
+      - name: Probe actual 2012 lucinid original experiment workbook
+        run: |
+          python analysis/119_lucinid_dryad_original_workbook_preflight.py \
+            --out /tmp/lucinid_original_experiment_preflight.json
+          cat /tmp/lucinid_original_experiment_preflight.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lucinid-2012-original-data-workbook-preflight
+          path: /tmp/lucinid_original_experiment_preflight.json
