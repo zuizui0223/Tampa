@@ -145,6 +145,21 @@ def summarize(rows,primary,require_original_frame=True):
             size_gates[label]["site_bootstrap_95pct_percentile"]=(
                 ORIGINAL.bootstrap_site_mean(sample,seed=2026112425)["site_bootstrap_95pct_percentile"]
             )
+            site_pairs=[(x["site"],x["taxon"],x[label]) for x in sites if x[label] is not None]
+            size_gates[label]["leave_one_site_out_mean_range"]=[
+                min(statistics.mean([z[2] for z in site_pairs if z[0]!=site]) for site,_,_ in site_pairs),
+                max(statistics.mean([z[2] for z in site_pairs if z[0]!=site]) for site,_,_ in site_pairs),
+            ]
+            amph=[p[2] for p in site_pairs if p[1]=="Amphipod"]
+            size_gates[label]["amphipod_only_posthoc_check"]={
+                "sites":len(amph),
+                "site_equal_mean_mm":statistics.mean(amph) if amph else None,
+                "site_bootstrap_95pct_percentile":(
+                    ORIGINAL.bootstrap_site_mean(amph,seed=2026112488)["site_bootstrap_95pct_percentile"]
+                    if len(amph)>=5 else None
+                ),
+                "warning":"Dropping isopod sites selects distinct geographies and cannot identify an independent prey-taxon effect.",
+            }
     return {
       "schema":"tampa.zen2_2015_predation_manipulation_ceiling_taxon_audit_v1",
       "status":"response_exposed_posthoc_sensitivity_not_new_original_experimental_claim",
@@ -152,6 +167,12 @@ def summarize(rows,primary,require_original_frame=True):
       "source_paper":"10.1002/ecy.3316",
       "site_count":len(sites),
       "size_diagnostic_posthoc_no_causal_prey_selection":size_gates,
+      "measured_prey_size_count":sum(x["prey_size_mm_n"] for x in sites),
+      "missing_prey_size_count":sum(x["prey_size_mm_missing"] for x in sites),
+      "sites_without_any_prey_size_measurement":[x["site"] for x in sites if x["prey_size_mm_n"]==0],
+      "sites_with_more_than_half_prey_size_missing":[
+          x["site"] for x in sites if x["prey_size_mm_missing"]>x["n_original_tether_trials"]/2
+      ],
       "original_tethered_prey_trials":sum(x["n_original_tether_trials"] for x in sites),
       "taxon_by_site_not_an_independent_species_experiment":{
           k:{"sites":sorted(v),"n_sites":len(v),
