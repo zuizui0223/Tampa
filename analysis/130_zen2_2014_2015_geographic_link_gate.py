@@ -90,8 +90,6 @@ def audit(old,new,threshold=THRESHOLD_KM):
         match=AMBIGUOUS_CODE_FAMILIES.get(code,code)
         ambiguous=(code in AMBIGUOUS_CODE_FAMILIES)
         old_group=groups_old.get(match,[])
-        distances=[haversine(coords.pop(),(r["lat"],r["lon"])) for r in old_group] if old_group else []
-        # NOTE: coords.pop() only used per candidate once; immediately re-derive location
         loc=(study[0]["lat"],study[0]["lon"])
         distances=[haversine(loc,(r["lat"],r["lon"])) for r in old_group]
         min_distance=min(distances) if distances else None
