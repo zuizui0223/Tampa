@@ -63,6 +63,40 @@ An interesting ecological generalization is not simply that interactions are ben
 
 The 2004 and 2011 meta-analyses **already exist**. We will not pool their published summary averages with original trials, double-count citations or treat them as independent experiment families. Nested biological observations and shared controls need multilevel covariance and original n/SD/SE. If not available, evidence remains a qualitative directional mechanism inventory.
 
+## Verified original-data exploratory result: 15-site ZEN factorial
+
+**Authoritative analysis:** [GitHub Actions #45321203113](https://github.com/zuizui0223/Tampa/actions/runs/45321203113), job 138199905130, downloadable source-verified artifact #14888135811 (ZIP SHA256 `a21290113e43a6b59e16522bf110cb8056dd6554cfc63d70910584955eb63a44`). Source CSV SHA256 `5a97763735a22076eac25a86736c50cb12611a529c5e233941fbc3a73ad4c6ae`; original 15 sites, 40 plots/site, all 600 plots, exactly 150 each across four D±N± treatments. The entire reproducible result, including all site contrasts and bootstraps, is pinned in `results/zen_15site_mesograzer_exploratory_verified_20261124.json`.
+
+**Treatment semantics:** D+ is *grazer deterrent*, so D+−D− is the effect of reducing grazer access, not adding grazers; N+ is fertilizer addition. Site-equal raw contrasts are the average of the two relevant factorial cell contrasts per site, not pooled plot-level inferential estimates. Confidence intervals below are site-bootstrap percentile summaries across 15 site contrasts with 5,000 resamples.
+
+| Endpoint | Original-scale 15-site D+ minus D− mean contrast | Site-bootstrap CI | Sign count |
+| --- | ---: | ---: | --- |
+| Epiphyte chlorophyll-a normalized to Zostera | **+141.815** (raw original Chl a units) | **+9.229 to +383.872** | 11 positive / 4 negative |
+| Grazer biomass per gram host | **−15.665** (original CSV units) | **−37.511 to −1.697** | 11 negative / 4 positive |
+| Epiphyte chl a nutrient N+−N− | **+30.915** | **−22.891 to +116.058** | 7 positive / 8 negative |
+| Epiphyte chl a D×N difference-in-differences | **+32.160** | **−90.103 to +224.673** | 4 positive / 11 negative |
+
+**Outlier-disclosure and post-hoc rescaling:** One site (VA) had a very large chl a raw D+−D− contrast (**+1749.587**). The across-site raw mean after omitting VA falls to **+26.974**, so the pooled raw magnitude is not representative. *After observing this*, the exploratory response was also expressed as an equal-site mean of log-ratios of positive per-arm cell means, with unadjusted site-bootstrap intervals and full leave-one-site-out audit:
+
+| 15-site post-hoc scale-invariant contrast | Site-equal geometric ratio | Site-bootstrap 95% interval | Leave-one-site-out ratio range |
+| --- | ---: | ---: | ---: |
+| Chl a, grazer deterrent (D+ vs D−) | **1.2747** | **1.0549–1.7008** | **1.1337–1.3237** |
+| Grazer biomass, grazer deterrent | **0.7923** | **0.6482–0.9677** | **0.7482–0.8298** |
+| Chl a, fertilization | **1.0434** | **0.9416–1.1539** | Not a supported increment |
+| Chl a, D×N ratio of ratios | **0.9021** | **0.7030–1.1610** | Not a supported increment |
+
+The post-hoc scale-invariant D+ epiphyte response is positive in **12/15 sites**, negative in 3; median site ratio is **1.1186**. Even after omitting VA the geometric D+ ratio is **1.1337**. Relative to source controls, the same manipulation lowers grazer biomass (geometric ratio 0.792), supporting the expected manipulation direction.
+
+**What is biologically learned, and what is not:** In one **already published** 15-site coordinated Zostera experiment, reducing mesograzers tends to increase epiphyte chlorophyll, while simply adding nutrients has no consistent site-equal mean signal in this reaggregation; a strong global mean D×N interaction is not resolved. This reinforces the pathway *mesograzers consume epiphytes*, already reported by Duffy et al. (2015), not a first discovery. The actual original CSV contains no matched **Zostera biomass, cover, survival, rhizome TNC or belowground biomass endpoint**, so this reanalysis cannot demonstrate improved host persistence or a hidden belowground reserve effect. The sites represent **one coordinated study**, not 15 independent published studies or 600 independent estuaries. The 95% intervals do not correct source selection or publication confounding, and the scale sensitivity was selected post-outcome. Cross-site temperature/latitude associations are post-hoc ecological moderators; without manipulations and further sites they cannot identify a general switching mechanism.
+
+## Additional already-published experimental sign changes
+
+- Fuggle et al. (2023) J Ecology DOI 10.1111/1365-2745.14081: under nutrient addition, intact root microbiomes helped Zostera growth differently from ambient conditions. This is **prior experimental evidence for context-dependent microbial facilitation**, not a new hypothesis confirmation from this repository.
+- Jongen et al. (2025) J Ecology DOI 10.1111/1365-2745.70104: a **120-pot factorial** contrasts rhizosphere microbes and bulk sediment microorganisms across heatwave intensities. Rhizosphere microbes have positive plant effects, whereas bulk sediment microbiota may exert negative effects under extreme heat. This is a compelling **compartment-specific net interaction sign** already documented, not a result of our new meta.
+- Marsiglia et al. (2025) *Sci* DOI 10.3390/sci7020062 surveyed **62** epiphyte/epibiont studies, so the claim of first discovery that epibionts can help or hurt seagrass would be wrong.
+
+**Cross-family synthesis remains a hypothesis, not a pooled result:** Seagrass recipient outcome and endpoint choice, biotic partner guild, abiotic stress and timescale must all be mapped before a common hierarchical effect can be interpreted. Root bacteria and invertebrates in a sediment detoxification mechanism are not the same experimental manipulation as grazer-deterrent treatments on epiphytes.
+
 ## Implementation
 
 - `data/seagrass_interactions_v1/study_evidence_registry.csv`: 15 evidence records, 6 arms, DOI/URL/estimand/source status.
