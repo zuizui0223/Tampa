@@ -1,0 +1,106 @@
+{
+  "status": "executed local original-data analysis, response-open; core repository reproduction not separately replayed",
+  "source_artifact": {
+    "id": 14932375590,
+    "sha256": "843038aefe1afaed39ded71f4d5e5890262a778300c1f0ab011245b7e61ead8a"
+  },
+  "counts": {
+    "eligible_station_years": 16207,
+    "consecutive_pairs": 8957,
+    "test_pairs": 6309,
+    "test_stations": 1770,
+    "test_years": [
+      2013,
+      2022
+    ],
+    "no_family_pairs": 5094
+  },
+  "M_forward": {
+    "mean": {
+      "rmse": 1.2158640611862988
+    },
+    "persistence": {
+      "rmse": 1.6181151404857035,
+      "recall": 0.3069679849340866
+    },
+    "environment": {
+      "rmse": 1.1995025724115156,
+      "recall": 0.3163841807909605
+    },
+    "environment_B": {
+      "rmse": 1.193678022479228,
+      "recall": 0.30257376020087884
+    },
+    "environment_B_M": {
+      "rmse": 1.192975956540048,
+      "recall": 0.3113622096672944,
+      "skill": 0.0011759611296909833
+    },
+    "environment_B_M_history": {
+      "rmse": 1.192315135529631,
+      "recall": 0.28562460765850595,
+      "skill": 0.002282204887692707
+    }
+  },
+  "spatiotemporal_M": {
+    "environment_B_rmse": 1.211,
+    "environment_B_M_rmse": 1.21,
+    "environment_B_M_history_rmse": 1.213,
+    "incremental_skill": 0.002
+  },
+  "B_forward": {
+    "environment_B_rmse": 1.275,
+    "environment_B_M_rmse": 1.273,
+    "environment_B_M_history_rmse": 1.271
+  },
+  "sensitivity_M_skill": {
+    "ridge1": 0.0011552032950483682,
+    "ridge100": 0.0013212853147931414,
+    "nonlinear": -0.00207,
+    "no_family": -0.0006307559422886744,
+    "post2012": -0.0001
+  },
+  "annual_years_improved": 4,
+  "field_defaunation": {
+    "n_pairs": 15,
+    "control_mean": 0.051748866666666664,
+    "defaunated_mean": 0.0192846,
+    "delta": -0.032464266666666665,
+    "ci": [
+      -0.04486217333333333,
+      -0.02074836666666667
+    ],
+    "p_sign_flip": 0.00006103515625,
+    "all_negative": true,
+    "by_level": {
+      "Low": [
+        0.0795868,
+        0.029295,
+        -0.0502918
+      ],
+      "Mid": [
+        0.055731,
+        0.0236416,
+        -0.0320894
+      ],
+      "High": [
+        0.0199288,
+        0.0049172,
+        -0.0150116
+      ]
+    }
+  },
+  "GEI": {
+    "n_pots": 10,
+    "start_mean": 69.238155531,
+    "end_mean": 44.9510505305,
+    "decrease_n": 8,
+    "rho_change_vs_survival": 0.3432465321284133
+  },
+  "limits": [
+    "Conditional on identified positive observations in both years; no presence forecast, no risk threshold, no individual size distribution.",
+    "Response-open fixed model comparisons; annual spatial folds are approximate geographic cells, local lag observations available at prediction time. No independent geographic region validation.",
+    "All field defaunation effects are multi-taxon intervention, not exclusively Hediste; loss rate as recorded.",
+    "GEI only in worm+algae treatment, no comparison with algae-only. Cannot distinguish food substitution versus physical protection."
+  ]
+}

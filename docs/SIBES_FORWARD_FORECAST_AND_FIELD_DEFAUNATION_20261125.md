@@ -1,0 +1,25 @@
+# SIBES forward-year forecast and field defaunation contrast
+
+2026-11-25 JST. Independent follow-up to 162, response-open, no estimated plant recruitment suitability. Source-verified archive 14932375590 SHA256 843038aefe1afaed39ded71f4d5e5890262a778300c1f0ab011245b7e61ead8a. SIBES DOI 10.25850/nioz/7b.b.ug; Hautekiet data 10.5281/zenodo.15182547, paper 10.1002/lno.70379. Executed full local Python; repository 163 is compact reproduction of principal calculations, not independently replayed in CI.
+
+## Conditional prediction of observed mean individual AFDM
+Retain exact identified H. diversicolor positive abundance and AFDM grid events, remove conflicting sample IDs, require >=30 positive station-years in each year-basin. 16,207 events. Match same station and basin in consecutive years, 8,957 pairs. Test 2013–2022, training only earlier target years, 6,309 pairs at 1,770 stations. Both years positive and sampled, so this is retrospective conditional forecasting of measured mean AFDM, not forecast of population occurrence, risk or area. Environmental predictors are prior-year longitude, latitude, basin, mud, grain size, observation day; no next-year covariates. Log B and log M; expanding historical means use only records through predictor year, including irregular prior positive records. B+M and B+N contain the same log-scale information; neither individual size distribution nor independent body mass data. Ridge 10 with training-only imputation, scaling; 1/100 sensitivity. Geographic sensitivity partitions approximate 10 km cells into five deterministic folds, trains on earlier target years outside fold, allows local lag predictors. Not independent-region validation and adjacent cells can be close. All choices exploratory.
+
+| model | pooled RMSE log M | top quartile recall within evaluated paired year-basin subsets |
+|---|---:|---:|
+| training mean |1.215864|not meaningful for rank|
+| persistence |1.618115|.30697|
+| environmental |1.199503|.31638|
+| + lag B |1.193678|.30257|
+| + lag M |1.192976|.31136|
+| + past B,M means and count |1.192315|.28562|
+
+Incremental MSE skill from lag M vs env+B .001176 (0.118%), improves 4/10 test years. Historical means add little (.002282 skill). Recall 482/1593 ->496/1593 when adding M; history 455/1593, not practically reliable. Spatial+temporal RMSE approx 1.211 ->1.210 ->1.213. Sensitivities: alpha 1/100 +.116/.132% incremental MSE skill; squared log predictors and logB x logM interaction -0.207%; no family co-record in either year -0.063%; restriction to predictor years >=2012, test 2016–22 -0.01%. Gradient-boosting attempt exceeded runtime; no result reported for that model. No independent tuning/holdout. For log B, corresponding RMSE 1.275 ->1.273 ->1.271. Results support weak predictability in tested models, not impossibility of prediction, not a claim about individual size distribution or general future population. No inference that environmental variability specifically causes the lack of skill. The small improvement may partly reflect sampling error, conditional positives, variable observation dates, imputation, coarse sampling, and family-level juvenile IDs.
+
+## Field defaunation: separate saltmarsh experiment
+15 paired plots from source LossRate_defaunation_exp1.csv, five per elevation. Read Loss rate as recorded, no reconstruction of units or survival probabilities. Control/defaunated means: low .0795868/.029295, mid .055731/.0236416, high .0199288/.0049172. Equal elevation weighted loss-rate difference -.0324643 (63% relative reduction; all 15 paired contrasts negative); 30,000 bootstrap draws within elevation, conditional interval [-.0448622,-.0207484]. Exact sign flip p=2/32768=.000061 under independent symmetric pair differences; randomization and spatial independence not established, treat as sensitivity. Defaunation removes fauna, not selectively Hediste; other pathways and sediment changes possible. Elevation difference in magnitude descriptive, not proven interaction. Prior article already documented field removal benefit. No shared dataset with SIBES.
+
+## Mechanism gate
+Algal image scores (Average GEI) available for 10 pots, all assigned both worms and algae. Start mean 69.2382, end 44.9511, eight decreases; correlation of score change with final plant survival rho=.343, not a causal mechanism. GEI is a greenness index, not calibrated biomass or intake. No algae-only image score time series. Cannot distinguish consumption, disturbance and other changes, or partition protective mechanism into physical barrier vs alternate food. No claim of a new mechanism beyond original authors' interpretations. Need factorial measurements of actual worm feeding / burrow access, algae and plants, or restoration trials with updated site-year measurements of worm size and plant endpoints. No actual sea otter, pollinator, seagrass recruitment link tested. Main/manuscript unchanged.
+
+Reproduction: python analysis/163_sibes_forward_forecast.py github-actions-artifact-14932375590.zip --out result.json. Full local result/forecasts also saved in this conversation. 
