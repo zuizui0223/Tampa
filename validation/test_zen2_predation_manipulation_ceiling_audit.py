@@ -44,6 +44,9 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(j["original_tethered_prey_trials"],216)
         self.assertEqual(j["sites_with_100pct_consumption"],["CC"])
         self.assertEqual(j["number_sites_other"],5)
+        self.assertAlmostEqual(j["assay_baseline_risk_and_upper_bound"]["site_equal_mean_ambient_predation"],7/12)
+        self.assertAlmostEqual(j["assay_baseline_risk_and_upper_bound"]["site_equal_mean_max_possible_predation_increase"],5/12)
+        self.assertEqual(j["assay_baseline_risk_and_upper_bound"]["sites_with_ambient_predation_at_least_90pct"],["CC"])
         self.assertEqual(j["measured_prey_size_count"],216)
         self.assertEqual(j["missing_prey_size_count"],0)
         doses=j["manipulation_fidelity_source_count_diagnostic"]["site_mean_post_pre_ratios"]
