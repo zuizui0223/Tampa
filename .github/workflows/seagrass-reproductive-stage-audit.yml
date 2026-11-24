@@ -1,0 +1,38 @@
+name: Seagrass reproductive stage audit
+on:
+  pull_request:
+    paths:
+      - 'analysis/135_zen_realized_grazer_epiphyte_coupling.py'
+      - 'analysis/136_reproductive_stage_recruitment_audit.py'
+      - 'analysis/137_reproductive_raw_source_preflight.py'
+      - 'docs/SEAGRASS_REPRODUCTIVE_STAGE_GATES_20261124.md'
+      - '.github/workflows/seagrass-reproductive-stage-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  arithmetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          python analysis/135_zen_realized_grazer_epiphyte_coupling.py > out/zen_coupling.json
+          python analysis/136_reproductive_stage_recruitment_audit.py > out/reproductive_stage.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproductive-stage-arithmetic
+          path: out/
+          if-no-files-found: error
+  source_inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/137_reproductive_raw_source_preflight.py > reproductive_source_inventory.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproductive-source-inventory
+          path: reproductive_source_inventory.json
+          if-no-files-found: error
