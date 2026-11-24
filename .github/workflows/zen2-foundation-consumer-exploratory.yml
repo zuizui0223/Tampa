@@ -30,7 +30,7 @@ jobs:
           name: zen2-two-original-sources-metadata
           path: /tmp/zen2_two_sources_metadata_v1.json
 
-  2015-site-equal-experiment:
+  experiment_2015_site_equal:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
           name: zen2-2015-eelgrass-thinning-consumer-predation
           path: /tmp/zen2_2015_site_predation.json
 
-  2014-paired-structure-community:
+  survey_2014_paired_structure:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
