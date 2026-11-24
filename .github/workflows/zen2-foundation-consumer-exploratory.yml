@@ -8,6 +8,8 @@ on:
       - 'analysis/128_zen2_2014_50meadow_state_consumer.py'
       - 'analysis/129_zen2_predation_manipulation_ceiling_audit.py'
       - 'analysis/130_zen2_2014_2015_geographic_link_gate.py'
+      - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
+      - 'validation/test_zen2_prior2014_state_later2015_interaction.py'
       - 'validation/test_zen2_2014_2015_geographic_link_gate.py'
       - 'validation/test_zen2_predation_manipulation_ceiling_audit.py'
       - 'validation/test_zen2_2014_50meadow_state_consumer.py'
@@ -145,3 +147,21 @@ jobs:
         with:
           name: zen2-2014-2015-response-blind-geographic-linkage
           path: /tmp/zen2_crossyear_geo.json
+
+  crossyear_temporal_context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test site-level source-locked temporal state transport and maxT
+        run: python -m unittest discover -s validation -p 'test_zen2_prior2014_state_later2015_interaction.py' -v
+      - name: Compute 2014-nearest-subsite shoot persistence and 2015 predation contextual tests
+        run: |
+          python analysis/131_zen2_prior2014_state_later2015_interaction.py --out /tmp/zen2_crossyear_2014_2015_site_context.json
+          cat /tmp/zen2_crossyear_2014_2015_site_context.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-crossyear-prior-2014-context-to-2015-trophic-risk
+          path: /tmp/zen2_crossyear_2014_2015_site_context.json
