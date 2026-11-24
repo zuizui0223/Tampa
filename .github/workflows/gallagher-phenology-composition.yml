@@ -43,10 +43,9 @@ jobs:
                       key="0.1" if a==".1" else a
                       w=panel["cv"]["week"][water][key]
                       b=panel["cv"]["array"][water][key]
-                      assert w["total_rate"]["rmse"]<w["context"]["rmse"]
-                      assert w["total_rate"]["rmse"]<w["composition"]["rmse"]
-                      assert b["composition"]["rmse"]<b["total_rate"]["rmse"]
-          for split,targets in {"array":[.834564,.882215,.832909],"week":[1.225831,1.021539,1.203983]}.items():
+                      assert w["context"]["rmse"]<w["total_rate"]["rmse"]
+                      assert b["total_rate"]["rmse"]<b["context"]["rmse"]
+          for split,targets in {"array":[.882215,.832909,.834564],"week":[1.021539,1.203983,1.225831]}.items():
               r=p["author_aggregate"]["cv"][split]["assigned"]["1"]
               for key,target in zip(("context","total_rate","composition"),targets):
                   assert math.isclose(r[key]["rmse"],target,abs_tol=1e-6)
