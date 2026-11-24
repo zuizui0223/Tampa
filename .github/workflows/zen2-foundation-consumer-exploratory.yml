@@ -6,6 +6,8 @@ on:
       - 'analysis/126_zen2_structure_consumer_source_preflight.py'
       - 'analysis/127_zen2_2015_site_predation_factorial.py'
       - 'analysis/128_zen2_2014_50meadow_state_consumer.py'
+      - 'analysis/129_zen2_predation_manipulation_ceiling_audit.py'
+      - 'validation/test_zen2_predation_manipulation_ceiling_audit.py'
       - 'validation/test_zen2_2014_50meadow_state_consumer.py'
       - 'validation/test_zen2_2015_site_predation_factorial.py'
       - 'validation/test_zen2_structure_consumer_source_preflight.py'
@@ -91,3 +93,22 @@ jobs:
         with:
           name: zen2-2014-twentyfive-paired-region-state-consumer
           path: /tmp/zen2_2014_25region_state_consumer.json
+
+  manipulation_dose_ceiling_size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic closure and taxon-confounding checks
+        run: python -m unittest discover -s validation -p 'test_zen2_predation_manipulation_ceiling_audit.py' -v
+      - name: Original ZEN2 2015 experimental dose, saturation and prey-size audit
+        run: |
+          python analysis/129_zen2_predation_manipulation_ceiling_audit.py \
+            --out /tmp/zen2_2015_dose_ceiling_prey_size.json
+          cat /tmp/zen2_2015_dose_ceiling_prey_size.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2015-manipulation-ceiling-size-source-audit
+          path: /tmp/zen2_2015_dose_ceiling_prey_size.json
