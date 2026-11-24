@@ -1,0 +1,96 @@
+{
+  "status": "executed original source matched-site decomposition; response-open",
+  "artifact_sha256": "d4b902fb8216844bb078cf9ba0e9a87f1767defc1781534245761a45c82cadfd",
+  "source": "10.5066/P9LODH0Z",
+  "primary": {
+    "Intertidal": {
+      "n": 44,
+      "large_change": -1.3832521645021645,
+      "abundance_component": -1.3239435056125777,
+      "abundance_ci": [
+        -2.3907094661592776,
+        -0.40847585085010896
+      ],
+      "size_fraction_component": -0.0593086588895869,
+      "size_fraction_ci": [
+        -0.4598029731530758,
+        0.40732873706881007
+      ],
+      "taxon_count_early_late": {
+        "Leukoma staminea": [
+          3.626978114478115,
+          0.4954545454545455
+        ],
+        "Hiatella arctica": [
+          7.075,
+          10.403
+        ],
+        "Saxidomus gigantea": [
+          2.038299663299663,
+          1.4522727272727274
+        ],
+        "Mya spp.": [
+          2.31060606060606,
+          2.514610389610389
+        ]
+      },
+      "cooccurrence": {
+        "hiatella_increase": 24,
+        "leukoma_decrease": 28,
+        "both": 16,
+        "spearman": 0.01931293228944075
+      },
+      "L2_ratio": 0.8210708082370071,
+      "L2_diff_ci": [
+        -6.1183804168470415,
+        0.22669194949494817
+      ],
+      "L3_ratio": 0.7325879112994755,
+      "L3_diff_ci": [
+        -7.850182350648148,
+        -0.40412846109187894
+      ]
+    },
+    "Subtidal": {
+      "n": 11,
+      "large_change": -8.007123870281765,
+      "abundance_component": -9.189338080154725,
+      "abundance_ci": [
+        -15.68810365268819,
+        -2.788032388529264
+      ],
+      "size_fraction_component": 1.1822142098729598,
+      "size_fraction_ci": [
+        -1.60861333270826,
+        3.616961590213663
+      ],
+      "taxon_count_early_late": {
+        "Leukoma staminea": [
+          16.91961722488038,
+          0.8272727272727274
+        ],
+        "Hiatella arctica": [
+          2.835,
+          0.747
+        ],
+        "Saxidomus gigantea": [
+          10.077272727272726,
+          7.0116161616161605
+        ],
+        "Mya spp.": [
+          6.361004784688995,
+          8.856060606060607
+        ]
+      },
+      "L2_ratio": 0.5653017023760393,
+      "L3_ratio": 0.5672375271493134
+    }
+  },
+  "limits": [
+    "All clam labels, including unresolved genus groups; not causal species replacement or individual shrinkage.",
+    "Aggregate site-equal decomposition; fraction includes site distribution changes.",
+    "20,000 paired-site percentile bootstrap, spatial dependence not accounted for.",
+    "Size moments are hypothetical, not shell surface/biomass or measured function.",
+    "Site metadata and forage taxonomy missing; retry submitted; no otter density model."
+  ]
+}

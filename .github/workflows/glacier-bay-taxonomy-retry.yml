@@ -1,0 +1,26 @@
+name: Glacier Bay taxonomy and site retry
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/147_glacier_bay_taxonomy_site_retry.py'
+      - '.github/workflows/glacier-bay-taxonomy-retry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python analysis/147_glacier_bay_taxonomy_site_retry.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: glacier-bay-taxonomy-site-retry
+          path: glacier_bay_retry/
+          if-no-files-found: error
