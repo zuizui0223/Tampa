@@ -1,0 +1,165 @@
+{
+  "status": "locally executed original-data reanalysis; no biotic effect or meta-analysis",
+  "source": "10.1371/journal.pone.0215157",
+  "artifact": {
+    "run": 45391136099,
+    "id": 14919780256,
+    "sha256": "9286792a9cca0b46ec1e9d1add5a869625b91c57bb53ee32788b982b825bbfa3"
+  },
+  "audit": {
+    "pots": 100,
+    "tanks": 5,
+    "emergence_rows": 1070,
+    "biomass_rows": 486,
+    "nominal_seeds": 1500,
+    "fate_below15": 28,
+    "fate_above15": 11,
+    "fate_equal15": 61,
+    "nonmonotone_pots": [
+      11,
+      12
+    ],
+    "biomass_count_mismatch_pots": 24,
+    "biomass_time_mismatch_rows": 1,
+    "carroll": "HTTP 403"
+  },
+  "common_day_emergence": {
+    "n_unsorted_pots": 70,
+    "depths_cm": [
+      0.1,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "day16": [
+      0.26666666666666666,
+      0.5066666666666667,
+      0.4266666666666667,
+      0.25333333333333335,
+      0.09333333333333334,
+      0.006666666666666667,
+      0
+    ],
+    "day26": [
+      0.29333333333333333,
+      0.5333333333333333,
+      0.47333333333333333,
+      0.32,
+      0.29333333333333333,
+      0.06666666666666667,
+      0.04
+    ],
+    "day40": [
+      0.30666666666666664,
+      0.54,
+      0.49333333333333335,
+      0.32666666666666666,
+      0.30666666666666664,
+      0.1,
+      0.04666666666666667
+    ],
+    "day62": [
+      0.30666666666666664,
+      0.5666666666666667,
+      0.5,
+      0.34,
+      0.36,
+      0.12,
+      0.04666666666666667
+    ],
+    "contrast_4cm_minus_point1cm_day16": {
+      "mean": -0.17333333333333334,
+      "ci": [
+        -0.36,
+        -0.026666666666666665
+      ],
+      "p_sign_flip": 0.125
+    },
+    "day62_contrast": {
+      "mean": 0.05333333333333334,
+      "ci": [
+        -0.06,
+        0.14
+      ],
+      "p_sign_flip": 0.5
+    },
+    "contrast_change": {
+      "mean": 0.22666666666666666,
+      "ci": [
+        0.16,
+        0.29333333333333333
+      ],
+      "p_sign_flip": 0.0625,
+      "tank_directions": 5
+    }
+  },
+  "fate24": {
+    "pot_equal_shallow": [
+      0.5340031781943546,
+      0.2768657078215902,
+      0.15579778065072183,
+      0.03333333333333334
+    ],
+    "pot_equal_deep": [
+      0.12917366946778713,
+      0.4911764705882353,
+      0.25822128851540616,
+      0.12142857142857144
+    ],
+    "endpoint_order": [
+      "emergence",
+      "dead",
+      "viable",
+      "failed"
+    ],
+    "deep_minus_shallow": [
+      -0.40482950872656753,
+      0.21431076276664512,
+      0.10242350786468432,
+      0.08809523809523809
+    ],
+    "dead_ci": [
+      0.14612798965740142,
+      0.2836910148674855
+    ]
+  },
+  "fate8": {
+    "dead_deep_minus_shallow": 0.291007326007326,
+    "ci": [
+      0.1911904761904762,
+      0.368076923076923
+    ]
+  },
+  "scenario_only": [
+    {
+      "depth_cm": 2,
+      "required_extra_predation_at_1cm_if_depth_d_is_perfectly_protected": 0.11764705882352944
+    },
+    {
+      "depth_cm": 3,
+      "required_extra_predation_at_1cm_if_depth_d_is_perfectly_protected": 0.4
+    },
+    {
+      "depth_cm": 4,
+      "required_extra_predation_at_1cm_if_depth_d_is_perfectly_protected": 0.3647058823529412
+    },
+    {
+      "depth_cm": 6,
+      "required_extra_predation_at_1cm_if_depth_d_is_perfectly_protected": 0.788235294117647
+    },
+    {
+      "depth_cm": 8,
+      "required_extra_predation_at_1cm_if_depth_d_is_perfectly_protected": 0.9176470588235294
+    }
+  ],
+  "limitations": [
+    "Five tanks only, unadjusted response-open analysis; no actual predator-depth factorial",
+    "Fates denominated by reported totals, not nominal planting when mismatched",
+    "No biomass sum inferred from inconsistent records",
+    "Separate cohorts at destructive harvests",
+    "Scenario assumes independent multiplicative additional losses"
+  ]
+}
