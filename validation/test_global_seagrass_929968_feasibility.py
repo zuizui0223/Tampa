@@ -48,6 +48,15 @@ class GlobalFeasibilityTests(unittest.TestCase):
         self.assertEqual(x["paired_ratio_by_genus"][0]["paired_rows"],2)
         self.assertEqual(x["cover_values_with_positive_value"],2)
 
+    def test_exact_duplicate_rows_flagged_not_removed(self):
+        d=fake_rows()
+        d.append(d[0].copy())
+        x=M.audit(d,keys())
+        self.assertEqual(x["exact_duplicate_member_rows_not_automatically_removed"],2)
+        self.assertEqual(x["exact_duplicate_row_groups"],1)
+        self.assertEqual(x["source_row_count"],5)
+        self.assertEqual(x["raw_reference_strings_not_independent_publications"],2)
+
     def test_non_numeric_is_not_zero(self):
         d=fake_rows()
         d[2][HEAD[10]]="N/A"
