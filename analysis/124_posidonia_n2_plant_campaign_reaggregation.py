@@ -66,8 +66,16 @@ def calculate_from_raw(raw):
     for plant in columns.values():count[plant["campaign"]]+=1
     if dict(count)!=CAMPAIGN_EXPECTED:
         raise ValueError("Original campaign composition changed")
+    # Original workbook sheet includes a SECOND panel (16S relative-abundance)
+    # whose new sample-header row starts at B30. Never treat its sample labels
+    # or proportions as independent N2 fixation assays.
+    boundary=indexed.get(30,{})
+    if boundary and boundary.get("B30")!="April2016_Plant1":
+        raise ValueError("Figure 2 panel-b separator changed; stop rather than mix assays")
+    if not boundary:
+        raise ValueError("Figure 2 panel-b separator missing; cannot safely isolate a")
     for row_num,cells in sorted(indexed.items()):
-        if row_num<=4:continue
+        if row_num<=4 or row_num>=30:continue
         for cell,value in cells.items():
             col=letter(cell)
             if col not in columns:continue
@@ -124,6 +132,8 @@ def calculate_from_raw(raw):
         "unit":METRIC,
         "plant_count":len(plant_rows),
         "root_piece_measurement_count":sum(p["root_piece_readings"] for p in plant_rows),
+        "excluded_second_panel_start_row":30,
+        "exclusion_reason":"16S rRNA plant-column table starts with April2016_Plant1 at B30; separate endpoint.",
         "campaigns":summary,
         "plant_level_details":plant_rows,
         "same_year_2016_nonmatched_plants_apr_vs_aug":{
