@@ -1,0 +1,143 @@
+{
+  "evidence_class": "response_exposed_hypothesis_generation_not_new_global_confirmation",
+  "global_differences_are_site_specific_log_ratios_not_seagrass_biomass": true,
+  "limitations": [
+    "Temperature and salinity were observed environmental contexts, not manipulated factors.",
+    "Original Duffy et al. 2015 study already tested the importance of grazer diversity vs environmental gradients.",
+    "Selection of moderators and log effect occurred after seeing outcomes: permutation thresholds cannot undo researcher degrees of freedom.",
+    "15 site labels, not 600 plot observations, form the geographic replication.",
+    "No broad climatic generalization or temperature-causal grazer mechanism is supported by this retrospective screen.",
+    "Three-predictor maxT handles this declared family only; it does not correct for every tested hypothesis in the existing literature."
+  ],
+  "outcome": "15-site grazer-deterrent effect on epiphytic chlorophyll-a (log ratio)",
+  "permutation": {
+    "draws": 20000,
+    "familywise_three_previously_screened_predictors": true,
+    "randomization_unit": "whole_site_effects_permuted_against_fixed_site_covariates_not_original_2011_experimental_randomization",
+    "seed": 2026112418
+  },
+  "predictor_results": {
+    "grazer_richness_site": {
+      "leave_one_site_out_extremes": [
+        {
+          "omit": "NN",
+          "r": 0.06805338773889714
+        },
+        {
+          "omit": "VA",
+          "r": 0.3895063320125518
+        }
+      ],
+      "leave_one_site_out_pearson_max": 0.3895063320125518,
+      "leave_one_site_out_pearson_min": 0.06805338773889714,
+      "n_sites": 15,
+      "pearson_r": 0.1602458572198089,
+      "spearman_r": 0.4495816295896197,
+      "three_predictor_familywise_maxT_permutation_p": 0.9165541722913855,
+      "two_sided_unadjusted_site_label_permutation_p": 0.5385730713464327
+    },
+    "sal": {
+      "leave_one_site_out_extremes": [
+        {
+          "omit": "FI",
+          "r": -0.4241031045609916
+        },
+        {
+          "omit": "VA",
+          "r": 0.3190298812215533
+        }
+      ],
+      "leave_one_site_out_pearson_max": 0.3190298812215533,
+      "leave_one_site_out_pearson_min": -0.4241031045609916,
+      "n_sites": 15,
+      "pearson_r": -0.21598130055175674,
+      "spearman_r": 0.0661305000437297,
+      "three_predictor_familywise_maxT_permutation_p": 0.807909604519774,
+      "two_sided_unadjusted_site_label_permutation_p": 0.44512774361281937
+    },
+    "temp_avg": {
+      "leave_one_site_out_extremes": [
+        {
+          "omit": "NN",
+          "r": 0.46587847961038076
+        },
+        {
+          "omit": "NC",
+          "r": 0.6117920077200297
+        }
+      ],
+      "leave_one_site_out_pearson_max": 0.6117920077200297,
+      "leave_one_site_out_pearson_min": 0.46587847961038076,
+      "n_sites": 15,
+      "pearson_r": 0.5294093965169012,
+      "spearman_r": 0.5178571428571429,
+      "three_predictor_familywise_maxT_permutation_p": 0.1407929603519824,
+      "two_sided_unadjusted_site_label_permutation_p": 0.04609769511524424
+    }
+  },
+  "schema": "tampa.zen_site_moderator_posthoc_robustness_v1",
+  "source": "results/zen_15site_mesograzer_exploratory_verified_20261124.json",
+  "source_raw_data_sha256": "5a97763735a22076eac25a86736c50cb12611a529c5e233941fbc3a73ad4c6ae",
+  "source_verified_run": {
+    "run_id": 45323837217,
+    "job_id": 138208526176,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45323837217",
+    "status": "completed_success",
+    "artifacts": [
+      {
+        "id": 14888782523,
+        "name": "lucinid-field-2020-published-sulfide-vs-rhizome-contrasts",
+        "digest": "sha256:49586d6deca3f9fd23930e1a5eca6291eba3461f83ac0b09e9ca17d15e908f37",
+        "size": 2044
+      },
+      {
+        "id": 14888772621,
+        "name": "zen-15site-grazer-nutrient-site-equal-contrasts",
+        "digest": "sha256:64b843b189c518ed7612a4e94cb5b5ca4896ee3df2bc97d922bbd1fbdd2a55ae",
+        "size": 6772
+      },
+      {
+        "id": 14888767453,
+        "name": "seagrass-interaction-original-data-preflight",
+        "digest": "sha256:3d430e5b4920ab1dbc6b03f03c9daf5283aca85bafbe770539eb0f85e6dbe056",
+        "size": 2319
+      },
+      {
+        "id": 14888523151,
+        "name": "lucinid-field-2020-original-source-gate",
+        "digest": "sha256:07c36cf97ff608498dbedddcacbe4f598e70b20356978ccb569ccd4c4c8a9bbc",
+        "size": 403
+      },
+      {
+        "id": 14888418491,
+        "name": "seagrass-six-interactions-exploratory-evidence",
+        "digest": "sha256:88b9a26ab460d158b3aeb9e4b4240790516494eedf98a424baa0477c3a747d30",
+        "size": 2510
+      },
+      {
+        "id": 14888294626,
+        "name": "posidonia-N2-root-piece-plant-campaign-analysis",
+        "digest": "sha256:3fe01b517535caaf8d4856bdef4e3843c744392ed51607dd5a7d91f25ae81122",
+        "size": 3085
+      },
+      {
+        "id": 14888233570,
+        "name": "zen-15site-environmental-modifier-posthoc-diagnostics",
+        "digest": "sha256:a3cd03d7a09003ec9677db3f62cd93912c7fed02ae50a2d0f47e3330537a1c15",
+        "size": 1483
+      },
+      {
+        "id": 14887969929,
+        "name": "posidonia-N2-2021-original-source-factor-gate",
+        "digest": "sha256:675aec87ab080163d39944685f55f472e8a8bae7a36629625e5f34d37fd23084",
+        "size": 5141
+      },
+      {
+        "id": 14887759978,
+        "name": "lucinid-2012-original-data-workbook-preflight",
+        "digest": "sha256:649a214dce6538aeba2865e5c6430ca98e3bae7ebd67fc758d141463106d273f",
+        "size": 404
+      }
+    ]
+  }
+}
