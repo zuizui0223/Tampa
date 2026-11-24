@@ -246,8 +246,13 @@ def execute(raw:bytes):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--out",type=Path,default=None)
+    p.add_argument("--raw-out",type=Path,default=None,help="Write exact downloaded CC-BY source for downstream same-run analysis")
     a=p.parse_args()
-    r=execute(download())
+    raw=download()
+    if a.raw_out:
+        a.raw_out.parent.mkdir(parents=True,exist_ok=True)
+        a.raw_out.write_bytes(raw)
+    r=execute(raw)
     s=json.dumps(r,ensure_ascii=False,indent=2,sort_keys=True)+"\n"
     if a.out:
         a.out.parent.mkdir(parents=True,exist_ok=True)
