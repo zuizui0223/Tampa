@@ -1,0 +1,95 @@
+{
+  "status": "published aggregate extraction and arithmetic only; no original Kwakernaak or Zhu individual records",
+  "kwakernaak": {
+    "doi": "10.1016/j.jembe.2022.151853",
+    "source": "https://www.vliz.be/imisdocs/publications/49/385549.pdf",
+    "sections": [
+      "2.3",
+      "3.1",
+      "3.3"
+    ],
+    "size": {
+      "nominal_initial_biomass_g_DW_m2": 2,
+      "small_mass_g_DW": 0.0029,
+      "big_mass_g_DW": 0.0095,
+      "small_seedling_m2": 195,
+      "big_seedling_m2": 9,
+      "small_reported_SE": 8,
+      "big_reported_SE": 9,
+      "approx_initial_count_small": 8,
+      "approx_initial_count_large": 3,
+      "ratio_small_large": 21.666666666666668,
+      "big_minus_small": -186,
+      "relative_reduction_large": 0.9538461538461538,
+      "individual_mass_ratio": 3.2758620689655173,
+      "reported_F": 10.62,
+      "reported_df": [
+        1,
+        17
+      ],
+      "reported_p": 0.0046
+    },
+    "high_biomass": {
+      "nominal_initial_biomass_g_DW_m2": 8,
+      "seedling_establishment": "reported zero throughout experiment",
+      "intact_recovery_percent": 52.7,
+      "reported_SE": 2.3,
+      "control_recovery_percent": 38.2,
+      "control_SE": 4.2,
+      "recovery_difference_pp": 14.5,
+      "recovery_ratio": 1.3795811518324608,
+      "missing_fraction": 0.473,
+      "interpretation": "recovered intact seed stock not viability or protection; germination and cause of nonrecovery unknown"
+    },
+    "limits": [
+      "2 g treatment is nominal initial biomass; size and number differ, and biomass changes after inoculation",
+      "Avoid converting 364 per m2 control summary into terminal counts; source reports a temporal mean and a fold difference not consistent with simple 364/9 arithmetic",
+      "Original authors already identified size dependence and suggested sprouted seed predation; no new experimental estimate or independent reanalysis"
+    ]
+  },
+  "zhu": {
+    "doi": "10.1002/ecy.1613",
+    "plant": "Spartina anglica",
+    "source": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ecy.1613",
+    "feeding_3weeks": {
+      "sterile_intact_recovered_percent": 100,
+      "sprouts_remaining_percent": 0
+    },
+    "redistribution_4weeks": {
+      "surface_seed_worm_buried_percent_approx": 25,
+      "viability_ANOVA_p": 0.89
+    },
+    "separate_feeding_4weeks": {
+      "intact_sterile_recovered_percent": 100,
+      "dehusked_recovered_percent": 8.3,
+      "sprouts_remaining_percent": 0
+    },
+    "limits": [
+      "Different feeding and redistribution experiments; no independent SE reconstruction from seed count",
+      "Sterile intact vs sprouted is not randomized developmental transition in the same cohort; direct husk manipulation supports physical barrier",
+      "Authors explicitly predicted predation of worms before germination could benefit plants; cannot claim that idea as novelty"
+    ]
+  },
+  "macro": {
+    "doi": "10.25850/nioz/7b.b.ug",
+    "descriptor": "10.1038/s41597-025-04540-9",
+    "published_coverage": {
+      "years": [
+        2008,
+        2021
+      ],
+      "sample_records": 51851,
+      "unique_stations": 5107
+    },
+    "planned": "sample-level biomass versus average individual AFDM; station/year rank disagreement and temporal windows; no measured plant recruitment",
+    "status": "source gate prepared; no raw data results",
+    "unit_warning": "AFDM != DW; sample mean mass does not identify individual size distribution or count above a predation threshold"
+  },
+  "new_comparator": {
+    "paper": "10.1002/lno.70379",
+    "data": "10.5281/zenodo.15182547",
+    "status": "published evidence, source gate; no raw-data fit",
+    "plant": "Aster tripolium",
+    "partner": "Hediste diversicolor x Vaucheria"
+  }
+}

@@ -1,0 +1,23 @@
+name: Ragworm stage and size sources
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/159_ragworm_stage_size_sources.py'
+      - '.github/workflows/ragworm-stage-size-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/159_ragworm_stage_size_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ragworm-stage-size-sources
+          path: ragworm_stage_sources/
+          if-no-files-found: error
