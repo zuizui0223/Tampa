@@ -1,0 +1,51 @@
+name: Otter source and Posidonia coverage audit
+on:
+  pull_request:
+    paths:
+      - 'analysis/147_otter_genetic_and_extent_source_gate.py'
+      - 'analysis/148_posidonia_adult_reference_coverage.py'
+      - 'analysis/146_posidonia_stage_marker_diversity.py'
+      - '.github/workflows/otter-source-posidonia-coverage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source_gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/147_otter_genetic_and_extent_source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: otter-original-source-inventory
+          path: otter_sources/
+          retention-days: 3
+          if-no-files-found: error
+  adult_coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/144_external_seagrass_genetic_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.dryad("posidonia_adult_seedling",m.DOIS["posidonia_adult_seedling"])["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/148_posidonia_adult_reference_coverage.py > out/posidonia_adult_reference_coverage.json
+          python - <<'PY'
+          import json,math
+          r=json.load(open("out/posidonia_adult_reference_coverage.json"))["results"]
+          for mode,expected in [("unique_profile",[1.2255,2.2458,-1.0479,-.5714,.3230,2.0460]),("complete_individual",[2.7817,3.8209,-.9656,-.4776,1.6062,3.3656])]:
+              for key,value in zip(("5","6","7","8","9","10"),expected):
+                  assert math.isclose(r[mode][key]["primary"]["difference"],value,abs_tol=.0001)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: posidonia-adult-reference-coverage
+          path: out/posidonia_adult_reference_coverage.json
+          if-no-files-found: error
