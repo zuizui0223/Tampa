@@ -1,0 +1,46 @@
+name: Seagrass realized paternity and external clone structure
+on:
+  pull_request:
+    paths:
+      - 'analysis/144_external_seagrass_genetic_source_gate.py'
+      - 'analysis/145_seagrass_realized_paternity_and_spatial_redundancy.py'
+      - 'docs/SEAGRASS_REALIZED_PATERNITY_AND_EXTERNAL_CLONE_STRUCTURE_20261124.md'
+      - '.github/workflows/seagrass-realized-paternity-external-clones.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install numpy==2.2.6 openpyxl==3.1.5
+      - run: python analysis/144_external_seagrass_genetic_source_gate.py
+      - run: |
+          mkdir -p out
+          python analysis/145_seagrass_realized_paternity_and_spatial_redundancy.py > out/realized_paternity_external_clones.json
+          python - <<'PY'
+          import json, math
+          a=json.load(open("out/realized_paternity_external_clones.json"))
+          for k,n,s,h in [('unfiltered',83,17,[2,4,8,3,4]),('published',64,11,[1,3,7,2,2]),('high_locus',76,13,[1,3,5,4,1])]:
+              b=a["paternity"]["datasets"][k]
+              assert b["all_outcross_min2"]==n and b["all_outcross_single_sire"]==s
+              assert list(b["all_outcross_exactly5_sire_histogram"].values())==h
+          m=a["paternity"]["matched_published_high_locus"]
+          assert m["matched_spathes"]==136 and m["both_all_outcross_min2"]==53 and m["both_single_sire"]==5
+          g=a["spatial"]
+          assert g["observed_quadrat_ids"]==797 and g["complete_quadrats"]==794
+          assert g["complete_quadrat_genet_count_histogram"]=={"1":64,"2":176,"3":263,"4":291}
+          assert g["all_quadrat_same_genet_pairs"]==1129 and g["all_quadrat_pairs"]==4773
+          assert math.isclose(g["relative_deficit_other_genets"],.3372487188017269,abs_tol=1e-9)
+          assert g["complete_quadrat_permutation"]["observed_same_pairs"]==1127
+          assert g["complete_quadrat_permutation"]["one_sided_p"]==.0002
+          for k,target in [("1",.04877105796836727),("5",.06874058497737466),("10",.10820482748766524)]:
+              assert math.isclose(g["nearest_complete_quadrats"][k]["spearman_local_richness_vs_external_richness"],target,abs_tol=1e-6)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: realized-paternity-external-clone-results
+          path: out/realized_paternity_external_clones.json
+          if-no-files-found: error
