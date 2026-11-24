@@ -1,0 +1,53 @@
+{
+  "status": "published aggregate descriptive audit; arithmetic executed in JS",
+  "source": "10.3354/meps10072 Supplement 2 and Table 2",
+  "orders": {
+    "Mysida": {
+      "taxa": 1,
+      "specimens": 8,
+      "O": 8
+    },
+    "Amphipoda": {
+      "taxa": 8,
+      "specimens": 56,
+      "other": 5,
+      "O": 7,
+      "H": 31,
+      "unknown": 13
+    },
+    "Isopoda": {
+      "taxa": 11,
+      "specimens": 17,
+      "unknown": 10,
+      "H": 5,
+      "other": 2
+    },
+    "Cumacea": {
+      "taxa": 10,
+      "specimens": 35,
+      "H": 10,
+      "other": 24,
+      "unknown": 1
+    },
+    "Tanaidacea": {
+      "taxa": 4,
+      "specimens": 12,
+      "O": 11,
+      "unknown": 1
+    }
+  },
+  "totals": {
+    "taxa": 34,
+    "specimens": 128,
+    "O": 26,
+    "other": 31,
+    "H": 46,
+    "unknown": 25
+  },
+  "fraction_all_flower_specimens": 0.41025641025641024,
+  "fraction_crustacean_flower_specimens": 0.5079365079365079,
+  "H_or_O_fraction_all_peracarids": 0.5625,
+  "H_or_O_fraction_known_peracarids": 0.6990291262135923,
+  "H_or_O_fraction_upper_if_all_unknown_H_or_O": 0.7578125,
+  "largest_taxon_fraction_peracarids": 0.234375
+}
