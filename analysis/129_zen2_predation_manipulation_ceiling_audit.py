@@ -38,10 +38,10 @@ def group_label(site):
 def safeavg(values):
     return statistics.mean(values) if values else None
 
-def summarize(rows,primary):
+def summarize(rows,primary,require_original_frame=True):
     if primary["schema"]!="tampa.zen2_2015_original_site_equal_predation_v1":
         raise ValueError("Unexpected original site-contrast schema")
-    if len(rows)!=2666 or primary["site_count"]!=17:
+    if require_original_frame and (len(rows)!=2666 or primary["site_count"]!=17):
         raise ValueError("Original source cohort drift")
     if set(x["taxon"] for x in rows)!={"Amphipod","Isopod"}:
         raise ValueError("Unexpected original prey taxon roster")
@@ -62,6 +62,16 @@ def summarize(rows,primary):
             # taxon contrast, so treat it as a separate audit gate.
             raise ValueError("Unexpected within-site prey classes: new design review needed")
         effects=next(x["contrasts"] for x in primary["source_cell_coverage"] if x["site"]==site)
+        sizes={
+          status:[x["size_mm"] for x in items if x["recorded_eaten"]==status and x["size_mm"] is not None]
+          for status in (0,1)
+        }
+        within_cell_size=[]
+        for key,cell_items in cell.items():
+            alive=[x["size_mm"] for x in cell_items if x["recorded_eaten"]==0 and x["size_mm"] is not None]
+            eaten=[x["size_mm"] for x in cell_items if x["recorded_eaten"]==1 and x["size_mm"] is not None]
+            if len(alive)>=2 and len(eaten)>=2:
+                within_cell_size.append(statistics.mean(eaten)-statistics.mean(alive))
         ratios={}
         risks={}
         for location in ORIGINAL.LOCATIONS:
@@ -84,7 +94,16 @@ def summarize(rows,primary):
           "all_tethered_prey_consumed":all(x["recorded_eaten"]==1 for x in items),
           "site_overall_consumed_fraction":safeavg([x["recorded_eaten"] for x in items]),
           "ambient_only_consumed_fraction":safeavg([x["recorded_eaten"] for x in items if x["treatment"]=="Amb"]),
-          "prey_size_mm_n":sum(x["size"] is not None for x in items) if "size" in items[0] else None,
+          "prey_size_mm_n":sum(x["size_mm"] is not None for x in items),
+          "prey_size_mm_missing":sum(x["size_mm"] is None for x in items),
+          "prey_size_eaten_minus_alive_within_site_mm":(
+              statistics.mean(sizes[1])-statistics.mean(sizes[0])
+              if len(sizes[1])>=5 and len(sizes[0])>=5 else None
+          ),
+          "prey_size_eaten_minus_alive_within_site_treatment_cells_mm":(
+              statistics.mean(within_cell_size) if len(within_cell_size)>=2 else None
+          ),
+          "site_six_cells_with_measurable_size_and_both_outcomes":len(within_cell_size),
           "achieved_to_initial_density_ratio_by_treatment":ratios_by_treatment,
           "achieved_to_initial_density_ratio_by_cell":ratios,
           "predation_by_cell":risks,
@@ -92,7 +111,7 @@ def summarize(rows,primary):
         })
     taxonomy=defaultdict(set)
     for r in sites:taxonomy[r["taxon"]].add(r["site"])
-    if len(sites)!=17 or set(taxonomy)!={"Amphipod","Isopod"}:
+    if (require_original_frame and len(sites)!=17) or set(taxonomy)!={"Amphipod","Isopod"}:
         raise ValueError("Incorrect 17-site source or taxonomy classes")
     all17={k:[r["original_site_risk_contrasts"][k] for r in sites] for k in CONTRASTS}
     non_saturated=[r for r in sites if not r["all_tethered_prey_consumed"]]
@@ -110,12 +129,29 @@ def summarize(rows,primary):
             "site_family_equal_mean":statistics.mean(group_means),
             "original_17_site_equal_mean":statistics.mean(all17[k]),
         }
+    size_gates={}
+    for label in ("prey_size_eaten_minus_alive_within_site_mm",
+                  "prey_size_eaten_minus_alive_within_site_treatment_cells_mm"):
+        sample=[x[label] for x in sites if x[label] is not None]
+        size_gates[label]={
+          "sites_with_estimate":len(sample),
+          "site_equal_mean_mm":statistics.mean(sample) if sample else None,
+          "site_equal_median_mm":statistics.median(sample) if sample else None,
+          "positive_site_differences":sum(v>0 for v in sample),
+          "negative_site_differences":sum(v<0 for v in sample),
+          "no_effect_sized_test_if_n_below_5":len(sample)<5,
+        }
+        if len(sample)>=5:
+            size_gates[label]["site_bootstrap_95pct_percentile"]=(
+                ORIGINAL.bootstrap_site_mean(sample,seed=2026112425)["site_bootstrap_95pct_percentile"]
+            )
     return {
       "schema":"tampa.zen2_2015_predation_manipulation_ceiling_taxon_audit_v1",
       "status":"response_exposed_posthoc_sensitivity_not_new_original_experimental_claim",
       "source_file_sha256":ORIGINAL.SOURCE_SHA256,
       "source_paper":"10.1002/ecy.3316",
       "site_count":len(sites),
+      "size_diagnostic_posthoc_no_causal_prey_selection":size_gates,
       "original_tethered_prey_trials":sum(x["n_original_tether_trials"] for x in sites),
       "taxon_by_site_not_an_independent_species_experiment":{
           k:{"sites":sorted(v),"n_sites":len(v),
@@ -160,6 +196,7 @@ def summarize(rows,primary):
           "Three sites at 100% eaten limit estimability of upward risk changes but removing them post hoc selects on the outcome.",
           "Tether label is reused over repeated deployment rounds; don't count distinct IDs as independent habitat blocks.",
           "Original Hovel 2021 already studied patch-edge risk and shoot thinning and found adjusted edges could be safer.",
+          "Prey size was assessed after the global null and original site-roster review: even within original factorial cells it is observational and can reflect tethering and survival bias.",
           "Actual measured patch architecture, prey size, epibiont biomass and predator community are not identified as causal mediators here.",
           "A calibrated longer-term survival probability and reciprocal seagrass-grazer demographic feedback are not observed.",
       ]
