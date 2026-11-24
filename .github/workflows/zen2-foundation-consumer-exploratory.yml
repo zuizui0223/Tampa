@@ -5,6 +5,8 @@ on:
     paths:
       - 'analysis/126_zen2_structure_consumer_source_preflight.py'
       - 'analysis/127_zen2_2015_site_predation_factorial.py'
+      - 'analysis/128_zen2_2014_50meadow_state_consumer.py'
+      - 'validation/test_zen2_2014_50meadow_state_consumer.py'
       - 'validation/test_zen2_2015_site_predation_factorial.py'
       - 'validation/test_zen2_structure_consumer_source_preflight.py'
       - 'docs/ZEN2_FOUNDATION_CONSUMER_EXPERIMENT_20261124.md'
@@ -45,3 +47,21 @@ jobs:
         with:
           name: zen2-2015-eelgrass-thinning-consumer-predation
           path: /tmp/zen2_2015_site_predation.json
+
+  2014-paired-structure-community:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test 25 region-code A/B measurement pairs and missingness
+        run: python -m unittest discover -s validation -p 'test_zen2_2014_50meadow_state_consumer.py' -v
+      - name: Calculate matched-within-region observed host/consumer/epiphyte co-variation
+        run: |
+          python analysis/128_zen2_2014_50meadow_state_consumer.py --out /tmp/zen2_2014_25region_state_consumer.json
+          cat /tmp/zen2_2014_25region_state_consumer.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2014-twentyfive-paired-region-state-consumer
+          path: /tmp/zen2_2014_25region_state_consumer.json
