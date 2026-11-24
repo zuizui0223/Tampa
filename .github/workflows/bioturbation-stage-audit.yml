@@ -1,0 +1,39 @@
+name: Bioturbation burial germination stage audit
+on:
+  pull_request:
+    paths:
+      - 'analysis/158_bioturbation_burial_germination_stage_audit.py'
+      - 'docs/BIOTURBATION_BURIAL_GERMINATION_STAGE_20261124.md'
+      - '.github/workflows/bioturbation-stage-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          python analysis/158_bioturbation_burial_germination_stage_audit.py > out/bioturbation_stage_audit.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/bioturbation_stage_audit.json"))
+          t=x["total"]
+          assert t["cores"]==160 and t["counted_seeds"]==1529 and t["germinated"]==171
+          assert t["counted_above_10"]==34 and t["counted_below_10"]==61
+          tests={(r["temp"],r["fauna"],r["endpoint"]):r for r in x["matched_tank_tests"]}
+          for key,delta,p in [
+            (("COLD","COCKLE","buried_fraction"),.41115169552669556,.0009765625),
+            (("WARM","COCKLE","buried_fraction"),.5876902611277612,.011962890625),
+            (("WARM","MIX","buried_fraction"),.5043718434343435,.001373291015625)]:
+              assert math.isclose(tests[key]["mean_difference"],delta,abs_tol=1e-9)
+              assert math.isclose(tests[key]["holm_p"],p,abs_tol=1e-12)
+          assert all(v["holm_p"]==1 for k,v in tests.items() if k[2]=="germinated_count")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bioturbation-stage-audit
+          path: out/bioturbation_stage_audit.json
+          if-no-files-found: error
