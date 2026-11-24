@@ -24,6 +24,7 @@ on:
       - 'validation/test_zen2_2015_site_predation_factorial.py'
       - 'validation/test_zen2_structure_consumer_source_preflight.py'
       - 'docs/ZEN2_FOUNDATION_CONSUMER_EXPERIMENT_20261124.md'
+      - 'docs/ZEN2_STRUCTURE_VS_TROPHIC_SITE_CV_20261124.md'
       - 'results/zen2_2015_site_predation_source_verified_20261124.json'
       - 'results/zen2_2015_manipulation_ceiling_size_verified_20261124.json'
       - 'results/zen2_2014_25region_state_consumer_source_verified_20261124.json'
