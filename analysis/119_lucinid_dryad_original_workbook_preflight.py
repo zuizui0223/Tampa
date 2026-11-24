@@ -104,16 +104,42 @@ def workbook_outline(raw):
 
 def report(fetcher=fetch):
     try:
-        b=fetcher(VERSION_FILES)
-        listing=json.loads(b)
-        file=file_manifest(listing)
-        data=fetcher(file["download_url"])
+        try:
+            b=fetcher(VERSION_FILES)
+            listing=json.loads(b)
+            file=file_manifest(listing)
+            data=fetcher(file["download_url"])
+            access_method="official_version_file"
+        except urllib.error.HTTPError as err:
+            if err.code not in (401,403):
+                raise
+            # Official bulk original archive is advertised in dataset API metadata.
+            # Never substitute a mirror or an unrelated workbook.
+            meta_url=ROOT+"/api/v2/datasets/doi%3A10.5061%2Fdryad.210mp"
+            metadata=json.loads(fetcher(meta_url))
+            href=metadata.get("_links",{}).get("stash:download",{}).get("href")
+            if not isinstance(href,str) or not href.startswith("/api/v2/"):
+                raise ValueError("Dryad dataset has no official bulk-download link")
+            zipped=fetcher(ROOT+href)
+            if not zipfile.is_zipfile(io.BytesIO(zipped)):
+                raise ValueError("Official Dryad bulk dataset did not return ZIP")
+            with zipfile.ZipFile(io.BytesIO(zipped)) as z:
+                members=[name for name in z.namelist()
+                         if Path(name).name==EXPECTED and not name.startswith("__MACOSX/")]
+                if len(members)!=1:
+                    raise ValueError("Original XLSX missing or ambiguous inside source ZIP")
+                data=z.read(members[0])
+            file={"file_id":None,"path":members[0],
+                  "download_url":ROOT+href,
+                  "raw_metadata_fields":["official_bulk_zip_member"]}
+            access_method="official_bulk_zip_after_version_file_auth_stop"
         out={
             "schema":"tampa.dryad_lucinid_2012_original_workbook_preflight_v1",
             "status":"ORIGINAL_WORKBOOK_RETRIEVED_TREATMENT_MAPPING_REQUIRED",
             "dataset_doi":"10.5061/dryad.210mp",
             "publication_doi":"10.1126/science.1219973",
             "original_file_metadata":file,
+            "access_method":access_method,
             "original_xlsx_sha256":hashlib.sha256(data).hexdigest(),
             "original_xlsx_bytes":len(data),
             "workbook":workbook_outline(data),
