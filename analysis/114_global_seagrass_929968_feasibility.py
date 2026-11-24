@@ -20,7 +20,7 @@ from pathlib import Path
 from statistics import median
 from urllib.request import Request, urlopen
 
-DATASET_URL="https://doi.pangaea.de/10.1594/PANGAEA.929968?format=textfile"
+DATASET_URL="https://doi.org/10.1594/PANGAEA.929968"
 DOI="10.1594/PANGAEA.929968"
 ESSD_DOI="10.5194/essd-15-511-2023"
 EXPECTED={
@@ -37,13 +37,15 @@ MEASURES=("ag","bg","total","shoot","cover")
 def download()->bytes:
     req=Request(DATASET_URL,headers={
         "User-Agent":"Tampa-Global-Seagrass-Macro-Feasibility/1.0",
-        "Accept":"text/plain,text/tab-separated-values;q=0.9,*/*;q=0.7",
+        "Accept":"text/tab-separated-values",
         "Accept-Encoding":"identity",
     })
     with urlopen(req,timeout=120) as resp:
         raw=resp.read(20_000_001)
     if len(raw)>20_000_000:
         raise RuntimeError("Unexpected data size >20MB")
+    if b"Latitude\\tLongitude" not in raw and b"Latitude\tLongitude" not in raw:
+        raise RuntimeError("PANGAEA DOI content negotiation did not return the required original tabular data")
     return raw
 
 
