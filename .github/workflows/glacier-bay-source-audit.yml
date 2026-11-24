@@ -1,0 +1,27 @@
+name: Glacier Bay prey and forage source audit
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/142_glacier_bay_source_gate.py'
+      - '.github/workflows/glacier-bay-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve and audit public USGS and Zenodo sources
+        run: python analysis/142_glacier_bay_source_gate.py --out glacier_bay_sources
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: glacier-bay-prey-source-audit
+          path: glacier_bay_sources/
+          if-no-files-found: error
