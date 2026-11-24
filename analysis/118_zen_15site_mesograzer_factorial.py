@@ -41,13 +41,13 @@ def raw_file()->bytes:
         raise RuntimeError("ZEN original-source checksum mismatch or over-size")
     return raw
 
-def numeric(value):
+def numeric(value,allow_negative=False):
     t=str(value or "").strip()
     if t.lower() in ("","na","n/a","nan","null","."):
         return None
     try:x=float(t)
     except ValueError:raise ValueError(f"Unexpected nonnumeric value {t[:50]}")
-    if not math.isfinite(x) or x<0:
+    if not math.isfinite(x) or (x<0 and not allow_negative):
         raise ValueError("Invalid negative/non-finite measured biomass or Chla")
     return x
 
@@ -85,7 +85,7 @@ def parse_core(raw):
         for target in OUTCOMES:
             parsed[target]=numeric(r[target])
         for k in ("grazer_richness_site","temp_avg","sal"):
-            parsed[k]=numeric(r[k])
+            parsed[k]=numeric(r[k],allow_negative=(k=="temp_avg"))
         sites[site].append(parsed)
     return sites
 
