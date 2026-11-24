@@ -11,6 +11,8 @@ on:
       - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
       - 'analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py'
       - 'analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py'
+      - 'analysis/134_zen2_2014_2015_leave_ocean_basin_out.py'
+      - 'validation/test_zen2_2014_2015_leave_ocean_basin_out.py'
       - 'results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json'
       - 'results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json'
       - 'validation/test_zen2_crossyear_structure_vs_trophic_site_cv.py'
@@ -258,3 +260,21 @@ jobs:
         with:
           name: zen2-crossyear-host-vs-interaction-14site-cv
           path: /tmp/zen2_crossyear_host_interaction_site_cv.json
+
+  crossyear_two_basin_transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check source-locked Pacific Atlantic held-out domains and no target leakage
+        run: python -m unittest discover -s validation -p 'test_zen2_2014_2015_leave_ocean_basin_out.py' -v
+      - name: Test cross-ocean transfer of vegetation and trophic outcomes
+        run: |
+          python analysis/134_zen2_2014_2015_leave_ocean_basin_out.py --out /tmp/zen2_leave_basin_out.json
+          cat /tmp/zen2_leave_basin_out.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-cross-ocean-structural-vs-trophic-transfer
+          path: /tmp/zen2_leave_basin_out.json
