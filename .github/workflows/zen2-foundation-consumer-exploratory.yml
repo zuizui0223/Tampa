@@ -1,0 +1,27 @@
+name: Tampa ZEN2 foundation–consumer reciprocity exploratory source
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/126_zen2_structure_consumer_source_preflight.py'
+      - 'validation/test_zen2_structure_consumer_source_preflight.py'
+      - 'docs/ZEN2_FOUNDATION_CONSUMER_EXPERIMENT_20261124.md'
+      - '.github/workflows/zen2-foundation-consumer-exploratory.yml'
+jobs:
+  source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original 2015 experimental and 2014 observational source boundaries
+        run: python -m unittest discover -s validation -p 'test_zen2_structure_consumer_source_preflight.py' -v
+      - name: Profile original two public datasets and their experimental units
+        run: |
+          python analysis/126_zen2_structure_consumer_source_preflight.py --out /tmp/zen2_two_sources_metadata_v1.json
+          cat /tmp/zen2_two_sources_metadata_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-two-original-sources-metadata
+          path: /tmp/zen2_two_sources_metadata_v1.json
