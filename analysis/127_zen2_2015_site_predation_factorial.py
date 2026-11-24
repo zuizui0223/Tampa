@@ -66,6 +66,7 @@ def parse_rows(blob,verify_digest=True):
         result.append({"site":site,"location":loc,"treatment":treatment,
                        "recorded_eaten":int(status),"taxon":r["Taxon"].strip(),
                        "density_actual":density,"density_initial":initial,
+                       "size_mm":numeric("Size_mm"),
                        "epibiont":numeric("Epiphyte_biomass"),
                        "crust_biomass":numeric("Crust_biomass"),
                        "tether":r["Tether_no"].strip()})
