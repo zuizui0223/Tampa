@@ -1,0 +1,215 @@
+{
+  "status": "locally executed, source-verified original flume reanalysis, no survival measured",
+  "source": "10.1371/journal.pone.0222020.s007",
+  "artifact_sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c",
+  "total": {
+    "released": 4800,
+    "trapped": 1611,
+    "direct": 978,
+    "scour": 579,
+    "unknown": 54,
+    "missing_rows": 8
+  },
+  "flow": [
+    {
+      "v": 12,
+      "k": 138,
+      "s": 0,
+      "u": 0,
+      "bounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "v": 14,
+      "k": 118,
+      "s": 0,
+      "u": 0,
+      "bounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "v": 16,
+      "k": 114,
+      "s": 1,
+      "u": 0,
+      "bounds": [
+        0.008771929824561403,
+        0.008771929824561403
+      ]
+    },
+    {
+      "v": 18,
+      "k": 130,
+      "s": 13,
+      "u": 0,
+      "bounds": [
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "v": 20,
+      "k": 129,
+      "s": 29,
+      "u": 10,
+      "bounds": [
+        0.2248062015503876,
+        0.3023255813953488
+      ]
+    },
+    {
+      "v": 22,
+      "k": 122,
+      "s": 36,
+      "u": 0,
+      "bounds": [
+        0.29508196721311475,
+        0.29508196721311475
+      ]
+    },
+    {
+      "v": 24,
+      "k": 162,
+      "s": 71,
+      "u": 0,
+      "bounds": [
+        0.4382716049382716,
+        0.4382716049382716
+      ]
+    },
+    {
+      "v": 26,
+      "k": 186,
+      "s": 100,
+      "u": 12,
+      "bounds": [
+        0.5376344086021505,
+        0.6021505376344086
+      ]
+    },
+    {
+      "v": 28,
+      "k": 223,
+      "s": 131,
+      "u": 11,
+      "bounds": [
+        0.5874439461883408,
+        0.6367713004484304
+      ]
+    },
+    {
+      "v": 30,
+      "k": 289,
+      "s": 198,
+      "u": 21,
+      "bounds": [
+        0.6851211072664359,
+        0.7577854671280276
+      ]
+    }
+  ],
+  "bins": [
+    {
+      "name": "12–18",
+      "n": 1920,
+      "k": 500,
+      "d": 486,
+      "s": 14,
+      "u": 0,
+      "bounds": [
+        0.028,
+        0.028
+      ]
+    },
+    {
+      "name": "20–24",
+      "n": 1440,
+      "k": 413,
+      "d": 267,
+      "s": 136,
+      "u": 10,
+      "bounds": [
+        0.32929782082324455,
+        0.35351089588377727
+      ]
+    },
+    {
+      "name": "26–30",
+      "n": 1440,
+      "k": 698,
+      "d": 225,
+      "s": 429,
+      "u": 44,
+      "bounds": [
+        0.6146131805157593,
+        0.6776504297994269
+      ]
+    }
+  ],
+  "complete_configs": [
+    {
+      "id": 2,
+      "d": 40,
+      "s": 3,
+      "k": 43
+    },
+    {
+      "id": 7,
+      "d": 156,
+      "s": 55,
+      "k": 211
+    },
+    {
+      "id": 16,
+      "d": 105,
+      "s": 85,
+      "k": 190
+    }
+  ],
+  "mixed_vs_dense": {
+    "direct_delta": -51,
+    "scour_delta": 30,
+    "threshold": 1.7,
+    "threshold_low": 18,
+    "threshold_mid": 0.8125,
+    "threshold_high": 1.5384615384615385,
+    "leave_one_velocity_out_range": [
+      1.5,
+      2.272727272727273
+    ]
+  },
+  "mixed_vs_short": {
+    "direct_delta": 65,
+    "scour_delta": 82,
+    "delta_by_bin": [
+      [
+        37,
+        3
+      ],
+      [
+        21,
+        26
+      ],
+      [
+        7,
+        53
+      ]
+    ]
+  },
+  "scenario_only": {
+    "direct_survival": 0.44,
+    "scour_survival": 0.8,
+    "dense": 0.37546666666666667,
+    "mixed": 0.38066666666666665,
+    "delta": 0.0052
+  },
+  "limits": [
+    "Scour is a location, not a measured burial depth or survival.",
+    "Conditional survival assumed common across treatments and flow; comparison of separate studies is not causal inference.",
+    "One cell trial per configuration/velocity; thresholds are descriptive, not inferential; flow binning post hoc."
+  ]
+}
