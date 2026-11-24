@@ -1,0 +1,155 @@
+{
+  "status": "locally executed original-data analyses; compact summary; equivalent repository script not separately CI-replayed",
+  "source": {
+    "run": 45405306386,
+    "artifact": 14925013077,
+    "sha256": "5f9be541c571700e2209d374d300a0a93781b7551ce31f721881f091cd5bd1c3",
+    "field_doi": "10.1594/PANGAEA.984656",
+    "field_sha256": "d0fa13bb1c1f6d686b3e9053ae1c7667747630c2a5605f90a4b06b71e79be10c",
+    "seedball_doi": "10.6084/m9.figshare.32328606",
+    "seedball_sha256": "9a3fa8a555a2def1f4583f92311afa9e97fed46183cbfe43ce5f83f2a191dccd"
+  },
+  "field": {
+    "n_rows": 434,
+    "n_actual_visit_rows": 372,
+    "n_plots": 62,
+    "transitions": 310,
+    "n_blocks": 3,
+    "primary": {
+      "early": {
+        "estimate": -0.03439718426475662,
+        "ci": [
+          -0.1767524585243987,
+          0.10795808999488547
+        ]
+      },
+      "late": {
+        "estimate": -0.003401583050563581,
+        "ci": [
+          -0.08818295575249345,
+          0.08137978965136629
+        ]
+      },
+      "early_minus_late": {
+        "estimate": -0.03099560121419304,
+        "ci": [
+          -0.1731156050661214,
+          0.11112440263773532
+        ],
+        "p": 0.6642986391685041
+      }
+    },
+    "sensitivity_interaction": {
+      "no_initial_stock": -0.04882372315767595,
+      "between_and_within": -0.06750324159648004,
+      "omit_flagged_plots": 0.0021732847761249258,
+      "omit_B1": -0.015760054524030995,
+      "omit_B2": 0.018661857656079348,
+      "omit_B3": -0.031241738865039358
+    },
+    "raw_change": {
+      "early": -0.34294747976713824,
+      "late": -0.14810097253698165,
+      "difference": -0.19484650723015662,
+      "ci": [
+        -1.2728535112304618,
+        0.8831604967701485
+      ]
+    },
+    "block_holdout": [
+      {
+        "alpha": 0.1,
+        "base_mse": 0.4127050272637253,
+        "plus_mounds_mse": 0.4254129000378601
+      },
+      {
+        "alpha": 1,
+        "base_mse": 0.4132045691212214,
+        "plus_mounds_mse": 0.4260024063913284
+      },
+      {
+        "alpha": 10,
+        "base_mse": 0.4211040717052268,
+        "plus_mounds_mse": 0.4354974665234593
+      }
+    ],
+    "mound_increment_improves_blocks": 0,
+    "interpretation": "no supported calendar-window difference or incremental predictive information"
+  },
+  "seedball": {
+    "rows": 2240,
+    "units": 448,
+    "replicates": 28,
+    "shared_trays": 14,
+    "visits": 5,
+    "all_64_per_treatment": [
+      {
+        "treatment": "naked seeds",
+        "ever": 47,
+        "final": 45,
+        "ever_deficit": 0,
+        "extra_not_visible": 0,
+        "final_deficit": 0
+      },
+      {
+        "treatment": "buried fireclay balls",
+        "ever": 46,
+        "final": 43,
+        "ever_deficit": 1,
+        "extra_not_visible": 1,
+        "final_deficit": 2
+      },
+      {
+        "treatment": "seed ball (1:3)",
+        "ever": 11,
+        "final": 10,
+        "ever_deficit": 36,
+        "extra_not_visible": -1,
+        "final_deficit": 35
+      },
+      {
+        "treatment": "seed ball (1:4:1)",
+        "ever": 29,
+        "final": 27,
+        "ever_deficit": 18,
+        "extra_not_visible": 0,
+        "final_deficit": 18
+      },
+      {
+        "treatment": "seed ball (1:4:1) 3h dried",
+        "ever": 31,
+        "final": 29,
+        "ever_deficit": 16,
+        "extra_not_visible": 0,
+        "final_deficit": 16
+      },
+      {
+        "treatment": "seed ball (1:4:1) oven dried",
+        "ever": 35,
+        "final": 26,
+        "ever_deficit": 12,
+        "extra_not_visible": 7,
+        "final_deficit": 19
+      },
+      {
+        "treatment": "seed ball (2:4:1)",
+        "ever": 40,
+        "final": 32,
+        "ever_deficit": 7,
+        "extra_not_visible": 6,
+        "final_deficit": 13
+      }
+    ],
+    "integrity_audit": {
+      "later_visible_recorded": 527,
+      "later_visible_not_recorded": 0,
+      "later_no_visible_recorded": 1,
+      "later_no_visible_not_recorded": 752,
+      "initial_recorded_ever_visible": 134,
+      "initial_recorded_never_visible": 0,
+      "initial_not_recorded_ever_visible": 12,
+      "initial_not_recorded_never_visible": 174
+    },
+    "interpretation": "Outcome-dependent recorded structural scores preclude all-unit integrity-effect inference; observed histories not mortality or causal protection."
+  }
+}
