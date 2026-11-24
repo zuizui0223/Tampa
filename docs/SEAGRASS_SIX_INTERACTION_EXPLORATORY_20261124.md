@@ -67,12 +67,14 @@ The 2004 and 2011 meta-analyses **already exist**. We will not pool their publis
 
 **Authoritative analysis:** [GitHub Actions #45321203113](https://github.com/zuizui0223/Tampa/actions/runs/45321203113), job 138199905130, downloadable source-verified artifact #14888135811 (ZIP SHA256 `a21290113e43a6b59e16522bf110cb8056dd6554cfc63d70910584955eb63a44`). Source CSV SHA256 `5a97763735a22076eac25a86736c50cb12611a529c5e233941fbc3a73ad4c6ae`; original 15 sites, 40 plots/site, all 600 plots, exactly 150 each across four D±N± treatments. The entire reproducible result, including all site contrasts and bootstraps, is pinned in `results/zen_15site_mesograzer_exploratory_verified_20261124.json`.
 
+**Original measurement units (confirmed against BCO-DMO parameter definitions):** `chla_per_Zostera` is micrograms chlorophyll-a per gram eelgrass blade tissue (µg/g). `grazer_bmass_per_g`, despite its suffix, is described by the data provider as total mesograzer biomass in **grams**. Preserve its original field name but do not label it "per gram host" or infer the treatment effect as an absolute amount of seagrass consumed. The catalog lists 16 sites, while the exact publicly linked CSV contains 15 sites/600 plots. Source: https://www.bco-dmo.org/dataset/659737/Dataset_description.pdf (parameter definitions) and 15-site original paper DOI 10.1111/ele.12448.
+
 **Treatment semantics:** D+ is *grazer deterrent*, so D+−D− is the effect of reducing grazer access, not adding grazers; N+ is fertilizer addition. Site-equal raw contrasts are the average of the two relevant factorial cell contrasts per site, not pooled plot-level inferential estimates. Confidence intervals below are site-bootstrap percentile summaries across 15 site contrasts with 5,000 resamples.
 
 | Endpoint | Original-scale 15-site D+ minus D− mean contrast | Site-bootstrap CI | Sign count |
 | --- | ---: | ---: | --- |
 | Epiphyte chlorophyll-a normalized to Zostera | **+141.815** (raw original Chl a units) | **+9.229 to +383.872** | 11 positive / 4 negative |
-| Grazer biomass per gram host | **−15.665** (original CSV units) | **−37.511 to −1.697** | 11 negative / 4 positive |
+| Plot mesograzer biomass (`grazer_bmass_per_g`; BCO-DMO documentation: grams) | **−15.665** (source units) | **−37.511 to −1.697** | 11 negative / 4 positive |
 | Epiphyte chl a nutrient N+−N− | **+30.915** | **−22.891 to +116.058** | 7 positive / 8 negative |
 | Epiphyte chl a D×N difference-in-differences | **+32.160** | **−90.103 to +224.673** | 4 positive / 11 negative |
 
