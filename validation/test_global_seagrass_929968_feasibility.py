@@ -67,9 +67,10 @@ class GlobalFeasibilityTests(unittest.TestCase):
     def test_no_fake_years(self):
         d=fake_rows()
         d[1][HEAD[5]]=""
+        d[2][HEAD[5]]=""
         x=M.audit(d,keys())
         self.assertEqual(x["publication_geocoordinate_genus_candidates_with_two_or_more_years"],0)
-        self.assertEqual(x["parse_and_domain_warnings"]["missing_or_noninteger_year"],1)
+        self.assertEqual(x["parse_and_domain_warnings"]["missing_or_noninteger_year"],2)
 
     def test_html_is_rejected(self):
         with self.assertRaises(ValueError):
