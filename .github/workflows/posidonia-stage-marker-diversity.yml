@@ -1,0 +1,48 @@
+name: Posidonia stage marker diversity
+on:
+  pull_request:
+    paths:
+      - 'analysis/144_external_seagrass_genetic_source_gate.py'
+      - 'analysis/146_posidonia_stage_marker_diversity.py'
+      - 'docs/POSIDONIA_STAGE_MARKER_DIVERSITY_20261124.md'
+      - '.github/workflows/posidonia-stage-marker-diversity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/144_external_seagrass_genetic_source_gate.py")
+          m=importlib.util.module_from_spec(s); s.loader.exec_module(m)
+          m.ROOT.mkdir(exist_ok=True)
+          report=m.dryad("posidonia_adult_seedling",m.DOIS["posidonia_adult_seedling"])
+          assert report["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/146_posidonia_stage_marker_diversity.py > out/posidonia_stage_marker_diversity.json
+          python - <<'PY'
+          import json, math
+          x=json.load(open("out/posidonia_stage_marker_diversity.json"))
+          p=x["populations"]; c=x["matched_cohorts"]
+          assert sum(v["raw_n"] for v in p.values())==381
+          assert sum(v["incomplete_n"] for v in p.values())==14
+          assert x["individual_rarefaction_n"]==27 and x["profile_equal_rarefaction_n"]==11
+          assert all(v["delta_rarefied_profiles"]>0 for v in c.values())
+          assert sum(v["delta_rarefied_alleles"]>0 for v in c.values())==4
+          assert sum(v["delta_profile_equal_alleles"]>0 for v in c.values())==2
+          assert sum(v["exact_seedling_profile_absent_from_complete_local_adults"] for v in c.values())==177
+          for k,v in zip(("5","6","7","8","9","10"),(-1.7790249883129121,-1.0339400074274572,-2.6419858452144283,-1.3805186221318237,.5693084816456668,1.4453165053122738)):
+              assert math.isclose(c[k]["delta_profile_equal_alleles"],v,abs_tol=1e-9)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: posidonia-stage-marker-diversity
+          path: out/posidonia_stage_marker_diversity.json
+          if-no-files-found: error
