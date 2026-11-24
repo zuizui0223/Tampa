@@ -1,0 +1,52 @@
+name: Chin Donaher paired stage pilot
+on:
+  pull_request:
+    paths:
+      - 'analysis/160_paired_stage_mutualism_source_gate.py'
+      - 'analysis/162_chin_sulfide_exposure_growth.py'
+      - 'analysis/163_donaher_epiphyte_biomass_paired.py'
+      - '.github/workflows/chin-donaher-paired-stage-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install numpy==2.2.6 pandas==2.2.3 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/160_paired_stage_mutualism_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.figshare()["status"]=="ACQUIRED_SCHEMA_UNVERIFIED"
+          assert m.dryad("donaher_2021","10.5061/dryad.9cnp5hqh7")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/162_chin_sulfide_exposure_growth.py > out/chin_pilot.json
+          python analysis/163_donaher_epiphyte_biomass_paired.py > out/donaher_pilot.json
+          python - <<'PY'
+          import json, numpy as np
+          c=json.load(open("out/chin_pilot.json"))
+          assert c["host_units"]==48 and c["sulfide_rows"]==864
+          assert c["floor_10_count"]==169 and c["floor_10_final_count"]==35
+          for key,target in {"LA":-17.41,"LS":54.52,"DA":182.36,"DS":83.18}.items():
+              x=c["contrasts"][key]
+              assert abs(x["percent_changes_positive_means"][2]-target)<.01
+              assert x["tank_sign_counts_clam_minus_control"][:2]==[0,0]
+              assert all((r[2]>0)==(key!="LA") for r in x["leave_one_tank_out"])
+          assert np.linalg.matrix_rank(np.array(c["full_block_covariance"]),tol=1e-10)<=5
+          d=json.load(open("out/donaher_pilot.json"))
+          assert d["plot_count"]==32 and d["matched_rows"]==192
+          for key,target in {"2019|MAY|HALODULE":[98.26,45.50],"2019|MAY|ZOSTERA":[17.60,46.18],"2019|JULY|HALODULE":[-3.30,-9.29],"2019|JULY|ZOSTERA":[6.12,.10]}.items():
+              np.testing.assert_allclose(np.array(d["groups"][key]["percent_change"])*100,target,atol=.01,rtol=0)
+          assert d["primary_2019"]["common_complete_panel_plot_n"]=={"NO":14,"YES":12}
+          assert np.linalg.eigvalsh(np.array(d["primary_2019"]["sampling_covariance"])).min()>-1e-10
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chin-donaher-paired-stage
+          path: out/
+          if-no-files-found: error
