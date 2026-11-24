@@ -6,6 +6,8 @@ on:
       - 'data/seagrass_interactions_v1/**'
       - 'analysis/116_seagrass_six_interactions_evidence_screen.py'
       - 'analysis/117_seagrass_interaction_original_data_preflight.py'
+      - 'analysis/118_zen_15site_mesograzer_factorial.py'
+      - 'validation/test_zen_15site_mesograzer_factorial.py'
       - 'validation/test_seagrass_six_interactions_evidence_screen.py'
       - 'validation/test_seagrass_interaction_original_data_preflight.py'
       - 'docs/SEAGRASS_SIX_INTERACTION_EXPLORATORY_20261124.md'
@@ -47,3 +49,22 @@ jobs:
         with:
           name: seagrass-interaction-original-data-preflight
           path: /tmp/seagrass_interaction_source_preflight.json
+
+  zen_global_factorial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify 15-site treatment arithmetic with synthetic plots
+        run: python -m unittest discover -s validation -p 'test_zen_15site_mesograzer_factorial.py' -v
+      - name: Source-locked ZEN 15-site grazer and nutrient experiment reaggregation
+        run: |
+          python analysis/118_zen_15site_mesograzer_factorial.py \
+            --out /tmp/zen15_grazer_nutrient_exploratory.json
+          cat /tmp/zen15_grazer_nutrient_exploratory.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen-15site-grazer-nutrient-site-equal-contrasts
+          path: /tmp/zen15_grazer_nutrient_exploratory.json
