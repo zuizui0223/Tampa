@@ -1,0 +1,122 @@
+{
+  "status": "executed locally on retrieved, hash-verified original data; response-open observational contrasts; combined repository script not yet CI-replayed",
+  "artifact": {
+    "run": 45383304380,
+    "id": 14914948367,
+    "sha256": "d4b902fb8216844bb078cf9ba0e9a87f1767defc1781534245761a45c82cadfd"
+  },
+  "forage": {
+    "source": "10.5066/P9T6UB5G",
+    "csv_sha256": "6b2f4244ed277f386e5538e59e755feb5298f5b405c4799e441d2cf36bc45f92",
+    "raw_rows": 27594,
+    "duplicate_rows": 11,
+    "eligible_domain_dives": 19613,
+    "complete_dives": 17128,
+    "bouts": 2457,
+    "excluded_dives": 2485,
+    "matched_sites": 13,
+    "early_1993_2007": {
+      "prey_hour": 68.2099227703361,
+      "small_hour": 30.666024221768776,
+      "large_hour": 36.56102239530977,
+      "known_small_share": 0.43632879692338544,
+      "prey_dive": 2.514336467805466
+    },
+    "late_2018_2019": {
+      "prey_hour": 298.49529803049677,
+      "small_hour": 293.4390626517892,
+      "large_hour": 4.731392557994582,
+      "known_small_share": 0.9776503761573513,
+      "prey_dive": 9.343716209099174
+    },
+    "difference_ci": {
+      "total": [
+        151.84866355916532,
+        321.3149803236849
+      ],
+      "small": [
+        183.24569680175242,
+        356.73067583133417
+      ],
+      "large": [
+        -36.36061318032043,
+        -27.718615026357853
+      ]
+    },
+    "same_direction_all_sites": {
+      "primary": 13,
+      "min10_bouts": 11,
+      "summer": 8,
+      "keep_duplicates": 13
+    }
+  },
+  "benthos": {
+    "source": "10.5066/P9LODH0Z",
+    "csv_sha256": "d764f29396b9775ed5baa555d605284b3f5d436332e42f87a66977e3e69546bf",
+    "raw_rows": 43900,
+    "observed_quadrats": 1828,
+    "duplicate_rows": 18,
+    "intertidal": {
+      "n": 44,
+      "total": [
+        34.86399410774411,
+        33.85844155844156
+      ],
+      "total_diff_ci": [
+        -7.612427849927852,
+        4.252355248917748
+      ],
+      "large50": [
+        3.3339015151515152,
+        1.9506493506493505
+      ],
+      "large50_diff_ci": [
+        -2.4613313943001445,
+        -0.38260582010582106
+      ],
+      "large40_diff_ci": [
+        -3.7953799903799905,
+        -0.3080469877344909
+      ],
+      "large60_diff_ci": [
+        -1.4442013888888887,
+        0.012518037518037456
+      ]
+    },
+    "subtidal": {
+      "n": 11,
+      "total": [
+        55.45837320574163,
+        30.964646464646467
+      ],
+      "total_diff_ci": [
+        -36.586893939393946,
+        -14.02140151515154
+      ],
+      "large50": [
+        16.558133971291866,
+        8.5510101010101
+      ],
+      "large50_diff_ci": [
+        -14.038007708665603,
+        -2.192366427226
+      ],
+      "large40_diff_ci": [
+        -15.509204545454544,
+        -4.354368686868703
+      ],
+      "large60_diff_ci": [
+        -7.697200956937799,
+        -0.003340643274854114
+      ]
+    }
+  },
+  "limits": [
+    "No forage taxonomy file: no taxon-specific functional interpretation.",
+    "Relative paw-width sizes in forage are not fixed millimetres in benthos; different sampling windows and no spatial join.",
+    "Retrieved item counts per complete dive-plus-surface cycle hour are not biomass, energy, population removal or continuous daily foraging rates.",
+    "Matched named sites do not control within-site locations, sampling protocol, demographics or spatial dependence.",
+    "Benthic compact file includes observed quadrats only; mixed sampling designs, missing site metadata; no causal otter attribution.",
+    "Prior publications modeled prey counts per dive and bivalve prey depletion. Novel contribution here is descriptive time-normalized size contrasts and reproductive-function hypothesis, not first prey-switching finding."
+  ]
+}
