@@ -1,0 +1,61 @@
+name: Cross system paired stage source and screen
+on:
+  pull_request:
+    paths:
+      - 'analysis/165_diel_pollination_paired_stage_screen.py'
+      - 'analysis/166_cross_system_stage_source_gate.py'
+      - 'results/diel_pollination_stage_screen_20261124.json'
+      - '.github/workflows/cross-system-paired-stage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diel_screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          python analysis/165_diel_pollination_paired_stage_screen.py > out/diel_screen.json
+          python - <<'PY'
+          import json
+          a=json.load(open("out/diel_screen.json"))
+          assert a["source_rows"]==1652 and a["study_ids"]==140
+          assert a["candidate_contexts"]==298
+          assert a["multi_endpoint_contexts"]==127 and a["multi_endpoint_study_ids"]==64
+          assert a["fruit_seed_candidates"]==113
+          assert a["complete_summary"]["contexts"]==112 and a["complete_summary"]["study_ids"]==53
+          assert a["complete_summary"]["direction_counts"]=={"same":88,"opposite":21,"tie":3}
+          assert a["explicit_unit_positive_summary"]["contexts"]==40
+          assert a["explicit_unit_positive_summary"]["direction_counts"]=={"same":33,"opposite":7}
+          assert a["explicit_unit_strong_opposite"]==6
+          assert a["sensitivity_excluding_converted_counts_and_seed_means_below_one"]["contexts"]==16
+          assert a["sensitivity_excluding_converted_counts_and_seed_means_below_one"]["direction_counts"]=={"same":14,"opposite":2}
+          assert len(a["pollen_studies"])==8 and len(a["pollen_and_seed_candidates"])==5
+          b=json.load(open("results/diel_pollination_stage_screen_20261124.json"))
+          def keys(rows,field):
+              return sorted(tuple(row[m][field][i] for m in ("fruit","seed") for i in (0,1)) for row in rows)
+          assert keys(a["candidate_records"],"source_rows")==keys(b["complete_records"],"ids")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: diel-pollination-stage-screen
+          path: out/
+          if-no-files-found: error
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python analysis/166_cross_system_stage_source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cross-system-stage-original-source-inventory
+          path: cross_system_sources/
+          retention-days: 3
+          if-no-files-found: error
