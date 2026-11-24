@@ -9,6 +9,8 @@ on:
       - 'analysis/129_zen2_predation_manipulation_ceiling_audit.py'
       - 'analysis/130_zen2_2014_2015_geographic_link_gate.py'
       - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
+      - 'results/zen2_2014_2015_geographic_link_verified_20261124.json'
+      - 'results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json'
       - 'validation/test_zen2_prior2014_state_later2015_interaction.py'
       - 'validation/test_zen2_2014_2015_geographic_link_gate.py'
       - 'validation/test_zen2_predation_manipulation_ceiling_audit.py'
@@ -143,6 +145,18 @@ jobs:
         run: |
           python analysis/130_zen2_2014_2015_geographic_link_gate.py --out /tmp/zen2_crossyear_geo.json
           cat /tmp/zen2_crossyear_geo.json
+      - name: Compare original-source output to frozen result: ZIP-original 2014–2015 geo
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/zen2_crossyear_geo.json').read_text())
+          expected=json.loads(Path('results/zen2_2014_2015_geographic_link_verified_20261124.json').read_text())
+          proof=expected.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or actual!=expected:
+              raise SystemExit('ZEN2 frozen source audit mismatch: results/zen2_2014_2015_geographic_link_verified_20261124.json')
+          print('PASS exact original-source source-grain and inference provenance')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen2-2014-2015-response-blind-geographic-linkage
@@ -161,6 +175,18 @@ jobs:
         run: |
           python analysis/131_zen2_prior2014_state_later2015_interaction.py --out /tmp/zen2_crossyear_2014_2015_site_context.json
           cat /tmp/zen2_crossyear_2014_2015_site_context.json
+      - name: Compare original-source output to frozen result: previous-year location-state 2015 risk
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/zen2_crossyear_2014_2015_site_context.json').read_text())
+          expected=json.loads(Path('results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json').read_text())
+          proof=expected.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or actual!=expected:
+              raise SystemExit('ZEN2 frozen source audit mismatch: results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json')
+          print('PASS exact original-source source-grain and inference provenance')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen2-crossyear-prior-2014-context-to-2015-trophic-risk
