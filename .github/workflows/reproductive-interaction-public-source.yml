@@ -1,0 +1,29 @@
+name: Reproductive interaction public source audit
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/138_reproductive_public_source_gate.py'
+      - '.github/workflows/reproductive-interaction-public-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify summary arithmetic and retrieve original public sources
+        run: |
+          python analysis/137_seed_predation_burial_boundary.py
+          python analysis/138_reproductive_public_source_gate.py --out reproductive_sources
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproductive-interaction-public-source-audit
+          path: reproductive_sources/
+          if-no-files-found: error

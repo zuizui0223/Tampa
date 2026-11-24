@@ -1,0 +1,48 @@
+{
+  "schema": "tampa.seed_predation_burial_boundary.v1",
+  "scope": "Published rounded aggregate arithmetic and hypothetical hazard scaling, not an otter effect estimate",
+  "infantes_2016": {
+    "doi": "10.1371/journal.pone.0168128",
+    "host": "Zostera marina",
+    "consumer": "Carcinus maenas",
+    "lab_exposure_hours": 24,
+    "reported_seed_loss_by_depth": [
+      {
+        "depth_cm": 0,
+        "predation": 0.56
+      },
+      {
+        "depth_cm": 1,
+        "predation": 0.2
+      },
+      {
+        "depth_cm": 2,
+        "predation": 0
+      }
+    ],
+    "field_8_month_seedling_establishment": {
+      "predator_exclosure": 0.14,
+      "predator_access": 0.005
+    }
+  },
+  "li_2018": {
+    "doi": "10.1016/j.aquabot.2018.07.008",
+    "seed_rain_per_m2": {
+      "inside": 1634,
+      "downstream_8m": 515,
+      "perpendicular_8m": 203
+    }
+  },
+  "jeppesen_2025": {
+    "doi": "10.1007/s10530-024-03467-3",
+    "online_publication": "2024-12-10",
+    "consumer": "Enhydra lutris nereis",
+    "prey": "Carcinus maenas",
+    "estimate_crabs_year": 120000,
+    "conservative_estimate_range": [
+      52000,
+      67000
+    ],
+    "data_doi": "10.7291/D1469B"
+  }
+}

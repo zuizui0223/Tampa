@@ -1,0 +1,53 @@
+{
+  "schema": "tampa.seed_predation_burial_boundary.v1",
+  "status": "Published rounded aggregate arithmetic and hypothetical hazard scaling, not an otter effect estimate",
+  "field_establishment_ratio": 28.000000000000004,
+  "depth_scenarios": [
+    {
+      "depth_cm": 0,
+      "observed_survival": 0.43999999999999995,
+      "half_hazard_survival": 0.6633249580710799,
+      "half_hazard_gain_pp": 22.332495807108,
+      "zero_hazard_survival": 1,
+      "zero_hazard_gain_pp": 56.00000000000001,
+      "zero_hazard_ratio": 2.272727272727273
+    },
+    {
+      "depth_cm": 1,
+      "observed_survival": 0.8,
+      "half_hazard_survival": 0.8944271909999159,
+      "half_hazard_gain_pp": 9.442719099991582,
+      "zero_hazard_survival": 1,
+      "zero_hazard_gain_pp": 20,
+      "zero_hazard_ratio": 1.25
+    },
+    {
+      "depth_cm": 2,
+      "observed_survival": 1,
+      "half_hazard_survival": 1,
+      "half_hazard_gain_pp": 0,
+      "zero_hazard_survival": 1,
+      "zero_hazard_gain_pp": 0,
+      "zero_hazard_ratio": 1
+    }
+  ],
+  "seed_supply_scenarios": [
+    {
+      "context": "downstream_8m",
+      "ratio_to_inside": 0.31517747858017137,
+      "break_even_later_recruitment_multiplier": 3.1728155339805824
+    },
+    {
+      "context": "perpendicular_8m",
+      "ratio_to_inside": 0.12423500611995104,
+      "break_even_later_recruitment_multiplier": 8.049261083743842
+    }
+  ],
+  "limitations": [
+    "No local otter-to-seed recruitment effect measured",
+    "Depth observations are short-term and rounded; observed zero consumption is not proof of zero true risk",
+    "Assumed proportional hazard and hypothetical hazard changes are not estimated from crab CPUE",
+    "Field exclosure manipulates predator access, not otters or one predator species alone",
+    "Seed-rain contrasts are from separate sites in China; do not multiply across studies to estimate a realized cascade"
+  ]
+}
