@@ -9,6 +9,8 @@ on:
       - 'analysis/129_zen2_predation_manipulation_ceiling_audit.py'
       - 'analysis/130_zen2_2014_2015_geographic_link_gate.py'
       - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
+      - 'analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py'
+      - 'validation/test_zen2_crossyear_basin_latitude_rank_sensitivity.py'
       - 'results/zen2_2014_2015_geographic_link_verified_20261124.json'
       - 'results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json'
       - 'validation/test_zen2_prior2014_state_later2015_interaction.py'
@@ -191,3 +193,21 @@ jobs:
         with:
           name: zen2-crossyear-prior-2014-context-to-2015-trophic-risk
           path: /tmp/zen2_crossyear_2014_2015_site_context.json
+
+  crossyear_basin_latitude_robustness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test source-pinned crossyear basin-geographic null and latitude partial rank
+        run: python -m unittest discover -s validation -p 'test_zen2_crossyear_basin_latitude_rank_sensitivity.py' -v
+      - name: Test if 2014 to 2015 shoot-density ranking remains after preserving ocean basins
+        run: |
+          python analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py --out /tmp/zen2_crossyear_basin_robustness.json
+          cat /tmp/zen2_crossyear_basin_robustness.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-crossyear-shoot-density-basin-latitude-robustness
+          path: /tmp/zen2_crossyear_basin_robustness.json
