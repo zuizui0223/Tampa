@@ -1,0 +1,46 @@
+name: Enhalus spatial null decomposition
+on:
+  pull_request:
+    paths:
+      - 'analysis/138_reproductive_exact_source_members.py'
+      - 'analysis/142_enhalus_spatial_null_decomposition.py'
+      - 'docs/ENHALUS_SPATIAL_NULL_DECOMPOSITION_20261124.md'
+      - '.github/workflows/enhalus-spatial-null-decomposition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install numpy==2.2.6 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/138_reproductive_exact_source_members.py")
+          m=importlib.util.module_from_spec(s); s.loader.exec_module(m)
+          v, members=m.SOURCES["yu"]
+          print(m.extract("yu",v,members))
+          PY
+      - run: |
+          mkdir -p out
+          python analysis/142_enhalus_spatial_null_decomposition.py > out/enhalus_spatial_null.json
+          python - <<'PY'
+          import json, math
+          x=json.load(open("out/enhalus_spatial_null.json"))
+          for i,r in enumerate(("1","2","4","8")):
+              a,b=x["plots"]["PLOTA"][r],x["plots"]["PLOTB"][r]
+              for obs,ref in [(a["random_label_expected_distinct_other_mlgs"],[2.537645,6.973808,25.025720,79.704880][i]),(b["random_label_expected_distinct_other_mlgs"],[3.530173,9.973182,33.551373,96.610264][i]),(x["B_minus_A_accounting"][r]["fraction_degree_gap_offset_by_total_redundancy_gap"],[.379180,.530724,.649894,.717799][i])]:
+                  assert math.isclose(obs,ref,abs_tol=0.000001)
+              assert a["observed_same_mlg_pairs"]==[54,60,61,62][i]
+              assert b["observed_same_mlg_pairs"]==[126,236,355,372][i]
+              assert a["same_pair_permutation_p_one_sided_unadjusted"]==.0002
+              assert b["same_pair_permutation_p_one_sided_unadjusted"]==.0002
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: enhalus-spatial-null-decomposition
+          path: out/enhalus_spatial_null.json
+          if-no-files-found: error
