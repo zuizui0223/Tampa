@@ -7,6 +7,8 @@ on:
       - 'analysis/127_zen2_2015_site_predation_factorial.py'
       - 'analysis/128_zen2_2014_50meadow_state_consumer.py'
       - 'analysis/129_zen2_predation_manipulation_ceiling_audit.py'
+      - 'analysis/130_zen2_2014_2015_geographic_link_gate.py'
+      - 'validation/test_zen2_2014_2015_geographic_link_gate.py'
       - 'validation/test_zen2_predation_manipulation_ceiling_audit.py'
       - 'validation/test_zen2_2014_50meadow_state_consumer.py'
       - 'validation/test_zen2_2015_site_predation_factorial.py'
@@ -125,3 +127,21 @@ jobs:
         with:
           name: zen2-2015-manipulation-ceiling-size-source-audit
           path: /tmp/zen2_2015_dose_ceiling_prey_size.json
+
+  crossyear_geography_gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test response-blind site-code and distance linkage
+        run: python -m unittest discover -s validation -p 'test_zen2_2014_2015_geographic_link_gate.py' -v
+      - name: Verify published 2014 and 2015 source geography before ecological joins
+        run: |
+          python analysis/130_zen2_2014_2015_geographic_link_gate.py --out /tmp/zen2_crossyear_geo.json
+          cat /tmp/zen2_crossyear_geo.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2014-2015-response-blind-geographic-linkage
+          path: /tmp/zen2_crossyear_geo.json
