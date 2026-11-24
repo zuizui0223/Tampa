@@ -1,0 +1,5380 @@
+{
+  "status": "response-open original-data exploratory analysis; no causal clam persistence effect",
+  "groups": {
+    "shell_only": {
+      "n": 30,
+      "final": 154,
+      "present": 15,
+      "early": 42,
+      "earlypresent": 15,
+      "late_first": 2
+    },
+    "nothing_seen": {
+      "n": 21,
+      "final": 79,
+      "present": 8,
+      "early": 16,
+      "earlypresent": 6,
+      "late_first": 2
+    },
+    "live_confirmed": {
+      "n": 29,
+      "final": 120,
+      "present": 16,
+      "early": 38,
+      "earlypresent": 17,
+      "late_first": 2
+    }
+  },
+  "transitions": {
+    "early_absent": {
+      "n": 42,
+      "present": 9,
+      "sum": 83
+    },
+    "early_present": {
+      "n": 38,
+      "present": 30,
+      "sum": 270
+    }
+  },
+  "bydate": [
+    {
+      "date": "5-Nov-25",
+      "n": 80,
+      "confirmedLive": 19,
+      "positive": 0,
+      "counts": 0
+    },
+    {
+      "date": "17-Nov-25",
+      "n": 80,
+      "confirmedLive": 11,
+      "positive": 0,
+      "counts": 0
+    },
+    {
+      "date": "3-Dec-25",
+      "n": 80,
+      "confirmedLive": 3,
+      "positive": 32,
+      "counts": 59
+    },
+    {
+      "date": "17-Dec-25",
+      "n": 80,
+      "confirmedLive": 1,
+      "positive": 38,
+      "counts": 96
+    },
+    {
+      "date": "4-Jan-26",
+      "n": 40,
+      "confirmedLive": null,
+      "positive": 11,
+      "counts": 24
+    },
+    {
+      "date": "17-Jan-26",
+      "n": 80,
+      "confirmedLive": null,
+      "positive": 41,
+      "counts": 108
+    },
+    {
+      "date": "30-Jan-26",
+      "n": 80,
+      "confirmedLive": null,
+      "positive": 40,
+      "counts": 146
+    },
+    {
+      "date": "14-Feb-26",
+      "n": 80,
+      "confirmedLive": null,
+      "positive": 34,
+      "counts": 94
+    },
+    {
+      "date": "1-Apr-26",
+      "n": 80,
+      "confirmedLive": null,
+      "positive": 41,
+      "counts": 303
+    },
+    {
+      "date": "17-Apr-26",
+      "n": 80,
+      "confirmedLive": null,
+      "positive": 39,
+      "counts": 353
+    }
+  ],
+  "results": [
+    {
+      "index": 2,
+      "date": "3-Dec-25",
+      "status_visits": 2,
+      "alpha": 0.1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2057822379193626,
+          "mae": 0.9512563406583021,
+          "skill": 0.12386926462998904
+        },
+        "design_status": {
+          "mse": 1.2388787918348168,
+          "mae": 0.9695069721346498,
+          "skill": 0.09982105160423105
+        },
+        "design_early": {
+          "mse": 0.7981906242144043,
+          "mae": 0.7209930321525173,
+          "skill": 0.4200284955556116
+        },
+        "full": {
+          "mse": 0.7811050161771611,
+          "mae": 0.7012804047363893,
+          "skill": 0.43244303100252934
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 6
+    },
+    {
+      "index": 2,
+      "date": "3-Dec-25",
+      "status_visits": 2,
+      "alpha": 0.1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.2351538928650362,
+          "mae": 0.4509784991624531,
+          "skill": 0.1071282644017082
+        },
+        "design_status": {
+          "mse": 0.24485182525867435,
+          "mae": 0.45640188878944465,
+          "skill": 0.07030552835203407
+        },
+        "design_early": {
+          "mse": 0.16701186584342953,
+          "mae": 0.3367693087839997,
+          "skill": 0.36586133997484893
+        },
+        "full": {
+          "mse": 0.16764786353357858,
+          "mae": 0.3309183702719258,
+          "skill": 0.3634464772884557
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 4
+    },
+    {
+      "index": 2,
+      "date": "3-Dec-25",
+      "status_visits": 2,
+      "alpha": 1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2049479231594715,
+          "mae": 0.9529230298485494,
+          "skill": 0.12447548421187205
+        },
+        "design_status": {
+          "mse": 1.2383277554304721,
+          "mae": 0.9708820677105449,
+          "skill": 0.10022143893369373
+        },
+        "design_early": {
+          "mse": 0.7979149117532541,
+          "mae": 0.7230178038242062,
+          "skill": 0.42022883037042447
+        },
+        "full": {
+          "mse": 0.7803515938332304,
+          "mae": 0.7038578045384105,
+          "skill": 0.4329904735269534
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 6
+    },
+    {
+      "index": 2,
+      "date": "3-Dec-25",
+      "status_visits": 2,
+      "alpha": 1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23501310882104048,
+          "mae": 0.4517369834193544,
+          "skill": 0.10766281686935186
+        },
+        "design_status": {
+          "mse": 0.24453613192065257,
+          "mae": 0.4570125280424147,
+          "skill": 0.07150420575942062
+        },
+        "design_early": {
+          "mse": 0.16714436861860565,
+          "mae": 0.338411471621304,
+          "skill": 0.3653582312174234
+        },
+        "full": {
+          "mse": 0.16767975515146802,
+          "mae": 0.33284425260089084,
+          "skill": 0.3633253858454477
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 4
+    },
+    {
+      "index": 2,
+      "date": "3-Dec-25",
+      "status_visits": 2,
+      "alpha": 10,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2000000836015943,
+          "mae": 0.9681185321714875,
+          "skill": 0.12807062284802917
+        },
+        "design_status": {
+          "mse": 1.2358817811533427,
+          "mae": 0.9834902334565048,
+          "skill": 0.10199870283319801
+        },
+        "design_early": {
+          "mse": 0.8027535016741751,
+          "mae": 0.7431850395945759,
+          "skill": 0.41671307336865815
+        },
+        "full": {
+          "mse": 0.7846641426918588,
+          "mae": 0.7287023949050606,
+          "skill": 0.4298569420450591
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 6
+    },
+    {
+      "index": 2,
+      "date": "3-Dec-25",
+      "status_visits": 2,
+      "alpha": 10,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23430042201743703,
+          "mae": 0.45840609499527896,
+          "skill": 0.11036886564242754
+        },
+        "design_status": {
+          "mse": 0.24251119775345714,
+          "mae": 0.464025358968071,
+          "skill": 0.07919281538568668
+        },
+        "design_early": {
+          "mse": 0.16916207018438106,
+          "mae": 0.35283706079841953,
+          "skill": 0.35769708354513186
+        },
+        "full": {
+          "mse": 0.1693799084156734,
+          "mae": 0.3505690591651633,
+          "skill": 0.35686995881721895
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 4
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 2,
+      "alpha": 0.1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2057822379193626,
+          "mae": 0.9512563406583021,
+          "skill": 0.12386926462998904
+        },
+        "design_status": {
+          "mse": 1.2388787918348168,
+          "mae": 0.9695069721346498,
+          "skill": 0.09982105160423105
+        },
+        "design_early": {
+          "mse": 0.8116137075600817,
+          "mae": 0.6901166259841873,
+          "skill": 0.41027517898422616
+        },
+        "full": {
+          "mse": 0.8228304881120649,
+          "mae": 0.6973295948117584,
+          "skill": 0.40212497915174994
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 6
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 2,
+      "alpha": 0.1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.2351538928650362,
+          "mae": 0.4509784991624531,
+          "skill": 0.1071282644017082
+        },
+        "design_status": {
+          "mse": 0.24485182525867435,
+          "mae": 0.45640188878944465,
+          "skill": 0.07030552835203407
+        },
+        "design_early": {
+          "mse": 0.14743935896737054,
+          "mae": 0.3019258318962057,
+          "skill": 0.44017751637966096
+        },
+        "full": {
+          "mse": 0.15107798961832186,
+          "mae": 0.30124985134824395,
+          "skill": 0.4263617533279275
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 2,
+      "alpha": 1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2049479231594715,
+          "mae": 0.9529230298485494,
+          "skill": 0.12447548421187205
+        },
+        "design_status": {
+          "mse": 1.2383277554304721,
+          "mae": 0.9708820677105449,
+          "skill": 0.10022143893369373
+        },
+        "design_early": {
+          "mse": 0.811047698014167,
+          "mae": 0.691613409719863,
+          "skill": 0.41068644591460024
+        },
+        "full": {
+          "mse": 0.82151810161969,
+          "mae": 0.6989045487961956,
+          "skill": 0.4030785693660479
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 6,
+      "predictions": {
+        "mean": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 6,
+            "observed": 1.6094379124341003,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 1.140391685816648
+          },
+          {
+            "id": 9,
+            "observed": 2.8903717578961645,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 10,
+            "observed": 2.3978952727983707,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 11,
+            "observed": 1.9459101490553132,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 16,
+            "observed": 0.6931471805599453,
+            "prediction": 1.0526432629294853
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 22,
+            "observed": 1.9459101490553132,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 1.13571846030802
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 27,
+            "observed": 2.0794415416798357,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 32,
+            "observed": 1.6094379124341003,
+            "prediction": 1.111510553293317
+          },
+          {
+            "id": 33,
+            "observed": 1.3862943611198906,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 35,
+            "observed": 1.791759469228055,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 36,
+            "observed": 2.302585092994046,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 37,
+            "observed": 2.4849066497880004,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 38,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 40,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0074058040727019
+          },
+          {
+            "id": 41,
+            "observed": 2.3978952727983707,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 43,
+            "observed": 2.5649493574615367,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 44,
+            "observed": 1.9459101490553132,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 45,
+            "observed": 2.639057329615259,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 48,
+            "observed": 1.9459101490553132,
+            "prediction": 1.0031099587950965
+          },
+          {
+            "id": 49,
+            "observed": 3.258096538021482,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 54,
+            "observed": 2.5649493574615367,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 55,
+            "observed": 2.9444389791664403,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 56,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0186210625576275
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 59,
+            "observed": 3.1780538303479458,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 60,
+            "observed": 1.9459101490553132,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 61,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 64,
+            "observed": 1.9459101490553132,
+            "prediction": 1.0421989895880566
+          },
+          {
+            "id": 65,
+            "observed": 2.4849066497880004,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 68,
+            "observed": 2.70805020110221,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 69,
+            "observed": 3.332204510175204,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 70,
+            "observed": 1.6094379124341003,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 72,
+            "observed": 1.3862943611198906,
+            "prediction": 1.002732578564074
+          },
+          {
+            "id": 73,
+            "observed": 1.9459101490553132,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 74,
+            "observed": 2.5649493574615367,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 75,
+            "observed": 2.0794415416798357,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 77,
+            "observed": 2.5649493574615367,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 78,
+            "observed": 2.3978952727983707,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 79,
+            "observed": 1.791759469228055,
+            "prediction": 0.9503725554790665
+          },
+          {
+            "id": 80,
+            "observed": 1.9459101490553132,
+            "prediction": 0.9503725554790665
+          }
+        ],
+        "design": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0.0562449312983671
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0.0562449312983671
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0.0562449312983671
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0.0562449312983671
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0.011629580547724845
+          },
+          {
+            "id": 6,
+            "observed": 1.6094379124341003,
+            "prediction": 0.011629580547724845
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.011629580547724845
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0.011629580547724845
+          },
+          {
+            "id": 9,
+            "observed": 2.8903717578961645,
+            "prediction": 0.3274437273373506
+          },
+          {
+            "id": 10,
+            "observed": 2.3978952727983707,
+            "prediction": 0.3274437273373506
+          },
+          {
+            "id": 11,
+            "observed": 1.9459101490553132,
+            "prediction": 0.3274437273373506
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.3274437273373506
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.5061288673161332
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.5061288673161332
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.5061288673161332
+          },
+          {
+            "id": 16,
+            "observed": 0.6931471805599453,
+            "prediction": 0.5061288673161332
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.9112008617659835
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.9112008617659835
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.9112008617659835
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.9112008617659835
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.8573670935736641
+          },
+          {
+            "id": 22,
+            "observed": 1.9459101490553132,
+            "prediction": 0.8573670935736641
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.8573670935736641
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 0.8573670935736641
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 1.0241344494151106
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 1.0241344494151106
+          },
+          {
+            "id": 27,
+            "observed": 2.0794415416798357,
+            "prediction": 1.0241344494151106
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 1.0241344494151106
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 1.0364900998063815
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 1.0364900998063815
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 1.0364900998063815
+          },
+          {
+            "id": 32,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0364900998063815
+          },
+          {
+            "id": 33,
+            "observed": 1.3862943611198906,
+            "prediction": 1.0763342191658687
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 1.0763342191658687
+          },
+          {
+            "id": 35,
+            "observed": 1.791759469228055,
+            "prediction": 1.0763342191658687
+          },
+          {
+            "id": 36,
+            "observed": 2.302585092994046,
+            "prediction": 1.0763342191658687
+          },
+          {
+            "id": 37,
+            "observed": 2.4849066497880004,
+            "prediction": 1.0696995358431685
+          },
+          {
+            "id": 38,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0696995358431685
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 1.0696995358431685
+          },
+          {
+            "id": 40,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0696995358431685
+          },
+          {
+            "id": 41,
+            "observed": 2.3978952727983707,
+            "prediction": 1.1556005064862411
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 1.1556005064862411
+          },
+          {
+            "id": 43,
+            "observed": 2.5649493574615367,
+            "prediction": 1.1556005064862411
+          },
+          {
+            "id": 44,
+            "observed": 1.9459101490553132,
+            "prediction": 1.1556005064862411
+          },
+          {
+            "id": 45,
+            "observed": 2.639057329615259,
+            "prediction": 1.2187447506144689
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 1.2187447506144689
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 1.2187447506144689
+          },
+          {
+            "id": 48,
+            "observed": 1.9459101490553132,
+            "prediction": 1.2187447506144689
+          },
+          {
+            "id": 49,
+            "observed": 3.258096538021482,
+            "prediction": 1.3643253662425379
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 1.3643253662425379
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 1.3643253662425379
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 1.3643253662425379
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 1.2580307881328137
+          },
+          {
+            "id": 54,
+            "observed": 2.5649493574615367,
+            "prediction": 1.2580307881328137
+          },
+          {
+            "id": 55,
+            "observed": 2.9444389791664403,
+            "prediction": 1.2580307881328137
+          },
+          {
+            "id": 56,
+            "observed": 1.6094379124341003,
+            "prediction": 1.2580307881328137
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 1.42947380464598
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 1.42947380464598
+          },
+          {
+            "id": 59,
+            "observed": 3.1780538303479458,
+            "prediction": 1.42947380464598
+          },
+          {
+            "id": 60,
+            "observed": 1.9459101490553132,
+            "prediction": 1.42947380464598
+          },
+          {
+            "id": 61,
+            "observed": 1.6094379124341003,
+            "prediction": 1.471928421850076
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 1.471928421850076
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 1.471928421850076
+          },
+          {
+            "id": 64,
+            "observed": 1.9459101490553132,
+            "prediction": 1.471928421850076
+          },
+          {
+            "id": 65,
+            "observed": 2.4849066497880004,
+            "prediction": 1.4822055406475958
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 1.4822055406475958
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 1.4822055406475958
+          },
+          {
+            "id": 68,
+            "observed": 2.70805020110221,
+            "prediction": 1.4822055406475958
+          },
+          {
+            "id": 69,
+            "observed": 3.332204510175204,
+            "prediction": 1.450589038652984
+          },
+          {
+            "id": 70,
+            "observed": 1.6094379124341003,
+            "prediction": 1.450589038652984
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 1.450589038652984
+          },
+          {
+            "id": 72,
+            "observed": 1.3862943611198906,
+            "prediction": 1.450589038652984
+          },
+          {
+            "id": 73,
+            "observed": 1.9459101490553132,
+            "prediction": 1.440044266641339
+          },
+          {
+            "id": 74,
+            "observed": 2.5649493574615367,
+            "prediction": 1.440044266641339
+          },
+          {
+            "id": 75,
+            "observed": 2.0794415416798357,
+            "prediction": 1.440044266641339
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 1.440044266641339
+          },
+          {
+            "id": 77,
+            "observed": 2.5649493574615367,
+            "prediction": 1.3817090449889848
+          },
+          {
+            "id": 78,
+            "observed": 2.3978952727983707,
+            "prediction": 1.3817090449889848
+          },
+          {
+            "id": 79,
+            "observed": 1.791759469228055,
+            "prediction": 1.3817090449889848
+          },
+          {
+            "id": 80,
+            "observed": 1.9459101490553132,
+            "prediction": 1.3817090449889848
+          }
+        ],
+        "design_status": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0.18936810411271154
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0.18936810411271154
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0.18936810411271154
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 6,
+            "observed": 1.6094379124341003,
+            "prediction": 0
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.14688819516515833
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 9,
+            "observed": 2.8903717578961645,
+            "prediction": 0.20023764276326905
+          },
+          {
+            "id": 10,
+            "observed": 2.3978952727983707,
+            "prediction": 0.20023764276326905
+          },
+          {
+            "id": 11,
+            "observed": 1.9459101490553132,
+            "prediction": 0.5355952492055198
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.3822370375991814
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.682008610589667
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.682008610589667
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.19329279254107767
+          },
+          {
+            "id": 16,
+            "observed": 0.6931471805599453,
+            "prediction": 0.3466510041474161
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.8331026509038255
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 1.1678252362978645
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.8331026509038255
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 1.1678252362978645
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.7942094934986557
+          },
+          {
+            "id": 22,
+            "observed": 1.9459101490553132,
+            "prediction": 0.7942094934986557
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 1.1289320788926946
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 1.1289320788926946
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.9601506329571909
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.9601506329571909
+          },
+          {
+            "id": 27,
+            "observed": 2.0794415416798357,
+            "prediction": 0.9601506329571909
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.9601506329571909
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.8745323688293934
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 1.0631137366373657
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 1.0631137366373657
+          },
+          {
+            "id": 32,
+            "observed": 1.6094379124341003,
+            "prediction": 1.1520068156591174
+          },
+          {
+            "id": 33,
+            "observed": 1.3862943611198906,
+            "prediction": 1.0293604152972595
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.8312303270828301
+          },
+          {
+            "id": 35,
+            "observed": 1.791759469228055,
+            "prediction": 1.0293604152972595
+          },
+          {
+            "id": 36,
+            "observed": 2.302585092994046,
+            "prediction": 1.030577278570354
+          },
+          {
+            "id": 37,
+            "observed": 2.4849066497880004,
+            "prediction": 1.254408641992903
+          },
+          {
+            "id": 38,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0562785537784736
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 1.254408641992903
+          },
+          {
+            "id": 40,
+            "observed": 1.6094379124341003,
+            "prediction": 1.0550616905053791
+          },
+          {
+            "id": 41,
+            "observed": 2.3978952727983707,
+            "prediction": 1.0654195229762684
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 1.0654195229762684
+          },
+          {
+            "id": 43,
+            "observed": 2.5649493574615367,
+            "prediction": 1.0654195229762684
+          },
+          {
+            "id": 44,
+            "observed": 1.9459101490553132,
+            "prediction": 1.0654195229762684
+          },
+          {
+            "id": 45,
+            "observed": 2.639057329615259,
+            "prediction": 1.4141731189504607
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 1.4141731189504607
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 1.3003806776979792
+          },
+          {
+            "id": 48,
+            "observed": 1.9459101490553132,
+            "prediction": 1.4141731189504607
+          },
+          {
+            "id": 49,
+            "observed": 3.258096538021482,
+            "prediction": 1.5092638159818812
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 1.3822936337200944
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 1.2233939530638254
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 1.5092638159818812
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 1.3230118498247392
+          },
+          {
+            "id": 54,
+            "observed": 2.5649493574615367,
+            "prediction": 1.1641121691684702
+          },
+          {
+            "id": 55,
+            "observed": 2.9444389791664403,
+            "prediction": 1.1641121691684702
+          },
+          {
+            "id": 56,
+            "observed": 1.6094379124341003,
+            "prediction": 1.1641121691684702
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 1.4308486091169899
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 1.4308486091169899
+          },
+          {
+            "id": 59,
+            "observed": 3.1780538303479458,
+            "prediction": 1.5168341356829351
+          },
+          {
+            "id": 60,
+            "observed": 1.9459101490553132,
+            "prediction": 1.3615899222311338
+          },
+          {
+            "id": 61,
+            "observed": 1.6094379124341003,
+            "prediction": 1.3351364973068929
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 1.3351364973068929
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 1.4211220238728381
+          },
+          {
+            "id": 64,
+            "observed": 1.9459101490553132,
+            "prediction": 1.4211220238728381
+          },
+          {
+            "id": 65,
+            "observed": 2.4849066497880004,
+            "prediction": 1.6219529500382257
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 1.4351858663188348
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 1.4351858663188348
+          },
+          {
+            "id": 68,
+            "observed": 2.70805020110221,
+            "prediction": 1.4351858663188348
+          },
+          {
+            "id": 69,
+            "observed": 3.332204510175204,
+            "prediction": 1.3797096554945567
+          },
+          {
+            "id": 70,
+            "observed": 1.6094379124341003,
+            "prediction": 1.3797096554945567
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 1.298707217375388
+          },
+          {
+            "id": 72,
+            "observed": 1.3862943611198906,
+            "prediction": 1.4854743010947788
+          },
+          {
+            "id": 73,
+            "observed": 1.9459101490553132,
+            "prediction": 1.6863997594638866
+          },
+          {
+            "id": 74,
+            "observed": 2.5649493574615367,
+            "prediction": 1.1208896355661921
+          },
+          {
+            "id": 75,
+            "observed": 2.0794415416798357,
+            "prediction": 1.1208896355661921
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 1.3928717734647353
+          },
+          {
+            "id": 77,
+            "observed": 2.5649493574615367,
+            "prediction": 1.3670720012558837
+          },
+          {
+            "id": 78,
+            "observed": 2.3978952727983707,
+            "prediction": 1.3670720012558837
+          },
+          {
+            "id": 79,
+            "observed": 1.791759469228055,
+            "prediction": 1.660599987255035
+          },
+          {
+            "id": 80,
+            "observed": 1.9459101490553132,
+            "prediction": 1.3886178493564918
+          }
+        ],
+        "design_early": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 6,
+            "observed": 1.6094379124341003,
+            "prediction": 0.5857302532832729
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 9,
+            "observed": 2.8903717578961645,
+            "prediction": 1.7850726829813435
+          },
+          {
+            "id": 10,
+            "observed": 2.3978952727983707,
+            "prediction": 1.2837998414183898
+          },
+          {
+            "id": 11,
+            "observed": 1.9459101490553132,
+            "prediction": 1.2837998414183898
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.6629169708644794
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.4055594493254926
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.4055594493254926
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.4055594493254926
+          },
+          {
+            "id": 16,
+            "observed": 0.6931471805599453,
+            "prediction": 1.0264423198794028
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.241105658910013
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.241105658910013
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.241105658910013
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.241105658910013
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 1.3015775400986036
+          },
+          {
+            "id": 22,
+            "observed": 1.9459101490553132,
+            "prediction": 2.000728937505388
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.6024261426918189
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 1.3015775400986036
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.2939227888882835
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.2939227888882835
+          },
+          {
+            "id": 27,
+            "observed": 2.0794415416798357,
+            "prediction": 0.2939227888882835
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.9963961341674783
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.6271760297399404
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.6271760297399404
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.6271760297399404
+          },
+          {
+            "id": 32,
+            "observed": 1.6094379124341003,
+            "prediction": 0.6271760297399404
+          },
+          {
+            "id": 33,
+            "observed": 1.3862943611198906,
+            "prediction": 1.8284733665850479
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 1.1131615038327278
+          },
+          {
+            "id": 35,
+            "observed": 1.791759469228055,
+            "prediction": 2.0587523518112327
+          },
+          {
+            "id": 36,
+            "observed": 2.302585092994046,
+            "prediction": 1.8284733665850479
+          },
+          {
+            "id": 37,
+            "observed": 2.4849066497880004,
+            "prediction": 0.6136803852403608
+          },
+          {
+            "id": 38,
+            "observed": 1.6094379124341003,
+            "prediction": 0.6136803852403608
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.6136803852403608
+          },
+          {
+            "id": 40,
+            "observed": 1.6094379124341003,
+            "prediction": 1.328992247992681
+          },
+          {
+            "id": 41,
+            "observed": 2.3978952727983707,
+            "prediction": 0.35335508564821483
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.35335508564821483
+          },
+          {
+            "id": 43,
+            "observed": 2.5649493574615367,
+            "prediction": 1.497268038071193
+          },
+          {
+            "id": 44,
+            "observed": 1.9459101490553132,
+            "prediction": 2.218996755250621
+          },
+          {
+            "id": 45,
+            "observed": 2.639057329615259,
+            "prediction": 0.7032862147376959
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.7032862147376959
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.7032862147376959
+          },
+          {
+            "id": 48,
+            "observed": 1.9459101490553132,
+            "prediction": 1.4250149319171237
+          },
+          {
+            "id": 49,
+            "observed": 3.258096538021482,
+            "prediction": 1.8905203480761998
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.5745382299481302
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 1.232529289012165
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.5745382299481302
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.8079388106601074
+          },
+          {
+            "id": 54,
+            "observed": 2.5649493574615367,
+            "prediction": 0.8079388106601074
+          },
+          {
+            "id": 55,
+            "observed": 2.9444389791664403,
+            "prediction": 2.893721119512697
+          },
+          {
+            "id": 56,
+            "observed": 1.6094379124341003,
+            "prediction": 1.4659298697241423
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.624490680183964
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.624490680183964
+          },
+          {
+            "id": 59,
+            "observed": 3.1780538303479458,
+            "prediction": 1.9209406279421255
+          },
+          {
+            "id": 60,
+            "observed": 1.9459101490553132,
+            "prediction": 1.6519029558132579
+          },
+          {
+            "id": 61,
+            "observed": 1.6094379124341003,
+            "prediction": 2.008233495993725
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 1.629046194243512
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.9808212203644313
+          },
+          {
+            "id": 64,
+            "observed": 1.9459101490553132,
+            "prediction": 1.629046194243512
+          },
+          {
+            "id": 65,
+            "observed": 2.4849066497880004,
+            "prediction": 2.7036183524952295
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 2.543167947694681
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.6781840730532067
+          },
+          {
+            "id": 68,
+            "observed": 2.70805020110221,
+            "prediction": 2.3533953977180095
+          },
+          {
+            "id": 69,
+            "observed": 3.332204510175204,
+            "prediction": 1.6357645156803802
+          },
+          {
+            "id": 70,
+            "observed": 1.6094379124341003,
+            "prediction": 2.057799895617441
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.9142902683281735
+          },
+          {
+            "id": 72,
+            "observed": 1.3862943611198906,
+            "prediction": 1.6357645156803802
+          },
+          {
+            "id": 73,
+            "observed": 1.9459101490553132,
+            "prediction": 1.6788744376520885
+          },
+          {
+            "id": 74,
+            "observed": 2.5649493574615367,
+            "prediction": 2.7184788563766933
+          },
+          {
+            "id": 75,
+            "observed": 2.0794415416798357,
+            "prediction": 1.2491122576053872
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.5144289582197342
+          },
+          {
+            "id": 77,
+            "observed": 2.5649493574615367,
+            "prediction": 0.76322287732552
+          },
+          {
+            "id": 78,
+            "observed": 2.3978952727983707,
+            "prediction": 0.76322287732552
+          },
+          {
+            "id": 79,
+            "observed": 1.791759469228055,
+            "prediction": 1.9276683567578743
+          },
+          {
+            "id": 80,
+            "observed": 1.9459101490553132,
+            "prediction": 1.9276683567578743
+          }
+        ],
+        "full": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 6,
+            "observed": 1.6094379124341003,
+            "prediction": 0.31569077037624815
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.04799557348085892
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 9,
+            "observed": 2.8903717578961645,
+            "prediction": 1.729314984154302
+          },
+          {
+            "id": 10,
+            "observed": 2.3978952727983707,
+            "prediction": 1.2169278806489863
+          },
+          {
+            "id": 11,
+            "observed": 1.9459101490553132,
+            "prediction": 1.507866198719197
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.5526981264040809
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.6398294416653942
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.6398294416653942
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.02837218700275479
+          },
+          {
+            "id": 16,
+            "observed": 0.6931471805599453,
+            "prediction": 0.9835402593178707
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.20572395569394308
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.4614747797689114
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.20572395569394308
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.4614747797689114
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 1.394467284700981
+          },
+          {
+            "id": 22,
+            "observed": 1.9459101490553132,
+            "prediction": 2.1156086294696985
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.9290767640072315
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 1.650218108775949
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.2336144892672073
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.2336144892672073
+          },
+          {
+            "id": 27,
+            "observed": 2.0794415416798357,
+            "prediction": 0.2336144892672073
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.9522521212786464
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.34028107382186235
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.5574132943287221
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.5574132943287221
+          },
+          {
+            "id": 32,
+            "observed": 1.6094379124341003,
+            "prediction": 0.8205818957894243
+          },
+          {
+            "id": 33,
+            "observed": 1.3862943611198906,
+            "prediction": 1.8398858051797147
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.7727525966954178
+          },
+          {
+            "id": 35,
+            "observed": 1.791759469228055,
+            "prediction": 2.0739505759071397
+          },
+          {
+            "id": 36,
+            "observed": 2.302585092994046,
+            "prediction": 1.6337681944491909
+          },
+          {
+            "id": 37,
+            "observed": 2.4849066497880004,
+            "prediction": 0.8346046632567631
+          },
+          {
+            "id": 38,
+            "observed": 1.6094379124341003,
+            "prediction": 0.4945430413928299
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.8346046632567631
+          },
+          {
+            "id": 40,
+            "observed": 1.6094379124341003,
+            "prediction": 1.4277322387437177
+          },
+          {
+            "id": 41,
+            "observed": 2.3978952727983707,
+            "prediction": 0.3008565171029296
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.3008565171029296
+          },
+          {
+            "id": 43,
+            "observed": 2.5649493574615367,
+            "prediction": 1.4576958591118314
+          },
+          {
+            "id": 44,
+            "observed": 1.9459101490553132,
+            "prediction": 2.187580220087275
+          },
+          {
+            "id": 45,
+            "observed": 2.639057329615259,
+            "prediction": 0.9532453491204234
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.9532453491204234
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.6914629521050364
+          },
+          {
+            "id": 48,
+            "observed": 1.9459101490553132,
+            "prediction": 1.6831297100958669
+          },
+          {
+            "id": 49,
+            "observed": 3.258096538021482,
+            "prediction": 2.08599956716039
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.582605988777255
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 1.0410128888645078
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.7411099567631749
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.8864515721417889
+          },
+          {
+            "id": 54,
+            "observed": 2.5649493574615367,
+            "prediction": 0.6724136670304341
+          },
+          {
+            "id": 55,
+            "observed": 2.9444389791664403,
+            "prediction": 2.8040132671195064
+          },
+          {
+            "id": 56,
+            "observed": 1.6094379124341003,
+            "prediction": 1.3448584722290418
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.6282178049588173
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.6282178049588173
+          },
+          {
+            "id": 59,
+            "observed": 3.1780538303479458,
+            "prediction": 2.048961074919975
+          },
+          {
+            "id": 60,
+            "observed": 1.9459101490553132,
+            "prediction": 1.503164669932933
+          },
+          {
+            "id": 61,
+            "observed": 1.6094379124341003,
+            "prediction": 1.8056424558124098
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 1.4197721116610922
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.8615662506492016
+          },
+          {
+            "id": 64,
+            "observed": 1.9459101490553132,
+            "prediction": 1.521215960973551
+          },
+          {
+            "id": 65,
+            "observed": 2.4849066497880004,
+            "prediction": 2.968032353113836
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 2.5969797980232476
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.6573965953075595
+          },
+          {
+            "id": 68,
+            "observed": 2.70805020110221,
+            "prediction": 2.3996163487858997
+          },
+          {
+            "id": 69,
+            "observed": 3.332204510175204,
+            "prediction": 1.6950736981767731
+          },
+          {
+            "id": 70,
+            "observed": 1.6094379124341003,
+            "prediction": 2.1339904872214075
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.6130446605006356
+          },
+          {
+            "id": 72,
+            "observed": 1.3862943611198906,
+            "prediction": 1.5675620037494562
+          },
+          {
+            "id": 73,
+            "observed": 1.9459101490553132,
+            "prediction": 1.9808269355546626
+          },
+          {
+            "id": 74,
+            "observed": 2.5649493574615367,
+            "prediction": 2.34570672213016
+          },
+          {
+            "id": 75,
+            "observed": 2.0794415416798357,
+            "prediction": 0.8489932270341289
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.4448979683543177
+          },
+          {
+            "id": 77,
+            "observed": 2.5649493574615367,
+            "prediction": 0.7453506240513996
+          },
+          {
+            "id": 78,
+            "observed": 2.3978952727983707,
+            "prediction": 0.7453506240513996
+          },
+          {
+            "id": 79,
+            "observed": 1.791759469228055,
+            "prediction": 2.2812795912517445
+          },
+          {
+            "id": 80,
+            "observed": 1.9459101490553132,
+            "prediction": 1.93701810238354
+          }
+        ]
+      },
+      "row_squared_errors": {
+        "mean": [
+          9.323456742262227,
+          10.546343510320083,
+          9.685405520106126,
+          8.597556313754312,
+          7.373883577399032,
+          11.857525345290464,
+          15.614576275198075,
+          10.861738551473763,
+          14.063016526836725,
+          12.177165425038805
+        ],
+        "design": [
+          2.5660511760637017,
+          14.385497785207827,
+          6.711309024998465,
+          7.811431547405419,
+          6.9997984376116476,
+          11.006297204938962,
+          15.428657530520816,
+          11.987743416274117,
+          12.576023287281936,
+          6.923024442454829
+        ],
+        "design_status": [
+          2.7194473724248405,
+          15.289307079658007,
+          8.621910016033278,
+          7.2529515587346856,
+          6.7185865555347,
+          11.408424966940421,
+          15.824305361019002,
+          11.348557601693496,
+          12.045877970985263,
+          7.836851951414082
+        ],
+        "design_early": [
+          1.0479773714040665,
+          3.9452646956740702,
+          3.9866582977776677,
+          6.498551407444869,
+          6.6789921069865406,
+          10.527288723795744,
+          7.812599481874574,
+          6.321993505236427,
+          11.078350861250929,
+          6.986139389688477
+        ],
+        "full": [
+          1.6760852426566168,
+          4.143991084558158,
+          6.070302658924755,
+          5.782517254675792,
+          6.025908754296003,
+          10.070314222045411,
+          7.803402240147704,
+          5.237099860118822,
+          10.869050654675055,
+          8.042776157476876
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 2,
+      "alpha": 1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23501310882104048,
+          "mae": 0.4517369834193544,
+          "skill": 0.10766281686935186
+        },
+        "design_status": {
+          "mse": 0.24453613192065257,
+          "mae": 0.4570125280424147,
+          "skill": 0.07150420575942062
+        },
+        "design_early": {
+          "mse": 0.14772488381197144,
+          "mae": 0.3040457019737265,
+          "skill": 0.4390933877673332
+        },
+        "full": {
+          "mse": 0.15125664865791322,
+          "mae": 0.30311897714359615,
+          "skill": 0.4256833907253921
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 5,
+      "predictions": {
+        "mean": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 6,
+            "observed": 1,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 9,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 10,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 11,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 16,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 22,
+            "observed": 1,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 0.5277777777777778
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 27,
+            "observed": 1,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 32,
+            "observed": 1,
+            "prediction": 0.5138888888888888
+          },
+          {
+            "id": 33,
+            "observed": 1,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 35,
+            "observed": 1,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 36,
+            "observed": 1,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 37,
+            "observed": 1,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 38,
+            "observed": 1,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 40,
+            "observed": 1,
+            "prediction": 0.4583333333333333
+          },
+          {
+            "id": 41,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 43,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 44,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 45,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 48,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 49,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 54,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 55,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 56,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 59,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 60,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 61,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 64,
+            "observed": 1,
+            "prediction": 0.4861111111111111
+          },
+          {
+            "id": 65,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 68,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 69,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 70,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 72,
+            "observed": 1,
+            "prediction": 0.4722222222222222
+          },
+          {
+            "id": 73,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 74,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 75,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 77,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 78,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 79,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          },
+          {
+            "id": 80,
+            "observed": 1,
+            "prediction": 0.4444444444444444
+          }
+        ],
+        "design": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0.07858740061286795
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0.07858740061286795
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0.07858740061286795
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0.07858740061286795
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0.13338192116081315
+          },
+          {
+            "id": 6,
+            "observed": 1,
+            "prediction": 0.13338192116081315
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.13338192116081315
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0.13338192116081315
+          },
+          {
+            "id": 9,
+            "observed": 1,
+            "prediction": 0.1537457072570826
+          },
+          {
+            "id": 10,
+            "observed": 1,
+            "prediction": 0.1537457072570826
+          },
+          {
+            "id": 11,
+            "observed": 1,
+            "prediction": 0.1537457072570826
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.1537457072570826
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.2907320086269456
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.2907320086269456
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.2907320086269456
+          },
+          {
+            "id": 16,
+            "observed": 1,
+            "prediction": 0.2907320086269456
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.4004701604736695
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.4004701604736695
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.4004701604736695
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.4004701604736695
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.4552646810216147
+          },
+          {
+            "id": 22,
+            "observed": 1,
+            "prediction": 0.4552646810216147
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.4552646810216147
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 0.4552646810216147
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.4399872703467792
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.4399872703467792
+          },
+          {
+            "id": 27,
+            "observed": 1,
+            "prediction": 0.4399872703467792
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.4399872703467792
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.522179051168697
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.522179051168697
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.522179051168697
+          },
+          {
+            "id": 32,
+            "observed": 1,
+            "prediction": 0.522179051168697
+          },
+          {
+            "id": 33,
+            "observed": 1,
+            "prediction": 0.4434508273336086
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.4434508273336086
+          },
+          {
+            "id": 35,
+            "observed": 1,
+            "prediction": 0.4434508273336086
+          },
+          {
+            "id": 36,
+            "observed": 1,
+            "prediction": 0.4434508273336086
+          },
+          {
+            "id": 37,
+            "observed": 1,
+            "prediction": 0.5256426081555263
+          },
+          {
+            "id": 38,
+            "observed": 1,
+            "prediction": 0.5256426081555263
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.5256426081555263
+          },
+          {
+            "id": 40,
+            "observed": 1,
+            "prediction": 0.5256426081555263
+          },
+          {
+            "id": 41,
+            "observed": 1,
+            "prediction": 0.4922109848394288
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.4922109848394288
+          },
+          {
+            "id": 43,
+            "observed": 1,
+            "prediction": 0.4922109848394288
+          },
+          {
+            "id": 44,
+            "observed": 1,
+            "prediction": 0.4922109848394288
+          },
+          {
+            "id": 45,
+            "observed": 1,
+            "prediction": 0.6018000259353192
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.6018000259353192
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.6018000259353192
+          },
+          {
+            "id": 48,
+            "observed": 1,
+            "prediction": 0.6018000259353192
+          },
+          {
+            "id": 49,
+            "observed": 1,
+            "prediction": 0.5950571430170604
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.5950571430170604
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 0.5950571430170604
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.5950571430170604
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.6224544032910331
+          },
+          {
+            "id": 54,
+            "observed": 1,
+            "prediction": 0.6224544032910331
+          },
+          {
+            "id": 55,
+            "observed": 1,
+            "prediction": 0.6224544032910331
+          },
+          {
+            "id": 56,
+            "observed": 1,
+            "prediction": 0.6224544032910331
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.6103445454750174
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.6103445454750174
+          },
+          {
+            "id": 59,
+            "observed": 1,
+            "prediction": 0.6103445454750174
+          },
+          {
+            "id": 60,
+            "observed": 1,
+            "prediction": 0.6103445454750174
+          },
+          {
+            "id": 61,
+            "observed": 1,
+            "prediction": 0.6925363262969351
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 0.6925363262969351
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.6925363262969351
+          },
+          {
+            "id": 64,
+            "observed": 1,
+            "prediction": 0.6925363262969351
+          },
+          {
+            "id": 65,
+            "observed": 1,
+            "prediction": 0.6350478855199152
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 0.6350478855199152
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.6350478855199152
+          },
+          {
+            "id": 68,
+            "observed": 1,
+            "prediction": 0.6350478855199152
+          },
+          {
+            "id": 69,
+            "observed": 1,
+            "prediction": 0.6898424060678604
+          },
+          {
+            "id": 70,
+            "observed": 1,
+            "prediction": 0.6898424060678604
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.6898424060678604
+          },
+          {
+            "id": 72,
+            "observed": 1,
+            "prediction": 0.6898424060678604
+          },
+          {
+            "id": 73,
+            "observed": 1,
+            "prediction": 0.5961006275667922
+          },
+          {
+            "id": 74,
+            "observed": 1,
+            "prediction": 0.5961006275667922
+          },
+          {
+            "id": 75,
+            "observed": 1,
+            "prediction": 0.5961006275667922
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.5961006275667922
+          },
+          {
+            "id": 77,
+            "observed": 1,
+            "prediction": 0.6508951481147374
+          },
+          {
+            "id": 78,
+            "observed": 1,
+            "prediction": 0.6508951481147374
+          },
+          {
+            "id": 79,
+            "observed": 1,
+            "prediction": 0.6508951481147374
+          },
+          {
+            "id": 80,
+            "observed": 1,
+            "prediction": 0.6508951481147374
+          }
+        ],
+        "design_status": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0.039566243852937985
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0.11622427838592428
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0.11622427838592428
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0.11622427838592428
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0.0002089483149868565
+          },
+          {
+            "id": 6,
+            "observed": 1,
+            "prediction": 0.07686698284797315
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.17395647164089506
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0.0002089483149868565
+          },
+          {
+            "id": 9,
+            "observed": 1,
+            "prediction": 0.10068329456094627
+          },
+          {
+            "id": 10,
+            "observed": 1,
+            "prediction": 0.10068329456094627
+          },
+          {
+            "id": 11,
+            "observed": 1,
+            "prediction": 0.22838598504697027
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.20888548726540945
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.34029507433476514
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.34029507433476514
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.1930918860671803
+          },
+          {
+            "id": 16,
+            "observed": 1,
+            "prediction": 0.21259238384874113
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.3714663941961935
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.49316438064128465
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.3714663941961935
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.49316438064128465
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.43059494920418956
+          },
+          {
+            "id": 22,
+            "observed": 1,
+            "prediction": 0.43059494920418956
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.5522929356492807
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 0.5522929356492807
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.4162827762992985
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.4162827762992985
+          },
+          {
+            "id": 27,
+            "observed": 1,
+            "prediction": 0.4162827762992985
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.4162827762992985
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.4968671205084695
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.5483032261426041
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.5483032261426041
+          },
+          {
+            "id": 32,
+            "observed": 1,
+            "prediction": 0.5392143098720751
+          },
+          {
+            "id": 33,
+            "observed": 1,
+            "prediction": 0.42088032600529207
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.36328637755924503
+          },
+          {
+            "id": 35,
+            "observed": 1,
+            "prediction": 0.42088032600529207
+          },
+          {
+            "id": 36,
+            "observed": 1,
+            "prediction": 0.4445339335103696
+          },
+          {
+            "id": 37,
+            "observed": 1,
+            "prediction": 0.5892508528643822
+          },
+          {
+            "id": 38,
+            "observed": 1,
+            "prediction": 0.5316569044183351
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.5892508528643822
+          },
+          {
+            "id": 40,
+            "observed": 1,
+            "prediction": 0.5080032969132576
+          },
+          {
+            "id": 41,
+            "observed": 1,
+            "prediction": 0.4548740419919038
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.4548740419919038
+          },
+          {
+            "id": 43,
+            "observed": 1,
+            "prediction": 0.4548740419919038
+          },
+          {
+            "id": 44,
+            "observed": 1,
+            "prediction": 0.4548740419919038
+          },
+          {
+            "id": 45,
+            "observed": 1,
+            "prediction": 0.6641815859851333
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.6641815859851333
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.6407934004462271
+          },
+          {
+            "id": 48,
+            "observed": 1,
+            "prediction": 0.6641815859851333
+          },
+          {
+            "id": 49,
+            "observed": 1,
+            "prediction": 0.6492079874800449
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.5980748638697787
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 0.5562285329437932
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.6492079874800449
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.6383377798388231
+          },
+          {
+            "id": 54,
+            "observed": 1,
+            "prediction": 0.5964914489128376
+          },
+          {
+            "id": 55,
+            "observed": 1,
+            "prediction": 0.5964914489128376
+          },
+          {
+            "id": 56,
+            "observed": 1,
+            "prediction": 0.5964914489128376
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.6132984622519376
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.6132984622519376
+          },
+          {
+            "id": 59,
+            "observed": 1,
+            "prediction": 0.639312676672009
+          },
+          {
+            "id": 60,
+            "observed": 1,
+            "prediction": 0.5785022167140013
+          },
+          {
+            "id": 61,
+            "observed": 1,
+            "prediction": 0.6432596792758868
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 0.6432596792758868
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.6692738936959581
+          },
+          {
+            "id": 64,
+            "observed": 1,
+            "prediction": 0.6692738936959581
+          },
+          {
+            "id": 65,
+            "observed": 1,
+            "prediction": 0.6649355233972537
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 0.6282358702531953
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.6282358702531953
+          },
+          {
+            "id": 68,
+            "observed": 1,
+            "prediction": 0.6282358702531953
+          },
+          {
+            "id": 69,
+            "observed": 1,
+            "prediction": 0.680917606562433
+          },
+          {
+            "id": 70,
+            "observed": 1,
+            "prediction": 0.680917606562433
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.6555995812040623
+          },
+          {
+            "id": 72,
+            "observed": 1,
+            "prediction": 0.6922992343481207
+          },
+          {
+            "id": 73,
+            "observed": 1,
+            "prediction": 0.6646244772580003
+          },
+          {
+            "id": 74,
+            "observed": 1,
+            "prediction": 0.49967623440480347
+          },
+          {
+            "id": 75,
+            "observed": 1,
+            "prediction": 0.49967623440480347
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.5861815060947668
+          },
+          {
+            "id": 77,
+            "observed": 1,
+            "prediction": 0.6545931434280177
+          },
+          {
+            "id": 78,
+            "observed": 1,
+            "prediction": 0.6545931434280177
+          },
+          {
+            "id": 79,
+            "observed": 1,
+            "prediction": 0.7330361145912512
+          },
+          {
+            "id": 80,
+            "observed": 1,
+            "prediction": 0.6465308429012878
+          }
+        ],
+        "design_early": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0.08297026072152242
+          },
+          {
+            "id": 6,
+            "observed": 1,
+            "prediction": 0.38897149094207023
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.08297026072152242
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0.08297026072152242
+          },
+          {
+            "id": 9,
+            "observed": 1,
+            "prediction": 0.8162184048087572
+          },
+          {
+            "id": 10,
+            "observed": 1,
+            "prediction": 0.588396660273717
+          },
+          {
+            "id": 11,
+            "observed": 1,
+            "prediction": 0.588396660273717
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.3062137710502023
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.24502456478845083
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.24502456478845083
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.24502456478845083
+          },
+          {
+            "id": 16,
+            "observed": 1,
+            "prediction": 0.5272074540119654
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.09812574701592625
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.09812574701592625
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.09812574701592625
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.09812574701592625
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.6556907493384362
+          },
+          {
+            "id": 22,
+            "observed": 1,
+            "prediction": 0.9711452075500265
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.3402362911268459
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 0.6556907493384362
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.10792497129275325
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.10792497129275325
+          },
+          {
+            "id": 27,
+            "observed": 1,
+            "prediction": 0.10792497129275325
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.4273733267042349
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.33604429259285845
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.33604429259285845
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.33604429259285845
+          },
+          {
+            "id": 32,
+            "observed": 1,
+            "prediction": 0.33604429259285845
+          },
+          {
+            "id": 33,
+            "observed": 1,
+            "prediction": 0.768736500911773
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.45937791760675684
+          },
+          {
+            "id": 35,
+            "observed": 1,
+            "prediction": 0.8683277202722102
+          },
+          {
+            "id": 36,
+            "observed": 1,
+            "prediction": 0.768736500911773
+          },
+          {
+            "id": 37,
+            "observed": 1,
+            "prediction": 0.328423121472291
+          },
+          {
+            "id": 38,
+            "observed": 1,
+            "prediction": 0.328423121472291
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.328423121472291
+          },
+          {
+            "id": 40,
+            "observed": 1,
+            "prediction": 0.6377817047773071
+          },
+          {
+            "id": 41,
+            "observed": 1,
+            "prediction": 0.13886077434850796
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.13886077434850796
+          },
+          {
+            "id": 43,
+            "observed": 1,
+            "prediction": 0.6426989665312944
+          },
+          {
+            "id": 44,
+            "observed": 1,
+            "prediction": 0.9605854729650687
+          },
+          {
+            "id": 45,
+            "observed": 1,
+            "prediction": 0.3747655332221808
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.3747655332221808
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.3747655332221808
+          },
+          {
+            "id": 48,
+            "observed": 1,
+            "prediction": 0.6926520396559549
+          },
+          {
+            "id": 49,
+            "observed": 1,
+            "prediction": 0.8493070525660948
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.213443264324996
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 0.5313751584455454
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.213443264324996
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.4049763799119419
+          },
+          {
+            "id": 54,
+            "observed": 1,
+            "prediction": 0.4049763799119419
+          },
+          {
+            "id": 55,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 56,
+            "observed": 1,
+            "prediction": 0.7229082740324914
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.24498777568275987
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.24498777568275987
+          },
+          {
+            "id": 59,
+            "observed": 1,
+            "prediction": 0.8334060303223492
+          },
+          {
+            "id": 60,
+            "observed": 1,
+            "prediction": 0.7112982098545305
+          },
+          {
+            "id": 61,
+            "observed": 1,
+            "prediction": 0.9359484967610955
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 0.7638471899091195
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.46963806258932483
+          },
+          {
+            "id": 64,
+            "observed": 1,
+            "prediction": 0.7638471899091195
+          },
+          {
+            "id": 65,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 1
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.2690457215151898
+          },
+          {
+            "id": 68,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 69,
+            "observed": 1,
+            "prediction": 0.7741369529727015
+          },
+          {
+            "id": 70,
+            "observed": 1,
+            "prediction": 0.9662535426026755
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.44571147374432707
+          },
+          {
+            "id": 72,
+            "observed": 1,
+            "prediction": 0.7741369529727015
+          },
+          {
+            "id": 73,
+            "observed": 1,
+            "prediction": 0.7026125439546627
+          },
+          {
+            "id": 74,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 75,
+            "observed": 1,
+            "prediction": 0.5109500199356897
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.1833007709963357
+          },
+          {
+            "id": 77,
+            "observed": 1,
+            "prediction": 0.37506673540443347
+          },
+          {
+            "id": 78,
+            "observed": 1,
+            "prediction": 0.37506673540443347
+          },
+          {
+            "id": 79,
+            "observed": 1,
+            "prediction": 0.8943785083627604
+          },
+          {
+            "id": 80,
+            "observed": 1,
+            "prediction": 0.8943785083627604
+          }
+        ],
+        "full": [
+          {
+            "id": 1,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 2,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 3,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 4,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 5,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 6,
+            "observed": 1,
+            "prediction": 0.28672211410405113
+          },
+          {
+            "id": 7,
+            "observed": 0,
+            "prediction": 0.1300781220446302
+          },
+          {
+            "id": 8,
+            "observed": 0,
+            "prediction": 0
+          },
+          {
+            "id": 9,
+            "observed": 1,
+            "prediction": 0.7886919403994123
+          },
+          {
+            "id": 10,
+            "observed": 1,
+            "prediction": 0.5581432639622312
+          },
+          {
+            "id": 11,
+            "observed": 1,
+            "prediction": 0.6658594870442233
+          },
+          {
+            "id": 12,
+            "observed": 0,
+            "prediction": 0.28558448718003676
+          },
+          {
+            "id": 13,
+            "observed": 0,
+            "prediction": 0.32131654911001684
+          },
+          {
+            "id": 14,
+            "observed": 0,
+            "prediction": 0.32131654911001684
+          },
+          {
+            "id": 15,
+            "observed": 0,
+            "prediction": 0.11888582767116865
+          },
+          {
+            "id": 16,
+            "observed": 1,
+            "prediction": 0.4991608275353551
+          },
+          {
+            "id": 17,
+            "observed": 0,
+            "prediction": 0.08910541895634938
+          },
+          {
+            "id": 18,
+            "observed": 0,
+            "prediction": 0.17526100698607638
+          },
+          {
+            "id": 19,
+            "observed": 0,
+            "prediction": 0.08910541895634938
+          },
+          {
+            "id": 20,
+            "observed": 0,
+            "prediction": 0.17526100698607638
+          },
+          {
+            "id": 21,
+            "observed": 0,
+            "prediction": 0.7007497641720496
+          },
+          {
+            "id": 22,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 23,
+            "observed": 0,
+            "prediction": 0.4623451225520461
+          },
+          {
+            "id": 24,
+            "observed": 0,
+            "prediction": 0.7869053522017766
+          },
+          {
+            "id": 25,
+            "observed": 0,
+            "prediction": 0.08898534981427259
+          },
+          {
+            "id": 26,
+            "observed": 0,
+            "prediction": 0.08898534981427259
+          },
+          {
+            "id": 27,
+            "observed": 1,
+            "prediction": 0.08898534981427259
+          },
+          {
+            "id": 28,
+            "observed": 0,
+            "prediction": 0.41272457404342766
+          },
+          {
+            "id": 29,
+            "observed": 0,
+            "prediction": 0.25619213761750076
+          },
+          {
+            "id": 30,
+            "observed": 0,
+            "prediction": 0.3204901231367004
+          },
+          {
+            "id": 31,
+            "observed": 0,
+            "prediction": 0.3204901231367004
+          },
+          {
+            "id": 32,
+            "observed": 1,
+            "prediction": 0.38991062513668345
+          },
+          {
+            "id": 33,
+            "observed": 1,
+            "prediction": 0.7700971208291347
+          },
+          {
+            "id": 34,
+            "observed": 0,
+            "prediction": 0.33809110813353777
+          },
+          {
+            "id": 35,
+            "observed": 1,
+            "prediction": 0.8709444848166628
+          },
+          {
+            "id": 36,
+            "observed": 1,
+            "prediction": 0.7044201763591145
+          },
+          {
+            "id": 37,
+            "observed": 1,
+            "prediction": 0.4083773086934933
+          },
+          {
+            "id": 38,
+            "observed": 1,
+            "prediction": 0.28963182090738915
+          },
+          {
+            "id": 39,
+            "observed": 0,
+            "prediction": 0.4083773086934933
+          },
+          {
+            "id": 40,
+            "observed": 1,
+            "prediction": 0.668569290286902
+          },
+          {
+            "id": 41,
+            "observed": 1,
+            "prediction": 0.1191324640764635
+          },
+          {
+            "id": 42,
+            "observed": 0,
+            "prediction": 0.1191324640764635
+          },
+          {
+            "id": 43,
+            "observed": 1,
+            "prediction": 0.6271338493083725
+          },
+          {
+            "id": 44,
+            "observed": 1,
+            "prediction": 0.9476470381067
+          },
+          {
+            "id": 45,
+            "observed": 1,
+            "prediction": 0.46177496212421043
+          },
+          {
+            "id": 46,
+            "observed": 0,
+            "prediction": 0.46177496212421043
+          },
+          {
+            "id": 47,
+            "observed": 0,
+            "prediction": 0.3734001360052793
+          },
+          {
+            "id": 48,
+            "observed": 1,
+            "prediction": 0.7822881509225379
+          },
+          {
+            "id": 49,
+            "observed": 1,
+            "prediction": 0.9264668853071321
+          },
+          {
+            "id": 50,
+            "observed": 0,
+            "prediction": 0.21363447745412134
+          },
+          {
+            "id": 51,
+            "observed": 0,
+            "prediction": 0.46855099129477085
+          },
+          {
+            "id": 52,
+            "observed": 0,
+            "prediction": 0.2799270959566726
+          },
+          {
+            "id": 53,
+            "observed": 0,
+            "prediction": 0.4284665846196492
+          },
+          {
+            "id": 54,
+            "observed": 1,
+            "prediction": 0.360113203785069
+          },
+          {
+            "id": 55,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 56,
+            "observed": 1,
+            "prediction": 0.6833830984602988
+          },
+          {
+            "id": 57,
+            "observed": 0,
+            "prediction": 0.24952332505086422
+          },
+          {
+            "id": 58,
+            "observed": 0,
+            "prediction": 0.24952332505086422
+          },
+          {
+            "id": 59,
+            "observed": 1,
+            "prediction": 0.8804877590716552
+          },
+          {
+            "id": 60,
+            "observed": 1,
+            "prediction": 0.6426679240387355
+          },
+          {
+            "id": 61,
+            "observed": 1,
+            "prediction": 0.8565063784089758
+          },
+          {
+            "id": 62,
+            "observed": 0,
+            "prediction": 0.681618949894821
+          },
+          {
+            "id": 63,
+            "observed": 0,
+            "prediction": 0.41566728263450736
+          },
+          {
+            "id": 64,
+            "observed": 1,
+            "prediction": 0.7146393163948755
+          },
+          {
+            "id": 65,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 66,
+            "observed": 0,
+            "prediction": 1
+          },
+          {
+            "id": 67,
+            "observed": 0,
+            "prediction": 0.2751559435464548
+          },
+          {
+            "id": 68,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 69,
+            "observed": 1,
+            "prediction": 0.824078122175362
+          },
+          {
+            "id": 70,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 71,
+            "observed": 0,
+            "prediction": 0.3443408709725294
+          },
+          {
+            "id": 72,
+            "observed": 1,
+            "prediction": 0.7295632094594694
+          },
+          {
+            "id": 73,
+            "observed": 1,
+            "prediction": 0.7952553056030919
+          },
+          {
+            "id": 74,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 75,
+            "observed": 1,
+            "prediction": 0.3790418094777781
+          },
+          {
+            "id": 76,
+            "observed": 0,
+            "prediction": 0.16558648815103535
+          },
+          {
+            "id": 77,
+            "observed": 1,
+            "prediction": 0.37874911441409
+          },
+          {
+            "id": 78,
+            "observed": 1,
+            "prediction": 0.37874911441409
+          },
+          {
+            "id": 79,
+            "observed": 1,
+            "prediction": 1
+          },
+          {
+            "id": 80,
+            "observed": 1,
+            "prediction": 0.889843910223219
+          }
+        ]
+      },
+      "row_squared_errors": {
+        "mean": [
+          2.17283950617284,
+          2.001543209876543,
+          2.17283950617284,
+          2.0570987654320985,
+          2.1805555555555562,
+          2.0617283950617287,
+          2.0015432098765427,
+          2.0015432098765427,
+          2.0617283950617287,
+          2.358024691358025
+        ],
+        "design": [
+          0.8291030233889208,
+          2.9287131125645693,
+          1.5600397548188474,
+          1.9407063951556494,
+          2.077234538150815,
+          2.0572736864715555,
+          2.0413292447477698,
+          2.196984622640032,
+          1.8374274699644173,
+          1.3322368577806656
+        ],
+        "design_status": [
+          0.9245252450123671,
+          3.1454591138965444,
+          1.8820858723889864,
+          1.9210730900410318,
+          2.0886161772583343,
+          2.175698699960873,
+          2.107542344280291,
+          2.158379707712145,
+          1.7679551086544376,
+          1.3915551944471987
+        ],
+        "design_early": [
+          0.3940080313741487,
+          0.8700210704506405,
+          1.014968699292817,
+          1.781355897229585,
+          1.4764261201121738,
+          1.6563399310247104,
+          0.9910227789396985,
+          1.095033478979825,
+          1.37421137350475,
+          1.1646033240493665
+        ],
+        "full": [
+          0.525685660342852,
+          0.9045592191104189,
+          1.4013456701729718,
+          1.6593973465899805,
+          1.4024423897256049,
+          1.621638576630225,
+          1.0422310078540151,
+          1.005897989624746,
+          1.2983659934662695,
+          1.2389680391159734
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 2,
+      "alpha": 10,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2000000836015943,
+          "mae": 0.9681185321714875,
+          "skill": 0.12807062284802917
+        },
+        "design_status": {
+          "mse": 1.2358817811533427,
+          "mae": 0.9834902334565048,
+          "skill": 0.10199870283319801
+        },
+        "design_early": {
+          "mse": 0.8128120066489999,
+          "mae": 0.7069116680597025,
+          "skill": 0.4094044855630171
+        },
+        "full": {
+          "mse": 0.8197739332895718,
+          "mae": 0.7154272401697497,
+          "skill": 0.40434589561586254
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 2,
+      "alpha": 10,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23430042201743703,
+          "mae": 0.45840609499527896,
+          "skill": 0.11036886564242754
+        },
+        "design_status": {
+          "mse": 0.24251119775345714,
+          "mae": 0.464025358968071,
+          "skill": 0.07919281538568668
+        },
+        "design_early": {
+          "mse": 0.1514005760163231,
+          "mae": 0.3225567889747329,
+          "skill": 0.42513690319444886
+        },
+        "full": {
+          "mse": 0.15425376963576762,
+          "mae": 0.3214382784250915,
+          "skill": 0.4143034191812647
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 4,
+      "alpha": 0.1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2057822379193626,
+          "mae": 0.9512563406583021,
+          "skill": 0.12386926462998904
+        },
+        "design_status": {
+          "mse": 1.2509370501612835,
+          "mae": 0.9720520301329095,
+          "skill": 0.09105942748785767
+        },
+        "design_early": {
+          "mse": 0.8116137075600817,
+          "mae": 0.6901166259841873,
+          "skill": 0.41027517898422616
+        },
+        "full": {
+          "mse": 0.855758474058239,
+          "mae": 0.7123256738636389,
+          "skill": 0.3781992489211773
+        }
+      },
+      "rows_status_improve": 0,
+      "rows_full_improve": 3
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 4,
+      "alpha": 0.1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.2351538928650362,
+          "mae": 0.4509784991624531,
+          "skill": 0.1071282644017082
+        },
+        "design_status": {
+          "mse": 0.24400869999584085,
+          "mae": 0.4590480967936828,
+          "skill": 0.07350684774156668
+        },
+        "design_early": {
+          "mse": 0.14743935896737054,
+          "mae": 0.3019258318962057,
+          "skill": 0.44017751637966096
+        },
+        "full": {
+          "mse": 0.1549728025740113,
+          "mae": 0.3073197693667006,
+          "skill": 0.41157327433994384
+        }
+      },
+      "rows_status_improve": 5,
+      "rows_full_improve": 1
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 4,
+      "alpha": 1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2049479231594715,
+          "mae": 0.9529230298485494,
+          "skill": 0.12447548421187205
+        },
+        "design_status": {
+          "mse": 1.2501887257360942,
+          "mae": 0.9733617771961909,
+          "skill": 0.09160316582494565
+        },
+        "design_early": {
+          "mse": 0.811047698014167,
+          "mae": 0.691613409719863,
+          "skill": 0.41068644591460024
+        },
+        "full": {
+          "mse": 0.8539939577746567,
+          "mae": 0.7131454390905373,
+          "skill": 0.3794813601519539
+        }
+      },
+      "rows_status_improve": 0,
+      "rows_full_improve": 3
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 4,
+      "alpha": 1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23501310882104048,
+          "mae": 0.4517369834193544,
+          "skill": 0.10766281686935186
+        },
+        "design_status": {
+          "mse": 0.24375191802424614,
+          "mae": 0.45970495237206094,
+          "skill": 0.07448184059350171
+        },
+        "design_early": {
+          "mse": 0.14772488381197144,
+          "mae": 0.3040457019737265,
+          "skill": 0.4390933877673332
+        },
+        "full": {
+          "mse": 0.15510302997843986,
+          "mae": 0.30921874748269945,
+          "skill": 0.4110788050917511
+        }
+      },
+      "rows_status_improve": 5,
+      "rows_full_improve": 1
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 4,
+      "alpha": 10,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2000000836015943,
+          "mae": 0.9681185321714875,
+          "skill": 0.12807062284802917
+        },
+        "design_status": {
+          "mse": 1.2440253369099101,
+          "mae": 0.9855176335876703,
+          "skill": 0.09608153199658032
+        },
+        "design_early": {
+          "mse": 0.8128120066489999,
+          "mae": 0.7069116680597025,
+          "skill": 0.4094044855630171
+        },
+        "full": {
+          "mse": 0.8476046008683733,
+          "mae": 0.725520393237224,
+          "skill": 0.3841239164849307
+        }
+      },
+      "rows_status_improve": 0,
+      "rows_full_improve": 2
+    },
+    {
+      "index": 3,
+      "date": "17-Dec-25",
+      "status_visits": 4,
+      "alpha": 10,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23430042201743703,
+          "mae": 0.45840609499527896,
+          "skill": 0.11036886564242754
+        },
+        "design_status": {
+          "mse": 0.24204947613643948,
+          "mae": 0.46546846418887505,
+          "skill": 0.08094595745162059
+        },
+        "design_early": {
+          "mse": 0.1514005760163231,
+          "mae": 0.3225567889747329,
+          "skill": 0.42513690319444886
+        },
+        "full": {
+          "mse": 0.15766585025153873,
+          "mae": 0.3275261352830248,
+          "skill": 0.40134785929540995
+        }
+      },
+      "rows_status_improve": 5,
+      "rows_full_improve": 0
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 2,
+      "alpha": 0.1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2057822379193626,
+          "mae": 0.9512563406583021,
+          "skill": 0.12386926462998904
+        },
+        "design_status": {
+          "mse": 1.2388787918348168,
+          "mae": 0.9695069721346498,
+          "skill": 0.09982105160423105
+        },
+        "design_early": {
+          "mse": 0.6198522771892645,
+          "mae": 0.5458474595178094,
+          "skill": 0.5496105230645101
+        },
+        "full": {
+          "mse": 0.630130943552549,
+          "mae": 0.5478532371730789,
+          "skill": 0.5421419642847534
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 4
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 2,
+      "alpha": 0.1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.2351538928650362,
+          "mae": 0.4509784991624531,
+          "skill": 0.1071282644017082
+        },
+        "design_status": {
+          "mse": 0.24485182525867435,
+          "mae": 0.45640188878944465,
+          "skill": 0.07030552835203407
+        },
+        "design_early": {
+          "mse": 0.10970614295339068,
+          "mae": 0.23600780782497216,
+          "skill": 0.5834493187794789
+        },
+        "full": {
+          "mse": 0.11423359915092235,
+          "mae": 0.23753710043042062,
+          "skill": 0.5662587138369725
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 2,
+      "alpha": 1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2049479231594715,
+          "mae": 0.9529230298485494,
+          "skill": 0.12447548421187205
+        },
+        "design_status": {
+          "mse": 1.2383277554304721,
+          "mae": 0.9708820677105449,
+          "skill": 0.10022143893369373
+        },
+        "design_early": {
+          "mse": 0.6191081960721727,
+          "mae": 0.5474389791124306,
+          "skill": 0.5501511781809907
+        },
+        "full": {
+          "mse": 0.6290212699433946,
+          "mae": 0.5497166101614854,
+          "skill": 0.5429482617443069
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 4
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 2,
+      "alpha": 1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23501310882104048,
+          "mae": 0.4517369834193544,
+          "skill": 0.10766281686935186
+        },
+        "design_status": {
+          "mse": 0.24453613192065257,
+          "mae": 0.4570125280424147,
+          "skill": 0.07150420575942062
+        },
+        "design_early": {
+          "mse": 0.11003839862106826,
+          "mae": 0.23872771713429314,
+          "skill": 0.5821877547413624
+        },
+        "full": {
+          "mse": 0.11448316432082728,
+          "mae": 0.23999596776178045,
+          "skill": 0.5653111229479465
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 2,
+      "alpha": 10,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2000000836015943,
+          "mae": 0.9681185321714875,
+          "skill": 0.12807062284802917
+        },
+        "design_status": {
+          "mse": 1.2358817811533427,
+          "mae": 0.9834902334565048,
+          "skill": 0.10199870283319801
+        },
+        "design_early": {
+          "mse": 0.6226457331589086,
+          "mae": 0.5650858728342184,
+          "skill": 0.5475807762694909
+        },
+        "full": {
+          "mse": 0.6304905788552155,
+          "mae": 0.5728123222645733,
+          "skill": 0.5418806504817453
+        }
+      },
+      "rows_status_improve": 4,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 2,
+      "alpha": 10,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23430042201743703,
+          "mae": 0.45840609499527896,
+          "skill": 0.11036886564242754
+        },
+        "design_status": {
+          "mse": 0.24251119775345714,
+          "mae": 0.464025358968071,
+          "skill": 0.07919281538568668
+        },
+        "design_early": {
+          "mse": 0.11460417379703436,
+          "mae": 0.26273539174537536,
+          "skill": 0.5648516538754661
+        },
+        "full": {
+          "mse": 0.11821708428551717,
+          "mae": 0.26363300783283805,
+          "skill": 0.551133549449849
+        }
+      },
+      "rows_status_improve": 3,
+      "rows_full_improve": 5
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 4,
+      "alpha": 0.1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2057822379193626,
+          "mae": 0.9512563406583021,
+          "skill": 0.12386926462998904
+        },
+        "design_status": {
+          "mse": 1.2509370501612835,
+          "mae": 0.9720520301329095,
+          "skill": 0.09105942748785767
+        },
+        "design_early": {
+          "mse": 0.6198522771892645,
+          "mae": 0.5458474595178094,
+          "skill": 0.5496105230645101
+        },
+        "full": {
+          "mse": 0.6422706696161711,
+          "mae": 0.5586267721824931,
+          "skill": 0.5333211450780742
+        }
+      },
+      "rows_status_improve": 0,
+      "rows_full_improve": 3
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 4,
+      "alpha": 0.1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.2351538928650362,
+          "mae": 0.4509784991624531,
+          "skill": 0.1071282644017082
+        },
+        "design_status": {
+          "mse": 0.24400869999584085,
+          "mae": 0.4590480967936828,
+          "skill": 0.07350684774156668
+        },
+        "design_early": {
+          "mse": 0.10970614295339068,
+          "mae": 0.23600780782497216,
+          "skill": 0.5834493187794789
+        },
+        "full": {
+          "mse": 0.11467941808009638,
+          "mae": 0.2395274872846187,
+          "skill": 0.5645659537631146
+        }
+      },
+      "rows_status_improve": 5,
+      "rows_full_improve": 3
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 4,
+      "alpha": 1,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2049479231594715,
+          "mae": 0.9529230298485494,
+          "skill": 0.12447548421187205
+        },
+        "design_status": {
+          "mse": 1.2501887257360942,
+          "mae": 0.9733617771961909,
+          "skill": 0.09160316582494565
+        },
+        "design_early": {
+          "mse": 0.6191081960721727,
+          "mae": 0.5474389791124306,
+          "skill": 0.5501511781809907
+        },
+        "full": {
+          "mse": 0.6409669396255626,
+          "mae": 0.5600524567731162,
+          "skill": 0.5342684454109823
+        }
+      },
+      "rows_status_improve": 0,
+      "rows_full_improve": 3
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 4,
+      "alpha": 1,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23501310882104048,
+          "mae": 0.4517369834193544,
+          "skill": 0.10766281686935186
+        },
+        "design_status": {
+          "mse": 0.24375191802424614,
+          "mae": 0.45970495237206094,
+          "skill": 0.07448184059350171
+        },
+        "design_early": {
+          "mse": 0.11003839862106826,
+          "mae": 0.23872771713429314,
+          "skill": 0.5821877547413624
+        },
+        "full": {
+          "mse": 0.11494348584727801,
+          "mae": 0.24201959925879998,
+          "skill": 0.5635632969806714
+        }
+      },
+      "rows_status_improve": 5,
+      "rows_full_improve": 4
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 4,
+      "alpha": 10,
+      "target": "count",
+      "models": {
+        "mean": {
+          "mse": 1.376258347345995,
+          "mae": 1.109947386525119,
+          "skill": 0
+        },
+        "design": {
+          "mse": 1.2000000836015943,
+          "mae": 0.9681185321714875,
+          "skill": 0.12807062284802917
+        },
+        "design_status": {
+          "mse": 1.2440253369099101,
+          "mae": 0.9855176335876703,
+          "skill": 0.09608153199658032
+        },
+        "design_early": {
+          "mse": 0.6226457331589086,
+          "mae": 0.5650858728342184,
+          "skill": 0.5475807762694909
+        },
+        "full": {
+          "mse": 0.6410567360301753,
+          "mae": 0.5784168282126231,
+          "skill": 0.5342031986462408
+        }
+      },
+      "rows_status_improve": 0,
+      "rows_full_improve": 3
+    },
+    {
+      "index": 5,
+      "date": "17-Jan-26",
+      "status_visits": 4,
+      "alpha": 10,
+      "target": "presence",
+      "models": {
+        "mean": {
+          "mse": 0.26336805555555554,
+          "mae": 0.5125000000000001,
+          "skill": 0
+        },
+        "design": {
+          "mse": 0.23430042201743703,
+          "mae": 0.45840609499527896,
+          "skill": 0.11036886564242754
+        },
+        "design_status": {
+          "mse": 0.24204947613643948,
+          "mae": 0.46546846418887505,
+          "skill": 0.08094595745162059
+        },
+        "design_early": {
+          "mse": 0.11460417379703436,
+          "mae": 0.26273539174537536,
+          "skill": 0.5648516538754661
+        },
+        "full": {
+          "mse": 0.11896442090172787,
+          "mae": 0.2660218210493169,
+          "skill": 0.5482959364575131
+        }
+      },
+      "rows_status_improve": 5,
+      "rows_full_improve": 3
+    }
+  ],
+  "independent_published_table": {
+    "source": "10.1111/rec.14101 Table 1",
+    "furrow": [
+      0,
+      0.36,
+      0.18,
+      0,
+      0.62
+    ],
+    "bag": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "furrow_mean": 0.23200000000000004,
+    "furrow_mean_excluding_dead_crab": 0.29000000000000004,
+    "nonzero_paired_differences": 3,
+    "exact_sign_two_sided": 0.25
+  },
+  "limitations": [
+    "All plots initially received a live clam; no no-clam or empty-shell randomized control.",
+    "L is confirmation, not true survival. Non-detection does not identify mortality; later status not routinely recorded.",
+    "Dose assigned by row and burial treatment by side of grid, not independently randomized. Row-holdout is internal predictive test, not spatially independent validation.",
+    "Shoots are not individually marked seedlings/genets; clonal growth possible. No true seed-fate estimation.",
+    "Early shoot count is a predictive state, not causal effect of clam. Model choices post hoc. No new independent field site.",
+    "Published 2024 nominal 20 mm furrows differ from Infantes 24-hour 2 cm burial trial in exposure duration and design; no pooled depth threshold."
+  ],
+  "source": {
+    "repo": "lopazanski/seed-density-clams",
+    "commit": "90e5e193c9db7efb75c3244f52b1585c9e93718e",
+    "path": "data/dryad/seed-density.csv",
+    "blob_sha": "d0f7ae365ae91641d34718c761e67ced1823032e",
+    "doi": "10.5061/dryad.cnp5hqcmx",
+    "paper": "10.3389/fmars.2026.1972882"
+  }
+}
