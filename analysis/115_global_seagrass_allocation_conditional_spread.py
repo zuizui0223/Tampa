@@ -171,8 +171,9 @@ def execute(raw):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--out",type=Path,default=None)
+    p.add_argument("--raw-file",type=Path,default=None,help="Already audited CC-BY TSV source for same-run reanalysis")
     args=p.parse_args()
-    raw=SOURCE.download()
+    raw=args.raw_file.read_bytes() if args.raw_file else SOURCE.download()
     data=execute(raw)
     s=json.dumps(data,indent=2,sort_keys=True,ensure_ascii=False)+"\n"
     if args.out:
