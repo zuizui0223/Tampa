@@ -1,0 +1,128 @@
+{
+  "schema": "tampa.predator_accessibility_fixed_species_v1",
+  "artifact_sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c",
+  "records": [
+    {
+      "species": "Carcinus maenas",
+      "n": [
+        15,
+        10,
+        10
+      ],
+      "mean_loss": [
+        0.56,
+        0.2,
+        0
+      ],
+      "any_loss": [
+        12,
+        3,
+        0
+      ],
+      "first_cm_absolute_reduction": 0.36,
+      "first_cm_ci": [
+        0.03333333333333338,
+        0.6599999999999999
+      ],
+      "residual_risk_ratio": 0.35714285714285715
+    },
+    {
+      "species": "Pagurus bernhardus",
+      "n": [
+        10,
+        10,
+        10
+      ],
+      "mean_loss": [
+        0.21,
+        0.03,
+        0
+      ],
+      "any_loss": [
+        6,
+        2,
+        0
+      ],
+      "first_cm_absolute_reduction": 0.18,
+      "first_cm_ci": [
+        0.04,
+        0.32
+      ],
+      "residual_risk_ratio": 0.14285714285714285
+    },
+    {
+      "species": "Strongylocentrotus droebachiensis",
+      "n": [
+        10,
+        10,
+        10
+      ],
+      "mean_loss": [
+        0.14,
+        0,
+        0
+      ],
+      "any_loss": [
+        5,
+        0,
+        0
+      ],
+      "first_cm_absolute_reduction": 0.14,
+      "first_cm_ci": [
+        0.03,
+        0.27
+      ],
+      "residual_risk_ratio": 0
+    }
+  ],
+  "fixed_species_equal_weight": {
+    "mean_loss": [
+      0.30333333333333334,
+      0.07666666666666667,
+      0
+    ],
+    "first_cm_difference": 0.22666666666666668,
+    "first_cm_ci": [
+      0.10333333333333336,
+      0.34444444444444444
+    ],
+    "first_cm_p": 0.0011346512750396933,
+    "second_cm_difference": 0.07666666666666667,
+    "second_cm_ci": [
+      0.01,
+      0.16
+    ],
+    "second_cm_p": 0.04986149584487535,
+    "first_minus_second_cm_difference": 0.15,
+    "first_minus_second_cm_ci": [
+      -0.03888888888888886,
+      0.31555555555555553
+    ],
+    "first_cm_share_total_observed_reduction": 0.7472527472527473
+  },
+  "scenario_only": {
+    "trapping_gain": 4.4186046511627906,
+    "multipliers": [
+      1.5780730897009971,
+      0.6312292358803987,
+      0
+    ],
+    "conditional_bootstrap_ci_nonzero_surface": [
+      [
+        0,
+        4.044146629877809
+      ],
+      [
+        0,
+        2.4101479915433406
+      ],
+      null
+    ],
+    "flow_cells_above_one": [
+      9,
+      3,
+      0
+    ]
+  },
+  "status": "locally executed original-workbook analysis; hypothetical scenario, not measured otter effect"
+}
