@@ -48,7 +48,7 @@ class GeographicLinkageTests(unittest.TestCase):
                             if x["source_2015_site"].startswith("KO")))
         self.assertEqual(len(j["candidates"]),17)
 
-    def test_nonoverlap_GA_not_included_and_thirteen_exact(self):
+    def test_nonoverlap_GA_not_included_and_fourteen_exact(self):
         j=M.audit(*fixture())
         self.assertEqual(len(j["eligible_site_codes"]),14)
         self.assertNotIn("GA",j["eligible_site_codes"])
@@ -59,7 +59,7 @@ class GeographicLinkageTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             M.haversine((91,0),(0,0))
         old,new=fixture()
-        new.append(new[0].copy())
+        old.append(old[0].copy())
         with self.assertRaises(ValueError):M.audit(old,new)
 
     def test_one_site_two_positions_need_manual_review(self):
