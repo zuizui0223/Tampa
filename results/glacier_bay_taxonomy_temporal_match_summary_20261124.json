@@ -1,0 +1,240 @@
+{
+  "status": "executed local source-verified observational audits; no selection model",
+  "original": {
+    "run": 45383304380,
+    "artifact": 14914948367,
+    "sha256": "d4b902fb8216844bb078cf9ba0e9a87f1767defc1781534245761a45c82cadfd"
+  },
+  "retry": {
+    "run": 45386052728,
+    "artifact": 14915918501,
+    "sha256": "e54e44830d2906015cae7434fb0bf3fd13a5145340efad3084523ec84126b7ac"
+  },
+  "temporal": {
+    "n_sites": 12,
+    "n_dives": 12356,
+    "early_years": [
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2004,
+      2005,
+      2006,
+      2007
+    ],
+    "middle": [
+      2010,
+      2011
+    ],
+    "late": [
+      2018,
+      2019
+    ],
+    "small": {
+      "means": [
+        34.69,
+        86.35,
+        304.92
+      ],
+      "mid_delta": 51.66,
+      "mid_ci": [
+        38.8,
+        65.51
+      ],
+      "late_delta": 218.58,
+      "late_ci": [
+        132.42,
+        311.91
+      ]
+    },
+    "large": {
+      "means": [
+        34.18,
+        17.08,
+        4.84
+      ],
+      "mid_delta": -17.09,
+      "mid_ci": [
+        -24.09,
+        -8.99
+      ],
+      "late_delta": -12.24,
+      "late_ci": [
+        -19.82,
+        -6.11
+      ]
+    },
+    "small_groups": {
+      "mus_mtr": {
+        "means": [
+          2.1464141900579814,
+          4.142296509924548,
+          219.69742511920376
+        ],
+        "delta": 215.5551286092792,
+        "ci": [
+          133.32747359437857,
+          303.30151994513375
+        ]
+      },
+      "other_class": {
+        "means": [
+          28.83235010691455,
+          68.72024905234325,
+          43.76560776662174
+        ],
+        "delta": -24.954641285721497,
+        "ci": [
+          -41.32160080132703,
+          -9.663093799490149
+        ]
+      },
+      "uni": {
+        "means": [
+          3.7140713766413604,
+          13.411097621894648,
+          41.42431566249174
+        ],
+        "delta": 28.013218040597106,
+        "ci": [
+          10.48064558897059,
+          47.6799261056065
+        ]
+      },
+      "other_unclassified": {
+        "means": [
+          0,
+          0.07474941907553817,
+          0.03612991333226336
+        ],
+        "delta": -0.03861950574327481,
+        "ci": [
+          -0.19413954937291714,
+          0.06960854810710991
+        ]
+      },
+      "total_late_delta": 218.57508585841154,
+      "mussel_fraction_net_increase": 0.9861834333164182
+    }
+  },
+  "benthos": {
+    "matched_metadata_events": 160,
+    "unmatched_count": {
+      "year": 2000,
+      "site": "240"
+    },
+    "unmatched_metadata": {
+      "year": 1999,
+      "site": "240"
+    },
+    "random_intertidal": {
+      "n": 35,
+      "total": [
+        19.151137566137567,
+        22.667755102040818
+      ],
+      "ci": [
+        -0.5305941987906267,
+        7.468987433862432
+      ],
+      "large": [
+        1.6041005291005288,
+        1.0665306122448979
+      ],
+      "large_ci": [
+        -1.4332620937263794,
+        0.3159814814814812
+      ]
+    },
+    "selected_intertidal": {
+      "n": 9,
+      "total": [
+        95.9695473251029,
+        77.37777777777778
+      ],
+      "ci": [
+        -42.97160493827161,
+        -1.107834362139935
+      ],
+      "large": [
+        10.06090534979424,
+        5.388888888888889
+      ],
+      "large_ci": [
+        -7.746738683127571,
+        -1.8368158436214002
+      ]
+    },
+    "selected_subtidal": {
+      "n": 11,
+      "total": [
+        55.45837320574163,
+        30.964646464646467
+      ],
+      "ci": [
+        -36.586893939393946,
+        -14.02140151515154
+      ],
+      "large": [
+        16.558133971291866,
+        8.5510101010101
+      ],
+      "large_ci": [
+        -14.122930622009571,
+        -2.2186051302498937
+      ]
+    }
+  },
+  "match_gate": {
+    "same_year": true,
+    "max_abs_days": 90,
+    "random_intertidal": [
+      {
+        "km": 0.5,
+        "bouts": 53,
+        "events": 5,
+        "sites": 3,
+        "adequate_events": 4,
+        "repeated_sites": 1
+      },
+      {
+        "km": 1,
+        "bouts": 131,
+        "events": 9,
+        "sites": 7,
+        "adequate_events": 5,
+        "repeated_sites": 1
+      },
+      {
+        "km": 2,
+        "bouts": 242,
+        "events": 14,
+        "sites": 11,
+        "adequate_events": 9,
+        "repeated_sites": 1,
+        "dives": 1921,
+        "all_items": 6179,
+        "identified_matched_clams": 1071,
+        "generic_clams": 698,
+        "unidentified": 779
+      },
+      {
+        "km": 5,
+        "bouts": 521,
+        "events": 26,
+        "sites": 15,
+        "adequate_events": 18,
+        "repeated_sites": 3
+      }
+    ],
+    "all_zones_5km": {
+      "bouts": 796,
+      "events": 50,
+      "adequate_events": 32,
+      "repeated_sites": 5
+    },
+    "fit_status": "STOP: habitat, time, taxonomy, repeated-site coverage inadequate for a valid selection model"
+  }
+}
