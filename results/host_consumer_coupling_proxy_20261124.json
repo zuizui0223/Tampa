@@ -1,0 +1,182 @@
+{
+  "status": "exploratory reanalysis of archived original-source paired contrasts; no pollinator measurement",
+  "source": {
+    "repository_commit": "12a5f0400fd1e857cdcfc828b9743c6e4cfd0128",
+    "file": "results/zen2_2014_25region_state_consumer_source_verified_20261124.json",
+    "blob_sha": "4b2f139c86285c99137f0d8aedc622334a2a5e47",
+    "doi": "10.26008/1912/bco-dmo.712069.1",
+    "original_csv_sha256": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034"
+  },
+  "method": "through-origin regression of signed within-region log1p differences; site pairs resampled; 20,000 bootstrap draws; LCG seed 712069; fixed quantile indices 500/19499; leave-one-region-out versus zero difference; secondary slope=1 benchmark",
+  "results": [
+    {
+      "x": "shoots_dlog1p",
+      "y": "mesograzer_count_unstandardized_dlog1p",
+      "n": 25,
+      "b": 0.3485073501685409,
+      "ci": [
+        -0.44595547772524685,
+        0.885764957828193
+      ],
+      "loo": [
+        0.14373901013774135,
+        0.52743929570272
+      ],
+      "skill": -0.03267208413591405,
+      "proportional_skill": -0.09803453311882104,
+      "sign_agreement": 14
+    },
+    {
+      "x": "shoots_dlog1p",
+      "y": "mesograzer_abundance_dlog1p",
+      "n": 25,
+      "b": 0.42402668893207945,
+      "ci": [
+        -0.455584342244191,
+        1.0418470226923064
+      ],
+      "loo": [
+        0.12021632330197658,
+        0.5602070839758865
+      ],
+      "skill": -0.043201385265311476,
+      "proportional_skill": -0.04929790938391321,
+      "sign_agreement": 11
+    },
+    {
+      "x": "shoots_dlog1p",
+      "y": "mesograzer_richness_dlog1p",
+      "n": 25,
+      "b": 0.0983367922679545,
+      "ci": [
+        -0.08932895003167611,
+        0.26343224856581826
+      ],
+      "loo": [
+        0.0411322426572278,
+        0.1355187381317801
+      ],
+      "skill": -0.03969397022596399,
+      "proportional_skill": -4.672235679829896,
+      "sign_agreement": 13
+    },
+    {
+      "x": "above_dlog1p",
+      "y": "mesograzer_count_unstandardized_dlog1p",
+      "n": 25,
+      "b": -0.5022756645624581,
+      "ci": [
+        -1.5726886527028563,
+        0.6504008592157747
+      ],
+      "loo": [
+        -0.722097900522389,
+        0.03234126743973421
+      ],
+      "skill": -0.08716945532408116,
+      "proportional_skill": -0.30893743613784896,
+      "sign_agreement": 12
+    },
+    {
+      "x": "above_dlog1p",
+      "y": "mesograzer_abundance_dlog1p",
+      "n": 25,
+      "b": -1.3710566136531854,
+      "ci": [
+        -2.4120560334189203,
+        -0.3803247385643311
+      ],
+      "loo": [
+        -1.5037768292086557,
+        -0.8172005661684199
+      ],
+      "skill": 0.1745751349315875,
+      "proportional_skill": -0.5782960233327579,
+      "sign_agreement": 9
+    },
+    {
+      "x": "above_dlog1p",
+      "y": "mesograzer_richness_dlog1p",
+      "n": 25,
+      "b": -0.09210240542901593,
+      "ci": [
+        -0.317439616821782,
+        0.21419946140434748
+      ],
+      "loo": [
+        -0.18363486236700005,
+        -0.028541312084086792
+      ],
+      "skill": -0.08536181647176444,
+      "proportional_skill": -3.280615589073239,
+      "sign_agreement": 11
+    },
+    {
+      "x": "below_dlog1p",
+      "y": "mesograzer_count_unstandardized_dlog1p",
+      "n": 25,
+      "b": 0.09186276256255656,
+      "ci": [
+        -0.6775895892670692,
+        0.9091340826946643
+      ],
+      "loo": [
+        -0.056901705688301336,
+        0.5690726522895552
+      ],
+      "skill": -0.2085134521044414,
+      "proportional_skill": -0.335982362055002,
+      "sign_agreement": 15
+    },
+    {
+      "x": "below_dlog1p",
+      "y": "mesograzer_abundance_dlog1p",
+      "n": 25,
+      "b": -0.24896186377260393,
+      "ci": [
+        -1.118959525582611,
+        0.6620408850772067
+      ],
+      "loo": [
+        -0.5059639217238021,
+        0.2787294481668262
+      ],
+      "skill": -0.2504365790883467,
+      "proportional_skill": -0.6182297330781203,
+      "sign_agreement": 12
+    },
+    {
+      "x": "below_dlog1p",
+      "y": "mesograzer_richness_dlog1p",
+      "n": 25,
+      "b": 0.040379312280662785,
+      "ci": [
+        -0.10898397496281115,
+        0.24141425693211893
+      ],
+      "loo": [
+        -0.01128090087843623,
+        0.1096183364783634
+      ],
+      "skill": -0.13160933688687182,
+      "proportional_skill": -6.801191341369912,
+      "sign_agreement": 12
+    }
+  ],
+  "kollars_published_arithmetic": {
+    "doi": "10.1002/ecy.3710",
+    "mean_new_genets_control": 1.22,
+    "mean_new_genets_2X": 0.11,
+    "relative_ratio": 0.09016393442622951,
+    "relative_reduction": 0.9098360655737705,
+    "events_at_least_vegetative": 7,
+    "total_colonization_events": 36
+  },
+  "hard_limits": [
+    "Observational pairs, not repeated disturbance or pollination manipulations",
+    "All mesograzers, not peracarids or confirmed pollinators; total unstandardized counts primary; normalized response may induce denominator artifacts",
+    "log1p slope is not a true elasticity; no power claim of equivalence",
+    "Gross and Foster original archives unavailable; no raw genetic models fitted",
+    "Two disturbance studies differ in geography, design and outcome; no common effect size or causal sign-switch test"
+  ]
+}
