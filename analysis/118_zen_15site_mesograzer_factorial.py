@@ -124,6 +124,13 @@ def by_site(sites:dict):
                "arm_means":{t:statistics.mean(measured[t]) if measured[t] else None for t in TREATMENTS}}
             if eligible:
                 a["contrasts"]=contrast(a["arm_means"])
+                # Exploratory scale-invariant check added after a very high raw
+                # site contrast was observed. NOT a frozen original primary.
+                if all(x>0 for x in a["arm_means"].values()):
+                    logs={t:math.log(x) for t,x in a["arm_means"].items()}
+                    a["posthoc_log_arm_mean_contrasts"]=contrast(logs)
+                else:
+                    a["posthoc_log_arm_mean_contrasts"]=None
             record["endpoints"][target]=a
         reports.append(record)
     return reports
@@ -171,7 +178,57 @@ def analysis(sites):
             moderators[key]={"site_count":len(v),
                              "unadjusted_pearson_of_site_deterrent_effect":(
                                 pearson([a for a,b in v],[b for a,b in v]))}
+        log_eligible=[
+            x for x in eligible
+            if x["endpoints"][response]["posthoc_log_arm_mean_contrasts"] is not None
+        ]
+        log_contrasts={}
+        for label in ckeys:
+            vals=[
+                x["endpoints"][response]["posthoc_log_arm_mean_contrasts"][label]
+                for x in log_eligible
+            ]
+            res=cluster_bootstrapped_mean(vals,seed=SEED+100+len(label)+len(response))
+            if res.get("estimable"):
+                res["site_equal_geometric_effect_ratio"]=math.exp(res["mean_site_equal"])
+                res["geometric_ratio_ci95"]=[
+                    math.exp(v) for v in res["site_bootstrap_95pct_percentile_ci"]
+                ]
+                res["median_site_specific_ratio"]=math.exp(statistics.median(vals))
+                loo=[
+                    {"omitted_site":x["site"],
+                     "site_equal_geometric_effect_ratio_without_site":
+                        math.exp(statistics.mean([
+                            y["endpoints"][response]["posthoc_log_arm_mean_contrasts"][label]
+                            for y in log_eligible if y["site"]!=x["site"]
+                        ]))}
+                    for x in log_eligible
+                ] if len(log_eligible)>=5 else []
+                if loo:
+                    res["site_omission_geometric_ratio_min"]=min(
+                        z["site_equal_geometric_effect_ratio_without_site"] for z in loo
+                    )
+                    res["site_omission_geometric_ratio_max"]=max(
+                        z["site_equal_geometric_effect_ratio_without_site"] for z in loo
+                    )
+                    res["most_influential_site_omission_by_ratio"]={
+                        "min_ratio":min(loo,key=lambda z:z["site_equal_geometric_effect_ratio_without_site"]),
+                        "max_ratio":max(loo,key=lambda z:z["site_equal_geometric_effect_ratio_without_site"]),
+                    }
+            log_contrasts[label]=res
+        raw_d=[x["endpoints"][response]["contrasts"]["grazer_deterrent_main_difference"] for x in eligible]
+        raw_loo=[{"omitted_site":x["site"],
+                  "mean_raw_contrast_without_site":statistics.mean([
+                      y["endpoints"][response]["contrasts"]["grazer_deterrent_main_difference"]
+                      for y in eligible if y["site"]!=x["site"]])}
+                for x in eligible] if len(eligible)>=5 else []
         result["endpoints"][response]={
+            "posthoc_scale_invariant_log_of_arm_means":log_contrasts,
+            "raw_deterrent_site_omission_min_max":[
+                min(z["mean_raw_contrast_without_site"] for z in raw_loo),
+                max(z["mean_raw_contrast_without_site"] for z in raw_loo),
+            ] if raw_loo else None,
+            "raw_deterrent_effect_site_median":statistics.median(raw_d) if raw_d else None,
             "sites_eligible":len(eligible),
             "not_eligible_sites":sorted(x["site"] for x in site_data if x not in eligible),
             "contrasts":contrasts,
@@ -203,6 +260,7 @@ def execute(raw):
             "Only original measured chlorophyll-a per Zostera and grazer biomass endpoints are analyzed; no plant shoot, cover, TNC, or true persistence response is in source.",
             "Missing NA measurements are never coded zero. At least five numerical observations per site per arm are required, predeclared before source outcomes.",
             "Site-equal bootstrap intervals are exploratory; published 2015 work already modeled these effects.",
+            "Scale-invariant log-of-arm-means contrasts and leave-one-site-out diagnostics were added after observing a large Virginia raw-scale site effect; they are expressly post-hoc robustness checks.",
             "Posthoc moderator correlations are observational across 15 sites and not externally predictive or mechanistically isolated.",
             "The BCO-DMO dataset landing page mentions 16 sites but the actual CSV has 15 site codes and 600 original factorial plots.",
         ]
