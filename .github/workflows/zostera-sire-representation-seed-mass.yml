@@ -1,0 +1,56 @@
+name: Zostera sire representation and seed mass
+on:
+  pull_request:
+    paths:
+      - 'analysis/144_external_seagrass_genetic_source_gate.py'
+      - 'analysis/152_zostera_realized_sire_representation.py'
+      - 'analysis/153_zostera_seed_mass_sire_representation.py'
+      - 'docs/ZOSTERA_SIRE_REPRESENTATION_SEED_MASS_20261124.md'
+      - '.github/workflows/zostera-sire-representation-seed-mass.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install numpy==2.2.6 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/144_external_seagrass_genetic_source_gate.py")
+          m=importlib.util.module_from_spec(s)
+          s.loader.exec_module(m)
+          m.ROOT.mkdir(exist_ok=True)
+          for name,doi in (("zostera_paternity","10.5061/dryad.dfn2z358x"),("seed_mass","10.5061/dryad.6t1g1jx7p")):
+              assert m.dryad(name,doi)["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/152_zostera_realized_sire_representation.py > out/sire_representation.json
+          python analysis/153_zostera_seed_mass_sire_representation.py > out/seed_mass_representation.json
+          python - <<'PY'
+          import json,math
+          a=json.load(open("out/sire_representation.json"))
+          h=a["datasets"]["high_locus"]
+          assert h["sire_records"]==180 and h["total_seed_contributions"]==688
+          for site,v in zip(("1","2","3"),(24.186104,32.518358,24.133212)):
+              assert math.isclose(h["sites"][site]["all_sire_records"]["observed_hill2"],v,abs_tol=1e-6)
+          b=json.load(open("out/seed_mass_representation.json"))
+          assert b["cross_table_key_overlap"]==690 and b["shared_seed_mass_disagreements"]==0
+          for cohort,scope,n,pos,obs in [
+              ("original","all",32,26,.131059),
+              ("original","outcross_only",31,19,.041829),
+              ("high_locus","all",31,25,.125943),
+              ("high_locus","outcross_only",29,21,.044695)]:
+              t=b["datasets"][cohort][scope]
+              assert t["mother_summary"]["informative"]==n and t["mother_summary"]["positive"]==pos
+              assert math.isclose(t["mother_summary"]["mean_relative_change"],obs,abs_tol=1e-6)
+              assert t["permutation_diagnostic"]["upper_tail_fraction_plus_one"]>.05
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zostera-sire-representation
+          path: out/
+          if-no-files-found: error
