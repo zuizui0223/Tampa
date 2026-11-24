@@ -27,6 +27,47 @@ PR #170 reaggregated a 2011 ZEN experiment at 15 eelgrass sites: grazer deterren
 
 **Optional response-open ecological question**: 2011 ZEN grazer suppression of epiphytes and 2015 ZEN2 predation data might have overlapping site codes, but 4-year separation, different plots, and guild/campaign differences mean no reciprocal causal feedback identification. First compute the code overlap and environment comparability; don't link by plot IDs across years.
 
+## Source-verified result: 2015 ZEN2 17-site predation experiment
+
+**Authoritative reaggregation:** [Actions run #45328106589](https://github.com/zuizui0223/Tampa/actions/runs/45328106589), original BCO-DMO CSV SHA256 `3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb`, 2,666 tethered prey, 17 sites, **2,002 recorded consumed**, 664 alive. The six edge/interior × ambient/50/80% thinning cells were present and had >=5 original trial records in every site. Trial and plot nesting are not independently identifiable from the fields and should not be fitted as 2,666 independent meadows.
+
+The *site-equal* contrasts (each of 17 sites has one contrast) are percentages of **recorded tethered predation**; bootstrap intervals are 5000 site-resample percentile intervals, exploratory, not the original Hovel et al. 2021 adjusted model.
+
+| Contrast (all 17 sites; mean site risk difference) | Estimate pp | 95% site bootstrap pp | Negative/positive/zero sites |
+| --- | ---: | ---: | --- |
+| 50% shoot removal minus ambient | +0.34 | −2.51 to +3.06 | 7 / 6 / 4 |
+| 80% shoot removal minus ambient | **−1.54** | −5.14 to +1.71 | 7 / 6 / 4 |
+| Edge minus patch interior, average thinning levels | **+1.06** | −1.18 to +3.33 | 6 / 8 / 3 |
+| Edge × 80% thinning difference-in-differences | **−0.73** | −5.36 to +3.30 | 6 / 7 / 4 |
+
+Three sites (CR, FR, NC) had **100%** recorded predation in this 24-hour tether assay, which causes saturation and limits treatment discrimination. At such sites a zero difference is not evidence for a biological null mechanism. Note that the published Hovel et al. 2021 model estimated *adjusted* edge effects, and the authors reported lower predation at edges in most sites; the unadjusted equal-site summary does not recover a robust general edge effect. It must not be described as a contradiction or new discovery.
+
+The direct ecological constraint is that **heavy experimental shoot thinning did not consistently increase the 24-hour observed prey predation endpoint across this already-published network**. Eelgrass shoot quantity alone cannot be asserted to universally protect mesograzers; patch position, predator identity, local physical architecture and epibionts may matter but the present descriptive contrasts do not isolate them. This study does **not** show that consumers have no benefit from seagrass.
+
+## Source-verified result: 2014 25 region-code paired-subsite observational data
+
+An independent original source [BCO-DMO 712069](https://www.bco-dmo.org/dataset/712069) has 50 subsite records, exactly 2 within each of 25 region/site codes (not 50 independent estuaries). Original CSV SHA256 `c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034`. Both Zostera above/below biomass, shoot density, epiphyton load, and original count and standardized mesograzer indices are observed. Cross-subsite differences were calculated for each region-code A/B pair, using log(1+x) within metrics. N=25 paired region-code contrasts, except epiphyton N=24.
+
+| Correlation of within-code **aboveground Zostera biomass difference** with consumer/epiphyton difference | Pearson r | 5000 pair-bootstrap 95% |
+| --- | ---: | ---: |
+| **Standardized** grazer abundance (`Mean_Std_Total_Abund_Mesograzers`) | −0.544 | −0.776 to −0.157 |
+| **Unstandardized** grazer counts (`Mean_Total_Abund_Mesograzers`) | −0.199 | −0.569 to +0.328 |
+| Mesograzer richness | −0.145 | −0.626 to +0.297 |
+| Epiphyton index | −0.048 | −0.411 to +0.273 |
+
+**Important denominator robustness gate:** the strong negative plant–grazer correlation is present only for the **standardized** abundance indicator. If this index is normalized by eelgrass biomass (as the original sampling methods suggest), it can display an artifactual negative association when compared against host biomass by construction. The effect shrinks when switching to the source's unstandardized grazer count and its exploratory interval overlaps zero. **Not proof that the standardized trend is 100% an artifact, but no evidence of a causal plant→grazer negative interaction**. The choice of the unstandardized metric as a negative control was made **after** seeing this surprising negative association, so it is post-hoc. The 2014 surveys are observational and cannot be used to infer reciprocal feedback dynamics or true rhizome buffering.
+
+Pinned exact results (including per-site records, every pair contrast and source-provenance): `results/zen2_2015_site_predation_source_verified_20261124.json`, `results/zen2_2014_25region_state_consumer_source_verified_20261124.json`. The workflow re-fetches both public sources and compares all numerical outputs exactly to these pinned ledgers.
+
+## Ecological synthesis: candidate asymmetry, not an identified feedback
+
+- **2011 ZEN grazer manipulation (PR #170):** reducing grazer access increases epiphytic chlorophyll on eelgrass; a direct grazer→epiphyte process effect.
+- **2015 ZEN2 habitat manipulation (this PR):** reducing eelgrass shoot density does not monotonically increase tethered grazer predation, so an equally strong *plant biomass→grazer protection* return path is not identified from this endpoint.
+- **2014 separate observation (this PR):** simply normalizing consumer counts by host biomass can change qualitative abundance relations; this demands explicit denominators before any cross-year feedback comparison.
+- **None of the two experiments measures the other direction at the same plots/time.** Thus a two-way positive feedback, net balance, hysteresis or conservation restoration benefit is still not proved.
+
+An ecologically meaningful experiment for the remaining hypothesis would cross **measured grazer-access changes with permanent eelgrass canopy complexity** at independent matched plots, measure epiphyte load, free-living grazer population fate and host growth together, and replicate that interaction across independent seagrass habitats. The requirement is not merely another weather correlation or more historical non-detection decompositions.
+
 ## Hard limitations
 
 - Hovel 2021 already tested the edge × shoot thinning interaction. This is a reanalysis, not an independent new positive ecological finding.
