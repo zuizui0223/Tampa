@@ -1,5 +1,8 @@
 # Water, phenology, and pollinator composition transfer (2026-11-25)
 
+## Correction (2026-11-25)
+The previous RMSE table transposed model labels. Re-execution of unchanged analysis/169 on pinned input files confirmed all numerical values but not the original labels. The corrected table and interpretation below supersede the earlier report. The previous CI expected the mislabeled directions; fix the assertions, not the estimators.
+
 ## Scope
 Gallagher & Campbell 2021, DOI 10.3389/fevo.2021.641693, Dryad 10.7280/D16D7Z. The paper already reports that flowering time affects visitation more strongly than water supply, whereas seed production responds more strongly to water supply. This posthoc diagnostic evaluates whether observed visit rate and taxonomic composition add predictive information for seed production in held-out experimental arrays versus held-out flowering weeks. It is not a causal mediation analysis, a test of general pollinator importance, or a novel claim of phenology-dependent facilitation.
 
@@ -21,12 +24,12 @@ Ridge regression, endpoint author mean mature seeds per flower, RMSE in original
 Primary, assigned-water context, alpha=1:
 |panel|split|context RMSE|+visit rate|+composition|
 |---|---|---:|---:|---:|
-|113|array|.834564|.882215|.832909|
-|113|week|1.225831|1.021539|1.203983|
-|88|array|.900837|.944864|.896066|
-|88|week|1.332608|1.072565|1.304477|
+|113|array|.882215|.832909|.834564|
+|113|week|1.021539|1.203983|1.225831|
+|88|array|.944864|.896066|.900837|
+|88|week|1.072565|1.304477|1.332608|
 
-In both panels, all three penalties and both water specifications, adding composition to visit model improves array RMSE, but context-only or context+composition is similar. Adding composition to visit model worsens week RMSE in all twelve combinations (two panels x two water specifications x three penalties). At alpha=1 primary week comparison, rate improves context by ~16.7%, composition raises RMSE ~17.9% relative to rate. This indicates nontransferability of incremental taxonomic composition in this specific four-week experiment, conditional on the model definitions, not a general biological absence or causal statement. Under array holdout, added rate by itself worsens baseline; added composition recovers that loss but hardly improves baseline (0.2%). Temporal split tests extrapolation to held-out weeks under a linear week term; with only four weeks there is no estimate of independent seasonal/site generality. No p-values, no assertion of significance or superiority across species. The 2020 Davis data and this experiment have different endpoints (yield vs seeds/flower), split units and composition resolutions; do not pool RMSE ratios as common causal effect sizes.
+Across both panels, three penalties, and two water specifications, unweighted visitation improves context-only array holdout in all 12 comparisons but worsens context-only week holdout in all 12. Adding composition to visitation improves array holdout in only 2/12 comparisons and week holdout in only 1/12; this is not consistent incremental predictive value. At alpha=1 for the 113-plant panel, visitation reduces array RMSE by 5.59%, but increases week RMSE by 17.86%; composition increases RMSE relative to visitation by 0.20% (array) and 1.81% (week). Thus the prior claim that visitation improved week holdout is withdrawn. Temporal split used a linear week term while array split used week indicators; analysis/170 adds a common linear-week design to both splits and fixed functional weights from the separate single-visit experiment. Small within-study diagnostics, not prospective/external validation or causal estimates; do not pool RMSE ratios across studies with different outcomes/designs.
 
 ## Reproduction and status
 analysis/169_gallagher_water_phenology_composition.py executed locally on exact source files before commit, all models completed. Independent CI pending. Latest prior head 185a062565be28bbee2ff704e7f88df128ce6cff: first page of 21 CI runs returned, cross-system source/screen reported failure (previous known API rate-limit failure not assumed to recur without logs), other displayed jobs success/in progress. Prior new composition and pollen-tube workflows not on returned first page, not confirmed. No new otter raw data in this turn. No merge, submission, Paper A or frozen TNC modifications. Next useful step: independent study with matched visitor behavior, taxon, and reproductive response, then examine how observation effort and plant resource conditions affect incremental prediction. Avoid claiming universal functional superiority from two small within-study CV exercises.
