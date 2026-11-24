@@ -59,6 +59,44 @@ An independent original source [BCO-DMO 712069](https://www.bco-dmo.org/dataset/
 
 Pinned exact results (including per-site records, every pair contrast and source-provenance): `results/zen2_2015_site_predation_source_verified_20261124.json`, `results/zen2_2014_25region_state_consumer_source_verified_20261124.json`. The workflow re-fetches both public sources and compares all numerical outputs exactly to these pinned ledgers.
 
+## Post-hoc mechanistic discrimination: did thinning happen, and what limited the risk measurement?
+
+**Source verified:** [GitHub Actions #45329552828](https://github.com/zuizui0223/Tampa/actions/runs/45329552828), original 2015 BCO-DMO CSV SHA256 `3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb`. The complete original-source 17-site audit is pinned at `results/zen2_2015_manipulation_ceiling_size_verified_20261124.json`, with original CI artifact SHA256 `d771b291b810a06c70de9311bdc8e8f97accd0bf5f3c895a62ed698764e91d0b`. This audit was added AFTER the first 17-site predation results were opened; **it is a post-hoc mechanism and assay-design sensitivity, not a newly pre-registered effect or independent replication**.
+
+### 1. Manipulation assignment and recorded dosage
+
+For all **17 sites**, the original dataset's `Calc_shoot_dens / Starting_shoot_dens` matches its assigned treatments to rounding precision:
+
+| Treatment | Site-median ratio | Mean site ratio | Maximum absolute deviation from nominal among sites |
+| --- | ---: | ---: | ---: |
+| Ambient | **1.0000** | 0.999992 | 0.000137 |
+| 50% shoot removal | **0.5000** | 0.499975 | 0.000417 |
+| 80% shoot removal | **0.2000** | 0.199994 | 0.000103 |
+
+**Key qualification:** `Calc_shoot_dens` is a *calculated* field labelled as density after thinning in the primary data dictionary, not an independent new survey of actual post-treatment canopy architecture. Hence the correct claim is: *recorded densities agree with the assigned design*. One cannot say independent field verification excludes all implementation or behavioral artifacts. Published methods report manually pulling shoots to the intended reduction levels.
+
+### 2. Binary outcome saturation
+
+Across sites, the equal-edge/interior ambient consumption risk was **mean 76.19%, median 86.89%**. **11/17 sites** had ambient risk >=75% and **8/17** >=90%. At a site with ambient consumption 90%, a binary 24-hour "eaten" endpoint can show at most another 10 percentage points of increase regardless of the true predator encounters; this is a *mathematical observation bound*, not an ecological limit on consumer survival. The equal-site average maximum possible observed upward change was **23.81 percentage points**. **3/17 sites (CR, FR, NC)** recorded all prey consumed in all treatments.
+
+A strictly labeled post-hoc **non-saturated subset** (n=14 after excluding sites with 100% observed predation in all treatments) had **80% removal minus ambient = −1.87 percentage points**, versus **−1.54 pp in the full 17-site analysis**. This does *not* recover a positive thinning-dependent predation risk and is **not a valid new independent treatment effect**, since the subset was selected on the observed outcome. No claim is made that absence of an observed increase demonstrates absence of a real, free-living predation effect.
+
+### 3. Experimental animal identity and repeated labels
+
+**15 sites used locally tethered amphipods (2,341 trials), 2 sites OR/SD used isopods (325 trials)**. No site studied both prey taxa, so taxon is geographically confounded by study site. Group differences cannot identify prey identity as a cause of spatial differences. Only **665 unique tether-number labels within site** appear across **2,666** source trial records (2,001 duplicate-in-site labels across repeated deployments). Published methods explicitly conducted four 24-hour trials per site. These labels are **not globally unique independent plots or ecological replicates**, and original trial round assignment is not unambiguously available as a field in the source CSV.
+
+### 4. Prey body size: a nonrobust post-hoc candidate
+
+The public source has **2,395 measured prey lengths**, **271 missing sizes**; VA has no size data, and BB has 104/122 missing. Three saturated sites have no alive prey for comparison.
+
+Within the same site and treatment six-cell strata, a site-level contrast between measured **eaten versus alive** prey sizes was estimable for **12/17 sites**. Averaging those site contrasts yielded **−0.465 mm** (site-bootstrap 95% percentile **[−1.009,−0.006]**), and 8 of 12 sites showed negative signs. However, when the two isopod-only sites were removed, the **10 amphipod-site** summary shrank to **−0.308 mm, interval [−0.759,+0.102]**. The body-size contrast is observational (prey size not randomized), prey taxon is confounded with region, and this subtype exclusion was selected post-outcome. **Do not call size-dependent predation a supported new mechanism.**
+
+### Stage distinction and next experiment
+
+- A validated treatment *label/density calculation* differs from actual observed **physical habitat complexity**, which would require leaf height, spatial cover or 3D structure measures.
+- The fact that a tethered animal was consumed is not a direct measure of **free-moving consumer population survival**; missing prey were classified as eaten under the original source's control-tether rule.
+- A biological reciprocal feedback would require co-located manipulation of **mesograzer access × actual eelgrass physical architecture**, measurement of epiphyte load, intact host plant growth and free-moving grazer demographic fates, and independent replication in multiple habitat contexts. Nothing in the 2011 and 2015 experiments supplies all four jointly.
+
 ## Ecological synthesis: candidate asymmetry, not an identified feedback
 
 - **2011 ZEN grazer manipulation (PR #170):** reducing grazer access increases epiphytic chlorophyll on eelgrass; a direct grazer→epiphyte process effect.
