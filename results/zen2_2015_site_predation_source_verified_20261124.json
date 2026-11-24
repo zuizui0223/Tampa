@@ -1,0 +1,807 @@
+{
+  "evidence_class": "reanalysis_of_Hovel_et_al_2021_original_public_experiment",
+  "limits": [
+    "The global 17-site patch edge and shoot-thinning test was already published by Hovel et al. 2021.",
+    "Status=1 is recorded consumed; 0 alive. Tethered predation is not natural population survival.",
+    "Site means, not individual tether records or repeated trials, are geographic replicates.",
+    "Site bootstrap is exploratory and does not account for all unrecorded plot/trial dependence.",
+    "Habitat edge is a spatial context, not randomized intervention; thinning levels were manipulated.",
+    "No plant growth, TNC, meadow annual retention, predator abundance, or consumer-mediated grazer benefit is measured in this experimental endpoint.",
+    "Do not treat 2011 grazer-deterrent 15-site results as an intervention performed on the 2015 tethered organisms."
+  ],
+  "physical_density_aggregate": {
+    "mean_site_average_calculated_shoot_density": 241.21860001211934,
+    "mean_site_average_initial_shoot_density": 408.4052574221354
+  },
+  "recorded_alive_count": 664,
+  "recorded_eaten_count": 2002,
+  "schema": "tampa.zen2_2015_original_site_equal_predation_v1",
+  "site_count": 17,
+  "site_equal_contrasts": {
+    "edge_by_eighty_thinning_difference_in_differences": {
+      "bootstrap_resamples": 5000,
+      "leave_one_site_out_mean_range": [
+        -0.015079558053695992,
+        0.008233934009796069
+      ],
+      "mean_site_equal": -0.007267533007898126,
+      "median_site": 0,
+      "negative_sites": 6,
+      "positive_sites": 7,
+      "site_bootstrap_95pct_percentile": [
+        -0.053639004673487464,
+        0.03295075295075295
+      ],
+      "sites": 17,
+      "zero_sites": 4
+    },
+    "edge_minus_interior_risk": {
+      "bootstrap_resamples": 5000,
+      "leave_one_site_out_mean_range": [
+        0.0035721789847851754,
+        0.017169977790917317
+      ],
+      "mean_site_equal": 0.01062022473405017,
+      "median_site": 0,
+      "negative_sites": 6,
+      "positive_sites": 8,
+      "site_bootstrap_95pct_percentile": [
+        -0.011754993723421276,
+        0.03327914641640132
+      ],
+      "sites": 17,
+      "zero_sites": 3
+    },
+    "eighty_minus_ambient_risk": {
+      "bootstrap_resamples": 5000,
+      "leave_one_site_out_mean_range": [
+        -0.023129227892158925,
+        -0.002017735218166252
+      ],
+      "mean_site_equal": -0.015422231963814112,
+      "median_site": 0,
+      "negative_sites": 7,
+      "positive_sites": 6,
+      "site_bootstrap_95pct_percentile": [
+        -0.05143889503930073,
+        0.01705188058129235
+      ],
+      "sites": 17,
+      "zero_sites": 4
+    },
+    "fifty_minus_ambient_risk": {
+      "bootstrap_resamples": 5000,
+      "leave_one_site_out_mean_range": [
+        -0.0024771836456619007,
+        0.012782787864309607
+      ],
+      "mean_site_equal": 0.0034174137882577818,
+      "median_site": 0,
+      "negative_sites": 7,
+      "positive_sites": 6,
+      "site_bootstrap_95pct_percentile": [
+        -0.0250571726275051,
+        0.03062342885872297
+      ],
+      "sites": 17,
+      "zero_sites": 4
+    }
+  },
+  "source_cell_coverage": [
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.09523809523809523,
+        "edge_minus_interior_risk": 0.055555555555555546,
+        "eighty_minus_ambient_risk": 0.047619047619047616,
+        "fifty_minus_ambient_risk": -0.0357142857142857
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 19,
+        "Edge|Eighty": 20,
+        "Edge|Fifty": 19,
+        "Interior|Amb": 19,
+        "Interior|Eighty": 19,
+        "Interior|Fifty": 15
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 21,
+        "Edge|Eighty": 20,
+        "Edge|Fifty": 21,
+        "Interior|Amb": 21,
+        "Interior|Eighty": 21,
+        "Interior|Fifty": 18
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.9047619047619048,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 0.9047619047619048,
+        "Interior|Amb": 0.9047619047619048,
+        "Interior|Eighty": 0.9047619047619048,
+        "Interior|Fifty": 0.8333333333333334
+      },
+      "site": "BB",
+      "site_average_calculated_shoot_density": 149.5813524590164,
+      "site_average_initial_shoot_density": 254.60655737704917,
+      "site_recorded_predation_fraction": 0.9098360655737705,
+      "source_tether_number_uniques": 14,
+      "taxa": {
+        "Amphipod": 122
+      },
+      "trials": 122
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": 0,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 26,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 29
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 26,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 29
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 1,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 1,
+        "Interior|Fifty": 1
+      },
+      "site": "CR",
+      "site_average_calculated_shoot_density": 628.9076524390244,
+      "site_average_initial_shoot_density": 816.5426829268292,
+      "site_recorded_predation_fraction": 1,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 164
+      },
+      "trials": 164
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.08940577940577948,
+        "edge_minus_interior_risk": -0.09417582417582417,
+        "eighty_minus_ambient_risk": 0.10788970288970293,
+        "fifty_minus_ambient_risk": 0.05357142857142855
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 9,
+        "Edge|Eighty": 10,
+        "Edge|Fifty": 11,
+        "Interior|Amb": 11,
+        "Interior|Eighty": 14,
+        "Interior|Fifty": 12
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 26,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 25,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.32142857142857145,
+        "Edge|Eighty": 0.38461538461538464,
+        "Edge|Fifty": 0.4074074074074074,
+        "Interior|Amb": 0.4074074074074074,
+        "Interior|Eighty": 0.56,
+        "Interior|Fifty": 0.42857142857142855
+      },
+      "site": "FI",
+      "site_average_calculated_shoot_density": 131.7391304347826,
+      "site_average_initial_shoot_density": 223.91304347826087,
+      "site_recorded_predation_fraction": 0.4161490683229814,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 161
+      },
+      "trials": 161
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": 0,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 21,
+        "Edge|Eighty": 21,
+        "Edge|Fifty": 20,
+        "Interior|Amb": 21,
+        "Interior|Eighty": 21,
+        "Interior|Fifty": 21
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 21,
+        "Edge|Eighty": 21,
+        "Edge|Fifty": 20,
+        "Interior|Amb": 21,
+        "Interior|Eighty": 21,
+        "Interior|Fifty": 21
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 1,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 1,
+        "Interior|Fifty": 1
+      },
+      "site": "FR",
+      "site_average_calculated_shoot_density": 126.420312,
+      "site_average_initial_shoot_density": 227.006368,
+      "site_recorded_predation_fraction": 1,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 125
+      },
+      "trials": 125
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": -0.011904761904761899,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 26,
+        "Edge|Eighty": 26,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 26
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 28,
+        "Interior|Amb": 28,
+        "Interior|Eighty": 28,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.9285714285714286,
+        "Edge|Eighty": 0.9285714285714286,
+        "Edge|Fifty": 0.9642857142857143,
+        "Interior|Amb": 0.9642857142857143,
+        "Interior|Eighty": 0.9642857142857143,
+        "Interior|Fifty": 0.9285714285714286
+      },
+      "site": "GA",
+      "site_average_calculated_shoot_density": 21.65714285714286,
+      "site_average_initial_shoot_density": 37.904761904761905,
+      "site_recorded_predation_fraction": 0.9464285714285714,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 168
+      },
+      "trials": 168
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.07956857956857954,
+        "edge_minus_interior_risk": 0.12338895672229011,
+        "eighty_minus_ambient_risk": -0.0342897842897843,
+        "fifty_minus_ambient_risk": 0.019943019943019946
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 24,
+        "Edge|Eighty": 26,
+        "Edge|Fifty": 25,
+        "Interior|Amb": 22,
+        "Interior|Eighty": 20,
+        "Interior|Fifty": 23
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 26,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 27
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.9230769230769231,
+        "Edge|Eighty": 0.9285714285714286,
+        "Edge|Fifty": 0.9259259259259259,
+        "Interior|Amb": 0.8148148148148148,
+        "Interior|Eighty": 0.7407407407407407,
+        "Interior|Fifty": 0.8518518518518519
+      },
+      "site": "JN",
+      "site_average_calculated_shoot_density": 65.23571604938272,
+      "site_average_initial_shoot_density": 112.39409876543209,
+      "site_recorded_predation_fraction": 0.8641975308641975,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 162
+      },
+      "trials": 162
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.060846560846560815,
+        "edge_minus_interior_risk": 0.04497354497354492,
+        "eighty_minus_ambient_risk": 0.04365079365079366,
+        "fifty_minus_ambient_risk": -0.005291005291005235
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 18,
+        "Edge|Eighty": 20,
+        "Edge|Fifty": 18,
+        "Interior|Amb": 17,
+        "Interior|Eighty": 18,
+        "Interior|Fifty": 18
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 27,
+        "Edge|Eighty": 27,
+        "Edge|Fifty": 28,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 28,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.6666666666666666,
+        "Edge|Eighty": 0.7407407407407407,
+        "Edge|Fifty": 0.6428571428571429,
+        "Interior|Amb": 0.6296296296296297,
+        "Interior|Eighty": 0.6428571428571429,
+        "Interior|Fifty": 0.6428571428571429
+      },
+      "site": "JS",
+      "site_average_calculated_shoot_density": 24.023030303030303,
+      "site_average_initial_shoot_density": 35.99393939393939,
+      "site_recorded_predation_fraction": 0.6606060606060606,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 165
+      },
+      "trials": 165
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.019230769230769384,
+        "edge_minus_interior_risk": 0.027981277981277957,
+        "eighty_minus_ambient_risk": 0.026098901098901117,
+        "fifty_minus_ambient_risk": 0.057183557183557165
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 24,
+        "Edge|Eighty": 25,
+        "Edge|Fifty": 22,
+        "Interior|Amb": 20,
+        "Interior|Eighty": 22,
+        "Interior|Fifty": 25
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 26,
+        "Interior|Eighty": 28,
+        "Interior|Fifty": 27
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.8571428571428571,
+        "Edge|Eighty": 0.8928571428571429,
+        "Edge|Fifty": 0.8148148148148148,
+        "Interior|Amb": 0.7692307692307693,
+        "Interior|Eighty": 0.7857142857142857,
+        "Interior|Fifty": 0.9259259259259259
+      },
+      "site": "KOA",
+      "site_average_calculated_shoot_density": 133.25,
+      "site_average_initial_shoot_density": 236.64634146341464,
+      "site_recorded_predation_fraction": 0.8414634146341463,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 164
+      },
+      "trials": 164
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.25529100529100524,
+        "edge_minus_interior_risk": -0.02689594356261027,
+        "eighty_minus_ambient_risk": -0.09457671957671959,
+        "fifty_minus_ambient_risk": -0.03769841269841273
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 27,
+        "Edge|Eighty": 21,
+        "Edge|Fifty": 24,
+        "Interior|Amb": 25,
+        "Interior|Eighty": 25,
+        "Interior|Fifty": 26
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 27,
+        "Edge|Eighty": 27,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 28,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.7777777777777778,
+        "Edge|Fifty": 0.8888888888888888,
+        "Interior|Amb": 0.8928571428571429,
+        "Interior|Eighty": 0.9259259259259259,
+        "Interior|Fifty": 0.9285714285714286
+      },
+      "site": "KOB",
+      "site_average_calculated_shoot_density": 194.1158536585366,
+      "site_average_initial_shoot_density": 332.8658536585366,
+      "site_recorded_predation_fraction": 0.9024390243902439,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 164
+      },
+      "trials": 164
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.11111111111111127,
+        "edge_minus_interior_risk": 0.025132275132275155,
+        "eighty_minus_ambient_risk": -0.05158730158730157,
+        "fifty_minus_ambient_risk": -0.03373015873015872
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 26,
+        "Edge|Eighty": 23,
+        "Edge|Fifty": 26,
+        "Interior|Amb": 24,
+        "Interior|Eighty": 25,
+        "Interior|Fifty": 23
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 28,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 28,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.9285714285714286,
+        "Edge|Eighty": 0.8214285714285714,
+        "Edge|Fifty": 0.9285714285714286,
+        "Interior|Amb": 0.8888888888888888,
+        "Interior|Eighty": 0.8928571428571429,
+        "Interior|Fifty": 0.8214285714285714
+      },
+      "site": "MX",
+      "site_average_calculated_shoot_density": 607.7801736526947,
+      "site_average_initial_shoot_density": 1079.807622754491,
+      "site_recorded_predation_fraction": 0.8802395209580839,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 167
+      },
+      "trials": 167
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": 0,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 23,
+        "Edge|Eighty": 23,
+        "Edge|Fifty": 26,
+        "Interior|Amb": 22,
+        "Interior|Eighty": 26,
+        "Interior|Fifty": 25
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 23,
+        "Edge|Eighty": 23,
+        "Edge|Fifty": 26,
+        "Interior|Amb": 22,
+        "Interior|Eighty": 26,
+        "Interior|Fifty": 25
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 1,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 1,
+        "Interior|Fifty": 1
+      },
+      "site": "NC",
+      "site_average_calculated_shoot_density": 317.24982068965517,
+      "site_average_initial_shoot_density": 598.8027586206897,
+      "site_recorded_predation_fraction": 1,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 145
+      },
+      "trials": 145
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.10994708994708996,
+        "edge_minus_interior_risk": 0.06754307420974087,
+        "eighty_minus_ambient_risk": 0.016455026455026417,
+        "fifty_minus_ambient_risk": 0.09536223036223035
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 15,
+        "Edge|Eighty": 17,
+        "Edge|Fifty": 17,
+        "Interior|Amb": 13,
+        "Interior|Eighty": 13,
+        "Interior|Fifty": 16
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 26,
+        "Interior|Amb": 25,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 27
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.5357142857142857,
+        "Edge|Eighty": 0.6071428571428571,
+        "Edge|Fifty": 0.6538461538461539,
+        "Interior|Amb": 0.52,
+        "Interior|Eighty": 0.48148148148148145,
+        "Interior|Fifty": 0.5925925925925926
+      },
+      "site": "OR",
+      "site_average_calculated_shoot_density": 56.91987577639752,
+      "site_average_initial_shoot_density": 97.88819875776397,
+      "site_recorded_predation_fraction": 0.5652173913043478,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Isopod": 161
+      },
+      "trials": 161
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.11772486772486773,
+        "edge_minus_interior_risk": 0.015432098765432093,
+        "eighty_minus_ambient_risk": 0.02314814814814814,
+        "fifty_minus_ambient_risk": 0.06415343915343914
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 6,
+        "Edge|Eighty": 8,
+        "Edge|Fifty": 8,
+        "Interior|Amb": 7,
+        "Interior|Eighty": 6,
+        "Interior|Fifty": 8
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 27,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 28,
+        "Interior|Eighty": 28,
+        "Interior|Fifty": 27
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.21428571428571427,
+        "Edge|Eighty": 0.2962962962962963,
+        "Edge|Fifty": 0.2962962962962963,
+        "Interior|Amb": 0.25,
+        "Interior|Eighty": 0.21428571428571427,
+        "Interior|Fifty": 0.2962962962962963
+      },
+      "site": "QU",
+      "site_average_calculated_shoot_density": 355.31094545454545,
+      "site_average_initial_shoot_density": 630.3820727272728,
+      "site_recorded_predation_fraction": 0.2606060606060606,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 165
+      },
+      "trials": 165
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.10846560846560849,
+        "edge_minus_interior_risk": -0.0037647537647537512,
+        "eighty_minus_ambient_risk": -0.01719576719576721,
+        "fifty_minus_ambient_risk": -0.03271265771265772
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 10,
+        "Edge|Eighty": 8,
+        "Edge|Fifty": 11,
+        "Interior|Amb": 10,
+        "Interior|Eighty": 11,
+        "Interior|Fifty": 7
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 28,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 28,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 26
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.35714285714285715,
+        "Edge|Eighty": 0.2857142857142857,
+        "Edge|Fifty": 0.39285714285714285,
+        "Interior|Amb": 0.37037037037037035,
+        "Interior|Eighty": 0.4074074074074074,
+        "Interior|Fifty": 0.2692307692307692
+      },
+      "site": "SD",
+      "site_average_calculated_shoot_density": 389.1064512195122,
+      "site_average_initial_shoot_density": 677.7871158536585,
+      "site_recorded_predation_fraction": 0.3475609756097561,
+      "source_tether_number_uniques": 21,
+      "taxa": {
+        "Isopod": 164
+      },
+      "trials": 164
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.002116402116402072,
+        "edge_minus_interior_risk": 0.025485008818342147,
+        "eighty_minus_ambient_risk": -0.22989417989417987,
+        "fifty_minus_ambient_risk": -0.1464285714285714
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 17,
+        "Edge|Eighty": 13,
+        "Edge|Fifty": 14,
+        "Interior|Amb": 23,
+        "Interior|Eighty": 16,
+        "Interior|Fifty": 19
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 20,
+        "Edge|Eighty": 21,
+        "Edge|Fifty": 20,
+        "Interior|Amb": 28,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.85,
+        "Edge|Eighty": 0.6190476190476191,
+        "Edge|Fifty": 0.7,
+        "Interior|Amb": 0.8214285714285714,
+        "Interior|Eighty": 0.5925925925925926,
+        "Interior|Fifty": 0.6785714285714286
+      },
+      "site": "SF",
+      "site_average_calculated_shoot_density": 30.54861111111111,
+      "site_average_initial_shoot_density": 54.68055555555556,
+      "site_recorded_predation_fraction": 0.7083333333333334,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 144
+      },
+      "trials": 144
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.04469987228607919,
+        "edge_minus_interior_risk": -0.03612148951979036,
+        "eighty_minus_ambient_risk": -0.08876117496807145,
+        "fifty_minus_ambient_risk": -0.03827352196917405
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 26,
+        "Edge|Eighty": 23,
+        "Edge|Fifty": 25,
+        "Interior|Amb": 26,
+        "Interior|Eighty": 26,
+        "Interior|Fifty": 22
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 27,
+        "Edge|Eighty": 27,
+        "Edge|Fifty": 28,
+        "Interior|Amb": 27,
+        "Interior|Eighty": 29,
+        "Interior|Fifty": 23
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.9629629629629629,
+        "Edge|Eighty": 0.8518518518518519,
+        "Edge|Fifty": 0.8928571428571429,
+        "Interior|Amb": 0.9629629629629629,
+        "Interior|Eighty": 0.896551724137931,
+        "Interior|Fifty": 0.9565217391304348
+      },
+      "site": "VA",
+      "site_average_calculated_shoot_density": 818.1548881987578,
+      "site_average_initial_shoot_density": 1436.0881366459628,
+      "site_recorded_predation_fraction": 0.9192546583850931,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 161
+      },
+      "trials": 161
+    },
+    {
+      "contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.004985754985754931,
+        "edge_minus_interior_risk": -0.03208519875186544,
+        "eighty_minus_ambient_risk": -0.010734635734635789,
+        "fifty_minus_ambient_risk": 0.0977309727309727
+      },
+      "eaten_by_location_thinning": {
+        "Edge|Amb": 16,
+        "Edge|Eighty": 17,
+        "Edge|Fifty": 19,
+        "Interior|Amb": 18,
+        "Interior|Eighty": 17,
+        "Interior|Fifty": 21
+      },
+      "n_by_location_thinning": {
+        "Edge|Amb": 26,
+        "Edge|Eighty": 28,
+        "Edge|Fifty": 27,
+        "Interior|Amb": 28,
+        "Interior|Eighty": 27,
+        "Interior|Fifty": 28
+      },
+      "risk_by_location_thinning": {
+        "Edge|Amb": 0.6153846153846154,
+        "Edge|Eighty": 0.6071428571428571,
+        "Edge|Fifty": 0.7037037037037037,
+        "Interior|Amb": 0.6428571428571429,
+        "Interior|Eighty": 0.6296296296296297,
+        "Interior|Fifty": 0.75
+      },
+      "site": "WA",
+      "site_average_calculated_shoot_density": 50.71524390243903,
+      "site_average_initial_shoot_density": 89.57926829268293,
+      "site_recorded_predation_fraction": 0.6585365853658537,
+      "source_tether_number_uniques": 42,
+      "taxa": {
+        "Amphipod": 164
+      },
+      "trials": 164
+    }
+  ],
+  "source_doi": "10.26008/1912/bco-dmo.724015.2",
+  "source_paper_doi": "10.1002/ecy.3316",
+  "source_sha256": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb",
+  "tethered_prey_count": 2666,
+  "source_verified_run": {
+    "run_id": 45328106589,
+    "job_id": 138222467329,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45328106589",
+    "source_only_exploratory": true,
+    "status": "completed_success",
+    "source_shas": [
+      "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb"
+    ],
+    "verified_original_sources": {
+      "2014": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034",
+      "2015": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb"
+    }
+  }
+}

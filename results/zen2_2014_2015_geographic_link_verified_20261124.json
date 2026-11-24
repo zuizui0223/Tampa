@@ -1,0 +1,467 @@
+{
+  "candidates": [
+    {
+      "closest_distance_km": 6.614,
+      "closest_subsite_id": "BB.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "BB",
+      "source_2014_subsite_ids": [
+        "BB.A",
+        "BB.B"
+      ],
+      "source_2014_subsite_names": [
+        "Westside Park, Bodega Bay",
+        "Sacramento Landing, Tomales Bay"
+      ],
+      "source_2014_to_2015_distances_km": [
+        6.614,
+        28.585
+      ],
+      "source_2015_lat_lon": [
+        38.379226,
+        -123.053677
+      ],
+      "source_2015_site": "BB"
+    },
+    {
+      "closest_distance_km": 0,
+      "closest_subsite_id": "CR.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "CR",
+      "source_2014_subsite_ids": [
+        "CR.A",
+        "CR.B"
+      ],
+      "source_2014_subsite_names": [
+        "Posedarje",
+        "Sveti Duh"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0,
+        1.229
+      ],
+      "source_2015_lat_lon": [
+        44.21154996,
+        15.490694
+      ],
+      "source_2015_site": "CR"
+    },
+    {
+      "closest_distance_km": 0.097,
+      "closest_subsite_id": "FI.B",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "FI",
+      "source_2014_subsite_ids": [
+        "FI.B",
+        "FI.A"
+      ],
+      "source_2014_subsite_names": [
+        "Angso",
+        "Faro"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0.097,
+        21.447
+      ],
+      "source_2015_lat_lon": [
+        60.1084,
+        21.7113
+      ],
+      "source_2015_site": "FI"
+    },
+    {
+      "closest_distance_km": 0,
+      "closest_subsite_id": "FR.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "FR",
+      "source_2014_subsite_ids": [
+        "FR.A",
+        "FR.B"
+      ],
+      "source_2014_subsite_names": [
+        "Bouzigues, Etang de Thau",
+        "Peyrac sur mer, Etang de Bages-Sigean"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0,
+        68.882
+      ],
+      "source_2015_lat_lon": [
+        43.446971,
+        3.661503
+      ],
+      "source_2015_site": "FR"
+    },
+    {
+      "closest_distance_km": null,
+      "closest_subsite_id": null,
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": false,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": null,
+      "source_2014_subsite_ids": [],
+      "source_2014_subsite_names": [],
+      "source_2014_to_2015_distances_km": [],
+      "source_2015_lat_lon": [
+        54.5191,
+        -5.553248
+      ],
+      "source_2015_site": "GA"
+    },
+    {
+      "closest_distance_km": 0,
+      "closest_subsite_id": "JN.B",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "JN",
+      "source_2014_subsite_ids": [
+        "JN.B",
+        "JN.A"
+      ],
+      "source_2014_subsite_names": [
+        "Akkeshi-bay",
+        "Akkeshi-ko estuary"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0,
+        6.01
+      ],
+      "source_2015_lat_lon": [
+        43.052222,
+        144.842699
+      ],
+      "source_2015_site": "JN"
+    },
+    {
+      "closest_distance_km": 0.399,
+      "closest_subsite_id": "JS.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "JS",
+      "source_2014_subsite_ids": [
+        "JS.A",
+        "JS.B"
+      ],
+      "source_2014_subsite_names": [
+        "Ikunoshima",
+        "Onoura"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0.399,
+        59.705
+      ],
+      "source_2015_lat_lon": [
+        34.294296,
+        132.915553
+      ],
+      "source_2015_site": "JS"
+    },
+    {
+      "closest_distance_km": 0.218,
+      "closest_subsite_id": "KO.A",
+      "code_mapping_ambiguous": true,
+      "eligible_as_prior_site_context": false,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "KO",
+      "source_2014_subsite_ids": [
+        "KO.A",
+        "KO.B"
+      ],
+      "source_2014_subsite_names": [
+        "Dongdae bay",
+        "Koje bay"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0.218,
+        52.666
+      ],
+      "source_2015_lat_lon": [
+        34.8944,
+        128.0179
+      ],
+      "source_2015_site": "KOA"
+    },
+    {
+      "closest_distance_km": 0.008,
+      "closest_subsite_id": "KO.B",
+      "code_mapping_ambiguous": true,
+      "eligible_as_prior_site_context": false,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "KO",
+      "source_2014_subsite_ids": [
+        "KO.A",
+        "KO.B"
+      ],
+      "source_2014_subsite_names": [
+        "Dongdae bay",
+        "Koje bay"
+      ],
+      "source_2014_to_2015_distances_km": [
+        52.462,
+        0.008
+      ],
+      "source_2015_lat_lon": [
+        34.8009,
+        128.5837
+      ],
+      "source_2015_site": "KOB"
+    },
+    {
+      "closest_distance_km": 0.694,
+      "closest_subsite_id": "MX.B",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "MX",
+      "source_2014_subsite_ids": [
+        "MX.B",
+        "MX.A"
+      ],
+      "source_2014_subsite_names": [
+        "Punta Banda Estuary",
+        "San Quintin Bay"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0.694,
+        161.094
+      ],
+      "source_2015_lat_lon": [
+        31.752923,
+        -116.626152
+      ],
+      "source_2015_site": "MX"
+    },
+    {
+      "closest_distance_km": 0.155,
+      "closest_subsite_id": "NC.B",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "NC",
+      "source_2014_subsite_ids": [
+        "NC.A",
+        "NC.B"
+      ],
+      "source_2014_subsite_names": [
+        "Middle Marsh",
+        "Shackleford Island"
+      ],
+      "source_2014_to_2015_distances_km": [
+        5.008,
+        0.155
+      ],
+      "source_2015_lat_lon": [
+        34.67183,
+        -76.57391
+      ],
+      "source_2015_site": "NC"
+    },
+    {
+      "closest_distance_km": 0.051,
+      "closest_subsite_id": "OR.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "OR",
+      "source_2014_subsite_ids": [
+        "OR.A",
+        "OR.B"
+      ],
+      "source_2014_subsite_names": [
+        "Yaquina Bay",
+        "Coos Bay"
+      ],
+      "source_2014_to_2015_distances_km": [
+        0.051,
+        142.954
+      ],
+      "source_2015_lat_lon": [
+        44.613039,
+        -124.013658
+      ],
+      "source_2015_site": "OR"
+    },
+    {
+      "closest_distance_km": 0.866,
+      "closest_subsite_id": "QU.B",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "QU",
+      "source_2014_subsite_ids": [
+        "QU.A",
+        "QU.B"
+      ],
+      "source_2014_subsite_names": [
+        "Pointe-Lebel",
+        "Baie-St-Ludger"
+      ],
+      "source_2014_to_2015_distances_km": [
+        10.44,
+        0.866
+      ],
+      "source_2015_lat_lon": [
+        49.0818,
+        -68.3115
+      ],
+      "source_2015_site": "QU"
+    },
+    {
+      "closest_distance_km": 0.094,
+      "closest_subsite_id": "SD.B",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "SD",
+      "source_2014_subsite_ids": [
+        "SD.A",
+        "SD.B"
+      ],
+      "source_2014_subsite_names": [
+        "Shelter Island",
+        "Coronado"
+      ],
+      "source_2014_to_2015_distances_km": [
+        5.222,
+        0.094
+      ],
+      "source_2015_lat_lon": [
+        32.700527,
+        -117.171924
+      ],
+      "source_2015_site": "SD"
+    },
+    {
+      "closest_distance_km": 1.015,
+      "closest_subsite_id": "SF.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "SF",
+      "source_2014_subsite_ids": [
+        "SF.B",
+        "SF.A"
+      ],
+      "source_2014_subsite_names": [
+        "Point San Pablo",
+        "Point Molate"
+      ],
+      "source_2014_to_2015_distances_km": [
+        4.189,
+        1.015
+      ],
+      "source_2015_lat_lon": [
+        37.94057,
+        -122.409763
+      ],
+      "source_2015_site": "SF"
+    },
+    {
+      "closest_distance_km": 0.616,
+      "closest_subsite_id": "VA.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "VA",
+      "source_2014_subsite_ids": [
+        "VA.B",
+        "VA.A"
+      ],
+      "source_2014_subsite_names": [
+        "Allens Islands",
+        "Goodwin Islands"
+      ],
+      "source_2014_to_2015_distances_km": [
+        5.361,
+        0.616
+      ],
+      "source_2015_lat_lon": [
+        37.22042,
+        -76.394382
+      ],
+      "source_2015_site": "VA"
+    },
+    {
+      "closest_distance_km": 2.653,
+      "closest_subsite_id": "WA.A",
+      "code_mapping_ambiguous": false,
+      "eligible_as_prior_site_context": true,
+      "prior_site_context_unit": "2014 source region-code with 2 subsites, not same permanent plot",
+      "source_2014_region_code": "WA",
+      "source_2014_subsite_ids": [
+        "WA.B",
+        "WA.A"
+      ],
+      "source_2014_subsite_names": [
+        "Dabob Bay",
+        "Willapa Bay"
+      ],
+      "source_2014_to_2015_distances_km": [
+        172.15,
+        2.653
+      ],
+      "source_2015_lat_lon": [
+        46.4978,
+        -124.025611
+      ],
+      "source_2015_site": "WA"
+    }
+  ],
+  "distinct_2014_region_codes": 25,
+  "distinct_2015_site_codes": 17,
+  "eligible_site_codes": [
+    "BB",
+    "CR",
+    "FI",
+    "FR",
+    "JN",
+    "JS",
+    "MX",
+    "NC",
+    "OR",
+    "QU",
+    "SD",
+    "SF",
+    "VA",
+    "WA"
+  ],
+  "evidence_class": "response_blind_original_source_coordinate_audit",
+  "noneligible_site_codes": [
+    "GA",
+    "KOA",
+    "KOB"
+  ],
+  "schema": "tampa.zen2_2014_2015_source_geographic_link_audit_v1",
+  "source_2014_subsites": 50,
+  "source_2015_tether_trials": 2666,
+  "source_shas": {
+    "2014": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034",
+    "2015": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb"
+  },
+  "spatial_maximum_nearest_subsite_km": 25,
+  "strict_limits": [
+    "Same site code plus nearby coordinates is a candidate region-level context, not the same permanent quadrat.",
+    "2014 A/B pair is region-level not 2015 edge-versus-interior orientation.",
+    "No outcomes were accessed in this linkage audit; all 2015/status and 2014 biomass columns are ignored.",
+    "KOA/KOB map ambiguously to 2014 KO and are excluded from direct one-to-one links.",
+    "Do not tune nearest-neighbor distance threshold after seeing any 2015 risk outcome.",
+    "Date difference does not identify mechanistic causation or out-of-sample validation."
+  ],
+  "source_verified_run": {
+    "run_id": 45330784453,
+    "job_id": 138231225604,
+    "head_sha": "e8ce557ac7873725dc9029e96f93c43eb7ce704e",
+    "status": "completed_success",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45330784453"
+  }
+}

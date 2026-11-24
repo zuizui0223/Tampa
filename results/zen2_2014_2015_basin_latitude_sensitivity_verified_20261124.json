@@ -1,0 +1,168 @@
+{
+  "basin_stratified_2015_label_permutation_two_sided_p": 0.0012499375031248437,
+  "basin_stratified_permutations": 20000,
+  "evidence_class": "response_open_posthoc_basin_and_latitude_reanalysis",
+  "latitude_rank_r2014": -0.25274725274725274,
+  "latitude_rank_r2015": -0.17362637362637362,
+  "ocean_category_counts": {
+    "Atlantic_Mediterranean": 6,
+    "Pacific": 8
+  },
+  "partial_spearman_rank_correlation_given_latitude": 0.8235278265905026,
+  "permutation_seed": 202611241432,
+  "same_14_sites_original_spearman_r": 0.8285714285714286,
+  "schema": "tampa.zen2_crossyear_basin_latitude_rank_sensitivity_v1",
+  "source_ledger_files": [
+    "results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json",
+    "results/zen2_2014_2015_geographic_link_verified_20261124.json"
+  ],
+  "source_site_geographies": [
+    {
+      "latitude": 38.379226,
+      "ocean": "Pacific",
+      "shoots2014": 327.1,
+      "shoots2015": 258.25357142857143,
+      "site": "BB"
+    },
+    {
+      "latitude": 44.21154996,
+      "ocean": "Atlantic_Mediterranean",
+      "shoots2014": 332.6,
+      "shoots2015": 1559.7883597883597,
+      "site": "CR"
+    },
+    {
+      "latitude": 60.1084,
+      "ocean": "Atlantic_Mediterranean",
+      "shoots2014": 466.3,
+      "shoots2015": 235.05291005291005,
+      "site": "FI"
+    },
+    {
+      "latitude": 43.446971,
+      "ocean": "Atlantic_Mediterranean",
+      "shoots2014": 93.5,
+      "shoots2015": 222.92992857142855,
+      "site": "FR"
+    },
+    {
+      "latitude": 43.052222,
+      "ocean": "Pacific",
+      "shoots2014": 192.6,
+      "shoots2015": 123.24657692307693,
+      "site": "JN"
+    },
+    {
+      "latitude": 34.294296,
+      "ocean": "Pacific",
+      "shoots2014": 121,
+      "shoots2015": 52.7037037037037,
+      "site": "JS"
+    },
+    {
+      "latitude": 31.752923,
+      "ocean": "Pacific",
+      "shoots2014": 1808,
+      "shoots2015": 1061.232634920635,
+      "site": "MX"
+    },
+    {
+      "latitude": 34.67183,
+      "ocean": "Atlantic_Mediterranean",
+      "shoots2014": 419.4,
+      "shoots2015": 544.1532509881423,
+      "site": "NC"
+    },
+    {
+      "latitude": 44.613039,
+      "ocean": "Pacific",
+      "shoots2014": 170.3,
+      "shoots2015": 102.85428571428571,
+      "site": "OR"
+    },
+    {
+      "latitude": 49.0818,
+      "ocean": "Atlantic_Mediterranean",
+      "shoots2014": 622.3,
+      "shoots2015": 605.5465,
+      "site": "QU"
+    },
+    {
+      "latitude": 32.700527,
+      "ocean": "Pacific",
+      "shoots2014": 1060,
+      "shoots2015": 673.8600502645503,
+      "site": "SD"
+    },
+    {
+      "latitude": 37.94057,
+      "ocean": "Pacific",
+      "shoots2014": 48.4,
+      "shoots2015": 52.9,
+      "site": "SF"
+    },
+    {
+      "latitude": 37.22042,
+      "ocean": "Atlantic_Mediterranean",
+      "shoots2014": 1858.9,
+      "shoots2015": 1457.8910555555556,
+      "site": "VA"
+    },
+    {
+      "latitude": 46.4978,
+      "ocean": "Pacific",
+      "shoots2014": 103.5,
+      "shoots2015": 93.37912087912088,
+      "site": "WA"
+    }
+  ],
+  "strict_limits": [
+    "Basin categorization follows prior 2021 Atlantic/Mediterranean versus Pacific framing; it is derived here from original coordinates.",
+    "This sensitivity was selected after the strong overall r was seen: it is not an independent confirmatory p value.",
+    "Basin-stratified random pairing preserves large basin differences but not spatial autocorrelation or independent-environment gradients within basins.",
+    "Partial rank correlation controlling latitude is descriptive; with fourteen sites it cannot rule out coastline, habitat, climate or lab-method confounding.",
+    "The 2014/2015 surveys are geographically nearby but not same permanent meadow quadrats.",
+    "Spatial rank stability cannot be called biological persistence/resilience, causal time memory or new evidence that trophic interactions are intrinsically variable."
+  ],
+  "within_basin_results": {
+    "Atlantic_Mediterranean": {
+      "n_source_nearest_subsites": 6,
+      "site_codes": [
+        "CR",
+        "FI",
+        "FR",
+        "NC",
+        "QU",
+        "VA"
+      ],
+      "within_basin_spearman_r": 0.37142857142857144
+    },
+    "Pacific": {
+      "n_source_nearest_subsites": 8,
+      "site_codes": [
+        "BB",
+        "JN",
+        "JS",
+        "MX",
+        "OR",
+        "SD",
+        "SF",
+        "WA"
+      ],
+      "within_basin_spearman_r": 0.9285714285714286
+    }
+  },
+  "source_verified_run": {
+    "run_id": 45332093895,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45332093895",
+    "job_id": 138235413078,
+    "status": "completed_success",
+    "artifact": {
+      "id": 14892227785,
+      "name": "zen2-crossyear-shoot-density-basin-latitude-robustness",
+      "digest": "sha256:fb17478504d5f19cb0b86dcb0593004d7e97920f8205a02a532377fd8a750b05",
+      "size_in_bytes": 1631
+    },
+    "strict_evidence_status": "source-locked published 2014/2015 response-open retrospective analysis"
+  }
+}

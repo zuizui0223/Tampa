@@ -1,0 +1,1214 @@
+{
+  "baseline": "mean of the n-1 training sites on the same outcome scale, recomputed inside each fold",
+  "evidence_class": "response_exposed_exploratory_leave_site_out_model_comparison",
+  "interpretation_stops": [
+    "Models, endpoints and transformations were chosen after prior ZEN2 outcomes had already been seen.",
+    "This within-program leave-one-site-out fit is NOT a prospective or untouched independent external validation.",
+    "The original Hovel et al. 2021 already modeled same-year vegetation and predation relationships.",
+    "CV R2 measures prediction error relative to a simple baseline, not the absence/presence of causal ecological interactions.",
+    "Shoot density is from nearby sites in two years, not repeated fixed quadrats or plant-specific survival.",
+    "Risk outcome is a site-level binary tether-assay contrast heavily affected by predation ceiling.",
+    "Reported CV scores are posthoc descriptive; do not claim accepted models or generality without new independent sampled years/sites.",
+    "Only 14 source-matched localities, some sharing research network and physical regimes."
+  ],
+  "model": "one predictor + intercept ordinary least squares, both fitted only within n-1 site labels",
+  "one_geography_one_cv_unit": true,
+  "original_14_site_models": [
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": 5.668341425329363,
+          "distance_km": 6.614,
+          "observed": 5.557806623016953,
+          "predicted": 5.707398795900329,
+          "residual_baseline": -0.11053480231240975,
+          "residual_model": -0.14959217288337623,
+          "site": "BB",
+          "training_slope": 0.8857358721147545
+        },
+        {
+          "baseline_prediction": 5.53025375545132,
+          "distance_km": 0,
+          "observed": 7.352946331431501,
+          "predicted": 5.5847502778104445,
+          "residual_baseline": 1.8226925759801809,
+          "residual_model": 1.7681960536210566,
+          "site": "CR",
+          "training_slope": 0.8789907118989435
+        },
+        {
+          "baseline_prediction": 5.675553013635506,
+          "distance_km": 0.097,
+          "observed": 5.464055975037085,
+          "predicted": 6.058011447584819,
+          "residual_baseline": -0.21149703859842095,
+          "residual_model": -0.5939554725477336,
+          "site": "FI",
+          "training_slope": 0.9000016339307305
+        },
+        {
+          "baseline_prediction": 5.679608612943016,
+          "distance_km": 0,
+          "observed": 5.411333184039457,
+          "predicted": 4.436813817179421,
+          "residual_baseline": -0.26827542890355893,
+          "residual_model": 0.9745193668600365,
+          "site": "FR",
+          "training_slope": 0.9586727334955313
+        },
+        {
+          "baseline_prediction": 5.72492131058587,
+          "distance_km": 0,
+          "observed": 4.822268114682358,
+          "predicted": 5.268094662093737,
+          "residual_baseline": -0.902653195903512,
+          "residual_model": -0.4458265474113787,
+          "site": "JN",
+          "training_slope": 0.8717947716749561
+        },
+        {
+          "baseline_prediction": 5.789443321760644,
+          "distance_km": 0.399,
+          "observed": 3.983481969410291,
+          "predicted": 4.943336251119918,
+          "residual_baseline": -1.8059613523503533,
+          "residual_model": -0.9598542817096272,
+          "site": "JS",
+          "training_slope": 0.8284598499770293
+        },
+        {
+          "baseline_prediction": 5.559855147760611,
+          "distance_km": 0.694,
+          "observed": 6.9681282314107325,
+          "predicted": 7.293596569047981,
+          "residual_baseline": 1.4082730836501218,
+          "residual_model": -0.3254683376372487,
+          "site": "MX",
+          "training_slope": 0.9209141287092539
+        },
+        {
+          "baseline_prediction": 5.61116755405304,
+          "distance_km": 0.155,
+          "observed": 6.301066949609144,
+          "predicted": 5.88421810450584,
+          "residual_baseline": 0.6898993955561039,
+          "residual_model": 0.41684884510330367,
+          "site": "NC",
+          "training_slope": 0.8778279203972202
+        },
+        {
+          "baseline_prediction": 5.738712025731942,
+          "distance_km": 0.051,
+          "observed": 4.642988817783421,
+          "predicted": 5.171284987339222,
+          "residual_baseline": -1.095723207948521,
+          "residual_model": -0.5282961695558006,
+          "site": "OR",
+          "training_slope": 0.8652459586902471
+        },
+        {
+          "baseline_prediction": 5.602958750572218,
+          "distance_km": 0.866,
+          "observed": 6.40778139485983,
+          "predicted": 6.248856733568107,
+          "residual_baseline": 0.8048226442876123,
+          "residual_model": 0.15892466129172345,
+          "site": "QU",
+          "training_slope": 0.8785722722393193
+        },
+        {
+          "baseline_prediction": 5.594749216604923,
+          "distance_km": 0.094,
+          "observed": 6.514505336434677,
+          "predicted": 6.779085240579691,
+          "residual_baseline": 0.9197561198297546,
+          "residual_model": -0.2645799041450134,
+          "site": "SD",
+          "training_slope": 0.9054381455090705
+        },
+        {
+          "baseline_prediction": 5.789162667260285,
+          "distance_km": 1.015,
+          "observed": 3.9871304779149517,
+          "predicted": 4.033718168393634,
+          "residual_baseline": -1.8020321893453337,
+          "residual_model": -0.04658769047868194,
+          "site": "SF",
+          "training_slope": 0.8799592145638407
+        },
+        {
+          "baseline_prediction": 5.53544717516851,
+          "distance_km": 0.616,
+          "observed": 7.285431875108035,
+          "predicted": 7.213407921681285,
+          "residual_baseline": 1.7499846999395245,
+          "residual_model": 0.07202395342674972,
+          "site": "VA",
+          "training_slope": 0.8773586983632295
+        },
+        {
+          "baseline_prediction": 5.746071175441418,
+          "distance_km": 2.653,
+          "observed": 4.54731987156023,
+          "predicted": 4.707339597307556,
+          "residual_baseline": -1.1987513038811883,
+          "residual_model": -0.16001972574732548,
+          "site": "WA",
+          "training_slope": 0.8743196814087537
+        }
+      ],
+      "later_outcome": "year2015_ambient_shoot_density",
+      "n_site_codes": 14,
+      "n_sites_model_absolute_error_better_than_fold_reference": 11,
+      "prior_predictor": "year2014_shoot_density",
+      "prior_state_model_rmse": 0.6686052083445332,
+      "response_scale": "log1p_response",
+      "site_codes": [
+        "BB",
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": 0.6936283074816676,
+      "slope_max_across_folds": 0.9586727334955313,
+      "slope_min_across_folds": 0.8284598499770293,
+      "training_only_reference_mean_rmse": 1.2079402075936732
+    },
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": 0.010446745569953198,
+          "distance_km": 6.614,
+          "observed": 0.055555555555555546,
+          "predicted": 0.009877235421060934,
+          "residual_baseline": 0.04510880998560235,
+          "residual_model": 0.04567832013449461,
+          "site": "BB",
+          "training_slope": -0.012915246495939598
+        },
+        {
+          "baseline_prediction": 0.014720249843457472,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": 0.013929872959691003,
+          "residual_baseline": -0.014720249843457472,
+          "residual_model": -0.013929872959691003,
+          "site": "CR",
+          "training_slope": -0.012748225201457243
+        },
+        {
+          "baseline_prediction": 0.02196454401082856,
+          "distance_km": 0.097,
+          "observed": -0.09417582417582417,
+          "predicted": 0.017698347159073716,
+          "residual_baseline": -0.11614036818665273,
+          "residual_model": -0.11187417133489788,
+          "site": "FI",
+          "training_slope": -0.010039219419484312
+        },
+        {
+          "baseline_prediction": 0.014720249843457472,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": 0.0346956801256017,
+          "residual_baseline": -0.014720249843457472,
+          "residual_model": -0.0346956801256017,
+          "site": "FR",
+          "training_slope": -0.015408738768950641
+        },
+        {
+          "baseline_prediction": 0.0052287916340505395,
+          "distance_km": 0,
+          "observed": 0.12338895672229011,
+          "predicted": 0.010130343472292282,
+          "residual_baseline": 0.11816016508823957,
+          "residual_model": 0.11325861324999784,
+          "site": "JN",
+          "training_slope": -0.009353979851607777
+        },
+        {
+          "baseline_prediction": 0.011260746383954016,
+          "distance_km": 0.399,
+          "observed": 0.04497354497354492,
+          "predicted": 0.023001638371922324,
+          "residual_baseline": 0.033712798589590906,
+          "residual_model": 0.0219719066016226,
+          "site": "JS",
+          "training_slope": -0.011496012682630034
+        },
+        {
+          "baseline_prediction": 0.012786997910205536,
+          "distance_km": 0.694,
+          "observed": 0.025132275132275155,
+          "predicted": -0.020744322762441605,
+          "residual_baseline": 0.01234527722206962,
+          "residual_model": 0.045876597894716764,
+          "site": "MX",
+          "training_slope": -0.017810883781499674
+        },
+        {
+          "baseline_prediction": 0.014720249843457472,
+          "distance_km": 0.155,
+          "observed": 0,
+          "predicted": 0.01079993631886468,
+          "residual_baseline": -0.014720249843457472,
+          "residual_model": -0.01079993631886468,
+          "site": "NC",
+          "training_slope": -0.012603383010550868
+        },
+        {
+          "baseline_prediction": 0.009524628750400482,
+          "distance_km": 0.051,
+          "observed": 0.06754307420974087,
+          "predicted": 0.016647418468061823,
+          "residual_baseline": 0.05801844545934039,
+          "residual_model": 0.05089565574167905,
+          "site": "OR",
+          "training_slope": -0.010861246646377625
+        },
+        {
+          "baseline_prediction": 0.013533165323039617,
+          "distance_km": 0.866,
+          "observed": 0.015432098765432093,
+          "predicted": 0.0037580524328935244,
+          "residual_baseline": 0.0018989334423924753,
+          "residual_model": 0.011674046332538568,
+          "site": "QU",
+          "training_slope": -0.013296439018832148
+        },
+        {
+          "baseline_prediction": 0.015009846286900068,
+          "distance_km": 0.094,
+          "observed": -0.0037647537647537512,
+          "predicted": -0.001506478014032725,
+          "residual_baseline": -0.01877460005165382,
+          "residual_model": -0.0022582757507210263,
+          "site": "SD",
+          "training_slope": -0.012626914780041834
+        },
+        {
+          "baseline_prediction": 0.012759864549738844,
+          "distance_km": 1.015,
+          "observed": 0.025485008818342147,
+          "predicted": 0.04213771926512649,
+          "residual_baseline": 0.012725144268603304,
+          "residual_model": -0.01665271044678434,
+          "site": "SF",
+          "training_slope": -0.014726363594869124
+        },
+        {
+          "baseline_prediction": 0.017498825960364423,
+          "distance_km": 0.616,
+          "observed": -0.03612148951979036,
+          "predicted": 0.0008755650095312734,
+          "residual_baseline": -0.053620315480154786,
+          "residual_model": -0.03699705452932164,
+          "site": "VA",
+          "training_slope": -0.008691837768365957
+        },
+        {
+          "baseline_prediction": 0.017188342055139427,
+          "distance_km": 2.653,
+          "observed": -0.03208519875186544,
+          "predicted": 0.038146437018336726,
+          "residual_baseline": -0.04927354080700487,
+          "residual_model": -0.07023163577020217,
+          "site": "WA",
+          "training_slope": -0.017640818183343628
+        }
+      ],
+      "later_outcome": "year2015_edge_minus_interior_risk",
+      "n_site_codes": 14,
+      "n_sites_model_absolute_error_better_than_fold_reference": 8,
+      "prior_predictor": "year2014_shoot_density",
+      "prior_state_model_rmse": 0.054011955124162216,
+      "response_scale": "risk_difference",
+      "site_codes": [
+        "BB",
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": -0.005679852546752295,
+      "slope_max_across_folds": -0.008691837768365957,
+      "slope_min_across_folds": -0.017810883781499674,
+      "training_only_reference_mean_rmse": 0.0538592155005372
+    },
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": -0.018563013271236082,
+          "distance_km": 6.614,
+          "observed": 0.047619047619047616,
+          "predicted": -0.018034107875648783,
+          "residual_baseline": 0.0661820608902837,
+          "residual_model": 0.0656531554946964,
+          "site": "BB",
+          "training_slope": 0.011994419362550378
+        },
+        {
+          "baseline_prediction": -0.014900009608232418,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": -0.014149107429025476,
+          "residual_baseline": 0.014900009608232418,
+          "residual_model": 0.014149107429025476,
+          "site": "CR",
+          "training_slope": 0.012111525882661763
+        },
+        {
+          "baseline_prediction": -0.02319921752282495,
+          "distance_km": 0.097,
+          "observed": 0.10788970288970293,
+          "predicted": -0.019364442956189346,
+          "residual_baseline": 0.13108892041252787,
+          "residual_model": 0.12725414584589229,
+          "site": "FI",
+          "training_slope": 0.009023995993733158
+        },
+        {
+          "baseline_prediction": -0.014900009608232418,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": -0.03398139709553731,
+          "residual_baseline": 0.014900009608232418,
+          "residual_model": 0.03398139709553731,
+          "site": "FR",
+          "training_slope": 0.014719087948950238
+        },
+        {
+          "baseline_prediction": -0.012262333893633626,
+          "distance_km": 0,
+          "observed": -0.0342897842897843,
+          "predicted": -0.018382033678952567,
+          "residual_baseline": -0.022027450396150672,
+          "residual_model": -0.01590775061083173,
+          "site": "JN",
+          "training_slope": 0.011678658183955052
+        },
+        {
+          "baseline_prediction": -0.018257762965985778,
+          "distance_km": 0.399,
+          "observed": 0.04365079365079366,
+          "predicted": -0.03546880533620027,
+          "residual_baseline": 0.06190855661677944,
+          "residual_model": 0.07911959898699393,
+          "site": "JS",
+          "training_slope": 0.01685207236145496
+        },
+        {
+          "baseline_prediction": -0.01093175563997845,
+          "distance_km": 0.694,
+          "observed": -0.05158730158730157,
+          "predicted": 0.028423803185051638,
+          "residual_baseline": -0.040655545947323124,
+          "residual_model": -0.08001110477235321,
+          "site": "MX",
+          "training_slope": 0.020904553424296955
+        },
+        {
+          "baseline_prediction": -0.014900009608232418,
+          "distance_km": 0.155,
+          "observed": 0,
+          "predicted": -0.011179629681112468,
+          "residual_baseline": 0.014900009608232418,
+          "residual_model": 0.011179629681112468,
+          "site": "NC",
+          "training_slope": 0.011960618167938081
+        },
+        {
+          "baseline_prediction": -0.01616578087400368,
+          "distance_km": 0.051,
+          "observed": 0.016455026455026417,
+          "predicted": -0.025181121592576863,
+          "residual_baseline": 0.032620807329030096,
+          "residual_model": 0.04163614804760328,
+          "site": "OR",
+          "training_slope": 0.013747119180391069
+        },
+        {
+          "baseline_prediction": -0.016680636388859197,
+          "distance_km": 0.866,
+          "observed": 0.02314814814814814,
+          "predicted": -0.008739424829362352,
+          "residual_baseline": 0.03982878453700733,
+          "residual_model": 0.03188757297751049,
+          "site": "QU",
+          "training_slope": 0.010801904430478305
+        },
+        {
+          "baseline_prediction": -0.013577258285481094,
+          "distance_km": 0.094,
+          "observed": -0.01719576719576721,
+          "predicted": 0.004484266528783351,
+          "residual_baseline": -0.003618508910286115,
+          "residual_model": -0.02168003372455056,
+          "site": "SD",
+          "training_slope": 0.013808237866487511
+        },
+        {
+          "baseline_prediction": 0.0027841580759352647,
+          "distance_km": 1.015,
+          "observed": -0.22989417989417987,
+          "predicted": 0.04111544405269994,
+          "residual_baseline": -0.23267833797011514,
+          "residual_model": -0.27100962394687983,
+          "site": "SF",
+          "training_slope": -0.01921448859426346
+        },
+        {
+          "baseline_prediction": -0.008072226918380767,
+          "distance_km": 0.616,
+          "observed": -0.08876117496807145,
+          "predicted": 0.043201781654770205,
+          "residual_baseline": -0.08068894804969069,
+          "residual_model": -0.13196295662284166,
+          "site": "VA",
+          "training_slope": 0.026809743621891292
+        },
+        {
+          "baseline_prediction": -0.014074268397875818,
+          "distance_km": 2.653,
+          "observed": -0.010734635734635789,
+          "predicted": -0.030111028710870708,
+          "residual_baseline": 0.0033396326632400292,
+          "residual_model": 0.01937639297623492,
+          "site": "WA",
+          "training_slope": 0.013498439310833488
+        }
+      ],
+      "later_outcome": "year2015_eighty_minus_ambient_risk",
+      "n_site_codes": 14,
+      "n_sites_model_absolute_error_better_than_fold_reference": 6,
+      "prior_predictor": "year2014_shoot_density",
+      "prior_state_model_rmse": 0.09612302694434874,
+      "response_scale": "risk_difference",
+      "site_codes": [
+        "BB",
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": -0.4133168972657808,
+      "slope_max_across_folds": 0.026809743621891292,
+      "slope_min_across_folds": -0.01921448859426346,
+      "training_only_reference_mean_rmse": 0.08085514546160373
+    },
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": 0.010446745569953198,
+          "distance_km": 6.614,
+          "observed": 0.055555555555555546,
+          "predicted": 0.012647806659221564,
+          "residual_baseline": 0.04510880998560235,
+          "residual_model": 0.04290774889633398,
+          "site": "BB",
+          "training_slope": 0.03419647274112194
+        },
+        {
+          "baseline_prediction": 0.014720249843457472,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": 0.016445701927502523,
+          "residual_baseline": -0.014720249843457472,
+          "residual_model": -0.016445701927502523,
+          "site": "CR",
+          "training_slope": 0.041504873993946506
+        },
+        {
+          "baseline_prediction": 0.02196454401082856,
+          "distance_km": 0.097,
+          "observed": -0.09417582417582417,
+          "predicted": 0.026196576960656043,
+          "residual_baseline": -0.11614036818665273,
+          "residual_model": -0.1203724011364802,
+          "site": "FI",
+          "training_slope": -0.018465046521532018
+        },
+        {
+          "baseline_prediction": 0.014720249843457472,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": 0.007064158143936936,
+          "residual_baseline": -0.014720249843457472,
+          "residual_model": -0.007064158143936936,
+          "site": "FR",
+          "training_slope": 0.0369498756108857
+        },
+        {
+          "baseline_prediction": 0.0052287916340505395,
+          "distance_km": 0,
+          "observed": 0.12338895672229011,
+          "predicted": 0.000101775278690968,
+          "residual_baseline": 0.11816016508823957,
+          "residual_model": 0.12328718144359914,
+          "site": "JN",
+          "training_slope": 0.061763153393655894
+        },
+        {
+          "baseline_prediction": 0.011260746383954016,
+          "distance_km": 0.399,
+          "observed": 0.04497354497354492,
+          "predicted": -0.004364468394410406,
+          "residual_baseline": 0.033712798589590906,
+          "residual_model": 0.049338013367955326,
+          "site": "JS",
+          "training_slope": 0.0651531986871503
+        },
+        {
+          "baseline_prediction": 0.012786997910205536,
+          "distance_km": 0.694,
+          "observed": 0.025132275132275155,
+          "predicted": 0.020159898582589583,
+          "residual_baseline": 0.01234527722206962,
+          "residual_model": 0.004972376549685572,
+          "site": "MX",
+          "training_slope": 0.03800870352281029
+        },
+        {
+          "baseline_prediction": 0.014720249843457472,
+          "distance_km": 0.155,
+          "observed": 0,
+          "predicted": 0.01619815230540966,
+          "residual_baseline": -0.014720249843457472,
+          "residual_model": -0.01619815230540966,
+          "site": "NC",
+          "training_slope": 0.0412846412341197
+        },
+        {
+          "baseline_prediction": 0.009524628750400482,
+          "distance_km": 0.051,
+          "observed": 0.06754307420974087,
+          "predicted": 0.009183285962597359,
+          "residual_baseline": 0.05801844545934039,
+          "residual_model": 0.05835978824714351,
+          "site": "OR",
+          "training_slope": -0.001028529781992864
+        },
+        {
+          "baseline_prediction": 0.013533165323039617,
+          "distance_km": 0.866,
+          "observed": 0.015432098765432093,
+          "predicted": 0.003631135654154265,
+          "residual_baseline": 0.0018989334423924753,
+          "residual_model": 0.011800963111277828,
+          "site": "QU",
+          "training_slope": 0.045502034584929824
+        },
+        {
+          "baseline_prediction": 0.015009846286900068,
+          "distance_km": 0.094,
+          "observed": -0.0037647537647537512,
+          "predicted": 0.011267996663376498,
+          "residual_baseline": -0.01877460005165382,
+          "residual_model": -0.01503275042813025,
+          "site": "SD",
+          "training_slope": 0.03681354851779207
+        },
+        {
+          "baseline_prediction": 0.012759864549738844,
+          "distance_km": 1.015,
+          "observed": 0.025485008818342147,
+          "predicted": 0.015157024818787414,
+          "residual_baseline": 0.012725144268603304,
+          "residual_model": 0.010327983999554733,
+          "site": "SF",
+          "training_slope": 0.038697577819030056
+        },
+        {
+          "baseline_prediction": 0.017498825960364423,
+          "distance_km": 0.616,
+          "observed": -0.03612148951979036,
+          "predicted": 0.016986877575877184,
+          "residual_baseline": -0.053620315480154786,
+          "residual_model": -0.05310836709566755,
+          "site": "VA",
+          "training_slope": 0.038558972345206534
+        },
+        {
+          "baseline_prediction": 0.017188342055139427,
+          "distance_km": 2.653,
+          "observed": -0.03208519875186544,
+          "predicted": 0.05629546872123602,
+          "residual_baseline": -0.04927354080700487,
+          "residual_model": -0.08838066747310146,
+          "site": "WA",
+          "training_slope": 0.10796220104319107
+        }
+      ],
+      "later_outcome": "year2015_edge_minus_interior_risk",
+      "n_site_codes": 14,
+      "n_sites_model_absolute_error_better_than_fold_reference": 6,
+      "prior_predictor": "year2014_epiphyton",
+      "prior_state_model_rmse": 0.05920994495560554,
+      "response_scale": "risk_difference",
+      "site_codes": [
+        "BB",
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": -0.20856292719049696,
+      "slope_max_across_folds": 0.10796220104319107,
+      "slope_min_across_folds": -0.018465046521532018,
+      "training_only_reference_mean_rmse": 0.0538592155005372
+    },
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": -0.018563013271236082,
+          "distance_km": 6.614,
+          "observed": 0.047619047619047616,
+          "predicted": -0.02659748950196123,
+          "residual_baseline": 0.0661820608902837,
+          "residual_model": 0.07421653712100884,
+          "site": "BB",
+          "training_slope": -0.12482649788903048
+        },
+        {
+          "baseline_prediction": -0.014900009608232418,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": -0.019740456215425414,
+          "residual_baseline": 0.014900009608232418,
+          "residual_model": 0.019740456215425414,
+          "site": "CR",
+          "training_slope": -0.11643448598989065
+        },
+        {
+          "baseline_prediction": -0.02319921752282495,
+          "distance_km": 0.097,
+          "observed": 0.10788970288970293,
+          "predicted": -0.01005399098584904,
+          "residual_baseline": 0.13108892041252787,
+          "residual_model": 0.11794369387555197,
+          "site": "FI",
+          "training_slope": -0.05735475654820501
+        },
+        {
+          "baseline_prediction": -0.014900009608232418,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": 0.009752951909013869,
+          "residual_baseline": 0.014900009608232418,
+          "residual_model": -0.009752951909013869,
+          "site": "FR",
+          "training_slope": -0.11898027051573183
+        },
+        {
+          "baseline_prediction": -0.012262333893633626,
+          "distance_km": 0,
+          "observed": -0.0342897842897843,
+          "predicted": -0.0022735319248370495,
+          "residual_baseline": -0.022027450396150672,
+          "residual_model": -0.03201625236494725,
+          "site": "JN",
+          "training_slope": -0.12033117615720326
+        },
+        {
+          "baseline_prediction": -0.018257762965985778,
+          "distance_km": 0.399,
+          "observed": 0.04365079365079366,
+          "predicted": 0.0044681420528248665,
+          "residual_baseline": 0.06190855661677944,
+          "residual_model": 0.0391826515979688,
+          "site": "JS",
+          "training_slope": -0.09476128335119535
+        },
+        {
+          "baseline_prediction": -0.01093175563997845,
+          "distance_km": 0.694,
+          "observed": -0.05158730158730157,
+          "predicted": -0.031583335799687466,
+          "residual_baseline": -0.040655545947323124,
+          "residual_model": -0.020003965787614104,
+          "site": "MX",
+          "training_slope": -0.10646281869875222
+        },
+        {
+          "baseline_prediction": -0.014900009608232418,
+          "distance_km": 0.155,
+          "observed": 0,
+          "predicted": -0.01905760510236488,
+          "residual_baseline": 0.014900009608232418,
+          "residual_model": 0.01905760510236488,
+          "site": "NC",
+          "training_slope": -0.1161408433849704
+        },
+        {
+          "baseline_prediction": -0.01616578087400368,
+          "distance_km": 0.051,
+          "observed": 0.016455026455026417,
+          "predicted": -0.07577785754357824,
+          "residual_baseline": 0.032620807329030096,
+          "residual_model": 0.09223288399860466,
+          "site": "OR",
+          "training_slope": -0.17962235738363655
+        },
+        {
+          "baseline_prediction": -0.016680636388859197,
+          "distance_km": 0.866,
+          "observed": 0.02314814814814814,
+          "predicted": 0.006618220548320449,
+          "residual_baseline": 0.03982878453700733,
+          "residual_model": 0.01652992759982769,
+          "site": "QU",
+          "training_slope": -0.10706344351563819
+        },
+        {
+          "baseline_prediction": -0.013577258285481094,
+          "distance_km": 0.094,
+          "observed": -0.01719576719576721,
+          "predicted": -0.001577135531553286,
+          "residual_baseline": -0.003618508910286115,
+          "residual_model": -0.015618631664213923,
+          "site": "SD",
+          "training_slope": -0.11806115842923294
+        },
+        {
+          "baseline_prediction": 0.0027841580759352647,
+          "distance_km": 1.015,
+          "observed": -0.22989417989417987,
+          "predicted": -0.0024695139982758643,
+          "residual_baseline": -0.23267833797011514,
+          "residual_model": -0.22742466589590402,
+          "site": "SF",
+          "training_slope": -0.08481050956519537
+        },
+        {
+          "baseline_prediction": -0.008072226918380767,
+          "distance_km": 0.616,
+          "observed": -0.08876117496807145,
+          "predicted": -0.006518683479632501,
+          "residual_baseline": -0.08068894804969069,
+          "residual_model": -0.08224249148843896,
+          "site": "VA",
+          "training_slope": -0.11700991800524885
+        },
+        {
+          "baseline_prediction": -0.014074268397875818,
+          "distance_km": 2.653,
+          "observed": -0.010734635734635789,
+          "predicted": -0.07292998595176019,
+          "residual_baseline": 0.0033396326632400292,
+          "residual_model": 0.0621953502171244,
+          "site": "WA",
+          "training_slope": -0.1624817099283957
+        }
+      ],
+      "later_outcome": "year2015_eighty_minus_ambient_risk",
+      "n_site_codes": 14,
+      "n_sites_model_absolute_error_better_than_fold_reference": 6,
+      "prior_predictor": "year2014_epiphyton",
+      "prior_state_model_rmse": 0.08220420533904248,
+      "response_scale": "risk_difference",
+      "site_codes": [
+        "BB",
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": -0.03364818239054568,
+      "slope_max_across_folds": -0.05735475654820501,
+      "slope_min_across_folds": -0.17962235738363655,
+      "training_only_reference_mean_rmse": 0.08085514546160373
+    }
+  ],
+  "original_geographic_cohort_site_count": 14,
+  "original_sources": {
+    "2014": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034",
+    "2015": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb"
+  },
+  "schema": "tampa.zen2_crossyear_site_cv_predictive_skill_v1",
+  "stricter_5km_sensitivity": [
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": 5.527957683154185,
+          "distance_km": 0,
+          "observed": 7.352946331431501,
+          "predicted": 5.585780363327845,
+          "residual_baseline": 1.8249886482773165,
+          "residual_model": 1.7671659681036562,
+          "site": "CR",
+          "training_slope": 0.8790286103743061
+        },
+        {
+          "baseline_prediction": 5.6853652128537195,
+          "distance_km": 0.097,
+          "observed": 5.464055975037085,
+          "predicted": 6.073553726294581,
+          "residual_baseline": -0.22130923781663459,
+          "residual_model": -0.6094977512574964,
+          "site": "FI",
+          "training_slope": 0.9008894777618418
+        },
+        {
+          "baseline_prediction": 5.689758778770188,
+          "distance_km": 0,
+          "observed": 5.411333184039457,
+          "predicted": 4.443201988097139,
+          "residual_baseline": -0.2784255947307308,
+          "residual_model": 0.968131195942318,
+          "site": "FR",
+          "training_slope": 0.9583925539430471
+        },
+        {
+          "baseline_prediction": 5.738847534549946,
+          "distance_km": 0,
+          "observed": 4.822268114682358,
+          "predicted": 5.282254838056545,
+          "residual_baseline": -0.9165794198675883,
+          "residual_model": -0.459986723374187,
+          "site": "JN",
+          "training_slope": 0.8718359556974583
+        },
+        {
+          "baseline_prediction": 5.808746379989286,
+          "distance_km": 0.399,
+          "observed": 3.983481969410291,
+          "predicted": 4.960914326998699,
+          "residual_baseline": -1.8252644105789946,
+          "residual_model": -0.9774323575884081,
+          "site": "JS",
+          "training_slope": 0.8279866817460483
+        },
+        {
+          "baseline_prediction": 5.560025858155915,
+          "distance_km": 0.694,
+          "observed": 6.9681282314107325,
+          "predicted": 7.311882971318297,
+          "residual_baseline": 1.4081023732548177,
+          "residual_model": -0.3437547399075642,
+          "site": "MX",
+          "training_slope": 0.9233668750371118
+        },
+        {
+          "baseline_prediction": 5.615614298306047,
+          "distance_km": 0.155,
+          "observed": 6.301066949609144,
+          "predicted": 5.893433532548094,
+          "residual_baseline": 0.6854526513030965,
+          "residual_model": 0.4076334170610494,
+          "site": "NC",
+          "training_slope": 0.8782960272696829
+        },
+        {
+          "baseline_prediction": 5.753787475958191,
+          "distance_km": 0.051,
+          "observed": 4.642988817783421,
+          "predicted": 5.185982520549378,
+          "residual_baseline": -1.1107986581747697,
+          "residual_model": -0.5429937027659566,
+          "site": "OR",
+          "training_slope": 0.8651739725692323
+        },
+        {
+          "baseline_prediction": 5.60672142786849,
+          "distance_km": 0.866,
+          "observed": 6.40778139485983,
+          "predicted": 6.260079958090271,
+          "residual_baseline": 0.8010599669913399,
+          "residual_model": 0.14770143676955882,
+          "site": "QU",
+          "training_slope": 0.8794041700313436
+        },
+        {
+          "baseline_prediction": 5.597827766070586,
+          "distance_km": 0.094,
+          "observed": 6.514505336434677,
+          "predicted": 6.794419514629262,
+          "residual_baseline": 0.916677570364091,
+          "residual_model": -0.2799141781945851,
+          "site": "SD",
+          "training_slope": 0.9070425599361716
+        },
+        {
+          "baseline_prediction": 5.808442337613897,
+          "distance_km": 1.015,
+          "observed": 3.9871304779149517,
+          "predicted": 4.048097086267492,
+          "residual_baseline": -1.8213118596989455,
+          "residual_model": -0.06096660835254042,
+          "site": "SF",
+          "training_slope": 0.8786884926426677
+        },
+        {
+          "baseline_prediction": 5.533583887847807,
+          "distance_km": 0.616,
+          "observed": 7.285431875108035,
+          "predicted": 7.228461318538575,
+          "residual_baseline": 1.751847987260228,
+          "residual_model": 0.056970556569459596,
+          "site": "VA",
+          "training_slope": 0.8794004613632969
+        },
+        {
+          "baseline_prediction": 5.761759888143457,
+          "distance_km": 2.653,
+          "observed": 4.54731987156023,
+          "predicted": 4.720407240162103,
+          "residual_baseline": -1.214440016583227,
+          "residual_model": -0.17308736860187324,
+          "site": "WA",
+          "training_slope": 0.8738342308609884
+        }
+      ],
+      "later_outcome": "year2015_ambient_shoot_density",
+      "n_site_codes": 13,
+      "n_sites_model_absolute_error_better_than_fold_reference": 11,
+      "prior_predictor": "year2014_shoot_density",
+      "prior_state_model_rmse": 0.696964121969456,
+      "response_scale": "log1p_response",
+      "site_codes": [
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": 0.6943177182919955,
+      "slope_max_across_folds": 0.9583925539430471,
+      "slope_min_across_folds": 0.8279866817460483,
+      "training_only_reference_mean_rmse": 1.260594154828302
+    },
+    {
+      "cross_validation": "each of n site-level records left out once, OLS fit to remaining n-1",
+      "held_out_site_predictions": [
+        {
+          "baseline_prediction": -0.020109931043839086,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": -0.019325760733543945,
+          "residual_baseline": 0.020109931043839086,
+          "residual_model": 0.019325760733543945,
+          "site": "CR",
+          "training_slope": 0.011921068620224653
+        },
+        {
+          "baseline_prediction": -0.029100739617980997,
+          "distance_km": 0.097,
+          "observed": 0.10788970288970293,
+          "predicted": -0.025359923907278016,
+          "residual_baseline": 0.1369904425076839,
+          "residual_model": 0.13324962679698094,
+          "site": "FI",
+          "training_slope": 0.008681507554529712
+        },
+        {
+          "baseline_prediction": -0.020109931043839086,
+          "distance_km": 0,
+          "observed": 0,
+          "predicted": -0.0395736946008563,
+          "residual_baseline": 0.020109931043839086,
+          "residual_model": 0.0395736946008563,
+          "site": "FR",
+          "training_slope": 0.014964361194231354
+        },
+        {
+          "baseline_prediction": -0.017252449019690395,
+          "distance_km": 0,
+          "observed": -0.0342897842897843,
+          "predicted": -0.023361141691120343,
+          "residual_baseline": -0.017037335270093903,
+          "residual_model": -0.010928642598663954,
+          "site": "JN",
+          "training_slope": 0.011664176746933924
+        },
+        {
+          "baseline_prediction": -0.023747497181405227,
+          "distance_km": 0.399,
+          "observed": 0.04365079365079366,
+          "predicted": -0.04116036170738639,
+          "residual_baseline": 0.06739829083219889,
+          "residual_model": 0.08481115535818005,
+          "site": "JS",
+          "training_slope": 0.0170052781888876
+        },
+        {
+          "baseline_prediction": -0.01581098924489729,
+          "distance_km": 0.694,
+          "observed": -0.05158730158730157,
+          "predicted": 0.022288989282208682,
+          "residual_baseline": -0.035776312342404276,
+          "residual_model": -0.07387629086951025,
+          "site": "MX",
+          "training_slope": 0.020081693790681882
+        },
+        {
+          "baseline_prediction": -0.020109931043839086,
+          "distance_km": 0.155,
+          "observed": 0,
+          "predicted": -0.0164106439535375,
+          "residual_baseline": 0.020109931043839086,
+          "residual_model": 0.0164106439535375,
+          "site": "NC",
+          "training_slope": 0.011694903572843293
+        },
+        {
+          "baseline_prediction": -0.021481183248424622,
+          "distance_km": 0.051,
+          "observed": 0.016455026455026417,
+          "predicted": -0.03052044168223693,
+          "residual_baseline": 0.03793620970345104,
+          "residual_model": 0.046975468137263346,
+          "site": "OR",
+          "training_slope": 0.013773270299535597
+        },
+        {
+          "baseline_prediction": -0.0220389433895181,
+          "distance_km": 0.866,
+          "observed": 0.02314814814814814,
+          "predicted": -0.01432098110295102,
+          "residual_baseline": 0.045187091537666244,
+          "residual_model": 0.03746912925109916,
+          "site": "QU",
+          "training_slope": 0.010388183371001277
+        },
+        {
+          "baseline_prediction": -0.01867695044419182,
+          "distance_km": 0.094,
+          "observed": -0.01719576719576721,
+          "predicted": -0.00125266571693676,
+          "residual_baseline": 0.0014811832484246112,
+          "residual_model": -0.01594310147883045,
+          "site": "SD",
+          "training_slope": 0.013207986636296926
+        },
+        {
+          "baseline_prediction": -0.0009520827193240979,
+          "distance_km": 1.015,
+          "observed": -0.22989417989417987,
+          "predicted": 0.03677298532375606,
+          "residual_baseline": -0.22894209717485578,
+          "residual_model": -0.26666716521793593,
+          "site": "SF",
+          "training_slope": -0.01883072831779015
+        },
+        {
+          "baseline_prediction": -0.012713166463166467,
+          "distance_km": 0.616,
+          "observed": -0.08876117496807145,
+          "predicted": 0.037455348529956856,
+          "residual_baseline": -0.076048008504905,
+          "residual_model": -0.1262165234980283,
+          "site": "VA",
+          "training_slope": 0.02603032787620707
+        },
+        {
+          "baseline_prediction": -0.019215378065952773,
+          "distance_km": 2.653,
+          "observed": -0.010734635734635789,
+          "predicted": -0.03554196761969859,
+          "residual_baseline": 0.008480742331316984,
+          "residual_model": 0.024807331885062803,
+          "site": "WA",
+          "training_slope": 0.013700193544364024
+        }
+      ],
+      "later_outcome": "year2015_eighty_minus_ambient_risk",
+      "n_site_codes": 13,
+      "n_sites_model_absolute_error_better_than_fold_reference": 5,
+      "prior_predictor": "year2014_shoot_density",
+      "prior_state_model_rmse": 0.09776605220412675,
+      "response_scale": "risk_difference",
+      "site_codes": [
+        "CR",
+        "FI",
+        "FR",
+        "JN",
+        "JS",
+        "MX",
+        "NC",
+        "OR",
+        "QU",
+        "SD",
+        "SF",
+        "VA",
+        "WA"
+      ],
+      "site_equal_cv_r2_against_fold_training_mean": -0.41449383611424495,
+      "slope_max_across_folds": 0.02603032787620707,
+      "slope_min_across_folds": -0.01883072831779015,
+      "training_only_reference_mean_rmse": 0.08220297760011726
+    }
+  ],
+  "source_verified_run": {
+    "run_id": 45332093895,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45332093895",
+    "job_id": 138235413185,
+    "status": "completed_success",
+    "artifact": {
+      "id": 14892441845,
+      "name": "zen2-crossyear-host-vs-interaction-14site-cv",
+      "digest": "sha256:7c05fdab20721f15dbb6e7ed048c919729e701c5249f13a6caa217fe6a4de835",
+      "size_in_bytes": 7904
+    },
+    "strict_evidence_status": "source-locked published 2014/2015 response-open retrospective analysis"
+  }
+}

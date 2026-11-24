@@ -1,0 +1,1031 @@
+{
+  "assay_baseline_risk_and_upper_bound": {
+    "interpretation": "Descriptive binary-assay ceiling: an observed change from ambient baseline cannot exceed (1 minus ambient consumption). This is NOT a bound on the true biological response with free-moving prey.",
+    "site_equal_mean_ambient_predation": 0.7619178098589863,
+    "site_equal_mean_max_possible_predation_increase": 0.2380821901410137,
+    "site_equal_median_ambient_predation": 0.8689458689458689,
+    "sites_with_ambient_predation_at_least_75pct": [
+      "BB",
+      "CR",
+      "FR",
+      "GA",
+      "JN",
+      "KOA",
+      "KOB",
+      "MX",
+      "NC",
+      "SF",
+      "VA"
+    ],
+    "sites_with_ambient_predation_at_least_90pct": [
+      "BB",
+      "CR",
+      "FR",
+      "GA",
+      "KOB",
+      "MX",
+      "NC",
+      "VA"
+    ]
+  },
+  "count_100pct_consumed_sites": 3,
+  "interpretation_stops": [
+    "Amphipod-versus-isopod prey taxon is completely confounded by site: 15 versus 2 sites, with no within-site taxon comparison.",
+    "Three sites at 100% eaten limit estimability of upward risk changes but removing them post hoc selects on the outcome.",
+    "Tether label is reused over repeated deployment rounds; don't count distinct IDs as independent habitat blocks.",
+    "Original Hovel 2021 already studied patch-edge risk and shoot thinning and found adjusted edges could be safer.",
+    "Prey size was assessed after the global null and original site-roster review: even within original factorial cells it is observational and can reflect tethering and survival bias.",
+    "Actual measured patch architecture, prey size, epibiont biomass and predator community are not identified as causal mediators here.",
+    "A calibrated longer-term survival probability and reciprocal seagrass-grazer demographic feedback are not observed."
+  ],
+  "manipulation_fidelity_source_count_diagnostic": {
+    "site_mean_post_pre_ratios": {
+      "Amb": {
+        "max": 1,
+        "maximum_absolute_deviation_from_nominal": 0.0001367346960851057,
+        "mean": 0.9999919567825832,
+        "median": 1,
+        "min": 0.9998632653039149,
+        "site_count": 17
+      },
+      "Eighty": {
+        "max": 0.20000015784764813,
+        "maximum_absolute_deviation_from_nominal": 0.00010258966527915137,
+        "mean": 0.19999388193040568,
+        "median": 0.2,
+        "min": 0.19989741033472086,
+        "site_count": 17
+      },
+      "Fifty": {
+        "max": 0.5000013848929288,
+        "maximum_absolute_deviation_from_nominal": 0.00041697206986013313,
+        "mean": 0.49997549257050616,
+        "median": 0.5,
+        "min": 0.49958302793013987,
+        "site_count": 17
+      }
+    },
+    "treatment_expected_post_pre_ratio": {
+      "Amb": 1,
+      "Eighty": 0.2,
+      "Fifty": 0.5
+    },
+    "warning": "Calculated shoot density is recorded after manipulation, not an independent canopy-architecture/leaf-height measurement."
+  },
+  "measured_prey_size_count": 2395,
+  "missing_prey_size_count": 271,
+  "number_sites_other": 14,
+  "original_all_sites_and_posthoc_nonsaturated_summary": {
+    "edge_by_eighty_thinning_difference_in_differences": {
+      "all_17_site_equal_mean": -0.007267533007898126,
+      "all_site_bootstrap_ci95_from_frozen_primary": [
+        -0.053639004673487464,
+        0.03295075295075295
+      ],
+      "non_saturated_site_count": 14,
+      "non_saturated_site_equal_mean": -0.008824861509590581,
+      "nonsaturated_status": "POSTHOC_CONDITIONING_ON_OBSERVED_OUTCOME_NOT_VALID_CAUSAL_REPLACEMENT",
+      "original_full_data_status": "AUTHORITATIVE_DESCRIPTIVE"
+    },
+    "edge_minus_interior_risk": {
+      "all_17_site_equal_mean": 0.01062022473405017,
+      "all_site_bootstrap_ci95_from_frozen_primary": [
+        -0.011754993723421276,
+        0.03327914641640132
+      ],
+      "non_saturated_site_count": 14,
+      "non_saturated_site_equal_mean": 0.012895987177060923,
+      "nonsaturated_status": "POSTHOC_CONDITIONING_ON_OBSERVED_OUTCOME_NOT_VALID_CAUSAL_REPLACEMENT",
+      "original_full_data_status": "AUTHORITATIVE_DESCRIPTIVE"
+    },
+    "eighty_minus_ambient_risk": {
+      "all_17_site_equal_mean": -0.015422231963814112,
+      "all_site_bootstrap_ci95_from_frozen_primary": [
+        -0.05143889503930073,
+        0.01705188058129235
+      ],
+      "non_saturated_site_count": 14,
+      "non_saturated_site_equal_mean": -0.018726995956059995,
+      "nonsaturated_status": "POSTHOC_CONDITIONING_ON_OBSERVED_OUTCOME_NOT_VALID_CAUSAL_REPLACEMENT",
+      "original_full_data_status": "AUTHORITATIVE_DESCRIPTIVE"
+    },
+    "fifty_minus_ambient_risk": {
+      "all_17_site_equal_mean": 0.0034174137882577818,
+      "all_site_bootstrap_ci95_from_frozen_primary": [
+        -0.0250571726275051,
+        0.03062342885872297
+      ],
+      "non_saturated_site_count": 14,
+      "non_saturated_site_equal_mean": 0.004149716742884449,
+      "nonsaturated_status": "POSTHOC_CONDITIONING_ON_OBSERVED_OUTCOME_NOT_VALID_CAUSAL_REPLACEMENT",
+      "original_full_data_status": "AUTHORITATIVE_DESCRIPTIVE"
+    }
+  },
+  "original_tethered_prey_trials": 2666,
+  "other_sites_in_sensitivity": [
+    "BB",
+    "FI",
+    "GA",
+    "JN",
+    "JS",
+    "KOA",
+    "KOB",
+    "MX",
+    "OR",
+    "QU",
+    "SD",
+    "SF",
+    "VA",
+    "WA"
+  ],
+  "same_region_KO_pair_sensitivity": {
+    "edge_by_eighty_thinning_difference_in_differences": {
+      "n_conservative_site_families": 16,
+      "original_17_site_equal_mean": -0.007267533007898126,
+      "site_family_equal_mean": -0.00034487144400938835
+    },
+    "edge_minus_interior_risk": {
+      "n_conservative_site_families": 16,
+      "original_17_site_equal_mean": 0.01062022473405017,
+      "site_family_equal_mean": 0.011250072079344942
+    },
+    "eighty_minus_ambient_risk": {
+      "n_conservative_site_families": 16,
+      "original_17_site_equal_mean": -0.015422231963814112,
+      "site_family_equal_mean": -0.014246189634120667
+    },
+    "fifty_minus_ambient_risk": {
+      "n_conservative_site_families": 16,
+      "original_17_site_equal_mean": 0.0034174137882577818,
+      "site_family_equal_mean": 0.0030220913848631294
+    }
+  },
+  "schema": "tampa.zen2_2015_predation_manipulation_ceiling_taxon_audit_v1",
+  "site_count": 17,
+  "site_diagnostics": [
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999999999999998,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.19999999999999998,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.9047619047619048,
+      "ambient_only_consumed_fraction": 0.9047619047619048,
+      "maximum_observable_risk_increase_over_ambient": 0.09523809523809523,
+      "n_original_tether_trials": 122,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.09523809523809523,
+        "edge_minus_interior_risk": 0.055555555555555546,
+        "eighty_minus_ambient_risk": 0.047619047619047616,
+        "fifty_minus_ambient_risk": -0.0357142857142857
+      },
+      "original_tether_id_reuse_count_beyond_first": 108,
+      "predation_by_cell": {
+        "Edge|Amb": 0.9047619047619048,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 0.9047619047619048,
+        "Interior|Amb": 0.9047619047619048,
+        "Interior|Eighty": 0.9047619047619048,
+        "Interior|Fifty": 0.8333333333333334
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": null,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": null,
+      "prey_size_mm_missing": 104,
+      "prey_size_mm_n": 18,
+      "site": "BB",
+      "site_overall_consumed_fraction": 0.9098360655737705,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 0,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 14
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1.0000332744749614,
+        "Edge|Eighty": 0.20004231641073378,
+        "Edge|Fifty": 0.49987758794435755,
+        "Interior|Amb": 0.9996869594969039,
+        "Interior|Eighty": 0.19975787115041216,
+        "Interior|Fifty": 0.4993087823996613
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 0.9998632653039149,
+        "Eighty": 0.19989741033472086,
+        "Fifty": 0.49958302793013987
+      },
+      "all_tethered_prey_consumed": true,
+      "ambient_equal_edge_interior_risk": 1,
+      "ambient_only_consumed_fraction": 1,
+      "maximum_observable_risk_increase_over_ambient": 0,
+      "n_original_tether_trials": 164,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": 0,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "original_tether_id_reuse_count_beyond_first": 122,
+      "predation_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 1,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 1,
+        "Interior|Fifty": 1
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": null,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": null,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 164,
+      "site": "CR",
+      "site_overall_consumed_fraction": 1,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 0,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.3644179894179894,
+      "ambient_only_consumed_fraction": 0.36363636363636365,
+      "maximum_observable_risk_increase_over_ambient": 0.6355820105820106,
+      "n_original_tether_trials": 161,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.08940577940577948,
+        "edge_minus_interior_risk": -0.09417582417582417,
+        "eighty_minus_ambient_risk": 0.10788970288970293,
+        "fifty_minus_ambient_risk": 0.05357142857142855
+      },
+      "original_tether_id_reuse_count_beyond_first": 119,
+      "predation_by_cell": {
+        "Edge|Amb": 0.32142857142857145,
+        "Edge|Eighty": 0.38461538461538464,
+        "Edge|Fifty": 0.4074074074074074,
+        "Interior|Amb": 0.4074074074074074,
+        "Interior|Eighty": 0.56,
+        "Interior|Fifty": 0.42857142857142855
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -0.5731978405843119,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -0.5193267259056734,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 161,
+      "site": "FI",
+      "site_overall_consumed_fraction": 0.4161490683229814,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999944676178394,
+        "Edge|Fifty": 0.49999875708615826,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.19999962619050382,
+        "Interior|Fifty": 0.4999995140505274
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.19999953647614388,
+        "Fifty": 0.4999991447996156
+      },
+      "all_tethered_prey_consumed": true,
+      "ambient_equal_edge_interior_risk": 1,
+      "ambient_only_consumed_fraction": 1,
+      "maximum_observable_risk_increase_over_ambient": 0,
+      "n_original_tether_trials": 125,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": 0,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "original_tether_id_reuse_count_beyond_first": 83,
+      "predation_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 1,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 1,
+        "Interior|Fifty": 1
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": null,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": null,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 125,
+      "site": "FR",
+      "site_overall_consumed_fraction": 1,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 0,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.9464285714285714,
+      "ambient_only_consumed_fraction": 0.9464285714285714,
+      "maximum_observable_risk_increase_over_ambient": 0.0535714285714286,
+      "n_original_tether_trials": 168,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": -0.011904761904761899,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "original_tether_id_reuse_count_beyond_first": 126,
+      "predation_by_cell": {
+        "Edge|Amb": 0.9285714285714286,
+        "Edge|Eighty": 0.9285714285714286,
+        "Edge|Fifty": 0.9642857142857143,
+        "Interior|Amb": 0.9642857142857143,
+        "Interior|Eighty": 0.9642857142857143,
+        "Interior|Fifty": 0.9285714285714286
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -0.7599580712788239,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -0.5384615384615389,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 168,
+      "site": "GA",
+      "site_overall_consumed_fraction": 0.9464285714285714,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 3,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999932210312535,
+        "Edge|Fifty": 0.5000022938007348,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.19999839786786452,
+        "Interior|Fifty": 0.5000004759851226
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.19999886838763367,
+        "Fifty": 0.5000013848929288
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.8689458689458689,
+      "ambient_only_consumed_fraction": 0.8679245283018868,
+      "maximum_observable_risk_increase_over_ambient": 0.1310541310541311,
+      "n_original_tether_trials": 162,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.07956857956857954,
+        "edge_minus_interior_risk": 0.12338895672229011,
+        "eighty_minus_ambient_risk": -0.0342897842897843,
+        "fifty_minus_ambient_risk": 0.019943019943019946
+      },
+      "original_tether_id_reuse_count_beyond_first": 120,
+      "predation_by_cell": {
+        "Edge|Amb": 0.9230769230769231,
+        "Edge|Eighty": 0.9285714285714286,
+        "Edge|Fifty": 0.9259259259259259,
+        "Interior|Amb": 0.8148148148148148,
+        "Interior|Eighty": 0.7407407407407407,
+        "Interior|Fifty": 0.8518518518518519
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -0.5097402597402603,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -0.4370569044482089,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 162,
+      "site": "JN",
+      "site_overall_consumed_fraction": 0.8641975308641975,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.6481481481481481,
+      "ambient_only_consumed_fraction": 0.6481481481481481,
+      "maximum_observable_risk_increase_over_ambient": 0.35185185185185186,
+      "n_original_tether_trials": 165,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.060846560846560815,
+        "edge_minus_interior_risk": 0.04497354497354492,
+        "eighty_minus_ambient_risk": 0.04365079365079366,
+        "fifty_minus_ambient_risk": -0.005291005291005235
+      },
+      "original_tether_id_reuse_count_beyond_first": 123,
+      "predation_by_cell": {
+        "Edge|Amb": 0.6666666666666666,
+        "Edge|Eighty": 0.7407407407407407,
+        "Edge|Fifty": 0.6428571428571429,
+        "Interior|Amb": 0.6296296296296297,
+        "Interior|Eighty": 0.6428571428571429,
+        "Interior|Fifty": 0.6428571428571429
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": 0.200851900393185,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": 0.18665577342047937,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 165,
+      "site": "JS",
+      "site_overall_consumed_fraction": 0.6606060606060606,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.8131868131868132,
+      "ambient_only_consumed_fraction": 0.8148148148148148,
+      "maximum_observable_risk_increase_over_ambient": 0.18681318681318682,
+      "n_original_tether_trials": 164,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.019230769230769384,
+        "edge_minus_interior_risk": 0.027981277981277957,
+        "eighty_minus_ambient_risk": 0.026098901098901117,
+        "fifty_minus_ambient_risk": 0.057183557183557165
+      },
+      "original_tether_id_reuse_count_beyond_first": 122,
+      "predation_by_cell": {
+        "Edge|Amb": 0.8571428571428571,
+        "Edge|Eighty": 0.8928571428571429,
+        "Edge|Fifty": 0.8148148148148148,
+        "Interior|Amb": 0.7692307692307693,
+        "Interior|Eighty": 0.7857142857142857,
+        "Interior|Fifty": 0.9259259259259259
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -1.9297658862876261,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -1.9582323232323233,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 164,
+      "site": "KOA",
+      "site_overall_consumed_fraction": 0.8414634146341463,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.9464285714285714,
+      "ambient_only_consumed_fraction": 0.9454545454545454,
+      "maximum_observable_risk_increase_over_ambient": 0.0535714285714286,
+      "n_original_tether_trials": 164,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.25529100529100524,
+        "edge_minus_interior_risk": -0.02689594356261027,
+        "eighty_minus_ambient_risk": -0.09457671957671959,
+        "fifty_minus_ambient_risk": -0.03769841269841273
+      },
+      "original_tether_id_reuse_count_beyond_first": 122,
+      "predation_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.7777777777777778,
+        "Edge|Fifty": 0.8888888888888888,
+        "Interior|Amb": 0.8928571428571429,
+        "Interior|Eighty": 0.9259259259259259,
+        "Interior|Fifty": 0.9285714285714286
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": 0.09543918918918948,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": 0.11575457875457822,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 164,
+      "site": "KOB",
+      "site_overall_consumed_fraction": 0.9024390243902439,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 5,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.20000020718893596,
+        "Edge|Fifty": 0.5000000113330006,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.20000010850636027,
+        "Interior|Fifty": 0.49999979354515534
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.20000015784764813,
+        "Fifty": 0.499999902439078
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.9087301587301587,
+      "ambient_only_consumed_fraction": 0.9090909090909091,
+      "maximum_observable_risk_increase_over_ambient": 0.09126984126984128,
+      "n_original_tether_trials": 167,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.11111111111111127,
+        "edge_minus_interior_risk": 0.025132275132275155,
+        "eighty_minus_ambient_risk": -0.05158730158730157,
+        "fifty_minus_ambient_risk": -0.03373015873015872
+      },
+      "original_tether_id_reuse_count_beyond_first": 125,
+      "predation_by_cell": {
+        "Edge|Amb": 0.9285714285714286,
+        "Edge|Eighty": 0.8214285714285714,
+        "Edge|Fifty": 0.9285714285714286,
+        "Interior|Amb": 0.8888888888888888,
+        "Interior|Eighty": 0.8928571428571429,
+        "Interior|Fifty": 0.8214285714285714
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -0.6857142857142855,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -0.6228994797473059,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 167,
+      "site": "MX",
+      "site_overall_consumed_fraction": 0.8802395209580839,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": true,
+      "ambient_equal_edge_interior_risk": 1,
+      "ambient_only_consumed_fraction": 1,
+      "maximum_observable_risk_increase_over_ambient": 0,
+      "n_original_tether_trials": 145,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0,
+        "edge_minus_interior_risk": 0,
+        "eighty_minus_ambient_risk": 0,
+        "fifty_minus_ambient_risk": 0
+      },
+      "original_tether_id_reuse_count_beyond_first": 103,
+      "predation_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 1,
+        "Edge|Fifty": 1,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 1,
+        "Interior|Fifty": 1
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": null,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": null,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 145,
+      "site": "NC",
+      "site_overall_consumed_fraction": 1,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 0,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.2,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.5278571428571428,
+      "ambient_only_consumed_fraction": 0.5283018867924528,
+      "maximum_observable_risk_increase_over_ambient": 0.4721428571428572,
+      "n_original_tether_trials": 161,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.10994708994708996,
+        "edge_minus_interior_risk": 0.06754307420974087,
+        "eighty_minus_ambient_risk": 0.016455026455026417,
+        "fifty_minus_ambient_risk": 0.09536223036223035
+      },
+      "original_tether_id_reuse_count_beyond_first": 119,
+      "predation_by_cell": {
+        "Edge|Amb": 0.5357142857142857,
+        "Edge|Eighty": 0.6071428571428571,
+        "Edge|Fifty": 0.6538461538461539,
+        "Interior|Amb": 0.52,
+        "Interior|Eighty": 0.48148148148148145,
+        "Interior|Fifty": 0.5925925925925926
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -2.659083249073136,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -2.4710774519598044,
+      "prey_size_mm_missing": 6,
+      "prey_size_mm_n": 155,
+      "site": "OR",
+      "site_overall_consumed_fraction": 0.5652173913043478,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Isopod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999995309993956,
+        "Edge|Fifty": 0.49999972756941524,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.20000006379783106,
+        "Interior|Fifty": 0.5000003344694244
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.20000000945522978,
+        "Fifty": 0.5000000310194198
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.23214285714285715,
+      "ambient_only_consumed_fraction": 0.23214285714285715,
+      "maximum_observable_risk_increase_over_ambient": 0.7678571428571428,
+      "n_original_tether_trials": 165,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.11772486772486773,
+        "edge_minus_interior_risk": 0.015432098765432093,
+        "eighty_minus_ambient_risk": 0.02314814814814814,
+        "fifty_minus_ambient_risk": 0.06415343915343914
+      },
+      "original_tether_id_reuse_count_beyond_first": 123,
+      "predation_by_cell": {
+        "Edge|Amb": 0.21428571428571427,
+        "Edge|Eighty": 0.2962962962962963,
+        "Edge|Fifty": 0.2962962962962963,
+        "Interior|Amb": 0.25,
+        "Interior|Eighty": 0.21428571428571427,
+        "Interior|Fifty": 0.2962962962962963
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": 0.8442622950819665,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": 0.8323270296954508,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 165,
+      "site": "QU",
+      "site_overall_consumed_fraction": 0.2606060606060606,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999996112940802,
+        "Edge|Fifty": 0.49999964361156074,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.20000006108054827,
+        "Interior|Fifty": 0.49999988672479545
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2000000101963314,
+        "Fifty": 0.49999976066608115
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.3637566137566137,
+      "ambient_only_consumed_fraction": 0.36363636363636365,
+      "maximum_observable_risk_increase_over_ambient": 0.6362433862433863,
+      "n_original_tether_trials": 164,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.10846560846560849,
+        "edge_minus_interior_risk": -0.0037647537647537512,
+        "eighty_minus_ambient_risk": -0.01719576719576721,
+        "fifty_minus_ambient_risk": -0.03271265771265772
+      },
+      "original_tether_id_reuse_count_beyond_first": 143,
+      "predation_by_cell": {
+        "Edge|Amb": 0.35714285714285715,
+        "Edge|Eighty": 0.2857142857142857,
+        "Edge|Fifty": 0.39285714285714285,
+        "Interior|Amb": 0.37037037037037035,
+        "Interior|Eighty": 0.4074074074074074,
+        "Interior|Fifty": 0.2692307692307692
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -0.10509919658960509,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -0.029465607348734196,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 164,
+      "site": "SD",
+      "site_overall_consumed_fraction": 0.3475609756097561,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Isopod",
+      "tether_id_distinct_within_site": 21
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999999999999998,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.2,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.8357142857142856,
+      "ambient_only_consumed_fraction": 0.8333333333333334,
+      "maximum_observable_risk_increase_over_ambient": 0.16428571428571437,
+      "n_original_tether_trials": 144,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.002116402116402072,
+        "edge_minus_interior_risk": 0.025485008818342147,
+        "eighty_minus_ambient_risk": -0.22989417989417987,
+        "fifty_minus_ambient_risk": -0.1464285714285714
+      },
+      "original_tether_id_reuse_count_beyond_first": 102,
+      "predation_by_cell": {
+        "Edge|Amb": 0.85,
+        "Edge|Eighty": 0.6190476190476191,
+        "Edge|Fifty": 0.7,
+        "Interior|Amb": 0.8214285714285714,
+        "Interior|Eighty": 0.5925925925925926,
+        "Interior|Fifty": 0.6785714285714286
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": -0.08683473389355711,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": -0.14182326512720925,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 144,
+      "site": "SF",
+      "site_overall_consumed_fraction": 0.7083333333333334,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999996009881452,
+        "Edge|Fifty": 0.5000001822227254,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.2000000373795373,
+        "Interior|Fifty": 0.5000000485774826
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.20000000011918884,
+        "Fifty": 0.5000001219513414
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.9629629629629629,
+      "ambient_only_consumed_fraction": 0.9629629629629629,
+      "maximum_observable_risk_increase_over_ambient": 0.03703703703703709,
+      "n_original_tether_trials": 161,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": -0.04469987228607919,
+        "edge_minus_interior_risk": -0.03612148951979036,
+        "eighty_minus_ambient_risk": -0.08876117496807145,
+        "fifty_minus_ambient_risk": -0.03827352196917405
+      },
+      "original_tether_id_reuse_count_beyond_first": 119,
+      "predation_by_cell": {
+        "Edge|Amb": 0.9629629629629629,
+        "Edge|Eighty": 0.8518518518518519,
+        "Edge|Fifty": 0.8928571428571429,
+        "Interior|Amb": 0.9629629629629629,
+        "Interior|Eighty": 0.896551724137931,
+        "Interior|Fifty": 0.9565217391304348
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": null,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": null,
+      "prey_size_mm_missing": 161,
+      "prey_size_mm_n": 0,
+      "site": "VA",
+      "site_overall_consumed_fraction": 0.9192546583850931,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 0,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    },
+    {
+      "achieved_to_initial_density_ratio_by_cell": {
+        "Edge|Amb": 1,
+        "Edge|Eighty": 0.19999999999999998,
+        "Edge|Fifty": 0.5,
+        "Interior|Amb": 1,
+        "Interior|Eighty": 0.19999999999999998,
+        "Interior|Fifty": 0.5
+      },
+      "achieved_to_initial_density_ratio_by_treatment": {
+        "Amb": 1,
+        "Eighty": 0.19999999999999998,
+        "Fifty": 0.5
+      },
+      "all_tethered_prey_consumed": false,
+      "ambient_equal_edge_interior_risk": 0.6291208791208791,
+      "ambient_only_consumed_fraction": 0.6296296296296297,
+      "maximum_observable_risk_increase_over_ambient": 0.3708791208791209,
+      "n_original_tether_trials": 164,
+      "original_site_risk_contrasts": {
+        "edge_by_eighty_thinning_difference_in_differences": 0.004985754985754931,
+        "edge_minus_interior_risk": -0.03208519875186544,
+        "eighty_minus_ambient_risk": -0.010734635734635789,
+        "fifty_minus_ambient_risk": 0.0977309727309727
+      },
+      "original_tether_id_reuse_count_beyond_first": 122,
+      "predation_by_cell": {
+        "Edge|Amb": 0.6153846153846154,
+        "Edge|Eighty": 0.6071428571428571,
+        "Edge|Fifty": 0.7037037037037037,
+        "Interior|Amb": 0.6428571428571429,
+        "Interior|Eighty": 0.6296296296296297,
+        "Interior|Fifty": 0.75
+      },
+      "prey_size_eaten_minus_alive_within_site_mm": 0,
+      "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": 0,
+      "prey_size_mm_missing": 0,
+      "prey_size_mm_n": 164,
+      "site": "WA",
+      "site_overall_consumed_fraction": 0.6585365853658537,
+      "site_six_cells_with_measurable_size_and_both_outcomes": 6,
+      "taxon": "Amphipod",
+      "tether_id_distinct_within_site": 42
+    }
+  ],
+  "sites_with_100pct_consumption": [
+    "CR",
+    "FR",
+    "NC"
+  ],
+  "sites_with_more_than_half_prey_size_missing": [
+    "BB",
+    "VA"
+  ],
+  "sites_without_any_prey_size_measurement": [
+    "VA"
+  ],
+  "size_diagnostic_posthoc_no_causal_prey_selection": {
+    "prey_size_eaten_minus_alive_within_site_mm": {
+      "amphipod_only_posthoc_check": {
+        "site_bootstrap_95pct_percentile": [
+          -0.7960641920602762,
+          0.08610228859125088
+        ],
+        "site_equal_mean_mm": -0.3404657692834524,
+        "sites": 10,
+        "warning": "Dropping isopod sites selects distinct geographies and cannot identify an independent prey-taxon effect."
+      },
+      "leave_one_site_out_mean_range": [
+        -0.637554766689021,
+        -0.31906880812946625
+      ],
+      "negative_site_differences": 8,
+      "no_effect_sized_test_if_n_below_5": false,
+      "positive_site_differences": 3,
+      "site_bootstrap_95pct_percentile": [
+        -1.0765153264965754,
+        -0.0344530059321394
+      ],
+      "site_equal_mean_mm": -0.5140700115414387,
+      "site_equal_median_mm": -0.3074197281649327,
+      "sites_with_estimate": 12
+    },
+    "prey_size_eaten_minus_alive_within_site_treatment_cells_mm": {
+      "amphipod_only_posthoc_check": {
+        "site_bootstrap_95pct_percentile": [
+          -0.7594245573802716,
+          0.10179184242418855
+        ],
+        "site_equal_mean_mm": -0.30830628550517514,
+        "sites": 10,
+        "warning": "Dropping isopod sites selects distinct geographies and cannot identify an independent prey-taxon effect."
+      },
+      "leave_one_site_out_mean_range": [
+        -0.5832666312777947,
+        -0.2829571329454987
+      ],
+      "negative_site_differences": 8,
+      "no_effect_sized_test_if_n_below_5": false,
+      "positive_site_differences": 3,
+      "site_bootstrap_95pct_percentile": [
+        -1.0087754576647625,
+        -0.006476931423741981
+      ],
+      "site_equal_mean_mm": -0.4653004928633575,
+      "site_equal_median_mm": -0.28944008478770905,
+      "sites_with_estimate": 12
+    }
+  },
+  "source_file_sha256": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb",
+  "source_paper": "10.1002/ecy.3316",
+  "status": "response_exposed_posthoc_sensitivity_not_new_original_experimental_claim",
+  "taxon_by_site_not_an_independent_species_experiment": {
+    "Amphipod": {
+      "n_sites": 15,
+      "original_tethered_prey_trials": 2341,
+      "sites": [
+        "BB",
+        "CR",
+        "FI",
+        "FR",
+        "GA",
+        "JN",
+        "JS",
+        "KOA",
+        "KOB",
+        "MX",
+        "NC",
+        "QU",
+        "SF",
+        "VA",
+        "WA"
+      ]
+    },
+    "Isopod": {
+      "n_sites": 2,
+      "original_tethered_prey_trials": 325,
+      "sites": [
+        "OR",
+        "SD"
+      ]
+    }
+  },
+  "tether_id_uniqueness": {
+    "sum_within_site_reused_labels": 2001,
+    "sum_within_site_unique_tether_labels": 665,
+    "total_original_trials": 2666,
+    "warnings": "Tether_no is not a globally unique trial/plot/round identifier. Four deployment rounds may reuse labels."
+  },
+  "source_verified_run": {
+    "run_id": 45329552828,
+    "job_id": 138227156657,
+    "url": "https://github.com/zuizui0223/Tampa/actions/runs/45329552828",
+    "head_sha": "0b5ed1c842a8c7bfc60933e0c727f1408956760e",
+    "status": "completed_success",
+    "artifact": {
+      "id": 14890509498,
+      "sha256": "sha256:d771b291b810a06c70de9311bdc8e8f97accd0bf5f3c895a62ed698764e91d0b",
+      "size": 6381
+    }
+  }
+}

@@ -1,0 +1,280 @@
+name: Tampa ZEN2 foundation–consumer reciprocity exploratory source
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/126_zen2_structure_consumer_source_preflight.py'
+      - 'analysis/127_zen2_2015_site_predation_factorial.py'
+      - 'analysis/128_zen2_2014_50meadow_state_consumer.py'
+      - 'analysis/129_zen2_predation_manipulation_ceiling_audit.py'
+      - 'analysis/130_zen2_2014_2015_geographic_link_gate.py'
+      - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
+      - 'analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py'
+      - 'analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py'
+      - 'analysis/134_zen2_2014_2015_leave_ocean_basin_out.py'
+      - 'validation/test_zen2_2014_2015_leave_ocean_basin_out.py'
+      - 'results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json'
+      - 'results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json'
+      - 'validation/test_zen2_crossyear_structure_vs_trophic_site_cv.py'
+      - 'validation/test_zen2_crossyear_basin_latitude_rank_sensitivity.py'
+      - 'results/zen2_2014_2015_geographic_link_verified_20261124.json'
+      - 'results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json'
+      - 'validation/test_zen2_prior2014_state_later2015_interaction.py'
+      - 'validation/test_zen2_2014_2015_geographic_link_gate.py'
+      - 'validation/test_zen2_predation_manipulation_ceiling_audit.py'
+      - 'validation/test_zen2_2014_50meadow_state_consumer.py'
+      - 'validation/test_zen2_2015_site_predation_factorial.py'
+      - 'validation/test_zen2_structure_consumer_source_preflight.py'
+      - 'docs/ZEN2_FOUNDATION_CONSUMER_EXPERIMENT_20261124.md'
+      - 'docs/ZEN2_STRUCTURE_VS_TROPHIC_SITE_CV_20261124.md'
+      - 'results/zen2_2015_site_predation_source_verified_20261124.json'
+      - 'results/zen2_2015_manipulation_ceiling_size_verified_20261124.json'
+      - 'results/zen2_2014_25region_state_consumer_source_verified_20261124.json'
+      - '.github/workflows/zen2-foundation-consumer-exploratory.yml'
+jobs:
+  source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original 2015 experimental and 2014 observational source boundaries
+        run: python -m unittest discover -s validation -p 'test_zen2_structure_consumer_source_preflight.py' -v
+      - name: Profile original two public datasets and their experimental units
+        run: |
+          python analysis/126_zen2_structure_consumer_source_preflight.py --out /tmp/zen2_two_sources_metadata_v1.json
+          cat /tmp/zen2_two_sources_metadata_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-two-original-sources-metadata
+          path: /tmp/zen2_two_sources_metadata_v1.json
+
+  experiment_2015_site_equal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test experimental treatment factorial, status and site-level independence
+        run: python -m unittest discover -s validation -p 'test_zen2_2015_site_predation_factorial.py' -v
+      - name: Analyze 2015 original 17-site tether experiment by site
+        run: |
+          python analysis/127_zen2_2015_site_predation_factorial.py --out /tmp/zen2_2015_site_predation.json
+          cat /tmp/zen2_2015_site_predation.json
+      - name: Match ZEN2 2015 source-verification to pinned exact source-backed JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_2015_site_predation.json').read_text())
+          frozen=json.loads(Path('results/zen2_2015_site_predation_source_verified_20261124.json').read_text())
+          proof=frozen.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('ZEN2 derived results drift or provenance missing: results/zen2_2015_site_predation_source_verified_20261124.json')
+          print('PASS source and full result identity: ZEN2 2015 source-verification')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2015-eelgrass-thinning-consumer-predation
+          path: /tmp/zen2_2015_site_predation.json
+
+  survey_2014_paired_structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test 25 region-code A/B measurement pairs and missingness
+        run: python -m unittest discover -s validation -p 'test_zen2_2014_50meadow_state_consumer.py' -v
+      - name: Calculate matched-within-region observed host/consumer/epiphyte co-variation
+        run: |
+          python analysis/128_zen2_2014_50meadow_state_consumer.py --out /tmp/zen2_2014_25region_state_consumer.json
+          cat /tmp/zen2_2014_25region_state_consumer.json
+      - name: Match ZEN2 2014 source-verification to pinned exact source-backed JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_2014_25region_state_consumer.json').read_text())
+          frozen=json.loads(Path('results/zen2_2014_25region_state_consumer_source_verified_20261124.json').read_text())
+          proof=frozen.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('ZEN2 derived results drift or provenance missing: results/zen2_2014_25region_state_consumer_source_verified_20261124.json')
+          print('PASS source and full result identity: ZEN2 2014 source-verification')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2014-twentyfive-paired-region-state-consumer
+          path: /tmp/zen2_2014_25region_state_consumer.json
+
+  manipulation_dose_ceiling_size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic closure and taxon-confounding checks
+        run: python -m unittest discover -s validation -p 'test_zen2_predation_manipulation_ceiling_audit.py' -v
+      - name: Original ZEN2 2015 experimental dose, saturation and prey-size audit
+        run: |
+          python analysis/129_zen2_predation_manipulation_ceiling_audit.py \
+            --out /tmp/zen2_2015_dose_ceiling_prey_size.json
+          cat /tmp/zen2_2015_dose_ceiling_prey_size.json
+      - name: Confirm original-data dose and predation ceiling exactly match source-verified ledger
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/zen2_2015_dose_ceiling_prey_size.json').read_text())
+          frozen=json.loads(Path('results/zen2_2015_manipulation_ceiling_size_verified_20261124.json').read_text())
+          proof=frozen.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or actual!=frozen:
+              raise SystemExit('ZEN2 original source or dose/ceiling/size results changed')
+          print('PASS: all original 17-site dose, ceiling, size and site effect summaries exactly reproduce')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2015-manipulation-ceiling-size-source-audit
+          path: /tmp/zen2_2015_dose_ceiling_prey_size.json
+
+  crossyear_geography_gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test response-blind site-code and distance linkage
+        run: python -m unittest discover -s validation -p 'test_zen2_2014_2015_geographic_link_gate.py' -v
+      - name: Verify published 2014 and 2015 source geography before ecological joins
+        run: |
+          python analysis/130_zen2_2014_2015_geographic_link_gate.py --out /tmp/zen2_crossyear_geo.json
+          cat /tmp/zen2_crossyear_geo.json
+      - name: Verify frozen source result for 2014 to 2015 geographic linkage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/zen2_crossyear_geo.json').read_text())
+          expected=json.loads(Path('results/zen2_2014_2015_geographic_link_verified_20261124.json').read_text())
+          proof=expected.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or actual!=expected:
+              raise SystemExit('ZEN2 frozen source audit mismatch: results/zen2_2014_2015_geographic_link_verified_20261124.json')
+          print('PASS exact original-source source-grain and inference provenance')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2014-2015-response-blind-geographic-linkage
+          path: /tmp/zen2_crossyear_geo.json
+
+  crossyear_temporal_context:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test site-level source-locked temporal state transport and maxT
+        run: python -m unittest discover -s validation -p 'test_zen2_prior2014_state_later2015_interaction.py' -v
+      - name: Compute 2014-nearest-subsite shoot persistence and 2015 predation contextual tests
+        run: |
+          python analysis/131_zen2_prior2014_state_later2015_interaction.py --out /tmp/zen2_crossyear_2014_2015_site_context.json
+          cat /tmp/zen2_crossyear_2014_2015_site_context.json
+      - name: Verify frozen source result for previous year location state and 2015 risk
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/zen2_crossyear_2014_2015_site_context.json').read_text())
+          expected=json.loads(Path('results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json').read_text())
+          proof=expected.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or actual!=expected:
+              raise SystemExit('ZEN2 frozen source audit mismatch: results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json')
+          print('PASS exact original-source source-grain and inference provenance')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-crossyear-prior-2014-context-to-2015-trophic-risk
+          path: /tmp/zen2_crossyear_2014_2015_site_context.json
+
+  crossyear_basin_latitude_robustness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test source-pinned crossyear basin-geographic null and latitude partial rank
+        run: python -m unittest discover -s validation -p 'test_zen2_crossyear_basin_latitude_rank_sensitivity.py' -v
+      - name: Test if 2014 to 2015 shoot-density ranking remains after preserving ocean basins
+        run: |
+          python analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py --out /tmp/zen2_crossyear_basin_robustness.json
+          cat /tmp/zen2_crossyear_basin_robustness.json
+      - name: Confirm Basin and latitude sensitivity reproduces the archived result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_crossyear_basin_robustness.json').read_text())
+          frozen=json.loads(Path('results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json').read_text())
+          verified=frozen.pop('source_verified_run',None)
+          if verified is None or verified.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('Original ZEN2 result drift: results/zen2_2014_2015_basin_latitude_sensitivity_verified_20261124.json')
+          print('PASS: exact source-validated cross-year result')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-crossyear-shoot-density-basin-latitude-robustness
+          path: /tmp/zen2_crossyear_basin_robustness.json
+
+  crossyear_host_vs_interaction_site_cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate leave-one-geographical-site-out prediction without test-site response leakage
+        run: python -m unittest discover -s validation -p 'test_zen2_crossyear_structure_vs_trophic_site_cv.py' -v
+      - name: Compare 2014 habitat state forecasting 2015 habitat versus trophic risk
+        run: |
+          python analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py --out /tmp/zen2_crossyear_host_interaction_site_cv.json
+          cat /tmp/zen2_crossyear_host_interaction_site_cv.json
+      - name: Confirm Site leave-one-out structural versus trophic predictions reproduces the archived result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_crossyear_host_interaction_site_cv.json').read_text())
+          frozen=json.loads(Path('results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json').read_text())
+          verified=frozen.pop('source_verified_run',None)
+          if verified is None or verified.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('Original ZEN2 result drift: results/zen2_2014_2015_host_vs_interaction_cv_verified_20261124.json')
+          print('PASS: exact source-validated cross-year result')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-crossyear-host-vs-interaction-14site-cv
+          path: /tmp/zen2_crossyear_host_interaction_site_cv.json
+
+  crossyear_two_basin_transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check source-locked Pacific Atlantic held-out domains and no target leakage
+        run: python -m unittest discover -s validation -p 'test_zen2_2014_2015_leave_ocean_basin_out.py' -v
+      - name: Test cross-ocean transfer of vegetation and trophic outcomes
+        run: |
+          python analysis/134_zen2_2014_2015_leave_ocean_basin_out.py --out /tmp/zen2_leave_basin_out.json
+          cat /tmp/zen2_leave_basin_out.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-cross-ocean-structural-vs-trophic-transfer
+          path: /tmp/zen2_leave_basin_out.json
