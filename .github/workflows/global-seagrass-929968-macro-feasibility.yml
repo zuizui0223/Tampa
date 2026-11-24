@@ -5,6 +5,8 @@ on:
     paths:
       - 'analysis/114_global_seagrass_929968_feasibility.py'
       - 'validation/test_global_seagrass_929968_feasibility.py'
+      - 'analysis/115_global_seagrass_allocation_conditional_spread.py'
+      - 'validation/test_global_seagrass_allocation_conditional_spread.py'
       - 'docs/GLOBAL_SEAGRASS_MACRO_FEASIBILITY_20261124.md'
       - '.github/workflows/global-seagrass-929968-macro-feasibility.yml'
 jobs:
@@ -17,11 +19,19 @@ jobs:
           python-version: '3.11'
       - name: Synthetic grain and source parser tests
         run: python -m unittest discover -s validation -p 'test_global_seagrass_929968_feasibility.py' -v
+      - name: Test proposed global allocation analysis using synthetic same-row inputs
+        run: python -m unittest discover -s validation -p 'test_global_seagrass_allocation_conditional_spread.py' -v
       - name: Download original PANGAEA dataset and profile macroecological pairing
         run: |
-          python analysis/114_global_seagrass_929968_feasibility.py --out /tmp/global_seagrass_929968_feasibility_v1.json
+          python analysis/114_global_seagrass_929968_feasibility.py --out /tmp/global_seagrass_929968_feasibility_v1.json --raw-out /tmp/original_global_seagrass.tab
           cat /tmp/global_seagrass_929968_feasibility_v1.json
+      - name: Estimate source-verified same-record allocation and conditioned spread
+        run: |
+          python analysis/115_global_seagrass_allocation_conditional_spread.py --raw-file /tmp/original_global_seagrass.tab --out /tmp/global_seagrass_allocation_v1.json
+          cat /tmp/global_seagrass_allocation_v1.json
       - uses: actions/upload-artifact@v4
         with:
           name: global-seagrass-929968-feasibility
-          path: /tmp/global_seagrass_929968_feasibility_v1.json
+          path: |
+            /tmp/global_seagrass_929968_feasibility_v1.json
+            /tmp/global_seagrass_allocation_v1.json
