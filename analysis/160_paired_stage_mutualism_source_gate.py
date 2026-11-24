@@ -38,7 +38,12 @@ def figshare():
     if "facilitation of a tropical seagrass" not in m["title"].lower():raise ValueError("unexpected Figshare article")
     files=[f for f in m["files"] if Path(f["name"]).suffix.lower() in {".csv",".xlsx",".xls",".txt",".zip",".r",".md"}]
     if not files or len(files)>40:raise ValueError("unmapped file roster")
-    return dict(status="ACQUIRED_SCHEMA_UNVERIFIED",metadata_sha256=sha,title=m["title"],files=[save(ROOT/"chin_2021",f["name"],f["downloadUrl"],f.get("size")) for f in files])
+    out=[]
+    for f in files:
+        urls={f[k] for k in ("downloadUrl","download_url") if isinstance(f.get(k),str) and f[k]}
+        if len(urls)!=1:raise ValueError("missing/ambiguous advertised file URL; keys="+",".join(sorted(f)))
+        out.append(save(ROOT/"chin_2021",f["name"],next(iter(urls)),f.get("size")))
+    return dict(status="ACQUIRED_SCHEMA_UNVERIFIED",metadata_sha256=sha,title=m["title"],files=out)
 def dans():
     base="https://lifesciences.datastations.nl"
     doi="doi:10.17026/dans-x9d-ytww"
