@@ -1,0 +1,156 @@
+{
+  "status": "executed local Python on checksum-verified Glacier Bay artifacts; descriptive same-sample proxy assessment; not SIBES or risk prediction",
+  "source": "10.5066/P9LODH0Z",
+  "artifacts": [
+    {
+      "id": 14914948367,
+      "sha256": "d4b902fb8216844bb078cf9ba0e9a87f1767defc1781534245761a45c82cadfd"
+    },
+    {
+      "id": 14915918501,
+      "sha256": "e54e44830d2906015cae7434fb0bf3fd13a5145340efad3084523ec84126b7ac"
+    }
+  ],
+  "random_intertidal_events": 92,
+  "quadrats": 905,
+  "primary_min5_threshold50": [
+    {
+      "taxon": "Leukoma staminea",
+      "n": 35,
+      "n_sites": 14,
+      "n_large_positive": 31,
+      "top": 9,
+      "top_density": 10,
+      "intersection_density": 6,
+      "top_cubic": 9,
+      "intersection_cubic": 6,
+      "rho_density": 0.8449226696994476,
+      "rho_cubic": 0.9098227532535565,
+      "jensen_ratio_median": 1.178818121415771,
+      "similar_pairs": 8,
+      "pairs_gap20pp": 1
+    },
+    {
+      "taxon": "Saxidomus gigantea",
+      "n": 24,
+      "n_sites": 12,
+      "n_large_positive": 24,
+      "top": 6,
+      "top_density": 6,
+      "intersection_density": 6,
+      "top_cubic": 6,
+      "intersection_cubic": 6,
+      "rho_density": 0.9629725573586172,
+      "rho_cubic": 0.9441823324559225,
+      "jensen_ratio_median": 1.163256761542479,
+      "similar_pairs": 6,
+      "pairs_gap20pp": 1
+    },
+    {
+      "taxon": "Strongylocentrotus droebachiensis",
+      "n": 25,
+      "n_sites": 13,
+      "n_large_positive": 1,
+      "top": 1,
+      "top_density": 7,
+      "intersection_density": 0,
+      "top_cubic": 7,
+      "intersection_cubic": 1,
+      "rho_density": -0.09909329872395184,
+      "rho_cubic": 0.31137618438976383,
+      "similar_pairs": 9,
+      "pairs_gap20pp": 0
+    },
+    {
+      "taxon": "Macoma spp.",
+      "n": 65,
+      "n_sites": 25,
+      "n_large_positive": 8,
+      "top": 8,
+      "top_density": 17,
+      "intersection_density": 3,
+      "top_cubic": 17,
+      "intersection_cubic": 4,
+      "rho_density": 0.052420783500511,
+      "rho_cubic": 0.23462490000031855,
+      "jensen_ratio_median": 1.1520273424392273,
+      "similar_pairs": 38,
+      "pairs_gap20pp": 0
+    },
+    {
+      "taxon": "Mya spp.",
+      "n": 37,
+      "n_sites": 16,
+      "n_large_positive": 30,
+      "top": 10,
+      "top_density": 10,
+      "intersection_density": 7,
+      "top_cubic": 10,
+      "intersection_cubic": 9,
+      "rho_density": 0.5961793171194847,
+      "rho_cubic": 0.874930926628507,
+      "jensen_ratio_median": 1.2552971401361763,
+      "similar_pairs": 7,
+      "pairs_gap20pp": 1
+    }
+  ],
+  "mya_threshold_sensitivity": [
+    {
+      "threshold": 40,
+      "min_count": 5,
+      "top": 11,
+      "density_hits": 7,
+      "cubic_hits": 9
+    },
+    {
+      "threshold": 50,
+      "min_count": 5,
+      "top": 10,
+      "density_hits": 7,
+      "cubic_hits": 9
+    },
+    {
+      "threshold": 60,
+      "min_count": 5,
+      "top": 12,
+      "density_hits": 5,
+      "cubic_hits": 6
+    },
+    {
+      "threshold": 50,
+      "min_count": 10,
+      "top": 9,
+      "density_hits": 6,
+      "cubic_hits": 7
+    }
+  ],
+  "example_same_taxon": {
+    "taxon": "Saxidomus gigantea",
+    "events": [
+      {
+        "site": "67",
+        "year": 1998,
+        "n": 13,
+        "nq": 10,
+        "mean_mm": 61.84615384615385,
+        "large_n": 11
+      },
+      {
+        "site": "43",
+        "year": 2011,
+        "n": 13,
+        "nq": 10,
+        "mean_mm": 62.76923076923077,
+        "large_n": 8
+      }
+    ]
+  },
+  "limits": [
+    "Size thresholds are illustrative, not experimentally calibrated",
+    "Same-sample rankings, no held-out prediction; repeated sites not independent",
+    "Minimum count selection excludes absences and low-density observations",
+    "Taxonomic pooling for Macoma and Mya",
+    "Cubic moment not observed biomass; no plant outcomes",
+    "Upper tail cannot be identified from total mass/number alone"
+  ]
+}
