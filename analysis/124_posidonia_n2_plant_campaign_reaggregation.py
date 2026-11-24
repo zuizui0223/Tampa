@@ -73,7 +73,7 @@ def calculate_from_raw(raw):
             if col not in columns:continue
             try:z=float(value)
             except ValueError as exc:
-                raise ValueError("Nonnumeric root-piece N2 fixation in source") from exc
+                raise ValueError(f"Nonnumeric root-piece value at row {row_num} cell {cell}: {value[:80]!r}") from exc
             if not math.isfinite(z) or z<0:raise ValueError("Impossible negative/nonfinite fixation")
             columns[col]["original_root_pieces"].append(z)
     plant_rows=[]
