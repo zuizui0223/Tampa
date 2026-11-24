@@ -20,6 +20,8 @@ on:
       - 'analysis/125_zen_site_moderator_posthoc_robustness.py'
       - 'validation/test_zen_site_moderator_posthoc_robustness.py'
       - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
+      - 'results/posidonia_n2_plant_campaign_exploratory_verified_20261124.json'
+      - 'results/zen_15site_moderator_posthoc_verified_20261124.json'
       - 'validation/test_zen_15site_mesograzer_factorial.py'
       - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
       - 'validation/test_seagrass_six_interactions_evidence_screen.py'
@@ -185,6 +187,18 @@ jobs:
           python analysis/124_posidonia_n2_plant_campaign_reaggregation.py \
             --out /tmp/posidonia_N2_plant_campaign_v1.json
           cat /tmp/posidonia_N2_plant_campaign_v1.json
+      - name: Verify stored Posidonia31-plant exact output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          observed=json.loads(Path('/tmp/posidonia_N2_plant_campaign_v1.json').read_text())
+          archived=json.loads(Path('results/posidonia_n2_plant_campaign_exploratory_verified_20261124.json').read_text())
+          proof=archived.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or observed!=archived:
+              raise SystemExit('Posidonia31-plant source or original-analysis mismatch')
+          print('PASS: Posidonia31-plant reproduced exactly')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: posidonia-N2-root-piece-plant-campaign-analysis
@@ -204,6 +218,18 @@ jobs:
           python analysis/125_zen_site_moderator_posthoc_robustness.py \
             --out /tmp/zen_moderator_posthoc_robustness.json
           cat /tmp/zen_moderator_posthoc_robustness.json
+      - name: Verify stored ZEN15-site-moderator exact output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          observed=json.loads(Path('/tmp/zen_moderator_posthoc_robustness.json').read_text())
+          archived=json.loads(Path('results/zen_15site_moderator_posthoc_verified_20261124.json').read_text())
+          proof=archived.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or observed!=archived:
+              raise SystemExit('ZEN15-site-moderator source or original-analysis mismatch')
+          print('PASS: ZEN15-site-moderator reproduced exactly')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen-15site-environmental-modifier-posthoc-diagnostics
