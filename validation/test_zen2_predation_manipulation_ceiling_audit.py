@@ -44,6 +44,8 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(j["original_tethered_prey_trials"],216)
         self.assertEqual(j["sites_with_100pct_consumption"],["CC"])
         self.assertEqual(j["number_sites_other"],5)
+        self.assertEqual(j["measured_prey_size_count"],216)
+        self.assertEqual(j["missing_prey_size_count"],0)
         doses=j["manipulation_fidelity_source_count_diagnostic"]["site_mean_post_pre_ratios"]
         for treatment,value in (("Amb",1),("Fifty",.5),("Eighty",.2)):
             self.assertAlmostEqual(doses[treatment]["median"],value)
@@ -64,6 +66,8 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(r["sites_with_estimate"],5)
             self.assertAlmostEqual(r["site_equal_mean_mm"],3)
             self.assertEqual(r["site_bootstrap_95pct_percentile"],[3,3])
+            self.assertEqual(r["leave_one_site_out_mean_range"],[3,3])
+            self.assertEqual(r["amphipod_only_posthoc_check"]["sites"],3)
 
     def test_tether_labels_repeat_and_are_not_216_independent_sites(self):
         rows,primary=sample()
