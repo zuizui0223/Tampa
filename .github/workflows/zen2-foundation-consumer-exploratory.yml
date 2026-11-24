@@ -145,7 +145,7 @@ jobs:
         run: |
           python analysis/130_zen2_2014_2015_geographic_link_gate.py --out /tmp/zen2_crossyear_geo.json
           cat /tmp/zen2_crossyear_geo.json
-      - name: Compare original-source output to frozen result: ZIP-original 2014–2015 geo
+      - name: Verify frozen source result for 2014 to 2015 geographic linkage
         run: |
           python - <<'PY'
           import json
@@ -175,7 +175,7 @@ jobs:
         run: |
           python analysis/131_zen2_prior2014_state_later2015_interaction.py --out /tmp/zen2_crossyear_2014_2015_site_context.json
           cat /tmp/zen2_crossyear_2014_2015_site_context.json
-      - name: Compare original-source output to frozen result: previous-year location-state 2015 risk
+      - name: Verify frozen source result for previous year location state and 2015 risk
         run: |
           python - <<'PY'
           import json
