@@ -1,0 +1,23 @@
+name: Wadden seagrass observed map sources
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/165_wadden_seagrass_map_sources.py'
+      - '.github/workflows/wadden-seagrass-map-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/165_wadden_seagrass_map_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wadden-seagrass-map-sources
+          path: wadden_seagrass_sources/
+          if-no-files-found: error

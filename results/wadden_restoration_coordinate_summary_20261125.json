@@ -1,0 +1,129 @@
+{
+  "status": "local executed SIBES coordinate audit; no recruitment association or GIS fit",
+  "source": "10.25850/nioz/7b.b.ug",
+  "archive_sha256": "843038aefe1afaed39ded71f4d5e5890262a778300c1f0ab011245b7e61ead8a",
+  "restoration_source": "10.1111/rec.13851",
+  "sites": {
+    "Griend": {
+      "lat": 53.2692,
+      "lon": 5.2949,
+      "plants_m2_may2019": 57,
+      "seed_recruitment_pct": 11.4
+    },
+    "Uithuizen": {
+      "lat": 53.4663,
+      "lon": 6.6883,
+      "plants_m2_may2019": 0
+    }
+  },
+  "grid_radius_2km": [
+    {
+      "year": 2017,
+      "Griend": {
+        "n_samples": 44,
+        "n_positive": 24,
+        "B_mean": 2.609496,
+        "M_median": 4.819773,
+        "M_pooled": 7.769282,
+        "dates": [
+          "2017-07-22",
+          "2017-07-26"
+        ]
+      },
+      "Uithuizen": {
+        "n_samples": 15,
+        "n_positive": 7,
+        "B_mean": 4.777014,
+        "M_median": 17.674994,
+        "M_pooled": 21.935578,
+        "dates": [
+          "2017-08-09",
+          "2017-08-09"
+        ]
+      }
+    },
+    {
+      "year": 2018,
+      "Griend": {
+        "n_samples": 46,
+        "n_positive": 42,
+        "B_mean": 3.611781,
+        "M_median": 6.147824,
+        "M_pooled": 7.249048,
+        "dates": [
+          "2018-07-17",
+          "2018-07-20"
+        ]
+      },
+      "Uithuizen": {
+        "n_samples": 14,
+        "n_positive": 9,
+        "B_mean": 6.299178,
+        "M_median": 8.735417,
+        "M_pooled": 7.460517,
+        "dates": [
+          "2018-08-24",
+          "2018-08-24"
+        ]
+      }
+    },
+    {
+      "year": 2019,
+      "Griend": {
+        "n_samples": 47,
+        "n_positive": 44,
+        "B_mean": 2.793657,
+        "M_median": 5.867194,
+        "M_pooled": 6.331752,
+        "dates": [
+          "2019-07-11",
+          "2019-07-14"
+        ]
+      },
+      "Uithuizen": {
+        "n_samples": 16,
+        "n_positive": 10,
+        "B_mean": 6.49613,
+        "M_median": 26.083335,
+        "M_pooled": 27.573569,
+        "dates": [
+          "2019-08-29",
+          "2019-08-29"
+        ]
+      }
+    }
+  ],
+  "radius_order_km": [
+    0.5,
+    1,
+    2,
+    5
+  ],
+  "Uith_minus_Griend_M_median": {
+    "2017": [
+      -5.3746495264,
+      -4.1514408138,
+      12.855221555,
+      8.283586992
+    ],
+    "2018": [
+      -6.8869607446,
+      -1.4753461369,
+      2.5875930856,
+      3.9662520395
+    ],
+    "2019": [
+      26.1270036559,
+      20.6008683403,
+      20.216140207,
+      20.6468724531
+    ]
+  },
+  "limits": [
+    "All 2019 local observations postdate May recruitment endpoint. Prior summer observations not pre-germination spring exposure.",
+    "Two sites, unknown exact plot geometries, distances chosen response-open, family-level juvenile identification.",
+    "No habitat covariates, no regression, no inference of causal size effect.",
+    "Seagrass can itself change macrofauna; restored-bed survey 10.3389/fmars.2023.1294845 found Hediste characteristic of restored seagrass, no raw data acquired.",
+    "GIS source acquisition workflow committed, not yet retrieved."
+  ]
+}
