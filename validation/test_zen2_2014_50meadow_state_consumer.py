@@ -15,6 +15,7 @@ def fake_sites():
                          "above":10+i+offset*2,"below":30+i*2+offset,
                          "shoots":100+i*5+offset*10,
                          "mesograzer_abundance":2+i+.1*offset,
+                         "mesograzer_count_unstandardized":20+i+3*offset,
                          "mesograzer_richness":3+i%5,
                          "epiphyton":1+i/10+offset*.5,
                          "temperature":10+i*.3,
