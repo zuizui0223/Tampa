@@ -1,0 +1,72 @@
+{
+  "scope": "source-hash verified local reanalysis; whole-configuration CV within one flume, response-open",
+  "source": "10.1371/journal.pone.0222020.s007",
+  "artifact_sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c",
+  "n_configurations": 16,
+  "n_cells": 160,
+  "primary_C": 1,
+  "primary": {
+    "flow": {
+      "rmse": 0.23393303120054718,
+      "skill": 0.008726460954449289
+    },
+    "width": {
+      "rmse": 0.15946578688976404,
+      "skill": 0.539377172037135
+    },
+    "geometry": {
+      "rmse": 0.11950823235476787,
+      "skill": 0.7412942613478805
+    },
+    "identity": {
+      "rmse": 0.2214104611339169,
+      "skill": 0.1120128325874088
+    },
+    "geometry_identity": {
+      "rmse": 0.12650253785545645,
+      "skill": 0.7101262469936475
+    },
+    "training_flow_mean": {
+      "rmse": 0.23496046423406305,
+      "skill": 0
+    }
+  },
+  "sensitivity_rmse_rounded": [
+    {
+      "C": 0.1,
+      "geometry": 0.1325,
+      "geometry_identity": 0.1333,
+      "improved": 10
+    },
+    {
+      "C": 0.3,
+      "geometry": 0.1241,
+      "geometry_identity": 0.1257,
+      "improved": 11
+    },
+    {
+      "C": 1,
+      "geometry": 0.1195,
+      "geometry_identity": 0.1265,
+      "improved": 11
+    },
+    {
+      "C": 3,
+      "geometry": 0.1186,
+      "geometry_identity": 0.1302,
+      "improved": 11
+    },
+    {
+      "C": 10,
+      "geometry": 0.119,
+      "geometry_identity": 0.1345,
+      "improved": 10
+    }
+  ],
+  "limits": [
+    "Identity refers to four binary treatment composition categories, including short and long eelgrass, not full species traits.",
+    "Geometry is summed width and object count, not physical equivalence, and encodes treatment identity in part.",
+    "One trial per configuration-velocity cell, no independent population replication.",
+    "No shell-only or dead-versus-live treatment, no otter outcome."
+  ]
+}
