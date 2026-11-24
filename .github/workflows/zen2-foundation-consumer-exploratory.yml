@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'analysis/126_zen2_structure_consumer_source_preflight.py'
+      - 'analysis/127_zen2_2015_site_predation_factorial.py'
+      - 'validation/test_zen2_2015_site_predation_factorial.py'
       - 'validation/test_zen2_structure_consumer_source_preflight.py'
       - 'docs/ZEN2_FOUNDATION_CONSUMER_EXPERIMENT_20261124.md'
       - '.github/workflows/zen2-foundation-consumer-exploratory.yml'
@@ -25,3 +27,21 @@ jobs:
         with:
           name: zen2-two-original-sources-metadata
           path: /tmp/zen2_two_sources_metadata_v1.json
+
+  2015-site-equal-experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test experimental treatment factorial, status and site-level independence
+        run: python -m unittest discover -s validation -p 'test_zen2_2015_site_predation_factorial.py' -v
+      - name: Analyze 2015 original 17-site tether experiment by site
+        run: |
+          python analysis/127_zen2_2015_site_predation_factorial.py --out /tmp/zen2_2015_site_predation.json
+          cat /tmp/zen2_2015_site_predation.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-2015-eelgrass-thinning-consumer-predation
+          path: /tmp/zen2_2015_site_predation.json
