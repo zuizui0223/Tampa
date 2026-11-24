@@ -10,6 +10,8 @@ on:
       - 'analysis/130_zen2_2014_2015_geographic_link_gate.py'
       - 'analysis/131_zen2_prior2014_state_later2015_interaction.py'
       - 'analysis/132_zen2_crossyear_basin_latitude_rank_sensitivity.py'
+      - 'analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py'
+      - 'validation/test_zen2_crossyear_structure_vs_trophic_site_cv.py'
       - 'validation/test_zen2_crossyear_basin_latitude_rank_sensitivity.py'
       - 'results/zen2_2014_2015_geographic_link_verified_20261124.json'
       - 'results/zen2_2014_prior_state_2015_trophic_risk_verified_20261124.json'
@@ -211,3 +213,21 @@ jobs:
         with:
           name: zen2-crossyear-shoot-density-basin-latitude-robustness
           path: /tmp/zen2_crossyear_basin_robustness.json
+
+  crossyear_host_vs_interaction_site_cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate leave-one-geographical-site-out prediction without test-site response leakage
+        run: python -m unittest discover -s validation -p 'test_zen2_crossyear_structure_vs_trophic_site_cv.py' -v
+      - name: Compare 2014 habitat state forecasting 2015 habitat versus trophic risk
+        run: |
+          python analysis/133_zen2_crossyear_structure_vs_trophic_site_cv.py --out /tmp/zen2_crossyear_host_interaction_site_cv.json
+          cat /tmp/zen2_crossyear_host_interaction_site_cv.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen2-crossyear-host-vs-interaction-14site-cv
+          path: /tmp/zen2_crossyear_host_interaction_site_cv.json
