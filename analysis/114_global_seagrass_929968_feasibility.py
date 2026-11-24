@@ -103,6 +103,9 @@ def audit(rows,keys):
     byregion=defaultdict(list)
     years=[]
     refs=set()
+    exact_raw_row_counts=Counter(tuple(row[k] for k in rows[0].keys()) for row in rows)
+    duplicated_member_rows=sum(c for c in exact_raw_row_counts.values() if c>1)
+    duplicate_groups=sum(c>1 for c in exact_raw_row_counts.values())
     genera=set()
     regions=set()
     habitats=set()
@@ -178,6 +181,10 @@ def audit(rows,keys):
         ],key=lambda x:-x["paired_rows"])
     return {
         "source_row_count":len(rows),
+        "raw_reference_strings_not_independent_publications":len(refs),
+        "exact_duplicate_member_rows_not_automatically_removed":duplicated_member_rows,
+        "exact_duplicate_row_groups":duplicate_groups,
+        "source_years_are_not_permanent_mark_revisits":True,
         "references":len(refs),
         "genera":len(genera),
         "bioregions":len(regions),
@@ -224,6 +231,8 @@ def execute(raw:bytes):
             "This global literature database is NOT a seagrass site-absence record.",
             "Observation year is not evidence that the same permanent quadrat was revisited.",
             "Repeated extracted values are not independent literature studies or sampling units.",
+            "Raw Reference strings include known bibliographic corruption and can overcount independent articles; never use their count as n_studies.",
+            "Exact duplicate rows are counted but not automatically removed because field replicate status is unresolved.",
             "Same-row biomass allocation ratio is a static cross-sectional measurement, not clonal carbon storage or TNC.",
             "Do not treat pooled genus/bioregion differences as ecological mechanism without study-cluster and location checks.",
             "The 2025 JBI global genus/life-history/temperature analysis already exists; this audit alone is not a novel macroecological discovery.",
