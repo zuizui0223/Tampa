@@ -1,0 +1,207 @@
+{
+  "status": "original artifact verified; full local Python executed; repository core reproduction not separately CI-replayed",
+  "artifact": {
+    "run": 45412432794,
+    "id": 14932375590,
+    "sha256": "843038aefe1afaed39ded71f4d5e5890262a778300c1f0ab011245b7e61ead8a"
+  },
+  "sibes": {
+    "doi": "10.25850/nioz/7b.b.ug",
+    "source_hashes": {
+      "biota": "8d7623106a54f3c8bd473da104a4656cba849625e19d2d9fbeaf9b83d4426449",
+      "samples": "2d5faefec912d8514eb4742b1ef82f57df63e82d823bf4b3e63e4d5e181e9920",
+      "species": "067bcbf2ac75a1a07b3063932172903b1c132101d6557b7aa98f89e81759b22c"
+    },
+    "years": [
+      2008,
+      2022
+    ],
+    "sample_rows": 59463,
+    "unique_sample_ids": 59457,
+    "conflicting_sample_ids": [
+      154828,
+      155325,
+      156417,
+      156582,
+      158356,
+      158642
+    ],
+    "stations": 5105,
+    "biota_rows": 449516,
+    "species_table_rows": 171,
+    "identified_hediste_rows": 20034,
+    "zero_afdm": 281,
+    "cooccur_nereididae": 5116,
+    "primary_grid_positive": 16794,
+    "primary_stations": 2945,
+    "year_basin": {
+      "groups": 147,
+      "events": 16207,
+      "top_B": 4107,
+      "top_M": 4123,
+      "both": 2071,
+      "top_M_outside_B": 0.49769585253456217,
+      "median_rho_B_M": 0.6663750562579986
+    },
+    "year_only_top_M_outside_B": 0.48025689819219786,
+    "sensitivity": {
+      "all_sampling_types": 0.4954462659380692,
+      "grid_no_family": 0.49170896785109985,
+      "grid_2012_2022": 0.5067456400131622,
+      "grid_2008_2021": 0.49908877896381154,
+      "grid_include_recorded_zero_AFDM": 0.4948601482189816
+    },
+    "same_biomass_bands": [
+      {
+        "range": [
+          0.5,
+          1
+        ],
+        "n": 2155,
+        "q": [
+          2.3698073749373996,
+          9.20049552675117,
+          23.119945429941023
+        ]
+      },
+      {
+        "range": [
+          1,
+          2
+        ],
+        "n": 3041,
+        "q": [
+          3.8401005277150864,
+          14.949786382143037,
+          38.874673663155434
+        ]
+      },
+      {
+        "range": [
+          2,
+          4
+        ],
+        "n": 3538,
+        "q": [
+          5.999974520089604,
+          21.55863393097843,
+          60.99944738180416
+        ]
+      },
+      {
+        "range": [
+          4,
+          8
+        ],
+        "n": 2935,
+        "q": [
+          9.776923302698648,
+          29.866668513922832,
+          88.96062400313109
+        ]
+      },
+      {
+        "range": [
+          8,
+          16
+        ],
+        "n": 1327,
+        "q": [
+          14.678873283271328,
+          35.766641834533715,
+          98.63966901787744
+        ]
+      }
+    ],
+    "consecutive": {
+      "n": 8957,
+      "B_top_retained": [
+        952,
+        2594
+      ],
+      "M_top_retained": [
+        665,
+        2190
+      ],
+      "B_within10pct": 467,
+      "M_twofold_change_given_similar_B": 233,
+      "M_rank_switch_given_similar_B": 155
+    }
+  },
+  "hautekiet": {
+    "doi": "10.5281/zenodo.15182547",
+    "paper": "10.1002/lno.70379",
+    "survival_source_sha256": "168e3750a48f7642389799c801bc8159516d9361bdf7899d0e53570bb352e7bb",
+    "n_pots": 40,
+    "n_initial": 200,
+    "cells": [
+      {
+        "worm": 0,
+        "algae": 0,
+        "survive": 50,
+        "n": 50
+      },
+      {
+        "worm": 0,
+        "algae": 1,
+        "survive": 39,
+        "n": 50
+      },
+      {
+        "worm": 1,
+        "algae": 0,
+        "survive": 3,
+        "n": 50
+      },
+      {
+        "worm": 1,
+        "algae": 1,
+        "survive": 40,
+        "n": 50
+      }
+    ],
+    "algae_without_worm": {
+      "RD": -0.22,
+      "ci": [
+        -0.32,
+        -0.14
+      ]
+    },
+    "algae_with_worm": {
+      "RD": 0.74,
+      "ci": [
+        0.58,
+        0.88
+      ]
+    },
+    "interaction_RD": {
+      "estimate": 0.96,
+      "ci": [
+        0.78,
+        1.12
+      ],
+      "loo_range": [
+        0.9177777777777776,
+        1.0044444444444445
+      ]
+    },
+    "field": {
+      "n_pairs": 6,
+      "Vau": 0.6666666666666666,
+      "Mud": 0.2333333333333333,
+      "RD": 0.43333333333333335,
+      "bootstrap": [
+        0.1,
+        0.7666666666666666
+      ],
+      "sign_flip_p": 0.125
+    }
+  },
+  "limits": [
+    "SIBES identified positive species records only; small Nereididae may be recorded at family level; AFDM includes estimated mass and is not experimental DW.",
+    "Year-basin quartiles describe observed ranks, not harmful thresholds. Shared numerator B and M=B/N.",
+    "Survey June–October; no locally paired eelgrass recruitment or spring risk data.",
+    "Hautekiet experiment is saltmarsh, separate from SIBES. Published interaction already reported; conditional pot-level reaggregation and leave-one-pot sensitivity.",
+    "No new causal mediation or meta-analysis."
+  ]
+}
