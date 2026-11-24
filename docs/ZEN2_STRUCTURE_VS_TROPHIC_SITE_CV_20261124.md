@@ -64,3 +64,22 @@ Original six-job crossyear analysis succeeded at [Actions #45330784453](https://
 - Workflow exact equality checks independently reproduce both full JSON results, not just headline effects. No original 2014/2015 source, Tampa main manuscript, prospective TNC, or prior prediction holdout contract has been modified.
 
 **Decision:** Good enough for **hypothesis generation and methods evidence**, not enough to brand as a new global proof or causal multi-trophic mechanism. Further exploratory modeling within these same 14 localities risks post-hoc overfit; the next decisive dataset should use jointly repeated plant and trophic outcomes.
+
+
+## Secondary geographic-transfer challenge: leave an entire ocean basin out
+
+A further **post-hoc** difficulty increase, added only AFTER observing site-LOOCV, trains the same one-predictor model in the Atlantic+Mediterranean and tests every Pacific site (n=8), and swaps train/test roles to test the six Atlantic+Mediterranean sites. Models are fit ONLY in the other basin; their reference is the **other basin's mean on the same outcome scale**. The domain-transfer estimator has just two broad categories; it is not 2 independent meta-analytic trials or prospective external datasets.
+
+| 2015 target from 2014 shoot density | Pacific held out (8) | Atlantic+Mediterranean held out (6) | Combined basin-transfer R² |
+| --- | ---: | ---: | ---: |
+| 2015 shoot density, log1p | **+0.584** | **+0.537** | **+0.566** |
+| 2015 edge–interior 24h predation risk contrast | +0.125 | +0.063 | +0.101 |
+| 2015 80%-thinning–ambient risk contrast | −0.420 | −0.104 | −0.326 |
+
+The stricter pre-specified geographic distance sensitivity (13 localities, 7 Pacific + 6 Atlantic/Mediterranean) gives combined R² **+0.576** for shoot density, **+0.109** for edge risk and **−0.292** for thinning risk. The structural result is therefore not restricted to site-by-site LOOCV or the single BB location just outside a 5-km geographical tolerance. Nevertheless the basins contain different field teams, habitats, predators and methods; the data **do not demonstrate a mechanism**, and positive modest edge-risk R² with an alternate CV split should not be selectively presented as validated interaction prediction.
+
+Implementation: `analysis/134_zen2_2014_2015_leave_ocean_basin_out.py`, with tests `validation/test_zen2_2014_2015_leave_ocean_basin_out.py`. The calculations above were independently checked from the archived original site-level source JSON; the dedicated source CI is the final exact-output verification gate. No ZEN2 underlying biological response was modified and no new outside study was introduced.
+
+## Next independent data that could falsify the ecological hypothesis
+
+A genuinely *novel* macroecological hypothesis cannot rely only on the same ZEN study measured in multiple ways. Prefer **another independent regional time series** with annual host canopy/shoot/above-and-below biomass, and *the same plots or communities* measured concurrently for epiphyte grazers, predators and freely moving grazer survival. Then compare predeclared next-year host and trophic endpoint predictive skill with independent basins blocked as the CV units. Such a result would separate spatial vegetation persistence, consumer behavioral compensation, and instrument-level saturation much more sharply than another post-hoc 14-site correlation.
