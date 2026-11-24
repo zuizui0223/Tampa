@@ -37,7 +37,8 @@ def mock_xlsx(change=""):
         row4+=f'<c r="{col}4" t="inlineStr"><is><t>ERS-SYNTHETIC-{i}</t></is></c>'
         row5+=f'<c r="{col}5"><v>{amount}</v></c>'
         row6+=f'<c r="{col}6"><v>{amount}</v></c>'
-    sheet='<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetData>'+row3+'</row>'+row4+'</row>'+row5+'</row>'+row6+'</row></sheetData></worksheet>'
+    second_panel='<row r="30"><c r="B30" t="inlineStr"><is><t>April2016_Plant1</t></is></c></row>'
+    sheet='<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetData>'+row3+'</row>'+row4+'</row>'+row5+'</row>'+row6+'</row>'+second_panel+'</sheetData></worksheet>'
     book='<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheets><sheet name="Figure 2"/></sheets></workbook>'
     out=io.BytesIO()
     with zipfile.ZipFile(out,"w") as z:
