@@ -15,6 +15,8 @@ on:
       - 'validation/test_lucinid_field_published_factorial_contrast.py'
       - 'analysis/123_posidonia_nfix_original_source_factor_gate.py'
       - 'validation/test_posidonia_nfix_original_source_factor_gate.py'
+      - 'analysis/124_posidonia_n2_plant_campaign_reaggregation.py'
+      - 'validation/test_posidonia_n2_plant_campaign_reaggregation.py'
       - 'validation/test_zen_15site_mesograzer_factorial.py'
       - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
       - 'validation/test_seagrass_six_interactions_evidence_screen.py'
@@ -165,3 +167,22 @@ jobs:
         with:
           name: posidonia-N2-2021-original-source-factor-gate
           path: /tmp/posidonia_N2_original_source_factor_gate.json
+
+  posidonia_n2_plant_campaign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify independent plant identities versus root-piece pseudoreplicates
+        run: python -m unittest discover -s validation -p 'test_posidonia_n2_plant_campaign_reaggregation.py' -v
+      - name: Reaggregate source-verified 2021 Posidonia N2 fixation by 31 plants
+        run: |
+          python analysis/124_posidonia_n2_plant_campaign_reaggregation.py \
+            --out /tmp/posidonia_N2_plant_campaign_v1.json
+          cat /tmp/posidonia_N2_plant_campaign_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: posidonia-N2-root-piece-plant-campaign-analysis
+          path: /tmp/posidonia_N2_plant_campaign_v1.json
