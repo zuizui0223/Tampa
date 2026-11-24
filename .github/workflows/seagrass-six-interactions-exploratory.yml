@@ -17,6 +17,9 @@ on:
       - 'validation/test_posidonia_nfix_original_source_factor_gate.py'
       - 'analysis/124_posidonia_n2_plant_campaign_reaggregation.py'
       - 'validation/test_posidonia_n2_plant_campaign_reaggregation.py'
+      - 'analysis/125_zen_site_moderator_posthoc_robustness.py'
+      - 'validation/test_zen_site_moderator_posthoc_robustness.py'
+      - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
       - 'validation/test_zen_15site_mesograzer_factorial.py'
       - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
       - 'validation/test_seagrass_six_interactions_evidence_screen.py'
@@ -186,3 +189,22 @@ jobs:
         with:
           name: posidonia-N2-root-piece-plant-campaign-analysis
           path: /tmp/posidonia_N2_plant_campaign_v1.json
+
+  zen_moderator_posthoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check site-grain/moderator null randomization
+        run: python -m unittest discover -s validation -p 'test_zen_site_moderator_posthoc_robustness.py' -v
+      - name: Compute exploratory 15-site temperature salinity richness sign screen
+        run: |
+          python analysis/125_zen_site_moderator_posthoc_robustness.py \
+            --out /tmp/zen_moderator_posthoc_robustness.json
+          cat /tmp/zen_moderator_posthoc_robustness.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen-15site-environmental-modifier-posthoc-diagnostics
+          path: /tmp/zen_moderator_posthoc_robustness.json
