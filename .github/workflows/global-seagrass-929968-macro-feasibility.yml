@@ -1,0 +1,56 @@
+name: Tampa global seagrass PANGAEA macro feasibility
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'analysis/114_global_seagrass_929968_feasibility.py'
+      - 'validation/test_global_seagrass_929968_feasibility.py'
+      - 'analysis/115_global_seagrass_allocation_conditional_spread.py'
+      - 'validation/test_global_seagrass_allocation_conditional_spread.py'
+      - 'docs/GLOBAL_SEAGRASS_MACRO_FEASIBILITY_20261124.md'
+      - 'results/global_seagrass_929968_feasibility_verified_20261124.json'
+      - 'results/global_seagrass_allocation_conditioned_spread_verified_20261124.json'
+      - '.github/workflows/global-seagrass-929968-macro-feasibility.yml'
+jobs:
+  original_global_data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic grain and source parser tests
+        run: python -m unittest discover -s validation -p 'test_global_seagrass_929968_feasibility.py' -v
+      - name: Test proposed global allocation analysis using synthetic same-row inputs
+        run: python -m unittest discover -s validation -p 'test_global_seagrass_allocation_conditional_spread.py' -v
+      - name: Download original PANGAEA dataset and profile macroecological pairing
+        run: |
+          python analysis/114_global_seagrass_929968_feasibility.py --out /tmp/global_seagrass_929968_feasibility_v1.json --raw-out /tmp/original_global_seagrass.tab
+          cat /tmp/global_seagrass_929968_feasibility_v1.json
+      - name: Estimate source-verified same-record allocation and conditioned spread
+        run: |
+          python analysis/115_global_seagrass_allocation_conditional_spread.py --raw-file /tmp/original_global_seagrass.tab --out /tmp/global_seagrass_allocation_v1.json
+          cat /tmp/global_seagrass_allocation_v1.json
+      - name: Assert both global original-source results equal frozen verified outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          pairs=[
+              ('/tmp/global_seagrass_929968_feasibility_v1.json','results/global_seagrass_929968_feasibility_verified_20261124.json'),
+              ('/tmp/global_seagrass_allocation_v1.json','results/global_seagrass_allocation_conditioned_spread_verified_20261124.json'),
+          ]
+          for current,archived in pairs:
+              live=json.loads(Path(current).read_text())
+              expected=json.loads(Path(archived).read_text())
+              provenance=expected.pop('source_verified_run',None)
+              if not provenance or provenance.get('status')!='success' or live!=expected:
+                  raise SystemExit('Nonmatching source-verified global seagrass analysis: '+archived)
+          print('PASS: full global feasibility and allocation outputs reproduce exact original public source')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: global-seagrass-929968-feasibility
+          path: |
+            /tmp/global_seagrass_929968_feasibility_v1.json
+            /tmp/global_seagrass_allocation_v1.json

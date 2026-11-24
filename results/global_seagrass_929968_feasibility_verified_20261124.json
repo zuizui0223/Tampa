@@ -1,0 +1,618 @@
+{
+  "audit": {
+    "bioregions": 6,
+    "candidate_multiyear_groups_top20": [
+      {
+        "genus": "Thalassia",
+        "latitude": 9.35,
+        "longitude": -82.25,
+        "n_years": 12,
+        "reference": "Lopez-Calderon et al. 2013",
+        "rows": 23,
+        "years": [
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010
+        ]
+      },
+      {
+        "genus": "Enhalus",
+        "latitude": -12.666,
+        "longitude": 141.838,
+        "n_years": 11,
+        "reference": "Unsworth et al. 2012",
+        "rows": 11,
+        "years": [
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010
+        ]
+      },
+      {
+        "genus": "Cymodocea",
+        "latitude": -6.277,
+        "longitude": 39.176,
+        "n_years": 10,
+        "reference": "Alonso Aller et al. 2019",
+        "rows": 48,
+        "years": [
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Halodule",
+        "latitude": -6.277,
+        "longitude": 39.176,
+        "n_years": 10,
+        "reference": "Alonso Aller et al. 2019",
+        "rows": 30,
+        "years": [
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Thalassia",
+        "latitude": -6.277,
+        "longitude": 39.176,
+        "n_years": 10,
+        "reference": "Alonso Aller et al. 2019",
+        "rows": 30,
+        "years": [
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Halophila",
+        "latitude": -6.277,
+        "longitude": 39.176,
+        "n_years": 10,
+        "reference": "Alonso Aller et al. 2019",
+        "rows": 28,
+        "years": [
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Syringodium",
+        "latitude": -6.277,
+        "longitude": 39.176,
+        "n_years": 10,
+        "reference": "Alonso Aller et al. 2019",
+        "rows": 21,
+        "years": [
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Thalassia",
+        "latitude": 11.167245,
+        "longitude": -60.826928,
+        "n_years": 10,
+        "reference": "Juman 2005",
+        "rows": 15,
+        "years": [
+          1992,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002
+        ]
+      },
+      {
+        "genus": "Halodule",
+        "latitude": 30.35973,
+        "longitude": -88.397873,
+        "n_years": 9,
+        "reference": "Cho et al. 2017",
+        "rows": 22,
+        "years": [
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013
+        ]
+      },
+      {
+        "genus": "Halodule",
+        "latitude": 30.354828,
+        "longitude": -88.410662,
+        "n_years": 9,
+        "reference": "Cho et al. 2017",
+        "rows": 22,
+        "years": [
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013
+        ]
+      },
+      {
+        "genus": "Ruppia",
+        "latitude": 30.354828,
+        "longitude": -88.410662,
+        "n_years": 9,
+        "reference": "Cho et al. 2017",
+        "rows": 22,
+        "years": [
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013
+        ]
+      },
+      {
+        "genus": "Ruppia",
+        "latitude": 30.35973,
+        "longitude": -88.397873,
+        "n_years": 9,
+        "reference": "Cho et al. 2017",
+        "rows": 21,
+        "years": [
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013
+        ]
+      },
+      {
+        "genus": "Zostera",
+        "latitude": 37.262,
+        "longitude": -75.815,
+        "n_years": 8,
+        "reference": "Berger et al. 2020",
+        "rows": 30,
+        "years": [
+          2007,
+          2011,
+          2012,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018
+        ]
+      },
+      {
+        "genus": "Ruppia",
+        "latitude": 30.386569,
+        "longitude": -88.406113,
+        "n_years": 8,
+        "reference": "Cho et al. 2017",
+        "rows": 18,
+        "years": [
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2013
+        ]
+      },
+      {
+        "genus": "Thalassia",
+        "latitude": 9.737,
+        "longitude": -82.807,
+        "n_years": 7,
+        "reference": "Loria-Naranjo et al. 2018",
+        "rows": 30,
+        "years": [
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015
+        ]
+      },
+      {
+        "genus": "Thalassia",
+        "latitude": 21.981,
+        "longitude": 120.713,
+        "n_years": 7,
+        "reference": "Kuo et al. 2010",
+        "rows": 26,
+        "years": [
+          2001,
+          2002,
+          2003,
+          2005,
+          2006,
+          2007,
+          2008
+        ]
+      },
+      {
+        "genus": "Halophila",
+        "latitude": 21.435,
+        "longitude": 109.283,
+        "n_years": 7,
+        "reference": "Qiu et al. 2017",
+        "rows": 26,
+        "years": [
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014
+        ]
+      },
+      {
+        "genus": "Ruppia",
+        "latitude": 37.239,
+        "longitude": -76.438,
+        "n_years": 7,
+        "reference": "Shields et al. 2019",
+        "rows": 7,
+        "years": [
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Zostera",
+        "latitude": 37.239,
+        "longitude": -76.438,
+        "n_years": 7,
+        "reference": "Shields et al. 2019",
+        "rows": 7,
+        "years": [
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016
+        ]
+      },
+      {
+        "genus": "Halodule",
+        "latitude": 27.817,
+        "longitude": -97.133,
+        "n_years": 6,
+        "reference": "Dunton 1996",
+        "rows": 86,
+        "years": [
+          1989,
+          1990,
+          1991,
+          1992,
+          1993,
+          1994
+        ]
+      }
+    ],
+    "cover_values_with_positive_value": 1285,
+    "exact_duplicate_member_rows_not_automatically_removed": 269,
+    "exact_duplicate_row_groups": 123,
+    "exact_same_row_paired_above_below_count": 1916,
+    "genera": 12,
+    "habitat_classes": [
+      "Coastal",
+      "Estuarine"
+    ],
+    "nonempty_measure_counts": {
+      "ag": 3386,
+      "bg": 2008,
+      "cover": 1285,
+      "paired_ag_bg": 1916,
+      "paired_ag_cover": 384,
+      "paired_bg_cover": 281,
+      "paired_shoot_cover": 434,
+      "rows_with_target_measures": 6305,
+      "shoot": 3209,
+      "total": 2696
+    },
+    "note": "Coordinates/genus/year within a publication are NOT verified fixed marks; all paired records are publication-extracted and can be correlated. No true absence or mapped extent is present in the dataset.",
+    "paired_ratio_by_bioregion": [
+      {
+        "distinct_references": 32,
+        "group": "Tropical Atlantic",
+        "median_below_to_above_biomass": 1.6787352160270337,
+        "paired_rows": 434,
+        "q25_ratio": 0.8814175829461025,
+        "q75_ratio": 3.5901699690300286
+      },
+      {
+        "distinct_references": 38,
+        "group": "Tropical Indo Pacific",
+        "median_below_to_above_biomass": 2.1099447513812155,
+        "paired_rows": 379,
+        "q25_ratio": 1.1859734195402298,
+        "q75_ratio": 5.685741373809199
+      },
+      {
+        "distinct_references": 18,
+        "group": "Temperate North Pacific",
+        "median_below_to_above_biomass": 0.6137865911237016,
+        "paired_rows": 339,
+        "q25_ratio": 0.3353948161390684,
+        "q75_ratio": 1.0821190783919332
+      },
+      {
+        "distinct_references": 18,
+        "group": "Temperate North Atlantic",
+        "median_below_to_above_biomass": 1.032204789430223,
+        "paired_rows": 301,
+        "q25_ratio": 0.5886392009987516,
+        "q75_ratio": 1.726953026877669
+      },
+      {
+        "distinct_references": 13,
+        "group": "Temperate Southern",
+        "median_below_to_above_biomass": 0.8609290461981091,
+        "paired_rows": 234,
+        "q25_ratio": 0.6415522242573363,
+        "q75_ratio": 2.9512736966032533
+      },
+      {
+        "distinct_references": 22,
+        "group": "Mediterranean",
+        "median_below_to_above_biomass": 1.9332686241203592,
+        "paired_rows": 229,
+        "q25_ratio": 1.1388149939540508,
+        "q75_ratio": 4.117018779342723
+      }
+    ],
+    "paired_ratio_by_genus": [
+      {
+        "distinct_references": 55,
+        "group": "Zostera",
+        "median_below_to_above_biomass": 0.8580323785803238,
+        "paired_rows": 775,
+        "q25_ratio": 0.4663360296917226,
+        "q75_ratio": 1.6858874261091066
+      },
+      {
+        "distinct_references": 23,
+        "group": "Halodule",
+        "median_below_to_above_biomass": 2.2222222222222223,
+        "paired_rows": 276,
+        "q25_ratio": 1.2524406560600356,
+        "q75_ratio": 4.144171190317906
+      },
+      {
+        "distinct_references": 23,
+        "group": "Halophila",
+        "median_below_to_above_biomass": 0.8421052631578948,
+        "paired_rows": 253,
+        "q25_ratio": 0.6666666666666666,
+        "q75_ratio": 1.234513274336283
+      },
+      {
+        "distinct_references": 31,
+        "group": "Thalassia",
+        "median_below_to_above_biomass": 3.8231759656652358,
+        "paired_rows": 195,
+        "q25_ratio": 1.4978810294344274,
+        "q75_ratio": 6.502634313359014
+      },
+      {
+        "distinct_references": 24,
+        "group": "Cymodocea",
+        "median_below_to_above_biomass": 2.310958904109589,
+        "paired_rows": 167,
+        "q25_ratio": 1.500764674448885,
+        "q75_ratio": 4.704645720256536
+      },
+      {
+        "distinct_references": 8,
+        "group": "Ruppia",
+        "median_below_to_above_biomass": 0.9901023890784982,
+        "paired_rows": 128,
+        "q25_ratio": 0.3754027150263883,
+        "q75_ratio": 1.5047812047077929
+      },
+      {
+        "distinct_references": 8,
+        "group": "Enhalus",
+        "median_below_to_above_biomass": 6.960464412196195,
+        "paired_rows": 60,
+        "q25_ratio": 3.1793676996249625,
+        "q75_ratio": 10.40297759919213
+      },
+      {
+        "distinct_references": 9,
+        "group": "Syringodium",
+        "median_below_to_above_biomass": 1.1819710729902455,
+        "paired_rows": 19,
+        "q25_ratio": 0.6589506172839505,
+        "q75_ratio": 1.6334305115552195
+      },
+      {
+        "distinct_references": 4,
+        "group": "Posidonia",
+        "median_below_to_above_biomass": 3.5307328907381996,
+        "paired_rows": 16,
+        "q25_ratio": 1.1177481770191433,
+        "q75_ratio": 8.083827560766494
+      },
+      {
+        "distinct_references": 7,
+        "group": "Thalassodendron",
+        "median_below_to_above_biomass": 1.6695544554455446,
+        "paired_rows": 15,
+        "q25_ratio": 1.4000850439882697,
+        "q75_ratio": 2.7312408425469044
+      },
+      {
+        "distinct_references": 1,
+        "group": "Phyllospadix",
+        "median_below_to_above_biomass": 0.6232687322153856,
+        "paired_rows": 12,
+        "q25_ratio": 0.4730964568960312,
+        "q75_ratio": 0.7241320590835727
+      }
+    ],
+    "parse_and_domain_warnings": {
+      "missing_or_noninteger_year": 10
+    },
+    "publication_geocoordinate_genus_candidates_with_two_or_more_years": 348,
+    "raw_reference_strings_not_independent_publications": 405,
+    "references": 405,
+    "references_in_exact_same_row_biomass_pairs": 139,
+    "references_with_candidate_multiyear_groups": 164,
+    "references_with_multiple_reported_years": 174,
+    "same_row_median_bg_to_ag_ratio": 1.2814593547385125,
+    "same_row_ratio_q25_q75": [
+      0.6807380887541736,
+      2.9699237013792184
+    ],
+    "sampling_year_range": [
+      1972,
+      2019
+    ],
+    "source_row_count": 6658,
+    "source_years_are_not_permanent_mark_revisits": true,
+    "total_numeric_cover_values": 1285
+  },
+  "evidence_class": "exploratory_global_literature_reanalysis_not_longitudinal_validation",
+  "hard_stops": [
+    "This global literature database is NOT a seagrass site-absence record.",
+    "Observation year is not evidence that the same permanent quadrat was revisited.",
+    "Repeated extracted values are not independent literature studies or sampling units.",
+    "Raw Reference strings include known bibliographic corruption and can overcount independent articles; never use their count as n_studies.",
+    "Exact duplicate rows are counted but not automatically removed because field replicate status is unresolved.",
+    "Same-row biomass allocation ratio is a static cross-sectional measurement, not clonal carbon storage or TNC.",
+    "Do not treat pooled genus/bioregion differences as ecological mechanism without study-cluster and location checks.",
+    "The 2025 JBI global genus/life-history/temperature analysis already exists; this audit alone is not a novel macroecological discovery.",
+    "Do not reuse the already-opened SeagrassNet external early-warning validation as untouched."
+  ],
+  "schema": "tampa.global_seagrass_929968_feasibility_v1",
+  "source": {
+    "download_sha256": "84e067f41637bc1031ee64487b5cb634500d6507698f0b11c42d25a6985946a5",
+    "license": "CC BY 4.0",
+    "original_dataset_doi": "10.1594/PANGAEA.929968",
+    "related_essd_doi": "10.5194/essd-15-511-2023",
+    "schema": {
+      "header": [
+        "Latitude",
+        "Longitude",
+        "Seagr bioregion",
+        "Habitat",
+        "Genus",
+        "Year obs [a AD]",
+        "Seagr biom above dm [g/m**2]",
+        "Seagr biom below dm [g/m**2]",
+        "Seagr biom tot dm [g/m**2]",
+        "Seagr shoot dens [#/m**2]",
+        "Seagr cov [%]",
+        "Seagr leaf dens [#/m**2]",
+        "Seagr prod above dm [g/m**2/day]",
+        "Seagr prod below dm [g/m**2/day]",
+        "Seagr prod total dm [g/m**2/day]",
+        "Seagr shoot prod dm [g/m**2/day]",
+        "Seagr leaf prod dm [g/m**2/day]",
+        "Reference"
+      ],
+      "header_line": 410
+    },
+    "url": "https://doi.org/10.1594/PANGAEA.929968"
+  },
+  "source_verified_run": {
+    "id": 45322310487,
+    "job_id": 138203514342,
+    "head_sha": "6e473fc836d0228084bb1ac5c2e3bb512e42f2b6",
+    "artifact_ids": [
+      14887787930
+    ],
+    "status": "success"
+  }
+}
