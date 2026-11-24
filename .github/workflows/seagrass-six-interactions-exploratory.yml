@@ -1,0 +1,49 @@
+name: Tampa six seagrass interaction exploratory audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/seagrass_interactions_v1/**'
+      - 'analysis/116_seagrass_six_interactions_evidence_screen.py'
+      - 'analysis/117_seagrass_interaction_original_data_preflight.py'
+      - 'validation/test_seagrass_six_interactions_evidence_screen.py'
+      - 'validation/test_seagrass_interaction_original_data_preflight.py'
+      - 'docs/SEAGRASS_SIX_INTERACTION_EXPLORATORY_20261124.md'
+      - '.github/workflows/seagrass-six-interactions-exploratory.yml'
+jobs:
+  six_interaction_evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate six hypothesis registry and published arithmetic
+        run: python -m unittest discover -s validation -p 'test_seagrass_six_interactions_evidence_screen.py' -v
+      - name: Generate six families and existing Tampa sensitivity output
+        run: |
+          python analysis/116_seagrass_six_interactions_evidence_screen.py \
+            --out /tmp/seagrass_six_interactions_evidence_v1.json
+          cat /tmp/seagrass_six_interactions_evidence_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seagrass-six-interactions-exploratory-evidence
+          path: /tmp/seagrass_six_interactions_evidence_v1.json
+  experimental_source_preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate official data-source inventory and source-failure rules
+        run: python -m unittest discover -s validation -p 'test_seagrass_interaction_original_data_preflight.py' -v
+      - name: Independently attempt the official public CSV JSON and source workbook data URLs
+        run: |
+          python analysis/117_seagrass_interaction_original_data_preflight.py \
+            --out /tmp/seagrass_interaction_source_preflight.json
+          cat /tmp/seagrass_interaction_source_preflight.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seagrass-interaction-original-data-preflight
+          path: /tmp/seagrass_interaction_source_preflight.json
