@@ -10,6 +10,7 @@ on:
       - 'analysis/119_lucinid_dryad_original_workbook_preflight.py'
       - 'validation/test_lucinid_dryad_original_workbook_preflight.py'
       - 'validation/test_zen_15site_mesograzer_factorial.py'
+      - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
       - 'validation/test_seagrass_six_interactions_evidence_screen.py'
       - 'validation/test_seagrass_interaction_original_data_preflight.py'
       - 'docs/SEAGRASS_SIX_INTERACTION_EXPLORATORY_20261124.md'
@@ -66,6 +67,18 @@ jobs:
           python analysis/118_zen_15site_mesograzer_factorial.py \
             --out /tmp/zen15_grazer_nutrient_exploratory.json
           cat /tmp/zen15_grazer_nutrient_exploratory.json
+      - name: Assert current original-data result reproduces source-verified 15-site ledger
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          live=json.loads(Path('/tmp/zen15_grazer_nutrient_exploratory.json').read_text())
+          archive=json.loads(Path('results/zen_15site_mesograzer_exploratory_verified_20261124.json').read_text())
+          provenance=archive.pop('source_verified_run')
+          if not provenance.get('successful') or live != archive:
+              raise SystemExit('ZEN original data results disagree with source-verified ledger')
+          print('PASS: all 600-plot, 15-site factorial and bootstrap outputs exactly reproduce')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen-15site-grazer-nutrient-site-equal-contrasts
