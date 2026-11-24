@@ -84,6 +84,7 @@ def summarize(rows,primary,require_original_frame=True):
         ratios_by_treatment={tr:safeavg([x["density_actual"]/x["density_initial"]
                                          for x in items if x["treatment"]==tr])
                              for tr in ORIGINAL.TREATMENTS}
+        ambient_risk=statistics.mean([risks["Edge|Amb"],risks["Interior|Amb"]])
         n_tethers=len({x["tether"] for x in items})
         sites.append({
           "site":site,
@@ -94,6 +95,8 @@ def summarize(rows,primary,require_original_frame=True):
           "all_tethered_prey_consumed":all(x["recorded_eaten"]==1 for x in items),
           "site_overall_consumed_fraction":safeavg([x["recorded_eaten"] for x in items]),
           "ambient_only_consumed_fraction":safeavg([x["recorded_eaten"] for x in items if x["treatment"]=="Amb"]),
+          "ambient_equal_edge_interior_risk":ambient_risk,
+          "maximum_observable_risk_increase_over_ambient":1-ambient_risk,
           "prey_size_mm_n":sum(x["size_mm"] is not None for x in items),
           "prey_size_mm_missing":sum(x["size_mm"] is None for x in items),
           "prey_size_eaten_minus_alive_within_site_mm":(
@@ -178,6 +181,14 @@ def summarize(rows,primary,require_original_frame=True):
           k:{"sites":sorted(v),"n_sites":len(v),
              "original_tethered_prey_trials":sum(x["n_original_tether_trials"] for x in sites if x["taxon"]==k)}
           for k,v in taxonomy.items()
+      },
+      "assay_baseline_risk_and_upper_bound":{
+          "site_equal_mean_ambient_predation":statistics.mean([x["ambient_equal_edge_interior_risk"] for x in sites]),
+          "site_equal_median_ambient_predation":statistics.median([x["ambient_equal_edge_interior_risk"] for x in sites]),
+          "site_equal_mean_max_possible_predation_increase":statistics.mean([x["maximum_observable_risk_increase_over_ambient"] for x in sites]),
+          "sites_with_ambient_predation_at_least_90pct":[x["site"] for x in sites if x["ambient_equal_edge_interior_risk"]>=.9],
+          "sites_with_ambient_predation_at_least_75pct":[x["site"] for x in sites if x["ambient_equal_edge_interior_risk"]>=.75],
+          "interpretation":"Descriptive binary-assay ceiling: an observed change from ambient baseline cannot exceed (1 minus ambient consumption). This is NOT a bound on the true biological response with free-moving prey.",
       },
       "sites_with_100pct_consumption":[x["site"] for x in sites if x["all_tethered_prey_consumed"]],
       "count_100pct_consumed_sites":sum(x["all_tethered_prey_consumed"] for x in sites),
