@@ -1,0 +1,58 @@
+name: Gallagher phenology composition transfer
+on:
+  pull_request:
+    paths:
+      - 'analysis/166_cross_system_stage_source_gate.py'
+      - 'analysis/169_gallagher_water_phenology_composition.py'
+      - '.github/workflows/gallagher-phenology-composition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install --only-binary=:all: numpy==2.3.5 pandas==2.2.3 scikit-learn==1.8.0 scipy==1.17.0 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/166_cross_system_stage_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          for name,doi in [("gallagher_2020","10.7280/D19X0D"),("gallagher_2021","10.7280/D16D7Z")]:
+              assert m.dryad(name,doi)["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/169_gallagher_water_phenology_composition.py > out/gallagher_phenology.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/gallagher_phenology.json"))
+          assert x["source_plants"]==115 and x["old_2015_overlap_plant_ids"]==31
+          assert x["raw_seed_mean_disagrees"]==21 and x["raw_count_disagrees_among_observed_plants"]==5
+          assert x["primary_zero_observed_visits"]==35 and x["primary_zero_visits_positive_seeds"]==19
+          p=x["panels"]
+          assert p["author_aggregate"]["plants"]==113 and p["raw_count_and_seed_agreement"]["plants"]==88
+          for panel in p.values():
+              assert panel["array_blocks"]==20
+              for water in ("assigned","measured"):
+                  for a in (".1","1","10"):
+                      key="0.1" if a==".1" else a
+                      w=panel["cv"]["week"][water][key]
+                      b=panel["cv"]["array"][water][key]
+                      assert w["total_rate"]["rmse"]<w["context"]["rmse"]
+                      assert w["total_rate"]["rmse"]<w["composition"]["rmse"]
+                      assert b["composition"]["rmse"]<b["total_rate"]["rmse"]
+          for split,targets in {"array":[.834564,.882215,.832909],"week":[1.225831,1.021539,1.203983]}.items():
+              r=p["author_aggregate"]["cv"][split]["assigned"]["1"]
+              for key,target in zip(("context","total_rate","composition"),targets):
+                  assert math.isclose(r[key]["rmse"],target,abs_tol=1e-6)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gallagher-phenology-composition
+          path: out/
+          if-no-files-found: error
