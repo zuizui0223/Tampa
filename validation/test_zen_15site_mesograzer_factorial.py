@@ -37,6 +37,18 @@ class ZENAnalysisTests(unittest.TestCase):
         self.assertAlmostEqual(a["nutrient_addition_main_difference"],1)
         self.assertAlmostEqual(a["grazer_deterrent_x_nutrient_difference_in_differences"],0)
 
+    def test_posthoc_scale_invariant_same_site_ratio(self):
+        r=M.analysis(M.parse_core(fake_csv()))
+        x=r["per_site_exploratory_contrasts"][0]["endpoints"]["chla_per_Zostera"]["posthoc_log_arm_mean_contrasts"]
+        self.assertAlmostEqual(
+            x["grazer_deterrent_main_difference"],
+            (math.log(5/3)+math.log(4/2))/2
+        )
+        self.assertAlmostEqual(
+            x["grazer_deterrent_x_nutrient_difference_in_differences"],
+            math.log(5/3)-math.log(4/2)
+        )
+
     def test_grazer_reduction_manipulation_sign(self):
         r=M.analysis(M.parse_core(fake_csv()))
         a=r["per_site_exploratory_contrasts"][0]["endpoints"]["grazer_bmass_per_g"]["contrasts"]
