@@ -10,6 +10,8 @@ on:
       - 'validation/test_zen2_2015_site_predation_factorial.py'
       - 'validation/test_zen2_structure_consumer_source_preflight.py'
       - 'docs/ZEN2_FOUNDATION_CONSUMER_EXPERIMENT_20261124.md'
+      - 'results/zen2_2015_site_predation_source_verified_20261124.json'
+      - 'results/zen2_2014_25region_state_consumer_source_verified_20261124.json'
       - '.github/workflows/zen2-foundation-consumer-exploratory.yml'
 jobs:
   source-gate:
@@ -43,6 +45,18 @@ jobs:
         run: |
           python analysis/127_zen2_2015_site_predation_factorial.py --out /tmp/zen2_2015_site_predation.json
           cat /tmp/zen2_2015_site_predation.json
+      - name: Match ZEN2 2015 source-verification to pinned exact source-backed JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_2015_site_predation.json').read_text())
+          frozen=json.loads(Path('results/zen2_2015_site_predation_source_verified_20261124.json').read_text())
+          proof=frozen.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('ZEN2 derived results drift or provenance missing: results/zen2_2015_site_predation_source_verified_20261124.json')
+          print('PASS source and full result identity: ZEN2 2015 source-verification')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen2-2015-eelgrass-thinning-consumer-predation
@@ -61,6 +75,18 @@ jobs:
         run: |
           python analysis/128_zen2_2014_50meadow_state_consumer.py --out /tmp/zen2_2014_25region_state_consumer.json
           cat /tmp/zen2_2014_25region_state_consumer.json
+      - name: Match ZEN2 2014 source-verification to pinned exact source-backed JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('/tmp/zen2_2014_25region_state_consumer.json').read_text())
+          frozen=json.loads(Path('results/zen2_2014_25region_state_consumer_source_verified_20261124.json').read_text())
+          proof=frozen.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or current!=frozen:
+              raise SystemExit('ZEN2 derived results drift or provenance missing: results/zen2_2014_25region_state_consumer_source_verified_20261124.json')
+          print('PASS source and full result identity: ZEN2 2014 source-verification')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: zen2-2014-twentyfive-paired-region-state-consumer
