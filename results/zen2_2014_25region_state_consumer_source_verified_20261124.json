@@ -1,0 +1,494 @@
+{
+  "evidence_class": "original_source_observational_cross_sectional_not_experiment",
+  "hard_limits": [
+    "Two observational subsites share a region code, not randomized intervention assignment.",
+    "2014 subsite data do not match 2015 factorial tether plots or 2011 grazer-deterrent plots.",
+    "All models are post-hoc descriptive across at most 25 region-code pairs.",
+    "Pairwise log1p difference is stable to the site-scale offset but does not block unmeasured within-code habitat confounding.",
+    "The above/below biomass data were already part of published ZEN2 survey summaries.",
+    "Mean_Std_Total_Abund_Mesograzers likely uses host-standardization. A correlation against host biomass may be mechanically induced by its denominator. The source also provides Mean_Total_Abund_Mesograzers without Std; compare both, and do not interpret the difference as causality.",
+    "The unstandardized consumer outcome was added after seeing an unexpected negative association using the standardized consumer metric: post-hoc denominator diagnostic only.",
+    "Within-region covariance is neither organism-specific interaction nor causally mediated change.",
+    "This source cannot estimate future seagrass retention, TNC or biodiversity effects of consumer removal."
+  ],
+  "individual_region_pair_log_contrasts": [
+    {
+      "above_dlog1p": -0.2535005443657248,
+      "below_dlog1p": -1.0513676779306564,
+      "epiphyton_dlog1p": 0.15852322723986756,
+      "mesograzer_abundance_dlog1p": 0.13138400282910845,
+      "mesograzer_count_unstandardized_dlog1p": -0.22304808136330445,
+      "mesograzer_richness_dlog1p": 0.07290677080808794,
+      "region_code": "BB",
+      "salinity_dlog1p": -0.02898753687325195,
+      "shoots_dlog1p": -0.1751333328318534,
+      "subsite_A": "BB.A",
+      "subsite_B": "BB.B",
+      "temperature_dlog1p": -5.399999999999999
+    },
+    {
+      "above_dlog1p": -0.42949002144486714,
+      "below_dlog1p": -1.1966556188349706,
+      "epiphyton_dlog1p": -0.013698844358161901,
+      "mesograzer_abundance_dlog1p": -1.9507005773779462,
+      "mesograzer_count_unstandardized_dlog1p": -0.8304294412677624,
+      "mesograzer_richness_dlog1p": 0.030397477184370914,
+      "region_code": "BC",
+      "salinity_dlog1p": 0,
+      "shoots_dlog1p": -1.021598614567944,
+      "subsite_A": "BC.A",
+      "subsite_B": "BC.B",
+      "temperature_dlog1p": 2
+    },
+    {
+      "above_dlog1p": 0.6971514982469222,
+      "below_dlog1p": 0.11267373401838832,
+      "epiphyton_dlog1p": 0.01152529084905407,
+      "mesograzer_abundance_dlog1p": -0.5538851132264376,
+      "mesograzer_count_unstandardized_dlog1p": -0.7178397931503169,
+      "mesograzer_richness_dlog1p": -0.5007752879124893,
+      "region_code": "CR",
+      "salinity_dlog1p": 0.21357410029805912,
+      "shoots_dlog1p": -0.2952968908822351,
+      "subsite_A": "CR.A",
+      "subsite_B": "CR.B",
+      "temperature_dlog1p": -2
+    },
+    {
+      "above_dlog1p": 0.32190348263983726,
+      "below_dlog1p": 0.5609255458174864,
+      "epiphyton_dlog1p": 0.0766730538055804,
+      "mesograzer_abundance_dlog1p": 0.10763066419236544,
+      "mesograzer_count_unstandardized_dlog1p": -0.06725222700916778,
+      "mesograzer_richness_dlog1p": 0.12699969076130757,
+      "region_code": "ES",
+      "salinity_dlog1p": -0.006022465506467789,
+      "shoots_dlog1p": 0.42793952769288435,
+      "subsite_A": "ES.A",
+      "subsite_B": "ES.B",
+      "temperature_dlog1p": 0.3500000000000014
+    },
+    {
+      "above_dlog1p": -0.38773743125463467,
+      "below_dlog1p": 0.24956311434817113,
+      "epiphyton_dlog1p": 0.40284215578469373,
+      "mesograzer_abundance_dlog1p": 2.5758939005647266,
+      "mesograzer_count_unstandardized_dlog1p": 3.553529366058509,
+      "mesograzer_richness_dlog1p": 0.11332868530700324,
+      "region_code": "FI",
+      "salinity_dlog1p": 0,
+      "shoots_dlog1p": -0.809914254842413,
+      "subsite_A": "FI.A",
+      "subsite_B": "FI.B",
+      "temperature_dlog1p": -3
+    },
+    {
+      "above_dlog1p": -0.5798342493627953,
+      "below_dlog1p": 0.5696905939983443,
+      "epiphyton_dlog1p": 0.018456084820910625,
+      "mesograzer_abundance_dlog1p": 0.4402080565520374,
+      "mesograzer_count_unstandardized_dlog1p": 0.8452837610155024,
+      "mesograzer_richness_dlog1p": 0.03953083875663532,
+      "region_code": "FR",
+      "salinity_dlog1p": 0.172321473459371,
+      "shoots_dlog1p": -1.2225297136161135,
+      "subsite_A": "FR.A",
+      "subsite_B": "FR.B",
+      "temperature_dlog1p": 0
+    },
+    {
+      "above_dlog1p": -1.2095871390894692,
+      "below_dlog1p": -2.187957589639905,
+      "epiphyton_dlog1p": -0.05545130453621419,
+      "mesograzer_abundance_dlog1p": 4.918246502351783,
+      "mesograzer_count_unstandardized_dlog1p": 3.7541444554868733,
+      "mesograzer_richness_dlog1p": 0.4855078157817009,
+      "region_code": "IR",
+      "salinity_dlog1p": 0,
+      "shoots_dlog1p": 0.6099795676076649,
+      "subsite_A": "IR.A",
+      "subsite_B": "IR.B",
+      "temperature_dlog1p": 4.099999999999998
+    },
+    {
+      "above_dlog1p": -0.3672207612272027,
+      "below_dlog1p": -0.4330117600636596,
+      "epiphyton_dlog1p": 0.3282295867671974,
+      "mesograzer_abundance_dlog1p": 0.9480262583422401,
+      "mesograzer_count_unstandardized_dlog1p": 0.3230256733054686,
+      "mesograzer_richness_dlog1p": -0.45107561936021656,
+      "region_code": "JN",
+      "salinity_dlog1p": -0.13815033848081715,
+      "shoots_dlog1p": -0.3627440914261575,
+      "subsite_A": "JN.A",
+      "subsite_B": "JN.B",
+      "temperature_dlog1p": 5
+    },
+    {
+      "above_dlog1p": 1.011964724440194,
+      "below_dlog1p": 1.1893659578779578,
+      "epiphyton_dlog1p": 0,
+      "mesograzer_abundance_dlog1p": -0.6593803180891278,
+      "mesograzer_count_unstandardized_dlog1p": -0.6896198400419771,
+      "mesograzer_richness_dlog1p": -0.21465693743689118,
+      "region_code": "JS",
+      "salinity_dlog1p": 0.06473754591681313,
+      "shoots_dlog1p": 0.23447803638831655,
+      "subsite_A": "JS.A",
+      "subsite_B": "JS.B",
+      "temperature_dlog1p": 1.6000000000000014
+    },
+    {
+      "above_dlog1p": -0.46306826630412345,
+      "below_dlog1p": -1.0141339123854873,
+      "epiphyton_dlog1p": 0.05785195063853358,
+      "mesograzer_abundance_dlog1p": 0.8153440881103615,
+      "mesograzer_count_unstandardized_dlog1p": 0.47215648260683674,
+      "mesograzer_richness_dlog1p": 0.15104025741286575,
+      "region_code": "KO",
+      "salinity_dlog1p": -0.06878645183506782,
+      "shoots_dlog1p": -0.7068375001686285,
+      "subsite_A": "KO.A",
+      "subsite_B": "KO.B",
+      "temperature_dlog1p": 0.5
+    },
+    {
+      "above_dlog1p": -0.03243791290829634,
+      "below_dlog1p": 0.6211981791713441,
+      "epiphyton_dlog1p": 0.15480758059317823,
+      "mesograzer_abundance_dlog1p": -0.3130255474577992,
+      "mesograzer_count_unstandardized_dlog1p": -1.9990199743692618,
+      "mesograzer_richness_dlog1p": -0.14197026127038725,
+      "region_code": "LI",
+      "salinity_dlog1p": 0.044171218313137306,
+      "shoots_dlog1p": -0.07993986404717912,
+      "subsite_A": "LI.1",
+      "subsite_B": "LI.2",
+      "temperature_dlog1p": 1.5
+    },
+    {
+      "above_dlog1p": 0.50960243910954,
+      "below_dlog1p": 1.392663809405371,
+      "epiphyton_dlog1p": 0.003933141746837107,
+      "mesograzer_abundance_dlog1p": 0.029166892985292847,
+      "mesograzer_count_unstandardized_dlog1p": 0.3150504379868271,
+      "mesograzer_richness_dlog1p": -0.3063742054639337,
+      "region_code": "MA",
+      "salinity_dlog1p": 0.006015055729761354,
+      "shoots_dlog1p": -0.39131576219997477,
+      "subsite_A": "MA.A",
+      "subsite_B": "MA.B",
+      "temperature_dlog1p": 0.29999999999999893
+    },
+    {
+      "above_dlog1p": 0.43583393404978565,
+      "below_dlog1p": -0.14105836136683436,
+      "epiphyton_dlog1p": -0.04961942037417988,
+      "mesograzer_abundance_dlog1p": -0.8238091307565147,
+      "mesograzer_count_unstandardized_dlog1p": -0.2643334929530097,
+      "mesograzer_richness_dlog1p": 0.19521216662503216,
+      "region_code": "MX",
+      "salinity_dlog1p": 0.02898753687325195,
+      "shoots_dlog1p": -1.616928584163258,
+      "subsite_A": "MX.A",
+      "subsite_B": "MX.B",
+      "temperature_dlog1p": -7.561
+    },
+    {
+      "above_dlog1p": -0.019572693154874088,
+      "below_dlog1p": -0.11319148913913413,
+      "epiphyton_dlog1p": -0.06259468708134217,
+      "mesograzer_abundance_dlog1p": 1.9647376421932867,
+      "mesograzer_count_unstandardized_dlog1p": 1.1321885842017139,
+      "mesograzer_richness_dlog1p": 0.34981385355878736,
+      "region_code": "NC",
+      "salinity_dlog1p": 0.2972515234679314,
+      "shoots_dlog1p": 0.34162409183384845,
+      "subsite_A": "NC.A",
+      "subsite_B": "NC.B",
+      "temperature_dlog1p": -1.7999999999999972
+    },
+    {
+      "above_dlog1p": -0.7722248700645022,
+      "below_dlog1p": -1.329754726171588,
+      "epiphyton_dlog1p": 0.004585060760650628,
+      "mesograzer_abundance_dlog1p": -0.3137760165361736,
+      "mesograzer_count_unstandardized_dlog1p": -1.8854449533053779,
+      "mesograzer_richness_dlog1p": -0.8754687373538999,
+      "region_code": "NN",
+      "salinity_dlog1p": 0.2682639865946794,
+      "shoots_dlog1p": -1.2508502637310706,
+      "subsite_A": "NN.A",
+      "subsite_B": "NN.B",
+      "temperature_dlog1p": -2.5
+    },
+    {
+      "above_dlog1p": -0.09576809503484984,
+      "below_dlog1p": -0.7082779308558083,
+      "epiphyton_dlog1p": 0.520989902047257,
+      "mesograzer_abundance_dlog1p": -1.2022245521324066,
+      "mesograzer_count_unstandardized_dlog1p": -1.8246871375264861,
+      "mesograzer_richness_dlog1p": -0.26966356694910254,
+      "region_code": "OR",
+      "salinity_dlog1p": 0.08455738802806279,
+      "shoots_dlog1p": -0.2387824451986642,
+      "subsite_A": "OR.A",
+      "subsite_B": "OR.B",
+      "temperature_dlog1p": 1
+    },
+    {
+      "above_dlog1p": 0.45439972888528857,
+      "below_dlog1p": 0.7878080498389419,
+      "epiphyton_dlog1p": -0.0009537435153097046,
+      "mesograzer_abundance_dlog1p": 0.17609100704331865,
+      "mesograzer_count_unstandardized_dlog1p": 2.3591629071411617,
+      "mesograzer_richness_dlog1p": 0.7801585575495751,
+      "region_code": "PO",
+      "salinity_dlog1p": 0,
+      "shoots_dlog1p": -0.3207912310590597,
+      "subsite_A": "PO.A",
+      "subsite_B": "PO.B",
+      "temperature_dlog1p": -0.03999999999999915
+    },
+    {
+      "above_dlog1p": -0.7175697539929979,
+      "below_dlog1p": -0.6774184263158727,
+      "epiphyton_dlog1p": 0.04652001563489286,
+      "mesograzer_abundance_dlog1p": 0.8150369981689822,
+      "mesograzer_count_unstandardized_dlog1p": -1.2089979405286089,
+      "mesograzer_richness_dlog1p": 0.05480823649499511,
+      "region_code": "QU",
+      "salinity_dlog1p": -0.2578291093020999,
+      "shoots_dlog1p": -0.1078057010234783,
+      "subsite_A": "QU.A",
+      "subsite_B": "QU.B",
+      "temperature_dlog1p": 0.10000000000000142
+    },
+    {
+      "above_dlog1p": 1.0547950079633823,
+      "below_dlog1p": 1.2829975026923828,
+      "epiphyton_dlog1p": 0.005946499187726338,
+      "mesograzer_abundance_dlog1p": -0.5223081028666847,
+      "mesograzer_count_unstandardized_dlog1p": 0.33160604697004015,
+      "mesograzer_richness_dlog1p": 0.016529301951210496,
+      "region_code": "RU",
+      "salinity_dlog1p": 0.3101549283038394,
+      "shoots_dlog1p": 0.2867822577528836,
+      "subsite_A": "RU.A",
+      "subsite_B": "RU.B",
+      "temperature_dlog1p": 8
+    },
+    {
+      "above_dlog1p": 0.3747126977932709,
+      "below_dlog1p": -1.3052199714824217,
+      "epiphyton_dlog1p": 0.5917539641208993,
+      "mesograzer_abundance_dlog1p": 0.2622969039878589,
+      "mesograzer_count_unstandardized_dlog1p": 0.02648129819136713,
+      "mesograzer_richness_dlog1p": -0.06620063715598157,
+      "region_code": "SD",
+      "salinity_dlog1p": 0,
+      "shoots_dlog1p": -1.0878317764799208,
+      "subsite_A": "SD.A",
+      "subsite_B": "SD.B",
+      "temperature_dlog1p": -1.6699999999999982
+    },
+    {
+      "above_dlog1p": -0.32990196071874855,
+      "below_dlog1p": 0.3188700684809884,
+      "epiphyton_dlog1p": 0.1992557382990305,
+      "mesograzer_abundance_dlog1p": -1.0687771401923758,
+      "mesograzer_count_unstandardized_dlog1p": -1.4010925822188405,
+      "mesograzer_richness_dlog1p": -0.15201620729862553,
+      "region_code": "SF",
+      "salinity_dlog1p": 0.10178269430994247,
+      "shoots_dlog1p": 0.32760478633589196,
+      "subsite_A": "SF.A",
+      "subsite_B": "SF.B",
+      "temperature_dlog1p": 0.1999999999999993
+    },
+    {
+      "above_dlog1p": 0.8053521791622309,
+      "below_dlog1p": -0.13362209968612948,
+      "epiphyton_dlog1p": null,
+      "mesograzer_abundance_dlog1p": -1.4508328822574619,
+      "mesograzer_count_unstandardized_dlog1p": -0.47852467897766937,
+      "mesograzer_richness_dlog1p": -0.5619549702885951,
+      "region_code": "SW",
+      "salinity_dlog1p": 0.03922071315328157,
+      "shoots_dlog1p": 0.8779013146807015,
+      "subsite_A": "SW.A",
+      "subsite_B": "SW.B",
+      "temperature_dlog1p": 0
+    },
+    {
+      "above_dlog1p": 0.5816696484323023,
+      "below_dlog1p": 0.3053310681323733,
+      "epiphyton_dlog1p": 0.004454350349380284,
+      "mesograzer_abundance_dlog1p": -0.61063195032939,
+      "mesograzer_count_unstandardized_dlog1p": 0.4696867222552843,
+      "mesograzer_richness_dlog1p": 0.018349138668196652,
+      "region_code": "UK",
+      "salinity_dlog1p": 0.049213982781412646,
+      "shoots_dlog1p": 1.124691175335668,
+      "subsite_A": "UK.A",
+      "subsite_B": "UK.B",
+      "temperature_dlog1p": 2.1999999999999993
+    },
+    {
+      "above_dlog1p": -0.1983843505504792,
+      "below_dlog1p": 0.39109176509004406,
+      "epiphyton_dlog1p": 0.0777008645772421,
+      "mesograzer_abundance_dlog1p": 0.7142855997465025,
+      "mesograzer_count_unstandardized_dlog1p": 0.7589527983527176,
+      "mesograzer_richness_dlog1p": -0.09662683568907138,
+      "region_code": "VA",
+      "salinity_dlog1p": 0.012007453063055618,
+      "shoots_dlog1p": 0.3366227936826238,
+      "subsite_A": "VA.A",
+      "subsite_B": "VA.B",
+      "temperature_dlog1p": 1.0400000000000027
+    },
+    {
+      "above_dlog1p": 0.50488568712308,
+      "below_dlog1p": -1.681922169372657,
+      "epiphyton_dlog1p": 0.20515543278970072,
+      "mesograzer_abundance_dlog1p": -2.6514031654375576,
+      "mesograzer_count_unstandardized_dlog1p": -1.9316411792541146,
+      "mesograzer_richness_dlog1p": -0.4730852957831435,
+      "region_code": "WA",
+      "salinity_dlog1p": 0.13353139262452274,
+      "shoots_dlog1p": -2.3056426149632,
+      "subsite_A": "WA.A",
+      "subsite_B": "WA.B",
+      "temperature_dlog1p": 1
+    }
+  ],
+  "measured_missing_subsite_counts": {
+    "above": 0,
+    "below": 0,
+    "epiphyton": 1,
+    "mesograzer_abundance": 0,
+    "mesograzer_count_unstandardized": 0,
+    "mesograzer_richness": 0,
+    "salinity": 0,
+    "shoots": 0,
+    "temperature": 0
+  },
+  "paired_region_codes": 25,
+  "sample_subsites": 50,
+  "schema": "tampa.zen2_2014_25paired_region_structure_consumer_v1",
+  "source_doi": "10.26008/1912/bco-dmo.712069.1",
+  "source_sha256": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034",
+  "within_region_association_tests_descriptive": {
+    "above__epiphyton": {
+      "pairs": 24,
+      "pearson_r_of_within_region_log1p_contrasts": -0.047787243454602585,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.41125723573890133,
+        0.2725685517451235
+      ]
+    },
+    "above__mesograzer_abundance": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": -0.5435327672600808,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.7755530683043105,
+        -0.15676371773986303
+      ]
+    },
+    "above__mesograzer_count_unstandardized": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": -0.19894629755037743,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.5686695061437202,
+        0.3276056333295431
+      ]
+    },
+    "above__mesograzer_richness": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": -0.14456281396673387,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.6262740535376391,
+        0.29654000194686103
+      ]
+    },
+    "below__epiphyton": {
+      "pairs": 24,
+      "pearson_r_of_within_region_log1p_contrasts": -0.22701192853933572,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.5657380874870034,
+        0.14276197106145064
+      ]
+    },
+    "below__mesograzer_abundance": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": -0.15414308985243158,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.6076921678820562,
+        0.455149434453192
+      ]
+    },
+    "below__mesograzer_count_unstandardized": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": 0.06378125532413921,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.39983851619689864,
+        0.5838269951328594
+      ]
+    },
+    "below__mesograzer_richness": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": 0.07915036285768856,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.3975708367179533,
+        0.4825454659091821
+      ]
+    },
+    "shoots__epiphyton": {
+      "pairs": 24,
+      "pearson_r_of_within_region_log1p_contrasts": -0.21505428737485596,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.5108306464542024,
+        0.14375178112409095
+      ]
+    },
+    "shoots__mesograzer_abundance": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": 0.27595612963111377,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.2605484073029843,
+        0.6118690298019867
+      ]
+    },
+    "shoots__mesograzer_count_unstandardized": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": 0.21987198267334523,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.19803633292931275,
+        0.5327715300119434
+      ]
+    },
+    "shoots__mesograzer_richness": {
+      "pairs": 25,
+      "pearson_r_of_within_region_log1p_contrasts": 0.18544647208448556,
+      "site_code_pair_bootstrap_percentile_interval": [
+        -0.2595782857068936,
+        0.5223001633169508
+      ]
+    }
+  },
+  "source_verified_run": {
+    "run_id": 45328106589,
+    "job_id": 138222468095,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45328106589",
+    "source_only_exploratory": true,
+    "status": "completed_success",
+    "source_shas": [
+      "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034"
+    ],
+    "verified_original_sources": {
+      "2014": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034",
+      "2015": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb"
+    }
+  }
+}
