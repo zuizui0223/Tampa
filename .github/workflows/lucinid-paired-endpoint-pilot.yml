@@ -1,0 +1,46 @@
+name: Lucinid paired endpoint pilot
+on:
+  pull_request:
+    paths:
+      - 'analysis/161_lucinid_paired_endpoint_pilot.py'
+      - 'analysis/160_paired_stage_mutualism_source_gate.py'
+      - '.github/workflows/lucinid-paired-endpoint-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install numpy==2.2.6 pandas==2.2.3 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/160_paired_stage_mutualism_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.zenodo()["status"]=="ACQUIRED_SCHEMA_UNVERIFIED"
+          assert m.dryad("lucinid_2020","10.5061/dryad.jm63xsj6n")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          assert m.dans()["status"]=="ACQUIRED_SCHEMA_UNVERIFIED"
+          PY
+          mkdir -p out
+          python analysis/161_lucinid_paired_endpoint_pilot.py > out/lucinid_paired_endpoint_pilot.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/lucinid_paired_endpoint_pilot.json"))["studies"]
+          assert sum(v["host_units"] for v in x.values())==84
+          def check(actual,expected):
+              assert all(math.isclose(a,b,abs_tol=1e-6) for a,b in zip(actual,expected))
+          check(x["2012"]["contrasts"]["S"]["oriented_log_response_ratios"],[5.134016,.328743])
+          y=x["2020"]["contrasts"]["OM"]
+          check(y["oriented_log_response_ratios"],[.491320,-.263568])
+          assert all(a>0 and b<0 for a,b in y["leave_one_block_out_log_ratios"])
+          check(x["2022"]["contrasts"]["no|yes"]["equal_tank_mean_log_ratios"],[2.786986,.740867])
+          check(x["2022"]["contrasts"]["yes|yes"]["equal_tank_mean_log_ratios"],[2.670855,.342902])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lucinid-paired-endpoint-pilot
+          path: out/
+          if-no-files-found: error
