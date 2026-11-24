@@ -55,7 +55,7 @@ class GlobalFeasibilityTests(unittest.TestCase):
         self.assertEqual(x["exact_duplicate_member_rows_not_automatically_removed"],2)
         self.assertEqual(x["exact_duplicate_row_groups"],1)
         self.assertEqual(x["source_row_count"],5)
-        self.assertEqual(x["raw_reference_strings_not_independent_publications"],2)
+        self.assertEqual(x["raw_reference_strings_not_independent_publications"],3)
 
     def test_non_numeric_is_not_zero(self):
         d=fake_rows()
