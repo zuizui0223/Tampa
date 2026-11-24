@@ -1,0 +1,378 @@
+{
+  "candidate_sites": [
+    {
+      "nearest_2014_source_subsite": "BB.A",
+      "nearest_distance_km": 6.614,
+      "site_code": "BB",
+      "year2014_above_biomass": 186.85,
+      "year2014_below_biomass": 63.4578,
+      "year2014_epiphyton": 0.337,
+      "year2014_shoot_density": 327.1,
+      "year2015_ambient_epibiont": 0.3411666666666667,
+      "year2015_ambient_shoot_density": 258.25357142857143,
+      "year2015_edge_minus_interior_risk": 0.055555555555555546,
+      "year2015_eighty_minus_ambient_risk": 0.047619047619047616,
+      "year2015_original_site_overall_predation": 0.9098360655737705,
+      "year2015_prey_taxa": {
+        "Amphipod": 122
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "CR.A",
+      "nearest_distance_km": 0,
+      "site_code": "CR",
+      "year2014_above_biomass": 80.325,
+      "year2014_below_biomass": 43.9474,
+      "year2014_epiphyton": 0.309,
+      "year2014_shoot_density": 332.6,
+      "year2015_ambient_epibiont": 0.12828703703703703,
+      "year2015_ambient_shoot_density": 1559.7883597883597,
+      "year2015_edge_minus_interior_risk": 0,
+      "year2015_eighty_minus_ambient_risk": 0,
+      "year2015_original_site_overall_predation": 1,
+      "year2015_prey_taxa": {
+        "Amphipod": 164
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "FI.B",
+      "nearest_distance_km": 0.097,
+      "site_code": "FI",
+      "year2014_above_biomass": 45.825,
+      "year2014_below_biomass": 68.85,
+      "year2014_epiphyton": 0.018,
+      "year2014_shoot_density": 466.3,
+      "year2015_ambient_epibiont": 0.27994973544973545,
+      "year2015_ambient_shoot_density": 235.05291005291005,
+      "year2015_edge_minus_interior_risk": -0.09417582417582417,
+      "year2015_eighty_minus_ambient_risk": 0.10788970288970293,
+      "year2015_original_site_overall_predation": 0.4161490683229814,
+      "year2015_prey_taxa": {
+        "Amphipod": 161
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "FR.A",
+      "nearest_distance_km": 0,
+      "site_code": "FR",
+      "year2014_above_biomass": 125.95,
+      "year2014_below_biomass": 298.275,
+      "year2014_epiphyton": 0.039,
+      "year2014_shoot_density": 93.5,
+      "year2015_ambient_epibiont": 0.06421428571428572,
+      "year2015_ambient_shoot_density": 222.92992857142855,
+      "year2015_edge_minus_interior_risk": 0,
+      "year2015_eighty_minus_ambient_risk": 0,
+      "year2015_original_site_overall_predation": 1,
+      "year2015_prey_taxa": {
+        "Amphipod": 125
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "JN.B",
+      "nearest_distance_km": 0,
+      "site_code": "JN",
+      "year2014_above_biomass": 208.375,
+      "year2014_below_biomass": 83.65,
+      "year2014_epiphyton": 0.166,
+      "year2014_shoot_density": 192.6,
+      "year2015_ambient_epibiont": 0.24007336182336184,
+      "year2015_ambient_shoot_density": 123.24657692307693,
+      "year2015_edge_minus_interior_risk": 0.12338895672229011,
+      "year2015_eighty_minus_ambient_risk": -0.0342897842897843,
+      "year2015_original_site_overall_predation": 0.8641975308641975,
+      "year2015_prey_taxa": {
+        "Amphipod": 162
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "JS.A",
+      "nearest_distance_km": 0.399,
+      "site_code": "JS",
+      "year2014_above_biomass": 411.375,
+      "year2014_below_biomass": 179.1,
+      "year2014_epiphyton": 0.008,
+      "year2014_shoot_density": 121,
+      "year2015_ambient_epibiont": 0.3595925925925926,
+      "year2015_ambient_shoot_density": 52.7037037037037,
+      "year2015_edge_minus_interior_risk": 0.04497354497354492,
+      "year2015_eighty_minus_ambient_risk": 0.04365079365079366,
+      "year2015_original_site_overall_predation": 0.6606060606060606,
+      "year2015_prey_taxa": {
+        "Amphipod": 165
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "MX.B",
+      "nearest_distance_km": 0.694,
+      "site_code": "MX",
+      "year2014_above_biomass": 155.75,
+      "year2014_below_biomass": 186.175,
+      "year2014_epiphyton": 0.508,
+      "year2014_shoot_density": 1808,
+      "year2015_ambient_epibiont": 0.46320899470899474,
+      "year2015_ambient_shoot_density": 1061.232634920635,
+      "year2015_edge_minus_interior_risk": 0.025132275132275155,
+      "year2015_eighty_minus_ambient_risk": -0.05158730158730157,
+      "year2015_original_site_overall_predation": 0.8802395209580839,
+      "year2015_prey_taxa": {
+        "Amphipod": 167
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "NC.B",
+      "nearest_distance_km": 0.155,
+      "site_code": "NC",
+      "year2014_above_biomass": 151.2,
+      "year2014_below_biomass": 217.65,
+      "year2014_epiphyton": 0.302,
+      "year2014_shoot_density": 419.4,
+      "year2015_ambient_epibiont": 3.1440958498023717,
+      "year2015_ambient_shoot_density": 544.1532509881423,
+      "year2015_edge_minus_interior_risk": 0,
+      "year2015_eighty_minus_ambient_risk": 0,
+      "year2015_original_site_overall_predation": 1,
+      "year2015_prey_taxa": {
+        "Amphipod": 145
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "OR.A",
+      "nearest_distance_km": 0.051,
+      "site_code": "OR",
+      "year2014_above_biomass": 286.8,
+      "year2014_below_biomass": 79.35,
+      "year2014_epiphyton": 0.714,
+      "year2014_shoot_density": 170.3,
+      "year2015_ambient_epibiont": 0.5827314285714286,
+      "year2015_ambient_shoot_density": 102.85428571428571,
+      "year2015_edge_minus_interior_risk": 0.06754307420974087,
+      "year2015_eighty_minus_ambient_risk": 0.016455026455026417,
+      "year2015_original_site_overall_predation": 0.5652173913043478,
+      "year2015_prey_taxa": {
+        "Isopod": 161
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "QU.B",
+      "nearest_distance_km": 0.866,
+      "site_code": "QU",
+      "year2014_above_biomass": 137.85,
+      "year2014_below_biomass": 437.4,
+      "year2014_epiphyton": 0.029,
+      "year2014_shoot_density": 622.3,
+      "year2015_ambient_epibiont": 0.08307142857142857,
+      "year2015_ambient_shoot_density": 605.5465,
+      "year2015_edge_minus_interior_risk": 0.015432098765432093,
+      "year2015_eighty_minus_ambient_risk": 0.02314814814814814,
+      "year2015_original_site_overall_predation": 0.2606060606060606,
+      "year2015_prey_taxa": {
+        "Amphipod": 165
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "SD.B",
+      "nearest_distance_km": 0.094,
+      "site_code": "SD",
+      "year2014_above_biomass": 242.525,
+      "year2014_below_biomass": 1122.425,
+      "year2014_epiphyton": 0.146,
+      "year2014_shoot_density": 1060,
+      "year2015_ambient_epibiont": 0.9578677248677249,
+      "year2015_ambient_shoot_density": 673.8600502645503,
+      "year2015_edge_minus_interior_risk": -0.0037647537647537512,
+      "year2015_eighty_minus_ambient_risk": -0.01719576719576721,
+      "year2015_original_site_overall_predation": 0.3475609756097561,
+      "year2015_prey_taxa": {
+        "Isopod": 164
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "SF.A",
+      "nearest_distance_km": 1.015,
+      "site_code": "SF",
+      "year2014_above_biomass": 148.2632,
+      "year2014_below_biomass": 113.8947,
+      "year2014_epiphyton": 0.334,
+      "year2014_shoot_density": 48.4,
+      "year2015_ambient_epibiont": 0.5813678571428571,
+      "year2015_ambient_shoot_density": 52.9,
+      "year2015_edge_minus_interior_risk": 0.025485008818342147,
+      "year2015_eighty_minus_ambient_risk": -0.22989417989417987,
+      "year2015_original_site_overall_predation": 0.7083333333333334,
+      "year2015_prey_taxa": {
+        "Amphipod": 144
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "VA.A",
+      "nearest_distance_km": 0.616,
+      "site_code": "VA",
+      "year2014_above_biomass": 329.4,
+      "year2014_below_biomass": 691.2778,
+      "year2014_epiphyton": 0.244,
+      "year2014_shoot_density": 1858.9,
+      "year2015_ambient_epibiont": 0.05788888888888889,
+      "year2015_ambient_shoot_density": 1457.8910555555556,
+      "year2015_edge_minus_interior_risk": -0.03612148951979036,
+      "year2015_eighty_minus_ambient_risk": -0.08876117496807145,
+      "year2015_original_site_overall_predation": 0.9192546583850931,
+      "year2015_prey_taxa": {
+        "Amphipod": 161
+      }
+    },
+    {
+      "nearest_2014_source_subsite": "WA.A",
+      "nearest_distance_km": 2.653,
+      "site_code": "WA",
+      "year2014_above_biomass": 169.65,
+      "year2014_below_biomass": 48.75,
+      "year2014_epiphyton": 0.763,
+      "year2014_shoot_density": 103.5,
+      "year2015_ambient_epibiont": 0.2724972527472527,
+      "year2015_ambient_shoot_density": 93.37912087912088,
+      "year2015_edge_minus_interior_risk": -0.03208519875186544,
+      "year2015_eighty_minus_ambient_risk": -0.010734635734635789,
+      "year2015_original_site_overall_predation": 0.6585365853658537,
+      "year2015_prey_taxa": {
+        "Amphipod": 164
+      }
+    }
+  ],
+  "distance_summary": {
+    "max_nearest_km": 6.614,
+    "median_nearest_km": 0.277,
+    "min_nearest_km": 0
+  },
+  "evidence_class": "posthoc_external_crossyear_geographic_context_not_longitudinal_fixed_plots",
+  "geographic_gate_rule": "Same 2014 region code and <=25km nearest of 2014 A/B subsite to 2015 site; KOA/KOB explicitly excluded; 5km strict sensitivity predeclared before viewing crossyear result",
+  "hard_limits": [
+    "2014 and 2015 source sites are geographically nearby, NOT identical permanent sampling points.",
+    "Nearest subsite selected exclusively by source coordinates; averaging far-away A/B subsites would be invalid.",
+    "2015 risk outcomes and 2014 site survey outcomes were already opened before this cross-year test: no untouched holdout.",
+    "Original Hovel et al. 2021 already linked same-year structural features to predation edge effects.",
+    "Only 14 sites eligible by exact code and <=25km; KOA/KOB excluded despite likely geographic match, GA has no 2014 source code.",
+    "Cross-year association may reflect shared environment and researcher/site identity; not experimental temporal causality.",
+    "2014 epiphyton and 2015 epibiont can use different sampling and normalization and should not be compared as absolute rates.",
+    "No TNC, actual host survival, fish predator identification or validated conservation decision threshold.",
+    "Four comparisons are jointly corrected only within this selected posthoc family, not all analyses in the research program."
+  ],
+  "n_match": 14,
+  "schema": "tampa.zen2_nearest_subsite_2014_prior_state_2015_interaction_exploratory_v1",
+  "site_equal_prior_predictor_later_risk_screen": {
+    "associations": [
+      {
+        "four_comparison_maxT_FWER_permutation_p": 0.5709714514274287,
+        "later_risk_outcome": "year2015_edge_minus_interior_risk",
+        "leave_one_site_out_spearman_max": -0.24862257904942348,
+        "leave_one_site_out_spearman_min": -0.55249462010983,
+        "n_site_code_geography_matched_complete": 14,
+        "prior_predictor": "year2014_shoot_density",
+        "sign_interpretation": "Exploratory temporal across-site association only, not a causal or prospectively frozen prediction",
+        "site_label_two_sided_posthoc_permutation_p": 0.17774111294435277,
+        "spearman_r": -0.3819021768444649
+      },
+      {
+        "four_comparison_maxT_FWER_permutation_p": 0.99930003499825,
+        "later_risk_outcome": "year2015_eighty_minus_ambient_risk",
+        "leave_one_site_out_spearman_max": 0.09392408541867109,
+        "leave_one_site_out_spearman_min": -0.33702171826699623,
+        "n_site_code_geography_matched_complete": 14,
+        "prior_predictor": "year2014_shoot_density",
+        "sign_interpretation": "Exploratory temporal across-site association only, not a causal or prospectively frozen prediction",
+        "site_label_two_sided_posthoc_permutation_p": 0.8225588720563972,
+        "spearman_r": -0.06843333804727407
+      },
+      {
+        "four_comparison_maxT_FWER_permutation_p": 0.9480525973701315,
+        "later_risk_outcome": "year2015_edge_minus_interior_risk",
+        "leave_one_site_out_spearman_max": 0.39227118027797925,
+        "leave_one_site_out_spearman_min": 0.04972451580988469,
+        "n_site_code_geography_matched_complete": 14,
+        "prior_predictor": "year2014_epiphyton",
+        "sign_interpretation": "Exploratory temporal across-site association only, not a causal or prospectively frozen prediction",
+        "site_label_two_sided_posthoc_permutation_p": 0.5066246687665616,
+        "spearman_r": 0.19646990600669006
+      },
+      {
+        "four_comparison_maxT_FWER_permutation_p": 0.6438678066096695,
+        "later_risk_outcome": "year2015_eighty_minus_ambient_risk",
+        "leave_one_site_out_spearman_max": -0.20442300944063707,
+        "leave_one_site_out_spearman_min": -0.5193449429032402,
+        "n_site_code_geography_matched_complete": 14,
+        "prior_predictor": "year2014_epiphyton",
+        "sign_interpretation": "Exploratory temporal across-site association only, not a causal or prospectively frozen prediction",
+        "site_label_two_sided_posthoc_permutation_p": 0.21683915804209788,
+        "spearman_r": -0.35541185243906853
+      }
+    ],
+    "complete_case_sites": [
+      "BB",
+      "CR",
+      "FI",
+      "FR",
+      "JN",
+      "JS",
+      "MX",
+      "NC",
+      "OR",
+      "QU",
+      "SD",
+      "SF",
+      "VA",
+      "WA"
+    ],
+    "maxT_scope": "four posthoc 2014 vegetation predictors x 2015 observed risk effects",
+    "n_complete_case_sites": 14,
+    "permutation_draws": 20000,
+    "permutation_seed": 202611241404
+  },
+  "source_shas": {
+    "2014": "c2af785e48aa76f88834e6c96ab69f49f85feb0918a89f9ec0585680cb170034",
+    "2015": "3de12972e709f6a856e60e6d8cbf6fd81cf824edb7d907c453301e3e42d596fb"
+  },
+  "strict_five_km_sensitivity": {
+    "included_site_codes": [
+      "CR",
+      "FI",
+      "FR",
+      "JN",
+      "JS",
+      "MX",
+      "NC",
+      "OR",
+      "QU",
+      "SD",
+      "SF",
+      "VA",
+      "WA"
+    ],
+    "structural_stability": {
+      "source_2014_nearest_subsite_shoot_density_vs_2015_ambient_shoot_density": {
+        "leave_one_site_out_spearman_max": 0.8951048951048951,
+        "leave_one_site_out_spearman_min": 0.7692307692307693,
+        "n_geographically_nearby_sites": 13,
+        "spearman_r": 0.8021978021978022,
+        "unit": "source shoots per m2 in both years, different local transects and years",
+        "within_source_year_independent_site_label_permutation_p": 0.0007998400319936012
+      }
+    }
+  },
+  "temporal_structural_stability": {
+    "source_2014_nearest_subsite_shoot_density_vs_2015_ambient_shoot_density": {
+      "leave_one_site_out_spearman_max": 0.9065934065934066,
+      "leave_one_site_out_spearman_min": 0.8021978021978022,
+      "n_geographically_nearby_sites": 14,
+      "spearman_r": 0.8285714285714286,
+      "unit": "source shoots per m2 in both years, different local transects and years",
+      "within_source_year_independent_site_label_permutation_p": 0.0006499675016249188
+    }
+  },
+  "source_verified_run": {
+    "run_id": 45330784453,
+    "job_id": 138231225354,
+    "head_sha": "e8ce557ac7873725dc9029e96f93c43eb7ce704e",
+    "status": "completed_success",
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45330784453"
+  }
+}
