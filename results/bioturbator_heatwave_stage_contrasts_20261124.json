@@ -1,0 +1,1148 @@
+{
+  "status": "response-open original-data within-block contrasts, conditional on two runs and four run-temperature baths",
+  "counts": {
+    "raw_rows": 240,
+    "selected_rows": 160,
+    "blocks": 32,
+    "gt_nominal_10": 34,
+    "recovered_seed_records": 1529,
+    "germinated_seed_records": 171,
+    "depth_count_failures": []
+  },
+  "group_means": {
+    "COLD": {
+      "NO": {
+        "n_cores": 16,
+        "recovered": 144,
+        "buried": 47,
+        "germinated": 15,
+        "buried_germinated": 2,
+        "mean_core": {
+          "buried": 0.3307404401154401,
+          "germ": 0.10714511183261183,
+          "buried_germ": 0.014756944444444444,
+          "surface_germ": 0.09238816738816738,
+          "germ_per_nominal": 0.09375000000000001
+        },
+        "pooled": {
+          "buried": 0.3263888888888889,
+          "germ": 0.10416666666666667,
+          "conditional_buried_germ": 0.0425531914893617,
+          "conditional_surface_germ": 0.13402061855670103
+        }
+      },
+      "COCKLE": {
+        "n_cores": 16,
+        "recovered": 156,
+        "buried": 114,
+        "germinated": 23,
+        "buried_germinated": 19,
+        "mean_core": {
+          "buried": 0.7418921356421356,
+          "germ": 0.1455176767676768,
+          "buried_germ": 0.12051767676767677,
+          "surface_germ": 0.025,
+          "germ_per_nominal": 0.14375000000000002
+        },
+        "pooled": {
+          "buried": 0.7307692307692307,
+          "germ": 0.14743589743589744,
+          "conditional_buried_germ": 0.16666666666666666,
+          "conditional_surface_germ": 0.09523809523809523
+        }
+      },
+      "SHRIMP": {
+        "n_cores": 16,
+        "recovered": 155,
+        "buried": 66,
+        "germinated": 18,
+        "buried_germinated": 7,
+        "mean_core": {
+          "buried": 0.41993371212121217,
+          "germ": 0.11477272727272729,
+          "buried_germ": 0.04261363636363637,
+          "surface_germ": 0.07215909090909091,
+          "germ_per_nominal": 0.11250000000000002
+        },
+        "pooled": {
+          "buried": 0.4258064516129032,
+          "germ": 0.11612903225806452,
+          "conditional_buried_germ": 0.10606060606060606,
+          "conditional_surface_germ": 0.12359550561797752
+        }
+      },
+      "WORM": {
+        "n_cores": 16,
+        "recovered": 152,
+        "buried": 68,
+        "germinated": 21,
+        "buried_germinated": 9,
+        "mean_core": {
+          "buried": 0.42131358225108223,
+          "germ": 0.13343930375180377,
+          "buried_germ": 0.056502525252525256,
+          "surface_germ": 0.0769367784992785,
+          "germ_per_nominal": 0.13125
+        },
+        "pooled": {
+          "buried": 0.4473684210526316,
+          "germ": 0.13815789473684212,
+          "conditional_buried_germ": 0.1323529411764706,
+          "conditional_surface_germ": 0.14285714285714285
+        }
+      },
+      "MIX": {
+        "n_cores": 16,
+        "recovered": 161,
+        "buried": 85,
+        "germinated": 11,
+        "buried_germinated": 3,
+        "mean_core": {
+          "buried": 0.5368359071484071,
+          "germ": 0.06398115773115774,
+          "buried_germ": 0.01818181818181818,
+          "surface_germ": 0.045799339549339554,
+          "germ_per_nominal": 0.06874999999999999
+        },
+        "pooled": {
+          "buried": 0.5279503105590062,
+          "germ": 0.06832298136645963,
+          "conditional_buried_germ": 0.03529411764705882,
+          "conditional_surface_germ": 0.10526315789473684
+        }
+      }
+    },
+    "WARM": {
+      "NO": {
+        "n_cores": 16,
+        "recovered": 139,
+        "buried": 29,
+        "germinated": 16,
+        "buried_germinated": 4,
+        "mean_core": {
+          "buried": 0.1973011363636364,
+          "germ": 0.12664141414141414,
+          "buried_germ": 0.02795138888888889,
+          "surface_germ": 0.09869002525252525,
+          "germ_per_nominal": 0.09999999999999999
+        },
+        "pooled": {
+          "buried": 0.20863309352517986,
+          "germ": 0.11510791366906475,
+          "conditional_buried_germ": 0.13793103448275862,
+          "conditional_surface_germ": 0.10909090909090909
+        }
+      },
+      "COCKLE": {
+        "n_cores": 16,
+        "recovered": 160,
+        "buried": 124,
+        "germinated": 24,
+        "buried_germinated": 18,
+        "mean_core": {
+          "buried": 0.7849913974913976,
+          "germ": 0.14700646575646578,
+          "buried_germ": 0.11173409923409924,
+          "surface_germ": 0.035272366522366524,
+          "germ_per_nominal": 0.15000000000000002
+        },
+        "pooled": {
+          "buried": 0.775,
+          "germ": 0.15,
+          "conditional_buried_germ": 0.14516129032258066,
+          "conditional_surface_germ": 0.16666666666666666
+        }
+      },
+      "SHRIMP": {
+        "n_cores": 16,
+        "recovered": 158,
+        "buried": 66,
+        "germinated": 12,
+        "buried_germinated": 3,
+        "mean_core": {
+          "buried": 0.4241161616161616,
+          "germ": 0.077114898989899,
+          "buried_germ": 0.019176136363636364,
+          "surface_germ": 0.05793876262626262,
+          "germ_per_nominal": 0.075
+        },
+        "pooled": {
+          "buried": 0.4177215189873418,
+          "germ": 0.0759493670886076,
+          "conditional_buried_germ": 0.045454545454545456,
+          "conditional_surface_germ": 0.09782608695652174
+        }
+      },
+      "WORM": {
+        "n_cores": 16,
+        "recovered": 143,
+        "buried": 50,
+        "germinated": 16,
+        "buried_germinated": 3,
+        "mean_core": {
+          "buried": 0.32073863636363636,
+          "germ": 0.10375180375180375,
+          "buried_germ": 0.018750000000000003,
+          "surface_germ": 0.08500180375180375,
+          "germ_per_nominal": 0.1
+        },
+        "pooled": {
+          "buried": 0.34965034965034963,
+          "germ": 0.11188811188811189,
+          "conditional_buried_germ": 0.06,
+          "conditional_surface_germ": 0.13978494623655913
+        }
+      },
+      "MIX": {
+        "n_cores": 16,
+        "recovered": 161,
+        "buried": 113,
+        "germinated": 15,
+        "buried_germinated": 10,
+        "mean_core": {
+          "buried": 0.7016729797979798,
+          "germ": 0.08882575757575757,
+          "buried_germ": 0.05871212121212121,
+          "surface_germ": 0.030113636363636363,
+          "germ_per_nominal": 0.09375
+        },
+        "pooled": {
+          "buried": 0.7018633540372671,
+          "germ": 0.09316770186335403,
+          "conditional_buried_germ": 0.08849557522123894,
+          "conditional_surface_germ": 0.10416666666666667
+        }
+      }
+    }
+  },
+  "contrasts": [
+    {
+      "temp": "COLD",
+      "treatment": "COCKLE",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.41115169552669556,
+          "conditional_bootstrap95": [
+            0.2993371212121212,
+            0.5367830086580087
+          ],
+          "by_run": [
+            0.4782287157287158,
+            0.3440746753246753
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.3634199134199134,
+          "positive": 15,
+          "negative": 1
+        },
+        "germ": {
+          "difference": 0.038372564935064926,
+          "conditional_bootstrap95": [
+            -0.04164186507936507,
+            0.12148944805194803
+          ],
+          "by_run": [
+            0.036814574314574314,
+            0.03993055555555555
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.0041486291486291516,
+          "positive": 7,
+          "negative": 6
+        },
+        "buried_germ": {
+          "difference": 0.10576073232323233,
+          "conditional_bootstrap95": [
+            0.048263888888888884,
+            0.17228535353535354
+          ],
+          "by_run": [
+            0.1590909090909091,
+            0.05243055555555556
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.0856060606060606,
+          "positive": 8,
+          "negative": 2
+        },
+        "surface_germ": {
+          "difference": -0.06738816738816739,
+          "conditional_bootstrap95": [
+            -0.11461038961038962,
+            -0.022249278499278498
+          ],
+          "by_run": [
+            -0.12227633477633479,
+            -0.0125
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.08975468975468975,
+          "positive": 2,
+          "negative": 7
+        },
+        "germ_per_nominal": {
+          "difference": 0.05000000000000001,
+          "conditional_bootstrap95": [
+            -0.024999999999999998,
+            0.125
+          ],
+          "by_run": [
+            0.05000000000000002,
+            0.05
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.009090909090909096,
+          "positive": 7,
+          "negative": 4
+        }
+      }
+    },
+    {
+      "temp": "COLD",
+      "treatment": "SHRIMP",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.08919327200577201,
+          "conditional_bootstrap95": [
+            -0.09684343434343436,
+            0.2811124639249639
+          ],
+          "by_run": [
+            0.09145472582972582,
+            0.0869318181818182
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.10494227994227993,
+          "positive": 8,
+          "negative": 8
+        },
+        "germ": {
+          "difference": 0.007627615440115443,
+          "conditional_bootstrap95": [
+            -0.07719381313131311,
+            0.08788329725829726
+          ],
+          "by_run": [
+            -0.0032106782106782056,
+            0.018465909090909092
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.027380952380952384,
+          "positive": 8,
+          "negative": 5
+        },
+        "buried_germ": {
+          "difference": 0.02785669191919192,
+          "conditional_bootstrap95": [
+            -0.015451388888888888,
+            0.0772885101010101
+          ],
+          "by_run": [
+            0.03611111111111111,
+            0.01960227272727273
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.00681818181818182,
+          "positive": 5,
+          "negative": 2
+        },
+        "surface_germ": {
+          "difference": -0.020229076479076475,
+          "conditional_bootstrap95": [
+            -0.09999999999999999,
+            0.059375000000000004
+          ],
+          "by_run": [
+            -0.03932178932178931,
+            -0.0011363636363636367
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.0341991341991342,
+          "positive": 5,
+          "negative": 5
+        },
+        "germ_per_nominal": {
+          "difference": 0.018750000000000003,
+          "conditional_bootstrap95": [
+            -0.0625,
+            0.09375
+          ],
+          "by_run": [
+            0,
+            0.037500000000000006
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.02727272727272728,
+          "positive": 8,
+          "negative": 4
+        }
+      }
+    },
+    {
+      "temp": "COLD",
+      "treatment": "WORM",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.09057314213564215,
+          "conditional_bootstrap95": [
+            -0.11754599567099565,
+            0.30527597402597406
+          ],
+          "by_run": [
+            0.19107593795093794,
+            -0.009929653679653656
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.0011183261183261345,
+          "positive": 8,
+          "negative": 7
+        },
+        "germ": {
+          "difference": 0.02629419191919192,
+          "conditional_bootstrap95": [
+            -0.050146554834054835,
+            0.10382395382395382
+          ],
+          "by_run": [
+            -0.005704365079365083,
+            0.05829274891774892
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.03434343434343434,
+          "positive": 8,
+          "negative": 6
+        },
+        "buried_germ": {
+          "difference": 0.04174558080808081,
+          "conditional_bootstrap95": [
+            -0.0028251262626262617,
+            0.08648989898989899
+          ],
+          "by_run": [
+            0.07525252525252525,
+            0.008238636363636365
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.03409090909090909,
+          "positive": 7,
+          "negative": 2
+        },
+        "surface_germ": {
+          "difference": -0.015451388888888893,
+          "conditional_bootstrap95": [
+            -0.08159722222222222,
+            0.05270111832611833
+          ],
+          "by_run": [
+            -0.08095689033189032,
+            0.05005411255411256
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.00025252525252525415,
+          "positive": 6,
+          "negative": 7
+        },
+        "germ_per_nominal": {
+          "difference": 0.037500000000000006,
+          "conditional_bootstrap95": [
+            -0.03125,
+            0.10625000000000001
+          ],
+          "by_run": [
+            0,
+            0.07500000000000001
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.045454545454545456,
+          "positive": 7,
+          "negative": 5
+        }
+      }
+    },
+    {
+      "temp": "COLD",
+      "treatment": "MIX",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.20609546703296705,
+          "conditional_bootstrap95": [
+            0.049494949494949494,
+            0.35956664862914867
+          ],
+          "by_run": [
+            0.2281631562881563,
+            0.18402777777777776
+          ],
+          "strict_n": 9,
+          "strict_diff": 0.26869488536155206,
+          "positive": 11,
+          "negative": 5
+        },
+        "germ": {
+          "difference": -0.0431639541014541,
+          "conditional_bootstrap95": [
+            -0.09554560023310024,
+            0.006823038073038079
+          ],
+          "by_run": [
+            -0.08206654456654455,
+            -0.004261363636363636
+          ],
+          "strict_n": 9,
+          "strict_diff": -0.019885361552028216,
+          "positive": 5,
+          "negative": 8
+        },
+        "buried_germ": {
+          "difference": 0.0034248737373737386,
+          "conditional_bootstrap95": [
+            -0.017881944444444443,
+            0.02329545454545455
+          ],
+          "by_run": [
+            0.022474747474747477,
+            -0.015625
+          ],
+          "strict_n": 9,
+          "strict_diff": -0.004012345679012343,
+          "positive": 2,
+          "negative": 2
+        },
+        "surface_germ": {
+          "difference": -0.04658882783882784,
+          "conditional_bootstrap95": [
+            -0.1019570707070707,
+            0.005533355533355523
+          ],
+          "by_run": [
+            -0.10454129204129205,
+            0.01136363636363636
+          ],
+          "strict_n": 9,
+          "strict_diff": -0.015873015873015872,
+          "positive": 5,
+          "negative": 7
+        },
+        "germ_per_nominal": {
+          "difference": -0.025,
+          "conditional_bootstrap95": [
+            -0.06875,
+            0.018750000000000003
+          ],
+          "by_run": [
+            -0.0625,
+            0.0125
+          ],
+          "strict_n": 9,
+          "strict_diff": 0,
+          "positive": 4,
+          "negative": 6
+        }
+      }
+    },
+    {
+      "temp": "COLD",
+      "treatment": "MIX",
+      "control": "COCKLE",
+      "metrics": {
+        "buried": {
+          "difference": -0.20505622849372848,
+          "conditional_bootstrap95": [
+            -0.32431526806526806,
+            -0.08967126623376623
+          ],
+          "by_run": [
+            -0.2500655594405594,
+            -0.16004689754689755
+          ],
+          "strict_n": 8,
+          "strict_diff": -0.21026785714285715,
+          "positive": 5,
+          "negative": 11
+        },
+        "germ": {
+          "difference": -0.08153651903651904,
+          "conditional_bootstrap95": [
+            -0.14501262626262626,
+            -0.017472804972804967
+          ],
+          "by_run": [
+            -0.11888111888111888,
+            -0.044191919191919185
+          ],
+          "strict_n": 8,
+          "strict_diff": -0.10694444444444445,
+          "positive": 3,
+          "negative": 11
+        },
+        "buried_germ": {
+          "difference": -0.10233585858585859,
+          "conditional_bootstrap95": [
+            -0.16275252525252526,
+            -0.04848484848484848
+          ],
+          "by_run": [
+            -0.1366161616161616,
+            -0.06805555555555556
+          ],
+          "strict_n": 8,
+          "strict_diff": -0.09444444444444444,
+          "positive": 0,
+          "negative": 9
+        },
+        "surface_germ": {
+          "difference": 0.020799339549339553,
+          "conditional_bootstrap95": [
+            -0.020192307692307693,
+            0.06182498057498057
+          ],
+          "by_run": [
+            0.017735042735042734,
+            0.02386363636363636
+          ],
+          "strict_n": 8,
+          "strict_diff": -0.0125,
+          "positive": 7,
+          "negative": 4
+        },
+        "germ_per_nominal": {
+          "difference": -0.07500000000000002,
+          "conditional_bootstrap95": [
+            -0.1375,
+            -0.012499999999999994
+          ],
+          "by_run": [
+            -0.11250000000000002,
+            -0.0375
+          ],
+          "strict_n": 8,
+          "strict_diff": -0.1,
+          "positive": 3,
+          "negative": 10
+        }
+      }
+    },
+    {
+      "temp": "WARM",
+      "treatment": "COCKLE",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.5876902611277612,
+          "conditional_bootstrap95": [
+            0.33950216450216447,
+            0.7874259421134422
+          ],
+          "by_run": [
+            0.5490457459207458,
+            0.6263347763347764
+          ],
+          "strict_n": 10,
+          "strict_diff": 0.6136111111111111,
+          "positive": 14,
+          "negative": 2
+        },
+        "germ": {
+          "difference": 0.020365051615051612,
+          "conditional_bootstrap95": [
+            -0.05080579143079144,
+            0.08986291486291487
+          ],
+          "by_run": [
+            0.05620629370629371,
+            -0.015476190476190484
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.012777777777777782,
+          "positive": 7,
+          "negative": 5
+        },
+        "buried_germ": {
+          "difference": 0.08378271034521034,
+          "conditional_bootstrap95": [
+            0.029353805916305917,
+            0.14019036519036515
+          ],
+          "by_run": [
+            0.08919240481740481,
+            0.07837301587301587
+          ],
+          "strict_n": 10,
+          "strict_diff": 0.060833333333333336,
+          "positive": 9,
+          "negative": 2
+        },
+        "surface_germ": {
+          "difference": -0.06341765873015874,
+          "conditional_bootstrap95": [
+            -0.13799152236652235,
+            0.007796717171717173
+          ],
+          "by_run": [
+            -0.03298611111111111,
+            -0.09384920634920635
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.07361111111111111,
+          "positive": 4,
+          "negative": 7
+        },
+        "germ_per_nominal": {
+          "difference": 0.049999999999999996,
+          "conditional_bootstrap95": [
+            -0.00625,
+            0.10624999999999998
+          ],
+          "by_run": [
+            0.0875,
+            0.012499999999999997
+          ],
+          "strict_n": 10,
+          "strict_diff": 0.009999999999999992,
+          "positive": 7,
+          "negative": 2
+        }
+      }
+    },
+    {
+      "temp": "WARM",
+      "treatment": "SHRIMP",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.22681502525252525,
+          "conditional_bootstrap95": [
+            0.09408143939393938,
+            0.360842803030303
+          ],
+          "by_run": [
+            0.17367424242424243,
+            0.27995580808080806
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.1891414141414141,
+          "positive": 11,
+          "negative": 2
+        },
+        "germ": {
+          "difference": -0.049526515151515155,
+          "conditional_bootstrap95": [
+            -0.12035984848484849,
+            0.015625
+          ],
+          "by_run": [
+            -0.019886363636363636,
+            -0.07916666666666666
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.025757575757575757,
+          "positive": 6,
+          "negative": 7
+        },
+        "buried_germ": {
+          "difference": -0.008775252525252525,
+          "conditional_bootstrap95": [
+            -0.03958333333333333,
+            0.022727272727272728
+          ],
+          "by_run": [
+            -0.003661616161616161,
+            -0.013888888888888888
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.02929292929292929,
+          "positive": 1,
+          "negative": 3
+        },
+        "surface_germ": {
+          "difference": -0.04075126262626263,
+          "conditional_bootstrap95": [
+            -0.11475694444444443,
+            0.028740530303030296
+          ],
+          "by_run": [
+            -0.016224747474747475,
+            -0.06527777777777778
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.0035353535353535377,
+          "positive": 5,
+          "negative": 7
+        },
+        "germ_per_nominal": {
+          "difference": -0.025,
+          "conditional_bootstrap95": [
+            -0.07500000000000001,
+            0.025
+          ],
+          "by_run": [
+            -3.469446951953614e-18,
+            -0.05
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.009090909090909092,
+          "positive": 5,
+          "negative": 6
+        }
+      }
+    },
+    {
+      "temp": "WARM",
+      "treatment": "WORM",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.12343750000000003,
+          "conditional_bootstrap95": [
+            -0.026972853535353544,
+            0.2801767676767677
+          ],
+          "by_run": [
+            0.12136994949494948,
+            0.1255050505050505
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.17550505050505058,
+          "positive": 8,
+          "negative": 6
+        },
+        "germ": {
+          "difference": -0.022889610389610404,
+          "conditional_bootstrap95": [
+            -0.11622474747474748,
+            0.0669462481962482
+          ],
+          "by_run": [
+            0.015530303030303016,
+            -0.061309523809523814
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.016305916305916303,
+          "positive": 7,
+          "negative": 7
+        },
+        "buried_germ": {
+          "difference": -0.009201388888888887,
+          "conditional_bootstrap95": [
+            -0.04427083333333333,
+            0.030555555555555558
+          ],
+          "by_run": [
+            -0.017013888888888887,
+            -0.0013888888888888874
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.00580808080808081,
+          "positive": 2,
+          "negative": 4
+        },
+        "surface_germ": {
+          "difference": -0.013688221500721506,
+          "conditional_bootstrap95": [
+            -0.10101010101010101,
+            0.07032377344877344
+          ],
+          "by_run": [
+            0.03254419191919191,
+            -0.05992063492063492
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.022113997113997107,
+          "positive": 6,
+          "negative": 6
+        },
+        "germ_per_nominal": {
+          "difference": -6.938893903907228e-18,
+          "conditional_bootstrap95": [
+            -0.08125,
+            0.08124999999999999
+          ],
+          "by_run": [
+            0.03749999999999999,
+            -0.03750000000000002
+          ],
+          "strict_n": 11,
+          "strict_diff": -5.046468293750712e-18,
+          "positive": 7,
+          "negative": 7
+        }
+      }
+    },
+    {
+      "temp": "WARM",
+      "treatment": "MIX",
+      "control": "NO",
+      "metrics": {
+        "buried": {
+          "difference": 0.5043718434343435,
+          "conditional_bootstrap95": [
+            0.36543560606060604,
+            0.6357796717171718
+          ],
+          "by_run": [
+            0.5393623737373737,
+            0.46938131313131315
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.3931818181818183,
+          "positive": 15,
+          "negative": 1
+        },
+        "germ": {
+          "difference": -0.03781565656565657,
+          "conditional_bootstrap95": [
+            -0.11931818181818182,
+            0.04242424242424243
+          ],
+          "by_run": [
+            -0.05252525252525253,
+            -0.023106060606060616
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.07676767676767678,
+          "positive": 5,
+          "negative": 8
+        },
+        "buried_germ": {
+          "difference": 0.030760732323232325,
+          "conditional_bootstrap95": [
+            -0.01324179292929293,
+            0.07386363636363635
+          ],
+          "by_run": [
+            0.0057133838383838405,
+            0.055808080808080814
+          ],
+          "strict_n": 11,
+          "strict_diff": 0.004797979797979801,
+          "positive": 7,
+          "negative": 3
+        },
+        "surface_germ": {
+          "difference": -0.06857638888888891,
+          "conditional_bootstrap95": [
+            -0.14169823232323234,
+            -0.002383207070707067
+          ],
+          "by_run": [
+            -0.05823863636363638,
+            -0.07891414141414141
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.08156565656565656,
+          "positive": 4,
+          "negative": 7
+        },
+        "germ_per_nominal": {
+          "difference": -0.006250000000000004,
+          "conditional_bootstrap95": [
+            -0.075,
+            0.0625
+          ],
+          "by_run": [
+            -0.025000000000000005,
+            0.012499999999999997
+          ],
+          "strict_n": 11,
+          "strict_diff": -0.036363636363636376,
+          "positive": 5,
+          "negative": 7
+        }
+      }
+    },
+    {
+      "temp": "WARM",
+      "treatment": "MIX",
+      "control": "COCKLE",
+      "metrics": {
+        "buried": {
+          "difference": -0.08331841769341772,
+          "conditional_bootstrap95": [
+            -0.22566773504273505,
+            0.06305465367965368
+          ],
+          "by_run": [
+            -0.009683372183372202,
+            -0.1569534632034632
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.11555555555555559,
+          "positive": 5,
+          "negative": 9
+        },
+        "germ": {
+          "difference": -0.05818070818070817,
+          "conditional_bootstrap95": [
+            -0.12826617826617825,
+            0.011858974358974372
+          ],
+          "by_run": [
+            -0.10873154623154623,
+            -0.0076298701298701255
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.06555555555555555,
+          "positive": 2,
+          "negative": 11
+        },
+        "buried_germ": {
+          "difference": -0.05302197802197802,
+          "conditional_bootstrap95": [
+            -0.1121225996225996,
+            -0.00006451881451881303
+          ],
+          "by_run": [
+            -0.08347902097902098,
+            -0.02256493506493506
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.06444444444444444,
+          "positive": 2,
+          "negative": 9
+        },
+        "surface_germ": {
+          "difference": -0.005158730158730154,
+          "conditional_bootstrap95": [
+            -0.03348665223665223,
+            0.023863636363636365
+          ],
+          "by_run": [
+            -0.025252525252525245,
+            0.014935064935064937
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.00111111111111111,
+          "positive": 3,
+          "negative": 5
+        },
+        "germ_per_nominal": {
+          "difference": -0.056249999999999994,
+          "conditional_bootstrap95": [
+            -0.125,
+            0.012500000000000004
+          ],
+          "by_run": [
+            -0.1125,
+            0
+          ],
+          "strict_n": 10,
+          "strict_diff": -0.06000000000000001,
+          "positive": 2,
+          "negative": 8
+        }
+      }
+    }
+  ],
+  "decomposition": [
+    {
+      "temp": "COLD",
+      "treatment": "COCKLE",
+      "control": "NO",
+      "pooled_germ_difference": 0.04326923076923077,
+      "redistribution": -0.004051659647047888,
+      "buried_quality": 0.06560378402133721,
+      "surface_quality": -0.018282893605058553
+    },
+    {
+      "temp": "COLD",
+      "treatment": "SHRIMP",
+      "control": "NO",
+      "pooled_germ_difference": 0.01196236559139785,
+      "redistribution": -0.00541837282213784,
+      "buried_quality": 0.023884990663902813,
+      "surface_quality": -0.0065042522503671206
+    },
+    {
+      "temp": "COLD",
+      "treatment": "WORM",
+      "control": "NO",
+      "pooled_germ_difference": 0.03399122807017545,
+      "redistribution": -0.006168239969954648,
+      "buried_quality": 0.03474160637565963,
+      "surface_quality": 0.005417861664470452
+    },
+    {
+      "temp": "COLD",
+      "treatment": "MIX",
+      "control": "NO",
+      "pooled_germ_difference": -0.03584368530020704,
+      "redistribution": -0.01626968193070816,
+      "buried_quality": -0.003100855667583098,
+      "surface_quality": -0.01647314770191578
+    },
+    {
+      "temp": "COLD",
+      "treatment": "MIX",
+      "control": "COCKLE",
+      "pooled_germ_difference": -0.07911291606943781,
+      "redistribution": -0.00014801026906097919,
+      "buried_quality": -0.08268059732254104,
+      "surface_quality": 0.003715691522164225
+    },
+    {
+      "temp": "WARM",
+      "treatment": "COCKLE",
+      "control": "NO",
+      "pooled_germ_difference": 0.03489208633093524,
+      "redistribution": 0.002077079563975494,
+      "buried_quality": 0.0035559594593513235,
+      "surface_quality": 0.02925904730760846
+    },
+    {
+      "temp": "WARM",
+      "treatment": "SHRIMP",
+      "control": "NO",
+      "pooled_germ_difference": -0.03915854658045716,
+      "redistribution": -0.0024600733716806755,
+      "buried_quality": -0.02896153772589246,
+      "surface_quality": -0.007736935482884012
+    },
+    {
+      "temp": "WARM",
+      "treatment": "WORM",
+      "control": "NO",
+      "pooled_germ_difference": -0.003219801780952866,
+      "redistribution": -0.0035920494246546504,
+      "buried_quality": -0.0217538031306327,
+      "surface_quality": 0.022126050774334487
+    },
+    {
+      "temp": "WARM",
+      "treatment": "MIX",
+      "control": "NO",
+      "pooled_germ_difference": -0.02194021180571072,
+      "redistribution": 0.0032476830220430717,
+      "buried_quality": -0.02250540502061587,
+      "surface_quality": -0.0026824898071379096
+    },
+    {
+      "temp": "WARM",
+      "treatment": "MIX",
+      "control": "COCKLE",
+      "pooled_germ_difference": -0.05683229813664596,
+      "redistribution": 0.0013594810814333057,
+      "buried_quality": -0.04184375903174387,
+      "surface_quality": -0.0163480201863354
+    }
+  ],
+  "source": {
+    "doi": "10.1007/s00442-025-05662-y",
+    "repo": "SimonaLaukaityte/heatwave-on-animal-plant-interactions",
+    "commit": "ea4679016e8bddcd083cd93fe2fd6f33b6b1025e",
+    "path": "data.txt",
+    "blob_sha": "cb12f65a477078f3980a381b5251a635db312d53",
+    "author_code_ref": "14286c76bf40a5416060b32e29c9e57f9ec51bd2"
+  },
+  "limits": [
+    "Rows 81–240 per author code; excluded source run 1 is not treated as another independent run.",
+    "34 cores have >10 recovered seed records despite nominal 10 planted; do not model as binomial with nominal n=10 or interpret recovered fractions as per-sown establishment. Germination count per nominal ten is only a scaling sensitivity.",
+    "Water bath shared within temperature/run; conditional block bootstrap does not generalize thermal effects beyond two runs.",
+    "Burial is post-treatment; arithmetic decomposition is not causal mediation, and no seed survival or emergence after removal was measured.",
+    "Recovered-seed germination includes all recovered seed records in denominator; source precomputed germination percentages differ, possibly due to viability denominators. Distinct estimand; not a reproduction of original significance tests.",
+    "Exploratory unadjusted comparisons, no evidence of equivalence where interval crosses zero."
+  ]
+}

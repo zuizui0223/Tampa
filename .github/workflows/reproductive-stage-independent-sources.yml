@@ -1,0 +1,26 @@
+name: Reproductive stage independent source audit
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/151_reproductive_stage_independent_sources.py'
+      - '.github/workflows/reproductive-stage-independent-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python analysis/151_reproductive_stage_independent_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproductive-stage-independent-sources
+          path: reproductive_stage_sources/
+          if-no-files-found: error

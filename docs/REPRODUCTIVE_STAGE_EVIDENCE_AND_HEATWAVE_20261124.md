@@ -1,0 +1,27 @@
+# Stage-resolved interactions: independent bioturbator experiment and evidence register
+2026-11-24 | Response-open exploratory analysis, not a pooled meta-analysis.
+
+Laukaityte et al. 2025 (Oecologia, 10.1007/s00442-025-05662-y), published data.txt at SimonaLaukaityte/heatwave-on-animal-plant-interactions @ ea4679016e8bddcd083cd93fe2fd6f33b6b1025e, blob cb12f65a477078f3980a381b5251a635db312d53. Author analysis at 14286c76bf40a5416060b32e29c9e57f9ec51bd2 selects rows 81:240. We implement identical selection (runs 2/3, 160 cores, 32 five-treatment blocks); no inference from excluded first 80 rows. All six depth-specific counts sum to total recovery and germinated counts; no depth-specific germinated counts exceed recovery counts. 34 cores report >10 recovered seed records (range 1–14) despite nominal sowing of ten. Cannot establish initial denominator or identity of extra seed records. Main endpoint is germinated / all recovered seed records per core, **not** author viability-based or precomputed ratios; e.g. source 2.1.1 germinated_perc .2857 vs 2/10. Code preserves actual integer counts, no cap/imputation. Results conditional on reported records. Totals 1529 recovered and 171 germinated. Source reports all invertebrates survived; no withdrawal experiment.
+
+Within each run/temperature, eight tanks contain each treatment once, random assignment of cores as described. Equal run/block weighting; 20,000 within-run paired block bootstrap, seed 20261124. Temperature shares a common bath per run; no general heatwave interaction inference from 16 cores as independent temperature replicates. Intervals unadjusted and conditional on two observed runs. Excluding pairs with recovery >10 is diagnostic only (post-treatment selection).
+
+| Temperature | Contrast | Buried proportion RD (95% conditional interval) | All-recovered germinated RD (95% conditional interval) |
+|---|---|---:|---:|
+|COLD|COCKLE − NO|41.12 [29.93, 53.68]|3.84 [-4.16, 12.15]|
+|COLD|SHRIMP − NO|8.92 [-9.68, 28.11]|0.76 [-7.72, 8.79]|
+|COLD|WORM − NO|9.06 [-11.75, 30.53]|2.63 [-5.01, 10.38]|
+|COLD|MIX − NO|20.61 [4.95, 35.96]|-4.32 [-9.55, 0.68]|
+|COLD|MIX − COCKLE|-20.51 [-32.43, -8.97]|-8.15 [-14.50, -1.75]|
+|WARM|COCKLE − NO|58.77 [33.95, 78.74]|2.04 [-5.08, 8.99]|
+|WARM|SHRIMP − NO|22.68 [9.41, 36.08]|-4.95 [-12.04, 1.56]|
+|WARM|WORM − NO|12.34 [-2.70, 28.02]|-2.29 [-11.62, 6.69]|
+|WARM|MIX − NO|50.44 [36.54, 63.58]|-3.78 [-11.93, 4.24]|
+|WARM|MIX − COCKLE|-8.33 [-22.57, 6.31]|-5.82 [-12.83, 1.19]|
+
+Mix increases burial vs no fauna under both regimes; germination difference unresolved, negative point estimates. Cold mix vs cockle: -8.15 pp germinated, interval [-14.50,-1.75]; both runs negative, count/nominal-ten sensitivity -7.5 pp and exclusion of >10 pairs -10.69 pp. Warm contrast -5.82 pp [-12.83,1.19]. No claim of a universal negative diversity effect; mixed treatment changes individual species densities and composition, despite intended biovolume matching. Predators and strong flow absent; no full seed-to-meadow endpoint. Stronger physical burial and better recruitment are not equivalent. Original paper already describes temperature-dependent burial and conditional germination; added result is all-recovered germination as common endpoint plus explicit accounting.
+
+Pooled identity (not paired-core mean): G=P*g_b+(1-P)*g_s, P=buried fraction, g_b/g_s=germination among buried/surface recovered records. Symmetric arithmetic decomposition exact across all comparisons, stored in JSON. Example cold mix vs cockle pooled total -7.91 pp: redistribution -0.015 pp, within-buried conditional rate -8.27 pp, within-surface rate +0.37 pp. These are descriptive components, not causal mediators; burial is post-treatment and populations differ. In warm mix vs no fauna the pooled redistribution term +0.32 pp, buried conditional rate term -2.25 pp, surface term -0.27 pp. Do not infer survival, physiological mechanism or effect duration from this assay.
+
+Evidence register data/seagrass_interactions_v1/reproductive_stage_evidence_registry.csv has 17 publication-level records, including non-biotic depth and upstream observational context as explicit exclusions from a treatment meta-analysis. This is a targeted starting register, not exhaustive screening. Separate stage and measurement windows, unit, assigned withdrawal, provenance and non-estimable endpoints. A temporal lag between interaction and outcome is not duration of benefit after withdrawal. No study here unambiguously randomizes withdrawal of a live beneficial partner and follows a subsequent reproductive endpoint; Fishman sequential predator exposure is a potential timing contrast, not facilitation removal. Source cohorts and dependencies must be mapped before pooling any compatible contrasts. No grand mean, no formal duration meta-analysis.
+
+Next source gate: Jørgensen 2019 S1–S4 PLOS XLSX and Carroll 2019 dataset DOI 10.20429/data.2019.01. PLOS direct runtime DNS failed; Carroll official 119 KB CC BY archive URL (https://digitalcommons.georgiasouthern.edu/context/biology-data/article/1002/type/native/viewcontent) returned web cache miss; retrieval workflow added, no raw data fit claimed. The new temperature factorial is independent of prior Infantes/Meysick/Lopazanski, not an otter-to-seed or pollination mechanism test. Main/manuscript unchanged. Executed analysis in JS on verified connector source; standalone Node wrapper not independently run yet.
