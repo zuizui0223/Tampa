@@ -1,0 +1,121 @@
+{
+  "status": "locally executed source-verified original-data reanalysis, response-open",
+  "artifact": {
+    "id": 14914948367,
+    "sha256": "d4b902fb8216844bb078cf9ba0e9a87f1767defc1781534245761a45c82cadfd"
+  },
+  "source": "10.5066/P9T6UB5G",
+  "n_complete_dives": 17128,
+  "n_matched_dives": 9730,
+  "n_sites": 13,
+  "n_codes": 70,
+  "primary": {
+    "small": {
+      "delta": 262.7730384300204,
+      "rate_component": 210.02761578353187,
+      "rate_ci": [
+        140.19854153187995,
+        297.12351410306826
+      ],
+      "within_fraction_component": 52.745422646488485,
+      "fraction_ci": [
+        30.24716718725616,
+        95.65668860621665
+      ],
+      "top3_codes": [
+        "mus",
+        "mtr",
+        "uni"
+      ],
+      "top3_delta": 242.25058100596107,
+      "remaining_delta": 20.522457424059304,
+      "remaining_ci": [
+        7.195482400602945,
+        35.74149436331424
+      ],
+      "remaining_positive_sites": 10,
+      "loo_delta_range": [
+        230.02982848075234,
+        278.99303435772055
+      ]
+    },
+    "large": {
+      "delta": -31.8296298373152,
+      "rate_component": 17.638982184943693,
+      "rate_ci": [
+        -5.81690248599724,
+        61.236293054201624
+      ],
+      "within_fraction_component": -49.46861202225888,
+      "fraction_ci": [
+        -92.79060237425537,
+        -26.386617201496946
+      ],
+      "top3_codes": [
+        "mom",
+        "cla",
+        "std"
+      ],
+      "top3_delta": -21.68356643140933,
+      "remaining_delta": -10.146063405905862,
+      "remaining_ci": [
+        -13.494307915650817,
+        -6.974651139219796
+      ],
+      "remaining_negative_sites": 13,
+      "loo_delta_range": [
+        -32.807878071851654,
+        -30.414414680397343
+      ]
+    }
+  },
+  "sensitivity": [
+    {
+      "name": "strict explicit large codes",
+      "n_sites": 13,
+      "small_delta": 262.7730384300204,
+      "large_delta": -31.8296298373152,
+      "large_fraction_component": -49.46861202225888
+    },
+    {
+      "name": "adult females",
+      "n_sites": 9,
+      "small_delta": 292.15412100264246,
+      "large_delta": -29.52303217283956,
+      "large_fraction_component": -29.92199469148785,
+      "large_fraction_ci": [
+        -106.96421833235883,
+        -16.091257586662014
+      ]
+    },
+    {
+      "name": "summer",
+      "n_sites": 8,
+      "small_delta": 369.02487528785366,
+      "large_delta": -33.77199431159576,
+      "large_fraction_component": -87.95231675214322,
+      "large_fraction_ci": [
+        -120.12886006671881,
+        -8.034033551186546
+      ]
+    },
+    {
+      "name": "minimum 10 bouts",
+      "n_sites": 11,
+      "small_delta": 266.3005077928141,
+      "large_delta": -33.26907309186974,
+      "large_fraction_component": -52.58027131133281,
+      "large_fraction_ci": [
+        -102.50347110437076,
+        -27.889635699131336
+      ]
+    }
+  ],
+  "limits": [
+    "Not measured consumption, biomass, prey density or functional consequences",
+    "Code names not verified taxonomy; no species-level selection",
+    "Response-open summary and bootstrap across matched sites; no spatial or temporal dependence correction",
+    "Top-three exclusions selected on observed outcomes; not external validation",
+    "Observation windows do not align with prey census; no paired mediation"
+  ]
+}
