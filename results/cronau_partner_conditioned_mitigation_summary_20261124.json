@@ -1,0 +1,174 @@
+{
+  "status": "locally executed original-data aquarium analysis; rounded summary, not full output",
+  "source": "10.17026/dans-x38-abzq",
+  "paper": "10.1111/1365-2664.14381",
+  "artifact": {
+    "run": 45395555677,
+    "id": 14921515463,
+    "sha256": "05f7586f961ea26fe6685155eac93078ac62a8c0213dfa0222fceac02744ea33"
+  },
+  "audit": {
+    "aquaria": 32,
+    "plant_rows": 192,
+    "glue_rows": 1344,
+    "ambiguous_aquaria": [
+      18,
+      19
+    ],
+    "invalid_glue_rows": 3,
+    "missing_biomass_rows": 1,
+    "block_id_present": false,
+    "field_shared_controls": 10
+  },
+  "final_plant": {
+    "shoots": {
+      "without": -0.0625,
+      "ci_without": [
+        -0.3333,
+        0.2292
+      ],
+      "with": 0.5179,
+      "ci_with": [
+        0.3542,
+        0.6786
+      ],
+      "interaction": 0.5804,
+      "ci_interaction": [
+        0.25,
+        0.8958
+      ]
+    },
+    "leaves": {
+      "without": 0.125,
+      "ci_without": [
+        -0.5417,
+        0.8333
+      ],
+      "with": 2.4173,
+      "ci_with": [
+        1.7214,
+        3.1101
+      ],
+      "interaction": 2.2923,
+      "ci_interaction": [
+        1.2958,
+        3.2589
+      ]
+    },
+    "belowdw": {
+      "without": 0.010493,
+      "ci_without": [
+        -0.0506,
+        0.0665
+      ],
+      "with": 0.220474,
+      "ci_with": [
+        0.1713,
+        0.2694
+      ],
+      "interaction": 0.209981,
+      "ci_interaction": [
+        0.1344,
+        0.2878
+      ]
+    },
+    "abovedw": {
+      "without": -0.0332,
+      "with": 0.0571,
+      "interaction": 0.0903,
+      "ci_interaction": [
+        0.0365,
+        0.1494
+      ]
+    },
+    "totaldw": {
+      "without": -0.0238,
+      "with": 0.2775,
+      "interaction": 0.3013,
+      "ci_interaction": [
+        0.1846,
+        0.4244
+      ]
+    }
+  },
+  "late_damage": {
+    "days": [
+      27,
+      40,
+      49,
+      54,
+      61
+    ],
+    "gluing": {
+      "without_snail": 38.88541666666667,
+      "with_snail": 10.718419312169313,
+      "effect": -28.166997,
+      "ci": [
+        -36.2726,
+        -20.5999
+      ]
+    },
+    "epicover": {
+      "without_snail": 35.23958333333333,
+      "with_snail": 5.633333333333334,
+      "effect": -29.60625,
+      "ci": [
+        -36.0126,
+        -22.9917
+      ],
+      "interaction": 3.09375,
+      "ci_interaction": [
+        -9.0045,
+        14.9459
+      ]
+    },
+    "bites": {
+      "without_snail": 0.24916666666666665,
+      "with_snail": 0.5791666666666666,
+      "effect": 0.33,
+      "ci": [
+        0.18,
+        0.4817
+      ]
+    }
+  },
+  "sensitivity_interactions": {
+    "exclude_aq18_19": [
+      0.5417,
+      2.2292,
+      0.2108
+    ],
+    "hypothetical_reassign_either_duplicate": [
+      0.5833,
+      2.3125,
+      0.2095
+    ]
+  },
+  "field": {
+    "final_difference": 5,
+    "final_ci": [
+      3,
+      7.2
+    ],
+    "first_difference": 2.9,
+    "first_ci": [
+      -0.1,
+      5.8
+    ],
+    "change_difference": 2.1,
+    "change_ci": [
+      -0.8,
+      5.1
+    ],
+    "site_changes": [
+      2,
+      2.2
+    ]
+  },
+  "limits": [
+    "No released block identifiers; conditional aquarium bootstrap, no block-level generalization.",
+    "Observed ramet outcomes, missingness may depend on plant death.",
+    "Both pathways and final vegetative state measured; no reproduction, no causal mediation. Existing original paper reported mitigation and possible diet shift.",
+    "PANGAEA lab obtained, field schema stopped; Figshare API key is download_url, not downloadUrl. Neither analyzed here."
+  ]
+}
