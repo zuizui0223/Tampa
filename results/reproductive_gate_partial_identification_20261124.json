@@ -1,0 +1,184 @@
+{
+  "schema": "tampa.reproductive_gate_partial_identification.v1",
+  "source_artifact_sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c",
+  "status": "post-hoc original-workbook partial identification and theoretical thresholds; no causal otter effect estimate",
+  "field": {
+    "arms": [
+      "CAGE",
+      "CAGE-HAND",
+      "CAGE-SAND"
+    ],
+    "trials": [
+      2,
+      3
+    ],
+    "plots_per_arm_trial": 3,
+    "means_real_mimic": [
+      [
+        0.9158333333333334,
+        0.7333333333333333
+      ],
+      [
+        0.18333333333333332,
+        0.7166666666666667
+      ],
+      [
+        0.7191666666666667,
+        0.6833333333333333
+      ]
+    ],
+    "contrasts": {
+      "crab_removal_surface": 0.7325,
+      "burial_with_crab": 0.5358333333333334,
+      "substitution_lower_bound": 0.4516666666666669,
+      "substitution_upper_bound": 1.4516666666666669,
+      "relative_rr_ratio_lower_bound": 3.592564393939395,
+      "burial_real_minus_mimic_contrast": 0.5691666666666667,
+      "removal_real_minus_mimic_contrast": 0.7158333333333334
+    },
+    "conditional_plot_bootstrap_percentile_95": {
+      "crab_removal_surface": [
+        0.6016666666666667,
+        0.8508333333333333
+      ],
+      "burial_with_crab": [
+        0.43500000000000005,
+        0.6275000000000001
+      ],
+      "substitution_lower_bound": [
+        0.3075000000000001,
+        0.5833333333333335
+      ],
+      "substitution_upper_bound": [
+        1.3075,
+        1.5833333333333335
+      ],
+      "relative_rr_ratio_lower_bound": [
+        2.378815171657102,
+        5.7915625
+      ],
+      "burial_real_minus_mimic_contrast": [
+        0.4483333333333333,
+        0.6799999999999999
+      ],
+      "removal_real_minus_mimic_contrast": [
+        0.5483333333333335,
+        0.8775
+      ]
+    },
+    "bootstrap_seed": 20261124,
+    "bootstrap_draws": 50000,
+    "by_trial": {
+      "2": {
+        "crab_removal_surface": 0.7416666666666667,
+        "burial_with_crab": 0.3950000000000001,
+        "substitution_lower_bound": 0.39333333333333353,
+        "substitution_upper_bound": 1.3933333333333335,
+        "relative_rr_ratio_lower_bound": 2.534729437229438,
+        "burial_real_minus_mimic_contrast": 0.47833333333333333,
+        "removal_real_minus_mimic_contrast": 0.7250000000000001
+      },
+      "3": {
+        "crab_removal_surface": 0.7233333333333334,
+        "burial_with_crab": 0.6766666666666666,
+        "substitution_lower_bound": 0.51,
+        "substitution_upper_bound": 1.51,
+        "relative_rr_ratio_lower_bound": 5.959595959595959,
+        "burial_real_minus_mimic_contrast": 0.66,
+        "removal_real_minus_mimic_contrast": 0.7066666666666668
+      }
+    },
+    "missing_arm": "no-crab + sand within cage; bound recovery probability in [0,1]"
+  },
+  "serial_gate": {
+    "model": "R=S*T*(1-q)*E; perfect predator control delta=S*T*q*E. Assuming S,E unchanged, engineer modifies delta by T1*q1-T0*q0. Substitution if q1/q0<T0/T1. No estimation of q1/q0 in flume.",
+    "treatment_2": "10 short shoots",
+    "treatment_16": "10 short shoots, 6 mussels, 3 oysters",
+    "rows": [
+      {
+        "flow_cm_s": 12,
+        "short_shoot_trapping": 0.23333333333333334,
+        "mixed_trapping": 0.6666666666666666,
+        "break_even_predation_risk_ratio": 0.35,
+        "minimum_predation_risk_reduction_for_substitution": 0.65
+      },
+      {
+        "flow_cm_s": 14,
+        "short_shoot_trapping": 0.16666666666666666,
+        "mixed_trapping": 0.6,
+        "break_even_predation_risk_ratio": 0.2777777777777778,
+        "minimum_predation_risk_reduction_for_substitution": 0.7222222222222222
+      },
+      {
+        "flow_cm_s": 16,
+        "short_shoot_trapping": 0.3,
+        "mixed_trapping": 0.43333333333333335,
+        "break_even_predation_risk_ratio": 0.6923076923076923,
+        "minimum_predation_risk_reduction_for_substitution": 0.3076923076923077
+      },
+      {
+        "flow_cm_s": 18,
+        "short_shoot_trapping": 0.16666666666666666,
+        "mixed_trapping": 0.5,
+        "break_even_predation_risk_ratio": 0.3333333333333333,
+        "minimum_predation_risk_reduction_for_substitution": 0.6666666666666667
+      },
+      {
+        "flow_cm_s": 20,
+        "short_shoot_trapping": 0.1,
+        "mixed_trapping": 0.5333333333333333,
+        "break_even_predation_risk_ratio": 0.1875,
+        "minimum_predation_risk_reduction_for_substitution": 0.8125
+      },
+      {
+        "flow_cm_s": 22,
+        "short_shoot_trapping": 0.1,
+        "mixed_trapping": 0.5666666666666667,
+        "break_even_predation_risk_ratio": 0.17647058823529413,
+        "minimum_predation_risk_reduction_for_substitution": 0.8235294117647058
+      },
+      {
+        "flow_cm_s": 24,
+        "short_shoot_trapping": 0.13333333333333333,
+        "mixed_trapping": 0.8,
+        "break_even_predation_risk_ratio": 0.16666666666666666,
+        "minimum_predation_risk_reduction_for_substitution": 0.8333333333333334
+      },
+      {
+        "flow_cm_s": 26,
+        "short_shoot_trapping": 0.06666666666666667,
+        "mixed_trapping": 0.7,
+        "break_even_predation_risk_ratio": 0.09523809523809523,
+        "minimum_predation_risk_reduction_for_substitution": 0.9047619047619048
+      },
+      {
+        "flow_cm_s": 28,
+        "short_shoot_trapping": 0.06666666666666667,
+        "mixed_trapping": 0.6333333333333333,
+        "break_even_predation_risk_ratio": 0.10526315789473684,
+        "minimum_predation_risk_reduction_for_substitution": 0.8947368421052632
+      },
+      {
+        "flow_cm_s": 30,
+        "short_shoot_trapping": 0.1,
+        "mixed_trapping": 0.9,
+        "break_even_predation_risk_ratio": 0.1111111111111111,
+        "minimum_predation_risk_reduction_for_substitution": 0.8888888888888888
+      }
+    ],
+    "equal_flow_mean_short": 0.14333333333333334,
+    "equal_flow_mean_mixed": 0.6333333333333334,
+    "threshold_if_same_q0_and_q_ratio_across_flow": 0.7736842105263158,
+    "threshold_range": [
+      0.3076923076923077,
+      0.9047619047619048
+    ]
+  },
+  "limitations": [
+    "Recovery, not actual germination/survival; real/mimic transport differs.",
+    "Bound is on additive probability scale at observed means, not identified missing arm, no mechanism inference; ceiling constrains it.",
+    "Bootstrap conditions on two observed trial periods, no between-estuary uncertainty.",
+    "Flume has one trial per treatment x flow cell; scenario thresholds are not independent replication; structures differ in width and density.",
+    "No jointly measured retention and predation or otter intervention; q ratio unknown."
+  ]
+}
