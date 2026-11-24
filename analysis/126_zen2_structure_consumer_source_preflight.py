@@ -48,7 +48,7 @@ def source_bytes(url,cap):
     return b
 
 def inspect_csv(raw:bytes,kind:str):
-    if len(raw)<500:raise ValueError("Unexpected source size")
+    if len(raw)<100:raise ValueError("Unexpected source size")
     t=raw.decode("utf-8-sig")
     r=csv.DictReader(io.StringIO(t))
     head=r.fieldnames
