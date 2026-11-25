@@ -1,0 +1,23 @@
+name: Marine pollen figures and supplements
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/176_marine_pollen_public_sources.py'
+      - '.github/workflows/marine-pollen-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/176_marine_pollen_public_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marine-pollen-sources
+          path: marine_pollen_sources/
+          if-no-files-found: error

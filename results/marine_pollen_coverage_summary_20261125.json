@@ -1,0 +1,85 @@
+{
+  "status": "published aggregate calculation only; executed Python locally",
+  "source_doi": "10.1002/ece3.2309",
+  "trap_table": 2,
+  "trap_results": [
+    {
+      "site": "Back-Reef",
+      "date": "2006-04-26",
+      "traps": 120,
+      "positive": 16,
+      "grains": 67,
+      "zero_fraction": 0.8666666666666667,
+      "expected_positive_equal_probability": 51.501009025704285,
+      "expected_zero_fraction": 0.5708249247857976,
+      "observed_to_expected_positive": 0.31067352470733844,
+      "mean_grains_all": 0.5583333333333333,
+      "mean_grains_positive": 4.1875,
+      "pair_concentration_lower": 0.048846675712347354,
+      "pair_concentration_upper": 0.5997286295793759,
+      "equal_probability_pair": 0.008333333333333333,
+      "pair_concentration_lower_relative": 5.8616010854816825
+    },
+    {
+      "site": "Back-Reef",
+      "date": "2006-05-10",
+      "traps": 120,
+      "positive": 17,
+      "grains": 57,
+      "zero_fraction": 0.8583333333333334,
+      "expected_positive_equal_probability": 45.52216893075326,
+      "expected_zero_fraction": 0.6206485922437228,
+      "observed_to_expected_positive": 0.3734444205824158,
+      "mean_grains_all": 0.475,
+      "mean_grains_positive": 3.3529411764705883,
+      "pair_concentration_lower": 0.043233082706766915,
+      "pair_concentration_upper": 0.5137844611528822,
+      "equal_probability_pair": 0.008333333333333333,
+      "pair_concentration_lower_relative": 5.1879699248120295
+    },
+    {
+      "site": "Mid-Lagoon",
+      "date": "2006-05-25",
+      "traps": 100,
+      "positive": 23,
+      "grains": 71,
+      "zero_fraction": 0.77,
+      "expected_positive_equal_probability": 51.010972699579504,
+      "expected_zero_fraction": 0.48989027300420496,
+      "observed_to_expected_positive": 0.45088338415843604,
+      "mean_grains_all": 0.71,
+      "mean_grains_positive": 3.0869565217391304,
+      "pair_concentration_lower": 0.030181086519114688,
+      "pair_concentration_upper": 0.4732394366197183,
+      "equal_probability_pair": 0.01,
+      "pair_concentration_lower_relative": 3.0181086519114686
+    }
+  ],
+  "fruit_source_doi": "10.3354/meps08870",
+  "fruit_failure": [
+    {
+      "comparison": "2008 male flower removal",
+      "fruit_set_reference": 0.86,
+      "fruit_set_treatment": 0.6,
+      "zero_reference": 0.14,
+      "zero_treatment": 0.4,
+      "zero_RD": 0.26,
+      "zero_RR": 2.857142857142857
+    },
+    {
+      "comparison": "2009 pollen addition",
+      "fruit_set_reference": 0.65,
+      "fruit_set_treatment": 0.91,
+      "zero_reference": 0.35,
+      "zero_treatment": 0.08999999999999997,
+      "zero_RD": -0.26,
+      "zero_RR": 0.25714285714285706
+    }
+  ],
+  "limits": [
+    "Three trials; equal-probability allocation is a descriptive benchmark, not a transport mechanism.",
+    "Pair concentration bounds conditional on reported totals, not confidence intervals.",
+    "Distances and flow vary; no flower endpoint or animal intervention in trap study.",
+    "Rounded fruit-set means; distinct years and treatments; no pooling."
+  ]
+}
