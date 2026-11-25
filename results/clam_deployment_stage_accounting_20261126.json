@@ -1,0 +1,9776 @@
+{
+  "status": "Executed response-open reanalysis of original CSV; observed plot histories, not tracked seed cohorts",
+  "source": {
+    "doi": "10.5061/dryad.cnp5hqcmx",
+    "commit": "90e5e193c9db7efb75c3244f52b1585c9e93718e",
+    "blob": "d0f7ae365ae91641d34718c761e67ced1823032e"
+  },
+  "byDate": {
+    "5-Nov-25": 80,
+    "17-Nov-25": 80,
+    "3-Dec-25": 80,
+    "17-Dec-25": 80,
+    "4-Jan-26": 40,
+    "17-Jan-26": 80,
+    "30-Jan-26": 80,
+    "14-Feb-26": 80,
+    "1-Apr-26": 80,
+    "17-Apr-26": 80
+  },
+  "full": [
+    "5-Nov-25",
+    "17-Nov-25",
+    "3-Dec-25",
+    "17-Dec-25",
+    "17-Jan-26",
+    "30-Jan-26",
+    "14-Feb-26",
+    "1-Apr-26",
+    "17-Apr-26"
+  ],
+  "plots": [
+    {
+      "id": 1,
+      "dose": 10,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 2,
+      "dose": 10,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 3,
+      "dose": 10,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 2,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 4,
+      "dose": 10,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 2,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 5,
+      "dose": 10,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 6,
+      "dose": 10,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 7,
+      "dose": 10,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 8,
+      "dose": 10,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 2,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 9,
+      "dose": 20,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        5,
+        6,
+        5,
+        4,
+        4,
+        11,
+        17
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 17,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 10,
+      "dose": 20,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        2,
+        3,
+        4,
+        2,
+        1,
+        6,
+        10
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 10,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 11,
+      "dose": 20,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        2,
+        3,
+        5,
+        3,
+        2,
+        6,
+        6
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 12,
+      "dose": 20,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 5,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 13,
+      "dose": 20,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 14,
+      "dose": 20,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 15,
+      "dose": 20,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 16,
+      "dose": 20,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 1,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 17,
+      "dose": 30,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 18,
+      "dose": 30,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "first": 6,
+      "last": 6,
+      "ever": true,
+      "final": 0,
+      "early": false,
+      "late": true,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 19,
+      "dose": 30,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 20,
+      "dose": 30,
+      "b": 1,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 21,
+      "dose": 30,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "first": 3,
+      "last": 5,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 22,
+      "dose": 30,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        2,
+        3,
+        3,
+        3,
+        4,
+        8,
+        6
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 23,
+      "dose": 30,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "first": 6,
+      "last": 6,
+      "ever": true,
+      "final": 0,
+      "early": false,
+      "late": true,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 24,
+      "dose": 30,
+      "b": 0,
+      "bin": "low",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        0
+      ],
+      "first": 3,
+      "last": 7,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 25,
+      "dose": 40,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 26,
+      "dose": 40,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 27,
+      "dose": 40,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        5,
+        7
+      ],
+      "first": 5,
+      "last": 8,
+      "ever": true,
+      "final": 7,
+      "early": false,
+      "late": true,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 28,
+      "dose": 40,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 3,
+      "last": 3,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 29,
+      "dose": 40,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 30,
+      "dose": 40,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 31,
+      "dose": 40,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 32,
+      "dose": 40,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        2,
+        4
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 33,
+      "dose": 50,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        1,
+        3,
+        2,
+        1,
+        0,
+        1,
+        3
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 3,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 34,
+      "dose": 50,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 3,
+      "last": 3,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 35,
+      "dose": 50,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        3,
+        4,
+        2,
+        3,
+        2,
+        5,
+        5
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 5,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 36,
+      "dose": 50,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        3,
+        1,
+        1,
+        0,
+        4,
+        9
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 9,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": true
+    },
+    {
+      "id": 37,
+      "dose": 50,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        7,
+        11
+      ],
+      "first": 5,
+      "last": 8,
+      "ever": true,
+      "final": 11,
+      "early": false,
+      "late": true,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 38,
+      "dose": 50,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        4,
+        4
+      ],
+      "first": 4,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": false,
+      "late": true,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": true
+    },
+    {
+      "id": 39,
+      "dose": 50,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 40,
+      "dose": 50,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        8,
+        4
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 41,
+      "dose": 60,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        3,
+        7,
+        6,
+        9,
+        10
+      ],
+      "first": 4,
+      "last": 8,
+      "ever": true,
+      "final": 10,
+      "early": false,
+      "late": true,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 42,
+      "dose": 60,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 2,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 43,
+      "dose": 60,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        2,
+        2,
+        3,
+        4,
+        2,
+        11,
+        12
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 12,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 44,
+      "dose": 60,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        5,
+        6,
+        9,
+        4,
+        7,
+        6
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 45,
+      "dose": 60,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        13
+      ],
+      "first": 7,
+      "last": 8,
+      "ever": true,
+      "final": 13,
+      "early": false,
+      "late": true,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 46,
+      "dose": 60,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      "first": 5,
+      "last": 5,
+      "ever": true,
+      "final": 0,
+      "early": false,
+      "late": true,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 47,
+      "dose": 60,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 48,
+      "dose": 60,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        0,
+        6,
+        6
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 49,
+      "dose": 70,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        2,
+        3,
+        3,
+        6,
+        5,
+        20,
+        25
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 25,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 50,
+      "dose": 70,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 51,
+      "dose": 70,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        4,
+        0
+      ],
+      "first": 3,
+      "last": 7,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 52,
+      "dose": 70,
+      "b": 1,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 53,
+      "dose": 70,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 54,
+      "dose": 70,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        6,
+        12
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 12,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": true
+    },
+    {
+      "id": 55,
+      "dose": 70,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        4,
+        8,
+        3,
+        9,
+        3,
+        11,
+        18
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 18,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 56,
+      "dose": 70,
+      "b": 0,
+      "bin": "mid",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        3,
+        4
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": true
+    },
+    {
+      "id": 57,
+      "dose": 80,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 58,
+      "dose": 80,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 59,
+      "dose": 80,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        2,
+        3,
+        3,
+        6,
+        3,
+        19,
+        23
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 23,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 60,
+      "dose": 80,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        4,
+        6
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 61,
+      "dose": 80,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 62,
+      "dose": 80,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 3,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 63,
+      "dose": 80,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "first": 4,
+      "last": 5,
+      "ever": true,
+      "final": 0,
+      "early": false,
+      "late": true,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 64,
+      "dose": 80,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        6,
+        6
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 65,
+      "dose": 90,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        4,
+        6,
+        7,
+        8,
+        3,
+        10,
+        11
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 11,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 66,
+      "dose": 90,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        2,
+        5,
+        4,
+        6,
+        0,
+        0,
+        0
+      ],
+      "first": 2,
+      "last": 5,
+      "ever": true,
+      "final": 0,
+      "early": true,
+      "late": false,
+      "transient": true,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 67,
+      "dose": 90,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 68,
+      "dose": 90,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        2,
+        4,
+        5,
+        4,
+        2,
+        11,
+        14
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 14,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 69,
+      "dose": 90,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        4,
+        1,
+        15,
+        27
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 27,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 70,
+      "dose": 90,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        3,
+        6,
+        4
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 4,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 71,
+      "dose": 90,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 72,
+      "dose": 90,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 3,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 73,
+      "dose": 100,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        4,
+        7,
+        4,
+        6
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 74,
+      "dose": 100,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        5,
+        7,
+        6,
+        6,
+        2,
+        11,
+        12
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 12,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 75,
+      "dose": 100,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        2,
+        1,
+        2,
+        2,
+        3,
+        8,
+        7
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 7,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    },
+    {
+      "id": 76,
+      "dose": 100,
+      "b": 1,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first": -1,
+      "last": -1,
+      "ever": false,
+      "final": 0,
+      "early": false,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 77,
+      "dose": 100,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        2,
+        0,
+        7,
+        16,
+        10,
+        18,
+        12
+      ],
+      "first": 2,
+      "last": 8,
+      "ever": true,
+      "final": 12,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": true,
+      "firstTwoLive": false
+    },
+    {
+      "id": 78,
+      "dose": 100,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        0,
+        4,
+        5,
+        6,
+        13,
+        10
+      ],
+      "first": 4,
+      "last": 8,
+      "ever": true,
+      "final": 10,
+      "early": false,
+      "late": true,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 79,
+      "dose": 100,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        2,
+        6,
+        5
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 5,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": false
+    },
+    {
+      "id": 80,
+      "dose": 100,
+      "b": 0,
+      "bin": "high",
+      "S": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        3,
+        7,
+        6
+      ],
+      "first": 3,
+      "last": 8,
+      "ever": true,
+      "final": 6,
+      "early": true,
+      "late": false,
+      "transient": false,
+      "reappear": false,
+      "firstTwoLive": true
+    }
+  ],
+  "groups": {
+    "all": {
+      "N": 80,
+      "seed": 4400,
+      "meanSeed": 55,
+      "ever": 55,
+      "final": 39,
+      "early": 45,
+      "late": 10,
+      "transient": 16,
+      "reappear": 11,
+      "earlyFinal": 33,
+      "lateFinal": 6,
+      "finalSum": 353,
+      "finalMean": 4.4125,
+      "per100Seeds": 8.022727272727273,
+      "factors": [
+        0.6875,
+        0.7090909090909091,
+        9.051282051282051
+      ],
+      "live": 26,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 32,
+          "mean": 0.7375
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 38,
+          "mean": 1.2
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 41,
+          "mean": 1.35
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 40,
+          "mean": 1.825
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 34,
+          "mean": 1.175
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 41,
+          "mean": 3.7875
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 39,
+          "mean": 4.4125
+        }
+      ],
+      "histories": [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          3,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          4,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          5,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          6,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          7,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          8,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          9,
+          [
+            0,
+            0,
+            5,
+            6,
+            5,
+            4,
+            4,
+            11,
+            17
+          ]
+        ],
+        [
+          10,
+          [
+            0,
+            0,
+            2,
+            3,
+            4,
+            2,
+            1,
+            6,
+            10
+          ]
+        ],
+        [
+          11,
+          [
+            0,
+            0,
+            2,
+            3,
+            5,
+            3,
+            2,
+            6,
+            6
+          ]
+        ],
+        [
+          12,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          13,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          14,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          16,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          17,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          18,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          19,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          20,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          21,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          22,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            3,
+            4,
+            8,
+            6
+          ]
+        ],
+        [
+          23,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          24,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        [
+          25,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          26,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          27,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            5,
+            7
+          ]
+        ],
+        [
+          28,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          29,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          30,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          31,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          32,
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4
+          ]
+        ],
+        [
+          33,
+          [
+            0,
+            0,
+            1,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ]
+        ],
+        [
+          34,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          35,
+          [
+            0,
+            0,
+            3,
+            4,
+            2,
+            3,
+            2,
+            5,
+            5
+          ]
+        ],
+        [
+          36,
+          [
+            0,
+            0,
+            0,
+            3,
+            1,
+            1,
+            0,
+            4,
+            9
+          ]
+        ],
+        [
+          37,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            7,
+            11
+          ]
+        ],
+        [
+          38,
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          39,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            8,
+            4
+          ]
+        ],
+        [
+          41,
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            7,
+            6,
+            9,
+            10
+          ]
+        ],
+        [
+          42,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          43,
+          [
+            0,
+            0,
+            2,
+            2,
+            3,
+            4,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          44,
+          [
+            0,
+            0,
+            0,
+            5,
+            6,
+            9,
+            4,
+            7,
+            6
+          ]
+        ],
+        [
+          45,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            13
+          ]
+        ],
+        [
+          46,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          47,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          48,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            3,
+            0,
+            6,
+            6
+          ]
+        ],
+        [
+          49,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            5,
+            20,
+            25
+          ]
+        ],
+        [
+          50,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          51,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            4,
+            0
+          ]
+        ],
+        [
+          52,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          53,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          54,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            6,
+            12
+          ]
+        ],
+        [
+          55,
+          [
+            0,
+            0,
+            4,
+            8,
+            3,
+            9,
+            3,
+            11,
+            18
+          ]
+        ],
+        [
+          56,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4
+          ]
+        ],
+        [
+          57,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          58,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          59,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            3,
+            19,
+            23
+          ]
+        ],
+        [
+          60,
+          [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            1,
+            4,
+            6
+          ]
+        ],
+        [
+          61,
+          [
+            0,
+            0,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          62,
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          63,
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          64,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            6
+          ]
+        ],
+        [
+          65,
+          [
+            0,
+            0,
+            4,
+            6,
+            7,
+            8,
+            3,
+            10,
+            11
+          ]
+        ],
+        [
+          66,
+          [
+            0,
+            0,
+            2,
+            5,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          67,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          68,
+          [
+            0,
+            0,
+            2,
+            4,
+            5,
+            4,
+            2,
+            11,
+            14
+          ]
+        ],
+        [
+          69,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            4,
+            1,
+            15,
+            27
+          ]
+        ],
+        [
+          70,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            3,
+            6,
+            4
+          ]
+        ],
+        [
+          71,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          72,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3
+          ]
+        ],
+        [
+          73,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            4,
+            7,
+            4,
+            6
+          ]
+        ],
+        [
+          74,
+          [
+            0,
+            0,
+            5,
+            7,
+            6,
+            6,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          75,
+          [
+            0,
+            0,
+            2,
+            1,
+            2,
+            2,
+            3,
+            8,
+            7
+          ]
+        ],
+        [
+          76,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          77,
+          [
+            0,
+            0,
+            2,
+            0,
+            7,
+            16,
+            10,
+            18,
+            12
+          ]
+        ],
+        [
+          78,
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            6,
+            13,
+            10
+          ]
+        ],
+        [
+          79,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            2,
+            6,
+            5
+          ]
+        ],
+        [
+          80,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            2,
+            3,
+            7,
+            6
+          ]
+        ]
+      ]
+    },
+    "low": {
+      "N": 24,
+      "seed": 480,
+      "meanSeed": 20,
+      "ever": 14,
+      "final": 6,
+      "early": 12,
+      "late": 2,
+      "transient": 8,
+      "reappear": 1,
+      "earlyFinal": 6,
+      "lateFinal": 0,
+      "finalSum": 44,
+      "finalMean": 1.8333333333333333,
+      "per100Seeds": 9.166666666666666,
+      "factors": [
+        0.5833333333333334,
+        0.42857142857142855,
+        7.333333333333333
+      ],
+      "live": 5,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 10,
+          "mean": 0.7083333333333334
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 9,
+          "mean": 0.8333333333333334
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 9,
+          "mean": 0.9583333333333334
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 8,
+          "mean": 0.6666666666666666
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 8,
+          "mean": 0.7083333333333334
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 7,
+          "mean": 1.5833333333333333
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 6,
+          "mean": 1.8333333333333333
+        }
+      ],
+      "histories": [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          3,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          4,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          5,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          6,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          7,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          8,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          9,
+          [
+            0,
+            0,
+            5,
+            6,
+            5,
+            4,
+            4,
+            11,
+            17
+          ]
+        ],
+        [
+          10,
+          [
+            0,
+            0,
+            2,
+            3,
+            4,
+            2,
+            1,
+            6,
+            10
+          ]
+        ],
+        [
+          11,
+          [
+            0,
+            0,
+            2,
+            3,
+            5,
+            3,
+            2,
+            6,
+            6
+          ]
+        ],
+        [
+          12,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          13,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          14,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          16,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          17,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          18,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          19,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          20,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          21,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          22,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            3,
+            4,
+            8,
+            6
+          ]
+        ],
+        [
+          23,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          24,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            0
+          ]
+        ]
+      ]
+    },
+    "mid": {
+      "N": 32,
+      "seed": 1760,
+      "meanSeed": 55,
+      "ever": 22,
+      "final": 17,
+      "early": 16,
+      "late": 6,
+      "transient": 5,
+      "reappear": 9,
+      "earlyFinal": 12,
+      "lateFinal": 5,
+      "finalSum": 153,
+      "finalMean": 4.78125,
+      "per100Seeds": 8.693181818181818,
+      "factors": [
+        0.6875,
+        0.7727272727272727,
+        9
+      ],
+      "live": 11,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 10,
+          "mean": 0.53125
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 13,
+          "mean": 1.0625
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 14,
+          "mean": 0.96875
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 14,
+          "mean": 1.8125
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 10,
+          "mean": 0.84375
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 18,
+          "mean": 3.75
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 17,
+          "mean": 4.78125
+        }
+      ],
+      "histories": [
+        [
+          25,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          26,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          27,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            5,
+            7
+          ]
+        ],
+        [
+          28,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          29,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          30,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          31,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          32,
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4
+          ]
+        ],
+        [
+          33,
+          [
+            0,
+            0,
+            1,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ]
+        ],
+        [
+          34,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          35,
+          [
+            0,
+            0,
+            3,
+            4,
+            2,
+            3,
+            2,
+            5,
+            5
+          ]
+        ],
+        [
+          36,
+          [
+            0,
+            0,
+            0,
+            3,
+            1,
+            1,
+            0,
+            4,
+            9
+          ]
+        ],
+        [
+          37,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            7,
+            11
+          ]
+        ],
+        [
+          38,
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          39,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            8,
+            4
+          ]
+        ],
+        [
+          41,
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            7,
+            6,
+            9,
+            10
+          ]
+        ],
+        [
+          42,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          43,
+          [
+            0,
+            0,
+            2,
+            2,
+            3,
+            4,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          44,
+          [
+            0,
+            0,
+            0,
+            5,
+            6,
+            9,
+            4,
+            7,
+            6
+          ]
+        ],
+        [
+          45,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            13
+          ]
+        ],
+        [
+          46,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          47,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          48,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            3,
+            0,
+            6,
+            6
+          ]
+        ],
+        [
+          49,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            5,
+            20,
+            25
+          ]
+        ],
+        [
+          50,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          51,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            4,
+            0
+          ]
+        ],
+        [
+          52,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          53,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          54,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            6,
+            12
+          ]
+        ],
+        [
+          55,
+          [
+            0,
+            0,
+            4,
+            8,
+            3,
+            9,
+            3,
+            11,
+            18
+          ]
+        ],
+        [
+          56,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4
+          ]
+        ]
+      ]
+    },
+    "high": {
+      "N": 24,
+      "seed": 2160,
+      "meanSeed": 90,
+      "ever": 19,
+      "final": 16,
+      "early": 17,
+      "late": 2,
+      "transient": 3,
+      "reappear": 1,
+      "earlyFinal": 15,
+      "lateFinal": 1,
+      "finalSum": 156,
+      "finalMean": 6.5,
+      "per100Seeds": 7.222222222222222,
+      "factors": [
+        0.7916666666666666,
+        0.8421052631578947,
+        9.75
+      ],
+      "live": 10,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 12,
+          "mean": 1.0416666666666667
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 16,
+          "mean": 1.75
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 18,
+          "mean": 2.25
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 18,
+          "mean": 3
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 16,
+          "mean": 2.0833333333333335
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 16,
+          "mean": 6.041666666666667
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 16,
+          "mean": 6.5
+        }
+      ],
+      "histories": [
+        [
+          57,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          58,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          59,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            3,
+            19,
+            23
+          ]
+        ],
+        [
+          60,
+          [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            1,
+            4,
+            6
+          ]
+        ],
+        [
+          61,
+          [
+            0,
+            0,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          62,
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          63,
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          64,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            6
+          ]
+        ],
+        [
+          65,
+          [
+            0,
+            0,
+            4,
+            6,
+            7,
+            8,
+            3,
+            10,
+            11
+          ]
+        ],
+        [
+          66,
+          [
+            0,
+            0,
+            2,
+            5,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          67,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          68,
+          [
+            0,
+            0,
+            2,
+            4,
+            5,
+            4,
+            2,
+            11,
+            14
+          ]
+        ],
+        [
+          69,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            4,
+            1,
+            15,
+            27
+          ]
+        ],
+        [
+          70,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            3,
+            6,
+            4
+          ]
+        ],
+        [
+          71,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          72,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3
+          ]
+        ],
+        [
+          73,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            4,
+            7,
+            4,
+            6
+          ]
+        ],
+        [
+          74,
+          [
+            0,
+            0,
+            5,
+            7,
+            6,
+            6,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          75,
+          [
+            0,
+            0,
+            2,
+            1,
+            2,
+            2,
+            3,
+            8,
+            7
+          ]
+        ],
+        [
+          76,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          77,
+          [
+            0,
+            0,
+            2,
+            0,
+            7,
+            16,
+            10,
+            18,
+            12
+          ]
+        ],
+        [
+          78,
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            6,
+            13,
+            10
+          ]
+        ],
+        [
+          79,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            2,
+            6,
+            5
+          ]
+        ],
+        [
+          80,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            2,
+            3,
+            7,
+            6
+          ]
+        ]
+      ]
+    },
+    "surface": {
+      "N": 40,
+      "seed": 2200,
+      "meanSeed": 55,
+      "ever": 28,
+      "final": 21,
+      "early": 21,
+      "late": 7,
+      "transient": 7,
+      "reappear": 9,
+      "earlyFinal": 17,
+      "lateFinal": 4,
+      "finalSum": 164,
+      "finalMean": 4.1,
+      "per100Seeds": 7.454545454545454,
+      "factors": [
+        0.7,
+        0.75,
+        7.809523809523809
+      ],
+      "live": 19,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 14,
+          "mean": 0.5
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 17,
+          "mean": 0.75
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 21,
+          "mean": 1
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 19,
+          "mean": 1.575
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 16,
+          "mean": 1.1
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 22,
+          "mean": 3.675
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 21,
+          "mean": 4.1
+        }
+      ],
+      "histories": [
+        [
+          5,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          6,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          7,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          8,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          13,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          14,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          16,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          21,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          22,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            3,
+            4,
+            8,
+            6
+          ]
+        ],
+        [
+          23,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          24,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        [
+          29,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          30,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          31,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          32,
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4
+          ]
+        ],
+        [
+          37,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            7,
+            11
+          ]
+        ],
+        [
+          38,
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          39,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            8,
+            4
+          ]
+        ],
+        [
+          45,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            13
+          ]
+        ],
+        [
+          46,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          47,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          48,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            3,
+            0,
+            6,
+            6
+          ]
+        ],
+        [
+          53,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          54,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            6,
+            12
+          ]
+        ],
+        [
+          55,
+          [
+            0,
+            0,
+            4,
+            8,
+            3,
+            9,
+            3,
+            11,
+            18
+          ]
+        ],
+        [
+          56,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4
+          ]
+        ],
+        [
+          61,
+          [
+            0,
+            0,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          62,
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          63,
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          64,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            6
+          ]
+        ],
+        [
+          69,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            4,
+            1,
+            15,
+            27
+          ]
+        ],
+        [
+          70,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            3,
+            6,
+            4
+          ]
+        ],
+        [
+          71,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          72,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3
+          ]
+        ],
+        [
+          77,
+          [
+            0,
+            0,
+            2,
+            0,
+            7,
+            16,
+            10,
+            18,
+            12
+          ]
+        ],
+        [
+          78,
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            6,
+            13,
+            10
+          ]
+        ],
+        [
+          79,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            2,
+            6,
+            5
+          ]
+        ],
+        [
+          80,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            2,
+            3,
+            7,
+            6
+          ]
+        ]
+      ]
+    },
+    "buried": {
+      "N": 40,
+      "seed": 2200,
+      "meanSeed": 55,
+      "ever": 27,
+      "final": 18,
+      "early": 24,
+      "late": 3,
+      "transient": 9,
+      "reappear": 2,
+      "earlyFinal": 16,
+      "lateFinal": 2,
+      "finalSum": 189,
+      "finalMean": 4.725,
+      "per100Seeds": 8.590909090909092,
+      "factors": [
+        0.675,
+        0.6666666666666666,
+        10.5
+      ],
+      "live": 7,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 18,
+          "mean": 0.975
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 21,
+          "mean": 1.65
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 20,
+          "mean": 1.7
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 21,
+          "mean": 2.075
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 18,
+          "mean": 1.25
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 19,
+          "mean": 3.9
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 18,
+          "mean": 4.725
+        }
+      ],
+      "histories": [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          3,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          4,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          9,
+          [
+            0,
+            0,
+            5,
+            6,
+            5,
+            4,
+            4,
+            11,
+            17
+          ]
+        ],
+        [
+          10,
+          [
+            0,
+            0,
+            2,
+            3,
+            4,
+            2,
+            1,
+            6,
+            10
+          ]
+        ],
+        [
+          11,
+          [
+            0,
+            0,
+            2,
+            3,
+            5,
+            3,
+            2,
+            6,
+            6
+          ]
+        ],
+        [
+          12,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          17,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          18,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          19,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          20,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          25,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          26,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          27,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            5,
+            7
+          ]
+        ],
+        [
+          28,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          33,
+          [
+            0,
+            0,
+            1,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ]
+        ],
+        [
+          34,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          35,
+          [
+            0,
+            0,
+            3,
+            4,
+            2,
+            3,
+            2,
+            5,
+            5
+          ]
+        ],
+        [
+          36,
+          [
+            0,
+            0,
+            0,
+            3,
+            1,
+            1,
+            0,
+            4,
+            9
+          ]
+        ],
+        [
+          41,
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            7,
+            6,
+            9,
+            10
+          ]
+        ],
+        [
+          42,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          43,
+          [
+            0,
+            0,
+            2,
+            2,
+            3,
+            4,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          44,
+          [
+            0,
+            0,
+            0,
+            5,
+            6,
+            9,
+            4,
+            7,
+            6
+          ]
+        ],
+        [
+          49,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            5,
+            20,
+            25
+          ]
+        ],
+        [
+          50,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          51,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            4,
+            0
+          ]
+        ],
+        [
+          52,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          57,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          58,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          59,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            3,
+            19,
+            23
+          ]
+        ],
+        [
+          60,
+          [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            1,
+            4,
+            6
+          ]
+        ],
+        [
+          65,
+          [
+            0,
+            0,
+            4,
+            6,
+            7,
+            8,
+            3,
+            10,
+            11
+          ]
+        ],
+        [
+          66,
+          [
+            0,
+            0,
+            2,
+            5,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          67,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          68,
+          [
+            0,
+            0,
+            2,
+            4,
+            5,
+            4,
+            2,
+            11,
+            14
+          ]
+        ],
+        [
+          73,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            4,
+            7,
+            4,
+            6
+          ]
+        ],
+        [
+          74,
+          [
+            0,
+            0,
+            5,
+            7,
+            6,
+            6,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          75,
+          [
+            0,
+            0,
+            2,
+            1,
+            2,
+            2,
+            3,
+            8,
+            7
+          ]
+        ],
+        [
+          76,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  },
+  "density": {
+    "10": {
+      "N": 8,
+      "seed": 80,
+      "meanSeed": 10,
+      "ever": 4,
+      "final": 1,
+      "early": 4,
+      "late": 0,
+      "transient": 3,
+      "reappear": 0,
+      "earlyFinal": 1,
+      "lateFinal": 0,
+      "finalSum": 4,
+      "finalMean": 0.5,
+      "per100Seeds": 5,
+      "factors": [
+        0.5,
+        0.25,
+        4
+      ],
+      "live": 3,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 4,
+          "mean": 0.5
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 1,
+          "mean": 0.125
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 1,
+          "mean": 0.125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 1,
+          "mean": 0.125
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 1,
+          "mean": 0.25
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 1,
+          "mean": 0.5
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 1,
+          "mean": 0.5
+        }
+      ],
+      "histories": [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          3,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          4,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          5,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          6,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          7,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          8,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "20": {
+      "N": 8,
+      "seed": 160,
+      "meanSeed": 20,
+      "ever": 5,
+      "final": 4,
+      "early": 5,
+      "late": 0,
+      "transient": 1,
+      "reappear": 0,
+      "earlyFinal": 4,
+      "lateFinal": 0,
+      "finalSum": 34,
+      "finalMean": 4.25,
+      "per100Seeds": 21.25,
+      "factors": [
+        0.625,
+        0.8,
+        8.5
+      ],
+      "live": 2,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 5,
+          "mean": 1.375
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 5,
+          "mean": 1.75
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 5,
+          "mean": 2.125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 5,
+          "mean": 1.375
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 4,
+          "mean": 1.125
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 4,
+          "mean": 3
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 4,
+          "mean": 4.25
+        }
+      ],
+      "histories": [
+        [
+          9,
+          [
+            0,
+            0,
+            5,
+            6,
+            5,
+            4,
+            4,
+            11,
+            17
+          ]
+        ],
+        [
+          10,
+          [
+            0,
+            0,
+            2,
+            3,
+            4,
+            2,
+            1,
+            6,
+            10
+          ]
+        ],
+        [
+          11,
+          [
+            0,
+            0,
+            2,
+            3,
+            5,
+            3,
+            2,
+            6,
+            6
+          ]
+        ],
+        [
+          12,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          13,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          14,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          16,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "30": {
+      "N": 8,
+      "seed": 240,
+      "meanSeed": 30,
+      "ever": 5,
+      "final": 1,
+      "early": 3,
+      "late": 2,
+      "transient": 4,
+      "reappear": 1,
+      "earlyFinal": 1,
+      "lateFinal": 0,
+      "finalSum": 6,
+      "finalMean": 0.75,
+      "per100Seeds": 2.5,
+      "factors": [
+        0.625,
+        0.2,
+        6
+      ],
+      "live": 0,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 1,
+          "mean": 0.25
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 3,
+          "mean": 0.625
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 3,
+          "mean": 0.625
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 2,
+          "mean": 0.5
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 3,
+          "mean": 0.75
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 2,
+          "mean": 1.25
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 1,
+          "mean": 0.75
+        }
+      ],
+      "histories": [
+        [
+          17,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          18,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          19,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          20,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          21,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          22,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            3,
+            4,
+            8,
+            6
+          ]
+        ],
+        [
+          23,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          24,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            0
+          ]
+        ]
+      ]
+    },
+    "40": {
+      "N": 8,
+      "seed": 320,
+      "meanSeed": 40,
+      "ever": 3,
+      "final": 2,
+      "early": 2,
+      "late": 1,
+      "transient": 1,
+      "reappear": 1,
+      "earlyFinal": 1,
+      "lateFinal": 1,
+      "finalSum": 11,
+      "finalMean": 1.375,
+      "per100Seeds": 3.4375,
+      "factors": [
+        0.375,
+        0.6666666666666666,
+        5.5
+      ],
+      "live": 3,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 1,
+          "mean": 0.125
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 1,
+          "mean": 0.125
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 1,
+          "mean": 0.125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 2,
+          "mean": 0.375
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 2,
+          "mean": 0.25
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 2,
+          "mean": 0.875
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 2,
+          "mean": 1.375
+        }
+      ],
+      "histories": [
+        [
+          25,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          26,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          27,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            5,
+            7
+          ]
+        ],
+        [
+          28,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          29,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          30,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          31,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          32,
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4
+          ]
+        ]
+      ]
+    },
+    "50": {
+      "N": 8,
+      "seed": 400,
+      "meanSeed": 50,
+      "ever": 7,
+      "final": 6,
+      "early": 5,
+      "late": 2,
+      "transient": 1,
+      "reappear": 5,
+      "earlyFinal": 4,
+      "lateFinal": 2,
+      "finalSum": 36,
+      "finalMean": 4.5,
+      "per100Seeds": 9,
+      "factors": [
+        0.875,
+        0.8571428571428571,
+        6
+      ],
+      "live": 3,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 3,
+          "mean": 0.625
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 5,
+          "mean": 1.5
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 5,
+          "mean": 1
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 4,
+          "mean": 1.375
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 2,
+          "mean": 0.5
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 6,
+          "mean": 3.625
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 6,
+          "mean": 4.5
+        }
+      ],
+      "histories": [
+        [
+          33,
+          [
+            0,
+            0,
+            1,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ]
+        ],
+        [
+          34,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          35,
+          [
+            0,
+            0,
+            3,
+            4,
+            2,
+            3,
+            2,
+            5,
+            5
+          ]
+        ],
+        [
+          36,
+          [
+            0,
+            0,
+            0,
+            3,
+            1,
+            1,
+            0,
+            4,
+            9
+          ]
+        ],
+        [
+          37,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            7,
+            11
+          ]
+        ],
+        [
+          38,
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          39,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            8,
+            4
+          ]
+        ]
+      ]
+    },
+    "60": {
+      "N": 8,
+      "seed": 480,
+      "meanSeed": 60,
+      "ever": 7,
+      "final": 5,
+      "early": 4,
+      "late": 3,
+      "transient": 2,
+      "reappear": 1,
+      "earlyFinal": 3,
+      "lateFinal": 2,
+      "finalSum": 47,
+      "finalMean": 5.875,
+      "per100Seeds": 9.791666666666666,
+      "factors": [
+        0.875,
+        0.7142857142857143,
+        9.4
+      ],
+      "live": 1,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 2,
+          "mean": 0.375
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 3,
+          "mean": 1
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 4,
+          "mean": 1.625
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 5,
+          "mean": 3.375
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 3,
+          "mean": 1.5
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 5,
+          "mean": 5
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 5,
+          "mean": 5.875
+        }
+      ],
+      "histories": [
+        [
+          41,
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            7,
+            6,
+            9,
+            10
+          ]
+        ],
+        [
+          42,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          43,
+          [
+            0,
+            0,
+            2,
+            2,
+            3,
+            4,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          44,
+          [
+            0,
+            0,
+            0,
+            5,
+            6,
+            9,
+            4,
+            7,
+            6
+          ]
+        ],
+        [
+          45,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            13
+          ]
+        ],
+        [
+          46,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          47,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          48,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            3,
+            0,
+            6,
+            6
+          ]
+        ]
+      ]
+    },
+    "70": {
+      "N": 8,
+      "seed": 560,
+      "meanSeed": 70,
+      "ever": 5,
+      "final": 4,
+      "early": 5,
+      "late": 0,
+      "transient": 1,
+      "reappear": 2,
+      "earlyFinal": 4,
+      "lateFinal": 0,
+      "finalSum": 59,
+      "finalMean": 7.375,
+      "per100Seeds": 10.535714285714286,
+      "factors": [
+        0.625,
+        0.8,
+        14.75
+      ],
+      "live": 4,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 4,
+          "mean": 1
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 4,
+          "mean": 1.625
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 4,
+          "mean": 1.125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 3,
+          "mean": 2.125
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 3,
+          "mean": 1.125
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 5,
+          "mean": 5.5
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 4,
+          "mean": 7.375
+        }
+      ],
+      "histories": [
+        [
+          49,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            5,
+            20,
+            25
+          ]
+        ],
+        [
+          50,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          51,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            4,
+            0
+          ]
+        ],
+        [
+          52,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          53,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          54,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            6,
+            12
+          ]
+        ],
+        [
+          55,
+          [
+            0,
+            0,
+            4,
+            8,
+            3,
+            9,
+            3,
+            11,
+            18
+          ]
+        ],
+        [
+          56,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4
+          ]
+        ]
+      ]
+    },
+    "80": {
+      "N": 8,
+      "seed": 640,
+      "meanSeed": 80,
+      "ever": 6,
+      "final": 4,
+      "early": 5,
+      "late": 1,
+      "transient": 2,
+      "reappear": 0,
+      "earlyFinal": 4,
+      "lateFinal": 0,
+      "finalSum": 39,
+      "finalMean": 4.875,
+      "per100Seeds": 6.09375,
+      "factors": [
+        0.75,
+        0.6666666666666666,
+        9.75
+      ],
+      "live": 5,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 5,
+          "mean": 0.875
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 5,
+          "mean": 1.125
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 5,
+          "mean": 1.125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 5,
+          "mean": 1.5
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 4,
+          "mean": 0.875
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 4,
+          "mean": 4.125
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 4,
+          "mean": 4.875
+        }
+      ],
+      "histories": [
+        [
+          57,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          58,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          59,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            3,
+            19,
+            23
+          ]
+        ],
+        [
+          60,
+          [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            1,
+            4,
+            6
+          ]
+        ],
+        [
+          61,
+          [
+            0,
+            0,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          62,
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          63,
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          64,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            6
+          ]
+        ]
+      ]
+    },
+    "90": {
+      "N": 8,
+      "seed": 720,
+      "meanSeed": 90,
+      "ever": 6,
+      "final": 5,
+      "early": 6,
+      "late": 0,
+      "transient": 1,
+      "reappear": 0,
+      "earlyFinal": 5,
+      "lateFinal": 0,
+      "finalSum": 59,
+      "finalMean": 7.375,
+      "per100Seeds": 8.194444444444445,
+      "factors": [
+        0.75,
+        0.8333333333333334,
+        11.8
+      ],
+      "live": 2,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 4,
+          "mean": 1.125
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 6,
+          "mean": 2.375
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 6,
+          "mean": 2.5
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 6,
+          "mean": 3
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 5,
+          "mean": 1.25
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 5,
+          "mean": 5.625
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 5,
+          "mean": 7.375
+        }
+      ],
+      "histories": [
+        [
+          65,
+          [
+            0,
+            0,
+            4,
+            6,
+            7,
+            8,
+            3,
+            10,
+            11
+          ]
+        ],
+        [
+          66,
+          [
+            0,
+            0,
+            2,
+            5,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          67,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          68,
+          [
+            0,
+            0,
+            2,
+            4,
+            5,
+            4,
+            2,
+            11,
+            14
+          ]
+        ],
+        [
+          69,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            4,
+            1,
+            15,
+            27
+          ]
+        ],
+        [
+          70,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            3,
+            6,
+            4
+          ]
+        ],
+        [
+          71,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          72,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3
+          ]
+        ]
+      ]
+    },
+    "100": {
+      "N": 8,
+      "seed": 800,
+      "meanSeed": 100,
+      "ever": 7,
+      "final": 7,
+      "early": 6,
+      "late": 1,
+      "transient": 0,
+      "reappear": 1,
+      "earlyFinal": 6,
+      "lateFinal": 1,
+      "finalSum": 58,
+      "finalMean": 7.25,
+      "per100Seeds": 7.25,
+      "factors": [
+        0.875,
+        1,
+        8.285714285714286
+      ],
+      "live": 3,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 3,
+          "mean": 1.125
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 5,
+          "mean": 1.75
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 7,
+          "mean": 3.125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 7,
+          "mean": 4.5
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 7,
+          "mean": 4.125
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 7,
+          "mean": 8.375
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 7,
+          "mean": 7.25
+        }
+      ],
+      "histories": [
+        [
+          73,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            4,
+            7,
+            4,
+            6
+          ]
+        ],
+        [
+          74,
+          [
+            0,
+            0,
+            5,
+            7,
+            6,
+            6,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          75,
+          [
+            0,
+            0,
+            2,
+            1,
+            2,
+            2,
+            3,
+            8,
+            7
+          ]
+        ],
+        [
+          76,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          77,
+          [
+            0,
+            0,
+            2,
+            0,
+            7,
+            16,
+            10,
+            18,
+            12
+          ]
+        ],
+        [
+          78,
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            6,
+            13,
+            10
+          ]
+        ],
+        [
+          79,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            2,
+            6,
+            5
+          ]
+        ],
+        [
+          80,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            2,
+            3,
+            7,
+            6
+          ]
+        ]
+      ]
+    }
+  },
+  "binBurial": {
+    "low_0": {
+      "N": 12,
+      "seed": 240,
+      "meanSeed": 20,
+      "ever": 7,
+      "final": 3,
+      "early": 6,
+      "late": 1,
+      "transient": 4,
+      "reappear": 1,
+      "earlyFinal": 3,
+      "lateFinal": 0,
+      "finalSum": 11,
+      "finalMean": 0.9166666666666666,
+      "per100Seeds": 4.583333333333333,
+      "factors": [
+        0.5833333333333334,
+        0.42857142857142855,
+        3.6666666666666665
+      ],
+      "live": 4,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 4,
+          "mean": 0.4166666666666667
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 5,
+          "mean": 0.5833333333333334
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 5,
+          "mean": 0.5833333333333334
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 4,
+          "mean": 0.5
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 4,
+          "mean": 0.75
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 4,
+          "mean": 1.25
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 3,
+          "mean": 0.9166666666666666
+        }
+      ],
+      "histories": [
+        [
+          5,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          6,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          7,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          8,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          13,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          14,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          16,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          21,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          22,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            3,
+            4,
+            8,
+            6
+          ]
+        ],
+        [
+          23,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          24,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            0
+          ]
+        ]
+      ]
+    },
+    "low_1": {
+      "N": 12,
+      "seed": 240,
+      "meanSeed": 20,
+      "ever": 7,
+      "final": 3,
+      "early": 6,
+      "late": 1,
+      "transient": 4,
+      "reappear": 0,
+      "earlyFinal": 3,
+      "lateFinal": 0,
+      "finalSum": 33,
+      "finalMean": 2.75,
+      "per100Seeds": 13.75,
+      "factors": [
+        0.5833333333333334,
+        0.42857142857142855,
+        11
+      ],
+      "live": 1,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 6,
+          "mean": 1
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 4,
+          "mean": 1.0833333333333333
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 4,
+          "mean": 1.3333333333333333
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 4,
+          "mean": 0.8333333333333334
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 4,
+          "mean": 0.6666666666666666
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 3,
+          "mean": 1.9166666666666667
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 3,
+          "mean": 2.75
+        }
+      ],
+      "histories": [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          3,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          4,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          9,
+          [
+            0,
+            0,
+            5,
+            6,
+            5,
+            4,
+            4,
+            11,
+            17
+          ]
+        ],
+        [
+          10,
+          [
+            0,
+            0,
+            2,
+            3,
+            4,
+            2,
+            1,
+            6,
+            10
+          ]
+        ],
+        [
+          11,
+          [
+            0,
+            0,
+            2,
+            3,
+            5,
+            3,
+            2,
+            6,
+            6
+          ]
+        ],
+        [
+          12,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          17,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          18,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          19,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          20,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "mid_0": {
+      "N": 16,
+      "seed": 880,
+      "meanSeed": 55,
+      "ever": 10,
+      "final": 9,
+      "early": 6,
+      "late": 4,
+      "transient": 1,
+      "reappear": 7,
+      "earlyFinal": 6,
+      "lateFinal": 3,
+      "finalSum": 76,
+      "finalMean": 4.75,
+      "per100Seeds": 8.636363636363637,
+      "factors": [
+        0.625,
+        0.9,
+        8.444444444444445
+      ],
+      "live": 8,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 5,
+          "mean": 0.5
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 4,
+          "mean": 0.6875
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 6,
+          "mean": 0.625
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 5,
+          "mean": 1.4375
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 3,
+          "mean": 0.375
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 9,
+          "mean": 3.375
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 9,
+          "mean": 4.75
+        }
+      ],
+      "histories": [
+        [
+          29,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          30,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          31,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          32,
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4
+          ]
+        ],
+        [
+          37,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            7,
+            11
+          ]
+        ],
+        [
+          38,
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          39,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            8,
+            4
+          ]
+        ],
+        [
+          45,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            13
+          ]
+        ],
+        [
+          46,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          47,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          48,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            3,
+            0,
+            6,
+            6
+          ]
+        ],
+        [
+          53,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          54,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            6,
+            12
+          ]
+        ],
+        [
+          55,
+          [
+            0,
+            0,
+            4,
+            8,
+            3,
+            9,
+            3,
+            11,
+            18
+          ]
+        ],
+        [
+          56,
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4
+          ]
+        ]
+      ]
+    },
+    "mid_1": {
+      "N": 16,
+      "seed": 880,
+      "meanSeed": 55,
+      "ever": 12,
+      "final": 8,
+      "early": 10,
+      "late": 2,
+      "transient": 4,
+      "reappear": 2,
+      "earlyFinal": 6,
+      "lateFinal": 2,
+      "finalSum": 77,
+      "finalMean": 4.8125,
+      "per100Seeds": 8.75,
+      "factors": [
+        0.75,
+        0.6666666666666666,
+        9.625
+      ],
+      "live": 3,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 5,
+          "mean": 0.5625
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 9,
+          "mean": 1.4375
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 8,
+          "mean": 1.3125
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 9,
+          "mean": 2.1875
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 7,
+          "mean": 1.3125
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 9,
+          "mean": 4.125
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 8,
+          "mean": 4.8125
+        }
+      ],
+      "histories": [
+        [
+          25,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          26,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          27,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            5,
+            7
+          ]
+        ],
+        [
+          28,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          33,
+          [
+            0,
+            0,
+            1,
+            3,
+            2,
+            1,
+            0,
+            1,
+            3
+          ]
+        ],
+        [
+          34,
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          35,
+          [
+            0,
+            0,
+            3,
+            4,
+            2,
+            3,
+            2,
+            5,
+            5
+          ]
+        ],
+        [
+          36,
+          [
+            0,
+            0,
+            0,
+            3,
+            1,
+            1,
+            0,
+            4,
+            9
+          ]
+        ],
+        [
+          41,
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            7,
+            6,
+            9,
+            10
+          ]
+        ],
+        [
+          42,
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          43,
+          [
+            0,
+            0,
+            2,
+            2,
+            3,
+            4,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          44,
+          [
+            0,
+            0,
+            0,
+            5,
+            6,
+            9,
+            4,
+            7,
+            6
+          ]
+        ],
+        [
+          49,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            5,
+            20,
+            25
+          ]
+        ],
+        [
+          50,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          51,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            4,
+            0
+          ]
+        ],
+        [
+          52,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "high_0": {
+      "N": 12,
+      "seed": 1080,
+      "meanSeed": 90,
+      "ever": 11,
+      "final": 9,
+      "early": 9,
+      "late": 2,
+      "transient": 2,
+      "reappear": 1,
+      "earlyFinal": 8,
+      "lateFinal": 1,
+      "finalSum": 77,
+      "finalMean": 6.416666666666667,
+      "per100Seeds": 7.12962962962963,
+      "factors": [
+        0.9166666666666666,
+        0.8181818181818182,
+        8.555555555555555
+      ],
+      "live": 7,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 5,
+          "mean": 0.5833333333333334
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 8,
+          "mean": 1
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 10,
+          "mean": 1.9166666666666667
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 10,
+          "mean": 2.8333333333333335
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 9,
+          "mean": 2.4166666666666665
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 9,
+          "mean": 6.5
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 9,
+          "mean": 6.416666666666667
+        }
+      ],
+      "histories": [
+        [
+          61,
+          [
+            0,
+            0,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          62,
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          63,
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          64,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            6
+          ]
+        ],
+        [
+          69,
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            4,
+            1,
+            15,
+            27
+          ]
+        ],
+        [
+          70,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            3,
+            6,
+            4
+          ]
+        ],
+        [
+          71,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          72,
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3
+          ]
+        ],
+        [
+          77,
+          [
+            0,
+            0,
+            2,
+            0,
+            7,
+            16,
+            10,
+            18,
+            12
+          ]
+        ],
+        [
+          78,
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            5,
+            6,
+            13,
+            10
+          ]
+        ],
+        [
+          79,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            2,
+            6,
+            5
+          ]
+        ],
+        [
+          80,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            2,
+            3,
+            7,
+            6
+          ]
+        ]
+      ]
+    },
+    "high_1": {
+      "N": 12,
+      "seed": 1080,
+      "meanSeed": 90,
+      "ever": 8,
+      "final": 7,
+      "early": 8,
+      "late": 0,
+      "transient": 1,
+      "reappear": 0,
+      "earlyFinal": 7,
+      "lateFinal": 0,
+      "finalSum": 79,
+      "finalMean": 6.583333333333333,
+      "per100Seeds": 7.314814814814815,
+      "factors": [
+        0.6666666666666666,
+        0.875,
+        11.285714285714286
+      ],
+      "live": 3,
+      "series": [
+        {
+          "date": "5-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "17-Nov-25",
+          "positive": 0,
+          "mean": 0
+        },
+        {
+          "date": "3-Dec-25",
+          "positive": 7,
+          "mean": 1.5
+        },
+        {
+          "date": "17-Dec-25",
+          "positive": 8,
+          "mean": 2.5
+        },
+        {
+          "date": "17-Jan-26",
+          "positive": 8,
+          "mean": 2.5833333333333335
+        },
+        {
+          "date": "30-Jan-26",
+          "positive": 8,
+          "mean": 3.1666666666666665
+        },
+        {
+          "date": "14-Feb-26",
+          "positive": 7,
+          "mean": 1.75
+        },
+        {
+          "date": "1-Apr-26",
+          "positive": 7,
+          "mean": 5.583333333333333
+        },
+        {
+          "date": "17-Apr-26",
+          "positive": 7,
+          "mean": 6.583333333333333
+        }
+      ],
+      "histories": [
+        [
+          57,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          58,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          59,
+          [
+            0,
+            0,
+            2,
+            3,
+            3,
+            6,
+            3,
+            19,
+            23
+          ]
+        ],
+        [
+          60,
+          [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            1,
+            4,
+            6
+          ]
+        ],
+        [
+          65,
+          [
+            0,
+            0,
+            4,
+            6,
+            7,
+            8,
+            3,
+            10,
+            11
+          ]
+        ],
+        [
+          66,
+          [
+            0,
+            0,
+            2,
+            5,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          67,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          68,
+          [
+            0,
+            0,
+            2,
+            4,
+            5,
+            4,
+            2,
+            11,
+            14
+          ]
+        ],
+        [
+          73,
+          [
+            0,
+            0,
+            0,
+            2,
+            2,
+            4,
+            7,
+            4,
+            6
+          ]
+        ],
+        [
+          74,
+          [
+            0,
+            0,
+            5,
+            7,
+            6,
+            6,
+            2,
+            11,
+            12
+          ]
+        ],
+        [
+          75,
+          [
+            0,
+            0,
+            2,
+            1,
+            2,
+            2,
+            3,
+            8,
+            7
+          ]
+        ],
+        [
+          76,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  },
+  "contrasts": {
+    "lowHigh": {
+      "delta": 4.666666666666667,
+      "ratio": 3.5454545454545454,
+      "seedRatio": 4.5,
+      "efficiencyRatio": 0.787878787878788,
+      "component": [
+        1.1479436438318014,
+        2.4457846003898633,
+        1.0729384224450016
+      ],
+      "relativeComponent": [
+        0.24598792367824313,
+        0.5240967000835421,
+        0.22991537623821462
+      ],
+      "ratioFactors": [
+        1.357142857142857,
+        1.9649122807017543,
+        1.3295454545454546
+      ]
+    },
+    "surfaceBuried": {
+      "delta": 0.625,
+      "ratio": 1.1524390243902438,
+      "seedRatio": 1,
+      "efficiencyRatio": 1.152439024390244,
+      "component": [
+        -0.16164847883597755,
+        -0.5240244708994708,
+        1.3106729497354501
+      ],
+      "relativeComponent": [
+        -0.25863756613756406,
+        -0.8384391534391533,
+        2.0970767195767204
+      ],
+      "ratioFactors": [
+        0.9642857142857144,
+        0.8888888888888888,
+        1.3445121951219512
+      ]
+    },
+    "lowMid": {
+      "delta": 2.947916666666667,
+      "ratio": 2.6079545454545454,
+      "seedRatio": 2.75,
+      "efficiencyRatio": 0.9483471074380166,
+      "component": [
+        0.5159481721981719,
+        1.790885040885041,
+        0.6410834535834538
+      ],
+      "relativeComponent": [
+        0.17502128809549292,
+        0.6075087064486357,
+        0.21747000545587122
+      ],
+      "ratioFactors": [
+        1.1785714285714286,
+        1.803030303030303,
+        1.2272727272727273
+      ]
+    },
+    "midHigh": {
+      "delta": 1.71875,
+      "ratio": 1.3594771241830066,
+      "seedRatio": 1.6363636363636365,
+      "efficiencyRatio": 0.830791575889615,
+      "component": [
+        0.7889441287878782,
+        0.4814904804625205,
+        0.4483153907496013
+      ],
+      "relativeComponent": [
+        0.4590220385674928,
+        0.2801399159054665,
+        0.26083804552704076
+      ],
+      "ratioFactors": [
+        1.1515151515151514,
+        1.089783281733746,
+        1.0833333333333333
+      ]
+    }
+  },
+  "arms": {
+    "0": {
+      "delta": 5.5,
+      "ratio": 7.000000000000001,
+      "seedRatio": 4.5,
+      "efficiencyRatio": 1.5555555555555556,
+      "component": [
+        1.3227513227513221,
+        1.8386243386243388,
+        2.3386243386243386
+      ],
+      "relativeComponent": [
+        0.24050024050024038,
+        0.3342953342953343,
+        0.4252044252044252
+      ],
+      "ratioFactors": [
+        1.5714285714285712,
+        1.9090909090909094,
+        2.3333333333333335
+      ]
+    },
+    "1": {
+      "delta": 3.833333333333333,
+      "ratio": 2.393939393939394,
+      "seedRatio": 4.5,
+      "efficiencyRatio": 0.531986531986532,
+      "component": [
+        0.6061153628117907,
+        3.1099418934240366,
+        0.11727607709750594
+      ],
+      "relativeComponent": [
+        0.15811705116829322,
+        0.8112891895888792,
+        0.030593759242827638
+      ],
+      "ratioFactors": [
+        1.1428571428571428,
+        2.041666666666667,
+        1.025974025974026
+      ]
+    }
+  },
+  "leaveDoseOut": [
+    {
+      "dose": 10,
+      "contrast": {
+        "delta": 4,
+        "ratio": 2.6,
+        "seedRatio": 3.6,
+        "efficiencyRatio": 0.7222222222222222,
+        "component": [
+          1.0009137426900587,
+          2.1589455409356724,
+          0.8401407163742691
+        ],
+        "relativeComponent": [
+          0.2502284356725147,
+          0.5397363852339181,
+          0.21003517909356728
+        ],
+        "ratioFactors": [
+          1.2666666666666666,
+          1.6842105263157894,
+          1.21875
+        ]
+      }
+    },
+    {
+      "dose": 20,
+      "contrast": {
+        "delta": 5.875,
+        "ratio": 10.4,
+        "seedRatio": 4.5,
+        "efficiencyRatio": 2.3111111111111113,
+        "component": [
+          0.9556428687459388,
+          3.1516102176738143,
+          1.7677469135802468
+        ],
+        "relativeComponent": [
+          0.16266261595675555,
+          0.5364442923700109,
+          0.3008930916732335
+        ],
+        "ratioFactors": [
+          1.4074074074074074,
+          3.789473684210526,
+          1.95
+        ]
+      }
+    },
+    {
+      "dose": 30,
+      "contrast": {
+        "delta": 4.125,
+        "ratio": 2.736842105263158,
+        "seedRatio": 6,
+        "efficiencyRatio": 0.45614035087719296,
+        "component": [
+          1.40105486517219,
+          1.6948718729694605,
+          1.0290732618583498
+        ],
+        "relativeComponent": [
+          0.33964966428416726,
+          0.4108780298107783,
+          0.2494723059050545
+        ],
+        "ratioFactors": [
+          1.4074074074074074,
+          1.5157894736842104,
+          1.2828947368421053
+        ]
+      }
+    },
+    {
+      "dose": 80,
+      "contrast": {
+        "delta": 5.479166666666667,
+        "ratio": 3.9886363636363638,
+        "seedRatio": 4.75,
+        "efficiencyRatio": 0.8397129186602872,
+        "component": [
+          1.3457245879120874,
+          2.9707532051282053,
+          1.1626888736263736
+        ],
+        "relativeComponent": [
+          0.24560752935277638,
+          0.5421906990348055,
+          0.212201771612418
+        ],
+        "ratioFactors": [
+          1.3928571428571428,
+          2.153846153846154,
+          1.3295454545454546
+        ]
+      }
+    },
+    {
+      "dose": 90,
+      "contrast": {
+        "delta": 4.229166666666667,
+        "ratio": 3.306818181818182,
+        "seedRatio": 4.5,
+        "efficiencyRatio": 0.7348484848484849,
+        "component": [
+          1.1914046601546597,
+          2.3654216154216154,
+          0.6723403910903912
+        ],
+        "relativeComponent": [
+          0.2817114467360772,
+          0.5593115149765395,
+          0.15897703828738313
+        ],
+        "ratioFactors": [
+          1.3928571428571428,
+          1.9743589743589745,
+          1.2024793388429753
+        ]
+      }
+    },
+    {
+      "dose": 100,
+      "contrast": {
+        "delta": 4.291666666666667,
+        "ratio": 3.340909090909091,
+        "seedRatio": 4.25,
+        "efficiencyRatio": 0.786096256684492,
+        "component": [
+          0.9107142857142855,
+          1.9682539682539684,
+          1.4126984126984128
+        ],
+        "relativeComponent": [
+          0.21220527045769758,
+          0.4586222838650023,
+          0.32917244567730003
+        ],
+        "ratioFactors": [
+          1.2857142857142856,
+          1.75,
+          1.4848484848484849
+        ]
+      }
+    }
+  ],
+  "adjacent": [
+    {
+      "from": "5-Nov-25",
+      "to": "17-Nov-25",
+      "positiveBefore": 0,
+      "positiveAfter": 0,
+      "loss": 0,
+      "appearance": 0
+    },
+    {
+      "from": "17-Nov-25",
+      "to": "3-Dec-25",
+      "positiveBefore": 0,
+      "positiveAfter": 32,
+      "loss": 0,
+      "appearance": 32
+    },
+    {
+      "from": "3-Dec-25",
+      "to": "17-Dec-25",
+      "positiveBefore": 32,
+      "positiveAfter": 38,
+      "loss": 7,
+      "appearance": 13
+    },
+    {
+      "from": "17-Dec-25",
+      "to": "17-Jan-26",
+      "positiveBefore": 38,
+      "positiveAfter": 41,
+      "loss": 3,
+      "appearance": 6
+    },
+    {
+      "from": "17-Jan-26",
+      "to": "30-Jan-26",
+      "positiveBefore": 41,
+      "positiveAfter": 40,
+      "loss": 4,
+      "appearance": 3
+    },
+    {
+      "from": "30-Jan-26",
+      "to": "14-Feb-26",
+      "positiveBefore": 40,
+      "positiveAfter": 34,
+      "loss": 9,
+      "appearance": 3
+    },
+    {
+      "from": "14-Feb-26",
+      "to": "1-Apr-26",
+      "positiveBefore": 34,
+      "positiveAfter": 41,
+      "loss": 2,
+      "appearance": 9
+    },
+    {
+      "from": "1-Apr-26",
+      "to": "17-Apr-26",
+      "positiveBefore": 41,
+      "positiveAfter": 39,
+      "loss": 2,
+      "appearance": 0
+    }
+  ],
+  "paired": [
+    {
+      "dose": 10,
+      "liveDifference": -0.75,
+      "everDifference": 0,
+      "finalDifference": -0.25,
+      "countDifference": -1
+    },
+    {
+      "dose": 20,
+      "liveDifference": 0,
+      "everDifference": 0.75,
+      "finalDifference": 0.5,
+      "countDifference": 8
+    },
+    {
+      "dose": 30,
+      "liveDifference": 0,
+      "everDifference": -0.75,
+      "finalDifference": -0.25,
+      "countDifference": -1.5
+    },
+    {
+      "dose": 40,
+      "liveDifference": -0.75,
+      "everDifference": 0.25,
+      "finalDifference": 0,
+      "countDifference": 0.75
+    },
+    {
+      "dose": 50,
+      "liveDifference": 0.25,
+      "everDifference": 0.25,
+      "finalDifference": 0,
+      "countDifference": -0.5
+    },
+    {
+      "dose": 60,
+      "liveDifference": -0.25,
+      "everDifference": 0.25,
+      "finalDifference": 0.25,
+      "countDifference": 2.25
+    },
+    {
+      "dose": 70,
+      "liveDifference": -0.5,
+      "everDifference": -0.25,
+      "finalDifference": -0.5,
+      "countDifference": -2.25
+    },
+    {
+      "dose": 80,
+      "liveDifference": -0.75,
+      "everDifference": -0.5,
+      "finalDifference": 0,
+      "countDifference": 4.75
+    },
+    {
+      "dose": 90,
+      "liveDifference": -0.5,
+      "everDifference": 0,
+      "finalDifference": -0.25,
+      "countDifference": -2.25
+    },
+    {
+      "dose": 100,
+      "liveDifference": 0.25,
+      "everDifference": -0.25,
+      "finalDifference": -0.25,
+      "countDifference": -2
+    }
+  ],
+  "forecastTable": [
+    {
+      "date": "5-Nov-25",
+      "current": 0,
+      "finalAmongCurrent": 0,
+      "finalAmongAbsent": 39,
+      "ever": 0,
+      "finalAmongEver": 0
+    },
+    {
+      "date": "17-Nov-25",
+      "current": 0,
+      "finalAmongCurrent": 0,
+      "finalAmongAbsent": 39,
+      "ever": 0,
+      "finalAmongEver": 0
+    },
+    {
+      "date": "3-Dec-25",
+      "current": 32,
+      "finalAmongCurrent": 25,
+      "finalAmongAbsent": 14,
+      "ever": 32,
+      "finalAmongEver": 25
+    },
+    {
+      "date": "17-Dec-25",
+      "current": 38,
+      "finalAmongCurrent": 30,
+      "finalAmongAbsent": 9,
+      "ever": 45,
+      "finalAmongEver": 33
+    },
+    {
+      "date": "17-Jan-26",
+      "current": 41,
+      "finalAmongCurrent": 35,
+      "finalAmongAbsent": 4,
+      "ever": 49,
+      "finalAmongEver": 36
+    },
+    {
+      "date": "30-Jan-26",
+      "current": 40,
+      "finalAmongCurrent": 34,
+      "finalAmongAbsent": 5,
+      "ever": 52,
+      "finalAmongEver": 38
+    },
+    {
+      "date": "14-Feb-26",
+      "current": 34,
+      "finalAmongCurrent": 31,
+      "finalAmongAbsent": 8,
+      "ever": 54,
+      "finalAmongEver": 38
+    },
+    {
+      "date": "1-Apr-26",
+      "current": 41,
+      "finalAmongCurrent": 39,
+      "finalAmongAbsent": 0,
+      "ever": 55,
+      "finalAmongEver": 39
+    },
+    {
+      "date": "17-Apr-26",
+      "current": 39,
+      "finalAmongCurrent": 39,
+      "finalAmongAbsent": 0,
+      "ever": 55,
+      "finalAmongEver": 39
+    }
+  ],
+  "limits": [
+    "Both density row and burial grid side spatially confounded, no causal contrast.",
+    "Ever-positive and terminal-positive at scheduled visits are observation states, not actual emergence or survival of individuals.",
+    "Shoot counts can include clonal proliferation or immigration; per seed is arithmetic per initial supplied seed, not per-seed survival.",
+    "No physical seed retention measured; no clam-free control; all plots initially received live clam.",
+    "Same study as prior analysis/149; not independent replication or pooled meta-analysis."
+  ]
+}
