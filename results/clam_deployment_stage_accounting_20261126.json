@@ -5,6 +5,12 @@
     "commit": "90e5e193c9db7efb75c3244f52b1585c9e93718e",
     "blob": "d0f7ae365ae91641d34718c761e67ced1823032e"
   },
+  "placement_labels": {
+    "status": "UNRESOLVED_SOURCE_CONFLICT",
+    "metadata": "1 manually buried; 0 surface",
+    "author_qmd_lines_288_290": "levels c(0,1), labels c(Buried,Surface)",
+    "rule": "Use numeric codes only; treatment meaning not identified. Dose contrasts pool both codes."
+  },
   "byDate": {
     "5-Nov-25": 80,
     "17-Nov-25": 80,
@@ -4635,7 +4641,7 @@
         ]
       ]
     },
-    "surface": {
+    "code0": {
       "N": 40,
       "seed": 2200,
       "meanSeed": 55,
@@ -5266,7 +5272,7 @@
         ]
       ]
     },
-    "buried": {
+    "code1": {
       "N": 40,
       "seed": 2200,
       "meanSeed": 55,
@@ -9300,7 +9306,7 @@
         1.3295454545454546
       ]
     },
-    "surfaceBuried": {
+    "code0Code1": {
       "delta": 0.625,
       "ratio": 1.1524390243902438,
       "seedRatio": 1,
