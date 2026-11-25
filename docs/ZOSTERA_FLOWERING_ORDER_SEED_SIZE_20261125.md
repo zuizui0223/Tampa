@@ -1,0 +1,36 @@
+# Flowering-order seed size, mating mode, and shared sire labels (2026-11-25)
+
+## Source, question and prior art
+Sgambelluri, Jarvis & Kamel (2025), Evolution, DOI 10.1093/evolut/qpaf111, data DOI 10.5061/dryad.6t1g1jx7p. Published paper already reports seed mass declining with spathe and rhipidium position, more selfed seeds at distal positions, and effects of maternal/paternal identity and within-spathe relatedness; its discussion already proposes longer development time and unequal resource access. Do not claim that these primary findings or proposed mechanisms are new. Follow-up to analysis/181: quantify how the observed first-to-last spathe mass difference persists within mating classes and among shared sire labels, and whether the loss in outcross sire-label richness and size are associated within the same pairs.
+
+Verified archive 14916683079 SHA256 2d0b308672fc68732d4fa30e5383e9ad48eb6236a8463ea4d3425ab81d7dd9a8. Read original README, three CSVs; exact member hashes pinned in analysis/182. Main mass table 844 seed rows, 35 shoots; reduced mass table 693 rows, 34 shoots; area table 873 rows. All focal endpoints positive and observed; unique within-source site/mother/rhipidium/spathe/seed keys. 690 keys common to both mass tables, all masses agree. Do not count overlapping panels as independent or infer across-paper ID crosswalk. Source weights mg, cross-sectional area mm². All flowering shoots sampled on 4 May 2021 (one collection date). Viable seeds only, genotyped and filtered source records. Distal spathes are generally later-developing but dates and maturity not measured. No missing or nonviable seeds imputed, no inference of eventual ripe mass or absolute recruitment.
+
+## Methods and results
+First and last observed spathe per branch defined before subset selection. Equal weight per branch within a maternal shoot, equal shoots. Compare all seeds; outcross-only and self-only when both endpoint spathes contain that class. For shared-label contrast, require same source site, mother, rhipidium, reproductive class and inferred sire label present at both ranks; equal shared-label means within branch. Bootstrap 20,000 maternal shoots with replacement within each of three observed sites, seed 20261125. All intervals conditional on these sites and selected observed pairs; exploratory, not randomized inference or validation of true father identity.
+
+|Panel|comparison|rows (branch pairs or shared label contrasts)|mothers|first|last|difference|conditional bootstrap 95%|
+|---|---|---:|---:|---:|---:|---:|---|
+|mass|all|48|24|2.212081|1.180012|-1.032069|[-1.303239,-.756256]|
+|mass|outcross|40|21|2.373107|1.348849|-1.024258|[-1.420624,-.610209]|
+|mass|self|25|17|1.909382|1.137301|-.772081|[-1.079345,-.449062]|
+|mass|shared label outcross|37|18|2.381729|1.383493|-.998236|[-1.459639,-.493580]|
+|mass|shared label outcross at least 2 seeds per endpoint|9|8|2.245267|1.191667|-1.053600|[-1.582892,-.561485]|
+|reduced mass|all|41|22|2.186335|1.326821|-.859514|[-1.116352,-.593009]|
+|reduced mass|outcross|32|17|2.331522|1.477463|-.854059|[-1.200673,-.489342]|
+|reduced mass|shared label outcross|38|17|2.265502|1.472258|-.793244|[-1.240250,-.314835]|
+|area|all|48|24|2.590444|1.945072|-.645372|[-.850775,-.426357]|
+|area|outcross|40|21|2.647674|1.988581|-.659092|[-.982276,-.322842]|
+|area|shared label outcross|37|18|2.619567|2.044105|-.575462|[-.921020,-.217481]|
+
+Main all-seed mass difference negative 21/24 maternal shoots; site means -.801524,-.937356,-1.357328 mg. Outcross-only and shared-label outcross mean mass differences negative at all three sites. Shared-label subset selected, often only one seed per label at an endpoint; reduced sample >=2 seeds at both endpoints also directionally consistent. Paternal identity is reconstructed by COLONY; shared labels not true controlled fathers.
+
+## Mixture accounting
+19 branch pairs, 13 maternal shoots have both outcross and self classes at both endpoint spathes. Within each pair average size M=p*u+(1-p)*s, p outcross fraction, u mean outcross size, s mean self size. Symmetric exact difference = delta p * mean(u-s) + mean(p)*delta u + [1-mean(p)]*delta s. Pair closure verified, then equal branch and shoot weighting. Main mass difference -.900239 mg = -.077300 class-composition component (conditional bootstrap [-.187486,.016689]) + -.822939 within-class size component ([-1.154765,-.469729]); about 91.4% of negative arithmetic difference corresponds to within-class size change. No causal attribution, not decomposition of full 48 pairs, and excludes all-self/all-outcross endpoints. Reduced mass only 9 pairs/6 mothers, -.344438 = -.018582 - .325856, total interval crosses zero. Area -.610436 = -.069117 -.541319 mm². Difference in maturation time, selective survival and resource allocation remain plausible.
+
+## Joint changes in paternal-label richness and size
+Rarefy to k=2 or 3 outcross-classified seeds at each endpoint, retaining pairs with both endpoints eligible. Size is mean of all outcross-classified measured seeds in those same endpoint spathes, not a subset simulated by rarefaction. Mother-averaged paired change correlations, descriptive only. Main k3 23 pairs / 14 mothers: outcross size 2.421217 -> 1.315263 mg; rarefied label richness 2.245408 -> 1.856037 (matches 181). Both negative for 9/14 mothers. Pearson r=.736582; site-centered r=.670496; leave-one-site-out .696143,.774261,.725742. k2 33/19: r=.616316, centered .601148. Reduced k3 23/13: r=.618781, centered .579644. Area k3 24/14: r=.605520, centered .579266. These overlapping samples are not independent replication. Common rank/development gradient, limited sample, correlated selection, and unmeasured donor and host states can create association. No causal diversity-to-size effect or general population relationship. No significance test.
+
+## Link to recovery: not calibrated
+Independent Jørgensen, Labouriau & Olesen (2019), DOI 10.1371/journal.pone.0215157, previously reanalyzed on separate six-interactions branch (157), found larger seeds retained viability and yielded larger seedlings, but no general size benefit for emergence, which depends on burial depth. Source studies differ in provenance, developmental stage and mass measurement protocol; do not transport seed mass thresholds or calculate expected emergence from the 2025 data. No paired germination/survival in this source. Next collect maturation-adjusted masses and independently follow germination/establishment by position and paternal composition, or obtain time-series sampling in same flowering season. No direct reserve or maturity measurements. Distinguish developmental timing and resources from changing pollen supply.
+
+Local exact-source computation completed. Script blob 26f1c1cf4f3bcb796928485fa56140f35ecf9ac9 matches local executed code; output JSON SHA256 1ad523d44f8d3a01830a50dca096c04fb112c9183cb2d92279357b94a5e7ea08. Reproduce: python analysis/182_zostera_flowering_order_seed_size.py <verified archive 14916683079> --out results.json. Independent CI not run. Exploratory reproductive-interaction-gates branch only; no main, Paper A/TNC, submission or merge changes.
