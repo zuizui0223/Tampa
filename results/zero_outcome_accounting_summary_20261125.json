@@ -1,0 +1,170 @@
+{
+  "status": "executed local source-verified zero/positive accounting; no causal decomposition, no pollination raw-data fit",
+  "sources": {
+    "marsh": {
+      "id": 14932375590,
+      "sha256": "843038aefe1afaed39ded71f4d5e5890262a778300c1f0ab011245b7e61ead8a",
+      "doi": "10.5281/zenodo.15182547"
+    },
+    "eelgrass": {
+      "id": 14911201555,
+      "sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c",
+      "doi": "10.1371/journal.pone.0168128"
+    },
+    "files": [
+      "168e3750a48f7642389799c801bc8159516d9361bdf7899d0e53570bb352e7bb",
+      "7433d4af6213e7d50c9b8afc1d5c149f0301466dba7d10e29f93428df4c5ada4",
+      "6bac2e2129517307bbf3ec94f146a12cfbab2c19390626ca6d8414cb256aa872"
+    ]
+  },
+  "contrasts": [
+    {
+      "name": "lab algae without worm",
+      "n": [
+        10,
+        10
+      ],
+      "zeros": [
+        0,
+        0
+      ],
+      "means": [
+        1,
+        0.78
+      ],
+      "positive_means": [
+        1,
+        0.78
+      ],
+      "delta": -0.22,
+      "parts": [
+        0,
+        -0.22
+      ]
+    },
+    {
+      "name": "lab algae with worm",
+      "n": [
+        10,
+        10
+      ],
+      "zeros": [
+        8,
+        0
+      ],
+      "means": [
+        0.06,
+        0.8
+      ],
+      "positive_means": [
+        0.3,
+        0.8
+      ],
+      "delta": 0.74,
+      "parts": [
+        0.44,
+        0.3
+      ],
+      "zero_RD": -0.8,
+      "conditional_bootstrap_RD": [
+        -1,
+        -0.5
+      ],
+      "undefined_accounting_bootstrap": 0.107625
+    },
+    {
+      "name": "paired field algal habitat",
+      "n": [
+        6,
+        6
+      ],
+      "zeros": [
+        4,
+        0
+      ],
+      "means": [
+        0.2333333333333333,
+        0.6666666666666666
+      ],
+      "positive_means": [
+        0.7,
+        0.6666666666666666
+      ],
+      "delta": 0.43333333333333335,
+      "parts": [
+        0.4555555555555556,
+        -0.022222222222222216
+      ],
+      "undefined_accounting_bootstrap": 0.0885
+    },
+    {
+      "name": "closed vs open cage eelgrass",
+      "n": [
+        4,
+        4
+      ],
+      "zeros": [
+        2,
+        0
+      ],
+      "means": [
+        0.5,
+        14.5
+      ],
+      "positive_means": [
+        1,
+        14.5
+      ],
+      "delta": 14,
+      "parts": [
+        3.875,
+        10.125
+      ],
+      "undefined_accounting_bootstrap": 0.0627
+    }
+  ],
+  "pollination_published": {
+    "doi": "10.1111/cobi.13892",
+    "plants": 138,
+    "excluded_both_open_and_hand_zero": 31,
+    "site_counts": [
+      {
+        "region": "Auckland",
+        "hihi": true,
+        "zero": 16,
+        "n": 48
+      },
+      {
+        "region": "Auckland",
+        "hihi": false,
+        "zero": 2,
+        "n": 30
+      },
+      {
+        "region": "Wellington",
+        "hihi": true,
+        "zero": 5,
+        "n": 30
+      },
+      {
+        "region": "Wellington",
+        "hihi": false,
+        "zero": 8,
+        "n": 30
+      }
+    ],
+    "status": "published aggregate only, site confounding, no causal effect of reintroduction on failure",
+    "fruit_lnR_hihi_present": 0.5,
+    "fruit_lnR_hihi_absent": 1.27
+  },
+  "pending_sources": [
+    10814705,
+    3987488
+  ],
+  "limits": [
+    "Arithmetic decomposition not mediation; conditioning on positive outcomes is post-treatment.",
+    "Zero count is observed endpoint, not permanent extinction.",
+    "Very small number of plots; no pooled study-level effect.",
+    "New pollination raw files not yet acquired."
+  ]
+}

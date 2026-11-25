@@ -1,0 +1,23 @@
+name: Pollination zero outcome sources
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths:
+      - 'analysis/173_pollination_failure_sources.py'
+      - '.github/workflows/pollination-zero-outcome-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/173_pollination_failure_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pollination-zero-outcome-sources
+          path: pollination_failure_sources/
+          if-no-files-found: error
