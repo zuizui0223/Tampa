@@ -1,0 +1,87 @@
+{
+  "status": "local Python executed 2026-11-25; published summary arithmetic only",
+  "source": "10.1016/S0304-3770(03)00070-6",
+  "contrast_site4_over_1a": {
+    "female_ready": 1.3118279569892473,
+    "male_bud_full": 1.6355555555555557,
+    "fruit": 0.031914893617021274,
+    "fruit_over_ready_stock": 0.02432856644576212,
+    "fruit_ratio_rounding_range": [
+      0.029177718832891247,
+      0.034666666666666665
+    ]
+  },
+  "scar_vs_tagged": {
+    "shallow": [
+      3.55,
+      1.1
+    ],
+    "deep": [
+      4.5,
+      0.1
+    ],
+    "scar_deep_shallow": 1.267605633802817,
+    "tagged_deep_shallow": 0.09090909090909091,
+    "relative_proxy_discrepancy": 13.943661971830986
+  },
+  "previous_timing": {
+    "pollen_pct": [
+      [
+        0,
+        82.5
+      ],
+      [
+        13,
+        55
+      ],
+      [
+        18,
+        30
+      ],
+      [
+        24,
+        0.5
+      ]
+    ],
+    "female_pct": [
+      [
+        "0–1h",
+        82.5
+      ],
+      [
+        "16–18h",
+        55
+      ],
+      [
+        "23–24h",
+        47.5
+      ],
+      [
+        "~48h",
+        27.5
+      ],
+      [
+        "~72h",
+        3
+      ]
+    ],
+    "iriomote_doi": "10.18960/hozen.1803",
+    "retention": [
+      1,
+      0.512,
+      0.098,
+      0.093
+    ],
+    "conditional_dehiscence_after_day3": 0.181640625,
+    "loss_share": [
+      0.538037486218302,
+      0.4564498346196251,
+      0.005512679162072767
+    ]
+  },
+  "limits": [
+    "No new raw data; observed stage stocks not tracked flower transitions; no causal model, pooled meta-analysis or animal effect.",
+    "Scar reconstruction and tagged shoots are different samples. Rounded rates and unknown covariances; no inferential tests.",
+    "Previous timing work not synced due concurrent branch changes; recorded now."
+  ]
+}
