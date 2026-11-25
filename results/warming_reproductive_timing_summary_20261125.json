@@ -1,0 +1,161 @@
+{
+  "status": "executed original PANGAEA data analysis and published Table4 audit; no causal animal effect",
+  "artifact": {
+    "id": 14988520327,
+    "run": 45537961466,
+    "sha256": "0052956db19a0fb8acf5c24a9bc712c829186ae35424f5aa8c361cd4aaa92cd3"
+  },
+  "source": {
+    "doi": "10.1594/PANGAEA.937393",
+    "paper": "10.1002/lno.11947",
+    "sha256": "c96c00fff4bb0a430d016d3a45317989b946de66ba7ebf11a255974175a24295"
+  },
+  "audit": {
+    "rows": 576,
+    "usable": 564,
+    "tanks": 12,
+    "dates": 12,
+    "monitored_boxes": 47,
+    "missing": "E2 box4 all dates",
+    "ambient_reported_implied": 15,
+    "ambient_observed": 14
+  },
+  "arms": {
+    "ambient": {
+      "events": 14,
+      "early": 3,
+      "late": 11,
+      "monitored_initial": 144,
+      "positive_tanks": 5,
+      "early_positive_tanks": 2,
+      "early_share": 0.21428571428571427,
+      "conditional_positive_count": 2.8,
+      "mean_tank_events_per_initial": 0.09722222222222222,
+      "final_original_rate": 0.611111111111111,
+      "mean_detection_day": 140.42857142857142
+    },
+    "heat": {
+      "events": 10,
+      "early": 8,
+      "late": 2,
+      "monitored_initial": 138,
+      "positive_tanks": 5,
+      "early_positive_tanks": 5,
+      "early_share": 0.8,
+      "conditional_positive_count": 2,
+      "mean_tank_events_per_initial": 0.06944444444444443,
+      "final_original_rate": 0.34953703703703703,
+      "mean_detection_day": 109.2
+    }
+  },
+  "differences": {
+    "seasonal_event_rate": {
+      "estimate": -0.02777777777777779,
+      "bootstrap95": [
+        -0.09722222222222221,
+        0.04166666666666666
+      ]
+    },
+    "early_rate": {
+      "estimate": 0.03472222222222222,
+      "bootstrap95": [
+        0,
+        0.06944444444444443
+      ]
+    },
+    "late_rate": {
+      "estimate": -0.0625,
+      "bootstrap95": [
+        -0.1111111111111111,
+        -0.006944444444444444
+      ]
+    },
+    "final_original_rate": {
+      "estimate": -0.26157407407407396,
+      "bootstrap95": [
+        -0.3657407407407407,
+        -0.15046296296296302
+      ]
+    },
+    "positive_tank_fraction": {
+      "estimate": 0,
+      "bootstrap95": [
+        -0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    "early_share": {
+      "estimate": 0.5857142857142857,
+      "bootstrap95": [
+        0.261904761904762,
+        1
+      ]
+    },
+    "detection_day": {
+      "estimate": -31.228571428571414,
+      "bootstrap95": [
+        -48.13666267942583,
+        -17.57528074866315
+      ],
+      "valid_draws": 39998,
+      "loo_range": [
+        -44.076923076923066,
+        -25.583333333333343
+      ],
+      "interval_bounds_conditional_on_observed_events": [
+        -59.12857142857142,
+        -17.014285714285705
+      ]
+    }
+  },
+  "kendrick": {
+    "doi": "10.1002/ece3.10456",
+    "data_doi": "10.5061/dryad.vhhmgqnwz",
+    "status": "published Table4; Dryad files returned 401",
+    "known_origin": [
+      {
+        "site": "Stark Bay",
+        "n": 110,
+        "local": 100,
+        "incorrect_nonlocal": 0,
+        "unresolved": 10
+      },
+      {
+        "site": "Parker Point",
+        "n": 139,
+        "local": 40,
+        "incorrect_nonlocal": 8,
+        "unresolved": 91
+      }
+    ],
+    "recruits": [
+      {
+        "site": "Parker Point",
+        "n": 60,
+        "local": 16,
+        "nonlocal": 15,
+        "unresolved": 29
+      },
+      {
+        "site": "Stark Bay",
+        "n": 58,
+        "local": 43,
+        "nonlocal": 2,
+        "unresolved": 13
+      },
+      {
+        "site": "Thomson Bay",
+        "n": 65,
+        "local": 28,
+        "nonlocal": 3,
+        "unresolved": 34
+      }
+    ]
+  },
+  "limits": [
+    "Earlier recognition of seed-containing spathes not flowering or fertilization dates. 49-day sampling gap; unobserved events not identifiable.",
+    "One missing container, no imputation; source table 14 ambient vs paper 15; no repair.",
+    "Exploratory 6 tanks/arm resampling; no equivalence, no independent temporal replicates or animal manipulation.",
+    "Kendrick assignment coverage varies and known-origin errors prevent direct immigration estimate. No raw data or individual origin model."
+  ]
+}
