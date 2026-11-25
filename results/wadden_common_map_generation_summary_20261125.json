@@ -1,0 +1,220 @@
+{
+  "status": "local original source computation, no wide-area causal model; repository scripts are equivalent parameterized versions not separately CI-replayed",
+  "sources": {
+    "gis": {
+      "run": 45425781075,
+      "id": 14938615379,
+      "sha256": "ad0097d3e14373bf0cb7babef0dd4aa26678d6bb97c7e5d94af5f7e534bc05e1"
+    },
+    "benthos": {
+      "id": 14932375590,
+      "sha256": "843038aefe1afaed39ded71f4d5e5890262a778300c1f0ab011245b7e61ead8a"
+    },
+    "generation": {
+      "doi": "10.34894/FKSY2M",
+      "paper": "10.1111/1365-2664.14405",
+      "sha256": "8677af34cdc98b0ccde8b9e257a9acd9a670389f84bcd65c82d36146b19d0643"
+    }
+  },
+  "gis": {
+    "years": [
+      2011,
+      2014,
+      2017,
+      2020,
+      2023
+    ],
+    "mapped": [
+      20107,
+      21140,
+      20201,
+      22759,
+      23933
+    ],
+    "mar_positive": [
+      274,
+      349,
+      798,
+      576,
+      2415
+    ],
+    "removed_duplicate_rows_2014": 8,
+    "common": [
+      19477,
+      16812,
+      16556,
+      19194
+    ],
+    "mar_00_01_10_11": [
+      [
+        19019,
+        193,
+        130,
+        135
+      ],
+      [
+        16338,
+        258,
+        92,
+        124
+      ],
+      [
+        15875,
+        104,
+        471,
+        106
+      ],
+      [
+        18689,
+        144,
+        161,
+        200
+      ]
+    ],
+    "nol_00_01_10_11": [
+      [
+        9974,
+        1240,
+        3054,
+        5209
+      ],
+      [
+        8094,
+        1833,
+        1893,
+        4992
+      ],
+      [
+        7018,
+        2634,
+        773,
+        6131
+      ],
+      [
+        8653,
+        1016,
+        2218,
+        7307
+      ]
+    ],
+    "common_all_five": 13885,
+    "mar_positive_common_all_five": [
+      91,
+      176,
+      366,
+      159,
+      172
+    ],
+    "outside_2020_positive_2023": 2071,
+    "outside_positive_by_deelgeb": {
+      "Griend": 1991,
+      "Eems": 80
+    },
+    "exact_prior_year": {
+      "n": 37,
+      "stations": 16,
+      "n_M": 21,
+      "new_mar": 4,
+      "lost_mar": 1,
+      "new_mar_identified_Hediste_detected": 0
+    },
+    "radius250": {
+      "n": 418,
+      "median_support": 0.0488923985,
+      "n_support_ge25pct": 33,
+      "new_mar_ge25pct": 3,
+      "lost_mar_ge25pct": 6
+    },
+    "radius500": {
+      "n": 686,
+      "median_support": 0.0244461993
+    }
+  },
+  "generation": {
+    "n_plots": 18,
+    "n_blocks": 3,
+    "counts": [
+      {
+        "scale": 4,
+        "density": 10,
+        "G1": 4.583333333333333,
+        "G2": 2.8333333333333335,
+        "mean_ratio": 0.5361111111111111
+      },
+      {
+        "scale": 4,
+        "density": 50,
+        "G1": 19.75,
+        "G2": 4.916666666666667,
+        "mean_ratio": 0.28004218004218
+      },
+      {
+        "scale": 40,
+        "density": 10,
+        "G1": 4.833333333333333,
+        "G2": 4.916666666666667,
+        "mean_ratio": 0.9892144892144893
+      },
+      {
+        "scale": 40,
+        "density": 50,
+        "G1": 23,
+        "G2": 8.166666666666666,
+        "mean_ratio": 0.3398582405935347
+      },
+      {
+        "scale": 400,
+        "density": 10,
+        "G1": 6.333333333333333,
+        "G2": 9.416666666666666,
+        "mean_ratio": 1.510185185185185
+      },
+      {
+        "scale": 400,
+        "density": 50,
+        "G1": 25.5,
+        "G2": 18.083333333333332,
+        "mean_ratio": 0.7117676767676767
+      }
+    ],
+    "contrasts_400_vs4": {
+      "geo_ratio": 3.450407857750069,
+      "geo_spathe_ratio": 1.9383181848571458,
+      "geo_conversion_ratio": 1.7801039502729339,
+      "block_log_diffs": [
+        0.9932593937,
+        2.0290707568,
+        0.6931471806
+      ],
+      "positive_pairs": 6
+    },
+    "contrasts_400_vs40": {
+      "geo_ratio": 1.7890614901473758,
+      "geo_spathe_ratio": 2.0144428687978087,
+      "geo_conversion_ratio": 0.8881172645094983,
+      "block_log_diffs": [
+        0.6127302007,
+        0.6019073445,
+        0.5304359803
+      ],
+      "positive_pairs": 6
+    },
+    "ridge1_rmse_log_G2": {
+      "mean": 1.1787900211375173,
+      "design": 0.9790721150444112,
+      "G1": 1.0105293148556527,
+      "G1_scale": 0.8978381962729494,
+      "G1_spathes": 0.9591471501809341,
+      "G1_dry": 0.7998705433160112,
+      "G1_spathes_dry": 0.8619058777142514
+    },
+    "G1_dry_mse_improvement": 0.37347042929078567
+  },
+  "limits": [
+    "Recorded map support differs across time and does not equal uniform survey effort; explicit zero is mapped cover class not proven absence.",
+    "No unobserved grid assigned zero; only exact common mapped cells. Griend expansion independently documented; do not dismiss real expansion outside common maps.",
+    "Prior-year exposure within three-year transition is not necessarily antecedent to true colonization; exact overlaps and changes too few for model; radius overlap sparse.",
+    "Restoration experiment three blocks, one site, no animal measurements, spathe proxy not actual seed production, no causal mediation. No external forecast validation.",
+    "No merged otter/pollination mechanism or formal meta-analysis."
+  ]
+}
