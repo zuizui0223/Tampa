@@ -1,0 +1,170 @@
+{
+  "status": "executed local original data, repository equivalent core not separately CI-replayed",
+  "source": {
+    "artifact": 14983579014,
+    "run": 45529321656,
+    "sha256": "860fa163a35d0d650e98b8e4d9e1f5e45b019eef9372c8068e9f29da75c5da44",
+    "campanula": "10.5281/zenodo.10814705",
+    "blueberry": "10.5281/zenodo.3987488"
+  },
+  "campanula": {
+    "rows": 237,
+    "plant_population_keys": 128,
+    "paired": 109,
+    "C_only": 8,
+    "S_only": 11,
+    "source_populations": 4,
+    "recorded_seed_populations": 53,
+    "visit_populations": 56,
+    "complete_n": [
+      15,
+      37,
+      14,
+      43
+    ],
+    "order": [
+      "high_single",
+      "high_small",
+      "low_single",
+      "low_small"
+    ],
+    "control_mean": [
+      34.46666666666667,
+      38.37837837837839,
+      11.285714285714285,
+      26.302325581395348
+    ],
+    "control_zero": [
+      2,
+      2,
+      3,
+      8
+    ],
+    "supplement_mean": [
+      70.86666666666667,
+      68.83783783783787,
+      43.214285714285715,
+      52.95348837209302
+    ],
+    "supplement_zero": [
+      1,
+      3,
+      0,
+      1
+    ],
+    "control_zero_supplement_positive": 13,
+    "control_positive_supplement_zero": 3,
+    "both_zero": 2,
+    "single_high_low": {
+      "delta": 23.180952380952384,
+      "incidence": 2.1910922410922424,
+      "positive_magnitude": 20.989860139860138,
+      "positive_share": 0.905478771541835
+    },
+    "available_C_single_high_low": {
+      "delta": 24.59166666666667,
+      "incidence": 4.849402680652679,
+      "positive_magnitude": 19.74226398601399
+    },
+    "complete_pop_equal_low_small_single": {
+      "delta": 11.24325396825397,
+      "incidence": -0.3858088953154839,
+      "positive_magnitude": 11.629062863569454
+    },
+    "source_equal_experimental_pop_small_single_delta": {
+      "AB": 6.8023809523809575,
+      "V": -0.4966666666666697,
+      "AL79": 19.47823129251701,
+      "VA73": 0.11666666666666892
+    }
+  },
+  "blueberry": {
+    "pollination": {
+      "set_rows": 2125,
+      "weight_rows": 747,
+      "matched": 611,
+      "weight_only": 136,
+      "matched_FS_conflicts": 0,
+      "positive_mass_FS0": 10,
+      "FS1": 1209,
+      "FS1_positive_mass": 617
+    },
+    "visits": {
+      "set_rows": 2080,
+      "weight_rows": 738,
+      "matched": 602,
+      "weight_only": 136,
+      "matched_FS_conflicts": 0,
+      "positive_mass_FS0": 7,
+      "FS1": 992,
+      "FS1_positive_mass": 595
+    },
+    "cross_minus_self_site_year": [
+      {
+        "cultivar": "Blue Rose",
+        "n": 1,
+        "rd": 0.03,
+        "mass_n": 1,
+        "mass_delta": 0.5408265765765761
+      },
+      {
+        "cultivar": "Powder Blue",
+        "n": 4,
+        "rd": 0.28694547702699874,
+        "mass_n": 2,
+        "mass_delta": 0.6158569444444444
+      },
+      {
+        "cultivar": "Snowchaser",
+        "n": 2,
+        "rd": 0.04158617031960038,
+        "mass_n": 2,
+        "mass_delta": 0.4443152784715284
+      }
+    ],
+    "one_visit_minus_zero_site_year": [
+      {
+        "cultivar": "Blue Rose",
+        "n": 2,
+        "rd": 0.3680555555555556
+      },
+      {
+        "cultivar": "Powder Blue",
+        "n": 3,
+        "rd": 0.045652173913043485
+      },
+      {
+        "cultivar": "Snowchaser",
+        "n": 3,
+        "rd": 0.32416536254564426
+      }
+    ],
+    "two_three_minus_one_visit_site_year": [
+      {
+        "cultivar": "Blue Rose",
+        "n": 2,
+        "rd": 0.022321428571428548,
+        "mass_n": 2,
+        "mass_delta": 0.23596855781564957
+      },
+      {
+        "cultivar": "Powder Blue",
+        "n": 3,
+        "rd": 0.0011745842344693714,
+        "mass_n": 0
+      },
+      {
+        "cultivar": "Snowchaser",
+        "n": 4,
+        "rd": 0.20787815126050418,
+        "mass_n": 3,
+        "mass_delta": 0.17674093384920633
+      }
+    ]
+  },
+  "limits": [
+    "Campanula zero = treated flower, not plant, autonomy class confounded with 2 source populations each; mean contrast driven in low class mainly by AL79.",
+    "Blueberry observed fruit set at one month, ripe weights later, incomplete overlap and missingness; no unbiased unconditional mass or causal component. No zero imputation.",
+    "Shared flowers/plant/site-year, no independent flower-level p-values or pooling. Published studies already report mating-system dependency."
+  ]
+}
