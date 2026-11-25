@@ -1,0 +1,187 @@
+{
+  "status": "executed locally on original source-pinned data; exploratory; no density-response identification",
+  "artifact": {
+    "id": 14911201555,
+    "sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c"
+  },
+  "source": "10.1371/journal.pone.0168128",
+  "n_tanks": 95,
+  "n_seeds_per_tank": 10,
+  "groups": [
+    {
+      "species": "Carcinus maenas",
+      "depth": 0,
+      "n": 15,
+      "p_loss": 0.56,
+      "p_all": 0.4666666666666667,
+      "p_all_independent": 0.0030330548909611446,
+      "seed_pair_excess": 0.1797333333333334,
+      "moment_rho": 0.7294372294372298
+    },
+    {
+      "species": "Carcinus maenas",
+      "depth": 1,
+      "n": 10,
+      "p_loss": 0.2,
+      "p_all": 0.1,
+      "p_all_independent": 1.0240000000000006e-7,
+      "seed_pair_excess": 0.12444444444444444,
+      "moment_rho": 0.7777777777777776
+    },
+    {
+      "species": "Carcinus maenas",
+      "depth": 2,
+      "n": 10,
+      "p_loss": 0,
+      "p_all": 0,
+      "p_all_independent": 0,
+      "seed_pair_excess": 0,
+      "moment_rho": 0
+    },
+    {
+      "species": "Pagurus bernhardus",
+      "depth": 0,
+      "n": 10,
+      "p_loss": 0.21,
+      "p_all": 0,
+      "p_all_independent": 1.6679880978200994e-7,
+      "seed_pair_excess": 0.0359,
+      "moment_rho": 0.21639541892706435
+    },
+    {
+      "species": "Pagurus bernhardus",
+      "depth": 1,
+      "n": 10,
+      "p_loss": 0.03,
+      "p_all": 0,
+      "p_all_independent": 5.904899999999998e-16,
+      "seed_pair_excess": 0.0013222222222222222,
+      "moment_rho": 0.04543718976708668
+    },
+    {
+      "species": "Pagurus bernhardus",
+      "depth": 2,
+      "n": 10,
+      "p_loss": 0,
+      "p_all": 0,
+      "p_all_independent": 0,
+      "seed_pair_excess": 0,
+      "moment_rho": 0
+    },
+    {
+      "species": "Strongylocentrotus droebachiensis",
+      "depth": 0,
+      "n": 10,
+      "p_loss": 0.14,
+      "p_all": 0,
+      "p_all_independent": 2.8925465497600027e-9,
+      "seed_pair_excess": 0.027066666666666673,
+      "moment_rho": 0.2248062015503877
+    },
+    {
+      "species": "Strongylocentrotus droebachiensis",
+      "depth": 1,
+      "n": 10,
+      "p_loss": 0,
+      "p_all": 0,
+      "p_all_independent": 0,
+      "seed_pair_excess": 0,
+      "moment_rho": 0
+    },
+    {
+      "species": "Strongylocentrotus droebachiensis",
+      "depth": 2,
+      "n": 10,
+      "p_loss": 0,
+      "p_all": 0,
+      "p_all_independent": 0,
+      "seed_pair_excess": 0,
+      "moment_rho": 0
+    }
+  ],
+  "surface_crab_counts": [
+    3,
+    1,
+    2,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    7
+  ],
+  "surface_crab_full_loss_excess_ci": [
+    0.19999087850574787,
+    0.6425706175025871
+  ],
+  "surface_crab_seed_pair_excess_ci": [
+    0.1047688888888887,
+    0.2188444444444445
+  ],
+  "loo_surface": {
+    "n": 35,
+    "binomial_nll": 4.1005617472720255,
+    "beta_binomial_nll": 1.9361507060765393,
+    "improved": 27,
+    "full_loss_brier_binomial": 0.19932807625634535,
+    "full_loss_brier_beta_binomial": 0.12779565494604953
+  },
+  "loo_by_species_surface": [
+    [
+      "Carcinus maenas",
+      6.029932442057808,
+      1.968462062688065,
+      13,
+      15
+    ],
+    [
+      "Pagurus bernhardus",
+      2.830552846518723,
+      2.0628703826202845,
+      7,
+      10
+    ],
+    [
+      "Strongylocentrotus droebachiensis",
+      2.476514605846652,
+      1.7609639946155067,
+      7,
+      10
+    ]
+  ],
+  "loo_surface_1cm": {
+    "n": 65,
+    "binomial_nll": 3.1741199456481337,
+    "beta_binomial_nll": 1.4301553613998317
+  },
+  "published_carroll": {
+    "doi": "10.1111/1365-2745.13154",
+    "duration_days": 5,
+    "rows": [
+      {
+        "species": "Dyspanopeus sayi",
+        "n": 18,
+        "full": 5,
+        "positive": 13,
+        "p_max": 0.6777777777777778,
+        "independent_full_upper": 0.02045847490479475
+      },
+      {
+        "species": "Pagurus longicarpus",
+        "n": 20,
+        "full": 3,
+        "positive": 4,
+        "p_max": 0.195,
+        "independent_full_upper": 7.949615317569926e-8
+      }
+    ],
+    "status": "bounds computed from published counts; no raw data"
+  },
+  "limits": [
+    "No independent spatial or future validation; individual predator heterogeneity can explain within-tank clustering.",
+    "No equal-total allocation or density treatment. No inference that aggregation causes capture or satiation.",
+    "No extrapolation from 10-seed tank to 20- or 200-seed field patches."
+  ]
+}
