@@ -1,0 +1,127 @@
+{
+  "status": "local Python executed on visually verified published Table 2 counts; no raw plot data",
+  "source": {
+    "doi": "10.18960/hozen.1803",
+    "artifact": 14994983552,
+    "run": 45556211243,
+    "archive_sha256": "c681e07eb99683de959e71a21151f5ff3aef8ac747a49146561b37c5f5ac880c",
+    "pdf_sha256": "560d13be5a57fafeae1bbd5ad09b7bc7bf4c65df3751f08fe9579b9fe2758c8f",
+    "table": "2, p.183"
+  },
+  "years": [
+    {
+      "year": 2014,
+      "male": 65,
+      "female": 123,
+      "day3": 53,
+      "day60": 23,
+      "dehiscent": 23
+    },
+    {
+      "year": 2015,
+      "male": 514,
+      "female": 671,
+      "day3": 355,
+      "day60": 55,
+      "dehiscent": 50
+    }
+  ],
+  "months": [
+    {
+      "month": "Jun",
+      "female": 60,
+      "day3": 40,
+      "day60": 22,
+      "dehiscent": 21,
+      "early": 0.6666666666666666,
+      "final": 0.35
+    },
+    {
+      "month": "Jul",
+      "female": 384,
+      "day3": 230,
+      "day60": 39,
+      "dehiscent": 37,
+      "early": 0.5989583333333334,
+      "final": 0.09635416666666667
+    },
+    {
+      "month": "Aug",
+      "female": 148,
+      "day3": 91,
+      "day60": 14,
+      "dehiscent": 13,
+      "early": 0.6148648648648649,
+      "final": 0.08783783783783784
+    },
+    {
+      "month": "Sep",
+      "female": 112,
+      "day3": 47,
+      "day60": 3,
+      "dehiscent": 2,
+      "early": 0.41964285714285715,
+      "final": 0.017857142857142856
+    },
+    {
+      "month": "Oct–Nov",
+      "female": 90,
+      "day3": 0,
+      "day60": 0,
+      "dehiscent": 0,
+      "early": 0,
+      "final": 0
+    }
+  ],
+  "all": {
+    "female": 794,
+    "day3": 408,
+    "day60": 78,
+    "dehiscent": 73,
+    "actual_day3": 0.5138539042821159,
+    "actual_final": 0.09193954659949623,
+    "actual_post_day3": 0.17892156862745098
+  },
+  "shapley_accounting": {
+    "seasonal_composition": -0.004850108880751915,
+    "day3_retention": 0.09669880525823588,
+    "post_day3_dehiscence": -0.20432491801004304,
+    "total": -0.11247622163255909
+  },
+  "mixed_2015_weights_2014_stages": 0.16109635197304478,
+  "mixed_2014_weights_2015_stages": 0.09205311892372661,
+  "malaysia": {
+    "doi": "10.3389/fcosc.2025.1646399",
+    "html_sha256": "d83d8e78aa68eb61d308c40799f5774aae580b175b2d5cfb9dbfaeaea30aa1fa",
+    "status": "article HTML acquired; no supplementary workbooks acquired",
+    "public_supplement_metadata": [
+      "Table 1.xlsx",
+      "Table 2.xlsx",
+      "Table 3.xlsx",
+      "Table 4.xlsx"
+    ],
+    "pilot_reported": {
+      "nursery_seedling_survival_four_month_pct": [
+        44.4,
+        63
+      ],
+      "vegetative_shoot_survival_less_than_pct": 22.2,
+      "direct_seed_persist_beyond_month1": false
+    },
+    "reported_large_program": {
+      "transplanted": 8591,
+      "area_plots": 324,
+      "MA_n": 6934,
+      "MB_n": 1657,
+      "MA_survival_pct": 63.39,
+      "MB_survival_pct": 66.07
+    },
+    "limits": "Pilot allocation/denominators not recovered; later replacement allowed, cannot interpret percentages as closed-cohort survival. Harvested fruits not field production."
+  },
+  "limits": [
+    "No inferential p-values or animal effect; two years, pooled plot counts, descriptive seasonal standardization",
+    "Day3 residual flowers proxy pollination; no direct fertilization",
+    "Autumn post-day3 rate undefined; irrelevant to all combinations because zero early rate in both years",
+    "Table counts disagree slightly with published percentages; retain counts and record"
+  ]
+}
