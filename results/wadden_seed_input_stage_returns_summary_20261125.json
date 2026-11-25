@@ -1,0 +1,140 @@
+{
+  "status": "executed local original-data analysis; repository core equivalent not independently CI-replayed",
+  "artifact": {
+    "id": 14938615379,
+    "sha256": "ad0097d3e14373bf0cb7babef0dd4aa26678d6bb97c7e5d94af5f7e534bc05e1"
+  },
+  "sources": {
+    "10.34894/FHEZIR": "03c3f9b7bc168b129f1eb9af1432c529e864fb980fe1e7d2f4a5599540fb332a",
+    "10.34894/ZY6U9J": "12b94190b42f68188ca2639f36a8d0fa367e0d3fb7610ccf322115cf8868cfd5",
+    "10.34894/FKSY2M": "8677af34cdc98b0ccde8b9e257a9acd9a670389f84bcd65c82d36146b19d0643"
+  },
+  "uithuizen2017": {
+    "n": 24,
+    "blocks": 6,
+    "label_conflicts": 24,
+    "max_implied_nominal_error": 4.405364961712621e-11,
+    "raw_label_density_low_high": [
+      0.8625,
+      0.29
+    ],
+    "inferred_dose_40_400_density": [
+      0.29,
+      0.8625
+    ],
+    "inferred_plants_per1000": [
+      7.25,
+      2.15625
+    ],
+    "efficiency_RD": -5.09375,
+    "conditional_ci": [
+      -6.945833333333333,
+      -3.4583333333333335
+    ],
+    "negative_blocks": 6,
+    "exact_sign_flip": 0.03125,
+    "warning": "No confirmed repair; derived loss implies reversed labels; published means do not match raw simple means exactly."
+  },
+  "noltei": {
+    "n_plots": 36,
+    "n_blocks": 6,
+    "early_low_high": {
+      "june_patches": [
+        3.75,
+        6.75
+      ],
+      "june_patches_per1000": [
+        46.875,
+        21.09375
+      ],
+      "aug22_area": [
+        2.12975,
+        3.5230833333333336
+      ],
+      "aug22_area_per1000": [
+        26.621875,
+        11.009635416666667
+      ]
+    },
+    "complete_blocks": {
+      "n": 4,
+      "aug22_area": [
+        2.38775,
+        3.66325
+      ],
+      "aug23_area": [
+        1.944,
+        1.72525
+      ],
+      "high_minus_low_change": -1.49425,
+      "by_block": [
+        -0.798,
+        -2.054,
+        -2.4395,
+        -0.6855
+      ],
+      "ci": [
+        -2.24675,
+        -0.74175
+      ],
+      "p_exact_sign_flip": 0.125
+    },
+    "observed_pairs": {
+      "n": 32,
+      "mean22": 2.7736875,
+      "mean23": 1.897125,
+      "decreased": 20,
+      "increased": 11,
+      "unchanged": 1,
+      "positive22_persist_positive23": 31,
+      "positive22_observed": 31
+    },
+    "missing_ids": [
+      5,
+      6,
+      11,
+      12
+    ],
+    "missing_high_mean_needed_to_equal_low": 0.758,
+    "missing_high_mean_needed_to_restore_initial_full_advantage": 9.118,
+    "missing_mean_needed_for_total_area_no_decline": 9.7685,
+    "cv_alpha1_MSE_sqrt_area": {
+      "mean": 0.2800620261435742,
+      "design": 0.3221117700399519,
+      "June": 0.29570845257875705,
+      "August22": 0.27868736046047526,
+      "design_August22": 0.30715206891556635,
+      "June_August22": 0.2953095209940607
+    },
+    "spearman_June_Aug22": 0.7847702569686069,
+    "spearman_Aug22_Aug23": 0.1785190615835777
+  },
+  "marina2020_21": {
+    "blocks": 3,
+    "first_generation_density_low_high": [
+      5.25,
+      22.75
+    ],
+    "second_generation_density_low_high": [
+      5.722222222222221,
+      10.38888888888889
+    ],
+    "first_generation_ratio": 4.333333333333333,
+    "second_generation_ratio": 1.8155339805825246,
+    "first_per_initial_injection": [
+      0.525,
+      0.455
+    ],
+    "second_per_initial_injection": [
+      0.5722222222222223,
+      0.2077777777777778
+    ]
+  },
+  "limits": [
+    "No new independent site or animal manipulation, no identified mechanism of diminishing returns.",
+    "2017 labels unresolved; source data preserved.",
+    "2023 missingness affects treatment comparison; no zero imputation.",
+    "Different treatments and endpoints; no pooled cross-species effect.",
+    "Complete block bootstrap conditional on few blocks; exact sign flips rely on symmetry, not exact experimental randomization."
+  ]
+}
