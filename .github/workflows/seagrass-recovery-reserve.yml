@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'analysis/173_donaher_recovery_timing.py'
+      - 'analysis/175_donaher_recovery_history_cv.py'
       - 'analysis/174_reserve_recovery_source_gate.py'
       - '.github/workflows/seagrass-recovery-reserve.yml'
   workflow_dispatch:
@@ -16,8 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: python -m pip install --only-binary=:all: numpy==2.2.6 pandas==2.2.3 openpyxl==3.1.5
+          python-version: '3.13'
+      - run: python -m pip install --only-binary=:all: numpy==2.3.5 pandas==2.2.3 scikit-learn==1.8.0 scipy==1.17.0 openpyxl==3.1.5
       - run: |
           python - <<'PY'
           import importlib.util
@@ -39,6 +40,26 @@ jobs:
           assert x["same_plot_april_minus_june_spring"]["D"]["observed"]==4
           assert math.isclose(x["same_plot_gap_difference_CD_minus_D"],-18.1,abs_tol=1e-10)
           assert x["biomass_source_audit"]["duplicate_context_rows_beyond_first"]==86
+          PY
+      - name: Verify plot holdout history diagnostic
+        run: |
+          python analysis/175_donaher_recovery_history_cv.py > out/recovery_history.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/recovery_history.json"));p=x["panels"]
+          assert x["elevation_conflict_plot_ids_outside_analysis"]==[15]
+          assert p["source_labels"]["matched_color_records"]==42
+          assert p["source_labels"]["plot_months"]==36
+          assert p["color_label_agreement_sensitivity"]["plot_months"]==35
+          for a in p.values():
+              assert a["plots"]==16
+              for r in a["cv"].values():
+                  assert r["state_month"]["rmse"]<r["state"]["rmse"]
+                  assert r["state_history"]["rmse"]<r["state"]["rmse"]
+                  assert r["state_clam"]["rmse"]>r["state"]["rmse"]
+          r=p["source_labels"]["cv"]["1.0"]
+          for k,t in {"state":21.811402,"state_month":18.652393,"state_clam":22.309200,"state_history":18.981178}.items():
+              assert math.isclose(r[k]["rmse"],t,abs_tol=1e-6)
           PY
       - uses: actions/upload-artifact@v4
         with:
