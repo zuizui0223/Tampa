@@ -1,0 +1,20 @@
+name: Marine reproductive stage sources
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths: ['analysis/179b_marine_reproduction_sources.py', '.github/workflows/marine-reproduction-stage-sources.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/179b_marine_reproduction_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: marine-reproduction-stage-sources
+          path: marine_reproduction_sources/

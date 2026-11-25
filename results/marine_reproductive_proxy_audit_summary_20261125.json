@@ -1,0 +1,150 @@
+{
+  "status": "published aggregate recalculation executed locally; no raw data fit",
+  "buckel": {
+    "doi": "10.3354/meps09576",
+    "sites": [
+      {
+        "site": "COP",
+        "male": 0.03,
+        "female": 1.9,
+        "total": 1.93,
+        "males_per_female": 0.015789473684210527,
+        "male_fraction": 0.015544041450777202,
+        "common_garden_collected": 6,
+        "extreme_male_rarity": true,
+        "in_reported_germination_comparison": false
+      },
+      {
+        "site": "DEV",
+        "male": 0.36,
+        "female": 7.65,
+        "total": 8.01,
+        "males_per_female": 0.047058823529411764,
+        "male_fraction": 0.0449438202247191,
+        "common_garden_collected": 100,
+        "extreme_male_rarity": false,
+        "in_reported_germination_comparison": true
+      },
+      {
+        "site": "HD",
+        "male": 0.97,
+        "female": 1.62,
+        "total": 2.59,
+        "males_per_female": 0.5987654320987654,
+        "male_fraction": 0.37451737451737455,
+        "common_garden_collected": 100,
+        "extreme_male_rarity": false,
+        "in_reported_germination_comparison": true
+      },
+      {
+        "site": "MM",
+        "male": 15.8,
+        "female": 16.3,
+        "total": 32.1,
+        "males_per_female": 0.9693251533742331,
+        "male_fraction": 0.49221183800623053,
+        "common_garden_collected": 136,
+        "extreme_male_rarity": false,
+        "in_reported_germination_comparison": true
+      },
+      {
+        "site": "LP",
+        "male": 8.58,
+        "female": 12.6,
+        "total": 21.18,
+        "males_per_female": 0.680952380952381,
+        "male_fraction": 0.40509915014164305,
+        "common_garden_collected": 78,
+        "extreme_male_rarity": false,
+        "in_reported_germination_comparison": true
+      },
+      {
+        "site": "TC",
+        "male": 15.2,
+        "female": 18.4,
+        "total": 33.599999999999994,
+        "males_per_female": 0.8260869565217391,
+        "male_fraction": 0.45238095238095244,
+        "common_garden_collected": 106,
+        "extreme_male_rarity": false,
+        "in_reported_germination_comparison": true
+      },
+      {
+        "site": "CB",
+        "male": 0,
+        "female": 6.37,
+        "total": 6.37,
+        "males_per_female": 0,
+        "male_fraction": 0,
+        "common_garden_collected": 2,
+        "extreme_male_rarity": true,
+        "in_reported_germination_comparison": false
+      }
+    ],
+    "CB_vs_HD_total_ratio": 2.4594594594594597,
+    "DEV_vs_HD_total_ratio": 3.092664092664093,
+    "DEV_vs_HD_males_per_female_ratio": 0.07859308671922377,
+    "germination_n_reported": 520,
+    "all_site_collected": 528,
+    "comparison_sites": 5,
+    "source_sites": 7,
+    "extreme_male_rarity_sites_omitted": 2
+  },
+  "stubler": {
+    "doi": "10.1007/s12237-016-0165-2",
+    "n_patches": 58,
+    "patches": [
+      {
+        "nominal_area_m2": 2.5,
+        "viable_m2": 57,
+        "nonviable_m2": 14,
+        "ratio_of_means_viable_fraction": 0.8028169014084507,
+        "nominal_total_viable": 142.5,
+        "flowering_shoots_m2_2012": 9.6,
+        "viable_per_reproductive_shoot_2012": 2.3
+      },
+      {
+        "nominal_area_m2": 5,
+        "viable_m2": 16,
+        "nonviable_m2": 6,
+        "ratio_of_means_viable_fraction": 0.7272727272727273,
+        "nominal_total_viable": 80,
+        "flowering_shoots_m2_2012": 3.7,
+        "viable_per_reproductive_shoot_2012": 2.7
+      },
+      {
+        "nominal_area_m2": 10,
+        "viable_m2": 34,
+        "nonviable_m2": 13,
+        "ratio_of_means_viable_fraction": 0.723404255319149,
+        "nominal_total_viable": 340,
+        "flowering_shoots_m2_2012": 5.7,
+        "viable_per_reproductive_shoot_2012": 3.7
+      },
+      {
+        "nominal_area_m2": 20,
+        "viable_m2": 20,
+        "nonviable_m2": 6,
+        "ratio_of_means_viable_fraction": 0.7692307692307693,
+        "nominal_total_viable": 400,
+        "flowering_shoots_m2_2012": 7.4,
+        "viable_per_reproductive_shoot_2012": 3.1
+      }
+    ],
+    "smallest_vs_largest_viable_density_ratio": 2.85,
+    "largest_vs_smallest_nominal_total_ratio": 2.807017543859649
+  },
+  "jahnke": {
+    "doi": "10.1111/1365-2745.12470",
+    "flowers_m2": [
+      97,
+      5
+    ],
+    "ratio": 19.4,
+    "shoot_density_difference_p_reported": 0.3
+  },
+  "limits": [
+    "published means; nominal patch totals illustrative; no animal intervention, no meta-analysis",
+    "germination comparison conditional on mature seed sampling; no missing values imputed"
+  ]
+}
