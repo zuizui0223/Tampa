@@ -1,0 +1,155 @@
+{
+  "status": "local original-workbook computation; compact rounded summary; no equal-total experimental contrast or causal biotic mechanism",
+  "source": {
+    "doi": "10.34894/FKSY2M",
+    "paper": "10.1111/1365-2664.14405",
+    "archive_id": 14938615379,
+    "archive_sha256": "ad0097d3e14373bf0cb7babef0dd4aa26678d6bb97c7e5d94af5f7e534bc05e1",
+    "workbook_sha256": "8677af34cdc98b0ccde8b9e257a9acd9a670389f84bcd65c82d36146b19d0643"
+  },
+  "audit": {
+    "plots": 18,
+    "blocks": 3,
+    "density_rows": 144,
+    "plants": 90,
+    "equal_total_injections": false
+  },
+  "all": {
+    "high_low_geometric": {
+      "G1": 4.1823,
+      "G2": 2.1063,
+      "spathes": 0.8327,
+      "spathes_proxy": 3.4826,
+      "conversion": 0.6048,
+      "renewal": 0.5036,
+      "G2_per_inj": 0.4213
+    },
+    "elasticity": [
+      0.889044629236549,
+      0.46285371525378977
+    ],
+    "conversion_negative_pairs": 8,
+    "conversion_pairs": 9,
+    "renewal_sign_flip_p": 0.25,
+    "conversion_sign_flip_p": 0.5
+  },
+  "by_area": [
+    {
+      "area": 4,
+      "G1": 3.7357,
+      "G2": 2.8603,
+      "spathes": 0.6351,
+      "spathes_proxy": 2.3725,
+      "conversion": 1.2056,
+      "conversion_negative_pairs": 2
+    },
+    {
+      "area": 40,
+      "G1": 4.8658,
+      "G2": 1.7031,
+      "spathes": 0.9244,
+      "spathes_proxy": 4.4981,
+      "conversion": 0.3786,
+      "conversion_negative_pairs": 3
+    },
+    {
+      "area": 400,
+      "G1": 4.0245,
+      "G2": 1.9183,
+      "spathes": 0.9834,
+      "spathes_proxy": 3.9579,
+      "conversion": 0.4847,
+      "conversion_negative_pairs": 3
+    }
+  ],
+  "areas40_400": {
+    "pairs": 6,
+    "blocks": 3,
+    "G1": 4.4252,
+    "G2": 1.8075,
+    "spathes": 0.9535,
+    "spathes_proxy": 4.2194,
+    "conversion": 0.4284,
+    "conversion_conditional_block_bootstrap95": [
+      0.3982,
+      0.4529
+    ],
+    "conversion_negative_pairs": 6,
+    "conversion_sign_flip_p_block": 0.25,
+    "elasticity": [
+      0.9241233248812771,
+      0.3677964011908424
+    ]
+  },
+  "fixed_budget_scenario": {
+    "injections": 20000,
+    "designs": [
+      {
+        "area": 4,
+        "dose": 10,
+        "plots": 500,
+        "total_area": 2000,
+        "G2_density": 2.8333333333333335,
+        "G2_total": 5666.666666666667
+      },
+      {
+        "area": 4,
+        "dose": 50,
+        "plots": 100,
+        "total_area": 400,
+        "G2_density": 4.916666666666667,
+        "G2_total": 1966.666666666667
+      },
+      {
+        "area": 40,
+        "dose": 10,
+        "plots": 50,
+        "total_area": 2000,
+        "G2_density": 4.916666666666667,
+        "G2_total": 9833.333333333334
+      },
+      {
+        "area": 40,
+        "dose": 50,
+        "plots": 10,
+        "total_area": 400,
+        "G2_density": 8.166666666666668,
+        "G2_total": 3266.6666666666665
+      },
+      {
+        "area": 400,
+        "dose": 10,
+        "plots": 5,
+        "total_area": 2000,
+        "G2_density": 9.416666666666666,
+        "G2_total": 18833.333333333332
+      },
+      {
+        "area": 400,
+        "dose": 50,
+        "plots": 1,
+        "total_area": 400,
+        "G2_density": 18.083333333333332,
+        "G2_total": 7233.333333333332
+      }
+    ],
+    "assumptions": "Linear scaling of mean observed density over independently replicated plots; no cross-plot interactions; not a fixed-budget trial."
+  },
+  "new_literature": [
+    {
+      "doi": "10.3354/meps250071",
+      "status": "published aggregate, original plot data not acquired",
+      "findings": "Density test nonsignificant 1999 p=.214, 2000 p=.958 text (.959 Table 3); early broadcast establishment, context differs; 1999 excludes low dose contaminated by external seed input. PDF text reviewed, screenshot unavailable."
+    },
+    {
+      "doi": "10.1016/j.ecoleng.2026.108000",
+      "status": "published abstract and section snippets, no raw data located",
+      "findings": "Highest seeding density promotes emergence, intermediate 100 seeds per 0.25 m2 maximizes later transition and potential seed production, ~1.5x highest dose; shallow-site all seedlings failed post-emergence."
+    }
+  ],
+  "limits": [
+    "Proxy measured at different dates from G1; density of G2 per proxy is not actual seed survival or seed-set efficiency.",
+    "No equal total sowing design and no predation measurement; no causal comparison of spatial concentration alone.",
+    "Small number of independent blocks, descriptive, no pooling across studies."
+  ]
+}
