@@ -1,0 +1,314 @@
+{
+  "status": "published figure transcription, executed visual and pixel cross-check (all 60 cells agree); not raw data",
+  "doi": "10.1038/ncomms12980",
+  "artifact_id": 14985411249,
+  "run_id": 45531042729,
+  "archive_sha256": "fbc015db8390a554621eba991dace725083ddea5baab9c86be20c916e83f445f",
+  "pdf_sha256": "009f7f76fa6ee20e2f6974446bdce06de38d656c2d26c4bfc1d651c5d35ae645",
+  "xml_sha256": "b77b3fc79aa6f92a4afb5e64dc17fd183a6cd2dfa04b9734b9c9297f31ec8ff3",
+  "figure": "6, printed p.4, PDF page 5",
+  "legend": {
+    "0": "zero tubes",
+    "1": "positive <10",
+    "2": "10–99",
+    "3": ">=100",
+    "-1": "no record"
+  },
+  "all": {
+    "control": {
+      "n_cells": 30,
+      "n_recorded": 27,
+      "n_no_record": 3,
+      "category_counts": [
+        22,
+        5,
+        0,
+        0
+      ],
+      "positive": 5,
+      "positive_fraction": 0.18518518518518517,
+      "at_least10": 0,
+      "at_least100": 0
+    },
+    "fauna": {
+      "n_cells": 30,
+      "n_recorded": 27,
+      "n_no_record": 3,
+      "category_counts": [
+        2,
+        3,
+        14,
+        8
+      ],
+      "positive": 25,
+      "positive_fraction": 0.9259259259259259,
+      "at_least10": 22,
+      "at_least100": 8
+    },
+    "positive_RD": 0.7407407407407407,
+    "at_least10_RD": 0.8148148148148148
+  },
+  "by_distance": [
+    {
+      "distance_cm": 15,
+      "control": {
+        "n_cells": 5,
+        "n_recorded": 4,
+        "n_no_record": 1,
+        "category_counts": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "positive": 0,
+        "positive_fraction": 0,
+        "at_least10": 0,
+        "at_least100": 0
+      },
+      "fauna": {
+        "n_cells": 5,
+        "n_recorded": 4,
+        "n_no_record": 1,
+        "category_counts": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "positive": 4,
+        "positive_fraction": 1,
+        "at_least10": 3,
+        "at_least100": 1
+      },
+      "positive_RD": 1,
+      "at_least10_RD": 0.75
+    },
+    {
+      "distance_cm": 30,
+      "control": {
+        "n_cells": 5,
+        "n_recorded": 5,
+        "n_no_record": 0,
+        "category_counts": [
+          4,
+          1,
+          0,
+          0
+        ],
+        "positive": 1,
+        "positive_fraction": 0.2,
+        "at_least10": 0,
+        "at_least100": 0
+      },
+      "fauna": {
+        "n_cells": 5,
+        "n_recorded": 5,
+        "n_no_record": 0,
+        "category_counts": [
+          0,
+          0,
+          4,
+          1
+        ],
+        "positive": 5,
+        "positive_fraction": 1,
+        "at_least10": 5,
+        "at_least100": 1
+      },
+      "positive_RD": 0.8,
+      "at_least10_RD": 1
+    },
+    {
+      "distance_cm": 45,
+      "control": {
+        "n_cells": 5,
+        "n_recorded": 4,
+        "n_no_record": 1,
+        "category_counts": [
+          3,
+          1,
+          0,
+          0
+        ],
+        "positive": 1,
+        "positive_fraction": 0.25,
+        "at_least10": 0,
+        "at_least100": 0
+      },
+      "fauna": {
+        "n_cells": 5,
+        "n_recorded": 4,
+        "n_no_record": 1,
+        "category_counts": [
+          0,
+          1,
+          1,
+          2
+        ],
+        "positive": 4,
+        "positive_fraction": 1,
+        "at_least10": 3,
+        "at_least100": 2
+      },
+      "positive_RD": 0.75,
+      "at_least10_RD": 0.75
+    },
+    {
+      "distance_cm": 60,
+      "control": {
+        "n_cells": 5,
+        "n_recorded": 4,
+        "n_no_record": 1,
+        "category_counts": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "positive": 0,
+        "positive_fraction": 0,
+        "at_least10": 0,
+        "at_least100": 0
+      },
+      "fauna": {
+        "n_cells": 5,
+        "n_recorded": 4,
+        "n_no_record": 1,
+        "category_counts": [
+          1,
+          1,
+          2,
+          0
+        ],
+        "positive": 3,
+        "positive_fraction": 0.75,
+        "at_least10": 2,
+        "at_least100": 0
+      },
+      "positive_RD": 0.75,
+      "at_least10_RD": 0.5
+    },
+    {
+      "distance_cm": 90,
+      "control": {
+        "n_cells": 5,
+        "n_recorded": 5,
+        "n_no_record": 0,
+        "category_counts": [
+          3,
+          2,
+          0,
+          0
+        ],
+        "positive": 2,
+        "positive_fraction": 0.4,
+        "at_least10": 0,
+        "at_least100": 0
+      },
+      "fauna": {
+        "n_cells": 5,
+        "n_recorded": 5,
+        "n_no_record": 0,
+        "category_counts": [
+          0,
+          0,
+          4,
+          1
+        ],
+        "positive": 5,
+        "positive_fraction": 1,
+        "at_least10": 5,
+        "at_least100": 1
+      },
+      "positive_RD": 0.6,
+      "at_least10_RD": 1
+    },
+    {
+      "distance_cm": 150,
+      "control": {
+        "n_cells": 5,
+        "n_recorded": 5,
+        "n_no_record": 0,
+        "category_counts": [
+          4,
+          1,
+          0,
+          0
+        ],
+        "positive": 1,
+        "positive_fraction": 0.2,
+        "at_least10": 0,
+        "at_least100": 0
+      },
+      "fauna": {
+        "n_cells": 5,
+        "n_recorded": 5,
+        "n_no_record": 0,
+        "category_counts": [
+          1,
+          0,
+          1,
+          3
+        ],
+        "positive": 4,
+        "positive_fraction": 0.8,
+        "at_least10": 4,
+        "at_least100": 3
+      },
+      "positive_RD": 0.6000000000000001,
+      "at_least10_RD": 0.8
+    }
+  ],
+  "far_90_150": {
+    "control": {
+      "n_cells": 10,
+      "n_recorded": 10,
+      "n_no_record": 0,
+      "category_counts": [
+        7,
+        3,
+        0,
+        0
+      ],
+      "positive": 3,
+      "positive_fraction": 0.3,
+      "at_least10": 0,
+      "at_least100": 0
+    },
+    "fauna": {
+      "n_cells": 10,
+      "n_recorded": 10,
+      "n_no_record": 0,
+      "category_counts": [
+        1,
+        0,
+        5,
+        4
+      ],
+      "positive": 9,
+      "positive_fraction": 0.9,
+      "at_least10": 9,
+      "at_least100": 4
+    },
+    "positive_RD": 0.6000000000000001,
+    "at_least10_RD": 0.9
+  },
+  "hypothetical_binary_completion_RD_bounds": [
+    0.5666666666666667,
+    0.7666666666666667
+  ],
+  "pearson_diagnostic": {
+    "displayed_categories_control_fauna": 39.16666666666667,
+    "displayed_distance_fauna": 14.536607142857143,
+    "published_treatment_chi_square": 38.75,
+    "published_distance_chi_square": 10.465,
+    "note": "Not exactly reproduced; no inferential p-values from figure."
+  },
+  "limits": [
+    "Four physical mesocosms and two females per tank; tank-night membership unavailable.",
+    "No water-flow in either arm, no factorial flow manipulation in tube endpoint.",
+    "No actual fruit or seed set and no exact counts for ordinal categories.",
+    "Supplements timed out, PDF and XML acquired and verified."
+  ]
+}
