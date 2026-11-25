@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'analysis/161_lucinid_paired_endpoint_pilot.py'
+      - 'analysis/172_seagrass_structural_state_diagnostic.py'
       - 'analysis/160_paired_stage_mutualism_source_gate.py'
       - '.github/workflows/lucinid-paired-endpoint-pilot.yml'
   workflow_dispatch:
@@ -26,6 +27,7 @@ jobs:
           assert m.zenodo()["status"]=="ACQUIRED_SCHEMA_UNVERIFIED"
           assert m.dryad("lucinid_2020","10.5061/dryad.jm63xsj6n")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
           assert m.dans()["status"]=="ACQUIRED_SCHEMA_UNVERIFIED"
+          assert m.dryad("donaher_2021","10.5061/dryad.9cnp5hqh7")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
           PY
           mkdir -p out
           python analysis/161_lucinid_paired_endpoint_pilot.py > out/lucinid_paired_endpoint_pilot.json
@@ -41,6 +43,24 @@ jobs:
           assert all(a>0 and b<0 for a,b in y["leave_one_block_out_log_ratios"])
           check(x["2022"]["contrasts"]["no|yes"]["equal_tank_mean_log_ratios"],[2.786986,.740867])
           check(x["2022"]["contrasts"]["yes|yes"]["equal_tank_mean_log_ratios"],[2.670855,.342902])
+          PY
+      - name: Verify structural state diagnostics
+        run: |
+          python analysis/172_seagrass_structural_state_diagnostic.py > out/structural_state.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/structural_state.json"))
+          f=x["field_2020"]; l=x["laboratory_2012"]; d=x["donaher_source_audit"]
+          assert f["plots"]==24 and f["blocks"]==6 and l["host_columns"]==20
+          a=f["contrasts"]["clam_addition"]["endpoints"]; b=f["contrasts"]["organic_matter"]["endpoints"]
+          for r,k,target in [(a,"shoots",1.180648458),(a,"below_per_shoot",.780108394),(b,"rhizome",.709677617),(b,"rhizome_per_shoot",.792784782)]:
+              assert math.isclose(r[k]["ratio"],target,abs_tol=1e-8)
+          assert a["below_per_shoot"]["negative_blocks"]==6
+          assert all(v["holm_11_p"]>=.05 for c in f["contrasts"].values() for v in c["endpoints"].values())
+          assert math.isclose(l["sulfide_effect_by_clam"]["Z"]["leaf"],.507887136,abs_tol=1e-8)
+          assert math.isclose(l["sulfide_effect_by_clam"]["ZL"]["below"],.948329197,abs_tol=1e-8)
+          assert d["duplicate_belowground_values_in_both_species_rows"]==80
+          assert d["by_2019_context"]["JULY|ZOSTERA"]["zero_density_positive_mass"]==5
           PY
       - uses: actions/upload-artifact@v4
         with:
