@@ -1,0 +1,50 @@
+name: Pollinator composition and behavior transfer
+on:
+  pull_request:
+    paths:
+      - 'analysis/166_cross_system_stage_source_gate.py'
+      - 'analysis/168_pollinator_composition_transfer.py'
+      - '.github/workflows/pollinator-composition-behavior.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install --only-binary=:all: numpy==2.3.5 pandas==2.2.3 scikit-learn==1.8.0 scipy==1.17.0 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/166_cross_system_stage_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.dryad("herbivory_pollinator","10.5061/dryad.xpnvx0kvp")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/168_pollinator_composition_transfer.py > out/pollinator_composition_transfer.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/pollinator_composition_transfer.json")); y=x["yield_2020"]; v=x["single_visit_2021"]
+          assert y["plants"]==92 and y["complete"]==91 and y["blocks"]==3
+          assert v["visits"]==1034 and v["fruits"]==181 and v["plants"]==74 and v["behavior_complete_visits"]==956
+          assert v["importance_missing_rows"]==12 and v["focal_exceeds_total_plants"]==4
+          for r in y["cv_log_yield"].values():
+              assert r["total_visits"]["rmse"]<r["composition"]["rmse"]<r["plant_context"]["rmse"]
+          for r in v["cv_behavior_complete"].values():
+              assert r["context_behavior"]["log_loss"]<r["taxon"]["log_loss"]<r["context"]["log_loss"]
+          for k,z in {"plant_context":.7704733860,"total_visits":.7406422957,"composition":.7630549800}.items():
+              assert math.isclose(y["cv_log_yield"]["1"][k]["rmse"],z,abs_tol=1e-6)
+          r=v["cv_behavior_complete"]["1"]
+          assert sum(r["context_behavior"]["block_log_loss"][b]<val for b,val in r["context"]["block_log_loss"].items())==5
+          assert math.isclose(r["context_behavior"]["log_loss"],.44430,abs_tol=1e-5)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pollinator-composition-transfer
+          path: out/
+          if-no-files-found: error

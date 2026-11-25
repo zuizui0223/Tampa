@@ -1,0 +1,52 @@
+name: Pollination duration and ovule gate
+on:
+  pull_request:
+    paths:
+      - 'analysis/166_cross_system_stage_source_gate.py'
+      - 'analysis/171_pollination_duration_and_ovule_gate.py'
+      - '.github/workflows/pollination-duration-ovule.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --only-binary=:all: numpy==2.2.6 pandas==2.2.3 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/166_cross_system_stage_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          for name,doi in [("penstemon_2026","10.5061/dryad.xpnvx0kwt"),("clarkia_reproduction","10.5061/dryad.k3j9kd56r")]:
+              assert m.dryad(name,doi)["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/171_pollination_duration_and_ovule_gate.py > out/pollination_duration_ovule.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/pollination_duration_ovule.json"));p=x["penstemon"];c=x["clarkia"]
+          assert p["nonmonotone_spatial_count_rows"]==0
+          for day,counts in {"D1":[6,0,0],"D2":[17,14,0],"D3":[20,20,20]}.items():
+              assert [p["microscopy"][day][k]["n"]-p["microscopy"][day][k]["zero"] for k in ("Pollen","NTubesTop","NTubesBase")]==counts
+          assert p["pollen_2015_sheet_disagreements"]==[{"Plant ID":6,"Day":"D2","Pollen_mic":245,"Pollen_year":145}]
+          for k,d in {"pollen_all_years":[82.7466666667,-.09],"seed_all_years":[2.2466666667,.025],"pollen_shared_years":[50.02,-.06],"seed_shared_years":[-.505,.0875]}.items():
+              assert all(math.isclose(a,b,abs_tol=1e-9) for a,b in zip(p[k]["equal_year_difference"],d))
+          q=c["directly_counted_pairs"]
+          assert c["source_rows"]==430 and c["pairs_matched"]==175 and c["complete_pairs"]["pairs"]==156
+          assert q["pairs"]==142 and q["blocks"]==37 and q["opposite"]==17
+          assert q["higher_fraction_fewer_seeds"]==7 and q["lower_fraction_more_seeds"]==10
+          assert math.isclose(q["delta_fraction"],.13413523745773953,abs_tol=1e-12)
+          assert math.isclose(q["delta_seeds"],10.422535211267606,abs_tol=1e-12)
+          assert all(a>0 for a,b in c["conditional_block_bootstrap_interval"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pollination-duration-ovule-gate
+          path: out/
+          if-no-files-found: error

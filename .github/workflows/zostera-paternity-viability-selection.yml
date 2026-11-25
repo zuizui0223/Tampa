@@ -1,0 +1,44 @@
+name: Zostera paternity viability selection
+on:
+  pull_request:
+    paths:
+      - 'analysis/144_external_seagrass_genetic_source_gate.py'
+      - 'analysis/149_zostera_paternity_viability_selection.py'
+      - 'docs/ZOSTERA_PATERNITY_VIABILITY_SELECTION_20261124.md'
+      - '.github/workflows/zostera-paternity-viability-selection.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/144_external_seagrass_genetic_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.dryad("zostera_paternity",m.DOIS["zostera_paternity"])["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/149_zostera_paternity_viability_selection.py > out/viability_selection.json
+          python - <<'PY'
+          import json,math
+          a=json.load(open("out/viability_selection.json"));x=a["published"];h=a["high_locus"]
+          assert a["viability_frame"]["sp athes".replace(" ","")]==219
+          assert x["included"]["sp athes".replace(" ","")]==162
+          assert x["excluded"]["nonviable"]==338 and x["excluded"]["all_nonviable"]==23
+          assert x["same_mother_with_both_groups"]==x["same_mother_positive"]==22
+          assert math.isclose(x["included"]["mean_spathe_viability"],.949096,abs_tol=.000001)
+          assert math.isclose(x["excluded"]["mean_spathe_viability"],.284262,abs_tol=.000001)
+          assert h["included"]["viable"]==811 and h["excluded"]["viable"]==225
+          assert x["source_viable_count_disagreements"]==22 and h["source_viable_count_disagreements"]==17
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zostera-viability-selection-audit
+          path: out/viability_selection.json
+          if-no-files-found: error

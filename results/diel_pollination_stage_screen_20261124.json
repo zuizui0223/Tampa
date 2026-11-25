@@ -1,0 +1,5332 @@
+{
+  "status": "candidate_extraction_screen_not_meta_effect",
+  "source": "liamkendall/bumble-bat data/DvN_LiteratureDataClean_2024-09-13.csv",
+  "blob": "39a82d966afcdde670603add1c881ace8791ffe9",
+  "rows": 1652,
+  "studies": 140,
+  "multi_contexts": 127,
+  "fruit_seed_candidates": 113,
+  "finite_fruit_seed_candidates": 112,
+  "pollen_and_seed_candidates": [
+    {
+      "context": {
+        "study_ID": "Martinell_2010",
+        "plant_species": "Silene sennenii",
+        "plant_cultivar": "NA",
+        "country": "Spain",
+        "locality": "Figueres",
+        "Site_period": "1",
+        "coordinates_lat": "42.2679167992506",
+        "coordinates_lon": "2.96358885416722",
+        "year_start": "2007",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "metrics": {
+        "pollen deposition": {
+          "d": 64,
+          "n": 220.9,
+          "unit": "grains/flower",
+          "ids": [
+            "996",
+            "997"
+          ],
+          "sample_sizes": [
+            "52",
+            "55"
+          ]
+        },
+        "seed set": {
+          "d": 18.9,
+          "n": 47.3,
+          "unit": "seeds per fruit",
+          "ids": [
+            "1000",
+            "1001"
+          ],
+          "sample_sizes": [
+            "17",
+            "43"
+          ]
+        }
+      }
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "White",
+        "country": "United States",
+        "locality": "Newton Park",
+        "Site_period": "1",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "metrics": {
+        "pollen deposition": {
+          "d": 58.21,
+          "n": 66.69,
+          "unit": "grains per stigma",
+          "ids": [
+            "1319",
+            "1318"
+          ],
+          "sample_sizes": [
+            "12",
+            "12"
+          ]
+        },
+        "seed set": {
+          "d": 2.52,
+          "n": 2,
+          "unit": "seeds per fruit",
+          "ids": [
+            "1323",
+            "1322"
+          ],
+          "sample_sizes": [
+            "12",
+            "12"
+          ]
+        },
+        "fruit set": {
+          "d": 8.2,
+          "n": 7.51,
+          "unit": "NA",
+          "ids": [
+            "1327",
+            "1326"
+          ],
+          "sample_sizes": [
+            "12",
+            "12"
+          ]
+        }
+      }
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "Pink",
+        "country": "United States",
+        "locality": "Newton Park",
+        "Site_period": "1",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "metrics": {
+        "pollen deposition": {
+          "d": 70.81,
+          "n": 103.83,
+          "unit": "grains per stigma",
+          "ids": [
+            "1321",
+            "1320"
+          ],
+          "sample_sizes": [
+            "12",
+            "12"
+          ]
+        },
+        "seed set": {
+          "d": 4.09,
+          "n": 2.15,
+          "unit": "seeds per fruit",
+          "ids": [
+            "1325",
+            "1324"
+          ],
+          "sample_sizes": [
+            "12",
+            "12"
+          ]
+        },
+        "fruit set": {
+          "d": 19.66,
+          "n": 4.84,
+          "unit": "NA",
+          "ids": [
+            "1329",
+            "1328"
+          ],
+          "sample_sizes": [
+            "12",
+            "12"
+          ]
+        }
+      }
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "Pink",
+        "country": "United States",
+        "locality": "Pine Junction",
+        "Site_period": "2",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "metrics": {
+        "pollen deposition": {
+          "d": 44.02,
+          "n": 78.79,
+          "unit": "grains per stigma",
+          "ids": [
+            "1331",
+            "1330"
+          ],
+          "sample_sizes": [
+            "10",
+            "10"
+          ]
+        },
+        "seed set": {
+          "d": 1.89,
+          "n": 2.58,
+          "unit": "seeds per fruit",
+          "ids": [
+            "1335",
+            "1334"
+          ],
+          "sample_sizes": [
+            "10",
+            "10"
+          ]
+        },
+        "fruit set": {
+          "d": 9.23,
+          "n": 15.9,
+          "unit": "NA",
+          "ids": [
+            "1339",
+            "1338"
+          ],
+          "sample_sizes": [
+            "10",
+            "10"
+          ]
+        }
+      }
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "Red",
+        "country": "United States",
+        "locality": "Pine Junction",
+        "Site_period": "2",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "metrics": {
+        "pollen deposition": {
+          "d": 59.89,
+          "n": 71.12,
+          "unit": "grains per stigma",
+          "ids": [
+            "1333",
+            "1332"
+          ],
+          "sample_sizes": [
+            "10",
+            "10"
+          ]
+        },
+        "seed set": {
+          "d": 2.9,
+          "n": 2.52,
+          "unit": "seeds per fruit",
+          "ids": [
+            "1337",
+            "1336"
+          ],
+          "sample_sizes": [
+            "10",
+            "10"
+          ]
+        },
+        "fruit set": {
+          "d": 10.26,
+          "n": 8.38,
+          "unit": "NA",
+          "ids": [
+            "1341",
+            "1340"
+          ],
+          "sample_sizes": [
+            "10",
+            "10"
+          ]
+        }
+      }
+    }
+  ],
+  "explicit_unit_positive": 40,
+  "complete_records": [
+    {
+      "context": {
+        "study_ID": "Dar_2006",
+        "plant_species": "Marginatocereus marginatus",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Puebla",
+        "Site_period": "NA",
+        "coordinates_lat": "18.33333336",
+        "coordinates_lon": "-97.46666669",
+        "year_start": "1997",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "April",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.028,
+        "n": 0.0833,
+        "unit": "proportion",
+        "ids": [
+          "30",
+          "31"
+        ],
+        "sample_sizes": [
+          "37",
+          "24"
+        ]
+      },
+      "seed": {
+        "d": 159,
+        "n": 94.5,
+        "unit": "seeds/fruit",
+        "ids": [
+          "35",
+          "36"
+        ],
+        "sample_sizes": [
+          "1",
+          "2"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Payne_2019",
+        "plant_species": "Aloe peglerae",
+        "plant_cultivar": "NA",
+        "country": "South Africa",
+        "locality": "Pretoria",
+        "Site_period": "NA",
+        "coordinates_lat": "-25.763455",
+        "coordinates_lon": "27.217038",
+        "year_start": "2013",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.233,
+        "n": 0.089,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "44",
+          "43"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 2433,
+        "n": 861,
+        "unit": "seeds/plant",
+        "ids": [
+          "48",
+          "47"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Payne_2019",
+        "plant_species": "Aloe peglerae",
+        "plant_cultivar": "NA",
+        "country": "South Africa",
+        "locality": "Pretoria",
+        "Site_period": "NA",
+        "coordinates_lat": "-25.763455",
+        "coordinates_lon": "27.217038",
+        "year_start": "2014",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.049,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "52",
+          "51"
+        ],
+        "sample_sizes": [
+          "5",
+          "6"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 242,
+        "unit": "seeds/plant",
+        "ids": [
+          "56",
+          "55"
+        ],
+        "sample_sizes": [
+          "5",
+          "6"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Alonso-Pedano_2012",
+        "plant_species": "Echinopsis schickendantzii",
+        "plant_cultivar": "NA",
+        "country": "Argentina",
+        "locality": "Salta",
+        "Site_period": "NA",
+        "coordinates_lat": "-25.16669444",
+        "coordinates_lon": "-65.81669444",
+        "year_start": "2005",
+        "year_end": "NA",
+        "month_start": "December",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.731958762886598,
+        "n": 0.467353951890034,
+        "unit": "proportion",
+        "ids": [
+          "74",
+          "73"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 0.832214765100671,
+        "n": 0.644295302013422,
+        "unit": "seeds/fruit",
+        "ids": [
+          "85",
+          "84"
+        ],
+        "sample_sizes": [
+          "11",
+          "7"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Alonso-Pedano_2012",
+        "plant_species": "Echinopsis schickendantzii",
+        "plant_cultivar": "NA",
+        "country": "Argentina",
+        "locality": "Salta",
+        "Site_period": "NA",
+        "coordinates_lat": "-25.16669444",
+        "coordinates_lon": "-65.81669444",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "December",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.597938144329896,
+        "n": 0.398625429553264,
+        "unit": "proportion",
+        "ids": [
+          "78",
+          "77"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 0.84228187919463,
+        "n": 0.61744966442953,
+        "unit": "seeds/fruit",
+        "ids": [
+          "88",
+          "87"
+        ],
+        "sample_sizes": [
+          "9",
+          "6"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Alonso-Pedano_2012",
+        "plant_species": "Echinopsis schickendantzii",
+        "plant_cultivar": "NA",
+        "country": "Argentina",
+        "locality": "Salta",
+        "Site_period": "NA",
+        "coordinates_lat": "-25.16669444",
+        "coordinates_lon": "-65.81669444",
+        "year_start": "2007",
+        "year_end": "NA",
+        "month_start": "December",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.536082474226804,
+        "n": 0.532646048109965,
+        "unit": "proportion",
+        "ids": [
+          "82",
+          "81"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 0.86241610738255,
+        "n": 0.627516778523489,
+        "unit": "seeds/fruit",
+        "ids": [
+          "91",
+          "90"
+        ],
+        "sample_sizes": [
+          "8",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Arizaga_2000",
+        "plant_species": "Agave macroacantha",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Zapotitla ́n Salinas",
+        "Site_period": "NA",
+        "coordinates_lat": "18.33336111",
+        "coordinates_lon": "-97.46669444",
+        "year_start": "1994",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.0179347826086956,
+        "n": 0.242119565217391,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "93",
+          "94"
+        ],
+        "sample_sizes": [
+          "9",
+          "9"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 150.22,
+        "unit": "seeds/fruit",
+        "ids": [
+          "97",
+          "98"
+        ],
+        "sample_sizes": [
+          "0",
+          "32"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Borbon-Palomares_2018",
+        "plant_species": "Agave colorata",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "NA",
+        "coordinates_lat": "28.29722222",
+        "coordinates_lon": "-111.43333333",
+        "year_start": "2015",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.0950819672131147,
+        "n": 0.498360655737704,
+        "unit": "proportion",
+        "ids": [
+          "103",
+          "102"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "seed": {
+        "d": 375.816993464052,
+        "n": 388.888888888888,
+        "unit": "seeds/fruit",
+        "ids": [
+          "107",
+          "106"
+        ],
+        "sample_sizes": [
+          "3",
+          "15"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Cruz-Neto_2015",
+        "plant_species": "Inga vera",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Alagoas",
+        "Site_period": "NA",
+        "coordinates_lat": "-9.00002778",
+        "coordinates_lon": "-35.86669444",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.003,
+        "n": 0.014,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "110",
+          "111"
+        ],
+        "sample_sizes": [
+          "1000",
+          "1000"
+        ]
+      },
+      "seed": {
+        "d": 3.3,
+        "n": 8.2,
+        "unit": "seeds/fruit",
+        "ids": [
+          "124",
+          "125"
+        ],
+        "sample_sizes": [
+          "3",
+          "14"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Cruz-Neto_2015",
+        "plant_species": "Inga striata",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Alagoas",
+        "Site_period": "NA",
+        "coordinates_lat": "-9.00002778",
+        "coordinates_lon": "-35.86669444",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.002,
+        "n": 0.01,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "115",
+          "116"
+        ],
+        "sample_sizes": [
+          "1000",
+          "1000"
+        ]
+      },
+      "seed": {
+        "d": 6.5,
+        "n": 10.8,
+        "unit": "seeds/fruit",
+        "ids": [
+          "127",
+          "128"
+        ],
+        "sample_sizes": [
+          "2",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Cruz-Neto_2015",
+        "plant_species": "Inga ingoides",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Alagoas",
+        "Site_period": "NA",
+        "coordinates_lat": "-9.00002778",
+        "coordinates_lon": "-35.86669444",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.002,
+        "n": 0.0136,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "120",
+          "121"
+        ],
+        "sample_sizes": [
+          "987",
+          "959"
+        ]
+      },
+      "seed": {
+        "d": 5,
+        "n": 8.4,
+        "unit": "seeds/fruit",
+        "ids": [
+          "130",
+          "131"
+        ],
+        "sample_sizes": [
+          "2",
+          "13"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Aguilar-Rodriguez_2016",
+        "plant_species": "Tillandsia heterophylla",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Veracruz",
+        "Site_period": "NA",
+        "coordinates_lat": "19.53147222",
+        "coordinates_lon": "-96.97780556",
+        "year_start": "2011",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "April",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.9487,
+        "n": 0.9062,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "134",
+          "135"
+        ],
+        "sample_sizes": [
+          "39",
+          "32"
+        ]
+      },
+      "seed": {
+        "d": 552.17,
+        "n": 526.28,
+        "unit": "seeds/fruit",
+        "ids": [
+          "138",
+          "139"
+        ],
+        "sample_sizes": [
+          "37",
+          "29"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Anderson_2015",
+        "plant_species": "Silene latifolia",
+        "plant_cultivar": "NA",
+        "country": "Canada",
+        "locality": "Saskatchewan",
+        "Site_period": "NA",
+        "coordinates_lat": "52.10871111",
+        "coordinates_lon": "-106.706975",
+        "year_start": "2009",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 2.7029702970297,
+        "n": 2.77227722772277,
+        "unit": "capsule/plant",
+        "ids": [
+          "161",
+          "160"
+        ],
+        "sample_sizes": [
+          "16",
+          "16"
+        ]
+      },
+      "seed": {
+        "d": 69.6517412935323,
+        "n": 268.65671641791,
+        "unit": "seeds/plant",
+        "ids": [
+          "157",
+          "156"
+        ],
+        "sample_sizes": [
+          "16",
+          "16"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Anderson_2015",
+        "plant_species": "Silene latifolia",
+        "plant_cultivar": "NA",
+        "country": "Canada",
+        "locality": "Saskatchewan",
+        "Site_period": "NA",
+        "coordinates_lat": "52.10871111",
+        "coordinates_lon": "-106.706975",
+        "year_start": "2010",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.164222873900293,
+        "n": 6.65346534653465,
+        "unit": "capsule/plant",
+        "ids": [
+          "169",
+          "168"
+        ],
+        "sample_sizes": [
+          "16",
+          "16"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 393.034825870646,
+        "unit": "seeds/plant",
+        "ids": [
+          "165",
+          "164"
+        ],
+        "sample_sizes": [
+          "16",
+          "16"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "North45078",
+        "coordinates_lat": "31.80472222",
+        "coordinates_lon": "-112.86555556",
+        "year_start": "2003",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.096726980435815,
+        "n": 0.637098663411342,
+        "unit": "proportion",
+        "ids": [
+          "737",
+          "736"
+        ],
+        "sample_sizes": [
+          "31",
+          "19"
+        ]
+      },
+      "seed": {
+        "d": 0.64,
+        "n": 1.2,
+        "unit": "seeds/fruit",
+        "ids": [
+          "198",
+          "199"
+        ],
+        "sample_sizes": [
+          "3",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "North45112",
+        "coordinates_lat": "31.80472222",
+        "coordinates_lon": "-112.86555556",
+        "year_start": "2003",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.115616315881097,
+        "n": 0.3733808450232,
+        "unit": "proportion",
+        "ids": [
+          "742",
+          "741"
+        ],
+        "sample_sizes": [
+          "61",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0.49,
+        "n": 0.74,
+        "unit": "seeds/fruit",
+        "ids": [
+          "202",
+          "203"
+        ],
+        "sample_sizes": [
+          "7",
+          "1"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "North45092",
+        "coordinates_lat": "31.80472222",
+        "coordinates_lon": "-112.86555556",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.389057750759878,
+        "n": 0.693009118541033,
+        "unit": "proportion",
+        "ids": [
+          "786",
+          "785"
+        ],
+        "sample_sizes": [
+          "10",
+          "19"
+        ]
+      },
+      "seed": {
+        "d": 0.07,
+        "n": 0.72,
+        "unit": "seeds/fruit",
+        "ids": [
+          "206",
+          "207"
+        ],
+        "sample_sizes": [
+          "2",
+          "13"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "North45109",
+        "coordinates_lat": "31.80472222",
+        "coordinates_lon": "-112.86555556",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.41337386018237,
+        "unit": "proportion",
+        "ids": [
+          "791",
+          "790"
+        ],
+        "sample_sizes": [
+          "10",
+          "24"
+        ]
+      },
+      "seed": {
+        "d": 0.22,
+        "n": 0.49,
+        "unit": "seeds/fruit",
+        "ids": [
+          "210",
+          "211"
+        ],
+        "sample_sizes": [
+          "1",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "North45123",
+        "coordinates_lat": "31.80472222",
+        "coordinates_lon": "-112.86555556",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.0851063829787235,
+        "n": 0.586626139817629,
+        "unit": "proportion",
+        "ids": [
+          "796",
+          "795"
+        ],
+        "sample_sizes": [
+          "10",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 0.44,
+        "unit": "seeds/fruit",
+        "ids": [
+          "214",
+          "215"
+        ],
+        "sample_sizes": [
+          "0",
+          "7"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "Central45061",
+        "coordinates_lat": "29.56833333",
+        "coordinates_lon": "-111.09138889",
+        "year_start": "2003",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.429919899245415,
+        "n": 0.684578831650866,
+        "unit": "proportion",
+        "ids": [
+          "732",
+          "731"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0.22,
+        "n": 0.49,
+        "unit": "seeds/fruit",
+        "ids": [
+          "218",
+          "219"
+        ],
+        "sample_sizes": [
+          "2",
+          "7"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "Central45062",
+        "coordinates_lat": "29.56833333",
+        "coordinates_lon": "-111.09138889",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.480243161094225,
+        "n": 0.869300911854103,
+        "unit": "proportion",
+        "ids": [
+          "762",
+          "761"
+        ],
+        "sample_sizes": [
+          "12",
+          "14"
+        ]
+      },
+      "seed": {
+        "d": 0.28,
+        "n": 0.81,
+        "unit": "seeds/fruit",
+        "ids": [
+          "226",
+          "227"
+        ],
+        "sample_sizes": [
+          "6",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "Central45077",
+        "coordinates_lat": "29.56833333",
+        "coordinates_lon": "-111.09138889",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.458966565349543,
+        "n": 0.717325227963525,
+        "unit": "proportion",
+        "ids": [
+          "767",
+          "766"
+        ],
+        "sample_sizes": [
+          "15",
+          "20"
+        ]
+      },
+      "seed": {
+        "d": 0.21,
+        "n": 0.54,
+        "unit": "seeds/fruit",
+        "ids": [
+          "230",
+          "231"
+        ],
+        "sample_sizes": [
+          "7",
+          "14"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "Central45097",
+        "coordinates_lat": "29.56833333",
+        "coordinates_lon": "-111.09138889",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.267477203647416,
+        "n": 0.954407294832826,
+        "unit": "proportion",
+        "ids": [
+          "772",
+          "771"
+        ],
+        "sample_sizes": [
+          "22",
+          "21"
+        ]
+      },
+      "seed": {
+        "d": 0.09,
+        "n": 0.55,
+        "unit": "seeds/fruit",
+        "ids": [
+          "234",
+          "235"
+        ],
+        "sample_sizes": [
+          "6",
+          "20"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "Central45114",
+        "coordinates_lat": "29.56833333",
+        "coordinates_lon": "-111.09138889",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.0212765957446809,
+        "n": 0.905775075987842,
+        "unit": "proportion",
+        "ids": [
+          "777",
+          "776"
+        ],
+        "sample_sizes": [
+          "10",
+          "18"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 0.32,
+        "unit": "seeds/fruit",
+        "ids": [
+          "238",
+          "239"
+        ],
+        "sample_sizes": [
+          "0",
+          "16"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "Central45128",
+        "coordinates_lat": "29.56833333",
+        "coordinates_lon": "-111.09138889",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.0820668693009119,
+        "n": 0.650455927051671,
+        "unit": "proportion",
+        "ids": [
+          "781",
+          "780"
+        ],
+        "sample_sizes": [
+          "12",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 0.06,
+        "n": 0.29,
+        "unit": "seeds/fruit",
+        "ids": [
+          "242",
+          "243"
+        ],
+        "sample_sizes": [
+          "1",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45086",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2003",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.499465923329371,
+        "n": 0.2013264874089,
+        "unit": "proportion",
+        "ids": [
+          "747",
+          "746"
+        ],
+        "sample_sizes": [
+          "12",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0.02,
+        "n": 0.04,
+        "unit": "seeds/fruit",
+        "ids": [
+          "250",
+          "251"
+        ],
+        "sample_sizes": [
+          "6",
+          "2"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45120",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2003",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.0493671675023479,
+        "unit": "proportion",
+        "ids": [
+          "752",
+          "751"
+        ],
+        "sample_sizes": [
+          "10",
+          "20"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 0.06,
+        "unit": "seeds/fruit",
+        "ids": [
+          "254",
+          "255"
+        ],
+        "sample_sizes": [
+          "0",
+          "1"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45147",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2003",
+        "year_end": "NA",
+        "month_start": "August",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.235877057054862,
+        "unit": "proportion",
+        "ids": [
+          "757",
+          "756"
+        ],
+        "sample_sizes": [
+          "10",
+          "17"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 0.07,
+        "unit": "seeds/fruit",
+        "ids": [
+          "258",
+          "259"
+        ],
+        "sample_sizes": [
+          "0",
+          "4"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45055",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.565349544072948,
+        "n": 0.0729483282674774,
+        "unit": "proportion",
+        "ids": [
+          "801",
+          "800"
+        ],
+        "sample_sizes": [
+          "16",
+          "14"
+        ]
+      },
+      "seed": {
+        "d": 0.06,
+        "n": 0.15,
+        "unit": "seeds/fruit",
+        "ids": [
+          "262",
+          "263"
+        ],
+        "sample_sizes": [
+          "9",
+          "1"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45070",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.264437689969604,
+        "n": 0.164133738601823,
+        "unit": "proportion",
+        "ids": [
+          "805",
+          "804"
+        ],
+        "sample_sizes": [
+          "23",
+          "18"
+        ]
+      },
+      "seed": {
+        "d": 0.3,
+        "n": 0.14,
+        "unit": "seeds/fruit",
+        "ids": [
+          "266",
+          "267"
+        ],
+        "sample_sizes": [
+          "6",
+          "3"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45088",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.410334346504559,
+        "n": 0.0668693009118541,
+        "unit": "proportion",
+        "ids": [
+          "809",
+          "808"
+        ],
+        "sample_sizes": [
+          "17",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 0.07,
+        "n": 0.03,
+        "unit": "seeds/fruit",
+        "ids": [
+          "270",
+          "271"
+        ],
+        "sample_sizes": [
+          "7",
+          "1"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45104",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.486322188449847,
+        "n": 0,
+        "unit": "proportion",
+        "ids": [
+          "813",
+          "812"
+        ],
+        "sample_sizes": [
+          "21",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0.06,
+        "n": 0,
+        "unit": "seeds/fruit",
+        "ids": [
+          "274",
+          "275"
+        ],
+        "sample_sizes": [
+          "10",
+          "0"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45120",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.392097264437689,
+        "n": 0.0638297872340425,
+        "unit": "proportion",
+        "ids": [
+          "817",
+          "816"
+        ],
+        "sample_sizes": [
+          "18",
+          "31"
+        ]
+      },
+      "seed": {
+        "d": 0.06,
+        "n": 0.1,
+        "unit": "seeds/fruit",
+        "ids": [
+          "278",
+          "279"
+        ],
+        "sample_sizes": [
+          "7",
+          "2"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45136",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.103343465045592,
+        "unit": "proportion",
+        "ids": [
+          "821",
+          "820"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 0.14,
+        "unit": "seeds/fruit",
+        "ids": [
+          "282",
+          "283"
+        ],
+        "sample_sizes": [
+          "0",
+          "1"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Bustamente_2010",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "South45152",
+        "coordinates_lat": "26.63666667",
+        "coordinates_lon": "-109.31083333",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "August",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.252279635258358,
+        "n": 0.729483282674771,
+        "unit": "proportion",
+        "ids": [
+          "825",
+          "824"
+        ],
+        "sample_sizes": [
+          "16",
+          "11"
+        ]
+      },
+      "seed": {
+        "d": 0.06,
+        "n": 0.42,
+        "unit": "seeds/fruit",
+        "ids": [
+          "286",
+          "287"
+        ],
+        "sample_sizes": [
+          "4",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Casas_1999",
+        "plant_species": "Stenocereus stellatus",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Puebla",
+        "Site_period": "Zapotitlan",
+        "coordinates_lat": "18.331162",
+        "coordinates_lon": "-97.469815",
+        "year_start": "1995",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.8,
+        "unit": "proportion converted (orig: percent fruit/flowers)",
+        "ids": [
+          "296",
+          "297"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 951,
+        "unit": "seeds/fruit",
+        "ids": [
+          "310",
+          "311"
+        ],
+        "sample_sizes": [
+          "0",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Casas_1999",
+        "plant_species": "Stenocereus stellatus",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Puebla",
+        "Site_period": "Coxcatlan",
+        "coordinates_lat": "18.275875",
+        "coordinates_lon": "-97.147198",
+        "year_start": "1995",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.7,
+        "unit": "proportion converted (orig: percent fruit/flowers)",
+        "ids": [
+          "301",
+          "302"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 703,
+        "unit": "seeds/fruit",
+        "ids": [
+          "314",
+          "315"
+        ],
+        "sample_sizes": [
+          "0",
+          "7"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Casas_1999",
+        "plant_species": "Stenocereus stellatus",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Puebla",
+        "Site_period": "Chinango",
+        "coordinates_lat": "18.106988",
+        "coordinates_lon": "-97.756004",
+        "year_start": "1995",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.75,
+        "unit": "proportion converted (orig: percent fruit/flowers)",
+        "ids": [
+          "306",
+          "307"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 1540,
+        "unit": "seeds/fruit",
+        "ids": [
+          "318",
+          "319"
+        ],
+        "sample_sizes": [
+          "0",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "de Avila_2011",
+        "plant_species": "Randia itatiaiae",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Rio de Janeiro",
+        "Site_period": "NA",
+        "coordinates_lat": "-22.50027778",
+        "coordinates_lon": "-42.25027778",
+        "year_start": "2005",
+        "year_end": "NA",
+        "month_start": "August",
+        "month_end": "September",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.25,
+        "n": 0.44,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "347",
+          "348"
+        ],
+        "sample_sizes": [
+          "24",
+          "23"
+        ]
+      },
+      "seed": {
+        "d": 16.17,
+        "n": 22.7,
+        "unit": "seeds/fruit",
+        "ids": [
+          "350",
+          "351"
+        ],
+        "sample_sizes": [
+          "6",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Groman_1999",
+        "plant_species": "Manfreda virginica",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Tennessee",
+        "Site_period": "NA",
+        "coordinates_lat": "36.08361111",
+        "coordinates_lon": "-86.51416667",
+        "year_start": "1996",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.182508250825082,
+        "n": 0.147854785478547,
+        "unit": "proportion fruit/flowers",
+        "ids": [
+          "387",
+          "388"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 0.176351351351351,
+        "n": 0.516891891891891,
+        "unit": "seeds/plant",
+        "ids": [
+          "395",
+          "396"
+        ],
+        "sample_sizes": [
+          "2",
+          "2"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Groman_1999",
+        "plant_species": "Manfreda virginica",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Tennessee",
+        "Site_period": "NA",
+        "coordinates_lat": "36.08361111",
+        "coordinates_lon": "-86.51416667",
+        "year_start": "1997",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.393898305084745,
+        "n": 0.374915254237288,
+        "unit": "proportion fruit/flowers",
+        "ids": [
+          "390",
+          "391"
+        ],
+        "sample_sizes": [
+          "23",
+          "24"
+        ]
+      },
+      "seed": {
+        "d": 0.148453608247422,
+        "n": 0.25360824742268,
+        "unit": "seeds/plant",
+        "ids": [
+          "398",
+          "399"
+        ],
+        "sample_sizes": [
+          "8",
+          "9"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Hove_2007",
+        "plant_species": "Silene lemmonii",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "California",
+        "Site_period": "NA",
+        "coordinates_lat": "40.383886",
+        "coordinates_lon": "-123.146353",
+        "year_start": "1999",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.09,
+        "n": 0.17,
+        "unit": "proportion fruits/flowers",
+        "ids": [
+          "408",
+          "409"
+        ],
+        "sample_sizes": [
+          "7",
+          "7"
+        ]
+      },
+      "seed": {
+        "d": 6.15,
+        "n": 6.88,
+        "unit": "mean seeds/fruit",
+        "ids": [
+          "415",
+          "416"
+        ],
+        "sample_sizes": [
+          "6",
+          "5"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Hove_2007",
+        "plant_species": "Silene lemmonii",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "California",
+        "Site_period": "NA",
+        "coordinates_lat": "40.383886",
+        "coordinates_lon": "-123.146353",
+        "year_start": "2000",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.23,
+        "n": 0.34,
+        "unit": "proportion fruits/flowers",
+        "ids": [
+          "412",
+          "413"
+        ],
+        "sample_sizes": [
+          "19",
+          "24"
+        ]
+      },
+      "seed": {
+        "d": 6.89,
+        "n": 9.22,
+        "unit": "mean seeds/fruit",
+        "ids": [
+          "419",
+          "420"
+        ],
+        "sample_sizes": [
+          "18",
+          "22"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Larrea-Alcázar_2011",
+        "plant_species": "Oreocereus celsianus",
+        "plant_cultivar": "NA",
+        "country": "Bolivia",
+        "locality": "Prepuna",
+        "Site_period": "NA",
+        "coordinates_lat": "-20.75027778",
+        "coordinates_lon": "-65.62527778",
+        "year_start": "2009",
+        "year_end": "NA",
+        "month_start": "December",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.71,
+        "n": 0.21,
+        "unit": "proportion",
+        "ids": [
+          "470",
+          "471"
+        ],
+        "sample_sizes": [
+          "21",
+          "14"
+        ]
+      },
+      "seed": {
+        "d": 976,
+        "n": 255,
+        "unit": "seeds/fruit",
+        "ids": [
+          "475",
+          "476"
+        ],
+        "sample_sizes": [
+          "15",
+          "3"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Lemaitre_2014",
+        "plant_species": "Echinopsis chiloensis",
+        "plant_cultivar": "ssp. chiloensis",
+        "country": "Chile",
+        "locality": "Reserva Nacional Rio Clarillo",
+        "Site_period": "NA",
+        "coordinates_lat": "-33.68361111",
+        "coordinates_lon": "-70.40861111",
+        "year_start": "2013",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.48,
+        "n": 0.2,
+        "unit": "proportion",
+        "ids": [
+          "480",
+          "481"
+        ],
+        "sample_sizes": [
+          "25",
+          "25"
+        ]
+      },
+      "seed": {
+        "d": 764.8,
+        "n": 1599,
+        "unit": "seeds/fruit",
+        "ids": [
+          "484",
+          "485"
+        ],
+        "sample_sizes": [
+          "12",
+          "5"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Luo_2011",
+        "plant_species": "Jatropha curcas",
+        "plant_cultivar": "NA",
+        "country": "China",
+        "locality": "Yunnan",
+        "Site_period": "NA",
+        "coordinates_lat": "24.36694444",
+        "coordinates_lon": "101.65027778",
+        "year_start": "2009",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.601746724890829,
+        "n": 0.479475982532751,
+        "unit": "proportion",
+        "ids": [
+          "522",
+          "521"
+        ],
+        "sample_sizes": [
+          "92",
+          "100"
+        ]
+      },
+      "seed": {
+        "d": 2.67281105990783,
+        "n": 2.31336405529953,
+        "unit": "seeds/fruit",
+        "ids": [
+          "526",
+          "525"
+        ],
+        "sample_sizes": [
+          "55",
+          "48"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "McMullen_2009",
+        "plant_species": "Ipomoea habeliana",
+        "plant_cultivar": "NA",
+        "country": "Ecuador",
+        "locality": "Galapagos",
+        "Site_period": "NA",
+        "coordinates_lat": "0.554473",
+        "coordinates_lon": "-90.73136",
+        "year_start": "1993",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.603468208092485,
+        "n": 0.598843930635838,
+        "unit": "proportion",
+        "ids": [
+          "531",
+          "532"
+        ],
+        "sample_sizes": [
+          "13",
+          "11"
+        ]
+      },
+      "seed": {
+        "d": 2.24549098196392,
+        "n": 2.1192384769539,
+        "unit": "seeds/fruit",
+        "ids": [
+          "536",
+          "537"
+        ],
+        "sample_sizes": [
+          "13",
+          "11"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Molina-Freaner_2003",
+        "plant_species": "Agave angustifolia",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "NA",
+        "coordinates_lat": "29.01694444",
+        "coordinates_lon": "-110.95027778",
+        "year_start": "2001",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "March",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.162711864406779,
+        "unit": "fruit/flower",
+        "ids": [
+          "550",
+          "549"
+        ],
+        "sample_sizes": [
+          "50",
+          "50"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 0.49023569023569,
+        "unit": "seeds/fruit",
+        "ids": [
+          "555",
+          "554"
+        ],
+        "sample_sizes": [
+          "0",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Molina-Freaner_2003",
+        "plant_species": "Agave subsimplex",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "NA",
+        "coordinates_lat": "28.90027778",
+        "coordinates_lon": "-112.01694444",
+        "year_start": "2002",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.178181818181818,
+        "n": 0.0872727272727273,
+        "unit": "fruit/flower",
+        "ids": [
+          "559",
+          "558"
+        ],
+        "sample_sizes": [
+          "50",
+          "50"
+        ]
+      },
+      "seed": {
+        "d": 0.276752767527675,
+        "n": 0.280442804428044,
+        "unit": "seeds/fruit",
+        "ids": [
+          "564",
+          "563"
+        ],
+        "sample_sizes": [
+          "9",
+          "4"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Molina-Freaner_2004",
+        "plant_species": "Pachycereus pecten-aboriginum",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Sonora",
+        "Site_period": "NA",
+        "coordinates_lat": "28.68361111",
+        "coordinates_lon": "-110.26694444",
+        "year_start": "1998",
+        "year_end": "NA",
+        "month_start": "January",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.18,
+        "n": 0.04,
+        "unit": "fruit/flower",
+        "ids": [
+          "567",
+          "568"
+        ],
+        "sample_sizes": [
+          "44",
+          "48"
+        ]
+      },
+      "seed": {
+        "d": 120.1,
+        "n": 100,
+        "unit": "seeds/fruit",
+        "ids": [
+          "572",
+          "573"
+        ],
+        "sample_sizes": [
+          "8",
+          "2"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Morse_1983",
+        "plant_species": "Asclepias syriaca",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Maine",
+        "Site_period": "pasture",
+        "coordinates_lat": "44.015492",
+        "coordinates_lon": "-69.42685",
+        "year_start": "1981",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.306666666666667,
+        "n": 0.0433333333333333,
+        "unit": "proportion converted (orig: # pods)",
+        "ids": [
+          "585",
+          "586"
+        ],
+        "sample_sizes": [
+          "300",
+          "300"
+        ]
+      },
+      "seed": {
+        "d": 162,
+        "n": 110,
+        "unit": "seeds/pod",
+        "ids": [
+          "588",
+          "589"
+        ],
+        "sample_sizes": [
+          "20",
+          "6"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Morse_1983",
+        "plant_species": "Asclepias syriaca",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Maine",
+        "Site_period": "field",
+        "coordinates_lat": "44.015492",
+        "coordinates_lon": "-69.42685",
+        "year_start": "1981",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.553333333333333,
+        "n": 0.27,
+        "unit": "proportion converted (orig: # pods)",
+        "ids": [
+          "591",
+          "592"
+        ],
+        "sample_sizes": [
+          "300",
+          "300"
+        ]
+      },
+      "seed": {
+        "d": 202.2,
+        "n": 161.6,
+        "unit": "seeds/pod",
+        "ids": [
+          "594",
+          "595"
+        ],
+        "sample_sizes": [
+          "20",
+          "20"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Morse_1983",
+        "plant_species": "Asclepias syriaca",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Maine",
+        "Site_period": "pasture",
+        "coordinates_lat": "44.015492",
+        "coordinates_lon": "-69.42685",
+        "year_start": "1982",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.296666666666667,
+        "n": 0.01,
+        "unit": "proportion converted (orig: # pods)",
+        "ids": [
+          "597",
+          "598"
+        ],
+        "sample_sizes": [
+          "300",
+          "300"
+        ]
+      },
+      "seed": {
+        "d": 138.7,
+        "n": 92,
+        "unit": "seeds/pod",
+        "ids": [
+          "600",
+          "601"
+        ],
+        "sample_sizes": [
+          "20",
+          "1"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Morse_1983",
+        "plant_species": "Asclepias syriaca",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Maine",
+        "Site_period": "field",
+        "coordinates_lat": "44.015492",
+        "coordinates_lon": "-69.42685",
+        "year_start": "1982",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.406666666666667,
+        "n": 0.0566666666666667,
+        "unit": "proportion converted (orig: # pods)",
+        "ids": [
+          "603",
+          "604"
+        ],
+        "sample_sizes": [
+          "300",
+          "300"
+        ]
+      },
+      "seed": {
+        "d": 184.5,
+        "n": 209,
+        "unit": "seeds/pod",
+        "ids": [
+          "606",
+          "607"
+        ],
+        "sample_sizes": [
+          "20",
+          "1"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Nakajima_2018",
+        "plant_species": "Lilium auratum",
+        "plant_cultivar": "var. platyphyllum",
+        "country": "Japan",
+        "locality": "Izu islands",
+        "Site_period": "NA",
+        "coordinates_lat": "34.743692",
+        "coordinates_lon": "139.398294",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.3,
+        "n": 0.69,
+        "unit": "proportion",
+        "ids": [
+          "609",
+          "610"
+        ],
+        "sample_sizes": [
+          "13",
+          "13"
+        ]
+      },
+      "seed": {
+        "d": 0.03,
+        "n": 0.49,
+        "unit": "seed/ovule",
+        "ids": [
+          "612",
+          "613"
+        ],
+        "sample_sizes": [
+          "4",
+          "9"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Ortega-Baes_2011",
+        "plant_species": "Echinopsis terscheckii",
+        "plant_cultivar": "NA",
+        "country": "Argentina",
+        "locality": "Salta",
+        "Site_period": "NA",
+        "coordinates_lat": "-24.86638889",
+        "coordinates_lon": "-61.36583333",
+        "year_start": "2000",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "November",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.1,
+        "n": 0.9,
+        "unit": "proportion",
+        "ids": [
+          "625",
+          "624"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 540,
+        "n": 5127,
+        "unit": "# seeds",
+        "ids": [
+          "635",
+          "634"
+        ],
+        "sample_sizes": [
+          "1",
+          "9"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Ortega-Baes_2011",
+        "plant_species": "Echinopsis terscheckii",
+        "plant_cultivar": "NA",
+        "country": "Argentina",
+        "locality": "Salta",
+        "Site_period": "NA",
+        "coordinates_lat": "-24.86638889",
+        "coordinates_lon": "-61.36583333",
+        "year_start": "2001",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "November",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.2,
+        "n": 0.8,
+        "unit": "proportion",
+        "ids": [
+          "629",
+          "628"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 5279,
+        "n": 6950,
+        "unit": "# seeds",
+        "ids": [
+          "638",
+          "637"
+        ],
+        "sample_sizes": [
+          "2",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Ortega-Baes_2011",
+        "plant_species": "Echinopsis terscheckii",
+        "plant_cultivar": "NA",
+        "country": "Argentina",
+        "locality": "Salta",
+        "Site_period": "NA",
+        "coordinates_lat": "-24.86638889",
+        "coordinates_lon": "-61.36583333",
+        "year_start": "2002",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "November",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.3,
+        "n": 0.8,
+        "unit": "proportion",
+        "ids": [
+          "632",
+          "631"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 4091,
+        "n": 6218,
+        "unit": "# seeds",
+        "ids": [
+          "641",
+          "640"
+        ],
+        "sample_sizes": [
+          "3",
+          "8"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Payne_2016",
+        "plant_species": "Aloe peglerae",
+        "plant_cultivar": "NA",
+        "country": "South Africa",
+        "locality": "Pretoria",
+        "Site_period": "NA",
+        "coordinates_lat": "-25.68361111",
+        "coordinates_lon": "27.98361111",
+        "year_start": "2013",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.233,
+        "n": 0.09,
+        "unit": "proportion converted (orig: percent)",
+        "ids": [
+          "652",
+          "651"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 43,
+        "n": 24,
+        "unit": "seeds/fruit",
+        "ids": [
+          "656",
+          "655"
+        ],
+        "sample_sizes": [
+          "55",
+          "39"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Queiroz_2015",
+        "plant_species": "Ipomoea marcellia",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Paraíba",
+        "Site_period": "NA",
+        "coordinates_lat": "-7.47916667",
+        "coordinates_lon": "-36.905",
+        "year_start": "2012",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "October",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.291666666666667,
+        "n": 0.0952380952380952,
+        "unit": "proportion converted (orig: # fruits)",
+        "ids": [
+          "667",
+          "666"
+        ],
+        "sample_sizes": [
+          "24",
+          "21"
+        ]
+      },
+      "seed": {
+        "d": 3.57,
+        "n": 2,
+        "unit": "seeds/fruit",
+        "ids": [
+          "672",
+          "671"
+        ],
+        "sample_sizes": [
+          "7",
+          "2"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Queiroz_2015",
+        "plant_species": "Ipomoea aff. Marcellia",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Paraíba",
+        "Site_period": "NA",
+        "coordinates_lat": "-7.47916667",
+        "coordinates_lon": "-36.905",
+        "year_start": "2012",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "October",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.133333333333333,
+        "n": 0.444444444444444,
+        "unit": "proportion converted (orig: # fruits)",
+        "ids": [
+          "676",
+          "675"
+        ],
+        "sample_sizes": [
+          "30",
+          "27"
+        ]
+      },
+      "seed": {
+        "d": 2.5,
+        "n": 3.77,
+        "unit": "seeds/fruit",
+        "ids": [
+          "681",
+          "680"
+        ],
+        "sample_sizes": [
+          "4",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Rodger_2010",
+        "plant_species": "Lilium formosanum",
+        "plant_cultivar": "NA",
+        "country": "South Africa",
+        "locality": "Pretoria",
+        "Site_period": "Wahroonga",
+        "coordinates_lat": "-29.60027778",
+        "coordinates_lon": "30.11694444",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.83,
+        "unit": "proportion",
+        "ids": [
+          "690",
+          "691"
+        ],
+        "sample_sizes": [
+          "11",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 539.325842696629,
+        "unit": "seeds/fruit",
+        "ids": [
+          "694",
+          "695"
+        ],
+        "sample_sizes": [
+          "0",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Rodger_2010",
+        "plant_species": "Lilium formosanum",
+        "plant_cultivar": "NA",
+        "country": "South Africa",
+        "locality": "Pretoria",
+        "Site_period": "Cedara",
+        "coordinates_lat": "-29.51694444",
+        "coordinates_lon": "30.26694444",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.5,
+        "n": 0.86,
+        "unit": "proportion",
+        "ids": [
+          "692",
+          "693"
+        ],
+        "sample_sizes": [
+          "9",
+          "7"
+        ]
+      },
+      "seed": {
+        "d": 107.865168539325,
+        "n": 862.921348314606,
+        "unit": "seeds/fruit",
+        "ids": [
+          "696",
+          "697"
+        ],
+        "sample_sizes": [
+          "4",
+          "6"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": true
+    },
+    {
+      "context": {
+        "study_ID": "Scopece_2018",
+        "plant_species": "Silene latifolia",
+        "plant_cultivar": "NA",
+        "country": "Italy",
+        "locality": "Naples",
+        "Site_period": "NA",
+        "coordinates_lat": "40.839383",
+        "coordinates_lon": "14.181022",
+        "year_start": "2011",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 4.49,
+        "n": 3.87,
+        "unit": "# fruits",
+        "ids": [
+          "707",
+          "706"
+        ],
+        "sample_sizes": [
+          "18",
+          "17"
+        ]
+      },
+      "seed": {
+        "d": 232.05741627,
+        "n": 373.20574163,
+        "unit": "seeds/plant",
+        "ids": [
+          "710",
+          "709"
+        ],
+        "sample_sizes": [
+          "18",
+          "17"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Vanderplank_2020",
+        "plant_species": "Silene nutans",
+        "plant_cultivar": "NA",
+        "country": "Belgium",
+        "locality": "Mons",
+        "Site_period": "NA",
+        "coordinates_lat": "50.45027778",
+        "coordinates_lon": "3.95027778",
+        "year_start": "2018",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.09,
+        "n": 0.504,
+        "unit": "proportion",
+        "ids": [
+          "715",
+          "716"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 16.544,
+        "n": 227.635,
+        "unit": "seeds/plant",
+        "ids": [
+          "721",
+          "722"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Robertson_2021",
+        "plant_species": "Malus domestica",
+        "plant_cultivar": "Enterprise ",
+        "country": "United States",
+        "locality": "Fayetteville",
+        "Site_period": "1",
+        "coordinates_lat": "36.1",
+        "coordinates_lon": "-94.17",
+        "year_start": "2018",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "April",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.16,
+        "n": 0.14,
+        "unit": "NA",
+        "ids": [
+          "850",
+          "849"
+        ],
+        "sample_sizes": [
+          "50",
+          "50"
+        ]
+      },
+      "seed": {
+        "d": 5.3,
+        "n": 5.3,
+        "unit": "seeds per fruit",
+        "ids": [
+          "858",
+          "857"
+        ],
+        "sample_sizes": [
+          "14",
+          "3"
+        ]
+      },
+      "direction": "tie",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Aguilar-Rodriguez_2014",
+        "plant_species": "Tillandsia macropetala",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Tlalnelhuayocan",
+        "Site_period": "1",
+        "coordinates_lat": "19.5",
+        "coordinates_lon": "-97",
+        "year_start": "2011",
+        "year_end": "2012",
+        "month_start": "March",
+        "month_end": "April",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0,
+        "n": 0.347222222222222,
+        "unit": "NA",
+        "ids": [
+          "877",
+          "878"
+        ],
+        "sample_sizes": [
+          "33",
+          "72"
+        ]
+      },
+      "seed": {
+        "d": 0,
+        "n": 184.5,
+        "unit": "NA",
+        "ids": [
+          "880",
+          "881"
+        ],
+        "sample_sizes": [
+          "33",
+          "72"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "de Oliveira Muniz_2020",
+        "plant_species": "Hylocereus undatus",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Quixeré",
+        "Site_period": "1",
+        "coordinates_lat": "-5.07536659634568",
+        "coordinates_lon": "-37.9907451980997",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 1,
+        "n": 1,
+        "unit": "NA",
+        "ids": [
+          "930",
+          "929"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "seed": {
+        "d": 6.678,
+        "n": 6.536,
+        "unit": "NA",
+        "ids": [
+          "946",
+          "945"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "direction": "tie",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "de Oliveira Muniz_2020",
+        "plant_species": "Hylocereus polyrhizus",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Quixeré",
+        "Site_period": "1",
+        "coordinates_lat": "-5.07536659634568",
+        "coordinates_lon": "-37.9907451980997",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 1,
+        "n": 0.933333333333333,
+        "unit": "NA",
+        "ids": [
+          "934",
+          "933"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "seed": {
+        "d": 6.829,
+        "n": 2.555,
+        "unit": "NA",
+        "ids": [
+          "950",
+          "949"
+        ],
+        "sample_sizes": [
+          "30",
+          "28"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Flores-Torres_2017",
+        "plant_species": "Agave horrida",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Tepoztlán",
+        "Site_period": "1",
+        "coordinates_lat": "19.016389",
+        "coordinates_lon": "-99.148611",
+        "year_start": "2005",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.224806201550387,
+        "n": 0.488372093023255,
+        "unit": "NA",
+        "ids": [
+          "958",
+          "957"
+        ],
+        "sample_sizes": [
+          "120",
+          "115"
+        ]
+      },
+      "seed": {
+        "d": 0.0766550522648081,
+        "n": 0.209059233449477,
+        "unit": "seeds per fruit",
+        "ids": [
+          "962",
+          "961"
+        ],
+        "sample_sizes": [
+          "27",
+          "56"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Gibson_2022",
+        "plant_species": "Nicotiana rustica",
+        "plant_cultivar": "NA",
+        "country": "Canada",
+        "locality": "Ottawa",
+        "Site_period": "1",
+        "coordinates_lat": "45.0178131180022",
+        "coordinates_lon": "-76.3658577634068",
+        "year_start": "2020",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "September",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.713,
+        "n": 0.596,
+        "unit": "NA",
+        "ids": [
+          "964",
+          "965"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 370,
+        "n": 351,
+        "unit": "seeds per fruit",
+        "ids": [
+          "972",
+          "973"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "McMullen_2011",
+        "plant_species": "Clerodendrum molle",
+        "plant_cultivar": "NA",
+        "country": "Ecuador",
+        "locality": "Santa Cruz Island",
+        "Site_period": "1",
+        "coordinates_lat": "-0.478611",
+        "coordinates_lon": "-90.168056",
+        "year_start": "1994",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.143478260869565,
+        "n": 0.238043478260869,
+        "unit": "NA",
+        "ids": [
+          "983",
+          "982"
+        ],
+        "sample_sizes": [
+          "5",
+          "5"
+        ]
+      },
+      "seed": {
+        "d": 0.394021739130434,
+        "n": 0.421195652173912,
+        "unit": "seeds per fruit",
+        "ids": [
+          "988",
+          "987"
+        ],
+        "sample_sizes": [
+          "5",
+          "5"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Meyer_2007",
+        "plant_species": "Gymnadenia conopsea",
+        "plant_cultivar": "NA",
+        "country": "Germany",
+        "locality": "Gottingen",
+        "Site_period": "1",
+        "coordinates_lat": "51.5420335108923",
+        "coordinates_lon": "9.9172372287325",
+        "year_start": "2006",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.668402001490471,
+        "n": 0.862056850846375,
+        "unit": "NA",
+        "ids": [
+          "1016",
+          "1017"
+        ],
+        "sample_sizes": [
+          "4",
+          "4"
+        ]
+      },
+      "seed": {
+        "d": 1.69294605809128,
+        "n": 2.6058091286307,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1020",
+          "1021"
+        ],
+        "sample_sizes": [
+          "4",
+          "4"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Ibarra_2005",
+        "plant_species": "Stenocereus queretaroensis",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Autlan valley",
+        "Site_period": "1",
+        "coordinates_lat": "19.712222",
+        "coordinates_lon": "-104.236111",
+        "year_start": "2002",
+        "year_end": "2003",
+        "month_start": "February",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.4,
+        "n": 0.85,
+        "unit": "NA",
+        "ids": [
+          "1082",
+          "1081"
+        ],
+        "sample_sizes": [
+          "20",
+          "20"
+        ]
+      },
+      "seed": {
+        "d": 0.16,
+        "n": 0.74,
+        "unit": "seeds per ovule",
+        "ids": [
+          "1086",
+          "1085"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Valiente-Banuet_2007",
+        "plant_species": "Hylocereus undatus",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "Tehuacan Valley",
+        "Site_period": "1",
+        "coordinates_lat": "18.4604803054948",
+        "coordinates_lon": "-97.4163429298623",
+        "year_start": "2001",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.461538461538462,
+        "n": 0.769230769230769,
+        "unit": "NA",
+        "ids": [
+          "1089",
+          "1088"
+        ],
+        "sample_sizes": [
+          "13",
+          "13"
+        ]
+      },
+      "seed": {
+        "d": 7110,
+        "n": 6830,
+        "unit": "seed per fruit",
+        "ids": [
+          "1094",
+          "1093"
+        ],
+        "sample_sizes": [
+          "3",
+          "3"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Jabbari_2013",
+        "plant_species": "Saponaria officinalis",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Marion County, Indiana",
+        "Site_period": "1",
+        "coordinates_lat": "40.5603999489768",
+        "coordinates_lon": "-85.6652007582537",
+        "year_start": "2009",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.875672043010752,
+        "n": 0.8252688172043,
+        "unit": "NA",
+        "ids": [
+          "1119",
+          "1118"
+        ],
+        "sample_sizes": [
+          "NA",
+          "NA"
+        ]
+      },
+      "seed": {
+        "d": 0.361559139784946,
+        "n": 0.348118279569892,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1122",
+          "1121"
+        ],
+        "sample_sizes": [
+          "NA",
+          "NA"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Suetsugu_2018",
+        "plant_species": "Mitrastemon yamamotoi",
+        "plant_cultivar": "NA",
+        "country": "Japan",
+        "locality": "Yakushima Island",
+        "Site_period": "1",
+        "coordinates_lat": "30.3460925113125",
+        "coordinates_lon": "130.510995583041",
+        "year_start": "2011",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "November",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.490909090909091,
+        "n": 0.481818181818182,
+        "unit": "NA",
+        "ids": [
+          "1124",
+          "1125"
+        ],
+        "sample_sizes": [
+          "110",
+          "110"
+        ]
+      },
+      "seed": {
+        "d": 48.2,
+        "n": 42.7,
+        "unit": "number of viable seeds",
+        "ids": [
+          "1132",
+          "1133"
+        ],
+        "sample_sizes": [
+          "100",
+          "100"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Gimenez_2007",
+        "plant_species": "Silene ciliata",
+        "plant_cultivar": "NA",
+        "country": "Spain",
+        "locality": "Penalara Natural Park",
+        "Site_period": "1",
+        "coordinates_lat": "40",
+        "coordinates_lon": "-3",
+        "year_start": "2004",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.887162162162162,
+        "n": 0.712837837837837,
+        "unit": "NA",
+        "ids": [
+          "1200",
+          "1199"
+        ],
+        "sample_sizes": [
+          "35",
+          "35"
+        ]
+      },
+      "seed": {
+        "d": 0.266508313539192,
+        "n": 0.32522565320665,
+        "unit": "seeds per ovule",
+        "ids": [
+          "1203",
+          "1202"
+        ],
+        "sample_sizes": [
+          "35",
+          "35"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Wolff_2003",
+        "plant_species": "Isertia laevis",
+        "plant_cultivar": "NA",
+        "country": "Ecuador",
+        "locality": "Podocarpus National Park",
+        "Site_period": "1",
+        "coordinates_lat": "-3.966667",
+        "coordinates_lon": "-79.066667",
+        "year_start": "2000",
+        "year_end": "2001",
+        "month_start": "February",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.6323529,
+        "n": 0.1428571,
+        "unit": "NA",
+        "ids": [
+          "1209",
+          "1208"
+        ],
+        "sample_sizes": [
+          "68",
+          "63"
+        ]
+      },
+      "seed": {
+        "d": 78,
+        "n": 320,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1211",
+          "1210"
+        ],
+        "sample_sizes": [
+          "43",
+          "9"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Haber_1982",
+        "plant_species": "Luehea seemannii",
+        "plant_cultivar": "NA",
+        "country": "Costa Rica",
+        "locality": "Guanacaste",
+        "Site_period": "1",
+        "coordinates_lat": "10.416667",
+        "coordinates_lon": "-85.116667",
+        "year_start": "1978",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.5392157,
+        "n": 0.1,
+        "unit": "NA",
+        "ids": [
+          "1217",
+          "1216"
+        ],
+        "sample_sizes": [
+          "204",
+          "140"
+        ]
+      },
+      "seed": {
+        "d": 33.8,
+        "n": 23.8,
+        "unit": "NA",
+        "ids": [
+          "1232",
+          "1231"
+        ],
+        "sample_sizes": [
+          "41",
+          "13"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Haber_1982",
+        "plant_species": "Luehea seemannii",
+        "plant_cultivar": "NA",
+        "country": "Costa Rica",
+        "locality": "Guanacaste",
+        "Site_period": "3",
+        "coordinates_lat": "10.416667",
+        "coordinates_lon": "-85.116667",
+        "year_start": "1978",
+        "year_end": "NA",
+        "month_start": "February",
+        "month_end": "February",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.4302326,
+        "n": 0.078125,
+        "unit": "NA",
+        "ids": [
+          "1227",
+          "1226"
+        ],
+        "sample_sizes": [
+          "86",
+          "128"
+        ]
+      },
+      "seed": {
+        "d": 6.5,
+        "n": 7.8,
+        "unit": "NA",
+        "ids": [
+          "1236",
+          "1235"
+        ],
+        "sample_sizes": [
+          "30",
+          "9"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Perez-Barrales_2010",
+        "plant_species": "Narcissus papyraceus",
+        "plant_cultivar": "Isoplethic-L-morph",
+        "country": "Spain",
+        "locality": "Seville",
+        "Site_period": "1",
+        "coordinates_lat": "37.3815225643024",
+        "coordinates_lon": "-5.99155722213194",
+        "year_start": "2003",
+        "year_end": "2004",
+        "month_start": "December",
+        "month_end": "January",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.130368545323888,
+        "n": 0.137037265167847,
+        "unit": "NA",
+        "ids": [
+          "1238",
+          "1240"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 3.62359550561797,
+        "n": 6.57303370786517,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1242",
+          "1244"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Perez-Barrales_2010",
+        "plant_species": "Narcissus papyraceus",
+        "plant_cultivar": "Isoplethic-S-morph",
+        "country": "Spain",
+        "locality": "Seville",
+        "Site_period": "1",
+        "coordinates_lat": "37.3815225643024",
+        "coordinates_lon": "-5.99155722213194",
+        "year_start": "2003",
+        "year_end": "2004",
+        "month_start": "December",
+        "month_end": "January",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.076953084898881,
+        "n": 0.083572528487835,
+        "unit": "NA",
+        "ids": [
+          "1239",
+          "1241"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "seed": {
+        "d": 0.926966292134835,
+        "n": 3.87640449438202,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1243",
+          "1245"
+        ],
+        "sample_sizes": [
+          "15",
+          "15"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Perez-Barrales_2010",
+        "plant_species": "Narcissus papyraceus",
+        "plant_cultivar": "monomorphic",
+        "country": "Spain",
+        "locality": "Seville",
+        "Site_period": "1",
+        "coordinates_lat": "37.3815225643024",
+        "coordinates_lon": "-5.99155722213194",
+        "year_start": "2003",
+        "year_end": "2004",
+        "month_start": "December",
+        "month_end": "January",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.519667957941339,
+        "n": 0.0907286478509499,
+        "unit": "NA",
+        "ids": [
+          "1246",
+          "1247"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "seed": {
+        "d": 10.2808988764045,
+        "n": 2.1067415730337,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1248",
+          "1249"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Walter_2010",
+        "plant_species": "Echinopsis chiloensis",
+        "plant_cultivar": "spp. chiloensis",
+        "country": "Chile",
+        "locality": "Cachapoal",
+        "Site_period": "1",
+        "coordinates_lat": "-34",
+        "coordinates_lon": "-70.7222694171802",
+        "year_start": "2008",
+        "year_end": "NA",
+        "month_start": "November",
+        "month_end": "December",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.1724138,
+        "n": 0.2444444,
+        "unit": "NA",
+        "ids": [
+          "1250",
+          "1251"
+        ],
+        "sample_sizes": [
+          "29",
+          "45"
+        ]
+      },
+      "seed": {
+        "d": 2223,
+        "n": 2560,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1259",
+          "1260"
+        ],
+        "sample_sizes": [
+          "5",
+          "5"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Stone_2018",
+        "plant_species": "Silene vulgaris",
+        "plant_cultivar": "female",
+        "country": "United States",
+        "locality": "Giles County, Virginia",
+        "Site_period": "1",
+        "coordinates_lat": "37.3595",
+        "coordinates_lon": "-80.554",
+        "year_start": "2007",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.4552,
+        "n": 0.135,
+        "unit": "NA",
+        "ids": [
+          "1263",
+          "1269"
+        ],
+        "sample_sizes": [
+          "773",
+          "854"
+        ]
+      },
+      "seed": {
+        "d": 30.0974976134211,
+        "n": 58.7251756678508,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1271",
+          "1273"
+        ],
+        "sample_sizes": [
+          "31",
+          "39"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Stone_2018",
+        "plant_species": "Silene vulgaris",
+        "plant_cultivar": "hermaphrodite",
+        "country": "United States",
+        "locality": "Giles County, Virginia",
+        "Site_period": "2",
+        "coordinates_lat": "37.3595",
+        "coordinates_lon": "-80.554",
+        "year_start": "2007",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.3162,
+        "n": 0.1219,
+        "unit": "NA",
+        "ids": [
+          "1264",
+          "1270"
+        ],
+        "sample_sizes": [
+          "637",
+          "586"
+        ]
+      },
+      "seed": {
+        "d": 39.3157952393621,
+        "n": 72.7829856492276,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1272",
+          "1274"
+        ],
+        "sample_sizes": [
+          "38",
+          "42"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Noone_2022",
+        "plant_species": "Vaccinium angustifolium",
+        "plant_cultivar": "NA",
+        "country": "Canada",
+        "locality": "Kent Island",
+        "Site_period": "1",
+        "coordinates_lat": "44.58",
+        "coordinates_lon": "-66.76",
+        "year_start": "2018",
+        "year_end": "NA",
+        "month_start": "May",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.718204488778055,
+        "n": 0.655860349127182,
+        "unit": "NA",
+        "ids": [
+          "1311",
+          "1312"
+        ],
+        "sample_sizes": [
+          "60",
+          "59"
+        ]
+      },
+      "seed": {
+        "d": 7.36526946107784,
+        "n": 5.83832335329341,
+        "unit": "viable seeds per fruit",
+        "ids": [
+          "1315",
+          "1316"
+        ],
+        "sample_sizes": [
+          "17",
+          "15"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "White",
+        "country": "United States",
+        "locality": "Newton Park",
+        "Site_period": "1",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 8.2,
+        "n": 7.51,
+        "unit": "NA",
+        "ids": [
+          "1327",
+          "1326"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 2.52,
+        "n": 2,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1323",
+          "1322"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "Pink",
+        "country": "United States",
+        "locality": "Newton Park",
+        "Site_period": "1",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 19.66,
+        "n": 4.84,
+        "unit": "NA",
+        "ids": [
+          "1329",
+          "1328"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "seed": {
+        "d": 4.09,
+        "n": 2.15,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1325",
+          "1324"
+        ],
+        "sample_sizes": [
+          "12",
+          "12"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "Pink",
+        "country": "United States",
+        "locality": "Pine Junction",
+        "Site_period": "2",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 9.23,
+        "n": 15.9,
+        "unit": "NA",
+        "ids": [
+          "1339",
+          "1338"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 1.89,
+        "n": 2.58,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1335",
+          "1334"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Elam_1988",
+        "plant_species": "Ipomopsis aggregata",
+        "plant_cultivar": "Red",
+        "country": "United States",
+        "locality": "Pine Junction",
+        "Site_period": "2",
+        "coordinates_lat": "39.477638472403",
+        "coordinates_lon": "-105.372912592741",
+        "year_start": "1985",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 10.26,
+        "n": 8.38,
+        "unit": "NA",
+        "ids": [
+          "1341",
+          "1340"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "seed": {
+        "d": 2.9,
+        "n": 2.52,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1337",
+          "1336"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Pachycereus pringlei",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "BK",
+        "Site_period": "5",
+        "coordinates_lat": "28.9557109557109",
+        "coordinates_lon": "-111.818181818181",
+        "year_start": "1995",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.132231405,
+        "n": 0.479338843,
+        "unit": "NA",
+        "ids": [
+          "1367",
+          "1385"
+        ],
+        "sample_sizes": [
+          "121",
+          "121"
+        ]
+      },
+      "seed": {
+        "d": 1182.2,
+        "n": 1652.7,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1400",
+          "1403"
+        ],
+        "sample_sizes": [
+          "2",
+          "21"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Carnegiea gigantea",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "BK",
+        "Site_period": "5",
+        "coordinates_lat": "28.9557109557109",
+        "coordinates_lon": "-111.818181818181",
+        "year_start": "1995",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.434210526,
+        "n": 0.565789474,
+        "unit": "NA",
+        "ids": [
+          "1368",
+          "1386"
+        ],
+        "sample_sizes": [
+          "76",
+          "76"
+        ]
+      },
+      "seed": {
+        "d": 1148.8,
+        "n": 1464.8,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1416",
+          "1420"
+        ],
+        "sample_sizes": [
+          "16",
+          "18"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Lophocereus schottii",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "BK",
+        "Site_period": "5",
+        "coordinates_lat": "28.9557109557109",
+        "coordinates_lon": "-111.818181818181",
+        "year_start": "1995",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.234042553,
+        "n": 0.35106383,
+        "unit": "NA",
+        "ids": [
+          "1370",
+          "1388"
+        ],
+        "sample_sizes": [
+          "94",
+          "94"
+        ]
+      },
+      "seed": {
+        "d": 108.4,
+        "n": 136.4,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1425",
+          "1427"
+        ],
+        "sample_sizes": [
+          "5",
+          "7"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Pachycereus pringlei",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "BK",
+        "Site_period": "6",
+        "coordinates_lat": "28.9557109557109",
+        "coordinates_lon": "-111.818181818181",
+        "year_start": "1996",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.093220339,
+        "n": 0.144067797,
+        "unit": "NA",
+        "ids": [
+          "1371",
+          "1389"
+        ],
+        "sample_sizes": [
+          "118",
+          "118"
+        ]
+      },
+      "seed": {
+        "d": 1483,
+        "n": 1440.9,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1401",
+          "1404"
+        ],
+        "sample_sizes": [
+          "8",
+          "12"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Carnegiea gigantea",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "BK",
+        "Site_period": "6",
+        "coordinates_lat": "28.9557109557109",
+        "coordinates_lon": "-111.818181818181",
+        "year_start": "1996",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.707070707,
+        "n": 0.131313131,
+        "unit": "NA",
+        "ids": [
+          "1372",
+          "1390"
+        ],
+        "sample_sizes": [
+          "99",
+          "99"
+        ]
+      },
+      "seed": {
+        "d": 1628.3,
+        "n": 1389.7,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1417",
+          "1421"
+        ],
+        "sample_sizes": [
+          "54",
+          "3"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Stenocereus thurberi",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "BK",
+        "Site_period": "6",
+        "coordinates_lat": "28.9557109557109",
+        "coordinates_lon": "-111.818181818181",
+        "year_start": "1996",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.168316832,
+        "n": 0.059405941,
+        "unit": "NA",
+        "ids": [
+          "1373",
+          "1391"
+        ],
+        "sample_sizes": [
+          "101",
+          "101"
+        ]
+      },
+      "seed": {
+        "d": 172.4,
+        "n": 339,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1408",
+          "1410"
+        ],
+        "sample_sizes": [
+          "8",
+          "1"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Carnegiea gigantea",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "ORPI",
+        "Site_period": "7",
+        "coordinates_lat": "32.2382617382617",
+        "coordinates_lon": "-112.881118881118",
+        "year_start": "1997",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.704081633,
+        "n": 0.12244898,
+        "unit": "NA",
+        "ids": [
+          "1375",
+          "1393"
+        ],
+        "sample_sizes": [
+          "98",
+          "98"
+        ]
+      },
+      "seed": {
+        "d": 1863.5,
+        "n": 939.6,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1418",
+          "1422"
+        ],
+        "sample_sizes": [
+          "42",
+          "5"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Fleming_2001",
+        "plant_species": "Lophocereus schottii",
+        "plant_cultivar": "NA",
+        "country": "Mexico",
+        "locality": "ORPI",
+        "Site_period": "7",
+        "coordinates_lat": "32.2382617382617",
+        "coordinates_lon": "-112.881118881118",
+        "year_start": "1997",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.066481994,
+        "n": 0.171745152,
+        "unit": "NA",
+        "ids": [
+          "1377",
+          "1395"
+        ],
+        "sample_sizes": [
+          "361",
+          "361"
+        ]
+      },
+      "seed": {
+        "d": 177.5,
+        "n": 134.7,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1426",
+          "1428"
+        ],
+        "sample_sizes": [
+          "6",
+          "31"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "McMullen_2012",
+        "plant_species": "Cordia lutea",
+        "plant_cultivar": "NA",
+        "country": "Ecuador",
+        "locality": "Galapagos (Santa Cruz)",
+        "Site_period": "1",
+        "coordinates_lat": "-0.478611",
+        "coordinates_lon": "-90.168056",
+        "year_start": "1994",
+        "year_end": "NA",
+        "month_start": "June",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.2,
+        "n": 0.17,
+        "unit": "NA",
+        "ids": [
+          "1480",
+          "1481"
+        ],
+        "sample_sizes": [
+          "6",
+          "6"
+        ]
+      },
+      "seed": {
+        "d": 0.67,
+        "n": 1.08,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1485",
+          "1486"
+        ],
+        "sample_sizes": [
+          "6",
+          "6"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Marques_2015",
+        "plant_species": "Billbergia horrida",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Juiz de Fora",
+        "Site_period": "1",
+        "coordinates_lat": "-21.7579968058356",
+        "coordinates_lon": "-43.3506088041035",
+        "year_start": "2010",
+        "year_end": "NA",
+        "month_start": "August",
+        "month_end": "October",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.1002475,
+        "n": 0.821066,
+        "unit": "NA",
+        "ids": [
+          "1487",
+          "1488"
+        ],
+        "sample_sizes": [
+          "808",
+          "788"
+        ]
+      },
+      "seed": {
+        "d": 3.8,
+        "n": 139.6,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1490",
+          "1491"
+        ],
+        "sample_sizes": [
+          "50",
+          "50"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Martins_2020",
+        "plant_species": "Cipocereus crassisepalus",
+        "plant_cultivar": "NA",
+        "country": "Brazil",
+        "locality": "Parque Estadual do Rio Preto",
+        "Site_period": "1",
+        "coordinates_lat": "-18.12025",
+        "coordinates_lon": "-43.343583",
+        "year_start": "2012",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.05714286,
+        "n": 0.6571429,
+        "unit": "NA",
+        "ids": [
+          "1499",
+          "1498"
+        ],
+        "sample_sizes": [
+          "35",
+          "35"
+        ]
+      },
+      "seed": {
+        "d": 143.5,
+        "n": 1432.17,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1503",
+          "1502"
+        ],
+        "sample_sizes": [
+          "2",
+          "23"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "McGregor_1962",
+        "plant_species": "Carnegiea gigantea",
+        "plant_cultivar": "NA",
+        "country": "United States",
+        "locality": "Saguaro National Monument, Arizona",
+        "Site_period": "1",
+        "coordinates_lat": "32.3134126277325",
+        "coordinates_lon": "-111.166929240774",
+        "year_start": "1960",
+        "year_end": "NA",
+        "month_start": "April",
+        "month_end": "June",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.2694301,
+        "n": 0.7209302,
+        "unit": "NA",
+        "ids": [
+          "1536",
+          "1537"
+        ],
+        "sample_sizes": [
+          "193",
+          "86"
+        ]
+      },
+      "seed": {
+        "d": 1751,
+        "n": 1887,
+        "unit": "NA",
+        "ids": [
+          "1541",
+          "1542"
+        ],
+        "sample_sizes": [
+          "10",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Tremlett_2020",
+        "plant_species": "Stenocereus queretaroensis",
+        "plant_cultivar": "Blanco",
+        "country": "Mexico",
+        "locality": "Techaluta de Montenegro, Jalisco",
+        "Site_period": "1",
+        "coordinates_lat": "20.074",
+        "coordinates_lon": "-103.55",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.590909090909091,
+        "n": 0.681818181818182,
+        "unit": "NA",
+        "ids": [
+          "1601",
+          "1602"
+        ],
+        "sample_sizes": [
+          "22",
+          "22"
+        ]
+      },
+      "seed": {
+        "d": 0.211638206,
+        "n": 0.943952615,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1574",
+          "1575"
+        ],
+        "sample_sizes": [
+          "11",
+          "9"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Tremlett_2020",
+        "plant_species": "Stenocereus queretaroensis",
+        "plant_cultivar": "Mamey",
+        "country": "Mexico",
+        "locality": "Techaluta de Montenegro, Jalisco",
+        "Site_period": "1",
+        "coordinates_lat": "20.074",
+        "coordinates_lon": "-103.55",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.1,
+        "n": 0.433333333333333,
+        "unit": "NA",
+        "ids": [
+          "1605",
+          "1606"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "seed": {
+        "d": 0.187684704,
+        "n": 0.643219814,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1577",
+          "1578"
+        ],
+        "sample_sizes": [
+          "3",
+          "10"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Tremlett_2020",
+        "plant_species": "Stenocereus queretaroensis",
+        "plant_cultivar": "Tenamaxtle",
+        "country": "Mexico",
+        "locality": "Techaluta de Montenegro, Jalisco",
+        "Site_period": "1",
+        "coordinates_lat": "20.074",
+        "coordinates_lon": "-103.55",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.592592592592593,
+        "n": 0.592592592592593,
+        "unit": "NA",
+        "ids": [
+          "1609",
+          "1610"
+        ],
+        "sample_sizes": [
+          "27",
+          "27"
+        ]
+      },
+      "seed": {
+        "d": 0.371328461,
+        "n": 0.993006993,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1580",
+          "1581"
+        ],
+        "sample_sizes": [
+          "16",
+          "14"
+        ]
+      },
+      "direction": "tie",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Tremlett_2020",
+        "plant_species": "Stenocereus queretaroensis",
+        "plant_cultivar": "wild",
+        "country": "Mexico",
+        "locality": "Techaluta de Montenegro, Jalisco",
+        "Site_period": "1",
+        "coordinates_lat": "20.074",
+        "coordinates_lon": "-103.55",
+        "year_start": "2016",
+        "year_end": "NA",
+        "month_start": "March",
+        "month_end": "May",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.133333333333333,
+        "n": 0.833333333333333,
+        "unit": "NA",
+        "ids": [
+          "1613",
+          "1614"
+        ],
+        "sample_sizes": [
+          "30",
+          "30"
+        ]
+      },
+      "seed": {
+        "d": 0.09659195,
+        "n": 0.603119137,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1584",
+          "1585"
+        ],
+        "sample_sizes": [
+          "3",
+          "19"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Hinman_2003",
+        "plant_species": "Agave palmeri",
+        "plant_cultivar": "wild",
+        "country": "United States",
+        "locality": "Portal, Arizona",
+        "Site_period": "1",
+        "coordinates_lat": "31.9214720247819",
+        "coordinates_lon": "-109.138306999513",
+        "year_start": "2000",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.201682797780358,
+        "n": 0.158454106280192,
+        "unit": "NA",
+        "ids": [
+          "1624",
+          "1620"
+        ],
+        "sample_sizes": [
+          "4",
+          "3"
+        ]
+      },
+      "seed": {
+        "d": 94.879266504575,
+        "n": 69.6604423397728,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1640",
+          "1636"
+        ],
+        "sample_sizes": [
+          "3",
+          "2"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Hinman_2003",
+        "plant_species": "Agave palmeri",
+        "plant_cultivar": "wild",
+        "country": "United States",
+        "locality": "Portal, Arizona",
+        "Site_period": "2",
+        "coordinates_lat": "31.9214720247819",
+        "coordinates_lon": "-109.138306999513",
+        "year_start": "2000",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "July",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.163148793392696,
+        "n": 0.417391304347826,
+        "unit": "NA",
+        "ids": [
+          "1625",
+          "1621"
+        ],
+        "sample_sizes": [
+          "3",
+          "3"
+        ]
+      },
+      "seed": {
+        "d": 114.601236103119,
+        "n": 73.384275951138,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1641",
+          "1637"
+        ],
+        "sample_sizes": [
+          "2",
+          "3"
+        ]
+      },
+      "direction": "opposite",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Hinman_2003",
+        "plant_species": "Agave palmeri",
+        "plant_cultivar": "wild",
+        "country": "United States",
+        "locality": "Portal, Arizona",
+        "Site_period": "3",
+        "coordinates_lat": "31.9214720247819",
+        "coordinates_lon": "-109.138306999513",
+        "year_start": "2000",
+        "year_end": "NA",
+        "month_start": "July",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.124599303135888,
+        "n": 0.363285024154589,
+        "unit": "NA",
+        "ids": [
+          "1626",
+          "1622"
+        ],
+        "sample_sizes": [
+          "4",
+          "4"
+        ]
+      },
+      "seed": {
+        "d": 81.827799328124,
+        "n": 229.580799655599,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1642",
+          "1638"
+        ],
+        "sample_sizes": [
+          "3",
+          "3"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    },
+    {
+      "context": {
+        "study_ID": "Hinman_2003",
+        "plant_species": "Agave palmeri",
+        "plant_cultivar": "wild",
+        "country": "United States",
+        "locality": "Portal, Arizona",
+        "Site_period": "4",
+        "coordinates_lat": "31.9214720247819",
+        "coordinates_lon": "-109.138306999513",
+        "year_start": "2000",
+        "year_end": "NA",
+        "month_start": "August",
+        "month_end": "August",
+        "additional_treatment": "NA"
+      },
+      "fruit": {
+        "d": 0.238446251129178,
+        "n": 0.5487922705314,
+        "unit": "NA",
+        "ids": [
+          "1627",
+          "1623"
+        ],
+        "sample_sizes": [
+          "3",
+          "4"
+        ]
+      },
+      "seed": {
+        "d": 194.068189832773,
+        "n": 240.709250390141,
+        "unit": "seeds per fruit",
+        "ids": [
+          "1643",
+          "1639"
+        ],
+        "sample_sizes": [
+          "3",
+          "4"
+        ]
+      },
+      "direction": "same",
+      "explicit_unit_positive": false
+    }
+  ]
+}

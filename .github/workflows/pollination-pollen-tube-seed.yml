@@ -1,0 +1,55 @@
+name: Pollination pollen tube and seed diagnostic
+on:
+  pull_request:
+    paths:
+      - 'analysis/166_cross_system_stage_source_gate.py'
+      - 'analysis/167_pollination_pollen_tube_seed_diagnostic.py'
+      - '.github/workflows/pollination-pollen-tube-seed.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --only-binary=:all: numpy==2.2.6 pandas==2.2.3 scipy==1.15.3 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/166_cross_system_stage_source_gate.py")
+          m=importlib.util.module_from_spec(s)
+          s.loader.exec_module(m)
+          m.ROOT.mkdir(exist_ok=True)
+          assert m.figshare_apple()["status"]=="ACQUIRED_SCHEMA_UNVERIFIED"
+          assert m.dryad("gallagher_2020","10.7280/D19X0D")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/167_pollination_pollen_tube_seed_diagnostic.py > out/pollination_stage.json
+          python - <<'PY'
+          import json, math
+          x=json.load(open("out/pollination_stage.json"))
+          a=x["apple"];g=x["gallagher"]
+          assert a["style_rows"]==487 and a["flower_contexts"]==105
+          assert a["nonmonotonic_style_counts"]==18
+          assert a["base_positive_mid_zero_flowers"]==3
+          assert a["visited_pollen_thresholds"]["100"]=={"flowers":42,"base_zero":28}
+          assert a["visited_exactly_five_recorded_styles"]["100"]=={"flowers":27,"base_zero":17}
+          assert a["visited_by_year"]["2017"]["100"]=={"flowers":8,"base_zero":6}
+          assert a["visited_by_year"]["2018"]["100"]=={"flowers":34,"base_zero":22}
+          assert a["one_visit_fruit_rows"]==58 and a["one_visit_initial"]==a["one_visit_final"]==0
+          assert a["one_visit_seed_rows"]==58 and a["one_visit_positive_seed_rows"]==0
+          assert g["visited_ramets"]==94 and g["pollen_and_seed_visited_ramets"]==47
+          assert g["zero_seed_with_conspecific_pollen"]==20 and g["visitor_label_mismatches"]==44
+          assert math.isclose(g["centered_within_site_visitor_rank_correlation"],-.09471641795659537,abs_tol=1e-10)
+          assert .53<g["two_sided_permutation_p"]<.60
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pollination-stage-original-diagnostics
+          path: out/
+          if-no-files-found: error

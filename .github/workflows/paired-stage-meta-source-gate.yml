@@ -1,0 +1,52 @@
+name: Paired-stage covariance and mutualism source gate
+on:
+  pull_request:
+    paths:
+      - 'analysis/159_bioturbation_joint_effect_covariance.py'
+      - 'analysis/160_paired_stage_mutualism_source_gate.py'
+      - 'results/bioturbation_joint_effect_covariance_20261124.json'
+      - '.github/workflows/paired-stage-meta-source-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  covariance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          python analysis/159_bioturbation_joint_effect_covariance.py > out/bioturbation_joint_effect_covariance.json
+          python - <<'PY'
+          import json, math
+          a=json.load(open("out/bioturbation_joint_effect_covariance.json"))
+          b=json.load(open("results/bioturbation_joint_effect_covariance_20261124.json"))
+          assert a["source_git_blob"]==b["source_git_blob"]
+          for temp in ("COLD","WARM"):
+              x=a["temperature_strata"][temp];y=b["temperature_strata"][temp]
+              assert x["labels"]==y["labels"] and len(x["labels"])==8
+              assert len(x["tank_vectors"])==16
+              for i in range(8):
+                  assert math.isclose(x["effect_estimate"][i],y["effect_estimate"][i],abs_tol=1e-12)
+                  for j in range(8):
+                      assert math.isclose(x["sampling_covariance"][i][j],y["sampling_covariance"][i][j],abs_tol=1e-12)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paired-stage-joint-effect-covariance
+          path: out/
+          if-no-files-found: error
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python analysis/160_paired_stage_mutualism_source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paired-stage-mutualism-source-inventory
+          path: transmission_sources/
+          retention-days: 3
+          if-no-files-found: error

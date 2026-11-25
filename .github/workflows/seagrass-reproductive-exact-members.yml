@@ -1,0 +1,22 @@
+name: Seagrass reproductive exact source members
+on:
+  pull_request:
+    paths:
+      - 'analysis/138_reproductive_exact_source_members.py'
+      - '.github/workflows/seagrass-reproductive-exact-members.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source_members:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/138_reproductive_exact_source_members.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproductive-exact-source-members
+          path: reproductive_input/
+          retention-days: 3
+          if-no-files-found: error

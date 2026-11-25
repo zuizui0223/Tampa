@@ -1,0 +1,503 @@
+{
+  "campaigns": [
+    {
+      "all_root_piece_zero_counts": 11,
+      "campaign": "April2016",
+      "plant_mean_fixation_group_mean": 0.001998601505911699,
+      "plant_mean_fixation_group_median": 0.001482264020602867,
+      "plant_mean_max": 0.0059032048242481285,
+      "plant_mean_min": 0,
+      "plant_means_positive_count": 4,
+      "plant_median_fixation_group_median": 0,
+      "plants_distinct": 5,
+      "root_piece_readings_total": 23
+    },
+    {
+      "all_root_piece_zero_counts": 5,
+      "campaign": "May2015",
+      "plant_mean_fixation_group_mean": 0.005845831123030196,
+      "plant_mean_fixation_group_median": 0.002968686673441672,
+      "plant_mean_max": 0.017837202032621086,
+      "plant_mean_min": 0,
+      "plant_means_positive_count": 4,
+      "plant_median_fixation_group_median": 0.002787855584021673,
+      "plants_distinct": 8,
+      "root_piece_readings_total": 22
+    },
+    {
+      "all_root_piece_zero_counts": 14,
+      "campaign": "May2017",
+      "plant_mean_fixation_group_mean": 0.00038859744606042657,
+      "plant_mean_fixation_group_median": 0,
+      "plant_mean_max": 0.0011657923381812798,
+      "plant_mean_min": 0,
+      "plant_means_positive_count": 1,
+      "plant_median_fixation_group_median": 0,
+      "plants_distinct": 3,
+      "root_piece_readings_total": 15
+    },
+    {
+      "all_root_piece_zero_counts": 6,
+      "campaign": "June2014",
+      "plant_mean_fixation_group_mean": 0.4333214468025974,
+      "plant_mean_fixation_group_median": 0.28832843119122153,
+      "plant_mean_max": 1.0780421391150647,
+      "plant_mean_min": 0.013711195738628348,
+      "plant_means_positive_count": 6,
+      "plant_median_fixation_group_median": 0.07480652822564807,
+      "plants_distinct": 6,
+      "root_piece_readings_total": 37
+    },
+    {
+      "all_root_piece_zero_counts": 4,
+      "campaign": "August2016",
+      "plant_mean_fixation_group_mean": 0.3708527424089652,
+      "plant_mean_fixation_group_median": 0.38589015808441934,
+      "plant_mean_max": 0.8447378889902761,
+      "plant_mean_min": 0.010022095083800668,
+      "plant_means_positive_count": 6,
+      "plant_median_fixation_group_median": 0.21876647831107848,
+      "plants_distinct": 6,
+      "root_piece_readings_total": 61
+    },
+    {
+      "all_root_piece_zero_counts": 2,
+      "campaign": "September2018",
+      "plant_mean_fixation_group_mean": 0.4202252076356228,
+      "plant_mean_fixation_group_median": 0.03887178827737734,
+      "plant_mean_max": 1.1874801762889726,
+      "plant_mean_min": 0.03432365834051843,
+      "plant_means_positive_count": 3,
+      "plant_median_fixation_group_median": 0.034529596470557734,
+      "plants_distinct": 3,
+      "root_piece_readings_total": 12
+    }
+  ],
+  "excluded_second_panel_start_row": 30,
+  "exclusion_reason": "16S rRNA plant-column table starts with April2016_Plant1 at B30; separate endpoint.",
+  "hard_limits": [
+    "Plant-labelled columns are primary biological replicates; rows 5 onward are root-piece subsamples and not independent plants.",
+    "Zero source values are retained; zeros may include nondetection and should not be interpreted as symbiont absence.",
+    "Samples from different months use different plants; April and August 2016 are not longitudinal measurements of the same individual.",
+    "Campaigns belong to different years (2014, 2015, 2016, 2017, 2018), confounded with season, history and method.",
+    "Published study already reported summer enhancement of N2 fixation; this reaggregation is not independent replication.",
+    "No experimental manipulation of light, nutrient supplementation, or loss of symbiont in these two groups.",
+    "No causal carbon-cost balance or host survival, Thalassia or global cross-species interaction inferred."
+  ],
+  "plant_count": 31,
+  "plant_level_details": [
+    {
+      "accession": "ERS6675146",
+      "campaign": "August2016",
+      "plant": "August2016_Plant6",
+      "plant_mean_fixation": 0.4767000423425809,
+      "plant_median_fixation": 0.3373100935582366,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 1.2734613511157853,
+      "root_piece_readings": 8,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675142",
+      "campaign": "August2016",
+      "plant": "August2016_Plant2",
+      "plant_mean_fixation": 0.559610499223015,
+      "plant_median_fixation": 0.32290080330889187,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 1.7921558653435363,
+      "root_piece_readings": 22,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675145",
+      "campaign": "August2016",
+      "plant": "August2016_Plant5",
+      "plant_mean_fixation": 0.8447378889902761,
+      "plant_median_fixation": 0.795071484326733,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 1.5036578605330726,
+      "root_piece_readings": 10,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675150",
+      "campaign": "September2018",
+      "plant": "September2018_Plant1",
+      "plant_mean_fixation": 0.03432365834051843,
+      "plant_median_fixation": 0.022276553922047405,
+      "root_piece_fraction_positive": 0.5,
+      "root_piece_max_fixation": 0.09274152551797891,
+      "root_piece_readings": 4,
+      "root_piece_zero_count": 2
+    },
+    {
+      "accession": "ERS6675151",
+      "campaign": "September2018",
+      "plant": "September2018_Plant2",
+      "plant_mean_fixation": 0.03887178827737734,
+      "plant_median_fixation": 0.034529596470557734,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.08136848743269587,
+      "root_piece_readings": 4,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675152",
+      "campaign": "September2018",
+      "plant": "September2018_Plant3",
+      "plant_mean_fixation": 1.1874801762889726,
+      "plant_median_fixation": 1.0970963356115344,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 1.7187665784521426,
+      "root_piece_readings": 4,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675136",
+      "campaign": "April2016",
+      "plant": "April2016_Plant1",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 4,
+      "root_piece_zero_count": 4
+    },
+    {
+      "accession": "ERS6675139",
+      "campaign": "April2016",
+      "plant": "April2016_Plant4",
+      "plant_mean_fixation": 0.000729630044561516,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0.25,
+      "root_piece_max_fixation": 0.002918520178246064,
+      "root_piece_readings": 4,
+      "root_piece_zero_count": 3
+    },
+    {
+      "accession": "ERS6675138",
+      "campaign": "April2016",
+      "plant": "April2016_Plant3",
+      "plant_mean_fixation": 0.001482264020602867,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0.3333333333333333,
+      "root_piece_max_fixation": 0.0044467920618086005,
+      "root_piece_readings": 3,
+      "root_piece_zero_count": 2
+    },
+    {
+      "accession": "ERS6675140",
+      "campaign": "April2016",
+      "plant": "April2016_Plant5",
+      "plant_mean_fixation": 0.0018779086401459818,
+      "plant_median_fixation": 0.0026101412684071982,
+      "root_piece_fraction_positive": 0.6666666666666666,
+      "root_piece_max_fixation": 0.0031482897337642506,
+      "root_piece_readings": 6,
+      "root_piece_zero_count": 2
+    },
+    {
+      "accession": "ERS6675137",
+      "campaign": "April2016",
+      "plant": "April2016_Plant2",
+      "plant_mean_fixation": 0.0059032048242481285,
+      "plant_median_fixation": 0.005124425969731249,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.012218484461301492,
+      "root_piece_readings": 6,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675128",
+      "campaign": "May2015",
+      "plant": "May2015_Plant1",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 1,
+      "root_piece_zero_count": 1
+    },
+    {
+      "accession": "ERS6675134",
+      "campaign": "May2015",
+      "plant": "May2015_Plant7",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 1,
+      "root_piece_zero_count": 1
+    },
+    {
+      "accession": "ERS6675135",
+      "campaign": "May2015",
+      "plant": "May2015_Plant8",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 1,
+      "root_piece_zero_count": 1
+    },
+    {
+      "accession": "ERS6675129",
+      "campaign": "May2015",
+      "plant": "May2015_Plant2",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 1,
+      "root_piece_zero_count": 1
+    },
+    {
+      "accession": "ERS6675131",
+      "campaign": "May2015",
+      "plant": "May2015_Plant4",
+      "plant_mean_fixation": 0.005937373346883344,
+      "plant_median_fixation": 0.005937373346883344,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.005937373346883344,
+      "root_piece_readings": 1,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675133",
+      "campaign": "May2015",
+      "plant": "May2015_Plant6",
+      "plant_mean_fixation": 0.006669735604128986,
+      "plant_median_fixation": 0.005575711168043346,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.009361431966445552,
+      "root_piece_readings": 3,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675132",
+      "campaign": "May2015",
+      "plant": "May2015_Plant5",
+      "plant_mean_fixation": 0.016322338000608158,
+      "plant_median_fixation": 0.015341687349595297,
+      "root_piece_fraction_positive": 0.8571428571428571,
+      "root_piece_max_fixation": 0.033858642600949534,
+      "root_piece_readings": 7,
+      "root_piece_zero_count": 1
+    },
+    {
+      "accession": "ERS6675130",
+      "campaign": "May2015",
+      "plant": "May2015_Plant3",
+      "plant_mean_fixation": 0.017837202032621086,
+      "plant_median_fixation": 0.01646925260716507,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.03221022735357728,
+      "root_piece_readings": 7,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675148",
+      "campaign": "May2017",
+      "plant": "May2017_Plant2",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 5,
+      "root_piece_zero_count": 5
+    },
+    {
+      "accession": "ERS6675149",
+      "campaign": "May2017",
+      "plant": "May2017_Plant3",
+      "plant_mean_fixation": 0,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0,
+      "root_piece_max_fixation": 0,
+      "root_piece_readings": 5,
+      "root_piece_zero_count": 5
+    },
+    {
+      "accession": "ERS6675147",
+      "campaign": "May2017",
+      "plant": "May2017_Plant1",
+      "plant_mean_fixation": 0.0011657923381812798,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0.2,
+      "root_piece_max_fixation": 0.005828961690906399,
+      "root_piece_readings": 5,
+      "root_piece_zero_count": 4
+    },
+    {
+      "accession": "ERS6675124",
+      "campaign": "June2014",
+      "plant": "June2014_Plant3",
+      "plant_mean_fixation": 0.013711195738628348,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0.2,
+      "root_piece_max_fixation": 0.06855597869314174,
+      "root_piece_readings": 5,
+      "root_piece_zero_count": 4
+    },
+    {
+      "accession": "ERS6675123",
+      "campaign": "June2014",
+      "plant": "June2014_Plant2",
+      "plant_mean_fixation": 0.05638536443919417,
+      "plant_median_fixation": 0.055004911015494984,
+      "root_piece_fraction_positive": 0.6666666666666666,
+      "root_piece_max_fixation": 0.13240831097368744,
+      "root_piece_readings": 6,
+      "root_piece_zero_count": 2
+    },
+    {
+      "accession": "ERS6675125",
+      "campaign": "June2014",
+      "plant": "June2014_Plant4",
+      "plant_mean_fixation": 0.1773536347420158,
+      "plant_median_fixation": 0.07852828382948684,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.7492636231972473,
+      "root_piece_readings": 7,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675122",
+      "campaign": "June2014",
+      "plant": "June2014_Plant1",
+      "plant_mean_fixation": 0.39930322764042725,
+      "plant_median_fixation": 0.07108477262180929,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 1.7237712438330892,
+      "root_piece_readings": 7,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675127",
+      "campaign": "June2014",
+      "plant": "June2014_Plant6",
+      "plant_mean_fixation": 0.875133119140254,
+      "plant_median_fixation": 0.4915786809745362,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 2.694778503532343,
+      "root_piece_readings": 7,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675126",
+      "campaign": "June2014",
+      "plant": "June2014_Plant5",
+      "plant_mean_fixation": 1.0780421391150647,
+      "plant_median_fixation": 1.039478467143204,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 2.277577155930097,
+      "root_piece_readings": 5,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675144",
+      "campaign": "August2016",
+      "plant": "August2016_Plant4",
+      "plant_mean_fixation": 0.010022095083800668,
+      "plant_median_fixation": 0,
+      "root_piece_fraction_positive": 0.42857142857142855,
+      "root_piece_max_fixation": 0.05343754471808942,
+      "root_piece_readings": 7,
+      "root_piece_zero_count": 4
+    },
+    {
+      "accession": "ERS6675141",
+      "campaign": "August2016",
+      "plant": "August2016_Plant1",
+      "plant_mean_fixation": 0.03896565498786081,
+      "plant_median_fixation": 0.01811887294065888,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.14695790606102005,
+      "root_piece_readings": 6,
+      "root_piece_zero_count": 0
+    },
+    {
+      "accession": "ERS6675143",
+      "campaign": "August2016",
+      "plant": "August2016_Plant3",
+      "plant_mean_fixation": 0.2950802738262578,
+      "plant_median_fixation": 0.11463215331326512,
+      "root_piece_fraction_positive": 1,
+      "root_piece_max_fixation": 0.986405104355472,
+      "root_piece_readings": 8,
+      "root_piece_zero_count": 0
+    }
+  ],
+  "root_piece_measurement_count": 170,
+  "same_year_2016_nonmatched_plants_apr_vs_aug": {
+    "difference_aug_minus_apr_of_plant_mean_fixation": 0.3688541409030535,
+    "n_april_plants": 5,
+    "n_august_plants": 6,
+    "status": "POSTHOC_UNMATCHED_PLANT_SEASONAL_ASSOCIATION_NOT_N_LIGHT_FACTORIAL",
+    "within_campaign_plant_bootstrap_95pct_percentile": [
+      0.1480810806675792,
+      0.609751231824543
+    ]
+  },
+  "schema": "tampa.posidonia_n2_original_plant_vs_root_piece_v1",
+  "source_fig": "Figure 2 panel a",
+  "source_paper": "10.1038/s41586-021-04063-4",
+  "source_sha256": "877242abb476cb2d933048778037f8eaf53435e346be42adf327d4af75c7156b",
+  "unit": "root_piece_N2_fixation_umol_N_gDW_per_day",
+  "source_verified_run": {
+    "run_id": 45323708586,
+    "job_id": 138208057898,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45323708586",
+    "status": "completed_success",
+    "artifacts": [
+      {
+        "id": 14889110233,
+        "name": "posidonia-N2-root-piece-plant-campaign-analysis",
+        "digest": "sha256:23e81226696030171291cc61a8595ff499d0fc54faf58a695fa5142d2b554bad",
+        "size": 3085
+      },
+      {
+        "id": 14888742664,
+        "name": "lucinid-2012-original-data-workbook-preflight",
+        "digest": "sha256:fad153d390f97d1a9763fc0349b90f7ac7b6ffdf54ca16895e5ebcc2bb83d15e",
+        "size": 404
+      },
+      {
+        "id": 14888653105,
+        "name": "lucinid-field-2020-original-source-gate",
+        "digest": "sha256:940b080f095467948b260b7c6e1dbd8696ea8f890dac6288ec16ed6c25a85bd8",
+        "size": 403
+      },
+      {
+        "id": 14888512934,
+        "name": "posidonia-N2-2021-original-source-factor-gate",
+        "digest": "sha256:31ca73f049c7ee5effd823d2b98dbea560a9f20d7e2769067cd2ba8d3f00e7f6",
+        "size": 5141
+      },
+      {
+        "id": 14888353339,
+        "name": "lucinid-field-2020-published-sulfide-vs-rhizome-contrasts",
+        "digest": "sha256:7d00e60aa6a3969983eec14a9bd02d6de2e011f4d8844dc2f0d7bd5f31437819",
+        "size": 2044
+      },
+      {
+        "id": 14887899946,
+        "name": "zen-15site-grazer-nutrient-site-equal-contrasts",
+        "digest": "sha256:ab6db85001684bbfd4f9d4bc3e017c967a98d95190562745d91f1d01ee82f2ae",
+        "size": 6772
+      },
+      {
+        "id": 14887783790,
+        "name": "seagrass-interaction-original-data-preflight",
+        "digest": "sha256:552b6a820a2e853aa0f26a09baf7193e8a573dac6466377b7df6fb108a656a22",
+        "size": 2319
+      },
+      {
+        "id": 14887769737,
+        "name": "seagrass-six-interactions-exploratory-evidence",
+        "digest": "sha256:c2a045c805a77c9f6fcf2e614439bde1816803c6b415a0b20b051ee146018c3f",
+        "size": 2510
+      }
+    ]
+  }
+}

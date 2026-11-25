@@ -1,0 +1,236 @@
+name: Tampa six seagrass interaction exploratory audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/seagrass_interactions_v1/**'
+      - 'analysis/116_seagrass_six_interactions_evidence_screen.py'
+      - 'analysis/117_seagrass_interaction_original_data_preflight.py'
+      - 'analysis/118_zen_15site_mesograzer_factorial.py'
+      - 'analysis/119_lucinid_dryad_original_workbook_preflight.py'
+      - 'validation/test_lucinid_dryad_original_workbook_preflight.py'
+      - 'analysis/121_lucinid_2020_field_experiment_source_gate.py'
+      - 'validation/test_lucinid_2020_field_experiment_source_gate.py'
+      - 'analysis/122_lucinid_field_published_factorial_contrast.py'
+      - 'validation/test_lucinid_field_published_factorial_contrast.py'
+      - 'analysis/123_posidonia_nfix_original_source_factor_gate.py'
+      - 'validation/test_posidonia_nfix_original_source_factor_gate.py'
+      - 'analysis/124_posidonia_n2_plant_campaign_reaggregation.py'
+      - 'validation/test_posidonia_n2_plant_campaign_reaggregation.py'
+      - 'analysis/125_zen_site_moderator_posthoc_robustness.py'
+      - 'validation/test_zen_site_moderator_posthoc_robustness.py'
+      - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
+      - 'results/posidonia_n2_plant_campaign_exploratory_verified_20261124.json'
+      - 'results/zen_15site_moderator_posthoc_verified_20261124.json'
+      - 'validation/test_zen_15site_mesograzer_factorial.py'
+      - 'results/zen_15site_mesograzer_exploratory_verified_20261124.json'
+      - 'validation/test_seagrass_six_interactions_evidence_screen.py'
+      - 'validation/test_seagrass_interaction_original_data_preflight.py'
+      - 'docs/SEAGRASS_SIX_INTERACTION_EXPLORATORY_20261124.md'
+      - '.github/workflows/seagrass-six-interactions-exploratory.yml'
+jobs:
+  six_interaction_evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate six hypothesis registry and published arithmetic
+        run: python -m unittest discover -s validation -p 'test_seagrass_six_interactions_evidence_screen.py' -v
+      - name: Generate six families and existing Tampa sensitivity output
+        run: |
+          python analysis/116_seagrass_six_interactions_evidence_screen.py \
+            --out /tmp/seagrass_six_interactions_evidence_v1.json
+          cat /tmp/seagrass_six_interactions_evidence_v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seagrass-six-interactions-exploratory-evidence
+          path: /tmp/seagrass_six_interactions_evidence_v1.json
+  experimental_source_preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate official data-source inventory and source-failure rules
+        run: python -m unittest discover -s validation -p 'test_seagrass_interaction_original_data_preflight.py' -v
+      - name: Independently attempt the official public CSV JSON and source workbook data URLs
+        run: |
+          python analysis/117_seagrass_interaction_original_data_preflight.py \
+            --out /tmp/seagrass_interaction_source_preflight.json
+          cat /tmp/seagrass_interaction_source_preflight.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seagrass-interaction-original-data-preflight
+          path: /tmp/seagrass_interaction_source_preflight.json
+
+  zen_global_factorial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify 15-site treatment arithmetic with synthetic plots
+        run: python -m unittest discover -s validation -p 'test_zen_15site_mesograzer_factorial.py' -v
+      - name: Source-locked ZEN 15-site grazer and nutrient experiment reaggregation
+        run: |
+          python analysis/118_zen_15site_mesograzer_factorial.py \
+            --out /tmp/zen15_grazer_nutrient_exploratory.json
+          cat /tmp/zen15_grazer_nutrient_exploratory.json
+      - name: Assert current original-data result reproduces source-verified 15-site ledger
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          live=json.loads(Path('/tmp/zen15_grazer_nutrient_exploratory.json').read_text())
+          archive=json.loads(Path('results/zen_15site_mesograzer_exploratory_verified_20261124.json').read_text())
+          provenance=archive.pop('source_verified_run')
+          if not provenance.get('successful') or live != archive:
+              raise SystemExit('ZEN original data results disagree with source-verified ledger')
+          print('PASS: all 600-plot, 15-site factorial and bootstrap outputs exactly reproduce')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen-15site-grazer-nutrient-site-equal-contrasts
+          path: /tmp/zen15_grazer_nutrient_exploratory.json
+
+  lucinid_original_experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate official Dryad workbook and factor header reader
+        run: python -m unittest discover -s validation -p 'test_lucinid_dryad_original_workbook_preflight.py' -v
+      - name: Probe actual 2012 lucinid original experiment workbook
+        run: |
+          python analysis/119_lucinid_dryad_original_workbook_preflight.py \
+            --out /tmp/lucinid_original_experiment_preflight.json
+          cat /tmp/lucinid_original_experiment_preflight.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lucinid-2012-original-data-workbook-preflight
+          path: /tmp/lucinid_original_experiment_preflight.json
+
+  lucinid_field_2020_original_data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test source original file mapping and no ecological inference
+        run: python -m unittest discover -s validation -p 'test_lucinid_2020_field_experiment_source_gate.py' -v
+      - name: Fetch source-authoritative 2020 lucinid field experimental table headers
+        run: |
+          python analysis/121_lucinid_2020_field_experiment_source_gate.py \
+            --out /tmp/lucinid_field_2020_source_gate.json
+          cat /tmp/lucinid_field_2020_source_gate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lucinid-field-2020-original-source-gate
+          path: /tmp/lucinid_field_2020_source_gate.json
+
+  lucinid_field_2020_published_effect_reaggregation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original published four-group means and inference boundaries
+        run: python -m unittest discover -s validation -p 'test_lucinid_field_published_factorial_contrast.py' -v
+      - name: Reaggregate original 2020 Thau-lagoon field experiment source-table means
+        run: |
+          python analysis/122_lucinid_field_published_factorial_contrast.py \
+            --out /tmp/lucinid_field_2020_published_factorial_contrasts.json
+          cat /tmp/lucinid_field_2020_published_factorial_contrasts.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lucinid-field-2020-published-sulfide-vs-rhizome-contrasts
+          path: /tmp/lucinid_field_2020_published_factorial_contrasts.json
+
+  posidonia_n2_source_factor_preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original Nature XLSX source and no-factorial-inference guards
+        run: python -m unittest discover -s validation -p 'test_posidonia_nfix_original_source_factor_gate.py' -v
+      - name: Profile source-verified Posidonia nitrogen fixation Fig1 Fig2 workbooks
+        run: |
+          python analysis/123_posidonia_nfix_original_source_factor_gate.py \
+            --out /tmp/posidonia_N2_original_source_factor_gate.json
+          cat /tmp/posidonia_N2_original_source_factor_gate.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: posidonia-N2-2021-original-source-factor-gate
+          path: /tmp/posidonia_N2_original_source_factor_gate.json
+
+  posidonia_n2_plant_campaign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify independent plant identities versus root-piece pseudoreplicates
+        run: python -m unittest discover -s validation -p 'test_posidonia_n2_plant_campaign_reaggregation.py' -v
+      - name: Reaggregate source-verified 2021 Posidonia N2 fixation by 31 plants
+        run: |
+          python analysis/124_posidonia_n2_plant_campaign_reaggregation.py \
+            --out /tmp/posidonia_N2_plant_campaign_v1.json
+          cat /tmp/posidonia_N2_plant_campaign_v1.json
+      - name: Verify stored Posidonia31-plant exact output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          observed=json.loads(Path('/tmp/posidonia_N2_plant_campaign_v1.json').read_text())
+          archived=json.loads(Path('results/posidonia_n2_plant_campaign_exploratory_verified_20261124.json').read_text())
+          proof=archived.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or observed!=archived:
+              raise SystemExit('Posidonia31-plant source or original-analysis mismatch')
+          print('PASS: Posidonia31-plant reproduced exactly')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: posidonia-N2-root-piece-plant-campaign-analysis
+          path: /tmp/posidonia_N2_plant_campaign_v1.json
+
+  zen_moderator_posthoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check site-grain/moderator null randomization
+        run: python -m unittest discover -s validation -p 'test_zen_site_moderator_posthoc_robustness.py' -v
+      - name: Compute exploratory 15-site temperature salinity richness sign screen
+        run: |
+          python analysis/125_zen_site_moderator_posthoc_robustness.py \
+            --out /tmp/zen_moderator_posthoc_robustness.json
+          cat /tmp/zen_moderator_posthoc_robustness.json
+      - name: Verify stored ZEN15-site-moderator exact output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          observed=json.loads(Path('/tmp/zen_moderator_posthoc_robustness.json').read_text())
+          archived=json.loads(Path('results/zen_15site_moderator_posthoc_verified_20261124.json').read_text())
+          proof=archived.pop('source_verified_run',None)
+          if not proof or proof.get('status')!='completed_success' or observed!=archived:
+              raise SystemExit('ZEN15-site-moderator source or original-analysis mismatch')
+          print('PASS: ZEN15-site-moderator reproduced exactly')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zen-15site-environmental-modifier-posthoc-diagnostics
+          path: /tmp/zen_moderator_posthoc_robustness.json

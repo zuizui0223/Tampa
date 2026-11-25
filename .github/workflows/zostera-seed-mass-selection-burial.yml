@@ -1,0 +1,57 @@
+name: Zostera seed mass selection and burial data gate
+on:
+  pull_request:
+    paths:
+      - 'analysis/154_zostera_seed_mass_threshold.py'
+      - 'analysis/155_zostera_seed_burial_source_gate.py'
+      - 'docs/ZOSTERA_SEED_MASS_SELECTION_AND_BURIAL_GATE_20261124.md'
+      - '.github/workflows/zostera-seed-mass-selection-burial.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mass_selection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/144_external_seagrass_genetic_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.dryad("seed_mass","10.5061/dryad.6t1g1jx7p")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/154_zostera_seed_mass_threshold.py > out/mass_threshold.json
+          python - <<'PY'
+          import json
+          d=json.load(open("out/mass_threshold.json"))["datasets"]
+          for version in d.values():
+              for key in ("all","outcross_only"):
+                  half=[r for r in version[key] if r["target_fraction"]==.5]
+                  assert len(half)==3
+                  assert all(r["ratio_to_full"]<1 for r in half)
+                  assert all(.92<r["ratio_to_conditional_null"]<1.07 for r in half)
+          quarters=[r for v in d.values() for r in v["outcross_only"] if r["target_fraction"]==.25]
+          assert sum(r["ratio_to_full"]>1 for r in quarters)==3
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mass-threshold-conditional-accounting
+          path: out/mass_threshold.json
+          if-no-files-found: error
+  burial_inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python analysis/155_zostera_seed_burial_source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seed-burial-original-source-inventory
+          path: seed_burial_source/
+          retention-days: 3
+          if-no-files-found: error

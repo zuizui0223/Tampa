@@ -1,0 +1,1377 @@
+{
+  "analysis": {
+    "endpoints": {
+      "chla_per_Zostera": {
+        "contrasts": {
+          "grazer_deterrent_main_difference": {
+            "estimable": true,
+            "mean_site_equal": 141.81479037037036,
+            "negative_site_contrasts": 4,
+            "positive_site_contrasts": 11,
+            "site_bootstrap_95pct_percentile_ci": [
+              9.228603703703703,
+              383.87185666666664
+            ],
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "grazer_deterrent_x_nutrient_difference_in_differences": {
+            "estimable": true,
+            "mean_site_equal": 32.15955259259257,
+            "negative_site_contrasts": 11,
+            "positive_site_contrasts": 4,
+            "site_bootstrap_95pct_percentile_ci": [
+              -90.10300814814816,
+              224.67287851851847
+            ],
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "nutrient_addition_main_difference": {
+            "estimable": true,
+            "mean_site_equal": 30.915096296296298,
+            "negative_site_contrasts": 8,
+            "positive_site_contrasts": 7,
+            "site_bootstrap_95pct_percentile_ci": [
+              -22.891440370370372,
+              116.05795666666666
+            ],
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          }
+        },
+        "expected_main_sign_if_effective_grazer_reduction": "positive",
+        "not_eligible_sites": [],
+        "posthoc_scale_invariant_log_of_arm_means": {
+          "grazer_deterrent_main_difference": {
+            "estimable": true,
+            "geometric_ratio_ci95": [
+              1.0548959168569996,
+              1.700782339696815
+            ],
+            "mean_site_equal": 0.242735260356597,
+            "median_site_specific_ratio": 1.1185987318071047,
+            "most_influential_site_omission_by_ratio": {
+              "max_ratio": {
+                "omitted_site": "NN",
+                "site_equal_geometric_effect_ratio_without_site": 1.32369745530996
+              },
+              "min_ratio": {
+                "omitted_site": "VA",
+                "site_equal_geometric_effect_ratio_without_site": 1.1337354694040018
+              }
+            },
+            "negative_site_contrasts": 3,
+            "positive_site_contrasts": 12,
+            "site_bootstrap_95pct_percentile_ci": [
+              0.05344210505352374,
+              0.5310883450243647
+            ],
+            "site_equal_geometric_effect_ratio": 1.2747311075845709,
+            "site_omission_geometric_ratio_max": 1.32369745530996,
+            "site_omission_geometric_ratio_min": 1.1337354694040018,
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "grazer_deterrent_x_nutrient_difference_in_differences": {
+            "estimable": true,
+            "geometric_ratio_ci95": [
+              0.7029668020810659,
+              1.1609533605424467
+            ],
+            "mean_site_equal": -0.10303878927502272,
+            "median_site_specific_ratio": 0.8394679091690717,
+            "most_influential_site_omission_by_ratio": {
+              "max_ratio": {
+                "omitted_site": "AK",
+                "site_equal_geometric_effect_ratio_without_site": 0.957017520861365
+              },
+              "min_ratio": {
+                "omitted_site": "VA",
+                "site_equal_geometric_effect_ratio_without_site": 0.8476139219159915
+              }
+            },
+            "negative_site_contrasts": 10,
+            "positive_site_contrasts": 5,
+            "site_bootstrap_95pct_percentile_ci": [
+              -0.3524456114998007,
+              0.1492415301107812
+            ],
+            "site_equal_geometric_effect_ratio": 0.9020919813089016,
+            "site_omission_geometric_ratio_max": 0.957017520861365,
+            "site_omission_geometric_ratio_min": 0.8476139219159915,
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "nutrient_addition_main_difference": {
+            "estimable": true,
+            "geometric_ratio_ci95": [
+              0.9415743950075445,
+              1.153885885428795
+            ],
+            "mean_site_equal": 0.04253114211728214,
+            "median_site_specific_ratio": 1.0154682718214063,
+            "most_influential_site_omission_by_ratio": {
+              "max_ratio": {
+                "omitted_site": "QU",
+                "site_equal_geometric_effect_ratio_without_site": 1.0687037454991066
+              },
+              "min_ratio": {
+                "omitted_site": "MA",
+                "site_equal_geometric_effect_ratio_without_site": 1.0159342299604768
+              }
+            },
+            "negative_site_contrasts": 6,
+            "positive_site_contrasts": 9,
+            "site_bootstrap_95pct_percentile_ci": [
+              -0.06020191647341188,
+              0.14313527708612453
+            ],
+            "site_equal_geometric_effect_ratio": 1.043448551064854,
+            "site_omission_geometric_ratio_max": 1.0687037454991066,
+            "site_omission_geometric_ratio_min": 1.0159342299604768,
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          }
+        },
+        "posthoc_site_level_moderator_descriptors": {
+          "grazer_richness_site": {
+            "site_count": 15,
+            "unadjusted_pearson_of_site_deterrent_effect": 0.014109672091672755
+          },
+          "sal": {
+            "site_count": 15,
+            "unadjusted_pearson_of_site_deterrent_effect": -0.36291876984026367
+          },
+          "temp_avg": {
+            "site_count": 15,
+            "unadjusted_pearson_of_site_deterrent_effect": 0.4213993846177226
+          }
+        },
+        "raw_deterrent_effect_site_median": 2.155505555555557,
+        "raw_deterrent_site_omission_min_max": [
+          26.973943253968255,
+          152.36404325396825
+        ],
+        "sites_eligible": 15
+      },
+      "grazer_bmass_per_g": {
+        "contrasts": {
+          "grazer_deterrent_main_difference": {
+            "estimable": true,
+            "mean_site_equal": -15.664998037037039,
+            "negative_site_contrasts": 11,
+            "positive_site_contrasts": 4,
+            "site_bootstrap_95pct_percentile_ci": [
+              -37.5105272962963,
+              -1.696730296296297
+            ],
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "grazer_deterrent_x_nutrient_difference_in_differences": {
+            "estimable": true,
+            "mean_site_equal": -6.148149111111109,
+            "negative_site_contrasts": 9,
+            "positive_site_contrasts": 6,
+            "site_bootstrap_95pct_percentile_ci": [
+              -15.005941555555546,
+              0.6803602222222219
+            ],
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "nutrient_addition_main_difference": {
+            "estimable": true,
+            "mean_site_equal": 19.769558333333332,
+            "negative_site_contrasts": 7,
+            "positive_site_contrasts": 8,
+            "site_bootstrap_95pct_percentile_ci": [
+              -1.44159974074074,
+              60.63115766666666
+            ],
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          }
+        },
+        "expected_main_sign_if_effective_grazer_reduction": "negative",
+        "not_eligible_sites": [],
+        "posthoc_scale_invariant_log_of_arm_means": {
+          "grazer_deterrent_main_difference": {
+            "estimable": true,
+            "geometric_ratio_ci95": [
+              0.6482188446082612,
+              0.9676647473025937
+            ],
+            "mean_site_equal": -0.23278812509198593,
+            "median_site_specific_ratio": 0.8883214532615414,
+            "most_influential_site_omission_by_ratio": {
+              "max_ratio": {
+                "omitted_site": "JS",
+                "site_equal_geometric_effect_ratio_without_site": 0.8298359195682347
+              },
+              "min_ratio": {
+                "omitted_site": "AK",
+                "site_equal_geometric_effect_ratio_without_site": 0.7481585344966624
+              }
+            },
+            "negative_site_contrasts": 10,
+            "positive_site_contrasts": 5,
+            "site_bootstrap_95pct_percentile_ci": [
+              -0.43352691648459557,
+              -0.032869587124731474
+            ],
+            "site_equal_geometric_effect_ratio": 0.792321428771367,
+            "site_omission_geometric_ratio_max": 0.8298359195682347,
+            "site_omission_geometric_ratio_min": 0.7481585344966624,
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "grazer_deterrent_x_nutrient_difference_in_differences": {
+            "estimable": true,
+            "geometric_ratio_ci95": [
+              0.7565662313399155,
+              1.4299900357059356
+            ],
+            "mean_site_equal": 0.025158235406492698,
+            "median_site_specific_ratio": 0.9201254277217459,
+            "most_influential_site_omission_by_ratio": {
+              "max_ratio": {
+                "omitted_site": "SW",
+                "site_equal_geometric_effect_ratio_without_site": 1.099035683709543
+              },
+              "min_ratio": {
+                "omitted_site": "JN",
+                "site_equal_geometric_effect_ratio_without_site": 0.9377345163359182
+              }
+            },
+            "negative_site_contrasts": 9,
+            "positive_site_contrasts": 6,
+            "site_bootstrap_95pct_percentile_ci": [
+              -0.2789651998967296,
+              0.3576674762097318
+            ],
+            "site_equal_geometric_effect_ratio": 1.0254773745161327,
+            "site_omission_geometric_ratio_max": 1.099035683709543,
+            "site_omission_geometric_ratio_min": 0.9377345163359182,
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          },
+          "nutrient_addition_main_difference": {
+            "estimable": true,
+            "geometric_ratio_ci95": [
+              0.8059636303715869,
+              1.2744771759723834
+            ],
+            "mean_site_equal": -0.0020508644626560397,
+            "median_site_specific_ratio": 0.9776382225118899,
+            "most_influential_site_omission_by_ratio": {
+              "max_ratio": {
+                "omitted_site": "AK",
+                "site_equal_geometric_effect_ratio_without_site": 1.0575982512320101
+              },
+              "min_ratio": {
+                "omitted_site": "SD",
+                "site_equal_geometric_effect_ratio_without_site": 0.9173647011187346
+              }
+            },
+            "negative_site_contrasts": 8,
+            "positive_site_contrasts": 7,
+            "site_bootstrap_95pct_percentile_ci": [
+              -0.2157166611020623,
+              0.24253603645271662
+            ],
+            "site_equal_geometric_effect_ratio": 0.9979512371229314,
+            "site_omission_geometric_ratio_max": 1.0575982512320101,
+            "site_omission_geometric_ratio_min": 0.9173647011187346,
+            "sites": 15,
+            "summary_only_no_new_randomization_test": true,
+            "zeros": 0
+          }
+        },
+        "posthoc_site_level_moderator_descriptors": {
+          "grazer_richness_site": {
+            "site_count": 15,
+            "unadjusted_pearson_of_site_deterrent_effect": -0.3936094891851659
+          },
+          "sal": {
+            "site_count": 15,
+            "unadjusted_pearson_of_site_deterrent_effect": -0.3245927026919443
+          },
+          "temp_avg": {
+            "site_count": 15,
+            "unadjusted_pearson_of_site_deterrent_effect": 0.04669154118885646
+          }
+        },
+        "raw_deterrent_effect_site_median": -2.055500000000002,
+        "raw_deterrent_site_omission_min_max": [
+          -16.887842182539686,
+          -6.750582658730159
+        ],
+        "sites_eligible": 15
+      }
+    },
+    "per_site_exploratory_contrasts": [
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 10,
+          "sal": 29,
+          "temp_avg": 10.45
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 55.7833,
+              "D+N-": 70.3309,
+              "D-N+": 82.9646,
+              "D-N-": 41.2495
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 0.9500499999999974,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -56.26270000000001,
+              "nutrient_addition_main_difference": 13.583750000000009
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.06831639310201165,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.9305117249118924,
+              "nutrient_addition_main_difference": 0.23351915684188507
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 0.08954,
+              "D+N-": 0.28956,
+              "D-N+": 0.07249,
+              "D-N-": 0.11435555555555556
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 0.09612722222222223,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.15815444444444443,
+              "nutrient_addition_main_difference": -0.12094277777777776
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 9
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.5701434289268021,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.7178131948535378,
+              "nutrient_addition_main_difference": -0.8147704791853525
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "AK"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 13,
+          "sal": 36,
+          "temp_avg": 14.94
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 161.5461,
+              "D+N-": 200.7608,
+              "D-N+": 242.3614,
+              "D-N-": 130.576
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -5.31525000000002,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -151.0001,
+              "nutrient_addition_main_difference": 36.28535000000002
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.012259633582445417,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.8357981666540031,
+              "nutrient_addition_main_difference": 0.20057548453699603
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 50.131640000000004,
+              "D+N-": 57.30881,
+              "D-N+": 122.12272,
+              "D-N-": 114.70362
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -64.69294500000001,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -14.596270000000004,
+              "nutrient_addition_main_difference": 0.12096500000001242
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.7921356576288652,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.1964768749645076,
+              "nutrient_addition_main_difference": -0.035563580919842686
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "BB"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 13,
+          "sal": 25,
+          "temp_avg": 15.95
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 256.3011,
+              "D+N-": 296.98810000000003,
+              "D-N+": 250.0772,
+              "D-N-": 243.2578
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 29.977100000000007,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -47.50640000000001,
+              "nutrient_addition_main_difference": -16.93379999999999
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.11207676967245739,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.17498702931897636,
+              "nutrient_addition_main_difference": -0.059845630794116644
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 3.56948,
+              "D+N-": 3.23422,
+              "D-N+": 2.345588888888889,
+              "D-N-": 4.759
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -0.1504444444444446,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 2.7486711111111113,
+              "nutrient_addition_main_difference": -1.0390755555555558
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 9,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.016816827567409653,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.8061332073086587,
+              "nutrient_addition_main_difference": -0.3044344627873361
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "BC"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 6,
+          "sal": 6.38,
+          "temp_avg": 19.85
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 92.7697,
+              "D+N-": 99.4391,
+              "D-N+": 117.5667,
+              "D-N-": 86.3916
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -5.874750000000006,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -37.8445,
+              "nutrient_addition_main_difference": 12.25285000000001
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.04811540331437314,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.37754070186128086,
+              "nutrient_addition_main_difference": 0.11934503230889248
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 18.32535,
+              "D+N-": 24.52093,
+              "D-N+": 26.49805,
+              "D-N-": 16.5705
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -0.11113500000000087,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -16.12313,
+              "nutrient_addition_main_difference": 1.8659849999999985
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.011558617187170661,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.7606888307702819,
+              "nutrient_addition_main_difference": 0.08910272399557062
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "FI"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 11,
+          "sal": 30.5,
+          "temp_avg": 23.17
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 32.6751,
+              "D+N-": 43.7437,
+              "D-N+": 26.012,
+              "D-N-": 29.3614
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 10.5227,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -7.719199999999997,
+              "nutrient_addition_main_difference": -7.208999999999996
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.3133610329219554,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.17061136595898851,
+              "nutrient_addition_main_difference": -0.20642859950576709
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 12.236,
+              "D+N-": 4.14416,
+              "D-N+": 7.15029,
+              "D-N-": 8.68747
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 0.27120000000000033,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 9.62902,
+              "nutrient_addition_main_difference": 3.277330000000001
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.10147606621620042,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 1.277411154361787,
+              "nutrient_addition_main_difference": 0.4439767348573198
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "JN"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 15,
+          "sal": 34.9,
+          "temp_avg": 19.04
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 87.5638,
+              "D+N-": 96.4655,
+              "D-N+": 44.3987,
+              "D-N-": 50.7904
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 44.420100000000005,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -2.510000000000005,
+              "nutrient_addition_main_difference": -7.646699999999996
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.6603177759576666,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.03767940967456784,
+              "nutrient_addition_main_difference": -0.11565746578065994
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 2.30954,
+              "D+N-": 3.05292,
+              "D-N+": 5.5916999999999994,
+              "D-N-": 7.33563
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -3.7824349999999995,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 1.0005500000000005,
+              "nutrient_addition_main_difference": -1.2436550000000004
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.8804398863604119,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.007590197117194997,
+              "nutrient_addition_main_difference": -0.2752550406120664
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "JS"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 7,
+          "sal": 33,
+          "temp_avg": 18.54
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 47.4084,
+              "D+N-": 26.18711111111111,
+              "D-N+": 38.7754,
+              "D-N-": 30.5091
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 2.155505555555557,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 12.954988888888892,
+              "nutrient_addition_main_difference": 14.74379444444444
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 9,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.024127875443426205,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.3537710556242355,
+              "nutrient_addition_main_difference": 0.41664655297830633
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 9.38337,
+              "D+N-": 9.50578,
+              "D-N+": 8.7499,
+              "D-N-": 7.22961
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 1.4548199999999998,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -1.6427000000000005,
+              "nutrient_addition_main_difference": 0.6989400000000003
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.17180582182692916,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.20381824002421323,
+              "nutrient_addition_main_difference": 0.08894805891363866
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "MA"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 22,
+          "sal": 34.1,
+          "temp_avg": 30
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 464.0536,
+              "D+N-": 659.3977,
+              "D-N+": 379.3533,
+              "D-N-": 419.6023
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 162.24784999999997,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -155.0951,
+              "nutrient_addition_main_difference": -117.79655000000002
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.32677579332669193,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.25048738273491367,
+              "nutrient_addition_main_difference": -0.22608308844864666
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 25.19144,
+              "D+N-": 23.42429,
+              "D-N+": 25.49476,
+              "D-N-": 27.23197
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -2.055500000000002,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 3.504360000000002,
+              "nutrient_addition_main_difference": 0.014969999999998151
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.08129340957913733,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.13864944599870288,
+              "nutrient_addition_main_difference": 0.0034060131064164167
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "NC"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 5,
+          "sal": 28.55,
+          "temp_avg": 9.9
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 16.7222,
+              "D+N-": 12.8025,
+              "D-N+": 17.2872,
+              "D-N-": 21.8973
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -4.8298999999999985,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 8.529800000000003,
+              "nutrient_addition_main_difference": -0.34520000000000195
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.2849760212545278,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.5034937118831526,
+              "nutrient_addition_main_difference": 0.015349857652029453
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 7.73601,
+              "D+N-": 4.8584,
+              "D-N+": 5.10737,
+              "D-N-": 5.12955
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 1.1787449999999993,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 2.8997900000000003,
+              "nutrient_addition_main_difference": 1.427715
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.18044634287602412,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.4695102266233311,
+              "nutrient_addition_main_difference": 0.23042177189496793
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "NN"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 27,
+          "sal": 36,
+          "temp_avg": 23.59
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 12.357,
+              "D+N-": 15.7591,
+              "D-N+": 12.546899999999999,
+              "D-N-": 11.5871
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 1.9910499999999995,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -4.3619,
+              "nutrient_addition_main_difference": -1.2211499999999997
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.14613732343486863,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.3227764848518797,
+              "nutrient_addition_main_difference": -0.0818070296521114
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 3.8731400000000002,
+              "D+N-": 5.01438,
+              "D-N+": 4.67026,
+              "D-N-": 5.26986
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -0.5263,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.5416399999999992,
+              "nutrient_addition_main_difference": -0.8704200000000002
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.11842160457889239,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.13745518500382659,
+              "nutrient_addition_main_difference": -0.18951664458818174
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "PO"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 13,
+          "sal": 19.5,
+          "temp_avg": 14.09
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 129.1643,
+              "D+N-": 187.38,
+              "D-N+": 114.9215,
+              "D-N-": 142.1329
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 29.744950000000017,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -31.0043,
+              "nutrient_addition_main_difference": -42.71355
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.19660602795861593,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.15954015433207225,
+              "nutrient_addition_main_difference": -0.29228332598022
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 26.22267,
+              "D+N-": 27.96245,
+              "D-N+": 37.11369,
+              "D-N-": 36.41493
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -9.671749999999996,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -2.4385400000000033,
+              "nutrient_addition_main_difference": -0.5205100000000016
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.30573895855348,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.08324528375159312,
+              "nutrient_addition_main_difference": -0.022615593014998936
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "QU"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 23,
+          "sal": 35,
+          "temp_avg": 19.38
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 2.9939,
+              "D+N-": 1.8766,
+              "D-N+": 1.8974,
+              "D-N-": 2.4981
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 0.23749999999999982,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 1.718,
+              "nutrient_addition_main_difference": 0.2583000000000002
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.08501177163773299,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.7421611713833338,
+              "nutrient_addition_main_difference": 0.09603467074055994
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 365.62841,
+              "D+N-": 91.07493333333333,
+              "D-N+": 533.92437,
+              "D-N-": 203.7126
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -140.46681333333336,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -55.65829333333329,
+              "nutrient_addition_main_difference": 302.3826233333333
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 9,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.5918321106854751,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.42639091081496616,
+              "nutrient_addition_main_difference": 1.1767394781339506
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "SD"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 13,
+          "sal": 20,
+          "temp_avg": 18.87
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 33.7298,
+              "D+N-": 29.3665,
+              "D-N+": 40.2257,
+              "D-N-": 24.6905
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -0.909950000000002,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -11.171900000000008,
+              "nutrient_addition_main_difference": 9.94925
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.0013441803003306774,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.34956038984700566,
+              "nutrient_addition_main_difference": 0.3133073456507942
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 16.15847,
+              "D+N-": 35.72278,
+              "D-N+": 31.8759,
+              "D-N-": 27.39893
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -3.69679,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -24.04128,
+              "nutrient_addition_main_difference": -7.543669999999999
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.20706062449518692,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.9446904869721009,
+              "nutrient_addition_main_difference": -0.3209989666485713
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "SW"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 13,
+          "sal": 15.05,
+          "temp_avg": 26.1
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 2651.1607,
+              "D+N-": 1445.0497,
+              "D-N+": 274.3639,
+              "D-N-": 322.6732
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 1749.58665,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 1254.4202999999998,
+              "nutrient_addition_main_difference": 578.9008499999999
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 1.8837782218687034,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.769038547574687,
+              "nutrient_addition_main_difference": 0.22233455488020049
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 5.41648,
+              "D+N-": 10.36095,
+              "D-N+": 13.34412,
+              "D-N-": 14.5672
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -6.066945,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -3.7213899999999995,
+              "nutrient_addition_main_difference": -3.083775000000001
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.6211790874864453,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.5609011858398061,
+              "nutrient_addition_main_difference": -0.3681471805736889
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "VA"
+      },
+      {
+        "arm_allocation": {
+          "D+N+": 10,
+          "D+N-": 10,
+          "D-N+": 10,
+          "D-N-": 10
+        },
+        "cross_site_predictors": {
+          "grazer_richness_site": 5,
+          "sal": 22.06,
+          "temp_avg": 18.04
+        },
+        "endpoints": {
+          "chla_per_Zostera": {
+            "arm_means": {
+              "D+N+": 747.769,
+              "D+N-": 901.5276,
+              "D-N+": 780.8276000000001,
+              "D-N-": 643.8325
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": 112.31825000000003,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -290.7537000000001,
+              "nutrient_addition_main_difference": -8.381749999999897
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": 0.14669589131161143,
+              "grazer_deterrent_x_nutrient_difference_in_differences": -0.3799123347943052,
+              "nutrient_addition_main_difference": 0.002959616331089876
+            }
+          },
+          "grazer_bmass_per_g": {
+            "arm_means": {
+              "D+N+": 9.17225,
+              "D+N-": 4.53697,
+              "D-N+": 12.46867,
+              "D-N-": 14.75016
+            },
+            "contrasts": {
+              "grazer_deterrent_main_difference": -6.754804999999998,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 6.91677,
+              "nutrient_addition_main_difference": 1.1768950000000018
+            },
+            "eligible_for_four_arm_contrast": true,
+            "n_valid_per_arm": {
+              "D+N+": 10,
+              "D+N-": 10,
+              "D-N+": 10,
+              "D-N-": 10
+            },
+            "posthoc_log_arm_mean_contrasts": {
+              "grazer_deterrent_main_difference": -0.7430155091800299,
+              "grazer_deterrent_x_nutrient_difference_in_differences": 0.8719580652870069,
+              "nutrient_addition_main_difference": 0.2679442004883339
+            }
+          }
+        },
+        "row_count": 40,
+        "site": "WA"
+      }
+    ],
+    "plots_total": 600,
+    "sites_total": 15,
+    "unique_plot_counts_by_site": {
+      "AK": 40,
+      "BB": 40,
+      "BC": 40,
+      "FI": 40,
+      "JN": 40,
+      "JS": 40,
+      "MA": 40,
+      "NC": 40,
+      "NN": 40,
+      "PO": 40,
+      "QU": 40,
+      "SD": 40,
+      "SW": 40,
+      "VA": 40,
+      "WA": 40
+    }
+  },
+  "schema": "tampa.zen_global_mesograzer_15site_exploratory_v1",
+  "source": {
+    "data_doi": null,
+    "dataset_url": "https://datadocs.bco-dmo.org/dataset/659737/file/2GGXP4qs6jo9x0/ZEN.csv",
+    "original_dataset_sites": 15,
+    "paper_doi": "10.1111/ele.12448",
+    "sha256": "5a97763735a22076eac25a86736c50cb12611a529c5e233941fbc3a73ad4c6ae"
+  },
+  "status": "response_open_exploratory_comparative_experiment",
+  "strict_boundaries": [
+    "Only 15 field sites provide geographic replication; 600 plots are not independent ecosystems.",
+    "D+ = deterrent treatment and N+ = fertilization from published ZEN design.",
+    "Only original measured chlorophyll-a per Zostera and grazer biomass endpoints are analyzed; no plant shoot, cover, TNC, or true persistence response is in source.",
+    "Missing NA measurements are never coded zero. At least five numerical observations per site per arm are required, predeclared before source outcomes.",
+    "Site-equal bootstrap intervals are exploratory; published 2015 work already modeled these effects.",
+    "Scale-invariant log-of-arm-means contrasts and leave-one-site-out diagnostics were added after observing a large Virginia raw-scale site effect; they are expressly post-hoc robustness checks.",
+    "Posthoc moderator correlations are observational across 15 sites and not externally predictive or mechanistically isolated.",
+    "The BCO-DMO dataset landing page mentions 16 sites but the actual CSV has 15 site codes and 600 original factorial plots."
+  ],
+  "source_verified_run": {
+    "run_id": 45321203113,
+    "job_id": 138199905130,
+    "run_url": "https://github.com/zuizui0223/Tampa/actions/runs/45321203113",
+    "successful": true
+  }
+}

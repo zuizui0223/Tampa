@@ -1,0 +1,25 @@
+# Spatial genetic neighbourhoods versus relative clonal richness in Enhalus acoroides (2026-11-24)
+
+## Source and grain
+Yu et al. 2019 DOI 10.1002/ece3.5106, Dryad 10.5061/dryad.sn1h87s. Source member `Ramets For Two plots.xlsx`, SHA256 10e1465ac9255ad2d873d6142386b5140320740ebc660196b4a9eb0e2251c959, exact-member Actions run 45374805601 artifact 14911175880, verified archive digest b5b116221241e9e603896a9dc99f66287f4707a313c12bf83ff7dd00487dc1f2. Two 20x20 m plots sampled in Li'an lagoon, one disturbed/polluted patchy (A), one continuous (B); 1 m grid with boundary points 0..20. Genotyping October 2016; flowering surveys June–December 2017, not contemporaneous individual flowering records. The workbook has no sex or flowering flags. Match the 8 unordered diploid locus pairs; no missing/zero alleles, all coordinates unique. Reproduce 271/395 sampled ramets, 214/255 exact MLGs, R .78889/.64467 and largest MLG counts 3/15. Article already studied SGS and disturbance; no first-discovery claim for clonal structure differences.
+
+## Executed locally: actual original-data neighbourhood analysis
+For each sampled focal ramet count distinct non-focal MLGs among other sampled ramets within fixed Euclidean radius. Excludes same MLG and self; count each different MLG once. Means across sampled ramets (not independent observations). All plot values conditional on observed sample points. A different MLG is not necessarily a mate (dioecious, no flowering/sex, no flow or viability). Separate proportion of unlike neighbours from their absolute count.
+
+|radius m|A distinct MLG mean|B distinct MLG mean|A unlike pair proportion|B unlike pair proportion|B exact expected mean after rarefaction to 271|A excess relative to rarefied B|
+|---|---:|---:|---:|---:|---:|---:|
+|1|2.129151|2.764557|0.843478|0.821277|1.928368|10.41%|
+|2|5.900369|7.410127|0.936975|0.883342|5.353109|10.22%|
+|4|20.856089|24.620253|0.982441|0.950605|18.247320|14.30%|
+|8|68.955720|78.103797|0.994710|0.984160|58.392851|18.09%|
+
+1m fraction of sampled focal ramets with no alternative MLG in radius: A 18/271 (6.642%) vs B 4/395 (1.013%). At 2m both zero. Raw A absolute neighbourhood smaller across all four radii despite greater unlike-pair fractions. Interior-only focal comparison retains direction: A/B means at 1m 2.254/2.881 (224/319 focal points), 2m 6.519/7.870 (181/253), 4m 24.766/27.637 (111/135), 8m 98.625/104.900 (16/20). No adjustment for neighbours beyond study boundaries; interior result limited to central points.
+
+## Density-matched conditional subsampling
+Uniform without-replacement rarefaction of B's actually observed grid points to 271; not actual disturbance or mortality. Exact expectation of distinct neighbouring MLGs conditional on focal retention: sum over alternative local genets of 1-C(N-1-k,n-1)/C(N-1,n-1), where k is the count of nearby sampled ramets with that MLG. Average over all B focal points. Exact total expected MLGs after rarefaction: 191.481689 versus observed A 214; previous published-count upper bound 205.1785 was deliberately independent of actual clone sizes. 2,000 random subsamples seed 20261124 gave total MLG quantiles 183/191/200 and mean-neighbourhood 2.5/50/97.5% values at 1m 1.815/1.926/2.044, 2m 5.100/5.358/5.624, 4m 17.369/18.247/19.118, 8m 55.321/58.363/61.484. A exceeds B conditional subsampling expected means at all radii. The quantiles describe this one finite collection, NOT inference on a population disturbance effect or uncertainty in A. A and B's different spatial placement and clone composition remain bundled. This arithmetic is not a formal separation of ecological causal effects.
+
+## Interpretation and falsifiable next step
+Relative clone richness or unlike-neighbour probability may increase while observed geographic availability of alternative MLGs declines. Random thinning of the dense observed plot recovers the opposite comparison: at matched sample number, the patchy plot contains more distinct MLG neighbours. Hence density and genotype redundancy must both be measured when asking whether disturbance enhances or constrains sexual recruitment. Do not infer floral mate limitation from genotype alone. Obtain spatial sex/flowering-time identity, water-surface pollen paths, patch-level reproductive output, parentage and seedlings in comparable replicated patches. For Enhalus, dioecy and surface hydrophily are important; do not assume the animal-mediated Thalassia pollen system applies. Otter-associated temperate eelgrass genotype diversity is a separate system; no causal linkage tested here. The stronger prospective hypothesis concerns donor availability per spatial reproductive neighbourhood, not generic clone diversity.
+
+## Reproducibility
+`analysis/141_enhalus_spatial_genetic_neighbourhood.py` checks source SHA, full MLG counts, coordinates and exact rarefaction. Numerical calculations above independently executed locally from the verified member. New CI run pending; code itself not yet independently verified. Original Tampa Paper A, TNC and prior result ledgers unchanged. No manuscript submission or merge.

@@ -1,0 +1,54 @@
+name: Gallagher fixed functional visitation transfer
+on:
+  pull_request:
+    paths:
+      - 'analysis/166_cross_system_stage_source_gate.py'
+      - 'analysis/170_gallagher_functional_visit_transfer.py'
+      - '.github/workflows/gallagher-functional-visit-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install --only-binary=:all: numpy==2.3.5 pandas==2.2.3 scikit-learn==1.8.0 scipy==1.17.0 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/166_cross_system_stage_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          for name,doi in [("gallagher_2020","10.7280/D19X0D"),("gallagher_2021","10.7280/D16D7Z")]:
+              assert m.dryad(name,doi)["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/170_gallagher_functional_visit_transfer.py > out/gallagher_functional_visit.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/gallagher_functional_visit.json"));p=x["panels"]
+          key="pooled|two|seed_ramet"
+          assert x["calibration_n"]==94 and x["target_n"]==113 and x["overlapping_plant_ids"]==0
+          assert math.isclose(x["calibration"][key]["relative_to_Bombus"]["other"],.6209268297709374,abs_tol=1e-12)
+          assert [p[k]["n"] for k in ("author","raw_agreement","three_guild_complete")]==[113,88,112]
+          for name in ("author","raw_agreement"):
+              for v in p[name]["cv"]["week_linear"].values():
+                  for r in v.values():
+                      assert r["context"]["rmse"]<r[key]["rmse"]<r["unweighted"]["rmse"]
+                      assert math.isclose(r["unweighted"]["rmse"],r["scenario_other_1"]["rmse"],abs_tol=1e-12)
+          for split,targets in {"array_categorical":[.882215,.832909,.836197],"array_linear":[.906243,.874898,.874983],"week_linear":[1.021539,1.203983,1.165830]}.items():
+              r=p["author"]["cv"][split]["assigned"]["1.0"]
+              for k,t in zip(("context","unweighted",key),targets):
+                  assert math.isclose(r[k]["rmse"],t,abs_tol=1e-6)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gallagher-functional-visit-transfer
+          path: out/
+          if-no-files-found: error

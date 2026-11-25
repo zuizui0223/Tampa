@@ -1,0 +1,89 @@
+name: Seagrass recruitment gate and otter habitat
+on:
+  pull_request:
+    paths:
+      - 'analysis/150_balestri_recruitment_gate.py'
+      - 'analysis/151_otter_habitat_use_paired_audit.py'
+      - 'docs/SEAGRASS_RECRUITMENT_GATE_AND_OTTER_HABITAT_20261124.md'
+      - '.github/workflows/seagrass-recruitment-gate-otter-habitat.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_balestri:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/138_reproductive_exact_source_members.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+          v, members=m.SOURCES["balestri"]
+          print(m.extract("balestri",v,members))
+          PY
+          mkdir -p out
+          python analysis/150_balestri_recruitment_gate.py > out/balestri_recruitment_gate.json
+          python - <<'PY'
+          import json
+          a=json.load(open("out/balestri_recruitment_gate.json"))
+          x=a["seedling_results"]
+          assert [x[d]["difference_individual_survival_pp"] for d in ("Low","Medium","High")]==[-25,50,37.5]
+          assert [x[d]["difference_occupied_pot_pp"] for d in ("Low","Medium","High")]==[-25,75,0]
+          assert x["Medium"]["symmetric_accounting"]=={"occupied_pot_component":.84375,"conditional_survivor_count_component":.15625}
+          assert x["High"]["symmetric_accounting"]=={"occupied_pot_component":0,"conditional_survivor_count_component":1.5}
+          assert len(a["survival_biomass_positive_status_disagreements"])==2
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balestri-recruitment-gate
+          path: out/balestri_recruitment_gate.json
+          if-no-files-found: error
+  original_otter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("acquire","analysis/147_otter_genetic_and_extent_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.wasson()["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/151_otter_habitat_use_paired_audit.py > out/otter_habitat.json
+          python - <<'PY'
+          import json,math
+          a=json.load(open("out/otter_habitat.json"))["groups"]
+          assert a["all"]["surveys"]==59 and a["all"]["eelgrass_density_higher"]==52
+          assert math.isclose(a["all"]["ratio_of_mean_densities"],6.452642830335918,abs_tol=1e-9)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: otter-habitat-audit
+          path: out/otter_habitat.json
+          if-no-files-found: error
+  seed_mass_source_inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util,json
+          s=importlib.util.spec_from_file_location("acquire","analysis/144_external_seagrass_genetic_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          out=m.safe("seed_mass",lambda:m.dryad("seed_mass","10.5061/dryad.6t1g1jx7p"))
+          (m.ROOT/"source_manifest_seed_mass.json").write_text(json.dumps(out,indent=2,default=str,sort_keys=True))
+          print(json.dumps(out,indent=2,default=str,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seed-mass-source-inventory
+          path: external_reproductive/
+          retention-days: 3
+          if-no-files-found: error
