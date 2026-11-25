@@ -1,0 +1,327 @@
+{
+  "status": "Executed published-summary arithmetic; not new raw-data or pooled meta-analysis",
+  "rows": [
+    {
+      "taxon": "Idotea resecata",
+      "stage": "attached",
+      "n": 28,
+      "k": 6,
+      "p": 0.21428571428571427,
+      "m": 0.06,
+      "sd": 0.05,
+      "mean": 0.012857142857142855,
+      "roundedMean": 0.012599999999999998,
+      "mean_rounding": [
+        0.011785714285714285,
+        0.013928571428571429
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.27005554984113916,
+      "sdStatus": "passes necessary bound only",
+      "approx_unconditional_se": 0.006243666481021249
+    },
+    {
+      "taxon": "Pugettia producta",
+      "stage": "attached",
+      "n": 18,
+      "k": 17,
+      "p": 0.9444444444444444,
+      "m": 0.9,
+      "sd": 0.23,
+      "mean": 0.85,
+      "roundedMean": 0.846,
+      "mean_rounding": [
+        0.8452777777777778,
+        0.8547222222222223
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.3159880337924207,
+      "sdStatus": "passes necessary bound only",
+      "approx_unconditional_se": 0.07256730029355808
+    },
+    {
+      "taxon": "Pachygrapsus crassipes",
+      "stage": "attached",
+      "n": 24,
+      "k": 9,
+      "p": 0.375,
+      "m": 0.1,
+      "sd": 0.05,
+      "mean": 0.037500000000000006,
+      "roundedMean": 0.038000000000000006,
+      "mean_rounding": [
+        0.035625000000000004,
+        0.03937500000000001
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.32514900430418053,
+      "sdStatus": "passes necessary bound only",
+      "approx_unconditional_se": 0.011753044625585938
+    },
+    {
+      "taxon": "Idotea resecata",
+      "stage": "released",
+      "n": 28,
+      "k": 0,
+      "p": 0,
+      "m": null,
+      "sd": null,
+      "mean": 0,
+      "roundedMean": 0,
+      "mean_rounding": [
+        0,
+        0
+      ],
+      "sdStatus": "no active feeders",
+      "zeroUpper95": 0.10146573557272476
+    },
+    {
+      "taxon": "Pugettia producta",
+      "stage": "released",
+      "n": 26,
+      "k": 13,
+      "p": 0.5,
+      "m": 0.96,
+      "sd": 0.24,
+      "mean": 0.48,
+      "roundedMean": 0.48,
+      "mean_rounding": [
+        0.4775,
+        0.4825
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.21576897367323236,
+      "sdStatus": "incompatible with [0,1] active sample even after rounding",
+      "approx_unconditional_se": null
+    },
+    {
+      "taxon": "Pachygrapsus crassipes",
+      "stage": "released",
+      "n": 25,
+      "k": 9,
+      "p": 0.36,
+      "m": 0.69,
+      "sd": 0.4,
+      "mean": 0.24839999999999998,
+      "roundedMean": 0.24839999999999998,
+      "mean_rounding": [
+        0.24659999999999996,
+        0.2502
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.49269348991030926,
+      "sdStatus": "passes necessary bound only",
+      "approx_unconditional_se": 0.08187730658328553
+    },
+    {
+      "taxon": "Idotea resecata",
+      "stage": "seedling",
+      "n": 25,
+      "k": 0,
+      "p": 0,
+      "m": null,
+      "sd": null,
+      "mean": 0,
+      "roundedMean": 0,
+      "mean_rounding": [
+        0,
+        0
+      ],
+      "sdStatus": "no active feeders",
+      "zeroUpper95": 0.11292814500684323
+    },
+    {
+      "taxon": "Pugettia producta",
+      "stage": "seedling",
+      "n": 24,
+      "k": 20,
+      "p": 0.8333333333333334,
+      "m": 0.96,
+      "sd": 0.16,
+      "mean": 0.8,
+      "roundedMean": 0.7968,
+      "mean_rounding": [
+        0.7958333333333333,
+        0.8041666666666667
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.21268954394906955,
+      "sdStatus": "passes necessary bound only",
+      "approx_unconditional_se": 0.08028933186665707
+    },
+    {
+      "taxon": "Pachygrapsus crassipes",
+      "stage": "seedling",
+      "n": 27,
+      "k": 24,
+      "p": 0.8888888888888888,
+      "m": 0.96,
+      "sd": 0.18,
+      "mean": 0.8533333333333333,
+      "roundedMean": 0.8543999999999999,
+      "mean_rounding": [
+        0.8488888888888888,
+        0.8577777777777778
+      ],
+      "max_possible_active_sample_sd_allowing_rounding": 0.21176278771509788,
+      "sdStatus": "passes necessary bound only",
+      "approx_unconditional_se": 0.06754548957845492
+    }
+  ],
+  "comps": [
+    {
+      "taxon": "Idotea resecata",
+      "from": "attached",
+      "to": "released",
+      "difference": -0.012857142857142855,
+      "components": null,
+      "reason": "conditional feeding undefined in zero-active cell"
+    },
+    {
+      "taxon": "Idotea resecata",
+      "from": "released",
+      "to": "seedling",
+      "difference": 0,
+      "components": null,
+      "reason": "conditional feeding undefined in zero-active cell"
+    },
+    {
+      "taxon": "Idotea resecata",
+      "from": "attached",
+      "to": "seedling",
+      "difference": -0.012857142857142855,
+      "components": null,
+      "reason": "conditional feeding undefined in zero-active cell"
+    },
+    {
+      "taxon": "Pugettia producta",
+      "from": "attached",
+      "to": "released",
+      "difference": -0.37,
+      "occurrence": -0.4133333333333333,
+      "magnitude": 0.04333333333333329,
+      "occurrenceShare": 1.117117117117117,
+      "rounding": [
+        -0.3772222222222223,
+        -0.3627777777777778
+      ]
+    },
+    {
+      "taxon": "Pugettia producta",
+      "from": "released",
+      "to": "seedling",
+      "difference": 0.32000000000000006,
+      "occurrence": 0.32,
+      "magnitude": 0,
+      "occurrenceShare": 0.9999999999999998,
+      "rounding": [
+        0.3133333333333333,
+        0.3266666666666667
+      ]
+    },
+    {
+      "taxon": "Pugettia producta",
+      "from": "attached",
+      "to": "seedling",
+      "difference": -0.04999999999999993,
+      "occurrence": -0.10333333333333326,
+      "magnitude": 0.05333333333333328,
+      "occurrenceShare": 2.066666666666668,
+      "rounding": [
+        -0.05888888888888899,
+        -0.0411111111111111
+      ]
+    },
+    {
+      "taxon": "Pachygrapsus crassipes",
+      "from": "attached",
+      "to": "released",
+      "difference": 0.21089999999999998,
+      "occurrence": -0.005925000000000005,
+      "magnitude": 0.216825,
+      "occurrenceShare": -0.02809388335704128,
+      "rounding": [
+        0.20722499999999994,
+        0.21457499999999996
+      ]
+    },
+    {
+      "taxon": "Pachygrapsus crassipes",
+      "from": "released",
+      "to": "seedling",
+      "difference": 0.6049333333333333,
+      "occurrence": 0.4363333333333333,
+      "magnitude": 0.1686,
+      "occurrenceShare": 0.7212916023804276,
+      "rounding": [
+        0.5986888888888888,
+        0.6111777777777778
+      ]
+    },
+    {
+      "taxon": "Pachygrapsus crassipes",
+      "from": "attached",
+      "to": "seedling",
+      "difference": 0.8158333333333333,
+      "occurrence": 0.2723611111111111,
+      "magnitude": 0.5434722222222222,
+      "occurrenceShare": 0.3338440585631597,
+      "rounding": [
+        0.8095138888888888,
+        0.8221527777777777
+      ]
+    }
+  ],
+  "coat": [
+    {
+      "name": "Ampithoe ramondi",
+      "biteRiskDifference": 0.20000000000000007,
+      "biteRiskRatio": 1.3333333333333335,
+      "relativeReduction": 0.2500000000000001,
+      "denominatorStatus": "separate open/sealed n not given; do not reconstruct counts or SE",
+      "rounding_sensitivity_if_nearest_tenth": [
+        0.09999999999999998,
+        0.30000000000000016
+      ]
+    },
+    {
+      "name": "Gammarella fucicola",
+      "biteRiskDifference": 0.4,
+      "biteRiskRatio": 1.6666666666666667,
+      "relativeReduction": 0.4,
+      "denominatorStatus": "separate open/sealed n not given; do not reconstruct counts or SE",
+      "rounding_sensitivity_if_nearest_tenth": [
+        0.29999999999999993,
+        0.45000000000000007
+      ]
+    }
+  ],
+  "mechanics": {
+    "open_vs_coat_reduction": 0.14932126696832582,
+    "seed_vs_leaf_nitrogen": 1.6315789473684212
+  },
+  "carroll": [
+    {
+      "name": "Dyspanopeus sayi",
+      "n": 18,
+      "positive": 13,
+      "all": 5,
+      "attack": 0.7222222222222222,
+      "conditional_min": 0.4461538461538462,
+      "conditional_max": 0.9384615384615385,
+      "overall_min": 0.32222222222222224,
+      "overall_max": 0.6777777777777777
+    },
+    {
+      "name": "Pagurus longicarpus",
+      "n": 20,
+      "positive": 4,
+      "all": 3,
+      "attack": 0.2,
+      "conditional_min": 0.775,
+      "conditional_max": 0.975,
+      "overall_min": 0.155,
+      "overall_max": 0.195
+    }
+  ],
+  "limitations": [
+    "Holbrook 4-day stage trials: animal-trial counts, not confirmed unique animals across stages; stage dependence and individual covariance unavailable; no stage contrast p-value.",
+    "Published Holbrook table and thesis reprint disagree for attached Pugettia conditional mean; use primary article and author-uploaded text .90, not reprint .99, source ambiguity recorded.",
+    "Castejon damaged versus wax-sealed cut seeds, endpoint visible bite marks; different groups and stopping times, no actual mortality.",
+    "Carroll partial consumption bounds based on known 10 seeds and positive/full-loss animal counts; no common exposure duration or stage, no pooled effect."
+  ]
+}
