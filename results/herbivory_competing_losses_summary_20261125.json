@@ -1,0 +1,101 @@
+{
+  "status": "published marginal arithmetic executed locally; no raw new records or causal mediation",
+  "piazzi2000": {
+    "doi": "10.1515/BOT.2000.058",
+    "contrasts": [
+      {
+        "reference": "open",
+        "damaged_exposed": 0.843,
+        "mature_exposed": 0.101,
+        "mature_excluded": 0.375,
+        "maturation_RD": 0.274,
+        "maturation_RR": 3.7128712871287126,
+        "hypothetical_mature_under_exclusion_among_damaged_bounds": [
+          0.2586002372479241,
+          0.44483985765124556
+        ],
+        "hypothetical_mature_under_exclusion_among_damaged_bounds_monotone": [
+          0.2586002372479241,
+          0.32502965599051015
+        ],
+        "hypothetical_nonmature_under_exclusion_among_damaged_lower": 0.5551601423487544,
+        "hypothetical_nonmature_under_exclusion_among_damaged_lower_monotone": 0.6749703440094899
+      },
+      {
+        "reference": "partial_cage",
+        "damaged_exposed": 0.795,
+        "mature_exposed": 0.067,
+        "mature_excluded": 0.375,
+        "maturation_RD": 0.308,
+        "maturation_RR": 5.597014925373134,
+        "hypothetical_mature_under_exclusion_among_damaged_bounds": [
+          0.21383647798742128,
+          0.4716981132075471
+        ],
+        "hypothetical_mature_under_exclusion_among_damaged_bounds_monotone": [
+          0.21383647798742128,
+          0.3874213836477987
+        ],
+        "hypothetical_nonmature_under_exclusion_among_damaged_lower": 0.5283018867924529,
+        "hypothetical_nonmature_under_exclusion_among_damaged_lower_monotone": 0.6125786163522013
+      }
+    ]
+  },
+  "balestri2003": {
+    "doi": "10.1016/S0304-3770(02)00151-1",
+    "flower_fruit_set": [
+      0.031,
+      0.112
+    ],
+    "RD": 0.081,
+    "RR": 3.6129032258064515,
+    "reported_abortion_loss_under_exclusion": 0.865,
+    "potential_overlap_with_piazzi2000": true
+  },
+  "planes2011": {
+    "doi": "10.3354/meps09089",
+    "inflorescences_m2_open_caged": [
+      0.4,
+      1.7
+    ],
+    "ratio": 4.25,
+    "n_plots_per_arm": 3,
+    "shoot_density_test_reported": "F=0.105, p>0.5",
+    "protected_vs_unprotected_flowering_not_significant_at_conservative_alpha": true
+  },
+  "verges2007": {
+    "doi": "10.1007/s00442-006-0606-x",
+    "fresh_inflorescence_vs_leaf_consumption_ratio_reported_lower": 2,
+    "ground_leaf_vs_inflorescence_ratio_reported_approx": 2,
+    "leaf_extract_vs_inflorescence_ratio_reported": 17,
+    "leaf1_toughness_N": 0.74,
+    "leaf2_toughness_N": 0.68,
+    "bract_toughness_N": 0.37
+  },
+  "thalassia2008": {
+    "doi": "10.3354/meps07212",
+    "pdf_sha256": "f581737ea0b5691c5f78755c81c6a0e97483108cf7f910eba7d50a997f4f14bc",
+    "trial2": {
+      "initial_marked": 40,
+      "closed": 13,
+      "included": 27,
+      "pre": 5,
+      "post": 7,
+      "remaining": 15,
+      "pre_fraction": 0.18518518518518517,
+      "post_fraction": 0.25925925925925924,
+      "pre_fraction_of_consumed": 0.4166666666666667,
+      "reported_pre_percent": 9
+    },
+    "female": {
+      "opened": 34,
+      "consumed_entirely": 0,
+      "bite_marks": 1
+    }
+  },
+  "limits": [
+    "Marginal probability assumptions and monotonicity are hypothetical, bounds not confidence intervals.",
+    "Piazzi and Balestri likely overlapping experimental cohort; separate endpoint units.",
+    "No causal attribution to herbivory in Enhalus; no sea turtle reproductive effect or meta-analysis."
+  ]
+}
