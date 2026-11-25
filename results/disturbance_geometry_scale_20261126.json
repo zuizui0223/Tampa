@@ -1,0 +1,311 @@
+{
+  "source": [
+    {
+      "system": "dugong_Halodule",
+      "seed": {
+        "inside": 6337,
+        "outside": 2218,
+        "unit": "per m2"
+      },
+      "shoot": {
+        "inside": 1120,
+        "outside": 5465,
+        "unit": "per m2"
+      },
+      "seedling": {
+        "inside": 9,
+        "outside": 3,
+        "unit": "observed count"
+      },
+      "note": "Inglis 2000 DOI 10.1046/j.1365-2745.2000.00433.x, nine feeding trails, paired adjacent meadow, published means only"
+    },
+    {
+      "system": "stingray_Halodule",
+      "seed": {
+        "inside": 10.1,
+        "outside": 12.9,
+        "unit": "per core"
+      },
+      "note": "Same Inglis paper; 20 paired observations, paired t=-0.98 p=.34; low power, not equivalence"
+    },
+    {
+      "system": "goose_pit_Vogelkoje",
+      "center": {
+        "inside": 5.75,
+        "outside": 3.7
+      },
+      "edge": {
+        "inside": 9.25,
+        "outside": 0.5
+      },
+      "note": "Zipperle et al. 2010 DOI 10.1016/j.aquabot.2010.05.002; thesis ch5 p126 site-specific reported means; surrounding meadow comparisons"
+    },
+    {
+      "system": "goose_pit_Leghoern",
+      "center": {
+        "inside": 3.13,
+        "outside": 2.6
+      },
+      "edge": {
+        "inside": 1.38,
+        "outside": 0.2
+      },
+      "note": "Same study; not independent article"
+    },
+    {
+      "system": "goose_pit_pooled",
+      "center": {
+        "pit": 4.4,
+        "sham": 2.4,
+        "untouched": 1.4
+      },
+      "edge": {
+        "pit": 5.3,
+        "sham": 1.9,
+        "untouched": 0.4
+      },
+      "note": "Same experiment pooled across two meadows. Use Results not ambiguous abstract punctuation."
+    }
+  ],
+  "dugong": {
+    "seed_ratio": 2.8570784490532013,
+    "shoot_ratio": 0.20494053064958828,
+    "seed_per_standing_shoot_ratio": 13.941012253639059,
+    "seedling_share_in_trails": 0.75,
+    "expected_share_equal_sampled_area": 0.7407364114552893,
+    "relative_seedling_per_seed": 1.0500236705065487,
+    "scenarios": [
+      {
+        "f": 0.01,
+        "stock_ratio_constant_outside": 1.018570784490532,
+        "outside_density_ratio_fixed_stock": 0.9817678017342498,
+        "pit_density_ratio_fixed_stock": 2.804987628309261,
+        "seed_share_in_pits": 0.028049876283092613,
+        "shoot_ratio_constant_outside": 0.9920494053064959,
+        "establishment_multiplier_pits_needed_if_other_areas_penalized_20pct": 7.28016411551207
+      },
+      {
+        "f": 0.05,
+        "stock_ratio_constant_outside": 1.09285392245266,
+        "outside_density_ratio_fixed_stock": 0.9150353761422471,
+        "pit_density_ratio_fixed_stock": 2.614327853297304,
+        "seed_share_in_pits": 0.1307163926648652,
+        "shoot_ratio_constant_outside": 0.9602470265324794,
+        "establishment_multiplier_pits_needed_if_other_areas_penalized_20pct": 1.680037872810478
+      },
+      {
+        "f": 0.1,
+        "stock_ratio_constant_outside": 1.1857078449053202,
+        "outside_density_ratio_fixed_stock": 0.8433780752119852,
+        "pit_density_ratio_fixed_stock": 2.409597323092133,
+        "seed_share_in_pits": 0.24095973230921328,
+        "shoot_ratio_constant_outside": 0.9204940530649588,
+        "establishment_multiplier_pits_needed_if_other_areas_penalized_20pct": 0.9800220924727785
+      },
+      {
+        "f": 0.2,
+        "stock_ratio_constant_outside": 1.3714156898106402,
+        "outside_density_ratio_fixed_stock": 0.7291735156815043,
+        "pit_density_ratio_fixed_stock": 2.0833059372739826,
+        "seed_share_in_pits": 0.4166611874547966,
+        "shoot_ratio_constant_outside": 0.8409881061299176,
+        "establishment_multiplier_pits_needed_if_other_areas_penalized_20pct": 0.630014202303929
+      },
+      {
+        "f": 0.3,
+        "stock_ratio_constant_outside": 1.5571235347159602,
+        "outside_density_ratio_fixed_stock": 0.6422098039783422,
+        "pit_density_ratio_fixed_stock": 1.8348437907172022,
+        "seed_share_in_pits": 0.5504531372151606,
+        "shoot_ratio_constant_outside": 0.7614821591948765,
+        "establishment_multiplier_pits_needed_if_other_areas_penalized_20pct": 0.5133449055809794
+      },
+      {
+        "f": 0.5,
+        "stock_ratio_constant_outside": 1.9285392245266006,
+        "outside_density_ratio_fixed_stock": 0.5185271770894213,
+        "pit_density_ratio_fixed_stock": 1.4814728229105787,
+        "seed_share_in_pits": 0.7407364114552893,
+        "shoot_ratio_constant_outside": 0.6024702653247942,
+        "establishment_multiplier_pits_needed_if_other_areas_penalized_20pct": 0.4200094682026195
+      }
+    ],
+    "rrGrid": [
+      {
+        "f": 0.01,
+        "scenario": [
+          {
+            "q": 0.5,
+            "recruit_ratio_fixed_seed_stock": 0.9859750618584535
+          },
+          {
+            "q": 1,
+            "recruit_ratio_fixed_seed_stock": 1
+          },
+          {
+            "q": 1.5,
+            "recruit_ratio_fixed_seed_stock": 1.0140249381415463
+          },
+          {
+            "q": 2,
+            "recruit_ratio_fixed_seed_stock": 1.0280498762830925
+          }
+        ]
+      },
+      {
+        "f": 0.05,
+        "scenario": [
+          {
+            "q": 0.5,
+            "recruit_ratio_fixed_seed_stock": 0.9346418036675673
+          },
+          {
+            "q": 1,
+            "recruit_ratio_fixed_seed_stock": 1
+          },
+          {
+            "q": 1.5,
+            "recruit_ratio_fixed_seed_stock": 1.0653581963324326
+          },
+          {
+            "q": 2,
+            "recruit_ratio_fixed_seed_stock": 1.1307163926648651
+          }
+        ]
+      },
+      {
+        "f": 0.1,
+        "scenario": [
+          {
+            "q": 0.5,
+            "recruit_ratio_fixed_seed_stock": 0.8795201338453933
+          },
+          {
+            "q": 1,
+            "recruit_ratio_fixed_seed_stock": 1
+          },
+          {
+            "q": 1.5,
+            "recruit_ratio_fixed_seed_stock": 1.1204798661546067
+          },
+          {
+            "q": 2,
+            "recruit_ratio_fixed_seed_stock": 1.2409597323092132
+          }
+        ]
+      },
+      {
+        "f": 0.2,
+        "scenario": [
+          {
+            "q": 0.5,
+            "recruit_ratio_fixed_seed_stock": 0.7916694062726016
+          },
+          {
+            "q": 1,
+            "recruit_ratio_fixed_seed_stock": 1
+          },
+          {
+            "q": 1.5,
+            "recruit_ratio_fixed_seed_stock": 1.2083305937273983
+          },
+          {
+            "q": 2,
+            "recruit_ratio_fixed_seed_stock": 1.4166611874547963
+          }
+        ]
+      },
+      {
+        "f": 0.3,
+        "scenario": [
+          {
+            "q": 0.5,
+            "recruit_ratio_fixed_seed_stock": 0.7247734313924198
+          },
+          {
+            "q": 1,
+            "recruit_ratio_fixed_seed_stock": 1
+          },
+          {
+            "q": 1.5,
+            "recruit_ratio_fixed_seed_stock": 1.2752265686075803
+          },
+          {
+            "q": 2,
+            "recruit_ratio_fixed_seed_stock": 1.5504531372151606
+          }
+        ]
+      },
+      {
+        "f": 0.5,
+        "scenario": [
+          {
+            "q": 0.5,
+            "recruit_ratio_fixed_seed_stock": 0.6296317942723554
+          },
+          {
+            "q": 1,
+            "recruit_ratio_fixed_seed_stock": 1
+          },
+          {
+            "q": 1.5,
+            "recruit_ratio_fixed_seed_stock": 1.3703682057276447
+          },
+          {
+            "q": 2,
+            "recruit_ratio_fixed_seed_stock": 1.7407364114552892
+          }
+        ]
+      }
+    ]
+  },
+  "stingray": {
+    "seed_ratio": 0.7829457364341085
+  },
+  "goose": {
+    "sites": [
+      {
+        "system": "goose_pit_Vogelkoje",
+        "center_ratio": 1.554054054054054,
+        "edge_ratio": 18.5,
+        "center_difference": 2.05,
+        "edge_difference": 8.75,
+        "ratio_of_ratios": 11.904347826086957,
+        "difference_of_differences": 6.7,
+        "edge_pit_vs_center_pit": 1.608695652173913
+      },
+      {
+        "system": "goose_pit_Leghoern",
+        "center_ratio": 1.2038461538461538,
+        "edge_ratio": 6.8999999999999995,
+        "center_difference": 0.5299999999999998,
+        "edge_difference": 1.18,
+        "ratio_of_ratios": 5.731629392971246,
+        "difference_of_differences": 0.6500000000000001,
+        "edge_pit_vs_center_pit": 0.4408945686900958
+      }
+    ],
+    "pooled": {
+      "center": {
+        "pit_vs_sham_ratio": 1.8333333333333335,
+        "pit_vs_sham_difference": 2.0000000000000004,
+        "pit_vs_untouched_ratio": 3.1428571428571432,
+        "pit_vs_untouched_difference": 3.0000000000000004
+      },
+      "edge": {
+        "pit_vs_sham_ratio": 2.7894736842105265,
+        "pit_vs_sham_difference": 3.4,
+        "pit_vs_untouched_ratio": 13.249999999999998,
+        "pit_vs_untouched_difference": 4.8999999999999995
+      }
+    },
+    "edge_vs_center_pit_sham_ratio_of_ratios": 1.5215311004784688,
+    "edge_vs_center_pit_sham_difference_of_differences": 1.3999999999999995
+  },
+  "limits": [
+    "Published summary arithmetic, no original replicate-level observations.",
+    "Area and survival scenarios hypothetical, no observed pit area or survival rates.",
+    "Local seed concentration is not net seed production, seed retention or genet recruitment.",
+    "No cross-species pooled effect; no actual otter effect."
+  ]
+}
