@@ -1,0 +1,215 @@
+{
+  "status": "full local Python executed on verified archives; repo compact core reproduction not separately CI-run (Monte Carlo seed sequence differs)",
+  "sources": [
+    {
+      "doi": "10.1371/journal.pone.0168128",
+      "artifact": 14911201555,
+      "sha256": "144aa9cbadf811e307f8c024180152e640f4a55c8f4fb19474382c69eef0ba6c"
+    },
+    {
+      "doi": "10.34894/FKSY2M",
+      "paper": "10.1111/1365-2664.14405",
+      "artifact": 14938615379,
+      "sha256": "ad0097d3e14373bf0cb7babef0dd4aa26678d6bb97c7e5d94af5f7e534bc05e1"
+    }
+  ],
+  "field": {
+    "n": 18,
+    "trials": 2,
+    "counts": [
+      {
+        "arm": "CAGE",
+        "real_missing": [
+          1,
+          0,
+          0,
+          81,
+          19,
+          0
+        ],
+        "mimic_missing": [
+          7,
+          5,
+          0,
+          7,
+          5,
+          8
+        ],
+        "mean_real_loss": 0.08416666666666667,
+        "mean_mimic_loss": 0.26666666666666666,
+        "near_total": 0
+      },
+      {
+        "arm": "CAGE-HAND",
+        "real_missing": [
+          110,
+          170,
+          166,
+          190,
+          170,
+          174
+        ],
+        "mimic_missing": [
+          5,
+          5,
+          3,
+          7,
+          7,
+          7
+        ],
+        "mean_real_loss": 0.8166666666666668,
+        "mean_mimic_loss": 0.2833333333333333,
+        "near_total": 5
+      },
+      {
+        "arm": "CAGE-SAND",
+        "real_missing": [
+          77,
+          54,
+          78,
+          22,
+          44,
+          62
+        ],
+        "mimic_missing": [
+          4,
+          7,
+          7,
+          6,
+          6,
+          8
+        ],
+        "mean_real_loss": 0.2808333333333333,
+        "mean_mimic_loss": 0.31666666666666665,
+        "near_total": 0
+      }
+    ],
+    "crab_surface_ten_draw": {
+      "observed_count_based": 0.22654539687533248,
+      "homogeneous_p10": 0.13196181993981576,
+      "trial_specific_p10": 0.18166031051996917,
+      "excess_pooled": 0.09458357693551672,
+      "conditional_bootstrap95": [
+        -0.006272070721237977,
+        0.1785619206014608
+      ]
+    },
+    "buried_minus_surface": {
+      "mean_loss": -0.5358333333333334,
+      "conditional_ci": [
+        -0.6291666666666667,
+        -0.43499999999999994
+      ],
+      "near_total_diff": -0.8333333333333334,
+      "conditional_ci_near_total": [
+        -1,
+        -0.5
+      ],
+      "excess_ten_draw_diff": -0.09456814918566364,
+      "ci_excess": [
+        -0.17854540193960322,
+        0.006287829435927144
+      ]
+    }
+  },
+  "recruitment": {
+    "2020": {
+      "mean_density": 14,
+      "mean_dispersion": 1.2383220386161566,
+      "null_mc95": [
+        0.663685447910938,
+        1.4021281032310444
+      ],
+      "p_conditional": 0.10873782524349514,
+      "zero_observed": 0,
+      "zero_expected": 0.20306934661396914,
+      "le1_observed": 1,
+      "le1_expected": 1.2833109625063723
+    },
+    "2021": {
+      "mean_density": 8.055555555555555,
+      "mean_dispersion": 1.9380757152941206,
+      "null_mc95": [
+        0.6765427204811308,
+        1.392073611483953
+      ],
+      "p_conditional": 0.00001999960000799984,
+      "zero_observed": 4,
+      "zero_expected": 4.008441813673778,
+      "le1_observed": 11,
+      "le1_expected": 8.37389359990124,
+      "le1_p_conditional": 0.0623587528249435
+    },
+    "plots": 18,
+    "blocks": 3,
+    "quadrats_each_year": 72,
+    "year_change": {
+      "mean": 0.6997536766779646,
+      "by_block": [
+        -0.030743064375365236,
+        0.713941823346988,
+        1.4160622710622712
+      ],
+      "sign_flip_p": 0.5
+    },
+    "sensitivity": [
+      {
+        "omit": "400 m2 high",
+        "dispersion": 1.2539141887685714,
+        "p": 0.10401791964160717
+      },
+      {
+        "omit": "two largest dispersion plots",
+        "dispersion": 1.2295494063394674,
+        "p": 0.11789764204715905
+      },
+      {
+        "omit": "block 1",
+        "dispersion": 2.473235855879615,
+        "p": 0.00001999960000799984
+      },
+      {
+        "omit": "block 2",
+        "dispersion": 1.6785358367196865,
+        "p": 0.0059598808023839525
+      },
+      {
+        "omit": "block 3",
+        "dispersion": 1.6624554532830615,
+        "p": 0.005739885202295954
+      }
+    ],
+    "same_quadrat_pair_excess": [
+      {
+        "year": 2020,
+        "dose": 10,
+        "n": 9,
+        "mean": -0.017473063547232343
+      },
+      {
+        "year": 2020,
+        "dose": 50,
+        "n": 9,
+        "mean": 0.007136643394747467
+      },
+      {
+        "year": 2021,
+        "dose": 10,
+        "n": 8,
+        "mean": -0.013145097009615647
+      },
+      {
+        "year": 2021,
+        "dose": 50,
+        "n": 9,
+        "mean": 0.04107459933783548
+      }
+    ]
+  },
+  "limits": [
+    "Non-recovery not verified predation or death. Hypergeometric subsampling does not identify spatial cluster risk.",
+    "Conditional bootstrap with two trials and small n; zero observed not zero probability.",
+    "Multinomial benchmark is a descriptive homogeneous placement model conditional on fixed quadrat totals, not literal randomization or independent study-level inference.",
+    "Three blocks, independent random squares in each year, no within-plot distances or animal measures, no causal joint model."
+  ]
+}
