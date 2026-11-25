@@ -1,0 +1,59 @@
+name: Seagrass recovery timing and reserve sources
+on:
+  pull_request:
+    paths:
+      - 'analysis/173_donaher_recovery_timing.py'
+      - 'analysis/174_reserve_recovery_source_gate.py'
+      - '.github/workflows/seagrass-recovery-reserve.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --only-binary=:all: numpy==2.2.6 pandas==2.2.3 openpyxl==3.1.5
+      - run: |
+          python - <<'PY'
+          import importlib.util
+          s=importlib.util.spec_from_file_location("source","analysis/160_paired_stage_mutualism_source_gate.py")
+          m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.ROOT.mkdir(exist_ok=True)
+          assert m.dryad("donaher_2021","10.5061/dryad.9cnp5hqh7")["status"]=="SOURCE_ACQUIRED_SCHEMA_ONLY"
+          PY
+          mkdir -p out
+          python analysis/173_donaher_recovery_timing.py > out/recovery_timing.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("out/recovery_timing.json"))
+          assert x["plot_count"]==32 and x["raw_rows"]==374 and x["known_color_panel_keys"]==96
+          assert x["blank_cover_rows"]==98 and x["absent_color_time_rows"]==12
+          d=x["spring_contrasts"]["JUNE"]
+          assert math.isclose(d["observed_mean_difference_pp"],25.314285714285717,abs_tol=1e-10)
+          assert all(math.isclose(a,b,abs_tol=1e-10) for a,b in zip(d["bounded_difference_pp"],[12.547619047619051,29.214285714285715]))
+          assert x["same_plot_april_minus_june_spring"]["CD"]["observed"]==5
+          assert x["same_plot_april_minus_june_spring"]["D"]["observed"]==4
+          assert math.isclose(x["same_plot_gap_difference_CD_minus_D"],-18.1,abs_tol=1e-10)
+          assert x["biomass_source_audit"]["duplicate_context_rows_beyond_first"]==86
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: donaher-recovery-timing
+          path: out/
+          if-no-files-found: error
+  reserve_inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/174_reserve_recovery_source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reserve-recovery-source-inventory
+          path: reserve_sources/
+          retention-days: 3
+          if-no-files-found: error
