@@ -1,0 +1,123 @@
+{
+  "source": {
+    "doi": "10.3354/meps09612",
+    "url": "https://www.int-res.com/articles/theme/m448p197.pdf",
+    "pages": "201–203 Results/Discussion; printed abstract p197"
+  },
+  "sites": [
+    {
+      "site": "Piankatank River",
+      "recover_surface": 10,
+      "recover_buried": 56,
+      "final_surface": 1.2,
+      "final_buried": 40.4,
+      "peak_loss_surface": 93,
+      "peak_loss_buried": 1,
+      "final_ratio": 33.666666666666664,
+      "final_difference_pp": 39.199999999999996,
+      "postpeak_stock_ratio": 14.142857142857153,
+      "implied_peak_ratio": 2.3804713804713784,
+      "implied_peak_surface_pct": 17.142857142857153,
+      "implied_peak_buried_pct": 40.80808080808081,
+      "log_peak_share": 0.2466362854337582,
+      "log_postpeak_share": 0.7533637145662417,
+      "separate_recovery_ratio": 5.6,
+      "rounding": {
+        "final_ratio": [
+          32.28,
+          35.17391304347826
+        ],
+        "postpeak_stock_ratio": [
+          13.133333333333342,
+          15.30769230769232
+        ],
+        "implied_peak_ratio": [
+          2.108743718592963,
+          2.6782167291988506
+        ],
+        "log_postpeak_share": [
+          0.723295825444078,
+          0.7852630375339551
+        ]
+      }
+    },
+    {
+      "site": "Mumfort Island",
+      "recover_surface": 9,
+      "recover_buried": 27,
+      "final_surface": 3.8,
+      "final_buried": 16.8,
+      "peak_loss_surface": 26,
+      "peak_loss_buried": 21,
+      "final_ratio": 4.421052631578948,
+      "final_difference_pp": 13,
+      "postpeak_stock_ratio": 1.0675675675675675,
+      "implied_peak_ratio": 4.1412391738840775,
+      "implied_peak_surface_pct": 5.135135135135135,
+      "implied_peak_buried_pct": 21.265822784810126,
+      "log_peak_share": 0.9560120190187812,
+      "log_postpeak_share": 0.04398798098121876,
+      "separate_recovery_ratio": 3,
+      "rounding": {
+        "final_ratio": [
+          4.350649350649351,
+          4.493333333333334
+        ],
+        "postpeak_stock_ratio": [
+          1.0536912751677854,
+          1.0816326530612246
+        ],
+        "implied_peak_ratio": [
+          4.022298456260721,
+          4.2643736730360935
+        ],
+        "log_postpeak_share": [
+          0.034806122593760806,
+          0.053370247783514096
+        ]
+      }
+    },
+    {
+      "site": "Spider Crab Bay",
+      "recover_surface": 45,
+      "recover_buried": 55,
+      "final_surface": 2.8,
+      "final_buried": 10.3,
+      "peak_loss_surface": 80,
+      "peak_loss_buried": 50,
+      "final_ratio": 3.6785714285714293,
+      "final_difference_pp": 7.500000000000001,
+      "postpeak_stock_ratio": 2.5000000000000004,
+      "implied_peak_ratio": 1.4714285714285715,
+      "implied_peak_surface_pct": 14.000000000000002,
+      "implied_peak_buried_pct": 20.6,
+      "log_peak_share": 0.2965270539538653,
+      "log_postpeak_share": 0.7034729460461346,
+      "separate_recovery_ratio": 1.2222222222222223,
+      "rounding": {
+        "final_ratio": [
+          3.596491228070176,
+          3.763636363636364
+        ],
+        "postpeak_stock_ratio": [
+          2.414634146341464,
+          2.5897435897435903
+        ],
+        "implied_peak_ratio": [
+          1.3887441375716518,
+          1.5586776859504132
+        ],
+        "log_postpeak_share": [
+          0.6651255137277761,
+          0.743429348390689
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Published rounded aggregate values; no original plot-level covariance or standard errors. Rounding sensitivity is not inferential uncertainty.",
+    "Peak date may differ by treatment; peak stock is back-calculated from reported mean peak loss, not independent measured individual transition. Stock retention may reflect detection and cohort changes.",
+    "Recovery experiments use independent destructive plots, 50 seeds per plot and four blocks; later video plots have 200 seeds per plot and six plots per arm/site. Never divide final establishment by recovered seed fraction to infer conditional survival.",
+    "Three sites in one paper; not three independent studies, no causal animal treatment. Original paper already documented burial and post-germination loss."
+  ]
+}

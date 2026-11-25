@@ -1,0 +1,603 @@
+{
+  "source": {
+    "doi": "10.1007/s00442-025-05662-y",
+    "commit": "ea4679016e8bddcd083cd93fe2fd6f33b6b1025e",
+    "blob": "cb12f65a477078f3980a381b5251a635db312d53"
+  },
+  "counts": {
+    "rows": 240,
+    "selected": 160,
+    "blocks": 32,
+    "gt10": 34,
+    "recovered": 1529,
+    "germinated": 171
+  },
+  "resamples": 40000,
+  "simultaneous_critical": 2.7908655105342612,
+  "groupMeans": {
+    "NO": {
+      "buried": 0.26402078823953823,
+      "germ": 0.116893262987013,
+      "germ_nominal": 0.09687500000000003,
+      "buried_nominal": 0.2375,
+      "recovered": 0.8843749999999999,
+      "germ_positive": 0.59375
+    },
+    "COCKLE": {
+      "buried": 0.7634417665667667,
+      "germ": 0.14626207126207125,
+      "germ_nominal": 0.14687499999999998,
+      "buried_nominal": 0.74375,
+      "recovered": 0.9874999999999997,
+      "germ_positive": 0.71875
+    },
+    "SHRIMP": {
+      "buried": 0.4220249368686868,
+      "germ": 0.09594381313131314,
+      "germ_nominal": 0.09375000000000003,
+      "buried_nominal": 0.4125,
+      "recovered": 0.9781250000000001,
+      "germ_positive": 0.5625
+    },
+    "WORM": {
+      "buried": 0.37102610930735935,
+      "germ": 0.11859555375180374,
+      "germ_nominal": 0.11562500000000003,
+      "buried_nominal": 0.36875,
+      "recovered": 0.921875,
+      "germ_positive": 0.625
+    },
+    "MIX": {
+      "buried": 0.6192544434731936,
+      "germ": 0.07640345765345766,
+      "germ_nominal": 0.08125,
+      "buried_nominal": 0.61875,
+      "recovered": 1.0062500000000003,
+      "germ_positive": 0.5625
+    }
+  },
+  "contrasts": [
+    {
+      "treatment": "COCKLE",
+      "control": "NO",
+      "n": 32,
+      "estimates": {
+        "buried": {
+          "estimate": 0.4994209783272283,
+          "bootstrap95": [
+            0.364940007908758,
+            0.6190525620213119
+          ],
+          "simultaneous95": [
+            0.31882912868388374,
+            0.6800128279705728
+          ]
+        },
+        "germ": {
+          "estimate": 0.029368808275058278,
+          "bootstrap95": [
+            -0.02418007339882341,
+            0.08331529581529581
+          ],
+          "simultaneous95": [
+            -0.04697324657513642,
+            0.10571086312525298
+          ]
+        },
+        "gap": {
+          "estimate": 0.4700521700521702,
+          "bootstrap95": [
+            0.32373858780108783,
+            0.6065927995615497
+          ],
+          "simultaneous95": [
+            0.2681645262618294,
+            0.671939813842511
+          ]
+        },
+        "germ_nominal": {
+          "estimate": 0.05,
+          "bootstrap95": [
+            0.003125000000000001,
+            0.096875
+          ]
+        },
+        "buried_nominal": {
+          "estimate": 0.5062500000000002,
+          "bootstrap95": [
+            0.38125000000000014,
+            0.6187500000000001
+          ]
+        },
+        "recovered": {
+          "estimate": 0.103125,
+          "bootstrap95": [
+            0.02499999999999999,
+            0.18437500000000007
+          ]
+        },
+        "germ_positive": {
+          "estimate": 0.125,
+          "bootstrap95": [
+            -0.0625,
+            0.3125
+          ]
+        }
+      },
+      "bootstrap_covariance_buried_germ": -0.00014874283953274667,
+      "bootstrap_correlation_buried_germ": -0.08403339195188919,
+      "joint_bootstrap_sign_fractions": {
+        "burPos_germPos": 0.8617,
+        "burPos_germNonpos": 0.1383,
+        "burNonpos_germPos": 0,
+        "burNonpos_germNonpos": 0
+      },
+      "byStratum": [
+        {
+          "run": "2",
+          "temp": "COLD",
+          "buried": 0.4782287157287158,
+          "germ": 0.036814574314574314
+        },
+        {
+          "run": "2",
+          "temp": "WARM",
+          "buried": 0.5490457459207458,
+          "germ": 0.05620629370629371
+        },
+        {
+          "run": "3",
+          "temp": "COLD",
+          "buried": 0.3440746753246753,
+          "germ": 0.03993055555555555
+        },
+        {
+          "run": "3",
+          "temp": "WARM",
+          "buried": 0.6263347763347764,
+          "germ": -0.015476190476190484
+        }
+      ],
+      "strict_n": 21,
+      "strict": {
+        "buried": 0.4825585789871504,
+        "germ": -0.00825774754346183
+      }
+    },
+    {
+      "treatment": "SHRIMP",
+      "control": "NO",
+      "n": 32,
+      "estimates": {
+        "buried": {
+          "estimate": 0.1580041486291486,
+          "bootstrap95": [
+            0.04194512085137085,
+            0.2743765782828283
+          ],
+          "simultaneous95": [
+            -0.007443529741446547,
+            0.32345182699974373
+          ]
+        },
+        "germ": {
+          "estimate": -0.02094944985569986,
+          "bootstrap95": [
+            -0.07556592712842713,
+            0.03181254509379511
+          ],
+          "simultaneous95": [
+            -0.09751758658008655,
+            0.05561868686868684
+          ]
+        },
+        "gap": {
+          "estimate": 0.1789535984848485,
+          "bootstrap95": [
+            0.04449968434343434,
+            0.31458333333333327
+          ],
+          "simultaneous95": [
+            -0.014096470522144883,
+            0.3720036674918419
+          ]
+        },
+        "germ_nominal": {
+          "estimate": -0.0031249999999999993,
+          "bootstrap95": [
+            -0.05000000000000001,
+            0.043750000000000004
+          ]
+        },
+        "buried_nominal": {
+          "estimate": 0.17499999999999996,
+          "bootstrap95": [
+            0.0625,
+            0.2875
+          ]
+        },
+        "recovered": {
+          "estimate": 0.09375,
+          "bootstrap95": [
+            0.031249999999999997,
+            0.16250000000000003
+          ]
+        },
+        "germ_positive": {
+          "estimate": -0.03125,
+          "bootstrap95": [
+            -0.25,
+            0.1875
+          ]
+        }
+      },
+      "bootstrap_covariance_buried_germ": -0.0002588747844510113,
+      "bootstrap_correlation_buried_germ": -0.15916911869707528,
+      "joint_bootstrap_sign_fractions": {
+        "burPos_germPos": 0.2283,
+        "burPos_germNonpos": 0.76885,
+        "burNonpos_germPos": 0.0012,
+        "burNonpos_germNonpos": 0.00165
+      },
+      "byStratum": [
+        {
+          "run": "2",
+          "temp": "COLD",
+          "buried": 0.09145472582972582,
+          "germ": -0.0032106782106782056
+        },
+        {
+          "run": "2",
+          "temp": "WARM",
+          "buried": 0.17367424242424243,
+          "germ": -0.019886363636363636
+        },
+        {
+          "run": "3",
+          "temp": "COLD",
+          "buried": 0.0869318181818182,
+          "germ": 0.018465909090909092
+        },
+        {
+          "run": "3",
+          "temp": "WARM",
+          "buried": 0.27995580808080806,
+          "germ": -0.07916666666666666
+        }
+      ],
+      "strict_n": 22,
+      "strict": {
+        "buried": 0.14704184704184706,
+        "germ": -0.026569264069264065
+      }
+    },
+    {
+      "treatment": "WORM",
+      "control": "NO",
+      "n": 32,
+      "estimates": {
+        "buried": {
+          "estimate": 0.10700532106782107,
+          "bootstrap95": [
+            -0.021873872655122664,
+            0.2421660804473304
+          ],
+          "simultaneous95": [
+            -0.08099973214350276,
+            0.2950103742791449
+          ]
+        },
+        "germ": {
+          "estimate": 0.001702290764790758,
+          "bootstrap95": [
+            -0.05733450577200577,
+            0.06066130050505051
+          ],
+          "simultaneous95": [
+            -0.08290458288856778,
+            0.08630916441814929
+          ]
+        },
+        "gap": {
+          "estimate": 0.10530303030303027,
+          "bootstrap95": [
+            -0.037642045454545435,
+            0.2524914321789322
+          ],
+          "simultaneous95": [
+            -0.10041883030381028,
+            0.31102489090987084
+          ]
+        },
+        "germ_nominal": {
+          "estimate": 0.01875,
+          "bootstrap95": [
+            -0.034374999999999996,
+            0.071875
+          ]
+        },
+        "buried_nominal": {
+          "estimate": 0.13124999999999998,
+          "bootstrap95": [
+            0.006249999999999993,
+            0.2625
+          ]
+        },
+        "recovered": {
+          "estimate": 0.037500000000000006,
+          "bootstrap95": [
+            -0.05625000000000001,
+            0.125
+          ]
+        },
+        "germ_positive": {
+          "estimate": 0.03125,
+          "bootstrap95": [
+            -0.21875,
+            0.28125
+          ]
+        }
+      },
+      "bootstrap_covariance_buried_germ": 0.000011730697532164834,
+      "bootstrap_correlation_buried_germ": 0.005744159418197224,
+      "joint_bootstrap_sign_fractions": {
+        "burPos_germPos": 0.49505,
+        "burPos_germNonpos": 0.452175,
+        "burNonpos_germPos": 0.02695,
+        "burNonpos_germNonpos": 0.025825
+      },
+      "byStratum": [
+        {
+          "run": "2",
+          "temp": "COLD",
+          "buried": 0.19107593795093794,
+          "germ": -0.005704365079365083
+        },
+        {
+          "run": "2",
+          "temp": "WARM",
+          "buried": 0.12136994949494948,
+          "germ": 0.015530303030303016
+        },
+        {
+          "run": "3",
+          "temp": "COLD",
+          "buried": -0.009929653679653656,
+          "germ": 0.05829274891774892
+        },
+        {
+          "run": "3",
+          "temp": "WARM",
+          "buried": 0.1255050505050505,
+          "germ": -0.061309523809523814
+        }
+      ],
+      "strict_n": 22,
+      "strict": {
+        "buried": 0.08831168831168833,
+        "germ": 0.00901875901875902
+      }
+    },
+    {
+      "treatment": "MIX",
+      "control": "NO",
+      "n": 32,
+      "estimates": {
+        "buried": {
+          "estimate": 0.3552336552336552,
+          "bootstrap95": [
+            0.2498846639471639,
+            0.4573029401154401
+          ],
+          "simultaneous95": [
+            0.2075790061072452,
+            0.5028883043600652
+          ]
+        },
+        "germ": {
+          "estimate": -0.04048980533355533,
+          "bootstrap95": [
+            -0.08833952505827507,
+            0.007213446275946283
+          ],
+          "simultaneous95": [
+            -0.1087574260284492,
+            0.027777815361338533
+          ]
+        },
+        "gap": {
+          "estimate": 0.3957234605672106,
+          "bootstrap95": [
+            0.2802914966977467,
+            0.5118686868686868
+          ],
+          "simultaneous95": [
+            0.2309629721657843,
+            0.5604839489686368
+          ]
+        },
+        "germ_nominal": {
+          "estimate": -0.015625,
+          "bootstrap95": [
+            -0.05625000000000001,
+            0.025
+          ]
+        },
+        "buried_nominal": {
+          "estimate": 0.38125000000000003,
+          "bootstrap95": [
+            0.278125,
+            0.48125
+          ]
+        },
+        "recovered": {
+          "estimate": 0.12187499999999998,
+          "bootstrap95": [
+            0.04687499999999997,
+            0.19687499999999994
+          ]
+        },
+        "germ_positive": {
+          "estimate": -0.03125,
+          "bootstrap95": [
+            -0.25,
+            0.1875
+          ]
+        }
+      },
+      "bootstrap_covariance_buried_germ": -0.000043886327656355335,
+      "bootstrap_correlation_buried_germ": -0.03391135676701471,
+      "joint_bootstrap_sign_fractions": {
+        "burPos_germPos": 0.049225,
+        "burPos_germNonpos": 0.950775,
+        "burNonpos_germPos": 0,
+        "burNonpos_germNonpos": 0
+      },
+      "byStratum": [
+        {
+          "run": "2",
+          "temp": "COLD",
+          "buried": 0.2281631562881563,
+          "germ": -0.08206654456654455
+        },
+        {
+          "run": "2",
+          "temp": "WARM",
+          "buried": 0.5393623737373737,
+          "germ": -0.05252525252525253
+        },
+        {
+          "run": "3",
+          "temp": "COLD",
+          "buried": 0.18402777777777776,
+          "germ": -0.004261363636363636
+        },
+        {
+          "run": "3",
+          "temp": "WARM",
+          "buried": 0.46938131313131315,
+          "germ": -0.023106060606060616
+        }
+      ],
+      "strict_n": 20,
+      "strict": {
+        "buried": 0.3371626984126984,
+        "germ": -0.05117063492063493
+      }
+    },
+    {
+      "treatment": "MIX",
+      "control": "COCKLE",
+      "n": 32,
+      "estimates": {
+        "buried": {
+          "estimate": -0.14418732309357313,
+          "bootstrap95": [
+            -0.2377519182206682,
+            -0.05131960053835055
+          ],
+          "simultaneous95": [
+            -0.2767366847287228,
+            -0.011637961458423413
+          ]
+        },
+        "germ": {
+          "estimate": -0.06985861360861359,
+          "bootstrap95": [
+            -0.11659902597402598,
+            -0.02323509823509822
+          ],
+          "simultaneous95": [
+            -0.136804996709196,
+            -0.002912230508031202
+          ]
+        },
+        "gap": {
+          "estimate": -0.07432870948495948,
+          "bootstrap95": [
+            -0.18985970626595633,
+            0.038624916749916735
+          ],
+          "simultaneous95": [
+            -0.23754182663588394,
+            0.08888440766596498
+          ]
+        },
+        "germ_nominal": {
+          "estimate": -0.06562500000000002,
+          "bootstrap95": [
+            -0.11250000000000002,
+            -0.018749999999999996
+          ]
+        },
+        "buried_nominal": {
+          "estimate": -0.12500000000000003,
+          "bootstrap95": [
+            -0.22812500000000008,
+            -0.025000000000000012
+          ]
+        },
+        "recovered": {
+          "estimate": 0.018750000000000006,
+          "bootstrap95": [
+            -0.05624999999999998,
+            0.09062500000000001
+          ]
+        },
+        "germ_positive": {
+          "estimate": -0.15625,
+          "bootstrap95": [
+            -0.375,
+            0.0625
+          ]
+        }
+      },
+      "bootstrap_covariance_buried_germ": -0.0002944801118087313,
+      "bootstrap_correlation_buried_germ": -0.2584812396335601,
+      "joint_bootstrap_sign_fractions": {
+        "burPos_germPos": 0,
+        "burPos_germNonpos": 0.001225,
+        "burNonpos_germPos": 0.00175,
+        "burNonpos_germNonpos": 0.997025
+      },
+      "byStratum": [
+        {
+          "run": "2",
+          "temp": "COLD",
+          "buried": -0.2500655594405594,
+          "germ": -0.11888111888111888
+        },
+        {
+          "run": "2",
+          "temp": "WARM",
+          "buried": -0.009683372183372202,
+          "germ": -0.10873154623154623
+        },
+        {
+          "run": "3",
+          "temp": "COLD",
+          "buried": -0.16004689754689755,
+          "germ": -0.044191919191919185
+        },
+        {
+          "run": "3",
+          "temp": "WARM",
+          "buried": -0.1569534632034632,
+          "germ": -0.0076298701298701255
+        }
+      ],
+      "strict_n": 18,
+      "strict": {
+        "buried": -0.1576499118165785,
+        "germ": -0.08395061728395062
+      }
+    }
+  ],
+  "limitations": [
+    "One experiment, two runs, four fixed run-temperature strata; within-block joint bootstrap conditional on these strata. No generalization of temperature or among-study variance.",
+    "Observed buried and germinated fractions of recovered records share denominator; burial is a position, not a success transition or a direct measure of retention. Stage-gap contrast is descriptive, not mediation or proven failure to transmit.",
+    "34 cores report more than nominal ten recovered records; per-ten scaling is not a probability. Strict subset selected on post-treatment recovery, sensitivity only.",
+    "Simultaneous intervals use maximum standardized centered bootstrap error over five contrasts x three metrics, approximate conditional intervals, not exact randomized inference or prospective validation.",
+    "Mixed treatment differs in animal composition/density from single-taxon arms; no general diversity effect or otter effect."
+  ]
+}
