@@ -1,0 +1,2399 @@
+{
+  "source": {
+    "repo": "esotka/AmpithoeValida",
+    "commit": "0302f9d7fd2c7b6f067432a1e290c6e4ceff3143",
+    "paper": "10.1007/s10592-022-01452-8",
+    "feedingSource": "10.3354/meps09569"
+  },
+  "audit": {
+    "metaN": 349,
+    "linked": 297,
+    "valid": 297,
+    "missing": [
+      "ALN003",
+      "ALN013",
+      "ARG006",
+      "ARG008",
+      "ARG009",
+      "ARG011",
+      "CBV002",
+      "CBV006",
+      "CBV007",
+      "CBV008",
+      "CBV010",
+      "CBV011",
+      "CBV012",
+      "CBV013",
+      "CBV014",
+      "CBV018",
+      "KAE001",
+      "MOU001",
+      "MOU006",
+      "MOU007",
+      "MOU008",
+      "MOU009",
+      "MOU011",
+      "MOU012",
+      "MOU013",
+      "MOU015",
+      "MOU016",
+      "MOU019",
+      "MOU020",
+      "MOU021",
+      "OSA007",
+      "OSA008",
+      "SFB023",
+      "SFB035",
+      "SHI001",
+      "SHI002",
+      "SHI005",
+      "SHI006",
+      "SHI007",
+      "SHI008",
+      "SHI009",
+      "SHI010",
+      "SHI011",
+      "SHI012",
+      "SND005",
+      "SOU001",
+      "SOU021",
+      "TMB004",
+      "TMB010",
+      "TMB014",
+      "TMB015",
+      "TMB017"
+    ],
+    "mismatch": [],
+    "hapN": 47,
+    "sequenceLength": 508,
+    "sequenceAlphabet": [
+      "A",
+      "C",
+      "G",
+      "N",
+      "R",
+      "T",
+      "Y"
+    ],
+    "hapAssignmentCount": 637,
+    "subsetN": 261,
+    "subsetLinked": 232
+  },
+  "byPop": {
+    "ALN": {
+      "name": "Allan Harbor, RI",
+      "region": "Eastern US",
+      "lat": 43,
+      "lon": -71.4125557,
+      "n": 20,
+      "clade": {
+        "A": 20
+      },
+      "reportedMtDNA": {
+        "A": 20,
+        "B": 0,
+        "C": 0
+      },
+      "reportedSNP": 20,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 18,
+      "haplotypes": {
+        "1": 17,
+        "6": 1
+      },
+      "within": {
+        "n": 18,
+        "meanPDistance": 0.00021872265966754154,
+        "haplotypeDiversity": 0.11111111111111116
+      }
+    },
+    "ARG": {
+      "name": "Argentina, Playa Bonita Beach",
+      "region": "Argentina",
+      "lat": -43.37,
+      "lon": -65.05,
+      "n": 21,
+      "clade": {
+        "A": 21
+      },
+      "reportedMtDNA": {
+        "A": 21,
+        "B": 0,
+        "C": 0
+      },
+      "reportedSNP": 21,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 17,
+      "haplotypes": {
+        "1": 17
+      },
+      "within": {
+        "n": 17,
+        "meanPDistance": 0,
+        "haplotypeDiversity": 0
+      }
+    },
+    "CBV": {
+      "name": "Chesapeake Bay, Goodwin Islands (VA)",
+      "region": "Eastern US",
+      "lat": 37.2167,
+      "lon": -76.3833,
+      "n": 22,
+      "clade": {
+        "A": 22
+      },
+      "reportedMtDNA": {
+        "A": 24,
+        "B": 0,
+        "C": 0
+      },
+      "reportedSNP": 22,
+      "cladeDifference": {
+        "A": -2,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 12,
+      "haplotypes": {
+        "1": 12
+      },
+      "within": {
+        "n": 12,
+        "meanPDistance": 0,
+        "haplotypeDiversity": 0
+      }
+    },
+    "CHS": {
+      "name": "Charleston Harbor, SC",
+      "region": "Eastern US",
+      "lat": 32.7513,
+      "lon": -79.9,
+      "n": 22,
+      "clade": {
+        "A": 22
+      },
+      "reportedMtDNA": {
+        "A": 22,
+        "B": 0,
+        "C": 0
+      },
+      "reportedSNP": 22,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 22,
+      "haplotypes": {
+        "1": 14,
+        "2": 1,
+        "3": 2,
+        "4": 1,
+        "8": 1,
+        "9": 1,
+        "11": 1,
+        "12": 1
+      },
+      "within": {
+        "n": 22,
+        "meanPDistance": 0.001414595902784877,
+        "haplotypeDiversity": 0.6017316017316017
+      }
+    },
+    "EHS": {
+      "name": "Elkhorn Slough, CA",
+      "region": "Western US",
+      "lat": 36.504474,
+      "lon": -121.451308,
+      "n": 20,
+      "clade": {
+        "C": 20
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 0,
+        "C": 20
+      },
+      "reportedSNP": 20,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 20,
+      "haplotypes": {
+        "16": 20
+      },
+      "within": {
+        "n": 20,
+        "meanPDistance": 0,
+        "haplotypeDiversity": 0
+      }
+    },
+    "HUM": {
+      "name": "Humboldt Bay, CA",
+      "region": "Western US",
+      "lat": 40.73333333,
+      "lon": -124.2166667,
+      "n": 23,
+      "clade": {
+        "A": 19,
+        "C": 4
+      },
+      "reportedMtDNA": {
+        "A": 19,
+        "B": 0,
+        "C": 4
+      },
+      "reportedSNP": 23,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 23,
+      "haplotypes": {
+        "1": 17,
+        "5": 1,
+        "7": 1,
+        "16": 4
+      },
+      "within": {
+        "n": 23,
+        "meanPDistance": 0.01571690890417352,
+        "haplotypeDiversity": 0.43873517786561267
+      }
+    },
+    "KAE": {
+      "name": "Kaeda",
+      "region": "Japan",
+      "lat": 31.82067,
+      "lon": 131.4481,
+      "n": 8,
+      "clade": {
+        "B": 7,
+        "C": 1
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 8,
+        "C": 0
+      },
+      "reportedSNP": 8,
+      "cladeDifference": {
+        "A": 0,
+        "B": -1,
+        "C": 1
+      },
+      "nLinked": 7,
+      "haplotypes": {
+        "25": 1,
+        "39": 2,
+        "41": 1,
+        "43": 1,
+        "44": 1,
+        "45": 1
+      },
+      "within": {
+        "n": 7,
+        "meanPDistance": 0.015386416618871256,
+        "haplotypeDiversity": 0.9523809523809523
+      }
+    },
+    "MNG": {
+      "name": "Mangoku-ura",
+      "region": "Japan",
+      "lat": 37,
+      "lon": 142,
+      "n": 20,
+      "clade": {
+        "C": 20
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 0,
+        "C": 18
+      },
+      "reportedSNP": 20,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 2
+      },
+      "nLinked": 20,
+      "haplotypes": {
+        "16": 19,
+        "20": 1
+      },
+      "within": {
+        "n": 20,
+        "meanPDistance": 0.0003937007874015747,
+        "haplotypeDiversity": 0.09999999999999998
+      }
+    },
+    "MOU": {
+      "name": "Moune Bay",
+      "region": "Japan",
+      "lat": 38.9012,
+      "lon": 142.5,
+      "n": 21,
+      "clade": {
+        "B": 1,
+        "C": 20
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 1,
+        "C": 20
+      },
+      "reportedSNP": 21,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 8,
+      "haplotypes": {
+        "16": 2,
+        "19": 3,
+        "29": 1,
+        "30": 1,
+        "40": 1
+      },
+      "within": {
+        "n": 8,
+        "meanPDistance": 0.023099265176825135,
+        "haplotypeDiversity": 0.8571428571428572
+      }
+    },
+    "OSA": {
+      "name": "Osaka: Misaka, mouth of Higashi River",
+      "region": "Japan",
+      "lat": 34.31666667,
+      "lon": 135.1166667,
+      "n": 20,
+      "clade": {
+        "B": 3,
+        "C": 17
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 3,
+        "C": 17
+      },
+      "reportedSNP": 20,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 18,
+      "haplotypes": {
+        "16": 15,
+        "39": 3
+      },
+      "within": {
+        "n": 18,
+        "meanPDistance": 0.011000463177396938,
+        "haplotypeDiversity": 0.2941176470588235
+      }
+    },
+    "SFB": {
+      "name": "San Francisco Bay, CA",
+      "region": "Western US",
+      "lat": 37.95,
+      "lon": -122.5,
+      "n": 51,
+      "clade": {
+        "A": 1,
+        "B": 50
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 51,
+        "C": 0
+      },
+      "reportedSNP": 51,
+      "cladeDifference": {
+        "A": 1,
+        "B": -1,
+        "C": 0
+      },
+      "nLinked": 49,
+      "haplotypes": {
+        "1": 1,
+        "31": 46,
+        "36": 1,
+        "37": 1
+      },
+      "within": {
+        "n": 49,
+        "meanPDistance": 0.0020361294123948763,
+        "haplotypeDiversity": 0.11989795918367352
+      }
+    },
+    "SHI": {
+      "name": "ShimabiraĘ",
+      "region": "Japan",
+      "lat": 31.42393,
+      "lon": 130.16317,
+      "n": 20,
+      "clade": {
+        "B": 20
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 20,
+        "C": 0
+      },
+      "reportedSNP": 20,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 10,
+      "haplotypes": {
+        "43": 8,
+        "46": 1,
+        "47": 1
+      },
+      "within": {
+        "n": 10,
+        "meanPDistance": 0.006036745406824145,
+        "haplotypeDiversity": 0.37777777777777777
+      }
+    },
+    "SND": {
+      "name": "Sandwich Marina, MA",
+      "region": "Eastern US",
+      "lat": 41.7703841,
+      "lon": -70.5036391,
+      "n": 18,
+      "clade": {
+        "A": 18
+      },
+      "reportedMtDNA": {
+        "A": 18,
+        "B": 0,
+        "C": 0
+      },
+      "reportedSNP": 18,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 17,
+      "haplotypes": {
+        "1": 17
+      },
+      "within": {
+        "n": 17,
+        "meanPDistance": 0,
+        "haplotypeDiversity": 0
+      }
+    },
+    "SOU": {
+      "name": "Matsushima Bay",
+      "region": "Japan",
+      "lat": 38.352839,
+      "lon": 141.059694,
+      "n": 23,
+      "clade": {
+        "C": 23
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 1,
+        "C": 22
+      },
+      "reportedSNP": 23,
+      "cladeDifference": {
+        "A": 0,
+        "B": -1,
+        "C": 1
+      },
+      "nLinked": 21,
+      "haplotypes": {
+        "16": 17,
+        "21": 1,
+        "23": 1,
+        "24": 1,
+        "28": 1
+      },
+      "within": {
+        "n": 21,
+        "meanPDistance": 0.004156490747934856,
+        "haplotypeDiversity": 0.35238095238095235
+      }
+    },
+    "TMB": {
+      "name": "Tomales Bay, CA",
+      "region": "Western US",
+      "lat": 38.17,
+      "lon": -122.91,
+      "n": 17,
+      "clade": {
+        "C": 17
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 0,
+        "C": 17
+      },
+      "reportedSNP": 17,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 12,
+      "haplotypes": {
+        "16": 11,
+        "22": 1
+      },
+      "within": {
+        "n": 12,
+        "meanPDistance": 0.0009881422924901185,
+        "haplotypeDiversity": 0.16666666666666663
+      }
+    },
+    "WAJ": {
+      "name": "Wajiro",
+      "region": "Japan",
+      "lat": 33.673563,
+      "lon": 130.426959,
+      "n": 7,
+      "clade": {
+        "B": 2,
+        "C": 5
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 2,
+        "C": 5
+      },
+      "reportedSNP": 7,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "nLinked": 7,
+      "haplotypes": {
+        "25": 3,
+        "26": 1,
+        "27": 1,
+        "39": 1,
+        "42": 1
+      },
+      "within": {
+        "n": 7,
+        "meanPDistance": 0.020809898762654662,
+        "haplotypeDiversity": 0.8571428571428572
+      }
+    },
+    "WIL": {
+      "name": "Willapa Bay, WA",
+      "region": "Western US",
+      "lat": 46.66666667,
+      "lon": -124,
+      "n": 16,
+      "clade": {
+        "C": 16
+      },
+      "reportedMtDNA": {
+        "A": 0,
+        "B": 0,
+        "C": 26
+      },
+      "reportedSNP": 16,
+      "cladeDifference": {
+        "A": 0,
+        "B": 0,
+        "C": -10
+      },
+      "nLinked": 16,
+      "haplotypes": {
+        "16": 16
+      },
+      "within": {
+        "n": 16,
+        "meanPDistance": 0,
+        "haplotypeDiversity": 0
+      }
+    }
+  },
+  "cross": [
+    {
+      "a": "ALN",
+      "b": "ARG",
+      "meanPDistance": 0.00010936132983377077,
+      "sameClade": 1,
+      "sameHaplotype": 0.9444444444444444,
+      "n1": 18,
+      "n2": 17
+    },
+    {
+      "a": "ALN",
+      "b": "CBV",
+      "meanPDistance": 0.00010936132983377078,
+      "sameClade": 1,
+      "sameHaplotype": 0.9444444444444444,
+      "n1": 18,
+      "n2": 12
+    },
+    {
+      "a": "ALN",
+      "b": "CHS",
+      "meanPDistance": 0.0008251809432911781,
+      "sameClade": 1,
+      "sameHaplotype": 0.601010101010101,
+      "n1": 18,
+      "n2": 22
+    },
+    {
+      "a": "ALN",
+      "b": "EHS",
+      "meanPDistance": 0.05129046369203864,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 20
+    },
+    {
+      "a": "ALN",
+      "b": "HUM",
+      "meanPDistance": 0.00918159686560918,
+      "sameClade": 0.8260869565217391,
+      "sameHaplotype": 0.6980676328502415,
+      "n1": 18,
+      "n2": 23
+    },
+    {
+      "a": "ALN",
+      "b": "KAE",
+      "meanPDistance": 0.042596207094666536,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 7
+    },
+    {
+      "a": "ALN",
+      "b": "MNG",
+      "meanPDistance": 0.05109361329833785,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 20
+    },
+    {
+      "a": "ALN",
+      "b": "MOU",
+      "meanPDistance": 0.045565065014739815,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 8
+    },
+    {
+      "a": "ALN",
+      "b": "OSA",
+      "meanPDistance": 0.04965004374453219,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 18
+    },
+    {
+      "a": "ALN",
+      "b": "SFB",
+      "meanPDistance": 0.04499054433672007,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.01927437641723356,
+      "n1": 18,
+      "n2": 49
+    },
+    {
+      "a": "ALN",
+      "b": "SHI",
+      "meanPDistance": 0.04341644794400696,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 10
+    },
+    {
+      "a": "ALN",
+      "b": "SND",
+      "meanPDistance": 0.00010936132983377077,
+      "sameClade": 1,
+      "sameHaplotype": 0.9444444444444444,
+      "n1": 18,
+      "n2": 17
+    },
+    {
+      "a": "ALN",
+      "b": "SOU",
+      "meanPDistance": 0.05150447259384681,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 21
+    },
+    {
+      "a": "ALN",
+      "b": "TMB",
+      "meanPDistance": 0.051472048166245545,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 12
+    },
+    {
+      "a": "ALN",
+      "b": "WAJ",
+      "meanPDistance": 0.045947381577302875,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 7
+    },
+    {
+      "a": "ALN",
+      "b": "WIL",
+      "meanPDistance": 0.051290463692038796,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 16
+    },
+    {
+      "a": "ARG",
+      "b": "CBV",
+      "meanPDistance": 0,
+      "sameClade": 1,
+      "sameHaplotype": 1,
+      "n1": 17,
+      "n2": 12
+    },
+    {
+      "a": "ARG",
+      "b": "CHS",
+      "meanPDistance": 0.0007158196134574076,
+      "sameClade": 1,
+      "sameHaplotype": 0.6363636363636364,
+      "n1": 17,
+      "n2": 22
+    },
+    {
+      "a": "ARG",
+      "b": "EHS",
+      "meanPDistance": 0.05118110236220498,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 20
+    },
+    {
+      "a": "ARG",
+      "b": "HUM",
+      "meanPDistance": 0.009072235535775408,
+      "sameClade": 0.8260869565217391,
+      "sameHaplotype": 0.7391304347826086,
+      "n1": 17,
+      "n2": 23
+    },
+    {
+      "a": "ARG",
+      "b": "KAE",
+      "meanPDistance": 0.04248678401365837,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 7
+    },
+    {
+      "a": "ARG",
+      "b": "MNG",
+      "meanPDistance": 0.05098425196850418,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 20
+    },
+    {
+      "a": "ARG",
+      "b": "MOU",
+      "meanPDistance": 0.04544652330198017,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 8
+    },
+    {
+      "a": "ARG",
+      "b": "OSA",
+      "meanPDistance": 0.04954068241469842,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 18
+    },
+    {
+      "a": "ARG",
+      "b": "SFB",
+      "meanPDistance": 0.044875194172157386,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.02040816326530612,
+      "n1": 17,
+      "n2": 49
+    },
+    {
+      "a": "ARG",
+      "b": "SHI",
+      "meanPDistance": 0.043307086614173165,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 10
+    },
+    {
+      "a": "ARG",
+      "b": "SND",
+      "meanPDistance": 0,
+      "sameClade": 1,
+      "sameHaplotype": 1,
+      "n1": 17,
+      "n2": 17
+    },
+    {
+      "a": "ARG",
+      "b": "SOU",
+      "meanPDistance": 0.051394864301756264,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 21
+    },
+    {
+      "a": "ARG",
+      "b": "TMB",
+      "meanPDistance": 0.05136265081489333,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 12
+    },
+    {
+      "a": "ARG",
+      "b": "WAJ",
+      "meanPDistance": 0.04583802024746909,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 7
+    },
+    {
+      "a": "ARG",
+      "b": "WIL",
+      "meanPDistance": 0.05118110236220502,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 16
+    },
+    {
+      "a": "CBV",
+      "b": "CHS",
+      "meanPDistance": 0.0007158196134574076,
+      "sameClade": 1,
+      "sameHaplotype": 0.6363636363636364,
+      "n1": 12,
+      "n2": 22
+    },
+    {
+      "a": "CBV",
+      "b": "EHS",
+      "meanPDistance": 0.05118110236220495,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 20
+    },
+    {
+      "a": "CBV",
+      "b": "HUM",
+      "meanPDistance": 0.009072235535775412,
+      "sameClade": 0.8260869565217391,
+      "sameHaplotype": 0.7391304347826086,
+      "n1": 12,
+      "n2": 23
+    },
+    {
+      "a": "CBV",
+      "b": "KAE",
+      "meanPDistance": 0.042486784013658324,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 7
+    },
+    {
+      "a": "CBV",
+      "b": "MNG",
+      "meanPDistance": 0.05098425196850415,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 20
+    },
+    {
+      "a": "CBV",
+      "b": "MOU",
+      "meanPDistance": 0.045446523301980124,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 8
+    },
+    {
+      "a": "CBV",
+      "b": "OSA",
+      "meanPDistance": 0.04954068241469828,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 18
+    },
+    {
+      "a": "CBV",
+      "b": "SFB",
+      "meanPDistance": 0.04487519417215719,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.02040816326530612,
+      "n1": 12,
+      "n2": 49
+    },
+    {
+      "a": "CBV",
+      "b": "SHI",
+      "meanPDistance": 0.04330708661417317,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 10
+    },
+    {
+      "a": "CBV",
+      "b": "SND",
+      "meanPDistance": 0,
+      "sameClade": 1,
+      "sameHaplotype": 1,
+      "n1": 12,
+      "n2": 17
+    },
+    {
+      "a": "CBV",
+      "b": "SOU",
+      "meanPDistance": 0.051394864301756334,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 21
+    },
+    {
+      "a": "CBV",
+      "b": "TMB",
+      "meanPDistance": 0.051362650814893135,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 12
+    },
+    {
+      "a": "CBV",
+      "b": "WAJ",
+      "meanPDistance": 0.04583802024746901,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 7
+    },
+    {
+      "a": "CBV",
+      "b": "WIL",
+      "meanPDistance": 0.05118110236220481,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 16
+    },
+    {
+      "a": "CHS",
+      "b": "EHS",
+      "meanPDistance": 0.051896921975662,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 20
+    },
+    {
+      "a": "CHS",
+      "b": "HUM",
+      "meanPDistance": 0.009788055149232856,
+      "sameClade": 0.8260869565217391,
+      "sameHaplotype": 0.47035573122529645,
+      "n1": 22,
+      "n2": 23
+    },
+    {
+      "a": "CHS",
+      "b": "KAE",
+      "meanPDistance": 0.04292169192110061,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 7
+    },
+    {
+      "a": "CHS",
+      "b": "MNG",
+      "meanPDistance": 0.051700071581961216,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 20
+    },
+    {
+      "a": "CHS",
+      "b": "MOU",
+      "meanPDistance": 0.04615532460582706,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 8
+    },
+    {
+      "a": "CHS",
+      "b": "OSA",
+      "meanPDistance": 0.05019685039370084,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 18
+    },
+    {
+      "a": "CHS",
+      "b": "SFB",
+      "meanPDistance": 0.045260008083405426,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.012987012987012988,
+      "n1": 22,
+      "n2": 49
+    },
+    {
+      "a": "CHS",
+      "b": "SHI",
+      "meanPDistance": 0.043682891911238426,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 10
+    },
+    {
+      "a": "CHS",
+      "b": "SND",
+      "meanPDistance": 0.0007158196134574076,
+      "sameClade": 1,
+      "sameHaplotype": 0.6363636363636364,
+      "n1": 22,
+      "n2": 17
+    },
+    {
+      "a": "CHS",
+      "b": "SOU",
+      "meanPDistance": 0.05211230039544007,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 21
+    },
+    {
+      "a": "CHS",
+      "b": "TMB",
+      "meanPDistance": 0.0520787062055621,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 12
+    },
+    {
+      "a": "CHS",
+      "b": "WAJ",
+      "meanPDistance": 0.04645157991614687,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 7
+    },
+    {
+      "a": "CHS",
+      "b": "WIL",
+      "meanPDistance": 0.051896921975662244,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 22,
+      "n2": 16
+    },
+    {
+      "a": "EHS",
+      "b": "HUM",
+      "meanPDistance": 0.04245121533721337,
+      "sameClade": 0.17391304347826086,
+      "sameHaplotype": 0.17391304347826086,
+      "n1": 20,
+      "n2": 23
+    },
+    {
+      "a": "EHS",
+      "b": "KAE",
+      "meanPDistance": 0.034610545223349054,
+      "sameClade": 0.14285714285714285,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 7
+    },
+    {
+      "a": "EHS",
+      "b": "MNG",
+      "meanPDistance": 0.00019685039370078732,
+      "sameClade": 1,
+      "sameHaplotype": 0.95,
+      "n1": 20,
+      "n2": 20
+    },
+    {
+      "a": "EHS",
+      "b": "MOU",
+      "meanPDistance": 0.01956975505260159,
+      "sameClade": 0.875,
+      "sameHaplotype": 0.25,
+      "n1": 20,
+      "n2": 8
+    },
+    {
+      "a": "EHS",
+      "b": "OSA",
+      "meanPDistance": 0.006233595800524929,
+      "sameClade": 0.8333333333333334,
+      "sameHaplotype": 0.8333333333333334,
+      "n1": 20,
+      "n2": 18
+    },
+    {
+      "a": "EHS",
+      "b": "SFB",
+      "meanPDistance": 0.04184744764047338,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 49
+    },
+    {
+      "a": "EHS",
+      "b": "SHI",
+      "meanPDistance": 0.039370078740157466,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 10
+    },
+    {
+      "a": "EHS",
+      "b": "SND",
+      "meanPDistance": 0.05118110236220498,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 17
+    },
+    {
+      "a": "EHS",
+      "b": "SOU",
+      "meanPDistance": 0.002169316464307939,
+      "sameClade": 1,
+      "sameHaplotype": 0.8095238095238095,
+      "n1": 20,
+      "n2": 21
+    },
+    {
+      "a": "EHS",
+      "b": "TMB",
+      "meanPDistance": 0.000494071146245059,
+      "sameClade": 1,
+      "sameHaplotype": 0.9166666666666666,
+      "n1": 20,
+      "n2": 12
+    },
+    {
+      "a": "EHS",
+      "b": "WAJ",
+      "meanPDistance": 0.022497187851518535,
+      "sameClade": 0.7142857142857143,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 7
+    },
+    {
+      "a": "EHS",
+      "b": "WIL",
+      "meanPDistance": 0,
+      "sameClade": 1,
+      "sameHaplotype": 1,
+      "n1": 20,
+      "n2": 16
+    },
+    {
+      "a": "HUM",
+      "b": "KAE",
+      "meanPDistance": 0.04126382079882226,
+      "sameClade": 0.024844720496894408,
+      "sameHaplotype": 0,
+      "n1": 23,
+      "n2": 7
+    },
+    {
+      "a": "HUM",
+      "b": "MNG",
+      "meanPDistance": 0.04232283464566938,
+      "sameClade": 0.17391304347826086,
+      "sameHaplotype": 0.16521739130434782,
+      "n1": 23,
+      "n2": 20
+    },
+    {
+      "a": "HUM",
+      "b": "MOU",
+      "meanPDistance": 0.04113175933075553,
+      "sameClade": 0.15217391304347827,
+      "sameHaplotype": 0.043478260869565216,
+      "n1": 23,
+      "n2": 8
+    },
+    {
+      "a": "HUM",
+      "b": "OSA",
+      "meanPDistance": 0.04218018943284281,
+      "sameClade": 0.14492753623188406,
+      "sameHaplotype": 0.14492753623188406,
+      "n1": 23,
+      "n2": 18
+    },
+    {
+      "a": "HUM",
+      "b": "SFB",
+      "meanPDistance": 0.044529177641614806,
+      "sameClade": 0.01685891748003549,
+      "sameHaplotype": 0.015084294587400177,
+      "n1": 23,
+      "n2": 49
+    },
+    {
+      "a": "HUM",
+      "b": "SHI",
+      "meanPDistance": 0.04279356384799733,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 23,
+      "n2": 10
+    },
+    {
+      "a": "HUM",
+      "b": "SND",
+      "meanPDistance": 0.009072235535775408,
+      "sameClade": 0.8260869565217391,
+      "sameHaplotype": 0.7391304347826086,
+      "n1": 23,
+      "n2": 17
+    },
+    {
+      "a": "HUM",
+      "b": "SOU",
+      "meanPDistance": 0.04300546026547223,
+      "sameClade": 0.17391304347826086,
+      "sameHaplotype": 0.14078674948240166,
+      "n1": 23,
+      "n2": 21
+    },
+    {
+      "a": "HUM",
+      "b": "TMB",
+      "meanPDistance": 0.04268717194420144,
+      "sameClade": 0.17391304347826086,
+      "sameHaplotype": 0.15942028985507245,
+      "n1": 23,
+      "n2": 12
+    },
+    {
+      "a": "HUM",
+      "b": "WAJ",
+      "meanPDistance": 0.04187655890839741,
+      "sameClade": 0.12422360248447205,
+      "sameHaplotype": 0,
+      "n1": 23,
+      "n2": 7
+    },
+    {
+      "a": "HUM",
+      "b": "WIL",
+      "meanPDistance": 0.04245121533721358,
+      "sameClade": 0.17391304347826086,
+      "sameHaplotype": 0.17391304347826086,
+      "n1": 23,
+      "n2": 16
+    },
+    {
+      "a": "KAE",
+      "b": "MNG",
+      "meanPDistance": 0.034441705162348686,
+      "sameClade": 0.14285714285714285,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 20
+    },
+    {
+      "a": "KAE",
+      "b": "MOU",
+      "meanPDistance": 0.030503308656844485,
+      "sameClade": 0.23214285714285715,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 8
+    },
+    {
+      "a": "KAE",
+      "b": "OSA",
+      "meanPDistance": 0.030342304049938394,
+      "sameClade": 0.2619047619047619,
+      "sameHaplotype": 0.047619047619047616,
+      "n1": 7,
+      "n2": 18
+    },
+    {
+      "a": "KAE",
+      "b": "SFB",
+      "meanPDistance": 0.014041730639021963,
+      "sameClade": 0.8396501457725948,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 49
+    },
+    {
+      "a": "KAE",
+      "b": "SHI",
+      "meanPDistance": 0.012829399289515687,
+      "sameClade": 0.8571428571428571,
+      "sameHaplotype": 0.11428571428571428,
+      "n1": 7,
+      "n2": 10
+    },
+    {
+      "a": "KAE",
+      "b": "SND",
+      "meanPDistance": 0.04248678401365836,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 17
+    },
+    {
+      "a": "KAE",
+      "b": "SOU",
+      "meanPDistance": 0.034675944641005284,
+      "sameClade": 0.14285714285714285,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 21
+    },
+    {
+      "a": "KAE",
+      "b": "TMB",
+      "meanPDistance": 0.03478673602652668,
+      "sameClade": 0.14285714285714285,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 12
+    },
+    {
+      "a": "KAE",
+      "b": "WAJ",
+      "meanPDistance": 0.026892460012233086,
+      "sameClade": 0.3469387755102041,
+      "sameHaplotype": 0.10204081632653061,
+      "n1": 7,
+      "n2": 7
+    },
+    {
+      "a": "KAE",
+      "b": "WIL",
+      "meanPDistance": 0.034610545223349026,
+      "sameClade": 0.14285714285714285,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 16
+    },
+    {
+      "a": "MNG",
+      "b": "MOU",
+      "meanPDistance": 0.01945480516648465,
+      "sameClade": 0.875,
+      "sameHaplotype": 0.2375,
+      "n1": 20,
+      "n2": 8
+    },
+    {
+      "a": "MNG",
+      "b": "OSA",
+      "meanPDistance": 0.006364829396325454,
+      "sameClade": 0.8333333333333334,
+      "sameHaplotype": 0.7916666666666666,
+      "n1": 20,
+      "n2": 18
+    },
+    {
+      "a": "MNG",
+      "b": "SFB",
+      "meanPDistance": 0.04164383469923392,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 49
+    },
+    {
+      "a": "MNG",
+      "b": "SHI",
+      "meanPDistance": 0.03917322834645667,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 10
+    },
+    {
+      "a": "MNG",
+      "b": "SND",
+      "meanPDistance": 0.05098425196850415,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 17
+    },
+    {
+      "a": "MNG",
+      "b": "SOU",
+      "meanPDistance": 0.0023099238883799297,
+      "sameClade": 1,
+      "sameHaplotype": 0.7690476190476191,
+      "n1": 20,
+      "n2": 21
+    },
+    {
+      "a": "MNG",
+      "b": "TMB",
+      "meanPDistance": 0.0006745173404707806,
+      "sameClade": 1,
+      "sameHaplotype": 0.8708333333333333,
+      "n1": 20,
+      "n2": 12
+    },
+    {
+      "a": "MNG",
+      "b": "WAJ",
+      "meanPDistance": 0.022440944881889736,
+      "sameClade": 0.7142857142857143,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 7
+    },
+    {
+      "a": "MNG",
+      "b": "WIL",
+      "meanPDistance": 0.0001968503937007874,
+      "sameClade": 1,
+      "sameHaplotype": 0.95,
+      "n1": 20,
+      "n2": 16
+    },
+    {
+      "a": "MOU",
+      "b": "OSA",
+      "meanPDistance": 0.021455808140309222,
+      "sameClade": 0.75,
+      "sameHaplotype": 0.20833333333333334,
+      "n1": 8,
+      "n2": 18
+    },
+    {
+      "a": "MOU",
+      "b": "SFB",
+      "meanPDistance": 0.03283892721196786,
+      "sameClade": 0.12244897959183673,
+      "sameHaplotype": 0,
+      "n1": 8,
+      "n2": 49
+    },
+    {
+      "a": "MOU",
+      "b": "SHI",
+      "meanPDistance": 0.03335586951817647,
+      "sameClade": 0.125,
+      "sameHaplotype": 0,
+      "n1": 8,
+      "n2": 10
+    },
+    {
+      "a": "MOU",
+      "b": "SND",
+      "meanPDistance": 0.04544652330198026,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 8,
+      "n2": 17
+    },
+    {
+      "a": "MOU",
+      "b": "SOU",
+      "meanPDistance": 0.019909939447207575,
+      "sameClade": 0.875,
+      "sameHaplotype": 0.20238095238095238,
+      "n1": 8,
+      "n2": 21
+    },
+    {
+      "a": "MOU",
+      "b": "TMB",
+      "meanPDistance": 0.019737201080840133,
+      "sameClade": 0.875,
+      "sameHaplotype": 0.22916666666666666,
+      "n1": 8,
+      "n2": 12
+    },
+    {
+      "a": "MOU",
+      "b": "WAJ",
+      "meanPDistance": 0.025429471180182895,
+      "sameClade": 0.6607142857142857,
+      "sameHaplotype": 0,
+      "n1": 8,
+      "n2": 7
+    },
+    {
+      "a": "MOU",
+      "b": "WIL",
+      "meanPDistance": 0.01956975505260161,
+      "sameClade": 0.875,
+      "sameHaplotype": 0.25,
+      "n1": 8,
+      "n2": 16
+    },
+    {
+      "a": "OSA",
+      "b": "SFB",
+      "meanPDistance": 0.03570558144517683,
+      "sameClade": 0.16326530612244897,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 49
+    },
+    {
+      "a": "OSA",
+      "b": "SHI",
+      "meanPDistance": 0.0345800524934383,
+      "sameClade": 0.16666666666666666,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 10
+    },
+    {
+      "a": "OSA",
+      "b": "SND",
+      "meanPDistance": 0.04954068241469836,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 17
+    },
+    {
+      "a": "OSA",
+      "b": "SOU",
+      "meanPDistance": 0.008039813322303776,
+      "sameClade": 0.8333333333333334,
+      "sameHaplotype": 0.6746031746031746,
+      "n1": 18,
+      "n2": 21
+    },
+    {
+      "a": "OSA",
+      "b": "TMB",
+      "meanPDistance": 0.006674823379291026,
+      "sameClade": 0.8333333333333334,
+      "sameHaplotype": 0.7638888888888888,
+      "n1": 18,
+      "n2": 12
+    },
+    {
+      "a": "OSA",
+      "b": "WAJ",
+      "meanPDistance": 0.023481439820022473,
+      "sameClade": 0.6428571428571429,
+      "sameHaplotype": 0.023809523809523808,
+      "n1": 18,
+      "n2": 7
+    },
+    {
+      "a": "OSA",
+      "b": "WIL",
+      "meanPDistance": 0.006233595800524931,
+      "sameClade": 0.8333333333333334,
+      "sameHaplotype": 0.8333333333333334,
+      "n1": 18,
+      "n2": 16
+    },
+    {
+      "a": "SFB",
+      "b": "SHI",
+      "meanPDistance": 0.015217071080400706,
+      "sameClade": 0.9795918367346939,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 10
+    },
+    {
+      "a": "SFB",
+      "b": "SND",
+      "meanPDistance": 0.044875194172157316,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.02040816326530612,
+      "n1": 49,
+      "n2": 17
+    },
+    {
+      "a": "SFB",
+      "b": "SOU",
+      "meanPDistance": 0.04171083077893746,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 21
+    },
+    {
+      "a": "SFB",
+      "b": "TMB",
+      "meanPDistance": 0.04186523561599334,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 12
+    },
+    {
+      "a": "SFB",
+      "b": "WAJ",
+      "meanPDistance": 0.031266882456019454,
+      "sameClade": 0.27988338192419826,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 7
+    },
+    {
+      "a": "SFB",
+      "b": "WIL",
+      "meanPDistance": 0.04184744764047388,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 16
+    },
+    {
+      "a": "SHI",
+      "b": "SND",
+      "meanPDistance": 0.043307086614173165,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 10,
+      "n2": 17
+    },
+    {
+      "a": "SHI",
+      "b": "SOU",
+      "meanPDistance": 0.03936524686991441,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 10,
+      "n2": 21
+    },
+    {
+      "a": "SHI",
+      "b": "TMB",
+      "meanPDistance": 0.03954773686885973,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 10,
+      "n2": 12
+    },
+    {
+      "a": "SHI",
+      "b": "WAJ",
+      "meanPDistance": 0.031439820022497164,
+      "sameClade": 0.2857142857142857,
+      "sameHaplotype": 0,
+      "n1": 10,
+      "n2": 7
+    },
+    {
+      "a": "SHI",
+      "b": "WIL",
+      "meanPDistance": 0.039370078740157424,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 10,
+      "n2": 16
+    },
+    {
+      "a": "SND",
+      "b": "SOU",
+      "meanPDistance": 0.051394864301756264,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 21
+    },
+    {
+      "a": "SND",
+      "b": "TMB",
+      "meanPDistance": 0.05136265081489333,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 12
+    },
+    {
+      "a": "SND",
+      "b": "WAJ",
+      "meanPDistance": 0.04583802024746909,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 7
+    },
+    {
+      "a": "SND",
+      "b": "WIL",
+      "meanPDistance": 0.05118110236220502,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 17,
+      "n2": 16
+    },
+    {
+      "a": "SOU",
+      "b": "TMB",
+      "meanPDistance": 0.002593525169317045,
+      "sameClade": 1,
+      "sameHaplotype": 0.7420634920634921,
+      "n1": 21,
+      "n2": 12
+    },
+    {
+      "a": "SOU",
+      "b": "WAJ",
+      "meanPDistance": 0.022859163959438766,
+      "sameClade": 0.7142857142857143,
+      "sameHaplotype": 0,
+      "n1": 21,
+      "n2": 7
+    },
+    {
+      "a": "SOU",
+      "b": "WIL",
+      "meanPDistance": 0.0021693164643079403,
+      "sameClade": 1,
+      "sameHaplotype": 0.8095238095238095,
+      "n1": 21,
+      "n2": 16
+    },
+    {
+      "a": "TMB",
+      "b": "WAJ",
+      "meanPDistance": 0.022669288374526284,
+      "sameClade": 0.7142857142857143,
+      "sameHaplotype": 0,
+      "n1": 12,
+      "n2": 7
+    },
+    {
+      "a": "TMB",
+      "b": "WIL",
+      "meanPDistance": 0.0004940711462450591,
+      "sameClade": 1,
+      "sameHaplotype": 0.9166666666666666,
+      "n1": 12,
+      "n2": 16
+    },
+    {
+      "a": "WAJ",
+      "b": "WIL",
+      "meanPDistance": 0.022497187851518528,
+      "sameClade": 0.7142857142857143,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 16
+    }
+  ],
+  "comparisons": [
+    {
+      "target": "EHS",
+      "a": "EHS",
+      "b": "SFB",
+      "meanPDistance": 0.04184744764047338,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 49
+    },
+    {
+      "target": "TMB",
+      "a": "SFB",
+      "b": "TMB",
+      "meanPDistance": 0.04186523561599334,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 12
+    },
+    {
+      "target": "HUM",
+      "a": "HUM",
+      "b": "SFB",
+      "meanPDistance": 0.044529177641614806,
+      "sameClade": 0.01685891748003549,
+      "sameHaplotype": 0.015084294587400177,
+      "n1": 23,
+      "n2": 49
+    },
+    {
+      "target": "WIL",
+      "a": "SFB",
+      "b": "WIL",
+      "meanPDistance": 0.04184744764047388,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 16
+    },
+    {
+      "target": "CBV",
+      "a": "CBV",
+      "b": "SFB",
+      "meanPDistance": 0.04487519417215719,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.02040816326530612,
+      "n1": 12,
+      "n2": 49
+    },
+    {
+      "target": "CHS",
+      "a": "CHS",
+      "b": "SFB",
+      "meanPDistance": 0.045260008083405426,
+      "sameClade": 0.02040816326530612,
+      "sameHaplotype": 0.012987012987012988,
+      "n1": 22,
+      "n2": 49
+    },
+    {
+      "target": "SHI",
+      "a": "SFB",
+      "b": "SHI",
+      "meanPDistance": 0.015217071080400706,
+      "sameClade": 0.9795918367346939,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 10
+    },
+    {
+      "target": "KAE",
+      "a": "KAE",
+      "b": "SFB",
+      "meanPDistance": 0.014041730639021963,
+      "sameClade": 0.8396501457725948,
+      "sameHaplotype": 0,
+      "n1": 7,
+      "n2": 49
+    },
+    {
+      "target": "WAJ",
+      "a": "SFB",
+      "b": "WAJ",
+      "meanPDistance": 0.031266882456019454,
+      "sameClade": 0.27988338192419826,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 7
+    },
+    {
+      "target": "OSA",
+      "a": "OSA",
+      "b": "SFB",
+      "meanPDistance": 0.03570558144517683,
+      "sameClade": 0.16326530612244897,
+      "sameHaplotype": 0,
+      "n1": 18,
+      "n2": 49
+    },
+    {
+      "target": "MNG",
+      "a": "MNG",
+      "b": "SFB",
+      "meanPDistance": 0.04164383469923392,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 20,
+      "n2": 49
+    },
+    {
+      "target": "MOU",
+      "a": "MOU",
+      "b": "SFB",
+      "meanPDistance": 0.03283892721196786,
+      "sameClade": 0.12244897959183673,
+      "sameHaplotype": 0,
+      "n1": 8,
+      "n2": 49
+    },
+    {
+      "target": "SOU",
+      "a": "SFB",
+      "b": "SOU",
+      "meanPDistance": 0.04171083077893746,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 49,
+      "n2": 21
+    }
+  ],
+  "sensitivity": [
+    {
+      "target": "EHS",
+      "meanPDistance": 0.04196021549937848,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 38,
+      "n2": 13
+    },
+    {
+      "target": "TMB",
+      "meanPDistance": 0.04196021549937831,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 38,
+      "n2": 7
+    },
+    {
+      "target": "HUM",
+      "meanPDistance": 0.04433187985369121,
+      "sameClade": 0.021739130434782608,
+      "sameHaplotype": 0.019450800915331808,
+      "n1": 38,
+      "n2": 23
+    },
+    {
+      "target": "WIL",
+      "meanPDistance": 0.04196021549937869,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 38,
+      "n2": 16
+    },
+    {
+      "target": "CBV",
+      "meanPDistance": 0.04461251554082035,
+      "sameClade": 0.02631578947368421,
+      "sameHaplotype": 0.02631578947368421,
+      "n1": 38,
+      "n2": 7
+    },
+    {
+      "target": "SHI",
+      "meanPDistance": 0.015369871529216778,
+      "sameClade": 0.9736842105263158,
+      "sameHaplotype": 0,
+      "n1": 38,
+      "n2": 9
+    },
+    {
+      "target": "MOU",
+      "meanPDistance": 0.031819483198194685,
+      "sameClade": 0.16228070175438597,
+      "sameHaplotype": 0,
+      "n1": 38,
+      "n2": 6
+    }
+  ],
+  "cleanComparisons": [
+    {
+      "target": "EHS",
+      "meanPDistance": 0.04165299650043736,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 48,
+      "n2": 20
+    },
+    {
+      "target": "TMB",
+      "meanPDistance": 0.04166737279934954,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 48,
+      "n2": 12
+    },
+    {
+      "target": "HUM",
+      "meanPDistance": 0.045267863935486506,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 48,
+      "n2": 23
+    },
+    {
+      "target": "CBV",
+      "meanPDistance": 0.0458100940507438,
+      "sameClade": 0,
+      "sameHaplotype": 0,
+      "n1": 48,
+      "n2": 12
+    },
+    {
+      "target": "SHI",
+      "meanPDistance": 0.014631862423447111,
+      "sameClade": 1,
+      "sameHaplotype": 0,
+      "n1": 48,
+      "n2": 10
+    },
+    {
+      "target": "MOU",
+      "meanPDistance": 0.032576268960092504,
+      "sameClade": 0.125,
+      "sameHaplotype": 0,
+      "n1": 48,
+      "n2": 8
+    }
+  ],
+  "budgets": [
+    {
+      "S": 250,
+      "A": 1300,
+      "c": 0.01,
+      "T": 7,
+      "potentialDemandRatio": 0.364,
+      "constantRemovalPulseRemaining": 0.636,
+      "constantHazardPulseReleased": 0.6948911947429106,
+      "exponentialReleaseFraction": 0.7331378299120235,
+      "densityFor90PctRelease_exp": 396.8253968253968,
+      "requiredDensityReduction90Pct_exp": 0.6947496947496947
+    },
+    {
+      "S": 250,
+      "A": 1300,
+      "c": 0.01,
+      "T": 14,
+      "potentialDemandRatio": 0.728,
+      "constantRemovalPulseRemaining": 0.272,
+      "constantHazardPulseReleased": 0.48287377253122976,
+      "exponentialReleaseFraction": 0.5787037037037037,
+      "densityFor90PctRelease_exp": 198.4126984126984,
+      "requiredDensityReduction90Pct_exp": 0.8473748473748474
+    },
+    {
+      "S": 250,
+      "A": 1300,
+      "c": 0.01,
+      "T": 21,
+      "potentialDemandRatio": 1.092,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.3355447327042427,
+      "exponentialReleaseFraction": 0.4780114722753346,
+      "densityFor90PctRelease_exp": 132.27513227513228,
+      "requiredDensityReduction90Pct_exp": 0.8982498982498983
+    },
+    {
+      "S": 250,
+      "A": 1300,
+      "c": 0.025,
+      "T": 7,
+      "potentialDemandRatio": 0.91,
+      "constantRemovalPulseRemaining": 0.08999999999999997,
+      "constantHazardPulseReleased": 0.40252422403363597,
+      "exponentialReleaseFraction": 0.5235602094240838,
+      "densityFor90PctRelease_exp": 158.73015873015873,
+      "requiredDensityReduction90Pct_exp": 0.8778998778998779
+    },
+    {
+      "S": 250,
+      "A": 1300,
+      "c": 0.025,
+      "T": 14,
+      "potentialDemandRatio": 1.82,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.16202575093388075,
+      "exponentialReleaseFraction": 0.35460992907801414,
+      "densityFor90PctRelease_exp": 79.36507936507937,
+      "requiredDensityReduction90Pct_exp": 0.938949938949939
+    },
+    {
+      "S": 250,
+      "A": 1300,
+      "c": 0.025,
+      "T": 21,
+      "potentialDemandRatio": 2.73,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.06521928966812753,
+      "exponentialReleaseFraction": 0.2680965147453083,
+      "densityFor90PctRelease_exp": 52.910052910052904,
+      "requiredDensityReduction90Pct_exp": 0.9592999592999593
+    },
+    {
+      "S": 250,
+      "A": 3200,
+      "c": 0.01,
+      "T": 7,
+      "potentialDemandRatio": 0.896,
+      "constantRemovalPulseRemaining": 0.10399999999999998,
+      "constantHazardPulseReleased": 0.4081991952779227,
+      "exponentialReleaseFraction": 0.5274261603375527,
+      "densityFor90PctRelease_exp": 396.8253968253968,
+      "requiredDensityReduction90Pct_exp": 0.8759920634920635
+    },
+    {
+      "S": 250,
+      "A": 3200,
+      "c": 0.01,
+      "T": 14,
+      "potentialDemandRatio": 1.792,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.16662658302554365,
+      "exponentialReleaseFraction": 0.35816618911174786,
+      "densityFor90PctRelease_exp": 198.4126984126984,
+      "requiredDensityReduction90Pct_exp": 0.9379960317460317
+    },
+    {
+      "S": 250,
+      "A": 3200,
+      "c": 0.01,
+      "T": 21,
+      "potentialDemandRatio": 2.688,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.06801683710293688,
+      "exponentialReleaseFraction": 0.27114967462039047,
+      "densityFor90PctRelease_exp": 132.27513227513228,
+      "requiredDensityReduction90Pct_exp": 0.9586640211640212
+    },
+    {
+      "S": 250,
+      "A": 3200,
+      "c": 0.025,
+      "T": 7,
+      "potentialDemandRatio": 2.24,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.1064585043792528,
+      "exponentialReleaseFraction": 0.30864197530864196,
+      "densityFor90PctRelease_exp": 158.73015873015873,
+      "requiredDensityReduction90Pct_exp": 0.9503968253968254
+    },
+    {
+      "S": 250,
+      "A": 3200,
+      "c": 0.025,
+      "T": 14,
+      "potentialDemandRatio": 4.48,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.011333413154667387,
+      "exponentialReleaseFraction": 0.18248175182481752,
+      "densityFor90PctRelease_exp": 79.36507936507937,
+      "requiredDensityReduction90Pct_exp": 0.9751984126984127
+    },
+    {
+      "S": 250,
+      "A": 3200,
+      "c": 0.025,
+      "T": 21,
+      "potentialDemandRatio": 6.72,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.0012065382139580404,
+      "exponentialReleaseFraction": 0.1295336787564767,
+      "densityFor90PctRelease_exp": 52.910052910052904,
+      "requiredDensityReduction90Pct_exp": 0.9834656084656085
+    },
+    {
+      "S": 500,
+      "A": 1300,
+      "c": 0.01,
+      "T": 7,
+      "potentialDemandRatio": 0.182,
+      "constantRemovalPulseRemaining": 0.8180000000000001,
+      "constantHazardPulseReleased": 0.8336013404157353,
+      "exponentialReleaseFraction": 0.8460236886632826,
+      "densityFor90PctRelease_exp": 793.6507936507936,
+      "requiredDensityReduction90Pct_exp": 0.38949938949938945
+    },
+    {
+      "S": 500,
+      "A": 1300,
+      "c": 0.01,
+      "T": 14,
+      "potentialDemandRatio": 0.364,
+      "constantRemovalPulseRemaining": 0.636,
+      "constantHazardPulseReleased": 0.6948911947429106,
+      "exponentialReleaseFraction": 0.7331378299120235,
+      "densityFor90PctRelease_exp": 396.8253968253968,
+      "requiredDensityReduction90Pct_exp": 0.6947496947496947
+    },
+    {
+      "S": 500,
+      "A": 1300,
+      "c": 0.01,
+      "T": 21,
+      "potentialDemandRatio": 0.546,
+      "constantRemovalPulseRemaining": 0.45399999999999996,
+      "constantHazardPulseReleased": 0.579262231380782,
+      "exponentialReleaseFraction": 0.6468305304010349,
+      "densityFor90PctRelease_exp": 264.55026455026456,
+      "requiredDensityReduction90Pct_exp": 0.7964997964997965
+    },
+    {
+      "S": 500,
+      "A": 1300,
+      "c": 0.025,
+      "T": 7,
+      "potentialDemandRatio": 0.455,
+      "constantRemovalPulseRemaining": 0.5449999999999999,
+      "constantHazardPulseReleased": 0.6344479679482282,
+      "exponentialReleaseFraction": 0.6872852233676976,
+      "densityFor90PctRelease_exp": 317.46031746031747,
+      "requiredDensityReduction90Pct_exp": 0.7557997557997558
+    },
+    {
+      "S": 500,
+      "A": 1300,
+      "c": 0.025,
+      "T": 14,
+      "potentialDemandRatio": 0.91,
+      "constantRemovalPulseRemaining": 0.08999999999999997,
+      "constantHazardPulseReleased": 0.40252422403363597,
+      "exponentialReleaseFraction": 0.5235602094240838,
+      "densityFor90PctRelease_exp": 158.73015873015873,
+      "requiredDensityReduction90Pct_exp": 0.8778998778998779
+    },
+    {
+      "S": 500,
+      "A": 1300,
+      "c": 0.025,
+      "T": 21,
+      "potentialDemandRatio": 1.365,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.2553806759880777,
+      "exponentialReleaseFraction": 0.4228329809725158,
+      "densityFor90PctRelease_exp": 105.82010582010581,
+      "requiredDensityReduction90Pct_exp": 0.9185999185999186
+    },
+    {
+      "S": 500,
+      "A": 3200,
+      "c": 0.01,
+      "T": 7,
+      "potentialDemandRatio": 0.448,
+      "constantRemovalPulseRemaining": 0.552,
+      "constantHazardPulseReleased": 0.6389046840319162,
+      "exponentialReleaseFraction": 0.6906077348066298,
+      "densityFor90PctRelease_exp": 793.6507936507936,
+      "requiredDensityReduction90Pct_exp": 0.751984126984127
+    },
+    {
+      "S": 500,
+      "A": 3200,
+      "c": 0.01,
+      "T": 14,
+      "potentialDemandRatio": 0.896,
+      "constantRemovalPulseRemaining": 0.10399999999999998,
+      "constantHazardPulseReleased": 0.4081991952779227,
+      "exponentialReleaseFraction": 0.5274261603375527,
+      "densityFor90PctRelease_exp": 396.8253968253968,
+      "requiredDensityReduction90Pct_exp": 0.8759920634920635
+    },
+    {
+      "S": 500,
+      "A": 3200,
+      "c": 0.01,
+      "T": 21,
+      "potentialDemandRatio": 1.344,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.26080037788112365,
+      "exponentialReleaseFraction": 0.4266211604095563,
+      "densityFor90PctRelease_exp": 264.55026455026456,
+      "requiredDensityReduction90Pct_exp": 0.9173280423280423
+    },
+    {
+      "S": 500,
+      "A": 3200,
+      "c": 0.025,
+      "T": 7,
+      "potentialDemandRatio": 1.12,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.32627979462303947,
+      "exponentialReleaseFraction": 0.4716981132075471,
+      "densityFor90PctRelease_exp": 317.46031746031747,
+      "requiredDensityReduction90Pct_exp": 0.9007936507936508
+    },
+    {
+      "S": 500,
+      "A": 3200,
+      "c": 0.025,
+      "T": 14,
+      "potentialDemandRatio": 2.24,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.1064585043792528,
+      "exponentialReleaseFraction": 0.30864197530864196,
+      "densityFor90PctRelease_exp": 158.73015873015873,
+      "requiredDensityReduction90Pct_exp": 0.9503968253968254
+    },
+    {
+      "S": 500,
+      "A": 3200,
+      "c": 0.025,
+      "T": 21,
+      "potentialDemandRatio": 3.36,
+      "constantRemovalPulseRemaining": 0,
+      "constantHazardPulseReleased": 0.03473525894473856,
+      "exponentialReleaseFraction": 0.22935779816513766,
+      "densityFor90PctRelease_exp": 105.82010582010581,
+      "requiredDensityReduction90Pct_exp": 0.966931216931217
+    }
+  ],
+  "limits": [
+    "Original deposited mitochondrial sequence/individual metadata linked by exact IDs. Clade labels from source hap numbering and author tree; no nuclear genotype inference. Sample composition not population prevalence or contemporary density.",
+    "Paper Table2 population summary and individual metadata differ in some cells/coverage; keep separate, do not reconcile or join historical accession counts to modern samples. Exclude metadata/sequence mismatches from paired sequence analysis only if found; report missing and mismatch.",
+    "Pairwise mean uncorrected p-distance on ACGT overlap; cross-pairs not independent observations, no p-values or confidence intervals; 261-subset sensitivity not independent replication.",
+    "San Francisco Bay feeding trials and genetics are different sampling dates/locations; no genotype-linked food choice, fruit survival, otter treatment or direct causal hybrid effect.",
+    "Reproductive budget is an illustrative alternative to published constant-removal extrapolation, not a fitted field model. Lab rates and field density maxima from Reynolds 2012; stock 250 observed, 500 source discussion alternative; time and release distribution assumed. No actual phenology, recruitment or threshold recommendation."
+  ]
+}
