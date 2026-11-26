@@ -1,0 +1,206 @@
+{
+  "status": "Executed published aggregate stage-ratio comparison and source audit; independent study from Massachusetts, not same-design replication",
+  "sources": {
+    "korea": "10.3354/meps10899",
+    "japan": "10.11233/aquaculturesci.57.531",
+    "harwell": "10.1016/S0304-3770(00)00147-9"
+  },
+  "rows": [
+    {
+      "year": 2008,
+      "depth": "shallow",
+      "type": "perennial",
+      "F": 27,
+      "spadix": 23,
+      "seedsPerSpadix": 9.7,
+      "P": 6024,
+      "B": 1834,
+      "seedlingInYear": 587,
+      "adultVegFromSeedlings": 19,
+      "reproFromSeedlings": 0,
+      "calcP": 6023.7,
+      "PPerF": 223.11111111111111,
+      "BPerF": 67.92592592592592,
+      "BPerP": 0.3044488711819389,
+      "developed": 19,
+      "developedPerRecordedSeedling": 0.03236797274275979
+    },
+    {
+      "year": 2008,
+      "depth": "deep",
+      "type": "annual",
+      "F": 230,
+      "spadix": 5.5,
+      "seedsPerSpadix": 6.5,
+      "P": 8223,
+      "B": 2138,
+      "seedlingInYear": 891,
+      "adultVegFromSeedlings": 17,
+      "reproFromSeedlings": 230,
+      "calcP": 8222.5,
+      "PPerF": 35.75217391304348,
+      "BPerF": 9.295652173913043,
+      "BPerP": 0.26000243220235925,
+      "developed": 247,
+      "developedPerRecordedSeedling": 0.2772166105499439
+    },
+    {
+      "year": 2009,
+      "depth": "shallow",
+      "type": "perennial",
+      "F": 30,
+      "spadix": 22.8,
+      "seedsPerSpadix": 10.4,
+      "P": 7114,
+      "B": 3274,
+      "seedlingInYear": 158,
+      "adultVegFromSeedlings": 7,
+      "reproFromSeedlings": 0,
+      "calcP": 7113.6,
+      "PPerF": 237.13333333333333,
+      "BPerF": 109.13333333333334,
+      "BPerP": 0.460219285915097,
+      "developed": 7,
+      "developedPerRecordedSeedling": 0.04430379746835443
+    },
+    {
+      "year": 2009,
+      "depth": "deep",
+      "type": "annual",
+      "F": 179,
+      "spadix": 8.2,
+      "seedsPerSpadix": 6.8,
+      "P": 9981,
+      "B": 3120,
+      "seedlingInYear": 603,
+      "adultVegFromSeedlings": 7,
+      "reproFromSeedlings": 179,
+      "calcP": 9981.039999999999,
+      "PPerF": 55.75977653631285,
+      "BPerF": 17.43016759776536,
+      "BPerP": 0.31259392846408174,
+      "developed": 186,
+      "developedPerRecordedSeedling": 0.30845771144278605
+    }
+  ],
+  "contrasts": [
+    {
+      "year": 2008,
+      "flowers": 8.518518518518519,
+      "seedPotential": 1.3650398406374502,
+      "bank": 1.1657579062159216,
+      "seedsPerShoot": 0.16024380737917893,
+      "bankPerPotential": 0.8540101698947721,
+      "bankPerFlower": 0.13684984116447774,
+      "logComponents": [
+        2.1422424429188665,
+        -1.8310588274277004,
+        -0.15781217672258563
+      ],
+      "commonYieldPredictionOverstatement": 6.240490764387153,
+      "commonBankPerFlowerPredictionOverstatement": 7.307279215604753
+    },
+    {
+      "year": 2009,
+      "flowers": 5.966666666666667,
+      "seedPotential": 1.403008152937869,
+      "bank": 0.9529627367135003,
+      "seedsPerShoot": 0.23514103121863728,
+      "bankPerPotential": 0.6792282245245808,
+      "bankPerFlower": 0.159714425147514,
+      "logComponents": [
+        1.7861884241785997,
+        -1.4475698120004137,
+        -0.38679808930573817
+      ],
+      "commonYieldPredictionOverstatement": 4.252766923821929,
+      "commonBankPerFlowerPredictionOverstatement": 6.261175213675214
+    }
+  ],
+  "transition": [
+    {
+      "depth": "shallow",
+      "potential2008": 6024,
+      "bank2008": 1834,
+      "seedlings2008_09": 158,
+      "developed2009": 7,
+      "bankOverPotential": 0.3044488711819389,
+      "seedlingOverBank": 0.0861504907306434,
+      "developedOverSeedling": 0.04430379746835443,
+      "developedOverPotential": 0.0011620185922974768
+    },
+    {
+      "depth": "deep",
+      "potential2008": 8223,
+      "bank2008": 2138,
+      "seedlings2008_09": 603,
+      "developed2009": 186,
+      "bankOverPotential": 0.26000243220235925,
+      "seedlingOverBank": 0.28203928905519177,
+      "developedOverSeedling": 0.30845771144278605,
+      "developedOverPotential": 0.022619481940897482
+    }
+  ],
+  "ratios": {
+    "potential": 1.3650398406374502,
+    "bank": 1.1657579062159216,
+    "seedlings": 3.8164556962025316,
+    "developed": 26.571428571428573
+  },
+  "factors": {
+    "bankPerPotential": 0.8540101698947721,
+    "seedlingPerBank": 3.273797823590011,
+    "developedPerSeedling": 6.962331201137171
+  },
+  "japan": {
+    "input": {
+      "annual": {
+        "P": 7286,
+        "spadix": 10,
+        "seedsPerSpadix": 3.6,
+        "tankFloatShoot": 88,
+        "tankFloatBranch": 60,
+        "tankCompleted": 20,
+        "tankReproductiveDensity": 168.1,
+        "authorLocalFraction": 0.12
+      },
+      "perennial": {
+        "P": 4100,
+        "spadix": 12.5,
+        "seedsPerSpadix": 4.4,
+        "tankFloatShoot": 0,
+        "tankFloatBranch": 0,
+        "tankReproductiveDensity": 45.4,
+        "authorLocalFraction": 1
+      }
+    },
+    "potentialRatio": 1.7770731707317073,
+    "tankAnnualFloatDensitySum": 148,
+    "tankAnnualFloatShare": 0.8804283164782868,
+    "tankAnnualCompleteShare": 0.1189767995240928,
+    "tankAnnualFateResidual": 0.09999999999999432,
+    "authorExtrapolatedLocalA": 874.3199999999999,
+    "authorExtrapolatedLocalP": 4100,
+    "localRatio": 0.21324878048780485,
+    "breakEvenAnnualLocalFraction": 0.5627230304693933,
+    "fieldSeedsPerShoot": [
+      36,
+      55.00000000000001
+    ]
+  },
+  "harwell": {
+    "tubesPerM2": 1.8,
+    "occupiedFraction": 0.7,
+    "plots": 55,
+    "transectLengthM": 100,
+    "shootTubeR2": 0.76,
+    "seedlingTubeR2": 0.39,
+    "plugInOccupiedTubesPerM2": 1.26
+  },
+  "limits": [
+    "Korean potential seed production and peak sediment bank are aggregate estimates and separate samples, not tracked cohort; 2008/09 recruitment matched only to preceding 2008 seed bank as in authors' life table; seedling-to-developed counts derived from monthly quadrat observations, not individually marked seed fates. 2009 potential/seed bank not combined with earlier recruitment. Two years of same two populations, no independent replication or sampling covariance.",
+    "Depth and life history confounded in Korean study, no animal manipulation. Source already reports seed output differences and life-cycle strategy; ratio accounting additional, no novel claim of annual/perennial biology.",
+    "Japanese field potential production and tank shoot/branch fate are separate experiments; author extrapolated fractions are not direct field seed survival or observed export rates. Different branch/shoot units, rounding, unequal source sediments and separate tanks; do not count tank fragments as independent seeds.",
+    "Harwell one observational transect, 70% refers to tubes containing reproductive fragments, not fraction of all drifting fragments captured. Plug-in occupied tube density not causal seed capture or recruitment estimate. No pooled effect, no otter effect."
+  ]
+}
