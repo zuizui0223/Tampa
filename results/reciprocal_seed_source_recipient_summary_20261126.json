@@ -1,0 +1,329 @@
+{
+  "status": "Executed local Python original-data reanalysis; compact transcription of checked output; full result reproducible using archived source bytes",
+  "source_run": 45779239331,
+  "artifact": 15097677081,
+  "archive_sha256": "8026c12f40414c2f34c01966b37d1946915c30dccef808a35e8b20a20081976b",
+  "source_hashes": {
+    "MIE0B9": "19535dc2e92ce30e4ce2468d3f1b0442104e94599c438d467cd3b4aca4d6d5c1",
+    "C4GJFA": "f74a3ac0eb0d5f44514136272b97a47d51dafbf19080079e4f9757d1d04c187d",
+    "GUWZQA": "0b5276d295a01c831b0c468b8236e6888ced5769bcdab42b920654ff3583172e",
+    "canada_CSV": "9993a811fa2ab88d8e31dd8484b746ac76a1eb81f6d36b68415e7358e5115564"
+  },
+  "audit": {
+    "meadow_sites": 20,
+    "field_rows": 702,
+    "quadrats": 108,
+    "season_landmarks": 324,
+    "env_rows": 144790,
+    "positive_shoot_missing_height": 200,
+    "repro_gt_total": 15,
+    "positive_cover_zero_shoot": 6
+  },
+  "state_means_2023": {
+    "NC": {
+      "shoot": 220.5,
+      "cover": 42.4,
+      "bank": 444.624,
+      "viability_pct": 11.255688111338266,
+      "viable_proxy": 62.30219834194014
+    },
+    "VA": {
+      "shoot": 625.7,
+      "cover": 59.7,
+      "bank": 1555,
+      "viability_pct": 88.2,
+      "viable_proxy": 1338.651
+    }
+  },
+  "shoot_vs_viable_proxy_spearman": {
+    "pooled": 0.8513268161612453,
+    "NC": 0.1313141338909517,
+    "VA": 0.709090909090909
+  },
+  "site_order": [
+    "NC1",
+    "NC10",
+    "NC2",
+    "VA1",
+    "VA3",
+    "VA5"
+  ],
+  "stage_order": [
+    "Spring",
+    "Early Summer",
+    "Late Summer"
+  ],
+  "site_density": [
+    [
+      61.2222222222,
+      38.3888888889,
+      0
+    ],
+    [
+      110.6666666667,
+      61.2222222222,
+      0
+    ],
+    [
+      0.1111111111,
+      0.1111111111,
+      0
+    ],
+    [
+      101.6666666667,
+      28.5,
+      20.1666666667
+    ],
+    [
+      78.5555555556,
+      105.2222222222,
+      119.1666666667
+    ],
+    [
+      620.2222222222,
+      207.3888888889,
+      46.1666666667
+    ]
+  ],
+  "site_positive": [
+    [
+      17,
+      18,
+      0
+    ],
+    [
+      18,
+      18,
+      0
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      17,
+      14
+    ],
+    [
+      18,
+      18,
+      18
+    ]
+  ],
+  "ss_fraction_order": [
+    "destination",
+    "source",
+    "source_x_destination",
+    "within_cell"
+  ],
+  "all_sites_log1p_ss": [
+    [
+      0.8029547732517325,
+      0.008635291303403425,
+      0.08548249612269986,
+      0.10292743932216433
+    ],
+    [
+      0.6040766732164456,
+      0.016933355845506752,
+      0.1314232529595963,
+      0.24756671797845153
+    ],
+    [
+      0.6496206034586186,
+      0.02749300989562094,
+      0.18733443587221382,
+      0.1355519507735467
+    ]
+  ],
+  "va_only_log1p_ss": [
+    [
+      0.5890357334620595,
+      0.04295362228414225,
+      0.19971945693217277,
+      0.1682911873216253
+    ],
+    [
+      0.35378051092410506,
+      0.06889439694962816,
+      0.21973418328525754,
+      0.35759090884100947
+    ],
+    [
+      0.06458125187729831,
+      0.1467978833946614,
+      0.426733615221331,
+      0.3618872495067092
+    ]
+  ],
+  "va_only_transform_sensitivity_interaction_spring_late": {
+    "shoot_raw": [
+      0.0904,
+      0.3185
+    ],
+    "shoot_log1p": [
+      0.199719,
+      0.426734
+    ],
+    "shoot_sqrt": [
+      0.1223,
+      0.3593
+    ],
+    "cover_raw": [
+      0.097,
+      0.2729
+    ],
+    "cover_log1p": [
+      0.2358,
+      0.4163
+    ],
+    "cover_sqrt": [
+      0.1567,
+      0.3685
+    ]
+  },
+  "final_va_density_matrix": {
+    "source_order": [
+      "NC1",
+      "NC10",
+      "NC2",
+      "VA1",
+      "VA3",
+      "VA5"
+    ],
+    "VA1": [
+      6.3333333333,
+      16.6666666667,
+      13.3333333333,
+      18.3333333333,
+      8.6666666667,
+      57.6666666667
+    ],
+    "VA3": [
+      123.6666666667,
+      62.3333333333,
+      338,
+      48.6666666667,
+      142.3333333333,
+      0
+    ],
+    "VA5": [
+      7.6666666667,
+      66,
+      87.3333333333,
+      34.3333333333,
+      70.6666666667,
+      11
+    ]
+  },
+  "va_source_state_late": {
+    "NC": {
+      "mean": 80.1481481481,
+      "positive": 27,
+      "n": 27
+    },
+    "VA": {
+      "mean": 43.5185185185,
+      "positive": 23,
+      "n": 27
+    }
+  },
+  "source_rank_spearman": {
+    "VA1_VA3": -0.7714285714285715,
+    "VA1_VA5": -0.08571428571428573,
+    "VA3_VA5": 0.6571428571428573
+  },
+  "prior_viable_stock_rank_vs_final": {
+    "VA1": 0.48571428571428577,
+    "VA3": -0.6,
+    "VA5": -0.4285714285714286
+  },
+  "source_selection_diagnostic": [
+    {
+      "destination": "VA1",
+      "best": "VA5",
+      "best_density": 57.6666666667,
+      "prior_bank_choice": "VA5",
+      "prior_bank_density": 57.6666666667,
+      "other_dest_rank_choice": "NC2",
+      "other_dest_rank_density": 13.3333333333
+    },
+    {
+      "destination": "VA3",
+      "best": "NC2",
+      "best_density": 338,
+      "prior_bank_choice": "VA5",
+      "prior_bank_density": 0,
+      "other_dest_rank_choice": "NC2",
+      "other_dest_rank_density": 338
+    },
+    {
+      "destination": "VA5",
+      "best": "NC2",
+      "best_density": 87.3333333333,
+      "prior_bank_choice": "VA5",
+      "prior_bank_density": 11,
+      "other_dest_rank_choice": "NC2",
+      "other_dest_rank_density": 87.3333333333
+    }
+  ],
+  "temp_common_82_days": [
+    [
+      "NC1",
+      28.4937431512,
+      15.1890243902,
+      4.6920731707
+    ],
+    [
+      "NC10",
+      28.5426089631,
+      14.6402439024,
+      4.1646341463
+    ],
+    [
+      "NC2",
+      28.1036111535,
+      13.2896341463,
+      1.8323170732
+    ],
+    [
+      "VA1",
+      27.7072763244,
+      10.243902439,
+      2.7256097561
+    ],
+    [
+      "VA3",
+      27.3976177353,
+      8.5609756098,
+      1.862804878
+    ],
+    [
+      "VA5",
+      27.6358805988,
+      9.8597560976,
+      1.9237804878
+    ]
+  ],
+  "temp_columns": [
+    "site",
+    "mean daily temp",
+    "daily quarter-hour readings>=28 scaled to hours",
+    "daily quarter-hour readings>=30 scaled to hours"
+  ],
+  "limits": [
+    "20-site table lacks flowering and quadrat raw values; cannot externally validate Massachusetts model.",
+    "Cross-year stock times viability is a proxy not seed-lot quality.",
+    "108 quadrats repeated, no tagged seedlings or confirmed input dose. Observed zero terminal shoots not permanent extinction.",
+    "Descriptive sums of squares, no independent variance inference, recipient subgroup response-open.",
+    "Temperature coverage common days and near-quarter-hour scaling, no causal temperature inference. No direct animal treatment, seed movement or pooled meta-analysis.",
+    "Canada bytes acquired but not fitted in this step."
+  ]
+}
