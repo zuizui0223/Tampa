@@ -1,0 +1,1907 @@
+{
+  "status": "Executed cross-source species-label matched descriptive calculation and source-audited laboratory aggregate ratios, not a direct net reproductive effect",
+  "sources": {
+    "carr": "10.1111/j.1439-0485.2010.00411.x",
+    "carr_derived_blob": "77aa45f9230e7ca4167dce19e05d94889824a1aa",
+    "carr_derived_commit": "df76c504ab80cbe201dc6806608adc93cb0ec900",
+    "reynolds": "10.3354/meps09569",
+    "lewis": "10.3390/d6040751",
+    "best": "10.3354/meps09678"
+  },
+  "traits": [
+    {
+      "name": "Ampithoe_valida",
+      "localVegetative": "negative (biomass reduction)",
+      "localReproductive": "direct consumption of spathes and attached fruits in feeding trials",
+      "movement": "tube building",
+      "maxLengthMM": 13,
+      "maxWidthMM": 4,
+      "ulvaMgDay": 2.9,
+      "fishPredationDay": 0.9,
+      "localEvidence": "10.3354/meps09569; 10.3390/d6040751",
+      "traitEvidence": "10.3354/meps09678"
+    },
+    {
+      "name": "Idotea_resecata",
+      "localVegetative": "positive biomass; epiphyte removal; induced phenolic defenses against A. valida; also observed leaf grazing",
+      "localReproductive": "unmeasured for Zostera marina in local studies",
+      "movement": "swimming/clinging",
+      "maxLengthMM": 45,
+      "maxWidthMM": 8,
+      "ulvaMgDay": 5.5,
+      "fishPredationDay": 1.3,
+      "localEvidence": "10.3390/d6040751",
+      "traitEvidence": "10.3354/meps09678"
+    },
+    {
+      "name": "Caprella_cf_drepanochir",
+      "localVegetative": "no detected biomass effect in tested mesocosm (not equivalence)",
+      "localReproductive": "unmeasured",
+      "movement": null,
+      "maxLengthMM": null,
+      "maxWidthMM": null,
+      "ulvaMgDay": null,
+      "fishPredationDay": null,
+      "localEvidence": "10.3390/d6040751",
+      "traitEvidence": null
+    },
+    {
+      "name": "Caprella_californica",
+      "localVegetative": "unassigned (Bodega Harbor feeding assays not SF Bay net effect)",
+      "localReproductive": "unmeasured",
+      "movement": "clinging",
+      "maxLengthMM": 30,
+      "maxWidthMM": 1,
+      "ulvaMgDay": 0.1,
+      "fishPredationDay": 2.7,
+      "localEvidence": null,
+      "traitEvidence": "10.3354/meps09678"
+    }
+  ],
+  "overall": {
+    "n": 14,
+    "totalV": 518.5233333333333,
+    "totalF": 1412.3666666666666,
+    "totalRatio": 2.723824707342003,
+    "per": [
+      {
+        "name": "Ampithoe_valida",
+        "V": 7.426666666666667,
+        "F": 22.540000000000003,
+        "ratio": 3.0350089766606825,
+        "shareV": 0.01598474310279761,
+        "shareF": 0.026989382539635415,
+        "shareDiff": 0.011004639436837806,
+        "pooledShareV": 0.014322724146132929,
+        "pooledShareF": 0.015959028580868995,
+        "pooledShareRatio": 1.1142453361554032,
+        "shareIncrease": 8,
+        "shareDecrease": 3,
+        "abundanceIncrease": 10,
+        "abundanceDecrease": 1,
+        "positiveBoth": 10,
+        "bothGeoRatio": 6.425701173041,
+        "netTotalIncreaseShare": 0.01690825759920643
+      },
+      {
+        "name": "Idotea_resecata",
+        "V": 0.026666666666666665,
+        "F": 1.0533333333333332,
+        "ratio": 39.5,
+        "shareV": 0.0005832380117468219,
+        "shareF": 0.0017134070069284625,
+        "shareDiff": 0.0011301689951816406,
+        "pooledShareV": 0.00005142809388198538,
+        "pooledShareF": 0.0007457931132142268,
+        "pooledShareRatio": 14.501667414033184,
+        "shareIncrease": 2,
+        "shareDecrease": 1,
+        "abundanceIncrease": 2,
+        "abundanceDecrease": 1,
+        "positiveBoth": 1,
+        "bothGeoRatio": 49.66666666666668,
+        "netTotalIncreaseShare": 0.0011485980018869826
+      },
+      {
+        "name": "Caprella_cf_drepanochir",
+        "V": 78.95333333333333,
+        "F": 212.49333333333334,
+        "ratio": 2.6913788735962174,
+        "shareV": 0.15484589754540984,
+        "shareF": 0.13215260545425572,
+        "shareDiff": -0.022693292091154116,
+        "pooledShareV": 0.15226572896108823,
+        "pooledShareF": 0.150451960067027,
+        "pooledShareRatio": 0.9880881344315847,
+        "shareIncrease": 5,
+        "shareDecrease": 6,
+        "abundanceIncrease": 10,
+        "abundanceDecrease": 1,
+        "positiveBoth": 11,
+        "bothGeoRatio": 3.353252367812484,
+        "netTotalIncreaseShare": 0.14939978295972825
+      },
+      {
+        "name": "Caprella_californica",
+        "V": 2.8133333333333335,
+        "F": 15.553333333333333,
+        "ratio": 5.528436018957345,
+        "shareV": 0.034871080581657735,
+        "shareF": 0.015380922886473383,
+        "shareDiff": -0.019490157695184352,
+        "pooledShareV": 0.005425663904549459,
+        "pooledShareF": 0.011012248943853107,
+        "pooledShareRatio": 2.0296592523210397,
+        "shareIncrease": 0,
+        "shareDecrease": 3,
+        "abundanceIncrease": 2,
+        "abundanceDecrease": 1,
+        "positiveBoth": 2,
+        "bothGeoRatio": 5.704046204421983,
+        "netTotalIncreaseShare": 0.014253057023415736
+      }
+    ],
+    "roleCoverage": {
+      "V": 0.16663988120110315,
+      "F": 0.1671567817611102
+    },
+    "movementCoverage": {
+      "V": 0.019799816144564376,
+      "F": 0.02771707063793633
+    },
+    "partialTraits": {
+      "V": {
+        "matchedCount": 10.266666666666666,
+        "meanMaxLengthMM": 17.741558441558443,
+        "meanMaxWidthMM": 3.1883116883116887,
+        "meanUlvaMgDay": 2.1394805194805198,
+        "meanFishPredationDay": 1.3942857142857146,
+        "tubeBuilderShare": 0.7233766233766235
+      },
+      "F": {
+        "matchedCount": 39.14666666666667,
+        "meanMaxLengthMM": 20.615292915531334,
+        "meanMaxWidthMM": 2.915701634877384,
+        "meanUlvaMgDay": 1.8574931880108994,
+        "meanFishPredationDay": 1.6259196185286102,
+        "tubeBuilderShare": 0.575783378746594
+      }
+    }
+  },
+  "byMonth": {
+    "June": {
+      "n": 5,
+      "totalV": 621.9799999999999,
+      "totalF": 1466.6399999999999,
+      "totalRatio": 2.358017942699122,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 0.28,
+          "F": 2.5600000000000005,
+          "ratio": 9.142857142857144,
+          "shareV": 0.007087507788644913,
+          "shareF": 0.011326196364065743,
+          "shareDiff": 0.00423868857542083,
+          "pooledShareV": 0.00045017524679250145,
+          "pooledShareF": 0.0017454862815687562,
+          "pooledShareRatio": 3.87734841932191,
+          "shareIncrease": 3,
+          "shareDecrease": 1,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 1,
+          "positiveBoth": 4,
+          "bothGeoRatio": 5.444759348731685,
+          "netTotalIncreaseShare": 0.002699310965358843
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0,
+          "F": 0.18,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0.0001309757694826457,
+          "shareDiff": 0.0001309757694826457,
+          "pooledShareV": 0,
+          "pooledShareF": 0.00012272950417280314,
+          "pooledShareRatio": null,
+          "shareIncrease": 1,
+          "shareDecrease": 0,
+          "abundanceIncrease": 1,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0.0002131034972651718
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 64.7,
+          "F": 99.97999999999999,
+          "ratio": 1.5452859350850074,
+          "shareV": 0.15308426400765524,
+          "shareF": 0.08059647966722765,
+          "shareDiff": -0.07248778434042759,
+          "pooledShareV": 0.10402263738383873,
+          "pooledShareF": 0.06816942126220477,
+          "pooledShareRatio": 0.6553325600721193,
+          "shareIncrease": 1,
+          "shareDecrease": 3,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 1,
+          "positiveBoth": 4,
+          "bothGeoRatio": 1.698074908684928,
+          "netTotalIncreaseShare": 0.04176828546397365
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 7.42,
+          "F": 44.260000000000005,
+          "ratio": 5.964959568733154,
+          "shareV": 0.04591584158415843,
+          "shareF": 0.03220548642945499,
+          "shareDiff": -0.013710355154703438,
+          "pooledShareV": 0.011929644040001288,
+          "pooledShareF": 0.030177821414934823,
+          "pooledShareRatio": 2.5296497794691586,
+          "shareIncrease": 0,
+          "shareDecrease": 1,
+          "abundanceIncrease": 1,
+          "abundanceDecrease": 0,
+          "positiveBoth": 1,
+          "bothGeoRatio": 5.964959568733153,
+          "netTotalIncreaseShare": 0.04361518244027183
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.10447281263063123,
+        "F": 0.07003763704794633
+      },
+      "movementCoverage": {
+        "V": 0.01237981928679379,
+        "F": 0.032046037200676385
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 7.7,
+          "meanMaxLengthMM": 29.381818181818183,
+          "meanMaxWidthMM": 1.109090909090909,
+          "meanUlvaMgDay": 0.2018181818181818,
+          "meanFishPredationDay": 2.6345454545454547,
+          "tubeBuilderShare": 0.03636363636363637
+        },
+        "F": {
+          "matchedCount": 47.00000000000001,
+          "meanMaxLengthMM": 29.13148936170213,
+          "meanMaxWidthMM": 1.1902127659574466,
+          "meanUlvaMgDay": 0.2731914893617022,
+          "meanFishPredationDay": 2.596595744680851,
+          "tubeBuilderShare": 0.05446808510638298
+        }
+      }
+    },
+    "August": {
+      "n": 5,
+      "totalV": 204.6,
+      "totalF": 1031.98,
+      "totalRatio": 5.0438905180840665,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 2.2600000000000002,
+          "F": 17.919999999999998,
+          "ratio": 7.929203539823007,
+          "shareV": 0.018805681967621557,
+          "shareF": 0.036933701682171347,
+          "shareDiff": 0.01812801971454979,
+          "pooledShareV": 0.011045943304007821,
+          "pooledShareF": 0.0173646776100312,
+          "pooledShareRatio": 1.5720411677045945,
+          "shareIncrease": 4,
+          "shareDecrease": 0,
+          "abundanceIncrease": 4,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 7.019307852863279,
+          "netTotalIncreaseShare": 0.018927216031327805
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0.02,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0.00023837902264600718,
+          "shareF": 0,
+          "shareDiff": -0.00023837902264600718,
+          "pooledShareV": 0.00009775171065493646,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 1,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 1,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": -0.000024172689695182383
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 41.06,
+          "F": 184.24,
+          "ratio": 4.487092060399416,
+          "shareV": 0.1346188846382146,
+          "shareF": 0.12329878242322337,
+          "shareDiff": -0.011320102214991218,
+          "pooledShareV": 0.20068426197458458,
+          "pooledShareF": 0.17853059167813332,
+          "pooledShareRatio": 0.8896093292095975,
+          "shareIncrease": 2,
+          "shareDecrease": 2,
+          "abundanceIncrease": 4,
+          "abundanceDecrease": 0,
+          "positiveBoth": 4,
+          "bothGeoRatio": 5.102503657062121,
+          "netTotalIncreaseShare": 0.17305228552781068
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 0.44000000000000006,
+          "F": 2.4,
+          "ratio": 5.454545454545453,
+          "shareV": 0.026829268292682933,
+          "shareF": 0.013937282229965159,
+          "shareDiff": -0.012891986062717775,
+          "pooledShareV": 0.0021505376344086026,
+          "pooledShareF": 0.002325626465629179,
+          "pooledShareRatio": 1.081416306517568,
+          "shareIncrease": 0,
+          "shareDecrease": 1,
+          "abundanceIncrease": 1,
+          "abundanceDecrease": 0,
+          "positiveBoth": 1,
+          "bothGeoRatio": 5.454545454545453,
+          "netTotalIncreaseShare": 0.0023689235901278734
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.21182795698924733,
+        "F": 0.19589526928816453
+      },
+      "movementCoverage": {
+        "V": 0.013294232649071359,
+        "F": 0.01969030407566038
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 2.72,
+          "meanMaxLengthMM": 15.98529411764706,
+          "meanMaxWidthMM": 3.5441176470588234,
+          "meanUlvaMgDay": 2.466176470588235,
+          "meanFishPredationDay": 1.1941176470588235,
+          "tubeBuilderShare": 0.8308823529411765
+        },
+        "F": {
+          "matchedCount": 20.319999999999997,
+          "meanMaxLengthMM": 15.007874015748033,
+          "meanMaxWidthMM": 3.6456692913385833,
+          "meanUlvaMgDay": 2.5692913385826777,
+          "meanFishPredationDay": 1.1125984251968506,
+          "tubeBuilderShare": 0.8818897637795277
+        }
+      }
+    },
+    "October": {
+      "n": 4,
+      "totalV": 534.275,
+      "totalF": 1220.9249999999997,
+      "totalRatio": 2.2851995695100835,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 24.675,
+          "F": 58.925000000000004,
+          "ratio": 2.3880445795339416,
+          "shareV": 0.027576299440157957,
+          "shareF": 0.040885311965836446,
+          "shareDiff": 0.013309012525678489,
+          "pooledShareV": 0.046184081231575504,
+          "pooledShareF": 0.048262587792042934,
+          "pooledShareRatio": 1.0450048264475678,
+          "shareIncrease": 1,
+          "shareDecrease": 2,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 4.365133527234992,
+          "netTotalIncreaseShare": 0.04987985145270518
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0.075,
+          "F": 3.725,
+          "ratio": 49.66666666666667,
+          "shareV": 0.0018891687657430732,
+          "shareF": 0.006261556564128427,
+          "shareDiff": 0.004372387798385354,
+          "pooledShareV": 0.00014037714660053343,
+          "pooledShareF": 0.003050965456518624,
+          "pooledShareRatio": 21.73406092375317,
+          "shareIncrease": 1,
+          "shareDecrease": 0,
+          "abundanceIncrease": 1,
+          "abundanceDecrease": 0,
+          "positiveBoth": 1,
+          "bothGeoRatio": 49.66666666666668,
+          "netTotalIncreaseShare": 0.005315663001529165
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 120.675,
+          "F": 323.15,
+          "ratio": 2.6778537393826394,
+          "shareV": 0.17817748285858281,
+          "shareF": 0.202130637597211,
+          "shareDiff": 0.02395315473862819,
+          "pooledShareV": 0.2258668288802583,
+          "pooledShareF": 0.26467637242254854,
+          "pooledShareRatio": 1.1718248922813932,
+          "shareIncrease": 2,
+          "shareDecrease": 1,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 4.600732279885126,
+          "netTotalIncreaseShare": 0.294873661982087
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 0.725,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0.03983516483516483,
+          "shareF": 0,
+          "shareDiff": -0.03983516483516483,
+          "pooledShareV": 0.0013569790838051565,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 1,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 1,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": -0.001055850870166752
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.27219128725843433,
+        "F": 0.3159899256711101
+      },
+      "movementCoverage": {
+        "V": 0.047681437461981196,
+        "F": 0.05131355324856156
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 25.475,
+          "meanMaxLengthMM": 13.57801766437684,
+          "meanMaxWidthMM": 3.9263984298331693,
+          "meanUlvaMgDay": 2.8279685966633954,
+          "meanFishPredationDay": 0.952404317958783,
+          "tubeBuilderShare": 0.9685966633954858
+        },
+        "F": {
+          "matchedCount": 62.650000000000006,
+          "meanMaxLengthMM": 14.902633679169993,
+          "meanMaxWidthMM": 4.2378292098962485,
+          "meanUlvaMgDay": 3.0545889864325617,
+          "meanFishPredationDay": 0.9237829209896249,
+          "tubeBuilderShare": 0.9405426975259378
+        }
+      }
+    }
+  },
+  "bySite": {
+    "PSP": {
+      "n": 3,
+      "totalV": 647.5666666666667,
+      "totalF": 1171.2333333333333,
+      "totalRatio": 1.80866834817522,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 31.8,
+          "F": 73.06666666666668,
+          "ratio": 2.29769392033543,
+          "shareV": 0.02715934249652796,
+          "shareF": 0.046619733184775684,
+          "shareDiff": 0.019460390688247724,
+          "pooledShareV": 0.04910691305914449,
+          "pooledShareF": 0.06238438113669352,
+          "pooledShareRatio": 1.2703787970047642,
+          "shareIncrease": 2,
+          "shareDecrease": 1,
+          "abundanceIncrease": 2,
+          "abundanceDecrease": 1,
+          "positiveBoth": 3,
+          "bothGeoRatio": 1.9887263922293925,
+          "netTotalIncreaseShare": 0.07880330999363466
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 130.96666666666667,
+          "F": 228.73333333333335,
+          "ratio": 1.7465003817765337,
+          "shareV": 0.22106451859217865,
+          "shareF": 0.17370620453467844,
+          "shareDiff": -0.04735831405750021,
+          "pooledShareV": 0.2022442991712565,
+          "pooledShareF": 0.19529271138685717,
+          "pooledShareRatio": 0.9656277689265651,
+          "shareIncrease": 1,
+          "shareDecrease": 2,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 1.7090640607217205,
+          "netTotalIncreaseShare": 0.1866963717377467
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.25135121223040097,
+        "F": 0.2576770925235507
+      },
+      "movementCoverage": {
+        "V": 0.04910691305914449,
+        "F": 0.06238438113669352
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 31.8,
+          "meanMaxLengthMM": 13,
+          "meanMaxWidthMM": 4,
+          "meanUlvaMgDay": 2.9,
+          "meanFishPredationDay": 0.9,
+          "tubeBuilderShare": 1
+        },
+        "F": {
+          "matchedCount": 73.06666666666668,
+          "meanMaxLengthMM": 13,
+          "meanMaxWidthMM": 4,
+          "meanUlvaMgDay": 2.9,
+          "meanFishPredationDay": 0.8999999999999999,
+          "tubeBuilderShare": 1
+        }
+      }
+    },
+    "CB": {
+      "n": 3,
+      "totalV": 307.8,
+      "totalF": 1184.7333333333333,
+      "totalRatio": 3.8490361706735974,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 4.566666666666666,
+          "F": 28.666666666666668,
+          "ratio": 6.277372262773723,
+          "shareV": 0.03278745785381544,
+          "shareF": 0.05077522645260139,
+          "shareDiff": 0.017987768598785946,
+          "pooledShareV": 0.014836473900801384,
+          "pooledShareF": 0.024196725001406787,
+          "pooledShareRatio": 1.6308945887809512,
+          "shareIncrease": 2,
+          "shareDecrease": 1,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 7.639081107236258,
+          "netTotalIncreaseShare": 0.027482134711874714
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0.03333333333333333,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0.00039729837107667864,
+          "shareF": 0,
+          "shareDiff": -0.00039729837107667864,
+          "pooledShareV": 0.00010829542993285683,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 1,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 1,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": -0.00003801125133039379
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 85.10000000000001,
+          "F": 293.06666666666666,
+          "ratio": 3.443791617704661,
+          "shareV": 0.2050629416451626,
+          "shareF": 0.20044991095340361,
+          "shareDiff": -0.004613030691758974,
+          "pooledShareV": 0.2764782326185835,
+          "pooledShareF": 0.24736930954926564,
+          "pooledShareRatio": 0.8947153170301289,
+          "shareIncrease": 2,
+          "shareDecrease": 1,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 4.578329012084378,
+          "netTotalIncreaseShare": 0.23715219705032686
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.2914230019493177,
+        "F": 0.27156603455067246
+      },
+      "movementCoverage": {
+        "V": 0.014944769330734244,
+        "F": 0.024196725001406787
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 4.6,
+          "meanMaxLengthMM": 13.231884057971014,
+          "meanMaxWidthMM": 4.028985507246377,
+          "meanUlvaMgDay": 2.918840579710145,
+          "meanFishPredationDay": 0.9028985507246378,
+          "tubeBuilderShare": 0.9927536231884059
+        },
+        "F": {
+          "matchedCount": 28.666666666666668,
+          "meanMaxLengthMM": 13,
+          "meanMaxWidthMM": 4,
+          "meanUlvaMgDay": 2.9,
+          "meanFishPredationDay": 0.9,
+          "tubeBuilderShare": 1
+        }
+      }
+    },
+    "KB": {
+      "n": 3,
+      "totalV": 64,
+      "totalF": 381.3666666666666,
+      "totalRatio": 5.958854166666666,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 0.7333333333333334,
+          "F": 7.8,
+          "ratio": 10.636363636363635,
+          "shareV": 0.01977064453658195,
+          "shareF": 0.02153294374231939,
+          "shareDiff": 0.0017622992057374394,
+          "pooledShareV": 0.011458333333333334,
+          "pooledShareF": 0.02045275762608164,
+          "pooledShareRatio": 1.7849679382762158,
+          "shareIncrease": 2,
+          "shareDecrease": 1,
+          "abundanceIncrease": 3,
+          "abundanceDecrease": 0,
+          "positiveBoth": 3,
+          "bothGeoRatio": 8.01563448954023,
+          "netTotalIncreaseShare": 0.02226656863774814
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0.09999999999999999,
+          "F": 4.966666666666667,
+          "ratio": 49.66666666666667,
+          "shareV": 0.002518891687657431,
+          "shareF": 0.00834874208550457,
+          "shareDiff": 0.005829850397847138,
+          "pooledShareV": 0.0015624999999999999,
+          "pooledShareF": 0.013023337120881044,
+          "pooledShareRatio": 8.33493575736387,
+          "shareIncrease": 1,
+          "shareDecrease": 0,
+          "abundanceIncrease": 1,
+          "abundanceDecrease": 0,
+          "positiveBoth": 1,
+          "bothGeoRatio": 49.66666666666668,
+          "netTotalIncreaseShare": 0.015334523684486928
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 5.8999999999999995,
+          "F": 66.96666666666667,
+          "ratio": 11.350282485875708,
+          "shareV": 0.17663923897224096,
+          "shareF": 0.13231669081045946,
+          "shareDiff": -0.044322548161781494,
+          "pooledShareV": 0.09218749999999999,
+          "pooledShareF": 0.17559653876409406,
+          "pooledShareRatio": 1.904776013712207,
+          "shareIncrease": 2,
+          "shareDecrease": 1,
+          "abundanceIncrease": 2,
+          "abundanceDecrease": 1,
+          "positiveBoth": 3,
+          "bothGeoRatio": 4.38779474467163,
+          "netTotalIncreaseShare": 0.19241676294506885
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.10520833333333335,
+        "F": 0.20907263351105676
+      },
+      "movementCoverage": {
+        "V": 0.013020833333333334,
+        "F": 0.033476094746962684
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 0.8333333333333334,
+          "meanMaxLengthMM": 16.84,
+          "meanMaxWidthMM": 4.4799999999999995,
+          "meanUlvaMgDay": 3.2119999999999997,
+          "meanFishPredationDay": 0.948,
+          "tubeBuilderShare": 0.88
+        },
+        "F": {
+          "matchedCount": 12.766666666666666,
+          "meanMaxLengthMM": 25.449086161879897,
+          "meanMaxWidthMM": 5.556135770234988,
+          "meanUlvaMgDay": 3.911488250652742,
+          "meanFishPredationDay": 1.0556135770234987,
+          "tubeBuilderShare": 0.6109660574412533
+        }
+      }
+    },
+    "BFI": {
+      "n": 2,
+      "totalV": 1507.85,
+      "totalF": 3808.7,
+      "totalRatio": 2.525914381403986,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 172.79999999999998,
+          "F": 473.70000000000005,
+          "ratio": 2.741319444444445,
+          "shareV": 0.17146278851746696,
+          "shareF": 0.15429022097273715,
+          "shareDiff": -0.017172567544729817,
+          "pooledShareV": 0.11460025864641708,
+          "pooledShareF": 0.12437314569275608,
+          "pooledShareRatio": 1.085278054009388,
+          "shareIncrease": 0,
+          "shareDecrease": 2,
+          "abundanceIncrease": 2,
+          "abundanceDecrease": 0,
+          "positiveBoth": 2,
+          "bothGeoRatio": 3.6825895401252895,
+          "netTotalIncreaseShare": 0.13077775604667843
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.11460025864641708,
+        "F": 0.12437314569275608
+      },
+      "movementCoverage": {
+        "V": 0,
+        "F": 0
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 0,
+          "meanMaxLengthMM": null,
+          "meanMaxWidthMM": null,
+          "meanUlvaMgDay": null,
+          "meanFishPredationDay": null,
+          "tubeBuilderShare": null
+        },
+        "F": {
+          "matchedCount": 0,
+          "meanMaxLengthMM": null,
+          "meanMaxWidthMM": null,
+          "meanUlvaMgDay": null,
+          "meanFishPredationDay": null,
+          "tubeBuilderShare": null
+        }
+      }
+    },
+    "RB": {
+      "n": 3,
+      "totalV": 65.39999999999999,
+      "totalF": 515.8000000000001,
+      "totalRatio": 7.8868501529052,
+      "per": [
+        {
+          "name": "Ampithoe_valida",
+          "V": 0.03333333333333333,
+          "F": 3.1666666666666665,
+          "ratio": 95,
+          "shareV": 0.0002062706270627063,
+          "shareF": 0.016019009318480625,
+          "shareDiff": 0.01581273869141792,
+          "pooledShareV": 0.0005096839959225281,
+          "pooledShareF": 0.0061393304898539475,
+          "pooledShareRatio": 12.045366421093444,
+          "shareIncrease": 2,
+          "shareDecrease": 0,
+          "abundanceIncrease": 2,
+          "abundanceDecrease": 0,
+          "positiveBoth": 1,
+          "bothGeoRatio": 13.999999999999996,
+          "netTotalIncreaseShare": 0.006956779159265836
+        },
+        {
+          "name": "Idotea_resecata",
+          "V": 0,
+          "F": 0.3,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0.00021829294913774282,
+          "shareDiff": 0.00021829294913774282,
+          "pooledShareV": 0,
+          "pooledShareF": 0.0005816207832493213,
+          "pooledShareRatio": null,
+          "shareIncrease": 1,
+          "shareDecrease": 0,
+          "abundanceIncrease": 1,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0.0006660746003552396
+        },
+        {
+          "name": "Caprella_cf_drepanochir",
+          "V": 0,
+          "F": 0,
+          "ratio": null,
+          "shareV": 0,
+          "shareF": 0,
+          "shareDiff": 0,
+          "pooledShareV": 0,
+          "pooledShareF": 0,
+          "pooledShareRatio": null,
+          "shareIncrease": 0,
+          "shareDecrease": 0,
+          "abundanceIncrease": 0,
+          "abundanceDecrease": 0,
+          "positiveBoth": 0,
+          "bothGeoRatio": null,
+          "netTotalIncreaseShare": 0
+        },
+        {
+          "name": "Caprella_californica",
+          "V": 14.066666666666668,
+          "F": 77.76666666666667,
+          "ratio": 5.528436018957345,
+          "shareV": 0.1743554029082887,
+          "shareF": 0.07690461443236692,
+          "shareDiff": -0.09745078847592177,
+          "pooledShareV": 0.21508664627930688,
+          "pooledShareF": 0.15076903192451852,
+          "pooledShareRatio": 0.7009688166727613,
+          "shareIncrease": 0,
+          "shareDecrease": 3,
+          "abundanceIncrease": 2,
+          "abundanceDecrease": 1,
+          "positiveBoth": 2,
+          "bothGeoRatio": 5.704046204421983,
+          "netTotalIncreaseShare": 0.14142984014209586
+        }
+      ],
+      "roleCoverage": {
+        "V": 0.0005096839959225281,
+        "F": 0.0067209512731032685
+      },
+      "movementCoverage": {
+        "V": 0.2155963302752294,
+        "F": 0.1574899831976218
+      },
+      "partialTraits": {
+        "V": {
+          "matchedCount": 14.100000000000001,
+          "meanMaxLengthMM": 29.959810874704495,
+          "meanMaxWidthMM": 1.0070921985815602,
+          "meanUlvaMgDay": 0.10661938534278961,
+          "meanFishPredationDay": 2.695744680851064,
+          "tubeBuilderShare": 0.002364066193853428
+        },
+        "F": {
+          "matchedCount": 81.23333333333333,
+          "meanMaxLengthMM": 29.39269593762823,
+          "meanMaxWidthMM": 1.1427985227739024,
+          "meanUlvaMgDay": 0.22909314731226918,
+          "meanFishPredationDay": 2.624661469019286,
+          "tubeBuilderShare": 0.038982355354944605
+        }
+      }
+    }
+  },
+  "paired": [
+    {
+      "site": "PSP",
+      "month": "June",
+      "totalRatio": 3.1229193341869403,
+      "Aveg": 0.4,
+      "Aflower": 0.3,
+      "A_ratio": 0.7499999999999999,
+      "A_shareVeg": 0.0051216389244558265,
+      "A_shareFlower": 0.001230012300123001,
+      "A_shareDiff": -0.0038916266243328255,
+      "A_relativeEnrichment": 0.24015990159901593,
+      "A_half_threshold": 0.5714285714285715,
+      "all_half_threshold": 0.24254658385093167,
+      "A_positive_both": true
+    },
+    {
+      "site": "CB",
+      "month": "June",
+      "totalRatio": 4.577291381668946,
+      "Aveg": 0.5,
+      "Aflower": 9.3,
+      "A_ratio": 18.6,
+      "A_shareVeg": 0.0068399452804377555,
+      "A_shareFlower": 0.027794381350866707,
+      "A_shareDiff": 0.02095443607042895,
+      "A_relativeEnrichment": 4.063538553496713,
+      "A_half_threshold": 0.0510204081632653,
+      "all_half_threshold": 0.17929850380181506,
+      "A_positive_both": true
+    },
+    {
+      "site": "KB",
+      "month": "June",
+      "totalRatio": 3.8685714285714297,
+      "Aveg": 0.4,
+      "Aflower": 1.8,
+      "A_ratio": 4.5,
+      "A_shareVeg": 0.022857142857142864,
+      "A_shareFlower": 0.026587887740029542,
+      "A_shareDiff": 0.003730744882886678,
+      "A_relativeEnrichment": 1.1632200886262922,
+      "A_half_threshold": 0.18181818181818182,
+      "all_half_threshold": 0.2053990610328638,
+      "A_positive_both": true
+    },
+    {
+      "site": "BFI",
+      "month": "June",
+      "totalRatio": 1.9113181752770183,
+      "Aveg": 0,
+      "Aflower": 0,
+      "A_ratio": null,
+      "A_shareVeg": 0,
+      "A_shareFlower": 0,
+      "A_shareDiff": 0,
+      "A_relativeEnrichment": null,
+      "A_half_threshold": null,
+      "all_half_threshold": 0.3434870185237819,
+      "A_positive_both": false
+    },
+    {
+      "site": "RB",
+      "month": "June",
+      "totalRatio": 8.504331683168319,
+      "Aveg": 0.1,
+      "Aflower": 1.4,
+      "A_ratio": 13.999999999999998,
+      "A_shareVeg": 0.0006188118811881189,
+      "A_shareFlower": 0.0010187004293094664,
+      "A_shareDiff": 0.0003998885481213475,
+      "A_relativeEnrichment": 1.6462198937640975,
+      "A_half_threshold": 0.06666666666666667,
+      "all_half_threshold": 0.10521518328016144,
+      "A_positive_both": true
+    },
+    {
+      "site": "PSP",
+      "month": "August",
+      "totalRatio": 3.082457412105836,
+      "Aveg": 3.8,
+      "Aflower": 18.1,
+      "A_ratio": 4.7631578947368425,
+      "A_shareVeg": 0.006886553098948895,
+      "A_shareFlower": 0.010641425127873479,
+      "A_shareDiff": 0.0037548720289245835,
+      "A_relativeEnrichment": 1.545246943568575,
+      "A_half_threshold": 0.17351598173515978,
+      "all_half_threshold": 0.24495050383983663,
+      "A_positive_both": true
+    },
+    {
+      "site": "CB",
+      "month": "August",
+      "totalRatio": 5.9666269368295595,
+      "Aveg": 7,
+      "Aflower": 59.1,
+      "A_ratio": 8.442857142857143,
+      "A_shareVeg": 0.08343265792610251,
+      "A_shareFlower": 0.11805833000399521,
+      "A_shareDiff": 0.0346256720778927,
+      "A_relativeEnrichment": 1.4150134124764568,
+      "A_half_threshold": 0.10590015128593042,
+      "all_half_threshold": 0.1435414884516681,
+      "A_positive_both": true
+    },
+    {
+      "site": "KB",
+      "month": "August",
+      "totalRatio": 3.5719584569732934,
+      "Aveg": 0.5,
+      "Aflower": 4.3,
+      "A_ratio": 8.6,
+      "A_shareVeg": 0.0037091988130563795,
+      "A_shareFlower": 0.008930425752855659,
+      "A_shareDiff": 0.005221226939799279,
+      "A_relativeEnrichment": 2.407642782969886,
+      "A_half_threshold": 0.10416666666666667,
+      "all_half_threshold": 0.21872464708745745,
+      "A_positive_both": true
+    },
+    {
+      "site": "BFI",
+      "month": "August",
+      "totalRatio": 9.761541719610333,
+      "Aveg": 0,
+      "Aflower": 0,
+      "A_ratio": null,
+      "A_shareVeg": 0,
+      "A_shareFlower": 0,
+      "A_shareDiff": 0,
+      "A_relativeEnrichment": null,
+      "A_half_threshold": null,
+      "all_half_threshold": 0.09292348866498742,
+      "A_positive_both": false
+    },
+    {
+      "site": "RB",
+      "month": "August",
+      "totalRatio": 10.5,
+      "Aveg": 0,
+      "Aflower": 8.1,
+      "A_ratio": null,
+      "A_shareVeg": 0,
+      "A_shareFlower": 0.047038327526132406,
+      "A_shareDiff": 0.047038327526132406,
+      "A_relativeEnrichment": null,
+      "A_half_threshold": 0,
+      "all_half_threshold": 0.08695652173913043,
+      "A_positive_both": false
+    },
+    {
+      "site": "PSP",
+      "month": "October",
+      "totalRatio": 1.195079219987812,
+      "Aveg": 91.2,
+      "Aflower": 200.8,
+      "A_ratio": 2.2017543859649122,
+      "A_shareVeg": 0.06946983546617916,
+      "A_shareFlower": 0.12798776212633056,
+      "A_shareDiff": 0.058517926660151404,
+      "A_relativeEnrichment": 1.8423501548184953,
+      "A_half_threshold": 0.31232876712328766,
+      "all_half_threshold": 0.45556442377763134,
+      "A_positive_both": true
+    },
+    {
+      "site": "CB",
+      "month": "October",
+      "totalRatio": 3.5477557411273484,
+      "Aveg": 6.2,
+      "Aflower": 17.6,
+      "A_ratio": 2.838709677419355,
+      "A_shareVeg": 0.008089770354906054,
+      "A_shareFlower": 0.006472968002942258,
+      "A_shareDiff": -0.0016168023519637954,
+      "A_relativeEnrichment": 0.8001423673314431,
+      "A_half_threshold": 0.2605042016806723,
+      "all_half_threshold": 0.21988867848740462,
+      "A_positive_both": true
+    },
+    {
+      "site": "KB",
+      "month": "October",
+      "totalRatio": 14.984886649874053,
+      "Aveg": 1.3,
+      "Aflower": 17.3,
+      "A_ratio": 13.307692307692308,
+      "A_shareVeg": 0.032745591939546605,
+      "A_shareFlower": 0.029080517734072962,
+      "A_shareDiff": -0.0036650742054736424,
+      "A_relativeEnrichment": 0.8880742723405357,
+      "A_half_threshold": 0.06989247311827956,
+      "all_half_threshold": 0.06255909234163252,
+      "A_positive_both": true
+    },
+    {
+      "site": "RB",
+      "month": "October",
+      "totalRatio": 0.049450549450549455,
+      "Aveg": 0,
+      "Aflower": 0,
+      "A_ratio": null,
+      "A_shareVeg": 0,
+      "A_shareFlower": 0,
+      "A_shareDiff": 0,
+      "A_relativeEnrichment": null,
+      "A_half_threshold": null,
+      "all_half_threshold": 0.9528795811518326,
+      "A_positive_both": false
+    }
+  ],
+  "leaveOneSiteOut": [
+    {
+      "omitted": "PSP",
+      "summary": {
+        "n": 11,
+        "totalV": 486.2625,
+        "totalF": 1472.6499999999999,
+        "totalRatio": 3.028508264569034,
+        "per": [
+          {
+            "name": "Ampithoe_valida",
+            "V": 1.3333333333333333,
+            "F": 9.908333333333333,
+            "ratio": 7.43125,
+            "shareV": 0.013191093254365025,
+            "shareF": 0.022081794878350353,
+            "shareDiff": 0.008890701623985328,
+            "pooledShareV": 0.0027420032047162455,
+            "pooledShareF": 0.006728233683043041,
+            "pooledShareRatio": 2.4537657984755374,
+            "shareIncrease": 6,
+            "shareDecrease": 2,
+            "abundanceIncrease": 8,
+            "abundanceDecrease": 0,
+            "positiveBoth": 7,
+            "bothGeoRatio": 9.499535149486476,
+            "netTotalIncreaseShare": 0.008693338064401668
+          },
+          {
+            "name": "Idotea_resecata",
+            "V": 0.03333333333333333,
+            "F": 1.3166666666666667,
+            "ratio": 39.5,
+            "shareV": 0.0007290475146835274,
+            "shareF": 0.002141758758660578,
+            "shareDiff": 0.0014127112439770507,
+            "pooledShareV": 0.00006855008011790614,
+            "pooledShareF": 0.000894079833406897,
+            "pooledShareRatio": 13.042724849760637,
+            "shareIncrease": 2,
+            "shareDecrease": 1,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 1,
+            "positiveBoth": 1,
+            "bothGeoRatio": 49.66666666666668,
+            "netTotalIncreaseShare": 0.0013010437919512702
+          },
+          {
+            "name": "Caprella_cf_drepanochir",
+            "V": 65.95,
+            "F": 208.43333333333334,
+            "ratio": 3.1604751074045994,
+            "shareV": 0.13829124228371764,
+            "shareF": 0.12176420568415006,
+            "shareDiff": -0.016527036599567585,
+            "pooledShareV": 0.1356263335132773,
+            "pooledShareF": 0.14153623286818548,
+            "pooledShareRatio": 1.0435748663391362,
+            "shareIncrease": 4,
+            "shareDecrease": 4,
+            "abundanceIncrease": 7,
+            "abundanceDecrease": 1,
+            "positiveBoth": 8,
+            "bothGeoRatio": 4.197933352718026,
+            "netTotalIncreaseShare": 0.1444496542518365
+          },
+          {
+            "name": "Caprella_californica",
+            "V": 3.516666666666667,
+            "F": 19.441666666666666,
+            "ratio": 5.528436018957345,
+            "shareV": 0.04358885072707217,
+            "shareF": 0.01922615360809173,
+            "shareDiff": -0.024362697118980443,
+            "pooledShareV": 0.007232033452439099,
+            "pooledShareF": 0.0132018243755588,
+            "pooledShareRatio": 1.825465059361183,
+            "shareIncrease": 0,
+            "shareDecrease": 3,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 1,
+            "positiveBoth": 2,
+            "bothGeoRatio": 5.704046204421983,
+            "netTotalIncreaseShare": 0.016144770691031672
+          }
+        ],
+        "roleCoverage": {
+          "V": 0.13843688679811145,
+          "F": 0.14915854638463544
+        },
+        "movementCoverage": {
+          "V": 0.01004258673727325,
+          "F": 0.02082413789200874
+        },
+        "partialTraits": {
+          "V": {
+            "matchedCount": 4.883333333333334,
+            "meanMaxLengthMM": 25.46075085324232,
+            "meanMaxWidthMM": 1.8668941979522184,
+            "meanUlvaMgDay": 0.9013651877133104,
+            "meanFishPredationDay": 2.198976109215017,
+            "tubeBuilderShare": 0.273037542662116
+          },
+          "F": {
+            "matchedCount": 30.666666666666664,
+            "meanMaxLengthMM": 25.151358695652178,
+            "meanMaxWidthMM": 2.2698369565217393,
+            "meanUlvaMgDay": 1.2365217391304348,
+            "meanFishPredationDay": 2.0583152173913044,
+            "tubeBuilderShare": 0.32309782608695653
+          }
+        }
+      }
+    },
+    {
+      "omitted": "CB",
+      "summary": {
+        "n": 11,
+        "totalV": 571.2041666666667,
+        "totalF": 1469.2749999999999,
+        "totalRatio": 2.572241390629445,
+        "per": [
+          {
+            "name": "Ampithoe_valida",
+            "V": 8.141666666666666,
+            "F": 21.008333333333336,
+            "ratio": 2.5803480040941666,
+            "shareV": 0.011784064415043155,
+            "shareF": 0.021042921561393924,
+            "shareDiff": 0.009258857146350769,
+            "pooledShareV": 0.014253514140448904,
+            "pooledShareF": 0.01429843516927283,
+            "pooledShareRatio": 1.0031515757013527,
+            "shareIncrease": 6,
+            "shareDecrease": 2,
+            "abundanceIncrease": 7,
+            "abundanceDecrease": 1,
+            "positiveBoth": 7,
+            "bothGeoRatio": 6.065691607240203,
+            "netTotalIncreaseShare": 0.014327006500044082
+          },
+          {
+            "name": "Idotea_resecata",
+            "V": 0.024999999999999998,
+            "F": 1.3166666666666667,
+            "ratio": 52.66666666666667,
+            "shareV": 0.0006297229219143578,
+            "shareF": 0.002141758758660578,
+            "shareDiff": 0.0015120358367462202,
+            "pooledShareV": 0.000043767187739351805,
+            "pooledShareF": 0.0008961335806208278,
+            "pooledShareRatio": 20.475009405621446,
+            "shareIncrease": 2,
+            "shareDecrease": 0,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 0,
+            "positiveBoth": 1,
+            "bothGeoRatio": 49.66666666666668,
+            "netTotalIncreaseShare": 0.0014382681395769638
+          },
+          {
+            "name": "Caprella_cf_drepanochir",
+            "V": 77.41666666666666,
+            "F": 192.35000000000002,
+            "ratio": 2.484607104413348,
+            "shareV": 0.14229163652047164,
+            "shareF": 0.11507827907946877,
+            "shareDiff": -0.027213357441002867,
+            "pooledShareV": 0.13553239136619274,
+            "pooledShareF": 0.1309149070119617,
+            "pooledShareRatio": 0.9659307689646298,
+            "shareIncrease": 3,
+            "shareDecrease": 5,
+            "abundanceIncrease": 7,
+            "abundanceDecrease": 1,
+            "positiveBoth": 8,
+            "bothGeoRatio": 3.022636948694906,
+            "netTotalIncreaseShare": 0.12797802697448704
+          },
+          {
+            "name": "Caprella_californica",
+            "V": 3.516666666666667,
+            "F": 19.441666666666666,
+            "ratio": 5.528436018957345,
+            "shareV": 0.04358885072707217,
+            "shareF": 0.01922615360809173,
+            "shareDiff": -0.024362697118980443,
+            "pooledShareV": 0.0061565844086688215,
+            "pooledShareF": 0.013232149642964501,
+            "pooledShareRatio": 2.1492679649340762,
+            "shareIncrease": 0,
+            "shareDecrease": 3,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 1,
+            "positiveBoth": 2,
+            "bothGeoRatio": 5.704046204421983,
+            "netTotalIncreaseShare": 0.017732454288590823
+          }
+        ],
+        "roleCoverage": {
+          "V": 0.14982967269438102,
+          "F": 0.14610947576185535
+        },
+        "movementCoverage": {
+          "V": 0.02045386573685708,
+          "F": 0.02842671839285816
+        },
+        "partialTraits": {
+          "V": {
+            "matchedCount": 11.683333333333334,
+            "meanMaxLengthMM": 18.185449358059913,
+            "meanMaxWidthMM": 3.105563480741797,
+            "meanUlvaMgDay": 2.062767475035663,
+            "meanFishPredationDay": 1.4426533523537803,
+            "tubeBuilderShare": 0.6968616262482168
+          },
+          "F": {
+            "matchedCount": 41.766666666666666,
+            "meanMaxLengthMM": 21.92198723064645,
+            "meanMaxWidthMM": 2.7296488427773347,
+            "meanUlvaMgDay": 1.678611332801277,
+            "meanFishPredationDay": 1.7504788507581803,
+            "tubeBuilderShare": 0.5029928172386274
+          }
+        }
+      }
+    },
+    {
+      "omitted": "KB",
+      "summary": {
+        "n": 11,
+        "totalV": 632.1541666666667,
+        "totalF": 1670.1166666666666,
+        "totalRatio": 2.6419452006037556,
+        "per": [
+          {
+            "name": "Ampithoe_valida",
+            "V": 9.1,
+            "F": 26.225000000000005,
+            "ratio": 2.8818681318681327,
+            "shareV": 0.015038267744351528,
+            "shareF": 0.028353492238964426,
+            "shareDiff": 0.013315224494612898,
+            "pooledShareV": 0.01439522268433992,
+            "pooledShareF": 0.015702495833624402,
+            "pooledShareRatio": 1.0908129855265538,
+            "shareIncrease": 6,
+            "shareDecrease": 2,
+            "abundanceIncrease": 7,
+            "abundanceDecrease": 1,
+            "positiveBoth": 7,
+            "bothGeoRatio": 5.969180771953128,
+            "netTotalIncreaseShare": 0.01649866926791672
+          },
+          {
+            "name": "Idotea_resecata",
+            "V": 0.008333333333333333,
+            "F": 0.075,
+            "ratio": 9,
+            "shareV": 0.00009932459276916966,
+            "shareF": 0.000054573237284435706,
+            "shareDiff": -0.000044751355484733954,
+            "pooledShareV": 0.00001318243835562264,
+            "pooledShareF": 0.00004490704242218607,
+            "pooledShareRatio": 3.4065808775834023,
+            "shareIncrease": 1,
+            "shareDecrease": 1,
+            "abundanceIncrease": 1,
+            "abundanceDecrease": 1,
+            "positiveBoth": 0,
+            "bothGeoRatio": null,
+            "netTotalIncreaseShare": 0.00006422839617680472
+          },
+          {
+            "name": "Caprella_cf_drepanochir",
+            "V": 97.21666666666667,
+            "F": 248.875,
+            "ratio": 2.560003428767358,
+            "shareV": 0.14939756218870207,
+            "shareF": 0.1321115841152048,
+            "shareDiff": -0.01728597807349727,
+            "pooledShareV": 0.15378632585669372,
+            "pooledShareF": 0.14901653577095414,
+            "pooledShareRatio": 0.9689843029985363,
+            "shareIncrease": 3,
+            "shareDecrease": 5,
+            "abundanceIncrease": 8,
+            "abundanceDecrease": 0,
+            "positiveBoth": 8,
+            "bothGeoRatio": 3.0657698721634206,
+            "netTotalIncreaseShare": 0.14611157275270864
+          },
+          {
+            "name": "Caprella_californica",
+            "V": 3.516666666666667,
+            "F": 19.441666666666666,
+            "ratio": 5.528436018957345,
+            "shareV": 0.04358885072707217,
+            "shareF": 0.01922615360809173,
+            "shareDiff": -0.024362697118980443,
+            "pooledShareV": 0.005562988986072754,
+            "pooledShareF": 0.01164090333010668,
+            "pooledShareRatio": 2.0925627139026006,
+            "shareIncrease": 0,
+            "shareDecrease": 3,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 1,
+            "positiveBoth": 2,
+            "bothGeoRatio": 5.704046204421983,
+            "netTotalIncreaseShare": 0.015342558136734227
+          }
+        ],
+        "roleCoverage": {
+          "V": 0.16819473097938925,
+          "F": 0.16476393864700073
+        },
+        "movementCoverage": {
+          "V": 0.019971394108768296,
+          "F": 0.02738830620615327
+        },
+        "partialTraits": {
+          "V": {
+            "matchedCount": 12.625,
+            "meanMaxLengthMM": 17.75643564356436,
+            "meanMaxWidthMM": 3.166996699669967,
+            "meanUlvaMgDay": 2.1217821782178214,
+            "meanFishPredationDay": 1.4016501650165016,
+            "tubeBuilderShare": 0.7207920792079208
+          },
+          "F": {
+            "matchedCount": 45.741666666666674,
+            "meanMaxLengthMM": 20.278010566587717,
+            "meanMaxWidthMM": 2.7314629258517034,
+            "meanUlvaMgDay": 1.7141738021497537,
+            "meanFishPredationDay": 1.6657132446711604,
+            "tubeBuilderShare": 0.5733284751320824
+          }
+        }
+      }
+    },
+    {
+      "omitted": "BFI",
+      "summary": {
+        "n": 12,
+        "totalV": 271.1916666666667,
+        "totalF": 813.2833333333334,
+        "totalRatio": 2.99892449989245,
+        "per": [
+          {
+            "name": "Ampithoe_valida",
+            "V": 9.283333333333333,
+            "F": 28.175000000000004,
+            "ratio": 3.035008976660683,
+            "shareV": 0.019980928878497013,
+            "shareF": 0.03373672817454427,
+            "shareDiff": 0.013755799296047255,
+            "pooledShareV": 0.03423163199459176,
+            "pooledShareF": 0.03464352316740783,
+            "pooledShareRatio": 1.0120324725645902,
+            "shareIncrease": 8,
+            "shareDecrease": 3,
+            "abundanceIncrease": 10,
+            "abundanceDecrease": 1,
+            "positiveBoth": 10,
+            "bothGeoRatio": 6.425701173041,
+            "netTotalIncreaseShare": 0.03484957956065242
+          },
+          {
+            "name": "Idotea_resecata",
+            "V": 0.03333333333333333,
+            "F": 1.3166666666666667,
+            "ratio": 39.5,
+            "shareV": 0.0007290475146835274,
+            "shareF": 0.002141758758660578,
+            "shareDiff": 0.0014127112439770507,
+            "pooledShareV": 0.0001229142980057155,
+            "pooledShareF": 0.001618951984753161,
+            "pooledShareRatio": 13.171388609955532,
+            "shareIncrease": 2,
+            "shareDecrease": 1,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 1,
+            "positiveBoth": 1,
+            "bothGeoRatio": 49.66666666666668,
+            "netTotalIncreaseShare": 0.002367373291724954
+          },
+          {
+            "name": "Caprella_cf_drepanochir",
+            "V": 55.49166666666667,
+            "F": 147.19166666666666,
+            "ratio": 2.6525003754317464,
+            "shareV": 0.15069167480239556,
+            "shareF": 0.12661820157463538,
+            "shareDiff": -0.024073473227760184,
+            "pooledShareV": 0.20462157760501487,
+            "pooledShareF": 0.18098448675123469,
+            "pooledShareRatio": 0.8844838793130246,
+            "shareIncrease": 5,
+            "shareDecrease": 4,
+            "abundanceIncrease": 8,
+            "abundanceDecrease": 1,
+            "positiveBoth": 9,
+            "bothGeoRatio": 3.2501535667524957,
+            "netTotalIncreaseShare": 0.16915958248143761
+          },
+          {
+            "name": "Caprella_californica",
+            "V": 3.516666666666667,
+            "F": 19.441666666666666,
+            "ratio": 5.528436018957345,
+            "shareV": 0.04358885072707217,
+            "shareF": 0.01922615360809173,
+            "shareDiff": -0.024362697118980443,
+            "pooledShareV": 0.012967458439602985,
+            "pooledShareF": 0.023905158103981798,
+            "pooledShareRatio": 1.8434728914167766,
+            "shareIncrease": 0,
+            "shareDecrease": 3,
+            "abundanceIncrease": 2,
+            "abundanceDecrease": 1,
+            "positiveBoth": 2,
+            "bothGeoRatio": 5.704046204421983,
+            "netTotalIncreaseShare": 0.029376950392768747
+          }
+        ],
+        "roleCoverage": {
+          "V": 0.23897612389761236,
+          "F": 0.21724696190339568
+        },
+        "movementCoverage": {
+          "V": 0.04732200473220047,
+          "F": 0.06016763325614279
+        },
+        "partialTraits": {
+          "V": {
+            "matchedCount": 12.833333333333334,
+            "meanMaxLengthMM": 17.741558441558443,
+            "meanMaxWidthMM": 3.1883116883116878,
+            "meanUlvaMgDay": 2.1394805194805193,
+            "meanFishPredationDay": 1.3942857142857144,
+            "tubeBuilderShare": 0.7233766233766233
+          },
+          "F": {
+            "matchedCount": 48.93333333333334,
+            "meanMaxLengthMM": 20.615292915531334,
+            "meanMaxWidthMM": 2.9157016348773843,
+            "meanUlvaMgDay": 1.857493188010899,
+            "meanFishPredationDay": 1.6259196185286102,
+            "tubeBuilderShare": 0.575783378746594
+          }
+        }
+      }
+    },
+    {
+      "omitted": "RB",
+      "summary": {
+        "n": 11,
+        "totalV": 631.8041666666667,
+        "totalF": 1636.5083333333332,
+        "totalRatio": 2.590214531137681,
+        "per": [
+          {
+            "name": "Ampithoe_valida",
+            "V": 9.275,
+            "F": 27.383333333333336,
+            "ratio": 2.9523809523809526,
+            "shareV": 0.019929361221731338,
+            "shareF": 0.029731975844924114,
+            "shareDiff": 0.009802614623192776,
+            "pooledShareV": 0.014680181754631249,
+            "pooledShareF": 0.0167327796477256,
+            "pooledShareRatio": 1.139821013622451,
+            "shareIncrease": 6,
+            "shareDecrease": 3,
+            "abundanceIncrease": 8,
+            "abundanceDecrease": 1,
+            "positiveBoth": 9,
+            "bothGeoRatio": 4.9566093055496685,
+            "netTotalIncreaseShare": 0.018023547561678607
+          },
+          {
+            "name": "Idotea_resecata",
+            "V": 0.03333333333333333,
+            "F": 1.2416666666666667,
+            "ratio": 37.25,
+            "shareV": 0.0007290475146835274,
+            "shareF": 0.0020871855213761424,
+            "shareDiff": 0.001358138006692615,
+            "pooledShareV": 0.000052758964077740334,
+            "pooledShareF": 0.0007587292049638204,
+            "pooledShareRatio": 14.381048192034873,
+            "shareIncrease": 1,
+            "shareDecrease": 1,
+            "abundanceIncrease": 1,
+            "abundanceDecrease": 1,
+            "positiveBoth": 1,
+            "bothGeoRatio": 49.66666666666668,
+            "netTotalIncreaseShare": 0.0012026757461773574
+          },
+          {
+            "name": "Caprella_cf_drepanochir",
+            "V": 98.69166666666666,
+            "F": 265.6166666666667,
+            "ratio": 2.6913788735962174,
+            "shareV": 0.1935573719317623,
+            "shareF": 0.16519075681781967,
+            "shareDiff": -0.028366615113942645,
+            "pooledShareV": 0.1562061028931697,
+            "pooledShareF": 0.16230694415447525,
+            "pooledShareRatio": 1.0390563566231337,
+            "shareIncrease": 5,
+            "shareDecrease": 6,
+            "abundanceIncrease": 10,
+            "abundanceDecrease": 1,
+            "positiveBoth": 11,
+            "bothGeoRatio": 3.353252367812484,
+            "netTotalIncreaseShare": 0.1661434335977838
+          },
+          {
+            "name": "Caprella_californica",
+            "V": 0,
+            "F": 0,
+            "ratio": null,
+            "shareV": 0,
+            "shareF": 0,
+            "shareDiff": 0,
+            "pooledShareV": 0,
+            "pooledShareF": 0,
+            "pooledShareRatio": null,
+            "shareIncrease": 0,
+            "shareDecrease": 0,
+            "abundanceIncrease": 0,
+            "abundanceDecrease": 0,
+            "positiveBoth": 0,
+            "bothGeoRatio": null,
+            "netTotalIncreaseShare": 0
+          }
+        ],
+        "roleCoverage": {
+          "V": 0.17093904361187867,
+          "F": 0.17979845300716465
+        },
+        "movementCoverage": {
+          "V": 0.014732940718708988,
+          "F": 0.01749150885268942
+        },
+        "partialTraits": {
+          "V": {
+            "matchedCount": 9.308333333333334,
+            "meanMaxLengthMM": 13.114592658907789,
+            "meanMaxWidthMM": 4.014324082363474,
+            "meanUlvaMgDay": 2.909310653536258,
+            "meanFishPredationDay": 0.9014324082363473,
+            "tubeBuilderShare": 0.9964189794091316
+          },
+          "F": {
+            "matchedCount": 28.625000000000004,
+            "meanMaxLengthMM": 14.388064046579329,
+            "meanMaxWidthMM": 4.173508005822416,
+            "meanUlvaMgDay": 3.0127802037845703,
+            "meanFishPredationDay": 0.9173508005822416,
+            "tubeBuilderShare": 0.9566229985443959
+          }
+        }
+      }
+    }
+  ],
+  "focalScenarios": [
+    {
+      "f": 0.01,
+      "allAnimalFlowerShare": 0.026776664318102553,
+      "AmpithoeFlowerShare": 0.029744780807094414
+    },
+    {
+      "f": 0.05,
+      "allAnimalFlowerShare": 0.1253842149822463,
+      "AmpithoeFlowerShare": 0.13773577219212124
+    },
+    {
+      "f": 0.1,
+      "allAnimalFlowerShare": 0.2323324320634219,
+      "AmpithoeFlowerShare": 0.2521816961288879
+    },
+    {
+      "f": 0.2,
+      "allAnimalFlowerShare": 0.4051004935282971,
+      "AmpithoeFlowerShare": 0.43141508230190123
+    },
+    {
+      "f": 0.3,
+      "allAnimalFlowerShare": 0.5386077882941269,
+      "AmpithoeFlowerShare": 0.5653531018337886
+    },
+    {
+      "f": 0.5,
+      "allAnimalFlowerShare": 0.7314588954661667,
+      "AmpithoeFlowerShare": 0.7521690767519467
+    }
+  ],
+  "lab": {
+    "expt1": {
+      "leaf": 0.07,
+      "early": 0.1,
+      "late": 0.3,
+      "spent": 0.3,
+      "looseSeed": 0.0001,
+      "attachedFruit": 0.09
+    },
+    "expt2": {
+      "leaf": 0.1,
+      "early": 0.005,
+      "late": 0.7,
+      "macroalga": 0.6,
+      "attachedFruit": 0.2
+    },
+    "bicoastal": {
+      "CA_leaf": 0.3,
+      "VA_leaf": 0.03,
+      "CA_late": 0.5,
+      "VA_late": 0.002,
+      "Gracilaria": 1.8
+    }
+  },
+  "ratios": {
+    "lateEarly1": 2.9999999999999996,
+    "lateEarly2": 140,
+    "lateLeaf1": 4.285714285714286,
+    "lateLeaf2": 6.999999999999999,
+    "attachedFruitVsLooseSeed1": 899.9999999999999,
+    "CA_VA_leaf": 10,
+    "CA_VA_late": 250
+  },
+  "limits": [
+    "Species-level labels only, no genus or juvenile trait transfer. Local net biomass effects are context specific; not net reproductive effects. Only A. valida has local direct reproductive consumption evidence in matched categories, unknowns not assumed neutral.",
+    "Maximum reported body dimensions are species traits from Bodega Harbor, not observed size distribution in Carr; partial matched-only community composition metrics, not representative whole assemblage.",
+    "Bodega Harbor assay rates are not measured SF Bay rates; numerical partial-trait means are standardized indices only, no realized consumption or cascade.",
+    "A. valida and total abundance per shoot not encounter probabilities; field and feeding studies overlap region and possibly samples; not independent meta-analysis.",
+    "Flowering fractions are scenarios, not observed site-month shoot density. No transfer to Thalassia animal pollination or direct otter benefit.",
+    "Zeros in previous ledger are reported/omitted-category bookkeeping, not true absence. Ratio over zero denominator undefined; no pseudocounts."
+  ]
+}
