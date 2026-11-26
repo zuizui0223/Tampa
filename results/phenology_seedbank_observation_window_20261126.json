@@ -1,0 +1,1179 @@
+{
+  "source": {
+    "paper": "10.1016/j.aquabot.2021.103444",
+    "tables": "2 and 3; methods 2.4; results 3.3–3.5",
+    "url": "https://www.researchgate.net/publication/354307476_Reproductive_ecology_of_Zostera_marina_L_eelgrass_across_varying_environmental_conditions",
+    "dataset": "https://open.canada.ca/data/en/dataset/56cfea6f-aeca-47ed-94ab-c519d9e63c91"
+  },
+  "status": "Executed published site-mean accounting, not raw cohort data or validated forecast",
+  "rows": [
+    {
+      "site": "L3F",
+      "bay": "L3F",
+      "peak": "2018-07-09",
+      "winter": "2018-11-28",
+      "shoots": 107.4,
+      "pistils": 241.7,
+      "fert": 0.882,
+      "herb": 0.0095,
+      "potential": 22913,
+      "bank": 1546.4,
+      "bankSE": 298.8,
+      "coats": 909.7,
+      "germ": 0.565,
+      "germPooled": false,
+      "lagDays": 142,
+      "calculatedPotential": 22895.46756,
+      "bankPerPotential": 0.06749007113865492,
+      "logRatio": -2.6957747861652215,
+      "coatsPerSeed": 0.5882695292291774,
+      "excessOverPotential": 0,
+      "excessShareOfBank": 0
+    },
+    {
+      "site": "PH-1",
+      "bay": "PH",
+      "peak": "2018-07-12",
+      "winter": "2018-12-06",
+      "shoots": 0.8,
+      "pistils": 108.2,
+      "fert": 0.771,
+      "herb": 0.1234,
+      "potential": 67,
+      "bank": 218.3,
+      "bankSE": 69,
+      "coats": 927.9,
+      "germ": 0.667,
+      "germPooled": true,
+      "lagDays": 147,
+      "calculatedPotential": 66.73776000000001,
+      "bankPerPotential": 3.2582089552238807,
+      "logRatio": 1.1811776441649322,
+      "coatsPerSeed": 4.25057260650481,
+      "excessOverPotential": 151.3,
+      "excessShareOfBank": 0.6930829134218965
+    },
+    {
+      "site": "TH shallow",
+      "bay": "TH",
+      "peak": "2018-08-02",
+      "winter": "2018-12-10",
+      "shoots": 5.6,
+      "pistils": 102.7,
+      "fert": 0.939,
+      "herb": 0.0107,
+      "potential": 540,
+      "bank": 18.2,
+      "bankSE": 18.2,
+      "coats": 272.9,
+      "germ": 0.333,
+      "germPooled": true,
+      "lagDays": 130,
+      "calculatedPotential": 540.03768,
+      "bankPerPotential": 0.0337037037037037,
+      "logRatio": -3.3901475454755703,
+      "coatsPerSeed": 14.994505494505495,
+      "excessOverPotential": 0,
+      "excessShareOfBank": 0
+    },
+    {
+      "site": "TH deep",
+      "bay": "TH",
+      "peak": "2018-08-02",
+      "winter": "2018-12-10",
+      "shoots": 4.4,
+      "pistils": 78.8,
+      "fert": 0.882,
+      "herb": 0.0359,
+      "potential": 306,
+      "bank": 36.4,
+      "bankSE": 23,
+      "coats": 1655.6,
+      "germ": 0.5,
+      "germPooled": true,
+      "lagDays": 130,
+      "calculatedPotential": 305.80704000000003,
+      "bankPerPotential": 0.11895424836601307,
+      "logRatio": -2.129016327309686,
+      "coatsPerSeed": 45.48351648351648,
+      "excessOverPotential": 0,
+      "excessShareOfBank": 0
+    },
+    {
+      "site": "Sambro shallow",
+      "bay": "Sambro",
+      "peak": "2018-08-09",
+      "winter": "2018-12-20",
+      "shoots": 23.2,
+      "pistils": 89.3,
+      "fert": 0.927,
+      "herb": 0.0297,
+      "potential": 1920,
+      "bank": 121.3,
+      "bankSE": 46.2,
+      "coats": 715.6,
+      "germ": 0.05,
+      "germPooled": false,
+      "lagDays": 133,
+      "calculatedPotential": 1920.5215199999998,
+      "bankPerPotential": 0.06317708333333333,
+      "logRatio": -2.761813649071823,
+      "coatsPerSeed": 5.899422918384172,
+      "excessOverPotential": 0,
+      "excessShareOfBank": 0
+    },
+    {
+      "site": "Sambro deep",
+      "bay": "Sambro",
+      "peak": "2018-09-17",
+      "winter": "2018-12-11",
+      "shoots": 9.6,
+      "pistils": 126.4,
+      "fert": 0.841,
+      "herb": 0.0514,
+      "potential": 1020,
+      "bank": 236.5,
+      "bankSE": 124.2,
+      "coats": 927.9,
+      "germ": 0.213,
+      "germPooled": false,
+      "lagDays": 85,
+      "calculatedPotential": 1020.50304,
+      "bankPerPotential": 0.23186274509803922,
+      "logRatio": -1.4616096983463291,
+      "coatsPerSeed": 3.9234672304439746,
+      "excessOverPotential": 0,
+      "excessShareOfBank": 0
+    }
+  ],
+  "pairs": [
+    {
+      "a": "L3F",
+      "b": "PH-1",
+      "peakDateDifferenceDays": 3,
+      "lagDifferenceDays": 5,
+      "potentialRatio": 0.0029241042203116134,
+      "bankRatio": 0.1411665804449043,
+      "bankPerPotentialRatio": 48.27686354827003,
+      "herbivoryDifferencePP": 11.39,
+      "reproductiveShootRatio": 0.0074487895716946,
+      "pistilRatio": 0.4476623913942905,
+      "fertilizationRatio": 0.8741496598639455,
+      "impliedCommonHazardPerDay": -0.7753904860660307,
+      "impliedHalfLifeDays": null,
+      "bankDifference": -1328.1000000000001
+    },
+    {
+      "a": "TH shallow",
+      "b": "TH deep",
+      "peakDateDifferenceDays": 0,
+      "lagDifferenceDays": 0,
+      "potentialRatio": 0.5666666666666667,
+      "bankRatio": 2,
+      "bankPerPotentialRatio": 3.5294117647058822,
+      "herbivoryDifferencePP": 2.52,
+      "reproductiveShootRatio": 0.7857142857142858,
+      "pistilRatio": 0.7672833495618305,
+      "fertilizationRatio": 0.9392971246006391,
+      "impliedCommonHazardPerDay": null,
+      "impliedHalfLifeDays": null,
+      "bankDifference": 18.2
+    },
+    {
+      "a": "Sambro shallow",
+      "b": "Sambro deep",
+      "peakDateDifferenceDays": 39,
+      "lagDifferenceDays": -48,
+      "potentialRatio": 0.53125,
+      "bankRatio": 1.9497114591920859,
+      "bankPerPotentialRatio": 3.6700450996556913,
+      "herbivoryDifferencePP": 2.17,
+      "reproductiveShootRatio": 0.41379310344827586,
+      "pistilRatio": 1.4154535274356104,
+      "fertilizationRatio": 0.90722761596548,
+      "impliedCommonHazardPerDay": 0.027087582306781124,
+      "impliedHalfLifeDays": 25.589112114536054,
+      "bankDifference": 115.2
+    }
+  ],
+  "cvResults": {
+    "all": {
+      "site": {
+        "constant bank/potential ratio": {
+          "rmseLogBank": 1.7887254104688046,
+          "maeLogBank": 1.3887850932879342,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -1.7122819152076953,
+              "error": 0.9834928709575261,
+              "predictedBank": 4134.732025097226,
+              "slope": 0
+            },
+            {
+              "site": "PH-1",
+              "group": "PH-1",
+              "observed": 1.1811776441649322,
+              "predicted": -2.4876724012737257,
+              "error": -3.668850045438658,
+              "predictedBank": 5.567912555720613,
+              "slope": 0
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -1.5734073633456256,
+              "error": 1.8167401821299447,
+              "predictedBank": 111.96225171350952,
+              "slope": 0
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -1.8256336069788024,
+              "error": 0.30338272033088365,
+              "predictedBank": 49.301351525024465,
+              "slope": 0
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -1.699074142626375,
+              "error": 1.0627395064454481,
+              "predictedBank": 351.0772632267497,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -1.9591149327714739,
+              "error": -0.4975052344251447,
+              "predictedBank": 143.80280818544045,
+              "slope": 0
+            }
+          ]
+        },
+        "peak-to-winter lag": {
+          "rmseLogBank": 4.416282925565266,
+          "maeLogBank": 3.069893501411291,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -1.4434377621901002,
+              "error": 1.2523370239751213,
+              "predictedBank": 5410.095108791354,
+              "slope": 0.01581436194221147
+            },
+            {
+              "site": "PH-1",
+              "group": "PH-1",
+              "observed": 1.1811776441649322,
+              "predicted": -3.0574055853868276,
+              "error": -4.23858322955176,
+              "predictedBank": 3.149636451655346,
+              "slope": -0.024771008004917463
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -1.546946366343154,
+              "error": 1.8432011791324163,
+              "predictedBank": 114.96442966018789,
+              "slope": 0.01017730653941205
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -1.8026763281395735,
+              "error": 0.3263399991701126,
+              "predictedBank": 50.44626820084327,
+              "slope": 0.008829722630472672
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -1.6312781352745465,
+              "error": 1.1305355137972766,
+              "predictedBank": 375.7042744260916,
+              "slope": 0.010934839895456207
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -11.089973761187387,
+              "error": -9.628364062841058,
+              "predictedBank": 0.01556989783353207,
+              "slope": 0.17764316786801382
+            }
+          ]
+        },
+        "lag with nonpositive slope": {
+          "rmseLogBank": 1.987559588300141,
+          "maeLogBank": 1.483740623973451,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -1.7122819152076953,
+              "error": 0.9834928709575261,
+              "predictedBank": 4134.732025097226,
+              "slope": 0
+            },
+            {
+              "site": "PH-1",
+              "group": "PH-1",
+              "observed": 1.1811776441649322,
+              "predicted": -3.0574055853868276,
+              "error": -4.23858322955176,
+              "predictedBank": 3.149636451655346,
+              "slope": -0.024771008004917463
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -1.5734073633456256,
+              "error": 1.8167401821299447,
+              "predictedBank": 111.96225171350952,
+              "slope": 0
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -1.8256336069788024,
+              "error": 0.30338272033088365,
+              "predictedBank": 49.301351525024465,
+              "slope": 0
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -1.699074142626375,
+              "error": 1.0627395064454481,
+              "predictedBank": 351.0772632267497,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -1.9591149327714739,
+              "error": -0.4975052344251447,
+              "predictedBank": 143.80280818544045,
+              "slope": 0
+            }
+          ]
+        },
+        "observed spathe herbivory": {
+          "rmseLogBank": 0.3728037680144085,
+          "maeLogBank": 0.3045310299685354,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.3630253827006005,
+              "error": -0.667250596535379,
+              "predictedBank": 793.4847581161611,
+              "slope": 40.53888672625013
+            },
+            {
+              "site": "PH-1",
+              "group": "PH-1",
+              "observed": 1.1811776441649322,
+              "predicted": 1.0234121885183862,
+              "error": -0.15776545564654598,
+              "predictedBank": 186.43913052134062,
+              "slope": 36.58904324501992
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -3.0116168645171344,
+              "error": 0.3785306809584359,
+              "predictedBank": 26.57450440248136,
+              "slope": 36.61429483634188
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -2.169483775756907,
+              "error": -0.040467448447221166,
+              "predictedBank": 34.95639145451706,
+              "slope": 38.03652309492316
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -2.313999101775773,
+              "error": 0.44781454729604997,
+              "predictedBank": 189.82096970624355,
+              "slope": 37.31340771537611
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -1.5969671492739097,
+              "error": -0.13535745092758056,
+              "predictedBank": 206.55996486540178,
+              "slope": 37.8815673114607
+            }
+          ]
+        }
+      },
+      "bay": {
+        "constant bank/potential ratio": {
+          "rmseLogBank": 1.8179415343181762,
+          "maeLogBank": 1.4337834158662857,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -1.7122819152076953,
+              "error": 0.9834928709575261,
+              "predictedBank": 4134.732025097226,
+              "slope": 0
+            },
+            {
+              "site": "PH-1",
+              "group": "PH",
+              "observed": 1.1811776441649322,
+              "predicted": -2.4876724012737257,
+              "error": -3.668850045438658,
+              "predictedBank": 5.567912555720613,
+              "slope": 0
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -1.4345051223546104,
+              "error": 1.95564242312096,
+              "predictedBank": 128.64594481984489,
+              "slope": 0
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -1.4345051223546104,
+              "error": 0.6945112049550757,
+              "predictedBank": 72.89936873124543,
+              "slope": 0
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -1.7584402536963863,
+              "error": 1.0033733953754367,
+              "predictedBank": 330.841765532945,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -1.7584402536963863,
+              "error": -0.2968305553500572,
+              "predictedBank": 175.75968793937702,
+              "slope": 0
+            }
+          ]
+        },
+        "peak-to-winter lag": {
+          "rmseLogBank": 4.32237379855406,
+          "maeLogBank": 2.9762313606573767,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -1.4434377621901002,
+              "error": 1.2523370239751213,
+              "predictedBank": 5410.095108791354,
+              "slope": 0.01581436194221147
+            },
+            {
+              "site": "PH-1",
+              "group": "PH",
+              "observed": 1.1811776441649322,
+              "predicted": -3.0574055853868276,
+              "error": -4.23858322955176,
+              "predictedBank": 3.149636451655346,
+              "slope": -0.024771008004917463
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -1.3988933099760614,
+              "error": 1.9912542354995089,
+              "predictedBank": 133.30981156067227,
+              "slope": 0.010957480731861261
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -1.3988933099760614,
+              "error": 0.7301230173336246,
+              "predictedBank": 75.54222655104762,
+              "slope": 0.010957480731861261
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -2.497310430866168,
+              "error": 0.2645032182056548,
+              "predictedBank": 158.02765259788072,
+              "slope": 0.17385180639289066
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -10.84219713772492,
+              "error": -9.38058743937859,
+              "predictedBank": 0.019947743866365268,
+              "slope": 0.17385180639289066
+            }
+          ]
+        },
+        "lag with nonpositive slope": {
+          "rmseLogBank": 2.0138932308308095,
+          "maeLogBank": 1.5287389465518026,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -1.7122819152076953,
+              "error": 0.9834928709575261,
+              "predictedBank": 4134.732025097226,
+              "slope": 0
+            },
+            {
+              "site": "PH-1",
+              "group": "PH",
+              "observed": 1.1811776441649322,
+              "predicted": -3.0574055853868276,
+              "error": -4.23858322955176,
+              "predictedBank": 3.149636451655346,
+              "slope": -0.024771008004917463
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -1.4345051223546104,
+              "error": 1.95564242312096,
+              "predictedBank": 128.64594481984489,
+              "slope": 0
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -1.4345051223546104,
+              "error": 0.6945112049550757,
+              "predictedBank": 72.89936873124543,
+              "slope": 0
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -1.7584402536963863,
+              "error": 1.0033733953754367,
+              "predictedBank": 330.841765532945,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -1.7584402536963863,
+              "error": -0.2968305553500572,
+              "predictedBank": 175.75968793937702,
+              "slope": 0
+            }
+          ]
+        },
+        "observed spathe herbivory": {
+          "rmseLogBank": 0.36998786383843973,
+          "maeLogBank": 0.29343832050783514,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.3630253827006005,
+              "error": -0.667250596535379,
+              "predictedBank": 793.4847581161611,
+              "slope": 40.53888672625013
+            },
+            {
+              "site": "PH-1",
+              "group": "PH",
+              "observed": 1.1811776441649322,
+              "predicted": 1.0234121885183862,
+              "error": -0.15776545564654598,
+              "predictedBank": 186.43913052134062,
+              "slope": 36.58904324501992
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -2.9975131049331183,
+              "error": 0.392634440542452,
+              "predictedBank": 26.951960340725822,
+              "slope": 36.51887809762869
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -2.0772373768728754,
+              "error": 0.05177895043681069,
+              "predictedBank": 38.334402287971365,
+              "slope": 36.51887809762869
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -2.3241834642950963,
+              "error": 0.43763018477672677,
+              "predictedBank": 187.89757503599174,
+              "slope": 37.28126593731203
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -1.5151799934554255,
+              "error": -0.05357029510909639,
+              "predictedBank": 224.1639968609294,
+              "slope": 37.28126593731203
+            }
+          ]
+        }
+      }
+    },
+    "omit_PH1_response_open_sensitivity": {
+      "site": {
+        "constant bank/potential ratio": {
+          "rmseLogBank": 0.8128576639651348,
+          "maeLogBank": 0.6923593884457183,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -2.435646805050852,
+              "error": 0.2601279811143695,
+              "predictedBank": 2005.8293778727593,
+              "slope": 0
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -2.2620536152232646,
+              "error": 1.1280939302523056,
+              "predictedBank": 56.23366080636172,
+              "slope": 0
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -2.5773364197647357,
+              "error": -0.44832009245504967,
+              "predictedBank": 23.248687578130358,
+              "slope": 0
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -2.4191370893242015,
+              "error": 0.34267655974762157,
+              "predictedBank": 170.876893417159,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -2.7441880770055747,
+              "error": -1.2825783786592455,
+              "predictedBank": 65.58649653597337,
+              "slope": 0
+            }
+          ]
+        },
+        "peak-to-winter lag": {
+          "rmseLogBank": 0.8822756947365048,
+          "maeLogBank": 0.7203213577486437,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.068558815414785,
+              "error": -0.37278402924956344,
+              "predictedBank": 1065.1819393726441,
+              "slope": -0.02812942268284146
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -2.4261239317067944,
+              "error": 0.9640236137687759,
+              "predictedBank": 47.724515032454434,
+              "slope": -0.021876042197804025
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -2.7777296399972835,
+              "error": -0.6487133126875975,
+              "predictedBank": 19.026932243010698,
+              "slope": -0.026719096031006345
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -2.6943944140934573,
+              "error": 0.06741923497836577,
+              "predictedBank": 129.7599300024489,
+              "slope": -0.02446731775726717
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -3.0102762964052454,
+              "error": -1.5486665980589163,
+              "predictedBank": 50.26362275865684,
+              "slope": 0.005458219885121459
+            }
+          ]
+        },
+        "lag with nonpositive slope": {
+          "rmseLogBank": 0.7922993213520649,
+          "maeLogBank": 0.6671037138687096,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.068558815414785,
+              "error": -0.37278402924956344,
+              "predictedBank": 1065.1819393726441,
+              "slope": -0.02812942268284146
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -2.4261239317067944,
+              "error": 0.9640236137687759,
+              "predictedBank": 47.724515032454434,
+              "slope": -0.021876042197804025
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -2.7777296399972835,
+              "error": -0.6487133126875975,
+              "predictedBank": 19.026932243010698,
+              "slope": -0.026719096031006345
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -2.6943944140934573,
+              "error": 0.06741923497836577,
+              "predictedBank": 129.7599300024489,
+              "slope": -0.02446731775726717
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -2.7441880770055747,
+              "error": -1.2825783786592455,
+              "predictedBank": 65.58649653597337,
+              "slope": 0
+            }
+          ]
+        },
+        "observed spathe herbivory": {
+          "rmseLogBank": 0.5159335753463508,
+          "maeLogBank": 0.4560255186492781,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.521219750554115,
+              "error": -0.8254449643888937,
+              "predictedBank": 677.3851130261272,
+              "slope": 48.40904996670069
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH shallow",
+              "observed": -3.3901475454755703,
+              "predicted": -2.8870031011319526,
+              "error": 0.5031444443436177,
+              "predictedBank": 30.101230111948396,
+              "slope": 29.866164201132037
+            },
+            {
+              "site": "TH deep",
+              "group": "TH deep",
+              "observed": -2.129016327309686,
+              "predicted": -2.1951283335096345,
+              "error": -0.0661120061999485,
+              "predictedBank": 34.07134704437822,
+              "slope": 36.142608629324
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro shallow",
+              "observed": -2.761813649071823,
+              "predicted": -2.3134883520638976,
+              "error": 0.44832529700792545,
+              "predictedBank": 189.91794547489374,
+              "slope": 37.39778310099257
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro deep",
+              "observed": -1.4616096983463291,
+              "predicted": -1.8987105796523343,
+              "error": -0.4371008813060051,
+              "predictedBank": 152.7568324425225,
+              "slope": 28.22963263282939
+            }
+          ]
+        }
+      },
+      "bay": {
+        "constant bank/potential ratio": {
+          "rmseLogBank": 0.7621239689201929,
+          "maeLogBank": 0.5642926300011496,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -2.435646805050852,
+              "error": 0.2601279811143695,
+              "predictedBank": 2005.8293778727593,
+              "slope": 0
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -2.3063993778611245,
+              "error": 1.0837481676144458,
+              "predictedBank": 53.79442093497956,
+              "slope": 0
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -2.3063993778611245,
+              "error": -0.17738305055143844,
+              "predictedBank": 30.48350519648842,
+              "slope": 0
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -2.7383128863168253,
+              "error": 0.023500762754997684,
+              "predictedBank": 124.1844026028037,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -2.7383128863168253,
+              "error": -1.2767031879704962,
+              "predictedBank": 65.97296388273946,
+              "slope": 0
+            }
+          ]
+        },
+        "peak-to-winter lag": {
+          "rmseLogBank": 0.823800049576366,
+          "maeLogBank": 0.6378695598101137,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.068558815414785,
+              "error": -0.37278402924956344,
+              "predictedBank": 1065.1819393726441,
+              "slope": -0.02812942268284146
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -2.540980226058393,
+              "error": 0.8491673194171772,
+              "predictedBank": 42.546130614293716,
+              "slope": -0.023458084819726863
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -2.540980226058393,
+              "error": -0.4119638987487071,
+              "predictedBank": 24.109474014766437,
+              "slope": -0.023458084819726863
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -2.743630148835776,
+              "error": 0.018183500236046868,
+              "predictedBank": 123.52583397619993,
+              "slope": 0.005317262518950557
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -2.998858749745403,
+              "error": -1.5372490513990738,
+              "predictedBank": 50.840798713434786,
+              "slope": 0.005317262518950557
+            }
+          ]
+        },
+        "lag with nonpositive slope": {
+          "rmseLogBank": 0.7294231472507605,
+          "maeLogBank": 0.5868238396281884,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.068558815414785,
+              "error": -0.37278402924956344,
+              "predictedBank": 1065.1819393726441,
+              "slope": -0.02812942268284146
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -2.540980226058393,
+              "error": 0.8491673194171772,
+              "predictedBank": 42.546130614293716,
+              "slope": -0.023458084819726863
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -2.540980226058393,
+              "error": -0.4119638987487071,
+              "predictedBank": 24.109474014766437,
+              "slope": -0.023458084819726863
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -2.7383128863168253,
+              "error": 0.023500762754997684,
+              "predictedBank": 124.1844026028037,
+              "slope": 0
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -2.7383128863168253,
+              "error": -1.2767031879704962,
+              "predictedBank": 65.97296388273946,
+              "slope": 0
+            }
+          ]
+        },
+        "observed spathe herbivory": {
+          "rmseLogBank": 0.47286303040003946,
+          "maeLogBank": 0.3775818196419905,
+          "predictions": [
+            {
+              "site": "L3F",
+              "group": "L3F",
+              "observed": -2.6957747861652215,
+              "predicted": -3.521219750554115,
+              "error": -0.8254449643888937,
+              "predictedBank": 677.3851130261272,
+              "slope": 48.40904996670069
+            },
+            {
+              "site": "TH shallow",
+              "group": "TH",
+              "observed": -3.3901475454755703,
+              "predicted": -2.888111243557985,
+              "error": 0.5020363019175851,
+              "predictedBank": 30.06789213680943,
+              "slope": 29.831377728044153
+            },
+            {
+              "site": "TH deep",
+              "group": "TH",
+              "observed": -2.129016327309686,
+              "predicted": -2.1363605248112725,
+              "error": -0.007344197501586436,
+              "predictedBank": 36.13365046989774,
+              "slope": 29.831377728044153
+            },
+            {
+              "site": "Sambro shallow",
+              "group": "Sambro",
+              "observed": -2.761813649071823,
+              "predicted": -2.35958830200532,
+              "error": 0.40222534706650315,
+              "predictedBank": 181.36147932640682,
+              "slope": 34.429507664682326
+            },
+            {
+              "site": "Sambro deep",
+              "group": "Sambro",
+              "observed": -1.4616096983463291,
+              "predicted": -1.6124679856817132,
+              "error": -0.1508582873353841,
+              "predictedBank": 203.3828006093945,
+              "slope": 34.429507664682326
+            }
+          ]
+        }
+      }
+    }
+  },
+  "fullFits": {
+    "constant bank/potential ratio": {
+      "a": -1.8761973937006164,
+      "b": 0,
+      "key": null
+    },
+    "peak-to-winter lag": {
+      "a": -2.9678686497466966,
+      "b": 0.008539801220699455,
+      "key": "lagDays"
+    },
+    "lag with nonpositive slope": {
+      "a": -1.8761973937006164,
+      "b": 0,
+      "key": "lagDays"
+    },
+    "observed spathe herbivory": {
+      "a": -3.5267670486841327,
+      "b": 38.00237118150843,
+      "key": "herb"
+    }
+  },
+  "fiveFits": {
+    "constant bank/potential ratio": {
+      "a": -2.4876724012737257,
+      "b": 0,
+      "key": null
+    },
+    "peak-to-winter lag": {
+      "a": 0.5839325913360396,
+      "b": -0.024771008004917463,
+      "key": "lagDays"
+    },
+    "lag with nonpositive slope": {
+      "a": 0.5839325913360396,
+      "b": -0.024771008004917463,
+      "key": "lagDays"
+    },
+    "observed spathe herbivory": {
+      "a": -3.491675747917072,
+      "b": 36.58904324501992,
+      "key": "herb"
+    }
+  },
+  "PH1": {
+    "bankToPotential": 3.2582089552238807,
+    "excess": 151.3,
+    "excessShare": 0.6930829134218965,
+    "sensitivityPotentialMultiplier": [
+      {
+        "k": 1,
+        "minimumUnaccountedStock": 151.3,
+        "share": 0.6930829134218965
+      },
+      {
+        "k": 2,
+        "minimumUnaccountedStock": 84.30000000000001,
+        "share": 0.38616582684379297
+      },
+      {
+        "k": 3,
+        "minimumUnaccountedStock": 17.30000000000001,
+        "share": 0.07924874026568951
+      },
+      {
+        "k": 4,
+        "minimumUnaccountedStock": 0,
+        "share": 0
+      }
+    ]
+  },
+  "limits": [
+    "Six site means, four parent bays, one year. Peak reproductive shoot density date is NOT first flowering or seed release date. Lag is an observation-window proxy only.",
+    "Potential density is a rounded product of peak stock and fertilized pistils, not annual measured release flux. Bank is separate sampled stock including imports or older seeds. Bank/potential ratio is not individual seed retention or survival; PH1 >100% documented by original authors.",
+    "Closed-stock excess and common hazard values are conditional arithmetic scenarios, not verified imports, decay rates or predation.",
+    "Observed spathe damage not cause-specific seed loss. Seed coats cannot be assigned to current cohort or predation. Spring germination uses a different sampled denominator; no multiplication with winter bank.",
+    "Leave-site and leave-bay models use tiny sample and response-open predictors; descriptive predictive diagnostics only, not prospective or independent validation. Omission PH1 based on response is sensitivity only, not primary. No uncertainty from aggregate means or pseudoreplication."
+  ]
+}
