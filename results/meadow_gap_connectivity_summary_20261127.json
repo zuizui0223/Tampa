@@ -1,0 +1,217 @@
+{
+  "status": "Executed local analysis; fixed habitat footprint with graph gap thresholds",
+  "source_archive": "c17dcaa395b9dabc6ab5b61ce918e1abc68fe87b528a2bd12c0e01dd2a97920f",
+  "full_result_sha256": "2027fbcd4644066f979ffcc2e2847a029e3e6e30ad385dc440748e3a74ae558b",
+  "executed_code_sha256": "d12086df0b3df3e58e80c092d49f4c1981228ea68e879bc278310c3f8a021c7a",
+  "gaps_m": [
+    0,
+    100,
+    300,
+    600,
+    1000,
+    2000,
+    5000
+  ],
+  "map_stats": {
+    "near": {
+      "fixed_area_km2": 11968.491362918216,
+      "original_polygons": 124,
+      "clusters": [
+        122,
+        117,
+        97,
+        75,
+        63,
+        48,
+        32
+      ],
+      "largest_share": [
+        0.7536887684,
+        0.7536887684,
+        0.7624449338,
+        0.9538260506,
+        0.9544658155,
+        0.9550963977,
+        0.9577383252
+      ]
+    },
+    "all": {
+      "fixed_area_km2": 12730.656979356754,
+      "original_polygons": 279,
+      "clusters": [
+        277,
+        249,
+        200,
+        157,
+        126,
+        86,
+        46
+      ],
+      "largest_share": [
+        0.7085665359,
+        0.7085665359,
+        0.7167984825,
+        0.9027945733,
+        0.9033960364,
+        0.9051009219,
+        0.9453853314
+      ]
+    }
+  },
+  "far10_7d": {
+    "dugong_near": {
+      "n": 5,
+      "observed_mapped": 0.533587,
+      "null_mapped": 0.452923,
+      "observed_cross": [
+        0.108583,
+        0.108583,
+        0.108583,
+        0,
+        0,
+        0,
+        0
+      ],
+      "null_cross": [
+        0.190007,
+        0.189937,
+        0.18939,
+        0.002551,
+        0.001999,
+        0.001381,
+        0.000595
+      ],
+      "negative_individuals": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        2
+      ]
+    },
+    "dugong_all": {
+      "n": 5,
+      "observed_mapped": 0.554962,
+      "null_mapped": 0.484817,
+      "observed_cross": [
+        0.034946,
+        0.034946,
+        0.034946,
+        0,
+        0,
+        0,
+        0
+      ],
+      "null_cross": [
+        0.102106,
+        0.101398,
+        0.100794,
+        0.024145,
+        0.023602,
+        0.020489,
+        0.001413
+      ],
+      "negative_individuals": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "turtle_near": {
+      "n": 3,
+      "observed_mapped": 0.438282,
+      "null_mapped": 0.413158,
+      "observed_cross": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "null_cross": [
+        0.142045,
+        0.142045,
+        0.142045,
+        0.00041,
+        0.00041,
+        0.000256,
+        0
+      ]
+    },
+    "turtle_all": {
+      "n": 3,
+      "observed_mapped": 0.808341,
+      "null_mapped": 0.479697,
+      "observed_cross": [
+        0.04777,
+        0.04777,
+        0.04777,
+        0.04777,
+        0.04777,
+        0.04777,
+        0
+      ],
+      "null_cross": [
+        0.084692,
+        0.084634,
+        0.084634,
+        0.029337,
+        0.029337,
+        0.019982,
+        0.000826
+      ]
+    }
+  },
+  "near_dugong_far10_loo_cross": {
+    "gap0": [
+      -0.10289349721052078,
+      -0.04536880810918681
+    ],
+    "gap300": [
+      -0.1027082291981876,
+      -0.044597254602919065
+    ],
+    "gap600": [
+      -0.0031893654433269416,
+      -0.001472027767693437
+    ]
+  },
+  "origin_strata": {
+    "near_dugong_far10_gap0": {
+      "origin_largest_fraction": 0.03903,
+      "other_origin_n": 5,
+      "other_origin_observed_cross": 0.07692,
+      "other_origin_null_cross": 0.189851,
+      "other_origin_loo": [
+        -0.12886736981309768,
+        -0.08475235336877396
+      ],
+      "largest_origin_n": 1,
+      "largest_origin_observed_cross": 0.834081,
+      "largest_origin_null_cross": 0.179922
+    }
+  },
+  "bran_acquisition": {
+    "first_run": 45952035817,
+    "artifact": 15177471977,
+    "manifest_only": true,
+    "reason": "recognized source units m/sec not in original allowlist",
+    "fix_commit": "4fc1ff439a153cf956272a4b33a1ec00d3012ed0",
+    "retry_run": 45952412156,
+    "status_at_this_check": "in_progress",
+    "physical_advection_executed": false
+  },
+  "limits": [
+    "A gap rule is a geometric graph definition, not dispersal distance, a physiological threshold, or measured population connectivity.",
+    "All gap comparisons share same fixed footprint and denominators; single linkage can chain across multiple gaps. Point-touch components merged at gap0.",
+    "No current trajectories, ingestion, or deposition. Small panel, no pair-level inference."
+  ]
+}
