@@ -1,0 +1,241 @@
+{
+  "run_id": 46068616927,
+  "job_id": 140739889666,
+  "artifact_id": 15231384045,
+  "artifact_digest": "sha256:ab23a44e3baee13f1b0917451a81dc1773378d175f1acb41eecf1c4829e15699",
+  "head_sha": "86187c7ebce0b99ca9e8bce55e7351f495c4dafb",
+  "source": "compact workflow log JSON; full archive not independently unpacked",
+  "audit": {
+    "torres": {
+      "source_records": 28732,
+      "qc": {
+        "missing_species": 47,
+        "eligible_rows": 28685,
+        "discordant_station_years": 377,
+        "duplicate_identical": 290
+      },
+      "programs_with_repeats": {
+        "Torres Strait lobster surveys": {
+          "pairs": 1071,
+          "initial_positive": 503,
+          "positive_stations": 94
+        },
+        "Torres Strait sea cucumber surveys": {
+          "pairs": 107,
+          "initial_positive": 99,
+          "positive_stations": 51
+        }
+      }
+    },
+    "shoalwater": {
+      "source_records": 27227,
+      "qc": {
+        "eligible_rows": 27129,
+        "inconsistent": 98,
+        "duplicate_identical": 50,
+        "discordant_station_years": 4
+      },
+      "programs_with_repeats": {
+        "Gladstone region": {
+          "pairs": 2,
+          "initial_positive": 0,
+          "positive_stations": 0
+        }
+      }
+    }
+  },
+  "tampa_audit": {
+    "original_point_years": 45568,
+    "all_taxa": {
+      "Halodule wrightii": 19387,
+      "Thalassia testudinum": 8707,
+      "Syringodium filiforme": 6759,
+      "Halophila": 269,
+      "Ruppia maritima": 622
+    },
+    "qc": {
+      "discordant_full_composition": 99
+    },
+    "pairs": 29650,
+    "kept": 28896
+  },
+  "panels": {
+    "tampa|pinned_exact_meter_marks": {
+      "pairs": 28896,
+      "positive": 17646,
+      "clusters": 71,
+      "loss": {
+        "total": 4090,
+        "bare": 2169,
+        "same_class": 722,
+        "other_class_only": 1199
+      },
+      "all": {
+        "pairs": 2502,
+        "clusters": 48,
+        "pair_mean_P": 0.7422062350119905,
+        "pair_mean_nonP": 0.7653876898481216,
+        "equal_cluster_difference": {
+          "clusters": 48,
+          "mean": -0.08054791075863012,
+          "ci95": [
+            -0.15904248892589382,
+            -0.010503019343726792
+          ]
+        }
+      },
+      "both_positive": {
+        "pairs": 2383,
+        "clusters": 46,
+        "pair_mean_P": 0.7792698279479647,
+        "pair_mean_nonP": 0.8036088963491398,
+        "equal_cluster_difference": {
+          "clusters": 46,
+          "mean": -0.09541530479634683,
+          "ci95": [
+            -0.1860534289482934,
+            -0.0106222298730366
+          ]
+        }
+      },
+      "class_label_reference": {
+        "eligible_lost_taxon_incidences": 1921,
+        "observed_same_class_fraction": 0.37584591358667363,
+        "reference_mean": 0.19193849918191788,
+        "reference_95": [
+          0.0015616866215512754,
+          0.40395627277459656
+        ],
+        "difference": 0.18390741440475575
+      },
+      "alternative_reference": {
+        "eligible_lost_taxon_incidences": 1921,
+        "observed_same_class_fraction": 0.04476834981780323,
+        "reference_mean": 0.1918512613933203,
+        "reference_95": [
+          0.0015616866215512754,
+          0.40395627277459656
+        ],
+        "difference": -0.14708291157551706
+      }
+    },
+    "torres|Torres Strait lobster surveys": {
+      "pairs": 1071,
+      "positive": 503,
+      "clusters": 155,
+      "loss": {
+        "total": 583,
+        "bare": 137,
+        "same_class": 288,
+        "other_class_only": 158
+      },
+      "all": {
+        "pairs": 102,
+        "clusters": 29,
+        "pair_mean_P": 0.45098039215686275,
+        "pair_mean_nonP": 0.5540849673202615,
+        "equal_cluster_difference": {
+          "clusters": 29,
+          "mean": -0.18156420527110181,
+          "ci95": [
+            -0.36011510839097044,
+            -0.0003860443515615907
+          ]
+        }
+      },
+      "both_positive": {
+        "pairs": 96,
+        "clusters": 26,
+        "pair_mean_P": 0.4791666666666667,
+        "pair_mean_nonP": 0.5887152777777778,
+        "equal_cluster_difference": {
+          "clusters": 26,
+          "mean": -0.17302674177674177,
+          "ci95": [
+            -0.3810083435083435,
+            0.0519459706959707
+          ]
+        }
+      },
+      "class_label_reference": {
+        "eligible_lost_taxon_incidences": 446,
+        "observed_same_class_fraction": 0.6457399103139013,
+        "reference_mean": 0.5912148899561889,
+        "reference_95": [
+          0.5246636771300448,
+          0.695067264573991
+        ],
+        "difference": 0.05452502035771245
+      },
+      "alternative_reference": {
+        "eligible_lost_taxon_incidences": 446,
+        "observed_same_class_fraction": 0.6345291479820628,
+        "reference_mean": 0.5737397846905515,
+        "reference_95": [
+          0.5224215246636771,
+          0.6502242152466368
+        ],
+        "difference": 0.0607893632915113
+      }
+    },
+    "torres|Torres Strait sea cucumber surveys": {
+      "pairs": 107,
+      "positive": 99,
+      "clusters": 55,
+      "loss": {
+        "total": 39,
+        "bare": 3,
+        "same_class": 12,
+        "other_class_only": 24
+      },
+      "all": {
+        "pairs": 31,
+        "clusters": 26,
+        "pair_mean_P": 0.9193548387096774,
+        "pair_mean_nonP": 0.25806451612903225,
+        "equal_cluster_difference": {
+          "clusters": 26,
+          "mean": 0.6923076923076923,
+          "ci95": [
+            0.5384615384615384,
+            0.8365384615384616
+          ]
+        }
+      },
+      "both_positive": {
+        "pairs": 30,
+        "clusters": 25,
+        "pair_mean_P": 0.95,
+        "pair_mean_nonP": 0.26666666666666666,
+        "equal_cluster_difference": {
+          "clusters": 25,
+          "mean": 0.72,
+          "ci95": [
+            0.57,
+            0.86
+          ]
+        }
+      },
+      "class_label_reference": {
+        "eligible_lost_taxon_incidences": 36,
+        "observed_same_class_fraction": 0.3333333333333333,
+        "reference_mean": 0.5022650213995887,
+        "reference_95": [
+          0.2222222222222222,
+          0.75
+        ],
+        "difference": -0.16893168806625541
+      },
+      "alternative_reference": {
+        "eligible_lost_taxon_incidences": 36,
+        "observed_same_class_fraction": 0.3333333333333333,
+        "reference_mean": 0.4397476516035796,
+        "reference_95": [
+          0.2222222222222222,
+          0.7222222222222222
+        ],
+        "difference": -0.10641431827024628
+      }
+    }
+  }
+}
