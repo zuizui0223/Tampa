@@ -1,0 +1,194 @@
+{
+  "status": "Executed source-archive Python analysis locally; values rounded from verified PDF vector-coordinate extraction, not individual data",
+  "source_run": 45939319877,
+  "source_artifact": 15172216666,
+  "archive_sha256": "3c3575d833558f2d86c4f5ede16969dd4a8ba21231fae64c091f25773f4661c4",
+  "pdf_sha256": "2911eaebc4861490f8fac5347c1c94d5f0a0e7cad5f56434e473eb09b11598b8",
+  "fig1_columns": [
+    "taxon_year",
+    "excretion",
+    "germination_per_consumed",
+    "germination_per_excreted",
+    "not_recovered",
+    "recovered_not_germinated"
+  ],
+  "fig1": [
+    [
+      "Fundulus 2009",
+      0.76325,
+      0.39611,
+      0.51899,
+      0.23675,
+      0.36713
+    ],
+    [
+      "Fundulus 2010",
+      0.99414,
+      0.27836,
+      0.28,
+      0.00586,
+      0.71578
+    ],
+    [
+      "Sphoeroides 2009",
+      1,
+      0.33322,
+      0.33322,
+      0,
+      0.66678
+    ],
+    [
+      "Sphoeroides 2010",
+      0.85696,
+      0.60696,
+      0.70827,
+      0.14304,
+      0.25
+    ],
+    [
+      "Sphoeroides 2011",
+      0.78576,
+      0.20221,
+      0.25735,
+      0.21424,
+      0.58354
+    ],
+    [
+      "Lagodon 2010",
+      0.59093,
+      0.2423,
+      0.41002,
+      0.40907,
+      0.34864
+    ],
+    [
+      "Lagodon 2011",
+      0.63193,
+      0.08477,
+      0.13415,
+      0.36807,
+      0.54716
+    ],
+    [
+      "Malaclemys 2009",
+      0.71887,
+      0.09371,
+      0.13036,
+      0.28113,
+      0.62516
+    ],
+    [
+      "Malaclemys 2010",
+      0.77774,
+      0.02774,
+      0.03567,
+      0.22226,
+      0.75
+    ],
+    [
+      "Aythya 2011",
+      0.16307,
+      0.0484,
+      0.29677,
+      0.83693,
+      0.11468
+    ]
+  ],
+  "post_excretion_dominant_trials": 8,
+  "fig2_columns": [
+    "taxon_year",
+    "consumed",
+    "control1",
+    "control2",
+    "conditional_break_even1",
+    "conditional_break_even2"
+  ],
+  "fig2": [
+    [
+      "Fundulus 2009",
+      0.39611,
+      0.56188,
+      0.56188,
+      1.419,
+      1.419
+    ],
+    [
+      "Fundulus 2010",
+      0.27802,
+      0.34518,
+      0.3429,
+      1.242,
+      1.233
+    ],
+    [
+      "Malaclemys 2010",
+      0.02823,
+      0.0451,
+      0.44996,
+      1.598,
+      15.939
+    ],
+    [
+      "Lagodon 2010",
+      0.24202,
+      0.70008,
+      0.8,
+      2.893,
+      3.306
+    ],
+    [
+      "Lagodon 2011",
+      0.08403,
+      0.27316,
+      0.51614,
+      3.251,
+      6.143
+    ],
+    [
+      "Sphoeroides 2010",
+      0.60697,
+      0.70008,
+      0.8,
+      1.153,
+      1.318
+    ],
+    [
+      "Sphoeroides 2011",
+      0.20211,
+      0.27316,
+      0.51614,
+      1.352,
+      2.554
+    ],
+    [
+      "Aythya 2011",
+      0.04801,
+      0.60016,
+      0.47299,
+      12.5,
+      9.851
+    ]
+  ],
+  "canada": {
+    "assessed_cores": 156,
+    "full": 410,
+    "assessed": 403,
+    "viable": 200,
+    "viable_upper": 207,
+    "positive_full_cores": 89,
+    "positive_confirmed_cores": 59,
+    "positive_possible_cores": 60,
+    "full_positive_guaranteed_no_viable": 29,
+    "within_site_date_unequal_full_count_pairs": {
+      "concordant": 174,
+      "reversed": 10,
+      "unresolved_or_tied": 103
+    }
+  },
+  "limits": [
+    "Fig1 excretion includes damaged/coats; no exact raw counts, no animal-level covariance, 10 species-year strata not independent studies. Germination per excreted computed from two plotted proportions, not intact-only probability.",
+    "Fig2 controls differ by taxa; duck control1 matrix+dye, control2 matrix. Thresholds hypothetical conditional downstream success ratio given equal ingested/control starting seeds. No actual recipient advantage, realized dispersal, causal effect or meta-analysis.",
+    "Canada assessed subset only, viability bounds conditional on recorded labels and untested seeds, zero possible viable is not proof all natural seeds dead or no previous germination; pairs dependent and descriptive. No animal treatment.",
+    "Tol JCU landing page acquired but spreadsheet download link unresolved."
+  ]
+}
