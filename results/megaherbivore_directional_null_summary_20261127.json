@@ -1,0 +1,213 @@
+{
+  "status": "Locally executed source-verified geometric endpoint analysis, not passive-current model",
+  "archive_sha256": "c17dcaa395b9dabc6ab5b61ce918e1abc68fe87b528a2bd12c0e01dd2a97920f",
+  "previous_run": 45940165071,
+  "previous_artifact": 15172078618,
+  "code_sha256": "d02a664fd65bce53d470fbd17c211f64b4ae9409c5844bb8f270df893a9950ab",
+  "result_sha256": {
+    "bearing10": "dc600a05c9eab6320c6957d3cdb3fcb56698080a9a12f3e9e514487d3a15db2a",
+    "bearing5": "bd5f2071df14c1ac4d9b68839b398b39c997bd33fe50e5a87a6619e577bde3c6"
+  },
+  "coast_hashes": {
+    "gshhs_i": "ad5e6fcb424b9d6bf86c396d4d982ddf0392fcb9d568b3716e3434f04a733e5d",
+    "gshhsmeta_i": "7fded55ecd6c2467a93ed9900410524539588193b9e48141e97fa46aa5da9aa4"
+  },
+  "map_union_components": [
+    [
+      "near",
+      124,
+      0.7536887684
+    ],
+    [
+      "eroded300",
+      94,
+      0.7824973781
+    ],
+    [
+      "buffered300",
+      75,
+      0.9345410739
+    ],
+    [
+      "all",
+      279,
+      0.7085665359
+    ]
+  ],
+  "columns": [
+    "species",
+    "map",
+    "distance_group",
+    "animals",
+    "observed_mapped",
+    "null_mapped",
+    "observed_other_component",
+    "null_other_component"
+  ],
+  "water_mask_7d_10deg": [
+    [
+      "dugong",
+      "near",
+      "all",
+      5,
+      0.625818,
+      0.594073,
+      0.057946,
+      0.095744
+    ],
+    [
+      "dugong",
+      "near",
+      "far10",
+      5,
+      0.533587,
+      0.452923,
+      0.108583,
+      0.190007
+    ],
+    [
+      "dugong",
+      "eroded300",
+      "far10",
+      5,
+      0.492116,
+      0.404423,
+      0.104285,
+      0.164388
+    ],
+    [
+      "dugong",
+      "buffered300",
+      "far10",
+      5,
+      0.544923,
+      0.498948,
+      0,
+      0.005631
+    ],
+    [
+      "dugong",
+      "all",
+      "far10",
+      5,
+      0.554962,
+      0.484817,
+      0.034946,
+      0.102106
+    ],
+    [
+      "turtle",
+      "near",
+      "all",
+      4,
+      0.55335,
+      0.717822,
+      0,
+      0.064128
+    ],
+    [
+      "turtle",
+      "near",
+      "far10",
+      3,
+      0.438282,
+      0.413158,
+      0,
+      0.142045
+    ],
+    [
+      "turtle",
+      "eroded300",
+      "far10",
+      3,
+      0.360684,
+      0.353558,
+      0,
+      0.121461
+    ],
+    [
+      "turtle",
+      "buffered300",
+      "far10",
+      3,
+      0.438282,
+      0.462666,
+      0,
+      0.001486
+    ],
+    [
+      "turtle",
+      "all",
+      "far10",
+      3,
+      0.808341,
+      0.479697,
+      0.04777,
+      0.084692
+    ]
+  ],
+  "water_mask_7d_5deg": [
+    [
+      "dugong",
+      "near",
+      "all",
+      5,
+      0.625818,
+      0.594124,
+      0.057946,
+      0.09563
+    ],
+    [
+      "dugong",
+      "near",
+      "far10",
+      5,
+      0.533587,
+      0.452102,
+      0.108583,
+      0.18974
+    ],
+    [
+      "turtle",
+      "near",
+      "all",
+      4,
+      0.55335,
+      0.716001,
+      0,
+      0.065469
+    ],
+    [
+      "turtle",
+      "near",
+      "far10",
+      3,
+      0.438282,
+      0.412694,
+      0,
+      0.143996
+    ]
+  ],
+  "dugong_far10_water_near": {
+    "positive_mapped": 3,
+    "positive_other_component": 1,
+    "loo_excess_mapped": [
+      -0.0020576830004890995,
+      0.16177597380119887
+    ],
+    "loo_excess_other": [
+      -0.10289349721052078,
+      -0.04536880810918681
+    ]
+  },
+  "hydrodynamic_acquisition": {
+    "run": 45947045388,
+    "status_at_last_check": "in_progress",
+    "data_verified": false,
+    "endpoint": "https://ncss.hycom.org/thredds/ncss/grid/GLBu0.08/reanalysis/3hrly"
+  },
+  "limits": [
+    "All directions geometric rather than current-driven; no evidence of seed delivery, feeding or causal habitat selection.",
+    "Coarse endpoint land mask, incomplete composite maps, 5 and 3–4 animals; union connectivity depends on polygons and buffer. No inference from pair counts."
+  ]
+}
