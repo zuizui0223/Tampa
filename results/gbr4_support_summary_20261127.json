@@ -1,0 +1,120 @@
+{
+  "status": "Locally executed source-verified grid support and one-day velocity pilot; no new passive trajectories",
+  "archive": "5e4f81c353b9f9b39540d56464eaa671b036e376b6da4b708be2a15a3ab67885",
+  "run": 45968912710,
+  "artifact": 15184370659,
+  "source_file": "https://thredds.nci.org.au/thredds/dodsC/fx3/gbr4_H4p0_ABARRAr2_OBRAN2020_FG2Gv3_Dhnd/gbr4_simple_2010-10-01.nc",
+  "source_grid_sha256": "a98058034bfd4ac295c3251c2c77a2ec421e032d37d9c05d54f7a7151e4e37e6",
+  "source_pilot_sha256": "73fd62c9bf4010b508b290f7546c3f02f2b50a8e6caab8e0e95daaf7f4844099",
+  "executed_code_git_blob": "d3b23faa9988d8a880038a7808d8e38d8de46afd",
+  "executed_code_sha256": "143061290a6f4a4789343027a2dd363654e59faf9ed39d8068f6e42308e1a996",
+  "full_result_sha256": "703c79b49796fe2fad9714e1cd439940fbf4fc9ee29fe736cd9c166c27a8b834",
+  "grid": {
+    "shape": [
+      180,
+      600
+    ],
+    "finite_centers": 92565,
+    "wet_centers": 75778,
+    "valid_quads": 91786,
+    "four_wet_quads": 74462,
+    "pilot_hours": 24,
+    "pilot_wet_centers": 6680,
+    "pilot_total_centers": 7722,
+    "pilot_valid_fraction": 0.8650608650608651,
+    "pilot_start_utc": "2010-09-30T14:00:00",
+    "pilot_end_utc": "2010-10-01T13:00:00",
+    "pilot_depth_m": -0.5
+  },
+  "columns": [
+    "species",
+    "region",
+    "panel",
+    "animals",
+    "origins",
+    "pairs",
+    "inside_center_grid",
+    "strict_four_wet",
+    "nearest_wet_2p8km",
+    "time"
+  ],
+  "rows": [
+    [
+      "turtle",
+      "Shoalwater",
+      "all_date_pairs",
+      6,
+      1747,
+      6991,
+      1,
+      0.04622369437835849,
+      0.8762736458948196,
+      1
+    ],
+    [
+      "turtle",
+      "Torres",
+      "all_date_pairs",
+      4,
+      598,
+      2616,
+      0,
+      0,
+      0,
+      0.5
+    ],
+    [
+      "turtle",
+      "Torres",
+      "near_meadow",
+      4,
+      455,
+      1917,
+      0,
+      0,
+      0,
+      0.5
+    ],
+    [
+      "dugong",
+      "Shoalwater",
+      "all_date_pairs",
+      4,
+      1697,
+      11827,
+      1,
+      0.4462356484095614,
+      0.9202204498400152,
+      1
+    ],
+    [
+      "dugong",
+      "Torres",
+      "all_date_pairs",
+      5,
+      779,
+      4823,
+      0.05383673469387755,
+      0.05383673469387755,
+      0.058544217687074816,
+      1
+    ],
+    [
+      "dugong",
+      "Torres",
+      "near_meadow",
+      5,
+      441,
+      2641,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "limitations": [
+    "Center quadrilaterals not actual grid cell polygons. Static mask tested at 24 hours on northern pilot only. No trajectory or release-time velocity computed.",
+    "Shoalwater all-date-pair starts, unlike Torres mapped origins. Do not infer regional difference in seed transfer or use nearest-cell support as path feasibility.",
+    "Alternative SLIM DOI 10.25903/3pe4-9n65 and Shoalwater map targeted in run 45969290478; no result claimed here."
+  ]
+}
