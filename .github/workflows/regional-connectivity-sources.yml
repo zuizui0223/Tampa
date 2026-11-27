@@ -1,0 +1,21 @@
+name: Regional seagrass habitat and SLIM metadata
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths: ['analysis/215_regional_connectivity_sources.py', '.github/workflows/regional-connectivity-sources.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/215_regional_connectivity_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regional-connectivity-sources
+          path: regional_connectivity_sources/
+          retention-days: 14
