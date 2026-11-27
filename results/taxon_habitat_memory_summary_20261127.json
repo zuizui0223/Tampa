@@ -1,0 +1,328 @@
+{
+  "status": "Executed exact source repeated-coordinate survey comparison and retrospective species prediction; no seed-fate inference",
+  "source_run": 45970652639,
+  "artifact": 15185560000,
+  "archive": "31d4831e2efa3552e58db32a70fefccf6dcad5049e2bed4f2ca09d984b547e06",
+  "inner": "9727c28d4dafcd225a754f2439e010fe09f2835dfbeefe03b28cc5d8f940facf",
+  "executed_code_git_blob": "3ea66694d56f74272670bb7a23df2c613aeba229",
+  "executed_code_sha256": "f56664dda18a20dbca26176c7fa2e495e0e8a934b041d818d68bc1ea7e365296",
+  "full_result_sha256": "3df2fde982a7a6d83bd293fd350b731c2b95387a385c5e27e4a4b8d359ec9ff3",
+  "audit": {
+    "lobster": {
+      "records": 1570,
+      "unique_station_year": 1570,
+      "all_stations": 402,
+      "repeated_stations": 171,
+      "lag_counts": {
+        "1": 1071,
+        "2": 55,
+        "3": 14,
+        "4": 12,
+        "5": 9,
+        "6": 6,
+        "7": 1
+      }
+    },
+    "cucumber": {
+      "records": 1036,
+      "unique_station_year": 1034,
+      "all_stations": 732,
+      "repeated_stations": 225,
+      "lag_counts": {
+        "2": 107,
+        "3": 125,
+        "4": 26,
+        "7": 44
+      }
+    }
+  },
+  "panel_columns": [
+    "survey",
+    "lag",
+    "pairs",
+    "stations",
+    "initial_grass",
+    "both_grass",
+    "grass_reobserved",
+    "taxon_reobserved_equal_pair",
+    "all_grass_nonrecord",
+    "taxon_nonrecord_while_grass",
+    "equal_station_grass",
+    "equal_station_taxon",
+    "both_identical",
+    "both_no_overlap",
+    "both_mean_initial_richness",
+    "both_mean_later_richness",
+    "both_mean_jaccard"
+  ],
+  "panels": [
+    [
+      "lobster",
+      "all",
+      1168,
+      171,
+      543,
+      449,
+      0.8268876611,
+      0.5237788301,
+      0.1731123389,
+      0.303108831,
+      0.6690320947,
+      0.4191439277,
+      54,
+      50,
+      2.9665924276,
+      3.0244988864,
+      0.4781878601
+    ],
+    [
+      "lobster",
+      1,
+      1071,
+      155,
+      503,
+      416,
+      0.8270377734,
+      0.5209978226,
+      0.1729622266,
+      0.3060399508,
+      0.6604983669,
+      0.4030762164,
+      52,
+      48,
+      2.9759615385,
+      3.0144230769,
+      0.4800633394
+    ],
+    [
+      "cucumber",
+      "all",
+      302,
+      225,
+      118,
+      105,
+      0.8898305085,
+      0.7514124294,
+      0.1101694915,
+      0.1384180791,
+      0.8142857143,
+      0.6791666667,
+      39,
+      4,
+      2.1523809524,
+      2.3238095238,
+      0.7015873016
+    ],
+    [
+      "cucumber",
+      2,
+      107,
+      55,
+      99,
+      98,
+      0.9898989899,
+      0.8484848485,
+      0.0101010101,
+      0.1414141414,
+      0.9803921569,
+      0.8406862745,
+      37,
+      2,
+      2.2142857143,
+      2.387755102,
+      0.7142857143
+    ]
+  ],
+  "taxon_columns": [
+    "code",
+    "initial",
+    "still_any",
+    "still_taxon",
+    "all_grass_not_recorded",
+    "taxon_not_recorded_while_grass"
+  ],
+  "lobster_1y": [
+    [
+      "CR_PA",
+      183,
+      157,
+      81,
+      26,
+      76
+    ],
+    [
+      "CS_PA",
+      113,
+      104,
+      36,
+      9,
+      68
+    ],
+    [
+      "EA_PA",
+      20,
+      19,
+      12,
+      1,
+      7
+    ],
+    [
+      "HO_PA",
+      272,
+      247,
+      184,
+      25,
+      63
+    ],
+    [
+      "HS_PA",
+      345,
+      299,
+      235,
+      46,
+      64
+    ],
+    [
+      "HU_PA",
+      60,
+      58,
+      28,
+      2,
+      30
+    ],
+    [
+      "SI_PA",
+      244,
+      230,
+      159,
+      14,
+      71
+    ],
+    [
+      "TC_PA",
+      66,
+      57,
+      27,
+      9,
+      30
+    ],
+    [
+      "TH_PA",
+      72,
+      67,
+      30,
+      5,
+      37
+    ]
+  ],
+  "cucumber_2y": [
+    [
+      "CR_PA",
+      22,
+      21,
+      6,
+      1,
+      15
+    ],
+    [
+      "EA_PA",
+      86,
+      85,
+      76,
+      1,
+      9
+    ],
+    [
+      "HO_PA",
+      11,
+      11,
+      3,
+      0,
+      8
+    ],
+    [
+      "HU_PA",
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      "SI_PA",
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      "TC_PA",
+      98,
+      97,
+      96,
+      1,
+      1
+    ],
+    [
+      "TH_PA",
+      1,
+      1,
+      0,
+      0,
+      1
+    ]
+  ],
+  "prediction_columns": [
+    "split",
+    "generic_brier",
+    "identity_brier",
+    "generic_logloss",
+    "identity_logloss",
+    "folds_improved_brier",
+    "folds"
+  ],
+  "prediction": [
+    [
+      "5km",
+      0.1389679576938397,
+      0.13720519293178146,
+      0.4262409307556638,
+      0.42167837708667993,
+      5,
+      5
+    ],
+    [
+      "10km",
+      0.14028134515382631,
+      0.13844017410315812,
+      0.4289344054524975,
+      0.42456870100986377,
+      5,
+      5
+    ],
+    [
+      "20km",
+      0.14155304015686315,
+      0.1395800496052865,
+      0.432218127869563,
+      0.4271969754279527,
+      5,
+      5
+    ],
+    [
+      "forward_year",
+      0.1407285946508195,
+      0.13955717998208317,
+      0.43216924668183043,
+      0.4278086385997133,
+      8,
+      11
+    ]
+  ],
+  "limits": [
+    "Cucumber 2-year is selected short interval, not modal overall (3-year most common); all-gap sensitivity retained. No like-for-like region or program comparison.",
+    "Repeated coordinates not tagged individuals; unknown month and detection, fixed recorded depth may be assigned from station. Changes in taxon labels not biological mortality or actual recipient suitability.",
+    "Algebraic accounting, not a test against null equality. Small predictive increment, one species worse in 10km panel. No independent spatial-temporal replication or animal interaction treatment."
+  ]
+}
