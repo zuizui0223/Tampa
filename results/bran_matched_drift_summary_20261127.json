@@ -1,0 +1,221 @@
+{
+  "status": "Executed original-data daily surface-current scenario; failed support gate; no animal superiority identified",
+  "source": {
+    "track_archive": "c17dcaa395b9dabc6ab5b61ce918e1abc68fe87b528a2bd12c0e01dd2a97920f",
+    "current_archive": "9f204beb344cc91e74cc03e91586f5ffdb166968caec9a14078f8fe9e4a2e355",
+    "run": 45952412156,
+    "artifact": 15177049081,
+    "months": [
+      "2009_07",
+      "2009_08",
+      "2010_09",
+      "2010_10",
+      "2010_11",
+      "2010_12",
+      "2011_01",
+      "2011_02"
+    ],
+    "days": 243,
+    "files": 16,
+    "grid": [
+      51,
+      81
+    ],
+    "depth_m": 2.5,
+    "units": "m/sec"
+  },
+  "executed_code_sha256": "66170c4f65d90308a3a1cbb50615f4ca4b9fa0b0f596dccf4601f5b314d8d81e",
+  "executed_code_git_blob": "3962c46c144432f4b29e90f000ff75a0bb292b95",
+  "full_result_sha256": "1cd6deab5ada6d46cb4222634bfc3b34cd6cde1f3a82c5e2f6aea1c5bcfa43e1",
+  "coverage_columns": [
+    "lag",
+    "scenario",
+    "unique_origins",
+    "initial_velocity",
+    "completed_24h",
+    "completed_72h",
+    "physical_complete",
+    "map_bbox_complete",
+    "outside_map_bbox",
+    "missing_velocity_start",
+    "missing_velocity_midpoint"
+  ],
+  "coverage": [
+    [
+      6,
+      "linear_3h_noon",
+      1011,
+      33,
+      22,
+      17,
+      6,
+      6,
+      0,
+      990,
+      15
+    ],
+    [
+      7,
+      "linear_3h_noon",
+      976,
+      34,
+      23,
+      20,
+      3,
+      2,
+      1,
+      954,
+      19
+    ],
+    [
+      7,
+      "linear_1h_noon",
+      976,
+      34,
+      23,
+      20,
+      3,
+      2,
+      1,
+      954,
+      19
+    ],
+    [
+      7,
+      "linear_3h_midnight",
+      976,
+      34,
+      23,
+      23,
+      3,
+      2,
+      1,
+      957,
+      16
+    ],
+    [
+      7,
+      "nearest_3h_noon",
+      976,
+      113,
+      107,
+      90,
+      88,
+      26,
+      62,
+      877,
+      11
+    ],
+    [
+      13,
+      "linear_3h_noon",
+      803,
+      12,
+      1,
+      1,
+      1,
+      0,
+      1,
+      796,
+      6
+    ]
+  ],
+  "primary_near_7d": {
+    "dugong": {
+      "animals": 5,
+      "initial_weight": 0.07420953827206664,
+      "physical_complete_weight": 0.005740671420173274,
+      "known_weight": 0.003701935436483206,
+      "observed_mapped": 0.6258184199303748,
+      "passive_mapped_interval": [
+        0.003701935436483162,
+        1
+      ],
+      "difference_interval": [
+        -0.3741815800696252,
+        0.6221164844938916
+      ],
+      "observed_cross_gap0": 0.057946,
+      "passive_cross_gap0_interval": [
+        0,
+        0.9962980645635168
+      ]
+    },
+    "turtle": {
+      "animals": 4,
+      "initial_weight": 0,
+      "known_weight": 0,
+      "observed_mapped": 0.5533498567697993,
+      "passive_mapped_interval": [
+        0,
+        1
+      ],
+      "observed_cross_gap0": 0,
+      "passive_cross_gap0_interval": [
+        0,
+        1
+      ]
+    }
+  },
+  "nearest_near_7d": {
+    "dugong": {
+      "animals": 5,
+      "complete_animals": 3,
+      "initial_weight": 0.19600975193122022,
+      "physical_complete_weight": 0.16018255388831731,
+      "known_weight": 0.0720033126987503,
+      "passive_mapped_interval": [
+        0.03424290278746924,
+        0.962239590088719
+      ],
+      "difference_interval": [
+        -0.3364211701583443,
+        0.5915755171429055
+      ],
+      "complete_case_animal_mapped": 0.7622060789341046,
+      "complete_case_passive_mapped": 0.22560975609756095
+    },
+    "turtle": {
+      "animals": 4,
+      "initial_weight": 0.023879935371352246,
+      "physical_complete_weight": 0.023879935371352246,
+      "known_weight": 0
+    }
+  },
+  "gbr4_metadata_gate": {
+    "bbox": [
+      142.168788,
+      -28.6960218,
+      156.8856378,
+      -7.0119082
+    ],
+    "start": "2010-09-01",
+    "source": "https://researchdata.edu.au/ereefs-gbr4-hydrodynamics-v40/3969962",
+    "rows": [
+      {
+        "species": "Chelonia mydas",
+        "animals": 4,
+        "unique_origins": 455,
+        "bbox_origins": 423,
+        "time_origins": 390,
+        "both_origins": 375,
+        "both_weight": 0.4896640826873385
+      },
+      {
+        "species": "Dugong dugon",
+        "animals": 5,
+        "unique_origins": 441,
+        "bbox_origins": 272,
+        "time_origins": 441,
+        "both_origins": 272,
+        "both_weight": 0.5291928785120528
+      }
+    ],
+    "wet_grid_verified": false
+  },
+  "limits": [
+    "Failed geographic support; no positive animal-versus-water contrast identifiable. Numerical missingness not mortality, failed dispersal, or demonstrated shallow-water mechanism. No tide/settling, incomplete map, coarse land mask.",
+    "GBR4 bbox/date necessary only; wet grid and full trajectory coverage unverified. No GBR4 velocity downloaded.",
+    "No new independent study, no causal effect, no pooled meta-analysis."
+  ]
+}
