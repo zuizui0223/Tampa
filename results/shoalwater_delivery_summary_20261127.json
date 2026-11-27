@@ -1,0 +1,174 @@
+{
+  "status": "Locally executed new region geometric comparison, historical habitat only",
+  "source_run": 45969290478,
+  "artifact": 15183868513,
+  "map_archive_sha256": "a1a705e26568fb73e8157466fe689f101acdd97e77de04a1ad8f2b2fc0f6a4db",
+  "map_sha256": "d0698578315c0bee949d02f29e8ac6512e25a766e0d059507bc7078524648bc8",
+  "track_archive": "c17dcaa395b9dabc6ab5b61ce918e1abc68fe87b528a2bd12c0e01dd2a97920f",
+  "executed_code_git_blob": "ec71eb1a8ae79d1de83e352add9df8e06bac3366",
+  "executed_code_sha256": "524c9a3125d060802651e7386b67d4c529a9db85ebe929ff494a654f8f3deced",
+  "full_result_sha256_10deg": "f8ee98b6d4a8da87394d3f0e0a02270f6f5a02d1bad090ba8ee1e4500f4809c1",
+  "full_result_sha256_5deg": "a25074071229a4ef33f55538c07fd3e319f3e9c1ebdc83e15525dc86f111cd36",
+  "cleaned_fixes": 4009,
+  "unparsed_date": {
+    "id": 845,
+    "raw": "May 999",
+    "excluded_from_date_subsets": true
+  },
+  "maps": {
+    "all": [
+      389,
+      439,
+      912.1102447400388
+    ],
+    "near2010_2014": [
+      101,
+      130,
+      634.6633848492966
+    ],
+    "pre2012_only": [
+      295,
+      320,
+      277.3629298609137
+    ]
+  },
+  "mapped_fixes": {
+    "all": [
+      1351,
+      1098
+    ],
+    "near2010_2014": [
+      0,
+      0
+    ],
+    "pre2012_only": [
+      1351,
+      1098
+    ]
+  },
+  "columns": [
+    "map",
+    "species",
+    "distance",
+    "animals",
+    "mapped",
+    "null_mapped",
+    "cross",
+    "null_cross",
+    "positive_cross",
+    "origin_weight"
+  ],
+  "rows": [
+    [
+      "all",
+      "turtle",
+      "all",
+      6,
+      0.6655309946409823,
+      0.6721174615053633,
+      0.0942079344963776,
+      0.08247641927655137,
+      3,
+      0.5814359323833105
+    ],
+    [
+      "all",
+      "dugong",
+      "all",
+      4,
+      0.5634777280644331,
+      0.38595806362827245,
+      0.12420970170133656,
+      0.04856942781061531,
+      4,
+      0.5431904774975426
+    ],
+    [
+      "all",
+      "dugong",
+      "far10",
+      3,
+      0.41900371937503217,
+      0.047204030932263254,
+      0.41900371937503217,
+      0.047204030932263254,
+      3,
+      0.06634144673093949
+    ],
+    [
+      "all_buffered300",
+      "dugong",
+      "far10",
+      3,
+      0.54168,
+      0.08045,
+      0.3601,
+      0.05377,
+      3,
+      0.1078
+    ],
+    [
+      "all_eroded300",
+      "dugong",
+      "far10",
+      2,
+      0.07057,
+      0.02131,
+      0.07057,
+      0.02131,
+      1,
+      0.018
+    ],
+    [
+      "pre2012_only",
+      "dugong",
+      "far10",
+      3,
+      0.41900371937503217,
+      0.047204030932263254,
+      0.41900371937503217,
+      0.047204030932263254,
+      3,
+      0.06634144673093949
+    ]
+  ],
+  "far10_cross_loo": {
+    "all": [
+      0.2901282010125844,
+      0.5210943333010438
+    ],
+    "eroded300": [
+      -0.029128787878787882,
+      0.1276419965576592
+    ],
+    "buffered300": [
+      0.16422725532747492,
+      0.3785349935961002
+    ]
+  },
+  "bearing5": {
+    "dugong_all": [
+      0.12420970170133656,
+      0.0485276372368657
+    ],
+    "dugong_far10": [
+      0.41900371937503217,
+      0.04116493530867258
+    ],
+    "turtle_all": [
+      0.0942079344963776,
+      0.08291841211841047
+    ]
+  },
+  "slim": {
+    "doi": "10.25903/3pe4-9n65",
+    "landing": "https://researchdata.jcu.edu.au/published/3fa443ab1228316dc51fada2033f8634/",
+    "state": "METADATA_ONLY",
+    "explicit_file_links": [],
+    "matrix_acquired": false
+  },
+  "limits": [
+    "2010-14 map overlaps zero positions, so no contemporaneous comparison. Old map result conditional on historic mapped habitat; cannot establish actual animal habitat at release or arrival.",
+    "Map erosion changes eligible origins and reduces n; long-distance origin eligibility small. No physical passive comparator. Different individuals in same tracking study; not independent study or population-wide replication."
+  ]
+}
