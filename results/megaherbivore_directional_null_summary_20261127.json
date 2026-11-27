@@ -202,9 +202,16 @@
   },
   "hydrodynamic_acquisition": {
     "run": 45947045388,
-    "status_at_last_check": "in_progress",
+    "status_at_last_check": "completed",
     "data_verified": false,
-    "endpoint": "https://ncss.hycom.org/thredds/ncss/grid/GLBu0.08/reanalysis/3hrly"
+    "endpoint": "https://ncss.hycom.org/thredds/ncss/grid/GLBu0.08/reanalysis/3hrly",
+    "workflow_conclusion": "success",
+    "source_state": "STOP",
+    "reason": "TimeoutError: The read operation timed out",
+    "artifact": 15174953291,
+    "artifact_sha256": "813294e43a995079ead4777841a3632bcedaba27a35124948ffcb0e9b6961b30",
+    "artifact_contents": "manifest only; no current file",
+    "second_window_attempted": false
   },
   "limits": [
     "All directions geometric rather than current-driven; no evidence of seed delivery, feeding or causal habitat selection.",
