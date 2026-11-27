@@ -16,3 +16,15 @@ Define a separate diagnostic for Torres already opened raw source, not new Tampa
 
 ## Boundaries
 This is a small cross-region synthesis plus a new executable reference diagnostic, not a completed macroecological theory or independent meta-analysis. Main manuscript and TNC protocol unchanged. Source: Carter et al. DOI 10.26274/2CR2-JK51; TBEP pinned occurrence and event. 
+
+## Executed raw-source result
+GitHub Actions run 45981390619, job 140445885799, artifact 15190135356, digest sha256:bc4dcceedafd4e36ede7a811f0449067ca01b9b8b77a9b75abe47e1ae359462a; all identity job steps passed. Prior summary exact replay, archive and inner checks, synthetic check and real original-row analysis passed. Full output recovered from job log JSON and stored with provenance in results/meadow_richness_reference_verified_20261127.json.
+
+| Water depth matching | Lobster 1y movable/416 | Observed/expected prior-taxon retention | Difference pp | Cucumber 2y movable/98 | Observed/expected | Difference pp |
+|---|---:|---:|---:|---:|---:|---:|
+| 2 m (primary) | 46 | 59.89/58.52% | +1.37 | 50 | 85.67/86.68% | -1.01 |
+| 1 m | 26 | 55.26/56.06% | -0.80 | 43 | 83.33/84.86% | -1.53 |
+| 5 m | 109 | 60.86/54.91% | +5.94 | 61 | 88.25/88.66% | -0.41 |
+| No depth | 267 | 62.73/55.61% | +7.13 | 75 | 90.00/90.14% | -0.14 |
+
+Strict 2m reference: both panels inside their simulated reference ranges. Coarse/no-depth lobster excess outside descriptive shuffle ranges; no consistent excess at finer depth matching and markedly different eligible subsets (11.1% at primary vs 64.2% no depth). Cannot infer that depth causes or explains the difference; not an inferential null test and not evidence of universal species-specific memory. Hypothesis: composition memory beyond measurable habitat sorting, if present, may depend on environmental heterogeneity and study grain; require independent comparable monitoring, explicit observation process and matched coverage. Do not conflate this with previous focal loss conditional masking. No new Tampa fits, manuscript or protected TNC changes.

@@ -1,0 +1,326 @@
+{
+  "run_id": 45981390619,
+  "job_id": 140445885799,
+  "artifact_id": 15190135356,
+  "artifact_digest": "sha256:bc4dcceedafd4e36ede7a811f0449067ca01b9b8b77a9b75abe47e1ae359462a",
+  "head_sha": "b507c29c6992fe3735d96806d301e775d7711a26",
+  "source": "Workflow log JSON, artifact digest verified via API; not independently unpacked result ZIP.",
+  "archive_sha256": "31d4831e2efa3552e58db32a70fefccf6dcad5049e2bed4f2ca09d984b547e06",
+  "inner_sha256": "9727c28d4dafcd225a754f2439e010fe09f2835dfbeefe03b28cc5d8f940facf",
+  "primary_reference": "same target year, exact initial and later richness, 2m depth bins",
+  "panels": {
+    "lobster": {
+      "1": {
+        "estimable": true,
+        "all_pairs": 416,
+        "movable_pairs": 26,
+        "movable_fraction": 0.0625,
+        "movable_stations": 21,
+        "movable_strata": 13,
+        "all_strata": 392,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.5525641025641026,
+            "expected": 0.5605769230769233,
+            "difference": -0.008012820512820706,
+            "shuffle_reference_2.5_97.5": [
+              0.530128205128205,
+              0.5910256410256409
+            ]
+          },
+          "jaccard": {
+            "observed": 0.44166666666666665,
+            "expected": 0.4480769230769229,
+            "difference": -0.006410256410256221,
+            "shuffle_reference_2.5_97.5": [
+              0.41538461538461546,
+              0.48076923076923084
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.11538461538461539,
+            "expected": 0.11538461538461539,
+            "difference": 0,
+            "shuffle_reference_2.5_97.5": [
+              0.11538461538461539,
+              0.11538461538461539
+            ]
+          }
+        }
+      },
+      "2": {
+        "estimable": true,
+        "all_pairs": 416,
+        "movable_pairs": 46,
+        "movable_fraction": 0.11057692307692307,
+        "movable_stations": 27,
+        "movable_strata": 22,
+        "all_strata": 375,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.5989130434782609,
+            "expected": 0.5852053140096628,
+            "difference": 0.013707729468598107,
+            "shuffle_reference_2.5_97.5": [
+              0.5594202898550723,
+              0.6105072463768114
+            ]
+          },
+          "jaccard": {
+            "observed": 0.47603519668737065,
+            "expected": 0.45791925465838473,
+            "difference": 0.01811594202898592,
+            "shuffle_reference_2.5_97.5": [
+              0.42929606625258804,
+              0.48581780538302277
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.06521739130434782,
+            "expected": 0.07971014492753624,
+            "difference": -0.014492753623188415,
+            "shuffle_reference_2.5_97.5": [
+              0.06521739130434782,
+              0.10869565217391304
+            ]
+          }
+        }
+      },
+      "5": {
+        "estimable": true,
+        "all_pairs": 416,
+        "movable_pairs": 109,
+        "movable_fraction": 0.2620192307692308,
+        "movable_stations": 43,
+        "movable_strata": 46,
+        "all_strata": 331,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.6085626911314984,
+            "expected": 0.5491335372069316,
+            "difference": 0.059429153924566824,
+            "shuffle_reference_2.5_97.5": [
+              0.5061162079510703,
+              0.5955657492354733
+            ]
+          },
+          "jaccard": {
+            "observed": 0.48322411533420706,
+            "expected": 0.43050822775593456,
+            "difference": 0.0527158875782725,
+            "shuffle_reference_2.5_97.5": [
+              0.39209261686325897,
+              0.4722149410222804
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.11009174311926606,
+            "expected": 0.18042813455657483,
+            "difference": -0.07033639143730877,
+            "shuffle_reference_2.5_97.5": [
+              0.13761467889908258,
+              0.22018348623853212
+            ]
+          }
+        }
+      },
+      "None": {
+        "estimable": true,
+        "all_pairs": 416,
+        "movable_pairs": 267,
+        "movable_fraction": 0.6418269230769231,
+        "movable_stations": 62,
+        "movable_strata": 95,
+        "all_strata": 216,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.6273408239700374,
+            "expected": 0.5560762588431118,
+            "difference": 0.07126456512692558,
+            "shuffle_reference_2.5_97.5": [
+              0.5297752808988773,
+              0.5844569288389522
+            ]
+          },
+          "jaccard": {
+            "observed": 0.48489388264669164,
+            "expected": 0.4223475120385228,
+            "difference": 0.06254637060816887,
+            "shuffle_reference_2.5_97.5": [
+              0.3993222757267708,
+              0.44613875512752016
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.10112359550561797,
+            "expected": 0.16985018726591788,
+            "difference": -0.06872659176029991,
+            "shuffle_reference_2.5_97.5": [
+              0.1385767790262172,
+              0.2022471910112361
+            ]
+          }
+        }
+      }
+    },
+    "cucumber": {
+      "1": {
+        "estimable": true,
+        "all_pairs": 98,
+        "movable_pairs": 43,
+        "movable_fraction": 0.4387755102040816,
+        "movable_stations": 27,
+        "movable_strata": 9,
+        "all_strata": 50,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.8333333333333334,
+            "expected": 0.8485834256183108,
+            "difference": -0.015250092284977423,
+            "shuffle_reference_2.5_97.5": [
+              0.8217054263565897,
+              0.8798449612403106
+            ]
+          },
+          "jaccard": {
+            "observed": 0.6996124031007752,
+            "expected": 0.7230066445182753,
+            "difference": -0.023394241417500128,
+            "shuffle_reference_2.5_97.5": [
+              0.6899224806201554,
+              0.7635658914728686
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.023255813953488372,
+            "expected": 0.023255813953488372,
+            "difference": 0,
+            "shuffle_reference_2.5_97.5": [
+              0.023255813953488372,
+              0.023255813953488372
+            ]
+          }
+        }
+      },
+      "2": {
+        "estimable": true,
+        "all_pairs": 98,
+        "movable_pairs": 50,
+        "movable_fraction": 0.5102040816326531,
+        "movable_stations": 30,
+        "movable_strata": 9,
+        "all_strata": 37,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.8566666666666667,
+            "expected": 0.8667550505050478,
+            "difference": -0.010088383838381065,
+            "shuffle_reference_2.5_97.5": [
+              0.846666666666667,
+              0.8900000000000005
+            ]
+          },
+          "jaccard": {
+            "observed": 0.6983333333333333,
+            "expected": 0.7144928451178487,
+            "difference": -0.016159511784515468,
+            "shuffle_reference_2.5_97.5": [
+              0.6900000000000001,
+              0.7450000000000001
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.02,
+            "expected": 0.019999999999999997,
+            "difference": 3.469446951953614e-18,
+            "shuffle_reference_2.5_97.5": [
+              0.02,
+              0.02
+            ]
+          }
+        }
+      },
+      "5": {
+        "estimable": true,
+        "all_pairs": 98,
+        "movable_pairs": 61,
+        "movable_fraction": 0.6224489795918368,
+        "movable_stations": 36,
+        "movable_strata": 9,
+        "all_strata": 31,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.8825136612021859,
+            "expected": 0.8866277847835197,
+            "difference": -0.004114123581333784,
+            "shuffle_reference_2.5_97.5": [
+              0.8688524590163941,
+              0.9043715846994542
+            ]
+          },
+          "jaccard": {
+            "observed": 0.7472677595628415,
+            "expected": 0.7544267549390433,
+            "difference": -0.007158995376201793,
+            "shuffle_reference_2.5_97.5": [
+              0.7308743169398911,
+              0.7786885245901644
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.01639344262295082,
+            "expected": 0.01639344262295082,
+            "difference": 0,
+            "shuffle_reference_2.5_97.5": [
+              0.01639344262295082,
+              0.01639344262295082
+            ]
+          }
+        }
+      },
+      "None": {
+        "estimable": true,
+        "all_pairs": 98,
+        "movable_pairs": 75,
+        "movable_fraction": 0.7653061224489796,
+        "movable_stations": 44,
+        "movable_strata": 9,
+        "all_strata": 24,
+        "metrics": {
+          "prior_taxon_retention": {
+            "observed": 0.9,
+            "expected": 0.9014430014430039,
+            "difference": -0.0014430014430039106,
+            "shuffle_reference_2.5_97.5": [
+              0.8844444444444433,
+              0.9155555555555543
+            ]
+          },
+          "jaccard": {
+            "observed": 0.7655555555555555,
+            "expected": 0.7694353054353091,
+            "difference": -0.003879749879753591,
+            "shuffle_reference_2.5_97.5": [
+              0.7466666666666656,
+              0.7888888888888876
+            ]
+          },
+          "no_shared_taxon": {
+            "observed": 0.013333333333333334,
+            "expected": 0.013333333333333332,
+            "difference": 1.734723475976807e-18,
+            "shuffle_reference_2.5_97.5": [
+              0.013333333333333334,
+              0.013333333333333334
+            ]
+          }
+        }
+      }
+    }
+  },
+  "limits": [
+    "Response-open diagnostic; conditioning on observed target richness and presence is not a prospective forecast.",
+    "Candidate target assemblages are permuted within matching strata; repeated stations, spatial autocorrelation and detection can violate exchangeability. Reference quantiles are not inferential confidence intervals or causal p-values.",
+    "Restricted to movable pairs; different matching widths may select different populations. No evidence of animal-mediated transport or true taxon survival."
+  ]
+}
