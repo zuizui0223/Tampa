@@ -1,0 +1,33 @@
+name: Cross-region meadow identity diagnostic
+on:
+  push:
+    branches: [analysis/cross-region-meadow-identity-20261127]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source-summary reaggregation
+        run: |
+          node analysis/220_cross_region_identity.cjs reproduced.json
+          diff -u results/cross_region_meadow_identity_20261127.json reproduced.json
+      - name: Synthetic reference check
+        run: python analysis/221_meadow_richness_reference.py --selftest
+      - name: Retrieve exact previous survey archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --location --retry 2 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/repos/zuizui0223/Tampa/actions/artifacts/15185560000/zip -o survey.zip
+          echo '31d4831e2efa3552e58db32a70fefccf6dcad5049e2bed4f2ca09d984b547e06  survey.zip' | sha256sum -c -
+      - name: Run observed-composition conditional reference
+        run: python analysis/221_meadow_richness_reference.py survey.zip richness-reference.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cross-region-meadow-identity
+          path: |
+            reproduced.json
+            richness-reference.json

@@ -1,0 +1,233 @@
+{
+  "source_commit": "19e659ca8d9527fc48b0dccebdda34ee7a6c1835",
+  "sources": [
+    {
+      "path": "results/community_insurance_v1.json",
+      "git_blob": "b224670af6e95a0c44bf44c697c315107ebf9902"
+    },
+    {
+      "path": "results/taxon_habitat_memory_summary_20261127.json",
+      "git_blob": "76fdbf64c435370e65aa38d7a06865510a08d6dd"
+    }
+  ],
+  "tampa": {
+    "panel": "Tampa Thalassia 1y, target years 2016–2025",
+    "loss": 370,
+    "selective": 302,
+    "bare": 68,
+    "fraction": 0.8162162162162162
+  },
+  "panels": [
+    {
+      "panel": "lobster_1y",
+      "total": {
+        "n": 1375,
+        "any": 1238,
+        "same": 792,
+        "bare": 137,
+        "selective": 446,
+        "loss": 583,
+        "fraction": 0.7650085763293311
+      },
+      "taxa": [
+        {
+          "code": "CR_PA",
+          "n": 183,
+          "any": 157,
+          "same": 81,
+          "bare": 26,
+          "selective": 76,
+          "loss": 102,
+          "fraction": 0.7450980392156863
+        },
+        {
+          "code": "CS_PA",
+          "n": 113,
+          "any": 104,
+          "same": 36,
+          "bare": 9,
+          "selective": 68,
+          "loss": 77,
+          "fraction": 0.8831168831168831
+        },
+        {
+          "code": "EA_PA",
+          "n": 20,
+          "any": 19,
+          "same": 12,
+          "bare": 1,
+          "selective": 7,
+          "loss": 8,
+          "fraction": 0.875
+        },
+        {
+          "code": "HO_PA",
+          "n": 272,
+          "any": 247,
+          "same": 184,
+          "bare": 25,
+          "selective": 63,
+          "loss": 88,
+          "fraction": 0.7159090909090909
+        },
+        {
+          "code": "HS_PA",
+          "n": 345,
+          "any": 299,
+          "same": 235,
+          "bare": 46,
+          "selective": 64,
+          "loss": 110,
+          "fraction": 0.5818181818181818
+        },
+        {
+          "code": "HU_PA",
+          "n": 60,
+          "any": 58,
+          "same": 28,
+          "bare": 2,
+          "selective": 30,
+          "loss": 32,
+          "fraction": 0.9375
+        },
+        {
+          "code": "SI_PA",
+          "n": 244,
+          "any": 230,
+          "same": 159,
+          "bare": 14,
+          "selective": 71,
+          "loss": 85,
+          "fraction": 0.8352941176470589
+        },
+        {
+          "code": "TC_PA",
+          "n": 66,
+          "any": 57,
+          "same": 27,
+          "bare": 9,
+          "selective": 30,
+          "loss": 39,
+          "fraction": 0.7692307692307693
+        },
+        {
+          "code": "TH_PA",
+          "n": 72,
+          "any": 67,
+          "same": 30,
+          "bare": 5,
+          "selective": 37,
+          "loss": 42,
+          "fraction": 0.8809523809523809
+        }
+      ],
+      "equal_taxon_initial20": 0.8026577180988945,
+      "range_initial20": [
+        0.5818181818181818,
+        0.9375
+      ],
+      "leave_one_taxon_range": [
+        0.7470355731225297,
+        0.8076109936575053
+      ]
+    },
+    {
+      "panel": "cucumber_2y",
+      "total": {
+        "n": 220,
+        "any": 217,
+        "same": 181,
+        "bare": 3,
+        "selective": 36,
+        "loss": 39,
+        "fraction": 0.9230769230769231
+      },
+      "taxa": [
+        {
+          "code": "CR_PA",
+          "n": 22,
+          "any": 21,
+          "same": 6,
+          "bare": 1,
+          "selective": 15,
+          "loss": 16,
+          "fraction": 0.9375
+        },
+        {
+          "code": "EA_PA",
+          "n": 86,
+          "any": 85,
+          "same": 76,
+          "bare": 1,
+          "selective": 9,
+          "loss": 10,
+          "fraction": 0.9
+        },
+        {
+          "code": "HO_PA",
+          "n": 11,
+          "any": 11,
+          "same": 3,
+          "bare": 0,
+          "selective": 8,
+          "loss": 8,
+          "fraction": 1
+        },
+        {
+          "code": "HU_PA",
+          "n": 1,
+          "any": 1,
+          "same": 0,
+          "bare": 0,
+          "selective": 1,
+          "loss": 1,
+          "fraction": 1
+        },
+        {
+          "code": "SI_PA",
+          "n": 1,
+          "any": 1,
+          "same": 0,
+          "bare": 0,
+          "selective": 1,
+          "loss": 1,
+          "fraction": 1
+        },
+        {
+          "code": "TC_PA",
+          "n": 98,
+          "any": 97,
+          "same": 96,
+          "bare": 1,
+          "selective": 1,
+          "loss": 2,
+          "fraction": 0.5
+        },
+        {
+          "code": "TH_PA",
+          "n": 1,
+          "any": 1,
+          "same": 0,
+          "bare": 0,
+          "selective": 1,
+          "loss": 1,
+          "fraction": 1
+        }
+      ],
+      "equal_taxon_initial20": 0.7791666666666667,
+      "range_initial20": [
+        0.5,
+        0.9375
+      ],
+      "leave_one_taxon_range": [
+        0.9032258064516129,
+        0.9459459459459459
+      ]
+    }
+  ],
+  "limits": [
+    "Secondary reaggregation of already opened source-verified summaries, not a new independent data collection or meta-analysis.",
+    "Tampa single focal taxon and repeated meter marks; Torres pooled taxon-by-station transitions, not independent events. Survey units, taxon richness, detectability, geography and lags differ; no regional or lag effect inference.",
+    "Conditional masking fraction is not evidence of a mechanism or excess over a richness-controlled null. It does not identify mortality, replacement or functional equivalence."
+  ]
+}
