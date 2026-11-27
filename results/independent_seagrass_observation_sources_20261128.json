@@ -1,0 +1,53 @@
+{
+  "run_id": 46084184508,
+  "job_id": 140789791560,
+  "head_sha": "58993c72f0012e72d0e151aeebe4a6c1a3ed5265",
+  "source": "verified workflow log",
+  "moreton_2011_06": {
+    "url": "https://doi.pangaea.de/10.1594/PANGAEA.846143",
+    "final_url": "https://doi.pangaea.de/10.1594/PANGAEA.846143",
+    "state": "STOP",
+    "reason": "StopIteration: "
+  },
+  "moreton_2012_06": {
+    "url": "https://doi.pangaea.de/10.1594/PANGAEA.846146",
+    "final_url": "https://doi.pangaea.de/10.1594/PANGAEA.846146",
+    "state": "STOP",
+    "reason": "StopIteration: "
+  },
+  "marinegeo": {
+    "url": "https://ipt-obis.gbif.us/archive.do?r=marinegeo-seagrass-monitoring&v=1.2",
+    "final_url": "https://ipt-obis.gbif.us/archive.do?r=marinegeo-seagrass-monitoring&v=1.2",
+    "members": {
+      "event.txt": {
+        "rows_ex_header": 492,
+        "header": "id\tlicense\trightsHolder\tbibliographicCitation\tinstitutionID\tdatasetID\tinstitutionCode\tdatasetName\teventID\tparentEventID\teventDate\thabitat\tsamplingProtocol\tsampleSizeValue\tsampleSizeUnit\tfieldNotes\tcountryCode\tminimumDepthInMeters\tmaximumDepthInMeters\tdecimalLatitude\tdecimalLongitude\tgeodeticDatum\tcoordinateUncertaintyInMeters\tfootprintWKT",
+        "first": "MarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1\tCC BY\t\t\tMarineGEO\t\tMarineGEO\tMarineGEO Global Seagrass Habitat Monitoring Data\tMarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1\t\t2021-01-21\tseagrass\thttps://doi.org/10.25573/serc.14925114\t\t\t\tPA\t3.5\t4.5\t9.291375\t-82.343535\tEPSG:4326\t30\tLINESTRING (-82.34341 9.29119, -82.34366 9.29156)",
+        "sha256": "3bef0b191f395141bb926f2c3d277e2bbe42d1f7f12861c9a5f28e06663cf048"
+      },
+      "occurrence.txt": {
+        "rows_ex_header": 2534,
+        "header": "id\tbasisOfRecord\toccurrenceID\trecordedBy\toccurrenceStatus\teventID\tidentificationQualifier\tidentifiedBy\tscientificNameID\tscientificName\tkingdom\tphylum\tclass\torder\tfamily\tgenus\ttaxonRank\tvernacularName",
+        "first": "MarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1:2\tHumanObservation\tMarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1:2:143820\t\tabsent\tMarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1:2\t\t\turn:lsid:marinespecies.org:taxname:143820\tHalimeda\tPlantae\t\tUlvophyceae\tBryopsidales\tHalimedaceae\tHalimeda\tgenus\t",
+        "sha256": "6656a636f74e5658dac1c9393e41f424cf31e95cc691ceaab901fb0d35b03a55"
+      },
+      "extendedmeasurementorfact.txt": {
+        "rows_ex_header": 2976,
+        "header": "id\tmeasurementID\toccurrenceID\tmeasurementType\tmeasurementTypeID\tmeasurementValue\tmeasurementValueID\tmeasurementAccuracy\tmeasurementUnit\tmeasurementUnitID\tmeasurementDeterminedDate\tmeasurementDeterminedBy\tmeasurementMethod",
+        "first": "MarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1:2\t\tMarineGEO:PAN-BDT_seagrass_2021:Almirante_Seagrass:1:2:143820\tpercentCover\thttps://vocab.nerc.ac.uk/collection/P01/current/PCOV7736/\t0\t\t\tPercent\thttps://vocab.nerc.ac.uk/collection/P06/current/UPCT/\t2021-01-21\t\thttps://doi.org/10.25573/serc.14925114",
+        "sha256": "264070846a202902cd5aa5799a82f8c94295119d790de130b78b5df5cab5824d"
+      }
+    },
+    "all_members": [
+      "event.txt",
+      "occurrence.txt",
+      "extendedmeasurementorfact.txt",
+      "eml.xml",
+      "meta.xml"
+    ],
+    "state": "ACQUIRED",
+    "file": "marinegeo.zip",
+    "sha256": "d54938eed357e27ebd456dfd7d50c0506e60e8345b524809711b91f8c0cee29e",
+    "bytes": 70005
+  }
+}

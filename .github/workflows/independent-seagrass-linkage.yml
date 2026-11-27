@@ -1,0 +1,26 @@
+name: MarineGEO independent linkage and Moreton export audit
+on:
+  push:
+    branches: [analysis/cross-region-meadow-identity-20261127]
+    paths: ['analysis/226_independent_seagrass_linkage.py', '.github/workflows/independent-seagrass-linkage.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  linkage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download pinned source archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --location --retry 2 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/repos/zuizui0223/Tampa/actions/artifacts/15237843683/zip -o sources.zip
+          echo 'f08742a7d7b26ff55e1e21fa98bcfc545b92f3cd1cd9e5beebcebf96a3f1771c  sources.zip' | sha256sum -c -
+      - run: python analysis/226_independent_seagrass_linkage.py sources.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-seagrass-linkage
+          path: independent_audit/
+          retention-days: 30

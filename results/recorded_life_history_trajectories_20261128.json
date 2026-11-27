@@ -1,0 +1,638 @@
+{
+  "run_id": 46084184508,
+  "job_id": 140789791775,
+  "head_sha": "58993c72f0012e72d0e151aeebe4a6c1a3ed5265",
+  "source": "verified workflow log",
+  "archive": "31d4831e2efa3552e58db32a70fefccf6dcad5049e2bed4f2ca09d984b547e06",
+  "panels": {
+    "A_annual": {
+      "step": 1,
+      "complete_triples": 906,
+      "initial_cooccurrence_triples": 90,
+      "paired_equal_station": {
+        "endpoint": {
+          "clusters": 24,
+          "mean": -0.4540118157305657,
+          "ci95": [
+            -0.6051959325396825,
+            -0.29968616452991453
+          ]
+        },
+        "continuous": {
+          "clusters": 24,
+          "mean": -0.35901887464387466,
+          "ci95": [
+            -0.5308366402116402,
+            -0.18389423076923075
+          ]
+        },
+        "reappearance": {
+          "clusters": 24,
+          "mean": -0.09499294108669108,
+          "ci95": [
+            -0.24584573412698413,
+            0.03324652777777778
+          ]
+        },
+        "first_loss": {
+          "clusters": 24,
+          "mean": 0.25873206654456654,
+          "ci95": [
+            0.08254349816849817,
+            0.44419642857142855
+          ]
+        }
+      },
+      "taxa": {
+        "Cymodocea rotundata": {
+          "n": 153,
+          "counts": {
+            "100": 64,
+            "101": 26,
+            "110": 30,
+            "111": 33
+          },
+          "continuous": 0.21568627450980393,
+          "reappearance_joint": 0.16993464052287582,
+          "endpoint": 0.38562091503267976,
+          "first_nonrecord": 0.5882352941176471,
+          "rerecord_after_nonrecord": 0.28888888888888886,
+          "retention_after_record": 0.5238095238095238
+        },
+        "Cymodocea serrulata": {
+          "n": 103,
+          "counts": {
+            "100": 58,
+            "101": 9,
+            "110": 20,
+            "111": 16
+          },
+          "continuous": 0.1553398058252427,
+          "reappearance_joint": 0.08737864077669903,
+          "endpoint": 0.24271844660194175,
+          "first_nonrecord": 0.6504854368932039,
+          "rerecord_after_nonrecord": 0.13432835820895522,
+          "retention_after_record": 0.4444444444444444
+        },
+        "Enhalus acoroides": {
+          "n": 16,
+          "counts": {
+            "100": 4,
+            "101": 2,
+            "110": 1,
+            "111": 9
+          },
+          "continuous": 0.5625,
+          "reappearance_joint": 0.125,
+          "endpoint": 0.6875,
+          "first_nonrecord": 0.375,
+          "rerecord_after_nonrecord": 0.3333333333333333,
+          "retention_after_record": 0.9
+        },
+        "Halodule uninervis": {
+          "n": 54,
+          "counts": {
+            "100": 23,
+            "101": 6,
+            "110": 12,
+            "111": 13
+          },
+          "continuous": 0.24074074074074073,
+          "reappearance_joint": 0.1111111111111111,
+          "endpoint": 0.35185185185185186,
+          "first_nonrecord": 0.5370370370370371,
+          "rerecord_after_nonrecord": 0.20689655172413793,
+          "retention_after_record": 0.52
+        },
+        "Halophila ovalis": {
+          "n": 235,
+          "counts": {
+            "100": 40,
+            "101": 36,
+            "110": 41,
+            "111": 118
+          },
+          "continuous": 0.502127659574468,
+          "reappearance_joint": 0.15319148936170213,
+          "endpoint": 0.6553191489361702,
+          "first_nonrecord": 0.32340425531914896,
+          "rerecord_after_nonrecord": 0.47368421052631576,
+          "retention_after_record": 0.7421383647798742
+        },
+        "Halophila spinulosa": {
+          "n": 291,
+          "counts": {
+            "100": 53,
+            "101": 40,
+            "110": 47,
+            "111": 151
+          },
+          "continuous": 0.5189003436426117,
+          "reappearance_joint": 0.13745704467353953,
+          "endpoint": 0.6563573883161512,
+          "first_nonrecord": 0.31958762886597936,
+          "rerecord_after_nonrecord": 0.43010752688172044,
+          "retention_after_record": 0.7626262626262627
+        },
+        "Syringodium isoetifolium": {
+          "n": 213,
+          "counts": {
+            "100": 37,
+            "101": 38,
+            "110": 31,
+            "111": 107
+          },
+          "continuous": 0.5023474178403756,
+          "reappearance_joint": 0.1784037558685446,
+          "endpoint": 0.6807511737089202,
+          "first_nonrecord": 0.352112676056338,
+          "rerecord_after_nonrecord": 0.5066666666666667,
+          "retention_after_record": 0.7753623188405797
+        },
+        "Thalassia hemprichii": {
+          "n": 67,
+          "counts": {
+            "100": 28,
+            "101": 13,
+            "110": 16,
+            "111": 10
+          },
+          "continuous": 0.14925373134328357,
+          "reappearance_joint": 0.19402985074626866,
+          "endpoint": 0.34328358208955223,
+          "first_nonrecord": 0.6119402985074627,
+          "rerecord_after_nonrecord": 0.3170731707317073,
+          "retention_after_record": 0.38461538461538464
+        },
+        "Thalassodendron ciliatum": {
+          "n": 58,
+          "counts": {
+            "100": 18,
+            "101": 16,
+            "110": 11,
+            "111": 13
+          },
+          "continuous": 0.22413793103448276,
+          "reappearance_joint": 0.27586206896551724,
+          "endpoint": 0.5,
+          "first_nonrecord": 0.5862068965517241,
+          "rerecord_after_nonrecord": 0.47058823529411764,
+          "retention_after_record": 0.5416666666666666
+        }
+      },
+      "classes": {
+        "C": {
+          "n": 526,
+          "counts": {
+            "100": 93,
+            "101": 76,
+            "110": 88,
+            "111": 269
+          },
+          "continuous": 0.5114068441064639,
+          "reappearance_joint": 0.1444866920152091,
+          "endpoint": 0.655893536121673,
+          "first_nonrecord": 0.32129277566539927,
+          "rerecord_after_nonrecord": 0.44970414201183434,
+          "retention_after_record": 0.7535014005602241
+        },
+        "O": {
+          "n": 523,
+          "counts": {
+            "100": 182,
+            "101": 79,
+            "110": 93,
+            "111": 169
+          },
+          "continuous": 0.3231357552581262,
+          "reappearance_joint": 0.15105162523900573,
+          "endpoint": 0.47418738049713194,
+          "first_nonrecord": 0.49904397705544934,
+          "rerecord_after_nonrecord": 0.30268199233716475,
+          "retention_after_record": 0.6450381679389313
+        },
+        "P": {
+          "n": 141,
+          "counts": {
+            "100": 50,
+            "101": 31,
+            "110": 28,
+            "111": 32
+          },
+          "continuous": 0.22695035460992907,
+          "reappearance_joint": 0.2198581560283688,
+          "endpoint": 0.44680851063829785,
+          "first_nonrecord": 0.574468085106383,
+          "rerecord_after_nonrecord": 0.38271604938271603,
+          "retention_after_record": 0.5333333333333333
+        }
+      }
+    },
+    "A_two_year": {
+      "step": 2,
+      "complete_triples": 701,
+      "initial_cooccurrence_triples": 70,
+      "paired_equal_station": {
+        "endpoint": {
+          "clusters": 17,
+          "mean": -0.33822503748974336,
+          "ci95": [
+            -0.5583877995642701,
+            -0.1342840166369578
+          ]
+        },
+        "continuous": {
+          "clusters": 17,
+          "mean": -0.3256387403446227,
+          "ci95": [
+            -0.5449346405228758,
+            -0.1282382650029709
+          ]
+        },
+        "reappearance": {
+          "clusters": 17,
+          "mean": -0.01258629714512067,
+          "ci95": [
+            -0.13427163794810854,
+            0.09130025747672807
+          ]
+        },
+        "first_loss": {
+          "clusters": 17,
+          "mean": 0.2502652576181988,
+          "ci95": [
+            0.05886597063067652,
+            0.44946311858076565
+          ]
+        }
+      },
+      "taxa": {
+        "Cymodocea rotundata": {
+          "n": 125,
+          "counts": {
+            "100": 53,
+            "101": 27,
+            "110": 26,
+            "111": 19
+          },
+          "continuous": 0.152,
+          "reappearance_joint": 0.216,
+          "endpoint": 0.368,
+          "first_nonrecord": 0.64,
+          "rerecord_after_nonrecord": 0.3375,
+          "retention_after_record": 0.4222222222222222
+        },
+        "Cymodocea serrulata": {
+          "n": 79,
+          "counts": {
+            "100": 44,
+            "101": 11,
+            "110": 17,
+            "111": 7
+          },
+          "continuous": 0.08860759493670886,
+          "reappearance_joint": 0.13924050632911392,
+          "endpoint": 0.22784810126582278,
+          "first_nonrecord": 0.6962025316455697,
+          "rerecord_after_nonrecord": 0.2,
+          "retention_after_record": 0.2916666666666667
+        },
+        "Enhalus acoroides": {
+          "n": 13,
+          "counts": {
+            "100": 3,
+            "101": 2,
+            "110": 3,
+            "111": 5
+          },
+          "continuous": 0.38461538461538464,
+          "reappearance_joint": 0.15384615384615385,
+          "endpoint": 0.5384615384615384,
+          "first_nonrecord": 0.38461538461538464,
+          "rerecord_after_nonrecord": 0.4,
+          "retention_after_record": 0.625
+        },
+        "Halodule uninervis": {
+          "n": 42,
+          "counts": {
+            "100": 15,
+            "101": 8,
+            "110": 11,
+            "111": 8
+          },
+          "continuous": 0.19047619047619047,
+          "reappearance_joint": 0.19047619047619047,
+          "endpoint": 0.38095238095238093,
+          "first_nonrecord": 0.5476190476190477,
+          "rerecord_after_nonrecord": 0.34782608695652173,
+          "retention_after_record": 0.42105263157894735
+        },
+        "Halophila ovalis": {
+          "n": 175,
+          "counts": {
+            "100": 25,
+            "101": 35,
+            "110": 40,
+            "111": 75
+          },
+          "continuous": 0.42857142857142855,
+          "reappearance_joint": 0.2,
+          "endpoint": 0.6285714285714286,
+          "first_nonrecord": 0.34285714285714286,
+          "rerecord_after_nonrecord": 0.5833333333333334,
+          "retention_after_record": 0.6521739130434783
+        },
+        "Halophila spinulosa": {
+          "n": 222,
+          "counts": {
+            "100": 37,
+            "101": 44,
+            "110": 36,
+            "111": 105
+          },
+          "continuous": 0.47297297297297297,
+          "reappearance_joint": 0.1981981981981982,
+          "endpoint": 0.6711711711711712,
+          "first_nonrecord": 0.36486486486486486,
+          "rerecord_after_nonrecord": 0.5432098765432098,
+          "retention_after_record": 0.7446808510638298
+        },
+        "Syringodium isoetifolium": {
+          "n": 157,
+          "counts": {
+            "100": 26,
+            "101": 27,
+            "110": 21,
+            "111": 83
+          },
+          "continuous": 0.5286624203821656,
+          "reappearance_joint": 0.17197452229299362,
+          "endpoint": 0.7006369426751592,
+          "first_nonrecord": 0.3375796178343949,
+          "rerecord_after_nonrecord": 0.5094339622641509,
+          "retention_after_record": 0.7980769230769231
+        },
+        "Thalassia hemprichii": {
+          "n": 55,
+          "counts": {
+            "100": 15,
+            "101": 15,
+            "110": 12,
+            "111": 13
+          },
+          "continuous": 0.23636363636363636,
+          "reappearance_joint": 0.2727272727272727,
+          "endpoint": 0.509090909090909,
+          "first_nonrecord": 0.5454545454545454,
+          "rerecord_after_nonrecord": 0.5,
+          "retention_after_record": 0.52
+        },
+        "Thalassodendron ciliatum": {
+          "n": 41,
+          "counts": {
+            "100": 19,
+            "101": 2,
+            "110": 9,
+            "111": 11
+          },
+          "continuous": 0.2682926829268293,
+          "reappearance_joint": 0.04878048780487805,
+          "endpoint": 0.3170731707317073,
+          "first_nonrecord": 0.5121951219512195,
+          "rerecord_after_nonrecord": 0.09523809523809523,
+          "retention_after_record": 0.55
+        }
+      },
+      "classes": {
+        "C": {
+          "n": 397,
+          "counts": {
+            "100": 62,
+            "101": 79,
+            "110": 76,
+            "111": 180
+          },
+          "continuous": 0.4534005037783375,
+          "reappearance_joint": 0.19899244332493704,
+          "endpoint": 0.6523929471032746,
+          "first_nonrecord": 0.35516372795969775,
+          "rerecord_after_nonrecord": 0.5602836879432624,
+          "retention_after_record": 0.703125
+        },
+        "O": {
+          "n": 403,
+          "counts": {
+            "100": 138,
+            "101": 73,
+            "110": 75,
+            "111": 117
+          },
+          "continuous": 0.2903225806451613,
+          "reappearance_joint": 0.18114143920595532,
+          "endpoint": 0.47146401985111663,
+          "first_nonrecord": 0.5235732009925558,
+          "rerecord_after_nonrecord": 0.3459715639810427,
+          "retention_after_record": 0.609375
+        },
+        "P": {
+          "n": 109,
+          "counts": {
+            "100": 37,
+            "101": 19,
+            "110": 24,
+            "111": 29
+          },
+          "continuous": 0.26605504587155965,
+          "reappearance_joint": 0.1743119266055046,
+          "endpoint": 0.44036697247706424,
+          "first_nonrecord": 0.5137614678899083,
+          "rerecord_after_nonrecord": 0.3392857142857143,
+          "retention_after_record": 0.5471698113207547
+        }
+      }
+    },
+    "B_two_year": {
+      "step": 2,
+      "complete_triples": 52,
+      "initial_cooccurrence_triples": 15,
+      "paired_equal_station": {
+        "endpoint": {
+          "clusters": 15,
+          "mean": 0.36666666666666664,
+          "ci95": [
+            0.13333333333333333,
+            0.6333333333333333
+          ]
+        },
+        "continuous": {
+          "clusters": 15,
+          "mean": 0.7333333333333333,
+          "ci95": [
+            0.5333333333333333,
+            0.9
+          ]
+        },
+        "reappearance": {
+          "clusters": 15,
+          "mean": -0.36666666666666664,
+          "ci95": [
+            -0.6333333333333333,
+            -0.1
+          ]
+        },
+        "first_loss": {
+          "clusters": 15,
+          "mean": -0.6666666666666666,
+          "ci95": [
+            -0.8333333333333334,
+            -0.4666666666666667
+          ]
+        }
+      },
+      "taxa": {
+        "Cymodocea rotundata": {
+          "n": 10,
+          "counts": {
+            "100": 2,
+            "101": 5,
+            "110": 2,
+            "111": 1
+          },
+          "continuous": 0.1,
+          "reappearance_joint": 0.5,
+          "endpoint": 0.6,
+          "first_nonrecord": 0.7,
+          "rerecord_after_nonrecord": 0.7142857142857143,
+          "retention_after_record": 0.3333333333333333
+        },
+        "Enhalus acoroides": {
+          "n": 46,
+          "counts": {
+            "100": 0,
+            "101": 9,
+            "110": 1,
+            "111": 36
+          },
+          "continuous": 0.782608695652174,
+          "reappearance_joint": 0.1956521739130435,
+          "endpoint": 0.9782608695652174,
+          "first_nonrecord": 0.1956521739130435,
+          "rerecord_after_nonrecord": 1,
+          "retention_after_record": 0.972972972972973
+        },
+        "Halodule uninervis": {
+          "n": 1,
+          "counts": {
+            "100": 1,
+            "101": 0,
+            "110": 0,
+            "111": 0
+          },
+          "continuous": 0,
+          "reappearance_joint": 0,
+          "endpoint": 0,
+          "first_nonrecord": 1,
+          "rerecord_after_nonrecord": 0,
+          "retention_after_record": null
+        },
+        "Halophila ovalis": {
+          "n": 6,
+          "counts": {
+            "100": 2,
+            "101": 4,
+            "110": 0,
+            "111": 0
+          },
+          "continuous": 0,
+          "reappearance_joint": 0.6666666666666666,
+          "endpoint": 0.6666666666666666,
+          "first_nonrecord": 1,
+          "rerecord_after_nonrecord": 0.6666666666666666,
+          "retention_after_record": null
+        },
+        "Thalassia hemprichii": {
+          "n": 1,
+          "counts": {
+            "100": 0,
+            "101": 1,
+            "110": 0,
+            "111": 0
+          },
+          "continuous": 0,
+          "reappearance_joint": 1,
+          "endpoint": 1,
+          "first_nonrecord": 1,
+          "rerecord_after_nonrecord": 1,
+          "retention_after_record": null
+        },
+        "Thalassodendron ciliatum": {
+          "n": 48,
+          "counts": {
+            "100": 0,
+            "101": 1,
+            "110": 1,
+            "111": 46
+          },
+          "continuous": 0.9583333333333334,
+          "reappearance_joint": 0.020833333333333332,
+          "endpoint": 0.9791666666666666,
+          "first_nonrecord": 0.020833333333333332,
+          "rerecord_after_nonrecord": 1,
+          "retention_after_record": 0.9787234042553191
+        }
+      },
+      "classes": {
+        "C": {
+          "n": 6,
+          "counts": {
+            "100": 2,
+            "101": 4,
+            "110": 0,
+            "111": 0
+          },
+          "continuous": 0,
+          "reappearance_joint": 0.6666666666666666,
+          "endpoint": 0.6666666666666666,
+          "first_nonrecord": 1,
+          "rerecord_after_nonrecord": 0.6666666666666666,
+          "retention_after_record": null
+        },
+        "O": {
+          "n": 11,
+          "counts": {
+            "100": 3,
+            "101": 5,
+            "110": 2,
+            "111": 1
+          },
+          "continuous": 0.09090909090909091,
+          "reappearance_joint": 0.45454545454545453,
+          "endpoint": 0.5454545454545454,
+          "first_nonrecord": 0.7272727272727273,
+          "rerecord_after_nonrecord": 0.625,
+          "retention_after_record": 0.3333333333333333
+        },
+        "P": {
+          "n": 95,
+          "counts": {
+            "100": 0,
+            "101": 11,
+            "110": 2,
+            "111": 82
+          },
+          "continuous": 0.8631578947368421,
+          "reappearance_joint": 0.11578947368421053,
+          "endpoint": 0.9789473684210527,
+          "first_nonrecord": 0.11578947368421053,
+          "rerecord_after_nonrecord": 1,
+          "retention_after_record": 0.9761904761904762
+        }
+      }
+    }
+  },
+  "limits": [
+    "Three actual observation years required, no imputation. 101 denotes re-recording after non-recording, not demographic recolonization. 111 denotes consecutive detections, not survival of the same individual.",
+    "Class-level rates are pooled taxon incidences. Paired analysis uses initial cooccurring P and nonP taxa and equal coordinate means; source richness, detectability, species identity and spatial dependence remain. No inference from small B panel.",
+    "Existing Torres data, post-hoc. No new Tampa mechanism mining."
+  ]
+}
