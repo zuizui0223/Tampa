@@ -1,0 +1,22 @@
+name: GBR4 coastal grid and velocity pilot
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths: ['analysis/213_gbr4_grid_pilot.py', '.github/workflows/gbr4-grid-pilot.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install netCDF4 numpy
+      - run: timeout 180 python analysis/213_gbr4_grid_pilot.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gbr4-pilot-sources
+          path: gbr4_pilot_sources/
+          retention-days: 14
