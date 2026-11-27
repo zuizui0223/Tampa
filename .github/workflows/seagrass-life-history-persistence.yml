@@ -1,0 +1,33 @@
+name: Life-history persistence across seagrass surveys
+on:
+  push:
+    branches: [analysis/cross-region-meadow-identity-20261127]
+    paths:
+      - 'analysis/222_life_history_persistence.py'
+      - '.github/workflows/seagrass-life-history-persistence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  trait:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies for original Tampa parser
+        run: pip install numpy pandas
+      - name: Download pinned Australian archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --location --retry 2 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/repos/zuizui0223/Tampa/actions/artifacts/15185560000/zip -o survey.zip
+          echo '31d4831e2efa3552e58db32a70fefccf6dcad5049e2bed4f2ca09d984b547e06  survey.zip' | sha256sum -c -
+      - name: Reconstruct and compare cooccurring life histories
+        run: python analysis/222_life_history_persistence.py survey.zip life-history.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seagrass-life-history-persistence
+          path: life-history.json
