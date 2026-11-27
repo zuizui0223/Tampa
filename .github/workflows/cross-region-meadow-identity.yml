@@ -24,7 +24,9 @@ jobs:
           curl --fail --location --retry 2 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/repos/zuizui0223/Tampa/actions/artifacts/15185560000/zip -o survey.zip
           echo '31d4831e2efa3552e58db32a70fefccf6dcad5049e2bed4f2ca09d984b547e06  survey.zip' | sha256sum -c -
       - name: Run observed-composition conditional reference
-        run: python analysis/221_meadow_richness_reference.py survey.zip richness-reference.json
+        run: |
+          python analysis/221_meadow_richness_reference.py survey.zip richness-reference.json
+          cat richness-reference.json
       - uses: actions/upload-artifact@v4
         with:
           name: cross-region-meadow-identity
