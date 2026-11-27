@@ -1,0 +1,21 @@
+name: Seagrass independent survey points
+on:
+  push:
+    branches: [analysis/reproductive-interaction-gates-20261124]
+    paths: ['analysis/217_seagrass_survey_points.py', '.github/workflows/seagrass-survey-points.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: python analysis/217_seagrass_survey_points.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seagrass-survey-points
+          path: seagrass_point_sources/
+          retention-days: 14
