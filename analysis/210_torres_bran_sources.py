@@ -21,7 +21,7 @@ def subset(month,component):
             time=np.array(ds[td][:]);depth=np.array(ds[zd][:]);lat=np.array(ds[yd][:]);lon=np.array(ds[xd][:])
             assert np.all(np.diff(lat)>0) and np.all(np.diff(lon)>0)
             assert "degrees" in ds[yd].units and "degrees" in ds[xd].units
-            assert v.units in ("m/s","m s-1","m s**-1","meter second-1","metre second-1","m s^-1"),v.units
+            assert v.units in ("m/sec","m/s","m s-1","m s**-1","meter second-1","metre second-1","m s^-1"),v.units
             ix=np.where((lon>=139)&(lon<=147))[0];iy=np.where((lat>=-12.5)&(lat<=-7.5))[0]
             assert len(ix)>20 and len(iy)>20
             zi=int(np.argmin(np.abs(depth)));assert abs(depth[zi])<=5
