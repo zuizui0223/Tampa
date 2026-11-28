@@ -1,0 +1,114 @@
+{
+  "run_id": 46100200783,
+  "artifact_id": 15244373806,
+  "artifact_digest": "sha256:befbd2c0d3484438648be4a0408670c20e592089179558d5429c13a43565bf58",
+  "source": [
+    {
+      "url": "https://store.pangaea.de/Images/Benthos/EasternBanks/2011-06/2011-06-07_EBMA88_57.jpg",
+      "sha256": "ecd000b5b44f126a429e3e678a9e2987aa6c7e4c356903e45bb803ccb65f0cd3",
+      "provider_rows": 4724,
+      "descriptor_photos": 4150,
+      "difference": 574,
+      "valid_unique_photo_rows": 4720,
+      "qc": {
+        "missing_photo_id": 4,
+        "identical_duplicate_rows": 0
+      },
+      "dates": {
+        "2011-06-03": 1153,
+        "2011-06-04": 1342,
+        "2011-06-05": 1579,
+        "2011-06-06": 342,
+        "2011-06-07": 308
+      },
+      "zones": {
+        "56J": 4724
+      },
+      "unique_transects": 4720,
+      "unique_locations": 4712,
+      "closure_quantiles": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "closure_exact_fractions": [
+        0.7641949152542373,
+        0.764406779661017,
+        0.8845338983050848,
+        0.9983050847457627
+      ]
+    },
+    {
+      "url": "https://store.pangaea.de/Images/Benthos/EasternBanks/2012-06/2012-06-10_MBMOT30_52.jpg",
+      "sha256": "5c894f0a0235c863e23e318cd530d617dfadad39ba619a83541c95a1987be756",
+      "provider_rows": 3668,
+      "descriptor_photos": 3748,
+      "difference": -80,
+      "valid_unique_photo_rows": 3668,
+      "qc": {
+        "identical_duplicate_rows": 0
+      },
+      "dates": {
+        "2012-06-07": 1032,
+        "2012-06-08": 1233,
+        "2012-06-09": 924,
+        "2012-06-10": 479
+      },
+      "zones": {
+        "56J": 3668
+      },
+      "unique_transects": 3668,
+      "unique_locations": 3654,
+      "closure_quantiles": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "closure_exact_fractions": [
+        0.8015267175572519,
+        0.8015267175572519,
+        0.8503271537622683,
+        0.9959105779716467
+      ]
+    }
+  ],
+  "STOP": "ValueError('zone/coverage gate')",
+  "limits": [
+    "Actual provider rows do not match paper photograph counts; no forced subsampling to paper count. Unique image URL required, exact duplicates collapsed and conflicting URL groups excluded.",
+    "Source-label cover and named-species sum separate; epiphyte/dark categories are not measured algae load. Cell-average composition based on sampled photos, not fixed quadrats or true survival. Grid shifts and thresholds response-open sensitivity, not spatially independent replications."
+  ]
+}

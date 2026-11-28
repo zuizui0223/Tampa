@@ -10,6 +10,7 @@ def get(yr,doi,descriptor_n,out):
     url='https://doi.pangaea.de/10.1594/PANGAEA.'+doi+'?format=textfile'
     with U.urlopen(U.Request(url,headers={'User-Agent':'Tampa-seagrass-research/1.0','Accept':'text/plain','Accept-Encoding':'identity'}),timeout=60) as r:b=r.read(30_000_001)
     assert len(b)<30_000_001
+    assert m.sha(b)=={2011:'ecd000b5b44f126a429e3e678a9e2987aa6c7e4c356903e45bb803ccb65f0cd3',2012:'5c894f0a0235c863e23e318cd530d617dfadad39ba619a83541c95a1987be756'}[yr], 'provider content differs from verified preflight'
     (out/('moreton_'+str(yr)+'.tsv')).write_bytes(b)
     s=b.decode('utf-8-sig');assert '*/' in s;rr=list(csv.reader(io.StringIO(s.split('*/',1)[1].strip('\r\n')),delimiter='\t'));h=rr[0];rows=[x for x in rr[1:] if x]
     for k,v in EXPECTED.items():assert h[k].strip().lower().startswith(v.lower()),(k,h[k],v)
@@ -19,7 +20,7 @@ def get(yr,doi,descriptor_n,out):
         if not x[1].startswith(str(yr)+'-06'):qc['outside_campaign']+=1;continue
         if not x[7].strip():qc['missing_photo_id']+=1;continue
         byurl[x[7]].append(x)
-    for url,vs in sorted(byurl.items()):
+    for photo_url,vs in sorted(byurl.items()):
         if len({tuple(x) for x in vs})>1:qc['conflicting_photo_id_rows']+=len(vs);continue
         qc['identical_duplicate_rows']+=len(vs)-1
         x=vs[0]
@@ -39,13 +40,13 @@ def get(yr,doi,descriptor_n,out):
         if total>100.001 or species.sum()>100.001:qc['invalid_sum']+=1;continue
         a.append((east,north,x[0],total,float(x[9]),species))
     assert len(a)+sum(qc.values())==len(rows),(len(a),qc,len(rows))
-    return a,{'url':url,'sha256':m.sha(b),'provider_rows':len(rows),'descriptor_photos':descriptor_n,'difference':len(rows)-descriptor_n,'valid_unique_photo_rows':len(a),'qc':dict(qc),'dates':dict(dates),'zones':dict(zones),'unique_transects':len({x[2] for x in a}),'unique_locations':len({(x[0],x[1]) for x in a}),'closure_quantiles':[m.q(x) for x in np.array(errs).T] if errs else None,'closure_exact_fractions':[float(np.mean(abs(x)<=.011)) for x in np.array(errs).T] if errs else None,'header':h}
+    return a,{'url':url,'sha256':m.sha(b),'provider_rows':len(rows),'descriptor_photos':descriptor_n,'difference':len(rows)-descriptor_n,'valid_unique_photo_rows':len(a),'qc':dict(qc),'dates':dict(dates),'zones':dict(zones),'unique_source_ids':len({x[2] for x in a}),'unique_locations':len({(x[0],x[1]) for x in a}),'closure_quantiles':[m.q(x) for x in np.array(errs).T] if errs else None,'closure_exact_fractions':[float(np.mean(abs(x)<=.011)) for x in np.array(errs).T] if errs else None,'header':h}
 def main():
     out=Path('moreton_audit');out.mkdir(exist_ok=True)
     result={}
     try:
         a,qa=get(2011,'846143',4150,out);b,qb=get(2012,'846146',3748,out);result['source']=[qa,qb]
-        if len(qa['zones'])!=1 or qa['zones']!=qb['zones'] or min(len(a),len(b))<100:raise ValueError('zone/coverage gate')
+        if len(qa['zones'])!=1 or set(qa['zones'])!=set(qb['zones']) or min(len(a),len(b))<100:raise ValueError('zone/coverage gate')
         # Keep different source totals explicit: these are provider table analyses, not paper photograph counts.
         result['grid']={}
         for w in (100,200,500):
