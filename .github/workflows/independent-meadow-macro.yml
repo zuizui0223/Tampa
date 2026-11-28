@@ -1,0 +1,30 @@
+name: Independent marine meadow composition and epifauna macro analysis
+on:
+  push:
+    branches: [analysis/cross-region-meadow-identity-20261127]
+    paths: ['analysis/227_independent_meadow_macro.py', '.github/workflows/independent-meadow-macro.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  macro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy scipy scikit-learn
+      - name: Download pinned MarineGEO source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --location --retry 2 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/repos/zuizui0223/Tampa/actions/artifacts/15237843683/zip -o sources.zip
+          echo 'f08742a7d7b26ff55e1e21fa98bcfc545b92f3cd1cd9e5beebcebf96a3f1771c  sources.zip' | sha256sum -c -
+      - run: python analysis/227_independent_meadow_macro.py sources.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-meadow-macro
+          path: macro_new/
+          retention-days: 30
