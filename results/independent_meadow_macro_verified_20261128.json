@@ -1,0 +1,168 @@
+{
+  "run_id": 46100116135,
+  "job_id": 140840408921,
+  "artifact_id": 15244593350,
+  "artifact_digest": "sha256:db1a1c4847b84c8760e6bc3a5a70c53d93344b2e8b7881b94e6bcf86ad1c6bcb",
+  "head_sha": "655c35e30854b1a77ccd301d023540032e9a3754",
+  "source": "compact log JSON",
+  "marinegeo": {
+    "qc": {},
+    "rows": 104,
+    "sites": 5,
+    "country_year_counts": {
+      "('PA', 2022)": 32,
+      "('US', 2021)": 36,
+      "('US', 2022)": 36
+    },
+    "site_counts": {
+      "PAN-BDT_seagrass:Almirante_Seagrass": 9,
+      "PAN-BDT_seagrass:Juan_Point_Seagrass": 7,
+      "PAN-BDT_seagrass:STRI_Seagrass": 16,
+      "USA-IRL_seagrass:Bear_Point_Seagrass": 36,
+      "USA-IRL_seagrass:Round_Island_Seagrass": 36
+    },
+    "correlations": {
+      "cover|animal_per_g_sum": {
+        "rows": 104,
+        "sites": 5,
+        "pooled_rho": -0.5817661169135961,
+        "within_transect_correlations": 15,
+        "within_site_clusters": 3,
+        "equal_site_rho": -0.023829518519954535,
+        "site_boot_ci": null
+      },
+      "cover|positive_fauna_taxa": {
+        "rows": 104,
+        "sites": 5,
+        "pooled_rho": -0.6102930073082895,
+        "within_transect_correlations": 15,
+        "within_site_clusters": 3,
+        "equal_site_rho": 0.07388580725372815,
+        "site_boot_ci": null
+      },
+      "density|animal_per_g_sum": {
+        "rows": 30,
+        "sites": 3,
+        "pooled_rho": 0.15771900922749824,
+        "within_transect_correlations": 3,
+        "within_site_clusters": 1,
+        "equal_site_rho": 0.19999999999999998,
+        "site_boot_ci": null
+      },
+      "density|positive_fauna_taxa": {
+        "rows": 30,
+        "sites": 3,
+        "pooled_rho": 0.22794842498449447,
+        "within_transect_correlations": 3,
+        "within_site_clusters": 1,
+        "equal_site_rho": 0.2375765404824695,
+        "site_boot_ci": null
+      },
+      "length|animal_per_g_sum": {
+        "rows": 92,
+        "sites": 5,
+        "pooled_rho": -0.564608236088476,
+        "within_transect_correlations": 13,
+        "within_site_clusters": 3,
+        "equal_site_rho": 0.04603174603174605,
+        "site_boot_ci": null
+      },
+      "length|positive_fauna_taxa": {
+        "rows": 92,
+        "sites": 5,
+        "pooled_rho": -0.5349034969995881,
+        "within_transect_correlations": 13,
+        "within_site_clusters": 3,
+        "equal_site_rho": 0.09091143248454635,
+        "site_boot_ci": null
+      },
+      "cover_richness|animal_per_g_sum": {
+        "rows": 104,
+        "sites": 5,
+        "pooled_rho": -0.019612816326524334,
+        "within_transect_correlations": 11,
+        "within_site_clusters": 3,
+        "equal_site_rho": -0.39277826336469185,
+        "site_boot_ci": null
+      },
+      "cover_richness|positive_fauna_taxa": {
+        "rows": 104,
+        "sites": 5,
+        "pooled_rho": -0.04380027369149414,
+        "within_transect_correlations": 11,
+        "within_site_clusters": 3,
+        "equal_site_rho": 0.10847867632872722,
+        "site_boot_ci": null
+      },
+      "thalassia_cover|animal_per_g_sum": {
+        "rows": 104,
+        "sites": 5,
+        "pooled_rho": -0.7021446786302555,
+        "within_transect_correlations": 7,
+        "within_site_clusters": 3,
+        "equal_site_rho": 0.0842063284230935,
+        "site_boot_ci": null
+      },
+      "thalassia_cover|positive_fauna_taxa": {
+        "rows": 104,
+        "sites": 5,
+        "pooled_rho": -0.7413309340625932,
+        "within_transect_correlations": 7,
+        "within_site_clusters": 3,
+        "equal_site_rho": -0.036567019712926814,
+        "site_boot_ci": null
+      }
+    },
+    "cv": {
+      "cover|animal_per_g_sum": {
+        "estimable": true,
+        "rows": 104,
+        "sites": 5,
+        "relative_skill": -0.049205307625105776,
+        "base_mse": 0.15674363271797143,
+        "aug_mse": 0.1644562513841358,
+        "sites_improved": 2
+      },
+      "cover|positive_fauna_taxa": {
+        "estimable": true,
+        "rows": 104,
+        "sites": 5,
+        "relative_skill": -0.15263307810686744,
+        "base_mse": 0.17934449800614796,
+        "aug_mse": 0.20671840077835726,
+        "sites_improved": 1
+      },
+      "cover+length|animal_per_g_sum": {
+        "estimable": true,
+        "rows": 92,
+        "sites": 5,
+        "relative_skill": -0.06652903435405166,
+        "base_mse": 0.16165942385120866,
+        "aug_mse": 0.17241446921426193,
+        "sites_improved": 2
+      },
+      "cover+length|positive_fauna_taxa": {
+        "estimable": true,
+        "rows": 92,
+        "sites": 5,
+        "relative_skill": -0.1491038000307876,
+        "base_mse": 0.19652648312857832,
+        "aug_mse": 0.2258293285697358,
+        "sites_improved": 2
+      },
+      "cover+density|animal_per_g_sum": {
+        "sites": 3,
+        "rows": 30,
+        "estimable": false
+      },
+      "cover+density|positive_fauna_taxa": {
+        "sites": 3,
+        "rows": 30,
+        "estimable": false
+      }
+    }
+  },
+  "moreton": {
+    "STOP": "AssertionError((4724, 4150, ['ID (Name of transect)', 'Date/Time', 'Latitude', 'Longitude', 'UTM east [m]', 'UTM north [m]', 'UTM Zone', 'URL image (JPEG)', 'Seagr cov [%]', 'Seagr in epiphyte cov [%]', 'Macro algae calc cov [%]', 'Macro algae non calc cov [%]', 'Cyanobacteria + oth algae cov [%]', 'Substratum cov [%]', 'Benthos oth cov [%]', 'C. serrulata cov [%] (Wide strap-like leaves (1 cm)...)', 'H. uninervis cov [%] (Narrow, strap like leaf (0.2 ...)', 'H. ovalis cov [%] (Paddle-like shape low to bent...)', 'H. spinulosa cov [%] (Compound leaf; leafelets serr...)', 'S. isoetifolium cov [%] (Thin cylndrcal like leaf (spa...)', 'Z. muelleri cov [%] (Strap-like leaves 0.5 cm wide...)', 'Seagr detritus cov [%] (Dead seagrass floating around...)', 'Seagr indet cov [%] (Other seagrass species.)', 'C. serrulata + algae cov [%] (Like Cymodocea serrulata but ...)', 'H. uninervis + algae cov [%] (Like Halodule uninervis but c...)', 'H. ovalis + algae cov [%] (Like Halophila ovalis but lea...)', 'H. spinulosa + algae cov [%] (Like Halophila spinulosa but ...)', 'S. isoetifolium + epiphyte cov [%] (Like Syringodium isoetifolium...)', 'S. isoetifolium + hairy algae cov [%] (Like Syringodium isoetifolium...)', 'Z. muelleri + algae cov [%] (Like Zostera mueller ibut wit...)', 'Z. muelleri + dark cov [%] (Like Zostera muelleri but lea...)', 'Halimeda sp. cov [%] (Calcified string of green sca...)', 'Padina sp. cov [%] (Fan-shaped algae; containing ...)', 'Udotea sp. cov [%] (Individual calcified green fa...)', 'Caulerpa sp. cov [%] (Green, grape-like; connected ...)', 'Hydroclatharus sp. cov [%] (Brown algae; uneven holes; re...)', 'Hydroclatharus sp. on seagr cov [%] (Brown algae; uneven holes; re...)', 'Macro algae gen unkn cov [%] (Other macro algae.)', 'Macro algae calc gen unkn cov [%] (Other macro algae calcareous.)', 'Sargassum sp. cov [%] (Attached to substrate; brown;...)', 'Macro cyanobac on sand cov [%] (Hairy like strings of cyanoba...)', 'Macro cyanobac on oth cov [%] (Hairy like strings of cyanoba...)', 'Microphytobenth on sand cov [%] (Microphytobenthic on sand whe...)', 'Microphytobenth mat cov [%] (Microphytobenthic occupies co...)', 'Sand dark colour cov [%] (Will fall out of your hand; b...)', 'Sand light colour cov [%] (Will fall out of your hand; l...)', 'Rock cov [%] (Hard surface not included in ...)', 'Anemone cov [%] (Sessile polyp attached to the...)', 'Benthos oth cov [%] (Other that is definetly worth...)', 'Benthos oth dead cov [%] (Other live type which is now ...)', 'Pina fan mussel cov [%] (Upright bivalve, 30-50 cm long)', 'Sea cucumber cov [%] (Elongated, cylindrical body, ...)', 'Small Shells cov [%] (Discarded small shells, often...)', 'Sponge cov [%] (Attached to the benthos; homo...)', 'Star fish cov [%] (Star-shaped, flat organism fr...)', 'Urchin cov [%] (Spiny and spherical. Can caus...)']))"
+  }
+}
